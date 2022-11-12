@@ -1,0 +1,18 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models\weapons\mw19\model680\rail_sight"
+"$bumpmap" "models\weapons\mw19\model680\rail_sight_n"
+"$phongexponenttexture" "models\weapons\mw19\model680\rail_sight_exp"
+	
+//    "$color2" "[.5 .5 .5]"
+	"$phong" "1"
+	"$phongboost" "15"
+    "$phongdisablehalflambert" "1"
+	"$phongalbedotint" "1"
+	"$phongalbedoboost"	"0"
+	"$phongfresnelranges" "[.3 .5 1]"
+	"$envmap" "env_cubemap"
+	"$envmaptint"	"[1 1 1]"
+	"$envmapfresnel" "1"
+    "$blendtintbybasealpha" "1"
+}

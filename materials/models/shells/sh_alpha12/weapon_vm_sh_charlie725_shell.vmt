@@ -1,0 +1,19 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models\shells\sh_alpha12\shell"
+"$bumpmap" "models\shells\sh_alpha12\shell_n"
+"$phongexponenttexture" "models\shells\sh_alpha12\shell_exp"
+	
+    "$color2" "[.2 .2 .2]"
+	"$phong" "1"
+	"$phongboost" "6"
+	"$phongexponent" "40"
+	"$phongalbedotint" "1"
+	"$phongalbedoboost"	"40"
+	"$phongfresnelranges" "[.3 .5 0]"
+	"$envmap" "env_cubemap"
+	"$envmaptint"	"[.1 .09 .08]"
+	"$basemapalphaenvmapmask" "1"
+	"$envmapfresnel" "1.2"
+    "$blendtintbybasealpha" "1"
+}

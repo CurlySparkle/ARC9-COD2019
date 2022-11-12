@@ -1,0 +1,15 @@
+"VertexLitGeneric"
+{
+"$basetexture" "models\weapons\mw19\m4a1\mag_trans"
+"$bumpmap" "models\weapons\mw19\m4a1\mag_n"
+"$phongexponenttexture" "models\weapons\mw19\m4a1\mag_trans_exp"
+
+	"$phong" "1"
+	"$phongboost" "15"
+	"$phongexponent" "180"
+	"$phongalbedotint" "1"
+	"$phongalbedoboost"	"0"
+	"$phongfresnelranges" "[.3 .5 1]"
+	"$envmapfresnel" "1.2"
+    "$translucent" "1"
+}
