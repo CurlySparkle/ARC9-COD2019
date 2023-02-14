@@ -32,7 +32,7 @@ SWEP.Slot = 3
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
-SWEP.WorldModelMirror = "models/weapons/csgo/c_snip_svd.mdl"
+SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_svd.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
