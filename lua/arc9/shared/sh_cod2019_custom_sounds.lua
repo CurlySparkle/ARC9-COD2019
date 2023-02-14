@@ -187,3 +187,18 @@ sound.Add( {
 		"weapons/csgo/minigun/weap_kilo121_fire_plr_06.ogg",
     }
 } )
+
+sound.Add( {
+    name = "COD2019.Rytec.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/csgo/rytec/weap_xmike109_fire_bang_plr_01.wav",
+		"weapons/csgo/rytec/weap_xmike109_fire_bang_plr_02.wav",
+		"weapons/csgo/rytec/weap_xmike109_fire_bang_plr_03.wav",
+		"weapons/csgo/rytec/weap_xmike109_fire_bang_plr_04.wav",
+    }
+} )
