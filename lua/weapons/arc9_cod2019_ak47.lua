@@ -463,6 +463,16 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["sight_rail"] = {
+        Bodygroups = {
+            {5,1},
+        },
+    },
+    ["pistol_grip"] = {
+        Bodygroups = {
+            {4,1},
+        },
+    },
     ["stock"] = {
         Bodygroups = {
             {3,1},
@@ -495,12 +505,13 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Dovetail",
+        PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.4, 0.2, -1),
+        Pos = Vector(1.5, 0, 0),
         Ang = Angle(0, 0, 0),
-        Category = {"csgo_rail_optic_ak",},
+        Category = {"csgo_optic",},
         CorrectiveAng = Angle(0, 0, 0),
+		InstalledElements = {"sight_rail"},
     },
     {
         PrintName = "Muzzle",
