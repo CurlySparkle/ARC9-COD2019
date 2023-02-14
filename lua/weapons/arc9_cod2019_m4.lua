@@ -6,7 +6,7 @@ SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Assault Rifles"
 
-SWEP.PrintName = "M4"
+SWEP.PrintName = "M4A1"
 
 SWEP.Class = "Assault Rifle"
 
@@ -231,8 +231,8 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/m4a1/"
 
-SWEP.ShootSound = "COD2019.M4.Fire"
-SWEP.ShootSoundSilenced = "COD2019.M4.Fire_Silenced"
+SWEP.ShootSound = "COD2019.M4A1.Fire"
+SWEP.ShootSoundSilenced = "COD2019.M4A1.Fire_Silenced"
 SWEP.DistantShootSound = "CSGO.m4a4.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
