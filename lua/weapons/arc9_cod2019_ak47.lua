@@ -84,7 +84,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.5
+SWEP.Recoil = 2
 
 SWEP.RecoilSeed = 6589132
 
@@ -114,7 +114,7 @@ SWEP.RecoilMultSights = 0.9
 
 -------------------------- VISUAL RECOIL
 
-SWEP.UseVisualRecoil = true
+SWEP.UseVisualRecoil = false
 SWEP.VisualRecoilPunch = 0.2
 SWEP.VisualRecoilUp = 0.2
 

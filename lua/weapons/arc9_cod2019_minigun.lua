@@ -243,14 +243,14 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
         EventTable = {
-            {s = path .. "weap_dblmg_spindown_plr_01.ogg", t = 4 / 30},
+            {s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.5, t = 4 / 30},
         },
     },
     ["trigger"] = {
         Source = {"windup"},
 		--MinProgress = 0.8,
         EventTable = {
-            {s = path .. "weap_dblmg_spinup_plr_01.ogg", t = 0 / 30},
+            {s = path .. "weap_dblmg_spinup_plr_01.ogg", v = 0.5, t = 0 / 30},
         },
     },
     ["reload"] = {

@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/csgo/minigun/minigun_ammobelt"
-	"$bumpmap"					"models/csgo/minigun/minigun_ammobelt_n"
-	"$phongexponenttexture"		"models/csgo/minigun/minigun_ammobelt_exponent"
+	"$basetexture"				"models/cod2019/minigun/minigun_ammobelt"
+	"$bumpmap"					"models/cod2019/minigun/minigun_ammobelt_n"
+	"$phongexponenttexture"		"models/cod2019/minigun/minigun_ammobelt_exponent"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 

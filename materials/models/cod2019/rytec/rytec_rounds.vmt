@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/csgo/rytec/rytec_rounds"
-	"$bumpmap"					"models/csgo/rytec/rytec_rounds_n"
-	"$phongexponenttexture"		"models/csgo/rytec/rytec_rounds_exponent"
+	"$basetexture"				"models/cod2019/rytec/rytec_rounds"
+	"$bumpmap"					"models/cod2019/rytec/rytec_rounds_n"
+	"$phongexponenttexture"		"models/cod2019/rytec/rytec_rounds_exponent"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 

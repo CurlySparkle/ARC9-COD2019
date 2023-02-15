@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/csgo/minigun/minigun_barrel"
-	"$bumpmap"					"models/csgo/minigun/minigun_barrel_n"
-	"$phongexponenttexture"		"models/csgo/minigun/minigun_barrel_exponent"
+	"$basetexture"				"models/cod2019/minigun/minigun_barrel"
+	"$bumpmap"					"models/cod2019/minigun/minigun_barrel_n"
+	"$phongexponenttexture"		"models/cod2019/minigun/minigun_barrel_exponent"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 

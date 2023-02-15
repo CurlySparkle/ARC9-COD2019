@@ -224,7 +224,7 @@ SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
 SWEP.CamQCA = 4
-SWEP.CamQCA_Mult = 0.5
+SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/models/weapons/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
@@ -244,7 +244,7 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 local path = "weapons/cod2019/rytec/"
 
 SWEP.ShootSound = "COD2019.Rytec.Fire"
-SWEP.ShootSoundSilenced = "CSGO.AWP.Fire_Silenced"
+SWEP.ShootSoundSilenced = "COD2019.Rytec.Silenced_Fire"
 SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
@@ -292,13 +292,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_xmike109_reload_up.wav", t = 0 / 30},
-            {s = path .. "wfoly_sn_xmike109_reload_magrelease.wav", t = 24 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_magout.wav", t = 41 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_arm.wav", t = 68 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_magin_01.wav", t = 78 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_magin_02.wav", t = 92 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_end.wav", t = 104 / 30},
+            {s = path .. "wfoly_sn_xmike109_reload_up.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sn_xmike109_reload_magrelease.ogg", t = 24 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_magout.ogg", t = 41 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_arm.ogg", t = 68 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_magin_01.ogg", t = 78 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_magin_02.ogg", t = 92 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_end.ogg", t = 104 / 30},
         },
     },
     ["reload_empty"] = {
@@ -327,16 +327,16 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_xmike109_reload_empty_up.wav", t = 0 / 30},
-            {s = path .. "wfoly_sn_xmike109_reload_empty_magrelease.wav", t = 26 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_magout.wav", t = 43 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_arm.wav", t = 58 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_magin_01.wav", t = 81 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_magin_02.wav", t = 95 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_rotate.wav", t = 104 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_boltpull.wav", t = 128 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_boltrelease.wav", t = 142 / 30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_end.wav", t = 149 / 30},
+            {s = path .. "wfoly_sn_xmike109_reload_empty_up.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sn_xmike109_reload_empty_magrelease.ogg", t = 26 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_magout.ogg", t = 43 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_arm.ogg", t = 58 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_magin_01.ogg", t = 81 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_magin_02.ogg", t = 95 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_rotate.ogg", t = 104 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_boltpull.ogg", t = 128 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_boltrelease.ogg", t = 142 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_end.ogg", t = 149 / 30},
         },
     },
     ["ready"] = {
@@ -364,24 +364,24 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_xmike109_first_raise_up.wav", t = 0 / 30},
-            {s = path .. "wfoly_sn_xmike109_first_raise_bolt_pull.wav", t = 17 / 30},
-            {s = path .. "wfoly_sn_xmike109_first_raise_bolt_release.wav", t = 28 / 30},
-			{s = path .. "wfoly_sn_xmike109_first_raise_end.wav", t = 35 / 30},
+            {s = path .. "wfoly_sn_xmike109_first_raise_up.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sn_xmike109_first_raise_bolt_pull.ogg", t = 17 / 30},
+            {s = path .. "wfoly_sn_xmike109_first_raise_bolt_release.ogg", t = 28 / 30},
+			{s = path .. "wfoly_sn_xmike109_first_raise_end.ogg", t = 35 / 30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_sn_xmike109_first_raise_up.wav", t = 0 / 30},
-			{s = path .. "wfoly_sn_xmike109_first_raise_end.wav", t = 10 / 30},
+            {s = path .. "wfoly_sn_xmike109_first_raise_up.ogg", t = 0 / 30},
+			{s = path .. "wfoly_sn_xmike109_first_raise_end.ogg", t = 10 / 30},
         },
     },
     ["holster"] = {
         Source = "holster",
 		Mult = 2,
         EventTable = {
-            {s = path .. "wfoly_sn_xmike109_first_raise_up.wav", t = 0 / 30},
+            {s = path .. "wfoly_sn_xmike109_first_raise_end.ogg", t = 0 / 30},
         },
     },
     ["idle"] = {
@@ -392,11 +392,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 1.5,
+		Mult = 2,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 1.5,
+		Mult = 2,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -423,10 +423,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_sn_xmike109_inspect_up.wav", t = 0 / 30 },
-			{ s = path .. "wfoly_sn_xmike109_inspect_grabrotate.wav", t = 49 / 30 },
-			{ s = path .. "wfoly_sn_xmike109_inspect_move.wav", t = 89 / 30 },
-			{ s = path .. "wfoly_sn_xmike109_inspect_end.wav", t = 111 / 30 },
+            { s = path .. "wfoly_sn_xmike109_inspect_up.ogg", t = 0 / 30 },
+			{ s = path .. "wfoly_sn_xmike109_inspect_grabrotate.ogg", t = 49 / 30 },
+			{ s = path .. "wfoly_sn_xmike109_inspect_move.ogg", t = 89 / 30 },
+			{ s = path .. "wfoly_sn_xmike109_inspect_end.ogg", t = 111 / 30 },
         },
     },
     ["bash"] = {

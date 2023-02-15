@@ -23,7 +23,7 @@ SWEP.Credits = {
     Assets = "Counter-Strike: Global Offensive/Insurgency: Sandstorm/Call of Duty®: Modern Warfare"
 }
 
-SWEP.Description = [[A Soviet semi-automatic sniper rifle chambered in 7.62×54mmR, designed as a squad support weapon. Upon introduction, it had beat out all other contestants and was accepted into service with the Soviet military with serial production beginning in 1964.]]
+SWEP.Description = [[A Soviet workhorse chambered in 7.62mm x 54mmR. This gas-operated semi-automatic sniper rifle allows for rapid followup shots.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_svd.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_g3sg1.mdl"
@@ -66,6 +66,8 @@ SWEP.BodyDamageMults = {
 -------------------------- PHYS BULLET BALLISTICS
 
 SWEP.PhysBulletMuzzleVelocity = 2800 * 12
+SWEP.PhysBulletGravity = 1.5
+SWEP.PhysBulletDrag = 1.15
 
 -------------------------- MAGAZINE
 
@@ -82,7 +84,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 250
+SWEP.RPM = 190
 
 SWEP.Firemodes = {
     {
@@ -93,27 +95,28 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.5
+SWEP.Recoil = 10
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 5 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0
 
-SWEP.RecoilDissipationRate = 50 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
-SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
+SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1
+SWEP.RecoilKick = 2
 
 SWEP.RecoilMultCrouch = 0.6
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
+SWEP.RecoilMultSights = 0.7
 
 -------------------------- VISUAL RECOIL
 
@@ -131,12 +134,6 @@ SWEP.SpreadAddSights = -0.5
 
 
 -------------------------- HANDLING
-
-SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
-SWEP.Sway = 0 -- How much the gun sways.
-SWEP.SwayMultSights = 0
-
-SWEP.SpeedMultSights = 0.5
 
 SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
@@ -163,7 +160,7 @@ SWEP.IronSights = {
 	CrosshairInSights = false
 }
 
-SWEP.ViewModelFOVBase = 56
+SWEP.ViewModelFOVBase = 65
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
@@ -185,7 +182,7 @@ SWEP.MovingPos = Vector(0, -0.7, -0.7)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
-SWEP.CrouchAng = Angle(0, 0, 0)
+SWEP.CrouchAng = Angle(0, 0, -5)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(24, 35, 2)
@@ -236,8 +233,8 @@ local path = "weapons/cod2019/svd/"
 
 SWEP.ShootSound = "COD2019.SVD.Fire"
 SWEP.ShootSoundSilenced = "COD2019.SVD.Silenced_Fire"
-SWEP.DistantShootSound = "COD2019.SVD.Distance_Fire"
-SWEP.DryFireSound = "weapons/cod2019/svd/svd_empty.ogg"
+SWEP.DistantShootSound = "CSGO.g3sg1.Distance_Fire"
+SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
@@ -272,14 +269,19 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 1.15,
                 lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
-            {s = path .. "svd_magout.ogg", t = 14 / 30},
-            {s = path .. "svd_magin.ogg", t = 45 / 30},
+            {s = path .. "wfoly_sn_delta_reload_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sn_delta_reload_magout_01.ogg", t = 14 / 30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_01.ogg", t = 26 / 30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 44 / 30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 53 / 30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 68 / 30},
+			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 73 / 30},
         },
     },
     ["reload_empty"] = {
@@ -308,9 +310,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "svd_magout.ogg", t = 14 / 30},
-            {s = path .. "svd_magin.ogg", t = 45 / 30},
-			{s = path .. "svd_boltrelease.ogg", t = 80 / 30},
+            {s = path .. "wfoly_sn_delta_reload_empty_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sn_delta_reload_empty_magout_01.ogg", t = 17 / 30},
+			{s = path .. "wfoly_sn_delta_reload_empty_throw_mag.ogg", t = 20 / 30},
+			{s = path .. "wfoly_sn_delta_reload_empty_magin_v2_01.ogg", t = 46 / 30},
+			{s = path .. "wfoly_sn_delta_reload_empty_magin_v2_02.ogg", t = 67 / 30},
+			{s = path .. "wfoly_sn_delta_reload_empty_end.ogg", t = 80 / 30},
+			{s = path .. "wfoly_sn_delta_reload_empty_charge_01.ogg", t = 92 / 30},
         },
     },
     ["ready"] = {
@@ -338,21 +344,21 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "svd_raise.ogg", t = 0 / 30},
-            {s = path .. "svd_boltback.ogg", t = 11 / 30},
-            {s = path .. "svd_boltrelease.ogg", t = 25 / 30},
+            {s = path .. "wfoly_sn_delta_raise_first_mvmnt.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sn_delta_raise_first_charge_01.ogg", t = 11 / 30},
+            {s = path .. "wfoly_sn_delta_raise_first_end.ogg", t = 25 / 30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "svd_raise.wav", t = 0 / 30},
+            {s = path .. "wfoly_sn_delta_raise_mvmnt.ogg", t = 0 / 30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = "CSGO.Item.Movement", t = 0 / 30},
+            {s = path .. "wfoly_sn_delta_reload_empty_end.ogg", t = 0 / 30},
         },
     },
     ["idle"] = {
@@ -363,11 +369,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2.5,
+		Mult = 2,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2.5,
+		Mult = 2,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -394,9 +400,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = "weapons/csgo/movement1.wav", t = 0 / 30 },
-            { s = "weapons/csgo/movement2.wav", t = 53 / 30 },
-            { s = "weapons/csgo/movement3.wav", t = 113 / 30 },
+            {s = path .. "wfoly_sn_delta_inspect_01", t = 0 / 30},
+            {s = path .. "wfoly_sn_delta_inspect_02", t = 53 / 30},
+            {s = path .. "wfoly_sn_delta_inspect_03", t = 113 / 30},
         },
     },
     ["bash"] = {
@@ -406,7 +412,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_Think	= ARC9.CSGO.BlendEmpty
+--SWEP.Hook_Think	= ARC9.CSGO.BlendEmpty
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -427,101 +433,117 @@ SWEP.DefaultBodygroups = "00000000000000"
 -- }
 
 SWEP.AttachmentElements = {
-    ["mag"] = {
+    ["mag_none"] = {
         Bodygroups = {
             {1,1},
         },
     },
-    ["barrel_short"] = {
+    ["barrel_none"] = {
         Bodygroups = {
             {2,1},
-			{3,1},
-        },
-    },
-    ["muzzle"] = {
-        Bodygroups = {
-            {3,2},
         },
     },
     ["stock_none"] = {
         Bodygroups = {
+            {3,1},
+        },
+    },
+    ["muzzle_none"] = {
+        Bodygroups = {
             {4,1},
         },
     },
-    ["stock_adapter"] = {
+    ["grip_rail"] = {
         Bodygroups = {
             {5,1},
         },
     },
+    ["laser_rail"] = {
+        Bodygroups = {
+            {6,1},
+        },
+    },
+    ["sight_rail"] = {
+        Bodygroups = {
+            {7,1},
+        },
+    },
 }
+
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("scope_svd") then model:SetBodygroup(7,0) end
+end
 
 SWEP.Attachments = {
     {
-        PrintName = "Dovetail",
-        Bone = "v_weapon.svd_Parent",
-        Pos = Vector(5, 0.11, 1.58),
+        PrintName = "Barrels",
+        DefaultAttName = "Standard Barrel",
+        Category = "cod2019_svd_barrel",
+        Bone = "tag_barrel_attach",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Category = {"csgo_rail_optic_ak",},
-        CorrectiveAng = Angle(-0, 0, 0),
-		RejectAttachments = { 
-		["csgo_rail_optic_1"] = true,
-		},
     },
     {
-        PrintName = "Barrel",
-		DefaultAttName = "Standard",
-        Bone = "v_weapon.svd_Parent",
-        Pos = Vector(20, 0, 0.55),
+        PrintName = "Optics",
+        Bone = "tag_rail",
+        Pos = Vector(-4, 0, 3.55),
         Ang = Angle(0, 0, 0),
-        Category = "go_svd_barrel"
+        Category = {"csgo_optic","cod2019_optic_svd"},
+		Installed = "cod2019_optic_scope_svd",
+        Integral = "cod2019_optic_scope_svd",
+        CorrectiveAng = Angle(0, 0, 0),
+		InstalledElements = {"sight_rail"},
     },
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"muzzle","muzzle_snipers"},
-        Bone = "v_weapon.svd_Parent",
-        Pos = Vector(35.7, 0, 0.55),
+        Category = "muzzle",
+        Bone = "tag_silencer",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		InstalledElements = {"muzzle_none"},
 		Scale = 1,
-		InstalledElements = {"muzzle"},
     },
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
         Category = "csgo_tac",
-        Bone = "v_weapon.svd_Parent",
-        Pos = Vector(19, 0.65, 1),
+        Bone = "tag_laser_attach",
+        Pos = Vector(-7, -0.48, 0.4),
         Ang = Angle(0, 0, -90),
+		InstalledElements = {"laser_rail"},
     },
     {
-        PrintName = "Bottom",
+        PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = "csgo_rail_ub",
-        Bone = "v_weapon.svd_Parent",
-        Pos = Vector(15, 0.11, -0.3),
+        Category = "grip",
+        Bone = "tag_attachments",
+        Pos = Vector(13, 0, -1),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
+		InstalledElements = {"grip_rail"},
     },
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"csgo_tube"},
-        Bone = "v_weapon.svd_Parent",
-        Pos = Vector(-2.3, 0, 0.6),
+        Category = "csgo_tube",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0.4, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_adapter","stock_none"},
-		Scale = 0.8,
+		--InstalledElements = {"stock_none"},
     },
     {
         PrintName = "Ammo",
-        Bone = "v_weapon.svd_Clip",
-        Category = "go_ammo",
-        Icon_Offset = Vector(0, 1.5, 0),
+        Bone = "j_mag1",
+        Category = {"go_ammo"},
+        Pos = Vector(0, 0, -1.5),
+        Ang = Angle(0, 0, 0),
     },
     {
         PrintName = "Mag",
-		Bone = "v_weapon.svd_Clip",
-        Category = "go_svd_mag",
+		Bone = "j_mag1",
+        Category = {"go_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -532,7 +554,7 @@ SWEP.Attachments = {
     {
         PrintName = "Skins",
         --Bone = "v_weapon.Clip",
-        Category = "go_skins_svd",
+        Category = "cod2019_skins_svd",
 		CosmeticOnly = true,
     },
     {
@@ -563,31 +585,18 @@ SWEP.Attachments = {
     {
         PrintName = "Charm",
         Category = "charm",
-        Bone = "v_weapon.svd_Parent", -- relevant bone any attachments will be mostly referring to
-        Pos = Vector(0, -0.8, 0), -- offset that the attachment will be relative to the bone
+        Bone = "tag_cosmetic",
+        Pos = Vector(0.5, 0, 0),
         Ang = Angle(0, 0, 0),
-    },
-    {
-        PrintName = "View",
-        Category = "go_ak47_view"
+		Scale = 1.5,
     },
     {
         PrintName = "Stats",
-        Category = "killcounter",
-        Bone = "v_weapon.svd_Parent", -- relevant bone any attachments will be mostly referring to
-        Pos = Vector(1, -0.8, 0.7), -- offset that the attachment will be relative to the bone
-        Ang = Angle(0, 0, 15),
+        Category = {"killcounter","killcounter2"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(0, 0, -1),
+        Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
-    },
-    {
-        PrintName = "Lhik",
-        Bone = "v_weapon.svd_Parent",
-        Pos = Vector(14, 0.35, -0.4),
-        Ang = Angle(3, 0, 170),
-        Category = {"grip_xm1014"},
-		Installed = "go_holdstyle_1",
-        Integral = true,
-        Hidden = true,		
     },
 }
 
