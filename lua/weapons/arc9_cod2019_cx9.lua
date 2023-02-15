@@ -223,7 +223,7 @@ SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
 SWEP.CamQCA = 4
-SWEP.CamQCA_Mult = 0.5
+SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/models/weapons/shared/shell_9mm_hr.mdl"
 SWEP.ShellSounds = ARC9.PistolShellSoundsTable
@@ -521,7 +521,7 @@ SWEP.Attachments = {
         PrintName = "Ammo",
         Bone = "j_mag1",
         Category = {"go_ammo"},
-        Pos = Vector(0, -1.5, -1.5),
+        Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
     {

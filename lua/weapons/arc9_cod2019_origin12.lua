@@ -119,7 +119,7 @@ SWEP.SpreadAddMove = 0.03
 SWEP.SpreadAddMidAir = 0.03
 SWEP.SpreadAddHipFire = 0.035
 SWEP.SpreadMultHipFire = 1.25
-SWEP.SpreadMultSights = 2
+SWEP.SpreadMultSights = 1
 SWEP.SpreadAddCrouch = -0.004
 SWEP.SpreadAddSightsMove = -0.1
 
@@ -146,7 +146,7 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.12, -5, 0.55),
+    Pos = Vector(-1.95, -3, 0.9),
     Ang = Angle(0, 0, 4.5),
     Magnification = 1.1,
     ViewModelFOV = 56,
@@ -171,7 +171,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(0, -0.4, -0.4)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -204,16 +204,22 @@ SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
 SWEP.CamQCA = 4
-SWEP.CamQCA_Mult = 0.5
+SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/shells/shell_12gauge.mdl"
+SWEP.ShellModel = "models/weapons/shared/shell_origin12.mdl"
 SWEP.ShellSounds = ARC9.ShotgunShellSoundsTable
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 1.5
+SWEP.ShellScale = 1.2
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = false
+SWEP.ShouldDropMagEmpty = true
+SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_shot_origin12_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
+SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
+SWEP.DropMagazineTime = 0.4
+SWEP.DropMagazineQCA = 3
+SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 SWEP.EjectDelay = 0.1
 
@@ -270,6 +276,7 @@ SWEP.Animations = {
     ["1_reload"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
+		DropMagAt = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -303,6 +310,7 @@ SWEP.Animations = {
     ["2_reload"] = {
         Source = "reload_short3",
 		MinProgress = 0.8,
+		DropMagAt = 0.8,
         IKTimeLine = {
             {
                 t = 0,

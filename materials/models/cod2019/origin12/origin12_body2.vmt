@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/csgo/origin12/origin12_body2"
-	"$bumpmap"					"models/csgo/origin12/origin12_body2_n"
-	"$phongexponenttexture"		"models/csgo/origin12/origin12_body2_exponent"
+	"$basetexture"				"models/cod2019/origin12/origin12_body2"
+	"$bumpmap"					"models/cod2019/origin12/origin12_body2_n"
+	"$phongexponenttexture"		"models/cod2019/origin12/origin12_body2_exponent"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 

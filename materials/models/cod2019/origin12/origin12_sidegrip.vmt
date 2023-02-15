@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/csgo/origin12/origin12_sidegrip"
-	"$bumpmap"					"models/csgo/origin12/origin12_sidegrip_n"
-	"$phongexponenttexture"		"models/csgo/origin12/origin12_sidegrip_exponent"
+	"$basetexture"				"models/cod2019/origin12/origin12_sidegrip"
+	"$bumpmap"					"models/cod2019/origin12/origin12_sidegrip_n"
+	"$phongexponenttexture"		"models/cod2019/origin12/origin12_sidegrip_exponent"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 
