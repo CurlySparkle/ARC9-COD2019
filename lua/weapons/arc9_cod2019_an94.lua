@@ -88,7 +88,7 @@ SWEP.Recoil = 1.5
 
 SWEP.RecoilSeed = 6589132
 
-SWEP.RecoilPatternDrift = 15
+SWEP.RecoilPatternDrift = 45
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
