@@ -1,4 +1,34 @@
 sound.Add( {
+    name = "COD2019.Scar.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/scar/weap_scharlie_fire_plr_01.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_plr_02.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_plr_03.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Scar.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/scar/weap_scharlie_fire_silenced_plr_01.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_silenced_plr_02.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_silenced_plr_03.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Grau556.Fire",
     channel = 10,
     volume = 1.0,
