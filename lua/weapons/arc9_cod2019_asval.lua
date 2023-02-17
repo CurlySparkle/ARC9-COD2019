@@ -84,22 +84,22 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.6
+SWEP.Recoil = 1.4
 
 SWEP.RecoilSeed = 6589132
 
-SWEP.RecoilPatternDrift = 15
+SWEP.RecoilPatternDrift = 45
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 0.8 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1.5 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 100 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
@@ -120,17 +120,14 @@ SWEP.VisualRecoilUp = 0.2
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.0014
+SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0
-SWEP.SpreadMultRecoil = 1.3
-SWEP.RecoilModifierCap = 50
-
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
+SWEP.SpreadAddShooting = 0.03 -- Applied per unit of recoil.
+SWEP.RecoilModifierCap = 20
 
 SWEP.SpreadAddMove = 0.1
 SWEP.SpreadAddMidAir = 0.1
+SWEP.SpreadAddHipFire = 0.015
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
 
@@ -216,9 +213,9 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/models/weapons/shared/shell_762_hr.mdl"
+SWEP.ShellModel = "models/weapons/shared/shell_asval.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.07
+SWEP.ShellScale = 1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
@@ -546,7 +543,7 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Stock",
         Category = {"csgo_stock","stock_retract"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(1.79, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_tube"},
     },

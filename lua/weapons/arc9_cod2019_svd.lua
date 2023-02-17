@@ -416,21 +416,16 @@ SWEP.Animations = {
 
 SWEP.DefaultBodygroups = "00000000000000"
 
--- SWEP.AttachmentTableOverrides = {
-    -- ["csgo_rail_optic_1"] = {
-    -- ModelOffset = Vector(-2.8, -0.1, 0.1),
-	-- Attachments = {
-    -- {
-        -- PrintName = "Optic",
-        -- Pos = Vector(0, 0, 0),
-        -- Ang = Angle(0, 0, 0),
-        -- Icon_Offset = Vector(0, 0, 1.5),
-        -- Category = {"csgo_optic"},
-		-- Scale = 1
-    -- },
-    -- },
-    -- }
--- }
+SWEP.AttachmentTableOverrides = {
+    ["arc9_stat_proscreen_main"] = {
+    ModelOffset = Vector(15, -0.2, 0.8),
+	ModelAngleOffset = Angle(0, 0, 0),
+	Scale = 0.9,
+    },
+    ["go_grip_angled"] = {
+    ModelOffset = Vector(0.9, 0, 0.1),
+    },
+}
 
 SWEP.AttachmentElements = {
     ["mag_none"] = {
