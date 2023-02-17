@@ -240,6 +240,9 @@ SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
+SWEP.EnterSightsSound = "weapons/cod2019/etc/smg_iron_in.ogg"
+SWEP.ExitSightsSound = "weapons/cod2019/etc/smg_iron_out.ogg"
+
 SWEP.BulletBones = {
     [1] = "j_bullet01",
     [2] = "j_bullet02",
@@ -514,17 +517,17 @@ SWEP.AttachmentElements = {
     },
     ["stock_retract"] = {
         Bodygroups = {
-            {3,1},
+            {2,1},
         },
     },
     ["stock_none"] = {
         Bodygroups = {
-            {3,3},
+            {2,3},
         },
     },
     ["stock_tube"] = {
         Bodygroups = {
-            {3,2},
+            {2,2},
 			{6,1},
         },
     },
@@ -542,7 +545,10 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) model:SetBodygroup(6,0) end
+    if wep:HasElement("stock_retract") then 
+	model:SetBodygroup(3,1) 
+	model:SetBodygroup(6,0) 
+	end
 	--if wep:HasElement("stock_none") then model:SetBodygroup(4,1) end
 end
 
@@ -596,9 +602,9 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"stock_retract","csgo_tube"},
+        Category = {"stock_retract","csgo_stock"},
         Bone = "tag_attachments",
-        Pos = Vector(-0.5, 0.6, -0.5),
+        Pos = Vector(1, 0, -0.4),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_tube"},
     },
