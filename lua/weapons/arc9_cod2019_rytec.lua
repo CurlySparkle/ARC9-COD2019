@@ -129,7 +129,7 @@ SWEP.VisualRecoilPunch = 1.5
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddShooting = 0.0002 -- Applied per unit of recoil.
+SWEP.SpreadAddRecoil = 0.0002 -- Applied per unit of recoil.
 
 SWEP.SpreadAddMove = 0.2
 SWEP.SpreadAddMidAir = 0.1
@@ -140,13 +140,9 @@ SWEP.SpreadAddSights = -0.1
 
 -------------------------- HANDLING
 
-SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
-SWEP.Sway = 0 -- How much the gun sways.
-SWEP.SwayMultSights = 0
-
 SWEP.SpeedMultSights = 0.5
 
-SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.8 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 SWEP.InstantSprintIdle = false
@@ -175,11 +171,8 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 60
 
-SWEP.SprintPos = Vector(-3, -3, 1)
-SWEP.SprintAng = Angle(0, 0, 0)
-
 SWEP.SprintMidPoint = {
-    Pos = Vector(0, -1, -0.15),
+    Pos = Vector(0, 0, 0),
     Ang = Angle(0, 0, 0)
 }
 
@@ -191,11 +184,14 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.7, -0.7)
+SWEP.MovingPos = Vector(0, -0.4, -0.4)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0.5, 0.7, -5)
+
+SWEP.SprintPos = Vector(-3, -3, 1)
+SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(24, 35, 2)
@@ -380,7 +376,7 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 2,
+		Mult = 1,
         EventTable = {
             {s = path .. "wfoly_sn_xmike109_first_raise_end.ogg", t = 0 / 30},
         },
@@ -499,10 +495,10 @@ SWEP.Attachments = {
         Bone = "tag_attachments",
         Pos = Vector(10, 0, 2),
         Ang = Angle(0, 0, 0),
-        Category = {"csgo_optic",},
-        CorrectiveAng = Angle(1.55, 0.6, 0),
-		Installed = "csgo_optic_acog",
-        Integral = "csgo_optic_acog",
+        Category = {"csgo_optic","cod2019_optic_rytec"},
+        CorrectiveAng = Angle(1.5, 0.6, 0),
+		Installed = "cod2019_optic_scope_rytec",
+        Integral = "cod2019_optic_scope_rytec",
     },
     {
         PrintName = "Muzzle",
@@ -560,7 +556,7 @@ SWEP.Attachments = {
     {
         PrintName = "Skins",
         --Bone = "v_weapon.Clip",
-        Category = "go_skins_svd",
+        Category = "cod2019_skins_rytec",
 		CosmeticOnly = true,
     },
     {
