@@ -11,12 +11,12 @@ SWEP.PrintName = "Oden"
 SWEP.Class = "Assault Rifle"
 SWEP.Trivia = {
     ["Country of Origin"] = "Germany",
-    ["Manufacturer"] = "Singuard Arms",
-    ["Caliber"] = "5.56×45mm NATO",
-    ["Weight (Loaded)"] = "3.25 kg",
-    ["Projectile Weight"] = "62 gr",
-    ["Muzzle Velocity"] = "2,624 ft/s",
-    ["Muzzle Energy"] = "1,285 joules"
+    ["Manufacturer"] = "VLK",
+    ["Caliber"] = "12.7×55mm STs-130",
+    ["Weight (Loaded)"] = "6 kg",
+    ["Projectile Weight"] = "509 gr",
+    ["Muzzle Velocity"] = "1,033 ft/s",
+    ["Muzzle Energy"] = "1,635 joules"
 }
 
 SWEP.Credits = {
@@ -24,7 +24,7 @@ SWEP.Credits = {
     Assets = "Counter-Strike: Global Offensive/Call of Duty®: Modern Warfare"
 }
 
-SWEP.Description = [[Fully automatic bullpup battle rifle maintains a slow cycle rate to help control hard hitting 12.7 x 55mm ammunition.]]
+SWEP.Description = [[Fully automatic bullpup battle rifle maintains a slow cycle rate to help control hard hitting 12.7x55mm ammunition.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_oden.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
