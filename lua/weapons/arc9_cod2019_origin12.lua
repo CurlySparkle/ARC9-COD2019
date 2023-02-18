@@ -241,8 +241,8 @@ SWEP.ShootSoundSilenced = "COD2019.Origin12.Fire_Silenced"
 SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
-SWEP.EnterSightsSound = "weapons/cod2019/etc/rifle_iron_in.ogg"
-SWEP.ExitSightsSound = "weapons/cod2019/etc/rifle_iron_out.ogg"
+SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
+SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
 SWEP.Animations = {
     ["fire"] = {

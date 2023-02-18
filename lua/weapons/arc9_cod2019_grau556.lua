@@ -252,8 +252,8 @@ SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
-SWEP.EnterSightsSound = "weapons/cod2019/etc/rifle_iron_in.ogg"
-SWEP.ExitSightsSound = "weapons/cod2019/etc/rifle_iron_out.ogg"
+SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
+SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",
