@@ -14,8 +14,8 @@ SWEP.Trivia = {
     ["Caliber"] = "7.62×54mmR",
     ["Weight (Loaded)"] = "4.4 kg",
     ["Projectile Weight"] = "144 gr",
-    ["Muzzle Velocity"] = "2,624.7 ft/s",
-    ["Muzzle Energy"] = "2,987 joules"
+    ["Muzzle Velocity"] = "2,723 ft/s",
+    ["Muzzle Energy"] = "3,215 joules"
 }
 
 SWEP.Credits = {
