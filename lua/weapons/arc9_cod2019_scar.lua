@@ -9,6 +9,15 @@ SWEP.SubCategory = "Assault Rifles"
 SWEP.PrintName = "FN Scar 17"
 
 SWEP.Class = "Assault Rifle"
+SWEP.Trivia = {
+    ["Country of Origin"] = "Belgium",
+    ["Manufacturer"] = "FORGE TAC",
+    ["Caliber"] = "7.62×51mm NATO",
+    ["Weight (Loaded)"] = "3.58 kg",
+    ["Projectile Weight"] = "144 gr",
+    ["Muzzle Velocity"] = "2,342 ft/s",
+    ["Muzzle Energy"] = "2,378 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",

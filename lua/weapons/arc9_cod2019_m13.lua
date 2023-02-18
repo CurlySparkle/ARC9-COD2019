@@ -9,6 +9,15 @@ SWEP.SubCategory = "Assault Rifles"
 SWEP.PrintName = "M13"
 
 SWEP.Class = "Assault Rifle"
+SWEP.Trivia = {
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "Tempus Armament",
+    ["Caliber"] = "5.56×45mm NATO",
+    ["Weight (Loaded)"] = "2.61 kg",
+    ["Projectile Weight"] = "62 gr",
+    ["Muzzle Velocity"] = "3,000 ft/s",
+    ["Muzzle Energy"] = "1,680 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",

@@ -10,6 +10,14 @@ SWEP.PrintName = "FAL"
 SWEP.TrueName = "FN-FAL"
 
 SWEP.Class = "Assault Rifle"
+SWEP.Trivia = {
+    ["Country of Origin"] = "Belgium",
+    ["Caliber"] = "7.62×51mm NATO",
+    ["Weight (Loaded)"] = "4.45 kg",
+    ["Projectile Weight"] = "144 gr",
+    ["Muzzle Velocity"] = "2,755.9 ft/s",
+    ["Muzzle Energy"] = "3,293 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle",

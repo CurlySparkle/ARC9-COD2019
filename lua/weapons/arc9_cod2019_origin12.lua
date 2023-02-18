@@ -9,13 +9,22 @@ SWEP.SubCategory = "Shotguns"
 SWEP.PrintName = "Origin-12"
 
 SWEP.Class = "Shotgun"
+SWEP.Trivia = {
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "FORGE TAC",
+    ["Caliber"] = "12 gauge",
+    ["Weight (Loaded)"] = "4.2 kg",
+    ["Projectile Weight"] = "493 gr",
+    ["Muzzle Velocity"] = "1,250 ft/s",
+    ["Muzzle Energy"] = "2,319 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",
     Assets = "Counter-Strike: Global Offensive/Call of Duty®: Modern Warfare"
 }
 
-SWEP.Description = [[Semi-automatic magazine-fed combat shotgun, developed by Fostech Outdoors, which has been noted for its very high rate of fire.]]
+SWEP.Description = [[Semi-automatic shotgun with large ammo capacity allows for continuous firing. Effective at close range.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_shot_origin12.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"

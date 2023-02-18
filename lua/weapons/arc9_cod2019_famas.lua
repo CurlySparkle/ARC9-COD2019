@@ -9,6 +9,15 @@ SWEP.SubCategory = "Assault Rifles"
 SWEP.PrintName = "FR 5.56"
 
 SWEP.Class = "Assault Rifle"
+SWEP.Trivia = {
+    ["Country of Origin"] = "France",
+    ["Manufacturer"] = "FORGE TAC",
+    ["Caliber"] = "5.56×45mm NATO",
+    ["Weight (Loaded)"] = "3.61 kg",
+    ["Projectile Weight"] = "62 gr",
+    ["Muzzle Velocity"] = "3,100 ft/s",
+    ["Muzzle Energy"] = "1,794 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",

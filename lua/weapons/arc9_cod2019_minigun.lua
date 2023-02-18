@@ -9,13 +9,22 @@ SWEP.SubCategory = "Specials"
 SWEP.PrintName = "Minigun"
 
 SWEP.Class = "Machine Guns"
+SWEP.Trivia = {
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "FSS",
+    ["Caliber"] = "7.62×51mm NATO",
+    ["Weight (Loaded)"] = "19 kg",
+    ["Projectile Weight"] = "144 gr",
+    ["Muzzle Velocity"] = "2,800 ft/s",
+    ["Muzzle Energy"] = "3,399 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",
     Assets = "Counter-Strike: Global Offensive/Call of Duty®: Modern Warfare"
 }
 
-SWEP.Description = [[A machine gun that appears in a portable form with high rate of fire around 3,000 RPM, manufactured by FSS.]]
+SWEP.Description = [[A machine gun that appears in a portable form with high rate of fire around 3,000 RPM.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_minigun.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"

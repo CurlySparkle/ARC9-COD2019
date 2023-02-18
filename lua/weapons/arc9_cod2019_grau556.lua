@@ -9,6 +9,15 @@ SWEP.SubCategory = "Assault Rifles"
 SWEP.PrintName = "Grau 5.56"
 
 SWEP.Class = "Assault Rifle"
+SWEP.Trivia = {
+    ["Country of Origin"] = "Switzerland",
+    ["Manufacturer"] = "ZLR Arms",
+    ["Caliber"] = "5.56×45mm NATO",
+    ["Weight (Loaded)"] = "3.62 kg",
+    ["Projectile Weight"] = "62 gr",
+    ["Muzzle Velocity"] = "2,989 ft/s",
+    ["Muzzle Energy"] = "1,506 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",

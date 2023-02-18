@@ -9,13 +9,22 @@ SWEP.SubCategory = "Submachine Guns"
 SWEP.PrintName = "CX-9"
 
 SWEP.Class = "Submachine Gun"
+SWEP.Trivia = {
+    ["Country of Origin"] = "Israel",
+    ["Manufacturer"] = "FORGE TAC",
+    ["Caliber"] = "9×19mm Parabellum",
+    ["Weight (Loaded)"] = "2.77 kg",
+    ["Projectile Weight"] = "115 gr",
+    ["Muzzle Velocity"] = "1,214 ft/s",
+    ["Muzzle Energy"] = "510 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",
     Assets = "Counter-Strike: Global Offensive/Call of Duty®: Modern Warfare"
 }
 
-SWEP.Description = [[Comes with excellent maneuverability and a fast fire rate make this a formidable weapon in close-quarters engagements, manufactured by FORGE TAC.]]
+SWEP.Description = [[Comes with excellent maneuverability and a fast fire rate make this a formidable weapon in close-quarters engagements.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_smg_evo.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"

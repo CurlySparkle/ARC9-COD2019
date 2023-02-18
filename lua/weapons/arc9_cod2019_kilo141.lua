@@ -9,6 +9,15 @@ SWEP.SubCategory = "Assault Rifles"
 SWEP.PrintName = "Kilo 141"
 
 SWEP.Class = "Assault Rifle"
+SWEP.Trivia = {
+    ["Country of Origin"] = "Germany",
+    ["Manufacturer"] = "Singuard Arms",
+    ["Caliber"] = "5.56×45mm NATO",
+    ["Weight (Loaded)"] = "3.25 kg",
+    ["Projectile Weight"] = "62 gr",
+    ["Muzzle Velocity"] = "2,624 ft/s",
+    ["Muzzle Energy"] = "1,285 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",

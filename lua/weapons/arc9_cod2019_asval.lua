@@ -9,6 +9,15 @@ SWEP.SubCategory = "Assault Rifles"
 SWEP.PrintName = "AS VAL"
 
 SWEP.Class = "Assault Rifle"
+SWEP.Trivia = {
+    ["Country of Origin"] = "Russia",
+    ["Manufacturer"] = "Verdansk Arms Plant",
+    ["Caliber"] = "9×39mm",
+    ["Weight (Loaded)"] = "2.6 kg",
+    ["Projectile Weight"] = "250 gr",
+    ["Muzzle Velocity"] = "970 ft/s",
+    ["Muzzle Energy"] = "708 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",

@@ -9,6 +9,15 @@ SWEP.SubCategory = "Assault Rifles"
 SWEP.PrintName = "AN-94"
 
 SWEP.Class = "Assault Rifle"
+SWEP.Trivia = {
+    ["Country of Origin"] = "Russia",
+    ["Manufacturer"] = "Verdansk Arms Plant",
+    ["Caliber"] = "5.45×39mm",
+    ["Weight (Loaded)"] = "3.85 kg",
+    ["Projectile Weight"] = "63.3 gr",
+    ["Muzzle Velocity"] = "2,953 ft/s",
+    ["Muzzle Energy"] = "1,662 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",

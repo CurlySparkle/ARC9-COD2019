@@ -8,7 +8,16 @@ SWEP.SubCategory = "Submachine Guns"
 
 SWEP.PrintName = "MP7"
 
-SWEP.Class = "Assault Rifle"
+SWEP.Class = "Submachine Gun"
+SWEP.Trivia = {
+    ["Country of Origin"] = "Germany",
+    ["Manufacturer"] = "FSS",
+    ["Caliber"] = "4.6×30mm HK",
+    ["Weight (Loaded)"] = "2.1 kg",
+    ["Projectile Weight"] = "31 gr",
+    ["Muzzle Velocity"] = "2,411 ft/s",
+    ["Muzzle Energy"] = "543 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",

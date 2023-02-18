@@ -10,12 +10,13 @@ SWEP.PrintName = "Rytec AMR"
 
 SWEP.Class = "Sniper Rifle"
 SWEP.Trivia = {
+    ["Country of Origin"] = "United States",
     ["Manufacturer"] = "Silverfield Ordnance",
     ["Caliber"] = ".50 BMG",
-    ["Weight (Loaded)"] = "3.22kg",
-    ["Projectile Weight"] = "4 Grams",
-    ["Muzzle Velocity"] = "2,989 Feet/Second",
-    ["Muzzle Energy"] = "1570 Joules"
+    ["Weight (Loaded)"] = "15.1 kg",
+    ["Projectile Weight"] = "360 gr",
+    ["Muzzle Velocity"] = "1,390 ft/s",
+    ["Muzzle Energy"] = "2,094 joules"
 }
 
 SWEP.Credits = {

@@ -9,6 +9,14 @@ SWEP.SubCategory = "Assault Rifles"
 SWEP.PrintName = "AK-47"
 
 SWEP.Class = "Assault Rifle"
+SWEP.Trivia = {
+    ["Country of Origin"] = "Russia",
+    ["Caliber"] = "7.62x39mm",
+    ["Weight (Loaded)"] = "4.79 kg",
+    ["Projectile Weight"] = "121.9 gr",
+    ["Muzzle Velocity"] = "2,350 ft/s",
+    ["Muzzle Energy"] = "2,027 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",

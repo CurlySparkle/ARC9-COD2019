@@ -9,13 +9,21 @@ SWEP.SubCategory = "Assault Rifles"
 SWEP.PrintName = "CR-56 AMAX"
 
 SWEP.Class = "Assault Rifle"
+SWEP.Trivia = {
+    ["Country of Origin"] = "Israel",
+    ["Caliber"] = "7.62x39mm",
+    ["Weight (Loaded)"] = "3.95 kg",
+    ["Projectile Weight"] = "121.9 gr",
+    ["Muzzle Velocity"] = "3,116.8 ft/s",
+    ["Muzzle Energy"] = "3,566 joules"
+}
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",
     Assets = "Counter-Strike: Global Offensive/Call of Duty®: Modern Warfare"
 }
 
-SWEP.Description = [[Chambered in subsonic 9x39mm and integrally suppressed, the AS VAL is a powerhouse built for stealth, accuracy, and penetration. This weapon will excel in the hands of an operator able to control heavy recoil and a high rate of fire.]]
+SWEP.Description = [[This lightweight 7.62x39mm full auto assault rifle is compact and powerful. Built exclusively for military use, the standard issue rifle is deadly at mid range combat and easily configured for a variety of assault tactics.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_cr56amax.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
