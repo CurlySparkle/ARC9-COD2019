@@ -10,13 +10,12 @@ SWEP.PrintName = "PP19 Bizon"
 
 SWEP.Class = "Submachine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Germany",
-    ["Manufacturer"] = "VLK",
-    ["Caliber"] = "12.7×55mm STs-130",
-    ["Weight (Loaded)"] = "6 kg",
-    ["Projectile Weight"] = "509 gr",
-    ["Muzzle Velocity"] = "1,033 ft/s",
-    ["Muzzle Energy"] = "1,635 joules"
+    ["Country of Origin"] = "Russia",
+    ["Caliber"] = "9×18mm Makarov",
+    ["Weight (Loaded)"] = "2.1 kg",
+    ["Projectile Weight"] = "95 gr",
+    ["Muzzle Velocity"] = "1,050 ft/s",
+    ["Muzzle Energy"] = "315 joules"
 }
 
 SWEP.Credits = {
