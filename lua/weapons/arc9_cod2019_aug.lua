@@ -10,13 +10,12 @@ SWEP.PrintName = "AUG"
 
 SWEP.Class = "Submachine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Germany",
-    ["Manufacturer"] = "VLK",
-    ["Caliber"] = "12.7×55mm STs-130",
-    ["Weight (Loaded)"] = "6 kg",
-    ["Projectile Weight"] = "509 gr",
-    ["Muzzle Velocity"] = "1,033 ft/s",
-    ["Muzzle Energy"] = "1,635 joules"
+    ["Country of Origin"] = "Austria",
+    ["Caliber"] = "9×19mm Parabellum",
+    ["Weight (Loaded)"] = "3.2 kg",
+    ["Projectile Weight"] = "124 gr",
+    ["Muzzle Velocity"] = "3,182 ft/s",
+    ["Muzzle Energy"] = "3,780 joules"
 }
 
 SWEP.Credits = {
