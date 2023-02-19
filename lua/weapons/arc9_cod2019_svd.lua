@@ -219,11 +219,12 @@ SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 0.1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
-SWEP.ShouldDropMag = true
+SWEP.ShouldDropMag = false
+SWEP.ShouldDropMagEmpty = true
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_snip_svd_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
-SWEP.DropMagazineTime = 1.2
+SWEP.DropMagazineTime = 1
 SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, 0)
 
@@ -400,9 +401,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_delta_inspect_01", t = 0 / 30},
-            {s = path .. "wfoly_sn_delta_inspect_02", t = 53 / 30},
-            {s = path .. "wfoly_sn_delta_inspect_03", t = 113 / 30},
+            {s = path .. "wfoly_sn_delta_inspect_01.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sn_delta_inspect_02.ogg", t = 53 / 30},
+            {s = path .. "wfoly_sn_delta_inspect_03.ogg", t = 113 / 30},
         },
     },
     ["bash"] = {
@@ -418,7 +419,7 @@ SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(15, -0.2, 0.8),
+    ModelOffset = Vector(18, -0.2, 0.8),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
     },

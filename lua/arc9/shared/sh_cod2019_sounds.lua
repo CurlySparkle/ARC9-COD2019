@@ -1,4 +1,34 @@
 sound.Add( {
+    name = "COD2019.aug.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/aug/weap_augolf_fire_plr_9mm_01.ogg",
+		"weapons/cod2019/aug/weap_augolf_fire_plr_9mm_02.ogg",
+		"weapons/cod2019/aug/weap_augolf_fire_plr_9mm_03.ogg",
+		"weapons/cod2019/aug/weap_augolf_fire_plr_9mm_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.aug.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/aug/weap_augolf_fire_silenced_plr_9mm_01.ogg",
+		"weapons/cod2019/aug/weap_augolf_fire_silenced_plr_9mm_02.ogg",
+		"weapons/cod2019/aug/weap_augolf_fire_silenced_plr_9mm_03.ogg",
+		"weapons/cod2019/aug/weap_augolf_fire_silenced_plr_9mm_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Oden.Fire",
     channel = 10,
     volume = 1.0,
