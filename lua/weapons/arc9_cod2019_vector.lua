@@ -10,13 +10,13 @@ SWEP.PrintName = "Fennec"
 
 SWEP.Class = "Submachine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Germany",
-    ["Manufacturer"] = "VLK",
-    ["Caliber"] = "12.7×55mm STs-130",
-    ["Weight (Loaded)"] = "6 kg",
-    ["Projectile Weight"] = "509 gr",
-    ["Muzzle Velocity"] = "1,033 ft/s",
-    ["Muzzle Energy"] = "1,635 joules"
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "FORGE TAC",
+    ["Caliber"] = ".45 ACP",
+    ["Weight (Loaded)"] = "2.7 kg",
+    ["Projectile Weight"] = "230 gr",
+    ["Muzzle Velocity"] = "950 ft/s",
+    ["Muzzle Energy"] = "625 joules"
 }
 
 SWEP.Credits = {
