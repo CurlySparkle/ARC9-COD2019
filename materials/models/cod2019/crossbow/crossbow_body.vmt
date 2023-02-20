@@ -1,0 +1,28 @@
+"VertexlitGeneric"
+{
+	"$basetexture"				"models/csgo/crossbow/crossbow_body"
+	"$bumpmap"					"models/csgo/crossbow/crossbow_body_n"
+	"$phongexponenttexture"		"models/csgo/crossbow/crossbow_body_exponent"
+	"$color2"					"[0.8 0.8 0.8]"
+	"$blendTintByBaseAlpha"		"1"
+
+	"$envmap"					"env_cubemap"
+	"$envmaptint"				"[ .13 .13 .13 ]"
+	"$envmapfresnel"			".25"
+	"$envmapcoefficient"		"[0.39 0.39 0.39]"
+
+	"$phong"					"1"
+	"$phongboost"				"5"
+     "$phongexponent"				"55"
+	"$phongfresnelranges"		"[0.32 0.72 0.99]"
+	"$phongalbedotint" 			"1"
+
+     "$normalmapalphaenvmapmask"              "1"
+	"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
+
+	"$rimlight"					"0"
+	"$rimlightexponent"			"80"
+	"$rimlightboost"			"0.3"
+	"$rimmask"					"0"
+	"$nocull"					"1"
+}
