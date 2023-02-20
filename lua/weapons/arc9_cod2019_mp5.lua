@@ -10,13 +10,12 @@ SWEP.PrintName = "MP5"
 
 SWEP.Class = "Submachine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Switzerland",
-    ["Manufacturer"] = "ZLR",
+    ["Country of Origin"] = "West Germany",
     ["Caliber"] = "9×19mm Parabellum",
-    ["Weight (Loaded)"] = "2.6 kg",
+    ["Weight (Loaded)"] = "2.54 kg",
     ["Projectile Weight"] = "124 gr",
-    ["Muzzle Velocity"] = "1,082.68 ft/s",
-    ["Muzzle Energy"] = "438 joules"
+    ["Muzzle Velocity"] = "1,312 ft/s",
+    ["Muzzle Energy"] = "643 joules"
 }
 
 SWEP.Credits = {
