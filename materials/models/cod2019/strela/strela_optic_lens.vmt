@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-"$basetexture" "models/csgo/strela/strela_optic_lens"
-"$bumpmap" "models/csgo/strela/strela_optic_lens_n"
-"$phongexponenttexture" "models/csgo/strela/strela_optic_lens_exponent"
+"$basetexture" "models/cod2019/strela/strela_optic_lens"
+"$bumpmap" "models/cod2019/strela/strela_optic_lens_n"
+"$phongexptexture" "models/cod2019/strela/strela_optic_lens_exp"
 	
 	"$phong" "1"
 	"$phongboost" "15"

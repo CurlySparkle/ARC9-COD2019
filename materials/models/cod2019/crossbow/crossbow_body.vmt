@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/csgo/crossbow/crossbow_body"
-	"$bumpmap"					"models/csgo/crossbow/crossbow_body_n"
-	"$phongexponenttexture"		"models/csgo/crossbow/crossbow_body_exponent"
+	"$basetexture"				"models/cod2019/crossbow/crossbow_body"
+	"$bumpmap"					"models/cod2019/crossbow/crossbow_body_n"
+	"$phongexponenttexture"		"models/cod2019/crossbow/crossbow_body_exponent"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 

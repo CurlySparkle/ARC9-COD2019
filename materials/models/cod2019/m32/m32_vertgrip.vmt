@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/cod2019/m32/m32_cylinder"
-	"$bumpmap"					"models/cod2019/m32/m32_cylinder_n"
-	"$phongexptexture"		"models/cod2019/m32/m32_cylinder_exp"
+	"$basetexture"				"models/cod2019/m32/m32_vertgrip"
+	"$bumpmap"					"models/cod2019/m32/m32_vertgrip_n"
+	"$phongexptexture"		       "models/cod2019/m32/m32_vertgrip_exp"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 
@@ -12,13 +12,13 @@
 	"$envmapcoefficient"		"[0.39 0.39 0.39]"
 
 	"$phong"					"1"
-	"$phongboost"				"15"
+	"$phongboost"				"5"
      //"$phongexp"				"55"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
      "$normalmapalphaenvmapmask"              "1"
-	"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
+	//"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
 
 	"$rimlight"					"0"
 	"$rimlightexp"			"33"

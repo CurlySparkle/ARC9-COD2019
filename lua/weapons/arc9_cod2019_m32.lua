@@ -111,10 +111,10 @@ SWEP.RecoilMultMove = 1.25
 -------------------------- SPREAD
 
 SWEP.Spread = 0.008
-SWEP.SpreadAddRecoil = 0.1
+SWEP.SpreadAddRecoil = 0.05
 
 SWEP.SpreadMultSights = 0.1
-SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddHipFire = 0
 --SWEP.SpreadAddMove = 0.015
 SWEP.SpreadAddMidAir = 0.15
 
@@ -150,7 +150,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -216,9 +216,9 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    -- ["fire_sights"] = {
-        -- Source = "shoot1_ads",
-    -- },
+    ["fire_sights"] = {
+        Source = "shoot1_ads",
+    },
     ["reload"] = {
         Source = "reload",
 		MinProgress = 0.8,
@@ -301,11 +301,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.5,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.5,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -334,9 +334,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_la_mike32_inspect_01.wav", t = 0 / 30 },
-			{ s = path .. "wfoly_la_mike32_inspect_02.wav", t = 62 / 30 },
-			{ s = path .. "wfoly_la_mike32_inspect_03.wav", t = 142 / 30 },
+            { s = path .. "wfoly_la_mike32_inspect_01.ogg", t = 0 / 30 },
+			{ s = path .. "wfoly_la_mike32_inspect_02.ogg", t = 62 / 30 },
+			{ s = path .. "wfoly_la_mike32_inspect_03.ogg", t = 142 / 30 },
         },
     },
     ["bash"] = {
@@ -344,14 +344,14 @@ SWEP.Animations = {
     },
 }
 
-SWEP.Hook_Think	= ARC9.CSGO.BlendCyl
+--SWEP.Hook_Think	= ARC9.CSGO.BlendCyl
 
 -------------------------- ATTACHMENTS
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(13, -1.45, 0.2),
-	ModelAngleOffset = Angle(0, 0, 0),
+    ModelOffset = Vector(5.5, -0.05, -1.65),
+	ModelAngleOffset = Angle(0, 0, -50),
 	Scale = 0.8,
     },
     ["csgo_p90_hold"] = {
@@ -394,11 +394,14 @@ end
 SWEP.Attachments = {
     {
         PrintName = "Optics",
-        Bone = "j_forend",
-        Pos = Vector(0.5, -0.85, 0),
-        Ang = Angle(0, 0, -90),
-        Category = {"csgo_optic",},
+        Bone = "tag_scope",
+        Pos = Vector(1, 0, 0.7),
+        Ang = Angle(0, 0, 0),
+        Category = {"csgo_optic","cod2019_optic_m32"},
         CorrectiveAng = Angle(0, 0, 0),
+		Installed = "cod2019_optic_scope_m32",
+        Integral = "cod2019_optic_scope_m32",
+		InstalledElements = {"sights"},
     },
     {
         PrintName = "Tactical",
@@ -486,16 +489,16 @@ SWEP.Attachments = {
     {
         PrintName = "Charm",
         Category = "charm",
-        Bone = "tag_launcher_attachment",
-        Pos = Vector(-4.7, -0.5, 1.2),
+        Bone = "tag_cosmetic",
+        Pos = Vector(0.5, 0, 0),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
     },
     {
         PrintName = "Stats",
         Category = {"killcounter","killcounter2"},
-        Bone = "tag_launcher_attachment",
-        Pos = Vector(-5.5, -0.5, 0.2),
+        Bone = "tag_cosmetic",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },

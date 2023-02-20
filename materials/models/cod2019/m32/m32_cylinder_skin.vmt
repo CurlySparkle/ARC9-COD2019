@@ -1,30 +1,33 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/csgo/m32/m32_cylinder"
-	"$bumpmap"					"models/csgo/m32/m32_cylinder_n"
-	"$phongexponenttexture"		"models/csgo/m32/m32_cylinder_exponent"
+	"$basetexture"				"models/cod2019/m32/m32_cylinder"
+	"$bumpmap"					"models/cod2019/m32/m32_cylinder_n"
+	"$phongexptexture"		"models/cod2019/m32/m32_cylinder_exp"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
-
-	"$envmap"					"env_cubemap"
-	"$envmaptint"				"[ .13 .13 .13 ]"
 
 	"$envmap"					"env_cubemap"
 	"$envmaptint"				"[ .13 .13 .13 ]"
 	"$envmapfresnel"			".25"
 	"$envmapcoefficient"		"[0.39 0.39 0.39]"
 
+	"$phong"					"1"
+	"$phongboost"				"15"
+     //"$phongexp"				"55"
+	"$phongfresnelranges"		"[0.32 0.72 0.99]"
+	"$phongalbedotint" 			"1"
+
      "$normalmapalphaenvmapmask"              "1"
 	"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
 
 	"$rimlight"					"0"
-	"$rimlightexponent"			"33"
+	"$rimlightexp"			"33"
 	"$rimlightboost"			"2"
 	"$rimmask"					"1"
 	"$nocull"					"1"
 
 	"$detailblendmode" "4"
-	"$detailblendfactor" "0.7"
+	"$detailblendfactor" "1"
 
 	 Proxies {
 		CustomCamo {
