@@ -104,7 +104,7 @@ SWEP.Firemodes = {
 -- General recoil multiplier
 SWEP.Recoil = 1.3
 
-SWEP.RecoilSeed = 6589132
+SWEP.RecoilSeed = 6213
 
 SWEP.RecoilPatternDrift = 25
 
