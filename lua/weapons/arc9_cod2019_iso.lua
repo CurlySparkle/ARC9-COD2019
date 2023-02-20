@@ -243,8 +243,8 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/iso/"
 
-SWEP.ShootSound = "COD2019.iso.Fire"
-SWEP.ShootSoundSilenced = "COD2019.iso.Silenced_Fire"
+SWEP.ShootSound = "COD2019.ISO.Fire"
+SWEP.ShootSoundSilenced = "COD2019.ISO.Silenced_Fire"
 SWEP.DistantShootSound = "CSGO.mp9.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

@@ -242,10 +242,10 @@ SWEP.DropMagazineQCA = 3
 
 -------------------------- SOUNDS
 
-local path = "weapons/csgo/fal/"
+local path = "weapons/cod2019/fal/"
 
-SWEP.ShootSound = "CSGO.Fal.Fire"
-SWEP.ShootSoundSilenced = "CSGO.Fal.Silenced_Fire"
+SWEP.ShootSound = "COD2019.FAL.Fire"
+SWEP.ShootSoundSilenced = "COD2019.FAL.Silenced_Fire"
 SWEP.DistantShootSound = "CSGO.GALILAR.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

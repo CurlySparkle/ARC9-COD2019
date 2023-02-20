@@ -20,7 +20,7 @@ SWEP.Credits = {
 
 SWEP.Description = [[Silent and agile, this high-performance crossbow fires 20.0" bolts with exceptional lethality. Exclusive customization, distinct functionality, and unique ammunition types put this weapon in a class of its own. Standard 20.0" bolts are recoverable, and are undetectable by trophy systems.]]
 
-SWEP.ViewModel = "models/weapons/cod2019/c_snip_crossbow.mdl"
+SWEP.ViewModel = "models/weapons/cod2019/c_eq_crossbow.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
@@ -28,7 +28,7 @@ SWEP.Slot = 3
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
-SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_crossbow.mdl"
+SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_crossbow.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
@@ -213,7 +213,7 @@ SWEP.NoShellEject = true
 
 local path = "weapons/cod2019/crossbow/"
 
-SWEP.ShootSound = "cod2019.Crossbow.Fire"
+SWEP.ShootSound = "COD2019.Crossbow.Fire"
 --SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
 SWEP.DryFireSound = "weapons/csgo/svd/svd_empty.wav"
 

@@ -206,9 +206,9 @@ SWEP.NoShellEject = true
 
 -------------------------- SOUNDS
 
-local path = "weapons/cod2019/M32/"
+local path = "weapons/cod2019/m32/"
 
-SWEP.ShootSound = "cod2019.M32.Fire"
+SWEP.ShootSound = "COD2019.M32.Fire"
 SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

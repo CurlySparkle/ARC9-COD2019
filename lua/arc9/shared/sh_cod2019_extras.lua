@@ -43,7 +43,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "cod2019.M32.Explode",
+    name = "COD2019.M32.Explode",
     channel = CHAN_STATIC,
     volume = 1.0,
     level = 140,
@@ -56,7 +56,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "cod2019.m32.Fire",
+    name = "COD2019.M32.Fire",
     channel = 10,
     volume = 1.0,
     level = 120,
@@ -71,7 +71,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "cod2019.Strela.Explode",
+    name = "COD2019.Strela.Explode",
     channel = CHAN_STATIC,
     volume = 1.0,
     level = 140,
@@ -84,7 +84,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "cod2019.Strela.Fire",
+    name = "COD2019.Strela.Fire",
     channel = 10,
     volume = 1.0,
     level = 120,
@@ -99,7 +99,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "cod2019.Pila.Fire",
+    name = "COD2019.Pila.Fire",
     channel = 10,
     volume = 1.0,
     level = 120,
@@ -114,7 +114,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "cod2019.RPG.Fire",
+    name = "COD2019.RPG.Fire",
     channel = 10,
     volume = 1.0,
     level = 120,
@@ -125,5 +125,17 @@ sound.Add( {
 		"weapons/cod2019/rpg/weap_rpapa7_fire_plr_02.ogg",
 		"weapons/cod2019/rpg/weap_rpapa7_fire_plr_03.ogg",
 		"weapons/cod2019/rpg/weap_rpapa7_fire_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Crossbow.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/csgo/crossbow/weap_crossbow_fire_01.wav",
     }
 } )

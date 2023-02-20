@@ -221,7 +221,7 @@ SWEP.NoShellEject = true
 
 local path = "weapons/cod2019/rpg/"
 
-SWEP.ShootSound = "cod2019.RPG.Fire"
+SWEP.ShootSound = "COD2019.RPG.Fire"
 SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
 SWEP.DryFireSound = "weapons/csgo/svd/svd_empty.ogg"
 
