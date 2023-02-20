@@ -289,6 +289,7 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
+		Mult = 0.7,
         EventTable = {
             {s = path .. "wfoly_plr_la_mike32_raise_up.ogg", t = 0 / 30},
         },

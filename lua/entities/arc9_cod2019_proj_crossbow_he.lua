@@ -70,7 +70,7 @@ if SERVER then
             self:SetTrigger(true)
             self:UseTriggerBounds(true, 16)
         end
-        self:EmitSound(("weapons/cod2019/crossbow/imp_Arrow_Concrete_2ch_V3_0" .. math.random(1,4) .. ".wav"), 75, 100, 1, CHAN_AUTO)
+        self:EmitSound(("weapons/cod2019/crossbow/imp_Arrow_Concrete_2ch_V3_0" .. math.random(1,4) .. ".ogg"), 75, 100, 1, CHAN_AUTO)
         self.DetonateTime = CurTime() + 0
     end
 
@@ -89,7 +89,7 @@ if SERVER then
 				    ParticleEffect("weapon_muzzle_flash_HE", self:GetPos(), Angle(0, 0, 0), nil)
                     --util.Effect( "Explosion", effectdata)
                     --self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)
-					self:EmitSound("HE.ExplosiveHit")
+					self:EmitSound("COD2019.HE_ExplosiveHit")
                 end
                 self:Remove()
             end

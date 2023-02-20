@@ -59,8 +59,8 @@ SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets 
 
 SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
 
-SWEP.ShootPosOffset = Vector(3, 15, -3)
-SWEP.ShootPosOffsetSights = Vector(0, 15, 0)
+SWEP.ShootPosOffset = Vector(3, 10, -5)
+SWEP.ShootPosOffsetSights = Vector(0, 10, -3)
 
 -------------------------- MAGAZINE
 
@@ -117,12 +117,12 @@ SWEP.RecoilMultMove = 1.25
 -------------------------- SPREAD
 
 SWEP.Spread = 0
-SWEP.SpreadAddShooting = 0
+SWEP.SpreadAddRecoil = 0.05
 
-SWEP.SpreadMultSights = 0.1
+SWEP.SpreadMultSights = -0.1
 SWEP.SpreadAddHipFire = 0.03
 --SWEP.SpreadAddMove = 0
-SWEP.SpreadAddMidAir = 0
+SWEP.SpreadAddMidAir = 0.15
 
 -------------------------- HANDLING
 
@@ -147,7 +147,7 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.15, -5, 0.95),
+    Pos = Vector(-3.64, -5, 1.45),
     Ang = Angle(0, 0, -1),
     Magnification = 1.1,
     ViewModelFOV = 56,
@@ -214,8 +214,10 @@ SWEP.NoShellEject = true
 local path = "weapons/cod2019/crossbow/"
 
 SWEP.ShootSound = "COD2019.Crossbow.Fire"
---SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
-SWEP.DryFireSound = "weapons/csgo/svd/svd_empty.wav"
+SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
+
+SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
+SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -250,12 +252,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sn_crossbow_reload_rotate.wav", t = 4 / 30},
-			{s = path .. "wfoly_sn_crossbow_reload_pull_string.wav", t = 13 / 30},
-			{s = path .. "wfoly_sn_crossbow_reload_load_arrow.wav", t = 55 / 30},
-			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_01.wav", t = 65 / 30},
-			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_02.wav", t = 70 / 30},
-			{s = path .. "wfoly_sn_crossbow_reload_end.wav", t = 79 / 30},
+			{s = path .. "wfoly_sn_crossbow_reload_rotate.ogg", t = 4 / 30},
+			{s = path .. "wfoly_sn_crossbow_reload_pull_string.ogg", t = 13 / 30},
+			{s = path .. "wfoly_sn_crossbow_reload_load_arrow.ogg", t = 55 / 30},
+			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_01.ogg", t = 65 / 30},
+			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_02.ogg", t = 70 / 30},
+			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 79 / 30},
         },
     },
     ["ready"] = {
@@ -273,21 +275,22 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_crossbow_raise.wav", t = 0 / 30},
-            {s = path .. "wfoly_sn_crossbow_raise_first_safety_off.wav", t = 0 / 30},
-			{s = path .. "wfoly_sn_crossbow_raise_first_end.wav", t = 11 / 30},
+            {s = path .. "wfoly_sn_crossbow_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sn_crossbow_raise_first_safety_off.ogg", t = 0 / 30},
+			{s = path .. "wfoly_sn_crossbow_raise_first_end.ogg", t = 11 / 30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_sn_crossbow_raise.wav", t = 0 / 30},
+            {s = path .. "wfoly_sn_crossbow_raise.ogg", t = 0 / 30},
         },
     },
     ["holster"] = {
         Source = "holster",
+		Mult = 0.7,
         EventTable = {
-            {s = path .. "wfoly_sn_crossbow_raise.wav", t = 0 / 30},
+            {s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 0 / 30},
         },
     },
     ["idle"] = {
@@ -331,11 +334,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_sn_crossbow_inspect_01.wav", t = 2 / 30 },
-			{ s = path .. "wfoly_sn_crossbow_inspect_02.wav", t = 40 / 30 },
-			{ s = path .. "wfoly_sn_crossbow_inspect_03.wav", t = 71 / 30 },
-			{ s = path .. "wfoly_sn_crossbow_inspect_04.wav", t = 100 / 30 },
-			{ s = path .. "wfoly_sn_crossbow_inspect_05.wav", t = 127 / 30 },
+            { s = path .. "wfoly_sn_crossbow_inspect_01.ogg", t = 2 / 30 },
+			{ s = path .. "wfoly_sn_crossbow_inspect_02.ogg", t = 40 / 30 },
+			{ s = path .. "wfoly_sn_crossbow_inspect_03.ogg", t = 71 / 30 },
+			{ s = path .. "wfoly_sn_crossbow_inspect_04.ogg", t = 100 / 30 },
+			{ s = path .. "wfoly_sn_crossbow_inspect_05.ogg", t = 127 / 30 },
         },
     },
     ["bash"] = {

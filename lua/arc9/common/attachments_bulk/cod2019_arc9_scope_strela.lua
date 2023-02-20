@@ -3,7 +3,7 @@ local ATT = {}
 ATT.PrintName = "Default Scope"
 ATT.CompactName = [[Default]]
 ATT.Icon = Material("entities/attachs/go_optic_strela.png", "mips smooth")
-ATT.Description = [[Long-range combat scope. Provides an improved precision at longer ranges.]]
+ATT.Description = [[Default targetting sight for the Strela]]
 ATT.Pros = {
     "+ 8x Zoom",
     "+ Clearer sight picture"

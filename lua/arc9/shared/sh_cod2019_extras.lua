@@ -1,3 +1,17 @@
+sound.Add({
+    name = "COD2019.HE_ExplosiveHit",
+    channel = CHAN_VOICE,
+    volume = 1.0,
+    level = 100,
+    soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+    "^shared/frag_expl_01.ogg",
+	"^shared/frag_expl_02.ogg",
+	"^shared/frag_expl_03.ogg",
+    "^shared/frag_expl_04.ogg",} 
+})
+
+
 sound.Add( {
     name = "COD2019.Iron.In_Rifle",
     channel = CHAN_AUTO,
@@ -136,6 +150,6 @@ sound.Add( {
     pitch = {90,110},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
-        "weapons/csgo/crossbow/weap_crossbow_fire_01.wav",
+        "weapons/cod2019/crossbow/weap_crossbow_fire_01.ogg",
     }
 } )

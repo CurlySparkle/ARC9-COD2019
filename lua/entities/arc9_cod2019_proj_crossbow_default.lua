@@ -121,7 +121,7 @@ if SERVER then
             self:SetTrigger(true)
             self:UseTriggerBounds(true, 16)
         end
-        self:EmitSound(("weapons/cod2019/crossbow/imp_Arrow_Concrete_2ch_V3_0" .. math.random(1,4) .. ".wav"), 75, 100, 1, CHAN_AUTO)
+        self:EmitSound(("weapons/cod2019/crossbow/imp_Arrow_Concrete_2ch_V3_0" .. math.random(1,4) .. ".ogg"), 75, 100, 1, CHAN_AUTO)
         self.DetonateTime = CurTime() + 2
 		
         -- if not self.Hit then

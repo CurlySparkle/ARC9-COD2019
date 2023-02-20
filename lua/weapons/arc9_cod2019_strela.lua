@@ -210,7 +210,7 @@ local path = "weapons/cod2019/strela/"
 
 SWEP.ShootSound = "COD2019.Strela.Fire"
 SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
-SWEP.DryFireSound = "weapons/csgo/svd/svd_empty.ogg"
+SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
@@ -373,10 +373,10 @@ SWEP.Attachments = {
         Bone = "tag_launcher_attachments",
         Pos = Vector(5, -3.1, 1.9),
         Ang = Angle(0, 0, -90),
-        Category = {"csgo_optic","csgo_optic_strela"},
+        Category = {"csgo_optic","cod2019_optic_strela"},
         InstalledElements = {"sights"},
-		Installed = "csgo_optic_scope_strela",
-		Integral = "csgo_optic_scope_strela",
+		Installed = "cod2019_optic_scope_strela",
+		Integral = "cod2019_optic_scope_strela",
         CorrectiveAng = Angle(-0.4, 0.4, 0),
     },
     {
