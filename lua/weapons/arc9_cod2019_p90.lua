@@ -10,13 +10,13 @@ SWEP.PrintName = "P90"
 
 SWEP.Class = "Submachine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Switzerland",
-    ["Manufacturer"] = "ZLR",
-    ["Caliber"] = "9×19mm Parabellum",
+    ["Country of Origin"] = "Belgium",
+    ["Manufacturer"] = "FORGE TAC",
+    ["Caliber"] = "5.7×28mm FN",
     ["Weight (Loaded)"] = "2.6 kg",
-    ["Projectile Weight"] = "124 gr",
-    ["Muzzle Velocity"] = "1,082.68 ft/s",
-    ["Muzzle Energy"] = "438 joules"
+    ["Projectile Weight"] = "27 gr",
+    ["Muzzle Velocity"] = "2,350 ft/s",
+    ["Muzzle Energy"] = "449 joules"
 }
 
 SWEP.Credits = {
