@@ -125,7 +125,7 @@ SWEP.RecoilMultMove = 1.25
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 0.6
-SWEP.VisualRecoilUp = 0.4
+SWEP.VisualRecoilUp = 0.01
 
 -------------------------- SPREAD
 
@@ -164,8 +164,8 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.5, -3, 0.45),
-    Ang = Angle(0, 0, 3),
+    Pos = Vector(-3.09, -4, -0.3),
+    Ang = Angle(0, 0, -4),
     Magnification = 1.15,
     ViewModelFOV = 56,
 	CrosshairInSights = false
@@ -173,7 +173,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -295,6 +295,7 @@ SWEP.Animations = {
         Source = "reload_short",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
+		DropMagAt = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -302,7 +303,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 1
             },
@@ -461,6 +462,28 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2", "melee3"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 

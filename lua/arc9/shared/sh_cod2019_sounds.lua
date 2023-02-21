@@ -3,7 +3,7 @@ sound.Add( {
     channel = 10,
     volume = 1.0,
     level = 120,
-    pitch = {90,110},
+    pitch = {90,105},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
         "weapons/cod2019/p90/weap_papa90_fire_plr_01.ogg",
@@ -18,7 +18,7 @@ sound.Add( {
     channel = 10,
     volume = 1.0,
     level = 120,
-    pitch = {90,110},
+    pitch = {90,105},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
         "weapons/cod2019/p90/weap_papa90_fire_silenced_plr_01.ogg",
