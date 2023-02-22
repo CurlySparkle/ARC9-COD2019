@@ -72,6 +72,8 @@ SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
+--SWEP.FiremodesOverrideHipFire = { mode = 0 }
+
 -------------------------- FIREMODES
 
 SWEP.RPM = 150
@@ -176,7 +178,7 @@ SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(17, 35, 3)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(0, 7, 3)
+SWEP.CustomizeSnapshotPos = Vector(-3, 0, 3)
 
 -------------------------- HoldTypes
 
@@ -282,6 +284,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.5,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_plr_la_mike32_raise_up.ogg", t = 0 / 30},
 			{s = path .. "wfoly_plr_la_mike32_raise_settle.ogg", t = 15 / 30},
@@ -490,8 +494,8 @@ SWEP.Attachments = {
     {
         PrintName = "Charm",
         Category = "charm",
-        Bone = "tag_cosmetic",
-        Pos = Vector(0.5, 0, 0),
+        Bone = "tag_launcher_attachment",
+        Pos = Vector(-4.8, -0.5, 1),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
     },

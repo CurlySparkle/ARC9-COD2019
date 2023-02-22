@@ -204,6 +204,10 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.NoShellEject = true
 
+SWEP.HookP_BlockFire = function(self)
+    return self:GetSightAmount() < 1
+end
+
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/strela/"

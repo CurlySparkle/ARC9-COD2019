@@ -198,7 +198,7 @@ SWEP.CrouchAng = Angle(0, 0, -5)
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(15, 30, 3)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
+SWEP.CustomizeSnapshotPos = Vector(-1, 0, 3)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -403,6 +403,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.5,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sm_papa90_raise.ogg", t = 0/30},
         },
