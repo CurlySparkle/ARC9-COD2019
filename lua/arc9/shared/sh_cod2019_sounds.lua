@@ -1,4 +1,77 @@
 sound.Add( {
+    name = "COD2019.Mode680.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/model680/weap_romeo870_fire_plr_01.ogg",
+		"weapons/cod2019/model680/weap_romeo870_fire_plr_02.ogg",
+		"weapons/cod2019/model680/weap_romeo870_fire_plr_03.ogg",
+		"weapons/cod2019/model680/weap_romeo870_fire_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Mode680.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/model680/weap_romeo870_fire_silenced_plr_01.ogg",
+		"weapons/cod2019/model680/weap_romeo870_fire_silenced_plr_02.ogg",
+		"weapons/cod2019/model680/weap_romeo870_fire_silenced_plr_03.ogg",
+		"weapons/cod2019/model680/weap_romeo870_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Mode680.Rechamber_A",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/model680/wfoly_sh_romeo870_rechamber_v2_01a.ogg",
+		"weapons/cod2019/model680/wfoly_sh_romeo870_rechamber_v2_01b.ogg",
+		"weapons/cod2019/model680/wfoly_sh_romeo870_rechamber_v2_01c.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Mode680.Rechamber_B",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/model680/wfoly_sh_romeo870_rechamber_v2_02a.ogg",
+		"weapons/cod2019/model680/wfoly_sh_romeo870_rechamber_v2_02b.ogg",
+		"weapons/cod2019/model680/wfoly_sh_romeo870_rechamber_v2_02c.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Mode680.ShellIn",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/model680/wfoly_sh_romeo870_reload_loop_shellin_01.ogg",
+		"weapons/cod2019/model680/wfoly_sh_romeo870_reload_loop_shellin_02.ogg",
+		"weapons/cod2019/model680/wfoly_sh_romeo870_reload_loop_shellin_03.ogg",
+		"weapons/cod2019/model680/wfoly_sh_romeo870_reload_loop_shellin_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Uzi.Fire",
     channel = 10,
     volume = 1.0,

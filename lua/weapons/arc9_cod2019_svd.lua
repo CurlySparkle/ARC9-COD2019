@@ -116,7 +116,7 @@ SWEP.RecoilKick = 2
 SWEP.RecoilMultCrouch = 0.6
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.7
+SWEP.RecoilMultSights = 0.5
 
 -------------------------- VISUAL RECOIL
 
