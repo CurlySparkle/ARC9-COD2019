@@ -11,12 +11,12 @@ SWEP.PrintName = "Model 680"
 SWEP.Class = "Shotgun"
 SWEP.Trivia = {
     ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "FORGE TAC",
+    ["Manufacturer"] = "XRK",
     ["Caliber"] = "12 gauge",
-    ["Weight (Loaded)"] = "4.2 kg",
+    ["Weight (Loaded)"] = "3.2 kg",
     ["Projectile Weight"] = "493 gr",
-    ["Muzzle Velocity"] = "1,250 ft/s",
-    ["Muzzle Energy"] = "2,319 joules"
+    ["Muzzle Velocity"] = "1,433.73 ft/s",
+    ["Muzzle Energy"] = "3,051 joules"
 }
 
 SWEP.Credits = {
