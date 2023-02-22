@@ -10,12 +10,13 @@ SWEP.PrintName = "Striker 45"
 
 SWEP.Class = "Submachine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "West Germany",
-    ["Caliber"] = "9×19mm Parabellum",
-    ["Weight (Loaded)"] = "2.54 kg",
-    ["Projectile Weight"] = "124 gr",
-    ["Muzzle Velocity"] = "1,312 ft/s",
-    ["Muzzle Energy"] = "643 joules"
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "FORGE TAC",
+    ["Caliber"] = ".45 ACP",
+    ["Weight (Loaded)"] = "2.7 kg",
+    ["Projectile Weight"] = "230 gr",
+    ["Muzzle Velocity"] = "900 ft/s",
+    ["Muzzle Energy"] = "561 joules"
 }
 
 SWEP.Credits = {

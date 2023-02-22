@@ -10,12 +10,12 @@ SWEP.PrintName = "Uzi"
 
 SWEP.Class = "Submachine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "West Germany",
+    ["Country of Origin"] = "Israel",
     ["Caliber"] = "9×19mm Parabellum",
-    ["Weight (Loaded)"] = "2.54 kg",
+    ["Weight (Loaded)"] = "3.5 kg",
     ["Projectile Weight"] = "124 gr",
-    ["Muzzle Velocity"] = "1,312 ft/s",
-    ["Muzzle Energy"] = "643 joules"
+    ["Muzzle Velocity"] = "1,300 ft/s",
+    ["Muzzle Energy"] = "631 joules"
 }
 
 SWEP.Credits = {
