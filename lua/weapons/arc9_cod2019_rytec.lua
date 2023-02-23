@@ -485,7 +485,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrels",
         DefaultAttName = "Standard Barrel",
-        Category = {"go_rytec_barrel"},
+        Category = {"cod2019_rytec_barrel"},
         Bone = "tag_attachments",
         Pos = Vector(30, 0, 0.25),
         Ang = Angle(0, 0, 0),
@@ -545,7 +545,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = "go_rytec_mag",
+        Category = "cod2019_rytec_mag",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

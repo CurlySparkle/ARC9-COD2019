@@ -8,7 +8,7 @@ ATT.CompactName = "Short"
 ATT.Description = [[Short-length barrel. Offers superior handling at the cost of performance.]]
 ATT.SortOrder = 0
 
-ATT.Icon = Material("entities/attachments/cod2019_rytec_barrel_short.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_rytec_barrel_short.png", "mips smooth")
 ATT.AutoStats = true
 
 ATT.Free = false
@@ -34,7 +34,7 @@ ATT.CompactName = "Long"
 ATT.Description = [[Short-length barrel. Offers superior handling at the cost of performance.]]
 ATT.SortOrder = 1
 
-ATT.Icon = Material("entities/attachments/cod2019_rytec_barrel_long.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_rytec_barrel_long.png", "mips smooth")
 ATT.AutoStats = true
 
 ATT.Free = false
@@ -59,7 +59,7 @@ ARC9.LoadAttachment(ATT, "cod2019_rytec_barrel_long")
 -- ATT.CompactName = "Skeleton"
 -- ATT.Description = [[Skeleton stock, gives more and better handling speed at the cost of more recoil.]]
 
--- ATT.Icon = Material("entities/attachments/cod2019_rytec_stock_skeleton.png", "mips smooth")
+-- ATT.Icon = Material("entities/attachs/cod2019_rytec_stock_skeleton.png", "mips smooth")
 
 -- ATT.Model = "models/weapons/csgo/atts/grip_vertical.mdl"
 
@@ -81,7 +81,7 @@ ATT = {}
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = [[10-Rounder]]
 ATT.CompactName = [[10-Round]]
-ATT.Icon = Material("entities/attachments/cod2019_rytec_mag_10.png")
+ATT.Icon = Material("entities/attachs/cod2019_rytec_mag_10.png")
 ATT.Description = [[Long magazine with 10 rounds. Improves handling.]]
 ATT.Pros = {}
 ATT.Cons = {}

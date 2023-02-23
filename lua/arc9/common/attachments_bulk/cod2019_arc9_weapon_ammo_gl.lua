@@ -8,7 +8,7 @@ ATT.Description = [[Changes the nade type to fire a singular but yet "powerful" 
 (Quite a stoner if you ask me...)]]
 ATT.SortOrder = 0
 
-ATT.Icon = Material("entities/attachs/go_ammo_gl_rock.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_rock.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
@@ -27,7 +27,7 @@ ATT.CompactName = "FN"
 ATT.Description = [[Changes the nade type to fire a flashing type nade. (better watch your eyes with this one.)]]
 ATT.SortOrder = 0.5
 
-ATT.Icon = Material("entities/attachs/go_ammo_gl_flash.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_flash.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
@@ -46,7 +46,7 @@ ATT.CompactName = "ICN"
 ATT.Description = [[Changes the nade type to fire an incendiary type nade.]]
 ATT.SortOrder = 1
 
-ATT.Icon = Material("entities/attachs/go_ammo_gl_inc.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_inc.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
@@ -65,7 +65,7 @@ ATT.CompactName = "SN"
 ATT.Description = [[Changes the nade type to fire an smoking type nade.]]
 ATT.SortOrder = 1
 
-ATT.Icon = Material("entities/attachs/go_ammo_gl_smoke.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_smoke.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 

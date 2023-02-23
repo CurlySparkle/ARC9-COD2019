@@ -2,8 +2,8 @@ local ATT = {}
 
 ATT.PrintName = "Default Scope"
 ATT.CompactName = [[Default]]
-ATT.Icon = Material("entities/attachs/go_optic_strela.png", "mips smooth")
-ATT.Description = [[Default targetting sight for the Strela]]
+ATT.Icon = Material("entities/attachs/cod2019_optic_strela.png", "mips smooth")
+ATT.Description = [[Default targetting sight for the Strela.]]
 ATT.Pros = {
     "+ 8x Zoom",
     "+ Clearer sight picture"

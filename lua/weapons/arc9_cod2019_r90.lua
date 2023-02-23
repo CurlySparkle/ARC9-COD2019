@@ -12,11 +12,11 @@ SWEP.Class = "Shotgun"
 SWEP.Trivia = {
     ["Country of Origin"] = "United States",
     ["Manufacturer"] = "FORGE TAC",
-    ["Caliber"] = "12 gauge",
+    ["Caliber"] = "12-gauge",
     ["Weight (Loaded)"] = "4.2 kg",
     ["Projectile Weight"] = "493 gr",
-    ["Muzzle Velocity"] = "1,250 ft/s",
-    ["Muzzle Energy"] = "2,319 joules"
+    ["Muzzle Velocity"] = "1,300 ft/s",
+    ["Muzzle Energy"] = "2,509 joules"
 }
 
 SWEP.Credits = {
@@ -24,7 +24,7 @@ SWEP.Credits = {
     Assets = "Counter-Strike: Global Offensive/Call of Duty®: Modern Warfare"
 }
 
-SWEP.Description = [[Reliable, well-rounded 12 gauge pump-action shotgun.]]
+SWEP.Description = [[Double barrels provide two rapid shots before each re-chamber.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_shot_r90.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
