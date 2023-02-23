@@ -1,4 +1,93 @@
 sound.Add( {
+    name = "COD2019.R90.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/r90/iw8_weap_dpapa12_fire_plr_01.ogg",
+		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_plr_01.ogg",
+		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_plr_01.ogg",
+		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_plr_01.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.R90.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/r90/iw8_weap_dpapa12_fire_silenced_plr_01.ogg",
+		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_silenced_plr_02.ogg",
+		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_silenced_plr_03.ogg",
+		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.R90.Rechamber_A",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/r90/wfoly_sh_dpapa12_rechamber_chamber_v3_01a.ogg",
+		"weapons/cod2019/r90/wfoly_sh_dpapa12_rechamber_chamber_v3_01b.ogg",
+		"weapons/cod2019/r90/wfoly_sh_dpapa12_rechamber_chamber_v3_01c.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.R90.Rechamber_B",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/r90/wfoly_sh_dpapa12_rechamber_chamber_v3_02a.ogg",
+		"weapons/cod2019/r90/wfoly_sh_dpapa12_rechamber_chamber_v3_02b.ogg",
+		"weapons/cod2019/r90/wfoly_sh_dpapa12_rechamber_chamber_v3_02c.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.R90.ShellIn",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/r90/wfoly_sh_dpapa12_reload_loop_load_01.ogg",
+		"weapons/cod2019/r90/wfoly_sh_dpapa12_reload_loop_load_02.ogg",
+		"weapons/cod2019/r90/wfoly_sh_dpapa12_reload_loop_load_03.ogg",
+		"weapons/cod2019/r90/wfoly_sh_dpapa12_reload_loop_load_04.ogg",
+		"weapons/cod2019/r90/wfoly_sh_dpapa12_reload_loop_load_05.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.R90.Rechamber_Empty",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/r90/wfoly_sh_dpapa12_reload_empty_end_chamber_01_01.ogg",
+		"weapons/cod2019/r90/wfoly_sh_dpapa12_reload_empty_end_chamber_01_02.ogg",
+		"weapons/cod2019/r90/wfoly_sh_dpapa12_reload_empty_end_chamber_01_03.ogg",
+		"weapons/cod2019/r90/wfoly_sh_dpapa12_reload_empty_end_chamber_01_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Mode680.Fire",
     channel = 10,
     volume = 1.0,
@@ -30,7 +119,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Mode680.Rechamber_A",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -44,7 +133,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Mode680.Rechamber_B",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -58,7 +147,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Mode680.ShellIn",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},

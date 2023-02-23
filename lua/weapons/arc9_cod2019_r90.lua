@@ -6,17 +6,17 @@ SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Shotguns"
 
-SWEP.PrintName = "Model 680"
+SWEP.PrintName = "R9-0"
 
 SWEP.Class = "Shotgun"
 SWEP.Trivia = {
     ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "XRK",
+    ["Manufacturer"] = "FORGE TAC",
     ["Caliber"] = "12 gauge",
-    ["Weight (Loaded)"] = "3.2 kg",
+    ["Weight (Loaded)"] = "4.2 kg",
     ["Projectile Weight"] = "493 gr",
-    ["Muzzle Velocity"] = "1,433.73 ft/s",
-    ["Muzzle Energy"] = "3,051 joules"
+    ["Muzzle Velocity"] = "1,250 ft/s",
+    ["Muzzle Energy"] = "2,319 joules"
 }
 
 SWEP.Credits = {
@@ -26,7 +26,7 @@ SWEP.Credits = {
 
 SWEP.Description = [[Reliable, well-rounded 12 gauge pump-action shotgun.]]
 
-SWEP.ViewModel = "models/weapons/cod2019/c_shot_model680.mdl"
+SWEP.ViewModel = "models/weapons/cod2019/c_shot_r90.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
@@ -34,7 +34,7 @@ SWEP.Slot = 3
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
-SWEP.WorldModelMirror = "models/weapons/cod2019/c_shot_model680.mdl"
+SWEP.WorldModelMirror = "models/weapons/cod2019/c_shot_r90.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
@@ -71,8 +71,8 @@ SWEP.RicochetChance = 0
 
 SWEP.Ammo = "buckshot" -- What ammo type this gun uses.
 
-SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
-SWEP.ClipSize = 8 -- Self-explanatory.
+SWEP.ChamberSize = 2 -- The amount of rounds this gun can chamber.
+SWEP.ClipSize = 14 -- Self-explanatory.
 SWEP.SupplyLimit = 8 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
@@ -88,7 +88,7 @@ SWEP.ManualActionNoLastCycle = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 200
+SWEP.RPM = 600
 
 SWEP.Firemodes = {
     {
@@ -99,7 +99,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 5
+SWEP.Recoil = 4
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 3 -- Multiplier for vertical recoil
@@ -139,7 +139,7 @@ SWEP.SpreadAddShooting = 0.02 -- Applied per unit of recoil.
 SWEP.SpreadAddMove = 0.03
 SWEP.SpreadAddMidAir = 0.03
 SWEP.SpreadAddHipFire = 0.035
-SWEP.SpreadMultHipFire = 1.25
+SWEP.SpreadMultHipFire = 1.15
 SWEP.SpreadMultSights = 1
 SWEP.SpreadAddCrouch = -0.004
 SWEP.SpreadAddSightsMove = -0.1
@@ -164,8 +164,8 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3, -2, 0.5),
-    Ang = Angle(0.95, 1, -4.5),
+    Pos = Vector(-2.95, -2, 0.3),
+    Ang = Angle(0, 0, -3.5),
     Magnification = 1.1,
     ViewModelFOV = 56,
     CrosshairInSights = false
@@ -173,29 +173,29 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
-SWEP.SprintAng = Angle(0, 0, 0)
-
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, 0),
     Ang = Angle(-2.5, 0, 2.5)
 }
-
-SWEP.ActivePos = Vector(0, 0, 0)
-SWEP.ActiveAng = Angle(0.6, 0.3, 0)
 
 SWEP.MovingMidPoint = {
     Pos = Vector(0, -0.5, -0.5),
     Ang = Angle(0, 0, 0)
 }
 
+SWEP.ActivePos = Vector(0, 0, 0)
+SWEP.ActiveAng = Angle(0, 0, 0)
+
 SWEP.MovingPos = Vector(0, -0.4, -0.4)
-SWEP.MovingAng = Angle(0.6, 0.3, 0)
+SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
-SWEP.CrouchAng = Angle(0.6, 0.3, -5)
+SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.CustomizeAng = Angle(90, 0, 2)
+SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 0)
+
+SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(15, 30, 3)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
@@ -235,14 +235,15 @@ SWEP.EjectDelay = 0
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
 SWEP.ShotgunReload = true
+SWEP.ManualActionChamber = 2
 
 -------------------------- SOUNDS
 
-local path = "weapons/cod2019/model680/"
+local path = "weapons/cod2019/r90/"
 
-SWEP.ShootSound = "COD2019.Mode680.Fire"
-SWEP.ShootSoundSilenced = "COD2019.Mode680.Silenced_Fire"
-SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
+SWEP.ShootSound = "COD2019.R90.Fire"
+SWEP.ShootSoundSilenced = "COD2019.R90.Silenced_Fire"
+SWEP.DistantShootSound = "CSGO.XM1014.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
@@ -253,16 +254,16 @@ SWEP.Animations = {
         Source = "shoot1",
     },
     ["fire_sights"] = {
-        Source = "shoot1_ads",
-		Mult = 0.5,
+        Source = "shoot1",
+		Mult = 1,
     },
     ["cycle"] = {
         Source = "pump",
 		EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = "COD2019.Mode680.Rechamber_A", t = 1 / 30},
-			{s = "COD2019.Mode680.Rechamber_B", t = 5 / 30},
+            {s = "COD2019.R90.Rechamber_A", t = 1 / 30},
+			{s = "COD2019.R90.Rechamber_B", t = 5 / 30},
         },
     },
     ["cycle_sights"] = {
@@ -270,8 +271,8 @@ SWEP.Animations = {
 		EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = "COD2019.Mode680.Rechamber_A", t = 1 / 30},
-			{s = "COD2019.Mode680.Rechamber_B", t = 5 / 30},
+            {s = "COD2019.R90.Rechamber_A", t = 1 / 30},
+			{s = "COD2019.R90.Rechamber_B", t = 5 / 30},
         },
     },
     ["reload_start"] = {
@@ -289,11 +290,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sh_dpapa12_reload_start_rotate.ogg", t = 0 / 30},
         },
     },
     ["reload_insert"] = {
-        Source = "reload_loop",
+        Source = {"reload_loop","reload_loop2"},
         IKTimeLine = {
             {
                 t = 0,
@@ -307,9 +308,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = "COD2019.Mode680.ShellIn", t = 0 / 30},
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0 / 30},
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 0 / 30},
+            {s = "COD2019.R90.ShellIn", t = 4 / 30},
+			{s = path .. "wfoly_sh_dpapa12_reload_loop_cloth.ogg", t = 4 / 30},
         },
     },
     ["reload_finish"] = {
@@ -332,7 +332,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 0 / 30},
+			{s = path .. "wfoly_sh_dpapa12_reload_empty_end_rotate.ogg", t = 0 / 30},
         },
     },
     ["reload_finish_empty"] = {
@@ -356,8 +356,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_reload_empty_start_twist.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_reload_empty_start_open_01.ogg", t = 6/30},
+            {s = path .. "wfoly_sh_dpapa12_reload_empty_end_rotate.ogg", t = 0/30},
+			{s = "COD2019.R90.Rechamber_Empty", t = 4/30},
 			{s = path .. "wfoly_sh_romeo870_reload_empty_start_end.ogg", t = 11/30},
 			{s = path .. "wfoly_sh_romeo870_reload_empty_start_close_01.ogg", t = 15/30},
         },
@@ -377,9 +377,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_raise_first_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_raise_first_chamber_e.ogg", t = 4/30},
-			{s = path .. "wfoly_sh_romeo870_raise_first_shoulder.ogg", t = 16/30},
+            {s = path .. "wfoly_sh_dpapa12_raise_first_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_01a.ogg", t = 4/30},
+			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_02a.ogg", t = 16/30},
+			{s = path .. "wfoly_sh_dpapa12_raise_first_end.ogg", t = 16/30},
         },
     },
     ["draw"] = {
@@ -387,13 +388,13 @@ SWEP.Animations = {
 		MinProgress = 0.5,
 		FireASAP = true,
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sh_dpapa12_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_raise_first_lift.ogg", t = 0/30},
+            {s = path .. "wfoly_sh_dpapa12_reload_empty_end_rotate.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -437,11 +438,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_sh_romeo870_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_sh_romeo870_inspect_02.ogg", t = 41/30 },
-			{ s = path .. "wfoly_sh_romeo870_inspect_03.ogg", t = 69/30 },
-			{ s = path .. "wfoly_sh_romeo870_inspect_04.ogg", t = 100/30 },
-			{ s = path .. "wfoly_sh_romeo870_inspect_05.ogg", t = 126/30 },
+            { s = path .. "wfoly_sh_dpapa12_inspect_01.ogg", t = 0/30 },
+			{ s = path .. "wfoly_sh_dpapa12_inspect_02.ogg", t = 41/30 },
+			{ s = path .. "wfoly_sh_dpapa12_inspect_03.ogg", t = 67/30 },
+			{ s = path .. "wfoly_sh_dpapa12_inspect_04.ogg", t = 100/30 },
+			{ s = path .. "wfoly_sh_dpapa12_inspect_05.ogg", t = 126/30 },
         },
     },
     ["bash"] = {
@@ -455,8 +456,8 @@ SWEP.Animations = {
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(4, 0, -1.3),
-	ModelAngleOffset = Angle(0, 0, 0),
+    ModelOffset = Vector(7, 0, -1.3),
+	ModelAngleOffset = Angle(0, 0, -20),
 	Scale = 0.8,
     },
     ["go_grip_angled"] = {
@@ -465,39 +466,29 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["barrel_none"] = {
+    ["base_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
+    ["grip"] = {
         Bodygroups = {
             {1,1},
         },
     },
-    ["pump_rail"] = {
+    ["pump_none"] = {
         Bodygroups = {
             {2,1},
         },
     },
-    ["pump_none"] = {
-        Bodygroups = {
-            {2,2},
-        },
-    },
-    ["rail_sight_none"] = {
+    ["sight_off"] = {
         Bodygroups = {
             {3,1},
         },
     },
-    ["sight_none"] = {
+    ["rail_laser"] = {
         Bodygroups = {
             {4,1},
-        },
-    },
-    ["stock_none2"] = {
-        Bodygroups = {
-            {5,2},
-        },
-    },
-    ["stock_none"] = {
-        Bodygroups = {
-            {5,1},
         },
     },
 }
@@ -511,7 +502,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrels",
         DefaultAttName = "Standard Barrel",
-        Category = "cod2019_model680_barrel",
+        Category = "cod2019_r90_barrel",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -521,10 +512,17 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Muzzle",
         Category = {"muzzle_shotgun","muzzle"},
         Bone = "tag_silencer",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(0, -0.68, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
 		Scale = 1,
+		DuplicateModels = { -- For guns that require duplicating attachment models, e.g. akimbo or guns with 2 mags on model
+             {
+                 Bone = "tag_silencer",
+                 Pos = Vector(0, 0.68, 0),
+                 Ang = Angle(0, 0, 0),
+             }
+        },
     },
     {
         PrintName = "Optics",
@@ -532,37 +530,27 @@ SWEP.Attachments = {
         Pos = Vector(2.1, 0, -0.07),
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optic",},
-        CorrectiveAng = Angle(2, 0.1, 0),
-		--InstalledElements = {"rail_sight"},
+        CorrectiveAng = Angle(0, 0, 0),
+		InstalledElements = {"sight_off"},
     },
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
         Category = "csgo_tac",
-        Bone = "tag_laser_attach",
-        Pos = Vector(-3.5, -0.35, -0.19),
+        Bone = "tag_grip_attach",
+        Pos = Vector(-0.9, 1.5, 1.4),
         Ang = Angle(0, 0, -90),
-		--InstalledElements = {"rail_grip"},
+		InstalledElements = {"rail_laser"},
     },
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
         Category = "grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-3, 0, 0),
+        Pos = Vector(-1.5, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
-		InstalledElements = {"pump_rail"},
-    },
-    {
-        PrintName = "Stock",
-        DefaultAttName = "Standard Stock",
-        Category = "cod2019_tube",
-        Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, -0.7),
-        Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_adapter"},
-		Scale = 1,
+		--InstalledElements = {"pump_rail"},
     },
     {
         PrintName = "Ammo",
@@ -585,7 +573,7 @@ SWEP.Attachments = {
     {
         PrintName = "Skins",
         --Bone = "v_weapon.Clip",
-        Category = "cod2019_skins_model680",
+        Category = "cod2019_skins_r90",
 		CosmeticOnly = true,
     },
     {
@@ -595,22 +583,22 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/shot_model680_decal_a.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/shot_r90_decal_a.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/shot_model680_decal_b.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/shot_r90_decal_b.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/shot_model680_decal_c.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/shot_r90_decal_c.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/shot_model680_decal_d.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/shot_r90_decal_d.mdl",
         Category = "stickers",
     },
     {
@@ -625,11 +613,11 @@ SWEP.Attachments = {
         PrintName = "Stats",
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(3, 0, 0),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
 }
 
-SWEP.GripPoseParam = 4.5
-SWEP.GripPoseParam2 = 0.7
+SWEP.GripPoseParam = 0.3
+SWEP.GripPoseParam2 = 0
