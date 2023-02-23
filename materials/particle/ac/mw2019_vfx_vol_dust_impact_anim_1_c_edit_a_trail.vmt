@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture" "particle/Ac/mw2019_vfx_vol_dust_impact_anim_1_c_edit_a"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$translucent" "1"
+}

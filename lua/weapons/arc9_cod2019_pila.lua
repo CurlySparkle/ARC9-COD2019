@@ -120,13 +120,13 @@ SWEP.VisualRecoilUp = 5
 -------------------------- SPREAD
 
 SWEP.Spread = 0.001
-SWEP.SpreadAddShooting = 0.03
+SWEP.SpreadAddRecoil = 0.03
 
 SWEP.SpreadMultSights = 0.1
 SWEP.SpreadAddHipFire = 0.01
 --SWEP.SpreadAddMove = 0
 SWEP.SpreadAddMidAir = 0.03
--- SWEP.SpreadAddShooting = math.rad(5 / 37.5) -- 0
+-- SWEP.SpreadAddRecoil = math.rad(5 / 37.5) -- 0
 
 SWEP.RecoilPatternDrift = 20
 
@@ -431,10 +431,10 @@ SWEP.Attachments = {
         Bone = "tag_launcher_attachments",
         Pos = Vector(1, -3.1, 0.75),
         Ang = Angle(0, 0, -70),
-        Category = {"csgo_optic","csgo_optic_pila"},
+        Category = {"csgo_optic","cod2019_optic_pila"},
         InstalledElements = {"sights"},
-		Installed = "csgo_optic_scope_pila",
-		Integral = "csgo_optic_scope_pila",
+		Installed = "cod2019_optic_scope_pila",
+		Integral = "cod2019_optic_scope_pila",
         CorrectiveAng = Angle(-0.4, 0.4, 0),
     },
     {

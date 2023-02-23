@@ -1,0 +1,9 @@
+"UnlitGeneric"
+{
+	"$basetexture" "particle/Ac/mw2019_vfx_flash_muzzle_side_sheet_1_e"
+	"$overbrightfactor" "1.5"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$translucent" "1"
+	"$additive" "1"
+}

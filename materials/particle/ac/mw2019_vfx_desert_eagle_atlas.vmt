@@ -1,0 +1,12 @@
+"SpriteCard"
+{
+	"$basetexture" "particle/Ac/mw2019_vfx_desert_eagle_atlas"
+	"$overbrightfactor" 1
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$translucent" "1"
+	"$additive" "1"
+	"$depthblend"  "1"
+	"$depthblendscale"  "45"
+	"$blendframes" "1"
+}

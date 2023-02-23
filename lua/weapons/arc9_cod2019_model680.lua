@@ -134,7 +134,7 @@ SWEP.VisualRecoilUp = 0.2
 
 SWEP.Spread = 0.035
 
-SWEP.SpreadAddShooting = 0.02 -- Applied per unit of recoil.
+SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
 
 SWEP.SpreadAddMove = 0.03
 SWEP.SpreadAddMidAir = 0.03
@@ -230,7 +230,6 @@ SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1.3
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.NoShellEject = true
-SWEP.EjectDelay = 0
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false

@@ -1,4 +1,64 @@
 sound.Add( {
+    name = "COD2019.725.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/725/weap_charlie725_fire_plr_swtn_01.ogg",
+		"weapons/cod2019/725/weap_charlie725_fire_plr_swtn_02.ogg",
+		"weapons/cod2019/725/weap_charlie725_fire_plr_swtn_03.ogg",
+		"weapons/cod2019/725/weap_charlie725_fire_plr_swtn_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.725.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/725/weap_charlie725_fire_silenced_plr_swtn_01.ogg",
+		"weapons/cod2019/725/weap_charlie725_fire_silenced_plr_swtn_02.ogg",
+		"weapons/cod2019/725/weap_charlie725_fire_silenced_plr_swtn_03.ogg",
+		"weapons/cod2019/725/weap_charlie725_fire_silenced_plr_swtn_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.VLK.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/vlk/weap_mike26_fire_bang_plr_01.ogg",
+		"weapons/cod2019/vlk/weap_mike26_fire_bang_plr_02.ogg",
+		"weapons/cod2019/vlk/weap_mike26_fire_bang_plr_03.ogg",
+		"weapons/cod2019/vlk/weap_mike26_fire_bang_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.VLK.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/vlk/weap_mike26_fire_silenced_bang_plr_01.ogg",
+		"weapons/cod2019/vlk/weap_mike26_fire_silenced_bang_plr_02.ogg",
+		"weapons/cod2019/vlk/weap_mike26_fire_silenced_bang_plr_03.ogg",
+		"weapons/cod2019/vlk/weap_mike26_fire_silenced_bang_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.R90.Fire",
     channel = 10,
     volume = 1.0,

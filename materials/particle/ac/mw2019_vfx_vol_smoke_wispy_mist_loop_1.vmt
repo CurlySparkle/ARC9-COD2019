@@ -1,0 +1,11 @@
+"SpriteCard"
+{
+	"$basetexture" "particle/Ac/mw2019_vfx_vol_smoke_wispy_mist_loop_1"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$translucent" "1"
+//      "$additive" "1"
+	"$depthblend"  "1"
+	"$depthblendscale"  "45"
+	"$blendframes" "1"
+}

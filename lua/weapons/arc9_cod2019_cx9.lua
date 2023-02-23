@@ -140,7 +140,7 @@ SWEP.VisualRecoilUp = 1
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddShooting = 0.02 -- Applied per unit of recoil.
+SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
 
 SWEP.RecoilModifierCap = 20
 

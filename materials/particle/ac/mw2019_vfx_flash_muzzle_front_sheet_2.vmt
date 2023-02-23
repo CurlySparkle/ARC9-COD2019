@@ -1,0 +1,12 @@
+"SpriteCard"
+{
+	"$basetexture" "particle/Ac/mw2019_vfx_flash_muzzle_front_sheet_2"
+	"$overbrightfactor" 1
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$translucent" "1"
+	"$additive" "1"
+	"$depthblend"  "1"
+	"$depthblendscale"  "45"
+	"$blendframes" "1"
+}
