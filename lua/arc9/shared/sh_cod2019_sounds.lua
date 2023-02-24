@@ -1,4 +1,52 @@
 sound.Add( {
+    name = "COD2019.AX50.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/ax50/weap_alpha50_fire_plr_01.ogg",
+		"weapons/cod2019/ax50/weap_alpha50_fire_plr_02.ogg",
+		"weapons/cod2019/ax50/weap_alpha50_fire_plr_03.ogg",
+		"weapons/cod2019/ax50/weap_alpha50_fire_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.AX50.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/ax50/weap_alpha50_fire_silenced_plr_01.ogg",
+		"weapons/cod2019/ax50/weap_alpha50_fire_silenced_plr_02.ogg",
+		"weapons/cod2019/ax50/weap_alpha50_fire_silenced_plr_03.ogg",
+		"weapons/cod2019/ax50/weap_alpha50_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.AX50.Rechamber",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/ax50/wfoly_sn_alpha50_rechamber_01_01.ogg",
+		"weapons/cod2019/ax50/wfoly_sn_alpha50_rechamber_01_02.ogg",
+		"weapons/cod2019/ax50/wfoly_sn_alpha50_rechamber_01_03.ogg",
+		"weapons/cod2019/ax50/wfoly_sn_alpha50_rechamber_01_04.ogg",
+		"weapons/cod2019/ax50/wfoly_sn_alpha50_rechamber_01_05.ogg",
+		"weapons/cod2019/ax50/wfoly_sn_alpha50_rechamber_01_06.ogg",
+		"weapons/cod2019/ax50/wfoly_sn_alpha50_rechamber_01_07.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Jak12.Fire",
     channel = 10,
     volume = 1.0,
