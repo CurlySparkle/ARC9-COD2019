@@ -227,7 +227,7 @@ local path = "weapons/cod2019/rpg/"
 
 SWEP.ShootSound = "COD2019.RPG.Fire"
 SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
-SWEP.DryFireSound = "weapons/csgo/svd/svd_empty.ogg"
+SWEP.DryFireSound = "weapons/cod2019/svd/svd_empty.ogg"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
