@@ -10,13 +10,13 @@ SWEP.PrintName = "JAK-12"
 
 SWEP.Class = "Shotgun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Japan",
-    ["Manufacturer"] = "Tempus Armament",
-    ["Caliber"] = "12 gauge",
-    ["Weight (Loaded)"] = "3.91 kg",
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "XRX",
+    ["Caliber"] = "12-gauge",
+    ["Weight (Loaded)"] = "5.5 kg",
     ["Projectile Weight"] = "493 gr",
-    ["Muzzle Velocity"] = "1,350 ft/s",
-    ["Muzzle Energy"] = "2,705 joules"
+    ["Muzzle Velocity"] = "1,100 ft/s",
+    ["Muzzle Energy"] = "1,796 joules"
 }
 
 SWEP.Credits = {
