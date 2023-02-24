@@ -10,13 +10,13 @@ SWEP.PrintName = "725"
 
 SWEP.Class = "Shotgun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "FORGE TAC",
+    ["Country of Origin"] = "Japan",
+    ["Manufacturer"] = "Tempus Armament",
     ["Caliber"] = "12 gauge",
-    ["Weight (Loaded)"] = "4.2 kg",
+    ["Weight (Loaded)"] = "3.91 kg",
     ["Projectile Weight"] = "493 gr",
-    ["Muzzle Velocity"] = "1,250 ft/s",
-    ["Muzzle Energy"] = "2,319 joules"
+    ["Muzzle Velocity"] = "1,350 ft/s",
+    ["Muzzle Energy"] = "2,705 joules"
 }
 
 SWEP.Credits = {

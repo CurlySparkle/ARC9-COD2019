@@ -10,13 +10,13 @@ SWEP.PrintName = "VLK Rogue"
 
 SWEP.Class = "Shotgun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "FORGE TAC",
+    ["Country of Origin"] = "Russia",
+    ["Manufacturer"] = "VLK",
     ["Caliber"] = "12 gauge",
-    ["Weight (Loaded)"] = "4.2 kg",
+    ["Weight (Loaded)"] = "2.26 kg",
     ["Projectile Weight"] = "493 gr",
-    ["Muzzle Velocity"] = "1,250 ft/s",
-    ["Muzzle Energy"] = "2,319 joules"
+    ["Muzzle Velocity"] = "1,325 ft/s",
+    ["Muzzle Energy"] = "2,606 joules"
 }
 
 SWEP.Credits = {
