@@ -233,28 +233,30 @@ SWEP.HookP_BlockFire = function(self)
     return self:GetSightAmount() < 1
 end
 
-SWEP.LockOn = false
-SWEP.LockOnSights = true
+-- SWEP.LockOn = false
+-- SWEP.LockOnSights = true
 
 -- Use LockOnSights = true to lock only in sights
 -- LockOn will provide targeting data in ENT.ShootEntData
 
-SWEP.LockOnAutoaim = true -- Gun will shoot directly towards lockon target
+-- This shit broken bruh
 
-SWEP.LocksLiving = true -- Locks on to any NPC or player
-SWEP.LocksGround = true -- Will lock on to any entity deemed a ground target and not an air target
-SWEP.LocksAir = true -- Will lock on to any entity deemed an air target, and not a ground target
+-- SWEP.LockOnAutoaim = true -- Gun will shoot directly towards lockon target
 
-SWEP.LockOnRange = 100000 -- How far away the lockon can be
-SWEP.LockOnFOV = 65 -- How wide the lockon can be
-SWEP.LockedOnFOV = 65 -- FOV needed to maintain a lock
+-- SWEP.LocksLiving = true -- Locks on to any NPC or player
+-- SWEP.LocksGround = true -- Will lock on to any entity deemed a ground target and not an air target
+-- SWEP.LocksAir = true -- Will lock on to any entity deemed an air target, and not a ground target
 
-SWEP.LockOnTime = 0.5 -- How long it takes to lock on, in seconds
+-- SWEP.LockOnRange = 100000 -- How far away the lockon can be
+-- SWEP.LockOnFOV = 65 -- How wide the lockon can be
+-- SWEP.LockedOnFOV = 65 -- FOV needed to maintain a lock
 
-SWEP.LockOnSound = "weapons/cod2019/pila/lockon_start.wav" -- Sound to play when locking on
-SWEP.LockedOnSound = "weapons/cod2019/pila/lockon.wav" -- Sound to play when successfully locked target
+-- SWEP.LockOnTime = 0.5 -- How long it takes to lock on, in seconds
 
-SWEP.LockOnHUD = true -- Show a box around locked targets
+-- SWEP.LockOnSound = "weapons/cod2019/pila/lockon_start.wav" -- Sound to play when locking on
+-- SWEP.LockedOnSound = "weapons/cod2019/pila/lockon.wav" -- Sound to play when successfully locked target
+
+-- SWEP.LockOnHUD = true -- Show a box around locked targets
 
 SWEP.Animations = {
     ["fire"] = {

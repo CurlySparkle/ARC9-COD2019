@@ -171,7 +171,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, 0, -0.7)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -341,7 +341,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
-		DropMagAt = 0.8,
+		DropMagAt = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -407,6 +407,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.5,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_plr_sm_mpapa7_raise.ogg", t = 0/30},
         },
@@ -594,7 +596,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "csgo_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(-1, 1.15, -1.97),
+        Pos = Vector(0, -0.4, -1.32),
         Ang = Angle(0, 0, -90),
 		--InstalledElements = {"rail_laser"},
     },

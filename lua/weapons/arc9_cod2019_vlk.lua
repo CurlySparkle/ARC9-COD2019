@@ -464,9 +464,9 @@ SWEP.Animations = {
         EventTable = {
             { s = path .. "wfoly_sh_mike26_inspect_01.ogg", t = 0/30 },
 			{ s = path .. "wfoly_sh_mike26_inspect_02.ogg", t = 41/30 },
-			{ s = path .. "wfoly_sh_mike26_inspect_04.ogg", t = 67/30 },
-			{ s = path .. "wfoly_sh_mike26_inspect_05.ogg", t = 98/30 },
-			{ s = path .. "wfoly_sh_mike26_inspect_06.ogg", t = 128/30 },
+			{ s = path .. "wfoly_sh_mike26_inspect_03.ogg", t = 67/30 },
+			{ s = path .. "wfoly_sh_mike26_inspect_04.ogg", t = 98/30 },
+			{ s = path .. "wfoly_sh_mike26_inspect_05.ogg", t = 128/30 },
         },
     },
     ["bash"] = {
@@ -601,7 +601,7 @@ SWEP.Attachments = {
     {
         PrintName = "Ammo",
         Bone = "j_mag1",
-        Category = {"go_ammo"},
+        Category = {"go_ammo_sg"},
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
