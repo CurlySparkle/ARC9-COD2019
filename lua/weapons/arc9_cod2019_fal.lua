@@ -20,8 +20,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle",
-    Assets = "Counter-Strike: Global Offensive/Call of Duty®: Modern Warfare"
+    Author = "Twilight Sparkle/Firmeteran",
+    Assets = "Infinity Ward/Valve/New World Interactive"
 }
 
 SWEP.Description = [[Semi-automatic battle rifle with a high rate of fire for faster follow up shots.]]
@@ -234,7 +234,7 @@ SWEP.ShellScale = 1.5
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = true
-SWEP.DropMagazineModel = "models/weapons/csgo/mags/w_rif_fal_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_rif_fal_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.9

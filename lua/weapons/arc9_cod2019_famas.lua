@@ -20,8 +20,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",
-    Assets = "Counter-Strike: Global Offensive/Call of Duty®: Modern Warfare"
+    Author = "Twilight Sparkle/Firmeteran",
+    Assets = "Infinity Ward/Valve/New World Interactive"
 }
 
 SWEP.Description = [[3 round burst bullpup battle rifle. A well placed burst can be extremely deadly at intermittent ranges.]]

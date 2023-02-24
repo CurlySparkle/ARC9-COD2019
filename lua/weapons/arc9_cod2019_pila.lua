@@ -14,8 +14,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",
-    Assets = "Counter-Strike: Global Offensive/Call of Duty®: Modern Warfare"
+    Author = "Twilight Sparkle/Firmeteran",
+    Assets = "Infinity Ward/Valve/New World Interactive"
 }
 
 SWEP.Description = [[Portable infrared surface-to-air missile with a free-fire option. Self propelled missiles have a higher speed, and moderate explosive yield.]]
