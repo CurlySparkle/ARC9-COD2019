@@ -530,7 +530,7 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"go_rytec_Stock"},
+        Category = {"cod2019_rytec_stock"},
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0.25),
         Ang = Angle(0, 0, 0),

@@ -3,17 +3,17 @@ local ATT = {}
 ATT.PrintName = "Default Scope"
 ATT.CompactName = [[Default]]
 --ATT.Icon = Material("entities/attachs/go_optic_schmidt.png", "mips smooth")
-ATT.Description = [[Default scope for the M32]]
+ATT.Description = [[Default scope for the MGL-32 Grenade Launcher.]]
 ATT.Pros = {
     "+ 4x Zoom",
     "+ Clearer sight picture"
 }
 ATT.Cons = {}
 ATT.SortOrder = 4
-ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
 ATT.Folder = "SCOPE"
 
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Category = {"cod2019_optic_m32"}
 ATT.ActivateElements = {"scope_m32"}
 

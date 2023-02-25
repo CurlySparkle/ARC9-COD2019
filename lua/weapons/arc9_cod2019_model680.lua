@@ -240,8 +240,8 @@ SWEP.ShotgunReload = true
 
 local path = "weapons/cod2019/model680/"
 
-SWEP.ShootSound = "COD2019.Mode680.Fire"
-SWEP.ShootSoundSilenced = "COD2019.Mode680.Silenced_Fire"
+SWEP.ShootSound = "COD2019.Model680.Fire"
+SWEP.ShootSoundSilenced = "COD2019.Model680.Silenced_Fire"
 SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
@@ -261,8 +261,8 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = "COD2019.Mode680.Rechamber_A", t = 0 / 30},
-			{s = "COD2019.Mode680.Rechamber_B", t = 6 / 30},
+            {s = "COD2019.Model680.Rechamber_A", t = 0 / 30},
+			{s = "COD2019.Model680.Rechamber_B", t = 6 / 30},
         },
     },
     ["cycle_sights"] = {
@@ -270,8 +270,8 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = "COD2019.Mode680.Rechamber_A", t = 0 / 30},
-			{s = "COD2019.Mode680.Rechamber_B", t = 6 / 30},
+            {s = "COD2019.Model680.Rechamber_A", t = 0 / 30},
+			{s = "COD2019.Model680.Rechamber_B", t = 6 / 30},
         },
     },
     ["reload_start"] = {
@@ -307,7 +307,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = "COD2019.Mode680.ShellIn", t = 0 / 30},
+            {s = "COD2019.Model680.ShellIn", t = 0 / 30},
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0 / 30},
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 0 / 30},
         },

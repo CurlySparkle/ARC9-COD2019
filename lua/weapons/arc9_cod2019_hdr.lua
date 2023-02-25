@@ -12,11 +12,11 @@ SWEP.Class = "Sniper Rifles"
 SWEP.Trivia = {
     ["Country of Origin"] = "Russia",
     ["Manufacturer"] = "VLK",
-    ["Caliber"] = "12 gauge",
+    ["Caliber"] = "12.7×108mm",
     ["Weight (Loaded)"] = "2.26 kg",
-    ["Projectile Weight"] = "493 gr",
-    ["Muzzle Velocity"] = "1,325 ft/s",
-    ["Muzzle Energy"] = "2,606 joules"
+    ["Projectile Weight"] = "914 gr",
+    ["Muzzle Velocity"] = "1,580 ft/s",
+    ["Muzzle Energy"] = "6,870 joules"
 }
 
 SWEP.Credits = {

@@ -2,7 +2,6 @@ local ATT = {}
 ----------------------------------------------------------------------------------------
 ATT = {}
 
-ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = [[40-Rounder]]
 ATT.CompactName = [[40-Round]]
 ATT.Icon = Material("entities/attachs/go_mp5_mag_40.png")
@@ -12,6 +11,7 @@ ATT.Cons = {}
 ATT.SortOrder = 1
 ATT.Free = false
 
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Category = {"cod2019_mag_cx9"}
 ATT.ActivateElements = {"mag_mp5"}
 ATT.ClipSizeOverride = 40

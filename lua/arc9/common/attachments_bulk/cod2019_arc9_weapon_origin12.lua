@@ -12,6 +12,7 @@ ATT.AutoStats = true
 
 ATT.Free = false
 
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Category = {"cod2019_origin12_tube"}
 ATT.ActivateElements = {"stock_retracted"}
 

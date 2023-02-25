@@ -274,7 +274,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "COD2019.Mode680.Fire",
+    name = "COD2019.Model680.Fire",
     channel = 10,
     volume = 1.0,
     level = 120,
@@ -289,7 +289,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "COD2019.Mode680.Silenced_Fire",
+    name = "COD2019.Model680.Silenced_Fire",
     channel = 10,
     volume = 1.0,
     level = 120,
@@ -304,7 +304,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "COD2019.Mode680.Rechamber_A",
+    name = "COD2019.Model680.Rechamber_A",
     channel = CHAN_AUTO,
     volume = 1.0,
     level = 120,
@@ -318,7 +318,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "COD2019.Mode680.Rechamber_B",
+    name = "COD2019.Model680.Rechamber_B",
     channel = CHAN_AUTO,
     volume = 1.0,
     level = 120,
@@ -332,7 +332,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "COD2019.Mode680.ShellIn",
+    name = "COD2019.Model680.ShellIn",
     channel = CHAN_AUTO,
     volume = 1.0,
     level = 120,
