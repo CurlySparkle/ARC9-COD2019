@@ -10,13 +10,13 @@ SWEP.PrintName = "AX-50"
 
 SWEP.Class = "Sniper Rifles"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Russia",
-    ["Manufacturer"] = "VLK",
-    ["Caliber"] = "12 gauge",
-    ["Weight (Loaded)"] = "2.26 kg",
-    ["Projectile Weight"] = "493 gr",
-    ["Muzzle Velocity"] = "1,325 ft/s",
-    ["Muzzle Energy"] = "2,606 joules"
+    ["Country of Origin"] = "United Kingdom",
+    ["Manufacturer"] = "Cronen",
+    ["Caliber"] = ".50 BMG",
+    ["Weight (Loaded)"] = "13 kg",
+    ["Projectile Weight"] = "290 gr",
+    ["Muzzle Velocity"] = "2,953 ft/s",
+    ["Muzzle Energy"] = "7,615 joules"
 }
 
 SWEP.Credits = {

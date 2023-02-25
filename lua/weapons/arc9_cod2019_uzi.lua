@@ -11,6 +11,7 @@ SWEP.PrintName = "Uzi"
 SWEP.Class = "Submachine Gun"
 SWEP.Trivia = {
     ["Country of Origin"] = "Israel",
+    ["Manufacturer"] = "Cronen",
     ["Caliber"] = "9×19mm Parabellum",
     ["Weight (Loaded)"] = "3.5 kg",
     ["Projectile Weight"] = "124 gr",
