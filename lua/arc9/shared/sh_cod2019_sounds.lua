@@ -1,4 +1,52 @@
 sound.Add( {
+    name = "COD2019.HDR.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/hdr/weap_hdromeo_fire_plr_01.ogg",
+		"weapons/cod2019/hdr/weap_hdromeo_fire_plr_02.ogg",
+		"weapons/cod2019/hdr/weap_hdromeo_fire_plr_03.ogg",
+		"weapons/cod2019/hdr/weap_hdromeo_fire_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.HDR.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/hdr/weap_hdromeo_fire_silenced_plr_01.ogg",
+		"weapons/cod2019/hdr/weap_hdromeo_fire_silenced_plr_02.ogg",
+		"weapons/cod2019/hdr/weap_hdromeo_fire_silenced_plr_03.ogg",
+		"weapons/cod2019/hdr/weap_hdromeo_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.HDR.Rechamber",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/hdr/wfoly_plr_sn_hdromeo_rechamber_boltopen_01_01.ogg",
+		"weapons/cod2019/hdr/wfoly_plr_sn_hdromeo_rechamber_boltopen_01_02.ogg",
+		"weapons/cod2019/hdr/wfoly_plr_sn_hdromeo_rechamber_boltopen_01_03.ogg",
+		"weapons/cod2019/hdr/wfoly_plr_sn_hdromeo_rechamber_boltopen_01_04.ogg",
+		"weapons/cod2019/hdr/wfoly_plr_sn_hdromeo_rechamber_boltopen_01_05.ogg",
+		"weapons/cod2019/hdr/wfoly_plr_sn_hdromeo_rechamber_boltopen_01_06.ogg",
+		"weapons/cod2019/hdr/wfoly_plr_sn_hdromeo_rechamber_boltopen_01_07.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.AX50.Fire",
     channel = 10,
     volume = 1.0,

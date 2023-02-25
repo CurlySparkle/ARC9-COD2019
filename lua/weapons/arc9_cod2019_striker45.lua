@@ -340,7 +340,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
-		DropMagAt = 0.5,
+		DropMagAt = 0.7,
         IKTimeLine = {
             {
                 t = 0,
