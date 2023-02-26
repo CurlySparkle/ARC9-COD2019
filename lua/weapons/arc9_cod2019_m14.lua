@@ -162,8 +162,8 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.43, -8, 0.7),
-    Ang = Angle(0, 0.5, 0),
+    Pos = Vector(-3.26, -3, 0.8),
+    Ang = Angle(0, 0, -3),
     Magnification = 1.15,
     ViewModelFOV = 56,
 	CrosshairInSights = false
@@ -539,7 +539,7 @@ SWEP.Attachments = {
         Bone = "tag_scope",
         Pos = Vector(1.5, 0, 0),
         Ang = Angle(0, 0, 0),
-        Category = {"csgo_optic","cod2019_optic_svd"},
+        Category = {"csgo_optic"},
         CorrectiveAng = Angle(0, 0, 0),
 		--InstalledElements = {"sight_rail"},
     },
