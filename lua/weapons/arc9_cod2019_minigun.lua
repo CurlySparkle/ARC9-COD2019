@@ -14,9 +14,9 @@ SWEP.Trivia = {
     ["Manufacturer"] = "FSS",
     ["Caliber"] = "7.62×51mm NATO",
     ["Weight (Loaded)"] = "19 kg",
-    ["Projectile Weight"] = "144 gr",
+    ["Projectile Weight"] = "147 gr",
     ["Muzzle Velocity"] = "2,800 ft/s",
-    ["Muzzle Energy"] = "3,399 joules"
+    ["Muzzle Energy"] = "3,470 joules"
 }
 
 SWEP.Credits = {

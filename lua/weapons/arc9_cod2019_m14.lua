@@ -10,12 +10,13 @@ SWEP.PrintName = "EBR-14"
 
 SWEP.Class = "Sniper Rifle"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Switzerland",
-    ["Caliber"] = "7.62×54mmR",
-    ["Weight (Loaded)"] = "4.4 kg",
-    ["Projectile Weight"] = "144 gr",
-    ["Muzzle Velocity"] = "2,723 ft/s",
-    ["Muzzle Energy"] = "3,215 joules"
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "FORGE TAC",
+    ["Caliber"] = "7.62×51mm NATO",
+    ["Weight (Loaded)"] = "5.1 kg",
+    ["Projectile Weight"] = "175 gr",
+    ["Muzzle Velocity"] = "2,800 ft/s",
+    ["Muzzle Energy"] = "4,131 joules"
 }
 
 SWEP.Credits = {
