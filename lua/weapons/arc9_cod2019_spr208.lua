@@ -10,13 +10,13 @@ SWEP.PrintName = "SP-R 208"
 
 SWEP.Class = "Sniper Rifles"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United Kingdom",
-    ["Manufacturer"] = "Cronen",
-    ["Caliber"] = ".50 BMG",
-    ["Weight (Loaded)"] = "13 kg",
-    ["Projectile Weight"] = "290 gr",
-    ["Muzzle Velocity"] = "2,953 ft/s",
-    ["Muzzle Energy"] = "7,615 joules"
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "Sloan Precision",
+    ["Caliber"] = ".300 Winchester Magnum",
+    ["Weight (Loaded)"] = "5 kg",
+    ["Projectile Weight"] = "180 gr",
+    ["Muzzle Velocity"] = "2,480 ft/s",
+    ["Muzzle Energy"] = "3,333 joules"
 }
 
 SWEP.Credits = {
