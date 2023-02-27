@@ -10,13 +10,12 @@ SWEP.PrintName = "Kar98k"
 
 SWEP.Class = "Sniper Rifles"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United Kingdom",
-    ["Manufacturer"] = "Cronen",
-    ["Caliber"] = ".50 BMG",
-    ["Weight (Loaded)"] = "13 kg",
-    ["Projectile Weight"] = "290 gr",
-    ["Muzzle Velocity"] = "2,953 ft/s",
-    ["Muzzle Energy"] = "7,615 joules"
+    ["Country of Origin"] = "Nazi Germany",
+    ["Caliber"] = "7.92×57mm Mauser",
+    ["Weight (Loaded)"] = "3.7 kg",
+    ["Projectile Weight"] = "178.2 gr",
+    ["Muzzle Velocity"] = "2,493 ft/s",
+    ["Muzzle Energy"] = "3,335 joules"
 }
 
 SWEP.Credits = {
@@ -244,8 +243,8 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/kar98k/"
 
-SWEP.ShootSound = "COD2019.kar98k.Fire"
-SWEP.ShootSoundSilenced = "COD2019.kar98k.Silenced_Fire"
+SWEP.ShootSound = "COD2019.Kar98k.Fire"
+SWEP.ShootSoundSilenced = "COD2019.Kar98k.Silenced_Fire"
 SWEP.DistantShootSound = "CSGO.Awp.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 

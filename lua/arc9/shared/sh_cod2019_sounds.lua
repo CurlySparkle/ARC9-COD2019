@@ -59,7 +59,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "COD2019.kar98k.Fire",
+    name = "COD2019.Kar98k.Fire",
     channel = 10,
     volume = 1.0,
     level = 120,
@@ -74,7 +74,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "COD2019.kar98k.Silenced_Fire",
+    name = "COD2019.Kar98k.Silenced_Fire",
     channel = 10,
     volume = 1.0,
     level = 120,
@@ -89,7 +89,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "COD2019.spr208.Fire",
+    name = "COD2019.SPR208.Fire",
     channel = 10,
     volume = 1.0,
     level = 120,
@@ -104,7 +104,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "COD2019.spr208.Silenced_Fire",
+    name = "COD2019.SPR208.Silenced_Fire",
     channel = 10,
     volume = 1.0,
     level = 120,

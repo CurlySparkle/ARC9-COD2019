@@ -11,12 +11,12 @@ SWEP.PrintName = "MK2 Carbine"
 SWEP.Class = "Shotgun"
 SWEP.Trivia = {
     ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "XRK",
-    ["Caliber"] = "12-gauge",
-    ["Weight (Loaded)"] = "3.2 kg",
-    ["Projectile Weight"] = "493 gr",
-    ["Muzzle Velocity"] = "1,433.73 ft/s",
-    ["Muzzle Energy"] = "3,051 joules"
+    ["Manufacturer"] = "FSS",
+    ["Caliber"] = ".45-70",
+    ["Weight (Loaded)"] = "3.3 kg",
+    ["Projectile Weight"] = "300 gr",
+    ["Muzzle Velocity"] = "1,589 ft/s",
+    ["Muzzle Energy"] = "2,281 joules"
 }
 
 SWEP.Credits = {
