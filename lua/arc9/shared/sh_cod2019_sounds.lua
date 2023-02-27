@@ -1,4 +1,64 @@
 sound.Add( {
+    name = "COD2019.MK2.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/mk2/weap_sbeta_fire_plr_01.ogg",
+		"weapons/cod2019/mk2/weap_sbeta_fire_plr_02.ogg",
+		"weapons/cod2019/mk2/weap_sbeta_fire_plr_03.ogg",
+		"weapons/cod2019/mk2/weap_sbeta_fire_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.MK2.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/mk2/weap_sbeta_fire_silenced_plr_01.ogg",
+		"weapons/cod2019/mk2/weap_sbeta_fire_silenced_plr_02.ogg",
+		"weapons/cod2019/mk2/weap_sbeta_fire_silenced_plr_03.ogg",
+		"weapons/cod2019/mk2/weap_sbeta_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.MK2.Load",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/mk2/wfoly_sbeta_sn_reload_loop_load_01.ogg",
+		"weapons/cod2019/mk2/wfoly_sbeta_sn_reload_loop_load_02.ogg",
+		"weapons/cod2019/mk2/wfoly_sbeta_sn_reload_loop_load_03.ogg",
+		"weapons/cod2019/mk2/wfoly_sbeta_sn_reload_loop_load_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.MK2.Shellin",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/mk2/wfoly_sbeta_sn_reload_loop_shells_01.ogg",
+		"weapons/cod2019/mk2/wfoly_sbeta_sn_reload_loop_shells_02.ogg",
+		"weapons/cod2019/mk2/wfoly_sbeta_sn_reload_loop_shells_03.ogg",
+		"weapons/cod2019/mk2/wfoly_sbeta_sn_reload_loop_shells_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.kar98k.Fire",
     channel = 10,
     volume = 1.0,
