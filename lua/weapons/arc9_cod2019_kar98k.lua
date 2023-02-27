@@ -6,17 +6,17 @@ SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Sniper Rifles"
 
-SWEP.PrintName = "SP-R 208"
+SWEP.PrintName = "Kar98k"
 
 SWEP.Class = "Sniper Rifles"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "Sloan Precision",
-    ["Caliber"] = ".300 Winchester Magnum",
-    ["Weight (Loaded)"] = "5 kg",
-    ["Projectile Weight"] = "180 gr",
-    ["Muzzle Velocity"] = "2,480 ft/s",
-    ["Muzzle Energy"] = "3,333 joules"
+    ["Country of Origin"] = "United Kingdom",
+    ["Manufacturer"] = "Cronen",
+    ["Caliber"] = ".50 BMG",
+    ["Weight (Loaded)"] = "13 kg",
+    ["Projectile Weight"] = "290 gr",
+    ["Muzzle Velocity"] = "2,953 ft/s",
+    ["Muzzle Energy"] = "7,615 joules"
 }
 
 SWEP.Credits = {
@@ -24,9 +24,9 @@ SWEP.Credits = {
     Assets = "Infinity Ward/Valve/New World Interactive"
 }
 
-SWEP.Description = [[Reliable, hard-hitting .300 Win bolt action rifle from Sloan Precision. This weapon's extensive military and civilian use gives rise to an abundance of customization.]]
+SWEP.Description = [[Bolt action rifle chambered in 7.92 Mauser. A WW2 relic that is still extremely lethal in the hands of a rebel marksman.]]
 
-SWEP.ViewModel = "models/weapons/cod2019/c_snip_spr208.mdl"
+SWEP.ViewModel = "models/weapons/cod2019/c_snip_kar98k.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
@@ -34,7 +34,7 @@ SWEP.Slot = 3
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
-SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_spr208.mdl"
+SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_kar98k.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
@@ -45,8 +45,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 94 -- Damage done at point blank range
-SWEP.DamageMin = 44 -- Damage done at maximum range
+SWEP.DamageMax = 86 -- Damage done at point blank range
+SWEP.DamageMin = 57 -- Damage done at maximum range
 
 SWEP.Num = 1
 
@@ -70,7 +70,7 @@ SWEP.PhysBulletDrag = 1
 
 SWEP.Ammo = "SniperPenetratedRound" -- What ammo type this gun uses.
 
-SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
+SWEP.ChamberSize = 0 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize = 5 -- Self-explanatory.
 SWEP.SupplyLimit = 8 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
@@ -90,7 +90,7 @@ SWEP.BarrelLength = 20
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 150
+SWEP.RPM = 200
 
 SWEP.Firemodes = {
     {
@@ -192,11 +192,11 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -0.5)
+SWEP.SprintPos = Vector(0, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(17, 35, 3)
+SWEP.CustomizePos = Vector(20, 35, 3)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
@@ -226,13 +226,13 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/models/weapons/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.1
+SWEP.ShellScale = 0.09
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
-SWEP.EjectDelay = 0.4
+SWEP.EjectDelay = 0.5
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_snip_spr208_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -242,19 +242,33 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 -------------------------- SOUNDS
 
-local path = "weapons/cod2019/spr208/"
+local path = "weapons/cod2019/kar98k/"
 
-SWEP.ShootSound = "COD2019.spr208.Fire"
-SWEP.ShootSoundSilenced = "COD2019.spr208.Silenced_Fire"
+SWEP.ShootSound = "COD2019.kar98k.Fire"
+SWEP.ShootSoundSilenced = "COD2019.kar98k.Silenced_Fire"
 SWEP.DistantShootSound = "CSGO.Awp.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
---SWEP.ReloadHideBonesFirstPerson = true
+SWEP.ReloadHideBonesFirstPerson = true
 SWEP.HideBones  = {
-    [1] = "j_mag2",
+    [1] = "j_clip",
+	[2] = "j_b_01",
+	[3] = "j_b_02",
+	[4] = "j_b_03",
+	[5] = "j_b_04",
+	[6] = "j_b_05",
+}
+
+SWEP.ReloadHideBoneTables  = {
+    [1] = "j_clip",
+	[2] = "j_b_01",
+	[3] = "j_b_02",
+	[4] = "j_b_03",
+	[5] = "j_b_04",
+	[6] = "j_b_05",
 }
 
 SWEP.Animations = {
@@ -269,8 +283,9 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 11/50},
-			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.4, t = 62/50},
+            {s = path .. "wfoly_sn_kilo98_rechamber_boltopen_01.ogg", v = 0.4, t = 20/60},
+			{s = path .. "wfoly_sn_kilo98_rechamber_cloth.ogg", v = 0.4, t = 28/60},
+			{s = path .. "wfoly_sn_kilo98_rechamber_boltclose_01.ogg", v = 0.4, t = 43/60},
         },
     },
     ["cycle_sights"] = {
@@ -278,8 +293,9 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 11/50},
-			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.4, t = 62/50},
+            {s = path .. "wfoly_sn_kilo98_rechamber_boltopen_01.ogg", v = 0.4, t = 20/60},
+			{s = path .. "wfoly_sn_kilo98_rechamber_cloth.ogg", v = 0.4, t = 28/60},
+			{s = path .. "wfoly_sn_kilo98_rechamber_boltclose_01.ogg", v = 0.4, t = 43/60},
         },
     },
     ["reload"] = {
@@ -308,11 +324,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sn_remeo700_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_remeo700_reload_magout.ogg", t = 10/30},
-			{s = path .. "wfoly_sn_remeo700_reload_maghit.ogg", t = 40/30},
-			{s = path .. "wfoly_sn_remeo700_reload_magin.ogg", t = 60/30},
-			{s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 62/30},
+			{s = path .. "wfoly_sn_kilo98_reload_boltopen_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_kilo98_reload_cloth01.ogg", t = 7/30},
+			{s = path .. "wfoly_sn_kilo98_reload_load_v2_01.ogg", t = 33/30},
+			{s = path .. "wfoly_sn_kilo98_reload_load_v2_02.ogg", t = 52/30},
+			{s = path .. "wfoly_sn_kilo98_reload_cloth02.ogg", t = 61/30},
+			{s = path .. "wfoly_sn_kilo98_reload_boltclose_01.ogg", t = 81/30},
+			{s = path .. "wfoly_sn_kilo98_reload_end.ogg", t = 88/30},
         },
     },
     -- ["1_reload"] = {
@@ -354,7 +372,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
-		EjectAt = 0.4,
+		EjectAt = 0.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -378,13 +396,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sn_remeo700_raise_first_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_remeo700_reload_empty_boltopen.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_remeo700_reload_empty_magout.ogg", t = 29/30},
-			{s = path .. "wfoly_sn_remeo700_reload_empty_maghit.ogg", t = 56/30},
-			{s = path .. "wfoly_sn_remeo700_reload_empty_magin.ogg", t = 73/30},
-			{s = path .. "wfoly_sn_remeo700_reload_empty_rotate.ogg", t = 80/30},
-			{s = path .. "wfoly_sn_remeo700_reload_empty_boltclose.ogg", t = 92/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_boltopen_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth01.ogg", t = 5/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_load_v2_01.ogg", t = 38/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_load_v2_02.ogg", t = 55/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth02.ogg", t = 80/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_boltclose_01.ogg", t = 84/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_end.ogg", t = 94/30},
         },
     },
     ["ready"] = {
@@ -402,9 +420,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_remeo700_raise_first_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_remeo700_raise_first_boltclose.ogg", t = 3/30},
-			{s = path .. "wfoly_sn_remeo700_raise_first_end.ogg", t = 19/30},
+            {s = path .. "wfoly_sn_kilo98_raise_first_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_kilo98_raise_first_safety_01.ogg", t = 24/30},
+			{s = path .. "wfoly_sn_kilo98_raise_first_end.ogg", t = 23/30},
         },
     },
     ["draw"] = {
@@ -412,13 +430,13 @@ SWEP.Animations = {
 		MinProgress = 0.7,
 		FireASAP = true,
         EventTable = {
-            {s = path .. "wfoly_sn_remeo700_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_kilo98_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_kilo98_reload_end.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -462,14 +480,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_sn_remeo700_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_sn_remeo700_inspect_02.ogg", t = 9/30 },
-			{ s = path .. "wfoly_sn_remeo700_inspect_03.ogg", t = 47/30 },
-			{ s = path .. "wfoly_sn_remeo700_inspect_04.ogg", t = 65/30 },
-			{ s = path .. "wfoly_sn_remeo700_inspect_05.ogg", t = 72/30 },
-			{ s = path .. "wfoly_sn_remeo700_inspect_06.ogg", t = 87/30 },
-			{ s = path .. "wfoly_sn_remeo700_inspect_07.ogg", t = 118/30 },
-			{ s = path .. "wfoly_sn_remeo700_inspect_08.ogg", t = 124/30 },
+            { s = path .. "wfoly_sn_kilo98_inspect_01.ogg", t = 0/30 },
+			{ s = path .. "wfoly_sn_kilo98_inspect_02.ogg", t = 37/30 },
+			{ s = path .. "wfoly_sn_kilo98_inspect_03.ogg", t = 70/30 },
+			{ s = path .. "wfoly_sn_kilo98_inspect_04.ogg", t = 98/30 },
+			{ s = path .. "wfoly_sn_kilo98_inspect_05.ogg", t = 120/30 },
         },
     },
     ["bash"] = {
@@ -483,30 +498,22 @@ SWEP.Animations = {
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(11, -0.1, -0.5),
+    ModelOffset = Vector(8, -0.3, -0.1),
 	ModelAngleOffset = Angle(0, 0, 0),
-	Scale = 1,
+	Scale = 0.8,
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.15),
     },
-    ["go_grip_loading"] = {
-    ModelOffset = Vector(1, 0, 0.15),
-    },
 }
 
 SWEP.AttachmentElements = {
-    ["mag"] = {
+    ["mag_none"] = {
         Bodygroups = {
             {1,1},
         },
     },
-    ["mag_none"] = {
-        Bodygroups = {
-            {1,2},
-        },
-    },
-    ["barrel_none"] = {
+    ["sight_rail"] = {
         Bodygroups = {
             {2,1},
         },
@@ -516,9 +523,19 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
-    ["bolt_none"] = {
+    ["sling"] = {
         Bodygroups = {
             {4,1},
+        },
+    },
+    ["rail_grip"] = {
+        Bodygroups = {
+            {5,1},
+        },
+    },
+    ["rail_laser"] = {
+        Bodygroups = {
+            {6,1},
         },
     },
 }
@@ -535,7 +552,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrels",
         DefaultAttName = "Standard Barrel",
-        Category = "cod2019_spr208_barrel",
+        Category = "cod2019_kar98k_barrel",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -555,25 +572,25 @@ SWEP.Attachments = {
         Bone = "tag_scope",
         Pos = Vector(2.5, 0, -0.07),
         Ang = Angle(0, 0, 0),
-        Category = {"csgo_optic","cod2019_optic_spr208"},
+        Category = {"csgo_optic"},
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sight_none"},
-		Installed = "cod2019_optic_scope_spr208",
-        Integral = "cod2019_optic_scope_spr208",
+		InstalledElements = {"sight_rail"},
+		--Installed = "cod2019_optic_scope_spr208",
+        --Integral = "cod2019_optic_scope_spr208",
     },
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
         Category = "csgo_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(1.4, 0, 0),
-        Ang = Angle(0, 0, 180),
-		--InstalledElements = {"rail_laser"},
+        Pos = Vector(-10, -0.5, -0.5),
+        Ang = Angle(0, 0, -90),
+		InstalledElements = {"rail_laser"},
     },
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = "cod2019_spr208_stock",
+        Category = "cod2019_kar98k_stock",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -584,26 +601,26 @@ SWEP.Attachments = {
         PrintName = "Grips",
         DefaultAttName = "Default",
         Category = "grip",
-        Bone = "tag_grip_attach",
-        Pos = Vector(-2, 0, 0),
+        Bone = "tag_attachments",
+        Pos = Vector(18.2, 0, 0.55),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
-		--InstalledElements = {"guard_none"},
+		InstalledElements = {"rail_grip"},
     },
     {
         PrintName = "Ammo",
-        Bone = "j_mag1",
+		Bone = "tag_attachments",
         Category = {"go_ammo","go_ammo_sniper"},
-        Pos = Vector(0, 0, -1.5),
+        Pos = Vector(11, 0, 1),
         Ang = Angle(0, 0, 0),
     },
-    {
-        PrintName = "Mag",
-		Bone = "j_mag1",
-        Category = {"go_mag"},
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-    },
+    -- {
+        -- PrintName = "Mag",
+		-- Bone = "tag_attachments",
+        -- Category = "go_mag",
+        -- Pos = Vector(11, 0, 3),
+        -- Ang = Angle(0, 0, 0),
+    -- },
     {
         PrintName = "Perk",
         Category = "go_perk"
@@ -611,7 +628,7 @@ SWEP.Attachments = {
     {
         PrintName = "Skins",
         --Bone = "v_weapon.Clip",
-        Category = "cod2019_skins_spr208",
+        Category = "cod2019_skins_kar98k",
 		CosmeticOnly = true,
     },
     {
@@ -621,22 +638,22 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/snip_spr208_decal_a.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/snip_kar98k_decal_a.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/snip_spr208_decal_b.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/snip_kar98k_decal_b.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/snip_spr208_decal_c.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/snip_kar98k_decal_c.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/snip_spr208_decal_d.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/snip_kar98k_decal_d.mdl",
         Category = "stickers",
     },
     {
@@ -651,11 +668,11 @@ SWEP.Attachments = {
         PrintName = "Stats",
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-15, 0.3, 0),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
 }
 
-SWEP.GripPoseParam = 3.5
+SWEP.GripPoseParam = 4.3
 SWEP.GripPoseParam2 = 0.6

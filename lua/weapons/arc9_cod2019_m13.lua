@@ -563,22 +563,22 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/stickers/rif_m13_decal_a.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/rif_m13_decal_a.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/stickers/rif_m13_decal_b.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/rif_m13_decal_b.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/stickers/rif_m13_decal_c.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/rif_m13_decal_c.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/stickers/rif_m13_decal_d.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/rif_m13_decal_d.mdl",
         Category = "stickers",
     },
     {
