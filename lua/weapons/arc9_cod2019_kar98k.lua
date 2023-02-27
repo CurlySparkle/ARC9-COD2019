@@ -8,7 +8,7 @@ SWEP.SubCategory = "Sniper Rifles"
 
 SWEP.PrintName = "Kar98k"
 
-SWEP.Class = "Sniper Rifles"
+SWEP.Class = "Marksman Rifle"
 SWEP.Trivia = {
     ["Country of Origin"] = "Nazi Germany",
     ["Caliber"] = "7.92×57mm Mauser",

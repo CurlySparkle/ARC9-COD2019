@@ -1,4 +1,34 @@
 sound.Add( {
+    name = "COD2019.SKS.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/sks/weap_sksierra_fire_bang_plr_01.ogg",
+		"weapons/cod2019/sks/weap_sksierra_fire_bang_plr_02.ogg",
+		"weapons/cod2019/sks/weap_sksierra_fire_bang_plr_03.ogg",
+		"weapons/cod2019/sks/weap_sksierra_fire_bang_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.SKS.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/sks/weap_sksierra_fire_silenced_bang_plr_01.ogg",
+		"weapons/cod2019/sks/weap_sksierra_fire_silenced_bang_plr_02.ogg",
+		"weapons/cod2019/sks/weap_sksierra_fire_silenced_bang_plr_03.ogg",
+		"weapons/cod2019/sks/weap_sksierra_fire_silenced_bang_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.MK2.Fire",
     channel = 10,
     volume = 1.0,

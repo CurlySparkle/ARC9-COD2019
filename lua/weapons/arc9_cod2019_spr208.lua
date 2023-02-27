@@ -8,7 +8,7 @@ SWEP.SubCategory = "Sniper Rifles"
 
 SWEP.PrintName = "SP-R 208"
 
-SWEP.Class = "Sniper Rifles"
+SWEP.Class = "Marksman Rifle"
 SWEP.Trivia = {
     ["Country of Origin"] = "United States",
     ["Manufacturer"] = "Sloan Precision",

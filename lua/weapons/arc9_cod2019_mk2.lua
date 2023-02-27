@@ -4,11 +4,11 @@ SWEP.Base = "arc9_go_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "Shotguns"
+SWEP.SubCategory = "Sniper Rifles"
 
 SWEP.PrintName = "MK2 Carbine"
 
-SWEP.Class = "Shotgun"
+SWEP.Class = "Marksman Rifle"
 SWEP.Trivia = {
     ["Country of Origin"] = "United States",
     ["Manufacturer"] = "FSS",
