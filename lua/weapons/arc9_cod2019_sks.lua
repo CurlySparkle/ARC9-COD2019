@@ -10,13 +10,13 @@ SWEP.PrintName = "SKS"
 
 SWEP.Class = "Marksman Rifle"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "FORGE TAC",
-    ["Caliber"] = "7.62×51mm NATO",
-    ["Weight (Loaded)"] = "5.1 kg",
-    ["Projectile Weight"] = "175 gr",
-    ["Muzzle Velocity"] = "2,800 ft/s",
-    ["Muzzle Energy"] = "4,131 joules"
+    ["Country of Origin"] = "Russia",
+    ["Manufacturer"] = "Verdansk Arms Plant",
+    ["Caliber"] = "7.62x39mm",
+    ["Weight (Loaded)"] = "3.85 kg",
+    ["Projectile Weight"] = "121.9 gr",
+    ["Muzzle Velocity"] = "2,411 ft/s",
+    ["Muzzle Energy"] = "2,134 joules"
 }
 
 SWEP.Credits = {
