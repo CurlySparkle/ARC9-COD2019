@@ -36,9 +36,9 @@ ATT.RTScope = true
 ATT.RTScopeSubmatIndex = 1
 ATT.RTScopeFOV = 16
 ATT.RTScopeRes = 512
-ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/mk4_crosshair.png", "mips smooth")
-ATT.RTScopeReticleScale = 1.05
-ATT.RTScopeShadowIntensity = 1
+ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/sks_crosshair.png", "mips smooth")
+ATT.RTScopeReticleScale = 0.9
+ATT.RTScopeShadowIntensity = 15
 ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
 
