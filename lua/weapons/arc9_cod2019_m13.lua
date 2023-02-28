@@ -44,8 +44,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 24 -- Damage done at point blank range
-SWEP.DamageMin = 19 -- Damage done at maximum range
+SWEP.DamageMax = 25 -- Damage done at point blank range
+SWEP.DamageMin = 13 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -55,7 +55,7 @@ SWEP.RangeMax = 4000 -- In Hammer units, how far bullets can travel before deali
 SWEP.Penetration = 11 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.25
 
-SWEP.ImpactForce = 15
+SWEP.ImpactForce = 11
 
 -------------------------- PHYS BULLET BALLISTICS
 
@@ -78,7 +78,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 891
+SWEP.RPM = 895.5223880597015
 
 SWEP.Firemodes = {
     {
@@ -93,7 +93,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.2
+SWEP.Recoil = 1.8
 
 SWEP.RecoilSeed = 6589132
 
@@ -108,29 +108,29 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 100 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1
+SWEP.RecoilKick = 1.3
 
 SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.3
-SWEP.VisualRecoilUp = 0.3
+SWEP.VisualRecoilPunch = 0.2
+SWEP.VisualRecoilUp = 0.8
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.03 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 20
+SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
+SWEP.RecoilModifierCap = 3
 
 SWEP.SpreadAddMove = 0.1
 SWEP.SpreadAddMidAir = 0.1
@@ -161,7 +161,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.5, -4, 0.65),
+    Pos = Vector(-2.67, -4, 0.4),
     Ang = Angle(0, 0, 0.5),
     Magnification = 1.15,
     ViewModelFOV = 56,
@@ -224,10 +224,10 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/models/weapons/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.08
+SWEP.ShellScale = 0.07
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
-SWEP.ShouldDropMag = true
+SWEP.ShouldDropMag = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_rif_m13_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -288,6 +288,40 @@ SWEP.Animations = {
             },
         },
         EventTable = {
+			{s = path .. "wfoly_ar_mcharlie_reload_rotate.ogg", t = 0 / 30},
+			{s = path .. "wfoly_ar_mcharlie_reload_magout_01.ogg", t = 11 / 30},
+			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_01.ogg", t = 33 / 30},
+			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_02.ogg", t = 39 / 30},
+			{s = path .. "wfoly_ar_mcharlie_reload_end.ogg", t = 39 / 30},
+        },
+    },
+    ["1_reload"] = {
+        Source = "reload_short2",
+		MinProgress = 0.8,
+		DropMagAt = 1.1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_mvmnt.ogg", t = 0 / 30},
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_rotate.ogg", t = 7 / 30},
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_magout_01.ogg", t = 19 / 30},
@@ -316,7 +350,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -440,7 +474,7 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(2, 0, 0),
     },
     ["go_grip_loading"] = {
-    ModelOffset = Vector(1, 0, 0.1),
+    ModelOffset = Vector(0, 0, 0.1),
     },
 }
 
@@ -490,7 +524,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_attachments",
-        Pos = Vector(5.5, 0, 1.7),
+        Pos = Vector(4.5, 0, 1.7),
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -600,4 +634,4 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 4.5
-SWEP.GripPoseParam2 = 1
+SWEP.GripPoseParam2 = 0.6
