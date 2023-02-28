@@ -1,4 +1,34 @@
 sound.Add( {
+    name = "COD2019.Finn.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/finn/weap_sierrax_fire_plr_01.ogg",
+		"weapons/cod2019/finn/weap_sierrax_fire_plr_02.ogg",
+		"weapons/cod2019/finn/weap_sierrax_fire_plr_03.ogg",
+		"weapons/cod2019/finn/weap_sierrax_fire_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Finn.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/finn/weap_sierrax_fire_silenced_plr_01.ogg",
+		"weapons/cod2019/finn/weap_sierrax_fire_silenced_plr_02.ogg",
+		"weapons/cod2019/finn/weap_sierrax_fire_silenced_plr_03.ogg",
+		"weapons/cod2019/finn/weap_sierrax_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.BruenMk9.Fire",
     channel = 10,
     volume = 1.0,
