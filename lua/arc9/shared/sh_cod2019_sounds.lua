@@ -1,5 +1,5 @@
 sound.Add( {
-    name = "COD2019.bruenmk9.Fire",
+    name = "COD2019.BruenMk9.Fire",
     channel = 10,
     volume = 1.0,
     level = 120,
@@ -14,7 +14,7 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "COD2019.bruenmk9.Silenced_Fire",
+    name = "COD2019.BruenMk9.Silenced_Fire",
     channel = 10,
     volume = 1.0,
     level = 120,

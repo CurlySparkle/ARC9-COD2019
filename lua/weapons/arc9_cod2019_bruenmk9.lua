@@ -10,13 +10,13 @@ SWEP.PrintName = "Bruen Mk9"
 
 SWEP.Class = "Light Machine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Germany",
-    ["Manufacturer"] = "Singuard Arms",
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "Bruen/Tempus Armament",
     ["Caliber"] = "5.56×45mm NATO",
-    ["Weight (Loaded)"] = "3.25 kg",
+    ["Weight (Loaded)"] = "10 kg",
     ["Projectile Weight"] = "62 gr",
-    ["Muzzle Velocity"] = "2,624 ft/s",
-    ["Muzzle Energy"] = "1,285 joules"
+    ["Muzzle Velocity"] = "3,000 ft/s",
+    ["Muzzle Energy"] = "1,680 joules"
 }
 
 SWEP.Credits = {
@@ -237,8 +237,8 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/bruenmk9/"
 
-SWEP.ShootSound = "COD2019.bruenmk9.Fire"
-SWEP.ShootSoundSilenced = "COD2019.bruenmk9.Silenced_Fire"
+SWEP.ShootSound = "COD2019.BruenMk9.Fire"
+SWEP.ShootSoundSilenced = "COD2019.BruenMk9.Silenced_Fire"
 SWEP.DistantShootSound = "CSGO.negev.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
