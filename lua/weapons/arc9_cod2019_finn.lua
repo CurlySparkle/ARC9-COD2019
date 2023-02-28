@@ -11,12 +11,12 @@ SWEP.PrintName = "FiNN"
 SWEP.Class = "Light Machine Gun"
 SWEP.Trivia = {
     ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "Bruen/Tempus Armament",
+    ["Manufacturer"] = "Tempus Armament",
     ["Caliber"] = "5.56×45mm NATO",
-    ["Weight (Loaded)"] = "10 kg",
+    ["Weight (Loaded)"] = "4.5 kg",
     ["Projectile Weight"] = "62 gr",
-    ["Muzzle Velocity"] = "3,000 ft/s",
-    ["Muzzle Energy"] = "1,680 joules"
+    ["Muzzle Velocity"] = "3,250 ft/s",
+    ["Muzzle Energy"] = "1,972 joules"
 }
 
 SWEP.Credits = {
@@ -238,8 +238,8 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/finn/"
 
-SWEP.ShootSound = "COD2019.Finn.Fire"
-SWEP.ShootSoundSilenced = "COD2019.Finn.Silenced_Fire"
+SWEP.ShootSound = "COD2019.FiNN.Fire"
+SWEP.ShootSoundSilenced = "COD2019.FiNN.Silenced_Fire"
 SWEP.DistantShootSound = "CSGO.negev.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
