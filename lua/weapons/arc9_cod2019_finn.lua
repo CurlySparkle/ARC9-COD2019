@@ -225,6 +225,18 @@ SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 0.08
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
+SWEP.ExtraShellModels = {
+    [1] = {
+        model = "models/weapons/shared/lmg_link.mdl",
+        physbox = Vector(1, 1, 1),
+        smoke = false
+    },
+    [2] = {
+        model = "models/weapons/shared/lmg_link.mdl",
+        smoke = false
+    }
+}
+
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_lmg_finn_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
@@ -270,6 +282,15 @@ SWEP.BulletBones = {
 SWEP.HideBones  = {
     [1] = "j_mag2",
 }
+
+SWEP.Hook_PrimaryAttack = function(self)
+
+    self:DoEject(1, 2)
+
+    if self:Clip1() == self:GetCapacity() then
+        self:DoEject(2, 2)
+    end
+end
 
 SWEP.Animations = {
     ["fire"] = {

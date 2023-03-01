@@ -88,7 +88,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 2
+SWEP.Recoil = 2.3
 
 SWEP.RecoilSeed = nil
 
@@ -219,10 +219,10 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/models/weapons/shared/shell_762_hr.mdl"
+SWEP.ShellModel = "models/weapons/shared/lmg_bullet.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.08
-SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
+SWEP.ShellScale = 2
+SWEP.ShellPhysBox = Vector(1, 1, 1)
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
@@ -239,7 +239,7 @@ local path = "weapons/cod2019/bruenmk9/"
 
 SWEP.ShootSound = "COD2019.BruenMk9.Fire"
 SWEP.ShootSoundSilenced = "COD2019.BruenMk9.Silenced_Fire"
-SWEP.DistantShootSound = "CSGO.negev.Distance_Fire"
+SWEP.DistantShootSound = "CSGO.M249.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
