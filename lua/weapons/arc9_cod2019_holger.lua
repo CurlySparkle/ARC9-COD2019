@@ -10,13 +10,13 @@ SWEP.PrintName = "Holger-26"
 
 SWEP.Class = "Light Machine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Switzerland",
-    ["Manufacturer"] = "ZLR",
+    ["Country of Origin"] = "Germany",
+    ["Manufacturer"] = "FORGE TAC",
     ["Caliber"] = "5.56×45mm NATO",
-    ["Weight (Loaded)"] = "3.62 kg",
+    ["Weight (Loaded)"] = "3.63 kg",
     ["Projectile Weight"] = "62 gr",
-    ["Muzzle Velocity"] = "2,989 ft/s",
-    ["Muzzle Energy"] = "1,506 joules"
+    ["Muzzle Velocity"] = "3,018 ft/s",
+    ["Muzzle Energy"] = "1,700 joules"
 }
 
 SWEP.Credits = {
