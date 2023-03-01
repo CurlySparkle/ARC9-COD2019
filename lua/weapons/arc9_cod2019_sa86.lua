@@ -10,13 +10,12 @@ SWEP.PrintName = "SA87"
 
 SWEP.Class = "Light Machine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Germany",
-    ["Manufacturer"] = "FORGE TAC",
+    ["Country of Origin"] = "United Kingdom",
     ["Caliber"] = "5.56×45mm NATO",
-    ["Weight (Loaded)"] = "3.63 kg",
+    ["Weight (Loaded)"] = "6.6 kg",
     ["Projectile Weight"] = "62 gr",
-    ["Muzzle Velocity"] = "3,018 ft/s",
-    ["Muzzle Energy"] = "1,700 joules"
+    ["Muzzle Velocity"] = "3,116 ft/s",
+    ["Muzzle Energy"] = "1,813 joules"
 }
 
 SWEP.Credits = {

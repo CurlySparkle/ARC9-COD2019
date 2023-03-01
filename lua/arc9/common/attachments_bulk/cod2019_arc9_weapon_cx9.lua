@@ -93,7 +93,7 @@ ATT = {}
 ATT.PrintName = [[Skeletal Stock]]
 ATT.CompactName = [[Skeletal]]
 ATT.Icon = Material("entities/attachs/cod2019_cx9_stock_skeletal.png")
-ATT.Description = [[Skeletal Stock, Provides more handling speed at the cost of recoil.]]
+ATT.Description = [[Provides more handling speed at the cost of recoil.]]
 ATT.SortOrder = 0.5
 ATT.Free = false
 
