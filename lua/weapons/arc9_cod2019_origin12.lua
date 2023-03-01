@@ -93,10 +93,10 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 3
+SWEP.Recoil = 4
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 3 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
 
 SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
@@ -116,7 +116,7 @@ SWEP.RecoilKick = 1.5
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.9
+SWEP.RecoilMultSights = 0.6
 
 -------------------------- SPREAD
 
@@ -138,7 +138,7 @@ SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire
 SWEP.Sway = 0 -- How much the gun sways.
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -429,9 +429,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
+		Mult = 2,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
+		Mult = 2,
     },
     ["inspect"] = {
         Source = "lookat01",

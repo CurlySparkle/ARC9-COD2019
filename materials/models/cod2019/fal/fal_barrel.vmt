@@ -2,7 +2,7 @@
 {
 	"$basetexture"				"models/cod2019/fal/fal_barrel"
 	"$bumpmap"					"models/cod2019/fal/fal_barrel_n"
-	"$phongexponenttexture"		"models/cod2019/fal/fal_barrel_exponent"
+	"$phongexponenttexture"		"models/cod2019/fal/fal_barrel_exp"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 

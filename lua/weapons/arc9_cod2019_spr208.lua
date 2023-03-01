@@ -101,7 +101,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 7
+SWEP.Recoil = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 3 -- Multiplier for vertical recoil
@@ -124,7 +124,7 @@ SWEP.RecoilKick = 3
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.5
 
 -------------------------- VISUAL RECOIL
 

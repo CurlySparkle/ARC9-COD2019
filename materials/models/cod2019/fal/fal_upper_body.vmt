@@ -2,7 +2,7 @@
 {
 	"$basetexture"				"models/cod2019/fal/fal_upper"
 	"$bumpmap"					"models/cod2019/fal/fal_upper_n"
-	"$phongexponenttexture"		"models/cod2019/fal/fal_upper_exponent"
+	"$phongexponenttexture"		"models/cod2019/fal/fal_upper_exp"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 

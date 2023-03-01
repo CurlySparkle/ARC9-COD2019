@@ -2,7 +2,7 @@
 {
 	"$basetexture"				"models/cod2019/crossbow/crossbow_sights"
 	"$bumpmap"					"models/cod2019/crossbow/crossbow_sights_n"
-	"$phongexponenttexture"		"models/cod2019/crossbow/crossbow_sights_exponent"
+	"$phongexponenttexture"		"models/cod2019/crossbow/crossbow_sights_exp"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 

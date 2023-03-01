@@ -2,7 +2,7 @@
 {
 	"$basetexture"				"models/cod2019/origin12/origin12_shell"
 	"$bumpmap"					"models/cod2019/origin12/origin12_shell_n"
-	"$phongexponenttexture"		"models/cod2019/origin12/origin12_shell_exponent"
+	"$phongexponenttexture"		"models/cod2019/origin12/origin12_shell_exp"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 
@@ -13,7 +13,7 @@
 
 	"$phong"					"1"
 	"$phongboost"				"15"
-     //"$phongexponent"				"55"
+     //"$phongexp"				"55"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
@@ -21,7 +21,7 @@
 	"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
 
 	"$rimlight"					"0"
-	"$rimlightexponent"			"80"
+	"$rimlightexp"			"80"
 	"$rimlightboost"			"0.3"
 	"$rimmask"					"0"
 	"$nocull"					"1"
