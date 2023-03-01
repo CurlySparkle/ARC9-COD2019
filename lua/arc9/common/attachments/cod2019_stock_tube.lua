@@ -5,7 +5,7 @@ ATT.Description = [[Aluminium mounting point, allows for using custom stock opti
 ATT.SortOrder = 0
 ATT.Free = false
 
-ATT.MenuCategory = "ARC9 - CSGO Attachments"
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Category = {"cod2019_tube"}
 ATT.Model = "models/weapons/cod2019/attachs/stock/stock_tube.mdl"
 --ATT.Scale = 1

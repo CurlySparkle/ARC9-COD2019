@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/cod2019/cx9/cx9_barrel"
-	"$bumpmap"					"models/cod2019/cx9/cx9_barrel_n"
-	"$phongexponenttexture"		"models/cod2019/cx9/cx9_barrel_exp"
+	"$basetexture"				"models/cod2019/cx9/cx9_barrel_silenced"
+	"$bumpmap"					"models/cod2019/cx9/cx9_barrel_silenced_n"
+	"$phongexponenttexture"		"models/cod2019/cx9/cx9_barrel_silenced_exp"
 	"$color2"					"[ .3 .3 .3 ]"
 	"$blendTintByBaseAlpha"		"1"
 
