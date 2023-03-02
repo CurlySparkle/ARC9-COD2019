@@ -10,13 +10,13 @@ SWEP.PrintName = "M19"
 
 SWEP.Class = "Handgun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Switzerland",
-    ["Manufacturer"] = "ZLR",
-    ["Caliber"] = "5.56×45mm NATO",
-    ["Weight (Loaded)"] = "3.62 kg",
-    ["Projectile Weight"] = "62 gr",
-    ["Muzzle Velocity"] = "2,989 ft/s",
-    ["Muzzle Energy"] = "1,506 joules"
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "Corvus Defense",
+    ["Caliber"] = "9×19mm Parabellum",
+    ["Weight (Loaded)"] = "1.66 kg",
+    ["Projectile Weight"] = "124 gr",
+    ["Muzzle Velocity"] = "1,198 ft/s",
+    ["Muzzle Energy"] = "536 joules"
 }
 
 SWEP.Credits = {
