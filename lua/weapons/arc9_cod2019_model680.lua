@@ -76,7 +76,7 @@ SWEP.ClipSize = 8 -- Self-explanatory.
 SWEP.SupplyLimit = 8 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -117,18 +117,18 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 2
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.9
+SWEP.RecoilMultSights = 0.5
 
 -------------------------- VISUAL RECOIL
 
-SWEP.UseVisualRecoil = false
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0.2
+SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.1
 
 -------------------------- SPREAD
 
@@ -164,7 +164,7 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3, -2, 0.4),
+    Pos = Vector(-3.2, -2, 0.4),
     Ang = Angle(0.95, 1, -5),
     Magnification = 1.1,
     ViewModelFOV = 56,
@@ -217,7 +217,7 @@ SWEP.AnimDraw = false
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "weapon_muzzle_flash_autoshotgun"
-SWEP.AfterShotParticle = "barrel_smoke_plume"
+SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
@@ -230,7 +230,7 @@ SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1.3
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.NoShellEject = true
-SWEP.EjectDelay = 0.2
+SWEP.EjectDelay = 0.15
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
@@ -460,7 +460,7 @@ SWEP.AttachmentTableOverrides = {
 	Scale = 0.8,
     },
     ["go_grip_angled"] = {
-    ModelOffset = Vector(0, 0, 0.1),
+    ModelOffset = Vector(0.5, 0, 0.1),
     },
 }
 
@@ -631,5 +631,5 @@ SWEP.Attachments = {
     },
 }
 
-SWEP.GripPoseParam = 4.5
+SWEP.GripPoseParam = 4.3
 SWEP.GripPoseParam2 = 0.7

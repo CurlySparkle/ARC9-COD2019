@@ -139,7 +139,7 @@ SWEP.SpreadAddSights = -0.5
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.1 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
@@ -211,7 +211,7 @@ SWEP.AnimDraw = false
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "weapon_muzzle_flash_pistol"
-SWEP.AfterShotParticle = "barrel_smoke_plume"
+SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
@@ -423,10 +423,14 @@ SWEP.Animations = {
     ["exit_sprint"] = {
         Source = "sprint_out",
 		Mult = 2,
+		MinProgress = 0.2,
+		FireASAP = true,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		Mult = 2,
+		MinProgress = 0.2,
+		FireASAP = true,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -466,7 +470,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
+SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 SWEP.DefaultBodygroups = "00000000000000"
 
