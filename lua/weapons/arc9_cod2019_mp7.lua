@@ -122,9 +122,8 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.RealRecoil = false
-SWEP.VisualRecoilPunch = 0.7
-SWEP.VisualRecoilUp = 0.3
+SWEP.VisualRecoilPunch = 0.8
+SWEP.VisualRecoilUp = 1
 
 -------------------------- SPREAD
 
@@ -145,7 +144,7 @@ SWEP.SpreadAddSights = -0.5
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.2 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -216,7 +215,7 @@ SWEP.AnimDraw = false
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "weapon_muzzle_flash_assaultrifle"
-SWEP.AfterShotParticle = "barrel_smoke_plume"
+SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
@@ -428,11 +427,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		NoStatAffectors = true
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		NoStatAffectors = true
     },
     ["inspect"] = {
         Source = "lookat01",

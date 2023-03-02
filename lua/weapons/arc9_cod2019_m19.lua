@@ -140,7 +140,7 @@ SWEP.SpreadAddSights = -0.5
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.1 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.1 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -422,15 +422,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
-		MinProgress = 0.2,
-		FireASAP = true,
+		NoStatAffectors = true
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
-		MinProgress = 0.2,
-		FireASAP = true,
+		NoStatAffectors = true
     },
     ["inspect"] = {
         Source = "lookat01",
