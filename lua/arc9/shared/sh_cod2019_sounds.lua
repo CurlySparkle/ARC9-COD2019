@@ -1,4 +1,34 @@
 sound.Add( {
+    name = "COD2019.M19.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m19/weap_papa320_fire_plr_01.ogg",
+		"weapons/cod2019/m19/weap_papa320_fire_plr_02.ogg",
+		"weapons/cod2019/m19/weap_papa320_fire_plr_03.ogg",
+		"weapons/cod2019/m19/weap_papa320_fire_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.M19.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m19/weap_papa320_fire_silenced_plr_01.ogg",
+		"weapons/cod2019/m19/weap_papa320_fire_silenced_plr_02.ogg",
+		"weapons/cod2019/m19/weap_papa320_fire_silenced_plr_03.ogg",
+		"weapons/cod2019/m19/weap_papa320_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.SA87.Fire",
     channel = 10,
     volume = 1.0,
