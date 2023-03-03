@@ -11,12 +11,11 @@ SWEP.PrintName = "1911"
 SWEP.Class = "Handgun"
 SWEP.Trivia = {
     ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "Corvus Defense",
-    ["Caliber"] = "9×19mm Parabellum",
-    ["Weight (Loaded)"] = "834 g",
-    ["Projectile Weight"] = "124 gr",
-    ["Muzzle Velocity"] = "1,198 ft/s",
-    ["Muzzle Energy"] = "536 joules"
+    ["Caliber"] = ".45 ACP",
+    ["Weight (Loaded)"] = "1 kg",
+    ["Projectile Weight"] = "230 gr",
+    ["Muzzle Velocity"] = "830 ft/s",
+    ["Muzzle Energy"] = "477 joules"
 }
 
 SWEP.Credits = {
