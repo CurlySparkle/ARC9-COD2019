@@ -10,13 +10,12 @@ SWEP.PrintName = ".357"
 
 SWEP.Class = "Handgun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Switzerland",
-    ["Manufacturer"] = "ZLR",
-    ["Caliber"] = "5.56×45mm NATO",
-    ["Weight (Loaded)"] = "3.62 kg",
-    ["Projectile Weight"] = "62 gr",
-    ["Muzzle Velocity"] = "2,989 ft/s",
-    ["Muzzle Energy"] = "1,506 joules"
+    ["Country of Origin"] = "United States",
+    ["Caliber"] = ".357 Magnum",
+    ["Weight (Loaded)"] = "1.1 kg",
+    ["Projectile Weight"] = "125 gr",
+    ["Muzzle Velocity"] = "1,450 ft/s",
+    ["Muzzle Energy"] = "791 joules"
 }
 
 SWEP.Credits = {
@@ -24,7 +23,7 @@ SWEP.Credits = {
     Assets = "Infinity Ward/Valve/New World Interactive"
 }
 
-SWEP.Description = [[The most powerful semi-automatic handgun available, deals heavy damage up to intermediate ranges.]]
+SWEP.Description = [[Double action revolver firing .357 Magnum ammunition for powerful damage over extended ranges.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_pist_357.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"

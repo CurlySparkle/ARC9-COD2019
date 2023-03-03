@@ -53,29 +53,6 @@ ATT.PhysBulletMuzzleVelocityMult = 1.25
 
 ARC9.LoadAttachment(ATT, "cod2019_rytec_barrel_long")
 ----------------------------------------------------------------------------------------
--- ATT = {}
-
--- ATT.PrintName = "Skeleton Stock"
--- ATT.CompactName = "Skeleton"
--- ATT.Description = [[Lightweight stock for the Rytec AMR. Gives more and better handling speed at the cost of more recoil.]]
--- ATT.SortOrder = 1
-
--- ATT.Icon = Material("entities/attachs/cod2019_rytec_stock_skeleton.png", "mips smooth")
-
--- ATT.Model = "models/weapons/csgo/atts/grip_vertical.mdl"
-
--- ATT.MenuCategory = "ARC9 - MW2019 Attachments"
--- ATT.Category = {"cod2019_rytec_stock"}
--- ATT.ActivateElements = {"stock_skeleton"}
-
--- ATT.SprintToFireTimeMult = 0.85
--- ATT.AimDownSightsTimeMult = 0.85
-
--- ATT.RecoilMult = 1.15
--- ATT.RecoilKickMult = 1.15
-
-ARC9.LoadAttachment(ATT, "cod2019_rytec_stock_skeleton")
-----------------------------------------------------------------------------------------
 ATT = {}
 
 ATT.PrintName = [[10-Rounder]]
