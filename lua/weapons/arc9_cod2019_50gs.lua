@@ -10,13 +10,13 @@ SWEP.PrintName = ".50 GS"
 
 SWEP.Class = "Handgun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Switzerland",
-    ["Manufacturer"] = "ZLR",
-    ["Caliber"] = "5.56×45mm NATO",
-    ["Weight (Loaded)"] = "3.62 kg",
-    ["Projectile Weight"] = "62 gr",
-    ["Muzzle Velocity"] = "2,989 ft/s",
-    ["Muzzle Energy"] = "1,506 joules"
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "FORGE TAC",
+    ["Caliber"] = ".50 Action Express",
+    ["Weight (Loaded)"] = "2 kg",
+    ["Projectile Weight"] = "300 gr",
+    ["Muzzle Velocity"] = "1,542 ft/s",
+    ["Muzzle Energy"] = "2,148 joules"
 }
 
 SWEP.Credits = {
