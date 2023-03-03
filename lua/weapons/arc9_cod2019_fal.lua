@@ -168,7 +168,7 @@ SWEP.TracerColor = Color(255, 225, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.3, -2, 0.8),
+    Pos = Vector(-2.45, -2, 0.6),
     Ang = Angle(0, 0, -3.5),
     Magnification = 1.1,
 	ViewModelFOV = 54,
@@ -177,7 +177,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -247,7 +247,7 @@ local path = "weapons/cod2019/fal/"
 SWEP.ShootSound = "COD2019.FAL.Fire"
 SWEP.ShootSoundSilenced = "COD2019.FAL.Silenced_Fire"
 SWEP.DistantShootSound = "CSGO.GALILAR.Distance_Fire"
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
@@ -576,11 +576,11 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"go_stock_alt","csgo_tube"},
-        Bone = "tag_attachments",
-        Pos = Vector(-0.9, 0, 0.15),
+        Category = {"go_stock_alt","cod2019_tube"},
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, -0.72),
         Ang = Angle(0, 0, 0),
-		Scale = 1
+		Scale = 1.05
 		--InstalledElements = {"stock_adapter"},
     },
     {

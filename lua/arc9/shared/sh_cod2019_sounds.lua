@@ -1326,15 +1326,13 @@ sound.Add( {
     channel = 10,
     volume = 1.0,
     level = 120,
-    pitch = {95,105},
+    pitch = {90,105},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
         "weapons/cod2019/fal/weap_falima_fire_silenced_plr_01.ogg",
 		"weapons/cod2019/fal/weap_falima_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/fal/weap_falima_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/fal/weap_falima_fire_silenced_plr_04.ogg",
-		"weapons/cod2019/fal/weap_falima_fire_silenced_plr_05.ogg",
-		"weapons/cod2019/fal/weap_falima_fire_silenced_plr_06.ogg",
     }
 } )
 
