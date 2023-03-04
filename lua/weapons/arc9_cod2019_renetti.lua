@@ -11,12 +11,12 @@ SWEP.PrintName = "Renetti"
 SWEP.Class = "Handgun"
 SWEP.Trivia = {
     ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "Corvus Defense",
+    ["Manufacturer"] = "Silverfield Ordnance",
     ["Caliber"] = "9×19mm Parabellum",
-    ["Weight (Loaded)"] = "834 g",
+    ["Weight (Loaded)"] = "1 kg",
     ["Projectile Weight"] = "124 gr",
-    ["Muzzle Velocity"] = "1,198 ft/s",
-    ["Muzzle Energy"] = "536 joules"
+    ["Muzzle Velocity"] = "1,250 ft/s",
+    ["Muzzle Energy"] = "583 joules"
 }
 
 SWEP.Credits = {
