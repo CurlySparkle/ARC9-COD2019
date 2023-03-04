@@ -259,7 +259,7 @@ SWEP.Animations = {
         Source = "shoot1",
     },
     ["fire_sights"] = {
-        Source = "shoot1_ads",
+        Source = "shoot1",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -513,12 +513,12 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
-		Scale = 0.8,
+		Scale = 0.7,
     },
     {
         PrintName = "Optics",
         Bone = "tag_reflex",
-        Pos = Vector(1.8, 0, -0.07),
+        Pos = Vector(0.95, 0, -0.07),
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optics_pistols_alt","eft_optic_small"},
         CorrectiveAng = Angle(0, 0, 0),

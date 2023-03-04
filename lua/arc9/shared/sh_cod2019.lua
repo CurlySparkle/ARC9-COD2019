@@ -18,3 +18,14 @@ ARC9.COD2019.BlendEmpty2 = function(wep)
         vm:SetPoseParameter("empty", 0)
     end
 end
+
+ARC9.COD2019.BlendEmptyElite = function(wep)
+    local vm = wep:GetOwner():GetViewModel()
+    if wep:Clip1() == 1 then
+        vm:SetPoseParameter("empty", 1)
+    elseif wep:Clip1() == 0 then
+        vm:SetPoseParameter("empty", 2)
+    else
+        vm:SetPoseParameter("empty", 0)
+    end
+end

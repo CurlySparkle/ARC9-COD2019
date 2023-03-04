@@ -6,16 +6,17 @@ SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Akimbos"
 
-SWEP.PrintName = "1911"
+SWEP.PrintName = "Renetti"
 
 SWEP.Class = "Handgun"
 SWEP.Trivia = {
     ["Country of Origin"] = "United States",
-    ["Caliber"] = ".45 ACP",
-    ["Weight (Loaded)"] = "2 kg",
-    ["Projectile Weight"] = "230 gr",
-    ["Muzzle Velocity"] = "830 ft/s",
-    ["Muzzle Energy"] = "477 joules"
+    ["Manufacturer"] = "Corvus Defense",
+    ["Caliber"] = "9×19mm Parabellum",
+    ["Weight (Loaded)"] = "1.66 kg",
+    ["Projectile Weight"] = "124 gr",
+    ["Muzzle Velocity"] = "1,198 ft/s",
+    ["Muzzle Energy"] = "536 joules"
 }
 
 SWEP.Credits = {
@@ -23,16 +24,16 @@ SWEP.Credits = {
     Assets = "Infinity Ward/Valve/New World Interactive"
 }
 
-SWEP.Description = [[A well-rounded semi-automatic side arm with a moderate rate of fire. Slightly more range than your average .45 ACP pistol.]]
+SWEP.Description = [[Well rounded semi-auto 9mm pistol. This unassuming sidearm excels in close range combat, and features gunsmithing capabilities unique to the pistol class that permit a variety of engagement styles.]]
 
-SWEP.ViewModel = "models/weapons/cod2019/c_akimbo_m1911.mdl"
+SWEP.ViewModel = "models/weapons/cod2019/c_akimbo_renetti.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
 
 SWEP.Slot = 1
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = false
-SWEP.WorldModelMirror = "models/weapons/cod2019/c_akimbo_m1911.mdl"
+SWEP.WorldModelMirror = "models/weapons/cod2019/c_akimbo_renetti.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
@@ -44,21 +45,21 @@ SWEP.WorldModelOffset = {
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 33 -- Damage done at point blank range
-SWEP.DamageMin = 16 -- Damage done at maximum range
+SWEP.DamageMin = 18 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 500 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 3000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 600 -- How far bullets retain their maximum damage for.
+SWEP.RangeMax = 4000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
 
-SWEP.Penetration = 1 -- Units of wood that can be penetrated by this gun.
-SWEP.RicochetChance = 0.25
+SWEP.Penetration = 2 -- Units of wood that can be penetrated by this gun.
+SWEP.RicochetChance = 0.2
 
 SWEP.ImpactForce = 8
 
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.PhysBulletMuzzleVelocity = 830 * 12
+SWEP.PhysBulletMuzzleVelocity = 1300 * 12
 SWEP.PhysBulletGravity = 1.5
 SWEP.PhysBulletDrag = 1.15
 
@@ -67,7 +68,7 @@ SWEP.PhysBulletDrag = 1.15
 SWEP.Ammo = "pistol" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 2 -- The amount of rounds this gun can chamber.
-SWEP.ClipSize = 14 -- Self-explanatory.
+SWEP.ClipSize = 30 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
@@ -77,7 +78,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 500
+SWEP.RPM = 600
 
 SWEP.Firemodes = {
     {
@@ -111,7 +112,7 @@ SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.6
 
 -------------------------- VISUAL RECOIL
 
@@ -216,8 +217,8 @@ SWEP.MuzzleEffectQCA = 1
 SWEP.MuzzleEffectQCAEvenShot = 2
 SWEP.CaseEffectQCA = 4
 SWEP.CaseEffectQCAEvenShot = 3
-SWEP.AfterShotQCA = 2
-SWEP.AfterShotQCAEvenShot = 1
+SWEP.AfterShotQCA = 1
+SWEP.AfterShotQCAEvenShot = 2
 
 SWEP.CamQCA = 7
 SWEP.CamQCA_Mult = 1
@@ -230,7 +231,7 @@ SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
-SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_pist_m1911_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_pist_renetti_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 2 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
@@ -239,10 +240,10 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 -------------------------- SOUNDS
 
-local path = "weapons/cod2019/m1911/"
+local path = "weapons/cod2019/renetti/"
 
-SWEP.ShootSound = "COD2019.M1911.Fire"
-SWEP.ShootSoundSilenced = "COD2019.M1911.Silenced_Fire"
+SWEP.ShootSound = "COD2019.Renetti.Fire"
+SWEP.ShootSoundSilenced = "COD2019.Renetti.Silenced_Fire"
 SWEP.DistantShootSound = "CSGO.hkp2000.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
 
@@ -252,14 +253,8 @@ SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
 SWEP.BulletBones = {
-    [1] = "j_bullet",
-    [2] = "j_bullet2",
-	[3] = "j_bullet_grp2",
-	[4] = "j_bullet_grp3",
-	[5] = "j_bullet_grp4",
-	[6] = "j_bullet_grp5",
-	[7] = "j_bullet_grp6",
-	[8] = "j_bullet_grp7",
+    [1] = "j_bullet1_l",
+	[2] = "j_bullet1",
 }
 
 SWEP.HideBones  = {
@@ -302,16 +297,16 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike1911_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_lift.ogg", t = 4/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 6/30},
-			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_magout_01.ogg", t = 10/30},
-			{s = path .. "wfoly_pi_mike1911_reload_magin_v2_01.ogg", t = 49/30},
-			{s = path .. "wfoly_pi_mike1911_reload_magin_v2_01.ogg", t = 52/30},
-			{s = path .. "wfoly_pi_mike1911_reload_magin_v2_02.ogg", t = 54/30},
-			{s = path .. "wfoly_pi_mike1911_fast_reload_magin_01.ogg", t = 54/30},
-			{s = path .. "wfoly_pi_mike1911_reload_end.ogg", t = 62/30},
-			{s = path .. "wfoly_pi_mike1911_fast_reload_end.ogg", t = 62/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magin.ogg", t = 24/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 26/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_charge.ogg", t = 54/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 56/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 65/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_end.ogg", t = 65/30},
         },
     },
     ["reload_empty"] = {
@@ -341,18 +336,16 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike1911_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_lift.ogg", t = 5/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 7/30},
-			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_magout_01.ogg", t = 12/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 50/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 52/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 54/30},
-			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_magin_01.ogg", t = 56/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 60/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 61/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 73/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 75/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 56/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magin.ogg", t = 57/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_charge.ogg", t = 72/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 75/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_end.ogg", t = 65/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 68/30},
         },
     },
     ["ready"] = {
@@ -380,24 +373,23 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_pi_mike1911_first_raise_lift.ogg", t = 0/30},
-            {s = path .. "wfoly_pi_mike1911_first_raise_slide_pull.ogg", t = 10/30},
-			{s = path .. "wfoly_pi_mike1911_first_raise_slide_release.ogg", t = 11/30},
-			{s = path .. "wfoly_pi_mike1911_first_raise_chamber_end.ogg", t = 20/30},
+            {s = path .. "wfoly_pi_mike9_raise_first_up.ogg", t = 0/30},
+            {s = path .. "wfoly_pi_mike9_raise_first_hammer.ogg", t = 11/30},
+			{s = path .. "wfoly_pi_mike9_raise_first_end.ogg", t = 15/30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_pi_mike1911_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_pi_mike9_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
 		Mult = 0.8,
         EventTable = {
-            {s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 0/30},
-            {s = path .. "wfoly_pi_mike1911_fast_reload_end.ogg", t = 5/30},
+            {s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 0/30},
+            {s = path .. "wfoly_pi_mike9_inspect_05_akimbo.ogg", t = 5/30},
         },
     },
     ["idle"] = {
@@ -439,10 +431,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_pi_mike1911_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_pi_mike1911_inspect_01.ogg", t = 36/30 },
-			{ s = path .. "wfoly_pi_mike1911_inspect_01.ogg", t = 61/30 },
-			{ s = path .. "wfoly_pi_mike1911_inspect_01.ogg", t = 112/30 },
+            { s = path .. "wfoly_pi_mike9_inspect_01.ogg", t = 0/30 },
+			{ s = path .. "wfoly_pi_mike9_inspect_02.ogg", t = 37/30 },
+			{ s = path .. "wfoly_pi_mike9_inspect_03.ogg", t = 60/30 },
+			{ s = path .. "wfoly_pi_mike9_inspect_04.ogg", t = 97/30 },
+			{ s = path .. "wfoly_pi_mike9_inspect_05.ogg", t = 113/30 },
         },
     },
     ["bash"] = {
@@ -452,7 +445,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
+SWEP.Hook_Think	= ARC9.COD2019.BlendEmptyElite
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -475,18 +468,13 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
-    ["grip_none"] = {
-        Bodygroups = {
-            {3,1},
-        },
-    },
 }
 
 SWEP.Attachments = {
     {
         PrintName = "Slide",
         DefaultAttName = "Standard slide",
-        Category = "cod2019_m1911_slide",
+        Category = "cod2019_renetti_slide",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -499,7 +487,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
-		Scale = 0.8,
+		Scale = 0.7,
         DuplicateModels = {
             {
                 Bone = "tag_silencer_l",
@@ -528,18 +516,18 @@ SWEP.Attachments = {
         Pos = Vector(0.5, 0, 0.2),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
-		LaserCorrectionAngle = Angle(-1.5, 0, 0.1),
+		--LaserCorrectionAngle = Angle(-1.5, 0, 0.1),
         DuplicateModels = {
             {
                 Bone = "tag_laser_attach_l",
-				LaserCorrectionAngle = Angle(0.1, 0, 2),
+				--LaserCorrectionAngle = Angle(0.1, 0, 2),
             }
         },
     },
     {
         PrintName = "Grip",
         DefaultAttName = "Default",
-        Category = "cod2019_m1911_grip",
+        Category = "cod2019_renetti_grip",
         Bone = "tag_stock_attach",
         Pos = Vector(-2.8, 0, 0.2),
         Ang = Angle(0, 0, 180),
@@ -549,14 +537,14 @@ SWEP.Attachments = {
     {
         PrintName = "Ammo",
         Bone = "j_mag1",
-        Category = {"go_ammo"},
+        Category = "go_ammo",
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"go_mag"},
+        Category = "go_mag",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -567,7 +555,7 @@ SWEP.Attachments = {
     {
         PrintName = "Skins",
         --Bone = "v_weapon.Clip",
-        Category = "cod2019_skins_m1911",
+        Category = "cod2019_skins_renetti",
 		CosmeticOnly = true,
     },
     {
@@ -577,22 +565,22 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/pist_m1911_decal_a.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/pist_renetti_decal_a.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/pist_m1911_decal_b.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/pist_renetti_decal_b.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/pist_m1911_decal_c.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/pist_renetti_decal_c.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/pist_m1911_decal_d.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/pist_renetti_decal_d.mdl",
         Category = "stickers",
     },
     {
