@@ -72,7 +72,7 @@ SWEP.PrimaryBash = true
 SWEP.BashDamage = 55
 SWEP.BashLungeRange = 0
 SWEP.BashRange = 64
-SWEP.PreBashTime = 0.15
+SWEP.PreBashTime = 0.2
 SWEP.PostBashTime = 0.6
 
 SWEP.ImpactForce = 15
@@ -152,9 +152,12 @@ function SWEP:SecondaryAttack()
 end
 
 SWEP.Animations = {
-    -- ["blowback"] = {
-        -- Source = "blowback",
-    -- },
+    ["blowback"] = {
+        Source = "blowback",
+        EventTable = {
+            { s = "COD2019.Shield.Hit", t = 0/30},
+        },
+    },
     ["idle"] = {
         Source = "idle",
     },
