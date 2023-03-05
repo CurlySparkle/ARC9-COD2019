@@ -108,7 +108,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 3
 
 SWEP.RecoilMultCrouch = 0.8
 
@@ -120,7 +120,7 @@ SWEP.RecoilMultSights = 1
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilUp = 1.5
 
 -------------------------- SPREAD
 
@@ -259,8 +259,8 @@ SWEP.Animations = {
         Source = "shoot1",
     },
     ["fire_sights"] = {
-        Source = "shoot1_ads",
-		Mult = 1.5,
+        Source = "shoot1",
+		Mult = 1,
     },
     ["reload"] = {
         Source = "reload_short",
