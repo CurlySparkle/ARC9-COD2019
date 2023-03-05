@@ -10,13 +10,12 @@ SWEP.PrintName = "Sykov"
 
 SWEP.Class = "Handgun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "Silverfield Ordnance",
-    ["Caliber"] = "9×19mm Parabellum",
-    ["Weight (Loaded)"] = "2 kg",
-    ["Projectile Weight"] = "124 gr",
-    ["Muzzle Velocity"] = "1,250 ft/s",
-    ["Muzzle Energy"] = "583 joules"
+    ["Country of Origin"] = "Soviet Union",
+    ["Caliber"] = "9×18mm Makarov",
+    ["Weight (Loaded)"] = "1.46 kg",
+    ["Projectile Weight"] = "92.6 gr",
+    ["Muzzle Velocity"] = "1,030 ft/s",
+    ["Muzzle Energy"] = "296 joules"
 }
 
 SWEP.Credits = {

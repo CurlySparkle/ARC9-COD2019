@@ -10,13 +10,12 @@ SWEP.PrintName = "Sykov"
 
 SWEP.Class = "Handgun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "Corvus Defense",
-    ["Caliber"] = "9×19mm Parabellum",
-    ["Weight (Loaded)"] = "834 g",
-    ["Projectile Weight"] = "124 gr",
-    ["Muzzle Velocity"] = "1,198 ft/s",
-    ["Muzzle Energy"] = "536 joules"
+    ["Country of Origin"] = "Soviet Union",
+    ["Caliber"] = "9×18mm Makarov",
+    ["Weight (Loaded)"] = "730 g",
+    ["Projectile Weight"] = "92.6 gr",
+    ["Muzzle Velocity"] = "1,030 ft/s",
+    ["Muzzle Energy"] = "296 joules"
 }
 
 SWEP.Credits = {
