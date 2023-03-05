@@ -10,13 +10,13 @@ SWEP.PrintName = "X16"
 
 SWEP.Class = "Handgun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "Silverfield Ordnance",
-    ["Caliber"] = "9×19mm Parabellum",
-    ["Weight (Loaded)"] = "2 kg",
-    ["Projectile Weight"] = "124 gr",
-    ["Muzzle Velocity"] = "1,250 ft/s",
-    ["Muzzle Energy"] = "583 joules"
+    ["Country of Origin"] = "Austria",
+    ["Manufacturer"] = "XRK",
+    ["Caliber"] = ".45 ACP",
+    ["Weight (Loaded)"] = "2.2 kg",
+    ["Projectile Weight"] = "230 gr",
+    ["Muzzle Velocity"] = "832 ft/s",
+    ["Muzzle Energy"] = "479 joules"
 }
 
 SWEP.Credits = {
