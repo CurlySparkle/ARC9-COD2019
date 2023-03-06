@@ -1,4 +1,4 @@
-SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_frag")
+SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_semtex")
 
 SWEP.Base = "arc9_base_nade"
 
@@ -10,9 +10,9 @@ SWEP.AdminOnly = false
 SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
-SWEP.PrintName = "Frag"
+SWEP.PrintName = "Semtex"
 SWEP.Class = "Grenade"
-SWEP.Description = [[Cookable fragmentation grenade.]]
+SWEP.Description = [[Timed sticky grenade.]]
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
@@ -31,8 +31,8 @@ SWEP.Firemodes = {
 
 SWEP.UseHands = true
 
-SWEP.ViewModel = "models/weapons/cod2019/c_eq_frag.mdl"
-SWEP.WorldModel = "models/weapons/cod2019/c_eq_frag.mdl"
+SWEP.ViewModel = "models/weapons/cod2019/c_eq_semtex.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/c_eq_semtex.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     Pos = Vector(0, 0, 0),
@@ -51,7 +51,7 @@ SWEP.Crosshair = true
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
-SWEP.ShootEnt = "arc9_cod2019_thrownfrag"
+SWEP.ShootEnt = "arc9_cod2019_thrownsemtex"
 SWEP.Ammo = "grenade"
 
 SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
@@ -77,7 +77,7 @@ SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, -1.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -124,7 +124,7 @@ SWEP.AnimDraw = false
 SWEP.CamQCA = 1
 SWEP.CamQCA_Mult = 1
 
-local path = "weapons/cod2019/throwables/frag/"
+local path = "weapons/cod2019/throwables/semtex/"
 
 SWEP.Animations = {
     ["idle"] = {
@@ -136,13 +136,13 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw",
         EventTable = {
-            {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
+            {s = path .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
+            {s = path .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
         },
     },
     ["pullpin"] = {
@@ -151,33 +151,33 @@ SWEP.Animations = {
         FireASAP = true,
 		Mult = 1.5,
         EventTable = {
-            { s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
-            { s = path .. "grenade_pin_frag_01.ogg", t = 0/30},
+            { s = path .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
+            { s = path .. "grenade_pin_semtex.ogg", t = 0/30},
         },
     },
     ["throw"] = {
         Source = "throw",
         EventTable = {
-            { s = path .. "grenade_frag_throw.ogg", t = 0/30},
+            { s = path .. "grenade_pin_semtex_fire.ogg", t = 0/30},
         },
         MinProgress = 0.4
     },
     ["toss"] = {
         Source = "underhand",
         EventTable = {
-            { s = path .. "grenade_frag_throw.ogg", t = 0/30},
+            { s = path .. "grenade_pin_semtex_fire.ogg", t = 0/30},
         },
         MinProgress = 0.4
     },
-    ["idle_sprint"] = {
-        Source = "sprint",
-    },
-    ["enter_sprint"] = {
-        Source = "sprint_in",
-    },
-    ["exit_sprint"] = {
-        Source = "sprint_out",
-    },
+    -- ["idle_sprint"] = {
+        -- Source = "sprint",
+    -- },
+    -- ["enter_sprint"] = {
+        -- Source = "sprint_in",
+    -- },
+    -- ["exit_sprint"] = {
+        -- Source = "sprint_out",
+    -- },
 }
 
 -------------------------- ATTACHMENTS

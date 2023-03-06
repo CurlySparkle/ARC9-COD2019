@@ -1,4 +1,4 @@
-SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_frag")
+SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_semtex")
 
 SWEP.Base = "arc9_base_nade"
 
@@ -10,9 +10,9 @@ SWEP.AdminOnly = false
 SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
-SWEP.PrintName = "Frag"
+SWEP.PrintName = "Molotov"
 SWEP.Class = "Grenade"
-SWEP.Description = [[Cookable fragmentation grenade.]]
+SWEP.Description = [[Improvised incendiary device that explodes on impact.]]
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
@@ -31,8 +31,8 @@ SWEP.Firemodes = {
 
 SWEP.UseHands = true
 
-SWEP.ViewModel = "models/weapons/cod2019/c_eq_frag.mdl"
-SWEP.WorldModel = "models/weapons/cod2019/c_eq_frag.mdl"
+SWEP.ViewModel = "models/weapons/cod2019/c_eq_molotov.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/c_eq_molotov.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     Pos = Vector(0, 0, 0),
@@ -51,16 +51,16 @@ SWEP.Crosshair = true
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
-SWEP.ShootEnt = "arc9_cod2019_thrownfrag"
+SWEP.ShootEnt = "arc9_cod2019_thrownmolotov"
 SWEP.Ammo = "grenade"
 
 SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
 SWEP.Tossable = true -- When grenade is enabled, right click will toss. Set to false to disable, allowing you to aim down sights.
 SWEP.ThrowAnimSpeed = 1
 
-SWEP.FuseTimer = 3 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
+SWEP.FuseTimer = -1 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
 
-SWEP.ThrowForceMin = 550 -- Minimum force that the grenade will be thrown with.
+SWEP.ThrowForceMin = 1000 -- Minimum force that the grenade will be thrown with.
 SWEP.ThrowForceMax = 1000 -- Maximum force that the grenade will be thrown with.
 SWEP.TossForce = 500 -- Force that the grenade will be thrown with when right clicked.
 
@@ -77,7 +77,7 @@ SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, -3.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -106,7 +106,7 @@ SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
-SWEP.ShootPosOffset = Vector(0, 15, -5)
+SWEP.ShootPosOffset = Vector(5, 5, -5)
 
 -------------------------- HoldTypes
 
@@ -124,67 +124,67 @@ SWEP.AnimDraw = false
 SWEP.CamQCA = 1
 SWEP.CamQCA_Mult = 1
 
-local path = "weapons/cod2019/throwables/frag/"
+local path = "weapons/cod2019/throwables/molotov/"
 
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-    ["idle_primed"] = {
-        Source = "idle_primed"
-    },
+    -- ["idle_primed"] = {
+        -- Source = "idle_primed"
+    -- },
     ["draw"] = {
         Source = "draw",
         EventTable = {
-            {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
+            {s = path .. "weap_molotov_pullout_01.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
+            {s = path .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
         },
     },
-    ["pullpin"] = {
-        Source = "pullpin",
-        MinProgress = 0.666,
-        FireASAP = true,
-		Mult = 1.5,
-        EventTable = {
-            { s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
-            { s = path .. "grenade_pin_frag_01.ogg", t = 0/30},
-        },
-    },
+    -- ["pullpin"] = {
+        -- Source = "pullpin",
+        -- MinProgress = 0.666,
+        -- FireASAP = true,
+		-- Mult = 1.5,
+        -- EventTable = {
+            -- { s = path .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
+            -- { s = path .. "grenade_pin_semtex.ogg", t = 0/30},
+        -- },
+    -- },
     ["throw"] = {
         Source = "throw",
         EventTable = {
-            { s = path .. "grenade_frag_throw.ogg", t = 0/30},
+            { s = path .. "weap_molotov_throw_01.ogg", t = 0/30},
         },
         MinProgress = 0.4
     },
     ["toss"] = {
         Source = "underhand",
         EventTable = {
-            { s = path .. "grenade_frag_throw.ogg", t = 0/30},
+            { s = path .. "weap_molotov_throw_02.ogg", t = 0/30},
         },
         MinProgress = 0.4
     },
-    ["idle_sprint"] = {
-        Source = "sprint",
-    },
-    ["enter_sprint"] = {
-        Source = "sprint_in",
-    },
-    ["exit_sprint"] = {
-        Source = "sprint_out",
-    },
+    -- ["idle_sprint"] = {
+        -- Source = "sprint",
+    -- },
+    -- ["enter_sprint"] = {
+        -- Source = "sprint_in",
+    -- },
+    -- ["exit_sprint"] = {
+        -- Source = "sprint_out",
+    -- },
 }
 
 -------------------------- ATTACHMENTS
 
-SWEP.Attachments = {
-    {
-        PrintName = "Functions",
-        Category = {"go_nade_type"},
-    },
-}
+-- SWEP.Attachments = {
+    -- {
+        -- PrintName = "Functions",
+        -- Category = {"go_nade_type"},
+    -- },
+-- }
