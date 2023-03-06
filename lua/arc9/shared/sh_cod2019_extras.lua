@@ -1,3 +1,28 @@
+sound.Add( {
+    name = "COD2019.Frag.Explode",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    level = 140,
+    sound = {
+        "^weapons/cod2019/throwables/frag/frag_expl_01.ogg",
+        "^weapons/cod2019/throwables/frag/frag_expl_02.ogg",
+        "^weapons/cod2019/throwables/frag/frag_expl_03.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Frag.Bounce",
+    channel = CHAN_AUTO,
+    volume = 1,
+    level = 120,
+    pitch = {95, 110},
+    sound = {
+        "weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_01.ogg",
+        "weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_02.ogg",
+        "weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_03.ogg",
+    }
+} )
+
 sound.Add({
     name = "COD2019.HE_ExplosiveHit",
     channel = CHAN_VOICE,
