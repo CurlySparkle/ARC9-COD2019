@@ -1,4 +1,4 @@
-SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_semtex")
+SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_molotov")
 
 SWEP.Base = "arc9_base_nade"
 
