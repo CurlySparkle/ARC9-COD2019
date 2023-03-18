@@ -131,8 +131,10 @@ SWEP.VisualRecoilUp = 0.2
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.03 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 20
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadMultRecoil = 1.1
+SWEP.RecoilModifierCap = 4
+SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadAddMove = 0.1
 SWEP.SpreadAddMidAir = 0.1

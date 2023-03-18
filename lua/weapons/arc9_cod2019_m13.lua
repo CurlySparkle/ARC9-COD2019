@@ -122,15 +122,18 @@ SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
+
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 0.2
 SWEP.VisualRecoilUp = 0.8
+
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
 SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadAddMove = 0.1
 SWEP.SpreadAddMidAir = 0.1

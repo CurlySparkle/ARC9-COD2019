@@ -132,7 +132,11 @@ SWEP.VisualRecoilUp = 0.1
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.035
+SWEP.Spread = 0.02
+SWEP.UseDispersion = true
+SWEP.DispersionSpread = 0.005
+SWEP.DispersionSpreadMultMove = 3
+SWEP.DispersionSpreadAddHipFire = 0.02
 
 SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
 

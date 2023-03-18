@@ -142,7 +142,8 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 6
+SWEP.RecoilModifierCap = 5
+SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadAddMove = 0.1
 SWEP.SpreadAddMidAir = 0.1
