@@ -211,7 +211,7 @@ SWEP.Akimbo = true
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "weapon_muzzle_flash_pistol"
-SWEP.AfterShotParticle = "barrel_smoke_plume"
+SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.MuzzleEffectQCAEvenShot = 2
 SWEP.CaseEffectQCA = 4
@@ -416,6 +416,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
+		MinProgress = 0.1,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,

@@ -200,7 +200,7 @@ SWEP.AnimDraw = false
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "pb_ins2_muzzleflash_tracer"
---SWEP.AfterShotParticle = "barrel_smoke_plume"
+--SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 --SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
 

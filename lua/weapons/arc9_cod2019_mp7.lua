@@ -65,7 +65,7 @@ SWEP.PhysBulletDrag = 1.15
 
 -------------------------- MAGAZINE
 
-SWEP.Ammo = "ar2" -- What ammo type this gun uses.
+SWEP.Ammo = "smg1" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize = 40 -- Self-explanatory.
@@ -436,6 +436,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
+        MinProgress = 0.1,
+        FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,

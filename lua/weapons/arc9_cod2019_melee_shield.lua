@@ -190,6 +190,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
+        MinProgress = 0.1,
+        FireASAP = true,
         EventTable = {
             { s = path .. "wfoly_me_riotshield_inspect_01.ogg", t = 0/30},
             { s = path .. "wfoly_me_riotshield_inspect_02.ogg", t = 51/30},

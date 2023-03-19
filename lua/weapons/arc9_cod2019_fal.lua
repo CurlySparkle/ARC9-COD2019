@@ -222,7 +222,7 @@ SWEP.AnimDraw = false
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "weapon_muzzle_flash_assaultrifle"
-SWEP.AfterShotParticle = "weapon_muzzle_smoke"
+SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
@@ -234,7 +234,8 @@ SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1.5
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
-SWEP.ShouldDropMag = true
+SWEP.ShouldDropMag = false
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_rif_fal_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -271,6 +272,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
+		DropMagAt = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -305,6 +307,7 @@ SWEP.Animations = {
     },
     ["1_reload"] = {
         Source = "reload_short2",
+		DropMagAt = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -341,6 +344,7 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
+		DropMagAt = 1.1,
         IKTimeLine = {
             {
                 t = 0,
@@ -438,6 +442,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
+		MinProgress = 0.1,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
