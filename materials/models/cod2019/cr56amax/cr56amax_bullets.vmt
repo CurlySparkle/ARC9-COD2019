@@ -3,8 +3,8 @@
 	"$basetexture"				"models/cod2019/cr56amax/cr56amax_bullets"
 	"$bumpmap"					"models/cod2019/cr56amax/cr56amax_bullets_n"
 	"$phongexponenttexture"		"models/cod2019/cr56amax/cr56amax_bullets_exp"
-	"$color2"					"[0.8 0.8 0.8]"
-	"$blendTintByBaseAlpha"		"1"
+	"$color2"					"[0.5 0.5 0.5]"
+	"$blendTintByBaseAlpha"		"0"
 
 	"$envmap"					"env_cubemap"
 	"$envmaptint"				"[ .13 .13 .13 ]"
@@ -12,9 +12,9 @@
 	"$envmapcoefficient"		"[0.39 0.39 0.39]"
 
 	"$phong"					"1"
-	"$phongboost"				"15"
+	"$phongboost"				"5"
      //"$phongexponent"				"55"
-	"$phongfresnelranges"		"[0.32 0.72 0.99]"
+	"$phongfresnelranges"		"[2 4 6]"
 	"$phongalbedotint" 			"1"
 
      "$normalmapalphaenvmapmask"              "1"

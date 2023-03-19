@@ -123,15 +123,15 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.7
-SWEP.VisualRecoilUp = 0.3
+SWEP.VisualRecoilPunch = 0.6
+SWEP.VisualRecoilUp = 1
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.03 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 20
+SWEP.SpreadAddRecoil = 0.05 -- Applied per unit of recoil.
+SWEP.RecoilModifierCap = 4
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadAddHipFire = 0.0012
@@ -141,7 +141,6 @@ SWEP.SpreadAddMove = 0.1
 SWEP.SpreadAddMidAir = 0.1
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
-
 
 -------------------------- HANDLING
 
@@ -163,7 +162,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.42, -2, 1.4),
+    Pos = Vector(-2.6, -2, 1.2),
     Ang = Angle(0, -0.4, 3),
     Magnification = 1.15,
     ViewModelFOV = 56,
@@ -172,7 +171,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -303,7 +302,7 @@ SWEP.Animations = {
         Source = "reload_short2",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.8,
+		DropMagAt = 1,
         IKTimeLine = {
             {
                 t = 0,
