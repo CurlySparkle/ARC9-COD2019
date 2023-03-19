@@ -288,8 +288,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 28/30},
-			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 31/30},
+			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 35/30},
         },
     },
     ["1_reload"] = {
@@ -358,8 +358,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 16/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 24/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 29/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 42/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 42/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 35/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 35/30},
         },
     },
     ["ready"] = {
