@@ -479,8 +479,8 @@ SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(3, -1.15, -3.55),
-	ModelAngleOffset = Angle(0, 0, 0),
+    ModelOffset = Vector(7, -0.5, -0.6),
+	ModelAngleOffset = Angle(0, 0, -15),
 	Scale = 0.9,
     },
     ["go_grip_angled"] = {
@@ -651,7 +651,7 @@ SWEP.Attachments = {
         PrintName = "Stats",
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, -1),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
