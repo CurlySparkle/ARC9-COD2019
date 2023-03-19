@@ -485,14 +485,14 @@ SWEP.Attachments = {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
         Category = {"muzzle","muzzle_pistols"},
-        Bone = "tag_silencer",
+        Bone = "tag_silencer_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
 		Scale = 0.7,
         DuplicateModels = {
             {
-                Bone = "tag_silencer_l",
+                Bone = "tag_silencer",
             }
         },
     },

@@ -126,17 +126,17 @@ SWEP.RecoilMultSights = 0.7
 
 -------------------------- VISUAL RECOIL
 
-SWEP.UseVisualRecoil = false
-SWEP.VisualRecoilPunch = 0.2
-SWEP.VisualRecoilUp = 0.2
+SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilPunch = 0.7
+SWEP.VisualRecoilUp = 0.5
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 4
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 3
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadAddMove = 0.1
@@ -175,7 +175,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, 0, -0.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -268,6 +268,7 @@ SWEP.Animations = {
     },
     ["fire_sights"] = {
         Source = "shoot1_ads",
+		Mult = 0.5,
     },
     ["reload"] = {
         Source = "reload_short",
@@ -341,7 +342,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
-		DropMagAt = 0.8,
+		DropMagAt = 1.13,
         IKTimeLine = {
             {
                 t = 0,
