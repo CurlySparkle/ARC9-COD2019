@@ -370,7 +370,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_maghit.ogg", t = 35/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_01.ogg", t = 47/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_02.ogg", t = 52/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_bolt_release.ogg", t = 65/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_bolt_release.ogg", t = 64/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_end.ogg", t = 70/30},
         },
     },

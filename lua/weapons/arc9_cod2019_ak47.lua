@@ -364,7 +364,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_twist.ogg", t = 12 / 30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 31 / 30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 45 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_chamber_01.ogg", t = 51 / 30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_chamber_01.ogg", t = 55 / 30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 69 / 30},
         },
     },
