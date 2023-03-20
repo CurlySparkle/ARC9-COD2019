@@ -137,7 +137,7 @@ SWEP.VisualRecoilUp = 0.4
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.03 -- Applied per unit of recoil.
+SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
 SWEP.RecoilModifierCap = 4
 SWEP.RecoilModifierCapSights = 0
 
@@ -179,7 +179,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, 0, -0.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
