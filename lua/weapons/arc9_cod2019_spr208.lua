@@ -269,8 +269,8 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 11/50},
-			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.4, t = 62/50},
+            {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 10/50},
+			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.4, t = 60/50},
         },
     },
     ["cycle_sights"] = {
@@ -278,8 +278,8 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 11/50},
-			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.4, t = 62/50},
+            {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 10/50},
+			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.4, t = 60/50},
         },
     },
     ["reload"] = {

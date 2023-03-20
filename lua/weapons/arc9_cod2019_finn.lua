@@ -404,8 +404,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_lm_sierrax_raise_first_lift.ogg", t = 0/30},
-            {s = path .. "wfoly_lm_sierrax_raise_first_coverplate.ogg", t = 19/30},
-			{s = path .. "wfoly_lm_sierrax_raise_first_end.ogg", t = 24/30},
+            {s = path .. "wfoly_lm_sierrax_raise_first_coverplate.ogg", t = 18/30},
+			{s = path .. "wfoly_lm_sierrax_raise_first_end.ogg", t = 23/30},
         },
     },
     ["draw"] = {
