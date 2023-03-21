@@ -173,7 +173,7 @@ SWEP.Animations = {
         },
     },
     ["throw"] = {
-        Source = "throw",
+        Source = "throw2",
         EventTable = {
             { s = "weapons/cod2019/throwables/mine/proxy_throw.ogg", t = 0 / 30},
         },

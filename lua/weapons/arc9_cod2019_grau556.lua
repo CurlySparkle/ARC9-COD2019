@@ -166,8 +166,8 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.45, -3, 0.55),
-    Ang = Angle(1, 1, 2.5),
+    Pos = Vector(-2.42, -4.5, 0.6),
+    Ang = Angle(1.1, 1, 3),
     Magnification = 1.15,
     ViewModelFOV = 56,
 	CrosshairInSights = false
@@ -600,9 +600,10 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"go_mag"},
+        Category = {"cod2019_grau556_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		InstalledElements = {"mag_none"},
     },
     {
         PrintName = "Perk",

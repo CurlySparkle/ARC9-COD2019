@@ -58,7 +58,7 @@ function ENT:Detonate()
             })
 
             util.Decal("Scorch", trs.HitPos + trs.HitNormal, trs.HitPos - trs.HitNormal)
-            self:EmitSound("CSGO.Mine.Explode")
+            self:EmitSound("COD2019.Mine.Explode")
         end
 
         local oldowner = self.Attacker or self:GetOwner()

@@ -169,6 +169,7 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
+		Mult = 0.7,
         EventTable = {
             { s = path .. "wfoly_me_riotshield_draw.ogg", t = 0/30},
         },
