@@ -49,6 +49,28 @@ sound.Add({
     "^shared/frag_expl_04.ogg",} 
 })
 
+sound.Add( {
+    name = "COD2019.Claymore.Explode",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    level = 140,
+    sound = {
+        "^weapons/cod2019/throwables/claymore/claymore_expl_01.ogg",
+        "^weapons/cod2019/throwables/claymore/claymore_expl_02.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Mine.Explode",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    level = 140,
+    sound = {
+        "^weapons/cod2019/throwables/mine/proxy_expl_01.ogg",
+        "^weapons/cod2019/throwables/mine/proxy_expl_02.ogg",
+    }
+} )
+
 sound.Add({
     name = "COD2019.Shield.Hit",
     channel = CHAN_VOICE,
@@ -62,6 +84,19 @@ sound.Add({
     "weapons/cod2019/melee/shield/impact_riotshield_01.ogg",
 	} 
 })
+
+sound.Add( {
+    name = "COD2019.Rock.Throw",
+    channel = CHAN_AUTO,
+    volume = 0.4,
+    level = 120,
+    pitch = {95, 110},
+    sound = {
+        "weapons/cod2019/throwables/rock/melee_attack_fist_plr_01.ogg",
+		"weapons/cod2019/throwables/rock/melee_attack_fist_plr_02.ogg",
+		"weapons/cod2019/throwables/rock/melee_attack_fist_plr_03.ogg",
+    }
+} )
 
 sound.Add( {
     name = "COD2019.Iron.In_Rifle",
