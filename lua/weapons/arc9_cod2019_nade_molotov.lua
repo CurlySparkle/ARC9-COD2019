@@ -47,6 +47,7 @@ SWEP.ClipSize = 3
 SWEP.ChamberSize = 0
 SWEP.SupplyLimit = 1
 SWEP.Crosshair = true
+SWEP.SuppressDefaultEvents = false
 
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.

@@ -45,8 +45,10 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 36 -- Damage done at point blank range
-SWEP.DamageMin = 6 -- Damage done at maximum range
+SWEP.DamageMax = 103 -- Damage done at point blank range
+SWEP.DamageMin = 40 -- Damage done at maximum range
+
+SWEP.DistributeDamage = true
 
 SWEP.Num = 6
 
@@ -88,7 +90,7 @@ SWEP.ManualActionNoLastCycle = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 200
+SWEP.RPM = 175
 
 SWEP.Firemodes = {
     {
@@ -128,25 +130,28 @@ SWEP.RecoilMultSights = 0.7
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilUp = 0.3
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.02
+-- SWEP.Spread = 0.035
+
+-- SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
+
+-- SWEP.SpreadAddSights = 0.5
+-- SWEP.SpreadAddMove = 0.055
+-- SWEP.SpreadAddMidAir = 0.03
+-- SWEP.SpreadAddHipFire = 0.065
+-- SWEP.SpreadMultHipFire = 1
+-- SWEP.SpreadAddCrouch = -0.004
+-- SWEP.SpreadAddSightsMove = -0.1
+
+SWEP.Spread = 200 * ARC9.MOAToAcc
 SWEP.UseDispersion = true
-SWEP.DispersionSpread = 0.005
-SWEP.DispersionSpreadMultMove = 3
+SWEP.DispersionSpread = 0.01
 SWEP.DispersionSpreadAddHipFire = 0.02
-
-SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
-
-SWEP.SpreadAddMove = 0.03
-SWEP.SpreadAddMidAir = 0.03
-SWEP.SpreadAddHipFire = 0.035
-SWEP.SpreadMultHipFire = 1.25
-SWEP.SpreadMultSights = 1
-SWEP.SpreadAddCrouch = -0.004
-SWEP.SpreadAddSightsMove = -0.1
+--SWEP.DispersionSpreadMultMove = 1.5
+--SWEP.DispersionSpreadAddMove = 0.015
 
 -------------------------- HANDLING
 
@@ -251,6 +256,11 @@ SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+
+SWEP.HideBones  = {
+    [1] = "j_shell",
+    [2] = "j_shell_fired",
+}
 
 SWEP.Animations = {
     ["fire"] = {
@@ -498,9 +508,14 @@ SWEP.AttachmentElements = {
             {4,1},
         },
     },
+    ["sight_none"] = {
+        Bodygroups = {
+            {4,1},
+        },
+    },
     ["stock_none2"] = {
         Bodygroups = {
-            {5,2},
+            {6,1},
         },
     },
     ["stock_none"] = {
@@ -537,11 +552,11 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.1, 0, -0.07),
+        Pos = Vector(0.5, 0, -0.07),
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optic",},
         CorrectiveAng = Angle(2, 0.1, 0),
-		--InstalledElements = {"rail_sight"},
+		InstalledElements = {"stock_none2"},
     },
     {
         PrintName = "Tactical",
@@ -574,16 +589,16 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Ammo",
-        Bone = "j_mag1",
+        Bone = "tag_attachments",
         Category = {"go_ammo_sg"},
-        Pos = Vector(0, 0, -1.5),
+        Pos = Vector(5, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
     {
         PrintName = "Mag",
-		Bone = "j_mag1",
+		Bone = "tag_attachments",
         Category = {"go_mag"},
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(5, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {

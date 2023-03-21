@@ -178,7 +178,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, -1.4)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -231,7 +231,7 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/shared/shell_762_hr_fal.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 1.5
+SWEP.ShellScale = 1.4
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
@@ -272,7 +272,6 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		DropMagAt = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -290,19 +289,19 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.77,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
-            {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0 / 30},
-            {s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 10 / 30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_elbow.ogg", t = 25 / 30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_arm.ogg", t = 34 / 30},
-			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 40 / 30},
-			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 49 / 30},
-			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 50 / 30},
+            {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 22/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 44/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 52/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 61/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 63/30},
         },
     },
     ["1_reload"] = {
@@ -331,10 +330,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_plr_ar_falima_reload_empty_start.ogg", t = 0 / 30},
+            {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0 / 30},
             {s = path .. "wfoly_plr_ar_falima_reload_empty_rotate.ogg", t = 0 / 30},
             {s = path .. "wfoly_plr_ar_falima_reload_empty_shake.ogg", t = 5 / 30},
-            {s = path .. "wfoly_plr_ar_falima_reload_empty_magout_01.ogg", t = 10 / 30},
+            {s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 10 / 30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_elbow.ogg", t = 25 / 30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_arm.ogg", t = 34 / 30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_01.ogg", t = 45 / 30},
