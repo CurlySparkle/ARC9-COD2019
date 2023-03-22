@@ -11,7 +11,7 @@ SWEP.PrintName = "RPG-7"
 SWEP.Class = "Rocket Launcher"
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
+    Author = "Twilight Sparkle/Palindrone/Firmeteran",
     Assets = "Infinity Ward/Valve/New World Interactive"
 }
 

@@ -26,8 +26,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",
-    Assets = "Counter-Strike: Global Offensive/COD: Modern Warfare 2019"
+    Author = "Twilight Sparkle/TheOnly8Z/Firmeteran",
+    Assets = "Infinity Ward/Valve/New World Interactive"
 }
 
 SWEP.Slot = 4
