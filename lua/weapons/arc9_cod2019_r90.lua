@@ -460,6 +460,10 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.1),
     },
+    ["go_holdstyle_1"] = {
+    ModelOffset = Vector(0, -0.5, 0.2),
+	ModelAngleOffset = Angle(0, 0, 170)
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -542,12 +546,12 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = "grip",
+        Category = {"grip","grip_xm1014"},
         Bone = "tag_grip_attach",
         Pos = Vector(-1.5, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
-		--InstalledElements = {"pump_rail"},
+		InstalledElements = {"grip"},
     },
     {
         PrintName = "Ammo",

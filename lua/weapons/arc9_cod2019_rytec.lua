@@ -118,12 +118,13 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.9
+SWEP.RecoilMultSights = 0.6
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1.5
+SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilUp = 1
 
 -------------------------- SPREAD
 
@@ -142,7 +143,7 @@ SWEP.SpreadAddSights = -0.1
 
 SWEP.SpeedMultSights = 0.5
 
-SWEP.AimDownSightsTime = 0.8 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 SWEP.InstantSprintIdle = false
@@ -193,8 +194,8 @@ SWEP.CrouchAng = Angle(0.5, 0.7, -5)
 SWEP.SprintPos = Vector(-3, -3, 1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(24, 35, 2)
+SWEP.CustomizeAng = Angle(90, 0, 1.5)
+SWEP.CustomizePos = Vector(22, 35, 2)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(0, 25, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
@@ -228,7 +229,8 @@ SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
-SWEP.ShouldDropMag = true
+SWEP.ShouldDropMag = false
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_snip_rytec_mag1.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -301,6 +303,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		DropMagAt = 2,
         IKTimeLine = {
             {
                 t = 0,
@@ -510,7 +513,7 @@ SWEP.Attachments = {
         Pos = Vector(34.4, 0, 0.25),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle",},
-		Scale = 1.5,
+		Scale = 1.1,
     },
     {
         PrintName = "Tactical",

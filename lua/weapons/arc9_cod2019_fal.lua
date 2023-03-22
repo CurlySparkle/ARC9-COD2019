@@ -545,11 +545,12 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_attachments",
-        Pos = Vector(3, 0, 1.18),
+        Pos = Vector(3, 0, 1.1),
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optic",},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sights"},
+		Scale = 0.9,
     },
     {
         PrintName = "Muzzle",

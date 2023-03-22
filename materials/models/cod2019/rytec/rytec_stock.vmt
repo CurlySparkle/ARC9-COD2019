@@ -2,7 +2,7 @@
 {
 	"$basetexture"				"models/cod2019/rytec/rytec_stock"
 	"$bumpmap"					"models/cod2019/rytec/rytec_stock_n"
-	"$phongexponenttexture"		"models/cod2019/rytec/rytec_stock_exponent"
+	"$phongexponenttexture"		"models/cod2019/rytec/rytec_stock_exp"
 	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 

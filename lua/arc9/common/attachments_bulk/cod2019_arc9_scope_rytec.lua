@@ -28,12 +28,28 @@ ATT.Sights = {
         Ang = Angle(0, 0, 0),
         ViewModelFOV = 40,
         Magnification = 2,
+        IgnoreExtra = true,
+		RTScopeFOV = 25,
+    },
+    {
+        Pos = Vector(-0.01, 9, -1.685),
+        Ang = Angle(0, 0, 0),
+        ViewModelFOV = 40,
+        Magnification = 2,
+        IgnoreExtra = true,
+		RTScopeFOV = 15,
+    },
+    {
+        Pos = Vector(-0.01, 9, -1.685),
+        Ang = Angle(0, 0, 0),
+        ViewModelFOV = 40,
+        Magnification = 2,
         IgnoreExtra = true
     },
 }
 
 ATT.RTScope = true
-ATT.RTScopeSubmatIndex = 2
+ATT.RTScopeSubmatIndex = 1
 ATT.RTScopeFOV = 8
 ATT.RTScopeRes = 512
 ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/mk4_crosshair.png", "mips smooth")
