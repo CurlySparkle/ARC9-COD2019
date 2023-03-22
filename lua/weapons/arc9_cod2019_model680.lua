@@ -508,11 +508,6 @@ SWEP.AttachmentElements = {
             {4,1},
         },
     },
-    ["sight_none"] = {
-        Bodygroups = {
-            {4,1},
-        },
-    },
     ["stock_none2"] = {
         Bodygroups = {
             {6,1},
@@ -554,7 +549,7 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(0.5, 0, -0.07),
         Ang = Angle(0, 0, 0),
-        Category = {"csgo_optic",},
+        Category = {"csgo_optic","cod2019_model680_optic"},
         CorrectiveAng = Angle(2, 0.1, 0),
 		InstalledElements = {"stock_none2"},
     },
