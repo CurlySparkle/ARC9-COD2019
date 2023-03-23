@@ -521,7 +521,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optics_pistols_alt","eft_optic_small"},
         CorrectiveAng = Angle(0, 0, 0),
-		Scale = 0.8,
+		Scale = 1,
     },
     {
         PrintName = "Tactical",

@@ -521,11 +521,11 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_reflex",
-        Pos = Vector(0.95, 0, -0.07),
+        Pos = Vector(1.1, 0, 0),
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optics_pistols_alt","eft_optic_small"},
         CorrectiveAng = Angle(0, 0, 0),
-		Scale = 0.8,
+		Scale = 1,
     },
     {
         PrintName = "Tactical",

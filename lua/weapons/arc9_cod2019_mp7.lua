@@ -244,7 +244,7 @@ local path = "weapons/cod2019/mp7/"
 
 SWEP.ShootSound = "COD2019.mp7.Fire"
 SWEP.ShootSoundSilenced = "COD2019.mp7.Silenced_Fire"
-SWEP.DistantShootSound = "CSGO.mp7.Distance_Fire"
+SWEP.DistantShootSound = "CSGO.MP9.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
@@ -341,7 +341,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
-		DropMagAt = 1,
+		DropMagAt = 0.65,
         IKTimeLine = {
             {
                 t = 0,

@@ -191,7 +191,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0.5, 0.7, -5)
 
-SWEP.SprintPos = Vector(-3, -3, 1)
+SWEP.SprintPos = Vector(-3, -3, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 1.5)
@@ -298,6 +298,41 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_magin_01.ogg", t = 78 / 30},
 			{s = path .. "wfoly_sn_xmike109_reload_magin_02.ogg", t = 92 / 30},
 			{s = path .. "wfoly_sn_xmike109_reload_end.ogg", t = 104 / 30},
+        },
+    },
+    ["1_reload"] = {
+        Source = "reload_short2",
+		MinProgress = 0.8,
+		DropMagAt = 1.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_xmike109_reload_up.ogg", t = 0 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_magout.ogg", t = 30 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_arm.ogg", t = 68 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_magin_01.ogg", t = 70 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_magin_02.ogg", t = 85 / 30},
+			{s = path .. "wfoly_sn_xmike109_reload_end.ogg", t = 90 / 30},
         },
     },
     ["reload_empty"] = {
