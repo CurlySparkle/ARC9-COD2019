@@ -529,6 +529,11 @@ SWEP.AttachmentElements = {
             {7,1},
         },
     },
+    ["sight_none"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -562,6 +567,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optic",},
         CorrectiveAng = Angle(2.1, -0.1, 0),
+		InstalledElements = {"sight_none"},
     },
     {
         PrintName = "Tactical",

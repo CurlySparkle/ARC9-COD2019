@@ -5,8 +5,7 @@ ATT = {}
 ATT.PrintName = "G.I. Mini Reflex"
 ATT.CompactName = [[G.I.]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_minidot01.png", "mips smooth")
-ATT.Description = [[RMR (Ruggedized Miniature Reflex) sight from Insurgency: Sandstorm, provides an effective aiming dot.
-Designed only for sidearms, mounted on a low-profile rail.]]
+ATT.Description = [[G.I. Miniature reflex optic features a wide, thin frame for an unobstructed sight picture.]]
 ATT.Pros = {
     "+ Clearer sight picture"
 }
@@ -46,8 +45,7 @@ ATT = {}
 ATT.PrintName = "Cronen LP945 Mini Reflex"
 ATT.CompactName = [[Cronen LP945]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_minidot02.png", "mips smooth")
-ATT.Description = [[SRO (Specialized Reflex Optic) from Insurgency: Sandstorm, provides an effective aiming dot.
-Designed only for sidearms, mounted on a low-profile rail.]]
+ATT.Description = [[Circular reflex frame from Cronen keeps the focus on the target.]]
 ATT.Pros = {
     "+ Clearer sight picture"
 }
@@ -87,8 +85,7 @@ ATT = {}
 ATT.PrintName = "Solozero Optic Mini Reflex"
 ATT.CompactName = [[Solozero]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_minidot03.png", "mips smooth")
-ATT.Description = [[SRO (Specialized Reflex Optic) from Insurgency: Sandstorm, provides an effective aiming dot.
-Designed only for sidearms, mounted on a low-profile rail.]]
+ATT.Description = [[Well rounded precision sight from Solozero Optics provides a balanced sight picture.]]
 ATT.Pros = {
     "+ Clearer sight picture"
 }
@@ -127,8 +124,7 @@ ATT = {}
 ATT.PrintName = "G.I. Mini Reflex"
 ATT.CompactName = [[G.I.]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_minidot01_alt.png", "mips smooth")
-ATT.Description = [[RMR (Ruggedized Miniature Reflex) sight from Insurgency: Sandstorm, provides an effective aiming dot.
-Designed only for sidearms, mounted on a low-profile rail.]]
+ATT.Description = [[G.I. Miniature reflex optic features a wide, thin frame for an unobstructed sight picture.]]
 ATT.Pros = {
     "+ Clearer sight picture"
 }
@@ -168,8 +164,7 @@ ATT = {}
 ATT.PrintName = "Cronen LP945 Mini Reflex"
 ATT.CompactName = [[Cronen LP945]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_minidot02_alt.png", "mips smooth")
-ATT.Description = [[SRO (Specialized Reflex Optic) from Insurgency: Sandstorm, provides an effective aiming dot.
-Designed only for sidearms, mounted on a low-profile rail.]]
+ATT.Description = [[Circular reflex frame from Cronen keeps the focus on the target.]]
 ATT.Pros = {
     "+ Clearer sight picture"
 }
@@ -209,8 +204,7 @@ ATT = {}
 ATT.PrintName = "Solozero Optic Mini Reflex"
 ATT.CompactName = [[Solozero]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_minidot03_alt.png", "mips smooth")
-ATT.Description = [[SRO (Specialized Reflex Optic) from Insurgency: Sandstorm, provides an effective aiming dot.
-Designed only for sidearms, mounted on a low-profile rail.]]
+ATT.Description = [[Well rounded precision sight from Solozero Optics provides a balanced sight picture.]]
 ATT.Pros = {
     "+ Clearer sight picture"
 }
