@@ -375,9 +375,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_dpapa12_raise_first_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_01a.ogg", t = 4/30},
-			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_02a.ogg", t = 16/30},
-			{s = path .. "wfoly_sh_dpapa12_raise_first_end.ogg", t = 16/30},
+			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_01a.ogg", t = 3/30},
+			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_02a.ogg", t = 14/30},
+			{s = path .. "wfoly_sh_dpapa12_raise_first_end.ogg", t = 15/30},
         },
     },
     ["draw"] = {

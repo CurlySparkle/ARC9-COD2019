@@ -403,8 +403,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_sm_beta_raise_first_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_sm_beta_raise_first_charge.ogg", t = 11/30},
-			{s = path .. "wfoly_plr_sm_beta_raise_first_end.ogg", t = 27/30},
+            {s = path .. "wfoly_plr_sm_beta_raise_first_charge.ogg", t = 13/30},
+			{s = path .. "wfoly_plr_sm_beta_raise_first_end.ogg", t = 28/30},
         },
     },
     ["draw"] = {

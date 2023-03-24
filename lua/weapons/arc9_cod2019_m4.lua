@@ -389,9 +389,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wpfoly_mike4_raise_first_01.ogg", t = 0/30},
-            {s = path .. "wpfoly_mike4_raise_first_02.ogg", t = 23/30},
-            {s = path .. "wpfoly_mike4_raise_first_03.ogg", t = 38/30},
+            {s = path .. "wpfoly_mike4_raise_first_01.ogg", t = 4/30},
+            {s = path .. "wpfoly_mike4_raise_first_02.ogg", t = 27/30},
+            {s = path .. "wpfoly_mike4_raise_first_03.ogg", t = 41/30},
         },
     },
     ["draw"] = {

@@ -257,7 +257,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_crossbow_reload_load_arrow.ogg", t = 55 / 30},
 			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_01.ogg", t = 65 / 30},
 			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_02.ogg", t = 70 / 30},
-			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 79 / 30},
+			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 78 / 30},
         },
     },
     ["ready"] = {
@@ -275,9 +275,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_crossbow_raise.ogg", t = 0 / 30},
-            {s = path .. "wfoly_sn_crossbow_raise_first_safety_off.ogg", t = 0 / 30},
-			{s = path .. "wfoly_sn_crossbow_raise_first_end.ogg", t = 11 / 30},
+            {s = path .. "wfoly_sn_crossbow_raise_first_safety_off.ogg", t = 10 / 30},
+			{s = path .. "wfoly_sn_crossbow_raise_first_end.ogg", t = 15 / 30},
         },
     },
     ["draw"] = {

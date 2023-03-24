@@ -400,9 +400,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_xmike109_first_raise_up.ogg", t = 0 / 30},
-            {s = path .. "wfoly_sn_xmike109_first_raise_bolt_pull.ogg", t = 17 / 30},
-            {s = path .. "wfoly_sn_xmike109_first_raise_bolt_release.ogg", t = 28 / 30},
-			{s = path .. "wfoly_sn_xmike109_first_raise_end.ogg", t = 35 / 30},
+            {s = path .. "wfoly_sn_xmike109_first_raise_bolt_pull.ogg", t = 16 / 30},
+            {s = path .. "wfoly_sn_xmike109_first_raise_bolt_release.ogg", t = 26 / 30},
+			{s = path .. "wfoly_sn_xmike109_first_raise_end.ogg", t = 32 / 30},
         },
     },
     ["draw"] = {
