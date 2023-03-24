@@ -7,9 +7,11 @@ ATT.CompactName = [[G.I.]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_minidot01.png", "mips smooth")
 ATT.Description = [[G.I. Miniature reflex optic features a wide, thin frame for an unobstructed sight picture.]]
 ATT.Pros = {
-    "+ Clearer sight picture"
+    "+ Precision Sight Picture"
 }
-ATT.Cons = {}
+ATT.Cons = {
+    "− Aim Down Sight Speed"
+}
 ATT.SortOrder = 1
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
@@ -21,6 +23,8 @@ ATT.Model = "models/weapons/cod2019/attachs/sights/minireddot_tall_1.mdl"
 ATT.Scale = 1
 ATT.ModelOffset = Vector(-1.5, 0, 0.05)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+ATT.AimDownSightsTimeMult = 1.15
 
 ATT.Sights = {
     {
@@ -47,9 +51,11 @@ ATT.CompactName = [[Cronen LP945]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_minidot02.png", "mips smooth")
 ATT.Description = [[Circular reflex frame from Cronen keeps the focus on the target.]]
 ATT.Pros = {
-    "+ Clearer sight picture"
+    "+ Precision Sight Picture"
 }
-ATT.Cons = {}
+ATT.Cons = {
+    "− Aim Down Sight Speed"
+}
 ATT.SortOrder = 2
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
@@ -61,6 +67,8 @@ ATT.Model = "models/weapons/cod2019/attachs/sights/minireddot_tall_2.mdl"
 ATT.Scale = 1
 ATT.ModelOffset = Vector(-1.5, 0, 0.05)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+ATT.AimDownSightsTimeMult = 1.15
 
 ATT.Sights = {
     {
@@ -87,9 +95,11 @@ ATT.CompactName = [[Solozero]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_minidot03.png", "mips smooth")
 ATT.Description = [[Well rounded precision sight from Solozero Optics provides a balanced sight picture.]]
 ATT.Pros = {
-    "+ Clearer sight picture"
+    "+ Precision Sight Picture"
 }
-ATT.Cons = {}
+ATT.Cons = {
+    "− Aim Down Sight Speed"
+}
 ATT.SortOrder = 2
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
@@ -101,6 +111,8 @@ ATT.Model = "models/weapons/cod2019/attachs/sights/minireddot_tall_3.mdl"
 ATT.Scale = 1
 ATT.ModelOffset = Vector(-1.5, 0, 0.05)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+ATT.AimDownSightsTimeMult = 1.15
 
 ATT.Sights = {
     {
@@ -126,9 +138,11 @@ ATT.CompactName = [[G.I.]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_minidot01_alt.png", "mips smooth")
 ATT.Description = [[G.I. Miniature reflex optic features a wide, thin frame for an unobstructed sight picture.]]
 ATT.Pros = {
-    "+ Clearer sight picture"
+    "+ Precision Sight Picture"
 }
-ATT.Cons = {}
+ATT.Cons = {
+    "− Aim Down Sight Speed"
+}
 ATT.SortOrder = 1
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
@@ -140,6 +154,8 @@ ATT.Model = "models/weapons/cod2019/attachs/sights/minireddot_1.mdl"
 ATT.Scale = 1
 ATT.ModelOffset = Vector(-1.5, 0, 0.05)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+ATT.AimDownSightsTimeMult = 1.15
 
 ATT.Sights = {
     {
@@ -166,9 +182,11 @@ ATT.CompactName = [[Cronen LP945]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_minidot02_alt.png", "mips smooth")
 ATT.Description = [[Circular reflex frame from Cronen keeps the focus on the target.]]
 ATT.Pros = {
-    "+ Clearer sight picture"
+    "+ Precision Sight Picture"
 }
-ATT.Cons = {}
+ATT.Cons = {
+    "− Aim Down Sight Speed"
+}
 ATT.SortOrder = 2
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
@@ -180,6 +198,8 @@ ATT.Model = "models/weapons/cod2019/attachs/sights/minireddot_2.mdl"
 ATT.Scale = 1
 ATT.ModelOffset = Vector(-1.5, 0, 0.05)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+ATT.AimDownSightsTimeMult = 1.15
 
 ATT.Sights = {
     {
@@ -206,9 +226,11 @@ ATT.CompactName = [[Solozero]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_minidot03_alt.png", "mips smooth")
 ATT.Description = [[Well rounded precision sight from Solozero Optics provides a balanced sight picture.]]
 ATT.Pros = {
-    "+ Clearer sight picture"
+    "+ Precision Sight Picture"
 }
-ATT.Cons = {}
+ATT.Cons = {
+    "− Aim Down Sight Speed"
+}
 ATT.SortOrder = 2
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
@@ -220,6 +242,8 @@ ATT.Model = "models/weapons/cod2019/attachs/sights/minireddot_3.mdl"
 ATT.Scale = 1
 ATT.ModelOffset = Vector(-1.5, 0, 0.05)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+ATT.AimDownSightsTimeMult = 1.15
 
 ATT.Sights = {
     {
