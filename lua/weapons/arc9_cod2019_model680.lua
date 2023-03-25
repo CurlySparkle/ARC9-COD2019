@@ -140,7 +140,7 @@ SWEP.VisualRecoilUp = 0.3
 
 -- SWEP.SpreadAddSights = 0.5
 -- SWEP.SpreadAddMove = 0.055
--- SWEP.SpreadAddMidAir = 0.03
+-- --SWEP.SpreadAddMidAir = 0
 -- SWEP.SpreadAddHipFire = 0.065
 -- SWEP.SpreadMultHipFire = 1
 -- SWEP.SpreadAddCrouch = -0.004
@@ -647,7 +647,18 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    {
+        PrintName = "lhik",
+        Bone = "tag_grip_attach",
+        Pos = Vector(-3, -0.2, 1.2),
+        Ang = Angle(0, 0, 180),
+        Category = "cod2019_lhik_model680",
+		Installed = "csgo_cod2019_lhik_model680",
+        Integral = true,
+        Hidden = true,		
+    },	
 }
 
 SWEP.GripPoseParam = 4.3
+SWEP.CodAngledGripPoseParam = 0
 SWEP.GripPoseParam2 = 0.7

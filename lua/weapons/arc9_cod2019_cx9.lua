@@ -146,7 +146,7 @@ SWEP.RecoilModifierCap = 5
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadAddMove = 0.1
-SWEP.SpreadAddMidAir = 0.1
+--SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddHipFire = 0.015
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
@@ -203,7 +203,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, -1.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)

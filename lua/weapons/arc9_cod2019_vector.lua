@@ -141,7 +141,7 @@ SWEP.SpreadAddHipFire = 0.0012
 SWEP.SpreadMultHipFire = 1.5
 
 SWEP.SpreadAddMove = 0.1
-SWEP.SpreadAddMidAir = 0.1
+--SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
 
@@ -175,7 +175,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, -1.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {

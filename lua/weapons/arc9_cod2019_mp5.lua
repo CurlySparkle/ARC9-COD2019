@@ -140,7 +140,7 @@ SWEP.SpreadAddHipFire = 0.0012
 SWEP.SpreadMultHipFire = 1.5
 
 SWEP.SpreadAddMove = 0.1
-SWEP.SpreadAddMidAir = 0.1
+--SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
 
@@ -165,7 +165,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.7, -3, 0.9),
+    Pos = Vector(-3.55, -3.5, 0.9),
     Ang = Angle(0, 0, -2.5),
     Magnification = 1.15,
     ViewModelFOV = 56,
@@ -458,7 +458,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 1.1,
+                t = 1.05,
                 lhik = 1,
                 rhik = 1
             },
@@ -649,6 +649,16 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    {
+        PrintName = "lhik",
+        Bone = "tag_grip_attach",
+        Pos = Vector(-3, -0.2, 0.3),
+        Ang = Angle(0, 0, 180),
+        Category = "cod2019_lhik_mp5",
+		Installed = "csgo_cod2019_lhik_mp5",
+        Integral = true,
+        Hidden = true,		
+    },	
 }
 
 SWEP.GripPoseParam = 4

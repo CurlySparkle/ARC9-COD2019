@@ -123,7 +123,7 @@ SWEP.SpreadAddRecoil = 0.03
 SWEP.SpreadMultSights = 0.1
 SWEP.SpreadAddHipFire = 0.01
 --SWEP.SpreadAddMove = 0
-SWEP.SpreadAddMidAir = 0.03
+--SWEP.SpreadAddMidAir = 0
 -- SWEP.SpreadAddRecoil = math.rad(5 / 37.5) -- 0
 
 SWEP.RecoilPatternDrift = 20
