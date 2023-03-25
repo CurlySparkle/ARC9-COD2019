@@ -173,14 +173,14 @@ SWEP.Animations = {
     ["throw"] = {
         Source = "throw",
         EventTable = {
-            { s = "COD2019.Rock.Throw", t = 0/30},
+            {s = "COD2019.Rock.Throw", t = 0/30},
         },
         MinProgress = 0.2
     },
     ["toss"] = {
         Source = "underhand",
         EventTable = {
-            { s = "COD2019.Rock.Throw", t = 0 },
+            {s = "COD2019.Rock.Throw", t = 0},
         },
         MinProgress = 0.2
     },

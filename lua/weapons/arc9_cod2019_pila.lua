@@ -126,7 +126,7 @@ SWEP.SpreadMultSights = 0.1
 SWEP.SpreadAddHipFire = 0.01
 --SWEP.SpreadAddMove = 0
 --SWEP.SpreadAddMidAir = 0
--- SWEP.SpreadAddRecoil = math.rad(5 / 37.5) -- 0
+-- SWEP.SpreadAddRecoil = math.rad(5/37.5) -- 0
 
 SWEP.RecoilPatternDrift = 20
 
@@ -292,14 +292,14 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_la_gromeo_reload_start.ogg", t = 0 / 30},
-			{s = path .. "wfoly_plr_la_gromeo_reload_rotate.ogg", t = 22 / 30},
-			{s = path .. "wfoly_plr_la_gromeo_reload_rockettip_01.ogg", t = 37 / 30},
-			{s = path .. "wfoly_plr_la_gromeo_reload_grabrocket.ogg", t = 64 / 30},
-			{s = path .. "wfoly_plr_la_gromeo_reload_load_01.ogg", t = 84 / 30},
-			{s = path .. "wfoly_plr_la_gromeo_reload_flipup.ogg", t = 102 / 30},
-			{s = path .. "wfoly_plr_la_gromeo_reload_arm.ogg", t = 128 / 30},
-			{s = path .. "wfoly_plr_la_gromeo_reload_end.ogg", t = 152 / 30},
+			{s = path .. "wfoly_plr_la_gromeo_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_la_gromeo_reload_rotate.ogg", t = 22/30},
+			{s = path .. "wfoly_plr_la_gromeo_reload_rockettip_01.ogg", t = 37/30},
+			{s = path .. "wfoly_plr_la_gromeo_reload_grabrocket.ogg", t = 64/30},
+			{s = path .. "wfoly_plr_la_gromeo_reload_load_01.ogg", t = 84/30},
+			{s = path .. "wfoly_plr_la_gromeo_reload_flipup.ogg", t = 102/30},
+			{s = path .. "wfoly_plr_la_gromeo_reload_arm.ogg", t = 128/30},
+			{s = path .. "wfoly_plr_la_gromeo_reload_end.ogg", t = 152/30},
         },
     },
     ["ready"] = {
@@ -317,21 +317,21 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_plr_la_gromeo_raise_first_up.ogg", t = 3 / 30},
-			{s = path .. "wfoly_plr_la_gromeo_raise_first_settle.ogg", t = 18 / 30},
+            {s = path .. "wfoly_plr_la_gromeo_raise_first_up.ogg", t = 3/30},
+			{s = path .. "wfoly_plr_la_gromeo_raise_first_settle.ogg", t = 18/30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_plr_la_gromeo_raise_up.ogg", t = 7 / 30},
-			{s = path .. "wfoly_plr_la_gromeo_raise_settle.ogg", t = 22 / 30},
+            {s = path .. "wfoly_plr_la_gromeo_raise_up.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_la_gromeo_raise_settle.ogg", t = 22/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_plr_la_gromeo_raise_up.ogg", t = 0 / 30},
+            {s = path .. "wfoly_plr_la_gromeo_raise_up.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -375,10 +375,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_la_gromeo_inspect_01.ogg", t = 1 / 30 },
-			{ s = path .. "wfoly_la_gromeo_inspect_02.ogg", t = 36 / 30 },
-			{ s = path .. "wfoly_la_gromeo_inspect_03.ogg", t = 87 / 30 },
-			{ s = path .. "wfoly_la_gromeo_inspect_04.ogg", t = 140 / 30 },
+            {s = path .. "wfoly_la_gromeo_inspect_01.ogg", t = 1/30},
+			{s = path .. "wfoly_la_gromeo_inspect_02.ogg", t = 36/30},
+			{s = path .. "wfoly_la_gromeo_inspect_03.ogg", t = 87/30},
+			{s = path .. "wfoly_la_gromeo_inspect_04.ogg", t = 140/30},
         },
     },
     ["bash"] = {

@@ -308,11 +308,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0 / 30},
-            {s = path .. "wfoly_sm_secho_reload_magout.ogg", t = 12 / 30},
-			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 25 / 30},
-			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 36 / 30},
-			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 37 / 30},
+            {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_secho_reload_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 36/30},
+			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 37/30},
         },
     },
     ["1_reload"] = {
@@ -342,11 +342,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0 / 30},
-            {s = path .. "wfoly_sm_secho_reload_magout.ogg", t = 12 / 30},
-			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 25 / 30},
-			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 36 / 30},
-			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 37 / 30},
+            {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_secho_reload_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 36/30},
+			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 37/30},
         },
     },
     ["reload_empty"] = {
@@ -375,13 +375,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sm_secho_reload_empty_up.ogg", t = 0 / 30},
-			{s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 13 / 30},
-			{s = path .. "wfoly_sm_secho_reload_empty_mvmnt.ogg", t = 33 / 30},
-			{s = path .. "wfoly_sm_secho_reload_empty_maghit.ogg", t = 40 / 30},
-			{s = path .. "wfoly_sm_secho_reload_empty_magin.ogg", t = 43 / 30},
-			{s = path .. "wfoly_sm_secho_reload_empty_charge.ogg", t = 49 / 30},
-			{s = path .. "wfoly_sm_secho_reload_empty_end.ogg", t = 55 / 30},
+			{s = path .. "wfoly_sm_secho_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_mvmnt.ogg", t = 33/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_maghit.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_magin.ogg", t = 43/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_charge.ogg", t = 49/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_end.ogg", t = 55/30},
         },
     },
     ["ready"] = {
@@ -409,22 +409,22 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sm_secho_raise_first_up.ogg", t = 0 / 30},
-            {s = path .. "wfoly_sm_secho_raise_first_charge.ogg", t = 12 / 30},
-            {s = path .. "wfoly_sm_secho_raise_first_end.ogg", t = 20 / 30},
+            {s = path .. "wfoly_sm_secho_raise_first_up.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_secho_raise_first_charge.ogg", t = 12/30},
+            {s = path .. "wfoly_sm_secho_raise_first_end.ogg", t = 20/30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_sm_secho_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sm_secho_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
 		Mult = 0.7,
         EventTable = {
-            {s = path .. "wfoly_sm_secho_reload_end.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sm_secho_reload_end.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -468,9 +468,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_sm_secho_inspect_magout.ogg", t = 0 / 30 },
-			{ s = path .. "wfoly_sm_secho_inspect_magin.ogg", t = 58 / 30 },
-			{ s = path .. "wfoly_sm_secho_inspect_end.ogg", t = 104 / 30 },
+            {s = path .. "wfoly_sm_secho_inspect_magout.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_secho_inspect_magin.ogg", t = 58/30},
+			{s = path .. "wfoly_sm_secho_inspect_end.ogg", t = 104/30},
         },
     },
     ["bash"] = {

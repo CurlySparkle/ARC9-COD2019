@@ -293,12 +293,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_mvmnt.ogg", t = 10 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 24 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 39 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 43 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 53 / 30},
+			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_mvmnt.ogg", t = 10/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 24/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 39/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 43/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 53/30},
         },
     },
     ["1_reload"] = {
@@ -327,11 +327,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 5 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 39 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 51 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 70 / 30},
+			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 5/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 39/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 51/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 70/30},
         },
     },
     ["reload_empty"] = {
@@ -360,11 +360,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltpull.ogg", t = 0 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_magout.ogg", t = 21 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_magin.ogg", t = 51 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltforward.ogg", t = 70 / 30},
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_end.ogg", t = 80 / 30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltpull.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_magout.ogg", t = 21/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_magin.ogg", t = 51/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltforward.ogg", t = 70/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_end.ogg", t = 80/30},
         },
     },
     ["ready"] = {
@@ -382,21 +382,21 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_aalpha12_raise_first_up.ogg", t = 0 / 30},
-			{s = path .. "wfoly_sh_aalpha12_raise_first_bolt.ogg", t = 4 / 30},
-			{s = path .. "wfoly_sh_aalpha12_raise_first_end.ogg", t = 24 / 30},
+            {s = path .. "wfoly_sh_aalpha12_raise_first_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_aalpha12_raise_first_bolt.ogg", t = 4/30},
+			{s = path .. "wfoly_sh_aalpha12_raise_first_end.ogg", t = 24/30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_sh_aalpha12_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sh_aalpha12_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -440,12 +440,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_sh_aalpha12_inspect_01.ogg", t = 0 / 30 },
-			{ s = path .. "wfoly_sh_aalpha12_inspect_02.ogg", t = 12 / 30 },
-			{ s = path .. "wfoly_sh_aalpha12_inspect_03.ogg", t = 55 / 30 },
-			{ s = path .. "wfoly_sh_aalpha12_inspect_04.ogg", t = 66 / 30 },
-			{ s = path .. "wfoly_sh_aalpha12_inspect_05.ogg", t = 103 / 30 },
-			{ s = path .. "wfoly_sh_aalpha12_inspect_06.ogg", t = 105 / 30 },
+            {s = path .. "wfoly_sh_aalpha12_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_02.ogg", t = 12/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_03.ogg", t = 55/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_04.ogg", t = 66/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_05.ogg", t = 103/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_06.ogg", t = 105/30},
         },
     },
     ["bash"] = {

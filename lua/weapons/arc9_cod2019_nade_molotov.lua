@@ -152,21 +152,21 @@ SWEP.Animations = {
         -- FireASAP = true,
 		-- Mult = 1.5,
         -- EventTable = {
-            -- { s = path .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
-            -- { s = path .. "grenade_pin_semtex.ogg", t = 0/30},
+            -- {s = path .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
+            -- {s = path .. "grenade_pin_semtex.ogg", t = 0/30},
         -- },
     -- },
     ["throw"] = {
         Source = "throw",
         EventTable = {
-            { s = path .. "weap_molotov_throw_01.ogg", t = 0/30},
+            {s = path .. "weap_molotov_throw_01.ogg", t = 0/30},
         },
         MinProgress = 0.4
     },
     ["toss"] = {
         Source = "underhand",
         EventTable = {
-            { s = path .. "weap_molotov_throw_02.ogg", t = 0/30},
+            {s = path .. "weap_molotov_throw_02.ogg", t = 0/30},
         },
         MinProgress = 0.4
     },

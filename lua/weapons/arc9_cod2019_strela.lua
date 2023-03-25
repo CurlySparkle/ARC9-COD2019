@@ -111,7 +111,7 @@ SWEP.SpreadMultSights = 0
 SWEP.SpreadAddHipFire = 0
 --SWEP.SpreadAddMove = 0
 --SWEP.SpreadAddMidAir = 0.02
--- SWEP.SpreadAddRecoil = math.rad(5 / 37.5) -- 0
+-- SWEP.SpreadAddRecoil = math.rad(5/37.5) -- 0
 
 SWEP.RecoilPatternDrift = 20
 
@@ -255,12 +255,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_la_kgolf_reload_start.ogg", t = 0 / 30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_unload_01.ogg", t = 32 / 30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_rotate.ogg", t = 68 / 30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_door_01.ogg", t = 83 / 30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_load_01.ogg", t = 105 / 30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_end.ogg", t = 144 / 30},
+			{s = path .. "wfoly_plr_la_kgolf_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_la_kgolf_reload_unload_01.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_la_kgolf_reload_rotate.ogg", t = 68/30},
+			{s = path .. "wfoly_plr_la_kgolf_reload_door_01.ogg", t = 83/30},
+			{s = path .. "wfoly_plr_la_kgolf_reload_load_01.ogg", t = 105/30},
+			{s = path .. "wfoly_plr_la_kgolf_reload_end.ogg", t = 144/30},
         },
     },
     ["ready"] = {
@@ -278,21 +278,21 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_plr_la_kgolf_raise_first_up.ogg", t = 3 / 30},
-			{s = path .. "wfoly_plr_la_kgolf_raise_first_settle.ogg", t = 20 / 30},
+            {s = path .. "wfoly_plr_la_kgolf_raise_first_up.ogg", t = 3/30},
+			{s = path .. "wfoly_plr_la_kgolf_raise_first_settle.ogg", t = 20/30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_plr_la_kgolf_raise_up.ogg", t = 7 / 30},
-			{s = path .. "wfoly_plr_la_kgolf_raise_settle.ogg", t = 24 / 30},
+            {s = path .. "wfoly_plr_la_kgolf_raise_up.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_la_kgolf_raise_settle.ogg", t = 24/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_plr_la_kgolf_raise_up.ogg", t = 0 / 30},
+            {s = path .. "wfoly_plr_la_kgolf_raise_up.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -336,9 +336,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_la_kgolf_inspect_01.ogg", t = 1 / 30 },
-			{ s = path .. "wfoly_la_kgolf_inspect_02.ogg", t = 88 / 30 },
-			{ s = path .. "wfoly_la_kgolf_inspect_03.ogg", t = 135 / 30 },
+            {s = path .. "wfoly_la_kgolf_inspect_01.ogg", t = 1/30},
+			{s = path .. "wfoly_la_kgolf_inspect_02.ogg", t = 88/30},
+			{s = path .. "wfoly_la_kgolf_inspect_03.ogg", t = 135/30},
         },
     },
     ["bash"] = {

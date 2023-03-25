@@ -290,12 +290,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_galima_reload_arm.ogg", t = 0 / 30},
-			{s = path .. "wfoly_ar_galima_reload_magout.ogg", t = 9 / 30},
-			{s = path .. "wfoly_ar_galima_reload_rotate.ogg", t = 31 / 30},
-			{s = path .. "wfoly_ar_galima_reload_maghit.ogg", t = 43 / 30},
-			{s = path .. "wfoly_ar_galima_reload_magin.ogg", t = 56 / 30},
-			{s = path .. "wfoly_ar_galima_reload_end.ogg", t = 55 / 30},
+			{s = path .. "wfoly_ar_galima_reload_arm.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_galima_reload_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_ar_galima_reload_rotate.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_galima_reload_maghit.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_galima_reload_magin.ogg", t = 56/30},
+			{s = path .. "wfoly_ar_galima_reload_end.ogg", t = 55/30},
         },
     },
     ["1_reload"] = {
@@ -326,12 +326,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_galima_reload_empty_arm.ogg", t = 0 / 30},
-			{s = path .. "wfoly_ar_galima_reload_empty_magout.ogg", t = 8 / 30},
-			{s = path .. "wfoly_ar_galima_reload_empty_rotate.ogg", t = 35 / 30},
-			{s = path .. "wfoly_ar_galima_reload_empty_maghit.ogg", t = 40 / 30},
-			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 50 / 30},
-			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 60 / 30},
+			{s = path .. "wfoly_ar_galima_reload_empty_arm.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_rotate.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_maghit.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 50/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 60/30},
         },
     },
     ["reload_empty"] = {
@@ -361,13 +361,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_galima_reload_empty_arm.ogg", t = 0 / 30},
-			{s = path .. "wfoly_ar_galima_reload_empty_magout.ogg", t = 8 / 30},
-			{s = path .. "wfoly_ar_galima_reload_empty_rotate.ogg", t = 35 / 30},
-			{s = path .. "wfoly_ar_galima_reload_empty_maghit.ogg", t = 43 / 30},
-			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 55 / 30},
-			{s = path .. "wfoly_ar_galima_reload_empty_charge.ogg", t = 71 / 30},
-			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 80 / 30},
+			{s = path .. "wfoly_ar_galima_reload_empty_arm.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_rotate.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_maghit.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 55/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_charge.ogg", t = 71/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 80/30},
         },
     },
     ["ready"] = {
@@ -404,14 +404,14 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_ar_galima_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_ar_galima_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
 		--Mult = 0.8,
         EventTable = {
-            {s = path .. "wfoly_ar_galima_reload_end.ogg", t = 0 / 30},
+            {s = path .. "wfoly_ar_galima_reload_end.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -455,11 +455,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_ar_galima_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_ar_galima_inspect_02.ogg", t = 35/30 },
-			{ s = path .. "wfoly_ar_galima_inspect_03.ogg", t = 72/30 },
-			{ s = path .. "wfoly_ar_galima_inspect_04.ogg", t = 94/30 },
-			{ s = path .. "wfoly_ar_galima_inspect_05.ogg", t = 122/30 },
+            {s = path .. "wfoly_ar_galima_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_galima_inspect_02.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_galima_inspect_03.ogg", t = 72/30},
+			{s = path .. "wfoly_ar_galima_inspect_04.ogg", t = 94/30},
+			{s = path .. "wfoly_ar_galima_inspect_05.ogg", t = 122/30},
         },
     },
     ["bash"] = {

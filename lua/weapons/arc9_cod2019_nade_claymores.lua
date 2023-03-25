@@ -166,20 +166,20 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "deploy",
         EventTable = {
-            { s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_pullback.ogg", t = 0 / 30},
+            {s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_pullback.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            { s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_putdown.ogg", t = 0 / 30},
+            {s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_putdown.ogg", t = 0/30},
         },
     },
     ["throw"] = {
         Source = "throw",
         EventTable = {
-            { s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_pullback.ogg", t = 0 / 30},
-            { s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_putdown.ogg", t = 6 / 30},
+            {s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_pullback.ogg", t = 0/30},
+            {s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_putdown.ogg", t = 6/30},
         },
         MinProgress = 0.5
     },

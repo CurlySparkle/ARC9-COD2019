@@ -447,9 +447,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_pi_mike_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_pi_mike_inspect_02.ogg", t = 62/30 },
-			{ s = path .. "wfoly_pi_mike_inspect_03.ogg", t = 112/30 },
+            {s = path .. "wfoly_pi_mike_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike_inspect_02.ogg", t = 62/30},
+			{s = path .. "wfoly_pi_mike_inspect_03.ogg", t = 112/30},
         },
     },
     ["bash"] = {

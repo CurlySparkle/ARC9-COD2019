@@ -261,8 +261,8 @@ SWEP.Animations = {
 		EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = "COD2019.R90.Rechamber_A", t = 1 / 30},
-			{s = "COD2019.R90.Rechamber_B", t = 5 / 30},
+            {s = "COD2019.R90.Rechamber_A", t = 1/30},
+			{s = "COD2019.R90.Rechamber_B", t = 5/30},
         },
     },
     ["cycle_sights"] = {
@@ -270,8 +270,8 @@ SWEP.Animations = {
 		EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = "COD2019.R90.Rechamber_A", t = 1 / 30},
-			{s = "COD2019.R90.Rechamber_B", t = 5 / 30},
+            {s = "COD2019.R90.Rechamber_A", t = 1/30},
+			{s = "COD2019.R90.Rechamber_B", t = 5/30},
         },
     },
     ["reload_start"] = {
@@ -289,7 +289,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_dpapa12_reload_start_rotate.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sh_dpapa12_reload_start_rotate.ogg", t = 0/30},
         },
     },
     ["reload_insert"] = {
@@ -307,8 +307,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = "COD2019.R90.ShellIn", t = 4 / 30},
-			{s = path .. "wfoly_sh_dpapa12_reload_loop_cloth.ogg", t = 4 / 30},
+            {s = "COD2019.R90.ShellIn", t = 4/30},
+			{s = path .. "wfoly_sh_dpapa12_reload_loop_cloth.ogg", t = 4/30},
         },
     },
     ["reload_finish"] = {
@@ -331,7 +331,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_dpapa12_reload_empty_end_rotate.ogg", t = 0 / 30},
+			{s = path .. "wfoly_sh_dpapa12_reload_empty_end_rotate.ogg", t = 0/30},
         },
     },
     ["reload_finish_empty"] = {
@@ -435,11 +435,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_sh_dpapa12_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_sh_dpapa12_inspect_02.ogg", t = 41/30 },
-			{ s = path .. "wfoly_sh_dpapa12_inspect_03.ogg", t = 67/30 },
-			{ s = path .. "wfoly_sh_dpapa12_inspect_04.ogg", t = 100/30 },
-			{ s = path .. "wfoly_sh_dpapa12_inspect_05.ogg", t = 126/30 },
+            {s = path .. "wfoly_sh_dpapa12_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_dpapa12_inspect_02.ogg", t = 41/30},
+			{s = path .. "wfoly_sh_dpapa12_inspect_03.ogg", t = 67/30},
+			{s = path .. "wfoly_sh_dpapa12_inspect_04.ogg", t = 100/30},
+			{s = path .. "wfoly_sh_dpapa12_inspect_05.ogg", t = 126/30},
         },
     },
     ["bash"] = {

@@ -461,11 +461,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_ar_tango21_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_ar_tango21_inspect_02.ogg", t = 39/30 },
-			{ s = path .. "wfoly_ar_tango21_inspect_03.ogg", t = 67/30 },
-			{ s = path .. "wfoly_ar_tango21_inspect_04.ogg", t = 96/30 },
-			{ s = path .. "wfoly_ar_tango21_inspect_05.ogg", t = 120/30 },
+            {s = path .. "wfoly_ar_tango21_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_tango21_inspect_02.ogg", t = 39/30},
+			{s = path .. "wfoly_ar_tango21_inspect_03.ogg", t = 67/30},
+			{s = path .. "wfoly_ar_tango21_inspect_04.ogg", t = 96/30},
+			{s = path .. "wfoly_ar_tango21_inspect_05.ogg", t = 120/30},
         },
     },
     ["bash"] = {

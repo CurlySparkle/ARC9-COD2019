@@ -252,14 +252,14 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
         EventTable = {
-            {s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.5, t = 4 / 30},
+            {s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.5, t = 4/30},
         },
     },
     ["trigger"] = {
         Source = {"windup"},
 		--MinProgress = 0.8,
         EventTable = {
-            {s = path .. "weap_dblmg_spinup_plr_01.ogg", v = 0.5, t = 0 / 30},
+            {s = path .. "weap_dblmg_spinup_plr_01.ogg", v = 0.5, t = 0/30},
         },
     },
     ["reload"] = {
@@ -288,22 +288,22 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 5 / 30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 45 / 30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 107 / 30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 137 / 30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 107/30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 137/30},
         },
     },
     ["draw"] = {
         Source = "draw",
         EventTable = {
-            {s = path .. "wfoly_lm_sierrax_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_lm_sierrax_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_lm_sierrax_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_lm_sierrax_raise.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -347,9 +347,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_lm_dblmg_inspect_01.ogg", t = 18 / 30 },
-			{ s = path .. "wfoly_lm_dblmg_inspect_02.ogg", t = 56 / 30 },
-			{ s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 105 / 30 },
+            {s = path .. "wfoly_lm_dblmg_inspect_01.ogg", t = 18/30},
+			{s = path .. "wfoly_lm_dblmg_inspect_02.ogg", t = 56/30},
+			{s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 105/30},
         },
     },
     ["bash"] = {

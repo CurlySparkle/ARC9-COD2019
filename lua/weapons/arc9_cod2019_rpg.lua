@@ -124,7 +124,7 @@ SWEP.SpreadMultSights = 0.1
 SWEP.SpreadAddHipFire = 0.01
 --SWEP.SpreadAddMove = 0
 --SWEP.SpreadAddMidAir = 0
--- SWEP.SpreadAddRecoil = math.rad(5 / 37.5) -- 0
+-- SWEP.SpreadAddRecoil = math.rad(5/37.5) -- 0
 
 SWEP.RecoilPatternDrift = 20
 
@@ -267,10 +267,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_la_rpapa7_reload_raise.ogg", t = 0 / 30},
-			{s = path .. "wfoly_la_rpapa7_reload_load.ogg", t = 18 / 30},
-			{s = path .. "wfoly_la_rpapa7_reload_lower.ogg", t = 30 / 30},
-			{s = path .. "wfoly_la_rpapa7_reload_end.ogg", t = 50 / 30},
+			{s = path .. "wfoly_la_rpapa7_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_la_rpapa7_reload_load.ogg", t = 17/30},
+			{s = path .. "wfoly_la_rpapa7_reload_lower.ogg", t = 29/30},
+			{s = path .. "wfoly_la_rpapa7_reload_end.ogg", t = 50/30},
         },
     },
     ["ready"] = {
@@ -288,19 +288,19 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_la_rpapa7_raise_first.ogg", t = 10 / 30},
+            {s = path .. "wfoly_la_rpapa7_raise_first.ogg", t = 12/30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_la_rpapa7_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_la_rpapa7_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_la_rpapa7_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_la_rpapa7_raise.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -344,9 +344,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_la_rpapa7_inspect_01.ogg", t = 5 / 30 },
-			{ s = path .. "wfoly_la_rpapa7_inspect_02.ogg", t = 88 / 30 },
-			{ s = path .. "wfoly_la_rpapa7_inspect_03.ogg", t = 165 / 30 },
+            {s = path .. "wfoly_la_rpapa7_inspect_01.ogg", t = 5/30},
+			{s = path .. "wfoly_la_rpapa7_inspect_02.ogg", t = 88/30},
+			{s = path .. "wfoly_la_rpapa7_inspect_03.ogg", t = 165/30},
         },
     },
     ["bash"] = {

@@ -319,13 +319,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_anovember94_reload_up.ogg", t = 0 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_arm.ogg", t = 0 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_magout.ogg", t = 22 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_magin_01.ogg", t = 43 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_magin_02.ogg", t = 47 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_armdown.ogg", t = 48 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_end.ogg", t = 62 / 30},
+			{s = path .. "wfoly_ar_anovember94_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_arm.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magout.ogg", t = 22/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magin_01.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magin_02.ogg", t = 47/30},
+			{s = path .. "wfoly_ar_anovember94_reload_armdown.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_anovember94_reload_end.ogg", t = 62/30},
         },
     },
     ["1_reload"] = {
@@ -356,11 +356,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_anovember94_reload_empty_up.ogg", t = 0 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 24 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 43 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 48 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 54 / 30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 24/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 54/30},
         },
     },
     ["reload_empty"] = {
@@ -389,13 +389,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_anovember94_reload_empty_up.ogg", t = 0 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 24 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 43 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 48 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_boltpull.ogg", t = 54 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_boltforward.ogg", t = 63 / 30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 68 / 30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 24/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltpull.ogg", t = 54/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltforward.ogg", t = 63/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 68/30},
         },
     },
     ["ready"] = {
@@ -434,14 +434,14 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_ar_anovember94_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_ar_anovember94_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
 		--Mult = 0.8,
         EventTable = {
-            {s = path .. "wfoly_ar_anovember94_first_raise_end.ogg", t = 0 / 30},
+            {s = path .. "wfoly_ar_anovember94_first_raise_end.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -485,11 +485,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_ar_anovember94_inspect_rotate.ogg", t = 0 / 30 },
-			{ s = path .. "wfoly_ar_anovember94_inspect_mvmnt.ogg", t = 42 / 30 },
-			{ s = path .. "wfoly_ar_anovember94_inspect_roll.ogg", t = 65 / 30 },
-			{ s = path .. "wfoly_ar_anovember94_inspect_fingers.ogg", t = 98 / 30 },
-			{ s = path .. "wfoly_ar_anovember94_inspect_end.ogg", t = 123 / 30 },
+            {s = path .. "wfoly_ar_anovember94_inspect_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_inspect_mvmnt.ogg", t = 42/30},
+			{s = path .. "wfoly_ar_anovember94_inspect_roll.ogg", t = 65/30},
+			{s = path .. "wfoly_ar_anovember94_inspect_fingers.ogg", t = 98/30},
+			{s = path .. "wfoly_ar_anovember94_inspect_end.ogg", t = 123/30},
         },
     },
     ["bash"] = {

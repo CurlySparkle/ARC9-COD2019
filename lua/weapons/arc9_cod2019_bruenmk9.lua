@@ -444,10 +444,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_lm_mkilo3_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_lm_mkilo3_inspect_02.ogg", t = 48/30 },
-			{ s = path .. "wfoly_lm_mkilo3_inspect_03.ogg", t = 89/30 },
-			{ s = path .. "wfoly_lm_mkilo3_inspect_04.ogg", t = 123/30 },
+            {s = path .. "wfoly_lm_mkilo3_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mkilo3_inspect_02.ogg", t = 48/30},
+			{s = path .. "wfoly_lm_mkilo3_inspect_03.ogg", t = 89/30},
+			{s = path .. "wfoly_lm_mkilo3_inspect_04.ogg", t = 123/30},
         },
     },
     ["bash"] = {

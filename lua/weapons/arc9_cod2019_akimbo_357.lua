@@ -327,7 +327,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 78/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 82/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_arm.ogg", t = 82/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 92/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 90/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 94/30},
         },
     },
@@ -416,10 +416,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_pi_cpapa_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_pi_cpapa_inspect_02.ogg", t = 34/30 },
-			{ s = path .. "wfoly_pi_cpapa_inspect_03.ogg", t = 62/30 },
-			{ s = path .. "wfoly_pi_cpapa_inspect_04.ogg", t = 114/30 },
+            {s = path .. "wfoly_pi_cpapa_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_cpapa_inspect_02.ogg", t = 34/30},
+			{s = path .. "wfoly_pi_cpapa_inspect_03.ogg", t = 62/30},
+			{s = path .. "wfoly_pi_cpapa_inspect_04.ogg", t = 114/30},
         },
     },
     ["bash"] = {

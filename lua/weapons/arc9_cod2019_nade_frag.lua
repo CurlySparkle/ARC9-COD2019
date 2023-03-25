@@ -151,21 +151,21 @@ SWEP.Animations = {
         FireASAP = true,
 		Mult = 1.5,
         EventTable = {
-            { s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
-            { s = path .. "grenade_pin_frag_01.ogg", t = 0/30},
+            {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
+            {s = path .. "grenade_pin_frag_01.ogg", t = 0/30},
         },
     },
     ["throw"] = {
         Source = "throw",
         EventTable = {
-            { s = path .. "grenade_frag_throw.ogg", t = 0/30},
+            {s = path .. "grenade_frag_throw.ogg", t = 0/30},
         },
         MinProgress = 0.4
     },
     ["toss"] = {
         Source = "underhand",
         EventTable = {
-            { s = path .. "grenade_frag_throw.ogg", t = 0/30},
+            {s = path .. "grenade_frag_throw.ogg", t = 0/30},
         },
         MinProgress = 0.4
     },

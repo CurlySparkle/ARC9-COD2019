@@ -423,9 +423,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_lm_mgolf36_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_lm_mgolf36_inspect_02.ogg", t = 50/30 },
-			{ s = path .. "wfoly_lm_mgolf36_inspect_03.ogg", t = 112/30 },
+            {s = path .. "wfoly_lm_mgolf36_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mgolf36_inspect_02.ogg", t = 50/30},
+			{s = path .. "wfoly_lm_mgolf36_inspect_03.ogg", t = 112/30},
         },
     },
     ["bash"] = {

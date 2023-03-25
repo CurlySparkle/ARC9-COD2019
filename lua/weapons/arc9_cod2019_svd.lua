@@ -276,13 +276,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_delta_reload_raise.ogg", t = 0 / 30},
-            {s = path .. "wfoly_sn_delta_reload_magout_01.ogg", t = 14 / 30},
-			{s = path .. "wfoly_sn_delta_reload_cloth_01.ogg", t = 26 / 30},
-			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 44 / 30},
-			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 53 / 30},
-			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 68 / 30},
-			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 73 / 30},
+            {s = path .. "wfoly_sn_delta_reload_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_delta_reload_magout_01.ogg", t = 14/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_01.ogg", t = 26/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 44/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 53/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 68/30},
+			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 73/30},
         },
     },
     ["reload_empty"] = {
@@ -311,13 +311,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_delta_reload_empty_raise.ogg", t = 0 / 30},
-            {s = path .. "wfoly_sn_delta_reload_empty_magout_01.ogg", t = 17 / 30},
-			{s = path .. "wfoly_sn_delta_reload_empty_throw_mag.ogg", t = 20 / 30},
-			{s = path .. "wfoly_sn_delta_reload_empty_magin_v2_01.ogg", t = 46 / 30},
-			{s = path .. "wfoly_sn_delta_reload_empty_magin_v2_02.ogg", t = 67 / 30},
-			{s = path .. "wfoly_sn_delta_reload_empty_end.ogg", t = 80 / 30},
-			{s = path .. "wfoly_sn_delta_reload_empty_charge_01.ogg", t = 92 / 30},
+            {s = path .. "wfoly_sn_delta_reload_empty_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_delta_reload_empty_magout_01.ogg", t = 17/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_throw_mag.ogg", t = 20/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_magin_v2_01.ogg", t = 46/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_magin_v2_02.ogg", t = 67/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_end.ogg", t = 80/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_charge_01.ogg", t = 92/30},
         },
     },
     ["ready"] = {
@@ -345,21 +345,21 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_delta_raise_first_mvmnt.ogg", t = 0 / 30},
-            {s = path .. "wfoly_sn_delta_raise_first_charge_01.ogg", t = 11 / 30},
-            {s = path .. "wfoly_sn_delta_raise_first_end.ogg", t = 25 / 30},
+            {s = path .. "wfoly_sn_delta_raise_first_mvmnt.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_delta_raise_first_charge_01.ogg", t = 11/30},
+            {s = path .. "wfoly_sn_delta_raise_first_end.ogg", t = 25/30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_sn_delta_raise_mvmnt.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sn_delta_raise_mvmnt.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_sn_delta_reload_empty_end.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sn_delta_reload_empty_end.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -403,9 +403,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_delta_inspect_01.ogg", t = 0 / 30},
-            {s = path .. "wfoly_sn_delta_inspect_02.ogg", t = 53 / 30},
-            {s = path .. "wfoly_sn_delta_inspect_03.ogg", t = 113 / 30},
+            {s = path .. "wfoly_sn_delta_inspect_01.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_delta_inspect_02.ogg", t = 53/30},
+            {s = path .. "wfoly_sn_delta_inspect_03.ogg", t = 113/30},
         },
     },
     ["bash"] = {

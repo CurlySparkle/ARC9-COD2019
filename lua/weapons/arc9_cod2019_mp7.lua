@@ -461,11 +461,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_sm_mpapa7_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_sm_mpapa7_inspect_02.ogg", t = 30/30 },
-			{ s = path .. "wfoly_sm_mpapa7_inspect_03.ogg", t = 58/30 },
-			{ s = path .. "wfoly_sm_mpapa7_inspect_04.ogg", t = 97/30 },
-			{ s = path .. "wfoly_sm_mpapa7_inspect_04.ogg", t = 109/30 },
+            {s = path .. "wfoly_sm_mpapa7_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_mpapa7_inspect_02.ogg", t = 30/30},
+			{s = path .. "wfoly_sm_mpapa7_inspect_03.ogg", t = 58/30},
+			{s = path .. "wfoly_sm_mpapa7_inspect_04.ogg", t = 97/30},
+			{s = path .. "wfoly_sm_mpapa7_inspect_04.ogg", t = 109/30},
         },
     },
     ["bash"] = {

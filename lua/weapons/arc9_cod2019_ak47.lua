@@ -292,13 +292,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_akilo47_reload_grab.ogg", t = 0 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_click.ogg", t = 19 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_magout_01.ogg", t = 11 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_maghit.ogg", t = 38 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_01.ogg", t = 42 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_02.ogg", t = 44 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 61 / 30},
+			{s = path .. "wfoly_ar_akilo47_reload_grab.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_akilo47_reload_click.ogg", t = 19/30},
+			{s = path .. "wfoly_ar_akilo47_reload_magout_01.ogg", t = 11/30},
+			{s = path .. "wfoly_ar_akilo47_reload_maghit.ogg", t = 38/30},
+			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_01.ogg", t = 42/30},
+			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_02.ogg", t = 44/30},
+			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 61/30},
         },
     },
     ["1_reload"] = {
@@ -327,11 +327,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_akilo47_reload_empty_maghit_01.ogg", t = 12 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_twist.ogg", t = 12 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 31 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 45 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 51 / 30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_maghit_01.ogg", t = 12/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_twist.ogg", t = 12/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 45/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 51/30},
         },
     },
     ["reload_empty"] = {
@@ -360,12 +360,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_akilo47_reload_empty_maghit_01.ogg", t = 12 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_twist.ogg", t = 12 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 31 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 45 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_chamber_01.ogg", t = 55 / 30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 69 / 30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_maghit_01.ogg", t = 12/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_twist.ogg", t = 12/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 45/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_chamber_01.ogg", t = 55/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 69/30},
         },
     },
     ["ready"] = {
@@ -401,14 +401,14 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_ar_akilo47_raise.ogg", t = 0 / 30},
+            {s = path .. "wfoly_ar_akilo47_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
 		--Mult = 0.8,
         EventTable = {
-            {s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 0 / 30},
+            {s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -452,11 +452,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_ar_ak47_inspect_01.ogg", t = 0 / 30 },
-			{ s = path .. "wfoly_ar_ak47_inspect_02.ogg", t = 36 / 30 },
-			{ s = path .. "wfoly_ar_ak47_inspect_03.ogg", t = 68 / 30 },
-			{ s = path .. "wfoly_ar_ak47_inspect_04.ogg", t = 100 / 30 },
-			{ s = path .. "wfoly_ar_ak47_inspect_05.ogg", t = 124 / 30 },
+            {s = path .. "wfoly_ar_ak47_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_ak47_inspect_02.ogg", t = 36/30},
+			{s = path .. "wfoly_ar_ak47_inspect_03.ogg", t = 68/30},
+			{s = path .. "wfoly_ar_ak47_inspect_04.ogg", t = 100/30},
+			{s = path .. "wfoly_ar_ak47_inspect_05.ogg", t = 124/30},
         },
     },
     ["bash"] = {

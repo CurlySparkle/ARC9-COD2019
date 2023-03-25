@@ -275,8 +275,8 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = "COD2019.Model680.Rechamber_A", t = 0 / 30},
-			{s = "COD2019.Model680.Rechamber_B", t = 6 / 30},
+            {s = "COD2019.Model680.Rechamber_A", t = 0/30},
+			{s = "COD2019.Model680.Rechamber_B", t = 6/30},
         },
     },
     ["cycle_sights"] = {
@@ -284,8 +284,8 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = "COD2019.Model680.Rechamber_A", t = 0 / 30},
-			{s = "COD2019.Model680.Rechamber_B", t = 6 / 30},
+            {s = "COD2019.Model680.Rechamber_A", t = 0/30},
+			{s = "COD2019.Model680.Rechamber_B", t = 6/30},
         },
     },
     ["reload_start"] = {
@@ -303,7 +303,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0/30},
         },
     },
     ["reload_insert"] = {
@@ -321,9 +321,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = "COD2019.Model680.ShellIn", t = 0 / 30},
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0 / 30},
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 0 / 30},
+            {s = "COD2019.Model680.ShellIn", t = 0/30},
+			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 0/30},
         },
     },
     ["reload_finish"] = {
@@ -346,7 +346,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 0 / 30},
+			{s = path .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 0/30},
         },
     },
     ["reload_finish_empty"] = {
@@ -451,11 +451,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_sh_romeo870_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_sh_romeo870_inspect_02.ogg", t = 41/30 },
-			{ s = path .. "wfoly_sh_romeo870_inspect_03.ogg", t = 69/30 },
-			{ s = path .. "wfoly_sh_romeo870_inspect_04.ogg", t = 100/30 },
-			{ s = path .. "wfoly_sh_romeo870_inspect_05.ogg", t = 126/30 },
+            {s = path .. "wfoly_sh_romeo870_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_romeo870_inspect_02.ogg", t = 41/30},
+			{s = path .. "wfoly_sh_romeo870_inspect_03.ogg", t = 69/30},
+			{s = path .. "wfoly_sh_romeo870_inspect_04.ogg", t = 100/30},
+			{s = path .. "wfoly_sh_romeo870_inspect_05.ogg", t = 126/30},
         },
     },
     ["bash"] = {

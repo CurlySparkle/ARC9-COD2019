@@ -155,7 +155,7 @@ SWEP.Animations = {
     ["blowback"] = {
         Source = "blowback",
         EventTable = {
-            { s = "COD2019.Shield.Hit", t = 0/30},
+            {s = "COD2019.Shield.Hit", t = 0/30},
         },
     },
     ["idle"] = {
@@ -164,14 +164,14 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw",
         EventTable = {
-            { s = path .. "wfoly_me_riotshield_draw.ogg", t = 0/30},
+            {s = path .. "wfoly_me_riotshield_draw.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
 		Mult = 0.7,
         EventTable = {
-            { s = path .. "wfoly_me_riotshield_draw.ogg", t = 0/30},
+            {s = path .. "wfoly_me_riotshield_draw.ogg", t = 0/30},
         },
     },
     ["bash"] = {
@@ -194,10 +194,10 @@ SWEP.Animations = {
         MinProgress = 0.1,
         FireASAP = true,
         EventTable = {
-            { s = path .. "wfoly_me_riotshield_inspect_01.ogg", t = 0/30},
-            { s = path .. "wfoly_me_riotshield_inspect_02.ogg", t = 51/30},
-            { s = path .. "wfoly_me_riotshield_inspect_03.ogg", t = 89/30},
-            { s = path .. "wfoly_me_riotshield_inspect_04.ogg", t = 134/30},
+            {s = path .. "wfoly_me_riotshield_inspect_01.ogg", t = 0/30},
+            {s = path .. "wfoly_me_riotshield_inspect_02.ogg", t = 51/30},
+            {s = path .. "wfoly_me_riotshield_inspect_03.ogg", t = 89/30},
+            {s = path .. "wfoly_me_riotshield_inspect_04.ogg", t = 134/30},
         },
     },
 }

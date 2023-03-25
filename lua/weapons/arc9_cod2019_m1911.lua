@@ -397,7 +397,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_pi_mike1911_first_raise_lift.ogg", t = 0/30},
-            {s = path .. "wfoly_pi_mike1911_first_raise_slide_pull.ogg", t = 7/30},
+            {s = path .. "wfoly_pi_mike1911_first_raise_slide_pull.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike1911_first_raise_slide_release.ogg", t = 18/30},
 			{s = path .. "wfoly_pi_mike1911_first_raise_chamber_end.ogg", t = 20/30},
         },
@@ -456,10 +456,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_pi_mike1911_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_pi_mike1911_inspect_02.ogg", t = 34/30 },
-			{ s = path .. "wfoly_pi_mike1911_inspect_03.ogg", t = 58/30 },
-			{ s = path .. "wfoly_pi_mike1911_inspect_04.ogg", t = 111/30 },
+            {s = path .. "wfoly_pi_mike1911_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike1911_inspect_02.ogg", t = 34/30},
+			{s = path .. "wfoly_pi_mike1911_inspect_03.ogg", t = 58/30},
+			{s = path .. "wfoly_pi_mike1911_inspect_04.ogg", t = 111/30},
         },
     },
     ["bash"] = {

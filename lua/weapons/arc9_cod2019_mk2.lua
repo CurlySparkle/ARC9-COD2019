@@ -272,7 +272,7 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sbeta_sn_rechamber.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sbeta_sn_rechamber.ogg", t = 0/30},
         },
     },
     ["cycle_sights"] = {
@@ -280,7 +280,7 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sbeta_sn_rechamber.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sbeta_sn_rechamber.ogg", t = 0/30},
         },
     },
     ["reload_start"] = {
@@ -298,7 +298,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sbeta_sn_reload_start_beginning.ogg", t = 0 / 30},
+            {s = path .. "wfoly_sbeta_sn_reload_start_beginning.ogg", t = 0/30},
         },
     },
     ["reload_insert"] = {
@@ -316,8 +316,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = "COD2019.MK2.Load", t = 0 / 37},
-			{s = "COD2019.MK2.Shellin", t = 16 / 37},
+            {s = "COD2019.MK2.Load", t = 0/37},
+			{s = "COD2019.MK2.Shellin", t = 16/37},
         },
     },
     ["reload_finish"] = {
@@ -340,7 +340,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sbeta_sn_reload_end_finish.ogg", t = 0 / 30},
+			{s = path .. "wfoly_sbeta_sn_reload_end_finish.ogg", t = 0/30},
         },
     },
     ["reload_finish_empty"] = {
@@ -447,10 +447,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_sn_sbeta_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_sn_sbeta_inspect_02.ogg", t = 43/30 },
-			{ s = path .. "wfoly_sn_sbeta_inspect_03.ogg", t = 70/30 },
-			{ s = path .. "wfoly_sn_sbeta_inspect_04.ogg", t = 123/30 },
+            {s = path .. "wfoly_sn_sbeta_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_sbeta_inspect_02.ogg", t = 43/30},
+			{s = path .. "wfoly_sn_sbeta_inspect_03.ogg", t = 70/30},
+			{s = path .. "wfoly_sn_sbeta_inspect_04.ogg", t = 123/30},
         },
     },
     ["bash"] = {

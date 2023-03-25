@@ -280,12 +280,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_sh_charlie725_reload_start.ogg", t = 0 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 4 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 38 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 44 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 52 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 64 / 30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 44/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 52/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 64/30},
         },
     },
     ["reload_empty"] = {
@@ -314,13 +314,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_start.ogg", t = 0 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_open_01.ogg", t = 4 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 33 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 43 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 48 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 59 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 69 / 30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_open_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 33/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 43/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 59/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 69/30},
         },
     },
     ["ready"] = {
@@ -338,21 +338,21 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_plr_sh_charlie725_raise_first_start.ogg", t = 0 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_raise_first_close_01.ogg", t = 5 / 30},
-			{s = path .. "wfoly_plr_sh_charlie725_raise_first_end.ogg", t = 18 / 30},
+            {s = path .. "wfoly_plr_sh_charlie725_raise_first_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_charlie725_raise_first_close_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sh_charlie725_raise_first_end.ogg", t = 18/30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wfoly_plr_sh_charlie725_raise_up.ogg", t = 0 / 30},
+            {s = path .. "wfoly_plr_sh_charlie725_raise_up.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 0 / 30},
+            {s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -396,11 +396,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_sh_charlie725_inspect_01.ogg", t = 0 / 30 },
-			{ s = path .. "wfoly_sh_charlie725_inspect_02.ogg", t = 42 / 30 },
-			{ s = path .. "wfoly_sh_charlie725_inspect_03.ogg", t = 76 / 30 },
-			{ s = path .. "wfoly_sh_charlie725_inspect_04.ogg", t = 106 / 30 },
-			{ s = path .. "wfoly_sh_charlie725_inspect_05.ogg", t = 132 / 30 },
+            {s = path .. "wfoly_sh_charlie725_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_charlie725_inspect_02.ogg", t = 42/30},
+			{s = path .. "wfoly_sh_charlie725_inspect_03.ogg", t = 76/30},
+			{s = path .. "wfoly_sh_charlie725_inspect_04.ogg", t = 106/30},
+			{s = path .. "wfoly_sh_charlie725_inspect_05.ogg", t = 132/30},
         },
     },
     ["bash"] = {

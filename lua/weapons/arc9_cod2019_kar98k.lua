@@ -359,13 +359,13 @@ SWEP.Animations = {
             -- },
         -- },
         -- EventTable = {
-			-- {s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0 / 30},
-			-- {s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 10 / 30},
-			-- {s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 15 / 30},
-			-- {s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 30 / 30},
-			-- {s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 40 / 30},
-			-- {s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 50 / 30},
-			-- {s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55 / 30},
+			-- {s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
+			-- {s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 10/30},
+			-- {s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 15/30},
+			-- {s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 30/30},
+			-- {s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 40/30},
+			-- {s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 50/30},
+			-- {s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55/30},
         -- },
     -- },
     ["reload_empty"] = {
@@ -420,8 +420,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_kilo98_raise_first_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_kilo98_raise_first_safety_01.ogg", t = 24/30},
-			{s = path .. "wfoly_sn_kilo98_raise_first_end.ogg", t = 23/30},
+			{s = path .. "wfoly_sn_kilo98_raise_first_safety_01.ogg", t = 22/30},
+			{s = path .. "wfoly_sn_kilo98_raise_first_end.ogg", t = 17/30},
         },
     },
     ["draw"] = {
@@ -479,11 +479,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_sn_kilo98_inspect_01.ogg", t = 0/30 },
-			{ s = path .. "wfoly_sn_kilo98_inspect_02.ogg", t = 37/30 },
-			{ s = path .. "wfoly_sn_kilo98_inspect_03.ogg", t = 70/30 },
-			{ s = path .. "wfoly_sn_kilo98_inspect_04.ogg", t = 98/30 },
-			{ s = path .. "wfoly_sn_kilo98_inspect_05.ogg", t = 120/30 },
+            {s = path .. "wfoly_sn_kilo98_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_kilo98_inspect_02.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_kilo98_inspect_03.ogg", t = 70/30},
+			{s = path .. "wfoly_sn_kilo98_inspect_04.ogg", t = 98/30},
+			{s = path .. "wfoly_sn_kilo98_inspect_05.ogg", t = 120/30},
         },
     },
     ["bash"] = {

@@ -291,11 +291,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wpfoly_mike4_reload_lift_v2.ogg", t = 0 / 30},
-			{s = path .. "wpfoly_mike4_reload_magout_v2.ogg", t = 18 / 30},
-			{s = path .. "wpfoly_mike4_reload_magin_01.ogg", t = 29 / 30},
-			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 31 / 30},
-			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 52 / 30},
+			{s = path .. "wpfoly_mike4_reload_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_magout_v2.ogg", t = 18/30},
+			{s = path .. "wpfoly_mike4_reload_magin_01.ogg", t = 29/30},
+			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 31/30},
+			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 52/30},
         },
     },
     ["1_reload"] = {
@@ -325,10 +325,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0 / 30},
-			{s = path .. "wpfoly_mike4_reload_empty_magout_v2.ogg", t = 5 / 30},
-			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 32 / 30},
-			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 50 / 30},
+			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_empty_magout_v2.ogg", t = 5/30},
+			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 32/30},
+			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 50/30},
         },
     },
     ["reload_empty"] = {
@@ -357,11 +357,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0 / 30},
-			{s = path .. "wpfoly_mike4_reload_empty_magout_v2.ogg", t = 5 / 30},
-			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 32 / 30},
-			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 52 / 30},
-			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 61 / 30},
+			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_empty_magout_v2.ogg", t = 5/30},
+			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 32/30},
+			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 52/30},
+			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 61/30},
         },
     },
     ["ready"] = {
@@ -397,14 +397,14 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wpfoly_mike4_raise_v2.ogg", t = 0 / 30},
+            {s = path .. "wpfoly_mike4_raise_v2.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
 		--Mult = 0.8,
         EventTable = {
-            {s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 0 / 30},
+            {s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -448,11 +448,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            { s = path .. "wfoly_ar_mike4_inspect_01.ogg", t = 0 / 30 },
-			{ s = path .. "wfoly_ar_mike4_inspect_02.ogg", t = 36 / 30 },
-			{ s = path .. "wfoly_ar_mike4_inspect_03.ogg", t = 62 / 30 },
-			{ s = path .. "wfoly_ar_mike4_inspect_04.ogg", t = 99 / 30 },
-			{ s = path .. "wfoly_ar_mike4_inspect_05.ogg", t = 126 / 30 },
+            {s = path .. "wfoly_ar_mike4_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_mike4_inspect_02.ogg", t = 36/30},
+			{s = path .. "wfoly_ar_mike4_inspect_03.ogg", t = 62/30},
+			{s = path .. "wfoly_ar_mike4_inspect_04.ogg", t = 99/30},
+			{s = path .. "wfoly_ar_mike4_inspect_05.ogg", t = 126/30},
         },
     },
     ["bash"] = {
