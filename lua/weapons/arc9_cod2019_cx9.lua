@@ -280,7 +280,7 @@ SWEP.Animations = {
         Source = "shoot1",
     },
     ["fire_sights"] = {
-        Source = "shoot1",
+        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
