@@ -128,10 +128,10 @@ SWEP.SpreadAddRecoil = 0
 SWEP.SpreadMultRecoil = 1.1
 SWEP.RecoilModifierCap = 25
 
-SWEP.SpreadAddMove = 0.15
+SWEP.SpreadMultMove = 1.5
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.02
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.09
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -155,7 +155,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.43, -1.5, 1.1),
+    Pos = Vector(-2.62, -2.5, 0.95),
     Ang = Angle(0, 0, -1.5),
     Magnification = 1.15,
     ViewModelFOV = 50,
@@ -209,7 +209,7 @@ SWEP.AnimDraw = false
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "weapon_muzzle_flash_assaultrifle"
-SWEP.AfterShotParticle = "weapon_muzzle_smoke"
+SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
@@ -292,7 +292,7 @@ SWEP.Animations = {
     ["1_reload"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
-		DropMagAt = 0.85,
+		DropMagAt = 0.95,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -327,7 +327,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.8,
-		DropMagAt = 0.65,
+		DropMagAt = 0.75,
         IKTimeLine = {
             {
                 t = 0,
@@ -644,6 +644,16 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    {
+        PrintName = "lhik",
+        Bone = "tag_grip_attach",
+        Pos = Vector(-2, -0.1, 0.4),
+        Ang = Angle(0, 0, 180),
+        Category = "cod2019_lhik_sks",
+		Installed = "csgo_cod2019_lhik_sks",
+        Integral = true,
+        Hidden = true,		
+    },	
 }
 
 SWEP.GripPoseParam = 5

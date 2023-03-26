@@ -138,11 +138,11 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.0002 -- Applied per unit of recoil.
 
-SWEP.SpreadAddMove = 0.2
+SWEP.SpreadMultMove = 1.5
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.05
-SWEP.SpreadAddCrouch = -0.01
-SWEP.SpreadAddSights = -0.1
+SWEP.SpreadAddHipFire = 0.09
+SWEP.SpreadAddCrouch = -0.03
+SWEP.SpreadAddSights = -0.5
 
 -------------------------- HANDLING
 
@@ -655,6 +655,16 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    {
+        PrintName = "lhik",
+        Bone = "tag_grip_attach",
+        Pos = Vector(-3, 0, 1.3),
+        Ang = Angle(0, 0, 180),
+        Category = "cod2019_lhik_spr208",
+		Installed = "csgo_cod2019_lhik_spr208",
+        Integral = true,
+        Hidden = true,		
+    },	
 }
 
 SWEP.GripPoseParam = 3.5

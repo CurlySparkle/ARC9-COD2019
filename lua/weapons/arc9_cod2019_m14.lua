@@ -298,7 +298,7 @@ SWEP.Animations = {
     ["1_reload"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
-		DropMagAt = 0.65,
+		DropMagAt = 0.75,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -335,7 +335,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.8,
-		DropMagAt = 0.65,
+		DropMagAt = 0.75,
         IKTimeLine = {
             {
                 t = 0,
@@ -649,7 +649,18 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    {
+        PrintName = "lhik",
+        Bone = "tag_grip_attach",
+        Pos = Vector(-3, -0.2, 0.7),
+        Ang = Angle(0, 0, 180),
+        Category = "cod2019_lhik_m14",
+		Installed = "csgo_cod2019_lhik_m14",
+        Integral = true,
+        Hidden = true,		
+    },	
 }
 
 SWEP.GripPoseParam = 4
+SWEP.CodAngledGripPoseParam = 0.5
 SWEP.GripPoseParam2 = 0.5
