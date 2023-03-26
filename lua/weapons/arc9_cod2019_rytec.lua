@@ -641,10 +641,20 @@ SWEP.Attachments = {
         PrintName = "Stats",
         Category = {"killcounter","killcounter2"},
         Bone = "tag_attachments",
-        Pos = Vector(18, -1.15, 0.1),
+        Pos = Vector(9, -1.15, 0.1),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    {
+        PrintName = "lhik",
+        Bone = "tag_attachments",
+        Pos = Vector(19.5, -0.3, -0.3),
+        Ang = Angle(0, 0, 180),
+        Category = "cod2019_lhik_rytec",
+		Installed = "csgo_cod2019_lhik_rytec",
+        Integral = true,
+        Hidden = true,		
+    },	
 }
 
 SWEP.GripPoseParam = 3

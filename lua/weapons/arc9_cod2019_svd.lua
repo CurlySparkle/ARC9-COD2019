@@ -162,7 +162,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1.5)
+SWEP.SprintPos = Vector(0, 0, -2)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -265,12 +265,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.5,
+                t = 0.7,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.15,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -596,6 +596,16 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    {
+        PrintName = "lhik",
+        Bone = "tag_attachments",
+        Pos = Vector(15, -0.4, 0),
+        Ang = Angle(0, 0, 180),
+        Category = "cod2019_lhik_svd",
+		Installed = "csgo_cod2019_lhik_svd",
+        Integral = true,
+        Hidden = true,		
+    },	
 }
 
 SWEP.GripPoseParam = 4.5

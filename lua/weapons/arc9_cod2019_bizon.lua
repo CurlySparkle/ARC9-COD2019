@@ -127,7 +127,7 @@ SWEP.RecoilMultSights = 0.6
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 0.8
-SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilUp = 1
 
 -------------------------- SPREAD
 
@@ -176,7 +176,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(-1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -248,7 +248,7 @@ local path = "weapons/cod2019/bizon/"
 
 SWEP.ShootSound = "COD2019.bizon.Fire"
 SWEP.ShootSoundSilenced = "COD2019.bizon.Silenced_Fire"
-SWEP.DistantShootSound = "CSGO.bizon.Distance_Fire"
+SWEP.DistantShootSound = "CSGO.Bizon.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
@@ -637,6 +637,16 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    {
+        PrintName = "lhik",
+        Bone = "tag_attachments",
+        Pos = Vector(10, -0.4, -1),
+        Ang = Angle(0, 0, 180),
+        Category = "cod2019_lhik_bizon",
+		Installed = "csgo_cod2019_lhik_bizon",
+        Integral = true,
+        Hidden = true,		
+    },	
 }
 
 SWEP.GripPoseParam = 5

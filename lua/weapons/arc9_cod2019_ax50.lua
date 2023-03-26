@@ -192,7 +192,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, -2)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -359,16 +359,21 @@ SWEP.Animations = {
             },
             {
                 t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.23,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.5,
+                t = 0.7,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -495,7 +500,7 @@ SWEP.AttachmentElements = {
             {1,1},
         },
     },
-    ["muzzle_grip"] = {
+    ["muzzle_none"] = {
         Bodygroups = {
             {2,1},
         },
@@ -654,7 +659,18 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    {
+        PrintName = "lhik",
+        Bone = "tag_attachments",
+        Pos = Vector(16, 0.1, -0.9),
+        Ang = Angle(0, 0, 180),
+        Category = "cod2019_lhik_ax50",
+		Installed = "csgo_cod2019_lhik_ax50",
+        Integral = true,
+        Hidden = true,		
+    },	
 }
 
 SWEP.GripPoseParam = 4
+SWEP.CodAngledGripPoseParam = 3
 SWEP.GripPoseParam2 = 0.5

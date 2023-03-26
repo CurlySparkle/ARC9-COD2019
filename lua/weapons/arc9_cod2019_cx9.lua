@@ -203,7 +203,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -1.5)
+SWEP.SprintPos = Vector(-2, 0, -1.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -243,7 +243,7 @@ SWEP.ShellScale = 0.08
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/csgo/mags/w_smg_mp7_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -318,7 +318,7 @@ SWEP.Animations = {
     ["1_reload"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
-		DropMagAt = 0.9,
+		DropMagAt = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -352,6 +352,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		DropMagAt = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -369,7 +370,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -651,7 +652,18 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    {
+        PrintName = "lhik",
+        Bone = "tag_attachments",
+        Pos = Vector(10, -0.3, -1),
+        Ang = Angle(0, 0, 180),
+        Category = "cod2019_lhik_cx9",
+		Installed = "csgo_cod2019_lhik_cx9",
+        Integral = true,
+        Hidden = true,		
+    },	
 }
 
 SWEP.GripPoseParam = 3.8
+SWEP.CodAngledGripPoseParam = 0
 SWEP.GripPoseParam2 = 0.3
