@@ -239,3 +239,49 @@ sound.Add( {
         "weapons/cod2019/crossbow/weap_crossbow_fire_01.ogg",
     }
 } )
+
+sound.Add({
+    name = "COD2019.Knife.Swing",
+    channel = CHAN_VOICE,
+    volume = 1,
+    level = 100,
+    pitch = {90, 110},
+    sound = {
+    "weapons/cod2019/melee/knife/melee_attack_knife_plr_01.ogg",
+    "weapons/cod2019/melee/knife/melee_attack_knife_plr_02.ogg",
+    "weapons/cod2019/melee/knife/melee_attack_knife_plr_03.ogg",
+    "weapons/cod2019/melee/knife/melee_attack_knife_plr_04.ogg",
+    "weapons/cod2019/melee/knife/melee_attack_knife_plr_05.ogg",
+    "weapons/cod2019/melee/knife/melee_attack_knife_plr_06.ogg",
+	} 
+})
+
+sound.Add({
+    name = "COD2019.Knife.Hit_Flesh",
+    channel = CHAN_VOICE,
+    volume = 1,
+    level = 100,
+    pitch = {90, 110},
+    sound = {
+    "weapons/cod2019/melee/knife/melee_character_knife_plr_01.ogg",
+    "weapons/cod2019/melee/knife/melee_character_knife_plr_02.ogg",
+    "weapons/cod2019/melee/knife/melee_character_knife_plr_03.ogg",
+    "weapons/cod2019/melee/knife/melee_character_knife_plr_04.ogg",
+    "weapons/cod2019/melee/knife/melee_character_knife_plr_05.ogg",
+	} 
+})
+
+sound.Add({
+    name = "COD2019.Knife.Hit_World",
+    channel = CHAN_VOICE,
+    volume = 1,
+    level = 100,
+    pitch = {90, 110},
+    sound = {
+    "weapons/cod2019/melee/knife/melee_world_knife_cement_plr_01.ogg",
+    "weapons/cod2019/melee/knife/melee_world_knife_cement_plr_02.ogg",
+    "weapons/cod2019/melee/knife/melee_world_knife_cement_plr_03.ogg",
+    "weapons/cod2019/melee/knife/melee_world_knife_cement_plr_04.ogg",
+    "weapons/cod2019/melee/knife/melee_world_knife_cement_plr_05.ogg",
+	} 
+})
