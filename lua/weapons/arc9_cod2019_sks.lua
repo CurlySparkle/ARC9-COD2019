@@ -37,7 +37,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_sks.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-10, 4, 0),
+    TPIKPos = Vector(-6, 4, 0),
     TPIKAng = Angle(0, 0, 175),
     Scale = 1
 }
@@ -145,7 +145,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.65
+SWEP.PostBashTime = 0.255
 
 -------------------------- TRACERS
 
@@ -271,12 +271,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.5,
+                t = 0.7,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 1,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -658,3 +658,4 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodStubbyGripPoseParam = 7

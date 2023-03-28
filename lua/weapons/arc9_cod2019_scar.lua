@@ -158,7 +158,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.65
+SWEP.PostBashTime = 0.255
 
 -------------------------- TRACERS
 
@@ -177,7 +177,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(-1, 0, -1.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -343,7 +343,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
-		DropMagAt = 0.8,
+		DropMagAt = 0.95,
         IKTimeLine = {
             {
                 t = 0,
@@ -664,3 +664,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 0.7
 SWEP.GripPoseParam2 = 0
+SWEP.CodStubbyGripPoseParam = 1
+SWEP.CodAngledGripPoseParam = 1

@@ -157,7 +157,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.65
+SWEP.PostBashTime = 0.255
 
 -------------------------- TRACERS
 
@@ -261,6 +261,10 @@ SWEP.BulletBones = {
     [2] = "j_bullet02",
 	[3] = "j_bullet03",
 	[4] = "j_bullet04",
+}
+
+SWEP.HideBones  = {
+    [1] = "j_mag2",
 }
 
 SWEP.Animations = {

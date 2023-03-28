@@ -73,7 +73,7 @@ SWEP.BashDamage = 55
 SWEP.BashLungeRange = 0
 SWEP.BashRange = 64
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.6
+SWEP.PostBashTime = 0.25
 
 SWEP.ImpactForce = 15
 

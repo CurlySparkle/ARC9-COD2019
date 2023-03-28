@@ -126,10 +126,10 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01 -- Applied per unit of recoil.
 
-SWEP.SpreadAddMove = 0.15
+SWEP.SpreadMultMove = 1.5
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.05
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.09
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -143,7 +143,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.65
+SWEP.PostBashTime = 0.25
 
 -------------------------- TRACERS
 
@@ -207,7 +207,7 @@ SWEP.AnimDraw = false
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "weapon_muzzle_flash_huntingrifle"
-SWEP.AfterShotParticle = "weapon_muzzle_smoke"
+SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
@@ -220,7 +220,7 @@ SWEP.ShellScale = 0.1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_snip_svd_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -285,6 +285,43 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 73/30},
         },
     },
+    ["1_reload"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.6,
+		DropMagAt = 1.3,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_delta_reload_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_delta_reload_empty_magout_01.ogg", t = 23/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_throw_mag.ogg", t = 26/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_01.ogg", t = 34/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 53/30},
+        },
+    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.8,
@@ -330,12 +367,12 @@ SWEP.Animations = {
             },
             {
                 t = 0.2,
-                lhik = 0,
+                lhik = 1,
                 rhik = 0
             },
             {
                 t = 0.7,
-                lhik = 0,
+                lhik = 1,
                 rhik = 0
             },
             {
@@ -410,6 +447,28 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2", "melee3"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -431,6 +490,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
@@ -466,6 +530,11 @@ SWEP.AttachmentElements = {
             {7,1},
         },
     },
+    ["foregrip_none"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -492,6 +561,7 @@ SWEP.Attachments = {
         Integral = "cod2019_optic_scope_svd",
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight_rail"},
+		ExcludeElements = {"body_none"},
     },
     {
         PrintName = "Muzzle",
@@ -542,6 +612,14 @@ SWEP.Attachments = {
         PrintName = "Mag",
 		Bone = "j_mag1",
         Category = {"go_mag"},
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "Reciever",
+        DefaultAttName = "Standard Barrel",
+        Category = "cod2019_svd_reciever",
+        Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -610,3 +688,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodAngledGripPoseParam = 0
+SWEP.CodStubbyGripPoseParam = 7

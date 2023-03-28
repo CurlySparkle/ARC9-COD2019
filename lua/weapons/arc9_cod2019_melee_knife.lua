@@ -125,7 +125,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.SprintPos = Vector(0, 0, -3)
 SWEP.SprintAng = Angle(0, 0, 0)
 
-SWEP.CrouchPos = Vector(0, 3.5, -0.5)
+SWEP.CrouchPos = Vector(0, 0, -2)
 SWEP.CrouchAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(0, -55, -50)
@@ -155,6 +155,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
+		MinProgress = 0.1,
+		FireASAP = true,
         EventTable = {
             {s = path .. "melee_knife_charge_01.ogg", t = 0/30},
         },

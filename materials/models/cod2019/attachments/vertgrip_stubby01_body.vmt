@@ -1,10 +1,10 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/cod2019/model680/model680_pumprail"
-	"$bumpmap"					"models/cod2019/model680/model680_pumprail_n"
-	"$phongexponenttexture"		"models/cod2019/model680/model680_pumprail_exp"
-	"$color2"					"[0.7 0.7 0.7]"
-	"$blendTintByBaseAlpha"		"0"
+	"$basetexture"				"models/cod2019/attachments/vertgrip_stubby01_body"
+	"$bumpmap"					"models/cod2019/attachments/vertgrip_stubby01_body_n"
+	"$phongexponenttexture"		"models/cod2019/attachments/vertgrip_stubby01_body_exp"
+	"$color2"					"[0.8 0.8 0.8]"
+	"$blendTintByBaseAlpha"		"1"
 
 	"$envmap"					"env_cubemap"
 	"$envmaptint"				"[ .13 .13 .13 ]"

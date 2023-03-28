@@ -10,7 +10,7 @@ ATT.Description = [[Extended foregrip reduces vertical recoil and provides stabi
 
 ATT.Model = "models/weapons/cod2019/attachs/grips/grip_stubby_tall.mdl"
 
-ATT.SortOrder = 0
+ATT.SortOrder = 1
 ATT.Category = "grip"
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 
@@ -26,7 +26,7 @@ ATT.LHIK = true
 ATT.ModelOffset = Vector(0, 0, 0.12)
 ATT.ModelAngleOffset = Angle(0, 0, 180)
 
-ARC9.LoadAttachment(ATT, "csgo_cod2019_grips_operator")
+ARC9.LoadAttachment(ATT, "csgo_cod2019_grips_merc")
 ------------------------------------------------------------------
 ATT = {}
 
@@ -38,7 +38,7 @@ ATT.Description = [[Streamline foregrip provides superior control acquiring targ
 
 ATT.Model = "models/weapons/cod2019/attachs/grips/grip_vert.mdl"
 
-ATT.SortOrder = 1
+ATT.SortOrder = 2
 ATT.Category = "grip"
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 
@@ -66,7 +66,7 @@ ATT.Description = [[Heavy weight angled grip keeps the weapon steady while aimin
 
 ATT.Model = "models/weapons/cod2019/attachs/grips/grip_angled.mdl"
 
-ATT.SortOrder = 2
+ATT.SortOrder = 0
 ATT.Category = "grip"
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 
@@ -87,3 +87,35 @@ ATT.DrawFunc = function(swep, model, wm)
 end
 
 ARC9.LoadAttachment(ATT, "csgo_cod2019_grips_angled")
+------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = "Operator Foregrip"
+ATT.CompactName = "Operator F"
+ATT.Description = [[No frills foregrip helps reload speed for faster action.]]
+
+--ATT.Icon = Material("entities/attachs/go_grip_angled.png", "mips smooth")
+
+ATT.Model = "models/weapons/cod2019/attachs/grips/grip_stubby.mdl"
+
+ATT.SortOrder = 1.5
+ATT.Category = "grip"
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+
+ATT.ReloadTimeMult = 0.8
+ATT.RecoilMult = 0.95
+
+ATT.AimDownSightsTimeMult = 1.05
+ATT.SprintToFireTimeMult = 1.075
+
+ATT.LHIK_Priority = 10
+ATT.LHIK = true
+
+ATT.ModelOffset = Vector(0, 0, 0.1)
+ATT.ModelAngleOffset = Angle(0, 0, 180)
+
+ATT.DrawFunc = function(swep, model, wm)
+    model:SetPoseParameter("gripstyle", swep.CodStubbyGripPoseParam or 0)
+end
+
+ARC9.LoadAttachment(ATT, "csgo_cod2019_grips_operator")

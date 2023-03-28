@@ -155,7 +155,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.65
+SWEP.PostBashTime = 0.255
 
 -------------------------- TRACERS
 
@@ -453,12 +453,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 1.05,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },

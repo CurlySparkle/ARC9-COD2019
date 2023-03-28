@@ -163,7 +163,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.65
+SWEP.PostBashTime = 0.255
 
 -------------------------- TRACERS
 
@@ -173,7 +173,7 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.08, -2, 0.4),
+    Pos = Vector(-3.18, -2, 0.4),
     Ang = Angle(0.95, 1, -5),
     Magnification = 1.1,
     ViewModelFOV = 56,
@@ -290,6 +290,7 @@ SWEP.Animations = {
     },
     ["reload_start"] = {
         Source = "reload_start",
+		RestoreAmmo = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -297,13 +298,16 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 1,
+                t = 0.2,
                 lhik = 0,
                 rhik = 1
             },
         },
         EventTable = {
             {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0/30},
+			{s = "COD2019.Model680.ShellIn", t = 5/30},
+			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 15/30},
+			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 17/30},
         },
     },
     ["reload_insert"] = {
@@ -335,7 +339,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.4,
+                t = 0.5,
                 lhik = 1,
                 rhik = 1
             },
@@ -459,7 +463,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = "melee",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -661,4 +687,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.3
 SWEP.CodAngledGripPoseParam = 0
+SWEP.CodStubbyGripPoseParam = 7
 SWEP.GripPoseParam2 = 0.7

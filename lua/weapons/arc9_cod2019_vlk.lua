@@ -158,7 +158,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.65
+SWEP.PostBashTime = 0.255
 
 -------------------------- TRACERS
 
@@ -196,7 +196,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -0.5)
+SWEP.SprintPos = Vector(-1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -231,9 +231,10 @@ SWEP.CamQCA_Mult = 1
 SWEP.ShellModel = "models/weapons/shared/shell_origin12.mdl"
 SWEP.ShellSounds = ARC9.ShotgunShellSoundsTable
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 1.4
+SWEP.ShellScale = 1.3
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.NoShellEject = true
+SWEP.EjectDelay = 0.15
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = true
@@ -559,6 +560,7 @@ SWEP.Attachments = {
         Pos = Vector(-0.23, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle_none"},
+		ExcludeElements = {"barrel_vlk"},
 		Scale = 1,
     },
     {
