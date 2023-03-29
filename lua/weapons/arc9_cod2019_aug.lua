@@ -95,22 +95,20 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.5
+SWEP.Recoil = 1.3
 
-SWEP.RecoilSeed = 61649
-
-SWEP.RecoilPatternDrift = 65
+SWEP.RecoilPatternDrift = 35
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1.5 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1.2 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.1
 
-SWEP.RecoilDissipationRate = 25 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
@@ -126,8 +124,8 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.7
-SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilPunch = 0.8
+SWEP.VisualRecoilUp = 1
 
 -------------------------- SPREAD
 
@@ -157,7 +155,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -234,7 +232,7 @@ SWEP.ShellScale = 0.07
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_smg_aug_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -307,11 +305,49 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 54/30},
         },
     },
-    ["1_reload"] = {
-        Source = "reload_short2",
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_boltopen.ogg", t = 8/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_rotate.ogg", t = 9/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magout_01.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 32/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_01.ogg", t = 55/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_02.ogg", t = 63/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 75/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 75/30},
+        },
+    },
+    ["reload_ar"] = {
+        Source = "reload_short_ar",
 		MinProgress = 0.8,
-		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
+		MagSwapTime = 3.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -335,19 +371,20 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magout_01.ogg", t = 8/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 9/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 30/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_01.ogg", t = 35/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_02.ogg", t = 40/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 45/30},
+			{s = path .. "wfoly_sm_augolf_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_magout_01.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_augolf_reload_magout_cloth.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_v2_01.ogg", t = 39/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_v2_02.ogg", t = 47/30},
+			{s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 54/30},
         },
     },
-    ["reload_empty"] = {
-        Source = "reload",
+    ["reload_empty_ar"] = {
+        Source = "reload_ar",
 		MinProgress = 0.9,
-		DropMagAt = 0.8,
+		DropMagAt = 0.6,
         IKTimeLine = {
             {
                 t = 0,
@@ -538,7 +575,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrels",
         DefaultAttName = "Standard Barrel",
-        Category = "cod2019_oden_barrel",
+        Category = "cod2019_aug_barrel",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -591,7 +628,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"go_mag"},
+        Category = {"go_mag","cod2019_aug_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -602,7 +639,7 @@ SWEP.Attachments = {
     {
         PrintName = "Skins",
         --Bone = "v_weapon.Clip",
-        Category = "cod2019_skins_oden",
+        Category = "cod2019_skins_aug",
 		CosmeticOnly = true,
     },
     {

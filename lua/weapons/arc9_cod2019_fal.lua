@@ -344,7 +344,7 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		DropMagAt = 1.1,
+		DropMagAt = 1.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -475,7 +475,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -660,3 +682,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 3
 SWEP.GripPoseParam2 = 0.3
+SWEP.CodAngledGripPoseParam = 0.3
+SWEP.CodStubbyGripPoseParam = 1

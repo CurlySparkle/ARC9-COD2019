@@ -187,7 +187,7 @@ SWEP.CrouchAng = Angle(0, 0, -5)
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(24, 35, 2)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
+SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -288,7 +288,7 @@ SWEP.Animations = {
     ["1_reload"] = {
         Source = "reload_xmag",
 		MinProgress = 0.6,
-		DropMagAt = 1.3,
+		DropMagAt = 1.2,
         IKTimeLine = {
             {
                 t = 0,
