@@ -1728,3 +1728,33 @@ sound.Add( {
 		"weapons/cod2019/cx9/weap_secho_fire_silenced_plr_04.ogg",
     }
 } )
+
+sound.Add( {
+    name = "COD2019.FSS.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/fss/weap_fss_fire_plr_01.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_plr_02.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_plr_03.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.FSS.Fire_Silenced",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/fss/weap_fss_fire_silenced_plr_01.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_silenced_plr_02.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_silenced_plr_03.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_silenced_plr_04.ogg",
+    }
+} )
