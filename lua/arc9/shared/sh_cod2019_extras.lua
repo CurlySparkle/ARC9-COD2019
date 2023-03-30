@@ -101,7 +101,7 @@ sound.Add( {
 sound.Add( {
     name = "COD2019.Iron.In_Rifle",
     channel = CHAN_AUTO,
-    volume = 0.4,
+    volume = 1,
     level = 120,
     pitch = {95, 110},
     sound = {
@@ -112,7 +112,7 @@ sound.Add( {
 sound.Add( {
     name = "COD2019.Iron.Out_Rifle",
     channel = CHAN_AUTO,
-    volume = 0.5,
+    volume = 1,
     level = 120,
     pitch = {95, 110},
     sound = {

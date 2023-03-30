@@ -134,7 +134,7 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 4
+SWEP.RecoilModifierCap = 3
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadMultMove = 2
@@ -164,8 +164,8 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.91, -4, 0.55),
-    Ang = Angle(0, 0, 2.5),
+    Pos = Vector(-2.43, -4, 0),
+    Ang = Angle(0.05, 0, 2.5),
     Magnification = 1.15,
     ViewModelFOV = 56,
 	CrosshairInSights = false
@@ -294,11 +294,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wpfoly_mike4_reload_lift_v2.ogg", t = 0/30},
-			{s = path2 .. "reload1.ogg", t = 21/30},
-			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 60/30},
-			{s = path2 .. "reload2.ogg", t = 60/30},
-			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 81/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_adjust.ogg", t = 0/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_magout.ogg", t = 21/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_adjust.ogg", t = 37/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_maghit.ogg", t = 60/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_magin.ogg", t = 67/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_end.ogg", t = 81/30},
         },
     },
     ["1_reload"] = {
@@ -328,10 +329,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0/30},
-			{s = path2 .. "reload7.ogg", t = 5/30},
-			{s = path2 .. "reload6.ogg", t = 32/30},
-			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 60/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_mvmnt.ogg", t = 0/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_swing.ogg", t = 12/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_magout.ogg", t = 12/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_maghit.ogg", t = 42/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_magin.ogg", t = 43/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_end.ogg", t = 52/30},
         },
     },
     ["reload_empty"] = {
@@ -361,12 +364,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wpfoly_mike4_reload_lift_v2.ogg", t = 0/30},
-			{s = path2 .. "reload3.ogg", t = 23/30},
-			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 60/30},
-			{s = path2 .. "reload4.ogg", t = 60/30},
-			{s = path2 .. "reload5.ogg", t = 85/30},
-			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 97/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_adjust.ogg", t = 0/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_magout.ogg", t = 21/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_mvmnt.ogg", t = 21/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_maghit.ogg", t = 60/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_magin.ogg", t = 67/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_charge.ogg", t = 85/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_end.ogg", t = 97/30},
         },
     },
     ["ready"] = {
@@ -394,21 +398,21 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path2 .. "reload5.ogg", t = 8/30},
-            {s = path .. "wpfoly_mike4_raise_first_03.ogg", t = 26/30},
+            {s = path2 .. "vm_p01_sm_alpha57_raise.ogg", t = 0/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_charge.ogg", t = 8/30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path .. "wpfoly_mike4_raise_v2.ogg", t = 0/30},
+            {s = path2 .. "vm_p01_sm_alpha57_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
 		--Mult = 0.8,
         EventTable = {
-            {s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 0/30},
+            {s = path2 .. "vm_p01_sm_alpha57_reload_down.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -452,11 +456,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_ar_mike4_inspect_01.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_mike4_inspect_02.ogg", t = 36/30},
-			{s = path .. "wfoly_ar_mike4_inspect_03.ogg", t = 62/30},
-			{s = path .. "wfoly_ar_mike4_inspect_04.ogg", t = 99/30},
-			{s = path .. "wfoly_ar_mike4_inspect_05.ogg", t = 126/30},
+            {s = path2 .. "vm_p01_sm_alpha57_inspect_01.ogg", t = 0/30},
+			{s = path2 .. "vm_p01_sm_alpha57_inspect_02.ogg", t = 90/30},
+			{s = path2 .. "vm_p01_sm_alpha57_inspect_03.ogg", t = 187/30},
+			{s = path2 .. "vm_p01_sm_alpha57_inspect_04.ogg", t = 175/30},
         },
     },
     ["bash"] = {
