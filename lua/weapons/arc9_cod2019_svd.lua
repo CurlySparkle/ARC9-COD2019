@@ -322,6 +322,83 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 53/30},
         },
     },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.6,
+		DropMagAt = 1.3,
+		Mult = 1.2,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_delta_reload_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_delta_reload_empty_magout_01.ogg", t = 23/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_throw_mag.ogg", t = 26/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_01.ogg", t = 34/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 53/30},
+        },
+    },
+    ["reload_empty_xmag"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.6,
+		DropMagAt = 1.3,
+		Mult = 1.2,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_delta_reload_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_delta_reload_empty_magout_01.ogg", t = 23/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_throw_mag.ogg", t = 26/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_01.ogg", t = 34/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 53/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_charge_01.ogg", t = 60/30},
+        },
+    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.8,
@@ -612,7 +689,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"go_mag"},
+        Category = {"go_mag","cod2019_svd_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

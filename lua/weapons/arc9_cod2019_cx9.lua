@@ -164,7 +164,7 @@ SWEP.InstantSprintIdle = false
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -203,7 +203,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(-2, 0, -1.5)
+SWEP.SprintPos = Vector(-1, 3, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -244,7 +244,7 @@ SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
-SWEP.DropMagazineModel = "models/weapons/csgo/mags/w_smg_mp7_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_smg_cx9_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.9
@@ -316,9 +316,10 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
-		DropMagAt = 1,
+		DropMagAt = 0.2,
+		Mult = 1.2,
         IKTimeLine = {
             {
                 t = 0,
@@ -331,22 +332,22 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
             {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0/30},
-            {s = path .. "wfoly_sm_secho_reload_magout.ogg", t = 12/30},
-			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 25/30},
-			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 36/30},
-			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 37/30},
+            {s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 5/30},
+			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 15/30},
+			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 20/30},
         },
     },
     ["reload_empty"] = {
@@ -436,11 +437,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 1.5,
+		Mult = 1.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 1.5,
+		Mult = 1.7,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -476,6 +477,28 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2", "melee3"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -544,8 +567,8 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Optics",
-        Bone = "tag_attachments",
-        Pos = Vector(3, 0, 1.3),
+        Bone = "tag_holo",
+        Pos = Vector(1, 0, 0),
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -555,8 +578,8 @@ SWEP.Attachments = {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
         Category = {"muzzle"},
-        Bone = "tag_attachments",
-        Pos = Vector(13.8, 0, -0.55),
+        Bone = "tag_silencer",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle"},
 		ExcludeElements = {"barrel_silenced"},
@@ -574,8 +597,8 @@ SWEP.Attachments = {
         PrintName = "Grips",
         DefaultAttName = "Default",
         Category = "grip",
-        Bone = "tag_attachments",
-        Pos = Vector(10, 0, -1.8),
+        Bone = "tag_grip_attach",
+        Pos = Vector(-1.3, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
     },
@@ -651,19 +674,10 @@ SWEP.Attachments = {
         Pos = Vector(2, -0.75, -0.5),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
-    },
-    {
-        PrintName = "lhik",
-        Bone = "tag_attachments",
-        Pos = Vector(10, -0.3, -1),
-        Ang = Angle(0, 0, 180),
-        Category = "cod2019_lhik_cx9",
-		Installed = "csgo_cod2019_lhik_cx9",
-        Integral = true,
-        Hidden = true,		
     },	
 }
 
 SWEP.GripPoseParam = 3.8
-SWEP.CodAngledGripPoseParam = 0
+SWEP.CodAngledGripPoseParam = 0.2
+SWEP.CodStubbyGripPoseParam = 0.5
 SWEP.GripPoseParam2 = 0.3

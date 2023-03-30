@@ -113,7 +113,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1
+SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 
@@ -124,8 +124,8 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilPunch = 0.7
+SWEP.VisualRecoilUp = 0.6
 SWEP.VisualRecoilRoll = 1
 
 -------------------------- SPREAD
@@ -133,14 +133,14 @@ SWEP.VisualRecoilRoll = 1
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.1
+SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = 4
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.015
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -232,7 +232,7 @@ SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
-SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_rif_m4_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_smg_fss_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
@@ -394,9 +394,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wpfoly_mike4_raise_first_01.ogg", t = 4/30},
-            {s = path .. "wpfoly_mike4_raise_first_02.ogg", t = 27/30},
-            {s = path .. "wpfoly_mike4_raise_first_03.ogg", t = 41/30},
+            {s = path2 .. "reload5.ogg", t = 4/30},
+            {s = path .. "wpfoly_mike4_raise_first_03.ogg", t = 15/30},
         },
     },
     ["draw"] = {
@@ -626,22 +625,17 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/rif_fss_decal_a.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/smg_fss_decal_a.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/rif_fss_decal_b.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/smg_fss_decal_b.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/rif_fss_decal_c.mdl",
-        Category = "stickers",
-    },
-    {
-        PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/rif_fss_decal_d.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/smg_fss_decal_c.mdl",
         Category = "stickers",
     },
     {
@@ -665,4 +659,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 0.4
 SWEP.GripPoseParam2 = 0
 SWEP.CodAngledGripPoseParam = 0
-SWEP.CodStubbyGripPoseParam = 6.3
+SWEP.CodStubbyGripPoseParam = 6.7
