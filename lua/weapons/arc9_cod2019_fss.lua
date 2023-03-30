@@ -11,16 +11,16 @@ SWEP.PrintName = "FSS Hurricane"
 SWEP.Class = "Submachine Gun"
 SWEP.Trivia = {
     ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "FORGE TAC",
-    ["Caliber"] = "5.56×45mm NATO",
-    ["Weight (Loaded)"] = "3.45 kg",
-    ["Projectile Weight"] = "62 gr",
-    ["Muzzle Velocity"] = "2,986 ft/s",
-    ["Muzzle Energy"] = "1,665 joules"
+    ["Manufacturer"] = "Tempus Armament",
+    ["Caliber"] = "5.7×28mm FN",
+    ["Weight (Loaded)"] = "3.5 kg",
+    ["Projectile Weight"] = "31 gr",
+    ["Muzzle Velocity"] = "2,350 ft/s",
+    ["Muzzle Energy"] = "515 joules"
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
+    Author = "Twilight Sparkle/AidenTheZapperGuy/Nekyo-ko/ZeR0-N/ola ola/box/Firmeteran",
     Assets = "Infinity Ward/Valve/New World Interactive"
 }
 
@@ -295,10 +295,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_lift_v2.ogg", t = 0/30},
-			{s = path2 .. "reload1.ogg", t = 18/30},
-			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 50/30},
-			{s = path2 .. "reload2.ogg", t = 55/30},
-			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 70/30},
+			{s = path2 .. "reload1.ogg", t = 21/30},
+			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 60/30},
+			{s = path2 .. "reload2.ogg", t = 60/30},
+			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 81/30},
         },
     },
     ["1_reload"] = {
@@ -362,11 +362,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_lift_v2.ogg", t = 0/30},
-			{s = path2 .. "reload3.ogg", t = 18/30},
-			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 55/30},
-			{s = path2 .. "reload4.ogg", t = 55/30},
-			{s = path2 .. "reload5.ogg", t = 80/30},
-			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 95/30},
+			{s = path2 .. "reload3.ogg", t = 23/30},
+			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 60/30},
+			{s = path2 .. "reload4.ogg", t = 60/30},
+			{s = path2 .. "reload5.ogg", t = 85/30},
+			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 97/30},
         },
     },
     ["ready"] = {
@@ -394,8 +394,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path2 .. "reload5.ogg", t = 4/30},
-            {s = path .. "wpfoly_mike4_raise_first_03.ogg", t = 15/30},
+            {s = path2 .. "reload5.ogg", t = 8/30},
+            {s = path .. "wpfoly_mike4_raise_first_03.ogg", t = 26/30},
         },
     },
     ["draw"] = {

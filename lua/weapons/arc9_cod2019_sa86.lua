@@ -326,12 +326,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_lima86_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_lima86_reload_empty_magout_01.ogg", t = 19/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_magout_01.ogg", t = 22/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_magin_v2_01.ogg", t = 55/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_magin_v2_02.ogg", t = 72/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_rotate.ogg", t = 75/30},
-			{s = path .. "wfoly_lm_lima86_reload_empty_charge_01.ogg", t = 94/30},
-			{s = path .. "wfoly_lm_lima86_reload_empty_end.ogg", t = 69/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_charge_01.ogg", t = 92/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_end.ogg", t = 70/30},
         },
     },
     ["ready"] = {

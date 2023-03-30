@@ -301,7 +301,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_magout.ogg", t = 20/30},
 			{s = path .. "wfoly_ar_sierra552_reload_maghit.ogg", t = 30/30},
 			{s = path .. "wfoly_ar_sierra552_reload_magin.ogg", t = 41/30},
-			{s = path .. "wfoly_ar_sierra552_reload_end.ogg", t = 51/30},
+			{s = path .. "wfoly_ar_sierra552_reload_end.ogg", t = 56/30},
         },
     },
     ["1_reload"] = {
@@ -336,7 +336,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_empty_magout.ogg", t = 21/30},
 			{s = path .. "wfoly_ar_sierra552_reload_empty_maghit.ogg", t = 32/30},
 			{s = path .. "wfoly_ar_sierra552_reload_empty_magin.ogg", t = 45/30},
-			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 58/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 56/30},
         },
     },
     ["reload_empty"] = {
@@ -402,7 +402,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_ar_sierra552_raise_first_up.ogg", t = 0/30},
             {s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 11/30},
-			{s = path .. "wfoly_ar_sierra552_raise_first_end.ogg", t = 16/30},
+			{s = path .. "wfoly_ar_sierra552_raise_first_end.ogg", t = 18/30},
         },
     },
     ["draw"] = {

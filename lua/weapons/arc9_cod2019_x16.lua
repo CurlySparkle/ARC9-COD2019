@@ -287,8 +287,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 1/30},
-			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 26/30},
+			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 24/30},
 			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 35/30},
         },
     },

@@ -68,7 +68,7 @@ SWEP.ClipSize = 1 -- Self-explanatory.
 SWEP.SupplyLimit = 12 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 12 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 SWEP.MissileCrosshair = true
@@ -268,8 +268,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_la_rpapa7_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_la_rpapa7_reload_load.ogg", t = 17/30},
-			{s = path .. "wfoly_la_rpapa7_reload_lower.ogg", t = 29/30},
+			{s = path .. "wfoly_la_rpapa7_reload_load.ogg", t = 18/30},
+			{s = path .. "wfoly_la_rpapa7_reload_lower.ogg", t = 21/30},
 			{s = path .. "wfoly_la_rpapa7_reload_end.ogg", t = 50/30},
         },
     },
@@ -288,7 +288,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_la_rpapa7_raise_first.ogg", t = 12/30},
+            {s = path .. "wfoly_la_rpapa7_raise_first.ogg", t = 13/30},
         },
     },
     ["draw"] = {
