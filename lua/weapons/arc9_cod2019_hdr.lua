@@ -343,8 +343,8 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_01.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_magout_01.ogg", t = 23/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_02.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_magout_01.ogg", t = 18/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_02.ogg", t = 18/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_rattle.ogg", t = 26/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_03.ogg", t = 48/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_01.ogg", t = 54/30},
@@ -423,7 +423,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_eject_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_eject_01.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_01.ogg", t = 10/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_02.ogg", t = 22/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magout_01.ogg", t = 40/30},

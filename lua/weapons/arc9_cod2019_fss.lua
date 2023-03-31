@@ -299,7 +299,7 @@ SWEP.Animations = {
 			{s = path2 .. "vm_p01_sm_alpha57_reload_adjust.ogg", t = 37/30},
 			{s = path2 .. "vm_p01_sm_alpha57_reload_maghit.ogg", t = 60/30},
 			{s = path2 .. "vm_p01_sm_alpha57_reload_magin.ogg", t = 67/30},
-			{s = path2 .. "vm_p01_sm_alpha57_reload_end.ogg", t = 81/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_end.ogg", t = 83/30},
         },
     },
     ["1_reload"] = {
@@ -330,10 +330,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_mvmnt.ogg", t = 0/30},
-			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_swing.ogg", t = 12/30},
-			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_magout.ogg", t = 12/30},
-			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_maghit.ogg", t = 42/30},
-			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_magin.ogg", t = 43/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_swing.ogg", t = 8/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_magout.ogg", t = 8/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_maghit.ogg", t = 40/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_magin.ogg", t = 41/30},
 			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_end.ogg", t = 52/30},
         },
     },
@@ -398,14 +398,14 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path2 .. "vm_p01_sm_alpha57_raise.ogg", t = 0/30},
-			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_charge.ogg", t = 8/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_charge.ogg", t = 12/30},
+            {s = path2 .. "vm_p01_sm_alpha57_raise.ogg", t = 16/30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path2 .. "vm_p01_sm_alpha57_raise.ogg", t = 0/30},
+            {s = path2 .. "vm_p01_sm_alpha57_raise_quick.ogg", t = 0/30},
         },
     },
     ["holster"] = {
@@ -456,10 +456,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path2 .. "vm_p01_sm_alpha57_inspect_01.ogg", t = 0/30},
-			{s = path2 .. "vm_p01_sm_alpha57_inspect_02.ogg", t = 90/30},
-			{s = path2 .. "vm_p01_sm_alpha57_inspect_03.ogg", t = 187/30},
-			{s = path2 .. "vm_p01_sm_alpha57_inspect_04.ogg", t = 175/30},
+            {s = path2 .. "vm_p01_sm_alpha57_inspect_up.ogg", t = 4/30},
+			{s = path2 .. "vm_p01_sm_alpha57_inspect_rotate.ogg", t = 90/30},
+			{s = path2 .. "vm_p01_sm_alpha57_inspect_drop.ogg", t = 177/30},
+			{s = path2 .. "vm_p01_sm_alpha57_inspect_end.ogg", t = 201/30},
         },
     },
     ["bash"] = {
