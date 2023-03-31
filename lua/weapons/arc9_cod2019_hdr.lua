@@ -268,7 +268,7 @@ SWEP.Animations = {
         },
     },
     ["cycle_sights"] = {
-        Source = "cycle",
+        Source = "cycle_ads",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
@@ -313,42 +313,45 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_end.ogg", t = 88/30},
         },
     },
-    -- ["1_reload"] = {
-        -- Source = "reload_short2",
-		-- MinProgress = 0.8,
-		-- DropMagAt = 0.8,
-        -- IKTimeLine = {
-            -- {
-                -- t = 0,
-                -- lhik = 1,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.2,
-                -- lhik = 0,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.7,
-                -- lhik = 0,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.75,
-                -- lhik = 1,
-                -- rhik = 1
-            -- },
-        -- },
-        -- EventTable = {
-			-- {s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 10/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 15/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 30/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 40/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 50/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55/30},
-        -- },
-    -- },
+    ["1_reload"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		DropMagAt = 1.1,
+		Mult = 1.1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_01.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_magout_01.ogg", t = 23/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_02.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_rattle.ogg", t = 26/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_03.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_01.ogg", t = 54/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_02.ogg", t = 57/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_end.ogg", t = 64/30},
+        },
+    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -389,6 +392,48 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_05.ogg", t = 98/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_end.ogg", t = 103/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_load_01.ogg", t = 114/30},
+        },
+    },
+    ["1_reload_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		EjectAt = 0.35,
+		DropMagAt = 1.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.4,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.2,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_eject_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_01.ogg", t = 10/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_02.ogg", t = 22/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magout_01.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_03.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_04.ogg", t = 65/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magin_v2_01.ogg", t = 71/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magin_v2_02.ogg", t = 75/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_05.ogg", t = 85/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_end.ogg", t = 103/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_load_01.ogg", t = 90/30},
         },
     },
     ["ready"] = {
@@ -476,7 +521,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+       Source = {"melee", "melee2"},
+       IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -665,16 +732,6 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
-    {
-        PrintName = "lhik",
-        Bone = "tag_attachments",
-        Pos = Vector(16, -0.2, -0.1),
-        Ang = Angle(0, 0, 180),
-        Category = "cod2019_lhik_hdr",
-		Installed = "csgo_cod2019_lhik_hdr",
-        Integral = true,
-        Hidden = true,		
-    },	
 }
 
 SWEP.GripPoseParam = 3

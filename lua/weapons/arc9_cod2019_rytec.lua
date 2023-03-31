@@ -66,9 +66,9 @@ SWEP.BodyDamageMults = {
 
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.PhysBulletMuzzleVelocity = 2799 * 12
-SWEP.PhysBulletGravity = 2
-SWEP.PhysBulletDrag = 2.5
+SWEP.PhysBulletMuzzleVelocity = 2999 * 12
+SWEP.PhysBulletGravity = 1.5
+SWEP.PhysBulletDrag = 1.5
 
 -------------------------- MAGAZINE
 
@@ -112,13 +112,12 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1
-
-SWEP.RecoilMultCrouch = 0.8
+SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultCrouch = 0.7
 
 -------------------------- VISUAL RECOIL
 
@@ -191,7 +190,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0.5, 0.7, -5)
 
-SWEP.SprintPos = Vector(-3, -3, 0)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 1.5)
@@ -301,9 +300,9 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
-		DropMagAt = 1.5,
+		DropMagAt = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -311,7 +310,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.1,
+                t = 0.2,
                 lhik = 0,
                 rhik = 0
             },
@@ -328,11 +327,11 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_xmike109_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_xmike109_reload_magout.ogg", t = 30/30},
-			{s = path .. "wfoly_sn_xmike109_reload_arm.ogg", t = 68/30},
-			{s = path .. "wfoly_sn_xmike109_reload_magin_01.ogg", t = 70/30},
-			{s = path .. "wfoly_sn_xmike109_reload_magin_02.ogg", t = 85/30},
-			{s = path .. "wfoly_sn_xmike109_reload_end.ogg", t = 90/30},
+			{s = path .. "wfoly_sn_xmike109_reload_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sn_xmike109_reload_arm.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_xmike109_reload_magin_01.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_xmike109_reload_magin_02.ogg", t = 55/30},
+			{s = path .. "wfoly_sn_xmike109_reload_end.ogg", t = 50/30},
         },
     },
     ["reload_empty"] = {
@@ -372,6 +371,43 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_empty_boltpull.ogg", t = 128/30},
 			{s = path .. "wfoly_sn_xmike109_reload_empty_boltrelease.ogg", t = 142/30},
 			{s = path .. "wfoly_sn_xmike109_reload_empty_end.ogg", t = 149/30},
+        },
+    },
+    ["1_reload_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		DropMagAt = 1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_xmike109_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_arm.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_magin_01.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_magin_02.ogg", t = 55/30},
+			{s = path .. "wfoly_sn_xmike109_first_raise_bolt_pull.ogg", t = 75/30},
+			{s = path .. "wfoly_sn_xmike109_first_raise_bolt_release.ogg", t = 90/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_end.ogg", t = 90/30},
         },
     },
     ["ready"] = {
@@ -414,7 +450,7 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 1,
+		Mult = 0.8,
         EventTable = {
             {s = path .. "wfoly_sn_xmike109_first_raise_end.ogg", t = 0/30},
         },
@@ -467,7 +503,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -544,11 +602,11 @@ SWEP.Attachments = {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
         Category = {"muzzle","muzzle_snipers"},
-        Bone = "tag_attachments",
-        Pos = Vector(34.4, 0, 0.25),
+        Bone = "tag_silencer",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle",},
-		Scale = 1.1,
+		Scale = 1,
     },
     {
         PrintName = "Tactical",

@@ -231,7 +231,7 @@ SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.EjectDelay = 0.4
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_snip_ax50_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -311,46 +311,48 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 68/30},
         },
     },
-    -- ["1_reload"] = {
-        -- Source = "reload_short2",
-		-- MinProgress = 0.8,
-		-- DropMagAt = 0.8,
-        -- IKTimeLine = {
-            -- {
-                -- t = 0,
-                -- lhik = 1,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.2,
-                -- lhik = 0,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.7,
-                -- lhik = 0,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.75,
-                -- lhik = 1,
-                -- rhik = 1
-            -- },
-        -- },
-        -- EventTable = {
-			-- {s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 10/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 15/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 30/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 40/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 50/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55/30},
-        -- },
-    -- },
+    ["1_reload"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		DropMagAt = 0.8,
+		Mult = 1.3,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_alpha50_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magout_01.ogg", t = 10/30},
+			{s = path .. "wfoly_sn_alpha50_reload_arm.ogg", t = 20/30},
+			{s = path .. "wfoly_sn_alpha50_reload_maghit.ogg", t = 32/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_01.ogg", t = 36/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 45/30},
+        },
+    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
 		EjectAt = 0.35,
+		DropMagAt = 1.9,
         IKTimeLine = {
             {
                 t = 0,
@@ -390,6 +392,50 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_empty_end.ogg", t = 108/30},
         },
     },
+    ["1_reload_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		EjectAt = 0.35,
+		DropMagAt = 1.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.23,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_alpha50_reload_empty_boltopen_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_maggrab.ogg", t = 20/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magout_01.ogg", t = 27/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_arm.ogg", t = 34/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magin_v2_01.ogg", t = 48/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magin_v2_02.ogg", t = 53/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_maghit_01.ogg", t = 57/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_boltclose_01.ogg", t = 69/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_end.ogg", t = 79/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -419,6 +465,7 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
+		Mult = 0.8,
         EventTable = {
             {s = path .. "wfoly_sn_alpha50_reload_empty_end.ogg", t = 0/30},
         },
@@ -470,7 +517,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = {"melee", "melee2"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
