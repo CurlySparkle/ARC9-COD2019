@@ -130,17 +130,15 @@ SWEP.VisualRecoilUp = 0.5
 
 SWEP.Spread = 0.0014
 
-SWEP.SpreadAddRecoil = 0
-SWEP.SpreadMultRecoil = 1.22
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = 3
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -173,7 +171,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 1, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -231,7 +229,7 @@ SWEP.ShellScale = 0.085
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_rif_ak47_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -286,7 +284,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -302,8 +300,10 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
+		DropMagAt = 0.85,
+		Mult = 1.1,
         IKTimeLine = {
             {
                 t = 0,
@@ -327,16 +327,19 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_akilo47_reload_empty_maghit_01.ogg", t = 12/30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_twist.ogg", t = 12/30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 31/30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 45/30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 51/30},
+			{s = path .. "wfoly_ar_akilo47_reload_grab.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_akilo47_reload_click.ogg", t = 11/30},
+			{s = path .. "wfoly_ar_akilo47_reload_magout_01.ogg", t = 11/30},
+			{s = path .. "wfoly_ar_akilo47_reload_maghit.ogg", t = 30/30},
+			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_01.ogg", t = 32/30},
+			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_02.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 37/30},
         },
     },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		DropMagAt = 1.15,
         IKTimeLine = {
             {
                 t = 0,
@@ -460,7 +463,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -577,6 +602,15 @@ SWEP.Attachments = {
         Category = {"go_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "Reciever",
+        DefaultAttName = "Standard Barrel",
+        Category = "cod2019_ak47_reciever",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(13, 0, 4.8),
     },
     {
         PrintName = "Perk",

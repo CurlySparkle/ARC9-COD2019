@@ -232,7 +232,7 @@ SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.EjectDelay = 0.4
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_snip_spr208_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -274,7 +274,7 @@ SWEP.Animations = {
         },
     },
     ["cycle_sights"] = {
-        Source = "cycle",
+        Source = "cycle_ads",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
@@ -315,46 +315,45 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 62/30},
         },
     },
-    -- ["1_reload"] = {
-        -- Source = "reload_short2",
-		-- MinProgress = 0.8,
-		-- DropMagAt = 0.8,
-        -- IKTimeLine = {
-            -- {
-                -- t = 0,
-                -- lhik = 1,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.2,
-                -- lhik = 0,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.7,
-                -- lhik = 0,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.75,
-                -- lhik = 1,
-                -- rhik = 1
-            -- },
-        -- },
-        -- EventTable = {
-			-- {s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 10/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 15/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 30/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 40/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 50/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55/30},
-        -- },
-    -- },
+    ["1_reload"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		DropMagAt = 0.95,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_remeo700_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_remeo700_reload_magout.ogg", t = 19/30},
+			{s = path .. "wfoly_sn_remeo700_reload_maghit.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_remeo700_reload_magin.ogg", t = 40/30},
+			{s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 46/30},
+        },
+    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
 		EjectAt = 0.4,
+		DropMagAt = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -385,6 +384,43 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_reload_empty_magin.ogg", t = 73/30},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_rotate.ogg", t = 80/30},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_boltclose.ogg", t = 92/30},
+        },
+    },
+    ["1_reload_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		EjectAt = 2,
+		DropMagAt = 0.9,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_remeo700_raise_first_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_magout.ogg", t = 20/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_maghit.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_magin.ogg", t = 40/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_rotate.ogg", t = 50/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_boltopen.ogg", t = 57/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_boltclose.ogg", t = 65/30},
         },
     },
     ["ready"] = {
@@ -473,7 +509,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = {"melee", "melee2"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -496,6 +554,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag"] = {
         Bodygroups = {
             {1,1},
@@ -605,6 +668,15 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
+        PrintName = "Reciever",
+        DefaultAttName = "Standard Barrel",
+        Category = "cod2019_spr208_reciever",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 0),
+    },
+    {
         PrintName = "Perk",
         Category = "go_perk"
     },
@@ -655,16 +727,6 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
-    {
-        PrintName = "lhik",
-        Bone = "tag_grip_attach",
-        Pos = Vector(-3, 0, 1.3),
-        Ang = Angle(0, 0, 180),
-        Category = "cod2019_lhik_spr208",
-		Installed = "csgo_cod2019_lhik_spr208",
-        Integral = true,
-        Hidden = true,		
-    },	
 }
 
 SWEP.GripPoseParam = 3.5
