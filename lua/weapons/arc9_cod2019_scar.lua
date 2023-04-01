@@ -158,7 +158,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -177,7 +177,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(-1, 0, -1.5)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -306,10 +306,11 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.55,
+		Mult = 1.1,
         IKTimeLine = {
             {
                 t = 0,
@@ -327,7 +328,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -335,9 +336,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 37/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 47/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 50/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["reload_empty"] = {
@@ -466,7 +467,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 

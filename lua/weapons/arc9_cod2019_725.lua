@@ -173,8 +173,8 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(-1, 0, -1.5)
-SWEP.SprintAng = Angle(0, 0, 15)
+SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, 0),
@@ -220,6 +220,7 @@ SWEP.MuzzleParticle = "weapon_muzzle_flash_autoshotgun"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
+SWEP.CaseEffectQCA = 6
 
 SWEP.CamQCA = 3
 SWEP.CamQCA_Mult = 1
@@ -230,8 +231,17 @@ SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1.2
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
+SWEP.ShellCorrectAng = Angle(0, 0, 0)
+
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
+
+SWEP.DropMagazineModel = "models/weapons/shared/shell_origin12.mdl"
+SWEP.DropMagazineSounds = {"arc9/casings/casing_12ga_1.wav", "arc9/casings/casing_12ga_2.wav", "arc9/casings/casing_12ga_3.wav"}
+SWEP.DropMagazineAmount = 1
+SWEP.DropMagazineAmountEmpty = 2
+SWEP.DropMagazineTime = 1
+SWEP.DropMagazineQCA = 6
 
 SWEP.NoShellEject = true
 
@@ -257,6 +267,8 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
+		DropMagAt = 0.6,
+		--EjectAt = 0.65,
         IKTimeLine = {
             {
                 t = 0,
@@ -274,7 +286,43 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_charlie725_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 44/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 47/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 50/30},
+        },
+    },
+    ["1_reload"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		DropMagAt = 0.6,
+		--EjectAt = 0.65,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -291,6 +339,8 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		DropMagAt = 0.6,
+		--EjectAt = 0.7,
         IKTimeLine = {
             {
                 t = 0,
@@ -321,6 +371,43 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 48/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 59/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 69/30},
+        },
+    },
+    ["1_reload_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.6,
+		--EjectAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_open_01.ogg", t = 3/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 55/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 55/30},
         },
     },
     ["ready"] = {

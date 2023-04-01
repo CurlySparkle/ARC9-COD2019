@@ -155,7 +155,7 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-1.95, -3, 0.9),
+    Pos = Vector(-2.11, -3, 0.7),
     Ang = Angle(0, 0, 4.5),
     Magnification = 1.1,
     ViewModelFOV = 56,
@@ -244,6 +244,12 @@ SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
+--SWEP.ReloadHideBonesFirstPerson = true
+SWEP.HideBones  = {
+    [1] = "j_mag2",
+}
+
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
@@ -286,43 +292,9 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
-		DropMagAt = 0.8,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 4/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_01.ogg", t = 29/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_02.ogg", t = 48/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_hands.ogg", t = 45/30},
-        },
-    },
-    ["2_reload"] = {
-        Source = "reload_short3",
-		MinProgress = 0.8,
-		DropMagAt = 0.8,
+		DropMagAt = 0.6,
         IKTimeLine = {
             {
                 t = 0,
@@ -340,7 +312,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -471,6 +443,28 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2","melee3"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -526,9 +520,9 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
     {
-        PrintName = "Optics",
-        Bone = "tag_attachments",
-        Pos = Vector(5.5, 0, 2),
+        PrintName = "tag_holo",
+        Bone = "tag_holo",
+        Pos = Vector(3, 0, 0),
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -538,11 +532,11 @@ SWEP.Attachments = {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
         Category = {"muzzle_shotgun","muzzle"},
-        Bone = "tag_attachments",
-        Pos = Vector(18, 0, -0.27),
+        Bone = "tag_silencer",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle"},
-		Scale = 1.1,
+		Scale = 1,
     },
     {
         PrintName = "Tactical",
@@ -556,8 +550,8 @@ SWEP.Attachments = {
         PrintName = "Grips",
         DefaultAttName = "Default",
         Category = {"grip","grip_p90"},
-        Bone = "tag_attachments",
-        Pos = Vector(14, 0, -1.5),
+        Bone = "tag_grip_attach",
+        Pos = Vector(-3.5, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"grip_none"},
