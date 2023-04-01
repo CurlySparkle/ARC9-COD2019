@@ -268,7 +268,7 @@ SWEP.Animations = {
     },
     ["fire_sights"] = {
         Source = "shoot1_ads",
-		Mult = 0.5,
+		Mult = 1,
     },
     ["cycle"] = {
         Source = "pump",
@@ -280,7 +280,7 @@ SWEP.Animations = {
         },
     },
     ["cycle_sights"] = {
-        Source = "pump",
+        Source = "pump_ads",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {

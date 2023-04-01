@@ -16,6 +16,7 @@ ENT.SphereSize = 2
 ENT.PhysMat = "grenade"
 
 ENT.LifeTime = 1.5
+ENT.Radius = 300
 
 ENT.ExplodeOnImpact = false
 
@@ -112,6 +113,7 @@ function ENT:Detonate()
 
         util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 256, 200)
         util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 328, 100)
+		util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
 
         self:EmitSound("Cod2019.Frag.Explode")
     end

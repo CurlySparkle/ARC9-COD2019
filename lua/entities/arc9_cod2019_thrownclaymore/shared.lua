@@ -16,6 +16,8 @@ ENT.DetectionRange = 400
 ENT.DetectionAngle = 45
 ENT.LaserOffset = Vector(1, 0, 8)
 
+ENT.Radius = 300
+
 ENT.NextBeepTime = 0
 ENT.DetectionRangeSqr = ENT.DetectionRange * ENT.DetectionRange
 
@@ -159,6 +161,7 @@ function ENT:Detonate()
         dir:RotateAroundAxis(self:GetAngles():Forward(), -5 + self:GetAdjustment().p)
 
         util.BlastDamage(oldowner, oldowner, pos, 200, 150)
+		util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
         local btabl = {
             Attacker = oldowner,
             Damage = 30,

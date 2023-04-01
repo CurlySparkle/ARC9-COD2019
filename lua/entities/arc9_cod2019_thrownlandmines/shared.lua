@@ -8,6 +8,7 @@ ENT.WeaponClass = "arc9_cod2019_nade_landmines"
 ENT.Bury = 3
 ENT.DetectionRange = 96
 ENT.ArmDelay = 3
+ENT.Radius = 300
 
 
 function ENT:OnPlant()
@@ -71,6 +72,7 @@ function ENT:Detonate()
         self:SetOwner(NULL)
         util.BlastDamage(oldowner, oldowner, pos, 128, 300 * d)
         util.BlastDamage(oldowner, oldowner, pos, 256, 150 * d)
+		util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
 
         self:Remove()
     end
