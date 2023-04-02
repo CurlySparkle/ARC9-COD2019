@@ -172,7 +172,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -0.7)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -457,6 +457,28 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2", "melee3"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -636,5 +658,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 0.4
 SWEP.GripPoseParam2 = 0
-SWEP.CodAngledGripPoseParam = 1
+SWEP.CodAngledGripPoseParam = 4
 SWEP.CodStubbyGripPoseParam = 1
+SWEP.CodStubbyTallGripPoseParam = 2

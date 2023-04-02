@@ -93,11 +93,11 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.8
+SWEP.Recoil = 1.4
 
 SWEP.RecoilSeed = 6589132
 
-SWEP.RecoilPatternDrift = 45
+SWEP.RecoilPatternDrift = 55
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 0.8 -- Multiplier for vertical recoil
@@ -113,18 +113,18 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.3
+SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.7
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.2
+SWEP.VisualRecoilPunch = 0.7
 SWEP.VisualRecoilUp = 0.8
 
 -------------------------- SPREAD
@@ -132,13 +132,13 @@ SWEP.VisualRecoilUp = 0.8
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCap = 2
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.015
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -154,7 +154,7 @@ SWEP.InstantSprintIdle = false
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -164,8 +164,8 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.67, -4, 0.4),
-    Ang = Angle(0, 0, 0.5),
+    Pos = Vector(-2.665, -3, 0.4),
+    Ang = Angle(0, 0, 1),
     Magnification = 1.15,
     ViewModelFOV = 56,
 	CrosshairInSights = false
@@ -280,12 +280,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -462,6 +462,28 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2", "melee3"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -640,3 +662,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.6
+SWEP.CodStubbyGripPoseParam = 7
+SWEP.CodStubbyTallGripPoseParam = 1

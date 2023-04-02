@@ -473,6 +473,28 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2", "melee3"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -491,6 +513,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
@@ -519,6 +546,11 @@ SWEP.AttachmentElements = {
     ["stock_none"] = {
         Bodygroups = {
             {3,2},
+        },
+    },
+    ["sight_none"] = {
+        Bodygroups = {
+            {5,1},
         },
     },
 }
@@ -554,7 +586,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optic",},
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sights"},
+		InstalledElements = {"sights","sight_none"},
     },
     {
         PrintName = "Tactical",
@@ -649,17 +681,10 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
-    {
-        PrintName = "lhik",
-        Bone = "tag_grip_attach",
-        Pos = Vector(-3, -0.2, 0.3),
-        Ang = Angle(0, 0, 180),
-        Category = "cod2019_lhik_mp5",
-		Installed = "csgo_cod2019_lhik_mp5",
-        Integral = true,
-        Hidden = true,		
-    },	
 }
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodAngledGripPoseParam = 5
+SWEP.CodStubbyGripPoseParam = 1
+SWEP.CodStubbyTallGripPoseParam = 2

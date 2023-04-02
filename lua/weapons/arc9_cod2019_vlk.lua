@@ -168,7 +168,7 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-1.37, -2, 1.05),
+    Pos = Vector(-1.75, -2, 1.1),
     Ang = Angle(0, 0, 6.5),
     Magnification = 1.1,
     ViewModelFOV = 56,
@@ -196,7 +196,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(-1, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -228,10 +228,10 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/weapons/shared/shell_origin12.mdl"
+SWEP.ShellModel = "models/weapons/shared/shell_jak12.mdl"
 SWEP.ShellSounds = ARC9.ShotgunShellSoundsTable
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 1.3
+SWEP.ShellScale = 1.1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.NoShellEject = true
 SWEP.EjectDelay = 0.15
@@ -262,7 +262,7 @@ SWEP.Animations = {
         Source = "shoot1",
     },
     ["fire_sights"] = {
-        Source = "shoot1",
+        Source = "shoot1_ads",
     },
     ["cycle"] = {
         Source = "pump",
@@ -273,7 +273,7 @@ SWEP.Animations = {
         },
     },
     ["cycle_sights"] = {
-        Source = "pump",
+        Source = "pump_ads",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
@@ -314,7 +314,7 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
 		DropMagAt = 0.8,
         IKTimeLine = {
@@ -334,7 +334,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -471,7 +471,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = {"melee", "melee2"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 

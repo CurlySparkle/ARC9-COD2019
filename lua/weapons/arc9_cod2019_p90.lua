@@ -125,7 +125,7 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.6
+SWEP.VisualRecoilPunch = 0.7
 SWEP.VisualRecoilUp = 0.3
 
 -------------------------- SPREAD
@@ -156,7 +156,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -332,6 +332,45 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_papa90_reload_end.ogg", t = 73/30},
         },
     },
+    ["1_reload"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.8,
+		Mult = 1.1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_papa90_reload_grabmag.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_papa90_reload_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_sm_papa90_reload_arm_down.ogg", t = 11/30},
+			{s = path .. "wfoly_sm_papa90_reload_arm_up.ogg", t = 11/30},
+			{s = path .. "wfoly_sm_papa90_reload_arm_maghit.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_papa90_reload_magin_v2_01.ogg", t = 37/30},
+			{s = path .. "wfoly_sm_papa90_reload_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_papa90_reload_end.ogg", t = 40/30},
+        },
+    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -467,7 +506,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
         IKTimeLine = {
             {
                 t = 0,
@@ -480,12 +519,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 1.1,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -649,3 +688,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodAngledGripPoseParam = 5
+SWEP.CodStubbyGripPoseParam = 0.5
+SWEP.CodStubbyTallGripPoseParam = 2

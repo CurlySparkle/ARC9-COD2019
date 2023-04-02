@@ -154,7 +154,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -329,11 +329,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 4/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 38/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 44/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 52/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 64/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 3/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 33/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 50/30},
         },
     },
     ["reload_empty"] = {
@@ -403,11 +403,11 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_open_01.ogg", t = 3/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 30/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 20/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 30/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 48/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 55/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 55/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 45/30},
         },
     },
     ["ready"] = {
@@ -467,7 +467,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
@@ -492,6 +492,28 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2","melee3"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -694,3 +716,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4.2
 SWEP.GripPoseParam2 = 0.3
 SWEP.CodStubbyGripPoseParam = 7
+SWEP.CodStubbyTallGripPoseParam = 1

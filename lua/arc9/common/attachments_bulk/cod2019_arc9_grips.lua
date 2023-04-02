@@ -26,6 +26,10 @@ ATT.LHIK = true
 ATT.ModelOffset = Vector(0, 0, 0.12)
 ATT.ModelAngleOffset = Angle(0, 0, 180)
 
+ATT.DrawFunc = function(swep, model, wm)
+    model:SetPoseParameter("gripstyle", swep.CodStubbyTallGripPoseParam or 0)
+end
+
 ARC9.LoadAttachment(ATT, "csgo_cod2019_grips_merc")
 ------------------------------------------------------------------
 ATT = {}

@@ -101,7 +101,7 @@ SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
 SWEP.Recoil = 3
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 3 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 2 -- Multiplier for vertical recoil
 
 SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
@@ -127,21 +127,14 @@ SWEP.RecoilMultSights = 0.9
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 5
+SWEP.VisualRecoilUp = 1
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.035
-
-SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
-
-SWEP.SpreadAddMove = 0.03
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.035
-SWEP.SpreadMultHipFire = 0.9
-SWEP.SpreadMultSights = 1
-SWEP.SpreadAddCrouch = -0.004
-SWEP.SpreadAddSightsMove = -0.1
+SWEP.Spread = 190 * ARC9.MOAToAcc
+SWEP.UseDispersion = true
+SWEP.DispersionSpread = 0.04
+SWEP.DispersionSpreadAddHipFire = 0
 
 -------------------------- HANDLING
 
@@ -226,10 +219,10 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/weapons/shared/shell_origin12.mdl"
+SWEP.ShellModel = "models/weapons/shared/shell_jak12.mdl"
 SWEP.ShellSounds = ARC9.ShotgunShellSoundsTable
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 1.3
+SWEP.ShellScale = 1.1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
@@ -264,7 +257,7 @@ SWEP.Animations = {
 		EjectAt = 0.1,
     },
     ["fire_sights"] = {
-        Source = "shoot1",
+        Source = "shoot1_ads",
 		EjectAt = 0.1,
     },
     ["reload"] = {
@@ -302,7 +295,7 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.9,
         IKTimeLine = {
             {
@@ -316,12 +309,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
@@ -354,7 +347,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1.3,
+                t = 1.22,
                 lhik = 1,
                 rhik = 1
             },
@@ -450,6 +443,28 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2","melee3"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
