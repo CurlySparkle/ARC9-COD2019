@@ -287,8 +287,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_magout_01.ogg", t = 18/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_magin_v2_01.ogg", t = 32/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_magin_v2_02.ogg", t = 40/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_end.ogg", t = 48/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_pull.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_end.ogg", t = 49/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_pull.ogg", t = 51/30},
         },
     },
     ["1_reload"] = {

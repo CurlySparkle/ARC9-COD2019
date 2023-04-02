@@ -296,8 +296,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 4/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 38/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 44/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 47/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 66/30},
         },
     },
     ["1_reload"] = {
@@ -330,10 +330,10 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 3/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 33/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 40/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 48/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 36/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 44/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 48/30},
         },
     },
     ["reload_empty"] = {
@@ -365,12 +365,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_open_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_open_01.ogg", t = 5/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 33/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 43/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 48/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 59/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 69/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 73/30},
         },
     },
     ["1_reload_empty"] = {
@@ -406,8 +406,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 20/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 30/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 48/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 45/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 47/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 48/30},
         },
     },
     ["ready"] = {

@@ -368,7 +368,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_papa90_reload_arm_maghit.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_papa90_reload_magin_v2_01.ogg", t = 37/30},
 			{s = path .. "wfoly_sm_papa90_reload_magin_v2_02.ogg", t = 40/30},
-			{s = path .. "wfoly_sm_papa90_reload_end.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_papa90_reload_end.ogg", t = 54/30},
         },
     },
     ["reload_empty"] = {
@@ -439,7 +439,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sm_papa90_raise_first_start.ogg", t = 0/37},
             {s = path .. "wfoly_sm_papa90_raise_first_charge_01.ogg", t = 9/37},
-			{s = path .. "wfoly_sm_papa90_raise_first_end.ogg", t = 15/37},
+			{s = path .. "wfoly_sm_papa90_raise_first_end.ogg", t = 17/37},
         },
     },
     ["draw"] = {

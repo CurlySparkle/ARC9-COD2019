@@ -376,9 +376,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_arm.ogg", t = 40/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_01.ogg", t = 51/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_02.ogg", t = 60/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltopen_01.ogg", t = 75/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltclose_01.ogg", t = 86/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 84/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltopen_01.ogg", t = 76/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltclose_01.ogg", t = 87/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 93/30},
         },
     },
     ["ready"] = {
@@ -407,10 +407,10 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_raise_first_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_ar_falima_raise_first_cloth.ogg", t = 2/30},
+            {s = path .. "wfoly_plr_ar_falima_raise_first_cloth.ogg", t = 3/30},
             {s = path .. "wfoly_plr_ar_falima_raise_first_boltopen_01.ogg", t = 18/30},
 			{s = path .. "wfoly_plr_ar_falima_raise_first_boltclosed_01.ogg", t = 26/30},
-			{s = path .. "wfoly_plr_ar_falima_raise_first_end.ogg", t = 37/30},
+			{s = path .. "wfoly_plr_ar_falima_raise_first_end.ogg", t = 39/30},
         },
     },
     ["draw"] = {

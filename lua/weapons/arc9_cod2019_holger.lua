@@ -366,7 +366,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_lm_mgolf36_raise_first_bolt_pull.ogg", t = 17/30},
 			{s = path .. "wfoly_lm_mgolf36_raise_first_bolt_release.ogg", t = 29/30},
 			{s = path .. "wfoly_lm_mgolf36_raise_first_down_grab.ogg", t = 36/30},
-			{s = path .. "wfoly_lm_mgolf36_raise_first_end.ogg", t = 38/30},
+			{s = path .. "wfoly_lm_mgolf36_raise_first_end.ogg", t = 43/30},
         },
     },
     ["draw"] = {
