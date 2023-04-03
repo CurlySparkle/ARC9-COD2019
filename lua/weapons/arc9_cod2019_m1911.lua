@@ -296,8 +296,7 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_mike1911_reload_lift.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_mike1911_reload_magout_01.ogg", t = 12/30},
-			{s = path .. "wfoly_pi_mike1911_reload_magin_v2_01.ogg", t = 22/30},
-			{s = path .. "wfoly_pi_mike1911_reload_magin_v2_02.ogg", t = 23/30},
+			{s = path .. "wfoly_pi_mike1911_reload_magin_01.ogg", t = 23/30},
 			{s = path .. "wfoly_pi_mike1911_reload_end.ogg", t = 32/30},
         },
     },
@@ -331,9 +330,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_mike1911_reload_empty_lift.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 6/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 18/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 22/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 35/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 30/30},
         },
     },
     ["reload_empty"] = {
@@ -365,10 +364,10 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_mike1911_reload_empty_lift.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 6/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 18/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 22/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 35/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 34/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 36/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 39/30},
         },
     },
     ["ready"] = {
@@ -399,7 +398,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_pi_mike1911_first_raise_lift.ogg", t = 0/30},
             {s = path .. "wfoly_pi_mike1911_first_raise_slide_pull.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike1911_first_raise_slide_release.ogg", t = 18/30},
-			{s = path .. "wfoly_pi_mike1911_first_raise_chamber_end.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike1911_first_raise_chamber_end.ogg", t = 21/30},
         },
     },
     ["draw"] = {

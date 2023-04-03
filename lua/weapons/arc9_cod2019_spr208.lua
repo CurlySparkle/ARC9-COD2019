@@ -379,7 +379,7 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sn_remeo700_raise_first_up.ogg", t = 0/30},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_boltopen.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_remeo700_reload_empty_magout.ogg", t = 29/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_magout.ogg", t = 30/30},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_maghit.ogg", t = 56/30},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_magin.ogg", t = 73/30},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_rotate.ogg", t = 80/30},
@@ -420,7 +420,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_reload_empty_magin.ogg", t = 40/30},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_rotate.ogg", t = 50/30},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_boltopen.ogg", t = 57/30},
-			{s = path .. "wfoly_sn_remeo700_reload_empty_boltclose.ogg", t = 65/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_boltclose.ogg", t = 60/30},
         },
     },
     ["ready"] = {
@@ -439,8 +439,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_raise_first_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_remeo700_raise_first_boltclose.ogg", t = 3/30},
-			{s = path .. "wfoly_sn_remeo700_raise_first_end.ogg", t = 19/30},
+			{s = path .. "wfoly_sn_remeo700_raise_first_boltclose.ogg", t = 5/30},
+			{s = path .. "wfoly_sn_remeo700_raise_first_end.ogg", t = 22/30},
         },
     },
     ["draw"] = {

@@ -297,7 +297,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_maghit.ogg", t = 34/30},
 			{s = path .. "wfoly_ar_valpha_reload_magin.ogg", t = 44/30},
 			{s = path .. "wfoly_ar_valpha_reload_magdown.ogg", t = 49/30},
-			{s = path .. "wfoly_ar_valpha_reload_end.ogg", t = 58/30},
+			{s = path .. "wfoly_ar_valpha_reload_end.ogg", t = 59/30},
         },
     },
     ["1_reload"] = {
@@ -333,7 +333,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_empty_arm.ogg", t = 11/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_maghit.ogg", t = 35/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_magin.ogg", t = 46/30},
-			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 44/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 59/30},
         },
     },
     ["reload_empty"] = {
@@ -369,7 +369,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_empty_magin.ogg", t = 46/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_grab_bolt.ogg", t = 44/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_charge.ogg", t = 58/30},
-			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 68/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 74/30},
         },
     },
     ["ready"] = {
@@ -399,7 +399,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_ar_valpha_raise_first_up.ogg", t = 0/30},
             {s = path .. "wfoly_ar_valpha_raise_first_selector.ogg", t = 9/30},
-            {s = path .. "wfoly_ar_valpha_raise_first_end.ogg", t = 16/30},
+            {s = path .. "wfoly_ar_valpha_raise_first_end.ogg", t = 17/30},
         },
     },
     ["draw"] = {
@@ -457,13 +457,13 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_ar_valpha_inspect_up.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_valpha_inspect_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_ar_valpha_inspect_magout.ogg", t = 20/30},
 			{s = path .. "wfoly_ar_valpha_inspect_magcatch.ogg", t = 40/30},
 			{s = path .. "wfoly_ar_valpha_inspect_magin.ogg", t = 61/30},
 			{s = path .. "wfoly_ar_valpha_inspect_rotate.ogg", t = 75/30},
 			{s = path .. "wfoly_ar_valpha_inspect_boltpull.ogg", t = 100/30},
 			{s = path .. "wfoly_ar_valpha_inspect_boltforward.ogg", t = 123/30},
-			{s = path .. "wfoly_ar_valpha_inspect_end.ogg", t = 145/30},
+			{s = path .. "wfoly_ar_valpha_inspect_end.ogg", t = 149/30},
         },
     },
     ["bash"] = {

@@ -295,7 +295,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_lima86_reload_rotate.ogg", t = 36/30},
 			{s = path .. "wfoly_lm_lima86_reload_magin_v2_01.ogg", t = 54/30},
 			{s = path .. "wfoly_lm_lima86_reload_magin_v2_02.ogg", t = 69/30},
-			{s = path .. "wfoly_lm_lima86_reload_end_01.ogg", t = 86/30},
+			{s = path .. "wfoly_lm_lima86_reload_end_01.ogg", t = 88/30},
         },
     },
     ["reload_empty"] = {
@@ -326,12 +326,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_lima86_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_lima86_reload_empty_magout_01.ogg", t = 22/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_magout_01.ogg", t = 24/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_magin_v2_01.ogg", t = 55/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_magin_v2_02.ogg", t = 72/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_rotate.ogg", t = 75/30},
-			{s = path .. "wfoly_lm_lima86_reload_empty_charge_01.ogg", t = 92/30},
-			{s = path .. "wfoly_lm_lima86_reload_empty_end.ogg", t = 70/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_charge_01.ogg", t = 94/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_end.ogg", t = 75/30},
         },
     },
     ["ready"] = {
@@ -361,7 +361,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_lm_lima86_raise_first_start.ogg", t = 0/30},
             {s = path .. "wfoly_lm_lima86_raise_first_charge_01.ogg", t = 14/30},
-			{s = path .. "wfoly_lm_lima86_raise_first_end.ogg", t = 23/30},
+			{s = path .. "wfoly_lm_lima86_raise_first_end.ogg", t = 22/30},
         },
     },
     ["draw"] = {

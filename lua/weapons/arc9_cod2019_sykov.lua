@@ -297,10 +297,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_pi_mike_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike_reload_magout.ogg", t = 9/30},
-			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 23/30},
-			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 29/30},
-			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 39/30},
+			{s = path .. "wfoly_pi_mike_reload_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 24/30},
+			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 41/30},
         },
     },
     ["reload_empty"] = {
@@ -332,11 +332,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_pi_mike_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_maghit.ogg", t = 24/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 26/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 44/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 54/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 45/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 58/30},
         },
     },
     ["ready"] = {
@@ -365,7 +365,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_pi_mike_first_raise_up.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike_first_raise_magout.ogg", t = 5/30},
+			{s = path .. "wfoly_pi_mike_first_raise_magout.ogg", t = 4/30},
 			{s = path .. "wfoly_pi_mike_first_raise_magin.ogg", t = 14/30},
 			{s = path .. "wfoly_pi_mike_first_raise_end.ogg", t = 19/30},
         },

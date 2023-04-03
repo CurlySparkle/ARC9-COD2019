@@ -330,9 +330,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_pi_cpapa_first_raise_start.ogg", t = 15/30},
-            {s = path .. "wfoly_pi_cpapa_first_raise_cylinderopen_01.ogg", t = 15/30},
-			{s = path .. "wfoly_pi_cpapa_first_raise_cylinderclose_01.ogg", t = 26/30},
+            {s = path .. "wfoly_pi_cpapa_first_raise_start.ogg", t = 12/30},
+            {s = path .. "wfoly_pi_cpapa_first_raise_cylinderopen_01.ogg", t = 12/30},
+			{s = path .. "wfoly_pi_cpapa_first_raise_cylinderclose_01.ogg", t = 23/30},
 			{s = path .. "wfoly_pi_cpapa_first_raise_end.ogg", t = 27/30},
         },
     },

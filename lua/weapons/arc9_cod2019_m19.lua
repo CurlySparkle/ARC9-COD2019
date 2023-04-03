@@ -291,10 +291,10 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_magout_01.ogg", t = 9/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_magin_v2_01.ogg", t = 23/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_magin_v2_02.ogg", t = 29/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_magin_v2_01.ogg", t = 24/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_magin_v2_02.ogg", t = 30/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_end.ogg", t = 33/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_wiggle.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_wiggle.ogg", t = 36/30},
         },
     },
     ["1_reload"] = {
@@ -329,9 +329,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magout_01.ogg", t = 8/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_arm.ogg", t = 13/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_regrip.ogg", t = 22/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magin_v2_01.ogg", t = 31/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magin_v2_01.ogg", t = 32/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magin_v2_02.ogg", t = 38/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_empty_end.ogg", t = 47/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_end.ogg", t = 38/30},
         },
     },
     ["reload_empty"] = {
@@ -399,7 +399,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_pi_papa320_raise_first_start.ogg", t = 0/30},
             {s = path .. "wfoly_plr_pi_papa320_raise_first_open_01.ogg", t = 4/30},
 			{s = path .. "wfoly_plr_pi_papa320_raise_first_close_01.ogg", t = 17/30},
-			{s = path .. "wfoly_plr_pi_papa320_raise_first_end.ogg", t = 18/30},
+			{s = path .. "wfoly_plr_pi_papa320_raise_first_end.ogg", t = 20/30},
         },
     },
     ["draw"] = {

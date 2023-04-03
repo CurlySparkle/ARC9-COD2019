@@ -335,7 +335,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 20/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 33/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 33/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["reload_empty"] = {
@@ -400,7 +400,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sm_charlie9_first_raise_up.ogg", t = 0/30},
             {s = path .. "wfoly_sm_charlie9_first_raise_bolt_forward.ogg", t = 13/30},
-			{s = path .. "wfoly_sm_charlie9_first_raise_end.ogg", t = 17/30},
+			{s = path .. "wfoly_sm_charlie9_first_raise_end.ogg", t = 19/30},
         },
     },
     ["draw"] = {
