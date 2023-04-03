@@ -182,7 +182,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -248,6 +248,7 @@ SWEP.ShotgunReload = true
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/model680/"
+local path2 = "weapons/cod2019/m13/"
 
 SWEP.ShootSound = "COD2019.Model680.Fire"
 SWEP.ShootSoundSilenced = "COD2019.Model680.Silenced_Fire"
@@ -378,6 +379,74 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_romeo870_reload_empty_start_open_01.ogg", t = 6/30},
 			{s = path .. "wfoly_sh_romeo870_reload_empty_start_end.ogg", t = 11/30},
 			{s = path .. "wfoly_sh_romeo870_reload_empty_start_close_01.ogg", t = 15/30},
+        },
+    },
+    ["reload_mag"] = {
+        Source = "reload_mag_fast_short",
+		MinProgress = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path2 .. "wfoly_ar_mcharlie_reload_rotate.ogg", t = 0/30},
+			{s = path2 .. "wfoly_ar_mcharlie_reload_magout_01.ogg", t = 11/30},
+			{s = path2 .. "wfoly_ar_mcharlie_reload_magin_v2_01.ogg", t = 33/30},
+			{s = path2 .. "wfoly_ar_mcharlie_reload_magin_v2_02.ogg", t = 39/30},
+			{s = path2 .. "wfoly_ar_mcharlie_reload_end.ogg", t = 39/30},
+        },
+    },
+    ["reload_empty_mag"] = {
+        Source = "reload_mag_fast_empty",
+		MinProgress = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+		    {s = "COD2019.Model680.Rechamber_A", t = 0/30},
+			{s = path2 .. "wfoly_ar_mcharlie_reload_rotate.ogg", t = 0/30},
+			{s = path2 .. "wfoly_ar_mcharlie_reload_magout_01.ogg", t = 11/30},
+			{s = path2 .. "wfoly_ar_mcharlie_reload_magin_v2_01.ogg", t = 33/30},
+			{s = path2 .. "wfoly_ar_mcharlie_reload_magin_v2_02.ogg", t = 39/30},
+			{s = "COD2019.Model680.Rechamber_B", t = 0/30},
+			{s = path2 .. "wfoly_ar_mcharlie_reload_end.ogg", t = 39/30},
         },
     },
     ["ready"] = {
@@ -618,7 +687,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "tag_attachments",
-        Category = {"go_mag"},
+        Category = {"go_mag","cod2019_model680_mag"},
         Pos = Vector(5, 0, 0),
         Ang = Angle(0, 0, 0),
     },

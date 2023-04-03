@@ -608,6 +608,13 @@ SWEP.Attachments = {
 		InstalledElements = {"rail_grip"},
     },
     {
+        PrintName = "Foregrip",
+        Category = "cod2019_725_foregrip",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+    },
+    {
         PrintName = "Grips",
         DefaultAttName = "Default",
         Category = "grip",

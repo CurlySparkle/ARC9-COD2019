@@ -43,8 +43,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 70 -- Damage done at point blank range
-SWEP.DamageMin = 47 -- Damage done at maximum range
+SWEP.DamageMax = 100 -- Damage done at point blank range
+SWEP.DamageMin = 28 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -77,7 +77,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 200
+SWEP.RPM = 150
 
 SWEP.Firemodes = {
     {
@@ -87,7 +87,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 3
+SWEP.Recoil = 2
 
 --SWEP.RecoilSeed = nil
 
@@ -107,7 +107,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 2.4
 
 SWEP.RecoilMultCrouch = 0.8
 
@@ -147,7 +147,7 @@ SWEP.SprintToFireTime = 0.1 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.25
+SWEP.PostBashTime = 0.15
 
 -------------------------- TRACERS
 
@@ -247,13 +247,16 @@ SWEP.HideBones = {
 	[8] = "j_b_loader",
 }
 
-SWEP.TriggerDelay = 0.05 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = 0.075 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
+SWEP.TriggerDelayTime = 0.075 -- Time until weapon fires.
 
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
+    },
+    ["fire_sights"] = {
+        Source = "shoot1_ads",
     },
     ["dryfire"] = {
         Source = "shoot1_cycle",
@@ -397,7 +400,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = "melee",
+        Source = {"melee","melee2"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 

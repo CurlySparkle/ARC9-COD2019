@@ -123,23 +123,22 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.6
+SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 1
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.05 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 4
+SWEP.SpreadAddRecoil = 0.03
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 3
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 -------------------------- HANDLING
@@ -152,7 +151,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -171,7 +170,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -299,10 +298,11 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
 		DropMagAt = 1,
+		Mult = 1.2,
         IKTimeLine = {
             {
                 t = 0,
@@ -315,23 +315,23 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
 			{s = path .. "wfoly_ar_galima_reload_empty_arm.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_magout.ogg", t = 8/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_rotate.ogg", t = 35/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_maghit.ogg", t = 40/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 50/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 60/30},
+			{s = path .. "wfoly_ar_galima_reload_magout.ogg", t = 15/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_rotate.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_maghit.ogg", t = 30/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["reload_empty"] = {
@@ -464,6 +464,28 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2", "melee3"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -643,3 +665,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodAngledGripPoseParam = 4.2
+SWEP.CodStubbyGripPoseParam = 1

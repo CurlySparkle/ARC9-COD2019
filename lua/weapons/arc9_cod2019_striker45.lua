@@ -125,7 +125,7 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.5
+SWEP.VisualRecoilPunch = 1.5
 SWEP.VisualRecoilUp = 1
 
 -------------------------- SPREAD
@@ -156,7 +156,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.15
 
 -------------------------- TRACERS
 
@@ -175,7 +175,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -268,6 +268,7 @@ SWEP.Animations = {
     },
     ["fire_sights"] = {
         Source = "shoot1_ads",
+		Mult = 0.3,
     },
     ["reload"] = {
         Source = "reload_short",
@@ -290,7 +291,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 1,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -303,7 +304,7 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.7,
@@ -469,6 +470,28 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2", "melee3"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -562,8 +585,8 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "csgo_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(3.3, -0.8, -1.1),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(0.5, 0, 0),
+        Ang = Angle(0, 0, 180),
 		--InstalledElements = {"rail_laser"},
     },
     {
@@ -584,6 +607,14 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_none"},
 		Scale = 1.2,
+    },
+    {
+        PrintName = "Reciever",
+        Category = "cod2019_striker45_reciever",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(4, 0, 1),
     },
     {
         PrintName = "Ammo",
@@ -654,3 +685,4 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodAngledGripPoseParam = 3
