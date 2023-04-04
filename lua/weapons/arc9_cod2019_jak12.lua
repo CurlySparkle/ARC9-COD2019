@@ -322,9 +322,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0/30},
 			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 5/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 39/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 51/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 70/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 30/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 33/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 40/30},
         },
     },
     ["reload_empty"] = {
@@ -442,7 +442,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = {"melee", "melee2"},
         IKTimeLine = {
             {
                 t = 0,
@@ -648,3 +648,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.2
 SWEP.GripPoseParam2 = 0.7
+SWEP.CodAngledGripPoseParam = 1
+SWEP.CodStubbyGripPoseParam = 6.5

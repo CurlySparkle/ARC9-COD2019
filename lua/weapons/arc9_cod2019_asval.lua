@@ -93,15 +93,15 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.4
+SWEP.Recoil = 1
 
 SWEP.RecoilSeed = 6589132
 
-SWEP.RecoilPatternDrift = 45
+SWEP.RecoilPatternDrift = 35
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1.5 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -124,8 +124,8 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.7
-SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilUp = 0.7
 
 -------------------------- SPREAD
 
@@ -153,7 +153,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -172,7 +172,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -0.5)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -230,7 +230,7 @@ SWEP.ShellScale = 1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_rif_asval_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -329,16 +329,17 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_valpha_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_valpha_reload_empty_magout.ogg", t = 11/30},
-			{s = path .. "wfoly_ar_valpha_reload_empty_arm.ogg", t = 11/30},
-			{s = path .. "wfoly_ar_valpha_reload_empty_maghit.ogg", t = 35/30},
-			{s = path .. "wfoly_ar_valpha_reload_empty_magin.ogg", t = 46/30},
-			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 59/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_arm.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_maghit.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_magin.ogg", t = 36/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 42/30},
         },
     },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		DropMagAt = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -624,7 +625,7 @@ SWEP.Attachments = {
         PrintName = "Stats",
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, -1),
+        Pos = Vector(-3.5, -0.1, 0.3),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
@@ -632,3 +633,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodStubbyGripPoseParam = 0
+SWEP.CodAngledGripPoseParam = 4.1

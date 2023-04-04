@@ -127,7 +127,7 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.5
+SWEP.VisualRecoilPunch = 0.7
 SWEP.VisualRecoilUp = 1
 
 -------------------------- SPREAD
@@ -155,7 +155,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -165,7 +165,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.25, -2, 0.5),
+    Pos = Vector(-2.3, -2, 0.5),
     Ang = Angle(-0.25, 1, 3),
     Magnification = 1.15,
     ViewModelFOV = 56,
@@ -185,15 +185,15 @@ SWEP.MovingMidPoint = {
 }
 
 SWEP.ActivePos = Vector(0, 0, 0)
-SWEP.ActiveAng = Angle(0, 1, 0)
+SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingPos = Vector(0, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 1, 0)
+SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
-SWEP.CrouchAng = Angle(0, 1, -5)
+SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -303,7 +303,7 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.85,
@@ -331,12 +331,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_magout.ogg", t = 7/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_rotatemvmnt.ogg", t = 23/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_arm.ogg", t = 28/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 41/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 48/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 56/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_rotatemvmnt.ogg", t = 15/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_arm.ogg", t = 18/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 30/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 35/30},
         },
     },
     ["reload_empty"] = {
@@ -469,7 +469,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -634,3 +656,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.4
+SWEP.CodStubbyGripPoseParam = 0
+SWEP.CodAngledGripPoseParam = 5
