@@ -94,7 +94,7 @@ SWEP.Firemodes = {
 SWEP.Recoil = 3
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 3 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
 
 SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
@@ -109,7 +109,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 10 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
@@ -147,7 +147,7 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.64, -5, 1.45),
+    Pos = Vector(-3.82, -4.5, 1.45),
     Ang = Angle(0, 0, -1),
     Magnification = 1.1,
     ViewModelFOV = 56,
@@ -156,7 +156,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -223,9 +223,9 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    -- ["fire_sights"] = {
-        -- Source = "shoot1_ads",
-    -- },
+    ["fire_sights"] = {
+        Source = "shoot1_ads",
+    },
     ["reload"] = {
         Source = "reload",
 		MinProgress = 0.8,
@@ -258,6 +258,40 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_01.ogg", t = 65/30},
 			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_02.ogg", t = 70/30},
 			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 78/30},
+        },
+    },
+    ["1_reload"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_crossbow_reload_rotate.ogg", t = 2/30},
+			{s = path .. "wfoly_sn_crossbow_reload_pull_string.ogg", t = 5/30},
+			{s = path .. "wfoly_sn_crossbow_reload_load_arrow.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_01.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_02.ogg", t = 50/30},
+			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 48/30},
         },
     },
     ["ready"] = {
@@ -300,11 +334,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.5,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.5,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -341,7 +375,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = {"melee", "melee2"},
     },
 }
 
@@ -483,3 +517,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.4
+SWEP.CodAngledGripPoseParam = 5.1
+SWEP.CodStubbyGripPoseParam = 6.5

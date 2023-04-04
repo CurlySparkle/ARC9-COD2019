@@ -127,8 +127,9 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.7
-SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilPunch = 0.6
+SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilRoll = 0.5
 
 -------------------------- SPREAD
 
@@ -268,7 +269,6 @@ SWEP.Animations = {
     },
     ["fire_sights"] = {
         Source = "shoot1_ads",
-		Mult = 0.5,
     },
     ["reload"] = {
         Source = "reload_short",
@@ -689,4 +689,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4.6
 SWEP.GripPoseParam2 = 0.6
 SWEP.CodStubbyGripPoseParam = 7
-SWEP.CodAngledGripPoseParam = 5.1
+SWEP.CodAngledGripPoseParam = 8

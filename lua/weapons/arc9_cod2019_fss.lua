@@ -591,7 +591,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2, 0, -0.03),
+        Pos = Vector(1.5, 0, -0.03),
         Ang = Angle(0, 0, 0),
         Category = "csgo_optic",
         CorrectiveAng = Angle(0, 0, 0),
