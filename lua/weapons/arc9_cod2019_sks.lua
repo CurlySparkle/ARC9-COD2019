@@ -54,7 +54,7 @@ SWEP.RangeMax = 8000 -- In Hammer units, how far bullets can travel before deali
 
 SWEP.Penetration = 11 -- Units of wood that can be penetrated by this gun.
 
-SWEP.ImpactForce = 11
+SWEP.ImpactForce = 8
 
 -------------------------- PHYS BULLET BALLISTICS
 
@@ -183,7 +183,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -290,9 +290,9 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
-		DropMagAt = 0.95,
+		DropMagAt = 1.1,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -327,7 +327,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.8,
-		DropMagAt = 0.75,
+		DropMagAt = 0.95,
         IKTimeLine = {
             {
                 t = 0,
@@ -432,7 +432,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 1
             },
@@ -455,13 +455,35 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
 -------------------------- ATTACHMENTS
 
---SWEP.Hook_Think	= ARC9.CSGO.BlendEmpty
+SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -659,3 +681,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodStubbyGripPoseParam = 7
+SWEP.CodAngledGripPoseParam = 7
