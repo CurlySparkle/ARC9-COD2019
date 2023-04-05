@@ -1596,7 +1596,7 @@ sound.Add( {
 sound.Add( {
     name = "COD2019.Minigun.Distance_Fire",
     channel = CHAN_WEAPON,
-    volume = 0.3,
+    volume = 0.2,
     level = 120,
     pitch = {97,103},
     sound = {

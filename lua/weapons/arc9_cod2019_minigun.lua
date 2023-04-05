@@ -45,8 +45,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 26 -- Damage done at point blank range
-SWEP.DamageMin = 6 -- Damage done at maximum range
+SWEP.DamageMax = 50 -- Damage done at point blank range
+SWEP.DamageMin = 25 -- Damage done at maximum range
 
 SWEP.Num = 1
 
@@ -58,9 +58,9 @@ SWEP.RangeMax = 8000 -- In Hammer units, how far bullets can travel before deali
 SWEP.Penetration = 15
 SWEP.ImpactForce = 15
 
-SWEP.PhysBulletMuzzleVelocity = 1312 * 12
+SWEP.PhysBulletMuzzleVelocity = 3000 * 12
 SWEP.PhysBulletGravity = 1.5
-SWEP.PhysBulletDrag = 1.15
+SWEP.PhysBulletDrag = 1.5
 
 -------------------------- MAGAZINE
 
@@ -122,21 +122,21 @@ SWEP.VisualRecoilPunch = 1
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.08
+SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadMultRecoil = 1.1
 SWEP.RecoilModifierCap = 1
---SWEP.RecoilModifierCapMove = 3
 
--- SWEP.SpreadAddMove = 0
--- --SWEP.SpreadAddMidAir = 0
--- SWEP.SpreadAddHipFire = 0.03
+--SWEP.SpreadAddMove = 0.1
+--SWEP.SpreadAddMidAir = 0
+SWEP.SpreadAddHipFire = 0.08
 SWEP.SpreadAddCrouch = -0.03
--- SWEP.SpreadAddSights = -0.5
+SWEP.SpreadAddSights = 0
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 1 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
@@ -154,13 +154,13 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-4.1, -5, 0.9),
-    Ang = Angle(0, 0, -1),
-    Magnification = 1.1,
-    ViewModelFOV = 56,
+    Pos = Vector(-2, -2, 1),
+    Ang = Angle(0, 0, 0),
+    Magnification = 1.4,
+    ViewModelFOV = 44,
     CrosshairInSights = false
 }
-SWEP.HasSights = false
+SWEP.HasSights = true
 
 SWEP.ViewModelFOVBase = 65
 
@@ -212,6 +212,9 @@ SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
 
+SWEP.ExplosionEffect = "cod2019_muzzle_he"
+SWEP.ImpactDecal = "FadingScorch"
+
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
@@ -253,13 +256,15 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
         EventTable = {
-            {s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.4, t = 4/30},
+            {s = path .. "weap_dblmg_spin_plr.ogg", v = 0.2, t = 0/30},
+			{s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.3, t = 4/30},
         },
     },
     ["trigger"] = {
         Source = {"shoot1_charged"},
 		--MinProgress = 0.8,
         EventTable = {
+		    {s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 0/30},
             {s = path .. "weap_dblmg_spinup_plr_01.ogg", v = 0.5, t = 0/30},
         },
     },
@@ -267,7 +272,8 @@ SWEP.Animations = {
         Source = {"winddown"},
 		--MinProgress = 0.8,
         EventTable = {
-            {s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.4, t = 0/30},
+            {s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 0/30},
+			{s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.4, t = 0/30},
         },
     },
     ["reload"] = {
