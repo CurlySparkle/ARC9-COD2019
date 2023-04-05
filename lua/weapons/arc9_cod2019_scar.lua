@@ -689,4 +689,4 @@ SWEP.GripPoseParam = 0.7
 SWEP.GripPoseParam2 = 0
 SWEP.CodStubbyGripPoseParam = 1
 SWEP.CodStubbyTallGripPoseParam = 2
-SWEP.CodAngledGripPoseParam = 3
+SWEP.CodAngledGripPoseParam = 9

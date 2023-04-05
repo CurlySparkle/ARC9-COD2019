@@ -643,3 +643,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 3
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodStubbyGripPoseParam = 0.5
+SWEP.CodStubbyTallGripPoseParam = 2
+SWEP.CodAngledGripPoseParam = 9

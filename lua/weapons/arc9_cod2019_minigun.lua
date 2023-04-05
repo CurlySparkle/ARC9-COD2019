@@ -110,7 +110,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1
+SWEP.RecoilKick = 2
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
@@ -125,11 +125,12 @@ SWEP.VisualRecoilPunch = 1
 SWEP.Spread = 0.003
 
 SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 20
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 3
 
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadAddMove = 0
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddHipFire = 0.03
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
 
@@ -143,7 +144,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.7
+SWEP.PostBashTime = 0.3
 
 -------------------------- TRACERS
 
@@ -163,7 +164,7 @@ SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, 0, -1.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -252,14 +253,21 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
         EventTable = {
-            {s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.5, t = 4/30},
+            {s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.4, t = 4/30},
         },
     },
     ["trigger"] = {
-        Source = {"windup"},
+        Source = {"shoot1_charged"},
 		--MinProgress = 0.8,
         EventTable = {
             {s = path .. "weap_dblmg_spinup_plr_01.ogg", v = 0.5, t = 0/30},
+        },
+    },
+    ["untrigger"] = {
+        Source = {"winddown"},
+		--MinProgress = 0.8,
+        EventTable = {
+            {s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.4, t = 0/30},
         },
     },
     ["reload"] = {
@@ -353,7 +361,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = "melee",
     },
 }
 

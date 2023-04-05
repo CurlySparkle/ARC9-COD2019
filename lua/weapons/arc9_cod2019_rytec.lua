@@ -552,14 +552,14 @@ SWEP.AttachmentElements = {
             {2,1},
 			{3,1},
         },
-	AttPosMods = { [3] = { Pos = Vector(40, -0.05, 0.33), } }	
+	AttPosMods = { [3] = { Pos = Vector(6, 0, 0.1), } }	
     },
     ["barrel_short"] = {
         Bodygroups = {
             {2,2},
 			{3,2},
         },
-	AttPosMods = { [3] = { Pos = Vector(30, 0, 0.25), } }	
+	AttPosMods = { [3] = { Pos = Vector(-5, 0, 0), } }	
     },
     ["muzzle"] = {
         Bodygroups = {

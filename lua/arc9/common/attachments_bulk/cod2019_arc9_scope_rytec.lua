@@ -24,7 +24,7 @@ ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.Sights = {
     {
-        Pos = Vector(-0.01, 9, -1.685),
+        Pos = Vector(-0.01, 9.5, -1.685),
         Ang = Angle(0, 0, 0),
         ViewModelFOV = 40,
         Magnification = 2,
@@ -32,7 +32,7 @@ ATT.Sights = {
 		RTScopeFOV = 25,
     },
     {
-        Pos = Vector(-0.01, 9, -1.685),
+        Pos = Vector(-0.01, 9.5, -1.685),
         Ang = Angle(0, 0, 0),
         ViewModelFOV = 40,
         Magnification = 2,
@@ -40,7 +40,7 @@ ATT.Sights = {
 		RTScopeFOV = 15,
     },
     {
-        Pos = Vector(-0.01, 9, -1.685),
+        Pos = Vector(-0.01, 9.5, -1.685),
         Ang = Angle(0, 0, 0),
         ViewModelFOV = 40,
         Magnification = 2,
