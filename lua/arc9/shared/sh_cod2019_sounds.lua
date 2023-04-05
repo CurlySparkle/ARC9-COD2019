@@ -1,4 +1,34 @@
 sound.Add( {
+    name = "COD2019.G3A3.Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/g3a3/weap_g3a3_plr_01.ogg",
+        "weapons/cod2019/g3a3/weap_g3a3_plr_02.ogg",
+        "weapons/cod2019/g3a3/weap_g3a3_plr_03.ogg",
+        "weapons/cod2019/g3a3/weap_g3a3_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.G3A3.Silenced_Fire",
+    channel = 10,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/g3a3/weap_g3a3_sup_plr_01.ogg",
+        "weapons/cod2019/g3a3/weap_g3a3_sup_plr_02.ogg",
+        "weapons/cod2019/g3a3/weap_g3a3_sup_plr_03.ogg",
+        "weapons/cod2019/g3a3/weap_g3a3_sup_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Sykov.Fire",
     channel = 10,
     volume = 1.0,

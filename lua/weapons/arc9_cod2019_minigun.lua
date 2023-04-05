@@ -126,7 +126,7 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 1
+SWEP.RecoilModifierCap = 0.3
 
 --SWEP.SpreadAddMove = 0.1
 --SWEP.SpreadAddMidAir = 0
@@ -264,7 +264,6 @@ SWEP.Animations = {
         Source = {"shoot1_charged"},
 		--MinProgress = 0.8,
         EventTable = {
-		    {s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 0/30},
             {s = path .. "weap_dblmg_spinup_plr_01.ogg", v = 0.5, t = 0/30},
         },
     },
@@ -272,7 +271,7 @@ SWEP.Animations = {
         Source = {"winddown"},
 		--MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 0/30},
+            {s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 5/30},
 			{s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.4, t = 0/30},
         },
     },
