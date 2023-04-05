@@ -449,12 +449,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },

@@ -122,17 +122,17 @@ SWEP.VisualRecoilPunch = 1
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.003
+SWEP.Spread = 0.08
 
 SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 3
-SWEP.RecoilModifierCapMove = 3
+SWEP.RecoilModifierCap = 1
+--SWEP.RecoilModifierCapMove = 3
 
-SWEP.SpreadAddMove = 0
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.03
-SWEP.SpreadAddCrouch = -0.01
-SWEP.SpreadAddSights = -0.5
+-- SWEP.SpreadAddMove = 0
+-- --SWEP.SpreadAddMidAir = 0
+-- SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddCrouch = -0.03
+-- SWEP.SpreadAddSights = -0.5
 
 -------------------------- HANDLING
 
@@ -186,11 +186,11 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(17, 35, 3)
+SWEP.CustomizeAng = Angle(90, 0, -10)
+SWEP.CustomizePos = Vector(24, 35, 11)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(0, 7, 3)
+SWEP.CustomizeSnapshotPos = Vector(0, 0, 0)
 
 -------------------------- HoldTypes
 
@@ -300,6 +300,38 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 45/30},
 			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 107/30},
 			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 137/30},
+        },
+    },
+    ["1_reload"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 85/30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 90/30},
         },
     },
     ["draw"] = {

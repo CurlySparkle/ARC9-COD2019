@@ -122,7 +122,7 @@ SWEP.RecoilKick = 1.5
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.9
+SWEP.RecoilMultSights = 0.7
 
 -------------------------- VISUAL RECOIL
 
@@ -136,7 +136,7 @@ SWEP.Spread = 0.035
 
 SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
 
-SWEP.SpreadAddMove = 0.03
+--SWEP.SpreadAddMove = 0
 --SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddHipFire = 0.035
 SWEP.SpreadMultHipFire = 1.15
@@ -154,7 +154,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -192,7 +192,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -253,8 +253,7 @@ SWEP.Animations = {
         Source = "shoot1",
     },
     ["fire_sights"] = {
-        Source = "shoot1",
-		Mult = 1,
+        Source = "shoot1_ads",
     },
     ["cycle"] = {
         Source = "pump",
@@ -266,7 +265,7 @@ SWEP.Animations = {
         },
     },
     ["cycle_sights"] = {
-        Source = "pump",
+        Source = "pump_ads",
 		EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
@@ -276,6 +275,7 @@ SWEP.Animations = {
     },
     ["reload_start"] = {
         Source = "reload_start",
+		RestoreAmmo = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -284,31 +284,36 @@ SWEP.Animations = {
             },
             {
                 t = 1,
-                lhik = 0,
+                lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
             {s = path .. "wfoly_sh_dpapa12_reload_start_rotate.ogg", t = 0/30},
+			{s = "COD2019.R90.ShellIn", t = 20/30},
+			{s = path .. "wfoly_sh_dpapa12_reload_loop_cloth.ogg", t = 20/30},
         },
     },
     ["reload_insert"] = {
-        Source = {"reload_loop","reload_loop2"},
+        Source = {"reload_loop"},
+		RestoreAmmo = 1,
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 0,
+                lhik = 1,
                 rhik = 1
             },
             {
                 t = 1,
-                lhik = 0,
+                lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
             {s = "COD2019.R90.ShellIn", t = 4/30},
 			{s = path .. "wfoly_sh_dpapa12_reload_loop_cloth.ogg", t = 4/30},
+			{s = "COD2019.R90.ShellIn", t = 17/30},
+			{s = path .. "wfoly_sh_dpapa12_reload_loop_cloth.ogg", t = 17/30},
         },
     },
     ["reload_finish"] = {
@@ -316,7 +321,7 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 0,
+                lhik = 1,
                 rhik = 1
             },
             {
@@ -340,7 +345,7 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 0,
+                lhik = 1,
                 rhik = 1
             },
             {
@@ -419,17 +424,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },
@@ -443,7 +448,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = {"melee","melee2"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -621,5 +648,6 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 0.3
-SWEP.CodAngledGripPoseParam = 1
+SWEP.CodAngledGripPoseParam = 3
+SWEP.CodStubbyGripPoseParam = 5
 SWEP.GripPoseParam2 = 0
