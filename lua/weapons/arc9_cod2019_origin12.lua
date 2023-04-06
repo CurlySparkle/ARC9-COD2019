@@ -378,7 +378,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_sh_oscar12_raise_first_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sh_oscar12_raise_first_magin_01.ogg", t = 9/30},
 			{s = path .. "wfoly_plr_sh_oscar12_raise_first_end_hit.ogg", t = 23/30},
-			{s = path .. "wfoly_plr_sh_oscar12_raise_first_end.ogg", t = 26/30},
+			{s = path .. "wfoly_plr_sh_oscar12_raise_first_end.ogg", t = 27/30},
         },
     },
     ["draw"] = {

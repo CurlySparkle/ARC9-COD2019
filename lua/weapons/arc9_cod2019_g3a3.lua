@@ -7,20 +7,19 @@ SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Assault Rifles"
 
 SWEP.PrintName = "G3A3"
-SWEP.TrueName = "G3A3"
 
 SWEP.Class = "Assault Rifle"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Belgium",
+    ["Country of Origin"] = "West Germany",
     ["Caliber"] = "7.62×51mm NATO",
-    ["Weight (Loaded)"] = "4.45 kg",
+    ["Weight (Loaded)"] = "4.38 kg",
     ["Projectile Weight"] = "144 gr",
-    ["Muzzle Velocity"] = "2,755.9 ft/s",
-    ["Muzzle Energy"] = "3,293 joules"
+    ["Muzzle Velocity"] = "2,625 ft/s",
+    ["Muzzle Energy"] = "2,988 joules"
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran/Viper",
+    Author = "Twilight Sparkle/Viper/Ma_rv/radpas1213/Firmeteran",
     Assets = "Infinity Ward/Valve/New World Interactive"
 }
 
@@ -292,9 +291,9 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_reload_xmag_start.ogg", t = 0/30},
             {s = path .. "wfoly_plr_ar_falima_reload_xmag_rattle.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magout_01.ogg", t = 20/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_01.ogg", t = 42/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_02.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magout_01.ogg", t = 18/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_01.ogg", t = 39/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_02.ogg", t = 47/30},
 			{s = path .. "wfoly_plr_ar_falima_raise_start.ogg", t = 61/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_xmag_end.ogg", t = 63/30},
         },
@@ -459,7 +458,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_ar_falima_inspect_01.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_falima_inspect_02.ogg", t = 38/30},
 			{s = path .. "wfoly_ar_falima_inspect_03.ogg", t = 67/30},
-			{s = path .. "wfoly_ar_falima_inspect_04.ogg", t = 100/30},
+			{s = path .. "wfoly_ar_falima_inspect_04.ogg", t = 101/30},
 			{s = path .. "wfoly_ar_falima_inspect_05.ogg", t = 119/30},
         },
     },

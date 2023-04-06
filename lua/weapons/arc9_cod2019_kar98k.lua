@@ -401,7 +401,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_load_v2_02.ogg", t = 55/30},
 			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth02.ogg", t = 80/30},
 			{s = path .. "wfoly_sn_kilo98_reload_empty_boltclose_01.ogg", t = 84/30},
-			{s = path .. "wfoly_sn_kilo98_reload_empty_end.ogg", t = 94/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_end.ogg", t = 96/30},
         },
     },
     ["ready"] = {

@@ -290,7 +290,7 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_mike9_reload_magrelease.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike9_reload_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike9_reload_magout.ogg", t = 9/30},
 			{s = path .. "wfoly_pi_mike9_reload_maghit.ogg", t = 20/30},
 			{s = path .. "wfoly_pi_mike9_reload_magin.ogg", t = 28/30},
 			{s = path .. "wfoly_pi_mike9_reload_end.ogg", t = 31/30},
@@ -327,7 +327,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 6/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 21/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 32/30},
         },
     },
     ["reload_empty"] = {

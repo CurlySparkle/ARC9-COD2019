@@ -441,7 +441,7 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw_short",
         EventTable = {
-            {s = path2 .. "vm_p01_sm_alpha57_raise_quick.ogg", t = 0/30},
+            {s = path2 .. "vm_p01_sm_alpha57_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
@@ -492,10 +492,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path2 .. "vm_p01_sm_alpha57_inspect_up.ogg", t = 4/30},
-			{s = path2 .. "vm_p01_sm_alpha57_inspect_rotate.ogg", t = 90/30},
+            {s = path2 .. "vm_p01_sm_alpha57_inspect_up.ogg", t = 6/30},
+			{s = path2 .. "vm_p01_sm_alpha57_inspect_rotate.ogg", t = 91/30},
 			{s = path2 .. "vm_p01_sm_alpha57_inspect_drop.ogg", t = 177/30},
-			{s = path2 .. "vm_p01_sm_alpha57_inspect_end.ogg", t = 201/30},
+			{s = path2 .. "vm_p01_sm_alpha57_inspect_end.ogg", t = 202/30},
         },
     },
     ["bash"] = {

@@ -318,10 +318,10 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 20/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 32/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 41/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 50/30},
+            {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 16/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 31/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 45/30},
         },
     },
     ["reload_empty"] = {
@@ -392,7 +392,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_raise_first_up.ogg", t = 0/30},
             {s = path .. "wfoly_sn_sksierra_raise_first_charge.ogg", t = 12/30},
-            {s = path .. "wfoly_sn_sksierra_raise_first_end.ogg", t = 21/30},
+            {s = path .. "wfoly_sn_sksierra_raise_first_end.ogg", t = 24/30},
         },
     },
     ["draw"] = {

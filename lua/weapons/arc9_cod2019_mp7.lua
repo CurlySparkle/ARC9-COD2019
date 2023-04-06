@@ -335,7 +335,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 14/30},
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_01.ogg", t = 25/30},
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_02.ogg", t = 36/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 49/30},
         },
     },
     ["reload_empty"] = {

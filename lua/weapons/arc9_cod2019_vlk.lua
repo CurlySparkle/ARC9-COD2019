@@ -269,7 +269,7 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.4, t = 1 / 30},
+            {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.4, t = 3/30},
         },
     },
     ["cycle_sights"] = {
@@ -277,7 +277,7 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.4, t = 1 / 30},
+            {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.4, t = 3/30},
         },
     },
     ["reload"] = {
@@ -306,11 +306,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 8 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 34 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 50 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 53 / 30},
+			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 34/30},
+			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 50/30},
+			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 54/30},
         },
     },
     ["1_reload"] = {
@@ -340,13 +340,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 10 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 15 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 30 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 40 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 50 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55 / 30},
+			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 7/30},
+			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 30/30},
+			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 27/30},
+			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 37/30},
+			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 41/30},
         },
     },
     ["reload_empty"] = {
@@ -376,16 +376,16 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_mark26_raise.ogg", t = 0 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_pull.ogg", t = 0 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 15 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_magout.ogg", t = 18 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 34 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_maghit.ogg", t = 49 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_magin.ogg", t = 60 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_rotate.ogg", t = 68 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_forward.ogg", t = 80 / 30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_end.ogg", t = 95 / 30},
+			{s = path .. "wfoly_sh_mark26_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_pull.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 15/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 34/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_maghit.ogg", t = 49/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_magin.ogg", t = 60/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_rotate.ogg", t = 68/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_forward.ogg", t = 80/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_end.ogg", t = 95/30},
         },
     },
     ["ready"] = {
@@ -404,8 +404,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_mark26_raise_first_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_mark26_raise_first_bolt_forward.ogg", t = 15/30},
-			{s = path .. "wfoly_sh_mark26_raise_first_end.ogg", t = 19/30},
+			{s = path .. "wfoly_sh_mark26_raise_first_bolt_forward.ogg", t = 17/30},
+			{s = path .. "wfoly_sh_mark26_raise_first_end.ogg", t = 21/30},
         },
     },
     ["draw"] = {
