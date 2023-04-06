@@ -163,9 +163,9 @@ SWEP.TracerColor = Color(255, 225, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.45, -2, 0.6),
+    Pos = Vector(-3.07, -2, 0.5),
     Ang = Angle(0, 0, -3.5),
-    Magnification = 1.1,
+    Magnification = 1.15,
 	ViewModelFOV = 54,
 	CrosshairInSights = false
 }
@@ -257,6 +257,11 @@ SWEP.BulletBones = {
     [4] = "j_bullet_01",
 }
 
+--SWEP.ReloadHideBonesFirstPerson = true
+SWEP.HideBones  = {
+    [1] = "j_mag2",
+}
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
@@ -318,7 +323,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.77,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -334,7 +339,7 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		DropMagAt = 0.7,
+		DropMagAt = 1.4,
         IKTimeLine = {
             {
                 t = 0,
@@ -517,7 +522,7 @@ SWEP.AttachmentElements = {
     },
     ["rail_foregrip"] = {
         Bodygroups = {
-            {3,2},
+            {3,1},
         },
     },
     ["rail_sight"] = {
@@ -557,7 +562,7 @@ SWEP.Attachments = {
         Category = {"muzzle"},
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
+        Ang = Angle(0, 0, -90),
 		InstalledElements = {"muzzle_none"},
 		Scale = 1,
     },
@@ -578,6 +583,7 @@ SWEP.Attachments = {
         Pos = Vector(8.5, 0, 0.8),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
+		InstalledElements = {"rail_foregrip"},
     },
     {
         PrintName = "Stock",
@@ -591,14 +597,14 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Ammo",
-        Bone = "j_mag1",
+        Bone = "j_mag",
         Category = {"go_ammo"},
-        Pos = Vector(0, -1.5, -1.5),
+        Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
     {
         PrintName = "Mag",
-		Bone = "j_mag1",
+		Bone = "j_mag",
         Category = {"go_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
