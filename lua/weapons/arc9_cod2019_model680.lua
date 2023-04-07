@@ -508,17 +508,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },
@@ -742,19 +742,9 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
-    {
-        PrintName = "lhik",
-        Bone = "tag_grip_attach",
-        Pos = Vector(-3, -0.2, 1.2),
-        Ang = Angle(0, 0, 180),
-        Category = "cod2019_lhik_model680",
-		Installed = "csgo_cod2019_lhik_model680",
-        Integral = true,
-        Hidden = true,		
-    },	
 }
 
 SWEP.GripPoseParam = 4.3
-SWEP.CodAngledGripPoseParam = 1
+SWEP.CodAngledGripPoseParam = 0
 SWEP.CodStubbyGripPoseParam = 7
 SWEP.GripPoseParam2 = 0.7

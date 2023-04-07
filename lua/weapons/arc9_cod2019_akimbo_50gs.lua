@@ -75,6 +75,7 @@ SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
+SWEP.InstantSprintIdle = false
 
 -------------------------- FIREMODES
 
@@ -128,7 +129,7 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.3
-SWEP.RecoilModifierCap = 5
+SWEP.RecoilModifierCap = 2
 
 SWEP.SpreadAddMove = 0.05
 --SWEP.SpreadAddMidAir = 0
@@ -253,6 +254,9 @@ SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+
+SWEP.TriggerDownSound = path .. "weap_decho_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = path .. "weap_decho_disconnector_plr_01.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",
@@ -494,14 +498,14 @@ SWEP.Attachments = {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
         Category = {"muzzle","muzzle_pistols"},
-        Bone = "tag_silencer",
+        Bone = "tag_silencer_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
 		Scale = 0.8,
         DuplicateModels = {
             {
-                Bone = "tag_silencer_l",
+                Bone = "tag_silencer",
             }
         },
     },

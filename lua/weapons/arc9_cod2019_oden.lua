@@ -96,15 +96,15 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 2
+SWEP.Recoil = 1.3
 
 SWEP.RecoilSeed = nil
 
-SWEP.RecoilPatternDrift = 65
+SWEP.RecoilPatternDrift = 45
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1.5 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1.1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -136,15 +136,13 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 5
+SWEP.RecoilModifierCap = 2
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.15
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -158,7 +156,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -306,10 +304,12 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
-		MinProgress = 0.8,
+        Source = "reload_fast",
+		MinProgress = 0.6,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 1,
+		Mult = 1.3,
         IKTimeLine = {
             {
                 t = 0,
@@ -333,18 +333,17 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_asierra12_reload_empty_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_asierra12_reload_empty_magout_01.ogg", t = 10/30},
-			{s = path .. "wfoly_ar_asierra12_reload_empty_magfly_01.ogg", t = 16/30},
-			{s = path .. "wfoly_ar_asierra12_reload_empty_armmag.ogg", t = 25/30},
-			{s = path .. "wfoly_ar_asierra12_reload_empty_magin_01.ogg", t = 46/30},
-			{s = path .. "wfoly_ar_asierra12_reload_empty_end.ogg", t = 62/30},
+			{s = path .. "wfoly_ar_asierra12_reload_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 10/30},
+			{s = path .. "wfoly_ar_asierra12_reload_mvmnt.ogg", t = 39/30},
+			{s = path .. "wfoly_ar_asierra12_reload_magin_01.ogg", t = 42/30},
+			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 64/30},
         },
     },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
-		DropMagAt = 0.8,
+		DropMagAt = 0.9,
         IKTimeLine = {
             {
                 t = 0,
@@ -451,12 +450,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },
@@ -470,7 +469,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -635,3 +656,4 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodAngledGripPoseParam = 4

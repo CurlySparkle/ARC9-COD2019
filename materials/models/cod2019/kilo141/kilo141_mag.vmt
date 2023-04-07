@@ -12,8 +12,8 @@
 	"$envmapcoefficient"		"[0.39 0.39 0.39]"
 
 	"$phong"					"1"
-	"$phongboost"				"15"
-     //"$phongexponent"				"55"
+	"$phongboost"				"1"
+     "$phongexponent"				"35"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 

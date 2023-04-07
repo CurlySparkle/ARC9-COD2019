@@ -248,6 +248,9 @@ SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
+SWEP.TriggerDownSound = path .. "weap_decho_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = path .. "weap_decho_disconnector_plr_01.ogg"
+
 SWEP.BulletBones = {
     [1] = "j_bullet01",
     [2] = "j_bullet02",

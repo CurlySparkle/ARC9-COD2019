@@ -134,16 +134,15 @@ SWEP.VisualRecoilUp = 0.4
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 4
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 2
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.15
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -230,7 +229,7 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/models/weapons/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.085
+SWEP.ShellScale = 0.07
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
@@ -328,7 +327,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -454,12 +453,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },
@@ -517,9 +516,9 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["mag"] = {
+    ["body_none"] = {
         Bodygroups = {
-            {1,1},
+            {0,1},
         },
     },
     ["mag_none"] = {
@@ -548,6 +547,11 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
+    ["rail_laser"] = {
+        Bodygroups = {
+            {7,1},
+        },
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -559,7 +563,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrels",
         DefaultAttName = "Standard Barrel",
-        Category = "cod2019_grau556_barrel",
+        Category = "cod2019_kilo141_barrel",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -588,8 +592,8 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "csgo_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(2, 1.05, -1.1),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(0.8, 0, -0.1),
+        Ang = Angle(0, 0, 180),
 		InstalledElements = {"rail_laser"},
     },
     {
@@ -597,7 +601,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-4, 0, 0),
+        Pos = Vector(-2.5, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"rail_grip"},
@@ -605,7 +609,7 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"stock_retract","csgo_stock"},
+        Category = {"stock_retract","csgo_stock","cod2019_kilo141_stock"},
         Bone = "tag_attachments",
         Pos = Vector(1, 0, 0.1),
         Ang = Angle(0, 0, 0),
@@ -621,7 +625,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"go_mag"},
+        Category = {"go_mag","cod2019_kilo141_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -632,7 +636,7 @@ SWEP.Attachments = {
     {
         PrintName = "Skins",
         --Bone = "v_weapon.Clip",
-        Category = "cod2019_skins_grau556",
+        Category = "cod2019_skins_kilo141",
 		CosmeticOnly = true,
     },
     {
@@ -672,7 +676,7 @@ SWEP.Attachments = {
         PrintName = "Stats",
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, -1),
+        Pos = Vector(0, 0.3, 0.8),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
@@ -680,5 +684,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 5.4
+SWEP.CodAngledGripPoseParam = 10
 SWEP.CodStubbyGripPoseParam = 6.6
