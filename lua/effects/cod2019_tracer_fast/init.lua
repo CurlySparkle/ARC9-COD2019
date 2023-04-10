@@ -10,7 +10,7 @@ function EFFECT:Init(data)
 	-- Keep the start and end pos - we're going to interpolate between them
 	self.StartPos = self:GetTracerShootPos(self.Position, self.WeaponEnt, self.Attachment)
 	self.EndPos = data:GetOrigin()
-	util.ParticleTracerEx("mw2019_tracer_slow", self.StartPos, self.EndPos, false, self:EntIndex(), self.Attachment)
+	util.ParticleTracerEx("mw2019_tracer_fast", self.StartPos, self.EndPos, false, self:EntIndex(), self.Attachment)
 end
 
 function EFFECT:Think()
