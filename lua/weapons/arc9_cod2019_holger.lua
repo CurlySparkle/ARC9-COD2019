@@ -122,22 +122,22 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.6
+SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 0.5
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 3
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -239,6 +239,7 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/holger/"
+local path2 = "weapons/cod2019/kilo141/"
 
 SWEP.ShootSound = "COD2019.holger.Fire"
 SWEP.ShootSoundSilenced = "COD2019.holger.Silenced_Fire"
@@ -337,6 +338,77 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_end.ogg", t = 118/30},
         },
     },
+    ["reload_ar"] = {
+        Source = "reload_armag",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.82,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
+			{s = path2 .. "wfoly_plr_ar_kilo433_reload_empty_magout_01.ogg", t = 15/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 20/30},
+			{s = path2 .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_01.ogg", t = 35/30},
+			{s = path2 .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_end.ogg", t = 45/30},
+        },
+    },
+    ["reload_empty_ar"] = {
+        Source = "reload_armag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
+			{s = path2 .. "wfoly_plr_ar_kilo433_reload_empty_magout_01.ogg", t = 15/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 20/30},
+			{s = path2 .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_01.ogg", t = 35/30},
+			{s = path2 .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 55/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_end.ogg", t = 65/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -412,12 +484,44 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.6,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_lm_mgolf36_inspect_01.ogg", t = 2/30},
+			{s = path .. "wfoly_lm_mgolf36_inspect_02.ogg", t = 54/30},
+			{s = path .. "wfoly_lm_mgolf36_inspect_03.ogg", t = 115/30},
+        },
+    },
+    ["inspect_ar"] = {
+        Source = "lookat01_ar",
+        MinProgress = 0.1,
+        FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.4,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },
@@ -429,7 +533,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -524,7 +650,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-3, 0, 0),
+        Pos = Vector(-3.5, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
@@ -606,3 +732,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.6
+SWEP.CodAngledGripPoseParam = 4.3
+SWEP.CodStubbyGripPoseParam = 7

@@ -261,3 +261,48 @@ ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
 ARC9.LoadAttachment(ATT, "csgo_cod2019_optic_minireddot3_alt")
+-------------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = "Aim-Op Reflex Sight"
+ATT.CompactName = [[Aim-Op]]
+--ATT.Icon = Material("entities/attachs/cod2019_optic_minidot01.png", "mips smooth")
+ATT.Description = [[Reflex sight of western origin. Provides higher precision.]]
+ATT.Pros = {
+    "+ Precision Sight Picture"
+}
+ATT.Cons = {
+    "− Aim Down Sight Speed"
+}
+ATT.SortOrder = 1
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.Free = false
+ATT.Folder = "Sights"
+
+ATT.Category = {"csgo_optic"}
+
+ATT.Model = "models/weapons/cod2019/attachs/sights/reflex_west04.mdl"
+ATT.Scale = 1
+ATT.ModelOffset = Vector(0, 0, 0.1)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+ATT.AimDownSightsTimeMult = 1.15
+
+ATT.Sights = {
+    {
+        Pos = Vector(0, 7, -1.27),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.15,
+        ViewModelFOV = 56,
+        IgnoreExtra = false
+    },
+}
+
+ATT.HoloSight = true
+ATT.HoloSightReticle = Material("hud/arc9_csgo/reticles/ReticleReflex.png", "mips smooth")
+ATT.HoloSightReticle:SetInt("$additive", 1)
+ATT.HoloSightSize = 512
+ATT.HoloSightColorable = false
+ATT.HoloSightColor = Color(255, 255, 255)
+
+ARC9.LoadAttachment(ATT, "csgo_cod2019_optic_aimop")

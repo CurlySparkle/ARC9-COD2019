@@ -45,10 +45,12 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 36 -- Damage done at point blank range
-SWEP.DamageMin = 6 -- Damage done at maximum range
+SWEP.DamageMax = 90 -- Damage done at point blank range
+SWEP.DamageMin = 35 -- Damage done at maximum range
 
-SWEP.Num = 7
+SWEP.DistributeDamage = true
+
+SWEP.Num = 6
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -82,7 +84,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 269
+SWEP.RPM = 300
 
 SWEP.Firemodes = {
     {
@@ -111,7 +113,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 3
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
@@ -401,11 +403,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.5,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.5,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -645,4 +647,4 @@ SWEP.GripPoseParam = 3
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodStubbyGripPoseParam = 0.5
 SWEP.CodStubbyTallGripPoseParam = 2
-SWEP.CodAngledGripPoseParam = 9
+SWEP.CodAngledGripPoseParam = 4.1

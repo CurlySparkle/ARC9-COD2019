@@ -179,7 +179,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1.4)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -599,7 +599,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "grip",
         Bone = "tag_attachments",
-        Pos = Vector(12.6, 0, -1.5),
+        Pos = Vector(15.5, 0, -1.5),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
     },
@@ -682,5 +682,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 3
 SWEP.GripPoseParam2 = 0.3
-SWEP.CodAngledGripPoseParam = 0.3
+SWEP.CodAngledGripPoseParam = 11
 SWEP.CodStubbyGripPoseParam = 1
+SWEP.CodStubbyTallGripPoseParam = 3

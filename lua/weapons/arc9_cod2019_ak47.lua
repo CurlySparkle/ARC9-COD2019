@@ -321,7 +321,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -439,17 +439,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.15,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },
@@ -464,24 +464,24 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2"},
-        IKTimeLine = {
+	    IKTimeLine = {
             {
                 t = 0,
                 lhik = 1,
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.6,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -575,7 +575,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-3, 0, 0),
+        Pos = Vector(-2, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"barrel"},
@@ -667,3 +667,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.6
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodStubbyGripPoseParam = 6.7
+SWEP.CodAngledGripPoseParam = 10.8
