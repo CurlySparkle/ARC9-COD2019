@@ -1,6 +1,6 @@
 AddCSLuaFile()
 
-SWEP.Base = "arc9_go_base"
+SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
@@ -218,6 +218,7 @@ SWEP.AnimDraw = false
 
 SWEP.MuzzleParticle = "weapon_muzzle_flash_assaultrifle"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
+SWEP.TracerEffect = "cod2019_tracer_slow"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
@@ -246,7 +247,7 @@ local path = "weapons/cod2019/spr208/"
 
 SWEP.ShootSound = "COD2019.SPR208.Fire"
 SWEP.ShootSoundSilenced = "COD2019.SPR208.Silenced_Fire"
-SWEP.DistantShootSound = "CSGO.Awp.Fire.Distance"
+SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
@@ -732,4 +733,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 3.5
 SWEP.GripPoseParam2 = 0.6
 SWEP.CodStubbyGripPoseParam = 0.7
-SWEP.CodAngledGripPoseParam = 4.3
+SWEP.CodAngledGripPoseParam = 8

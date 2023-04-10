@@ -1,6 +1,6 @@
 AddCSLuaFile()
 
-SWEP.Base = "arc9_go_base"
+SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
@@ -330,9 +330,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_grab.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_akilo47_reload_click.ogg", t = 11/30},
 			{s = path .. "wfoly_ar_akilo47_reload_magout_01.ogg", t = 11/30},
-			{s = path .. "wfoly_ar_akilo47_reload_maghit.ogg", t = 30/30},
-			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_01.ogg", t = 32/30},
-			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_02.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 31/30},
 			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 37/30},
         },
     },

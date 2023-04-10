@@ -1,6 +1,6 @@
 AddCSLuaFile()
 
-SWEP.Base = "arc9_go_base"
+SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
@@ -211,7 +211,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "weapon_muzzle_flash_magnum"
+SWEP.MuzzleParticle = "AC_muzzle_magnum"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1

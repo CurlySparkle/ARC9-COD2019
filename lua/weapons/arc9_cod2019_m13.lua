@@ -1,6 +1,6 @@
 AddCSLuaFile()
 
-SWEP.Base = "arc9_go_base"
+SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
