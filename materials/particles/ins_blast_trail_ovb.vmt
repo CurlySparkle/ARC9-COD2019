@@ -1,0 +1,16 @@
+"SpriteCard"
+{
+	$basetexture "particles/ins_blast_trail"
+	$SEQUENCE_BLEND_MODE 1 //2
+	$ADDSELF 2
+	$MAXLUMFRAMEBLEND1 0
+	$MAXLUMFRAMEBLEND2 1
+	"$depthblend" 1
+	"$depthblendscale" 50
+	$overbrightfactor 5
+	$STARTFADESIZE .4
+	$ENDFADESIZE 1
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+	"$nocull" 1
+}

@@ -1,0 +1,10 @@
+"SpriteCard"
+{
+	$BASETEXTURE "particles/ins_debris_rocks.vtf"
+	$DEPTHBLEND 1
+	$STARTFADESIZE .9
+	$overbrightfactor 2
+	$ENDFADESIZE 1.5
+	$BLENDFRAMES 1
+	$vertexfogamount 1.0
+}

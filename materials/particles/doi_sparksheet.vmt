@@ -1,0 +1,18 @@
+"SpriteCard"
+{
+	$BASETEXTURE "particles/doi_sparksheet"
+	
+	// Set this if you always want "additive over" blending (ONE:INVSRCALPHA)
+	$ADDOVERBLEND 1
+	$SEQUENCE_BLEND_MODE 1 //2
+	$MAXLUMFRAMEBLEND1 0
+	$MAXLUMFRAMEBLEND2 1
+	$POWERFUNCTION "[0.8 2.5 5]"
+	$OVERBRIGHTFACTOR 2.5	
+	$ADDSELF 1.0
+	$DEPTHBLEND 1
+	$startfadesize .9
+	$endfadesize 1.5
+	$MAXSIZE .9
+	$vertexfogamount 1.0
+}

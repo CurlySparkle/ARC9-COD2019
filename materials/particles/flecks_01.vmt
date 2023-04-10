@@ -1,0 +1,10 @@
+"SpriteCard"
+{
+$basetexture "particles/flecks_01"
+$vertexalpha 1
+$vertexcolor 1
+$alphatest 1
+$blendframes	0
+$overbrightfactor 1.1
+$vertexfogamount 1.0
+}

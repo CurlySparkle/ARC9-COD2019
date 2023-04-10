@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture" "particles/loopsmoke_thin"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$translucent" "1"	
+}

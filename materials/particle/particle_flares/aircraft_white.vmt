@@ -1,0 +1,8 @@
+spritecard
+{
+$basetexture "particle\particle_flares\aircraft_white"
+
+$additive 1
+$ignorez 1
+$depthblend 0
+}
