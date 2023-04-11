@@ -134,16 +134,14 @@ SWEP.VisualRecoilUp = 1
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 4
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 1
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.15
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -157,7 +155,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -176,7 +174,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(-1, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -310,7 +308,7 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.7,
@@ -340,9 +338,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_rotate.ogg", t = 4/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_magout_01.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_01.ogg", t = 36/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_02.ogg", t = 50/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_empty_end.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_02.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_end.ogg", t = 28/30},
         },
     },
     ["reload_empty"] = {
@@ -473,7 +471,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
     },
 }
 
