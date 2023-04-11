@@ -296,9 +296,9 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_reload_xmag_start.ogg", t = 0/30},
             {s = path .. "wfoly_plr_ar_falima_reload_xmag_rattle.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magout_01.ogg", t = 18/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_01.ogg", t = 39/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_02.ogg", t = 47/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magout_01.ogg", t = 17/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_01.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_02.ogg", t = 46/30},
 			{s = path .. "wfoly_plr_ar_falima_raise_start.ogg", t = 61/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_xmag_end.ogg", t = 63/30},
         },
@@ -331,10 +331,10 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_reload_xmag_start.ogg", t = 0/30},
             {s = path .. "wfoly_plr_ar_falima_reload_xmag_rattle.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magout_01.ogg", t = 10/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magout_01.ogg", t = 9/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_01.ogg", t = 33/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_02.ogg", t = 40/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_xmag_end.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_end.ogg", t = 47/30},
         },
     },
     ["reload_empty"] = {
@@ -365,12 +365,12 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_start.ogg", t = 0/30},
             {s = path .. "mp5-submachinegun-foley-bolt-chrage-1.ogg", t = 6/30},
-            {s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magout_01.ogg", t = 27/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magout_01.ogg", t = 25/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_rattle.ogg", t = 44/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_01.ogg", t = 52/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_02.ogg", t = 64/30},
-			{s = path .. "g3_boltpullreleasesoh.ogg", t = 80/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_end.ogg", t = 86/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_02.ogg", t = 63/30},
+			{s = path .. "g3_boltpullreleasesoh.ogg", t = 78/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_end.ogg", t = 95/30},
         },
     },
     ["ready"] = {

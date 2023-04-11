@@ -400,7 +400,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_ar_valpha_raise_first_up.ogg", t = 0/30},
             {s = path .. "wfoly_ar_valpha_raise_first_selector.ogg", t = 9/30},
-            {s = path .. "wfoly_ar_valpha_raise_first_end.ogg", t = 17/30},
+            {s = path .. "wfoly_ar_valpha_raise_first_end.ogg", t = 18/30},
         },
     },
     ["draw"] = {

@@ -331,7 +331,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_arm.ogg", t = 35/30},
 			{s = path .. "wfoly_sn_xmike109_reload_magin_01.ogg", t = 45/30},
 			{s = path .. "wfoly_sn_xmike109_reload_magin_02.ogg", t = 55/30},
-			{s = path .. "wfoly_sn_xmike109_reload_end.ogg", t = 50/30},
+			{s = path .. "wfoly_sn_xmike109_reload_end.ogg", t = 57/30},
         },
     },
     ["reload_empty"] = {
@@ -407,7 +407,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_empty_magin_02.ogg", t = 55/30},
 			{s = path .. "wfoly_sn_xmike109_first_raise_bolt_pull.ogg", t = 83/30},
 			{s = path .. "wfoly_sn_xmike109_first_raise_bolt_release.ogg", t = 96/30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_end.ogg", t = 96/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_end.ogg", t = 99/30},
         },
     },
     ["ready"] = {
@@ -436,9 +436,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_xmike109_first_raise_up.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_xmike109_first_raise_bolt_pull.ogg", t = 16/30},
-            {s = path .. "wfoly_sn_xmike109_first_raise_bolt_release.ogg", t = 26/30},
-			{s = path .. "wfoly_sn_xmike109_first_raise_end.ogg", t = 32/30},
+            {s = path .. "wfoly_sn_xmike109_first_raise_bolt_pull.ogg", t = 15/30},
+            {s = path .. "wfoly_sn_xmike109_first_raise_bolt_release.ogg", t = 25/30},
+			{s = path .. "wfoly_sn_xmike109_first_raise_end.ogg", t = 30/30},
         },
     },
     ["draw"] = {

@@ -291,12 +291,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_reload_grab.ogg", t = 0/30},
+            {s = path .. "wfoly_ar_akilo47_reload_magout_01.ogg", t = 11/30},
 			{s = path .. "wfoly_ar_akilo47_reload_click.ogg", t = 19/30},
-			{s = path .. "wfoly_ar_akilo47_reload_magout_01.ogg", t = 11/30},
 			{s = path .. "wfoly_ar_akilo47_reload_maghit.ogg", t = 38/30},
 			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_01.ogg", t = 42/30},
 			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_02.ogg", t = 44/30},
-			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 61/30},
+			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 65/30},
         },
     },
     ["1_reload"] = {
@@ -327,12 +327,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_akilo47_reload_grab.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_akilo47_reload_click.ogg", t = 11/30},
-			{s = path .. "wfoly_ar_akilo47_reload_magout_01.ogg", t = 11/30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 30/30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 31/30},
-			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 37/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_maghit_01.ogg", t = 5/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_twist.ogg", t = 5/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 20/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 40/30},
         },
     },
     ["reload_empty"] = {
@@ -397,7 +396,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_ar_ak47_inspect_03.ogg", t = 0/30},
             {s = path .. "wfoly_ar_akilo47_raise_first_chamber_01.ogg", t = 0/30},
-            {s = path .. "wfoly_ar_akilo47_raise_first_end.ogg", t = 16/30},
+            {s = path .. "wfoly_ar_akilo47_raise_first_end.ogg", t = 17/30},
         },
     },
     ["draw"] = {

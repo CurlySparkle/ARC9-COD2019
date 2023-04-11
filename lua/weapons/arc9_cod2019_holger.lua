@@ -435,10 +435,10 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_lm_mgolf36_raise_first_lift.ogg", t = 0/30},
-            {s = path .. "wfoly_lm_mgolf36_raise_first_bolt_pull.ogg", t = 17/30},
-			{s = path .. "wfoly_lm_mgolf36_raise_first_bolt_release.ogg", t = 29/30},
-			{s = path .. "wfoly_lm_mgolf36_raise_first_down_grab.ogg", t = 36/30},
-			{s = path .. "wfoly_lm_mgolf36_raise_first_end.ogg", t = 42/30},
+            {s = path .. "wfoly_lm_mgolf36_raise_first_bolt_pull.ogg", t = 19/30},
+			{s = path .. "wfoly_lm_mgolf36_raise_first_bolt_release.ogg", t = 34/30},
+			{s = path .. "wfoly_lm_mgolf36_raise_first_down_grab.ogg", t = 37/30},
+			{s = path .. "wfoly_lm_mgolf36_raise_first_end.ogg", t = 50/30},
         },
     },
     ["draw"] = {

@@ -310,7 +310,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_03.ogg", t = 48/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_01.ogg", t = 63/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_02.ogg", t = 80/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_end.ogg", t = 88/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_end.ogg", t = 89/30},
         },
     },
     ["1_reload"] = {
@@ -349,7 +349,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_03.ogg", t = 48/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_01.ogg", t = 54/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_02.ogg", t = 57/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_end.ogg", t = 64/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_end.ogg", t = 67/30},
         },
     },
     ["reload_empty"] = {
@@ -452,9 +452,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_sn_hdromeo_raise_first_up.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_raise_first_boltclose_01.ogg", t = 8/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_raise_first_adjust.ogg", t = 28/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_raise_first_settle.ogg", t = 39/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_raise_first_boltclose_01.ogg", t = 11/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_raise_first_adjust.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_raise_first_settle.ogg", t = 43/30},
         },
     },
     ["draw"] = {
@@ -463,8 +463,8 @@ SWEP.Animations = {
 		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_plr_sn_hdromeo_raise_up.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_raise_hand.ogg", t = 21/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_raise_settle.ogg", t = 28/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_raise_hand.ogg", t = 33/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_raise_settle.ogg", t = 45/30},
         },
     },
     ["holster"] = {

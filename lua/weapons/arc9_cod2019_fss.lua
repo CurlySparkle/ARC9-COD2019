@@ -406,7 +406,7 @@ SWEP.Animations = {
 			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_maghit.ogg", t = 40/30},
 			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_magin.ogg", t = 41/30},
 			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_boltrelease.ogg", t = 57/30},
-			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_end.ogg", t = 64/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_fast_end.ogg", t = 60/30},
         },
     },
     ["ready"] = {
