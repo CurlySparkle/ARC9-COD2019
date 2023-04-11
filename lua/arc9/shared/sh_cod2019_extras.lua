@@ -36,6 +36,31 @@ sound.Add( {
     }
 } )
 
+sound.Add( {
+    name = "COD2019.Flash.Explode",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    level = 140,
+    sound = {
+        "^weapons/cod2019/throwables/flashbang/flash_expl_01.ogg",
+        "^weapons/cod2019/throwables/flashbang/flash_expl_02.ogg",
+        "^weapons/cod2019/throwables/flashbang/flash_expl_03.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Flash.Bounce",
+    channel = CHAN_AUTO,
+    volume = 1,
+    level = 120,
+    pitch = {95, 110},
+    sound = {
+        "weapons/cod2019/throwables/flashbang/phy_flash_bounce_concrete_hard_01_ext.ogg",
+        "weapons/cod2019/throwables/flashbang/phy_flash_bounce_concrete_hard_02_ext.ogg",
+        "weapons/cod2019/throwables/flashbang/phy_flash_bounce_concrete_hard_03_ext.ogg",
+    }
+} )
+
 sound.Add({
     name = "COD2019.HE_ExplosiveHit",
     channel = CHAN_VOICE,

@@ -153,7 +153,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -191,7 +191,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -216,8 +216,8 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "weapon_muzzle_flash_huntingrifle"
-SWEP.AfterShotParticle = "weapon_muzzle_smoke"
+SWEP.MuzzleParticle = "AC_muzzle_shotgun"
+SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
@@ -296,7 +296,7 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
 		DropMagAt = 0.75,
 		FireASAP = true,
@@ -312,12 +312,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.6,
+                t = 0.5,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 0.8,
+                t = 0.75,
                 lhik = 1,
                 rhik = 1
             },
@@ -327,9 +327,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_sn_mike14_reload_empty_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_magout_arm.ogg", t = 11/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_mvmnt.ogg", t = 16/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 34/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 40/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 47/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 30/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 30/30},
         },
     },
     ["reload_empty"] = {
@@ -442,7 +442,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 1
             },
@@ -465,13 +465,35 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
 -------------------------- ATTACHMENTS
 
---SWEP.Hook_Think	= ARC9.CSGO.BlendEmpty
+SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -649,19 +671,9 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
-    {
-        PrintName = "lhik",
-        Bone = "tag_grip_attach",
-        Pos = Vector(-3, -0.2, 0.7),
-        Ang = Angle(0, 0, 180),
-        Category = "cod2019_lhik_m14",
-		Installed = "csgo_cod2019_lhik_m14",
-        Integral = true,
-        Hidden = true,		
-    },	
 }
 
 SWEP.GripPoseParam = 4
-SWEP.CodAngledGripPoseParam = 0.5
+SWEP.CodAngledGripPoseParam = 4
 SWEP.CodStubbyGripPoseParam = 6.5
 SWEP.GripPoseParam2 = 0.5

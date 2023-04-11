@@ -78,7 +78,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 809
+SWEP.RPM = 810
 
 SWEP.Firemodes = {
     {

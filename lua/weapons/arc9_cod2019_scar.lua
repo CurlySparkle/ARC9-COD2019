@@ -72,13 +72,13 @@ SWEP.ClipSize = 20 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 573
+SWEP.RPM = 571
 
 SWEP.Firemodes = {
     {
@@ -134,17 +134,15 @@ SWEP.VisualRecoilUp = 0.4
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 3
-SWEP.RecoilModifierCapSights = 0
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 1
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -221,7 +219,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "weapon_muzzle_flash_assaultrifle"
+SWEP.MuzzleParticle = "AC_muzzle_rifle"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
@@ -306,6 +304,42 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.55,
+		Mult = 1.1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 26/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 40/30},
+        },
+    },
+    ["reload_sights"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
@@ -536,12 +570,12 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
-    ["stock_none"] = {
+    ["stock_adapter"] = {
         Bodygroups = {
-            {3,2},
+            {7,1},
         },
     },
-    ["stock_none2"] = {
+    ["stock_none"] = {
         Bodygroups = {
             {3,3},
         },
@@ -560,7 +594,10 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("stock_retract") then model:SetBodygroup(4,1) end
+    if wep:HasElement("stock_retract") then 
+	model:SetBodygroup(3,1)
+	model:SetBodygroup(7,0) 
+	end
 end
 
 SWEP.Attachments = {
@@ -613,10 +650,12 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"stock_retract","csgo_tube"},
-        Bone = "tag_attachments",
-        Pos = Vector(-0.5, 0.6, -0.5),
+        Category = {"stock_retract","cod2019_tube"},
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, -0.7),
         Ang = Angle(0, 0, 0),
+		InstalledElements = {"stock_adapter"},
+		Scale = 1.1,
     },
     {
         PrintName = "Ammo",

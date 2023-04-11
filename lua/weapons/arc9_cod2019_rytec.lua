@@ -216,7 +216,7 @@ SWEP.AnimDraw = false
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "AC_muzzle_sniper_heavy"
-SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
+SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel_2"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
