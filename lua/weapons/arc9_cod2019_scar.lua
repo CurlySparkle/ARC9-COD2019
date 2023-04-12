@@ -572,7 +572,7 @@ SWEP.AttachmentElements = {
     },
     ["stock_adapter"] = {
         Bodygroups = {
-            {7,1},
+            {3,2},
         },
     },
     ["stock_none"] = {
@@ -652,10 +652,10 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Stock",
         Category = {"stock_retract","cod2019_tube"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, -0.7),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_adapter"},
-		Scale = 1.1,
+		Scale = 1,
     },
     {
         PrintName = "Ammo",

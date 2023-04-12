@@ -28,7 +28,7 @@ SWEP.Description = [[An agile 12-gauge mag fed shotgun from VLK with extensive o
 
 SWEP.ViewModel = "models/weapons/cod2019/c_shot_vlk.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
-SWEP.DefaultBodygroups = "00000000"
+SWEP.DefaultBodygroups = "00000000000"
 
 SWEP.Slot = 3
 
@@ -606,9 +606,9 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = "csgo_stock",
+        Category = {"csgo_stock","cod2019_stocks"},
         Bone = "tag_stock_attach",
-        Pos = Vector(1.05, 0, -0.1),
+        Pos = Vector(1.2, 0, -0.03),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_none"},
     },

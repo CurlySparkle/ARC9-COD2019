@@ -122,7 +122,7 @@ SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 
 SWEP.CamQCA = 1
-SWEP.CamQCA_Mult = 1
+SWEP.CamQCA_Mult = 0.5
 
 local path = "weapons/cod2019/throwables/gas/"
 

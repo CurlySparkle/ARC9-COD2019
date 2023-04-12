@@ -379,12 +379,12 @@ SWEP.Animations = {
             },
             {
                 t = 0.2,
-                lhik = 0,
+                lhik = 1,
                 rhik = 0
             },
             {
                 t = 0.5,
-                lhik = 0,
+                lhik = 1,
                 rhik = 0
             },
             {
@@ -581,9 +581,9 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = "csgo_tube",
+        Category = "cod2019_tube",
         Bone = "tag_stock_attach",
-        Pos = Vector(1, 0, 0),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock"},
     },

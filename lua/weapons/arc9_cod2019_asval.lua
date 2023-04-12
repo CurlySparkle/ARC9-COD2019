@@ -487,6 +487,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["sight_rail"] = {
         Bodygroups = {
             {4,1},
@@ -558,11 +563,11 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"csgo_stock","stock_retract"},
+        Category = {"cod2019_tube","stock_retract"},
         Bone = "tag_stock_attach",
-        Pos = Vector(1.79, 0, 0),
+        Pos = Vector(0.2, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_tube"},
+		InstalledElements = {"stock_none"},
     },
     {
         PrintName = "Ammo",

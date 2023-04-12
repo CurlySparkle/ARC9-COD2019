@@ -648,10 +648,10 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Stock",
         Category = "cod2019_tube",
         Bone = "tag_stock_attach",
-        Pos = Vector(0.65, 0, -0.85),
+        Pos = Vector(0.9, 0, -0.05),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_none","stock_main_none"},
-		Scale = 1.2,
+		Scale = 1,
     },
     {
         PrintName = "Grips",
@@ -673,7 +673,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"go_mag"},
+        Category = {"go_mag","cod2019_ax50_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

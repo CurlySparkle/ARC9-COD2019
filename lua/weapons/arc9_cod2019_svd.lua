@@ -673,11 +673,11 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = "csgo_tube",
+        Category = "cod2019_tube",
         Bone = "tag_stock_attach",
-        Pos = Vector(0.4, 0, 0),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		--InstalledElements = {"stock_none"},
+		InstalledElements = {"stock_none"},
     },
     {
         PrintName = "Ammo",

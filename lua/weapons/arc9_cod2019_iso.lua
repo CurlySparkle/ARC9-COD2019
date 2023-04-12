@@ -411,7 +411,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
             {s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 0/30},
         },
@@ -548,7 +547,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrels",
         DefaultAttName = "Standard Barrel",
-        Category = "cod2019_vector_barrel",
+        Category = "cod2019_iso_barrel",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -593,9 +592,9 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"cod2019_tube","stock_retract"},
+        Category = {"cod2019_tube","stock_retract","cod2019_iso_stock"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, -0.68),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_none"},
 		Scale = 1,
@@ -610,7 +609,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"go_mag"},
+        Category = {"go_mag","cod2019_iso_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

@@ -288,7 +288,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
@@ -514,6 +514,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
@@ -539,10 +544,9 @@ SWEP.AttachmentElements = {
             {2,3},
         },
     },
-    ["stock_tube"] = {
+    ["stock_adapter"] = {
         Bodygroups = {
             {2,2},
-			{6,1},
         },
     },
     ["sights"] = {
@@ -616,11 +620,11 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"stock_retract","csgo_stock"},
-        Bone = "tag_attachments",
-        Pos = Vector(1, 0, -0.4),
+        Category = {"stock_retract","cod2019_tube"},
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_tube"},
+		InstalledElements = {"stock_adapter"},
     },
     {
         PrintName = "Ammo",

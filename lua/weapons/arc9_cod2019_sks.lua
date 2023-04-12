@@ -595,9 +595,9 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = "csgo_stock",
+        Category = {"csgo_stock","cod2019_stocks"},
         Bone = "tag_stock_attach",
-        Pos = Vector(-0.5, 0, 1.1),
+        Pos = Vector(-0.2, 0, 1.2),
         Ang = Angle(5, 0, 0),
 		InstalledElements = {"stock_adapter"},
     },
@@ -611,7 +611,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = "go_mag",
+        Category = {"go_mag","cod2019_sks_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
