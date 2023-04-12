@@ -132,16 +132,16 @@ SWEP.VisualRecoilUp = 0.5
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 4
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCapMove = 0.5
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.015
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
-
 
 -------------------------- HANDLING
 
@@ -153,7 +153,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -163,7 +163,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.42, -1, 1.35),
+    Pos = Vector(-2.57, -1, 1.13),
     Ang = Angle(0, 0, 2),
     Magnification = 1.15,
     ViewModelFOV = 56,
@@ -230,7 +230,7 @@ SWEP.ShellScale = 0.085
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_rif_an94_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -285,6 +285,11 @@ SWEP.BulletBones = {
 	[30] = "j_bullet030",
 }
 
+--SWEP.ReloadHideBonesFirstPerson = true
+SWEP.HideBones  = {
+    [1] = "j_mag2",
+}
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
@@ -313,7 +318,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
@@ -329,10 +334,10 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
-		DropMagAt = 1.15,
+		DropMagAt = 0.6,
         IKTimeLine = {
             {
                 t = 0,
@@ -357,15 +362,16 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_anovember94_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 24/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 43/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 48/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 60/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 20/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 38/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		DropMagAt = 0.85,
         IKTimeLine = {
             {
                 t = 0,
@@ -469,17 +475,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.15,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },
@@ -493,7 +499,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -512,6 +540,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["sight_rail"] = {
         Bodygroups = {
             {5,1},
@@ -609,7 +642,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"go_mag"},
+        Category = {"go_mag","cod2019_an94_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -668,3 +701,4 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodAngledGripPoseParam = 4

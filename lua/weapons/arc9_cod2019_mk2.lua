@@ -121,7 +121,7 @@ SWEP.RecoilKick = 3
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 1
+SWEP.RecoilMultSights = 0.6
 
 -------------------------- VISUAL RECOIL
 
@@ -151,7 +151,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -189,11 +189,11 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(15, 30, 3)
+SWEP.CustomizePos = Vector(13, 33, 3)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
@@ -265,7 +265,6 @@ SWEP.Animations = {
     },
     ["fire_sights"] = {
         Source = "shoot1_ads",
-		Mult = 0.5,
     },
     ["cycle"] = {
         Source = "cycle",
@@ -276,7 +275,7 @@ SWEP.Animations = {
         },
     },
     ["cycle_sights"] = {
-        Source = "cycle",
+        Source = "cycle_ads",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
@@ -285,6 +284,7 @@ SWEP.Animations = {
     },
     ["reload_start"] = {
         Source = "reload_start",
+		RestoreAmmo = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -293,12 +293,14 @@ SWEP.Animations = {
             },
             {
                 t = 1,
-                lhik = 0,
+                lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
             {s = path .. "wfoly_sbeta_sn_reload_start_beginning.ogg", t = 0/30},
+            {s = "COD2019.MK2.Load", t = 5/37},
+			{s = "COD2019.MK2.Shellin", t = 16/37},
         },
     },
     ["reload_insert"] = {
@@ -306,12 +308,12 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 0,
+                lhik = 1,
                 rhik = 1
             },
             {
                 t = 1,
-                lhik = 0,
+                lhik = 1,
                 rhik = 1
             },
         },
@@ -325,7 +327,7 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 0,
+                lhik = 1,
                 rhik = 1
             },
             {
@@ -349,7 +351,7 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 0,
+                lhik = 1,
                 rhik = 1
             },
             {
@@ -431,17 +433,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },
@@ -454,7 +456,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = {"melee", "melee2"},
+	IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -571,8 +595,8 @@ SWEP.Attachments = {
     {
         PrintName = "Ammo",
         Bone = "j_mag1",
-        Category = {"go_ammo_sg"},
-        Pos = Vector(0, 0, -1.5),
+        Category = {"go_ammo"},
+        Pos = Vector(-2, 0, 1),
         Ang = Angle(0, 0, 0),
     },
     -- {
@@ -637,3 +661,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodAngledGripPoseParam = 4
+SWEP.CodStubbyGripPoseParam = 6.5

@@ -84,7 +84,7 @@ function ENT:Think()
 
             local dmg = DamageInfo()
 
-            dmg:SetDamage(10)
+            dmg:SetDamage(5)
             dmg:SetDamageType(DMG_NERVEGAS)
             dmg:SetInflictor(self)
             dmg:SetAttacker(self.Owner)
@@ -104,7 +104,7 @@ function ENT:Think()
                 end
             end
 
-            self.NextDamageTick = CurTime() + 1
+            self.NextDamageTick = CurTime() + 0.3
         else
             local emitter = ParticleEmitter(self:GetPos())
 
