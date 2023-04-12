@@ -3,8 +3,8 @@
 	"$basetexture"				"models/cod2019/mp5/mp5_stockadapter"
 	"$bumpmap"					"models/cod2019/mp5/mp5_stockadapter_n"
 	"$phongexponenttexture"		"models/cod2019/mp5/mp5_stockadapter_exp"
-	"$color2"					"[0.8 0.8 0.8]"
-	"$blendTintByBaseAlpha"		"1"
+	"$color2"					"[0.65 0.65 0.65]"
+	"$blendTintByBaseAlpha"		"0"
 
 	"$envmap"					"env_cubemap"
 	"$envmaptint"				"[ .13 .13 .13 ]"

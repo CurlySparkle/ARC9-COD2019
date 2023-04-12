@@ -132,16 +132,15 @@ SWEP.VisualRecoilUp = 0.4
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 4
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCapMove = 0.5
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.02
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -165,7 +164,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.55, -3.5, 0.9),
+    Pos = Vector(-3.71, -3.5, 0.9),
     Ang = Angle(0, 0, -2.5),
     Magnification = 1.15,
     ViewModelFOV = 56,
@@ -686,5 +685,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 5
-SWEP.CodStubbyGripPoseParam = 1
+SWEP.CodStubbyGripPoseParam = 6.5
 SWEP.CodStubbyTallGripPoseParam = 2

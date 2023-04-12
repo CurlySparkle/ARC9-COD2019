@@ -49,6 +49,19 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Gas.Explode",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    level = 140,
+    sound = {
+        "^weapons/cod2019/throwables/gas/gas_expl_01.ogg",
+        "^weapons/cod2019/throwables/gas/gas_expl_02.ogg",
+        "^weapons/cod2019/throwables/gas/gas_expl_03.ogg",
+    }
+} )
+
+
+sound.Add( {
     name = "COD2019.Flash.Bounce",
     channel = CHAN_AUTO,
     volume = 1,

@@ -129,16 +129,16 @@ SWEP.VisualRecoilUp = 1
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.025 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 3
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCapMove = 0.5
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -211,6 +211,7 @@ SWEP.HoldTypeBlindfire = "pistol"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
+--SWEP.AnimMelee = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
