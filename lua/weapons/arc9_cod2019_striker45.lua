@@ -133,16 +133,15 @@ SWEP.VisualRecoilUp = 1
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 4
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCapMove = 0.5
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -469,7 +468,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
         IKTimeLine = {
             {
                 t = 0,
@@ -499,7 +498,7 @@ SWEP.Animations = {
 
 --SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
-SWEP.DefaultBodygroups = "00000000000000"
+SWEP.DefaultBodygroups = "000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -510,6 +509,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
@@ -520,14 +524,19 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
+    ["sights_none"] = {
+        Bodygroups = {
+            {2,2},
+        },
+    },
     ["stock_none"] = {
         Bodygroups = {
-            {3,1},
+            {3,2},
         },
     },
     ["stock_retract"] = {
         Bodygroups = {
-            {3,2},
+            {3,1},
         },
     },
     ["grip_none"] = {
@@ -601,12 +610,12 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"cod2019_tube","stock_retract"},
+        Category = {"cod2019_tube","stock_retract","cod2019_striker45_stock"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, -0.8),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_none"},
-		Scale = 1.2,
+		Scale = 1,
     },
     {
         PrintName = "Reciever",
@@ -685,4 +694,4 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 3
+SWEP.CodAngledGripPoseParam = 4

@@ -432,12 +432,36 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_sh_charlie725_raise_up.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 0/30},
         },
@@ -491,7 +515,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = {"melee", "melee2"},
         IKTimeLine = {
             {
                 t = 0,
@@ -724,3 +748,4 @@ SWEP.GripPoseParam = 4.2
 SWEP.GripPoseParam2 = 0.3
 SWEP.CodStubbyGripPoseParam = 7
 SWEP.CodStubbyTallGripPoseParam = 1
+SWEP.CodAngledGripPoseParam = 4.1
