@@ -132,17 +132,24 @@ SWEP.VisualRecoilUp = 0.2
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.035
+-- SWEP.Spread = 0.035
 
-SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
+-- SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
 
---SWEP.SpreadAddMove = 0
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.035
-SWEP.SpreadMultHipFire = 1.15
-SWEP.SpreadMultSights = 1
-SWEP.SpreadAddCrouch = -0.004
-SWEP.SpreadAddSightsMove = -0.1
+-- --SWEP.SpreadAddMove = 0
+-- --SWEP.SpreadAddMidAir = 0
+-- SWEP.SpreadAddHipFire = 0.035
+-- SWEP.SpreadMultHipFire = 1.15
+-- SWEP.SpreadMultSights = 1
+-- SWEP.SpreadAddCrouch = -0.004
+-- SWEP.SpreadAddSightsMove = -0.1
+
+SWEP.Spread = 200 * ARC9.MOAToAcc
+SWEP.UseDispersion = true
+SWEP.DispersionSpread = 0.01
+SWEP.DispersionSpreadAddHipFire = 0.02
+--SWEP.DispersionSpreadMultMove = 1.5
+--SWEP.DispersionSpreadAddMove = 0.015
 
 -------------------------- HANDLING
 
