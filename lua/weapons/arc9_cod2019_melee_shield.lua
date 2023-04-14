@@ -12,7 +12,7 @@ SWEP.Class = "Melee"
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward/Valve/New World Interactive"
+    Assets = "Infinity Ward"
 }
 
 SWEP.Description = [[Ballistic-proof and explosive-resistant shield with increased melee damage.]]

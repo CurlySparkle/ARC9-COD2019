@@ -16,7 +16,7 @@ SWEP.Description = [[Blinds and deafens targets.]]
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward/Valve/New World Interactive"
+    Assets = "Infinity Ward"
 }
 
 SWEP.Slot = 4

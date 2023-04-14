@@ -12,7 +12,7 @@ SWEP.Class = "Melee"
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward/Valve/New World Interactive"
+    Assets = "Infinity Ward"
 }
 
 SWEP.Description = [[A CQC tactical knife. Standard military issue, employed for fast, quiet, and deadly wetwork.]]

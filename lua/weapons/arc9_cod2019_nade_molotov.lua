@@ -16,7 +16,7 @@ SWEP.Description = [[Improvised incendiary device that explodes on impact.]]
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward/Valve/New World Interactive"
+    Assets = "Infinity Ward"
 }
 
 SWEP.Slot = 4

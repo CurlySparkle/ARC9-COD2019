@@ -27,7 +27,7 @@ SWEP.Trivia = {
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/TheOnly8Z/Firmeteran",
-    Assets = "Infinity Ward/Valve/New World Interactive"
+    Assets = "Infinity Ward"
 }
 
 SWEP.Slot = 4

@@ -327,8 +327,8 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0/30},
 			{s = path .. "wpfoly_mike4_reload_empty_magout_v2.ogg", t = 5/30},
-			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 32/30},
-			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 50/30},
+			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 31/30},
+			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 52/30},
         },
     },
     ["reload_empty"] = {

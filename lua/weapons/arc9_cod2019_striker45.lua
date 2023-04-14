@@ -297,7 +297,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sm_smgolf45_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_magout.ogg", t = 20/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_magout.ogg", t = 21/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_magin.ogg", t = 43/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_end.ogg", t = 54/30},
         },
@@ -331,10 +331,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magout.ogg", t = 6/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_maghit.ogg", t = 35/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_01.ogg", t = 37/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_02.ogg", t = 39/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_magout.ogg", t = 5/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_maghit.ogg", t = 31/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_01.ogg", t = 33/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_02.ogg", t = 35/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_end.ogg", t = 41/30},
         },
     },

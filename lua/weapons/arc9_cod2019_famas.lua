@@ -334,9 +334,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 9/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 11/30},
 			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 25/30},
-			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 30/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 45/30},
         },
     },
     ["reload_empty"] = {

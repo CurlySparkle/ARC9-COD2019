@@ -292,7 +292,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_mike14_reload_arm.ogg", t = 25/30},
 			{s = path .. "wfoly_sn_mike14_reload_magin_v2_01.ogg", t = 32/30},
 			{s = path .. "wfoly_sn_mike14_reload_magin_v2_02.ogg", t = 38/30},
-			{s = path .. "wfoly_sn_mike14_reload_end.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_mike14_reload_end.ogg", t = 38/30},
         },
     },
     ["1_reload"] = {
