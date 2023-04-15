@@ -229,7 +229,7 @@ SWEP.ShellPhysBox = Vector(1, 1, 1)
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
-SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_lmg_bruenmk9_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_lmg_m91_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
@@ -330,6 +330,91 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
+		MinProgress = 0.9,
+		DropMagAt = 1.2,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.15,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_kilo121_reload_empty_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_boltopen_01.ogg", t = 23/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_boltclose_01.ogg", t = 37/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_lower.ogg", t = 44/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_coveropen_01.ogg", t = 65/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_clean.ogg", t = 83/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_inspect.ogg", t = 106/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_magout_01.ogg", t = 114/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_raise_01.ogg", t = 126/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_boxmag.ogg", t = 142/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_magin_01.ogg", t = 155/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_beltmvmnt.ogg", t = 164/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_click_01.ogg", t = 176/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_mvmnt01.ogg", t = 193/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_coverclose_01.ogg", t = 201/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_end.ogg", t = 223/30},
+        },
+    },
+    ["1_reload"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 3,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.15,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_kilo121_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_kilo121_reload_boltopen_01.ogg", t = 23/30},
+			{s = path .. "wfoly_lm_kilo121_reload_boltclose_01.ogg", t = 37/30},
+			{s = path .. "wfoly_lm_kilo121_reload_lower.ogg", t = 44/30},
+			{s = path .. "wfoly_lm_kilo121_reload_coveropen_01.ogg", t = 65/30},
+			{s = path .. "wfoly_lm_kilo121_reload_magout_01.ogg", t = 86/30},
+			{s = path .. "wfoly_lm_kilo121_reload_boxmag.ogg", t = 110/30},
+			{s = path .. "wfoly_lm_kilo121_reload_magin_01.ogg", t = 128/30},
+			{s = path .. "wfoly_lm_kilo121_reload_click_01.ogg", t = 151/30},
+			{s = path .. "wfoly_lm_kilo121_reload_coverclose_01.ogg", t = 174/30},
+			{s = path .. "wfoly_lm_kilo121_reload_end.ogg", t = 201/30},
+        },
+    },
+    ["1_reload_empty"] = {
+        Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 1.2,
         IKTimeLine = {
@@ -586,7 +671,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrels",
         DefaultAttName = "Standard Barrel",
-        Category = "cod2019_bruenmk9_barrel",
+        Category = "cod2019_m91_barrel",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
