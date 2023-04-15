@@ -21,7 +21,7 @@
 	"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
 
 	"$rimlight"					"0"
-	"$rimlightexponent"			"33"
+	"$rimlightexponent"			"100"
 	"$rimlightboost"			"2"
 	"$rimmask"					"1"
 	"$nocull"					"1"

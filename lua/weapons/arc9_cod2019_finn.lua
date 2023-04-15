@@ -88,11 +88,11 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 2
+SWEP.Recoil = 1.3
 
 --SWEP.RecoilSeed = nil
 
-SWEP.RecoilPatternDrift = 35
+SWEP.RecoilPatternDrift = 45
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -119,28 +119,31 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.8
-SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilPunch = 1.2
+SWEP.VisualRecoilUp = 0.8
+SWEP.VisualRecoilRoll = 1.2
+SWEP.VisualRecoilSide = 0.1
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.01 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 10
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCapMove = 0.5
+SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.15
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
-SWEP.SpreadAddSights = -0.1
+SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddCrouch = -0.03
+SWEP.SpreadAddSights = -0.5
 
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
@@ -148,7 +151,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.35
 
 -------------------------- TRACERS
 
@@ -158,9 +161,9 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.37, -2, 0.5),
+    Pos = Vector(-2.37, 0.5, 0.5),
     Ang = Angle(0, 0, 2),
-    Magnification = 1.15,
+    Magnification = 1.1,
     ViewModelFOV = 56,
 	CrosshairInSights = false
 }
@@ -187,7 +190,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -1.5)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -252,7 +255,7 @@ local path = "weapons/cod2019/finn/"
 
 SWEP.ShootSound = "COD2019.FiNN.Fire"
 SWEP.ShootSoundSilenced = "COD2019.FiNN.Silenced_Fire"
-SWEP.DistantShootSound = "CSGO.negev.Distance_Fire"
+SWEP.DistantShootSound = "CSGO.NEGEV.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
@@ -283,6 +286,13 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.TriggerDelay = 0.05 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/sa87/weap_lima86_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = ""
+
 SWEP.Hook_PrimaryAttack = function(self)
 
     self:DoEject(1, 2)
@@ -302,7 +312,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
-		MagSwapTime = 3.5,
+		MagSwapTime = 3,
         IKTimeLine = {
             {
                 t = 0,
@@ -336,6 +346,82 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_bullets.ogg", t = 114/30},
 			{s = path .. "wfoly_lm_sierrax_reload_closecover.ogg", t = 143/30},
 			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 153/30},
+        },
+    },
+    ["1_reload"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 3,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_sierrax_reload_lift.ogg", t = 2/30},
+			{s = path .. "wfoly_lm_sierrax_reload_coveropen.ogg", t = 4/30},
+			{s = path .. "wfoly_lm_sierrax_reload_magout.ogg", t = 27/30},
+			{s = path .. "wfoly_lm_sierrax_reload_rotate.ogg", t = 52/30},
+			{s = path .. "wfoly_lm_sierrax_reload_magin.ogg", t = 62/30},
+			{s = path .. "wfoly_lm_sierrax_reload_beltpull.ogg", t = 77/30},
+			{s = path .. "wfoly_lm_sierrax_reload_bullets.ogg", t = 107/30},
+			{s = path .. "wfoly_lm_sierrax_reload_closecover.ogg", t = 117/30},
+			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 127/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 3,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_sierrax_reload_lift.ogg", t = 2/30},
+			{s = path .. "wfoly_lm_sierrax_reload_coveropen.ogg", t = 4/30},
+			{s = path .. "wfoly_lm_sierrax_reload_magout.ogg", t = 27/30},
+			{s = path .. "wfoly_lm_sierrax_reload_rotate.ogg", t = 52/30},
+			{s = path .. "wfoly_lm_sierrax_reload_magin.ogg", t = 62/30},
+			{s = path .. "wfoly_lm_sierrax_reload_beltpull.ogg", t = 77/30},
+			{s = path .. "wfoly_lm_sierrax_reload_bullets.ogg", t = 107/30},
+			{s = path .. "wfoly_lm_sierrax_reload_closecover.ogg", t = 117/30},
+			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 127/30},
         },
     },
     ["reload_empty"] = {
@@ -378,6 +464,45 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_empty_end.ogg", t = 190/30},
         },
     },
+    ["reload_empty_fast"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 1.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.15,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_sierrax_reload_empty_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_charge.ogg", t = 11/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_coveropen.ogg", t = 31/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_magout.ogg", t = 44/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_magup.ogg", t = 63/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_magin.ogg", t = 74/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_bullets.ogg", t = 91/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_adjust.ogg", t = 100/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_coverclose.ogg", t = 129/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_end.ogg", t = 131/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -416,7 +541,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
             {s = path .. "wfoly_lm_sierrax_reload_empty_end.ogg", t = 0/30},
         },
@@ -429,11 +553,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.3,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.3,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -451,12 +575,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.3,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.45,
                 lhik = 1,
                 rhik = 1
             },
@@ -464,12 +588,34 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_lm_sierrax_inspect_01.ogg", t = 0/30},
 			{s = path .. "wfoly_lm_sierrax_inspect_02.ogg", t = 48/30},
-			{s = path .. "wfoly_lm_sierrax_inspect_03.ogg", t = 89/30},
-			{s = path .. "wfoly_lm_sierrax_inspect_04.ogg", t = 123/30},
+			{s = path .. "wfoly_lm_sierrax_inspect_03.ogg", t = 123/30},
+			{s = path .. "wfoly_lm_sierrax_inspect_04.ogg", t = 135/30},
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -663,3 +809,4 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodAngledGripPoseParam = 4

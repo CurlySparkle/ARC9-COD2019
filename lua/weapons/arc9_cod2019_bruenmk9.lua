@@ -67,7 +67,7 @@ SWEP.PhysBulletDrag = 1.5
 
 SWEP.Ammo = "ar2" -- What ammo type this gun uses.
 
-SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
+SWEP.ChamberSize = 0 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize = 100 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
@@ -119,23 +119,25 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.5
-SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilUp = 0.8
+SWEP.VisualRecoilRoll = 1.2
+SWEP.VisualRecoilSide = 0.1
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 5
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 1
+SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.15
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
-SWEP.SpreadAddSights = -0.1
+SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddCrouch = -0.03
+SWEP.SpreadAddSights = -0.5
 
 
 -------------------------- HANDLING
@@ -148,7 +150,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.4
 
 -------------------------- TRACERS
 
@@ -167,7 +169,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1.5)
+SWEP.SprintPos = Vector(-1, 0, -1.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -236,6 +238,8 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/bruenmk9/"
+local path2 = "weapons/cod2019/m4a1/"
+local path3 = "weapons/cod2019/sa86/"
 
 SWEP.ShootSound = "COD2019.BruenMk9.Fire"
 SWEP.ShootSoundSilenced = "COD2019.BruenMk9.Silenced_Fire"
@@ -270,9 +274,19 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.TriggerDelay = 0.1 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/sa87/weap_lima86_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/sa87/weap_lima86_disconnector_plr_01.ogg"
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
+    },
+    ["fire_smag"] = {
+        Source = "shoot1_smag",
     },
     ["fire_sights"] = {
         Source = "shoot1_ads",
@@ -280,7 +294,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
-		MagSwapTime = 3.5,
+		MagSwapTime = 3,
         IKTimeLine = {
             {
                 t = 0,
@@ -359,6 +373,79 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mkilo3_reload_empty_end.ogg", t = 225/30},
         },
     },
+    ["reload_smag"] = {
+        Source = "reload_smag",
+		MinProgress = 0.8,
+		DropMagAt = 0.65,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_up.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_magout.ogg", t = 16/30},
+			{s = path2 .. "wpfoly_mike4_reload_lift_v2.ogg", t = 31/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_maghit.ogg", t = 40/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_magin.ogg", t = 45/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_end.ogg", t = 60/30},
+        },
+    },
+    ["reload_empty_smag"] = {
+        Source = "reload_smag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.75,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_up.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_magout.ogg", t = 16/30},
+			{s = path2 .. "wpfoly_mike4_reload_lift_v2.ogg", t = 31/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_maghit.ogg", t = 45/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_magin.ogg", t = 49/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_magslap.ogg", t = 62/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_charge_pull.ogg", t = 75/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_charge_push.ogg", t = 90/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_end.ogg", t = 95/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -378,7 +465,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
@@ -411,11 +498,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.5,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.5,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -433,12 +520,45 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.3,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.45,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_lm_mkilo3_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mkilo3_inspect_02.ogg", t = 48/30},
+			{s = path .. "wfoly_lm_mkilo3_inspect_03.ogg", t = 89/30},
+			{s = path .. "wfoly_lm_mkilo3_inspect_04.ogg", t = 123/30},
+        },
+    },
+    ["inspect_smag"] = {
+        Source = "lookat01_smag",
+		MinProgress = 0.1,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.3,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.45,
                 lhik = 1,
                 rhik = 1
             },
@@ -451,7 +571,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -473,6 +615,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
@@ -488,9 +635,14 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
-    ["stock_none"] = {
+    ["stock_adapter"] = {
         Bodygroups = {
             {4,1},
+        },
+    },    
+	["stock_none"] = {
+        Bodygroups = {
+            {4,2},
         },
     },
 }
@@ -550,11 +702,11 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = "cod2019_bruenmk9_barrel",
+        Category = {"cod2019_bruenmk9_barrel","cod2019_tube"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		--InstalledElements = {"stock_adapter"},
+		InstalledElements = {"stock_adapter"},
     },
     {
         PrintName = "Ammo",

@@ -94,7 +94,7 @@ SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = nil
 
-SWEP.RecoilPatternDrift = 25
+SWEP.RecoilPatternDrift = 45
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -121,22 +121,25 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.6
-SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilPunch = 1.2
+SWEP.VisualRecoilUp = 0.8
+SWEP.VisualRecoilRoll = 1.2
+SWEP.VisualRecoilSide = 0.3
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
-SWEP.RecoilModifierCap = 4
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 1
+SWEP.RecoilModifierCapMove = 0.5
+SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -150,7 +153,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.35
 
 -------------------------- TRACERS
 
@@ -256,6 +259,13 @@ SWEP.BulletBones = {
 	[4] = "j_bullet04",
 }
 
+SWEP.TriggerDelay = 0.15 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.15 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = path .. "weap_lima86_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = path .. "weap_lima86_disconnector_plr_01.ogg"
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
@@ -267,6 +277,7 @@ SWEP.Animations = {
         Source = "reload_short",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
+		DropMagAt = 1.1,
         IKTimeLine = {
             {
                 t = 0,
@@ -301,7 +312,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
-		DropMagAt = 0.8,
+		DropMagAt = 1.1,
         IKTimeLine = {
             {
                 t = 0,
@@ -366,13 +377,36 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_lm_lima86_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.3,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_lm_lima86_raise_first_end.ogg", t = 0/30},
         },
@@ -425,7 +459,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee", "melee2"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -609,3 +665,4 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 0.2
 SWEP.GripPoseParam2 = 0.1
+SWEP.CodAngledGripPoseParam = 3
