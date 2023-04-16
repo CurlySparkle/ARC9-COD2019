@@ -10,13 +10,12 @@ SWEP.PrintName = "PKM"
 
 SWEP.Class = "Light Machine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "Bruen/Tempus Armament",
-    ["Caliber"] = "5.56×45mm NATO",
-    ["Weight (Loaded)"] = "10 kg",
-    ["Projectile Weight"] = "62 gr",
-    ["Muzzle Velocity"] = "3,000 ft/s",
-    ["Muzzle Energy"] = "1,680 joules"
+    ["Country of Origin"] = "Soviet Union",
+    ["Caliber"] = "7.62×54mmR",
+    ["Weight (Loaded)"] = "9.2 kg",
+    ["Projectile Weight"] = "181 gr",
+    ["Muzzle Velocity"] = "2,707 ft/s",
+    ["Muzzle Energy"] = "3,994 joules"
 }
 
 SWEP.Credits = {

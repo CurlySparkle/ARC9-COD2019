@@ -167,7 +167,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 
 SWEP.IronSights = {
     Pos = Vector(-2.48, -3, 0.45),
-    Ang = Angle(0, 0, 4),
+    Ang = Angle(0, 0.2, 4),
     Magnification = 1.15,
     ViewModelFOV = 56,
 	CrosshairInSights = false
@@ -333,9 +333,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 20/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 33/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 23/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 26/30},
         },
     },
     ["reload_empty"] = {

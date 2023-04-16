@@ -10,13 +10,13 @@ SWEP.PrintName = "M91"
 
 SWEP.Class = "Light Machine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "Bruen/Tempus Armament",
-    ["Caliber"] = "5.56×45mm NATO",
-    ["Weight (Loaded)"] = "10 kg",
-    ["Projectile Weight"] = "62 gr",
-    ["Muzzle Velocity"] = "3,000 ft/s",
-    ["Muzzle Energy"] = "1,680 joules"
+    ["Country of Origin"] = "Germany",
+    ["Manufacturer"] = "FSS",
+    ["Caliber"] = "7.62×51mm NATO",
+    ["Weight (Loaded)"] = "11.2 kg",
+    ["Projectile Weight"] = "147 gr",
+    ["Muzzle Velocity"] = "2,657 ft/s",
+    ["Muzzle Energy"] = "3,125 joules"
 }
 
 SWEP.Credits = {
@@ -163,8 +163,8 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3, -2, 1.1),
-    Ang = Angle(0, 0, 3),
+    Pos = Vector(-4.07, -0.9, 0.6),
+    Ang = Angle(0, 0.2, -0.6),
     Magnification = 1.15,
     ViewModelFOV = 56,
 	CrosshairInSights = false
@@ -489,10 +489,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_lm_kilo121_raise_first_raise_01.ogg", t = 0/30},
 			{s = path .. "wfoly_lm_kilo121_raise_first_drop.ogg", t = 11/30},
 			{s = path .. "wfoly_lm_kilo121_raise_first_rattle.ogg", t = 21/30},
-			{s = path .. "wfoly_lm_kilo121_reload_boltopen_01.ogg", t = 23/30},
+			{s = path .. "wfoly_lm_kilo121_reload_boltopen_01.ogg", t = 28/30},
 			{s = path .. "wfoly_lm_kilo121_reload_boltclose_01.ogg", t = 41/30},
 			{s = path .. "wfoly_lm_kilo121_raise_first_cloth01.ogg", t = 51/30},
-			{s = path .. "wfoly_lm_kilo121_raise_first_end.ogg", t = 58/30},
+			{s = path .. "wfoly_lm_kilo121_raise_first_end.ogg", t = 59/30},
         },
     },
     ["draw"] = {

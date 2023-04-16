@@ -329,7 +329,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mkilo3_reload_magin_load_belt.ogg", t = 96/30},
 			{s = path .. "wfoly_lm_mkilo3_reload_magin_links.ogg", t = 107/30},
 			{s = path .. "wfoly_lm_mkilo3_reload_cover_close.ogg", t = 135/30},
-			{s = path .. "wfoly_lm_mkilo3_reload_end.ogg", t = 154/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_end.ogg", t = 152/30},
         },
     },
     ["reload_empty"] = {
@@ -474,9 +474,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_lm_mkilo3_raise_first_up.ogg", t = 0/30},
-            {s = path .. "wfoly_lm_mkilo3_raise_first_charge_pull.ogg", t = 17/30},
-			{s = path .. "wfoly_lm_mkilo3_raise_first_charge_push.ogg", t = 32/30},
-			{s = path .. "wfoly_lm_mkilo3_raise_first_charge_end.ogg", t = 37/30},
+            {s = path .. "wfoly_lm_mkilo3_raise_first_charge_pull.ogg", t = 21/30},
+			{s = path .. "wfoly_lm_mkilo3_raise_first_charge_push.ogg", t = 35/30},
+			{s = path .. "wfoly_lm_mkilo3_raise_first_charge_end.ogg", t = 40/30},
         },
     },
     ["draw"] = {

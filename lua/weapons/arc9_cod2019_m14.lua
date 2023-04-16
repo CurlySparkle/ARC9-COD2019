@@ -163,7 +163,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.26, -3, 0.8),
+    Pos = Vector(-3.5, -3, 0.7),
     Ang = Angle(0, 0, -3),
     Magnification = 1.15,
     ViewModelFOV = 56,
@@ -327,9 +327,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_sn_mike14_reload_empty_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_magout_arm.ogg", t = 11/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_mvmnt.ogg", t = 16/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 25/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 30/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 30/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 22/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 27/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 33/30},
         },
     },
     ["reload_empty"] = {
