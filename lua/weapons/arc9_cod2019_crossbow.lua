@@ -32,8 +32,8 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_crossbow.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-9, 5, 0),
-    TPIKAng = Angle(0, 0, 180),
+    TPIKPos = Vector(-8, 5, -2),
+    TPIKAng = Angle(-9, 0, 170),
     Scale = 1
 }
 
