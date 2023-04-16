@@ -119,10 +119,12 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0.8
-SWEP.VisualRecoilRoll = 1.2
-SWEP.VisualRecoilSide = 0.1
+SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilPunchSights = 20
+SWEP.VisualRecoilPunch = 1.2
+SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilRoll = 1.5
+SWEP.VisualRecoilSide = 0
 
 -------------------------- SPREAD
 
@@ -251,23 +253,23 @@ SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
 SWEP.BulletBones = {
-    [1] = "j_b_01",
-    [2] = "j_b_02",
-	[3] = "j_b_03",
-	[4] = "j_b_04",
-	[5] = "j_b_05",
-	[6] = "j_b_06",
-	[7] = "j_b_07",
-	[8] = "j_b_08",
+    [17] = "j_b_01",
+    [16] = "j_b_02",
+	[15] = "j_b_03",
+	[14] = "j_b_04",
+	[13] = "j_b_05",
+	[12] = "j_b_06",
+	[11] = "j_b_07",
+	[10] = "j_b_08",
 	[9] = "j_b_09",
-	[10] = "j_b_10",
-	[11] = "j_b_11",
-	[12] = "j_b_12",
-	[13] = "j_b_13",
-	[14] = "j_b_14",
-	[15] = "j_b_15",
-	[16] = "j_b_16",
-	[17] = "j_b_17",
+	[8] = "j_b_10",
+	[7] = "j_b_11",
+	[6] = "j_b_12",
+	[5] = "j_b_13",
+	[4] = "j_b_14",
+	[3] = "j_b_15",
+	[2] = "j_b_16",
+	[1] = "j_b_17",
 }
 
 SWEP.HideBones  = {

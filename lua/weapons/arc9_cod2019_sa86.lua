@@ -121,6 +121,8 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilPunchSights = 20
 SWEP.VisualRecoilPunch = 1.2
 SWEP.VisualRecoilUp = 0.8
 SWEP.VisualRecoilRoll = 1.2
