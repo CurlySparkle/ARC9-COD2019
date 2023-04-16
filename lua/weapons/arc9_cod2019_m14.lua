@@ -37,8 +37,8 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_m14.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-10, 4, 0),
-    TPIKAng = Angle(0, 0, 175),
+    TPIKPos = Vector(-5, 5, -1.5),
+    TPIKAng = Angle(-9, 0, 175),
     Scale = 1
 }
 
@@ -226,7 +226,7 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/models/weapons/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.1
+SWEP.ShellScale = 0.05
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
