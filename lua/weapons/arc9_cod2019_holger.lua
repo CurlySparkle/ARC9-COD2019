@@ -91,11 +91,11 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 2
+SWEP.Recoil = 1
 
 SWEP.RecoilSeed = nil
 
-SWEP.RecoilPatternDrift = 25
+SWEP.RecoilPatternDrift = 45
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -122,10 +122,13 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 15
+SWEP.VisualRecoilRollSights = 20
+SWEP.VisualRecoilPunch = 1.3
+SWEP.VisualRecoilUp = 0.9
+SWEP.VisualRecoilRoll = 1.4
+SWEP.VisualRecoilSide = 0
 
 -------------------------- SPREAD
 
@@ -153,7 +156,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.3
 
 -------------------------- TRACERS
 
@@ -259,6 +262,17 @@ SWEP.BulletBones = {
 	[3] = "j_bullet03",
 	[4] = "j_bullet04",
 }
+
+SWEP.HideBones  = {
+    [1] = "j_mag2",
+}
+
+SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/sa87/weap_lima86_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/sa87/weap_lima86_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -368,11 +382,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path2 .. "wfoly_plr_ar_kilo433_reload_empty_magout_01.ogg", t = 15/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 15/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 20/30},
-			{s = path2 .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_01.ogg", t = 35/30},
-			{s = path2 .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 40/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_end.ogg", t = 45/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 35/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 40/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 45/30},
         },
     },
     ["reload_empty_ar"] = {
@@ -403,12 +417,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path2 .. "wfoly_plr_ar_kilo433_reload_empty_magout_01.ogg", t = 15/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 15/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 20/30},
-			{s = path2 .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_01.ogg", t = 35/30},
-			{s = path2 .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 35/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 40/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 55/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_end.ogg", t = 65/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 65/30},
         },
     },
     ["ready"] = {
@@ -604,6 +618,11 @@ SWEP.AttachmentElements = {
             {4,2},
         },
     },
+    ["sights_none"] = {
+        Bodygroups = {
+            {5,1},
+        },
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -628,15 +647,17 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle_none"},
+		ExcludeElements = {"barrel_spitfire"},
 		Scale = 1,
     },
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.8, 0, -0.07),
+        Pos = Vector(2, 0, -0.07),
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optic",},
         CorrectiveAng = Angle(0, 0, 0),
+		InstalledElements = {"sights_none"},
     },
     {
         PrintName = "Tactical",
@@ -646,6 +667,7 @@ SWEP.Attachments = {
         Pos = Vector(4, 0, -3),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
+		ExcludeElements = {"barrel_spitfire"},
     },
     {
         PrintName = "Grips",
@@ -656,6 +678,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
+		ExcludeElements = {"barrel_spitfire"},
     },
     {
         PrintName = "Stock",

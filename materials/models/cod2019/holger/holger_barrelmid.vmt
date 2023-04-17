@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-    "$basetexture"				"models/cod2019/holger/holger_frontend"
-    "$bumpmap"					"models/cod2019/holger/holger_frontend_n"
-    "$phongexponenttexture"		       "models/cod2019/holger/holger_frontend_exp"
+    "$basetexture"				"models/cod2019/holger/holger_barrelmid"
+    "$bumpmap"					"models/cod2019/holger/holger_barrelmid_n"
+    "$phongexponenttexture"		       "models/cod2019/holger/holger_barrelmid_exp"
 
     "$color2" "[0.8 0.8 0.8]"
     "$blendtintbybasealpha" "1"
