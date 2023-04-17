@@ -251,6 +251,10 @@ SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
+SWEP.HideBones  = {
+    [1] = "j_mag2",
+}
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",

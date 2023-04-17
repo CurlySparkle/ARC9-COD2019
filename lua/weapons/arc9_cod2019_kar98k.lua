@@ -270,6 +270,10 @@ SWEP.ReloadHideBoneTables  = {
 	[6] = "j_b_05",
 }
 
+SWEP.HideBones  = {
+    [1] = "j_mag2",
+}
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",

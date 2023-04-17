@@ -269,6 +269,10 @@ SWEP.BulletBones = {
 	[4] = "j_bullet04",
 }
 
+SWEP.HideBones  = {
+    [1] = "j_mag2",
+}
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",

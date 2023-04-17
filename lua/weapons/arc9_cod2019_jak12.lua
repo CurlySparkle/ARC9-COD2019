@@ -251,6 +251,10 @@ SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 SWEP.TriggerDownSound = "weapons/cod2019/jak12/weap_aalpha12_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = ""
 
+SWEP.HideBones  = {
+    [1] = "j_mag2",
+}
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
