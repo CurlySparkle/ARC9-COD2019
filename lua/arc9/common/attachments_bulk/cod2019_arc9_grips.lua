@@ -123,3 +123,31 @@ ATT.DrawFunc = function(swep, model, wm)
 end
 
 ARC9.LoadAttachment(ATT, "csgo_cod2019_grips_operator")
+------------------------------------------------------------------ SIDE GRIPS
+ATT = {}
+
+ATT.PrintName = "Foregrip"
+ATT.CompactName = "Foregrip"
+ATT.Description = [[Extended foregrip reduces vertical recoil and provides stability from the hip for fast paced guerilla tactics.]]
+
+ATT.Icon = Material("entities/attachs/cod2019_attach_grip_origin.png", "mips smooth")
+
+ATT.Model = "models/weapons/cod2019/attachs/grips/grip_origin12.mdl"
+
+ATT.SortOrder = 1
+ATT.Category = "cod2019_grips_side"
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+
+ATT.RecoilAutoControlMult = 1.1
+ATT.RecoilMult = 0.9
+
+ATT.AimDownSightsTimeMult = 1.05
+ATT.SprintToFireTimeMult = 1.05
+
+ATT.LHIK_Priority = 10
+ATT.LHIK = true
+
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 180)
+
+ARC9.LoadAttachment(ATT, "cod2019_attach_grip_foregrip_side")

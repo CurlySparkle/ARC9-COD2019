@@ -37,7 +37,7 @@ SWEP.SpeedMultMelee = 1
 SWEP.SpeedMultSights = 0.95
 SWEP.SpeedMultReload = 0.85
 
---SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
+SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_MAGIC
 
 -- This is for recoil that goes directly to camera, makes gun shoot where sights at but center of screen will be in different place. Like escape from shitlord
 SWEP.ViewRecoil = false -- true

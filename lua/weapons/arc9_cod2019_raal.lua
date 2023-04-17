@@ -303,12 +303,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.15,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -379,12 +379,12 @@ SWEP.Animations = {
             },
             {
                 t = 0.2,
-                lhik = 0,
+                lhik = 1,
                 rhik = 0
             },
             {
                 t = 0.5,
-                lhik = 0,
+                lhik = 1,
                 rhik = 0
             },
             {
@@ -466,12 +466,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.3,
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.45,
+                t = 0.75,
                 lhik = 1,
                 rhik = 1
             },
@@ -615,19 +615,19 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "csgo_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(-4, -0.35, 0.45),
+        Pos = Vector(0.3, 1.2, -1.9),
         Ang = Angle(0, 0, -90),
 		--InstalledElements = {"rail_laser"},
     },
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = "grip",
+        Category = "cod2019_grips_side",
         Bone = "tag_grip_attach",
-        Pos = Vector(1.2, 1.3, -3),
+        Pos = Vector(1.1, 0.1, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
-		InstalledElements = {"bipod_none","grip_rail"},
+		--InstalledElements = {"bipod_none"},
     },
     {
         PrintName = "Stock",

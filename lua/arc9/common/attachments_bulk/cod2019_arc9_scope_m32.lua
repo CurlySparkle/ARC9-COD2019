@@ -19,7 +19,7 @@ ATT.ActivateElements = {"scope_m32"}
 
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_m32.mdl"
 ATT.Scale = 1
-ATT.ModelOffset = Vector(0.5, 0, -0.8)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.Sights = {
