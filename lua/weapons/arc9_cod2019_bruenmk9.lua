@@ -475,7 +475,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_lm_mkilo3_raise_first_up.ogg", t = 0/30},
             {s = path .. "wfoly_lm_mkilo3_raise_first_charge_pull.ogg", t = 21/30},
-			{s = path .. "wfoly_lm_mkilo3_raise_first_charge_push.ogg", t = 35/30},
+			{s = path .. "wfoly_lm_mkilo3_raise_first_charge_push.ogg", t = 36/30},
 			{s = path .. "wfoly_lm_mkilo3_raise_first_charge_end.ogg", t = 40/30},
         },
     },

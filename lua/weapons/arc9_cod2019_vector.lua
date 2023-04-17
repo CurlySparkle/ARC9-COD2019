@@ -336,8 +336,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_victor_reload_empty_arm.ogg", t = 22/30},
 			{s = path .. "wfoly_sm_victor_reload_empty_rotate.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_victor_reload_empty_maghit.ogg", t = 40/30},
-			{s = path .. "wfoly_sm_victor_reload_empty_magin_01.ogg", t = 41/30},
-			{s = path .. "wfoly_sm_victor_reload_empty_magin_02.ogg", t = 42/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_magin_01.ogg", t = 42/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_magin_02.ogg", t = 43/30},
 			{s = path .. "wfoly_sm_victor_reload_empty_end.ogg", t = 50/30},
         },
     },
@@ -406,7 +406,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sm_victor_raise_first_up.ogg", t = 0/30},
             {s = path .. "wfoly_sm_victor_raise_first_charge.ogg", t = 6/30},
-			{s = path .. "wfoly_sm_victor_raise_first_end.ogg", t = 21/30},
+			{s = path .. "wfoly_sm_victor_raise_first_end.ogg", t = 23/30},
         },
     },
     ["draw"] = {

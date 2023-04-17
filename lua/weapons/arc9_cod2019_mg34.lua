@@ -10,12 +10,12 @@ SWEP.PrintName = "MG34"
 
 SWEP.Class = "Light Machine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Soviet Union",
-    ["Caliber"] = "7.62×54mmR",
-    ["Weight (Loaded)"] = "9.2 kg",
-    ["Projectile Weight"] = "181 gr",
-    ["Muzzle Velocity"] = "2,707 ft/s",
-    ["Muzzle Energy"] = "3,994 joules"
+    ["Country of Origin"] = "Nazi Germany",
+    ["Caliber"] = "7.92×57mm Mauser",
+    ["Weight (Loaded)"] = "12.5 kg",
+    ["Projectile Weight"] = "187 gr",
+    ["Muzzle Velocity"] = "2,510 ft/s",
+    ["Muzzle Energy"] = "3,547 joules"
 }
 
 SWEP.Credits = {

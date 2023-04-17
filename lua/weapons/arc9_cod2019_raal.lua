@@ -10,12 +10,13 @@ SWEP.PrintName = "RAAL"
 
 SWEP.Class = "Light Machine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Soviet Union",
-    ["Caliber"] = "7.62×54mmR",
-    ["Weight (Loaded)"] = "9.2 kg",
-    ["Projectile Weight"] = "181 gr",
-    ["Muzzle Velocity"] = "2,707 ft/s",
-    ["Muzzle Energy"] = "3,994 joules"
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "ZLR",
+    ["Caliber"] = ".338 Norma Magnum",
+    ["Weight (Loaded)"] = "10 kg",
+    ["Projectile Weight"] = "300 gr",
+    ["Muzzle Velocity"] = "3,000 ft/s",
+    ["Muzzle Energy"] = "8,130 joules"
 }
 
 SWEP.Credits = {
