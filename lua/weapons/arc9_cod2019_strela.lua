@@ -32,8 +32,8 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_strela.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-9, 8, -4),
     Ang = Angle(-17, 3, 190),
-    TPIKPos = Vector(-4, 6, 0),
-    TPIKAng = Angle(0, 0, 180),
+    TPIKPos = Vector(-4, 7.5, -5),
+    TPIKAng = Angle(-9, 0, 175),
     Scale = 1
 }
 

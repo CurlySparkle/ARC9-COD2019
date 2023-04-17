@@ -7,6 +7,7 @@ SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Submachine Guns"
 
 SWEP.PrintName = "Striker 45"
+SWEP.TrueName = "H&K UMP45"
 
 SWEP.Class = "Submachine Gun"
 SWEP.Trivia = {
@@ -37,8 +38,8 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_smg_striker45.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-10, 4, 0),
-    TPIKAng = Angle(0, 0, 175),
+    TPIKPos = Vector(-8, 5, -1.5),
+    TPIKAng = Angle(-9, 0, 175),
     Scale = 1
 }
 
