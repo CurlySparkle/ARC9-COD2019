@@ -277,6 +277,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
@@ -311,6 +312,7 @@ SWEP.Animations = {
     ["1_reload"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.5,
 		Mult = 0.8,
@@ -346,7 +348,8 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.8,
+		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             {
@@ -382,6 +385,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -412,6 +417,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.8,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_pi_decho_raise_mvmnt.ogg", t = 0/30},
         },

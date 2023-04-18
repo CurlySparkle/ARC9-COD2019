@@ -533,7 +533,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grip",
         DefaultAttName = "Default",
-        Category = "grip",
+        Category = "cod2019_grip",
         Bone = "tag_stock_attach",
         Pos = Vector(-2.8, 0, 0.2),
         Ang = Angle(0, 0, 180),

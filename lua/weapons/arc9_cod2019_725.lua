@@ -274,6 +274,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
+		FireASAP = true,
 		DropMagAt = 0.6,
 		--EjectAt = 0.65,
         IKTimeLine = {
@@ -310,6 +311,7 @@ SWEP.Animations = {
     ["1_reload"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
+		FireASAP = true,
 		DropMagAt = 0.6,
 		--EjectAt = 0.65,
         IKTimeLine = {
@@ -345,7 +347,8 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.8,
+		FireASAP = true,
 		DropMagAt = 0.6,
 		--EjectAt = 0.7,
         IKTimeLine = {
@@ -382,7 +385,8 @@ SWEP.Animations = {
     },
     ["1_reload_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.8,
+		FireASAP = true,
 		DropMagAt = 0.6,
 		--EjectAt = 0.7,
         IKTimeLine = {
@@ -418,7 +422,9 @@ SWEP.Animations = {
         },
     },
     ["ready"] = {
-        Source = {"draw"},
+        Source = "draw",
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -439,6 +445,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -648,7 +656,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = "grip",
+        Category = "cod2019_grip",
         Bone = "tag_grip_attach",
         Pos = Vector(-3, 0, 0),
         Ang = Angle(0, 0, 180),
@@ -667,7 +675,7 @@ SWEP.Attachments = {
     -- {
         -- PrintName = "Grips",
         -- DefaultAttName = "Default",
-        -- Category = "grip",
+        -- Category = "cod2019_grip",
         -- Bone = "tag_grip_attach",
         -- Pos = Vector(-1.5, 0, 0),
         -- Ang = Angle(0, 0, 180),

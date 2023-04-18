@@ -285,6 +285,8 @@ SWEP.Animations = {
         Source = "reload_short",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -321,6 +323,8 @@ SWEP.Animations = {
         Source = "reload",
 		MinProgress = 0.9,
 		DropMagAt = 0.8,
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -358,6 +362,9 @@ SWEP.Animations = {
         Source = "reload_armag",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
+		DropMagAt = 0.6,
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -393,6 +400,8 @@ SWEP.Animations = {
         Source = "reload_armag_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.8,
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -459,6 +468,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.5,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -695,7 +706,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = "grip",
+        Category = "cod2019_grip",
         Bone = "tag_grip_attach",
         Pos = Vector(-3.5, 0, 0),
         Ang = Angle(0, 0, 180),
@@ -782,3 +793,4 @@ SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.6
 SWEP.CodAngledGripPoseParam = 4.3
 SWEP.CodStubbyGripPoseParam = 7
+SWEP.CodStubbyTallGripPoseParam = 3

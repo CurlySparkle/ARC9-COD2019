@@ -73,3 +73,5 @@ if CLIENT then
 		end
 	end)
 end
+
+game.AddAmmoType({name = "arc9_cod2019_c4"})

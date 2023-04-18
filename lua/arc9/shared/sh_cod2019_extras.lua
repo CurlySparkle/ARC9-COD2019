@@ -137,6 +137,40 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.C4.Explode",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    level = 140,
+    sound = {
+        "^weapons/cod2019/throwables/c4/exp_c4_bang_01.ogg",
+        "^weapons/cod2019/throwables/c4/exp_c4_bang_02.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.C4.Bounce",
+    channel = CHAN_AUTO,
+    volume = 1,
+    level = 120,
+    pitch = {95, 110},
+    sound = {
+        "weapons/cod2019/throwables/c4/c4_drop_01.ogg",
+        "weapons/cod2019/throwables/c4/c4_drop_02.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.C4.Plant",
+    channel = CHAN_AUTO,
+    volume = 1,
+    level = 120,
+    pitch = {95, 110},
+    sound = {
+        "weapons/cod2019/throwables/c4/grenade_pin_c4_short.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Iron.In_Rifle",
     channel = CHAN_AUTO,
     volume = 1,
