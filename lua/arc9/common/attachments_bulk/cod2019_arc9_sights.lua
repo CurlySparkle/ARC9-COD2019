@@ -37,7 +37,7 @@ ATT.Sights = {
 }
 
 ATT.HoloSight = true
-ATT.HoloSightReticle = Material("hud/arc9_csgo/reticles/aimpoint_dot.png", "mips smooth")
+ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/aimpoint_dot.png", "mips smooth")
 ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
@@ -81,7 +81,7 @@ ATT.Sights = {
 }
 
 ATT.HoloSight = true
-ATT.HoloSightReticle = Material("hud/arc9_csgo/reticles/aimpoint_dot.png", "mips smooth")
+ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/aimpoint_dot.png", "mips smooth")
 ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
@@ -125,7 +125,7 @@ ATT.Sights = {
 }
 
 ATT.HoloSight = true
-ATT.HoloSightReticle = Material("hud/arc9_csgo/reticles/aimpoint_dot.png", "mips smooth")
+ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/aimpoint_dot.png", "mips smooth")
 ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
@@ -168,7 +168,7 @@ ATT.Sights = {
 }
 
 ATT.HoloSight = true
-ATT.HoloSightReticle = Material("hud/arc9_csgo/reticles/aimpoint_dot.png", "mips smooth")
+ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/aimpoint_dot.png", "mips smooth")
 ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
@@ -212,7 +212,7 @@ ATT.Sights = {
 }
 
 ATT.HoloSight = true
-ATT.HoloSightReticle = Material("hud/arc9_csgo/reticles/aimpoint_dot.png", "mips smooth")
+ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/aimpoint_dot.png", "mips smooth")
 ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
@@ -256,7 +256,7 @@ ATT.Sights = {
 }
 
 ATT.HoloSight = true
-ATT.HoloSightReticle = Material("hud/arc9_csgo/reticles/aimpoint_dot.png", "mips smooth")
+ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/aimpoint_dot.png", "mips smooth")
 ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
@@ -290,19 +290,29 @@ ATT.AimDownSightsTimeMult = 1.15
 
 ATT.Sights = {
     {
-        Pos = Vector(0, 7, -1.27),
+        Pos = Vector(0, 6.2, -1.27),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.15,
-        ViewModelFOV = 56,
+        Magnification = 1.5,
+        ViewModelFOV = 36,
         IgnoreExtra = false
     },
 }
 
-ATT.HoloSight = true
-ATT.HoloSightReticle = Material("hud/arc9_csgo/reticles/ReticleReflex.png", "mips smooth")
-ATT.HoloSightReticle:SetInt("$additive", 1)
-ATT.HoloSightSize = 512
-ATT.HoloSightColorable = false
-ATT.HoloSightColor = Color(255, 255, 255)
+-- ATT.HoloSight = false
+-- ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/ReticleReflex.png", "mips smooth")
+-- ATT.HoloSightReticle:SetInt("$additive", 1)
+-- ATT.HoloSightSize = 1024
+-- ATT.HoloSightColorable = false
+-- ATT.HoloSightColor = Color(255, 255, 255)
+
+ATT.RTScope = true
+ATT.RTScopeSubmatIndex = 2
+ATT.RTScopeFOV = 16
+ATT.RTScopeRes = 512
+ATT.RTScopeReticle = Material("hud/arc9_cod2019/reticles/ReticleReflex2.png", "mips smooth")
+ATT.RTScopeReticleScale = 1
+ATT.RTScopeShadowIntensity = 5
+ATT.RTScopeNoPP = false
+ATT.RTScopeColorable = false
 
 ARC9.LoadAttachment(ATT, "csgo_cod2019_optic_aimop")

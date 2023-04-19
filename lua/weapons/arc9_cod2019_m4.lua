@@ -124,8 +124,12 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.5
-SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 20
+SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = -1/6
 
 -------------------------- SPREAD
 
@@ -133,19 +137,19 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 4
+SWEP.RecoilModifierCap = 5
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadAddMove = 0.05
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.015
+SWEP.SpreadAddHipFire = 0.04
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
 
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.4 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
@@ -153,7 +157,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -272,6 +276,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -305,6 +310,7 @@ SWEP.Animations = {
     ["1_reload"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
+		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
             {
@@ -337,7 +343,8 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -355,7 +362,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -370,6 +377,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -400,6 +409,20 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.7,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wpfoly_mike4_raise_v2.ogg", t = 0/30},
         },
@@ -407,6 +430,18 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
 		--Mult = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.3,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 0/30},
         },
@@ -551,7 +586,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.4, 0, 0),
+        Pos = Vector(1.3, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = "csgo_optic",
         CorrectiveAng = Angle(0, 0, 0),
@@ -664,4 +699,4 @@ SWEP.GripPoseParam = 0.4
 SWEP.GripPoseParam2 = 0
 SWEP.CodAngledGripPoseParam = 4
 SWEP.CodStubbyGripPoseParam = 1
-SWEP.CodStubbyTallGripPoseParam = 2
+SWEP.CodStubbyTallGripPoseParam = 4

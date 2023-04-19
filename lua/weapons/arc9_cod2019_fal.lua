@@ -160,7 +160,7 @@ SWEP.Bash = true
 SWEP.PrimaryBash = false
 
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -392,7 +392,43 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag"] = {
-        Source = "reload_xmag_fast",
+        Source = "reload_med_mag",
+		MinProgress = 0.85,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 22/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 44/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 52/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 61/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 63/30},
+        },
+    },
+    ["1_reload_xmag"] = {
+        Source = "reload_med_mag_fast",
 		MinProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
@@ -720,8 +756,8 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "csgo_tac",
         Bone = "tag_attachments",
-        Pos = Vector(15.6, 1.05, 0.25),
-        Ang = Angle(0, 0, -125),
+        Pos = Vector(14.5, 1.27, -0.43),
+        Ang = Angle(0, 0, -90),
 		InstalledElements = {"laser_mount"},
     },
     {

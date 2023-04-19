@@ -25,15 +25,4 @@
 	"$rimlightboost"			"0.3"
 	"$rimmask"					"0"
 	"$nocull"					"1"
-
-	"$detailblendmode" "4"
-	"$detailblendfactor" "0.7"
-
-	 Proxies {
-		CustomCamo {
-			camoTexture $detail
-			camoScale $detailscale
-            blend $detailblendfactor
-		}
-	}
 }
