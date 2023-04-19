@@ -13,16 +13,11 @@ SWEP.NotForNPCs = true
 SWEP.PrintName = "Landmine"
 SWEP.Class = "Proximity Explosive"
 
-SWEP.Description = [[Anti-personnel proximity mine that sticks to any surface. Less effective on walls, and buries itself on soft ground.
-Difficult to spot, but its motion sensor cannot detect slowly moving targets.]]
+SWEP.Description = [[Pressure-triggered explosive that deals heavy damage.]]
 
 SWEP.Trivia = {
-    Designer = "Norman Macleod et al.",
-    Manufacturer = "Mohawk Electrical Systems Inc",
-    Mechanism = "Detonation by Radius",
-    Origin = "United States of America",
-    ["Explosive Mass"] = "680g",
-    ["Explosive Type"] = "C4"
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "FSS",
 }
 
 SWEP.Credits = {

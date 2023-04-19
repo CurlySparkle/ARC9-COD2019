@@ -306,7 +306,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0/30},
-			{s = "COD2019.Model680.ShellIn", t = 5/30},
+			{s = "COD2019.Model680.ShellIn", t = 12/30},
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 15/30},
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 17/30},
         },
@@ -326,7 +326,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = "COD2019.Model680.ShellIn", t = 0/30},
+            {s = "COD2019.Model680.ShellIn", t = 6/30},
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0/30},
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 0/30},
         },

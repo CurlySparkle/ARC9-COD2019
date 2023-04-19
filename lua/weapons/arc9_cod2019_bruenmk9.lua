@@ -372,7 +372,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mkilo3_reload_empty_magin_02.ogg", t = 155/30},
 			{s = path .. "wfoly_lm_mkilo3_reload_empty_load_belt.ogg", t = 172/30},
 			{s = path .. "wfoly_lm_mkilo3_reload_empty_cover_close.ogg", t = 210/30},
-			{s = path .. "wfoly_lm_mkilo3_reload_empty_end.ogg", t = 225/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_end.ogg", t = 226/30},
         },
     },
     ["reload_smag"] = {
@@ -476,7 +476,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_lm_mkilo3_raise_first_up.ogg", t = 0/30},
             {s = path .. "wfoly_lm_mkilo3_raise_first_charge_pull.ogg", t = 21/30},
 			{s = path .. "wfoly_lm_mkilo3_raise_first_charge_push.ogg", t = 36/30},
-			{s = path .. "wfoly_lm_mkilo3_raise_first_charge_end.ogg", t = 40/30},
+			{s = path .. "wfoly_lm_mkilo3_raise_first_charge_end.ogg", t = 42/30},
         },
     },
     ["draw"] = {

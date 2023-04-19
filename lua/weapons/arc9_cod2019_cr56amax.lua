@@ -298,7 +298,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_rotate.ogg", t = 31/30},
 			{s = path .. "wfoly_ar_galima_reload_maghit.ogg", t = 43/30},
 			{s = path .. "wfoly_ar_galima_reload_magin.ogg", t = 56/30},
-			{s = path .. "wfoly_ar_galima_reload_end.ogg", t = 55/30},
+			{s = path .. "wfoly_ar_galima_reload_end.ogg", t = 58/30},
         },
     },
     ["1_reload"] = {
@@ -330,12 +330,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_galima_reload_empty_arm.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_galima_reload_magout.ogg", t = 13/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_arm.ogg", t = 3/30},
+			{s = path .. "wfoly_ar_galima_reload_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_ar_galima_reload_empty_rotate.ogg", t = 23/30},
 			{s = path .. "wfoly_ar_galima_reload_empty_maghit.ogg", t = 28/30},
 			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 33/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 36/30},
         },
     },
     ["reload_empty"] = {

@@ -318,10 +318,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 34/30},
 			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 50/30},
-			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 54/30},
+			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 53/30},
         },
     },
     ["1_reload"] = {
@@ -357,7 +357,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 30/30},
 			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 27/30},
 			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 37/30},
-			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 41/30},
+			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 39/30},
         },
     },
     ["reload_empty"] = {

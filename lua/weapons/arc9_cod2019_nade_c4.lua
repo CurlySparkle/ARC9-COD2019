@@ -13,14 +13,15 @@ SWEP.NotForNPCs = true
 SWEP.PrintName = "C4"
 SWEP.Class = "Special Explosives"
 SWEP.Description = [[Large explosive that sticks to surfaces and can be detonated remotely with Right Click.]]
+
 SWEP.Trivia = {
-    ["Country"] = "USA",
-    ["Year"] = "1968",
+    ["Country of Origin"] = "United States",
+    ["Manufacturer"] = "XRX",
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/SlogoKolt/Arctic/TheOnly8Z/Matsilagi/CturiX",
-    Assets = "Valve"
+    Author = "Twilight Sparkle/Firmeteran",
+    Assets = "Infinity Ward"
 }
 
 SWEP.Slot = 4

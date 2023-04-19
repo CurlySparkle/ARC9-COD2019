@@ -439,7 +439,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_charge.ogg", t = 12/30},
-            {s = path2 .. "vm_p01_sm_alpha57_raise.ogg", t = 16/30},
+            {s = path2 .. "vm_p01_sm_alpha57_raise.ogg", t = 17/30},
         },
     },
     ["draw"] = {
