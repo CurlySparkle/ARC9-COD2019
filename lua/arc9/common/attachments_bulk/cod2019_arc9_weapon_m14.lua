@@ -26,10 +26,10 @@ ATT.RecoilUpMult = 0.95
 ATT.Attachments = {
     {
         PrintName = "Stock",
-        Pos = Vector(-1.7, 0, -0.55),
+        Pos = Vector(-1.85, 0, -0.6),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(-3, 0, 0),
-        Category = {"csgo_stock"},
+        Category = {"cod2019_stocks","csgo_stock"},
 		Scale = 1
     }
 }

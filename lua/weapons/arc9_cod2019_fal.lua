@@ -277,6 +277,8 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
+		MinProgress = 0.85,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -312,6 +314,8 @@ SWEP.Animations = {
     ["1_reload"] = {
         Source = "reload_short2",
 		DropMagAt = 1,
+		MinProgress = 0.85,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -349,6 +353,8 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		DropMagAt = 1.5,
+		MinProgress = 0.85,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -385,8 +391,86 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 93/30},
         },
     },
+    ["reload_xmag"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.85,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 45/30},
+        },
+    },
+    ["reload_empty_xmag"] = {
+        Source = "reload_xmag_fast_empty",
+		DropMagAt = 1.5,
+		MinProgress = 0.85,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_rotate.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_shake.ogg", t = 14/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_magout_01.ogg", t = 20/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_elbow.ogg", t = 31/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_arm.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_01.ogg", t = 51/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_02.ogg", t = 60/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltclose_01.ogg", t = 67/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 70/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -419,6 +503,20 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.7,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_raise_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_ar_falima_raise_settle.ogg", t = 0/30},
@@ -426,6 +524,18 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.3,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_raise_start.ogg", t = 0/30},
         },
@@ -507,6 +617,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["go_mag_extended"] then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and attached["go_mag_extended"] then 
+        return "reload_empty_xmag"
+    end
+end
+
 SWEP.DefaultBodygroups = "000000000"
 
 SWEP.AttachmentTableOverrides = {
@@ -544,6 +664,7 @@ SWEP.AttachmentElements = {
     ["sights"] = {
         Bodygroups = {
             {3,1},
+            {7,1},
         },
     },
     ["barrel_short"] = {

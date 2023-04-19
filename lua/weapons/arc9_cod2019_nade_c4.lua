@@ -113,7 +113,7 @@ SWEP.CustomizeSnapshotPos = Vector(0, -10, 1)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
-SWEP.ShootPosOffset = Vector(0, 5, -2)
+SWEP.ShootPosOffset = Vector(0, 15, -2)
 
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1

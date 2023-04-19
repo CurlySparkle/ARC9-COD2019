@@ -134,7 +134,7 @@ SWEP.RecoilMultSights = 0.6
 -- SWEP.SpreadAddCrouch = -0.004
 -- SWEP.SpreadAddSightsMove = -0.1
 
-SWEP.Spread = 150 * ARC9.MOAToAcc
+SWEP.Spread = 220 * ARC9.MOAToAcc
 SWEP.UseDispersion = true
 SWEP.DispersionSpread = 0.01
 SWEP.DispersionSpreadAddHipFire = 0.02
@@ -508,7 +508,7 @@ SWEP.AttachmentElements = {
         },
     },
     ["stock_retracted"] = {
-	AttPosMods = { [6] = { Pos = Vector(1.25, 0, 1), } }	
+	AttPosMods = { [6] = { Pos = Vector(1.25, 0, 0), } }	
     },
     ["sights"] = {
         Bodygroups = {
@@ -558,7 +558,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = {"grip","grip_p90"},
+        Category = {"cod2019_grip","grip_p90"},
         Bone = "tag_grip_attach",
         Pos = Vector(-3.5, 0, 0),
         Ang = Angle(0, 0, 180),

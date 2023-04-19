@@ -408,12 +408,36 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_ar_falpha_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.3,
+                lhik = 0,
+                rhik = 1
+            },
+        },
 		--Mult = 0.8,
         EventTable = {
             {s = path .. "wfoly_ar_falpha_inspect_03.ogg", t = 0/30},

@@ -29,11 +29,13 @@
 	"$detailblendmode" "4"
 	"$detailblendfactor" "0.7"
 
-	 Proxies {
-		CustomCamo {
-			camoTexture $detail
-			camoScale $detailscale
-            blend $detailblendfactor
+	 Proxies 
+         {
+		CustomCamo 
+          {
+		camoTexture $detail
+		camoScale $detailscale
+          blend $detailblendfactor
 		}
-	}
+	   }
 }
