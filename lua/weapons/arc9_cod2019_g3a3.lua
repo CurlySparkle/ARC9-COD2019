@@ -43,8 +43,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 36 -- Damage done at point blank range
-SWEP.DamageMin = 16 -- Damage done at maximum range
+SWEP.DamageMax = 47 -- Damage done at point blank range
+SWEP.DamageMin = 23 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -77,7 +77,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 500
+SWEP.RPM = 600
 
 SWEP.Firemodes = {
     {
@@ -94,7 +94,7 @@ SWEP.Firemodes = {
 -- General recoil multiplier
 SWEP.Recoil = 1.1
 
-SWEP.RecoilSeed = 67498
+SWEP.RecoilSeed = 213654
 
 SWEP.RecoilPatternDrift = 25
 
@@ -121,11 +121,12 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.7
-SWEP.VisualRecoilUp = 0.1
-
-SWEP.VisualRecoilADSMult = 1
-SWEP.VisualRecoilPunchADSMult = 1
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 20
+SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = -1/6
 
 -------------------------- SPREAD
 
@@ -163,8 +164,8 @@ SWEP.TracerColor = Color(255, 225, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.07, -2, 0.5),
-    Ang = Angle(0, 0, -3.5),
+    Pos = Vector(-3.1, -2, 0.85),
+    Ang = Angle(0, -0.5, -3.5),
     Magnification = 1.15,
 	ViewModelFOV = 54,
 	CrosshairInSights = false
@@ -472,11 +473,11 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 1,
+                lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
@@ -496,7 +497,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.DefaultBodygroups = "000000000"
+SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -510,29 +511,54 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["mag"] = {
+    ["ref_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
+    ["sights_none"] = {
         Bodygroups = {
             {1,1},
         },
     },
-    ["muzzle_none"] = {
+    ["barrel_none"] = {
         Bodygroups = {
             {2,1},
         },
     },
-    ["rail_foregrip"] = {
+    ["muzzle_none"] = {
         Bodygroups = {
             {3,1},
         },
     },
-    ["rail_sight"] = {
+    ["mag"] = {
         Bodygroups = {
             {4,1},
         },
     },
-    ["rail_laser"] = {
+    ["pistol_grip_none"] = {
         Bodygroups = {
 			{5,1},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+			{6,1},
+        },
+    },
+    ["rail_grip"] = {
+        Bodygroups = {
+			{7,1},
+        },
+    },
+    ["rail_laser"] = {
+        Bodygroups = {
+			{8,1},
+        },
+    },
+    ["rail_sight"] = {
+        Bodygroups = {
+			{9,1},
         },
     },
 }
@@ -543,17 +569,18 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Barrel",
         Category = {"cod2019_g3a3_barrel"},
         Bone = "tag_attachments",
-        Pos = Vector(12.5, 0, -0.55),
+        Pos = Vector(0, 0, 05),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(6, 0, -2.2),
     },
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(-3.5, 0, 2.3),
+        Pos = Vector(-5, 0, 2.55),
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optic",},
         CorrectiveAng = Angle(0, 0, 0),
-		--InstalledElements = {"sights"},
+		InstalledElements = {"rail_sight","sights_none"},
 		Scale = 1,
     },
     {
@@ -561,7 +588,7 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Muzzle",
         Category = {"muzzle"},
         Bone = "tag_silencer",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-1.3, 0, 0),
         Ang = Angle(0, 0, -90),
 		InstalledElements = {"muzzle_none"},
 		Scale = 1,
@@ -571,8 +598,8 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "csgo_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 180),
+        Pos = Vector(2.7, -1.13, -1.48),
+        Ang = Angle(0, 0, 90),
 		InstalledElements = {"rail_laser"},
     },
     {
@@ -580,20 +607,31 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_attachments",
-        Pos = Vector(8.5, 0, 0.8),
+        Pos = Vector(8.5, 0, 1.2),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
-		InstalledElements = {"rail_foregrip"},
+		InstalledElements = {"rail_grip"},
+    },
+    {
+        PrintName = "Pistol Grip",
+        DefaultAttName = "Standard",
+        Category = "cod2019_g3a3_pstgrip",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-4, 0, 0),
+		Scale = 1,
+		InstalledElements = {"pistol_grip_none"},
     },
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"cod2019_g3a3_stock"},
+        Category = "cod2019_g3a3_stock",
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-6, 0, 2),
         Ang = Angle(0, 0, 0),
-		Scale = 1
-		--InstalledElements = {"stock_adapter"},
+		Scale = 1,
+		InstalledElements = {"stock_none"},
     },
     {
         PrintName = "Ammo",
