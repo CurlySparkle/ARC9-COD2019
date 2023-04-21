@@ -37,8 +37,8 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_kar98k.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-5, 3, 0),
-    TPIKAng = Angle(-10, 3, 180),
+    TPIKPos = Vector(-8, 6, 0),
+    TPIKAng = Angle(-10, 8, 180),
     Scale = 1
 }
 
@@ -223,9 +223,9 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/weapons/shared/shell_Kar98k.mdl"
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_Kar98k.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 1.2
+SWEP.ShellScale = 1.5
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.EjectDelay = 0.45
@@ -780,7 +780,7 @@ SWEP.Attachments = {
         PrintName = "Mag",
 		Bone = "tag_attachments",
         Category = "go_mag",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(11, 0, -1),
         Ang = Angle(0, 0, 0),
     },
     {

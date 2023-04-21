@@ -223,7 +223,7 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/weapons/shared/shell_rytec.mdl"
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_rytec.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
@@ -583,6 +583,16 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	if wep:HasElement("barrel_short") and wep.Attachments[3].Installed then model:SetBodygroup(3,3) end
 end
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["csgo_perk_fastreload"] then
+        return "1_reload"
+    elseif anim == "reload_empty" and attached["csgo_perk_fastreload"] then 
+        return "1_reload_empty"
+    end
+end
+
 SWEP.Attachments = {
     {
         PrintName = "Barrels",
@@ -722,4 +732,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 3
 SWEP.GripPoseParam2 = 0.1
 SWEP.CodStubbyGripPoseParam = 1
-SWEP.CodAngledGripPoseParam = 1
+SWEP.CodAngledGripPoseParam = 8

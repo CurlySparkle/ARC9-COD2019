@@ -223,7 +223,7 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/weapons/shared/lmg_bullet.mdl"
+SWEP.ShellModel = "models/weapons/cod2019/shared/lmg_bullet.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 2
 SWEP.ShellPhysBox = Vector(1, 1, 1)

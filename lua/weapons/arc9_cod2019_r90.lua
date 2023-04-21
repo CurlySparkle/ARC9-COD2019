@@ -231,7 +231,7 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 3
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/weapons/shared/shell_origin12.mdl"
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_origin12.mdl"
 SWEP.ShellSounds = ARC9.ShotgunShellSoundsTable
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1.3
@@ -580,7 +580,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = {"grip","grip_xm1014"},
+        Category = {"cod2019_grip","grip_xm1014"},
         Bone = "tag_grip_attach",
         Pos = Vector(-1.5, 0, 0),
         Ang = Angle(0, 0, 180),

@@ -228,7 +228,7 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/models/weapons/shared/shell_762_hr.mdl"
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 0.06
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
@@ -311,7 +311,7 @@ SWEP.Animations = {
         Source = "reload_short2",
 		MinProgress = 0.8,
 		FireASAP = true,
-		DropMagAt = 0.5,
+		DropMagAt = 0.38,
         IKTimeLine = {
             {
                 t = 0,
@@ -569,6 +569,16 @@ SWEP.AttachmentElements = {
     },
 }
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["csgo_perk_fastreload"] then
+        return "1_reload"
+    -- elseif anim == "reload_empty" and attached["go_mag_extended"] then 
+        -- return "reload_empty_xmag"
+    end
+end
+
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
     -- local model = data.model
     -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
@@ -699,4 +709,4 @@ SWEP.GripPoseParam = 0.4
 SWEP.GripPoseParam2 = 0
 SWEP.CodAngledGripPoseParam = 4
 SWEP.CodStubbyGripPoseParam = 1
-SWEP.CodStubbyTallGripPoseParam = 4
+SWEP.CodStubbyTallGripPoseParam = 5

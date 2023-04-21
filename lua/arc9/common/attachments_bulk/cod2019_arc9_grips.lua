@@ -55,7 +55,7 @@ ATT.SprintToFireTimeMult = 1.05
 ATT.LHIK_Priority = 10
 ATT.LHIK = true
 
-ATT.ModelOffset = Vector(0.15, 0, 0.45)
+ATT.ModelOffset = Vector(0.15, 0, 0.5)
 ATT.ModelAngleOffset = Angle(0, 0, 180)
 
 ATT.DrawFunc = function(swep, model, wm)

@@ -124,8 +124,12 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilPunchSights = 20
 SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0.7
+SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = -1/9
 
 -------------------------- SPREAD
 
@@ -224,7 +228,7 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/weapons/shared/shell_asval.mdl"
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_asval.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)

@@ -222,7 +222,7 @@ SWEP.AfterShotQCAEvenShot = 2
 SWEP.CamQCA = 7
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/models/weapons/shared/shell_9mm_hr.mdl"
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_9mm_hr.mdl"
 SWEP.ShellSounds = ARC9.PistolShellSoundsTable
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 0.055
