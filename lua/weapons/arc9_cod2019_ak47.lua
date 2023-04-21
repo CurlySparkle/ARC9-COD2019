@@ -376,6 +376,41 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 69/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.85,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_akilo47_reload_empty_maghit_01.ogg", t = 5/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_twist.ogg", t = 5/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 20/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 40/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
 		MinProgress = 0.8,
@@ -410,14 +445,38 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.7,
+		MinProgress = 0.8,
 		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_ar_akilo47_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+        },
 		--Mult = 0.8,
         EventTable = {
             {s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 0/30},
@@ -499,6 +558,16 @@ SWEP.Animations = {
 }
 
 -------------------------- ATTACHMENTS
+
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["csgo_perk_fastreload"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["go_mag_extended"] then 
+        -- return "reload_empty_xmag"
+    end
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 

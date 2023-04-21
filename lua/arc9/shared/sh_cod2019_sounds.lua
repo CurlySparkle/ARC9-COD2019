@@ -599,6 +599,20 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Kar98k.ShellIn",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/kar98k/wfoly_sn_kilo98_reload_empty_load_v2_01.ogg",
+        "weapons/cod2019/kar98k/wfoly_sn_kilo98_reload_load_v2_01.ogg",
+        "weapons/cod2019/kar98k/wfoly_sn_kilo98_reload_scope_start_load_01.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.SPR208.Fire",
     channel = 10,
     volume = 1.0,

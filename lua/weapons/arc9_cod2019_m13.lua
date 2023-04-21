@@ -406,13 +406,36 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_ar_mcharlie_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.3,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_ar_mcharlie_raise_first_end.ogg", t = 0/30},
         },
@@ -668,4 +691,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.6
 SWEP.CodStubbyGripPoseParam = 7
+SWEP.CodAngledGripPoseParam = 8
 SWEP.CodStubbyTallGripPoseParam = 1

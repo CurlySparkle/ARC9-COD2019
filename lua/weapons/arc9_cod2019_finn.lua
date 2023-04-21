@@ -120,11 +120,11 @@ SWEP.RecoilMultSights = 0.8
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 1.2
+SWEP.VisualRecoilPunchSights = 30
+SWEP.VisualRecoilPunch = 1.4
 SWEP.VisualRecoilUp = 0.8
-SWEP.VisualRecoilRoll = 1.2
-SWEP.VisualRecoilSide = 0.1
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = -1/9
 
 -------------------------- SPREAD
 
@@ -332,7 +332,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1.15,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -371,7 +371,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -447,7 +447,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1.15,
+                t = 1.2,
                 lhik = 1,
                 rhik = 1
             },
@@ -487,7 +487,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1.15,
+                t = 1.2,
                 lhik = 1,
                 rhik = 1
             },

@@ -100,7 +100,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 7
+SWEP.Recoil = 4
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 3 -- Multiplier for vertical recoil
@@ -120,7 +120,7 @@ SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilKick = 3
 
-SWEP.RecoilMultCrouch = 0.8
+SWEP.RecoilMultCrouch = 0.7
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.6
@@ -137,15 +137,15 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.0002 -- Applied per unit of recoil.
 
-SWEP.SpreadAddMove = 0.2
+SWEP.SpreadMultMove = 1.5
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.05
-SWEP.SpreadAddCrouch = -0.01
-SWEP.SpreadAddSights = -0.1
+SWEP.SpreadAddHipFire = 0.09
+SWEP.SpreadAddCrouch = -0.03
+SWEP.SpreadAddSights = -0.5
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
@@ -191,7 +191,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -1.5)
+SWEP.SprintPos = Vector(0, 0, -0.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -223,12 +223,12 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/models/weapons/shared/shell_762_hr.mdl"
+SWEP.ShellModel = "models/weapons/shared/shell_Kar98k.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.09
+SWEP.ShellScale = 1.2
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
-SWEP.EjectDelay = 0.5
+SWEP.EjectDelay = 0.45
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
@@ -245,7 +245,7 @@ local path = "weapons/cod2019/kar98k/"
 
 SWEP.ShootSound = "COD2019.Kar98k.Fire"
 SWEP.ShootSoundSilenced = "COD2019.Kar98k.Silenced_Fire"
-SWEP.DistantShootSound = "CSGO.Awp.Fire.Distance"
+SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
@@ -259,6 +259,8 @@ SWEP.HideBones  = {
 	[4] = "j_b_03",
 	[5] = "j_b_04",
 	[6] = "j_b_05",
+	[7] = "j_mag2",
+	[8] = "j_bullet_loose",
 }
 
 SWEP.ReloadHideBoneTables  = {
@@ -268,10 +270,7 @@ SWEP.ReloadHideBoneTables  = {
 	[4] = "j_b_03",
 	[5] = "j_b_04",
 	[6] = "j_b_05",
-}
-
-SWEP.HideBones  = {
-    [1] = "j_mag2",
+	[7] = "j_bullet_loose",
 }
 
 SWEP.Animations = {
@@ -292,7 +291,7 @@ SWEP.Animations = {
         },
     },
     ["cycle_sights"] = {
-        Source = "cycle",
+        Source = "cycle_ads",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
@@ -304,6 +303,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
+		EjectAt = 0.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -336,42 +336,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_kilo98_reload_end.ogg", t = 88/30},
         },
     },
-    -- ["1_reload"] = {
-        -- Source = "reload_short2",
-		-- MinProgress = 0.8,
-		-- DropMagAt = 0.8,
-        -- IKTimeLine = {
-            -- {
-                -- t = 0,
-                -- lhik = 1,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.2,
-                -- lhik = 0,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.7,
-                -- lhik = 0,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.75,
-                -- lhik = 1,
-                -- rhik = 1
-            -- },
-        -- },
-        -- EventTable = {
-			-- {s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 10/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 15/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 30/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 40/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 50/30},
-			-- {s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55/30},
-        -- },
-    -- },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -408,6 +372,138 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_end.ogg", t = 96/30},
         },
     },
+    ["reload_start"] = {
+        Source = "reload_start",
+		RestoreAmmo = 1,
+		EjectAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_kilo98_reload_empty_cloth01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_boltopen_01.ogg", t = 8/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_load_v2_01.ogg", t = 34/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth02.ogg", t = 51/30},
+        },
+    },
+    ["reload_insert"] = {
+        Source = "reload_loop",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 0,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = "COD2019.Kar98k.ShellIn", t = 0/30},
+        },
+    },
+    ["reload_finish"] = {
+        Source = "reload_end",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_boltclose_01.ogg", t = 8/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_end.ogg", t = 10/30},
+        },
+    },
+    ["reload_start_fast"] = {
+        Source = "reload_start_fast",
+		RestoreAmmo = 1,
+		EjectAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_kilo98_reload_empty_cloth01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_boltopen_01.ogg", t = 3/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_load_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth02.ogg", t = 30/30},
+        },
+    },
+    ["reload_insert_fast"] = {
+        Source = "reload_loop_fast",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = "COD2019.Kar98k.ShellIn", t = 2/30},
+        },
+    },
+    ["reload_finish_fast"] = {
+        Source = "reload_end_fast",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_boltclose_01.ogg", t = 8/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_end.ogg", t = 10/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -430,14 +526,38 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.7,
+		MinProgress = 0.9,
 		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sn_kilo98_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sn_kilo98_reload_end.ogg", t = 0/30},
         },
@@ -450,11 +570,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.2,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.2,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -467,17 +587,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.63,
                 lhik = 1,
                 rhik = 1
             },
@@ -491,7 +611,29 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = {"melee", "melee2"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -501,7 +643,7 @@ SWEP.Animations = {
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(8, -0.3, -0.1),
+    ModelOffset = Vector(12, -0.3, -0.1),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.8,
     },
@@ -511,7 +653,7 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["mag_none"] = {
+    ["mag"] = {
         Bodygroups = {
             {1,1},
         },
@@ -541,15 +683,32 @@ SWEP.AttachmentElements = {
             {6,1},
         },
     },
+    ["loader_none"] = {
+        Bodygroups = {
+            {7,1},
+        },
+    },
 }
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("stock_retract") then 
-	-- model:SetBodygroup(5,0)
-	-- model:SetBodygroup(6,0)	
-	-- end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+	
+    if wep:HasElement("scope_kar98k") then 
+	model:SetBodygroup(2,0)	
+	end
+end
+
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload_start" and attached["csgo_perk_fastreload"] then
+        return "reload_start_fast"
+    elseif anim == "reload_insert" and attached["csgo_perk_fastreload"] then 
+        return "reload_insert_fast"
+    elseif anim == "reload_finish" and attached["csgo_perk_fastreload"] then 
+        return "reload_finish_fast"
+    end
+end
 
 SWEP.Attachments = {
     {
@@ -575,7 +734,7 @@ SWEP.Attachments = {
         Bone = "tag_scope",
         Pos = Vector(2.5, 0, -0.07),
         Ang = Angle(0, 0, 0),
-        Category = {"csgo_optic"},
+        Category = {"csgo_optic","cod2019_optic_kar98k"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight_rail"},
 		--Installed = "cod2019_optic_scope_spr208",
@@ -617,13 +776,13 @@ SWEP.Attachments = {
         Pos = Vector(11, 0, 1),
         Ang = Angle(0, 0, 0),
     },
-    -- {
-        -- PrintName = "Mag",
-		-- Bone = "tag_attachments",
-        -- Category = "go_mag",
-        -- Pos = Vector(11, 0, 3),
-        -- Ang = Angle(0, 0, 0),
-    -- },
+    {
+        PrintName = "Mag",
+		Bone = "tag_attachments",
+        Category = "go_mag",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+    },
     {
         PrintName = "Perk",
         Category = "go_perk"
@@ -679,3 +838,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.3
 SWEP.GripPoseParam2 = 0.6
+SWEP.CodAngledGripPoseParam = 8
+SWEP.CodStubbyGripPoseParam = 6.7

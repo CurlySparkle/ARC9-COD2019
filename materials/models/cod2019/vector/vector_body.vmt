@@ -25,4 +25,14 @@
 	"$rimlightboost"			"2"
 	"$rimmask"					"1"
 	"$nocull"					"1"
+
+    "Proxies"
+    {
+        "Arc9EnvMapTint"
+        {
+            "specularity" "0.5"
+            "min" "0"
+            "max" "0.2"
+        }
+    }
 }

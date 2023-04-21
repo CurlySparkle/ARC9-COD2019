@@ -4,7 +4,7 @@
     "$bumpmap" "models/cod2019/akilo47/akilo47_stock_n"
     "$phongexponenttexture" "models/cod2019/akilo47/akilo47_stock_exp"
 
-    "$color2" "[0 0 0]"
+    "$color2" "[0.5 0.5 0.5]"
     "$blendtintbybasealpha" "1"
 
     "$phong" "1"
@@ -13,7 +13,7 @@
     "$phongalbedotint" "0"
 
     //rimlight doesn't properly show in hlmv, make sure you're changing these values in game
-    "$rimlight" "1"
+    "$rimlight" "0"
     "$rimlightexponent" "100"
     "$rimmask" "1"
     "$rimlightboost" "1"
@@ -22,4 +22,14 @@
     "$envmapfresnel" "1"
     "$envmap" "env_cubemap"
     "$envmaptint" "[0.2 0.2 0.2]"
+
+     "Proxies"
+     {
+        "Arc9EnvMapTint"
+        {
+            "specularity" "0.5"
+            "min" "0"
+            "max" "0.2"
+        }
+     }
 }

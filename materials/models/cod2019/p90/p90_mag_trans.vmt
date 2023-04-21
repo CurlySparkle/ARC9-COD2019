@@ -23,4 +23,14 @@
 	//"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
 	"$translucent"					"1"
 	//"$nocull"					"1"
+
+     "Proxies"
+     {
+        "Arc9EnvMapTint"
+        {
+            "specularity" "0.5"
+            "min" "0"
+            "max" "0.2"
+        }
+     }
 }

@@ -136,14 +136,14 @@ SWEP.VisualRecoilSide = -1/6
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 5
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 2
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddMove = 0.05
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddHipFire = 0.04
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -624,7 +624,7 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Stock",
         Category = {"csgo_stock","cod2019_stocks"},
         Bone = "tag_stock_attach",
-        Pos = Vector(1.2, 0, 0),
+        Pos = Vector(1.2, 0, 0.05),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock"},
     },

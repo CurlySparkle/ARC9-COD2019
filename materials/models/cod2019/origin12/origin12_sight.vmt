@@ -3,19 +3,19 @@
 	"$basetexture"				"models/cod2019/origin12/origin12_sight"
 	"$bumpmap"					"models/cod2019/origin12/origin12_sight_n"
 	"$phongexponenttexture"		"models/cod2019/origin12/origin12_sight_exp"
-	"$color2"					"[0.8 0.8 0.8]"
-	"$blendTintByBaseAlpha"		"1"
+	"$color2"					"[0 0 0]"
+	"$blendTintByBaseAlpha"		"0"
 
 	"$envmap"					"env_cubemap"
-	"$envmaptint"				"[ .13 .13 .13 ]"
+	"$envmaptint"				"[0.2 0.2 0.2]"
 	"$envmapfresnel"			".25"
 	"$envmapcoefficient"		"[0.39 0.39 0.39]"
 
 	"$phong"					"1"
-	"$phongboost"				"15"
+	"$phongboost"				"1"
      //"$phongexp"				"55"
-	"$phongfresnelranges"		"[0.32 0.72 0.99]"
-	"$phongalbedotint" 			"1"
+	"$phongfresnelranges"		"[1 0.5 0]"
+	"$phongalbedotint" 			"0"
 
      "$normalmapalphaenvmapmask"              "1"
 	"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
@@ -25,4 +25,14 @@
 	"$rimlightboost"			"0.3"
 	"$rimmask"					"0"
 	"$nocull"					"1"
+
+     "Proxies"
+     {
+        "Arc9EnvMapTint"
+        {
+            "specularity" "0.5"
+            "min" "0"
+            "max" "0.2"
+        }
+     }
 }

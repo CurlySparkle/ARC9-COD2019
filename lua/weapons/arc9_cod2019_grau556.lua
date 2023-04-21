@@ -127,11 +127,12 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 0.6
-SWEP.VisualRecoilUp = 1
-SWEP.VisualRecoilRoll = 0.5
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilPunch = 0.8
+SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = -1/9
 
 -------------------------- SPREAD
 
@@ -620,10 +621,11 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"stock_retract","csgo_tube"},
+        Category = {"stock_retract","cod2019_tube"},
         Bone = "tag_attachments",
         Pos = Vector(-0.5, 0.6, -0.5),
         Ang = Angle(0, 0, 0),
+		InstalledElements = {"stock_none"},
     },
     {
         PrintName = "Ammo",
