@@ -93,14 +93,14 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.4
+SWEP.Recoil = 1.3
 
 SWEP.RecoilSeed = 6589132
 
 SWEP.RecoilPatternDrift = 55
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 0.8 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
 SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
@@ -138,7 +138,7 @@ SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddHipFire = 0.04
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
@@ -232,6 +232,7 @@ SWEP.ShellScale = 0.07
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_rif_m13_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -263,6 +264,13 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
@@ -273,6 +281,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -306,6 +315,7 @@ SWEP.Animations = {
     ["1_reload"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
+		FireASAP = true,
 		DropMagAt = 1.1,
         IKTimeLine = {
             {
@@ -341,6 +351,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -371,6 +382,78 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_magin_v2_02.ogg", t = 43/30},
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_bolt_release.ogg", t = 54/30},
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_end.ogg", t = 59/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_mcharlie_reload_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_magout_01.ogg", t = 2/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_02.ogg", t = 28/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_end.ogg", t = 30/30},
+        },
+    },
+    ["reload_empty_fast"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_mvmnt.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_rotate.ogg", t = 3/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_magin_v2_02.ogg", t = 27/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_bolt_release.ogg", t = 32/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_end.ogg", t = 35/30},
         },
     },
     ["ready"] = {
@@ -517,7 +600,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.DefaultBodygroups = "00000000000000"
+SWEP.DefaultBodygroups = "0000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -534,9 +617,14 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["mag"] = {
+    ["body_none"] = {
         Bodygroups = {
-            {1,1},
+            {0,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
+            {1,3},
         },
     },
     ["mag_aug"] = {
@@ -560,11 +648,31 @@ SWEP.AttachmentElements = {
 			{4,1},
         },
     },
+    ["barrel_none"] = {
+        Bodygroups = {
+            {5,1},
+        },
+    },
+    ["muzzle_none"] = {
+        Bodygroups = {
+            {6,1},
+        },
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
+end
+
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["go_mag_extended"] then
+        return "reload_fast"
+    elseif anim == "reload_empty" and attached["go_mag_extended"] then 
+        return "reload_empty_fast"
+    end
 end
 
 SWEP.Attachments = {
@@ -592,7 +700,7 @@ SWEP.Attachments = {
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"muzzle"},
+		InstalledElements = {"muzzle_none"},
 		Scale = 1,
     },
     {
@@ -692,4 +800,4 @@ SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.6
 SWEP.CodStubbyGripPoseParam = 7
 SWEP.CodAngledGripPoseParam = 8
-SWEP.CodStubbyTallGripPoseParam = 1
+SWEP.CodStubbyTallGripPoseParam = 0

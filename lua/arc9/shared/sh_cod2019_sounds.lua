@@ -1685,7 +1685,7 @@ sound.Add( {
     channel = 10,
     volume = 1.0,
     level = 120,
-    pitch = {95,105},
+    pitch = {90,115},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
         "weapons/cod2019/ak47/weap_akilo47_fire_plr_01.ogg",

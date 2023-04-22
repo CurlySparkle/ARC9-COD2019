@@ -449,6 +449,98 @@ SWEP.Animations = {
 			{s = path2 .. "wfoly_ar_mcharlie_reload_end.ogg", t = 39/30},
         },
     },
+    ["reload_start_fast"] = {
+        Source = "reload_start_fast",
+		RestoreAmmo = 1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0/30},
+			{s = "COD2019.Model680.ShellIn", t = 6/30},
+			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 7/30},
+			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 13/30},
+        },
+    },
+    ["reload_insert_fast"] = {
+        Source = "reload_loop_fast",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 0,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = "COD2019.Model680.ShellIn", t = 3/30},
+			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 0/30},
+        },
+    },
+    ["reload_finish_fast"] = {
+        Source = "reload_end_fast",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 0/30},
+        },
+    },
+    ["reload_finish_empty_fast"] = {
+        Source = "reload_end_empty_fast",
+		EjectAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sh_romeo870_reload_empty_start_twist.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_romeo870_reload_empty_start_open_01.ogg", t = 6/30},
+			{s = path .. "wfoly_sh_romeo870_reload_empty_start_end.ogg", t = 11/30},
+			{s = path .. "wfoly_sh_romeo870_reload_empty_start_close_01.ogg", t = 15/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -643,6 +735,18 @@ SWEP.AttachmentElements = {
     -- local model = data.model
     -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
 -- end
+
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload_start" and attached["csgo_perk_fastreload"] then
+        return "reload_start_fast"
+    elseif anim == "reload_insert" and attached["csgo_perk_fastreload"] then 
+        return "reload_insert_fast"
+    elseif anim == "reload_finish" and attached["csgo_perk_fastreload"] then 
+        return "reload_finish_fast"
+    end
+end
 
 SWEP.Attachments = {
     {

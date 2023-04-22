@@ -77,7 +77,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 545
+SWEP.RPM = 561
 
 SWEP.Firemodes = {
     {
@@ -133,11 +133,12 @@ SWEP.Spread = 0.0014
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0.5
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddHipFire = 0.07
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
@@ -152,7 +153,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -260,6 +261,13 @@ SWEP.BulletBones = {
 SWEP.HideBones  = {
     [1] = "j_mag2",
 }
+
+SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {

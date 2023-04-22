@@ -186,7 +186,7 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, -1, -1)
+SWEP.SprintPos = Vector(0, -1, -1.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -271,8 +271,7 @@ SWEP.Animations = {
         Source = "shoot1",
     },
     ["fire_sights"] = {
-        Source = "shoot1",
-		Mult = 1,
+        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -310,7 +309,7 @@ SWEP.Animations = {
         },
     },
     ["1_reload"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
 		FireASAP = true,
 		MagSwapTime = 1.5,
@@ -348,6 +347,78 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_decho_reload_empty_mvmnt.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_01.ogg", t = 23/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_02.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_shake.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_charge_01.ogg", t = 43/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_end.ogg", t = 44/30},
+        },
+    },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_decho_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_decho_reload_magout_01.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 36/30},
+			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 42/30},
+        },
+    },
+    ["reload_empty_xmag"] = {
+        Source = "reload_xmag_empty",
 		MinProgress = 0.8,
 		FireASAP = true,
 		DropMagAt = 0.8,
@@ -477,7 +548,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = "melee",
+        Source = {"melee","melee2"},
     },
 }
 
