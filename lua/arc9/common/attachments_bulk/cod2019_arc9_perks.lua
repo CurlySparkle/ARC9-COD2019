@@ -63,3 +63,104 @@ ATT.Category = "cod2019_perks"
 ATT.BashDamageMult = 1.2
 
 ARC9.LoadAttachment(ATT, "cod2019_perks_heavyhitter")
+------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = [[Enforcer]]
+ATT.CompactName = [[Enforcer]]
+ATT.Icon = Material("entities/attachs/cod2019_perks_juggernaut.png", "mips smooth")
+ATT.Description = [[Gain 30% resistance to damage.]]
+ATT.Pros = {
+    "+ 30% Resistance to all damage."
+}
+ATT.Cons = {}
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+
+ATT.Free = true
+
+ATT.Category = "cod2019_perks"
+ATT.ActivateElements = {"enforcer"}
+
+hook.Add("EntityTakeDamage", "ARC9_COD2019_PERK_ENFORCER", function(ent, dmg)
+    if !(ent:IsPlayer() or ent:IsNPC()) then return end
+    local wep = ent:GetActiveWeapon()
+    if !IsValid(wep) or !wep.ARC9 then return end
+    local attached = wep:GetElements()
+    if !attached["enforcer"] then return end
+
+    if attached["enforcer"] then
+        dmg:ScaleDamage(0.7)
+    end
+end)
+
+ARC9.LoadAttachment(ATT, "cod2019_perks_enforcer")
+------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = [[Deft Hands]]
+ATT.Description = [[Cycling your weapon 25% faster than normal.]]
+ATT.Icon = Material("entities/attachs/cod2019_perks_bolt.png", "mips smooth")
+ATT.AutoStats = true
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+
+ATT.Free = true
+
+ATT.Category = {"cod2019_perks_2"}
+ATT.ActivateElements = {"perk_bolt"}
+
+ATT.CycleTimeMult = 0.75
+
+ARC9.LoadAttachment(ATT, "cod2019_perks_bolt")
+------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = [[Burst]]
+ATT.Description = [[Changes fire mode to 3-round burst.]]
+ATT.Icon = Material("entities/attachs/cod2019_perks_burst.png", "mips smooth")
+ATT.AutoStats = true
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+
+ATT.Free = true
+
+ATT.Category = {"cod2019_perks_burst"}
+ATT.ActivateElements = {"perk_burst"}
+
+ATT.FiremodesOverride = {
+    {
+        Mode = 3,
+        RunawayBurst = true,
+        PostBurstDelay = 0.3,
+    },
+    {
+        Mode = 1,
+    },
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_perks_burst")
+------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = [[Burst]]
+ATT.Description = [[Changes fire mode to 2-round burst.]]
+ATT.Icon = Material("entities/attachs/cod2019_perks_burst_2.png", "mips smooth")
+ATT.AutoStats = true
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+
+ATT.Free = true
+
+ATT.Category = {"cod2019_perks_burst_2"}
+ATT.ActivateElements = {"perk_burst"}
+
+ATT.FiremodesOverride = {
+    {
+        Mode = 2,
+        RunawayBurst = true,
+        PostBurstDelay = 0.3,
+    },
+    {
+        Mode = 1,
+    },
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_perks_burst_2")

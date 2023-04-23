@@ -821,7 +821,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_2"}
     },
     {
         PrintName = "Skins",
