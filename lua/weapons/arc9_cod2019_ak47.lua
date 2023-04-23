@@ -572,7 +572,7 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
 
     if anim == "reload" and attached["csgo_perk_fastreload"] then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and attached["go_mag_extended"] then 
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
         -- return "reload_empty_xmag"
     end
 end
@@ -700,7 +700,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "go_perk"
+        Category = "cod2019_perks"
     },
     {
         PrintName = "Skins",

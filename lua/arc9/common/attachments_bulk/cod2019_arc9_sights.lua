@@ -1,5 +1,5 @@
 local ATT = {}
-
+------------------------------------------------------------------
 ATT = {}
 
 ATT.PrintName = "G.I. Mini Reflex"
@@ -130,7 +130,7 @@ ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
 ARC9.LoadAttachment(ATT, "csgo_cod2019_optic_minireddot3")
----------------------------------------------------------------
+--------------------------------------------------------------- PISTOLS
 ATT = {}
 
 ATT.PrintName = "G.I. Mini Reflex"
@@ -159,7 +159,7 @@ ATT.AimDownSightsTimeMult = 1.15
 
 ATT.Sights = {
     {
-        Pos = Vector(0, 9, -0.65),
+        Pos = Vector(0, 13, -0.65),
         Ang = Angle(0, 0, 0),
         Magnification = 1.15,
         ViewModelFOV = 56,
@@ -203,7 +203,7 @@ ATT.AimDownSightsTimeMult = 1.15
 
 ATT.Sights = {
     {
-        Pos = Vector(0, 9, -0.6),
+        Pos = Vector(0, 13, -0.6),
         Ang = Angle(0, 0, 0),
         Magnification = 1.15,
         ViewModelFOV = 56,
@@ -247,7 +247,7 @@ ATT.AimDownSightsTimeMult = 1.15
 
 ATT.Sights = {
     {
-        Pos = Vector(0, 9, -0.6),
+        Pos = Vector(0, 13, -0.6),
         Ang = Angle(0, 0, 0),
         Magnification = 1.15,
         ViewModelFOV = 56,
@@ -261,7 +261,7 @@ ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
 ARC9.LoadAttachment(ATT, "csgo_cod2019_optic_minireddot3_alt")
--------------------------------------------------------------------------
+------------------------------------------------------------------------- END OF PISTOLS ABOVE
 ATT = {}
 
 ATT.PrintName = "Aim-Op Reflex Sight"

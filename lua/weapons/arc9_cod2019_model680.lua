@@ -739,11 +739,11 @@ SWEP.AttachmentElements = {
 SWEP.Hook_TranslateAnimation = function (self, anim)
     local attached = self:GetElements()
 
-    if anim == "reload_start" and attached["csgo_perk_fastreload"] then
+    if anim == "reload_start" and attached["cod2019_perks_soh"] then
         return "reload_start_fast"
-    elseif anim == "reload_insert" and attached["csgo_perk_fastreload"] then 
+    elseif anim == "reload_insert" and attached["cod2019_perks_soh"] then 
         return "reload_insert_fast"
-    elseif anim == "reload_finish" and attached["csgo_perk_fastreload"] then 
+    elseif anim == "reload_finish" and attached["cod2019_perks_soh"] then 
         return "reload_finish_fast"
     end
 end
@@ -821,7 +821,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "go_perk"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

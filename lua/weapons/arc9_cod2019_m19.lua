@@ -249,10 +249,10 @@ SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
 SWEP.BulletBones = {
-    [1] = "j_bullet01",
-    [2] = "j_bullet02",
-	[3] = "j_bullet03",
-	[4] = "j_bullet04",
+    [1] = "j_bullet_01",
+    [2] = "j_bullet_02",
+	[3] = "j_bullet_03",
+	[4] = "j_bullet_04",
 }
 
 SWEP.HideBones  = {
@@ -503,6 +503,17 @@ SWEP.AttachmentElements = {
     },
 }
 
+
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "1_reload"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
 SWEP.Attachments = {
     {
         PrintName = "Slide",
@@ -515,12 +526,12 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"muzzle","muzzle_pistols"},
+        Category = "muzzle_pistols",
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
-		Scale = 0.7,
+		Scale = 1,
     },
     {
         PrintName = "Optics",
@@ -566,7 +577,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "go_perk"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
@@ -610,8 +621,8 @@ SWEP.Attachments = {
     {
         PrintName = "Stats",
         Category = "killcounter",
-        Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, -1),
+        Bone = "j_slide",
+        Pos = Vector(1.3, -0.6, -0.2),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },

@@ -72,7 +72,7 @@ SWEP.ClipSize = 40 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -381,6 +381,79 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 57/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.49,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magout.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 14/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_01.ogg", t = 20/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_02.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 40/30},
+        },
+    },
+    ["reload_empty_fast"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.49,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magout.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 10/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_01.ogg", t = 20/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_02.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_bolt_release.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 45/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -575,6 +648,16 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	--if wep:HasElement("stock_none") then model:SetBodygroup(4,1) end
 end
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        return "reload_empty_fast"
+    end
+end
+
 SWEP.Attachments = {
     {
         PrintName = "Barrels",
@@ -647,7 +730,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "go_perk"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

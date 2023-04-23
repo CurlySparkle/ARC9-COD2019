@@ -45,7 +45,7 @@ SWEP.WorldModelOffset = {
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 28 -- Damage done at point blank range
-SWEP.DamageMin = 14 -- Damage done at maximum range
+SWEP.DamageMin = 18 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -138,6 +138,7 @@ SWEP.Spread = 0.002
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCapMove = 0.5
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadMultMove = 2
@@ -234,7 +235,7 @@ SWEP.ShellScale = 0.06
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_rif_m4_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -257,9 +258,22 @@ SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
 SWEP.BulletBones = {
-    [1] = "j_bullet1",
-    [2] = "j_bullet2",
-    [3] = "j_bullet3",
+    [1] = "j_b_01",
+    [2] = "j_b_02",
+    [3] = "j_b_03",
+    [4] = "j_b_04",
+    [5] = "j_b_05",
+    [6] = "j_b_06",
+    [7] = "j_b_07",
+    [8] = "j_b_08",
+    [9] = "j_b_09",
+    [10] = "j_b_10",
+    [11] = "j_b_11",
+    [12] = "j_b_12",
+    [13] = "j_b_13",
+    [14] = "j_b_14",
+    [15] = "j_b_15",
+    [16] = "j_b_16",
 }
 
 SWEP.HideBones  = {
@@ -352,6 +366,7 @@ SWEP.Animations = {
         Source = "reload",
 		MinProgress = 0.8,
 		FireASAP = true,
+		DropMagAt = 0.39,
         IKTimeLine = {
             {
                 t = 0,
@@ -416,7 +431,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.7,
+		MinProgress = 0.8,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -544,17 +559,32 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["sight"] = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
+    ["sight_alt"] = {
         Bodygroups = {
             {1,1},
         },
     },
-    ["muzzle"] = {
+    ["sight_m13"] = {
+        Bodygroups = {
+            {1,2},
+        },
+    },
+    ["sight_none"] = {
+        Bodygroups = {
+            {1,3},
+        },
+    },
+    ["muzzle_none"] = {
         Bodygroups = {
             {2,1},
         },
     },
-    ["stock"] = {
+    ["stock_none"] = {
         Bodygroups = {
             {3,1},
         },
@@ -564,12 +594,17 @@ SWEP.AttachmentElements = {
             {4,1},
         },
     },
-    ["mag_hide"] = {
+    ["mag"] = {
         Bodygroups = {
             {5,1},
         },
     },
-	["barrel"] = {
+    ["mag_none"] = {
+        Bodygroups = {
+            {5,2},
+        },
+    },
+	["barrel_none"] = {
         Bodygroups = {
             {6,1},
         },
@@ -581,15 +616,15 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
 
     if anim == "reload" and attached["csgo_perk_fastreload"] then
         return "1_reload"
-    -- elseif anim == "reload_empty" and attached["go_mag_extended"] then 
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
         -- return "reload_empty_xmag"
     end
 end
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("sight_m13") then model:SetBodygroup(1,2) end
+end
 
 SWEP.Attachments = {
     {
@@ -605,9 +640,9 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(1.3, 0, -0.1),
         Ang = Angle(0, 0, 0),
-        Category = "csgo_optic",
+        Category = {"csgo_optic","cod2019_sights_m4"},
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sight"},
+		InstalledElements = {"sight_alt"},
     },
     {
         PrintName = "Muzzle",
@@ -616,7 +651,7 @@ SWEP.Attachments = {
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"muzzle"},
+		InstalledElements = {"muzzle_none"},
 		Scale = 1,
     },
     {
@@ -643,7 +678,7 @@ SWEP.Attachments = {
         Bone = "tag_stock_attach",
         Pos = Vector(1.2, 0, 0.05),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock"},
+		InstalledElements = {"stock_none"},
     },
     {
         PrintName = "Ammo",
@@ -661,7 +696,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "go_perk"
+        Category = "cod2019_perks"
     },
     {
         PrintName = "Skins",

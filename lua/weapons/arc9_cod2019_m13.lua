@@ -668,9 +668,9 @@ end
 SWEP.Hook_TranslateAnimation = function (self, anim)
     local attached = self:GetElements()
 
-    if anim == "reload" and attached["go_mag_extended"] then
+    if anim == "reload" and attached["cod2019_perks_soh"] then
         return "reload_fast"
-    elseif anim == "reload_empty" and attached["go_mag_extended"] then 
+    elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
         return "reload_empty_fast"
     end
 end
@@ -745,7 +745,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "go_perk"
+        Category = "cod2019_perks"
     },
     {
         PrintName = "Skins",
