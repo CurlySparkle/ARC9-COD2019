@@ -308,11 +308,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_lima86_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_lima86_reload_magout_01.ogg", t = 24/30},
+			{s = path .. "wfoly_lm_lima86_reload_magout_01.ogg", t = 25/30},
 			{s = path .. "wfoly_lm_lima86_reload_rotate.ogg", t = 36/30},
-			{s = path .. "wfoly_lm_lima86_reload_magin_v2_01.ogg", t = 54/30},
-			{s = path .. "wfoly_lm_lima86_reload_magin_v2_02.ogg", t = 69/30},
-			{s = path .. "wfoly_lm_lima86_reload_end_01.ogg", t = 88/30},
+			{s = path .. "wfoly_lm_lima86_reload_magin_v2_01.ogg", t = 56/30},
+			{s = path .. "wfoly_lm_lima86_reload_magin_v2_02.ogg", t = 70/30},
+			{s = path .. "wfoly_lm_lima86_reload_end_01.ogg", t = 87/30},
         },
     },
     ["reload_empty"] = {
@@ -343,11 +343,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_lima86_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_lima86_reload_empty_magout_01.ogg", t = 24/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_magout_01.ogg", t = 25/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_magin_v2_01.ogg", t = 55/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_magin_v2_02.ogg", t = 72/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_rotate.ogg", t = 75/30},
-			{s = path .. "wfoly_lm_lima86_reload_empty_charge_01.ogg", t = 94/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_charge_01.ogg", t = 93/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_end.ogg", t = 75/30},
         },
     },
@@ -617,8 +617,8 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Perk",
-        Category = "cod2019_perks"
+		PrintName = "Perk",
+        Category = {"cod2019_perks","cod2019_perks_soh_2"}
     },
     {
         PrintName = "Skins",

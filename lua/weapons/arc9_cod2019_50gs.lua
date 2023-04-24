@@ -308,7 +308,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 42/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		FireASAP = true,
@@ -340,9 +340,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_decho_reload_raise.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_decho_reload_magout_01.ogg", t = 4/30},
-			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 23/30},
-			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 30/30},
-			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 14/30},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 24/30},
         },
     },
     ["reload_empty"] = {
@@ -554,6 +554,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
 SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 SWEP.DefaultBodygroups = "00000000000000"
@@ -647,7 +657,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

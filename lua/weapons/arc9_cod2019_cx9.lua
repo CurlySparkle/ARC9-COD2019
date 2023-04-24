@@ -312,10 +312,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_sm_secho_reload_magout.ogg", t = 12/30},
 			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 25/30},
 			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 36/30},
-			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 37/30},
+			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 45/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		DropMagAt = 0.2,
@@ -347,7 +347,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 5/30},
 			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 15/30},
 			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 25/30},
-			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 20/30},
+			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 25/30},
         },
     },
     ["reload_empty"] = {
@@ -504,6 +504,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
@@ -626,7 +636,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

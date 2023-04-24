@@ -302,12 +302,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 45/30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 107/30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 43/30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 101/30},
 			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 137/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
         IKTimeLine = {
@@ -334,8 +334,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 35/30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 85/30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 76/30},
 			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 90/30},
         },
     },
@@ -406,6 +406,14 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    end
+end
+
 SWEP.AttachmentElements = {
     -- ["stock_none"] = {
         -- Bodygroups = {
@@ -445,7 +453,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

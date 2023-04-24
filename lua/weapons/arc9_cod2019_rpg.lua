@@ -288,7 +288,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_la_rpapa7_raise_first.ogg", t = 13/30},
+            {s = path .. "wfoly_la_rpapa7_raise_first.ogg", t = 14/30},
         },
     },
     ["draw"] = {
@@ -400,8 +400,8 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Perk",
-        Category = "cod2019_perks"
+		PrintName = "Perk",
+        Category = {"cod2019_perks","cod2019_perks_soh_2"}
     },
     {
         PrintName = "Skins",

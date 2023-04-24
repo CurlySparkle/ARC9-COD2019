@@ -308,11 +308,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_end.ogg", t = 49/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.65,
+		DropMagAt = 0.59,
         IKTimeLine = {
             {
                 t = 0,
@@ -379,42 +379,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_bolt_release.ogg", t = 45/30},
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 49/30},
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 57/30},
-        },
-    },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		MagSwapTime = 1.5,
-		DropMagAt = 0.49,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magout.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 14/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_01.ogg", t = 20/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_02.ogg", t = 30/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["reload_empty_fast"] = {
@@ -575,6 +539,16 @@ SWEP.Animations = {
 }
 
 -------------------------- ATTACHMENTS
+
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        return "reload_empty_fast"
+    end
+end
 
 --SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 

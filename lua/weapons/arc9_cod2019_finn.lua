@@ -232,12 +232,12 @@ SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ExtraShellModels = {
     [1] = {
-        model = "models/weapons/shared/lmg_link.mdl",
+        model = "models/weapons/cod2019/shared/lmg_link.mdl",
         physbox = Vector(1, 1, 1),
         smoke = false
     },
     [2] = {
-        model = "models/weapons/shared/lmg_link.mdl",
+        model = "models/weapons/cod2019/shared/lmg_link.mdl",
         smoke = false
     }
 }
@@ -348,44 +348,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_bullets.ogg", t = 114/30},
 			{s = path .. "wfoly_lm_sierrax_reload_closecover.ogg", t = 143/30},
 			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 153/30},
-        },
-    },
-    ["1_reload"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		MagSwapTime = 3,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_lm_sierrax_reload_lift.ogg", t = 2/30},
-			{s = path .. "wfoly_lm_sierrax_reload_coveropen.ogg", t = 4/30},
-			{s = path .. "wfoly_lm_sierrax_reload_magout.ogg", t = 27/30},
-			{s = path .. "wfoly_lm_sierrax_reload_rotate.ogg", t = 52/30},
-			{s = path .. "wfoly_lm_sierrax_reload_magin.ogg", t = 62/30},
-			{s = path .. "wfoly_lm_sierrax_reload_beltpull.ogg", t = 77/30},
-			{s = path .. "wfoly_lm_sierrax_reload_bullets.ogg", t = 107/30},
-			{s = path .. "wfoly_lm_sierrax_reload_closecover.ogg", t = 117/30},
-			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 127/30},
         },
     },
     ["reload_fast"] = {
@@ -623,6 +585,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        return "reload_empty_fast"
+    end
+end
+
 --SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 SWEP.DefaultBodygroups = "00000000000000"
@@ -753,7 +725,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

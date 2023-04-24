@@ -466,7 +466,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0/30},
-			{s = "COD2019.Model680.ShellIn", t = 6/30},
+			{s = "COD2019.Model680.ShellIn", t = 9/30},
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 7/30},
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 13/30},
         },
@@ -511,7 +511,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 1/30},
         },
     },
     ["reload_finish_empty_fast"] = {
@@ -678,6 +678,18 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload_start" and attached["cod2019_perks_soh"] then
+        return "reload_start_fast"
+    elseif anim == "reload_insert" and attached["cod2019_perks_soh"] then 
+        return "reload_insert_fast"
+    elseif anim == "reload_finish" and attached["cod2019_perks_soh"] then 
+        return "reload_finish_fast"
+    end
+end
+
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
     ModelOffset = Vector(4, 0, -1.3),
@@ -735,18 +747,6 @@ SWEP.AttachmentElements = {
     -- local model = data.model
     -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
 -- end
-
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
-
-    if anim == "reload_start" and attached["cod2019_perks_soh"] then
-        return "reload_start_fast"
-    elseif anim == "reload_insert" and attached["cod2019_perks_soh"] then 
-        return "reload_insert_fast"
-    elseif anim == "reload_finish" and attached["cod2019_perks_soh"] then 
-        return "reload_finish_fast"
-    end
-end
 
 SWEP.Attachments = {
     {

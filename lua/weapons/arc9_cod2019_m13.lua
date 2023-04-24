@@ -312,7 +312,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_mcharlie_reload_end.ogg", t = 41/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
 		FireASAP = true,
@@ -384,41 +384,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_end.ogg", t = 59/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		FireASAP = true,
-		DropMagAt = 0.5,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_ar_mcharlie_reload_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_magout_01.ogg", t = 2/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_01.ogg", t = 25/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_02.ogg", t = 28/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_end.ogg", t = 30/30},
-        },
-    },
     ["reload_empty_fast"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
@@ -449,11 +414,11 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_mvmnt.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_rotate.ogg", t = 3/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_magout_01.ogg", t = 3/30},
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_magin_v2_01.ogg", t = 25/30},
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_magin_v2_02.ogg", t = 27/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_bolt_release.ogg", t = 32/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_end.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_bolt_release.ogg", t = 36/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_end.ogg", t = 39/30},
         },
     },
     ["ready"] = {
@@ -600,6 +565,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        return "reload_empty_fast"
+    end
+end
+
 SWEP.DefaultBodygroups = "0000000000000000"
 
 SWEP.AttachmentTableOverrides = {
@@ -665,15 +640,6 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
 end
 
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
-
-    if anim == "reload" and attached["cod2019_perks_soh"] then
-        return "reload_fast"
-    elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
-        return "reload_empty_fast"
-    end
-end
 
 SWEP.Attachments = {
     {
@@ -745,7 +711,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

@@ -294,9 +294,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_plr_la_gromeo_reload_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_la_gromeo_reload_rotate.ogg", t = 22/30},
-			{s = path .. "wfoly_plr_la_gromeo_reload_rockettip_01.ogg", t = 37/30},
-			{s = path .. "wfoly_plr_la_gromeo_reload_grabrocket.ogg", t = 64/30},
-			{s = path .. "wfoly_plr_la_gromeo_reload_load_01.ogg", t = 84/30},
+			{s = path .. "wfoly_plr_la_gromeo_reload_rockettip_01.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_la_gromeo_reload_grabrocket.ogg", t = 70/30},
+			{s = path .. "wfoly_plr_la_gromeo_reload_load_01.ogg", t = 74/30},
 			{s = path .. "wfoly_plr_la_gromeo_reload_flipup.ogg", t = 102/30},
 			{s = path .. "wfoly_plr_la_gromeo_reload_arm.ogg", t = 128/30},
 			{s = path .. "wfoly_plr_la_gromeo_reload_end.ogg", t = 152/30},
@@ -456,8 +456,8 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Perk",
-        Category = "cod2019_perks"
+		PrintName = "Perk",
+        Category = {"cod2019_perks","cod2019_perks_soh_2"}
     },
     {
         PrintName = "Skins",

@@ -280,7 +280,7 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.4, t = 3/30},
+            {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.4, t = 2/30},
         },
     },
     ["cycle_sights"] = {
@@ -288,7 +288,7 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.4, t = 3/30},
+            {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.4, t = 2/30},
         },
     },
     ["reload"] = {
@@ -324,7 +324,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 53/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		DropMagAt = 0.8,
@@ -352,12 +352,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 7/30},
-			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 8/30},
+			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 9/30},
 			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 30/30},
 			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 27/30},
 			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 37/30},
-			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 39/30},
+			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 38/30},
         },
     },
     ["reload_empty"] = {
@@ -512,6 +512,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
     ModelOffset = Vector(0, 0, 0.6),
@@ -649,7 +659,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

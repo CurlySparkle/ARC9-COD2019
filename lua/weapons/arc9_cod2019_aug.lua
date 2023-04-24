@@ -345,7 +345,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_01.ogg", t = 55/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_02.ogg", t = 63/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 75/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 75/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 76/30},
         },
     },
     ["reload_ar"] = {
@@ -637,8 +637,8 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Perk",
-        Category = "cod2019_perks"
+		PrintName = "Perk",
+        Category = {"cod2019_perks","cod2019_perks_soh_2"}
     },
     {
         PrintName = "Skins",

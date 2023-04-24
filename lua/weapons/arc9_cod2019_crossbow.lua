@@ -260,7 +260,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 78/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
         IKTimeLine = {
@@ -291,7 +291,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_crossbow_reload_load_arrow.ogg", t = 35/30},
 			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_01.ogg", t = 45/30},
 			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_02.ogg", t = 50/30},
-			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 48/30},
+			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 52/30},
         },
     },
     ["ready"] = {
@@ -383,6 +383,17 @@ SWEP.Hook_Think	= ARC9.CSGO.BlendEmpty
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
+
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
     ModelOffset = Vector(5, -0.1, -1.6),
@@ -464,7 +475,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

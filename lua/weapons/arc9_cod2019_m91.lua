@@ -378,7 +378,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_kilo121_reload_empty_end.ogg", t = 223/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 3,
@@ -418,7 +418,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_kilo121_reload_end.ogg", t = 201/30},
         },
     },
-    ["1_reload_empty"] = {
+    ["reload_empty_fast"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 1.2,
@@ -743,8 +743,8 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Perk",
-        Category = "cod2019_perks"
+		PrintName = "Perk",
+        Category = {"cod2019_perks","cod2019_perks_soh_2"}
     },
     {
         PrintName = "Skins",

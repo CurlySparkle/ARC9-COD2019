@@ -309,13 +309,13 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_arm.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 22/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 42/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_shake.ogg", t = 45/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 58/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
@@ -344,9 +344,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 4/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 28/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 3/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 27/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 37/30},
         },
     },
@@ -508,6 +508,17 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
+
 --SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 SWEP.DefaultBodygroups = "00000000000000"
@@ -649,7 +660,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

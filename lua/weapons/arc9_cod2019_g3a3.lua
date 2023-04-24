@@ -304,7 +304,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_xmag_end.ogg", t = 63/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		DropMagAt = 0.9,
         IKTimeLine = {
@@ -497,6 +497,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
@@ -649,7 +659,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

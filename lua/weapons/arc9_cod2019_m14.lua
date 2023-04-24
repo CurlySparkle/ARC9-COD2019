@@ -304,7 +304,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_mike14_reload_end.ogg", t = 38/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		DropMagAt = 0.75,

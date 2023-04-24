@@ -319,7 +319,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_end.ogg", t = 56/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
@@ -510,6 +510,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
 SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
 
 SWEP.DefaultBodygroups = "00000000000000"
@@ -651,7 +661,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

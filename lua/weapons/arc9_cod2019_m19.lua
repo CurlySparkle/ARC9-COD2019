@@ -301,7 +301,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_wiggle.ogg", t = 36/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
@@ -473,6 +473,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
 SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 SWEP.DefaultBodygroups = "00000000000000"
@@ -503,16 +513,6 @@ SWEP.AttachmentElements = {
     },
 }
 
-
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
-
-    if anim == "reload" and attached["cod2019_perks_soh"] then
-        return "1_reload"
-    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
-        -- return "reload_empty_fast"
-    end
-end
 
 SWEP.Attachments = {
     {

@@ -312,7 +312,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 65/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		FireASAP = true,
@@ -382,41 +382,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 45/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_chamber_01.ogg", t = 55/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 69/30},
-        },
-    },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		FireASAP = true,
-		DropMagAt = 0.85,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_ar_akilo47_reload_empty_maghit_01.ogg", t = 5/30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_twist.ogg", t = 5/30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 20/30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 33/30},
-			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 40/30},
         },
     },
     ["ready"] = {
@@ -570,8 +535,10 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (self, anim)
     local attached = self:GetElements()
 
-    if anim == "reload" and attached["csgo_perk_fastreload"] then
+    if anim == "reload" and attached["cod2019_perks_soh"] then
         return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
     -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
         -- return "reload_empty_xmag"
     end
@@ -700,7 +667,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

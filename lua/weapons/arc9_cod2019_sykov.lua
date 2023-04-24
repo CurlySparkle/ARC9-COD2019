@@ -300,7 +300,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_magout.ogg", t = 12/30},
 			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 24/30},
 			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 30/30},
-			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 41/30},
+			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 42/30},
         },
     },
     ["reload_empty"] = {
@@ -536,8 +536,8 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Perk",
-        Category = "cod2019_perks"
+		PrintName = "Perk",
+        Category = {"cod2019_perks","cod2019_perks_soh_2"}
     },
     {
         PrintName = "Skins",

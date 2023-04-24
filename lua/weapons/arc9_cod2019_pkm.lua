@@ -360,7 +360,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_end.ogg", t = 244/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 3,
@@ -400,7 +400,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_end.ogg", t = 244/30},
         },
     },
-    ["1_reload_empty"] = {
+    ["reload_empty_fast"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 1.2,
@@ -467,8 +467,8 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_plr_lm_pkilo_raise_first_lift.ogg", t = 0/30},
             {s = path .. "wfoly_plr_lm_pkilo_raise_first_handle.ogg", t = 22/30},
-			{s = path .. "wfoly_plr_lm_pkilo_raise_first_charge.ogg", t = 33/30},
-			{s = path .. "wfoly_plr_lm_pkilo_raise_first_rattle.ogg", t = 33/30},
+			{s = path .. "wfoly_plr_lm_pkilo_raise_first_charge.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_lm_pkilo_raise_first_rattle.ogg", t = 35/30},
 			{s = path .. "wfoly_plr_lm_pkilo_raise_first_end.ogg", t = 56/30},
         },
     },
@@ -717,8 +717,8 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Perk",
-        Category = "cod2019_perks"
+		PrintName = "Perk",
+        Category = {"cod2019_perks","cod2019_perks_soh_2"}
     },
     {
         PrintName = "Skins",

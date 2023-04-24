@@ -304,10 +304,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_victor_reload_arm.ogg", t = 38/30},
 			{s = path .. "wfoly_sm_victor_reload_maghit.ogg", t = 52/30},
 			{s = path .. "wfoly_sm_victor_reload_magin.ogg", t = 66/30},
-			{s = path .. "wfoly_sm_victor_reload_end.ogg", t = 71/30},
+			{s = path .. "wfoly_sm_victor_reload_end.ogg", t = 72/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
@@ -342,7 +342,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_victor_reload_empty_maghit.ogg", t = 40/30},
 			{s = path .. "wfoly_sm_victor_reload_empty_magin_01.ogg", t = 42/30},
 			{s = path .. "wfoly_sm_victor_reload_empty_magin_02.ogg", t = 43/30},
-			{s = path .. "wfoly_sm_victor_reload_empty_end.ogg", t = 50/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_end.ogg", t = 52/30},
         },
     },
     ["reload_empty"] = {
@@ -379,8 +379,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_victor_reload_empty_maghit.ogg", t = 40/30},
 			{s = path .. "wfoly_sm_victor_reload_empty_magin_01.ogg", t = 49/30},
 			{s = path .. "wfoly_sm_victor_reload_empty_magin_02.ogg", t = 56/30},
-			{s = path .. "wfoly_sm_victor_reload_empty_charge.ogg", t = 71/30},
-			{s = path .. "wfoly_sm_victor_reload_empty_end.ogg", t = 86/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_charge.ogg", t = 72/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_end.ogg", t = 87/30},
         },
     },
     ["ready"] = {
@@ -502,6 +502,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
 --SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 SWEP.DefaultBodygroups = "00000000000000"
@@ -614,7 +624,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

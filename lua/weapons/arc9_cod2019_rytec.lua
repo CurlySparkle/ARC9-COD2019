@@ -303,7 +303,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_end.ogg", t = 104/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		DropMagAt = 1,
@@ -377,7 +377,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_empty_end.ogg", t = 149/30},
         },
     },
-    ["1_reload_empty"] = {
+    ["reload_empty_fast"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.8,
 		DropMagAt = 1,
@@ -411,7 +411,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_empty_magin_02.ogg", t = 55/30},
 			{s = path .. "wfoly_sn_xmike109_first_raise_bolt_pull.ogg", t = 83/30},
 			{s = path .. "wfoly_sn_xmike109_first_raise_bolt_release.ogg", t = 96/30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_end.ogg", t = 99/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_end.ogg", t = 100/30},
         },
     },
     ["ready"] = {
@@ -535,6 +535,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        return "reload_empty_fast"
+    end
+end
+
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
@@ -581,16 +591,6 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("barrel_long") and wep.Attachments[3].Installed then model:SetBodygroup(3,3) end
 	if wep:HasElement("barrel_short") and wep.Attachments[3].Installed then model:SetBodygroup(3,3) end
-end
-
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
-
-    if anim == "reload" and attached["csgo_perk_fastreload"] then
-        return "1_reload"
-    elseif anim == "reload_empty" and attached["csgo_perk_fastreload"] then 
-        return "1_reload_empty"
-    end
 end
 
 SWEP.Attachments = {
@@ -663,7 +663,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

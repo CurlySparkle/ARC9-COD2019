@@ -300,7 +300,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_pull.ogg", t = 51/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		DropMagAt = 0.6,
@@ -329,8 +329,8 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 4/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_01.ogg", t = 27/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_hands.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_01.ogg", t = 26/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 48/30},
         },
     },
     ["reload_empty"] = {
@@ -366,7 +366,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_hands.ogg", t = 45/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_tilt.ogg", t = 53/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_charge_01.ogg", t = 74/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 84/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 87/30},
         },
     },
     ["ready"] = {
@@ -480,6 +480,16 @@ SWEP.Animations = {
 --SWEP.Hook_Think	= ARC9.CSGO.BlendSights
 
 -------------------------- ATTACHMENTS
+
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -599,7 +609,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

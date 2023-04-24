@@ -641,6 +641,18 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload_start" and attached["cod2019_perks_soh"] then
+        return "reload_start_fast"
+    elseif anim == "reload_insert" and attached["cod2019_perks_soh"] then 
+        return "reload_insert_fast"
+    elseif anim == "reload_finish" and attached["cod2019_perks_soh"] then 
+        return "reload_finish_fast"
+    end
+end
+
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
     ModelOffset = Vector(12, -0.3, -0.1),
@@ -696,18 +708,6 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     if wep:HasElement("scope_kar98k") then 
 	model:SetBodygroup(2,0)	
 	end
-end
-
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
-
-    if anim == "reload_start" and attached["cod2019_perks_soh"] then
-        return "reload_start_fast"
-    elseif anim == "reload_insert" and attached["cod2019_perks_soh"] then 
-        return "reload_insert_fast"
-    elseif anim == "reload_finish" and attached["cod2019_perks_soh"] then 
-        return "reload_finish_fast"
-    end
 end
 
 SWEP.Attachments = {
@@ -785,7 +785,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_2"}
+        Category = {"cod2019_perks","cod2019_perks_2","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

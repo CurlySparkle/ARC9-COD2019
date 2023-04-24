@@ -294,11 +294,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_aalpha12_reload_mvmnt.ogg", t = 10/30},
 			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 24/30},
 			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 39/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 43/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 44/30},
 			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 53/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.9,
         IKTimeLine = {
@@ -326,9 +326,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0/30},
 			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 5/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 30/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 28/30},
 			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 33/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 40/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 34/30},
         },
     },
     ["reload_empty"] = {
@@ -476,6 +476,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.AttachmentTableOverrides = {
@@ -599,7 +609,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

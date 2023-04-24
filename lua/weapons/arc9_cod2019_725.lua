@@ -243,7 +243,7 @@ SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
 
-SWEP.DropMagazineModel = "models/weapons/shared/shell_origin12.mdl"
+SWEP.DropMagazineModel = "models/weapons/cod2019/shared/shell_origin12.mdl"
 SWEP.DropMagazineSounds = {"arc9/casings/casing_12ga_1.wav", "arc9/casings/casing_12ga_2.wav", "arc9/casings/casing_12ga_3.wav"}
 SWEP.DropMagazineAmount = 1
 SWEP.DropMagazineAmountEmpty = 2
@@ -308,7 +308,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 66/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		FireASAP = true,
@@ -383,7 +383,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 73/30},
         },
     },
-    ["1_reload_empty"] = {
+    ["reload_empty_fast"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.8,
 		FireASAP = true,
@@ -560,6 +560,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        return "reload_empty_fast"
+    end
+end
+
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
     ModelOffset = Vector(11.3, -0.6, 0.69),
@@ -698,7 +708,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

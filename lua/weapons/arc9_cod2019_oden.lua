@@ -314,7 +314,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 64/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.6,
 		FireASAP = true,
@@ -345,7 +345,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_asierra12_reload_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 5/30},
 			{s = path .. "wfoly_ar_asierra12_reload_mvmnt.ogg", t = 21/30},
 			{s = path .. "wfoly_ar_asierra12_reload_magin_01.ogg", t = 24/30},
 			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 39/30},
@@ -379,13 +379,13 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_asierra12_reload_empty_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_asierra12_reload_empty_magout_01.ogg", t = 10/30},
+			{s = path .. "wfoly_ar_asierra12_reload_empty_magout_01.ogg", t = 11/30},
 			{s = path .. "wfoly_ar_asierra12_reload_empty_magfly_01.ogg", t = 16/30},
 			{s = path .. "wfoly_ar_asierra12_reload_empty_armmag.ogg", t = 25/30},
-			{s = path .. "wfoly_ar_asierra12_reload_empty_magin_01.ogg", t = 46/30},
+			{s = path .. "wfoly_ar_asierra12_reload_empty_magin_01.ogg", t = 47/30},
 			{s = path .. "wfoly_ar_asierra12_reload_empty_armup.ogg", t = 62/30},
-			{s = path .. "wfoly_ar_asierra12_reload_empty_charge_01.ogg", t = 74/30},
-			{s = path .. "wfoly_ar_asierra12_reload_empty_end.ogg", t = 95/30},
+			{s = path .. "wfoly_ar_asierra12_reload_empty_charge_01.ogg", t = 73/30},
+			{s = path .. "wfoly_ar_asierra12_reload_empty_end.ogg", t = 93/30},
         },
     },
     ["ready"] = {
@@ -508,6 +508,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
 SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 SWEP.DefaultBodygroups = "00000000000000"
@@ -614,7 +624,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

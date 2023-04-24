@@ -318,7 +318,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_scharlie_reload_end.ogg", t = 49/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
@@ -351,43 +351,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 26/30},
 			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 31/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 40/30},
-        },
-    },
-    ["reload_sights"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		MagSwapTime = 1.5,
-		DropMagAt = 0.55,
-		Mult = 1.1,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 26/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 31/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 35/30},
         },
     },
     ["reload_empty"] = {
@@ -544,6 +508,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    end
+end
+
 SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 SWEP.DefaultBodygroups = "00000000000000"
@@ -688,7 +662,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

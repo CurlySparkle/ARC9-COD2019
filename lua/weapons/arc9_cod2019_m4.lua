@@ -328,7 +328,7 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 52/30},
         },
     },
-    ["1_reload"] = {
+    ["reload_fast"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
 		FireASAP = true,
@@ -545,6 +545,18 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["cod2019_perks_soh"] then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_fast"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_xmag"
+    end
+end
+
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
@@ -610,16 +622,6 @@ SWEP.AttachmentElements = {
         },
     },
 }
-
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
-
-    if anim == "reload" and attached["csgo_perk_fastreload"] then
-        return "1_reload"
-    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
-        -- return "reload_empty_xmag"
-    end
-end
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
@@ -696,7 +698,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
