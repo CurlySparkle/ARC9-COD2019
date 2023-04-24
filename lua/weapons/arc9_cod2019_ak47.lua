@@ -532,15 +532,13 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
 
-    if anim == "reload" and attached["cod2019_perks_soh"] then
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
         -- return "reload_empty_fast"
-    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
-        -- return "reload_empty_xmag"
     end
 end
 
@@ -652,7 +650,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"go_mag"},
+        Category = {"cod2019_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

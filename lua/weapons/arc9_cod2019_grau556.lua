@@ -87,11 +87,6 @@ SWEP.Firemodes = {
     {
         Mode = 1,
     },
-    {
-        Mode = 3,
-		RunawayBurst = true,
-		PostBurstDelay = 0.3
-    },
 }
 -------------------------- RECOIL
 
@@ -661,7 +656,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst"}
     },
     {
         PrintName = "Skins",

@@ -815,7 +815,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "tag_attachments",
-        Category = {"go_mag","cod2019_model680_mag"},
+        Category = {"cod2019_mag","cod2019_model680_mag"},
         Pos = Vector(5, 0, 0),
         Ang = Angle(0, 0, 0),
     },

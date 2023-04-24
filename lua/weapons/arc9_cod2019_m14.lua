@@ -304,6 +304,49 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_mike14_reload_end.ogg", t = 38/30},
         },
     },
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.8,
+		DropMagAt = 0.75,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_mike14_reload_empty_rotate.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_mike14_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magout_arm.ogg", t = 11/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_mvmnt.ogg", t = 16/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 34/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_rotate.ogg", t = 47/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_charge.ogg", t = 59/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 60/30},
+        },
+    },
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
@@ -341,8 +384,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 33/30},
         },
     },
-    ["reload_empty"] = {
-        Source = "reload",
+    ["reload_empty_fast"] = {
+        Source = "reload_empty",
 		MinProgress = 0.8,
 		DropMagAt = 0.75,
         IKTimeLine = {
@@ -420,7 +463,50 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_mike14_reload_end.ogg", t = 38/30},
         },
     },
-    ["1_reload_xmag"] = {
+    ["reload_empty_xmag"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.8,
+		DropMagAt = 0.75,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_mike14_reload_empty_rotate.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_mike14_reload_empty_magout.ogg", t = 16/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magout_arm.ogg", t = 17/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_mvmnt.ogg", t = 21/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 32/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 39/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_rotate.ogg", t = 47/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_charge.ogg", t = 59/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 63/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
 		MinProgress = 0.8,
 		FireASAP = true,
@@ -457,10 +543,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_mike14_reload_end.ogg", t = 38/30},
         },
     },
-    ["reload_empty_xmag"] = {
+    ["reload_xmag_empty_fast"] = {
         Source = "reload_xmag_empty",
 		MinProgress = 0.8,
 		DropMagAt = 0.75,
+		Mult = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -642,13 +729,31 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
+-- SWEP.Hook_TranslateAnimation = function (self, anim)
+    -- local attached = self:GetElements()
 
-    if anim == "reload" and attached["cod2019_perks_soh"] then
+    -- if anim == "reload" and attached["cod2019_perks_soh"] then
+        -- return "reload_xmag"
+    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+        -- return "reload_empty_xmag"
+    -- end
+-- end
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_empty_fast"
+    elseif anim == "reload" and wep:HasElement("ammo_extend") then 
         return "reload_xmag"
-    elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
-        return "reload_empty_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_empty"
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_empty_fast"
     end
 end
 
@@ -775,13 +880,13 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"go_mag"},
+        Category = {"cod2019_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst_2"}
     },
     {
         PrintName = "Skins",

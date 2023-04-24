@@ -87,11 +87,6 @@ SWEP.Firemodes = {
     {
         Mode = 1,
     },
-    {
-        Mode = 3,
-		RunawayBurst = true,
-		PostBurstDelay = 0.25
-    },
 }
 -------------------------- RECOIL
 
@@ -646,13 +641,13 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"go_mag","cod2019_kilo141_mag"},
+        Category = {"cod2019_mag","cod2019_kilo141_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
         PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst"}
     },
     {
         PrintName = "Skins",

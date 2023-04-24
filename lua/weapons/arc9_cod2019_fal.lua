@@ -86,12 +86,6 @@ SWEP.Firemodes = {
         -- add other attachment modifiers
     },
     {
-        Mode = 3,
-		RunawayBurst = true,
-		PostBurstDelay = 0.25
-        -- add other attachment modifiers
-    },
-    {
         Mode = 1,
         -- add other attachment modifiers
     }
@@ -318,45 +312,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 63/30},
         },
     },
-    ["1_reload"] = {
-        Source = "reload_short2",
-		DropMagAt = 1,
-		MinProgress = 0.85,
-		FireASAP = true,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.77,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-            {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_ar_falima_reload_empty_rotate.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_ar_falima_reload_empty_shake.ogg", t = 5/30},
-            {s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 10/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_elbow.ogg", t = 25/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_arm.ogg", t = 34/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_01.ogg", t = 45/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_02.ogg", t = 54/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 55/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		DropMagAt = 1.5,
@@ -398,6 +353,119 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 93/30},
         },
     },
+    -- ["reload_xmag"] = {
+        -- Source = "reload_med_mag",
+		-- MinProgress = 0.85,
+		-- FireASAP = true,
+        -- IKTimeLine = {
+            -- {
+                -- t = 0,
+                -- lhik = 1,
+                -- rhik = 0
+            -- },
+            -- {
+                -- t = 0.2,
+                -- lhik = 0,
+                -- rhik = 0
+            -- },
+            -- {
+                -- t = 0.7,
+                -- lhik = 0,
+                -- rhik = 0
+            -- },
+            -- {
+                -- t = 0.95,
+                -- lhik = 1,
+                -- rhik = 1
+            -- },
+        -- },
+        -- EventTable = {
+            -- {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0/30},
+            -- {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 5/30},
+			-- {s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 22/30},
+			-- {s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 44/30},
+			-- {s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 52/30},
+			-- {s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 61/30},
+			-- {s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 63/30},
+        -- },
+    -- },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.85,
+		--DropMagAt = 0.9,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 45/30},
+        },
+    },
+    ["reload_empty_fast"] = {
+        Source = "reload_fast_empty",
+		DropMagAt = 1.5,
+		MinProgress = 0.85,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_rotate.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_shake.ogg", t = 14/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_magout_01.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_elbow.ogg", t = 31/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_arm.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_01.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_02.ogg", t = 58/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltclose_01.ogg", t = 66/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 70/30},
+        },
+    },
     ["reload_xmag"] = {
         Source = "reload_med_mag",
 		MinProgress = 0.85,
@@ -434,7 +502,48 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 63/30},
         },
     },
-    ["1_reload_xmag"] = {
+    ["reload_xmag_empty"] = {
+        Source = "reload_empty",
+		DropMagAt = 1.5,
+		MinProgress = 0.85,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_rotate.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_shake.ogg", t = 14/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_magout_01.ogg", t = 20/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_elbow.ogg", t = 31/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_arm.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_01.ogg", t = 53/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_02.ogg", t = 61/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltopen_01.ogg", t = 77/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltclose_01.ogg", t = 87/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 93/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
         Source = "reload_med_mag_fast",
 		MinProgress = 0.85,
 		FireASAP = true,
@@ -470,7 +579,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 45/30},
         },
     },
-    ["reload_empty_xmag"] = {
+    ["reload_xmag_empty_fast"] = {
         Source = "reload_xmag_fast_empty",
 		DropMagAt = 1.5,
 		MinProgress = 0.85,
@@ -660,13 +769,21 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
 
-    if anim == "reload" and attached["go_mag_extended"] then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_empty_fast"
+    elseif anim == "reload" and wep:HasElement("ammo_extend") then 
         return "reload_xmag"
-    elseif anim == "reload_empty" and attached["go_mag_extended"] then 
-        return "reload_empty_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_empty"
+    elseif anim == "reload" and wep:HasElement("ammo_extend") then 
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+        return "reload_empty_fast"
     end
 end
 
@@ -796,13 +913,13 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"go_mag"},
+        Category = {"cod2019_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
         PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst"}
     },
     {
         PrintName = "Skins",

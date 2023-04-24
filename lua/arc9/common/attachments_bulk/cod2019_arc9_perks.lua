@@ -11,6 +11,7 @@ ATT.AutoStats = true
 ATT.Free = true
 
 ATT.Category = "cod2019_perks_soh"
+ATT.ActivateElements = {"perk_speedreload"}
 
 --ATT.ReloadTimeMult = 0.80
 
@@ -27,6 +28,7 @@ ATT.AutoStats = true
 ATT.Free = true
 
 ATT.Category = "cod2019_perks_soh_2"
+ATT.ActivateElements = {"perk_speedreload_2"}
 
 ATT.ReloadTimeMult = 0.80
 
@@ -43,6 +45,7 @@ ATT.AutoStats = true
 ATT.Free = true
 
 ATT.Category = "cod2019_perks"
+ATT.ActivateElements = {"perk_speedmelee"}
 
 ATT.PostBashTime = 0.1
 
@@ -59,6 +62,7 @@ ATT.AutoStats = true
 ATT.Free = true
 
 ATT.Category = "cod2019_perks"
+ATT.ActivateElements = {"perk_heavyhitter"}
 
 ATT.BashDamageMult = 1.2
 
@@ -80,7 +84,7 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = true
 
 ATT.Category = "cod2019_perks"
-ATT.ActivateElements = {"enforcer"}
+ATT.ActivateElements = {"perk_enforcer"}
 
 hook.Add("EntityTakeDamage", "ARC9_COD2019_PERK_ENFORCER", function(ent, dmg)
     if !(ent:IsPlayer() or ent:IsNPC()) then return end
@@ -130,10 +134,13 @@ ATT.FiremodesOverride = {
     {
         Mode = 3,
         RunawayBurst = true,
-        PostBurstDelay = 0.3,
+        PostBurstDelay = 0.15,
     },
     {
         Mode = 1,
+    },
+    {
+        Mode = -1,
     },
 }
 
@@ -156,7 +163,7 @@ ATT.FiremodesOverride = {
     {
         Mode = 2,
         RunawayBurst = true,
-        PostBurstDelay = 0.3,
+        PostBurstDelay = 0.15,
     },
     {
         Mode = 1,
