@@ -268,7 +268,8 @@ SWEP.Animations = {
     ["cycle"] = {
         Source = "cycle",
 		--EjectAt = 0.2,
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 10/50},
 			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.4, t = 60/50},
@@ -277,7 +278,8 @@ SWEP.Animations = {
     ["cycle_sights"] = {
         Source = "cycle_ads",
 		--EjectAt = 0.2,
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 10/50},
 			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.4, t = 60/50},
@@ -286,6 +288,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -319,6 +322,7 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
+		FireASAP = true,
 		DropMagAt = 0.95,
         IKTimeLine = {
             {
@@ -353,6 +357,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		FireASAP = true,
 		EjectAt = 0.4,
 		DropMagAt = 0.8,
         IKTimeLine = {
@@ -390,6 +395,7 @@ SWEP.Animations = {
     ["reload_empty_fast"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
+		FireASAP = true,
 		EjectAt = 2,
 		DropMagAt = 0.9,
         IKTimeLine = {
@@ -429,6 +435,11 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.5,
                 lhik = 0,
                 rhik = 1
             },
@@ -713,7 +724,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_2"}
     },
     {
         PrintName = "Skins",

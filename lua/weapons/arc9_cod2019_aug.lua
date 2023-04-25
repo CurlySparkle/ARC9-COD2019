@@ -124,24 +124,27 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.8
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 20
+SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = -1/6
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 4
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCapMove = 0.5
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.15
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.04
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -275,6 +278,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
@@ -312,6 +316,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             {
@@ -348,9 +353,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 76/30},
         },
     },
-    ["reload_ar"] = {
-        Source = "reload_short_ar",
+    ["reload_fast"] = {
+        Source = "reload_fast",
 		MinProgress = 0.8,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
@@ -385,9 +391,318 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 54/30},
         },
     },
-    ["reload_empty_ar"] = {
-        Source = "reload_ar",
+    ["reload_empty_fast"] = {
+        Source = "reload_fast_empty",
 		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_boltopen.ogg", t = 8/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_rotate.ogg", t = 9/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magout_01.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 32/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_01.ogg", t = 55/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_02.ogg", t = 63/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 75/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 76/30},
+        },
+    },
+    ["reload_armag"] = {
+        Source = "reload_ar",
+		MinProgress = 0.8,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_waffle_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_magout_01.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_augolf_reload_magout_cloth.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_magin_v2_01.ogg", t = 39/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_magin_v2_02.ogg", t = 47/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_end.ogg", t = 54/30},
+        },
+    },
+    ["reload_armag_empty"] = {
+        Source = "reload_ar_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_boltopen.ogg", t = 8/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_rotate.ogg", t = 9/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_magout_01.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 32/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_magin_v2_01.ogg", t = 55/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_magin_v2_02.ogg", t = 63/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 75/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_end.ogg", t = 75/30},
+        },
+    },
+    ["reload_armag_fast"] = {
+        Source = "reload_armag_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magout_01.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_mvmnt.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 30/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_end.ogg", t = 40/30},
+        },
+    },
+    ["reload_armag_empty_fast"] = {
+        Source = "reload_armag_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_mvmnt.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magout_01.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 15/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 20/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 30/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_end.ogg", t = 43/30},
+        },
+    },
+    ["reload_drummag"] = {
+        Source = "reload_drummag",
+		MinProgress = 0.8,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_magout_01.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_augolf_reload_magout_cloth.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_v2_01.ogg", t = 39/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_v2_02.ogg", t = 47/30},
+			{s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 54/30},
+        },
+    },
+    ["reload_drummag_empty"] = {
+        Source = "reload_drummag_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_boltopen.ogg", t = 8/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_rotate.ogg", t = 9/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magout_01.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 32/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_01.ogg", t = 55/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_02.ogg", t = 63/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 75/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 75/30},
+        },
+    },
+    ["reload_drummag_fast"] = {
+        Source = "reload_drummag_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_magout_01.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_augolf_reload_magout_cloth.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_v2_01.ogg", t = 39/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_v2_02.ogg", t = 47/30},
+			{s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 54/30},
+        },
+    },
+    ["reload_drummag_fast_empty"] = {
+        Source = "reload_drummag_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
 		DropMagAt = 0.6,
         IKTimeLine = {
             {
@@ -517,6 +832,28 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2", "melee3"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.05,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
 }
 
@@ -569,6 +906,28 @@ SWEP.AttachmentElements = {
         },
     },
 }
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+
+    if anim == "reload" and wep:HasElement("perk_speedreload") and  wep:HasElement("mag_armag") then
+        return "reload_armag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and  wep:HasElement("mag_armag") then 
+        return "reload_armag_empty_fast"
+    elseif anim == "reload" and wep:HasElement("mag_armag") then 
+        return "reload_armag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_armag") then 
+        return "reload_armag_empty"
+    elseif anim == "reload" and wep:HasElement("mag_drum") then 
+        return "reload_drummag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
+        return "reload_drummag_empty"
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
+        return "reload_empty_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_empty_fast"
+    end
+end
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
     -- local model = data.model
@@ -632,13 +991,13 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag","cod2019_aug_mag"},
+        Category = {"cod2019_aug_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
@@ -687,16 +1046,6 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
-    -- {
-        -- PrintName = "Pourquoi2",
-        -- Bone = "tag_attachments",
-        -- Pos = Vector(14, 1.9, -1.6),
-        -- Ang = Angle(0, 0, 170),
-        -- Category = {"cod_aug_grip"},
-        -- Installed = "cod2019_grip_aug_integral",
-        -- Integral = true,
-        -- Hidden = true,				
-    -- },
 }
 
 SWEP.GripPoseParam = 5
