@@ -339,7 +339,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_sierrax_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_sierrax_reload_coveropen.ogg", t = 13/30},
+			{s = path .. "wfoly_lm_sierrax_reload_coveropen.ogg", t = 12/30},
 			{s = path .. "wfoly_lm_sierrax_reload_magout.ogg", t = 42/30},
 			{s = path .. "wfoly_lm_sierrax_reload_rotate.ogg", t = 65/30},
 			{s = path .. "wfoly_lm_sierrax_reload_maghit.ogg", t = 86/30},
@@ -347,7 +347,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_beltpull.ogg", t = 107/30},
 			{s = path .. "wfoly_lm_sierrax_reload_bullets.ogg", t = 114/30},
 			{s = path .. "wfoly_lm_sierrax_reload_closecover.ogg", t = 143/30},
-			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 153/30},
+			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 152/30},
         },
     },
     ["reload_fast"] = {
@@ -506,17 +506,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
--- SWEP.Hook_TranslateAnimation = function (self, anim)
-    -- local attached = self:GetElements()
-
-    -- if anim == "reload" and attached["cod2019_perks_soh"] then
-        -- return "reload_fast"
-    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
-        -- return "reload_empty_fast"
-    -- end
--- end
-
---SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+-- SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 SWEP.DefaultBodygroups = "00000000000000"
 

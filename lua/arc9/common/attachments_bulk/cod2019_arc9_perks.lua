@@ -139,9 +139,6 @@ ATT.FiremodesOverride = {
     {
         Mode = 1,
     },
-    {
-        Mode = -1,
-    },
 }
 
 ARC9.LoadAttachment(ATT, "cod2019_perks_burst")

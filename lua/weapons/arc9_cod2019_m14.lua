@@ -729,16 +729,6 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
--- SWEP.Hook_TranslateAnimation = function (self, anim)
-    -- local attached = self:GetElements()
-
-    -- if anim == "reload" and attached["cod2019_perks_soh"] then
-        -- return "reload_xmag"
-    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
-        -- return "reload_empty_xmag"
-    -- end
--- end
-
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 

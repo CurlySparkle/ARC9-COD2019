@@ -344,8 +344,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 3/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 6/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 7/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 27/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 37/30},
         },
@@ -413,8 +413,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_sm_uzulu_raise_first_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_sm_uzulu_raise_first_stock.ogg", t = 8/30},
-			{s = path .. "wfoly_plr_sm_uzulu_raise_first_extend.ogg", t = 8/30},
+            {s = path .. "wfoly_plr_sm_uzulu_raise_first_stock.ogg", t = 11/30},
+			{s = path .. "wfoly_plr_sm_uzulu_raise_first_extend.ogg", t = 11/30},
 			{s = path .. "wfoly_plr_sm_uzulu_raise_first_end.ogg", t = 27/30},
         },
     },
@@ -508,16 +508,15 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
 
-    if anim == "reload" and attached["cod2019_perks_soh"] then
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         -- return "reload_empty_fast"
     end
 end
-
 
 --SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 

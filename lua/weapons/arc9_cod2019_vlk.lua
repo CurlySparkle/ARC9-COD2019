@@ -318,10 +318,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 10/30},
-			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 34/30},
-			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 50/30},
-			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 53/30},
+			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 11/30},
+			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 35/30},
+			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 51/30},
+			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55/30},
         },
     },
     ["reload_fast"] = {
@@ -352,9 +352,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 8/30},
-			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 9/30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 30/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 7/30},
+			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 24/30},
 			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 27/30},
 			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 37/30},
 			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 38/30},
@@ -512,12 +512,12 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
 
-    if anim == "reload" and attached["cod2019_perks_soh"] then
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         -- return "reload_empty_fast"
     end
 end

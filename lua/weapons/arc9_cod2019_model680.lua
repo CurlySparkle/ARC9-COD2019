@@ -466,8 +466,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0/30},
-			{s = "COD2019.Model680.ShellIn", t = 9/30},
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 7/30},
+            {s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 7/30},
+			{s = "COD2019.Model680.ShellIn", t = 10/30},
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 13/30},
         },
     },
@@ -511,7 +511,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 1/30},
+			{s = path .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 3/30},
         },
     },
     ["reload_finish_empty_fast"] = {
@@ -536,9 +536,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_romeo870_reload_empty_start_twist.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_reload_empty_start_open_01.ogg", t = 6/30},
-			{s = path .. "wfoly_sh_romeo870_reload_empty_start_end.ogg", t = 11/30},
-			{s = path .. "wfoly_sh_romeo870_reload_empty_start_close_01.ogg", t = 15/30},
+			{s = path .. "wfoly_sh_romeo870_reload_empty_start_open_01.ogg", t = 7/30},
+			{s = path .. "wfoly_sh_romeo870_reload_empty_start_close_01.ogg", t = 17/30},
+            {s = path .. "wfoly_sh_romeo870_reload_empty_start_end.ogg", t = 17/30},
         },
     },
     ["ready"] = {
@@ -678,15 +678,17 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
 
-    if anim == "reload_start" and attached["cod2019_perks_soh"] then
+    if anim == "reload_start" and wep:HasElement("perk_speedreload") then
         return "reload_start_fast"
-    elseif anim == "reload_insert" and attached["cod2019_perks_soh"] then 
+    elseif anim == "reload_insert" and wep:HasElement("perk_speedreload") then 
         return "reload_insert_fast"
-    elseif anim == "reload_finish" and attached["cod2019_perks_soh"] then 
+    elseif anim == "reload_finish" and wep:HasElement("perk_speedreload") then 
         return "reload_finish_fast"
+    elseif anim == "reload_finish_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_finish_empty_fast"
     end
 end
 

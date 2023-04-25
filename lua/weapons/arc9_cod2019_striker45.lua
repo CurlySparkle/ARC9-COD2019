@@ -302,8 +302,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sm_smgolf45_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_magout.ogg", t = 21/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_magin.ogg", t = 43/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_magout.ogg", t = 22/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_magin.ogg", t = 44/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_end.ogg", t = 56/30},
         },
     },
@@ -336,9 +336,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magout.ogg", t = 5/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_maghit.ogg", t = 31/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_01.ogg", t = 33/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_maghit.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_01.ogg", t = 30/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_02.ogg", t = 35/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_end.ogg", t = 41/30},
         },
@@ -501,12 +501,12 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
 
-    if anim == "reload" and attached["cod2019_perks_soh"] then
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         -- return "reload_empty_fast"
     end
 end

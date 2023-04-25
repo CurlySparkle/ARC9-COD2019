@@ -345,7 +345,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_magout_01.ogg", t = 19/30},
 			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_01.ogg", t = 36/30},
 			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_02.ogg", t = 43/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_end.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_end.ogg", t = 45/30},
         },
     },
     ["reload_empty"] = {
@@ -565,12 +565,12 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
 
-    if anim == "reload" and attached["cod2019_perks_soh"] then
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_empty_fast"
     end
 end

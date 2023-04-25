@@ -353,42 +353,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 93/30},
         },
     },
-    -- ["reload_xmag"] = {
-        -- Source = "reload_med_mag",
-		-- MinProgress = 0.85,
-		-- FireASAP = true,
-        -- IKTimeLine = {
-            -- {
-                -- t = 0,
-                -- lhik = 1,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.2,
-                -- lhik = 0,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.7,
-                -- lhik = 0,
-                -- rhik = 0
-            -- },
-            -- {
-                -- t = 0.95,
-                -- lhik = 1,
-                -- rhik = 1
-            -- },
-        -- },
-        -- EventTable = {
-            -- {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0/30},
-            -- {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 5/30},
-			-- {s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 22/30},
-			-- {s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 44/30},
-			-- {s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 52/30},
-			-- {s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 61/30},
-			-- {s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 63/30},
-        -- },
-    -- },
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.85,
@@ -772,18 +736,18 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
-        return "reload_xmag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
-        return "reload_xmag_empty_fast"
+    if anim == "reload" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_empty_fast"
     elseif anim == "reload" and wep:HasElement("ammo_extend") then 
         return "reload_xmag"
     elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
         return "reload_xmag_empty"
-    elseif anim == "reload" and wep:HasElement("ammo_extend") then 
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
-        return "reload_empty_fast"
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_empty_fast"
     end
 end
 

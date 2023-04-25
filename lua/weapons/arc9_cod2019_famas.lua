@@ -83,8 +83,6 @@ SWEP.RPM = 937
 SWEP.Firemodes = {
     {
         Mode = 1,
-		RPM = 451,
-        -- add other attachment modifiers
     },
     {
         Mode = -1,
@@ -521,12 +519,12 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
 
-    if anim == "reload" and attached["cod2019_perks_soh"] then
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         -- return "reload_empty_fast"
     end
 end

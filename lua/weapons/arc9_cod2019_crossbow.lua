@@ -257,7 +257,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_crossbow_reload_load_arrow.ogg", t = 55/30},
 			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_01.ogg", t = 65/30},
 			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_02.ogg", t = 70/30},
-			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 78/30},
+			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 77/30},
         },
     },
     ["reload_fast"] = {
@@ -287,7 +287,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sn_crossbow_reload_rotate.ogg", t = 2/30},
-			{s = path .. "wfoly_sn_crossbow_reload_pull_string.ogg", t = 5/30},
+			{s = path .. "wfoly_sn_crossbow_reload_pull_string.ogg", t = 2/30},
 			{s = path .. "wfoly_sn_crossbow_reload_load_arrow.ogg", t = 35/30},
 			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_01.ogg", t = 45/30},
 			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_02.ogg", t = 50/30},
@@ -383,16 +383,15 @@ SWEP.Hook_Think	= ARC9.CSGO.BlendEmpty
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
 
-    if anim == "reload" and attached["cod2019_perks_soh"] then
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and attached["cod2019_perks_soh"] then 
+    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         -- return "reload_empty_fast"
     end
 end
-
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
