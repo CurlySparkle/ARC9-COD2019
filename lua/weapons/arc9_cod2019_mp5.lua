@@ -77,7 +77,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 798
+SWEP.RPM = 833
 
 SWEP.Firemodes = {
     {
@@ -264,6 +264,13 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
@@ -308,6 +315,44 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mpapa5_reload_end.ogg", t = 74/30},
         },
     },
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.9,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_boltopen_01.ogg", t = 3/30},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_magout_01.ogg", t = 14/30},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_mvmnt.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_cloth.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_mpapa5_reload_empty_magin_v2_01.ogg", t = 45/30},
+			{s = path .. "wfoly_sm_mpapa5_reload_empty_magin_v2_02.ogg", t = 52/30},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_boltclose_01.ogg", t = 62/30},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_end.ogg", t = 72/30},
+        },
+    },
     ["reload_fast"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
@@ -345,8 +390,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mpapa5_reload_empty_end.ogg", t = 41/30},
         },
     },
-    ["reload_empty"] = {
-        Source = "reload",
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.5,
         IKTimeLine = {
@@ -421,7 +466,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
             {s = path .. "wfoly_pi_mpapa5_reload_end.ogg", t = 0/30},
         },
@@ -508,8 +552,8 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_empty_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
@@ -546,7 +590,7 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
-    ["grip"] = {
+    ["foregrip_none"] = {
         Bodygroups = {
             {4,1},
         },
@@ -608,7 +652,7 @@ SWEP.Attachments = {
         Bone = "tag_laser_attach",
         Pos = Vector(3.3, -0.8, -1.1),
         Ang = Angle(0, 0, -90),
-		--InstalledElements = {"rail_laser"},
+		InstalledElements = {"foregrip_none"},
     },
     {
         PrintName = "Grips",
@@ -618,6 +662,7 @@ SWEP.Attachments = {
         Pos = Vector(-3, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
+		InstalledElements = {"foregrip_none"},
     },
     {
         PrintName = "Stock",

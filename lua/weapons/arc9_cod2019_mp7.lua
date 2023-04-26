@@ -45,7 +45,7 @@ SWEP.WorldModelOffset = {
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 22 -- Damage done at point blank range
-SWEP.DamageMin = 14 -- Damage done at maximum range
+SWEP.DamageMin = 13 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -78,7 +78,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 950
+SWEP.RPM = 968
 
 SWEP.Firemodes = {
     {
@@ -264,6 +264,13 @@ SWEP.BulletBones = {
 SWEP.HideBones  = {
     [1] = "j_mag2",
 }
+
+SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.015 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -663,7 +670,7 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "csgo_tac",
+        Category = "cod2019_tac_alt",
         Bone = "tag_laser_attach",
         Pos = Vector(0, -0.4, -1.32),
         Ang = Angle(0, 0, -90),

@@ -44,8 +44,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 21 -- Damage done at point blank range
-SWEP.DamageMin = 17 -- Damage done at maximum range
+SWEP.DamageMax = 24 -- Damage done at point blank range
+SWEP.DamageMin = 10 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -86,11 +86,16 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 1034
+SWEP.RPM = 1300
 
 SWEP.Firemodes = {
     {
         Mode = -1,
+        -- add other attachment modifiers
+    },
+    {
+        Mode = 1,
+		RPM = 600,
         -- add other attachment modifiers
     },
     {
@@ -104,7 +109,7 @@ SWEP.Firemodes = {
 -- General recoil multiplier
 SWEP.Recoil = 1.3
 
-SWEP.RecoilSeed = 6213
+SWEP.RecoilSeed = 67676767
 
 SWEP.RecoilPatternDrift = 25
 
@@ -122,7 +127,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1
+SWEP.RecoilKick = 1.3
 
 SWEP.RecoilMultCrouch = 0.8
 
@@ -274,6 +279,13 @@ SWEP.BulletBones = {
 SWEP.HideBones  = {
     [1] = "j_mag2",
 }
+
+SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.015 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
