@@ -384,7 +384,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 33/30},
         },
     },
-    ["reload_empty_fast"] = {
+    ["reload_fast_empty"] = {
         Source = "reload_empty",
 		MinProgress = 0.8,
 		DropMagAt = 0.75,
@@ -543,7 +543,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_mike14_reload_end.ogg", t = 38/30},
         },
     },
-    ["reload_xmag_empty_fast"] = {
+    ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_empty",
 		MinProgress = 0.8,
 		DropMagAt = 0.75,
@@ -732,18 +732,18 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
-        return "reload_xmag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
-        return "reload_xmag_empty_fast"
+    if anim == "reload" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     elseif anim == "reload" and wep:HasElement("ammo_extend") then 
         return "reload_xmag"
     elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
         return "reload_xmag_empty"
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_empty_fast"
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_fast_empty"
     end
 end
 

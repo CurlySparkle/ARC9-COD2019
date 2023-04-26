@@ -316,7 +316,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_augolf_reload_magin_v2_01.ogg", t = 39/30},
-			{s = path .. "wfoly_sm_augolf_reload_magin_v2_02.ogg", t = 47/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_v2_02.ogg", t = 46/30},
 			{s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 55/30},
         },
     },
@@ -354,8 +354,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_empty_magout_01.ogg", t = 25/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 32/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 40/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_01.ogg", t = 55/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_02.ogg", t = 63/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_01.ogg", t = 51/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_02.ogg", t = 61/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 75/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 77/30},
         },
@@ -390,16 +390,16 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_augolf_reload_magout_01.ogg", t = 10/30},
-			{s = path .. "wfoly_sm_augolf_reload_magout_cloth.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_augolf_reload_magout_01.ogg", t = 9/30},
+			{s = path .. "wfoly_sm_augolf_reload_magout_cloth.ogg", t = 9/30},
 			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 12/30},
 			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 15/30},
-			{s = path .. "wfoly_sm_augolf_reload_magin_v2_01.ogg", t = 25/30},
-			{s = path .. "wfoly_sm_augolf_reload_magin_v2_02.ogg", t = 31/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_v2_01.ogg", t = 24/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_v2_02.ogg", t = 30/30},
 			{s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 36/30},
         },
     },
-    ["reload_empty_fast"] = {
+    ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
@@ -433,8 +433,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 13/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_01.ogg", t = 23/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_02.ogg", t = 29/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 38/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 39/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 39/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["reload_armag"] = {
@@ -552,7 +552,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_end.ogg", t = 40/30},
         },
     },
-    ["reload_armag_empty_fast"] = {
+    ["reload_armag_fast_empty"] = {
         Source = "reload_armag_fast_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
@@ -771,8 +771,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sm_augolf_raise_first_raise.ogg", t = 0/30},
-            {s = path .. "wfoly_sm_augolf_raise_first_chamber_01.ogg", t = 9/30},
-			{s = path .. "wfoly_sm_augolf_raise_first_end_01.ogg", t = 23/30},
+            {s = path .. "wfoly_sm_augolf_raise_first_chamber_01.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_augolf_raise_first_end_01.ogg", t = 25/30},
         },
     },
     ["draw"] = {
@@ -939,22 +939,22 @@ SWEP.AttachmentElements = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") and  wep:HasElement("mag_armag") then
-        return "reload_armag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and  wep:HasElement("mag_armag") then 
-        return "reload_armag_empty_fast"
+    if anim == "reload" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     elseif anim == "reload" and wep:HasElement("mag_armag") then 
         return "reload_armag"
     elseif anim == "reload_empty" and wep:HasElement("mag_armag") then 
         return "reload_armag_empty"
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_armag") then
+        return "reload_armag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_armag") then 
+        return "reload_armag_fast_empty"
     elseif anim == "reload" and wep:HasElement("mag_drum") then 
         return "reload_drummag"
     elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
         return "reload_drummag_empty"
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_empty_fast"
     end
 end
 

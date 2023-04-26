@@ -388,7 +388,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 58/30},
         },
     },
-    ["reload_empty_fast"] = {
+    ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.49,
@@ -553,7 +553,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_empty_fast"
+        return "reload_fast_empty"
     end
 end
 

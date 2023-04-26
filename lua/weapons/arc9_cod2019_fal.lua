@@ -306,10 +306,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0/30},
             {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 5/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 22/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 44/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 42/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 52/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 61/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 63/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 66/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 66/30},
         },
     },
     ["reload_empty"] = {
@@ -347,7 +347,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_elbow.ogg", t = 31/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_arm.ogg", t = 40/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_01.ogg", t = 53/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_02.ogg", t = 61/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_02.ogg", t = 63/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltopen_01.ogg", t = 77/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltclose_01.ogg", t = 87/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 93/30},
@@ -382,15 +382,15 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 8/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 6/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 7/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 30/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 40/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 50/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 47/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 47/30},
         },
     },
-    ["reload_empty_fast"] = {
+    ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		DropMagAt = 1.5,
 		MinProgress = 0.85,
@@ -424,8 +424,8 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_ar_falima_reload_empty_magout_01.ogg", t = 21/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_elbow.ogg", t = 31/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_arm.ogg", t = 40/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_01.ogg", t = 50/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_02.ogg", t = 58/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_01.ogg", t = 47/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_02.ogg", t = 57/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltclose_01.ogg", t = 66/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 70/30},
         },
@@ -460,10 +460,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0/30},
             {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 5/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 22/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 44/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 42/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 52/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 61/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 63/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 64/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 64/30},
         },
     },
     ["reload_xmag_empty"] = {
@@ -535,15 +535,15 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 8/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 6/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 7/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 30/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 40/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 50/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 47/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 47/30},
         },
     },
-    ["reload_xmag_empty_fast"] = {
+    ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
 		DropMagAt = 1.5,
 		MinProgress = 0.85,
@@ -577,8 +577,8 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_ar_falima_reload_empty_magout_01.ogg", t = 21/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_elbow.ogg", t = 31/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_arm.ogg", t = 40/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_01.ogg", t = 50/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_02.ogg", t = 58/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_01.ogg", t = 47/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_02.ogg", t = 57/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltclose_01.ogg", t = 66/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 70/30},
         },
@@ -739,7 +739,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     if anim == "reload" and wep:HasElement("perk_speedreload") then 
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_empty_fast"
+        return "reload_fast_empty"
     elseif anim == "reload" and wep:HasElement("ammo_extend") then 
         return "reload_xmag"
     elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
@@ -747,7 +747,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
         return "reload_xmag_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
-        return "reload_xmag_empty_fast"
+        return "reload_xmag_fast_empty"
     end
 end
 

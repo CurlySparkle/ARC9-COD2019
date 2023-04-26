@@ -301,10 +301,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 5/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 38/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 44/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 52/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 66/30},
         },
     },
@@ -342,7 +342,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 30/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 36/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 44/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 47/30},
         },
     },
     ["reload_empty"] = {
@@ -376,14 +376,14 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_open_01.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 33/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 43/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 42/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 48/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 59/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 73/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 70/30},
         },
     },
-    ["reload_empty_fast"] = {
+    ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.8,
 		FireASAP = true,
@@ -414,9 +414,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_open_01.ogg", t = 3/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 20/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 30/30},
-			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 31/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 47/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 47/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 48/30},
         },
@@ -566,7 +566,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_empty_fast"
+        return "reload_fast_empty"
     end
 end
 

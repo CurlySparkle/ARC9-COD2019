@@ -298,8 +298,8 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_ar_falima_reload_xmag_start.ogg", t = 0/30},
             {s = path .. "wfoly_plr_ar_falima_reload_xmag_rattle.ogg", t = 5/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magout_01.ogg", t = 17/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_01.ogg", t = 38/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_02.ogg", t = 46/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_01.ogg", t = 37/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_02.ogg", t = 45/30},
 			{s = path .. "wfoly_plr_ar_falima_raise_start.ogg", t = 61/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_xmag_end.ogg", t = 63/30},
         },
@@ -333,8 +333,8 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_ar_falima_reload_xmag_start.ogg", t = 0/30},
             {s = path .. "wfoly_plr_ar_falima_reload_xmag_rattle.ogg", t = 5/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magout_01.ogg", t = 9/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_01.ogg", t = 33/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_01.ogg", t = 29/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_02.ogg", t = 38/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_xmag_end.ogg", t = 47/30},
         },
     },
@@ -400,9 +400,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_raise_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_ar_falima_raise_settle.ogg", t = 5/30},
-            {s = path .. "mp5-submachinegun-foley-bolt-chrage-1.ogg", t = 14/30},
-			{s = path .. "mp5-submachinegun-foley-bolt-lock-back-1.ogg", t = 37/30},
+            {s = path .. "wfoly_plr_ar_falima_raise_settle.ogg", t = 3/30},
+            {s = path .. "mp5-submachinegun-foley-bolt-chrage-1.ogg", t = 15/30},
+			{s = path .. "mp5-submachinegun-foley-bolt-lock-back-1.ogg", t = 33/30},
 			{s = path .. "wfoly_plr_ar_falima_raise_first_end.ogg", t = 66/30},
         },
     },
@@ -503,7 +503,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_empty_fast"
+        -- return "reload_fast_empty"
     end
 end
 

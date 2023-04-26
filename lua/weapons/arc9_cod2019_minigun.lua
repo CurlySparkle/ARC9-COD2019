@@ -414,7 +414,6 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     end
 end
 
-
 SWEP.AttachmentElements = {
     -- ["stock_none"] = {
         -- Bodygroups = {

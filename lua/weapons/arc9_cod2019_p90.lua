@@ -556,7 +556,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_empty_fast"
+        -- return "reload_fast_empty"
     end
 end
 
