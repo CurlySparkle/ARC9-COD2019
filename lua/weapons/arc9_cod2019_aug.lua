@@ -77,7 +77,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 739
+SWEP.RPM = 769
 
 SWEP.Firemodes = {
     {
@@ -168,9 +168,9 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.65, -4, 0.5),
+    Pos = Vector(-3.65, -5, 0.5),
     Ang = Angle(0, 0, -2.5),
-    Magnification = 1.15,
+    Magnification = 1.17,
     ViewModelFOV = 56,
 	CrosshairInSights = false
 }
@@ -364,6 +364,7 @@ SWEP.Animations = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		FireASAP = true,
+		DropMagAt = 0.5,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
@@ -402,7 +403,7 @@ SWEP.Animations = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 0.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -776,13 +777,36 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sm_augolf_raise_01.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 0/30},
         },
