@@ -736,18 +736,20 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then 
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+--------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("ammo_extend") then 
         return "reload_xmag"
     elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
         return "reload_xmag_empty"
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
-        return "reload_xmag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
-        return "reload_xmag_fast_empty"
     end
 end
 

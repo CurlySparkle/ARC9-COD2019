@@ -231,7 +231,7 @@ SWEP.ShellScale = 1.2
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_shot_origin12_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
@@ -303,7 +303,8 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
-		DropMagAt = 0.6,
+		Mult = 0.9,
+		DropMagAt = 0.7,
         IKTimeLine = {
             {
                 t = 0,
@@ -500,9 +501,9 @@ SWEP.AttachmentTableOverrides = {
     ["go_supp_shitvo"] = {
 	ModelAngleOffset = Angle(0, 0, 180),
     },
-    ["csgo_p90_hold"] = {
-	ModelOffset = Vector(-5, -0.2, -0),
-	ModelAngleOffset = Angle(0, -4, 170),
+    ["cod2019_grips_none"] = {
+	ModelOffset = Vector(-4, -0.5, -0.7),
+	ModelAngleOffset = Angle(0, 0, 180),
     },
 }
 
@@ -568,7 +569,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = {"cod2019_grip","grip_p90"},
+        Category = {"cod2019_grip","cod2019_grip_none"},
         Bone = "tag_grip_attach",
         Pos = Vector(-3.5, 0, 0),
         Ang = Angle(0, 0, 180),

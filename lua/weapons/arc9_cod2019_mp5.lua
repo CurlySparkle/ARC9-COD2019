@@ -124,8 +124,12 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.8
-SWEP.VisualRecoilUp = 0.4
+SWEP.VisualRecoilMultSights = 0.4
+SWEP.VisualRecoilPunchSights = 20
+SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilUp = 0.3
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = -1/6
 
 -------------------------- SPREAD
 
@@ -154,7 +158,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -173,7 +177,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -393,7 +397,7 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
-		DropMagAt = 0.5,
+		DropMagAt = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -650,7 +654,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "csgo_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(3.3, -0.8, -1.1),
+        Pos = Vector(5.4, -0.8, -1.1),
         Ang = Angle(0, 0, -90),
 		InstalledElements = {"foregrip_none"},
     },

@@ -249,7 +249,7 @@ local path = "weapons/cod2019/aug/"
 
 SWEP.ShootSound = "COD2019.AUG.Fire"
 SWEP.ShootSoundSilenced = "COD2019.AUG.Silenced_Fire"
-SWEP.DistantShootSound = "CSGO.mp7.Distance_Fire"
+SWEP.DistantShootSound = "CSGO.AUG.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
@@ -532,12 +532,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 0.85,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
@@ -569,12 +569,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 0.95,
+                t = 1.1,
                 lhik = 1,
                 rhik = 1
             },
@@ -939,18 +939,21 @@ SWEP.AttachmentElements = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast_empty"
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_armag") then
+        return "reload_armag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_armag") then 
+        return "reload_armag_fast_empty"
+--------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("mag_armag") then 
         return "reload_armag"
     elseif anim == "reload_empty" and wep:HasElement("mag_armag") then 
         return "reload_armag_empty"
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_armag") then
-        return "reload_armag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_armag") then 
-        return "reload_armag_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+--------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("mag_drum") then 
         return "reload_drummag"
     elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
@@ -1079,3 +1082,4 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodAngledGripPoseParam = 10.8

@@ -1,6 +1,6 @@
 sound.Add( {
     name = "COD2019.MG34.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,115},
@@ -15,7 +15,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.MG34.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,115},
@@ -30,7 +30,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.RAAL.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,115},
@@ -45,7 +45,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.RAAL.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,115},
@@ -60,7 +60,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.PKM.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,115},
@@ -75,7 +75,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.PKM.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,115},
@@ -90,7 +90,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M91.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,115},
@@ -105,7 +105,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M91.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,115},
@@ -120,7 +120,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.G3A3.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -135,7 +135,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.G3A3.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -150,7 +150,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Sykov.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -165,7 +165,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Sykov.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -180,7 +180,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.X16.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -195,7 +195,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.X16.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -210,7 +210,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Renetti.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -225,7 +225,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Renetti.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -240,7 +240,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M1911.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -255,7 +255,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M1911.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -270,7 +270,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.357.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -285,7 +285,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.357.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -300,7 +300,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.50GS.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -315,7 +315,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.50GS.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -330,7 +330,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M19.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -345,7 +345,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M19.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -360,7 +360,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.SA87.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -375,7 +375,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.SA87.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -390,7 +390,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Holger.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -405,7 +405,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Holger.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -420,7 +420,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.FiNN.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -435,7 +435,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.FiNN.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -450,7 +450,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.BruenMk9.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -465,7 +465,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.BruenMk9.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -480,7 +480,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.SKS.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -495,7 +495,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.SKS.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -510,7 +510,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.MK2.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -525,7 +525,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.MK2.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -540,7 +540,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.MK2.Load",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -555,7 +555,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.MK2.Shellin",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -570,7 +570,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Kar98k.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -585,7 +585,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Kar98k.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -614,7 +614,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.SPR208.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -629,7 +629,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.SPR208.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -644,7 +644,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M14.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -659,7 +659,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M14.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -674,7 +674,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.HDR.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -689,7 +689,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.HDR.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -722,7 +722,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.AX50.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -737,7 +737,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.AX50.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -770,7 +770,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Jak12.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -785,7 +785,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Jak12.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -800,7 +800,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.725.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -815,7 +815,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.725.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -830,7 +830,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.VLK.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -845,7 +845,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.VLK.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -860,7 +860,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.R90.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -875,7 +875,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.R90.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -949,7 +949,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Model680.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -964,7 +964,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Model680.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -1022,7 +1022,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Uzi.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -1037,7 +1037,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Uzi.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -1052,7 +1052,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Uzi.Trigger",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -1067,7 +1067,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Striker45.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -1082,7 +1082,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Striker45.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -1097,7 +1097,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.P90.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -1112,7 +1112,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.P90.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -1127,7 +1127,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Mp5.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1142,7 +1142,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Mp5.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1157,7 +1157,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.ISO.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1172,7 +1172,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.ISO.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1187,7 +1187,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Vector.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1202,7 +1202,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Vector.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1217,7 +1217,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Bizon.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1232,7 +1232,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Bizon.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1247,7 +1247,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.AUG.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1262,7 +1262,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.AUG.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1277,7 +1277,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.AUG.Fire_AR",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1292,7 +1292,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.AUG.Silenced_Fire_AR",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1307,7 +1307,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Oden.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1322,7 +1322,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Oden.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1337,7 +1337,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.RAM7.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1352,7 +1352,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.RAM7.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1367,7 +1367,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Kilo141.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1382,7 +1382,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Kilo141.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1397,7 +1397,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.MP7.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1412,7 +1412,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.MP7.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1427,7 +1427,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Scar.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1442,7 +1442,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Scar.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1457,7 +1457,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Grau556.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1472,7 +1472,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Grau556.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1487,7 +1487,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Famas.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1502,7 +1502,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Famas.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1517,7 +1517,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Famas.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1532,7 +1532,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Famas.Sileneced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1547,7 +1547,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.CR56AMAX.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1562,7 +1562,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.CR56AMAX.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1577,7 +1577,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.ASVAL.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1592,7 +1592,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M4A1.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1607,7 +1607,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M4A1.Fire_Silenced",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1622,7 +1622,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M13.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -1637,7 +1637,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M13.Fire_Silenced",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1652,7 +1652,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.FAL.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1667,7 +1667,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.FAL.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -1682,7 +1682,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.AK47.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,115},
@@ -1697,7 +1697,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.AK47.Fire_Silenced",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1712,7 +1712,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.SVD.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1727,7 +1727,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.SVD.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1742,7 +1742,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Minigun.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1,
     level = 120,
     pitch = {95,105},
@@ -1775,7 +1775,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Rytec.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -1790,7 +1790,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Rytec.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -1805,7 +1805,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.AN94.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -1820,7 +1820,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.AN94.Fire_Silenced",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1835,7 +1835,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Origin12.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -1850,7 +1850,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Origin12.Fire_Silenced",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -1865,7 +1865,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.CX9.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -1880,7 +1880,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.CX9.Silenced_Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -1895,7 +1895,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.FSS.Fire",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -1910,7 +1910,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.FSS.Fire_Silenced",
-    channel = 10,
+    channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},

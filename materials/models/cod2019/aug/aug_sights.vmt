@@ -12,10 +12,10 @@
 	"$envmapcoefficient"		"[0.39 0.39 0.39]"
 
 	"$phong"					"1"
-	"$phongboost"				"15"
+	"$phongboost"				"1"
      //"$phongexponent"				"55"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
-	"$phongalbedotint" 			"1"
+	"$phongalbedotint" 			"0"
 
      "$normalmapalphaenvmapmask"              "1"
 	"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
@@ -25,6 +25,11 @@
 	"$rimlightboost"			"2"
 	"$rimmask"					"1"
 	"$nocull"					"1"
+
+	"$detail"			"models/cod2019/aug/aug_sights_s"
+	"$detailscale"                    "1"
+	"$detailblendfactor" 		"1"
+	"$detailblendmode"			"5"
 
      "Proxies"
      {

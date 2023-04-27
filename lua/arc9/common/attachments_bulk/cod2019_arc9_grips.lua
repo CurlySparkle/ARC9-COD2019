@@ -1,5 +1,5 @@
 local ATT = {}
-
+------------------------------------------------------------------
 ATT = {}
 
 ATT.PrintName = "Scout Foregrip"
@@ -220,3 +220,24 @@ ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 180)
 
 ARC9.LoadAttachment(ATT, "cod2019_attach_grip_foregrip_side")
+------------------------------------------------------------------ GRIP NONE
+ATT = {}
+
+ATT.PrintName = "Alt Hold"
+ATT.CompactName = "Alt Hold"
+ATT.Description = [[Changes the holding style of the weapon.]]
+
+ATT.Icon = Material("entities/attachs/cod2019_grip_none.png", "mips smooth")
+
+ATT.Model = "models/weapons/cod2019/attachs/grips/grip_none.mdl"
+
+ATT.SortOrder = 0
+ATT.Category = "cod2019_grip_none"
+
+ATT.LHIK_Priority = 5
+ATT.LHIK = true
+
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 180)
+
+ARC9.LoadAttachment(ATT, "cod2019_grips_none")
