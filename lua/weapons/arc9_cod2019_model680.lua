@@ -245,6 +245,12 @@ SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
 SWEP.ShotgunReload = true
 
+--SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_pist_50gs_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
+SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
+SWEP.DropMagazineAng = Angle(0, -90, 0)
+SWEP.DropMagazineQCA = 4
+
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/model680/"
@@ -269,12 +275,12 @@ SWEP.Animations = {
     },
     ["fire_sights"] = {
         Source = "shoot1_ads",
-		Mult = 1,
     },
     ["cycle"] = {
         Source = "pump",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
+		FireASAP = true,
         EventTable = {
             {s = "COD2019.Model680.Rechamber_A", t = 0/30},
 			{s = "COD2019.Model680.Rechamber_B", t = 6/30},
@@ -284,6 +290,7 @@ SWEP.Animations = {
         Source = "pump_ads",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
+		FireASAP = true,
         EventTable = {
             {s = "COD2019.Model680.Rechamber_A", t = 0/30},
 			{s = "COD2019.Model680.Rechamber_B", t = 6/30},
@@ -333,6 +340,8 @@ SWEP.Animations = {
     },
     ["reload_finish"] = {
         Source = "reload_end",
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -357,6 +366,8 @@ SWEP.Animations = {
     ["reload_finish_empty"] = {
         Source = "reload_end_empty",
 		EjectAt = 0.4,
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -379,74 +390,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_romeo870_reload_empty_start_open_01.ogg", t = 6/30},
 			{s = path .. "wfoly_sh_romeo870_reload_empty_start_end.ogg", t = 11/30},
 			{s = path .. "wfoly_sh_romeo870_reload_empty_start_close_01.ogg", t = 15/30},
-        },
-    },
-    ["reload_mag"] = {
-        Source = "reload_mag_fast_short",
-		MinProgress = 0.8,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path2 .. "wfoly_ar_mcharlie_reload_rotate.ogg", t = 0/30},
-			{s = path2 .. "wfoly_ar_mcharlie_reload_magout_01.ogg", t = 11/30},
-			{s = path2 .. "wfoly_ar_mcharlie_reload_magin_v2_01.ogg", t = 33/30},
-			{s = path2 .. "wfoly_ar_mcharlie_reload_magin_v2_02.ogg", t = 39/30},
-			{s = path2 .. "wfoly_ar_mcharlie_reload_end.ogg", t = 39/30},
-        },
-    },
-    ["reload_empty_mag"] = {
-        Source = "reload_mag_fast_empty",
-		MinProgress = 0.8,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-		    {s = "COD2019.Model680.Rechamber_A", t = 0/30},
-			{s = path2 .. "wfoly_ar_mcharlie_reload_rotate.ogg", t = 0/30},
-			{s = path2 .. "wfoly_ar_mcharlie_reload_magout_01.ogg", t = 11/30},
-			{s = path2 .. "wfoly_ar_mcharlie_reload_magin_v2_01.ogg", t = 33/30},
-			{s = path2 .. "wfoly_ar_mcharlie_reload_magin_v2_02.ogg", t = 39/30},
-			{s = "COD2019.Model680.Rechamber_B", t = 0/30},
-			{s = path2 .. "wfoly_ar_mcharlie_reload_end.ogg", t = 39/30},
         },
     },
     ["reload_start_fast"] = {
@@ -493,6 +436,8 @@ SWEP.Animations = {
     },
     ["reload_finish_fast"] = {
         Source = "reload_end_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -517,6 +462,8 @@ SWEP.Animations = {
     ["reload_finish_empty_fast"] = {
         Source = "reload_end_empty_fast",
 		EjectAt = 0.4,
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -541,6 +488,152 @@ SWEP.Animations = {
             {s = path .. "wfoly_sh_romeo870_reload_empty_start_end.ogg", t = 17/30},
         },
     },
+    ["reload"] = {
+        Source = "reload_mag_short",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 1.1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_magout.ogg", t = 21/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_magup.ogg", t = 25/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_maghit.ogg", t = 56/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_magin.ogg", t = 60/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_end.ogg", t = 70/30},
+        },
+    },
+    ["reload_empty"] = {
+        Source = "reload_mag_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_romeo870_rechamber_v2_01a.ogg", t = 3/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_raise.ogg", t = 15/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_magout.ogg", t = 27/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_magup.ogg", t = 45/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_maghit.ogg", t = 60/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_magin.ogg", t = 65/30},
+			{s = path .. "wfoly_sh_romeo870_rechamber_v2_02a.ogg", t = 83/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_end.ogg", t = 90/30},
+        },
+    },
+    ["reload_mag_fast"] = {
+        Source = "reload_mag_fast_short",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magup.ogg", t = 20/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magin.ogg", t = 30/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_end.ogg", t = 40/30},
+        },
+    },
+    ["reload_mag_empty_fast"] = {
+        Source = "reload_mag_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_romeo870_rechamber_v2_01a.ogg", t = 3/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magout.ogg", t = 20/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magup.ogg", t = 33/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magin.ogg", t = 40/30},
+			{s = path .. "wfoly_sh_romeo870_rechamber_v2_02a.ogg", t = 55/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_end.ogg", t = 60/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -563,7 +656,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.5,
+		MinProgress = 0.8,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -681,7 +774,17 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload_start" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("shot_mag") then
+        return "reload_mag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("shot_mag") then 
+        return "reload_mag_empty_fast"
+--------------------------------------------------------------
+    -- elseif anim == "reload" and wep:HasElement("shot_mag") then 
+        -- return "reload_mag"
+    -- elseif anim == "reload_empty" and wep:HasElement("shot_mag") then 
+        -- return "reload_mag_empty"
+--------------------------------------------------------------
+    elseif anim == "reload_start" and wep:HasElement("perk_speedreload") then
         return "reload_start_fast"
     elseif anim == "reload_insert" and wep:HasElement("perk_speedreload") then 
         return "reload_insert_fast"
@@ -692,22 +795,21 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     end
 end
 
+
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
     ModelOffset = Vector(4, 0, -1.3),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.8,
     },
-    ["go_grip_angled"] = {
-    ModelOffset = Vector(0.5, 0, 0.1),
-    },
-    ["go_holdstyle_1"] = {
-    ModelOffset = Vector(0, 0.1, 0.8),
-	ModelAngleOffset = Angle(0, 0, 170)
-    },
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["barrel_none"] = {
         Bodygroups = {
             {1,1},
@@ -731,6 +833,7 @@ SWEP.AttachmentElements = {
     ["sight_none"] = {
         Bodygroups = {
             {4,1},
+            {6,1},
         },
     },
     ["stock_adapter"] = {
@@ -762,7 +865,7 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"muzzle_shotgun","muzzle"},
+        Category = {"muzzle_shotguns","muzzle_support_shot"},
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -776,7 +879,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"csgo_optic","cod2019_model680_optic"},
         CorrectiveAng = Angle(2, 0.1, 0),
-		InstalledElements = {"stock_none2"},
+		InstalledElements = {"sight_none"},
     },
     {
         PrintName = "Tactical",

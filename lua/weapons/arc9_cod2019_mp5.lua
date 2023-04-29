@@ -656,7 +656,7 @@ SWEP.Attachments = {
         Bone = "tag_laser_attach",
         Pos = Vector(5.4, -0.8, -1.1),
         Ang = Angle(0, 0, -90),
-		InstalledElements = {"foregrip_none"},
+		--InstalledElements = {"foregrip_none"},
     },
     {
         PrintName = "Grips",

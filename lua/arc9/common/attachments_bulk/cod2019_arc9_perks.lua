@@ -114,8 +114,27 @@ ATT.Category = {"cod2019_perks_2"}
 ATT.ActivateElements = {"perk_bolt"}
 
 ATT.CycleTimeMult = 0.75
+--ATT.RPMMult = 1.75
 
 ARC9.LoadAttachment(ATT, "cod2019_perks_bolt")
+------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = [[Slam Fire]]
+ATT.Description = [[Increases the weapon's firing and pumping speed.]]
+ATT.Icon = Material("entities/attachs/cod2019_perks_bolt.png", "mips smooth")
+ATT.AutoStats = true
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+
+ATT.Free = true
+
+ATT.Category = {"cod2019_perks_shotgun"}
+ATT.ActivateElements = {"perk_slamfire"}
+
+ATT.CycleTimeMult = 0.75
+ATT.RPMMult = 1.75
+
+ARC9.LoadAttachment(ATT, "cod2019_perks_slamfire")
 ------------------------------------------------------------------
 ATT = {}
 

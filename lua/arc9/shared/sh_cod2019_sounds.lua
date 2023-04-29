@@ -979,11 +979,10 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Model680.Rechamber_A",
-    channel = CHAN_AUTO,
+    channel = 143 + 5,
     volume = 1.0,
     level = 120,
-    pitch = {90,105},
-	soundlevel = SNDLVL_GUNFIRE,
+    pitch = {100,100},
     sound = {
         "weapons/cod2019/model680/wfoly_sh_romeo870_rechamber_v2_01a.ogg",
 		"weapons/cod2019/model680/wfoly_sh_romeo870_rechamber_v2_01b.ogg",
@@ -993,15 +992,15 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Model680.Rechamber_B",
-    channel = CHAN_AUTO,
+    channel = 143 + 5,
     volume = 1.0,
     level = 120,
-    pitch = {90,105},
-	soundlevel = SNDLVL_GUNFIRE,
+    pitch = {100,100},
     sound = {
         "weapons/cod2019/model680/wfoly_sh_romeo870_rechamber_v2_02a.ogg",
 		"weapons/cod2019/model680/wfoly_sh_romeo870_rechamber_v2_02b.ogg",
 		"weapons/cod2019/model680/wfoly_sh_romeo870_rechamber_v2_02c.ogg",
+		"weapons/cod2019/model680/wfoly_sh_romeo870_rechamber_v2_02d.ogg",
     }
 } )
 
