@@ -11,7 +11,7 @@ ATT.Pros = {
 ATT.Cons = {}
 ATT.SortOrder = 4
 ATT.Free = false
-ATT.Folder = "SCOPE"
+ATT.Folder = "Scopes"
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Category = {"cod2019_optic_svd"}

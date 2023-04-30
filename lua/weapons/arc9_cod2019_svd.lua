@@ -361,7 +361,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 35/30},
 			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 37/30},
 			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 45/30},
-			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 53/30},
+			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 50/30},
         },
     },
     ["reload_empty_xmag"] = {
@@ -393,14 +393,14 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_delta_reload_raise.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_delta_reload_empty_magout_01.ogg", t = 23/30},
-			{s = path .. "wfoly_sn_delta_reload_empty_throw_mag.ogg", t = 26/30},
+            {s = path .. "wfoly_sn_delta_reload_empty_magout_01.ogg", t = 22/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_throw_mag.ogg", t = 25/30},
 			{s = path .. "wfoly_sn_delta_reload_cloth_01.ogg", t = 34/30},
 			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 35/30},
 			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 37/30},
 			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 45/30},
-			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 53/30},
-			{s = path .. "wfoly_sn_delta_reload_empty_charge_01.ogg", t = 60/30},
+            {s = path .. "wfoly_sn_delta_reload_empty_charge_01.ogg", t = 60/30},
+			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 68/30},
         },
     },
     ["reload_empty"] = {

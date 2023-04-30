@@ -519,9 +519,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_raise.ogg", t = 0/30},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_magout.ogg", t = 21/30},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_magup.ogg", t = 25/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_maghit.ogg", t = 56/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_magin.ogg", t = 60/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_end.ogg", t = 70/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_maghit.ogg", t = 55/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_magin.ogg", t = 59/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_end.ogg", t = 64/30},
         },
     },
     ["reload_empty"] = {
@@ -559,7 +559,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_maghit.ogg", t = 60/30},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_magin.ogg", t = 65/30},
 			{s = path .. "wfoly_sh_romeo870_rechamber_v2_02a.ogg", t = 83/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_end.ogg", t = 90/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_end.ogg", t = 87/30},
         },
     },
     ["reload_mag_fast"] = {
@@ -594,7 +594,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magup.ogg", t = 20/30},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magin.ogg", t = 30/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_end.ogg", t = 40/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_end.ogg", t = 45/30},
         },
     },
     ["reload_mag_empty_fast"] = {
@@ -627,9 +627,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sh_romeo870_rechamber_v2_01a.ogg", t = 3/30},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magout.ogg", t = 20/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magout.ogg", t = 19/30},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magup.ogg", t = 33/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magin.ogg", t = 40/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magin.ogg", t = 39/30},
 			{s = path .. "wfoly_sh_romeo870_rechamber_v2_02a.ogg", t = 55/30},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_end.ogg", t = 60/30},
         },
