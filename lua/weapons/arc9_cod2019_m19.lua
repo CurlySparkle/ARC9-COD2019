@@ -152,7 +152,7 @@ SWEP.SprintToFireTime = 0.1 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -268,7 +268,7 @@ SWEP.Animations = {
         Source = "shoot1",
     },
     ["fire_sights"] = {
-        Source = "shoot1",
+        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -304,45 +304,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_magin_v2_02.ogg", t = 30/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_end.ogg", t = 33/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_wiggle.ogg", t = 36/30},
-        },
-    },
-    ["reload_fast"] = {
-        Source = "reload_short2",
-		MinProgress = 0.8,
-		Mult = 0.8,
-		FireASAP = true,
-		MagSwapTime = 1.5,
-		DropMagAt = 0.5,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_plr_pi_papa320_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magout_01.ogg", t = 8/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_empty_arm.ogg", t = 13/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_empty_regrip.ogg", t = 22/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magin_v2_01.ogg", t = 32/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magin_v2_02.ogg", t = 38/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_empty_end.ogg", t = 38/30},
         },
     },
     ["reload_empty"] = {
@@ -381,6 +342,83 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magin_v2_02.ogg", t = 38/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_end.ogg", t = 47/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_charge_01.ogg", t = 48/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		Mult = 0.8,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_arm.ogg", t = 10/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_regrip.ogg", t = 13/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magin_v2_01.ogg", t = 17/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magin_v2_02.ogg", t = 20/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_end.ogg", t = 15/30},
+        },
+    },
+    ["reload_empty_fast"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_arm.ogg", t = 10/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_regrip.ogg", t = 13/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magin_v2_01.ogg", t = 17/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magin_v2_02.ogg", t = 20/30},
+			{s = path .. "wfoly_plr_pi_papa320_raise_first_close_01.ogg", t = 25/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_end.ogg", t = 25/30},
         },
     },
     ["ready"] = {
@@ -422,7 +460,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
             {s = path .. "wfoly_pi_papa320_inspect_04.ogg", t = 0/30},
         },
@@ -475,7 +512,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = "melee",
+        Source = {"melee","melee2"},
     },
 }
 
@@ -486,8 +523,8 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_empty_fast"
     end
 end
 

@@ -505,11 +505,12 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_scope",
-        Pos = Vector(-2.5, 0, -0.2),
+        Pos = Vector(-2.6, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optics_pistols_alt","eft_optic_small"},
         CorrectiveAng = Angle(0, 0, 0),
-		Scale = 0.8,
+		Scale = 1,
+		InstalledElements = {"sight_none"},
         DuplicateModels = {
             {
                 Bone = "tag_scope_l",
@@ -519,9 +520,9 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "csgo_tac_pistols",
+        Category = "cod2019_tac_pistols",
         Bone = "tag_laser_attach",
-        Pos = Vector(0.5, 0, 0.2),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
         DuplicateModels = {
