@@ -119,8 +119,12 @@ SWEP.RecoilMultSights = 1
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 20
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = -1/6
 
 -------------------------- SPREAD
 
@@ -530,7 +534,7 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = "muzzle_pistols",
+        Category = "cod2019_muzzle_pistols",
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -540,18 +544,19 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_reflex",
-        Pos = Vector(1.1, 0, 0),
+        Pos = Vector(1, 0, 0),
         Ang = Angle(0, 0, 0),
-        Category = {"csgo_optics_pistols_alt","eft_optic_small"},
+        Category = {"cod2019_optics_pistols_alt","eft_optic_small"},
         CorrectiveAng = Angle(0, 0, 0),
+		InstalledElements = {"sight_none"},
 		Scale = 1,
     },
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "csgo_tac_pistols",
+        Category = "cod2019_tac_pistols",
         Bone = "tag_laser_attach",
-        Pos = Vector(0.5, 0, 0.2),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
     },

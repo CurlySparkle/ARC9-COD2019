@@ -17,7 +17,7 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
 ATT.Folder = "Sights"
 
-ATT.Category = {"csgo_optic"}
+ATT.Category = {"cod2019_optic"}
 
 ATT.Model = "models/weapons/cod2019/attachs/sights/minireddot_tall_1.mdl"
 ATT.Scale = 1
@@ -41,7 +41,7 @@ ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/aimpoint_dot.png", "m
 ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
-ARC9.LoadAttachment(ATT, "csgo_cod2019_optic_minireddot1")
+ARC9.LoadAttachment(ATT, "cod2019_optic_minireddot1")
 ------------------------------------------------------------------
 
 ATT = {}
@@ -61,7 +61,7 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
 ATT.Folder = "Sights"
 
-ATT.Category = {"csgo_optic"}
+ATT.Category = {"cod2019_optic"}
 
 ATT.Model = "models/weapons/cod2019/attachs/sights/minireddot_tall_2.mdl"
 ATT.Scale = 1
@@ -85,7 +85,7 @@ ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/aimpoint_dot.png", "m
 ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
-ARC9.LoadAttachment(ATT, "csgo_cod2019_optic_minireddot2")
+ARC9.LoadAttachment(ATT, "cod2019_optic_minireddot2")
 ------------------------------------------------------------------
 
 ATT = {}
@@ -105,7 +105,7 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
 ATT.Folder = "Sights"
 
-ATT.Category = {"csgo_optic"}
+ATT.Category = {"cod2019_optic"}
 
 ATT.Model = "models/weapons/cod2019/attachs/sights/minireddot_tall_3.mdl"
 ATT.Scale = 1
@@ -129,7 +129,7 @@ ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/aimpoint_dot.png", "m
 ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
-ARC9.LoadAttachment(ATT, "csgo_cod2019_optic_minireddot3")
+ARC9.LoadAttachment(ATT, "cod2019_optic_minireddot3")
 --------------------------------------------------------------- PISTOLS
 ATT = {}
 
@@ -148,7 +148,7 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
 ATT.Folder = "Sights"
 
-ATT.Category = {"csgo_optics_pistols_alt"}
+ATT.Category = {"cod2019_optics_pistols_alt"}
 
 ATT.Model = "models/weapons/cod2019/attachs/sights/minireddot_1.mdl"
 ATT.Scale = 1
@@ -172,7 +172,7 @@ ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/aimpoint_dot.png", "m
 ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
-ARC9.LoadAttachment(ATT, "csgo_cod2019_optic_minireddot1_alt")
+ARC9.LoadAttachment(ATT, "cod2019_optic_minireddot1_alt")
 ------------------------------------------------------------------
 
 ATT = {}
@@ -192,7 +192,7 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
 ATT.Folder = "Sights"
 
-ATT.Category = {"csgo_optics_pistols_alt"}
+ATT.Category = {"cod2019_optics_pistols_alt"}
 
 ATT.Model = "models/weapons/cod2019/attachs/sights/minireddot_2.mdl"
 ATT.Scale = 1
@@ -216,7 +216,7 @@ ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/aimpoint_dot.png", "m
 ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
-ARC9.LoadAttachment(ATT, "csgo_cod2019_optic_minireddot2_alt")
+ARC9.LoadAttachment(ATT, "cod2019_optic_minireddot2_alt")
 ------------------------------------------------------------------
 
 ATT = {}
@@ -236,7 +236,7 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
 ATT.Folder = "Sights"
 
-ATT.Category = {"csgo_optics_pistols_alt"}
+ATT.Category = {"cod2019_optics_pistols_alt"}
 
 ATT.Model = "models/weapons/cod2019/attachs/sights/minireddot_3.mdl"
 ATT.Scale = 1
@@ -260,7 +260,7 @@ ATT.HoloSightReticle = Material("hud/arc9_cod2019/reticles/aimpoint_dot.png", "m
 ATT.HoloSightSize = 1512
 ATT.HoloSightColorable = false
 
-ARC9.LoadAttachment(ATT, "csgo_cod2019_optic_minireddot3_alt")
+ARC9.LoadAttachment(ATT, "cod2019_optic_minireddot3_alt")
 ------------------------------------------------------------------------- END OF PISTOLS ABOVE
 ATT = {}
 
@@ -279,7 +279,7 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
 ATT.Folder = "Sights"
 
-ATT.Category = {"csgo_optic"}
+ATT.Category = {"cod2019_optic"}
 
 ATT.Model = "models/weapons/cod2019/attachs/sights/reflex_west04.mdl"
 ATT.Scale = 1
@@ -315,4 +315,5 @@ ATT.RTScopeShadowIntensity = 5
 ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
 
-ARC9.LoadAttachment(ATT, "csgo_cod2019_optic_aimop")
+ARC9.LoadAttachment(ATT, "cod2019_optic_aimop")
+-------------------------------------------------------------------------

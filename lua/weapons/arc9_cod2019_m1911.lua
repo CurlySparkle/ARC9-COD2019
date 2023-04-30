@@ -520,12 +520,12 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"muzzle","muzzle_pistols"},
+        Category = "cod2019_muzzle_pistols",
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
-		Scale = 0.8,
+		Scale = 1,
     },
     {
         PrintName = "Optics",

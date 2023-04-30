@@ -481,12 +481,12 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"muzzle","muzzle_pistols"},
+        Category = "cod2019_muzzle_pistols",
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
-		Scale = 0.8,
+		Scale = 1,
         DuplicateModels = {
             {
                 Bone = "tag_silencer_l",
@@ -498,7 +498,7 @@ SWEP.Attachments = {
         Bone = "tag_reflex",
         Pos = Vector(1.5, 0, -0.07),
         Ang = Angle(0, 0, 0),
-        Category = {"csgo_optics_pistols_alt","eft_optic_small"},
+        Category = {"cod2019_optics_pistols_alt","eft_optic_small"},
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 0.8,
 		InstalledElements = {"rail_sight"},

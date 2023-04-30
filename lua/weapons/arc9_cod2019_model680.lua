@@ -566,7 +566,7 @@ SWEP.Animations = {
         Source = "reload_mag_fast_short",
 		MinProgress = 0.9,
 		FireASAP = true,
-		DropMagAt = 0.5,
+		DropMagAt = 0.6,
         IKTimeLine = {
             {
                 t = 0,
@@ -601,7 +601,7 @@ SWEP.Animations = {
         Source = "reload_mag_fast_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
-		DropMagAt = 0.7,
+		DropMagAt = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -643,7 +643,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 1,
+                t = 0.5,
                 lhik = 1,
                 rhik = 1
             },
@@ -865,7 +865,7 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"muzzle_shotguns","muzzle_support_shot"},
+        Category = "cod2019_muzzle_shot",
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -877,7 +877,7 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(0.5, 0, -0.07),
         Ang = Angle(0, 0, 0),
-        Category = {"csgo_optic","cod2019_model680_optic"},
+        Category = {"cod2019_optic","cod2019_model680_optic"},
         CorrectiveAng = Angle(2, 0.1, 0),
 		InstalledElements = {"sight_none"},
     },

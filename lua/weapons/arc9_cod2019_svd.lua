@@ -638,7 +638,7 @@ SWEP.Attachments = {
         Bone = "tag_rail",
         Pos = Vector(-4, 0, 3.55),
         Ang = Angle(0, 0, 0),
-        Category = {"csgo_optic","cod2019_optic_svd"},
+        Category = {"cod2019_optic","cod2019_optic_svd"},
 		Installed = "cod2019_optic_scope_svd",
         Integral = "cod2019_optic_scope_svd",
         CorrectiveAng = Angle(0, 0, 0),
@@ -648,7 +648,7 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = "muzzle",
+        Category = "cod2019_muzzle",
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
