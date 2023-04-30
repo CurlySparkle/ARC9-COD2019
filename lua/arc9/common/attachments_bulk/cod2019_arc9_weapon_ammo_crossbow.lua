@@ -17,9 +17,9 @@ ATT.Free = true
 ATT.ShootEnt = "arc9_gsr_thrownrock"
 ATT.ActivateElements = {"bolt_rock"}
 
-ATT.Category = {"go_ammo_crossbow"}
+ATT.Category = {"cod2019_ammo_crossbow"}
 
-ARC9.LoadAttachment(ATT, "csgo_ammo_crossbow_rock")
+ARC9.LoadAttachment(ATT, "cod2019_ammo_crossbow_rock")
 -------------------------------------------------------------------------------
 ATT = {}
 
@@ -34,8 +34,8 @@ ATT.AutoStats = true
 
 ATT.Free = true
 
-ATT.ShootEnt = "arc9_gsr_proj_crossbow_he"
+ATT.ShootEnt = "arc9_cod2019_proj_crossbow_he"
 
-ATT.Category = {"go_ammo_crossbow"}
+ATT.Category = {"cod2019_ammo_crossbow"}
 
-ARC9.LoadAttachment(ATT, "csgo_ammo_crossbow_he")
+ARC9.LoadAttachment(ATT, "cod2019_ammo_crossbow_he")

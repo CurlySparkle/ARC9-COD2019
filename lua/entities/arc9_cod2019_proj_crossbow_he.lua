@@ -86,7 +86,7 @@ if SERVER then
                     util.Effect( "WaterSurfaceExplosion", effectdata )
                     self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
                 else
-				    ParticleEffect("weapon_muzzle_flash_HE", self:GetPos(), Angle(0, 0, 0), nil)
+				    ParticleEffect("AC_muzzle_desert", self:GetPos(), Angle(0, 0, 0), nil)
                     --util.Effect( "Explosion", effectdata)
                     --self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)
 					self:EmitSound("COD2019.HE_ExplosiveHit")

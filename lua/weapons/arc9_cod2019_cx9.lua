@@ -599,7 +599,7 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"muzzle"},
+        Category = "cod2019_muzzle",
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),

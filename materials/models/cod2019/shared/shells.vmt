@@ -1,8 +1,8 @@
 vertexlitgeneric
 {
-	"$basetexture"           "models/weapons/shared/shells"
+	"$basetexture"           "models/cod2019/shared/shells"
 	//"$color2"            "[2 2 2]"
-	"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
+	"$phongwarptexture"                 "models/cod2019/shared/steelwarp"
 
 	"$envmap"                "env_cubemap"
 	"$envmaptint"            "[0.25 0.19 0.07]"

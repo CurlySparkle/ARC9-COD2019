@@ -12,10 +12,10 @@
 	"$envmapcoefficient"		"[0.39 0.39 0.39]"
 
 	"$phong"					"1"
-	"$phongboost"				"5"
-     "$phongexponent"				"55"
+	"$phongboost"				"1"
+     //"$phongexponent"				"55"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
-	"$phongalbedotint" 			"1"
+	"$phongalbedotint" 			"0"
 
      "$normalmapalphaenvmapmask"              "1"
 	"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"

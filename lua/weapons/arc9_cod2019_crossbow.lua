@@ -435,8 +435,8 @@ SWEP.AttachmentElements = {
 SWEP.Attachments = {
     {
         PrintName = "Optics",
-        Bone = "tag_attachments",
-        Pos = Vector(4.5, 0, 1.9),
+        Bone = "tag_holo",
+        Pos = Vector(2, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -445,7 +445,7 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "csgo_tac",
+        Category = "cod2019_tac_pistols",
         Bone = "tag_attachments",
         Pos = Vector(21.5, 0, -1),
         Ang = Angle(0, 0, 0),
@@ -453,22 +453,16 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = {"grip"},
-        Bone = "tag_attachments",
-        Pos = Vector(15, 0, -1.85),
+        Category = "cod2019_grip",
+        Bone = "tag_grip_attach",
+        Pos = Vector(-2.5, 0, 0),
         Ang = Angle(0, 0, 180),
-		Scale = 1,
 		InstalledElements = {"grip"},
-		RejectAttachments = { 
-		["go_ubgl_m203"] = true,
-		["go_ubgl_mass26"] = true,
-		["go_ubgl_xm1014"] = true,
-		},
     },
     {
         PrintName = "Ammo",
         Bone = "j_mag1",
-        Category = {"go_ammo_crossbow"},
+        Category = {"cod2019_ammo_crossbow"},
         Pos = Vector(0, -1.5, -1.5),
         Ang = Angle(0, 0, 0),
     },
@@ -479,7 +473,7 @@ SWEP.Attachments = {
     {
         PrintName = "Skins",
         --Bone = "v_weapon.Clip",
-        Category = "go_skins_crossbow",
+        Category = "cod2019_skins_crossbow",
 		CosmeticOnly = true,
     },
     {
