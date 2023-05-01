@@ -77,9 +77,9 @@ SWEP.PostBashTime = 0.25
 
 SWEP.ImpactForce = 15
 
-SWEP.MeleeHitSound = "CSGO.Shield.HitBody"
-SWEP.MeleeHitWallSound = "CSGO.Shield.HitWall"
-SWEP.MeleeSwingSound = "CSGO.Shield.Swing"
+SWEP.MeleeHitSound = "COD2019.Shield.HitBody"
+SWEP.MeleeHitWallSound = "COD2019.Shield.HitWall"
+SWEP.MeleeSwingSound = "COD2019.Melee.Swing"
 
 local path = "weapons/cod2019/melee/shield/"
 

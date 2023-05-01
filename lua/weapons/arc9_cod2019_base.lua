@@ -7,10 +7,10 @@ SWEP.PrintName = "MW2019 Base"
 
 -------------------------- MELEE
 
-SWEP.MeleeHitSound = "CSGO.Melee.HitBody"
-SWEP.MeleeHitWallSound = "CSGO.Melee.HitWall"
-SWEP.MeleeSwingSound = "CSGO.Shield.Swing"
-SWEP.BackstabSound = "CSGO.Melee.HitBody"
+SWEP.MeleeHitSound = "COD2019.Melee.HitBody"
+SWEP.MeleeHitWallSound = "COD2019.Melee.HitWall"
+SWEP.MeleeSwingSound = "COD2019.Melee.Swing"
+SWEP.BackstabSound = "COD2019.Melee.HitBody"
 
 SWEP.BashWhileSprint = true
 SWEP.Bash = true

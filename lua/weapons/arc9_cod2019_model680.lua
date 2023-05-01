@@ -54,8 +54,8 @@ SWEP.Num = 6
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 1700 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 4200 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 500
+SWEP.RangeMax = 3000
 
 SWEP.Penetration = 5 -- Units of wood that can be penetrated by this gun.
 
@@ -884,7 +884,7 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "csgo_tac",
+        Category = "cod2019_tac",
         Bone = "tag_laser_attach",
         Pos = Vector(-3.5, -0.35, -0.19),
         Ang = Angle(0, 0, -90),
@@ -926,7 +926,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_shot"}
     },
     {
         PrintName = "Skins",

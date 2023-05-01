@@ -122,13 +122,13 @@ ATT = {}
 
 ATT.PrintName = [[Slam Fire]]
 ATT.Description = [[Increases the weapon's firing and pumping speed.]]
-ATT.Icon = Material("entities/attachs/cod2019_perks_bolt.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_perks_slamfire.png", "mips smooth")
 ATT.AutoStats = true
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 
 ATT.Free = true
 
-ATT.Category = {"cod2019_perks_shotgun"}
+ATT.Category = {"cod2019_perks_shot"}
 ATT.ActivateElements = {"perk_slamfire"}
 
 ATT.CycleTimeMult = 0.75

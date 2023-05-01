@@ -447,6 +447,18 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sn_xmike109_first_raise_up.ogg", t = 0/30},
 			{s = path .. "wfoly_sn_xmike109_first_raise_end.ogg", t = 10/30},
@@ -454,7 +466,18 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sn_xmike109_first_raise_end.ogg", t = 0/30},
         },
@@ -625,7 +648,7 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "csgo_tac",
+        Category = "cod2019_tac",
         Bone = "tag_attachments",
         Pos = Vector(19.3, 1, 0.9),
         Ang = Angle(0, 0, -130),

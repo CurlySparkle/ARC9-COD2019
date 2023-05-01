@@ -2,7 +2,7 @@ local ATT = {}
 
 ATT.PrintName = "Default Scope"
 ATT.CompactName = [[Default]]
-ATT.Icon = Material("entities/attachs/go_optic_schmidt.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_optic_scope_svd.png", "mips smooth")
 ATT.Description = [[Long-range combat scope. Provides an improved precision at longer ranges.]]
 ATT.Pros = {
     "+ 8x Zoom",
@@ -37,7 +37,7 @@ ATT.RTScopeSubmatIndex = 2
 ATT.RTScopeFOV = 8
 ATT.RTScopeRes = 512
 -- ATT.RTScopeSurface = Material("models/weapons/arc9/mw3/mw3_optics/hamr_lens")
-ATT.RTScopeReticle = Material("hud/arc9_csgo/scopes/scope_overlay.png", "mips smooth")
+ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/svd_crosshair.png", "mips smooth")
 ATT.RTScopeReticleScale = 1
 ATT.RTScopeShadowIntensity = 1
 ATT.RTScopeNoPP = false

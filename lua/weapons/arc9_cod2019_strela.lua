@@ -395,7 +395,7 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "csgo_tac",
+        Category = "cod2019_tac",
         Bone = "tag_launcher_attachments",
         Pos = Vector(10, 2.1, 0.9),
         Ang = Angle(0, 0, -90),

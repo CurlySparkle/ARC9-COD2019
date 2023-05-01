@@ -2,7 +2,7 @@ local ATT = {}
 
 ATT.PrintName = "Default Scope"
 ATT.CompactName = [[Default]]
-ATT.Icon = Material("entities/attachs/go_optic_schmidt.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_optic_scope_ax50.png", "mips smooth")
 ATT.Description = [[Long-range combat scope. Provides an improved precision at longer ranges.]]
 ATT.Pros = {
     "+ 8x Zoom",
@@ -18,17 +18,34 @@ ATT.Category = {"cod2019_optic_ax50"}
 ATT.ActivateElements = {"scope_ax50"}
 
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_ax50.mdl"
+ATT.BoneMerge = true
 ATT.Scale = 1
-ATT.ModelOffset = Vector(-0.3, 0, 0)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.Sights = {
     {
-        Pos = Vector(0, 9, -1.865),
+        Pos = Vector(0, 9, -1.86),
         Ang = Angle(0, 0, 0),
         ViewModelFOV = 35,
         Magnification = 2,
-        IgnoreExtra = true
+        IgnoreExtra = true,
+    },
+    {
+        Pos = Vector(0, 9, -1.86),
+        Ang = Angle(0, 0, 0),
+        ViewModelFOV = 35,
+        Magnification = 2,
+        IgnoreExtra = true,
+		RTScopeFOV = 15,
+    },
+    {
+        Pos = Vector(0, 9, -1.86),
+        Ang = Angle(0, 0, 0),
+        ViewModelFOV = 35,
+        Magnification = 2,
+        IgnoreExtra = true,
+		RTScopeFOV = 25
     },
 }
 

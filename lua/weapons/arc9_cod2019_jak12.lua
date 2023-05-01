@@ -44,17 +44,17 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 204 -- Damage done at point blank range
-SWEP.DamageMin = 7 -- Damage done at maximum range
+SWEP.DamageMax = 60 -- Damage done at point blank range
+SWEP.DamageMin = 35 -- Damage done at maximum range
 
-SWEP.DistributeDamage = true
+SWEP.DistributeDamage = false
 
 SWEP.Num = 6
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 1700 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 7200 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 500
+SWEP.RangeMax = 3000
 
 SWEP.Penetration = 1 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.1
@@ -78,7 +78,7 @@ SWEP.ClipSize = 8 -- Self-explanatory.
 SWEP.SupplyLimit = 12 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -126,8 +126,12 @@ SWEP.RecoilMultSights = 0.9
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilPunchSights = 20
 SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = -1/6
 
 -------------------------- SPREAD
 
@@ -568,7 +572,7 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "csgo_tac",
+        Category = "cod2019_tac",
         Bone = "tag_laser_attach",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 180),

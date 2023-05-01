@@ -72,7 +72,7 @@ SWEP.ClipSize = 30 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -315,6 +315,7 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_short2",
 		MinProgress = 0.8,
+		Mult = 0.8,
 		FireASAP = true,
 		DropMagAt = 1.1,
         IKTimeLine = {
@@ -653,7 +654,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.5, 0, 0),
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -672,7 +673,7 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "csgo_tac",
+        Category = "cod2019_tac",
         Bone = "tag_attachments",
         Pos = Vector(16.3, 1, 0.2),
         Ang = Angle(0, 0, -90),
