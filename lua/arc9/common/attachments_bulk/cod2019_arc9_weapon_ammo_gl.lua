@@ -14,11 +14,11 @@ ATT.AutoStats = true
 
 ATT.Free = true
 
-ATT.ShootEnt = "arc9_gsr_thrownrock"
+ATT.ShootEnt = "arc9_cod2019_thrownrock"
 
-ATT.Category = {"go_ammo_gl"}
+ATT.Category = {"cod2019_ammo_gl"}
 
-ARC9.LoadAttachment(ATT, "csgo_ammo_gl_rock")
+ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_rock")
 ------------------------------------------------------------------------------------------
 ATT = {}
 
@@ -35,9 +35,9 @@ ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_flash"
 
-ATT.Category = {"go_ammo_gl"}
+ATT.Category = {"cod2019_ammo_gl"}
 
-ARC9.LoadAttachment(ATT, "csgo_ammo_gl_flash")
+ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_flash")
 ------------------------------------------------------------------------------------------
 ATT = {}
 
@@ -54,9 +54,9 @@ ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_inc"
 
-ATT.Category = {"go_ammo_gl"}
+ATT.Category = {"cod2019_ammo_gl"}
 
-ARC9.LoadAttachment(ATT, "csgo_ammo_gl_inc")
+ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_inc")
 ------------------------------------------------------------------------------------------
 ATT = {}
 
@@ -73,6 +73,6 @@ ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_smoke"
 
-ATT.Category = {"go_ammo_gl"}
+ATT.Category = {"cod2019_ammo_gl"}
 
-ARC9.LoadAttachment(ATT, "csgo_ammo_gl_smoke")
+ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_smoke")

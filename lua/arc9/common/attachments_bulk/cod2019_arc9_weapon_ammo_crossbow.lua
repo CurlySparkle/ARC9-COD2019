@@ -14,7 +14,7 @@ ATT.AutoStats = true
 
 ATT.Free = true
 
-ATT.ShootEnt = "arc9_gsr_thrownrock"
+ATT.ShootEnt = "arc9_cod2019_thrownrock"
 ATT.ActivateElements = {"bolt_rock"}
 
 ATT.Category = {"cod2019_ammo_crossbow"}

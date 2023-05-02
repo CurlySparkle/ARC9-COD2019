@@ -195,7 +195,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_rifle_silenced"
+SWEP.MuzzleParticle = "AC_muzzle_pistol_suppressed"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
@@ -400,7 +400,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_scope",
-        Pos = Vector(1.3, 0, 0),
+        Pos = Vector(1.3, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_optic_m32"},
         CorrectiveAng = Angle(0, 0, 0),
@@ -419,17 +419,12 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = {"grip","grip_p90"},
+        Category = "cod2019_grip",
         Bone = "j_forend",
-        Pos = Vector(9, 3.8, 0),
+        Pos = Vector(9.55, 3.96, -0.05),
         Ang = Angle(0, 0, 90),
 		Scale = 1,
 		InstalledElements = {"grip_none"},
-		RejectAttachments = { 
-		["go_ubgl_m203"] = true,
-		["go_ubgl_mass26"] = true,
-		["go_ubgl_xm1014"] = true,
-		},
     },
     {
         PrintName = "Stock (Opt)",
@@ -442,9 +437,9 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"csgo_stock"},
+        Category = "cod2019_stocks",
         Bone = "tag_launcher_attachment",
-        Pos = Vector(-8, 0, 1.8),
+        Pos = Vector(-8, 0, 1.9),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_none"},
 		Scale = 1,
@@ -452,7 +447,7 @@ SWEP.Attachments = {
     {
         PrintName = "Ammo",
         Bone = "j_mag1",
-        Category = {"go_ammo_gl"},
+        Category = {"cod2019_ammo_gl"},
         Pos = Vector(0, -1.5, -1.5),
         Ang = Angle(0, 0, 0),
     },
