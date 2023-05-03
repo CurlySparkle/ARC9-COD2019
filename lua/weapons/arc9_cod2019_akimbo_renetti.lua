@@ -211,7 +211,7 @@ SWEP.Akimbo = true
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "weapon_muzzle_flash_pistol"
+SWEP.MuzzleParticle = "AC_muzzle_pistol"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.MuzzleEffectQCAEvenShot = 2

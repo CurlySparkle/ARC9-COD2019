@@ -117,8 +117,12 @@ SWEP.RecoilMultSights = 0.4
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilPunchSights = 20
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = -1/6
 
 -------------------------- SPREAD
 
@@ -145,7 +149,7 @@ SWEP.SprintToFireTime = 0.1 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.25
+SWEP.PostBashTime = 0.15
 
 -------------------------- TRACERS
 
@@ -155,7 +159,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(0.5, 5, 3.35),
+    Pos = Vector(0.65, 7, 3.35),
     Ang = Angle(0, 0, 20),
     Magnification = 1.15,
     ViewModelFOV = 56,
@@ -208,7 +212,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "weapon_muzzle_flash_pistol"
+SWEP.MuzzleParticle = "AC_muzzle_pistol"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
@@ -258,7 +262,7 @@ SWEP.Animations = {
         Source = "shoot1",
     },
     ["fire_sights"] = {
-        Source = "shoot1",
+        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -289,40 +293,6 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 23/30},
-			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 35/30},
-        },
-    },
-    ["reload_fast"] = {
-        Source = "reload_short2",
-		MinProgress = 0.8,
-		MagSwapTime = 1.5,
-		DropMagAt = 0.5,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 16/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 29/30},
 			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 35/30},
         },
     },
@@ -360,6 +330,210 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 29/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 35/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 35/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 3/30},
+			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 30/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 3/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 10/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 22/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 23/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 30/30},
+        },
+    },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 23/30},
+			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 35/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 16/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 24/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 29/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 35/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 35/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 3/30},
+			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 30/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 22/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 30/30},
         },
     },
     ["ready"] = {
@@ -452,7 +626,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = "melee",
+        Source = {"melee","melee2"},
     },
 }
 
@@ -460,11 +634,22 @@ SWEP.Animations = {
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
-
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+	
+-----------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+-----------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
+-----------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
@@ -515,10 +700,11 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_reflex",
-        Pos = Vector(5, 0, -2.5),
+        Pos = Vector(1, 0, -0.05),
         Ang = Angle(0, 0, 0),
-        Category = "csgo_rail_optic_pistols",
+        Category = "cod2019_optics_pistols_alt",
         CorrectiveAng = Angle(0, 0, 0),
+		InstalledElements = {"sight_none"},
 		Scale = 1,
     },
     {

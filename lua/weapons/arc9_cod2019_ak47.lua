@@ -312,6 +312,42 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 65/30},
         },
     },
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 1.15,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_akilo47_reload_empty_maghit_01.ogg", t = 12/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_twist.ogg", t = 12/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 45/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_chamber_01.ogg", t = 55/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 69/30},
+        },
+    },
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
@@ -348,8 +384,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 40/30},
         },
     },
-    ["reload_empty"] = {
-        Source = "reload",
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
 		MinProgress = 0.8,
 		FireASAP = true,
 		DropMagAt = 1.15,
@@ -537,8 +573,8 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
@@ -553,6 +589,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["sight_rail"] = {
         Bodygroups = {
             {5,1},
@@ -576,6 +617,11 @@ SWEP.AttachmentElements = {
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
+        },
+    },
+    ["reciever_none"] = {
+        Bodygroups = {
+            {6,1},
         },
     },
 }
