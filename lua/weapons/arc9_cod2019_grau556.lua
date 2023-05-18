@@ -308,7 +308,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_sierra552_reload_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_sierra552_reload_magout.ogg", t = 20/30},
+			{s = path .. "wfoly_ar_sierra552_reload_magout.ogg", t = 21/30},
 			{s = path .. "wfoly_ar_sierra552_reload_maghit.ogg", t = 35/30},
 			{s = path .. "wfoly_ar_sierra552_reload_magin.ogg", t = 41/30},
 			{s = path .. "wfoly_ar_sierra552_reload_end.ogg", t = 56/30},

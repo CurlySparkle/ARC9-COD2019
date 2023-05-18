@@ -389,11 +389,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 15/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 20/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 35/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 40/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 45/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 17/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 33/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 38/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 53/30},
         },
     },
     ["reload_empty_ar"] = {
@@ -426,12 +426,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 15/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 20/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 35/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 40/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 52/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 65/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 17/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 34/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 39/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 50/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 67/30},
         },
     },
     ["ready"] = {
@@ -577,9 +577,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_lm_mgolf36_inspect_01.ogg", t = 2/30},
-			{s = path .. "wfoly_lm_mgolf36_inspect_02.ogg", t = 72/30},
-			{s = path .. "wfoly_lm_mgolf36_inspect_03.ogg", t = 126/30},
+            {s = path .. "wfoly_lm_mgolf36_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mgolf36_inspect_02.ogg", t = 70/30},
+			{s = path .. "wfoly_lm_mgolf36_inspect_03.ogg", t = 125/30},
         },
     },
     ["bash"] = {

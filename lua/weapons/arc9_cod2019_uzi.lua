@@ -309,7 +309,7 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_arm.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 22/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 21/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 42/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_shake.ogg", t = 45/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 58/30},
@@ -344,8 +344,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 6/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 5/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 27/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 37/30},
         },
@@ -378,8 +378,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_magout_01.ogg", t = 10/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_magout_01.ogg", t = 12/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 12/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_magin_01.ogg", t = 35/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_charge_01.ogg", t = 69/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_arm.ogg", t = 60/30},
@@ -415,7 +415,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_sm_uzulu_raise_first_start.ogg", t = 0/30},
             {s = path .. "wfoly_plr_sm_uzulu_raise_first_stock.ogg", t = 11/30},
 			{s = path .. "wfoly_plr_sm_uzulu_raise_first_extend.ogg", t = 11/30},
-			{s = path .. "wfoly_plr_sm_uzulu_raise_first_end.ogg", t = 27/30},
+			{s = path .. "wfoly_plr_sm_uzulu_raise_first_end.ogg", t = 28/30},
         },
     },
     ["draw"] = {

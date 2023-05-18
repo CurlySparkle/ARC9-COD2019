@@ -333,7 +333,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_ar_falima_reload_xmag_start.ogg", t = 0/30},
             {s = path .. "wfoly_plr_ar_falima_reload_xmag_rattle.ogg", t = 5/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magout_01.ogg", t = 9/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_01.ogg", t = 29/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_01.ogg", t = 30/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_02.ogg", t = 38/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_xmag_end.ogg", t = 47/30},
         },
