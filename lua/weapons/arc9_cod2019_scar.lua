@@ -585,7 +585,9 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then 
 	model:SetBodygroup(3,1)
-	model:SetBodygroup(7,0) 
+	model:SetBodygroup(7,0)
+	elseif wep:HasElement("optic_cronen") then
+	model:SetBodygroup(5,2)
 	end
 end
 

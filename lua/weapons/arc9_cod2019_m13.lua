@@ -312,43 +312,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_mcharlie_reload_end.ogg", t = 41/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_short2",
-		MinProgress = 0.8,
-		Mult = 0.8,
-		FireASAP = true,
-		DropMagAt = 1.1,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_mvmnt.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_rotate.ogg", t = 7/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_magout_01.ogg", t = 19/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_01.ogg", t = 36/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_02.ogg", t = 43/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_end.ogg", t = 45/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -385,11 +348,48 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_end.ogg", t = 59/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.9,
+		Mult = 1,
+		FireASAP = true,
+		DropMagAt = 0.45,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_mvmnt.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_rotate.ogg", t = 3/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_magout_01.ogg", t = 5/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_02.ogg", t = 30/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_end.ogg", t = 45/30},
+        },
+    },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
-		DropMagAt = 0.5,
+		DropMagAt = 0.45,
         IKTimeLine = {
             {
                 t = 0,
@@ -565,6 +565,8 @@ SWEP.Animations = {
 }
 
 -------------------------- ATTACHMENTS
+
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()

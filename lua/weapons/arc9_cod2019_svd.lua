@@ -78,7 +78,7 @@ SWEP.ClipSize = 10 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -289,10 +289,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 73/30},
         },
     },
-    ["1_reload"] = {
-        Source = "reload_xmag",
-		MinProgress = 0.6,
-		DropMagAt = 1.2,
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -310,27 +309,25 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_delta_reload_raise.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_delta_reload_empty_magout_01.ogg", t = 22/30},
-			{s = path .. "wfoly_sn_delta_reload_empty_throw_mag.ogg", t = 25/30},
-			{s = path .. "wfoly_sn_delta_reload_cloth_01.ogg", t = 34/30},
-			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 35/30},
-			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 37/30},
-			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 45/30},
-			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 50/30},
+            {s = path .. "wfoly_sn_delta_reload_empty_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_delta_reload_empty_magout_01.ogg", t = 20/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_throw_mag.ogg", t = 23/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_magin_v2_01.ogg", t = 46/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_magin_v2_02.ogg", t = 67/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_end.ogg", t = 80/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_charge_01.ogg", t = 92/30},
         },
     },
-    ["reload_xmag"] = {
-        Source = "reload_xmag",
+    ["reload_fast"] = {
+        Source = "reload_fast",
 		MinProgress = 0.6,
 		DropMagAt = 1.3,
-		Mult = 1.2,
         IKTimeLine = {
             {
                 t = 0,
@@ -364,11 +361,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 50/30},
         },
     },
-    ["reload_empty_xmag"] = {
-        Source = "reload_xmag_empty",
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
 		MinProgress = 0.6,
 		DropMagAt = 1.3,
-		Mult = 1.2,
         IKTimeLine = {
             {
                 t = 0,
@@ -403,8 +399,44 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 68/30},
         },
     },
-    ["reload_empty"] = {
-        Source = "reload",
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.6,
+		DumpClip = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_delta_reload_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_delta_reload_magout_01.ogg", t = 14/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_01.ogg", t = 26/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 44/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 52/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 65/30},
+			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 73/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
 		MinProgress = 0.8,
         IKTimeLine = {
             {
@@ -436,6 +468,81 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_delta_reload_empty_magin_v2_02.ogg", t = 67/30},
 			{s = path .. "wfoly_sn_delta_reload_empty_end.ogg", t = 80/30},
 			{s = path .. "wfoly_sn_delta_reload_empty_charge_01.ogg", t = 92/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.6,
+		DropMagAt = 1.3,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_delta_reload_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_delta_reload_empty_magout_01.ogg", t = 23/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_throw_mag.ogg", t = 26/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_01.ogg", t = 34/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 50/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.6,
+		DropMagAt = 1.3,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_delta_reload_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_delta_reload_empty_magout_01.ogg", t = 22/30},
+			{s = path .. "wfoly_sn_delta_reload_empty_throw_mag.ogg", t = 25/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_01.ogg", t = 34/30},
+			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 45/30},
+            {s = path .. "wfoly_sn_delta_reload_empty_charge_01.ogg", t = 60/30},
+			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 68/30},
         },
     },
     ["ready"] = {
@@ -476,7 +583,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
             {s = path .. "wfoly_sn_delta_reload_empty_end.ogg", t = 0/30},
         },
@@ -556,9 +662,30 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
---SWEP.Hook_Think	= ARC9.CSGO.BlendEmpty
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights
 
 SWEP.DefaultBodygroups = "00000000000000"
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+	
+-----------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+-----------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
+-----------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    end
+end
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -707,7 +834,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = "cod2019_perks"
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

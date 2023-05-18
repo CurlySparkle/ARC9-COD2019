@@ -30,6 +30,13 @@ ARC9.COD2019.BlendEmptyElite = function(wep)
     end
 end
 
+ARC9.COD2019.BlendSights = function(wep)
+    local vm = wep:GetOwner():GetViewModel()
+    local delta = wep:GetSightDelta()
+    local coolilove = math.cos(delta * (math.pi / 2))
+    vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 0, 1) )
+end
+
 cod2019_flashtime = 5
 cod2019_flashfade = 2
 cod2019_flashdistance = 1280
@@ -75,3 +82,4 @@ if CLIENT then
 end
 
 game.AddAmmoType({name = "arc9_cod2019_c4"})
+game.AddAmmoType({name = "arc9_cod2019_knife"})

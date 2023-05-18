@@ -428,3 +428,28 @@ sound.Add( {
         "weapons/cod2019/melee/shield/shield_hit_world_04.ogg",
     }
 } )
+
+sound.Add( {
+    name = "COD2019.Knife.Throw",
+    channel = 10,
+    volume = 1.0,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/cod2019/throwables/throwing_knife/weap_throwing_knife_throw_01.ogg",
+        "weapons/cod2019/throwables/throwing_knife/weap_throwing_knife_throw_02.ogg",
+        "weapons/cod2019/throwables/throwing_knife/weap_throwing_knife_throw_03.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Knife.Prepare",
+    channel = 10,
+    volume = 1.0,
+    level = 125,
+    pitch = {95, 115},
+    sound = {
+        "weapons/cod2019/throwables/throwing_knife/weap_throwing_knife_prepare_01.ogg",
+        "weapons/cod2019/throwables/throwing_knife/weap_throwing_knife_prepare_02.ogg",
+    }
+} )
