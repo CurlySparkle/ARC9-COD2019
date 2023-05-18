@@ -31,6 +31,8 @@ function ENT:Initialize()
         end
 
         self.dt = CurTime() + 15
+		
+		util.SpriteTrail(self, 0, Color(15, 15, 15), false, 3, 1, 0.25, 2, "trails/tube.vmt")
 
         timer.Simple(0, function()
             if !IsValid(self) then return end

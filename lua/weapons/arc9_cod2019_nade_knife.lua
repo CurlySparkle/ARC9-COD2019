@@ -106,7 +106,7 @@ SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
-SWEP.ShootPosOffset = Vector(0, 15, -5)
+SWEP.ShootPosOffset = Vector(0, 10, -5)
 
 -------------------------- HoldTypes
 
