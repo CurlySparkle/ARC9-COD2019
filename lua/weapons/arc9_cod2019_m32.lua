@@ -206,6 +206,15 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.NoShellEject = true
 
+SWEP.ShouldDropMag = false
+SWEP.ShouldDropMagEmpty = false
+
+SWEP.DropMagazineModel = "models/weapons/cod2019/shared/shell_m32.mdl"
+SWEP.DropMagazineSounds = {"weapons/cod2019/m32/40mm_shell_02.ogg"}
+SWEP.DropMagazineAmount = 6
+SWEP.DropMagazineTime = 1
+SWEP.DropMagazineQCA = 4
+
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/m32/"
@@ -213,6 +222,13 @@ local path = "weapons/cod2019/m32/"
 SWEP.ShootSound = "COD2019.M32.Fire"
 SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+
+SWEP.TriggerDelay = 0.01 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.01 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = ""
+SWEP.TriggerUpSound = "COD2019.M32.UnTrigger"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -225,6 +241,7 @@ SWEP.Animations = {
         Source = "reload",
 		MinProgress = 0.9,
 		FireASAP = true,
+		DropMagAt = 0.85,
         IKTimeLine = {
             {
                 t = 0,
@@ -267,6 +284,7 @@ SWEP.Animations = {
         Source = "reload_fast",
 		MinProgress = 0.9,
 		FireASAP = true,
+		DropMagAt = 0.7,
         IKTimeLine = {
             {
                 t = 0,
@@ -383,7 +401,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_la_mike32_inspect_01.ogg", t = 10/30},
+            {s = path .. "wfoly_la_mike32_inspect_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_rattle.ogg", t = 45/30},
 			{s = path .. "wfoly_la_mike32_inspect_02.ogg", t = 95/30},
 			{s = path .. "wfoly_plr_la_mike32_reload_open_01.ogg", t = 110/30},
 			{s = path .. "wfoly_plr_la_mike32_reload_rattle.ogg", t = 135/30},

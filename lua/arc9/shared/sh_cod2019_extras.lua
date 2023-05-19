@@ -243,6 +243,30 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.M32.UnTrigger",
+    channel = 10,
+    volume = 0.5,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m32/weap_mike32_fire_plr_disconnector_01.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.M32.Shells",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 125,
+    pitch = {90, 115},
+    sound = {
+        "weapons/cod2019/m32/40mm_shell_01.ogg",
+    }
+} )
+
+
+sound.Add( {
     name = "COD2019.Strela.Explode",
     channel = CHAN_STATIC,
     volume = 1.0,
