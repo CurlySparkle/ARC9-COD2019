@@ -152,7 +152,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1.5)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -223,7 +223,8 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -262,8 +263,52 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_la_mike32_reload_end.ogg", t = 149/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.9,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_la_mike32_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_open_01.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_smack.ogg", t = 20/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_shellsout_01.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_grab.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_rattle.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_armup.ogg", t = 52/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_shellsin_01.ogg", t = 66/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_cylinder_01.ogg", t = 72/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_armdown.ogg", t = 95/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_grab2.ogg", t = 103/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 110/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_end.ogg", t = 112/30},
+        },
+    },
     ["ready"] = {
-        Source = {"draw"},
+        Source = "draw",
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -284,7 +329,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.5,
+		MinProgress = 0.9,
 		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_plr_la_mike32_raise_up.ogg", t = 0/30},
@@ -293,7 +338,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
             {s = path .. "wfoly_plr_la_mike32_raise_up.ogg", t = 0/30},
         },
@@ -340,8 +384,11 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_la_mike32_inspect_01.ogg", t = 10/30},
-			{s = path .. "wfoly_la_mike32_inspect_02.ogg", t = 62/30},
-			{s = path .. "wfoly_la_mike32_inspect_03.ogg", t = 146/30},
+			{s = path .. "wfoly_la_mike32_inspect_02.ogg", t = 95/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_open_01.ogg", t = 110/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_rattle.ogg", t = 135/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 155/30},
+			{s = path .. "wfoly_la_mike32_inspect_03.ogg", t = 155/30},
         },
     },
     ["bash"] = {
@@ -389,7 +436,22 @@ SWEP.AttachmentElements = {
             {1,1},
         },
     },
+    ["nades_rock"] = {
+        Bodygroups = {
+            {5,1},
+        },
+    },
 }
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then
+        -- return "reload_fast_empty"
+    end
+end
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
@@ -453,7 +515,7 @@ SWEP.Attachments = {
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

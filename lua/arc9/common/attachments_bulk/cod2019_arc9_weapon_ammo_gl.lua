@@ -12,6 +12,8 @@ ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_rock.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
+ATT.ActivateElements = {"nades_rock"}
+
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_thrownrock"

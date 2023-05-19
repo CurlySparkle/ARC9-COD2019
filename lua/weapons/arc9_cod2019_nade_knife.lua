@@ -162,9 +162,9 @@ SWEP.Animations = {
         },
         MinProgress = 0.3
     },
-    -- ["bash"] = {
-        -- Source = "melee",
-    -- },
+    ["inspect"] = {
+        Source = "lookat01",
+    },
 }
 
 -------------------------- ATTACHMENTS
