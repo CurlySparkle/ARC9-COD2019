@@ -368,11 +368,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2.5,
+		Mult = 2,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2.5,
+		Mult = 2,
     },
     ["inspect"] = {
         Source = "lookat01",

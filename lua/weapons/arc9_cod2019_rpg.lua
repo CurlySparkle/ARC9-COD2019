@@ -54,8 +54,8 @@ SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets 
 
 --SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
 
-SWEP.ShootPosOffset = Vector(5, 25, -5)
-SWEP.ShootPosOffsetSights = Vector(0, 25, 0)
+SWEP.ShootPosOffset = Vector(5, 15, -5)
+SWEP.ShootPosOffsetSights = Vector(0, 5, 0)
 
 SWEP.PushBackForce = 5
 
@@ -151,8 +151,8 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3, -4, -4),
-    Ang = Angle(-0.6, 3, -5),
+    Pos = Vector(-2.3, -4, -4.4),
+    Ang = Angle(-0.7, 3, -15),
     Magnification = 1.25,
     ViewModelFOV = 56,
     CrosshairInSights = false
@@ -161,7 +161,7 @@ SWEP.IronSights = {
 SWEP.ViewModelFOVBase = 65
 
 SWEP.SprintPos = Vector(0, 0, 0)
-SWEP.SprintAng = Angle(0, -16.5, 0)
+SWEP.SprintAng = Angle(0, -16.0, 0)
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, 0),
@@ -174,20 +174,21 @@ SWEP.MovingMidPoint = {
 }
 
 SWEP.ActivePos = Vector(0, 0, 0)
-SWEP.ActiveAng = Angle(0, -16.5, 0)
+SWEP.ActiveAng = Angle(0, -16.0, 0)
 
 SWEP.ActivePosShooting = Vector(0, 0, 0)
 SWEP.ActiveAngShooting = Angle(0, 0, 0)
 
 SWEP.MovingPos = Vector(0, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, -16.5, 0)
+SWEP.MovingAng = Angle(0, -16.0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, -2, -5)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(17, 35, 3)
+SWEP.CustomizePos = Vector(12, 35, 3)
 SWEP.CustomizeSnapshotFOV = 90
+SWEP.CustomizeRotateAnchor = Vector(13, 0, 0)
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(-5, 25, 3)
 
@@ -233,6 +234,13 @@ SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
 SWEP.EnterSightsSound = "weapons/cod2019/rpg/wfoly_la_rpapa7_ads_up.ogg"
 SWEP.ExitSightsSound = "weapons/cod2019/rpg/wfoly_la_rpapa7_ads_down.ogg"
+
+SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = ""
 
 SWEP.Animations = {
     ["fire"] = {

@@ -42,8 +42,8 @@ SWEP.WorldModelOffset = {
 SWEP.ShootEnt = "arc9_cod2019_proj_strela_default" -- Set to an entity to launch it out of this weapon.
 SWEP.ShootEntForce = 5000
 
-SWEP.ShootPosOffset = Vector(5, 30, -5)
-SWEP.ShootPosOffsetSights = Vector(0, 30, 0)
+SWEP.ShootPosOffset = Vector(5, 10, -5)
+SWEP.ShootPosOffsetSights = Vector(4, 5, -4)
 
 SWEP.PushBackForce = 5
 
@@ -138,11 +138,11 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.23, -4, -1.5),
-    Ang = Angle(-0.6, 3, -5),
+    Pos = Vector(-2.35, -9, 0.1),
+    Ang = Angle(0, 0, 15),
     Magnification = 1.25,
     ViewModelFOV = 56,
-    CrosshairInSights = true
+    CrosshairInSights = false
 }
 
 SWEP.ViewModelFOVBase = 65
@@ -193,7 +193,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_rifle_silenced"
+SWEP.MuzzleParticle = "AC_muzzle_pistol_suppressed"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
@@ -213,13 +213,20 @@ end
 local path = "weapons/cod2019/strela/"
 
 SWEP.ShootSound = "COD2019.Strela.Fire"
-SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
+SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
 SWEP.EnterSightsSound = "weapons/cod2019/strela/weap_la_kgolf_ads_up.ogg"
 SWEP.ExitSightsSound = "weapons/cod2019/strela/weap_la_kgolf_ads_down.ogg"
+
+SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = ""
 
 SWEP.Animations = {
     ["fire"] = {
@@ -231,7 +238,6 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
 		MinProgress = 0.8,
-		Mult = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -364,6 +370,11 @@ SWEP.AttachmentElements = {
             {1,1},
         },
     },
+    ["sights_scope"] = {
+        Bodygroups = {
+            {2,1},
+        },
+    },
 }
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -378,9 +389,9 @@ SWEP.Attachments = {
         Pos = Vector(5, -3.1, 1.9),
         Ang = Angle(0, 0, -90),
         Category = {"cod2019_optic","cod2019_optic_strela"},
-        InstalledElements = {"sights"},
-		Installed = "cod2019_optic_scope_strela",
-		Integral = "cod2019_optic_scope_strela",
+        InstalledElements = {"sights_scope"},
+		--Installed = "cod2019_optic_scope_strela",
+		--Integral = "cod2019_optic_scope_strela",
         CorrectiveAng = Angle(-0.4, 0.4, 0),
     },
     {

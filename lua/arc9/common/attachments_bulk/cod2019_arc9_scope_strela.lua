@@ -24,12 +24,20 @@ ATT.ModelAngleOffset = Angle(0, 0, 90)
 
 ATT.Sights = {
     {
-        Pos = Vector(1.412, 4, -1.23),
+        Pos = Vector(1.42, 6, -1.2),
         Ang = Angle(0, 2, -0),
-        ViewModelFOV = 56,
+        ViewModelFOV = 40,
         Magnification = 1.5,
         IgnoreExtra = true,
 		CrosshairInSights = false
+    },
+    {
+        Pos = Vector(1.42, 6, -1.2),
+        Ang = Angle(0, 2, -0),
+        ViewModelFOV = 40,
+        Magnification = 1.5,
+        IgnoreExtra = true,
+		RTScopeFOV = 25
     },
 }
 
@@ -39,8 +47,8 @@ ATT.RTScopeFOV = 8
 ATT.RTScopeRes = 512
 -- ATT.RTScopeSurface = Material("models/weapons/arc9/mw3/mw3_optics/hamr_lens")
 ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/mk4_crosshair.png", "mips smooth")
-ATT.RTScopeReticleScale = 1
-ATT.RTScopeShadowIntensity = 0
+ATT.RTScopeReticleScale = 1.2
+ATT.RTScopeShadowIntensity = 5
 ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
 

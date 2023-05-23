@@ -1,0 +1,21 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"models/cod2019/strela/lens_d"
+	"$detail"		"models/cod2019/strela/lens_noise"
+	"$detailblendmode" "2"
+	"$detailframe"	"0"
+	"$translucent" 	"1"
+	"$additive"	"1"
+
+	$color2 "[1 0 0]"
+
+	Proxies
+	{
+		TextureScroll
+		{
+			textureScrollVar	$detailtexturetransform
+			textureScrollRate	50
+			textureScrollAngle 	180
+		}
+	}
+}
