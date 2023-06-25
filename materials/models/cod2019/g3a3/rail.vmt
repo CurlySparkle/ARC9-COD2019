@@ -18,7 +18,7 @@
     "$rimmask" "1"
     "$rimlightboost" "1"
 
-    "$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
+    "$phongwarptexture"                 "models\cod2019\shared\steelwarp"
 
     "$normalmapalphaenvmapmask" "1"
     "$envmapfresnel" "1"

@@ -215,12 +215,12 @@ SWEP.Akimbo = true
 
 SWEP.MuzzleParticle = "AC_muzzle_pistol"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
-SWEP.MuzzleEffectQCA = 2
-SWEP.MuzzleEffectQCAEvenShot = 1
-SWEP.CaseEffectQCA = 3
-SWEP.CaseEffectQCAEvenShot = 4
-SWEP.AfterShotQCA = 2
-SWEP.AfterShotQCAEvenShot = 1
+SWEP.MuzzleEffectQCA = 1
+SWEP.MuzzleEffectQCAEvenShot = 2
+SWEP.CaseEffectQCA = 4
+SWEP.CaseEffectQCAEvenShot = 3
+SWEP.AfterShotQCA = 1
+SWEP.AfterShotQCAEvenShot = 2
 
 SWEP.CamQCA = 7
 SWEP.CamQCA_Mult = 1
@@ -389,7 +389,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
         EventTable = {
             {s = path .. "wfoly_pi_papa320_inspect_04.ogg", t = 0/30},
         },
@@ -491,14 +490,14 @@ SWEP.Attachments = {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle_pistols",
-        Bone = "tag_silencer",
+        Bone = "tag_silencer_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
 		Scale = 1,
         DuplicateModels = {
             {
-                Bone = "tag_silencer_l",
+                Bone = "tag_silencer",
             }
         },
     },

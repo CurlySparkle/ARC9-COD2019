@@ -18,6 +18,6 @@
 	"$phongalbedotint" 			"1"
 
      "$normalmapalphaenvmapmask"              "1"
-	"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
+	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
 	"$translucent"					"1"
 }

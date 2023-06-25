@@ -18,7 +18,7 @@
 	"$phongalbedotint" 			"0"
 
      "$normalmapalphaenvmapmask"              "1"
-	"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
+	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
 
 	"$rimlight"					"0"
 	"$rimlightexponent"			"33"

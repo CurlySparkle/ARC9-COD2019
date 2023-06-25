@@ -13,7 +13,7 @@
 	"$phongboost"				"5"
 	"$phongfresnelranges"		"[0.25 0.5 1]"
      "$normalmapalphaenvmapmask"              "1"
-	//"$phongwarptexture"                 "models\weapons\v_arccw_go\atts\steelwarp"
+	//"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
 
 	"$rimlight"					"0"
 	"$rimlightexponent"			"80"	

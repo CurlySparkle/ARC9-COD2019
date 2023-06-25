@@ -173,17 +173,17 @@ SWEP.Animations = {
     ["backstab"] = {
         Source = "backstab"
     },
-    ["idle_sprint"] = {
-        Source = "sprint",
-    },
-    ["enter_sprint"] = {
-        Source = "idle",
-        Time = 1.5,
-    },
-    ["exit_sprint"] = {
-        Source = "idle",
-        Time = 1.5,
-    },
+    -- ["idle_sprint"] = {
+        -- Source = "sprint",
+    -- },
+    -- ["enter_sprint"] = {
+        -- Source = "idle",
+        -- Time = 1.5,
+    -- },
+    -- ["exit_sprint"] = {
+        -- Source = "idle",
+        -- Time = 1.5,
+    -- },
     ["inspect"] = {
         Source = "lookat01",
         MinProgress = 0.1,

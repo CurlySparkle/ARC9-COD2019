@@ -229,6 +229,7 @@ SWEP.Akimbo = true
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/357/"
+local path2 = "weapons/cod2019/50gs/"
 
 SWEP.ShootSound = "COD2019.357.Fire"
 SWEP.ShootSoundSilenced = "COD2019.357.Silenced_Fire"
@@ -251,9 +252,12 @@ SWEP.HideBones = {
 	[8] = "j_b_loader",
 }
 
-SWEP.TriggerDelay = 0.05 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
+SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg"
+SWEP.TriggerUpSound = ""
 
 SWEP.Animations = {
     ["fire_left"] = {

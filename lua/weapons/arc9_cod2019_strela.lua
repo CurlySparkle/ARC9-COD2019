@@ -43,7 +43,7 @@ SWEP.ShootEnt = "arc9_cod2019_proj_strela_default" -- Set to an entity to launch
 SWEP.ShootEntForce = 5000
 
 SWEP.ShootPosOffset = Vector(5, 10, -5)
-SWEP.ShootPosOffsetSights = Vector(4, 5, -4)
+SWEP.ShootPosOffsetSights = Vector(5, 10, -5)
 
 SWEP.PushBackForce = 5
 
@@ -74,7 +74,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 3
+SWEP.Recoil = 2
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 3 -- Multiplier for vertical recoil
@@ -92,20 +92,24 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 10 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 3
 
 SWEP.RecoilMultCrouch = 0.9
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 5
-SWEP.VisualRecoilUp = 5
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 20
+SWEP.VisualRecoilPunch = 3
+SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = -1/6
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0
-SWEP.SpreadAddRecoil = 0.03
+SWEP.SpreadAddRecoil = 0
 
 SWEP.SpreadMultSights = 0
 SWEP.SpreadAddHipFire = 0
@@ -121,14 +125,14 @@ SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire
 SWEP.Sway = 0 -- How much the gun sways.
 
 SWEP.AimDownSightsTime = 0.8 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.4 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.7
+SWEP.PostBashTime = 0.6
 
 -------------------------- TRACERS
 

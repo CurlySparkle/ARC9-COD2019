@@ -61,9 +61,9 @@ SWEP.ThrowAnimSpeed = 1
 
 SWEP.FuseTimer = 3 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
 
-SWEP.ThrowForceMin = 550 -- Minimum force that the grenade will be thrown with.
+SWEP.ThrowForceMin = 1000 -- Minimum force that the grenade will be thrown with.
 SWEP.ThrowForceMax = 1000 -- Maximum force that the grenade will be thrown with.
-SWEP.TossForce = 500 -- Force that the grenade will be thrown with when right clicked.
+SWEP.TossForce = 1000 -- Force that the grenade will be thrown with when right clicked.
 
 SWEP.ThrowChargeTime = 1 -- How long it takes to charge the grenade to its maximum throw force.
 
@@ -78,7 +78,7 @@ SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, -5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -131,13 +131,14 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-    ["idle_primed"] = {
-        Source = "idle_primed"
-    },
+    -- ["idle_primed"] = {
+        -- Source = "idle_primed"
+    -- },
     ["draw"] = {
         Source = "draw",
         EventTable = {
             {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
+            {s = path .. "grenade_pin_frag_01.ogg", t = 0/30},
         },
     },
     ["holster"] = {
@@ -146,39 +147,39 @@ SWEP.Animations = {
             {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
         },
     },
-    ["pullpin"] = {
-        Source = "pullpin",
-        MinProgress = 0.666,
-        FireASAP = true,
-		Mult = 1.5,
-        EventTable = {
-            {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
-            {s = path .. "grenade_pin_frag_01.ogg", t = 0/30},
-        },
-    },
+    -- ["pullpin"] = {
+        -- Source = "pullpin",
+        -- MinProgress = 0.666,
+        -- FireASAP = true,
+		-- Mult = 1.5,
+        -- EventTable = {
+            -- {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
+            -- {s = path .. "grenade_pin_frag_01.ogg", t = 0/30},
+        -- },
+    -- },
     ["throw"] = {
         Source = "throw",
         EventTable = {
             {s = path .. "grenade_frag_throw.ogg", t = 0/30},
         },
-        MinProgress = 0.4
+        MinProgress = 0.5
     },
     ["toss"] = {
         Source = "underhand",
         EventTable = {
             {s = path .. "grenade_frag_throw.ogg", t = 0/30},
         },
-        MinProgress = 0.4
+        MinProgress = 0.5
     },
-    ["idle_sprint"] = {
-        Source = "sprint",
-    },
-    ["enter_sprint"] = {
-        Source = "sprint_in",
-    },
-    ["exit_sprint"] = {
-        Source = "sprint_out",
-    },
+    -- ["idle_sprint"] = {
+        -- Source = "sprint",
+    -- },
+    -- ["enter_sprint"] = {
+        -- Source = "sprint_in",
+    -- },
+    -- ["exit_sprint"] = {
+        -- Source = "sprint_out",
+    -- },
 }
 
 -------------------------- ATTACHMENTS
