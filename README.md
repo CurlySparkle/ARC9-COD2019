@@ -7,3 +7,5 @@ https://github.com/CurlySparkle/ARC9-GSR
 If you want to make any improvements or better changes on the balance you can do so by doing a PR. (Pull Request)
 
 As obvious this requires ARC9 to use these goodies that you can download here: https://github.com/HaodongMo/ARC-9
+
+Attachments pack for this https://github.com/CurlySparkle/ARC9_Cod2019_Shared
