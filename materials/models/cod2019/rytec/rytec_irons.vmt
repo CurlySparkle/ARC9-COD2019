@@ -1,9 +1,9 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/cod2019/spr208/spr208_boltknob"
-	"$bumpmap"					"models/cod2019/spr208/spr208_boltknob_n"
-	"$phongexponenttexture"		"models/cod2019/spr208/spr208_boltknob_exp"
-	"$color2"					"[0.2 0.2 0.2]"
+	"$basetexture"				"models/cod2019/rytec/rytec_irons"
+	"$bumpmap"					"models/cod2019/rytec/rytec_irons_n"
+	"$phongexponenttexture"		"models/cod2019/rytec/rytec_irons_exp"
+	"$color2"					"[0.8 0.8 0.8]"
 	"$blendTintByBaseAlpha"		"1"
 
 	"$envmap"					"env_cubemap"

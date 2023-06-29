@@ -72,7 +72,7 @@ SWEP.ClipSize = 25 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -314,6 +314,44 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_victor_reload_end.ogg", t = 72/30},
         },
     },
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_victor_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_arm.ogg", t = 22/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_rotate.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_maghit.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_magin_01.ogg", t = 49/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_magin_02.ogg", t = 56/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_charge.ogg", t = 72/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_end.ogg", t = 87/30},
+        },
+    },
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
@@ -352,8 +390,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_victor_reload_empty_end.ogg", t = 52/30},
         },
     },
-    ["reload_empty"] = {
-        Source = "reload",
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.8,
         IKTimeLine = {
@@ -384,10 +422,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_victor_reload_empty_arm.ogg", t = 22/30},
 			{s = path .. "wfoly_sm_victor_reload_empty_rotate.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_victor_reload_empty_maghit.ogg", t = 40/30},
-			{s = path .. "wfoly_sm_victor_reload_empty_magin_01.ogg", t = 49/30},
-			{s = path .. "wfoly_sm_victor_reload_empty_magin_02.ogg", t = 56/30},
-			{s = path .. "wfoly_sm_victor_reload_empty_charge.ogg", t = 72/30},
-			{s = path .. "wfoly_sm_victor_reload_empty_end.ogg", t = 87/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_magin_01.ogg", t = 42/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_magin_02.ogg", t = 43/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_slap.ogg", t = 53/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_end.ogg", t = 55/30},
         },
     },
     ["ready"] = {
@@ -514,8 +552,8 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
@@ -532,9 +570,14 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["mag_none"] = {
+    ["ammo_extend"] = {
         Bodygroups = {
             {1,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
+            {1,2},
         },
     },
     ["muzzle_none"] = {
@@ -550,6 +593,11 @@ SWEP.AttachmentElements = {
     ["stock_none"] = {
         Bodygroups = {
             {4,1},
+        },
+    },
+    ["rail_laser"] = {
+        Bodygroups = {
+            {5,1},
         },
     },
 }
@@ -590,11 +638,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_alt",
         Bone = "tag_laser_attach",
-        Pos = Vector(1, -0.8, -1),
+        Pos = Vector(0.5, -0.62, -0.96),
         Ang = Angle(0, 0, -90),
-		--InstalledElements = {"rail_laser"},
+		InstalledElements = {"rail_laser"},
     },
     {
         PrintName = "Grips",

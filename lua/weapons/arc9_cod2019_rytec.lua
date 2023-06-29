@@ -79,7 +79,7 @@ SWEP.ClipSize = 5 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -162,9 +162,9 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-4.84, -9, 2.15),
-    Ang = Angle(1.1, -3, 0),
-    Magnification = 1.15,
+    Pos = Vector(-3.53, 0, 0.8),
+    Ang = Angle(0.5, 1.3, -2),
+    Magnification = 1.19,
     ViewModelFOV = 56,
 	CrosshairInSights = false
 }
@@ -608,6 +608,21 @@ SWEP.AttachmentElements = {
             {4,1},
         },
     },
+    ["rail_grip"] = {
+        Bodygroups = {
+            {6,1},
+        },
+    },
+    ["rail_laser"] = {
+        Bodygroups = {
+            {7,1},
+        },
+    },
+    ["sights_none"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -632,26 +647,28 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_optic_rytec"},
         CorrectiveAng = Angle(1.5, 0.6, 0),
-		Installed = "cod2019_optic_scope_rytec",
-        Integral = "cod2019_optic_scope_rytec",
+		--Installed = "cod2019_optic_scope_rytec",
+        --Integral = "cod2019_optic_scope_rytec",
+		InstalledElements = {"sights_none"},
     },
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"muzzle","muzzle_snipers"},
+        Category = {"cod2019_muzzle","cod2019_muzzle_shot"},
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle",},
-		Scale = 1,
+		Scale = 1.1,
     },
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_attachments",
-        Pos = Vector(19.3, 1, 0.9),
-        Ang = Angle(0, 0, -130),
+        Pos = Vector(22.8, 1.32, 0.15),
+        Ang = Angle(0, 0, -90),
+		InstalledElements = {"rail_laser",},
     },
     {
         PrintName = "Grips",
@@ -661,6 +678,7 @@ SWEP.Attachments = {
         Pos = Vector(18.7, 0.11, -1.2),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
+		InstalledElements = {"rail_grip",},
     },
     {
         PrintName = "Stock",

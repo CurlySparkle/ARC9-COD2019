@@ -516,11 +516,11 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_scope",
-        Pos = Vector(-2.5, 0, -0.2),
+        Pos = Vector(-3.2, 0, 0),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optics_pistols_alt","eft_optic_small"},
         CorrectiveAng = Angle(0, 0, 0),
-		Scale = 0.8,
+		Scale = 1,
         DuplicateModels = {
             {
                 Bone = "tag_scope_l",

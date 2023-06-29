@@ -78,7 +78,7 @@ SWEP.ClipSize = 8 -- Self-explanatory.
 SWEP.SupplyLimit = 8 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -300,8 +300,187 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_pull.ogg", t = 51/30},
         },
     },
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.9,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_01.ogg", t = 29/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_02.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_hands.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_tilt.ogg", t = 53/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_charge_01.ogg", t = 74/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 87/30},
+        },
+    },
     ["reload_fast"] = {
         Source = "reload_fast",
+		MinProgress = 0.8,
+		Mult = 0.9,
+		--DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_01.ogg", t = 26/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 48/30},
+        },
+    },
+    ["reload_empty_fast"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_01.ogg", t = 29/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_02.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_hands.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_tilt.ogg", t = 53/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_charge_01.ogg", t = 74/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 87/30},
+        },
+    },
+    ["reload_drum"] = {
+        Source = "reload_drum",
+		MinProgress = 0.8,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_oscar12_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_magout_01.ogg", t = 18/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_magin_v2_01.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_end.ogg", t = 49/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_pull.ogg", t = 51/30},
+        },
+    },
+    ["reload_drum_empty"] = {
+        Source = "reload_empty_drum",
+		MinProgress = 0.9,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_01.ogg", t = 29/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_02.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_hands.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_tilt.ogg", t = 53/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_charge_01.ogg", t = 74/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 87/30},
+        },
+    },
+    ["reload_drum_fast"] = {
+        Source = "reload_drum_fast",
 		MinProgress = 0.8,
 		Mult = 0.9,
 		DropMagAt = 0.7,
@@ -334,9 +513,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 48/30},
         },
     },
-    ["reload_empty"] = {
-        Source = "reload",
+    ["reload_drum_empty_fast"] = {
+        Source = "reload_empty_drum_fast",
 		MinProgress = 0.9,
+		DropMagAt = 0.7,
         IKTimeLine = {
             {
                 t = 0,
@@ -478,17 +658,47 @@ SWEP.Animations = {
     },
 }
 
---SWEP.Hook_Think	= ARC9.CSGO.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights
 
 -------------------------- ATTACHMENTS
+
+-- SWEP.Hook_TranslateAnimation = function (wep, anim)
+    -- --local attached = self:GetElements()
+
+    -- if anim == "reload" and wep:HasElement("perk_speedreload") then
+        -- return "reload_fast"
+    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        -- return "reload_fast_empty"
+    -- end
+-- end
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        return "reload_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend_drum") then
+        return "reload_drum_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend_drum") then 
+        return "reload_drum_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("ammo_extend_drum") then 
+        return "reload_drum"
+    elseif anim == "reload_empty" and wep:HasElement("ammo_extend_drum") then 
+        return "reload_drum_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("ammo_extend") then 
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_empty"
     end
 end
 
@@ -540,9 +750,9 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
     {
-        PrintName = "tag_holo",
+        PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(3, 0, 0),
+        Pos = Vector(1.5, 0, 0),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -589,7 +799,7 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Stock",
         Category = {"csgo_stock","cod2019_stocks"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(2.2, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_none"},
 		Scale = 1,

@@ -652,9 +652,9 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"muzzle_shotgun","muzzle"},
+        Category = "cod2019_muzzle",
         Bone = "tag_silencer",
-        Pos = Vector(-0.23, 0, 0),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
 		Scale = 1,
@@ -668,7 +668,7 @@ SWEP.Attachments = {
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight_none"},
 		Installed = "cod2019_optic_scope_spr208",
-        Integral = "cod2019_optic_scope_spr208",
+        --Integral = "cod2019_optic_scope_spr208",
     },
     {
         PrintName = "Tactical",

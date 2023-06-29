@@ -7,7 +7,6 @@ SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Submachine Guns"
 
 SWEP.PrintName = "Striker 45"
-SWEP.TrueName = "H&K UMP45"
 
 SWEP.Class = "Submachine Gun"
 SWEP.Trivia = {
