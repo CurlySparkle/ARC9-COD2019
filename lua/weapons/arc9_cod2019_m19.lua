@@ -590,16 +590,20 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac_pistols",
+        Category = {"cod2019_tac_pistols","cod2019_grip_pistols"},
         Bone = "tag_laser_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
+		RejectAttachments = { 
+		["csgo_cod2019_angled"] = true,
+		["csgo_cod2019_angled_tactical"] = true 
+		},
     },
     {
         PrintName = "Grip",
         DefaultAttName = "Default",
-        Category = "cod2019_grip",
+        Category = "cod2019_grip_m19",
         Bone = "tag_stock_attach",
         Pos = Vector(-2.8, 0, 0.2),
         Ang = Angle(0, 0, 180),

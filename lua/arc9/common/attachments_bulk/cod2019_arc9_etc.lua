@@ -47,6 +47,38 @@ ATT.Attachments = {
 }
 
 ARC9.LoadAttachment(ATT, "cod2019_attach_custom_laser_pstl")
+------------------------------------------------------------------ GRIPS
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = [[Grip]]
+ATT.CompactName = [[Grip Support]]
+ATT.Description = [[Lets you use grips on your pistols. (Why? i dunno but it looks cool???)]]
+--ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
+
+ATT.SortOrder = 1
+ATT.AutoStats = true
+ATT.Category = "cod2019_grip_pistols"
+ATT.Folder = "Grips"
+
+--ATT.Model = "models/weapons/cod2019/attachs/silencers/attachment_vm_sh_oscar12_silencer03.mdl"
+
+ATT.Attachments = {
+    {
+        PrintName = "Grip",
+        Pos = Vector(-0.2, 0, 0.05),
+        Ang = Angle(0, 0, 180),
+        Icon_Offset = Vector(0, 0, 0),
+        Category = "cod2019_grip",
+		Scale = 1,
+		RejectAttachments = { 
+		["csgo_cod2019_angled"] = true,
+		["csgo_cod2019_angled_tactical"] = true 
+		},
+    }
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_attach_grip_support")
 ------------------------------------------------------------------ OPTICS
 ATT = {}
 
