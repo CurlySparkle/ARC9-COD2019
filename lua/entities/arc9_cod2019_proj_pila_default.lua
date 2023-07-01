@@ -1,11 +1,12 @@
-ENT.Type 				= "anim"
-ENT.Base 				= "arc9_cod2019_proj_base"
-ENT.PrintName 			= "Base Projectile"
+AddCSLuaFile()
 
-ENT.Spawnable 			= false
+ENT.Type = "anim"
+ENT.Base = "arc9_cod2019_proj_base"
+ENT.PrintName = "PILA Rocket"
+
+ENT.Spawnable = false
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
-AddCSLuaFile()
 
 if CLIENT then
     killicon.Add( "arc9_cod2019_proj_pila_default", "hud/killicons/default", Color( 255, 255, 255, 255 ) )

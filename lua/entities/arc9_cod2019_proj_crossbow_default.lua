@@ -1,3 +1,5 @@
+AddCSLuaFile()
+
 ENT.Type = "anim"
 ENT.Base = "base_anim"
 ENT.PrintName = "Normal Bolt"
@@ -13,7 +15,6 @@ if CLIENT then
 end
 
 if SERVER then
-    AddCSLuaFile()
 
     function ENT:Initialize()
         self:SetModel(self.Model)

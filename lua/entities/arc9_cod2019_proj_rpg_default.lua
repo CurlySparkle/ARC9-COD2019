@@ -1,17 +1,14 @@
+AddCSLuaFile()
+
+ENT.Type = "anim"
+ENT.Base = "arc9_cod2019_proj_base"
+ENT.PrintName = "RPG-7 Rocket"
+ENT.Spawnable = false
+
+
 if CLIENT then
     killicon.Add( "arc9_cod2019_proj_rpg_default", "hud/killicons/default", Color( 255, 255, 255, 255 ) )
 end
-
-ENT.Type 				= "anim"
-ENT.Base 				= "base_entity"
-ENT.PrintName 			= "RPG-7 Round"
-ENT.Author 				= ""
-ENT.Information 		= ""
-
-ENT.Spawnable 			= false
-
-
-AddCSLuaFile()
 
 ENT.Model = "models/weapons/cod2019/mags/w_eq_rpg_rocket.mdl"
 ENT.Ticks = 0

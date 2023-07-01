@@ -1,5 +1,7 @@
-ENT.Base 				= "arc9_cod2019_proj_crossbow_default"
-ENT.PrintName 			= "Explosive Crossbow Bolt"
+AddCSLuaFile()
+
+ENT.Base = "arc9_cod2019_proj_crossbow_default"
+ENT.PrintName = "Explosive Crossbow Bolt"
 
 DEFINE_BASECLASS(ENT.Base)
 
@@ -13,7 +15,6 @@ if CLIENT then
 end
 
 if SERVER then
-    AddCSLuaFile()
 
     function ENT:PhysicsCollide(data, physobj)
         if self.Stuck then return end
