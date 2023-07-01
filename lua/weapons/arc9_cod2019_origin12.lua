@@ -370,7 +370,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 48/30},
         },
     },
-    ["reload_empty_fast"] = {
+    ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.7,
@@ -391,7 +391,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
