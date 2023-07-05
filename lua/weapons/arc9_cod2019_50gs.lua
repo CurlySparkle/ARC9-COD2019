@@ -88,7 +88,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.5
+SWEP.Recoil = 3
 
 --SWEP.RecoilSeed = nil
 
@@ -103,7 +103,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.1
 
-SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 55 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
@@ -120,7 +120,7 @@ SWEP.RecoilMultSights = 1
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 1.5
+SWEP.VisualRecoilUp = 2
 
 -------------------------- SPREAD
 
@@ -240,6 +240,9 @@ local path = "weapons/cod2019/50gs/"
 
 SWEP.ShootSound = "COD2019.50Gs.Fire"
 SWEP.ShootSoundSilenced = "COD2019.50Gs.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.50Gs.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.50Gs.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.Deagle.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
 

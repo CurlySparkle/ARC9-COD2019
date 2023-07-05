@@ -29,6 +29,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.MG34.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,115},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/mg34/weap_mgolf34_fire_plr_inside_01.ogg",
+        "weapons/cod2019/mg34/weap_mgolf34_fire_plr_inside_02.ogg",
+        "weapons/cod2019/mg34/weap_mgolf34_fire_plr_inside_03.ogg",
+        "weapons/cod2019/mg34/weap_mgolf34_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.MG34.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,115},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/mg34/weap_mgolf34_fire_silenced_plr_inside_01.ogg",
+        "weapons/cod2019/mg34/weap_mgolf34_fire_silenced_plr_inside_02.ogg",
+        "weapons/cod2019/mg34/weap_mgolf34_fire_silenced_plr_inside_03.ogg",
+        "weapons/cod2019/mg34/weap_mgolf34_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.RAAL.Fire",
     channel = 138,
     volume = 1.0,
@@ -55,6 +85,36 @@ sound.Add( {
         "weapons/cod2019/raal/weap_slima_fire_silenced_plr_02.ogg",
         "weapons/cod2019/raal/weap_slima_fire_silenced_plr_03.ogg",
         "weapons/cod2019/raal/weap_slima_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.RAAL.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,115},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/raal/weap_slima_fire_plr_inside_01.ogg",
+        "weapons/cod2019/raal/weap_slima_fire_plr_inside_02.ogg",
+        "weapons/cod2019/raal/weap_slima_fire_plr_inside_03.ogg",
+        "weapons/cod2019/raal/weap_slima_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.RAAL.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,115},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/raal/weap_slima_fire_silenced_plr_inside_01.ogg",
+        "weapons/cod2019/raal/weap_slima_fire_silenced_plr_inside_02.ogg",
+        "weapons/cod2019/raal/weap_slima_fire_silenced_plr_inside_03.ogg",
+        "weapons/cod2019/raal/weap_slima_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -89,6 +149,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.PKM.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,115},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/pkm/weap_pkilo_fire_plr_inside_01.ogg",
+        "weapons/cod2019/pkm/weap_pkilo_fire_plr_inside_02.ogg",
+        "weapons/cod2019/pkm/weap_pkilo_fire_plr_inside_03.ogg",
+        "weapons/cod2019/pkm/weap_pkilo_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.PKM.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,115},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/pkm/weap_pkilo_fire_silenced_plr_inside_01.ogg",
+        "weapons/cod2019/pkm/weap_pkilo_fire_silenced_plr_inside_02.ogg",
+        "weapons/cod2019/pkm/weap_pkilo_fire_silenced_plr_inside_03.ogg",
+        "weapons/cod2019/pkm/weap_pkilo_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.M91.Fire",
     channel = 138,
     volume = 1.0,
@@ -115,6 +205,37 @@ sound.Add( {
         "weapons/cod2019/m91/weap_kilo121_fire_silenced_plr_02.ogg",
         "weapons/cod2019/m91/weap_kilo121_fire_silenced_plr_03.ogg",
         "weapons/cod2019/m91/weap_kilo121_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.M91.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,115},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m91/weap_kilo121_fire_plr_inside_01.ogg",
+        "weapons/cod2019/m91/weap_kilo121_fire_plr_inside_02.ogg",
+        "weapons/cod2019/m91/weap_kilo121_fire_plr_inside_03.ogg",
+        "weapons/cod2019/m91/weap_kilo121_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.M91.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,115},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m91/weap_kilo121_fire_silenced_plr_inside_01.ogg",
+        "weapons/cod2019/m91/weap_kilo121_fire_silenced_plr_inside_02.ogg",
+        "weapons/cod2019/m91/weap_kilo121_fire_silenced_plr_inside_03.ogg",
+        "weapons/cod2019/m91/weap_kilo121_fire_silenced_plr_inside_04.ogg",
+        "weapons/cod2019/m91/weap_kilo121_fire_silenced_plr_inside_05.ogg",
     }
 } )
 
@@ -149,6 +270,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.G3A3.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/g3a3/weap_g3a3_plr_inside_01.ogg",
+        "weapons/cod2019/g3a3/weap_g3a3_plr_inside_02.ogg",
+        "weapons/cod2019/g3a3/weap_g3a3_plr_inside_03.ogg",
+        "weapons/cod2019/g3a3/weap_g3a3_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.G3A3.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/g3a3/weap_g3a3_sup_plr_inside_01.ogg",
+        "weapons/cod2019/g3a3/weap_g3a3_sup_plr_inside_01.ogg",
+        "weapons/cod2019/g3a3/weap_g3a3_sup_plr_inside_01.ogg",
+        "weapons/cod2019/g3a3/weap_g3a3_sup_plr_inside_01.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Sykov.Fire",
     channel = 138,
     volume = 1.0,
@@ -175,6 +326,36 @@ sound.Add( {
 		"weapons/cod2019/sykov/weap_mike_fire_silenced_bang_plr_02.ogg",
 		"weapons/cod2019/sykov/weap_mike_fire_silenced_bang_plr_03.ogg",
 		"weapons/cod2019/sykov/weap_mike_fire_silenced_bang_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Sykov.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/sykov/weap_mike_fire_bang_plr_inside_01.ogg",
+		"weapons/cod2019/sykov/weap_mike_fire_bang_plr_inside_02.ogg",
+		"weapons/cod2019/sykov/weap_mike_fire_bang_plr_inside_03.ogg",
+		"weapons/cod2019/sykov/weap_mike_fire_bang_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Sykov.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/sykov/weap_mike_fire_silenced_bang_plr_inside_01.ogg",
+		"weapons/cod2019/sykov/weap_mike_fire_silenced_bang_plr_inside_02.ogg",
+		"weapons/cod2019/sykov/weap_mike_fire_silenced_bang_plr_inside_03.ogg",
+		"weapons/cod2019/sykov/weap_mike_fire_silenced_bang_plr_inside_04.ogg",
     }
 } )
 
@@ -209,6 +390,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.X16.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/x16/weap_golf21_fire_plr_inside_01.ogg",
+		"weapons/cod2019/x16/weap_golf21_fire_plr_inside_02.ogg",
+		"weapons/cod2019/x16/weap_golf21_fire_plr_inside_03.ogg",
+		"weapons/cod2019/x16/weap_golf21_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.X16.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/x16/weap_golf21_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/x16/weap_golf21_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/x16/weap_golf21_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/x16/weap_golf21_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Renetti.Fire",
     channel = 138,
     volume = 1.0,
@@ -235,6 +446,36 @@ sound.Add( {
 		"weapons/cod2019/renetti/weap_mike9a3_fire_silenced_bang_plr_02.ogg",
 		"weapons/cod2019/renetti/weap_mike9a3_fire_silenced_bang_plr_03.ogg",
 		"weapons/cod2019/renetti/weap_mike9a3_fire_silenced_bang_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Renetti.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/renetti/weap_mike9a3_fire_bang_plr_inside_01.ogg",
+		"weapons/cod2019/renetti/weap_mike9a3_fire_bang_plr_inside_02.ogg",
+		"weapons/cod2019/renetti/weap_mike9a3_fire_bang_plr_inside_03.ogg",
+		"weapons/cod2019/renetti/weap_mike9a3_fire_bang_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Renetti.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/renetti/weap_mike9a3_fire_silenced_bang_plr_inside_01.ogg",
+		"weapons/cod2019/renetti/weap_mike9a3_fire_silenced_bang_plr_inside_02.ogg",
+		"weapons/cod2019/renetti/weap_mike9a3_fire_silenced_bang_plr_inside_03.ogg",
+		"weapons/cod2019/renetti/weap_mike9a3_fire_silenced_bang_plr_inside_04.ogg",
     }
 } )
 
@@ -269,6 +510,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.M1911.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m1911/weap_mike1911_fire_plr_inside_01.ogg",
+		"weapons/cod2019/m1911/weap_mike1911_fire_plr_inside_02.ogg",
+		"weapons/cod2019/m1911/weap_mike1911_fire_plr_inside_03.ogg",
+		"weapons/cod2019/m1911/weap_mike1911_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.M1911.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m1911/weap_mike1911_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/m1911/weap_mike1911_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/m1911/weap_mike1911_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/m1911/weap_mike1911_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.357.Fire",
     channel = 138,
     volume = 1.0,
@@ -295,6 +566,36 @@ sound.Add( {
 		"weapons/cod2019/357/weap_cpapa_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/357/weap_cpapa_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/357/weap_cpapa_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.357.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/357/weap_cpapa_fire_plr_inside_01.ogg",
+		"weapons/cod2019/357/weap_cpapa_fire_plr_inside_02.ogg",
+		"weapons/cod2019/357/weap_cpapa_fire_plr_inside_03.ogg",
+		"weapons/cod2019/357/weap_cpapa_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.357.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/357/weap_cpapa_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/357/weap_cpapa_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/357/weap_cpapa_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/357/weap_cpapa_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -329,6 +630,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.50GS.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/50gs/weap_decho_fire_plr_inside_01.ogg",
+		"weapons/cod2019/50gs/weap_decho_fire_plr_inside_02.ogg",
+		"weapons/cod2019/50gs/weap_decho_fire_plr_inside_03.ogg",
+		"weapons/cod2019/50gs/weap_decho_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.50GS.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/50gs/weap_decho_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/50gs/weap_decho_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/50gs/weap_decho_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/50gs/weap_decho_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.M19.Fire",
     channel = 138,
     volume = 1.0,
@@ -355,6 +686,36 @@ sound.Add( {
 		"weapons/cod2019/m19/weap_papa320_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/m19/weap_papa320_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/m19/weap_papa320_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.M19.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m19/weap_papa320_fire_plr_inside_01.ogg",
+		"weapons/cod2019/m19/weap_papa320_fire_plr_inside_02.ogg",
+		"weapons/cod2019/m19/weap_papa320_fire_plr_inside_03.ogg",
+		"weapons/cod2019/m19/weap_papa320_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.M19.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m19/weap_papa320_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/m19/weap_papa320_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/m19/weap_papa320_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/m19/weap_papa320_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -389,6 +750,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.SA87.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/sa87/weap_l86_fire_plr_inside_01.ogg",
+		"weapons/cod2019/sa87/weap_l86_fire_plr_inside_02.ogg",
+		"weapons/cod2019/sa87/weap_l86_fire_plr_inside_03.ogg",
+		"weapons/cod2019/sa87/weap_l86_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.SA87.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/sa87/weap_l86_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/sa87/weap_l86_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/sa87/weap_l86_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/sa87/weap_l86_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Holger.Fire",
     channel = 138,
     volume = 1.0,
@@ -412,9 +803,39 @@ sound.Add( {
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
         "weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_01.ogg",
-		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_01.ogg",
-		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_01.ogg",
-		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_01.ogg",
+		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_02.ogg",
+		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_03.ogg",
+		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Holger.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/holger/weap_mgolf36_fire_plr_inside_01.ogg",
+		"weapons/cod2019/holger/weap_mgolf36_fire_plr_inside_02.ogg",
+		"weapons/cod2019/holger/weap_mgolf36_fire_plr_inside_03.ogg",
+		"weapons/cod2019/holger/weap_mgolf36_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Holger.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_01.ogg",
+		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_02.ogg",
+		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_03.ogg",
+		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_04.ogg",
     }
 } )
 
@@ -449,6 +870,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.FiNN.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/finn/weap_sierrax_fire_plr_inside_01.ogg",
+		"weapons/cod2019/finn/weap_sierrax_fire_plr_inside_02.ogg",
+		"weapons/cod2019/finn/weap_sierrax_fire_plr_inside_03.ogg",
+		"weapons/cod2019/finn/weap_sierrax_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.FiNN.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/finn/weap_sierrax_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/finn/weap_sierrax_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/finn/weap_sierrax_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/finn/weap_sierrax_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.BruenMk9.Fire",
     channel = 138,
     volume = 1.0,
@@ -475,6 +926,36 @@ sound.Add( {
 		"weapons/cod2019/bruenmk9/weap_mkilo3_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/bruenmk9/weap_mkilo3_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/bruenmk9/weap_mkilo3_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.BruenMk9.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/bruenmk9/weap_mkilo3_fire_plr_inside_01.ogg",
+		"weapons/cod2019/bruenmk9/weap_mkilo3_fire_plr_inside_02.ogg",
+		"weapons/cod2019/bruenmk9/weap_mkilo3_fire_plr_inside_03.ogg",
+		"weapons/cod2019/bruenmk9/weap_mkilo3_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.BruenMk9.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/bruenmk9/weap_mkilo3_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/bruenmk9/weap_mkilo3_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/bruenmk9/weap_mkilo3_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/bruenmk9/weap_mkilo3_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -509,6 +990,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.SKS.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/sks/weap_sksierra_fire_bang_plr_inside_01.ogg",
+		"weapons/cod2019/sks/weap_sksierra_fire_bang_plr_inside_01.ogg",
+		"weapons/cod2019/sks/weap_sksierra_fire_bang_plr_inside_01.ogg",
+		"weapons/cod2019/sks/weap_sksierra_fire_bang_plr_inside_01.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.SKS.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/sks/weap_sksierra_fire_silenced_bang_plr_inside_01.ogg",
+		"weapons/cod2019/sks/weap_sksierra_fire_silenced_bang_plr_inside_01.ogg",
+		"weapons/cod2019/sks/weap_sksierra_fire_silenced_bang_plr_inside_01.ogg",
+		"weapons/cod2019/sks/weap_sksierra_fire_silenced_bang_plr_inside_01.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.MK2.Fire",
     channel = 138,
     volume = 1.0,
@@ -535,6 +1046,36 @@ sound.Add( {
 		"weapons/cod2019/mk2/weap_sbeta_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/mk2/weap_sbeta_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/mk2/weap_sbeta_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.MK2.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/mk2/weap_sbeta_fire_plr_inside_01.ogg",
+		"weapons/cod2019/mk2/weap_sbeta_fire_plr_inside_02.ogg",
+		"weapons/cod2019/mk2/weap_sbeta_fire_plr_inside_03.ogg",
+		"weapons/cod2019/mk2/weap_sbeta_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.MK2.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/mk2/weap_sbeta_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/mk2/weap_sbeta_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/mk2/weap_sbeta_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/mk2/weap_sbeta_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -599,6 +1140,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Kar98k.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/kar98k/weap_kilo98_fire_plr_inside_01.ogg",
+		"weapons/cod2019/kar98k/weap_kilo98_fire_plr_inside_02.ogg",
+		"weapons/cod2019/kar98k/weap_kilo98_fire_plr_inside_03.ogg",
+		"weapons/cod2019/kar98k/weap_kilo98_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Kar98k.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/kar98k/weap_kilo98_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/kar98k/weap_kilo98_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/kar98k/weap_kilo98_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/kar98k/weap_kilo98_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Kar98k.ShellIn",
     channel = CHAN_AUTO,
     volume = 1.0,
@@ -643,6 +1214,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.SPR208.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/spr208/weap_romeo700_fire_bang_plr_inside_01.ogg",
+		"weapons/cod2019/spr208/weap_romeo700_fire_bang_plr_inside_02.ogg",
+		"weapons/cod2019/spr208/weap_romeo700_fire_bang_plr_inside_03.ogg",
+		"weapons/cod2019/spr208/weap_romeo700_fire_bang_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.SPR208.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/spr208/weap_romeo700_fire_silenced_bang_plr_inside_01.ogg",
+		"weapons/cod2019/spr208/weap_romeo700_fire_silenced_bang_plr_inside_02.ogg",
+		"weapons/cod2019/spr208/weap_romeo700_fire_silenced_bang_plr_inside_03.ogg",
+		"weapons/cod2019/spr208/weap_romeo700_fire_silenced_bang_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.M14.Fire",
     channel = 138,
     volume = 1.0,
@@ -673,6 +1274,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.M14.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m14/weap_mike14_fire_plr_inside_01.ogg",
+		"weapons/cod2019/m14/weap_mike14_fire_plr_inside_02.ogg",
+		"weapons/cod2019/m14/weap_mike14_fire_plr_inside_03.ogg",
+		"weapons/cod2019/m14/weap_mike14_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.M14.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m14/weap_mike14_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/m14/weap_mike14_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/m14/weap_mike14_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/m14/weap_mike14_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.HDR.Fire",
     channel = 138,
     volume = 1.0,
@@ -699,6 +1330,36 @@ sound.Add( {
 		"weapons/cod2019/hdr/weap_hdromeo_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/hdr/weap_hdromeo_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/hdr/weap_hdromeo_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.HDR.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/hdr/weap_hdromeo_fire_plr_inside_01.ogg",
+        "weapons/cod2019/hdr/weap_hdromeo_fire_plr_inside_02.ogg",
+        "weapons/cod2019/hdr/weap_hdromeo_fire_plr_inside_03.ogg",
+        "weapons/cod2019/hdr/weap_hdromeo_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.HDR.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/hdr/weap_hdromeo_fire_silenced_plr_inside_01.ogg",
+        "weapons/cod2019/hdr/weap_hdromeo_fire_silenced_plr_inside_02.ogg",
+        "weapons/cod2019/hdr/weap_hdromeo_fire_silenced_plr_inside_03.ogg",
+        "weapons/cod2019/hdr/weap_hdromeo_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -751,6 +1412,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.AX50.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/ax50/weap_alpha50_fire_plr_inside_01.ogg",
+		"weapons/cod2019/ax50/weap_alpha50_fire_plr_inside_02.ogg",
+		"weapons/cod2019/ax50/weap_alpha50_fire_plr_inside_03.ogg",
+		"weapons/cod2019/ax50/weap_alpha50_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.AX50.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/ax50/weap_alpha50_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/ax50/weap_alpha50_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/ax50/weap_alpha50_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/ax50/weap_alpha50_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.AX50.Rechamber",
     channel = CHAN_AUTO,
     volume = 1.0,
@@ -799,6 +1490,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Jak12.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/jak12/weap_aalpha12_fire_plr_inside_01.ogg",
+        "weapons/cod2019/jak12/weap_aalpha12_fire_plr_inside_02.ogg",
+        "weapons/cod2019/jak12/weap_aalpha12_fire_plr_inside_03.ogg",
+        "weapons/cod2019/jak12/weap_aalpha12_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Jak12.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/jak12/weap_aalpha12_fire_silenced_plr_inside_01.ogg",
+        "weapons/cod2019/jak12/weap_aalpha12_fire_silenced_plr_inside_02.ogg",
+        "weapons/cod2019/jak12/weap_aalpha12_fire_silenced_plr_inside_03.ogg",
+        "weapons/cod2019/jak12/weap_aalpha12_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.725.Fire",
     channel = 138,
     volume = 1.0,
@@ -825,6 +1546,36 @@ sound.Add( {
 		"weapons/cod2019/725/weap_charlie725_fire_silenced_plr_swtn_02.ogg",
 		"weapons/cod2019/725/weap_charlie725_fire_silenced_plr_swtn_03.ogg",
 		"weapons/cod2019/725/weap_charlie725_fire_silenced_plr_swtn_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.725.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/725/weap_charlie725_fire_plr_swtn_inside_01.ogg",
+        "weapons/cod2019/725/weap_charlie725_fire_plr_swtn_inside_02.ogg",
+        "weapons/cod2019/725/weap_charlie725_fire_plr_swtn_inside_03.ogg",
+        "weapons/cod2019/725/weap_charlie725_fire_plr_swtn_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.725.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/725/weap_charlie725_fire_silenced_plr_swtn_inside_01.ogg",
+        "weapons/cod2019/725/weap_charlie725_fire_silenced_plr_swtn_inside_02.ogg",
+        "weapons/cod2019/725/weap_charlie725_fire_silenced_plr_swtn_inside_03.ogg",
+        "weapons/cod2019/725/weap_charlie725_fire_silenced_plr_swtn_inside_04.ogg",
     }
 } )
 
@@ -859,6 +1610,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.VLK.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/vlk/weap_mike26_fire_bang_plr_inside_01.ogg",
+        "weapons/cod2019/vlk/weap_mike26_fire_bang_plr_inside_02.ogg",
+        "weapons/cod2019/vlk/weap_mike26_fire_bang_plr_inside_03.ogg",
+        "weapons/cod2019/vlk/weap_mike26_fire_bang_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.VLK.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/vlk/weap_mike26_fire_silenced_bang_plr_inside_01.ogg",
+        "weapons/cod2019/vlk/weap_mike26_fire_silenced_bang_plr_inside_02.ogg",
+        "weapons/cod2019/vlk/weap_mike26_fire_silenced_bang_plr_inside_03.ogg",
+        "weapons/cod2019/vlk/weap_mike26_fire_silenced_bang_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.R90.Fire",
     channel = 138,
     volume = 1.0,
@@ -885,6 +1666,36 @@ sound.Add( {
 		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.R90.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/r90/iw8_weap_dpapa12_fire_plr_inside_01.ogg",
+		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_plr_inside_02.ogg",
+		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_plr_inside_03.ogg",
+		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.R90.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/r90/iw8_weap_dpapa12_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/r90/iw8_weap_dpapa12_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -978,6 +1789,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Model680.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/model680/weap_romeo870_fire_plr_inside_01.ogg",
+		"weapons/cod2019/model680/weap_romeo870_fire_plr_inside_02.ogg",
+		"weapons/cod2019/model680/weap_romeo870_fire_plr_inside_03.ogg",
+		"weapons/cod2019/model680/weap_romeo870_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Model680.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/model680/weap_romeo870_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/model680/weap_romeo870_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/model680/weap_romeo870_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/model680/weap_romeo870_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Model680.Rechamber_A",
     channel = 143 + 5,
     volume = 1.0,
@@ -1050,6 +1891,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Uzi.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/uzi/weap_uzulu_fire_plr_inside_01.ogg",
+		"weapons/cod2019/uzi/weap_uzulu_fire_plr_inside_02.ogg",
+		"weapons/cod2019/uzi/weap_uzulu_fire_plr_inside_03.ogg",
+		"weapons/cod2019/uzi/weap_uzulu_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Uzi.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/uzi/weap_uzulu_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/uzi/weap_uzulu_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/uzi/weap_uzulu_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/uzi/weap_uzulu_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Uzi.Trigger",
     channel = 138,
     volume = 1.0,
@@ -1095,6 +1966,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Striker45.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/striker45/weap_smgolf45_fire_plr_inside_01.ogg",
+		"weapons/cod2019/striker45/weap_smgolf45_fire_plr_inside_02.ogg",
+		"weapons/cod2019/striker45/weap_smgolf45_fire_plr_inside_03.ogg",
+		"weapons/cod2019/striker45/weap_smgolf45_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Striker45.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/striker45/weap_smgolf45_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/striker45/weap_smgolf45_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/striker45/weap_smgolf45_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/striker45/weap_smgolf45_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.P90.Fire",
     channel = 138,
     volume = 1.0,
@@ -1121,6 +2022,36 @@ sound.Add( {
 		"weapons/cod2019/p90/weap_papa90_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/p90/weap_papa90_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/p90/weap_papa90_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.P90.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/p90/weap_papa90_fire_plr_inside_01.ogg",
+		"weapons/cod2019/p90/weap_papa90_fire_plr_inside_02.ogg",
+		"weapons/cod2019/p90/weap_papa90_fire_plr_inside_03.ogg",
+		"weapons/cod2019/p90/weap_papa90_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.P90.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/p90/weap_papa90_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/p90/weap_papa90_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/p90/weap_papa90_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/p90/weap_papa90_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -1155,6 +2086,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Mp5.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/mp5/weap_mpapa5_fire_plr_inside_01.ogg",
+		"weapons/cod2019/mp5/weap_mpapa5_fire_plr_inside_02.ogg",
+		"weapons/cod2019/mp5/weap_mpapa5_fire_plr_inside_03.ogg",
+		"weapons/cod2019/mp5/weap_mpapa5_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Mp5.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/mp5/weap_mpapa5_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/mp5/weap_mpapa5_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/mp5/weap_mpapa5_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/mp5/weap_mpapa5_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.ISO.Fire",
     channel = 138,
     volume = 1.0,
@@ -1181,6 +2142,36 @@ sound.Add( {
 		"weapons/cod2019/iso/weap_charlie9_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/iso/weap_charlie9_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/iso/weap_charlie9_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.ISO.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/iso/weap_charlie9_fire_plr_inside_01.ogg",
+		"weapons/cod2019/iso/weap_charlie9_fire_plr_inside_02.ogg",
+		"weapons/cod2019/iso/weap_charlie9_fire_plr_inside_03.ogg",
+		"weapons/cod2019/iso/weap_charlie9_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.ISO.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/iso/weap_charlie9_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/iso/weap_charlie9_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/iso/weap_charlie9_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/iso/weap_charlie9_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -1215,6 +2206,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Vector.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/vector/weap_victor_fire_plr_inside_01.ogg",
+		"weapons/cod2019/vector/weap_victor_fire_plr_inside_02.ogg",
+		"weapons/cod2019/vector/weap_victor_fire_plr_inside_03.ogg",
+		"weapons/cod2019/vector/weap_victor_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Vector.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/vector/weap_victor_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/vector/weap_victor_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/vector/weap_victor_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/vector/weap_victor_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Bizon.Fire",
     channel = 138,
     volume = 1.0,
@@ -1241,6 +2262,36 @@ sound.Add( {
 		"weapons/cod2019/bizon/weap_beta_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/bizon/weap_beta_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/bizon/weap_beta_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Bizon.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/bizon/weap_beta_fire_plr_inside_01.ogg",
+		"weapons/cod2019/bizon/weap_beta_fire_plr_inside_02.ogg",
+		"weapons/cod2019/bizon/weap_beta_fire_plr_inside_03.ogg",
+		"weapons/cod2019/bizon/weap_beta_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Bizon.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/bizon/weap_beta_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/bizon/weap_beta_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/bizon/weap_beta_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/bizon/weap_beta_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -1275,6 +2326,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.AUG.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/aug/weap_augolf_fire_plr_9mm_inside_01.ogg",
+		"weapons/cod2019/aug/weap_augolf_fire_plr_9mm_inside_02.ogg",
+		"weapons/cod2019/aug/weap_augolf_fire_plr_9mm_inside_03.ogg",
+		"weapons/cod2019/aug/weap_augolf_fire_plr_9mm_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.AUG.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/aug/weap_augolf_fire_silenced_plr_9mm_inside_01.ogg",
+		"weapons/cod2019/aug/weap_augolf_fire_silenced_plr_9mm_inside_02.ogg",
+		"weapons/cod2019/aug/weap_augolf_fire_silenced_plr_9mm_inside_03.ogg",
+		"weapons/cod2019/aug/weap_augolf_fire_silenced_plr_9mm_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.AUG.Fire_AR",
     channel = 138,
     volume = 1.0,
@@ -1301,6 +2382,36 @@ sound.Add( {
         "weapons/cod2019/aug/weap_augolf_fire_silenced_plr_ar_02.ogg",
         "weapons/cod2019/aug/weap_augolf_fire_silenced_plr_ar_03.ogg",
         "weapons/cod2019/aug/weap_augolf_fire_silenced_plr_ar_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.AUG.Fire_AR_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/aug/weap_augolf_fire_plr_ar_inside_01.ogg",
+        "weapons/cod2019/aug/weap_augolf_fire_plr_ar_inside_02.ogg",
+        "weapons/cod2019/aug/weap_augolf_fire_plr_ar_inside_03.ogg",
+        "weapons/cod2019/aug/weap_augolf_fire_plr_ar_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.AUG.Silenced_Fire_AR_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/aug/weap_augolf_fire_silenced_plr_9mm_inside_01.ogg",
+        "weapons/cod2019/aug/weap_augolf_fire_silenced_plr_9mm_inside_02.ogg",
+        "weapons/cod2019/aug/weap_augolf_fire_silenced_plr_9mm_inside_03.ogg",
+        "weapons/cod2019/aug/weap_augolf_fire_silenced_plr_9mm_inside_04.ogg",
     }
 } )
 
@@ -1335,6 +2446,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Oden.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/oden/weap_ash12_fire_plr_inside_01.ogg",
+		"weapons/cod2019/oden/weap_ash12_fire_plr_inside_02.ogg",
+		"weapons/cod2019/oden/weap_ash12_fire_plr_inside_03.ogg",
+		"weapons/cod2019/oden/weap_ash12_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Oden.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/oden/weap_ash12_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/oden/weap_ash12_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/oden/weap_ash12_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/oden/weap_ash12_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.RAM7.Fire",
     channel = 138,
     volume = 1.0,
@@ -1361,6 +2502,36 @@ sound.Add( {
 		"weapons/cod2019/ram7/weap_tango21_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/ram7/weap_tango21_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/ram7/weap_tango21_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.RAM7.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/ram7/weap_tango21_fire_plr_inside_01.ogg",
+		"weapons/cod2019/ram7/weap_tango21_fire_plr_inside_02.ogg",
+		"weapons/cod2019/ram7/weap_tango21_fire_plr_inside_03.ogg",
+		"weapons/cod2019/ram7/weap_tango21_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.RAM7.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/ram7/weap_tango21_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/ram7/weap_tango21_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/ram7/weap_tango21_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/ram7/weap_tango21_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -1395,6 +2566,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Kilo141.Fire",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/kilo141/weap_kilo433_fire_plr_inside_01.ogg",
+		"weapons/cod2019/kilo141/weap_kilo433_fire_plr_inside_02.ogg",
+		"weapons/cod2019/kilo141/weap_kilo433_fire_plr_inside_03.ogg",
+		"weapons/cod2019/kilo141/weap_kilo433_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Kilo141.Silenced_Fire",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/kilo141/weap_kilo433_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/kilo141/weap_kilo433_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/kilo141/weap_kilo433_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/kilo141/weap_kilo433_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.MP7.Fire",
     channel = 138,
     volume = 1.0,
@@ -1421,6 +2622,36 @@ sound.Add( {
 		"weapons/cod2019/mp7/weap_mpapa7_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/mp7/weap_mpapa7_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/mp7/weap_mpapa7_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.MP7.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/mp7/weap_mpapa7_fire_plr_inside_01.ogg",
+		"weapons/cod2019/mp7/weap_mpapa7_fire_plr_inside_02.ogg",
+		"weapons/cod2019/mp7/weap_mpapa7_fire_plr_inside_03.ogg",
+		"weapons/cod2019/mp7/weap_mpapa7_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.MP7.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/mp7/weap_mpapa7_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/mp7/weap_mpapa7_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/mp7/weap_mpapa7_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/mp7/weap_mpapa7_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -1455,6 +2686,37 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Scar.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/scar/weap_scharlie_fire_plr_inside_01.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_plr_inside_02.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_plr_inside_03.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Scar.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/scar/weap_scharlie_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+
+sound.Add( {
     name = "COD2019.Grau556.Fire",
     channel = 138,
     volume = 1.0,
@@ -1481,6 +2743,36 @@ sound.Add( {
 		"weapons/cod2019/grau556/weap_sierra552_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/grau556/weap_sierra552_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/grau556/weap_sierra552_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Grau556.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/grau556/weap_sierra552_fire_plr_inside_01.ogg",
+		"weapons/cod2019/grau556/weap_sierra552_fire_plr_inside_02.ogg",
+		"weapons/cod2019/grau556/weap_sierra552_fire_plr_inside_03.ogg",
+		"weapons/cod2019/grau556/weap_sierra552_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Grau556.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/grau556/weap_sierra552_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/grau556/weap_sierra552_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/grau556/weap_sierra552_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/grau556/weap_sierra552_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -1515,32 +2807,32 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "COD2019.Famas.Fire",
+    name = "COD2019.Famas.Fire_Inside",
     channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
-        "weapons/cod2019/famas/weap_famas_fire_plr_01.ogg",
-		"weapons/cod2019/famas/weap_famas_fire_plr_02.ogg",
-		"weapons/cod2019/famas/weap_famas_fire_plr_03.ogg",
-		"weapons/cod2019/famas/weap_famas_fire_plr_04.ogg",
+        "weapons/cod2019/famas/weap_famas_fire_plr_inside_01.ogg",
+		"weapons/cod2019/famas/weap_famas_fire_plr_inside_02.ogg",
+		"weapons/cod2019/famas/weap_famas_fire_plr_inside_03.ogg",
+		"weapons/cod2019/famas/weap_famas_fire_plr_inside_04.ogg",
     }
 } )
 
 sound.Add( {
-    name = "COD2019.Famas.Sileneced_Fire",
+    name = "COD2019.Famas.Silenced_Fire_Inside",
     channel = 138,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
-        "weapons/cod2019/famas/weap_famas_fire_silenced_plr_01.ogg",
-		"weapons/cod2019/famas/weap_famas_fire_silenced_plr_02.ogg",
-		"weapons/cod2019/famas/weap_famas_fire_silenced_plr_03.ogg",
-		"weapons/cod2019/famas/weap_famas_fire_silenced_plr_04.ogg",
+        "weapons/cod2019/famas/weap_famas_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/famas/weap_famas_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/famas/weap_famas_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/famas/weap_famas_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -1575,6 +2867,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.CR56AMAX.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/cr56amax/weap_galima_fire_plr_inside_01.ogg",
+		"weapons/cod2019/cr56amax/weap_galima_fire_plr_inside_02.ogg",
+		"weapons/cod2019/cr56amax/weap_galima_fire_plr_inside_03.ogg",
+		"weapons/cod2019/cr56amax/weap_galima_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.CR56AMAX.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/cr56amax/weap_galima_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/cr56amax/weap_galima_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/cr56amax/weap_galima_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/cr56amax/weap_galima_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.ASVAL.Fire",
     channel = 138,
     volume = 1.0,
@@ -1586,6 +2908,21 @@ sound.Add( {
 		"weapons/cod2019/asval/weap_valpha_sup_plr_02.ogg",
 		"weapons/cod2019/asval/weap_valpha_sup_plr_03.ogg",
 		"weapons/cod2019/asval/weap_valpha_sup_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.ASVAL.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/asval/weap_valpha_sup_plr_inside_01.ogg",
+		"weapons/cod2019/asval/weap_valpha_sup_plr_inside_02.ogg",
+		"weapons/cod2019/asval/weap_valpha_sup_plr_inside_03.ogg",
+		"weapons/cod2019/asval/weap_valpha_sup_plr_inside_04.ogg",
     }
 } )
 
@@ -1620,6 +2957,38 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.M4A1.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m4a1/weap_mike4_fire_plr_inside_01.ogg",
+		"weapons/cod2019/m4a1/weap_mike4_fire_plr_inside_02.ogg",
+		"weapons/cod2019/m4a1/weap_mike4_fire_plr_inside_03.ogg",
+		"weapons/cod2019/m4a1/weap_mike4_fire_plr_inside_04.ogg",
+		"weapons/cod2019/m4a1/weap_mike4_fire_plr_inside_05.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.M4A1.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m4a1/weap_mike4_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/m4a1/weap_mike4_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/m4a1/weap_mike4_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/m4a1/weap_mike4_fire_silenced_plr_inside_04.ogg",
+		"weapons/cod2019/m4a1/weap_mike4_fire_silenced_plr_inside_05.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.M13.Fire",
     channel = 138,
     volume = 1.0,
@@ -1646,6 +3015,37 @@ sound.Add( {
 		"weapons/cod2019/m13/weap_mcharlie_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/m13/weap_mcharlie_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/m13/weap_mcharlie_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.M13.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m13/weap_mcharlie_fire_plr_inside_01.ogg",
+		"weapons/cod2019/m13/weap_mcharlie_fire_plr_inside_02.ogg",
+		"weapons/cod2019/m13/weap_mcharlie_fire_plr_inside_03.ogg",
+		"weapons/cod2019/m13/weap_mcharlie_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.M13.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/m13/weap_mcharlie_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/m13/weap_mcharlie_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/m13/weap_mcharlie_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/m13/weap_mcharlie_fire_silenced_plr_inside_04.ogg",
+		"weapons/cod2019/m13/weap_mcharlie_fire_silenced_plr_inside_05.ogg",
     }
 } )
 
@@ -1680,6 +3080,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.FAL.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/fal/weap_falima_fire_plr_inside_01.ogg",
+		"weapons/cod2019/fal/weap_falima_fire_plr_inside_02.ogg",
+		"weapons/cod2019/fal/weap_falima_fire_plr_inside_03.ogg",
+		"weapons/cod2019/fal/weap_falima_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.FAL.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/fal/weap_falima_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/fal/weap_falima_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/fal/weap_falima_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/fal/weap_falima_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.AK47.Fire",
     channel = 138,
     volume = 1.0,
@@ -1699,13 +3129,43 @@ sound.Add( {
     channel = 138,
     volume = 1.0,
     level = 120,
-    pitch = {90,110},
+    pitch = {85,110},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
         "weapons/cod2019/ak47/weap_akilo47_fire_silenced_plr_01.ogg",
 		"weapons/cod2019/ak47/weap_akilo47_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/ak47/weap_akilo47_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/ak47/weap_akilo47_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.AK47.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,115},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/ak47/weap_akilo47_fire_plr_inside_01.ogg",
+		"weapons/cod2019/ak47/weap_akilo47_fire_plr_inside_02.ogg",
+		"weapons/cod2019/ak47/weap_akilo47_fire_plr_inside_03.ogg",
+		"weapons/cod2019/ak47/weap_akilo47_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.AK47.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/ak47/weap_akilo47_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/ak47/weap_akilo47_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/ak47/weap_akilo47_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/ak47/weap_akilo47_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -1736,6 +3196,36 @@ sound.Add( {
 		"weapons/cod2019/svd/weap_delta_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/svd/weap_delta_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/svd/weap_delta_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.SVD.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/svd/weap_delta_fire_plr_inside_01.ogg",
+		"weapons/cod2019/svd/weap_delta_fire_plr_inside_02.ogg",
+		"weapons/cod2019/svd/weap_delta_fire_plr_inside_03.ogg",
+		"weapons/cod2019/svd/weap_delta_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.SVD.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/svd/weap_delta_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/svd/weap_delta_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/svd/weap_delta_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/svd/weap_delta_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -1803,6 +3293,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Rytec.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/rytec/weap_xmike109_fire_bang_plr_inside_01.ogg",
+		"weapons/cod2019/rytec/weap_xmike109_fire_bang_plr_inside_02.ogg",
+		"weapons/cod2019/rytec/weap_xmike109_fire_bang_plr_inside_03.ogg",
+		"weapons/cod2019/rytec/weap_xmike109_fire_bang_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Rytec.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/rytec/weap_xmike109_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/rytec/weap_xmike109_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/rytec/weap_xmike109_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/rytec/weap_xmike109_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.AN94.Fire",
     channel = 138,
     volume = 1.0,
@@ -1829,6 +3349,36 @@ sound.Add( {
 		"weapons/cod2019/an94/weap_anov94_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/an94/weap_anov94_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/an94/weap_anov94_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.AN94.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/an94/weap_anov94_fire_plr_inside_01.ogg",
+		"weapons/cod2019/an94/weap_anov94_fire_plr_inside_02.ogg",
+		"weapons/cod2019/an94/weap_anov94_fire_plr_inside_03.ogg",
+		"weapons/cod2019/an94/weap_anov94_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.AN94.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/an94/weap_anov94_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/an94/weap_anov94_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/an94/weap_anov94_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/an94/weap_anov94_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -1863,6 +3413,36 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Origin12.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/origin12/weap_oscar12_fire_plr_inside_01.ogg",
+		"weapons/cod2019/origin12/weap_oscar12_fire_plr_inside_02.ogg",
+		"weapons/cod2019/origin12/weap_oscar12_fire_plr_inside_03.ogg",
+		"weapons/cod2019/origin12/weap_oscar12_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Origin12.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/origin12/weap_oscar12_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/origin12/weap_oscar12_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/origin12/weap_oscar12_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/origin12/weap_oscar12_fire_silenced_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.CX9.Fire",
     channel = 138,
     volume = 1.0,
@@ -1889,6 +3469,36 @@ sound.Add( {
 		"weapons/cod2019/cx9/weap_secho_fire_silenced_plr_02.ogg",
 		"weapons/cod2019/cx9/weap_secho_fire_silenced_plr_03.ogg",
 		"weapons/cod2019/cx9/weap_secho_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.CX9.Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/cx9/weap_secho_fire_plr_inside_01.ogg",
+		"weapons/cod2019/cx9/weap_secho_fire_plr_inside_02.ogg",
+		"weapons/cod2019/cx9/weap_secho_fire_plr_inside_03.ogg",
+		"weapons/cod2019/cx9/weap_secho_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.CX9.Silenced_Fire_Inside",
+    channel = 138,
+    volume = 1.0,
+    level = 120,
+    pitch = {95,105},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/cx9/weap_secho_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/cx9/weap_secho_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/cx9/weap_secho_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/cx9/weap_secho_fire_silenced_plr_inside_04.ogg",
     }
 } )
 

@@ -245,6 +245,9 @@ local path = "weapons/cod2019/hdr/"
 
 SWEP.ShootSound = "COD2019.HDR.Fire"
 SWEP.ShootSoundSilenced = "COD2019.HDR.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.HDR.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.HDR.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.Awp.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 

@@ -257,6 +257,9 @@ local path = "weapons/cod2019/finn/"
 
 SWEP.ShootSound = "COD2019.FiNN.Fire"
 SWEP.ShootSoundSilenced = "COD2019.FiNN.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.FiNN.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.FiNN.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.NEGEV.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

@@ -242,7 +242,10 @@ local path = "weapons/cod2019/famas/"
 
 SWEP.ShootSound = "COD2019.famas.Fire"
 SWEP.ShootSoundSilenced = "COD2019.famas.Silenced_Fire"
-SWEP.DistantShootSound = "CSGO.ak47.Distance_Fire"
+SWEP.ShootSoundIndoor = "COD2019.famas.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.famas.Silenced_Fire_Inside"
+
+SWEP.DistantShootSound = "CSGO.Famas.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"

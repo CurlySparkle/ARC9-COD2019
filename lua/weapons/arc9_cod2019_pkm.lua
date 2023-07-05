@@ -243,6 +243,9 @@ local path = "weapons/cod2019/pkm/"
 
 SWEP.ShootSound = "COD2019.PKM.Fire"
 SWEP.ShootSoundSilenced = "COD2019.PKM.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.PKM.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.PKM.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.NEGEV.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

@@ -248,7 +248,10 @@ local path = "weapons/cod2019/asval/"
 
 SWEP.ShootSound = "COD2019.ASVAL.Fire"
 SWEP.ShootSoundSilenced = "COD2019.ASVAL.Fire"
-SWEP.DistantShootSound = "CSGO.ak47.Distance_Fire"
+SWEP.ShootSoundIndoor = "COD2019.ASVAL.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.ASVAL.Silenced_Fire_Inside"
+
+SWEP.DistantShootSound = nil
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"

@@ -245,6 +245,9 @@ local path = "weapons/cod2019/raal/"
 
 SWEP.ShootSound = "COD2019.RAAL.Fire"
 SWEP.ShootSoundSilenced = "COD2019.RAAL.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.RAAL.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.RAAL.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.M249.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

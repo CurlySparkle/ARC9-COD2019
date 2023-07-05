@@ -247,6 +247,9 @@ local path = "weapons/cod2019/origin12/"
 
 SWEP.ShootSound = "COD2019.Origin12.Fire"
 SWEP.ShootSoundSilenced = "COD2019.Origin12.Fire_Silenced"
+SWEP.ShootSoundIndoor = "COD2019.Origin12.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Origin12.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

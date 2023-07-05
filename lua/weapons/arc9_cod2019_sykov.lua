@@ -237,6 +237,9 @@ local path = "weapons/cod2019/sykov/"
 
 SWEP.ShootSound = "COD2019.Sykov.Fire"
 SWEP.ShootSoundSilenced = "COD2019.Sykov.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.Sykov.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Sykov.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.Glock.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
 

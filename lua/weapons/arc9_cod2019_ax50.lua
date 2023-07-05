@@ -245,6 +245,9 @@ local path = "weapons/cod2019/ax50/"
 
 SWEP.ShootSound = "COD2019.AX50.Fire"
 SWEP.ShootSoundSilenced = "COD2019.AX50.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.AX50.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.AX50.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.Awp.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 

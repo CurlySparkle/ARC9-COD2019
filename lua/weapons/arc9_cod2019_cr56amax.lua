@@ -244,6 +244,9 @@ local path = "weapons/cod2019/cr56amax/"
 
 SWEP.ShootSound = "COD2019.CR56AMAX.Fire"
 SWEP.ShootSoundSilenced = "COD2019.CR56AMAX.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.CR56AMAX.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.CR56AMAX.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.ak47.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

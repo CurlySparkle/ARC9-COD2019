@@ -258,6 +258,9 @@ local path2 = "weapons/cod2019/m13/"
 
 SWEP.ShootSound = "COD2019.Model680.Fire"
 SWEP.ShootSoundSilenced = "COD2019.Model680.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.Model680.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Model680.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
@@ -528,7 +531,7 @@ SWEP.Animations = {
         Source = "reload_mag_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
-		DropMagAt = 0.7,
+		DropMagAt = 1.1,
         IKTimeLine = {
             {
                 t = 0,
@@ -676,6 +679,7 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
+		Mult = 0.8,
         IKTimeLine = {
             {
                 t = 0,

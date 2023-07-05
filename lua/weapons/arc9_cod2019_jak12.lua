@@ -246,6 +246,9 @@ local path = "weapons/cod2019/jak12/"
 
 SWEP.ShootSound = "COD2019.Jak12.Fire"
 SWEP.ShootSoundSilenced = "COD2019.Jak12.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.Jak12.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Jak12.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
@@ -369,7 +372,9 @@ SWEP.Animations = {
         },
     },
     ["ready"] = {
-        Source = {"draw"},
+        Source = "draw",
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -390,12 +395,39 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.6,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sh_aalpha12_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+		Mult = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0/30},
         },

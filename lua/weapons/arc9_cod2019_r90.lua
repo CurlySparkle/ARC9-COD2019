@@ -249,6 +249,9 @@ local path = "weapons/cod2019/r90/"
 
 SWEP.ShootSound = "COD2019.R90.Fire"
 SWEP.ShootSoundSilenced = "COD2019.R90.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.R90.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.R90.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.XM1014.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 

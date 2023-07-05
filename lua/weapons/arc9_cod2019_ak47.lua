@@ -248,6 +248,9 @@ local path = "weapons/cod2019/ak47/"
 
 SWEP.ShootSound = "COD2019.AK47.Fire"
 SWEP.ShootSoundSilenced = "COD2019.AK47.Fire_Silenced"
+SWEP.ShootSoundIndoor = "COD2019.AK47.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.AK47.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.ak47.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

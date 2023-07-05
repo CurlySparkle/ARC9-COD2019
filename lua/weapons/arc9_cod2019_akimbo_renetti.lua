@@ -244,6 +244,9 @@ local path = "weapons/cod2019/renetti/"
 
 SWEP.ShootSound = "COD2019.Renetti.Fire"
 SWEP.ShootSoundSilenced = "COD2019.Renetti.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.Renetti.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Renetti.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.hkp2000.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
 

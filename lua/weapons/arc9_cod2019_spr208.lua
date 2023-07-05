@@ -247,6 +247,9 @@ local path = "weapons/cod2019/spr208/"
 
 SWEP.ShootSound = "COD2019.SPR208.Fire"
 SWEP.ShootSoundSilenced = "COD2019.SPR208.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.SPR208.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.SPR208.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
@@ -432,6 +435,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -477,6 +482,7 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
+		Mult = 0.8,
         IKTimeLine = {
             {
                 t = 0,

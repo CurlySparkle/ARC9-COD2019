@@ -246,6 +246,9 @@ local path = "weapons/cod2019/bizon/"
 
 SWEP.ShootSound = "COD2019.bizon.Fire"
 SWEP.ShootSoundSilenced = "COD2019.bizon.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.bizon.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.bizon.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.Bizon.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

@@ -251,6 +251,9 @@ local path = "weapons/cod2019/uzi/"
 
 SWEP.ShootSound = "COD2019.Uzi.Fire"
 SWEP.ShootSoundSilenced = "COD2019.Uzi.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.Uzi.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Uzi.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.mac10.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

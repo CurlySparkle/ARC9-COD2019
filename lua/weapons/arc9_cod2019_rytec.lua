@@ -243,6 +243,9 @@ local path = "weapons/cod2019/rytec/"
 
 SWEP.ShootSound = "COD2019.Rytec.Fire"
 SWEP.ShootSoundSilenced = "COD2019.Rytec.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.Rytec.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Rytec.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

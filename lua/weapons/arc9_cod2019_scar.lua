@@ -251,6 +251,9 @@ local path = "weapons/cod2019/scar/"
 
 SWEP.ShootSound = "COD2019.Scar.Fire"
 SWEP.ShootSoundSilenced = "COD2019.Scar.Silenced_Fire"
+SWEP.ShootSoundIndoor = "COD2019.Scar.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Scar.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.SG556.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
