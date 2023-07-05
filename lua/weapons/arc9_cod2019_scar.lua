@@ -253,8 +253,9 @@ SWEP.ShootSound = "COD2019.Scar.Fire"
 SWEP.ShootSoundSilenced = "COD2019.Scar.Silenced_Fire"
 SWEP.ShootSoundIndoor = "COD2019.Scar.Fire_Inside"
 SWEP.ShootSoundSilencedIndoor = "COD2019.Scar.Silenced_Fire_Inside"
+--SWEP.ShootSoundSilencedIndoor = { path .. "weap_scharlie_fire_silenced_plr_inside_01.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_02.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_03.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_04.ogg" }
 
-SWEP.DistantShootSound = "CSGO.SG556.Distance_Fire"
+SWEP.DistantShootSound = nil
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"

@@ -72,7 +72,7 @@ SWEP.ClipSize = 50 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -247,6 +247,9 @@ local path3 = "weapons/cod2019/p90/"
 
 SWEP.ShootSound = "COD2019.FSS.Fire"
 SWEP.ShootSoundSilenced = "COD2019.FSS.Fire_Silenced"
+SWEP.ShootSoundIndoor = "COD2019.FSS.Fire_Inside"
+SWEP.ShootSoundSilencedIndoor = "COD2019.FSS.Silenced_Fire_Inside"
+
 SWEP.DistantShootSound = "CSGO.m4a4.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
@@ -711,5 +714,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 0.4
 SWEP.GripPoseParam2 = 0
-SWEP.CodAngledGripPoseParam = 0
+SWEP.CodAngledGripPoseParam = 5
 SWEP.CodStubbyGripPoseParam = 6.7

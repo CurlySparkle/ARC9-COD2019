@@ -826,16 +826,16 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Holger.Silenced_Fire_Inside",
-    channel = 138,
+    channel = 139,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
-        "weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_01.ogg",
-		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_02.ogg",
-		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_03.ogg",
-		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_04.ogg",
+        "weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/holger/weap_mgolf36_fire_silenced_plr_inside_04.ogg",
     }
 } )
 
@@ -2687,7 +2687,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Scar.Fire_Inside",
-    channel = 138,
+    channel = 139,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -2702,7 +2702,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Scar.Silenced_Fire_Inside",
-    channel = 138,
+    channel = 139,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -3294,7 +3294,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Rytec.Fire_Inside",
-    channel = 138,
+    channel = 139,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -3309,7 +3309,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Rytec.Silenced_Fire_Inside",
-    channel = 138,
+    channel = 139,
     volume = 1.0,
     level = 120,
     pitch = {95,105},
@@ -3529,5 +3529,36 @@ sound.Add( {
         "weapons/cod2019/fss/weap_fss_fire_silenced_plr_02.ogg",
         "weapons/cod2019/fss/weap_fss_fire_silenced_plr_03.ogg",
         "weapons/cod2019/fss/weap_fss_fire_silenced_plr_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.FSS.Fire_Inside",
+    channel = 139,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/fss/weap_fss_fire_plr_inside_01.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_plr_inside_02.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_plr_inside_03.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_plr_inside_04.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.FSS.Silenced_Fire_Inside",
+    channel = 139,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/fss/weap_fss_fire_silenced_plr_inside_01.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_silenced_plr_inside_02.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_silenced_plr_inside_03.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_silenced_plr_inside_04.ogg",
+        "weapons/cod2019/fss/weap_fss_fire_silenced_plr_inside_05.ogg",
     }
 } )
