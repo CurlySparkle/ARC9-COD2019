@@ -232,7 +232,9 @@ SWEP.TriggerDelayTime = 0.45 -- Time until weapon fires.
 
 local path = "weapons/cod2019/minigun/"
 
-SWEP.ShootSound = "COD2019.Minigun.Fire"
+SWEP.ShootPitchVariation = 13
+SWEP.ShootSound = {path .. "weap_lmg_fire_layer_plr_01.ogg", path .. "weap_lmg_fire_layer_plr_02.ogg", path .. "weap_lmg_fire_layer_plr_03.ogg", path .. "weap_lmg_fire_layer_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_lmg_fire_layer_plr_inside_01.ogg", path .. "weap_lmg_fire_layer_plr_inside_02.ogg", path .. "weap_lmg_fire_layer_plr_inside_03.ogg", path .. "weap_lmg_fire_layer_plr_inside_04.ogg"}
 --SWEP.DistantShootSound = "COD2019.Minigun.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

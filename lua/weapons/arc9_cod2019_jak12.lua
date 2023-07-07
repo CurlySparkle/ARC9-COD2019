@@ -37,7 +37,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_shot_jak12.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-3, 3, 0),
+    TPIKPos = Vector(-5, 3, 0),
     TPIKAng = Angle(0, 0, 180),
     Scale = 1
 }
@@ -230,8 +230,8 @@ SWEP.ShellScale = 1.1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
-SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_shot_vlk_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.ShouldDropMagEmpty = false
+SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_shot_jak12_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {
 "weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ak_poly_concrete_01.ogg",
 "weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ak_poly_concrete_02.ogg",
@@ -316,6 +316,7 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.9,
+		DropMagAt = 0.6,
         IKTimeLine = {
             {
                 t = 0,
@@ -349,6 +350,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		DropMagAt = 1.2,
         IKTimeLine = {
             {
                 t = 0,
@@ -706,5 +708,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.2
 SWEP.GripPoseParam2 = 0.7
-SWEP.CodAngledGripPoseParam = 1
+SWEP.CodAngledGripPoseParam = 9
 SWEP.CodStubbyGripPoseParam = 6.5

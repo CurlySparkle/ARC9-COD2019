@@ -121,10 +121,22 @@ SWEP.RecoilMultSights = 0.8
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.3
 SWEP.VisualRecoilPunchSights = 30
-SWEP.VisualRecoilPunch = 1.4
+SWEP.VisualRecoilPunch = 1.7
 SWEP.VisualRecoilUp = 0.8
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = -1/9
+SWEP.VisualRecoilSide = 0.1
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -318,14 +330,30 @@ end
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["fire_sights"] = {
         Source = "shoot1_ads",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
 		MagSwapTime = 3,
+		DropMagAt = 2.15,
         IKTimeLine = {
             {
                 t = 0,
@@ -343,7 +371,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1,
+                t = 1.05,
                 lhik = 1,
                 rhik = 1
             },
@@ -363,7 +391,8 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
 		MagSwapTime = 3,
         IKTimeLine = {
             {
@@ -431,18 +460,49 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_lm_sierrax_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_lm_sierrax_reload_empty_end.ogg", t = 0/30},
         },
     },
     ["idle"] = {
         Source = "idle",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["idle_sprint"] = {
         Source = "sprint",
