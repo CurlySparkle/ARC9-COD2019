@@ -72,7 +72,7 @@ SWEP.ClipSize = 30 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -230,7 +230,7 @@ SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_rif_kilo141_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
-SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
+SWEP.DropMagazineSounds = {"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_metal_concrete_01.ogg", "weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_metal_concrete_02.ogg", "weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_metal_concrete_03.ogg"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 3
@@ -240,10 +240,16 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/kilo141/"
 
-SWEP.ShootSound = "COD2019.Kilo141.Fire"
-SWEP.ShootSoundSilenced = "COD2019.Kilo141.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.Kilo141.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.Kilo141.Silenced_Fire_Inside"
+-- SWEP.ShootSound = "COD2019.Kilo141.Fire"
+-- SWEP.ShootSoundSilenced = "COD2019.Kilo141.Silenced_Fire"
+-- SWEP.ShootSoundIndoor = "COD2019.Kilo141.Fire_Inside"
+-- SWEP.ShootSoundSilencedIndoor = "COD2019.Kilo141.Silenced_Fire_Inside"
+
+SWEP.ShootPitchVariation = 15
+SWEP.ShootSound = { path .. "weap_kilo433_fire_plr_01.ogg", path .. "weap_kilo433_fire_plr_02.ogg", path .. "weap_kilo433_fire_plr_03.ogg", path .. "weap_kilo433_fire_plr_04.ogg" }
+SWEP.ShootSoundSilenced = { path .. "weap_kilo433_fire_silenced_plr_01.ogg", path .. "weap_kilo433_fire_silenced_plr_02.ogg", path .. "weap_kilo433_fire_silenced_plr_03.ogg", path .. "weap_kilo433_fire_silenced_plr_04.ogg" }
+SWEP.ShootSoundIndoor = { path .. "weap_kilo433_fire_plr_inside_01.ogg", path .. "weap_kilo433_fire_plr_inside_02.ogg", path .. "weap_kilo433_fire_plr_inside_013.ogg", path .. "weap_kilo433_fire_plr_inside_04.ogg" }
+SWEP.ShootSoundSilencedIndoor = { path .. "weap_kilo433_fire_silenced_plr_inside_01.ogg", path .. "weap_kilo433_fire_silenced_plr_inside_02.ogg", path .. "weap_kilo433_fire_silenced_plr_inside_03.ogg", path .. "weap_kilo433_fire_silenced_plr_inside_04.ogg" }
 
 --SWEP.DistantShootSound = "CSGO.SG556.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
