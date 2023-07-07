@@ -59,7 +59,7 @@ SWEP.Sway = 0 -- How much the gun sways.
 SWEP.FiremodeSound = "weapons/csgo/auto_semiauto_switch.wav"
 
 function SWEP:MakeEnvironmentDust(radius)
-    --simple func for snipers
+    --Makes a dust enviroment effect when shooting
     radius = radius || 150
     
     if (!IsValid(self:GetOwner()) || !self:GetOwner():IsOnGround()) then
