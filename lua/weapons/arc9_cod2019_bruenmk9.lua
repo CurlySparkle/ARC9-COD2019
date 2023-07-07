@@ -243,10 +243,11 @@ local path = "weapons/cod2019/bruenmk9/"
 local path2 = "weapons/cod2019/m4a1/"
 local path3 = "weapons/cod2019/sa86/"
 
-SWEP.ShootSound = "COD2019.BruenMk9.Fire"
-SWEP.ShootSoundSilenced = "COD2019.BruenMk9.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.BruenMk9.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.BruenMk9.Silenced_Fire_Inside"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path .. "weap_mkilo3_fire_plr_01.ogg", path .. "weap_mkilo3_fire_plr_02.ogg", path .. "weap_mkilo3_fire_plr_03.ogg", path .. "weap_mkilo3_fire_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_mkilo3_fire_silenced_plr_01.ogg", path .. "weap_mkilo3_fire_silenced_plr_02.ogg", path .. "weap_mkilo3_fire_silenced_plr_03.ogg", path .. "weap_mkilo3_fire_silenced_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_mkilo3_fire_plr_inside_01.ogg", path .. "weap_mkilo3_fire_plr_inside_02.ogg", path .. "weap_mkilo3_fire_plr_inside_03.ogg", path .. "weap_mkilo3_fire_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_mkilo3_fire_silenced_plr_inside_01.ogg", path .. "weap_mkilo3_fire_silenced_plr_inside_02.ogg", path .. "weap_mkilo3_fire_silenced_plr_inside_03.ogg", path .. "weap_mkilo3_fire_silenced_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.M249.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"

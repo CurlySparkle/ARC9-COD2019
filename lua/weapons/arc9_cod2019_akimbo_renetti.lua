@@ -242,10 +242,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/renetti/"
 
-SWEP.ShootSound = "COD2019.Renetti.Fire"
-SWEP.ShootSoundSilenced = "COD2019.Renetti.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.Renetti.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.Renetti.Silenced_Fire_Inside"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path .. "weap_mike9a3_fire_bang_plr_01.ogg", path .. "weap_mike9a3_fire_bang_plr_02.ogg", path .. "weap_mike9a3_fire_bang_plr_03.ogg", path .. "weap_mike9a3_fire_bang_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_mike9a3_fire_silenced_bang_plr_01.ogg", path .. "weap_mike9a3_fire_silenced_bang_plr_02.ogg", path .. "weap_mike9a3_fire_silenced_bang_plr_03.ogg", path .. "weap_mike9a3_fire_silenced_bang_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_mike9a3_fire_bang_plr_inside_01.ogg", path .. "weap_mike9a3_fire_bang_plr_inside_02.ogg", path .. "weap_mike9a3_fire_bang_plr_inside_03.ogg", path .. "weap_mike9a3_fire_bang_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_mike9a3_fire_silenced_bang_plr_inside_01.ogg", path .. "weap_mike9a3_fire_silenced_bang_plr_inside_02.ogg", path .. "weap_mike9a3_fire_silenced_bang_plr_inside_03.ogg", path .. "weap_mike9a3_fire_silenced_bang_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.hkp2000.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
@@ -392,7 +393,7 @@ SWEP.Animations = {
 		Mult = 0.8,
         EventTable = {
             {s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 0/30},
-            {s = path .. "wfoly_pi_mike9_inspect_05_akimbo.ogg", t = 5/30},
+            {s = path .. "wfoly_pi_mike9_inspect_05.ogg", t = 5/30},
         },
     },
     ["idle"] = {

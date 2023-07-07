@@ -242,16 +242,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/rytec/"
 
---SWEP.ShootSound = "COD2019.Rytec.Fire"
---SWEP.ShootSoundSilenced = "COD2019.Rytec.Silenced_Fire"
---SWEP.ShootSoundIndoor = "COD2019.Rytec.Fire_Inside"
---SWEP.ShootSoundSilencedIndoor = "COD2019.Rytec.Silenced_Fire_Inside"
-
 SWEP.ShootPitchVariation = 13
-SWEP.ShootSound = { path .. "weap_xmike109_fire_bang_plr_01.ogg", path .. "weap_xmike109_fire_bang_plr_02.ogg", path .. "weap_xmike109_fire_bang_plr_03.ogg", path .. "weap_xmike109_fire_bang_plr_04.ogg" }
-SWEP.ShootSoundSilenced = { path .. "weap_xmike109_fire_silenced_plr_01.ogg", path .. "weap_xmike109_fire_silenced_plr_02.ogg", path .. "weap_xmike109_fire_silenced_plr_03.ogg", path .. "weap_xmike109_fire_silenced_plr_04.ogg" }
-SWEP.ShootSoundIndoor = { path .. "weap_xmike109_fire_bang_plr_inside_01.ogg", path .. "weap_xmike109_fire_bang_plr_inside_02.ogg", path .. "weap_xmike109_fire_bang_plr_inside_03.ogg", path .. "weap_xmike109_fire_bang_plr_inside_04.ogg" }
-SWEP.ShootSoundSilencedIndoor = { path .. "weap_xmike109_fire_silenced_plr_inside_01.ogg", path .. "weap_xmike109_fire_silenced_plr_inside_02.ogg", path .. "weap_xmike109_fire_silenced_plr_inside_03.ogg", path .. "weap_xmike109_fire_silenced_plr_inside_04.ogg" }
+SWEP.ShootSound = {path .. "weap_xmike109_fire_bang_plr_01.ogg", path .. "weap_xmike109_fire_bang_plr_02.ogg", path .. "weap_xmike109_fire_bang_plr_03.ogg", path .. "weap_xmike109_fire_bang_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_xmike109_fire_silenced_plr_01.ogg", path .. "weap_xmike109_fire_silenced_plr_02.ogg", path .. "weap_xmike109_fire_silenced_plr_03.ogg", path .. "weap_xmike109_fire_silenced_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_xmike109_fire_bang_plr_inside_01.ogg", path .. "weap_xmike109_fire_bang_plr_inside_02.ogg", path .. "weap_xmike109_fire_bang_plr_inside_03.ogg", path .. "weap_xmike109_fire_bang_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_xmike109_fire_silenced_plr_inside_01.ogg", path .. "weap_xmike109_fire_silenced_plr_inside_02.ogg", path .. "weap_xmike109_fire_silenced_plr_inside_03.ogg", path .. "weap_xmike109_fire_silenced_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
@@ -430,7 +425,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_xmike109_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_magout.ogg", t = 14/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_magout.ogg", t = 15/30},
 			{s = path .. "wfoly_sn_xmike109_reload_empty_arm.ogg", t = 35/30},
 			{s = path .. "wfoly_sn_xmike109_reload_empty_magin_01.ogg", t = 45/30},
 			{s = path .. "wfoly_sn_xmike109_reload_empty_magin_02.ogg", t = 55/30},

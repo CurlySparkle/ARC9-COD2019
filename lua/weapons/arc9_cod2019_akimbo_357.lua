@@ -231,10 +231,11 @@ SWEP.Akimbo = true
 local path = "weapons/cod2019/357/"
 local path2 = "weapons/cod2019/50gs/"
 
-SWEP.ShootSound = "COD2019.357.Fire"
-SWEP.ShootSoundSilenced = "COD2019.357.Silenced_Fire"
---SWEP.DistantShootSound = "CSGO.Deagle.Fire.Distance"
-SWEP.DryFireSound = ""
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path .. "weap_cpapa_fire_plr_01.ogg", path .. "weap_cpapa_fire_plr_02.ogg", path .. "weap_cpapa_fire_plr_03.ogg", path .. "weap_cpapa_fire_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_cpapa_fire_silenced_plr_01.ogg", path .. "weap_cpapa_fire_silenced_plr_02.ogg", path .. "weap_cpapa_fire_silenced_plr_03.ogg", path .. "weap_cpapa_fire_silenced_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_cpapa_fire_plr_inside_01.ogg", path .. "weap_cpapa_fire_plr_inside_02.ogg", path .. "weap_cpapa_fire_plr_inside_03.ogg", path .. "weap_cpapa_fire_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_cpapa_fire_silenced_plr_inside_01.ogg", path .. "weap_cpapa_fire_silenced_plr_inside_02.ogg", path .. "weap_cpapa_fire_silenced_plr_inside_03.ogg", path .. "weap_cpapa_fire_silenced_plr_inside_04.ogg"}
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 

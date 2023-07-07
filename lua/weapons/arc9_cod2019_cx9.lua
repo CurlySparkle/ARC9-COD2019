@@ -260,10 +260,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/cx9/"
 
-SWEP.ShootSound = "COD2019.CX9.Fire"
-SWEP.ShootSoundSilenced = "COD2019.CX9.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.CX9.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.CX9.Silenced_Fire_Inside"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path .. "weap_secho_fire_plr_01.ogg", path .. "weap_secho_fire_plr_02.ogg", path .. "weap_secho_fire_plr_03.ogg", path .. "weap_secho_fire_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_secho_fire_silenced_plr_01.ogg", path .. "weap_secho_fire_silenced_plr_02.ogg", path .. "weap_secho_fire_silenced_plr_03.ogg", path .. "weap_secho_fire_silenced_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_secho_fire_plr_inside_01.ogg", path .. "weap_secho_fire_plr_inside_02.ogg", path .. "weap_secho_fire_plr_inside_03.ogg", path .. "weap_secho_fire_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_secho_fire_silenced_plr_inside_01.ogg", path .. "weap_secho_fire_silenced_plr_inside_02.ogg", path .. "weap_secho_fire_silenced_plr_inside_03.ogg", path .. "weap_secho_fire_silenced_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.mp7.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
@@ -359,10 +360,10 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0/30},
-            {s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 5/30},
+            {s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 4/30},
 			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 15/30},
+            {s = path .. "wfoly_sm_secho_reload_end.ogg", t = 23/30},
 			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 25/30},
-			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 25/30},
         },
     },
     ["reload_empty"] = {

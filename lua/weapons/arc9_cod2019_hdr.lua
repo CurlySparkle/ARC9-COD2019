@@ -243,10 +243,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/hdr/"
 
-SWEP.ShootSound = "COD2019.HDR.Fire"
-SWEP.ShootSoundSilenced = "COD2019.HDR.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.HDR.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.HDR.Silenced_Fire_Inside"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path .. "weap_hdromeo_fire_plr_01.ogg", path .. "weap_hdromeo_fire_plr_02.ogg", path .. "weap_hdromeo_fire_plr_03.ogg", path .. "weap_hdromeo_fire_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_hdromeo_fire_silenced_plr_01.ogg", path .. "weap_hdromeo_fire_silenced_plr_02.ogg", path .. "weap_hdromeo_fire_silenced_plr_03.ogg", path .. "weap_hdromeo_fire_silenced_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_hdromeo_fire_plr_inside_01.ogg", path .. "weap_hdromeo_fire_plr_inside_02.ogg", path .. "weap_hdromeo_fire_plr_inside_03.ogg", path .. "weap_hdromeo_fire_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_hdromeo_fire_silenced_plr_inside_01.ogg", path .. "weap_hdromeo_fire_silenced_plr_inside_02.ogg", path .. "weap_hdromeo_fire_silenced_plr_inside_03.ogg", path .. "weap_hdromeo_fire_silenced_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.Awp.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
@@ -365,8 +366,8 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_01.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_magout_01.ogg", t = 18/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_02.ogg", t = 18/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_magout_01.ogg", t = 16/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_02.ogg", t = 16/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_rattle.ogg", t = 26/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_03.ogg", t = 48/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_01.ogg", t = 54/30},
@@ -448,14 +449,14 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_eject_01.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_01.ogg", t = 10/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_02.ogg", t = 22/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magout_01.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magout_01.ogg", t = 38/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_03.ogg", t = 40/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_04.ogg", t = 65/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magin_v2_01.ogg", t = 71/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magin_v2_02.ogg", t = 75/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_05.ogg", t = 85/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_end.ogg", t = 103/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_load_01.ogg", t = 90/30},
+            {s = path .. "wfoly_plr_sn_hdromeo_reload_empty_end.ogg", t = 88/30},
+            {s = path .. "wfoly_plr_sn_hdromeo_reload_empty_load_01.ogg", t = 89/30},
         },
     },
     ["ready"] = {

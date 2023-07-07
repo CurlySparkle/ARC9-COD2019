@@ -243,10 +243,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/kar98k/"
 
-SWEP.ShootSound = "COD2019.Kar98k.Fire"
-SWEP.ShootSoundSilenced = "COD2019.Kar98k.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.Kar98k.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.Kar98k.Silenced_Fire_Inside"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path .. "weap_kilo98_fire_plr_01.ogg", path .. "weap_kilo98_fire_plr_02.ogg", path .. "weap_kilo98_fire_plr_03.ogg", path .. "weap_kilo98_fire_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_kilo98_fire_silenced_plr_01.ogg", path .. "weap_kilo98_fire_silenced_plr_02.ogg", path .. "weap_kilo98_fire_silenced_plr_03.ogg", path .. "weap_kilo98_fire_silenced_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_kilo98_fire_plr_inside_01.ogg", path .. "weap_kilo98_fire_plr_inside_02.ogg", path .. "weap_kilo98_fire_plr_inside_03.ogg", path .. "weap_kilo98_fire_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_kilo98_fire_silenced_plr_inside_01.ogg", path .. "weap_kilo98_fire_silenced_plr_inside_02.ogg", path .. "weap_kilo98_fire_silenced_plr_inside_03.ogg", path .. "weap_kilo98_fire_silenced_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"

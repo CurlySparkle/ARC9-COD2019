@@ -127,6 +127,7 @@ SWEP.CamQCA = 1
 SWEP.CamQCA_Mult = 1
 
 local path = "weapons/cod2019/throwables/molotov/"
+local path2 = "weapons/cod2019/throwables/semtex/"
 
 SWEP.Animations = {
     ["idle"] = {
@@ -144,7 +145,7 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
+            {s = path2 .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
         },
     },
     -- ["pullpin"] = {

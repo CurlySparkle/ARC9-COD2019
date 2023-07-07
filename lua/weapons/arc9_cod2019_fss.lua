@@ -245,10 +245,11 @@ local path = "weapons/cod2019/m4a1/"
 local path2 = "weapons/cod2019/fss/"
 local path3 = "weapons/cod2019/p90/"
 
-SWEP.ShootSound = "COD2019.FSS.Fire"
-SWEP.ShootSoundSilenced = "COD2019.FSS.Fire_Silenced"
-SWEP.ShootSoundIndoor = "COD2019.FSS.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.FSS.Silenced_Fire_Inside"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path2 .. "weap_fss_fire_plr_01.ogg", path2 .. "weap_fss_fire_plr_02.ogg", path2 .. "weap_fss_fire_plr_03.ogg", path2 .. "weap_fss_fire_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path2 .. "weap_fss_fire_silenced_plr_01.ogg", path2 .. "weap_fss_fire_silenced_plr_02.ogg", path2 .. "weap_fss_fire_silenced_plr_03.ogg", path2 .. "weap_fss_fire_silenced_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path2 .. "weap_fss_fire_plr_inside_01.ogg", path2 .. "weap_fss_fire_plr_inside_02.ogg", path2 .. "weap_fss_fire_plr_inside_03.ogg", path2 .. "weap_fss_fire_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path2 .. "weap_fss_fire_silenced_plr_inside_01.ogg", path2 .. "weap_fss_fire_silenced_plr_inside_02.ogg", path2 .. "weap_fss_fire_silenced_plr_inside_03.ogg", path2 .. "weap_fss_fire_silenced_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.m4a4.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"

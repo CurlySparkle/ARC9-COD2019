@@ -247,10 +247,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/aug/"
 
-SWEP.ShootSound = "COD2019.AUG.Fire"
-SWEP.ShootSoundSilenced = "COD2019.AUG.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.AUG.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.AUG.Silenced_Fire_Inside"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path .. "weap_augolf_fire_plr_9mm_01.ogg", path .. "weap_augolf_fire_plr_9mm_02.ogg", path .. "weap_augolf_fire_plr_9mm_03.ogg", path .. "weap_augolf_fire_plr_9mm_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_augolf_fire_silenced_plr_9mm_01.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_02.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_03.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_augolf_fire_plr_9mm_inside_01.ogg", path .. "weap_augolf_fire_plr_9mm_inside_02.ogg", path .. "weap_augolf_fire_plr_9mm_inside_03.ogg", path .. "weap_augolf_fire_plr_9mm_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_augolf_fire_silenced_plr_9mm_inside_01.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_inside_02.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_inside_03.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.AUG.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"

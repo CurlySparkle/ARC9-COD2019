@@ -243,10 +243,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/ax50/"
 
-SWEP.ShootSound = "COD2019.AX50.Fire"
-SWEP.ShootSoundSilenced = "COD2019.AX50.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.AX50.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.AX50.Silenced_Fire_Inside"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path .. "weap_alpha50_fire_plr_01.ogg", path .. "weap_alpha50_fire_plr_02.ogg", path .. "weap_alpha50_fire_plr_03.ogg", path .. "weap_alpha50_fire_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_alpha50_fire_silenced_plr_01.ogg", path .. "weap_alpha50_fire_silenced_plr_02.ogg", path .. "weap_alpha50_fire_silenced_plr_03.ogg", path .. "weap_alpha50_fire_silenced_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_alpha50_fire_plr_inside_01.ogg", path .. "weap_alpha50_fire_plr_inside_02.ogg", path .. "weap_alpha50_fire_plr_inside_03.ogg", path .. "weap_alpha50_fire_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_alpha50_fire_silenced_plr_inside_01.ogg", path .. "weap_alpha50_fire_silenced_plr_inside_02.ogg", path .. "weap_alpha50_fire_silenced_plr_inside_03.ogg", path .. "weap_alpha50_fire_silenced_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.Awp.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
@@ -362,11 +363,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sn_alpha50_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_alpha50_reload_magout_01.ogg", t = 10/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magout_01.ogg", t = 9/30},
 			{s = path .. "wfoly_sn_alpha50_reload_arm.ogg", t = 20/30},
 			{s = path .. "wfoly_sn_alpha50_reload_maghit.ogg", t = 32/30},
-			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_01.ogg", t = 36/30},
-			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_01.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_02.ogg", t = 39/30},
 			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 46/30},
         },
     },
@@ -449,7 +450,7 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sn_alpha50_reload_empty_boltopen_01.ogg", t = 0/30},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_maggrab.ogg", t = 20/30},
-			{s = path .. "wfoly_sn_alpha50_reload_empty_magout_01.ogg", t = 27/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magout_01.ogg", t = 26/30},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_arm.ogg", t = 34/30},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_magin_v2_01.ogg", t = 48/30},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_magin_v2_02.ogg", t = 53/30},

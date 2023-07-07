@@ -241,10 +241,11 @@ SWEP.DropMagazineQCA = 3
 
 local path = "weapons/cod2019/g3a3/"
 
-SWEP.ShootSound = "COD2019.G3A3.Fire"
-SWEP.ShootSoundSilenced = "COD2019.G3A3.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.G3A3.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.G3A3.Silenced_Fire_Inside"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path .. "weap_g3a3_fire_plr_01.ogg", path .. "weap_g3a3_fire_plr_02.ogg", path .. "weap_g3a3_fire_plr_03.ogg", path .. "weap_g3a3_fire_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_g3a3_fire_silenced_plr_01.ogg", path .. "weap_g3a3_fire_silenced_plr_02.ogg", path .. "weap_g3a3_fire_silenced_plr_03.ogg", path .. "weap_g3a3_fire_silenced_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_g3a3_fire_plr_inside_01.ogg", path .. "weap_g3a3_fire_plr_inside_02.ogg", path .. "weap_g3a3_fire_plr_inside_03.ogg", path .. "weap_g3a3_fire_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_g3a3_fire_silenced_plr_inside_01.ogg", path .. "weap_g3a3_fire_silenced_plr_inside_02.ogg", path .. "weap_g3a3_fire_silenced_plr_inside_03.ogg", path .. "weap_g3a3_fire_silenced_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.GALILAR.Distance_Fire"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
@@ -406,7 +407,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_ar_falima_raise_settle.ogg", t = 3/30},
             {s = path .. "mp5-submachinegun-foley-bolt-chrage-1.ogg", t = 15/30},
 			{s = path .. "mp5-submachinegun-foley-bolt-lock-back-1.ogg", t = 33/30},
-			{s = path .. "wfoly_plr_ar_falima_raise_first_end.ogg", t = 66/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_end.ogg", t = 65/30},
         },
     },
     ["draw"] = {

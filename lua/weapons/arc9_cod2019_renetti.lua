@@ -240,10 +240,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/renetti/"
 
-SWEP.ShootSound = "COD2019.Renetti.Fire"
-SWEP.ShootSoundSilenced = "COD2019.Renetti.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.Renetti.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.Renetti.Silenced_Fire_Inside"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path .. "weap_mike9a3_fire_bang_plr_01.ogg", path .. "weap_mike9a3_fire_bang_plr_02.ogg", path .. "weap_mike9a3_fire_bang_plr_03.ogg", path .. "weap_mike9a3_fire_bang_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_mike9a3_fire_silenced_bang_plr_01.ogg", path .. "weap_mike9a3_fire_silenced_bang_plr_02.ogg", path .. "weap_mike9a3_fire_silenced_bang_plr_03.ogg", path .. "weap_mike9a3_fire_silenced_bang_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_mike9a3_fire_bang_plr_inside_01.ogg", path .. "weap_mike9a3_fire_bang_plr_inside_02.ogg", path .. "weap_mike9a3_fire_bang_plr_inside_03.ogg", path .. "weap_mike9a3_fire_bang_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_mike9a3_fire_silenced_bang_plr_inside_01.ogg", path .. "weap_mike9a3_fire_silenced_bang_plr_inside_02.ogg", path .. "weap_mike9a3_fire_silenced_bang_plr_inside_03.ogg", path .. "weap_mike9a3_fire_silenced_bang_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.hkp2000.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
@@ -365,12 +366,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike9_reload_magrelease.ogg", t = 1/30},
-			{s = path .. "wfoly_pi_mike9_reload_magout.ogg", t = 8/30},
-			{s = path .. "wfoly_pi_mike9_reload_maghit.ogg", t = 19/30},
-			{s = path .. "wfoly_pi_mike9_reload_magin.ogg", t = 22/30},
-			{s = path .. "wfoly_pi_mike9_reload_end.ogg", t = 22/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 19/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 22/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 22/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -505,12 +505,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike9_reload_magrelease.ogg", t = 1/30},
-			{s = path .. "wfoly_pi_mike9_reload_magout.ogg", t = 8/30},
-			{s = path .. "wfoly_pi_mike9_reload_maghit.ogg", t = 17/30},
-			{s = path .. "wfoly_pi_mike9_reload_magin.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_mike9_reload_end.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 15/30},
         },
     },
     ["reload_xmag_fast_empty"] = {

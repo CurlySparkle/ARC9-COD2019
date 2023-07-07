@@ -246,10 +246,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/asval/"
 
-SWEP.ShootSound = "COD2019.ASVAL.Fire"
-SWEP.ShootSoundSilenced = "COD2019.ASVAL.Fire"
-SWEP.ShootSoundIndoor = "COD2019.ASVAL.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.ASVAL.Silenced_Fire_Inside"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path .. "weap_valpha_sup_plr_01.ogg", path .. "weap_valpha_sup_plr_02.ogg", path .. "weap_valpha_sup_plr_03.ogg", path .. "weap_valpha_sup_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_valpha_sup_plr_01.ogg", path .. "weap_valpha_sup_plr_02.ogg", path .. "weap_valpha_sup_plr_03.ogg", path .. "weap_valpha_sup_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_valpha_sup_plr_inside_01.ogg", path .. "weap_valpha_sup_plr_inside_02.ogg", path .. "weap_valpha_sup_plr_inside_03.ogg", path .. "weap_valpha_sup_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_valpha_sup_plr_inside_01.ogg", path .. "weap_valpha_sup_plr_inside_02.ogg", path .. "weap_valpha_sup_plr_inside_03.ogg", path .. "weap_valpha_sup_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = nil
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"

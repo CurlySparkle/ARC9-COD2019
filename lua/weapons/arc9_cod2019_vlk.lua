@@ -256,10 +256,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/vlk/"
 
-SWEP.ShootSound = "COD2019.VLK.Fire"
-SWEP.ShootSoundSilenced = "COD2019.VLK.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.VLK.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.VLK.Silenced_Fire_Inside"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = {path .. "weap_mike26_fire_bang_plr_01.ogg", path .. "weap_mike26_fire_bang_plr_02.ogg", path .. "weap_mike26_fire_bang_plr_03.ogg", path .. "weap_mike26_fire_bang_plr_04.ogg"}
+SWEP.ShootSoundSilenced = {path .. "weap_mike26_fire_silenced_bang_plr_01.ogg", path .. "weap_mike26_fire_silenced_bang_plr_02.ogg", path .. "weap_mike26_fire_silenced_bang_plr_03.ogg", path .. "weap_mike26_fire_silenced_bang_plr_04.ogg"}
+SWEP.ShootSoundIndoor = {path .. "weap_mike26_fire_bang_plr_inside_01.ogg", path .. "weap_mike26_fire_bang_plr_inside_02.ogg", path .. "weap_mike26_fire_bang_plr_inside_03.ogg", path .. "weap_mike26_fire_bang_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_mike26_fire_silenced_bang_plr_inside_01.ogg", path .. "weap_mike26_fire_silenced_bang_plr_inside_02.ogg", path .. "weap_mike26_fire_silenced_bang_plr_inside_03.ogg", path .. "weap_mike26_fire_silenced_bang_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.XM1014.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
