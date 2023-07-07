@@ -289,7 +289,8 @@ SWEP.Animations = {
     ["cycle"] = {
         Source = "pump",
 		--EjectAt = 0.2,
-		MinProgress = 0.8,
+		MinProgress = 0.7,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.4, t = 2/30},
         },
@@ -297,7 +298,8 @@ SWEP.Animations = {
     ["cycle_sights"] = {
         Source = "pump_ads",
 		--EjectAt = 0.2,
-		MinProgress = 0.8,
+		MinProgress = 0.7,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.4, t = 2/30},
         },

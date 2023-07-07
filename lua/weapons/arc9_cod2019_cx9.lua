@@ -80,7 +80,7 @@ SWEP.ClipSize = 20 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -138,21 +138,38 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.5
-SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilPunch = 0.9
+SWEP.VisualRecoilUp = 0.6
+
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.1
+SWEP.SpreadMultRecoil = 3
 SWEP.RecoilModifierCap = 5
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadAddMove = 0.1
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.015
+SWEP.SpreadAddHipFire = 0.03
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
 
@@ -307,7 +324,8 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -338,44 +356,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 45/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		DropMagAt = 0.2,
-		Mult = 1.2,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-            {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0/30},
-            {s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 4/30},
-			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 15/30},
-            {s = path .. "wfoly_sm_secho_reload_end.ogg", t = 23/30},
-			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 25/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		FireASAP = true,
 		DropMagAt = 1,
         IKTimeLine = {
             {
@@ -407,6 +391,221 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_reload_empty_magin.ogg", t = 43/30},
 			{s = path .. "wfoly_sm_secho_reload_empty_charge.ogg", t = 49/30},
 			{s = path .. "wfoly_sm_secho_reload_empty_end.ogg", t = 55/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 4/30},
+			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 15/30},
+            {s = path .. "wfoly_sm_secho_reload_end.ogg", t = 23/30},
+			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 25/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sm_secho_reload_empty_up.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 4/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_mvmnt.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_maghit.ogg", t = 15/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_magin.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_charge.ogg", t = 35/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_end.ogg", t = 30/30},
+        },
+    },
+    ["reload_drum"] = {
+        Source = "reload_drum",
+		MinProgress = 0.9,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_secho_reload_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 36/30},
+			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 45/30},
+        },
+    },
+    ["reload_drum_empty"] = {
+        Source = "reload_empty_drum",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_secho_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_mvmnt.ogg", t = 33/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_maghit.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_magin.ogg", t = 43/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_charge.ogg", t = 49/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_end.ogg", t = 55/30},
+        },
+    },
+    ["reload_drum_fast"] = {
+        Source = "reload_fast_drum",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 4/30},
+			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 15/30},
+            {s = path .. "wfoly_sm_secho_reload_end.ogg", t = 23/30},
+			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 25/30},
+        },
+    },
+    ["reload_drum_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sm_secho_reload_empty_up.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 4/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_mvmnt.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_maghit.ogg", t = 15/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_magin.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_charge.ogg", t = 35/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_end.ogg", t = 30/30},
         },
     },
     ["ready"] = {
@@ -507,17 +706,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -527,13 +726,25 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights
+
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
+        return "reload_drum_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
+        return "reload_drum_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_drum") then
+        return "reload_drum"
+    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
+        return "reload_drum_empty"
     end
 end
 
@@ -711,6 +922,6 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 3.8
-SWEP.CodAngledGripPoseParam = 0.2
+SWEP.CodAngledGripPoseParam = 4
 SWEP.CodStubbyGripPoseParam = 0.5
 SWEP.GripPoseParam2 = 0.3

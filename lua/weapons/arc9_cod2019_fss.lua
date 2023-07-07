@@ -252,7 +252,7 @@ local path = "weapons/cod2019/m4a1/"
 local path2 = "weapons/cod2019/fss/"
 local path3 = "weapons/cod2019/p90/"
 
-SWEP.ShootPitchVariation = 10
+SWEP.ShootPitchVariation = 11
 SWEP.ShootSound = {path2 .. "weap_fss_fire_plr_01.ogg", path2 .. "weap_fss_fire_plr_02.ogg", path2 .. "weap_fss_fire_plr_03.ogg", path2 .. "weap_fss_fire_plr_04.ogg"}
 SWEP.ShootSoundSilenced = {path2 .. "weap_fss_fire_silenced_plr_01.ogg", path2 .. "weap_fss_fire_silenced_plr_02.ogg", path2 .. "weap_fss_fire_silenced_plr_03.ogg", path2 .. "weap_fss_fire_silenced_plr_04.ogg"}
 SWEP.ShootSoundIndoor = {path2 .. "weap_fss_fire_plr_inside_01.ogg", path2 .. "weap_fss_fire_plr_inside_02.ogg", path2 .. "weap_fss_fire_plr_inside_03.ogg", path2 .. "weap_fss_fire_plr_inside_04.ogg"}

@@ -279,7 +279,7 @@ SWEP.Animations = {
     ["cycle"] = {
         Source = "cycle",
 		--EjectAt = 0.2,
-		MinProgress = 0.9,
+		MinProgress = 0.8,
 		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 10/50},
@@ -289,7 +289,7 @@ SWEP.Animations = {
     ["cycle_sights"] = {
         Source = "cycle_ads",
 		--EjectAt = 0.2,
-		MinProgress = 0.9,
+		MinProgress = 0.8,
 		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 10/50},

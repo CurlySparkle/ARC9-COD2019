@@ -269,7 +269,8 @@ SWEP.Animations = {
     ["cycle"] = {
         Source = "pump",
 		EjectAt = 0.2,
-		MinProgress = 0.8,
+		MinProgress = 0.6,
+		FireASAP = true,
         EventTable = {
             {s = "COD2019.R90.Rechamber_A", t = 1/30},
 			{s = "COD2019.R90.Rechamber_B", t = 5/30},
@@ -278,7 +279,8 @@ SWEP.Animations = {
     ["cycle_sights"] = {
         Source = "pump_ads",
 		EjectAt = 0.2,
-		MinProgress = 0.8,
+		MinProgress = 0.6,
+		FireASAP = true,
         EventTable = {
             {s = "COD2019.R90.Rechamber_A", t = 1/30},
 			{s = "COD2019.R90.Rechamber_B", t = 5/30},

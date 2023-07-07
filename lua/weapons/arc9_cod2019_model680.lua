@@ -276,14 +276,28 @@ SWEP.HideBones  = {
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["fire_sights"] = {
         Source = "shoot1_ads",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["cycle"] = {
         Source = "pump",
 		--EjectAt = 0.2,
-		MinProgress = 0.8,
+		MinProgress = 0.55,
 		FireASAP = true,
         EventTable = {
             {s = "COD2019.Model680.Rechamber_A", t = 0/30},
@@ -293,7 +307,7 @@ SWEP.Animations = {
     ["cycle_sights"] = {
         Source = "pump_ads",
 		--EjectAt = 0.2,
-		MinProgress = 0.8,
+		MinProgress = 0.55,
 		FireASAP = true,
         EventTable = {
             {s = "COD2019.Model680.Rechamber_A", t = 0/30},
@@ -699,6 +713,13 @@ SWEP.Animations = {
     },
     ["idle"] = {
         Source = "idle",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["idle_sprint"] = {
         Source = "sprint",
