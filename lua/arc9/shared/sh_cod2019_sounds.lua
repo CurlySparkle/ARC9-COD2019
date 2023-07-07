@@ -2778,10 +2778,10 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Famas.Fire",
-    channel = 138,
-    volume = 1.0,
-    level = 120,
-    pitch = {90,110},
+    --channel = 138,
+    --volume = 1.0,
+    --level = 120,
+    --pitch = {90,110},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
         "weapons/cod2019/grau556/weap_sierra552_fire_plr_01.ogg",
@@ -2793,10 +2793,10 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Famas.Silenced_Fire",
-    channel = 138,
-    volume = 1.0,
-    level = 120,
-    pitch = {90,110},
+    -- channel = 138,
+    -- volume = 1.0,
+    -- level = 120,
+    -- pitch = {90,110},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
         "weapons/cod2019/grau556/weap_sierra552_fire_silenced_plr_01.ogg",
@@ -2808,10 +2808,10 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Famas.Fire_Inside",
-    channel = 138,
-    volume = 1.0,
-    level = 120,
-    pitch = {90,110},
+    -- channel = 138,
+    -- volume = 1.0,
+    -- level = 120,
+    -- pitch = {90,110},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
         "weapons/cod2019/famas/weap_famas_fire_plr_inside_01.ogg",
@@ -2823,10 +2823,10 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Famas.Silenced_Fire_Inside",
-    channel = 138,
-    volume = 1.0,
-    level = 120,
-    pitch = {90,110},
+    -- channel = 138,
+    -- volume = 1.0,
+    -- level = 120,
+    -- pitch = {90,110},
 	soundlevel = SNDLVL_GUNFIRE,
     sound = {
         "weapons/cod2019/famas/weap_famas_fire_silenced_plr_inside_01.ogg",

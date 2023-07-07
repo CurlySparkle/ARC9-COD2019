@@ -244,7 +244,7 @@ SWEP.ShootSoundSilenced = "COD2019.X16.Silenced_Fire"
 SWEP.ShootSoundIndoor = "COD2019.X16.Fire_Inside"
 SWEP.ShootSoundSilencedIndoor = "COD2019.X16.Silenced_Fire_Inside"
 
-SWEP.DistantShootSound = "CSGO.Glock.Fire.Distance"
+--SWEP.DistantShootSound = "CSGO.Glock.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"

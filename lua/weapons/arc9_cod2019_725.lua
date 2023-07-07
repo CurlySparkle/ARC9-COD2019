@@ -256,12 +256,18 @@ SWEP.NoShellEject = true
 
 local path = "weapons/cod2019/725/"
 
-SWEP.ShootSound = "COD2019.725.Fire"
-SWEP.ShootSoundSilenced = "COD2019.725.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.725.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.725.Silenced_Fire_Inside"
+-- SWEP.ShootSound = "COD2019.725.Fire"
+-- SWEP.ShootSoundSilenced = "COD2019.725.Silenced_Fire"
+-- SWEP.ShootSoundIndoor = "COD2019.725.Fire_Inside"
+-- SWEP.ShootSoundSilencedIndoor = "COD2019.725.Silenced_Fire_Inside"
 
-SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = { path .. "weap_charlie725_fire_plr_swtn_01.ogg", path .. "weap_charlie725_fire_plr_swtn_02.ogg", path .. "weap_charlie725_fire_plr_swtn_03.ogg", path .. "weap_charlie725_fire_plr_swtn_04.ogg" }
+SWEP.ShootSoundSilenced = { path .. "weap_charlie725_fire_silenced_plr_swtn_01.ogg", path .. "weap_charlie725_fire_silenced_plr_swtn_02.ogg", path .. "weap_charlie725_fire_silenced_plr_swtn_03.ogg", path .. "weap_charlie725_fire_silenced_plr_swtn_04.ogg" }
+SWEP.ShootSoundIndoor = { path .. "weap_charlie725_fire_plr_swtn_inside_01.ogg", path .. "weap_charlie725_fire_plr_swtn_inside_02.ogg", path .. "weap_charlie725_fire_plr_swtn_inside_03.ogg", path .. "weap_charlie725_fire_plr_swtn_inside_04.ogg" }
+SWEP.ShootSoundSilencedIndoor = { path .. "weap_charlie725_fire_silenced_plr_swtn_inside_01.ogg", path .. "weap_charlie725_fire_silenced_plr_swtn_inside_02.ogg", path .. "weap_charlie725_fire_silenced_plr_swtn_inside_03.ogg", path .. "weap_charlie725_fire_silenced_plr_swtn_inside_04.ogg" }
+
+--SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"

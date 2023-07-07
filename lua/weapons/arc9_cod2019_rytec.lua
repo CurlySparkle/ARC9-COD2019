@@ -112,7 +112,8 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 5
+SWEP.RecoilKickSights = 3
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
@@ -177,7 +178,7 @@ SWEP.SprintMidPoint = {
 }
 
 SWEP.ActivePos = Vector(0, 0, 0)
-SWEP.ActiveAng = Angle(0.5, 0.7, 0)
+SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
     Pos = Vector(0, -0.5, -0.5),
@@ -241,18 +242,31 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/rytec/"
 
-SWEP.ShootSound = "COD2019.Rytec.Fire"
-SWEP.ShootSoundSilenced = "COD2019.Rytec.Silenced_Fire"
-SWEP.ShootSoundIndoor = "COD2019.Rytec.Fire_Inside"
-SWEP.ShootSoundSilencedIndoor = "COD2019.Rytec.Silenced_Fire_Inside"
+--SWEP.ShootSound = "COD2019.Rytec.Fire"
+--SWEP.ShootSoundSilenced = "COD2019.Rytec.Silenced_Fire"
+--SWEP.ShootSoundIndoor = "COD2019.Rytec.Fire_Inside"
+--SWEP.ShootSoundSilencedIndoor = "COD2019.Rytec.Silenced_Fire_Inside"
 
-SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
+SWEP.ShootPitchVariation = 13
+SWEP.ShootSound = { path .. "weap_xmike109_fire_bang_plr_01.ogg", path .. "weap_xmike109_fire_bang_plr_02.ogg", path .. "weap_xmike109_fire_bang_plr_03.ogg", path .. "weap_xmike109_fire_bang_plr_04.ogg" }
+SWEP.ShootSoundSilenced = { path .. "weap_xmike109_fire_silenced_plr_01.ogg", path .. "weap_xmike109_fire_silenced_plr_02.ogg", path .. "weap_xmike109_fire_silenced_plr_03.ogg", path .. "weap_xmike109_fire_silenced_plr_04.ogg" }
+SWEP.ShootSoundIndoor = { path .. "weap_xmike109_fire_bang_plr_inside_01.ogg", path .. "weap_xmike109_fire_bang_plr_inside_02.ogg", path .. "weap_xmike109_fire_bang_plr_inside_03.ogg", path .. "weap_xmike109_fire_bang_plr_inside_04.ogg" }
+SWEP.ShootSoundSilencedIndoor = { path .. "weap_xmike109_fire_silenced_plr_inside_01.ogg", path .. "weap_xmike109_fire_silenced_plr_inside_02.ogg", path .. "weap_xmike109_fire_silenced_plr_inside_03.ogg", path .. "weap_xmike109_fire_silenced_plr_inside_04.ogg" }
+
+--SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+
+SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/svd/weap_delta_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/svd/weap_delta_disconnector_plr_01.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_he_round_01",
@@ -263,6 +277,14 @@ SWEP.BulletBones = {
 SWEP.HideBones  = {
     [1] = "j_mag2",
 }
+
+function SWEP:PrimaryAttack()
+    local clip = self:Clip1()
+    weapons.Get(self.Base).PrimaryAttack(self)
+    if (clip != self:Clip1()) then
+        self:MakeEnvironmentDust(150)
+    end
+end
 
 SWEP.Animations = {
     ["fire"] = {
@@ -309,7 +331,7 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
-		DropMagAt = 1,
+		DropMagAt = 1.15,
         IKTimeLine = {
             {
                 t = 0,
@@ -383,7 +405,7 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.8,
-		DropMagAt = 1,
+		DropMagAt = 1.15,
         IKTimeLine = {
             {
                 t = 0,
@@ -662,7 +684,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle",},
-		Scale = 1.1,
+		Scale = 1.2,
     },
     {
         PrintName = "Tactical",
@@ -672,6 +694,7 @@ SWEP.Attachments = {
         Pos = Vector(22.8, 1.32, 0.15),
         Ang = Angle(0, 0, -90),
 		InstalledElements = {"rail_laser",},
+		LaserCorrectionAngle = Angle(0, 10, 0),
     },
     {
         PrintName = "Grips",

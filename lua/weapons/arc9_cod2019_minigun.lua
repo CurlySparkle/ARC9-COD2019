@@ -233,7 +233,7 @@ SWEP.TriggerDelayTime = 0.45 -- Time until weapon fires.
 local path = "weapons/cod2019/minigun/"
 
 SWEP.ShootSound = "COD2019.Minigun.Fire"
-SWEP.DistantShootSound = "COD2019.Minigun.Distance_Fire"
+--SWEP.DistantShootSound = "COD2019.Minigun.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.BulletBones = {

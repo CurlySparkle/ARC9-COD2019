@@ -252,7 +252,7 @@ SWEP.ShootSoundSilenced = "COD2019.M14.Silenced_Fire"
 SWEP.ShootSoundIndoor = "COD2019.M14.Fire_Inside"
 SWEP.ShootSoundSilencedIndoor = "COD2019.M14.Silenced_Fire_Inside"
 
-SWEP.DistantShootSound = "CSGO.g3sg1.Distance_Fire"
+--SWEP.DistantShootSound = "CSGO.g3sg1.Distance_Fire"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
@@ -842,7 +842,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(0, -0.48, 0),
+        Pos = Vector(-3, -0.48, 0),
         Ang = Angle(0, 0, -90),
 		--InstalledElements = {"laser_rail"},
     },

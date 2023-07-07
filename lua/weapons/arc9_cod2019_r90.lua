@@ -252,7 +252,7 @@ SWEP.ShootSoundSilenced = "COD2019.R90.Silenced_Fire"
 SWEP.ShootSoundIndoor = "COD2019.R90.Fire_Inside"
 SWEP.ShootSoundSilencedIndoor = "COD2019.R90.Silenced_Fire_Inside"
 
-SWEP.DistantShootSound = "CSGO.XM1014.Fire.Distance"
+--SWEP.DistantShootSound = "CSGO.XM1014.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"

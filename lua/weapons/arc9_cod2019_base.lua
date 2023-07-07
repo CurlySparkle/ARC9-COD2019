@@ -57,3 +57,23 @@ SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire
 SWEP.Sway = 0 -- How much the gun sways.
 
 SWEP.FiremodeSound = "weapons/csgo/auto_semiauto_switch.wav"
+
+function SWEP:MakeEnvironmentDust(radius)
+    --simple func for snipers
+    radius = radius || 150
+    
+    if (!IsValid(self:GetOwner()) || !self:GetOwner():IsOnGround()) then
+        return
+    end
+    
+    local bInWater = self:GetOwner():WaterLevel() > 0
+    
+    if (IsFirstTimePredicted()) then
+        local data = EffectData()
+        data:SetEntity(self:GetOwner())
+        data:SetScale(bInWater && radius * 0.15 || radius)
+        data:SetOrigin(bInWater && self:GetOwner():EyePos() || self:GetOwner():GetPos())
+        
+        util.Effect(bInWater && "waterripple" || "ThumperDust", data)
+    end
+end

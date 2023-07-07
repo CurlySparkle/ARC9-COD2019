@@ -248,15 +248,30 @@ SWEP.ShootSoundSilenced = "COD2019.AX50.Silenced_Fire"
 SWEP.ShootSoundIndoor = "COD2019.AX50.Fire_Inside"
 SWEP.ShootSoundSilencedIndoor = "COD2019.AX50.Silenced_Fire_Inside"
 
-SWEP.DistantShootSound = "CSGO.Awp.Fire.Distance"
+--SWEP.DistantShootSound = "CSGO.Awp.Fire.Distance"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
+SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/svd/weap_delta_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/svd/weap_delta_disconnector_plr_01.ogg"
+
 SWEP.HideBones  = {
     [1] = "j_mag2",
 }
+
+function SWEP:PrimaryAttack()
+    local clip = self:Clip1()
+    weapons.Get(self.Base).PrimaryAttack(self)
+    if (clip != self:Clip1()) then
+        self:MakeEnvironmentDust(150)
+    end
+end
 
 SWEP.Animations = {
     ["fire"] = {

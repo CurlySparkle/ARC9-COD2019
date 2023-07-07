@@ -29,7 +29,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_m32.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-12, 5, 0),
+    TPIKPos = Vector(-8, 5, 0),
     TPIKAng = Angle(0, 0, 180),
     Scale = 1
 }
@@ -220,7 +220,7 @@ SWEP.DropMagazineQCA = 4
 local path = "weapons/cod2019/m32/"
 
 SWEP.ShootSound = "COD2019.M32.Fire"
-SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
+--SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.TriggerDelay = 0.01 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.

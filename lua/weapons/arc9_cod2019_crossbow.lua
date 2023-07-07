@@ -71,7 +71,7 @@ SWEP.ClipSize = 1 -- Self-explanatory.
 SWEP.SupplyLimit = 24 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 24 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 SWEP.LauncherCrosshair = false
@@ -129,8 +129,8 @@ SWEP.SpreadAddHipFire = 0.03
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
-SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.4 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -213,7 +213,7 @@ SWEP.NoShellEject = true
 
 local path = "weapons/cod2019/crossbow/"
 
-SWEP.ShootSound = "COD2019.Crossbow.Fire"
+SWEP.ShootSound = path .. "weap_crossbow_fire_01.ogg"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
@@ -379,7 +379,7 @@ SWEP.Animations = {
     },
 }
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
+SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 -------------------------- ATTACHMENTS
 

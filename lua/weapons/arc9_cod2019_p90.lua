@@ -254,7 +254,7 @@ SWEP.ShootSoundSilenced = "COD2019.P90.Silenced_Fire"
 SWEP.ShootSoundIndoor = "COD2019.P90.Fire_Inside"
 SWEP.ShootSoundSilencedIndoor = "COD2019.P90.Silenced_Fire_Inside"
 
-SWEP.DistantShootSound = "CSGO.p90.Distance_Fire"
+--SWEP.DistantShootSound = "CSGO.p90.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
@@ -301,8 +301,8 @@ SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before s
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/p90/weap_papa90_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/p90/weap_papa90_disconnector_plr_01.ogg"
 
 
 SWEP.Animations = {

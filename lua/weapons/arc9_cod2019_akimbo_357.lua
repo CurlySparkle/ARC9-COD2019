@@ -233,7 +233,7 @@ local path2 = "weapons/cod2019/50gs/"
 
 SWEP.ShootSound = "COD2019.357.Fire"
 SWEP.ShootSoundSilenced = "COD2019.357.Silenced_Fire"
-SWEP.DistantShootSound = "CSGO.Deagle.Fire.Distance"
+--SWEP.DistantShootSound = "CSGO.Deagle.Fire.Distance"
 SWEP.DryFireSound = ""
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"

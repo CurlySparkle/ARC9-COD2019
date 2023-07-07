@@ -237,13 +237,20 @@ SWEP.ShootSoundSilenced = "COD2019.SVD.Silenced_Fire"
 SWEP.ShootSoundIndoor = "COD2019.SVD.Fire_Inside"
 SWEP.ShootSoundSilencedIndoor = "COD2019.SVD.Silenced_Fire_Inside"
 
-SWEP.DistantShootSound = "CSGO.g3sg1.Distance_Fire"
+--SWEP.DistantShootSound = "CSGO.g3sg1.Distance_Fire"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+
+SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/svd/weap_delta_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/svd/weap_delta_disconnector_plr_01.ogg"
 
 SWEP.HideBones  = {
     [1] = "j_mag2",

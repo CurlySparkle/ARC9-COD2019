@@ -127,15 +127,16 @@ SWEP.VisualRecoilUp = 1.5
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadAddRecoil = 0.02
 SWEP.SpreadMultRecoil = 1.3
 SWEP.RecoilModifierCap = 2
+--SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadAddMove = 0.05
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.01
+SWEP.SpreadAddHipFire = 0.04
 SWEP.SpreadAddCrouch = -0.01
-SWEP.SpreadAddSights = 0.01
+SWEP.SpreadAddSights = -0.5
 
 
 -------------------------- HANDLING
@@ -250,7 +251,13 @@ SWEP.ShootSoundSilenced = "COD2019.50Gs.Silenced_Fire"
 SWEP.ShootSoundIndoor = "COD2019.50Gs.Fire_Inside"
 SWEP.ShootSoundSilencedIndoor = "COD2019.50Gs.Silenced_Fire_Inside"
 
-SWEP.DistantShootSound = "CSGO.Deagle.Fire.Distance"
+SWEP.ShootPitchVariation = 10
+SWEP.ShootSound = { path .. "weap_decho_fire_plr_01.ogg", path .. "weap_decho_fire_plr_02.ogg", path .. "weap_decho_fire_plr_03.ogg", path .. "weap_decho_fire_plr_04.ogg" }
+SWEP.ShootSoundSilenced = { path .. "weap_decho_fire_silenced_plr_01.ogg", path .. "weap_decho_fire_silenced_plr_02.ogg", path .. "weap_decho_fire_silenced_plr_03.ogg", path .. "weap_decho_fire_silenced_plr_04.ogg" }
+SWEP.ShootSoundIndoor = { path .. "weap_decho_fire_plr_inside_01.ogg", path .. "weap_decho_fire_plr_inside_02.ogg", path .. "weap_decho_fire_plr_inside_03.ogg", path .. "weap_decho_fire_plr_inside_04.ogg" }
+SWEP.ShootSoundSilencedIndoor = { path .. "weap_decho_fire_silenced_plr_inside_01.ogg", path .. "weap_decho_fire_silenced_plr_inside_02.ogg", path .. "weap_decho_fire_silenced_plr_inside_03.ogg", path .. "weap_decho_fire_silenced_plr_inside_04.ogg" }
+
+--SWEP.DistantShootSound = "CSGO.Deagle.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"

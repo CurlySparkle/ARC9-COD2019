@@ -221,7 +221,7 @@ SWEP.NoShellEject = true
 local path = "weapons/cod2019/pila/"
 
 SWEP.ShootSound = "COD2019.Pila.Fire"
-SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
+--SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
 SWEP.DryFireSound = "weapons/csgo/svd/svd_empty.ogg"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"

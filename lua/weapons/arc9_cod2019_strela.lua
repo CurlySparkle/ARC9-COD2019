@@ -217,7 +217,7 @@ end
 local path = "weapons/cod2019/strela/"
 
 SWEP.ShootSound = "COD2019.Strela.Fire"
-SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
+--SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
