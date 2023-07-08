@@ -71,7 +71,7 @@ SWEP.ClipSize = 25 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -126,10 +126,22 @@ SWEP.RecoilMultSights = 0.6
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilPunch = 1.5
 SWEP.VisualRecoilUp = 1
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = -1/6
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -254,7 +266,7 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/aug/"
 
-SWEP.ShootPitchVariation = 10
+SWEP.ShootPitchVariation = 11
 SWEP.ShootSound = {path .. "weap_augolf_fire_plr_9mm_01.ogg", path .. "weap_augolf_fire_plr_9mm_02.ogg", path .. "weap_augolf_fire_plr_9mm_03.ogg", path .. "weap_augolf_fire_plr_9mm_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_augolf_fire_silenced_plr_9mm_01.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_02.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_03.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_augolf_fire_plr_9mm_inside_01.ogg", path .. "weap_augolf_fire_plr_9mm_inside_02.ogg", path .. "weap_augolf_fire_plr_9mm_inside_03.ogg", path .. "weap_augolf_fire_plr_9mm_inside_04.ogg"}
@@ -548,7 +560,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.95,
+                t = 1.1,
                 lhik = 1,
                 rhik = 1
             },
@@ -585,7 +597,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 1.1,
+                t = 1.15,
                 lhik = 1,
                 rhik = 1
             },
@@ -622,7 +634,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.85,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
@@ -660,7 +672,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.95,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -899,7 +911,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
---SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -943,6 +955,11 @@ SWEP.AttachmentElements = {
     ["upper"] = {
         Bodygroups = {
             {6,1},
+        },
+    },
+    ["rail_laser"] = {
+        Bodygroups = {
+            {7,1},
         },
     },
 }
@@ -1008,9 +1025,9 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = {"csgo_tac","cod2019_tac_alt"},
+        Category = {"csgo_tac","cod2019_tac"},
         Bone = "tag_laser_attach",
-        Pos = Vector(-4, -0.3, -0.4),
+        Pos = Vector(-5, 0, -0.4),
         Ang = Angle(0, 0, -90),
 		InstalledElements = {"rail_laser"},
     },

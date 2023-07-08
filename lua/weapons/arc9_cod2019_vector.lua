@@ -308,7 +308,8 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+        MinProgress = 0.9,
+        FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
@@ -344,7 +345,8 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+        MinProgress = 0.9,
+        FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             {
@@ -382,7 +384,8 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+        MinProgress = 0.9,
+        FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.7,
         IKTimeLine = {
@@ -420,7 +423,8 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.9,
+        MinProgress = 0.9,
+        FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             {
@@ -458,6 +462,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
+        MinProgress = 0.9,
+        FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -488,6 +494,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        MinProgress = 0.8,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sm_victor_raise.ogg", t = 0/30},
         },
