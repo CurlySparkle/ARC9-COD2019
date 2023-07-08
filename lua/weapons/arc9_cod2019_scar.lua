@@ -195,7 +195,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -255,7 +255,7 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/scar/"
 
-SWEP.ShootPitchVariation = 10
+SWEP.ShootPitchVariation = 12
 SWEP.ShootSound = {path .. "weap_scharlie_fire_plr_01.ogg", path .. "weap_scharlie_fire_plr_02.ogg", path .. "weap_scharlie_fire_plr_03.ogg", path .. "weap_scharlie_fire_plr_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_scharlie_fire_silenced_plr_01.ogg", path .. "weap_scharlie_fire_silenced_plr_02.ogg", path .. "weap_scharlie_fire_silenced_plr_03.ogg", path .. "weap_scharlie_fire_silenced_plr_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_scharlie_fire_plr_inside_01.ogg", path .. "weap_scharlie_fire_plr_inside_02.ogg", path .. "weap_scharlie_fire_plr_inside_03.ogg", path .. "weap_scharlie_fire_plr_inside_04.ogg"}
@@ -328,42 +328,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_scharlie_reload_end.ogg", t = 49/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		MagSwapTime = 1.5,
-		DropMagAt = 0.55,
-		Mult = 1.1,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 25/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 31/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 35/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -397,6 +361,146 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 54/30},
 			{s = path .. "wfoly_ar_scharlie_reload_empty_bolt_release.ogg", t = 64/30},
 			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 67/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.55,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 35/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.55,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_bolt_release.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 45/30},
+        },
+    },
+    ["reload_xmags"] = {
+        Source = "reload_xmags",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magout.ogg", t = 19/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_01.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_02.ogg", t = 44/30},
+			{s = path .. "wfoly_ar_scharlie_reload_end.ogg", t = 49/30},
+        },
+    },
+    ["reload_xmags_fast"] = {
+        Source = "reload_xmags_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.55,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 35/30},
         },
     },
     ["ready"] = {
@@ -521,8 +625,18 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        return "reload_xmags_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        return "reload_fast_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("ammo_extend") then
+        return "reload_xmags"
     -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         -- return "reload_fast_empty"
     end

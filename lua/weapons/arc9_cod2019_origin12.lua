@@ -252,7 +252,7 @@ SWEP.EjectDelay = 0.1
 
 local path = "weapons/cod2019/origin12/"
 
-SWEP.ShootPitchVariation = 13
+SWEP.ShootPitchVariation = 14
 SWEP.ShootSound = {path .. "weap_oscar12_fire_plr_01.ogg", path .. "weap_oscar12_fire_plr_02.ogg", path .. "weap_oscar12_fire_plr_03.ogg", path .. "weap_oscar12_fire_plr_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_oscar12_fire_silenced_plr_01.ogg", path .. "weap_oscar12_fire_silenced_plr_02.ogg", path .. "weap_oscar12_fire_silenced_plr_03.ogg", path .. "weap_oscar12_fire_silenced_plr_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_oscar12_fire_plr_inside_01.ogg", path .. "weap_oscar12_fire_plr_inside_02.ogg", path .. "weap_oscar12_fire_plr_inside_03.ogg", path .. "weap_oscar12_fire_plr_inside_04.ogg"}
