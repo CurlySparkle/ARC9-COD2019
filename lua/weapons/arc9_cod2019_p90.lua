@@ -78,7 +78,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 895
+SWEP.RPM = 895.5223880597015
 
 SWEP.Firemodes = {
     {
@@ -104,7 +104,7 @@ SWEP.RecoilPatternDrift = 35
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 2 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -125,20 +125,25 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilMultSights = 0.1
 SWEP.VisualRecoilPunchSights = 25
 SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 0
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = -1/6
 
+SWEP.VisualRecoilSpringPunchDamping = 26
+SWEP.VisualRecoilDampingConst = 80
+SWEP.VisualRecoilSpringMagnitude = 2 / 1.67
+
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 4
+SWEP.SpreadMultRecoil = 1.5
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 1
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadAddHipFire = 0.0012
@@ -624,7 +629,7 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"muzzle","muzzle_p90","p90_barrel"},
+        Category = {"cod2019_muzzle","p90_barrel"},
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),

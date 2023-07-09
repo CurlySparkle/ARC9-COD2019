@@ -38,7 +38,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_hdr.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-5, 5, -2),
+    TPIKPos = Vector(-7, 5, -2),
     TPIKAng = Angle(-10, 3, 180),
     Scale = 1
 }
@@ -75,7 +75,7 @@ SWEP.ClipSize = 5 -- Self-explanatory.
 SWEP.SupplyLimit = 8 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -164,9 +164,9 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-1.37, -2, 1.05),
-    Ang = Angle(0, 0, 6.5),
-    Magnification = 1.1,
+    Pos = Vector(-4.75, -3, -0.2),
+    Ang = Angle(-0.8, 0.3, -8),
+    Magnification = 1.17,
     ViewModelFOV = 56,
     CrosshairInSights = false
 }
@@ -186,7 +186,7 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.4, -0.4)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -638,6 +638,11 @@ SWEP.AttachmentElements = {
             {6,1},
         },
     },
+    ["sight_none"] = {
+        Bodygroups = {
+            {7,1},
+        },
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -660,7 +665,7 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"muzzle_shotgun","muzzle"},
+        Category = "cod2019_muzzle",
         Bone = "tag_silencer",
         Pos = Vector(-0.23, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -675,16 +680,16 @@ SWEP.Attachments = {
         Category = {"cod2019_optic","cod2019_optic_hdr"},
         CorrectiveAng = Angle(-0.5, 1.15, 0),
 		InstalledElements = {"sight_none"},
-		Installed = "cod2019_optic_scope_hdr",
-        Integral = "cod2019_optic_scope_hdr",
+		--Installed = "cod2019_optic_scope_hdr",
+        --Integral = "cod2019_optic_scope_hdr",
     },
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(0, 0, -3.2),
-        Ang = Angle(0, 0, 0),
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 180),
 		--InstalledElements = {"rail_laser"},
     },
     {
@@ -702,7 +707,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_attachments",
-        Pos = Vector(16, 0, -0.4),
+        Pos = Vector(14.5, 0, -0.4),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"guard_none"},
@@ -775,5 +780,5 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 3
-SWEP.CodAngledGripPoseParam = 3
+SWEP.CodAngledGripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5

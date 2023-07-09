@@ -37,7 +37,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_rytec.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-6, 6, -1),
+    TPIKPos = Vector(-8, 6, -1),
     TPIKAng = Angle(-10, 0, 175),
     Scale = 1
 }
@@ -123,8 +123,21 @@ SWEP.RecoilMultCrouch = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilSpringMagnitude = 5
 SWEP.VisualRecoilUp = 1
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -297,6 +310,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
+		DropMagAt = 2.2,
         IKTimeLine = {
             {
                 t = 0,
@@ -332,7 +346,7 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
-		DropMagAt = 1.15,
+		DropMagAt = 1.13,
         IKTimeLine = {
             {
                 t = 0,

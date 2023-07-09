@@ -122,8 +122,12 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.8
+SWEP.VisualRecoilPunch = 1.5
 SWEP.VisualRecoilUp = 1
+
+SWEP.VisualRecoilSpringPunchDamping = 26
+SWEP.VisualRecoilDampingConst = 80
+SWEP.VisualRecoilSpringMagnitude = 2 / 1.67
 
 -------------------------- SPREAD
 
@@ -140,7 +144,6 @@ SWEP.SpreadMultMove = 2
 SWEP.SpreadAddHipFire = 0.03
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
-
 
 -------------------------- HANDLING
 

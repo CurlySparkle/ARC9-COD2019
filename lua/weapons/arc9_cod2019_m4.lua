@@ -131,6 +131,8 @@ SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = -1/6
 
+SWEP.VisualRecoilSpringMagnitude = 0.8
+
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002

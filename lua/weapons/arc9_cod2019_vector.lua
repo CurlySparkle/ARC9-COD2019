@@ -636,6 +636,11 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
+    ["tag_laser"] = {
+        Bodygroups = {
+            {6,1},
+        },
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -674,11 +679,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac_alt",
+        Category = "cod2019_tac_cylinde",
         Bone = "tag_laser_attach",
-        Pos = Vector(0.5, -0.62, -0.96),
-        Ang = Angle(0, 0, -90),
-		InstalledElements = {"rail_laser"},
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		InstalledElements = {"tag_laser"},
     },
     {
         PrintName = "Grips",

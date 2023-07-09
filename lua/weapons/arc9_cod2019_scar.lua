@@ -134,6 +134,22 @@ SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = -1/9
 
+SWEP.VisualRecoilSpringPunchDamping = 26
+SWEP.VisualRecoilDampingConst = 80
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
+
+
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
@@ -201,6 +217,10 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
+-- SWEP.BarrelLength = 0
+-- SWEP.NearWallPos = Vector(0, 0, -1)
+-- SWEP.NearWallAng = Angle(25, 0, -35)
+
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(15, 30, 3)
 SWEP.CustomizeSnapshotFOV = 90
@@ -255,11 +275,13 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/scar/"
 
-SWEP.ShootPitchVariation = 12
+SWEP.ShootVolume = 100
+SWEP.ShootVolumeActual = 1
+SWEP.ShootPitchVariation = 5
 SWEP.ShootSound = {path .. "weap_scharlie_fire_plr_01.ogg", path .. "weap_scharlie_fire_plr_02.ogg", path .. "weap_scharlie_fire_plr_03.ogg", path .. "weap_scharlie_fire_plr_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_scharlie_fire_silenced_plr_01.ogg", path .. "weap_scharlie_fire_silenced_plr_02.ogg", path .. "weap_scharlie_fire_silenced_plr_03.ogg", path .. "weap_scharlie_fire_silenced_plr_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_scharlie_fire_plr_inside_01.ogg", path .. "weap_scharlie_fire_plr_inside_02.ogg", path .. "weap_scharlie_fire_plr_inside_03.ogg", path .. "weap_scharlie_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_scharlie_fire_silenced_plr_inside_01.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_02.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_03.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSoundSilencedIndoor = {path .. "weap_scharlie_fire_silenced_plr_inside_01.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_02.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_03.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_04.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_05.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_06.ogg"}
 
 --SWEP.DistantShootSound = nil
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
@@ -737,7 +759,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.5, 0, -0.07),
+        Pos = Vector(1, 0, -0.07),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
