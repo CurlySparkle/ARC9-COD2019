@@ -289,9 +289,9 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sn_kilo98_rechamber_boltopen_01.ogg", v = 0.4, t = 20/60},
-			{s = path .. "wfoly_sn_kilo98_rechamber_cloth.ogg", v = 0.4, t = 28/60},
-			{s = path .. "wfoly_sn_kilo98_rechamber_boltclose_01.ogg", v = 0.4, t = 43/60},
+            {s = path .. "wfoly_sn_kilo98_rechamber_boltopen_01.ogg", v = 0.4, t = 13/60},
+			{s = path .. "wfoly_sn_kilo98_rechamber_cloth.ogg", v = 0.4, t = 21/60},
+			{s = path .. "wfoly_sn_kilo98_rechamber_boltclose_01.ogg", v = 0.4, t = 36/60},
         },
     },
     ["cycle_sights"] = {
@@ -299,9 +299,9 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sn_kilo98_rechamber_boltopen_01.ogg", v = 0.4, t = 20/60},
-			{s = path .. "wfoly_sn_kilo98_rechamber_cloth.ogg", v = 0.4, t = 28/60},
-			{s = path .. "wfoly_sn_kilo98_rechamber_boltclose_01.ogg", v = 0.4, t = 43/60},
+            {s = path .. "wfoly_sn_kilo98_rechamber_boltopen_01.ogg", v = 0.4, t = 13/60},
+			{s = path .. "wfoly_sn_kilo98_rechamber_cloth.ogg", v = 0.4, t = 21/60},
+			{s = path .. "wfoly_sn_kilo98_rechamber_boltclose_01.ogg", v = 0.4, t = 36/60},
         },
     },
     ["reload"] = {

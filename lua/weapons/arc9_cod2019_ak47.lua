@@ -429,8 +429,8 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_maghit_01.ogg", t = 4/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_twist.ogg", t = 4/30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 18/30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 30/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 17/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 29/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_chamber_01.ogg", t = 33/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 43/30},
         },

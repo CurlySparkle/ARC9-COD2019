@@ -374,7 +374,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_dpapa12_reload_empty_end_rotate.ogg", t = 0/30},
-			{s = "COD2019.R90.Rechamber_Empty", t = 4/30},
+			{s = "COD2019.R90.Rechamber_Empty", t = 9/30},
         },
     },
     ["ready"] = {
@@ -393,9 +393,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_dpapa12_raise_first_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_01a.ogg", t = 3/30},
+			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_01a.ogg", t = 10/30},
 			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_02a.ogg", t = 14/30},
-			{s = path .. "wfoly_sh_dpapa12_raise_first_end.ogg", t = 15/30},
+			{s = path .. "wfoly_sh_dpapa12_raise_first_end.ogg", t = 19/30},
         },
     },
     ["draw"] = {

@@ -571,8 +571,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_pi_golf21_first_raise_open_slide.ogg", t = 3/30},
-			{s = path .. "wfoly_pi_golf21_first_raise_slide_release.ogg", t = 10/30},
+            {s = path .. "wfoly_pi_golf21_first_raise_open_slide.ogg", t = 4/30},
+			{s = path .. "wfoly_pi_golf21_first_raise_slide_release.ogg", t = 11/30},
         },
     },
     ["draw"] = {

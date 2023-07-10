@@ -354,8 +354,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_ar_galima_reload_empty_rotate.ogg", t = 23/30},
 			{s = path .. "wfoly_ar_galima_reload_empty_maghit.ogg", t = 28/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 33/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 36/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 32/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 35/30},
         },
     },
     ["reload_empty"] = {

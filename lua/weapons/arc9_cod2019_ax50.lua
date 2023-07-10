@@ -293,8 +293,8 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = "COD2019.AX50.Rechamber", v = 0.4, t = 7/30},
-			{s = path .. "wfoly_sn_alpha50_rechamber_02.ogg", v = 0.4, t = 15/30},
+            {s = "COD2019.AX50.Rechamber", v = 0.4, t = 6/30},
+			{s = path .. "wfoly_sn_alpha50_rechamber_02.ogg", v = 0.4, t = 19/30},
         },
     },
     ["cycle_sights"] = {
@@ -302,8 +302,8 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
-            {s = "COD2019.AX50.Rechamber", v = 0.4, t = 7/30},
-			{s = path .. "wfoly_sn_alpha50_rechamber_02.ogg", v = 0.4, t = 15/30},
+            {s = "COD2019.AX50.Rechamber", v = 0.4, t = 6/30},
+			{s = path .. "wfoly_sn_alpha50_rechamber_02.ogg", v = 0.4, t = 19/30},
         },
     },
     ["reload"] = {
@@ -412,8 +412,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sn_alpha50_reload_empty_boltopen_01.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_alpha50_reload_empty_maggrab.ogg", t = 21/30},
-			{s = path .. "wfoly_sn_alpha50_reload_empty_magout_01.ogg", t = 34/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_maggrab.ogg", t = 22/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magout_01.ogg", t = 35/30},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_arm.ogg", t = 55/30},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_magin_v2_01.ogg", t = 73/30},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_magin_v2_02.ogg", t = 82/30},
@@ -481,7 +481,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_alpha50_raise_first.ogg", t = 3/30},
+            {s = path .. "wfoly_sn_alpha50_raise_first.ogg", t = 7/30},
 			{s = path .. "wfoly_sn_alpha50_raise_first_boltclose_01.ogg", t = 14/30},
         },
     },
