@@ -1,9 +1,9 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/cod2019/striker45/striker45_grip"
-	"$bumpmap"					"models/cod2019/striker45/striker45_grip_n"
-	"$phongexponenttexture"		"models/cod2019/striker45/striker45_grip_exp"
-	"$color2"					"[0.8 0.8 0.8]"
+	"$basetexture"				"models/cod2019/shared/attachment_vm_laser_mount01"
+	"$bumpmap"					"models/cod2019/shared/attachment_vm_laser_mount01_n"
+	"$phongexponenttexture"		"models/cod2019/shared/attachment_vm_laser_mount01_exp"
+	"$color2"					"[0.8 0.8 0.8}"
 	"$blendTintByBaseAlpha"		"1"
 
 	"$envmap"					"env_cubemap"
@@ -12,7 +12,7 @@
 	"$envmapcoefficient"		"[0.39 0.39 0.39]"
 
 	"$phong"					"1"
-	"$phongboost"				"1"
+	"$phongboost"				"15"
      //"$phongexponent"				"55"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"

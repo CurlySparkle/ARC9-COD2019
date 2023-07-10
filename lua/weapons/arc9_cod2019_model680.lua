@@ -119,7 +119,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 2
+SWEP.RecoilKick = 3
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
@@ -805,7 +805,7 @@ SWEP.Animations = {
     },
 }
 
---SWEP.Hook_Think	= ARC9.CSGO.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 -------------------------- ATTACHMENTS
 
@@ -839,6 +839,42 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(4, 0, -1.3),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.8,
+    },
+    ["cod2019_laser_02_cylinde_alt"] = {
+    Sights = {
+    {
+        Pos = Vector(-0.5, 22, -2.5),
+        Ang = Angle(1.9, -0.2, 45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["cod2019_laser_01_cylinde_alt"] = {
+    Sights = {
+    {
+        Pos = Vector(-0.5, 22, -2.5),
+        Ang = Angle(1.9, -0.2, 45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["cod2019_laser_03_cylinde_alt"] = {
+    Sights = {
+    {
+        Pos = Vector(-0.5, 22, -2.5),
+        Ang = Angle(1.9, -0.2, 45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 
@@ -884,6 +920,11 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
+    ["tag_laser"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
 }
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -922,11 +963,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_cylinde",
         Bone = "tag_laser_attach",
-        Pos = Vector(-3.5, -0.35, -0.19),
-        Ang = Angle(0, 0, -90),
-		--InstalledElements = {"rail_grip"},
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		InstalledElements = {"tag_laser"},
     },
     {
         PrintName = "Grips",

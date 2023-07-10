@@ -44,8 +44,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 30 -- Damage done at point blank range
-SWEP.DamageMin = 17 -- Damage done at maximum range
+SWEP.DamageMax = 26 -- Damage done at point blank range
+SWEP.DamageMin = 13 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -68,17 +68,17 @@ SWEP.PhysBulletDrag = 1.15
 SWEP.Ammo = "smg1" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
-SWEP.ClipSize = 25 -- Self-explanatory.
+SWEP.ClipSize = 30 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 605
+SWEP.RPM = 800
 
 SWEP.Firemodes = {
     {
@@ -96,9 +96,9 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.6
+SWEP.Recoil = 1.3
 
-SWEP.RecoilSeed = 61649
+SWEP.RecoilSeed = 6215
 
 SWEP.RecoilPatternDrift = 45
 
@@ -125,8 +125,29 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1.5
-SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.5
+
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilSpringPunchDamping = 26
+SWEP.VisualRecoilDampingConst = 80
+SWEP.VisualRecoilSpringMagnitude = 2 / 1.67
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -134,8 +155,8 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 2
-SWEP.RecoilModifierCapMove = 0.5
+SWEP.RecoilModifierCap = 2.5
+SWEP.RecoilModifierCapMove = 1
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadMultMove = 2
@@ -190,7 +211,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -251,7 +272,7 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/striker45/"
 
-SWEP.ShootPitchVariation = 10
+SWEP.ShootPitchVariation = 12
 SWEP.ShootSound = {path .. "weap_smgolf45_fire_plr_01.ogg", path .. "weap_smgolf45_fire_plr_02.ogg", path .. "weap_smgolf45_fire_plr_03.ogg", path .. "weap_smgolf45_fire_plr_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_smgolf45_fire_silenced_plr_01.ogg", path .. "weap_smgolf45_fire_silenced_plr_02.ogg", path .. "weap_smgolf45_fire_silenced_plr_03.ogg", path .. "weap_smgolf45_fire_silenced_plr_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_smgolf45_fire_plr_inside_01.ogg", path .. "weap_smgolf45_fire_plr_inside_02.ogg", path .. "weap_smgolf45_fire_plr_inside_03.ogg", path .. "weap_smgolf45_fire_plr_inside_04.ogg"}
@@ -317,42 +338,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_end.ogg", t = 56/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magout.ogg", t = 6/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_maghit.ogg", t = 18/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_01.ogg", t = 29/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_02.ogg", t = 34/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_end.ogg", t = 41/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -387,6 +372,79 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_02.ogg", t = 52/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_bolt_release.ogg", t = 64/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_end.ogg", t = 70/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_maghit.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_01.ogg", t = 29/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_02.ogg", t = 34/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_end.ogg", t = 41/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_maghit.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_01.ogg", t = 29/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_02.ogg", t = 34/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_bolt_release.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_end.ogg", t = 45/30},
         },
     },
     ["ready"] = {
@@ -516,8 +574,8 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
@@ -583,7 +641,9 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
+    if wep:HasElement("stock_retract") then model:SetBodygroup(3,1)
+	elseif wep:HasElement("body_ump") then model:SetBodygroup(2,2)
+	end
 end
 
 SWEP.Attachments = {
@@ -608,7 +668,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.3, 0, -0.07),
+        Pos = Vector(1, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -660,7 +720,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_mag_striker45"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -719,4 +779,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 4
+SWEP.CodAngledGripPoseParam = 10
+SWEP.CodStubbyTallGripPoseParam = 2.9
