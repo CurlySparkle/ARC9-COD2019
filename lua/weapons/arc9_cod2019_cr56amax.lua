@@ -71,7 +71,7 @@ SWEP.ClipSize = 30 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -125,21 +125,38 @@ SWEP.RecoilMultSights = 0.6
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.4
 SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilPunch = 1.3
+SWEP.VisualRecoilUp = 0
+
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = -1/9
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.03
-SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 3
+SWEP.SpreadMultRecoil = 1.1
+SWEP.SpreadMultRecoilMove = 0.5
+SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCapMove = 1
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadMultMove = 2
+SWEP.SpreadMultMove = 1.5
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddHipFire = 0.07
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
@@ -188,7 +205,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -321,43 +338,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_end.ogg", t = 58/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		MagSwapTime = 1.5,
-		DropMagAt = 1,
-		Mult = 1.2,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.95,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_ar_galima_reload_empty_arm.ogg", t = 3/30},
-			{s = path .. "wfoly_ar_galima_reload_magout.ogg", t = 10/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_rotate.ogg", t = 23/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_maghit.ogg", t = 28/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 32/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 35/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -394,6 +374,75 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 80/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_galima_reload_fast_rotate.ogg", t = 3/30},
+			{s = path .. "wfoly_ar_galima_reload_fast_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_ar_galima_reload_fast_magin.ogg", t = 28/30},
+			{s = path .. "wfoly_ar_galima_reload_fast_end.ogg", t = 35/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_galima_reload_empty_fast_rotate.ogg", t = 3/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_fast_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_fast_magin.ogg", t = 28/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_fast_charge.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_fast_end.ogg", t = 40/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -427,13 +476,36 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_ar_galima_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
-		--Mult = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_ar_galima_reload_end.ogg", t = 0/30},
         },
@@ -511,6 +583,24 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_galima_fire_switch_on.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "wfoly_ar_galima_fire_switch_off.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_galima_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -520,12 +610,12 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -534,6 +624,42 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(7, -0.7, 1.75),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
+    },
+    ["cod2019_laser_01_cylinde_alt"] = {
+    Sights = {
+    {
+        Pos = Vector(-1, 17, -1),
+        Ang = Angle(0, 0, 45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["cod2019_laser_02_cylinde_alt"] = {
+    Sights = {
+    {
+        Pos = Vector(-1, 17, -1),
+        Ang = Angle(0, 0, 45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["cod2019_laser_03_cylinde_alt"] = {
+    Sights = {
+    {
+        Pos = Vector(-1, 17, -1),
+        Ang = Angle(0, 0, 45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 
@@ -573,6 +699,11 @@ SWEP.AttachmentElements = {
             {1,1},
         },
     },
+    ["tag_laser"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
 }
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -610,11 +741,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_cylinde",
         Bone = "tag_laser_attach",
-        Pos = Vector(-1.5, -0.55, -1.1),
-        Ang = Angle(0, 0, -90),
-		InstalledElements = {"rail_laser"},
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		InstalledElements = {"tag_laser"},
     },
     {
         PrintName = "Grips",

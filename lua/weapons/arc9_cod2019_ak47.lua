@@ -125,10 +125,22 @@ SWEP.RecoilMultSights = 0.6
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = -1/6
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -368,7 +380,6 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		FireASAP = true,
 		DropMagAt = 0.85,
-		Mult = 1.1,
         IKTimeLine = {
             {
                 t = 0,
@@ -579,9 +590,29 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_akilo47_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_akilo47_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_ak47_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
+
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
@@ -600,6 +631,42 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(8, 0, 0.5),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
+    },
+    ["cod2019_laser_02_cylinde_alt"] = {
+    Sights = {
+    {
+        Pos = Vector(-1, 21, -2),
+        Ang = Angle(0, 0, 45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["cod2019_laser_01_cylinde_alt"] = {
+    Sights = {
+    {
+        Pos = Vector(-1, 21, -2),
+        Ang = Angle(0, 0, 45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["cod2019_laser_03_cylinde_alt"] = {
+    Sights = {
+    {
+        Pos = Vector(-1, 21, -2),
+        Ang = Angle(0, 0, 45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 
@@ -637,6 +704,11 @@ SWEP.AttachmentElements = {
     ["reciever_none"] = {
         Bodygroups = {
             {6,1},
+        },
+    },
+    ["tag_laser"] = {
+        Bodygroups = {
+            {7,1},
         },
     },
 }
@@ -677,10 +749,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_cylinde",
         Bone = "tag_laser_attach",
-        Pos = Vector(-4, -0.4, 0),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		InstalledElements = {"tag_laser"},
     },
     {
         PrintName = "Grips",

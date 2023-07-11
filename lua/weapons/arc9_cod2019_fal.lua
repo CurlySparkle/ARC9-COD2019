@@ -478,7 +478,7 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag_empty"] = {
-        Source = "reload_empty",
+        Source = "reload",
 		DropMagAt = 1.5,
 		MinProgress = 0.85,
 		FireASAP = true,

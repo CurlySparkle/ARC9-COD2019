@@ -72,7 +72,7 @@ SWEP.ClipSize = 30 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -86,8 +86,10 @@ SWEP.Firemodes = {
         -- add other attachment modifiers
     },
     {
-        Mode = 1,
-        -- add other attachment modifiers
+        Mode = 3,
+        RPM = 800,
+		PostBurstDelay = 0.2,
+		RunawayBurst = true
     }
 }
 -------------------------- RECOIL
@@ -101,7 +103,7 @@ SWEP.RecoilPatternDrift = 45
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1.5 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -124,8 +126,25 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.7
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.5
+
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -344,6 +363,42 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_anovember94_reload_end.ogg", t = 62/30},
         },
     },
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.9,
+		DropMagAt = 0.85,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_anovember94_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 24/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltpull.ogg", t = 54/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltforward.ogg", t = 63/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 68/30},
+        },
+    },
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
@@ -379,10 +434,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 42/30},
         },
     },
-    ["reload_empty"] = {
-        Source = "reload",
-		MinProgress = 0.9,
-		DropMagAt = 0.85,
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+		DropMagAt = 0.6,
         IKTimeLine = {
             {
                 t = 0,
@@ -400,19 +456,19 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
 			{s = path .. "wfoly_ar_anovember94_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 24/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 43/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 48/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_boltpull.ogg", t = 54/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_boltforward.ogg", t = 63/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 68/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 16/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 32/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 36/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltpull.ogg", t = 45/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltforward.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 55/30},
         },
     },
     ["ready"] = {
@@ -534,6 +590,24 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_anovember94_selectsemi_on.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "wfoly_ar_anovember94_selectsemi_off.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_anovember94_inspect_mvmnt.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -543,12 +617,20 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
+SWEP.Hook_Think	= function(wep)
+    local vm = wep:GetOwner():GetViewModel()
+    vm:SetPoseParameter("bullets",30-wep:Clip1())
+	
+    local vm = wep:GetOwner():GetViewModel()
+    local delta = wep:GetSightDelta()
+    local coolilove = math.cos(delta * (math.pi / 2))
+    vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 1, 0) )
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -557,6 +639,42 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(7, 0, 0.5),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
+    },
+    ["csgo_cod2019_laser_01"] = {
+    Sights = {
+    {
+        Pos = Vector(1.5, 16.5, -0.5),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_02"] = {
+    Sights = {
+    {
+        Pos = Vector(1.5, 16.5, -0.5),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_03"] = {
+    Sights = {
+    {
+        Pos = Vector(1.5, 16.5, -0.5),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 
