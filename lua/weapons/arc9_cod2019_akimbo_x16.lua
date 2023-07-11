@@ -37,8 +37,8 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_akimbo_x16.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-4, 7.5, -3),
-    TPIKAng = Angle(-9, 0, 180),
+    TPIKPos = Vector(-15, 7.5, -15),
+    TPIKAng = Angle(-3, 0, 180),
     Scale = 1
 }
 
@@ -195,16 +195,16 @@ SWEP.CustomizeNoRotate = false
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "rpg"
-SWEP.HoldTypeSprint = "rpg"
-SWEP.HoldTypeHolstered = "rpg"
-SWEP.HoldTypeSights = "rpg"
+SWEP.HoldType = "duel"
+SWEP.HoldTypeSprint = "duel"
+SWEP.HoldTypeHolstered = "duel"
+SWEP.HoldTypeSights = "duel"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_DUEL
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
-SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
+-- SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_DUEL
+-- SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
+-- SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
 SWEP.AnimDraw = false
 
 SWEP.Akimbo = true

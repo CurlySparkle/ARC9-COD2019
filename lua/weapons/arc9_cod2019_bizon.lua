@@ -535,8 +535,8 @@ SWEP.AttachmentTableOverrides = {
     ["csgo_cod2019_laser_01"] = {
     Sights = {
     {
-        Pos = Vector(3, 15, -2),
-        Ang = Angle(0, 0, -45),
+        Pos = Vector(3, 20, -2),
+        Ang = Angle(0.7, -1.2, -45),
         ViewModelFOV = 45,
         Magnification = 1.25,
         IgnoreExtra = false,
@@ -559,8 +559,8 @@ SWEP.AttachmentTableOverrides = {
     ["csgo_cod2019_laser_03"] = {
     Sights = {
     {
-        Pos = Vector(3, 15, -2),
-        Ang = Angle(0, 0, -45),
+        Pos = Vector(3, 20, -2),
+        Ang = Angle(0.7, -1.2, -45),
         ViewModelFOV = 45,
         Magnification = 1.25,
         IgnoreExtra = false,

@@ -36,8 +36,8 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_akimbo_357.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-4, 7.5, -3),
-    TPIKAng = Angle(-9, 0, 180),
+    TPIKPos = Vector(-15, 7.5, -15),
+    TPIKAng = Angle(-3, 0, 180),
     Scale = 1
 }
 
@@ -196,15 +196,16 @@ SWEP.CustomizeNoRotate = false
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "rpg"
-SWEP.HoldTypeSprint = "rpg"
-SWEP.HoldTypeHolstered = "rpg"
-SWEP.HoldTypeSights = "rpg"
+SWEP.HoldType = "duel"
+SWEP.HoldTypeSprint = "duel"
+SWEP.HoldTypeHolstered = "duel"
+SWEP.HoldTypeSights = "duel"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_DUEL
+SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
+SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
 SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
@@ -259,6 +260,27 @@ SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg"
 SWEP.TriggerUpSound = ""
+
+SWEP.HideBones  = {
+    [1] = "j_mag1",
+    [2] = "j_mag1_l",
+    [3] = "j_b_loader",
+    [4] = "j_b_loader_l",
+    [5] = "j_b_loader_top",
+    [6] = "j_b_loader_top_l",
+    [7] = "j_b_loader_01",
+    [8] = "j_b_loader_02",
+    [9] = "j_b_loader_03",
+    [10] = "j_b_loader_04",
+    [11] = "j_b_loader_05",
+    [12] = "j_b_loader_06",
+    [13] = "j_b_loader_01_l",
+    [14] = "j_b_loader_02_l",
+    [15] = "j_b_loader_03_l",
+    [16] = "j_b_loader_04_l",
+    [17] = "j_b_loader_05_l",
+    [18] = "j_b_loader_06_l",
+}
 
 SWEP.Animations = {
     ["fire_left"] = {

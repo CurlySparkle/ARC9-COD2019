@@ -104,7 +104,7 @@ SWEP.Firemodes = {
 SWEP.Recoil = 4
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 3 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
 
 SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
@@ -113,24 +113,41 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
-SWEP.RecoilDissipationRateSights = 50
-SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilDissipationRate = 0 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRateSights = 0
+SWEP.RecoilResetTime = 1 -- How long the gun must go before the recoil pattern starts to reset.
 
-SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
+SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 2
+SWEP.RecoilKick = 3
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilAutoControlMultHipFire = 1
+SWEP.RecoilMultSights = 1
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.5
+
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch * 9999
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -138,11 +155,11 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.0002 -- Applied per unit of recoil.
 
-SWEP.SpreadAddMove = 0.2
+SWEP.SpreadMultMove = 2.5
 --SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddHipFire = 0.05
 SWEP.SpreadAddCrouch = -0.01
-SWEP.SpreadAddSights = -0.1
+SWEP.SpreadAddSights = -0.5
 
 -------------------------- HANDLING
 
@@ -164,8 +181,8 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-1.37, -2, 1.05),
-    Ang = Angle(0, 0, 6.5),
+    Pos = Vector(-3.665, -3.5, 0.65),
+    Ang = Angle(0, 0, -2),
     Magnification = 1.1,
     ViewModelFOV = 56,
     CrosshairInSights = false
@@ -186,7 +203,7 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.4, -0.4)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -341,43 +358,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 68/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		DropMagAt = 0.8,
-		Mult = 1.3,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_sn_alpha50_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_alpha50_reload_magout_01.ogg", t = 9/30},
-			{s = path .. "wfoly_sn_alpha50_reload_arm.ogg", t = 20/30},
-			{s = path .. "wfoly_sn_alpha50_reload_maghit.ogg", t = 32/30},
-			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_01.ogg", t = 35/30},
-			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_02.ogg", t = 39/30},
-			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 46/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -422,8 +402,203 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_empty_end.ogg", t = 108/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_alpha50_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magout_01.ogg", t = 9/30},
+			{s = path .. "wfoly_sn_alpha50_reload_arm.ogg", t = 20/30},
+			{s = path .. "wfoly_sn_alpha50_reload_maghit.ogg", t = 32/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_01.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_02.ogg", t = 39/30},
+			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 46/30},
+        },
+    },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		EjectAt = 0.35,
+		DropMagAt = 1.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.23,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_alpha50_reload_empty_boltopen_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_maggrab.ogg", t = 20/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magout_01.ogg", t = 26/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_arm.ogg", t = 34/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magin_v2_01.ogg", t = 48/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magin_v2_02.ogg", t = 53/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_maghit_01.ogg", t = 57/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_boltclose_01.ogg", t = 69/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_end.ogg", t = 79/30},
+        },
+    },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_alpha50_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magout_01.ogg", t = 18/30},
+			{s = path .. "wfoly_sn_alpha50_reload_arm.ogg", t = 40/30},
+			{s = path .. "wfoly_sn_alpha50_reload_maghit.ogg", t = 57/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_01.ogg", t = 62/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_02.ogg", t = 66/30},
+			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 68/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_empty_xmag",
+		MinProgress = 0.9,
+		EjectAt = 0.35,
+		DropMagAt = 1.9,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.23,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_alpha50_reload_empty_boltopen_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_maggrab.ogg", t = 22/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magout_01.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_arm.ogg", t = 55/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magin_v2_01.ogg", t = 73/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magin_v2_02.ogg", t = 82/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_maghit_01.ogg", t = 92/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_boltclose_01.ogg", t = 110/30},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_end.ogg", t = 108/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_alpha50_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magout_01.ogg", t = 9/30},
+			{s = path .. "wfoly_sn_alpha50_reload_arm.ogg", t = 20/30},
+			{s = path .. "wfoly_sn_alpha50_reload_maghit.ogg", t = 32/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_01.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_02.ogg", t = 39/30},
+			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 46/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_empty_xmag_fast",
 		MinProgress = 0.9,
 		EjectAt = 0.35,
 		DropMagAt = 1.4,
@@ -487,8 +662,20 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.7,
+		MinProgress = 0.8,
 		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sn_alpha50_raise.ogg", t = 0/30},
         },
@@ -496,6 +683,18 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
 		Mult = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sn_alpha50_reload_empty_end.ogg", t = 0/30},
         },
@@ -573,17 +772,27 @@ SWEP.Animations = {
     },
 }
 
---SWEP.Hook_Think	= ARC9.CSGO.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 -------------------------- ATTACHMENTS
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_extend") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_extend") then 
+        return "reload_xmag_fast_empty"
+    --------------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+    --------------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_extend") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_extend") then 
+        return "reload_xmag_empty"
     end
 end
 
@@ -595,6 +804,42 @@ SWEP.AttachmentTableOverrides = {
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.1),
+    },
+    ["csgo_cod2019_laser_01"] = {
+    Sights = {
+    {
+        Pos = Vector(3, 20, -2),
+        Ang = Angle(0, 0, 45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_02"] = {
+    Sights = {
+    {
+        Pos = Vector(-2.5, 20, -1),
+        Ang = Angle(-0.1, -0.2, 45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_03"] = {
+    Sights = {
+    {
+        Pos = Vector(3, 20, -2),
+        Ang = Angle(0, 0, 45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 
@@ -671,16 +916,16 @@ SWEP.Attachments = {
         Category = {"cod2019_optic","cod2019_optic_ax50"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight_none"},
-		Installed = "cod2019_optic_scope_ax50",
-        Integral = "cod2019_optic_scope_ax50",
+		--Installed = "cod2019_optic_scope_ax50",
+        --Integral = "cod2019_optic_scope_ax50",
     },
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(3, 1.3, -1.4),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(0, 0, -0.1),
+        Ang = Angle(0, 0, 180),
 		--InstalledElements = {"rail_laser"},
     },
     {

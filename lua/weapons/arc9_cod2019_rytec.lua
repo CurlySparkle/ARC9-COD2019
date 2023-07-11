@@ -598,6 +598,8 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
+
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
@@ -615,6 +617,42 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(-1.7, -0.2, 0.8),
 	ModelAngleOffset = Angle(0, 0, 35),
 	Scale = 0.8,
+    },
+    ["csgo_cod2019_laser_01"] = {
+    Sights = {
+    {
+        Pos = Vector(3, 20, -2),
+        Ang = Angle(0.8, 1.3, -45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_02"] = {
+    Sights = {
+    {
+        Pos = Vector(3, 20, -2),
+        Ang = Angle(0.8, 1.3, -45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_03"] = {
+    Sights = {
+    {
+        Pos = Vector(3, 20, -2),
+        Ang = Angle(0.8, 1.3, -45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 

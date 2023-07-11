@@ -37,8 +37,8 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_akimbo_50gs.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-4, 7.5, -3),
-    TPIKAng = Angle(-9, 0, 180),
+    TPIKPos = Vector(-15, 7.5, -15),
+    TPIKAng = Angle(-3, 0, 180),
     Scale = 1
 }
 
@@ -120,8 +120,26 @@ SWEP.RecoilMultSights = 1
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 1.5
+
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
+
 
 -------------------------- SPREAD
 
@@ -199,16 +217,16 @@ SWEP.CustomizeNoRotate = false
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "rpg"
-SWEP.HoldTypeSprint = "rpg"
-SWEP.HoldTypeHolstered = "rpg"
-SWEP.HoldTypeSights = "rpg"
+SWEP.HoldType = "duel"
+SWEP.HoldTypeSprint = "duel"
+SWEP.HoldTypeHolstered = "duel"
+SWEP.HoldTypeSights = "duel"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_DUEL
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
-SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
+--SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_DUEL
+SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_RPG
+--SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
 SWEP.AnimDraw = false
 
 SWEP.Akimbo = true
@@ -275,6 +293,11 @@ SWEP.BulletBones = {
     [2] = "j_bullet02",
 	[3] = "j_bullet03",
 	[4] = "j_bullet04",
+}
+
+SWEP.HideBones  = {
+    [1] = "j_mag2",
+    [2] = "j_mag2_l",
 }
 
 SWEP.Animations = {

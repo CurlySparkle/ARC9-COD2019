@@ -72,7 +72,7 @@ SWEP.ClipSize = 32 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -100,7 +100,7 @@ SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.8
+SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = nil
 
@@ -120,7 +120,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.2
+SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
@@ -129,24 +129,58 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.7
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 1
+
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
+
 
 -------------------------- SPREAD
 
+-- SWEP.Spread = 0.002
+-- SWEP.SpreadSights = 0
+
+-- SWEP.SpreadAddRecoil = 0.01
+-- SWEP.SpreadMultRecoil = 1.1
+-- SWEP.RecoilModifierCap = 4
+-- SWEP.RecoilModifierCapMove = 0.5
+-- SWEP.RecoilModifierCapSights = 0
+
+-- SWEP.SpreadAddHipFire = 0.0012
+-- SWEP.SpreadMultHipFire = 1.5
+
+-- SWEP.SpreadAddMove = 0.1
+-- --SWEP.SpreadAddMidAir = 0
+-- SWEP.SpreadAddCrouch = -0.01
+-- SWEP.SpreadAddSights = -0.5
+
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 4
+SWEP.SpreadAddRecoil = 0.005
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
-SWEP.SpreadMultHipFire = 1.5
-
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddHipFire = 0.02
+SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
 
@@ -195,7 +229,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -256,7 +290,7 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/uzi/"
 
-SWEP.ShootPitchVariation = 10
+SWEP.ShootPitchVariation = 11
 SWEP.ShootSound = {path .. "weap_uzulu_fire_plr_01.ogg", path .. "weap_uzulu_fire_plr_02.ogg", path .. "weap_uzulu_fire_plr_03.ogg", path .. "weap_uzulu_fire_plr_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_uzulu_fire_silenced_plr_01.ogg", path .. "weap_uzulu_fire_silenced_plr_02.ogg", path .. "weap_uzulu_fire_silenced_plr_03.ogg", path .. "weap_uzulu_fire_silenced_plr_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_uzulu_fire_plr_inside_01.ogg", path .. "weap_uzulu_fire_plr_inside_02.ogg", path .. "weap_uzulu_fire_plr_inside_03.ogg", path .. "weap_uzulu_fire_plr_inside_04.ogg"}
@@ -326,41 +360,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 58/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_short2",
-		MinProgress = 0.8,
-		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_plr_sm_uzulu_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 27/30},
-			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 37/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -398,8 +397,112 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_end.ogg", t = 82/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		--DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_uzulu_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 27/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 37/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_magout_01.ogg", t = 12/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 12/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_magin_01.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_charge_01.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_arm.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_rattle.ogg", t = 61/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_end.ogg", t = 66/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_sm_uzulu_raise_first_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_sm_uzulu_raise_first_stock.ogg", t = 11/30},
+			{s = path .. "wfoly_plr_sm_uzulu_raise_first_extend.ogg", t = 11/30},
+			{s = path .. "wfoly_plr_sm_uzulu_raise_first_end.ogg", t = 28/30},
+        },
+    },
+    ["ready_nostock"] = {
+        Source = "draw_nostock",
         IKTimeLine = {
             {
                 t = 0,
@@ -437,7 +540,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
         EventTable = {
             {s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 0/30},
         },
@@ -522,14 +624,16 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "ready" and wep:HasElement("stock_adapter") then 
+        return "ready_nostock"
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
---SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -649,10 +753,10 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Stock",
         Category = {"cod2019_tube","stock_retract"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, -0.88),
+        Pos = Vector(0.3, 0, -0.05),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_adapter"},
-		Scale = 1.2,
+		InstalledElements = {"stock_none"},
+		Scale = 1,
     },
     {
         PrintName = "Ammo",

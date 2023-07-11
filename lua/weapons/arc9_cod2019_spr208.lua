@@ -585,7 +585,7 @@ SWEP.Animations = {
     },
 }
 
---SWEP.Hook_Think	= ARC9.CSGO.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 -------------------------- ATTACHMENTS
 
