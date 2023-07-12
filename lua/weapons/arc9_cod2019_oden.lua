@@ -44,8 +44,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 48 -- Damage done at point blank range
-SWEP.DamageMin = 21 -- Damage done at maximum range
+SWEP.DamageMax = 40 -- Damage done at point blank range
+SWEP.DamageMin = 20 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -72,13 +72,13 @@ SWEP.ClipSize = 20 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 413
+SWEP.RPM = 410
 
 SWEP.Firemodes = {
     {
@@ -86,6 +86,7 @@ SWEP.Firemodes = {
     },
     {
         Mode = 1,
+		RPM = 500,
     },
     {
         Mode = 2,
@@ -96,15 +97,15 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.3
+SWEP.Recoil = 1.5
 
-SWEP.RecoilSeed = nil
+SWEP.RecoilSeed = 346598
 
 SWEP.RecoilPatternDrift = 45
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1.1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -127,8 +128,25 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.8
+SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.1
+
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -191,7 +209,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -288,9 +306,6 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
@@ -323,43 +338,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_asierra12_reload_mvmnt.ogg", t = 39/30},
 			{s = path .. "wfoly_ar_asierra12_reload_magin_01.ogg", t = 42/30},
 			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 64/30},
-        },
-    },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.6,
-		FireASAP = true,
-		MagSwapTime = 1.5,
-		DropMagAt = 1,
-		Mult = 1.3,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_ar_asierra12_reload_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 5/30},
-			{s = path .. "wfoly_ar_asierra12_reload_mvmnt.ogg", t = 21/30},
-			{s = path .. "wfoly_ar_asierra12_reload_magin_01.ogg", t = 24/30},
-			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 39/30},
         },
     },
     ["reload_empty"] = {
@@ -399,6 +377,79 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_asierra12_reload_empty_end.ogg", t = 93/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.85,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.45,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_asierra12_reload_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 5/30},
+			{s = path .. "wfoly_ar_asierra12_reload_mvmnt.ogg", t = 21/30},
+			{s = path .. "wfoly_ar_asierra12_reload_magin_01.ogg", t = 24/30},
+			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 39/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.45,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_asierra12_reload_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 5/30},
+			{s = path .. "wfoly_ar_asierra12_reload_mvmnt.ogg", t = 21/30},
+			{s = path .. "wfoly_ar_asierra12_reload_magin_01.ogg", t = 24/30},
+			{s = path .. "wfoly_ar_asierra12_reload_empty_charge_01.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 39/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -431,15 +482,38 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_ar_asierra12_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.3,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
-            {s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 0/30},
+            {s = path .. "wfoly_ar_asierra12_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -515,6 +589,30 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_ar_asierra12_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_ar_asierra12_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["firemode_3"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_ar_asierra12_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_asierra12_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -524,12 +622,12 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -594,7 +692,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.2, 0, -0.07),
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),

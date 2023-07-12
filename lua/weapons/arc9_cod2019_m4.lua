@@ -83,25 +83,27 @@ SWEP.RPM = 810
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
         -- add other attachment modifiers
     },
     {
         Mode = 1,
+		PoseParam = 1,
         -- add other attachment modifiers
     }
 }
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.1
+SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = 6589132
 
 SWEP.RecoilPatternDrift = 55
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 1.2 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 0.5 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -113,25 +115,38 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1
+SWEP.RecoilKick = 2
 
 SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 1.5
-SWEP.VisualRecoilUp = 0.5
-SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = -1/6
+SWEP.VisualRecoilPunch = 3
+SWEP.VisualRecoilUp = 0.4
 
 SWEP.VisualRecoilSpringMagnitude = 0.8
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.3
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
+
 
 -------------------------- SPREAD
 
@@ -340,41 +355,6 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 52/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_short2",
-		MinProgress = 0.8,
-		FireASAP = true,
-		DropMagAt = 0.38,
-		Mult = 0.8,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0/30},
-			{s = path .. "wpfoly_mike4_reload_empty_magout_v2.ogg", t = 5/30},
-			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 31/30},
-			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 54/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.8,
@@ -408,6 +388,77 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 31/30},
 			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 53/30},
 			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 63/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_short2",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.38,
+		Mult = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_fast_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magout_v2.ogg", t = 5/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 34/30},
+			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 54/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_empty_fast_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magout_v2.ogg", t = 5/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 31/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 37/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 40/30},
         },
     },
     ["ready"] = {
@@ -554,17 +605,37 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_m4_selector_semi_on_01.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_m4_selector_semi_on_03.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_mike4_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
+
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
@@ -578,6 +649,42 @@ SWEP.AttachmentTableOverrides = {
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(0.7, 0, 0),
+    },
+    ["csgo_cod2019_laser_01"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 15, -1),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_02"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 15, -1),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_03"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 15, -1),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 

@@ -38,7 +38,7 @@ SWEP.WorldModelOffset = {
     Pos = Vector(-9.5, 6.2, -5.5),
     Ang = Angle(-7, 0, 180),
     Scale = 1,
-    TPIKPos = Vector(-4, 5, -2),
+    TPIKPos = Vector(-7, 5, -2),
     TPIKAng = Angle(-9, 0, 175),
 }
 
@@ -72,7 +72,7 @@ SWEP.ClipSize = 20 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 6 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -83,11 +83,11 @@ SWEP.RPM = 650
 SWEP.Firemodes = {
     {
         Mode = -1,
-        -- add other attachment modifiers
+		PoseParam = 0,
     },
     {
         Mode = 1,
-        -- add other attachment modifiers
+		PoseParam = 1,
     }
 }
 -------------------------- RECOIL
@@ -122,11 +122,27 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1.1
+SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 1
 
 SWEP.VisualRecoilADSMult = 1
 SWEP.VisualRecoilPunchADSMult = 1
+
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
+
 
 -------------------------- SPREAD
 
@@ -189,7 +205,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -367,7 +383,7 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.85,
-		--DropMagAt = 0.9,
+		DropMagAt = 0.9,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -442,7 +458,7 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag"] = {
-        Source = "reload_med_mag",
+        Source = "reload_xmag",
 		MinProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
@@ -478,7 +494,7 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag_empty"] = {
-        Source = "reload",
+        Source = "reload_xmag_empty",
 		DropMagAt = 1.5,
 		MinProgress = 0.85,
 		FireASAP = true,
@@ -519,9 +535,11 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag_fast"] = {
-        Source = "reload_med_mag_fast",
+        Source = "reload_xmag_fast",
 		MinProgress = 0.85,
+		DropMagAt = 0.8,
 		FireASAP = true,
+		DropMagazineQCA = 5,
         IKTimeLine = {
             {
                 t = 0,
@@ -556,7 +574,7 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
-		DropMagAt = 1.5,
+		DropMagAt = 1.4,
 		MinProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
@@ -740,16 +758,37 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_ar_falima_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_ar_falima_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_falima_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
 
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
+
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+--------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
         return "reload_xmag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
         return "reload_xmag_fast_empty"
 --------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
@@ -757,10 +796,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
 --------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("ammo_extend") then 
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then 
         return "reload_xmag"
-    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
         return "reload_xmag_empty"
+--------------------------------------------------------------------------
     end
 end
 
@@ -778,9 +818,9 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["mag"] = {
+    ["mag_none"] = {
         Bodygroups = {
-            {1,1},
+            {1,2},
         },
     },
     ["stock_skeleton"] = {
@@ -890,9 +930,10 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag_fal"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		InstalledElements = {"mag_none"},
     },
     {
         PrintName = "Perk",

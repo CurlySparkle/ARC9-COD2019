@@ -83,15 +83,17 @@ SWEP.RPM = 571
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
     },
     {
         Mode = 1,
+		PoseParam = 1,
     },
-    {
-        Mode = 3,
-		RunawayBurst = true,
-		PostBurstDelay = 0.3
-    },
+    -- {
+        -- Mode = 3,
+		-- RunawayBurst = true,
+		-- PostBurstDelay = 0.3
+    -- },
 }
 -------------------------- RECOIL
 
@@ -129,7 +131,7 @@ SWEP.RecoilMultSights = 0.7
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 30
-SWEP.VisualRecoilPunch = 1.2
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = -1/9
@@ -306,8 +308,8 @@ SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before s
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/scar/weap_scharlie_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/scar/weap_scharlie_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -640,6 +642,24 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_scharlie_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_scharlie_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_scharlie_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -664,7 +684,19 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     end
 end
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+SWEP.Hook_Think	= function(wep)
+    local vm = wep:GetOwner():GetViewModel()
+    if wep:Clip1() == 0 then
+        vm:SetPoseParameter("empty", 1)
+    else
+        vm:SetPoseParameter("empty", 0)
+    end
+
+    local vm = wep:GetOwner():GetViewModel()
+    local delta = wep:GetSightDelta()
+    local coolilove = math.cos(delta * (math.pi / 2))
+    vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 1, 0) )
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 

@@ -12,7 +12,7 @@
 	"$envmapcoefficient"		"[0.39 0.39 0.39]"
 
 	"$phong"					"1"
-	"$phongboost"				"15"
+	"$phongboost"				"1"
      //"$phongexponent"				"55"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
@@ -27,7 +27,7 @@
 	"$nocull"					"1"
 
 	"$detailblendmode" "4"
-	"$detailblendfactor" "0.7"
+	"$detailblendfactor" "0.4"
 
 	 Proxies {
 		CustomCamo {

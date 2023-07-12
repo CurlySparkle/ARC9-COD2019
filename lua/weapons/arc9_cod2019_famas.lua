@@ -72,7 +72,7 @@ SWEP.ClipSize = 30 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -122,8 +122,23 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.6
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.4
+
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -186,7 +201,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -256,7 +271,7 @@ SWEP.ShootSoundSilencedIndoor = {path .. "weap_famas_fire_silenced_plr_inside_01
 --SWEP.DistantShootSound = "CSGO.Famas.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+SWEP.FiremodeSound = ""
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
@@ -275,8 +290,8 @@ SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before s
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/famas/weap_falpha_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/famas/weap_falpha_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -319,6 +334,40 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_falpha_reload_end.ogg", t = 52/30},
         },
     },
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 11/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_chamber_01.ogg", t = 62/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 75/30},
+        },
+    },
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
@@ -353,10 +402,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 45/30},
         },
     },
-    ["reload_empty"] = {
-        Source = "reload",
-		MinProgress = 0.9,
-		DropMagAt = 0.8,
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		--DropMagAt = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -374,7 +424,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -382,9 +432,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 11/30},
-			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 40/30},
-			{s = path .. "wfoly_ar_falpha_reload_empty_chamber_01.ogg", t = 62/30},
-			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 75/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_chamber_01.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 45/30},
         },
     },
     ["ready"] = {
@@ -526,6 +576,90 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "weap_falpha_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "weap_falpha_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_ar_falpha_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -535,12 +669,12 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "00000000000000"
 

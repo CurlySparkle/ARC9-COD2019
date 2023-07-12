@@ -78,15 +78,24 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 751
+SWEP.RPM = 750
 
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
     },
     {
         Mode = 1,
+		PoseParam = 1,
     },
+    -- {
+        -- Mode = 3,
+		-- RPM = 700,
+		-- PostBurstDelay = 0.15,
+		-- RunawayBurst = true,
+		-- PoseParam = 1,
+    -- },
 }
 -------------------------- RECOIL
 
@@ -122,8 +131,23 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.7
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.4
+
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -186,7 +210,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -276,8 +300,8 @@ SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before s
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/kilo141/weap_kilo433_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/kilo141/weap_kilo433_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -322,6 +346,43 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_kilo433_reload_end.ogg", t = 66/30},
         },
     },
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.9,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_reach.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_tilt.ogg", t = 15/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_01.ogg", t = 28/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_charge_01.ogg", t = 57/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 73/30},
+        },
+    },
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
@@ -359,8 +420,82 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 40/30},
         },
     },
-    ["reload_empty"] = {
-        Source = "reload",
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.48,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_reach.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_tilt.ogg", t = 15/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_01.ogg", t = 22/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 26/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_charge_01.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 40/30},
+        },
+    },
+    ["reload_drum"] = {
+        Source = "reload_drum",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_settle.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_magout_01.ogg", t = 22/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_magin_01.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_grab.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_end.ogg", t = 66/30},
+        },
+    },
+    ["reload_drum_empty"] = {
+        Source = "reload_drum_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.7,
         IKTimeLine = {
@@ -386,14 +521,87 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magout_01.ogg", t = 4/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_reach.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_tilt.ogg", t = 15/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_01.ogg", t = 28/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 38/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_charge_01.ogg", t = 57/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 73/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_drumout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_grab.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_settle.ogg", t = 15/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_drumin_v2_01.ogg", t = 28/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_drumin_v2_02.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_charge_01.ogg", t = 57/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_end.ogg", t = 73/30},
+        },
+    },
+    ["reload_drum_fast"] = {
+        Source = "reload_drum_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_settle.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_magout_01.ogg", t = 22/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_magin_01.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_grab.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_end.ogg", t = 66/30},
+        },
+    },
+    ["reload_drum_fast_empty"] = {
+        Source = "reload_drum_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_drumout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_grab.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_settle.ogg", t = 15/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_drumin_v2_01.ogg", t = 28/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_drumin_v2_02.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_charge_01.ogg", t = 57/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_end.ogg", t = 73/30},
         },
     },
     ["ready"] = {
@@ -513,6 +721,24 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_kilo433_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_kilo433_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_kilo433_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -520,25 +746,73 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+--------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
+        return "reload_drum_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
+        return "reload_drum_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_drum") then 
+        return "reload_drum"
+    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
+        return "reload_drum_empty"
+--------------------------------------------------------------------------
     end
 end
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(11.5, 0, 1),
+    ModelOffset = Vector(9.5, -0.83, -0.9),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(0.9, 0, 0.1),
+    },
+    ["csgo_cod2019_laser_01"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 17, -1),
+        Ang = Angle(1.3, 0.9, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_02"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 17, -1),
+        Ang = Angle(1.3, 0.9, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_03"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 17, -1),
+        Ang = Angle(1.3, 0.9, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 
@@ -583,7 +857,11 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("stock_retract") then model:SetBodygroup(4,1) end
+    if wep:HasElement("stock_retract") then 
+	model:SetBodygroup(4,1)
+	elseif wep:HasElement("optic_cronen") then
+	model:SetBodygroup(5,2)
+	end
 end
 
 SWEP.Attachments = {
@@ -608,7 +886,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.5, 0, -0.07),
+        Pos = Vector(1, 0, -0.08),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(1.1, 0.85, 0),

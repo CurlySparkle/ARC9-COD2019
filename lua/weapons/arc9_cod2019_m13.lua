@@ -83,10 +83,12 @@ SWEP.RPM = 895.5223880597015
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
         -- add other attachment modifiers
     },
     {
         Mode = 1,
+		PoseParam = 1,
         -- add other attachment modifiers
     }
 }
@@ -100,8 +102,8 @@ SWEP.RecoilSeed = 6589132
 SWEP.RecoilPatternDrift = 55
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.9 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -124,8 +126,23 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.7
-SWEP.VisualRecoilUp = 0.8
+SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilUp = 0.5
+
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -190,7 +207,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -260,7 +277,7 @@ SWEP.ShootSoundSilencedIndoor = {path .. "weap_mcharlie_fire_silenced_plr_inside
 --SWEP.DistantShootSound = "CSGO.m4a4.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+SWEP.FiremodeSound = ""
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
@@ -326,6 +343,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		DropMagAt = 1.15,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -362,9 +380,8 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.9,
-		Mult = 1,
 		FireASAP = true,
-		DropMagAt = 0.45,
+		DropMagAt = 0.55,
         IKTimeLine = {
             {
                 t = 0,
@@ -400,7 +417,7 @@ SWEP.Animations = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
-		DropMagAt = 0.45,
+		DropMagAt = 0.55,
         IKTimeLine = {
             {
                 t = 0,
@@ -573,11 +590,29 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_ar_mcharlie_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_ar_mcharlie_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_mcharlie_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
@@ -602,6 +637,42 @@ SWEP.AttachmentTableOverrides = {
     },
     ["go_grip_loading"] = {
     ModelOffset = Vector(0, 0, 0.1),
+    },
+    ["csgo_cod2019_laser_01"] = {
+    Sights = {
+    {
+        Pos = Vector(-2, 17.5, -1),
+        Ang = Angle(0, 0, 45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_02"] = {
+    Sights = {
+    {
+        Pos = Vector(-2, 17.5, -1),
+        Ang = Angle(0, 0, 45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_03"] = {
+    Sights = {
+    {
+        Pos = Vector(-2, 17.5, -1),
+        Ang = Angle(0, 0, 45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 
@@ -687,9 +758,9 @@ SWEP.Attachments = {
         PrintName = "Tactical",
         DefaultAttName = "Default",
         Category = "cod2019_tac",
-        Bone = "tag_attachments",
-        Pos = Vector(16.3, 1, 0.2),
-        Ang = Angle(0, 0, -90),
+        Bone = "tag_laser_attach",
+        Pos = Vector(2, 0, -0.09),
+        Ang = Angle(0, 0, 180),
     },
     {
         PrintName = "Grips",

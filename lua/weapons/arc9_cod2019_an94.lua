@@ -79,17 +79,26 @@ SWEP.Crosshair = true
 -------------------------- FIREMODES
 
 SWEP.RPM = 571
+SWEP.RPMMultFirstShot = 2
+
+SWEP.RPMMultHook = function(self, a) 
+   if self:GetBurstCount() <= 3 
+   then return 2 
+  end 
+end
 
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
         -- add other attachment modifiers
     },
     {
         Mode = 3,
         RPM = 800,
 		PostBurstDelay = 0.2,
-		RunawayBurst = true
+		RunawayBurst = true,
+		PoseParam = 1
     }
 }
 -------------------------- RECOIL

@@ -72,20 +72,22 @@ SWEP.ClipSize = 30 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 730
+SWEP.RPM = 680
 
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
     },
     {
         Mode = 1,
+		PoseParam = 1,
     },
 }
 -------------------------- RECOIL
@@ -127,7 +129,19 @@ SWEP.VisualRecoilPunchSights = 25
 SWEP.VisualRecoilPunch = 0.8
 SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = -1/9
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -190,7 +204,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -251,7 +265,7 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/grau556/"
 
-SWEP.ShootPitchVariation = 15
+SWEP.ShootPitchVariation = 10
 SWEP.ShootSound = {path .. "weap_sierra552_fire_plr_01.ogg", path .. "weap_sierra552_fire_plr_02.ogg", path .. "weap_sierra552_fire_plr_03.ogg", path .. "weap_sierra552_fire_plr_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_sierra552_fire_silenced_plr_01.ogg", path .. "weap_sierra552_fire_silenced_plr_02.ogg", path .. "weap_sierra552_fire_silenced_plr_03.ogg", path .. "weap_sierra552_fire_silenced_plr_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_sierra552_fire_plr_inside_01.ogg", path .. "weap_sierra552_fire_plr_inside_02.ogg", path .. "weap_sierra552_fire_plr_inside_03.ogg", path .. "weap_sierra552_fire_plr_inside_04.ogg"}
@@ -260,7 +274,7 @@ SWEP.ShootSoundSilencedIndoor = {path .. "weap_sierra552_fire_silenced_plr_insid
 --SWEP.DistantShootSound = "CSGO.SG556.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+SWEP.FiremodeSound = ""
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
@@ -281,8 +295,8 @@ SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before s
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/grau556/weap_sierra552_hammer_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/grau556/weap_sierra552_disconnector_plr_02.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -329,7 +343,7 @@ SWEP.Animations = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.85,
+		DropMagAt = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -512,6 +526,24 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_sierra552_fire_switch_on.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "wfoly_ar_sierra552_fire_switch_off.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_asierra552_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -521,12 +553,12 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -538,6 +570,42 @@ SWEP.AttachmentTableOverrides = {
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(0.9, 0, 0.1),
+    },
+    ["csgo_cod2019_laser_01"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 15, -1),
+        Ang = Angle(0.3, 2, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_02"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 15, -1),
+        Ang = Angle(0.3, 2, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_03"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 15, -1),
+        Ang = Angle(0.3, 2, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 
