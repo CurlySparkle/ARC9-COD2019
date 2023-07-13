@@ -259,7 +259,8 @@ SWEP.DropMagazineSounds = {
 "weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_02.ogg", 
 "weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_03.ogg", 
 "weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_04.ogg", 
-"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_05.ogg", 
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_05.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_06.ogg", 
 }
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
@@ -421,8 +422,8 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_fast_lift_v2.ogg", t = 0/30},
 			{s = path .. "wpfoly_mike4_reload_fast_magout_v2.ogg", t = 5/30},
-			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 30/30},
-			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 34/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 33/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 37/30},
 			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 54/30},
         },
     },
@@ -456,9 +457,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_empty_fast_lift_v2.ogg", t = 0/30},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_magout_v2.ogg", t = 5/30},
-			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 31/30},
-			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 37/30},
-			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 40/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 25/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 34/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 44/30},
         },
     },
     ["ready"] = {
@@ -489,7 +490,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wpfoly_mike4_raise_first_01.ogg", t = 4/30},
-            {s = path .. "wpfoly_mike4_raise_first_02.ogg", t = 27/30},
+            {s = path .. "wpfoly_mike4_raise_first_02.ogg", t = 26/30},
             {s = path .. "wpfoly_mike4_raise_first_03.ogg", t = 41/30},
         },
     },

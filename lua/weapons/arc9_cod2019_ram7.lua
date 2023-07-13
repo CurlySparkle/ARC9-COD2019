@@ -371,7 +371,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 49/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_rotate.ogg", t = 56/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_charge.ogg", t = 68/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 79/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 77/30},
         },
     },
     ["reload_fast"] = {
@@ -408,7 +408,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_arm.ogg", t = 18/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 31/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 37/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 44/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 42/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -445,8 +445,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_arm.ogg", t = 18/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 31/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 37/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_charge.ogg", t = 45/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 44/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_charge.ogg", t = 44/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 50/30},
         },
     },
     ["ready"] = {

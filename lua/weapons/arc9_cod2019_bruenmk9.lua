@@ -4,7 +4,7 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "LMGs"
+SWEP.SubCategory = "Light Machine Guns"
 
 SWEP.PrintName = "Bruen Mk9"
 

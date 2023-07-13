@@ -417,7 +417,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_tilt.ogg", t = 15/30},
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_01.ogg", t = 22/30},
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 26/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 39/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -454,8 +454,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_tilt.ogg", t = 15/30},
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_01.ogg", t = 22/30},
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 26/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_charge_01.ogg", t = 35/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_charge_01.ogg", t = 37/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 47/30},
         },
     },
     ["reload_drum"] = {

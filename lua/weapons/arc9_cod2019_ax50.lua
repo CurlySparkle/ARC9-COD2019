@@ -8,7 +8,7 @@ SWEP.SubCategory = "Sniper Rifles"
 
 SWEP.PrintName = "AX-50"
 
-SWEP.Class = "Sniper Rifles"
+SWEP.Class = "Sniper Rifle"
 SWEP.Trivia = {
     ["Country of Origin"] = "United Kingdom",
     ["Manufacturer"] = "Cronen",

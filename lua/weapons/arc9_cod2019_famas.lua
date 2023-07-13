@@ -363,7 +363,7 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 11/30},
-			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 38/30},
 			{s = path .. "wfoly_ar_falpha_reload_empty_chamber_01.ogg", t = 62/30},
 			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 75/30},
         },
@@ -397,7 +397,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 11/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 12/30},
 			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 25/30},
 			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 45/30},
         },
@@ -431,10 +431,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 11/30},
-			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 22/30},
 			{s = path .. "wfoly_ar_falpha_reload_empty_chamber_01.ogg", t = 40/30},
-			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 45/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 55/30},
         },
     },
     ["ready"] = {

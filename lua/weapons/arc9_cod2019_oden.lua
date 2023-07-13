@@ -407,10 +407,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_asierra12_reload_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 5/30},
-			{s = path .. "wfoly_ar_asierra12_reload_mvmnt.ogg", t = 21/30},
-			{s = path .. "wfoly_ar_asierra12_reload_magin_01.ogg", t = 24/30},
-			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 39/30},
+			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_ar_asierra12_reload_mvmnt.ogg", t = 17/30},
+			{s = path .. "wfoly_ar_asierra12_reload_magin_01.ogg", t = 20/30},
+			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 37/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -443,11 +443,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_asierra12_reload_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 5/30},
-			{s = path .. "wfoly_ar_asierra12_reload_mvmnt.ogg", t = 21/30},
-			{s = path .. "wfoly_ar_asierra12_reload_magin_01.ogg", t = 24/30},
-			{s = path .. "wfoly_ar_asierra12_reload_empty_charge_01.ogg", t = 35/30},
-			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 39/30},
+			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_ar_asierra12_reload_mvmnt.ogg", t = 17/30},
+			{s = path .. "wfoly_ar_asierra12_reload_magin_01.ogg", t = 20/30},
+			{s = path .. "wfoly_ar_asierra12_reload_empty_charge_01.ogg", t = 47/30},
+			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 62/30},
         },
     },
     ["ready"] = {

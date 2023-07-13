@@ -366,7 +366,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_empty_magin.ogg", t = 46/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_grab_bolt.ogg", t = 44/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_charge.ogg", t = 58/30},
-			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 74/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 72/30},
         },
     },
     ["reload_fast"] = {
@@ -440,7 +440,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_empty_magin.ogg", t = 36/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_grab_bolt.ogg", t = 40/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_charge.ogg", t = 45/30},
-			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 50/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 58/30},
         },
     },
     ["reload_xmag"] = {
@@ -615,7 +615,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_ar_valpha_raise_first_up.ogg", t = 0/30},
             {s = path .. "wfoly_ar_valpha_raise_first_selector.ogg", t = 9/30},
-            {s = path .. "wfoly_ar_valpha_raise_first_end.ogg", t = 18/30},
+            {s = path .. "wfoly_ar_valpha_raise_first_end.ogg", t = 17/30},
         },
     },
     ["draw"] = {

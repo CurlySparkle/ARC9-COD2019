@@ -440,7 +440,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 16/30},
 			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 32/30},
 			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 36/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 42/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -475,9 +475,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 16/30},
 			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 32/30},
 			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 36/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_boltpull.ogg", t = 45/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltpull.ogg", t = 39/30},
 			{s = path .. "wfoly_ar_anovember94_reload_empty_boltforward.ogg", t = 48/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 55/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 50/30},
         },
     },
     ["ready"] = {

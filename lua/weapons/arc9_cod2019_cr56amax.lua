@@ -405,7 +405,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_fast_rotate.ogg", t = 3/30},
 			{s = path .. "wfoly_ar_galima_reload_fast_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_ar_galima_reload_fast_magin.ogg", t = 28/30},
-			{s = path .. "wfoly_ar_galima_reload_fast_end.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_galima_reload_fast_end.ogg", t = 37/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -439,8 +439,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_empty_fast_rotate.ogg", t = 3/30},
 			{s = path .. "wfoly_ar_galima_reload_empty_fast_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_ar_galima_reload_empty_fast_magin.ogg", t = 28/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_fast_charge.ogg", t = 35/30},
-			{s = path .. "wfoly_ar_galima_reload_empty_fast_end.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_fast_charge.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_galima_reload_empty_fast_end.ogg", t = 53/30},
         },
     },
     ["ready"] = {
