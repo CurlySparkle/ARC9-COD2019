@@ -297,8 +297,8 @@ SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before s
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.015 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/bizon/weap_beta_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/bizon/weap_beta_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -452,9 +452,8 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
-            {s = path .. "wfoly_plr_sm_beta_reload_end.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_sm_beta_drop_down.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -507,6 +506,24 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee", "melee2"},
+    },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_sm_beta_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_sm_beta_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_sm_beta_inspect_03.ogg", t = 0/30},
+        },
     },
 }
 

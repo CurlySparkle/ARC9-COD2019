@@ -83,9 +83,11 @@ SWEP.RPM = 800
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
     },
     {
         Mode = 1,
+		PoseParam = 1,
     },
     -- {
         -- Mode = 3,
@@ -272,7 +274,7 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/striker45/"
 
-SWEP.ShootPitchVariation = 12
+SWEP.ShootPitchVariation = 10
 SWEP.ShootSound = {path .. "weap_smgolf45_fire_plr_01.ogg", path .. "weap_smgolf45_fire_plr_02.ogg", path .. "weap_smgolf45_fire_plr_03.ogg", path .. "weap_smgolf45_fire_plr_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_smgolf45_fire_silenced_plr_01.ogg", path .. "weap_smgolf45_fire_silenced_plr_02.ogg", path .. "weap_smgolf45_fire_silenced_plr_03.ogg", path .. "weap_smgolf45_fire_silenced_plr_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_smgolf45_fire_plr_inside_01.ogg", path .. "weap_smgolf45_fire_plr_inside_02.ogg", path .. "weap_smgolf45_fire_plr_inside_03.ogg", path .. "weap_smgolf45_fire_plr_inside_04.ogg"}
@@ -281,7 +283,7 @@ SWEP.ShootSoundSilencedIndoor = {path .. "weap_smgolf45_fire_silenced_plr_inside
 --SWEP.DistantShootSound = "CSGO.UMP45.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+SWEP.FiremodeSound = ""
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_SMG"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_SMG"
@@ -297,13 +299,16 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.015 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = path .. "weap_smgolf45_fire_hammer_01.ogg"
+SWEP.TriggerUpSound = path .. "weap_smgolf45_disconnector_plr_01.ogg"
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-		Mult = 0.3,
     },
     ["reload"] = {
         Source = "reload_short",
@@ -487,9 +492,8 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
         EventTable = {
-            {s = path .. "wfoly_sm_smgolf45_raise_first_mvmnt.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_smgolf45_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -565,6 +569,24 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "wfoly_sm_smgolf45_selectsemi_off.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_sm_smgolf45_selectsemi_on.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_sm_smgolf45_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -579,7 +601,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     end
 end
 
---SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "000000000000000"
 

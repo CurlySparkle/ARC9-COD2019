@@ -126,8 +126,8 @@ SWEP.RecoilMultSights = 0.6
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 1.5
-SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.4
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = -1/6
 
@@ -183,7 +183,7 @@ SWEP.IronSights = {
     Pos = Vector(-3.65, -5, 0.5),
     Ang = Angle(0, 0, -2.5),
     Magnification = 1.17,
-    ViewModelFOV = 56,
+    ViewModelFOV = 54,
 	CrosshairInSights = false
 }
 
@@ -205,7 +205,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -266,7 +266,7 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/aug/"
 
-SWEP.ShootPitchVariation = 11
+SWEP.ShootPitchVariation = 10
 SWEP.ShootSound = {path .. "weap_augolf_fire_plr_9mm_01.ogg", path .. "weap_augolf_fire_plr_9mm_02.ogg", path .. "weap_augolf_fire_plr_9mm_03.ogg", path .. "weap_augolf_fire_plr_9mm_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_augolf_fire_silenced_plr_9mm_01.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_02.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_03.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_augolf_fire_plr_9mm_inside_01.ogg", path .. "weap_augolf_fire_plr_9mm_inside_02.ogg", path .. "weap_augolf_fire_plr_9mm_inside_03.ogg", path .. "weap_augolf_fire_plr_9mm_inside_04.ogg"}
@@ -295,15 +295,12 @@ SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before s
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/aug/weap_augolf_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/aug/weap_augolf_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -831,7 +828,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_augolf_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -907,11 +904,29 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_sm_augolf_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_sm_augolf_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_sm_augolf_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "00000000000000"
 

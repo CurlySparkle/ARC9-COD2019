@@ -71,7 +71,7 @@ SWEP.ClipSize = 20 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 6 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -82,17 +82,20 @@ SWEP.RPM = 600
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
         -- add other attachment modifiers
     },
     {
         Mode = 1,
+		RPM = 450,
+		PoseParam = 1,
         -- add other attachment modifiers
     }
 }
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.1
+SWEP.Recoil = 1.25
 
 SWEP.RecoilSeed = 213654
 
@@ -112,7 +115,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 2
+SWEP.RecoilKick = 1
 
 SWEP.RecoilMultCrouch = 0.7
 SWEP.RecoilMultMove = 1.25
@@ -121,12 +124,25 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.2
+
 SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilPunchSights = 25
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = -1/6
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -189,7 +205,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -274,12 +290,16 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.TriggerDelay = 0.01 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.01 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -313,40 +333,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_02.ogg", t = 45/30},
 			{s = path .. "wfoly_plr_ar_falima_raise_start.ogg", t = 61/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_xmag_end.ogg", t = 63/30},
-        },
-    },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		DropMagAt = 0.9,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-            {s = path .. "wfoly_plr_ar_falima_reload_xmag_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_ar_falima_reload_xmag_rattle.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magout_01.ogg", t = 9/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_01.ogg", t = 30/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_02.ogg", t = 38/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_xmag_end.ogg", t = 47/30},
         },
     },
     ["reload_empty"] = {
@@ -385,6 +371,75 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_end.ogg", t = 95/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		DropMagAt = 0.9,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_rattle.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_magout_01.ogg", t = 9/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_magin_v2_02.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_end.ogg", t = 47/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		DropMagAt = 0.9,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_start.ogg", t = 0},
+            {s = path .. "mp5-submachinegun-foley-bolt-chrage-1.ogg", t = 0.16},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_magout_01.ogg", t = 0.5},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_magin_v2_01.ogg", t = 1.3},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_magin_v2_02.ogg", t = 1.45},
+			{s = path .. "g3_boltpullrelease.ogg", t = 2.0},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_end.ogg", t = 2.1},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -419,6 +474,18 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_raise_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_ar_falima_raise_settle.ogg", t = 0/30},
@@ -426,7 +493,18 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_drop_down.ogg", t = 0/30},
         },
@@ -504,17 +582,37 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_kilo433_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_kilo433_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_ar_falima_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
+
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
@@ -528,6 +626,42 @@ SWEP.AttachmentTableOverrides = {
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(0.7, 0, 0.1),
+    },
+    ["csgo_cod2019_laser_01"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 22, -1),
+        Ang = Angle(0.3, -0.2, -45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_02"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 22, -1),
+        Ang = Angle(0.3, -0.2, -45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_03"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 22, -1),
+        Ang = Angle(0.3, -0.2, -45),
+        ViewModelFOV = 54,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 

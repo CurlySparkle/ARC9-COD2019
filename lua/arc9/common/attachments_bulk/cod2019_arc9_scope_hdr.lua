@@ -1,7 +1,7 @@
 local ATT = {}
 
-ATT.PrintName = "Default Scope"
-ATT.CompactName = [[Default]]
+ATT.PrintName = "HDR Scope"
+ATT.CompactName = [[HDR Scope]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_scope_hdr.png", "mips smooth")
 ATT.Description = [[Long-range combat scope. Provides an improved precision at longer ranges.]]
 ATT.Pros = {
@@ -14,7 +14,7 @@ ATT.Free = false
 ATT.Folder = "Scopes"
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.Category = {"cod2019_optic_hdr"}
+ATT.Category = {"cod2019_optic_hdr","cod2019_scope_snipers"}
 ATT.ActivateElements = {"scope_hdr"}
 
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_hdr.mdl"

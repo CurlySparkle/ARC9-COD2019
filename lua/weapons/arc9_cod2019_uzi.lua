@@ -83,9 +83,11 @@ SWEP.RPM = 603
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
     },
     {
         Mode = 1,
+		PoseParam = 1,
     },
     -- {
         -- Mode = 3,
@@ -93,9 +95,6 @@ SWEP.Firemodes = {
 		-- PostBurstDelay = 0.25
     -- },
 }
-
-SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
 
 -------------------------- RECOIL
 
@@ -129,7 +128,7 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilPunch = 2.5
 SWEP.VisualRecoilUp = 1
 
 SWEP.VisualRecoilMultSights = 0.2
@@ -290,7 +289,7 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/uzi/"
 
-SWEP.ShootPitchVariation = 11
+SWEP.ShootPitchVariation = 10
 SWEP.ShootSound = {path .. "weap_uzulu_fire_plr_01.ogg", path .. "weap_uzulu_fire_plr_02.ogg", path .. "weap_uzulu_fire_plr_03.ogg", path .. "weap_uzulu_fire_plr_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_uzulu_fire_silenced_plr_01.ogg", path .. "weap_uzulu_fire_silenced_plr_02.ogg", path .. "weap_uzulu_fire_silenced_plr_03.ogg", path .. "weap_uzulu_fire_silenced_plr_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_uzulu_fire_plr_inside_01.ogg", path .. "weap_uzulu_fire_plr_inside_02.ogg", path .. "weap_uzulu_fire_plr_inside_03.ogg", path .. "weap_uzulu_fire_plr_inside_04.ogg"}
@@ -299,13 +298,17 @@ SWEP.ShootSoundSilencedIndoor = {path .. "weap_uzulu_fire_silenced_plr_inside_01
 --SWEP.DistantShootSound = "CSGO.mac10.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+SWEP.FiremodeSound = ""
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_SMG"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_SMG"
 
+SWEP.TriggerDelay = 0.1 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
+
 SWEP.TriggerDownSound = "COD2019.Uzi.Trigger"
-SWEP.TriggerUpSound = ""
+SWEP.TriggerUpSound = path .. "weap_uzulu_disconnector_plr_01.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",
@@ -321,9 +324,6 @@ SWEP.HideBones  = {
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -541,7 +541,7 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_sm_uzulu_drop_down.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -615,6 +615,24 @@ SWEP.Animations = {
                 lhik = 1,
                 rhik = 1
             },
+        },
+    },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_sm_uzulu_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_sm_uzulu_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_plr_sm_uzulu_inspect_02.ogg", t = 0/30},
         },
     },
 }

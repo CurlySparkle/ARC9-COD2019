@@ -96,9 +96,9 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.3
+SWEP.Recoil = 1.15
 
-SWEP.RecoilSeed = 6213
+SWEP.RecoilSeed = 6589132
 
 SWEP.RecoilPatternDrift = 35
 
@@ -120,21 +120,33 @@ SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilMultSights = 0.85
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.1
+SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 25
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilPunch = 2.5
+SWEP.VisualRecoilUp = 0.1
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = -1/6
+SWEP.VisualRecoilSide = -0.1
 
 SWEP.VisualRecoilSpringPunchDamping = 26
 SWEP.VisualRecoilDampingConst = 80
 SWEP.VisualRecoilSpringMagnitude = 2 / 1.67
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -142,14 +154,14 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.5
-SWEP.RecoilModifierCap = 3
-SWEP.RecoilModifierCapMove = 1
+SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
+SWEP.SpreadAddHipFire = 0.015
 SWEP.SpreadMultHipFire = 1.5
 
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 3
 --SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
@@ -175,10 +187,10 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.28, -4, -0.3),
+    Pos = Vector(-3.28, -7.5, -0.3),
     Ang = Angle(0, 0, -4),
     Magnification = 1.15,
-    ViewModelFOV = 56,
+    ViewModelFOV = 54,
 	CrosshairInSights = false
 }
 
@@ -364,45 +376,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_papa90_reload_end.ogg", t = 73/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		MagSwapTime = 1.5,
-		DropMagAt = 0.8,
-		Mult = 1.1,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.95,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_sm_papa90_reload_grabmag.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_papa90_reload_magout_01.ogg", t = 7/30},
-			{s = path .. "wfoly_sm_papa90_reload_arm_down.ogg", t = 11/30},
-			{s = path .. "wfoly_sm_papa90_reload_arm_up.ogg", t = 11/30},
-			{s = path .. "wfoly_sm_papa90_reload_arm_maghit.ogg", t = 28/30},
-			{s = path .. "wfoly_sm_papa90_reload_magin_v2_01.ogg", t = 37/30},
-			{s = path .. "wfoly_sm_papa90_reload_magin_v2_02.ogg", t = 40/30},
-			{s = path .. "wfoly_sm_papa90_reload_end.ogg", t = 54/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -442,6 +415,84 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_papa90_reload_empty_chamber_01.ogg", t = 76/30},
 			{s = path .. "wfoly_sm_papa90_reload_empty_gunrattle.ogg", t = 77/30},
 			{s = path .. "wfoly_sm_papa90_reload_empty_end.ogg", t = 88/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_papa90_reload_grabmag.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_papa90_reload_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_sm_papa90_reload_arm_down.ogg", t = 11/30},
+			{s = path .. "wfoly_sm_papa90_reload_arm_up.ogg", t = 11/30},
+			{s = path .. "wfoly_sm_papa90_reload_arm_maghit.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_papa90_reload_magin_v2_01.ogg", t = 37/30},
+			{s = path .. "wfoly_sm_papa90_reload_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_papa90_reload_end.ogg", t = 54/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_papa90_reload_empty_rattle.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_papa90_reload_empty_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_sm_papa90_reload_empty_arm_down.ogg", t = 17/30},
+			{s = path .. "wfoly_sm_papa90_reload_empty_arm_swing.ogg", t = 24/30},
+			{s = path .. "wfoly_sm_papa90_reload_empty_rattle.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_papa90_reload_empty_magin_v2_01.ogg", t = 39/30},
+			{s = path .. "wfoly_sm_papa90_reload_empty_magin_v2_02.ogg", t = 43/30},
+			{s = path .. "wfoly_sm_papa90_reload_empty_chamber_01.ogg", t = 55/30},
+			{s = path .. "wfoly_sm_papa90_reload_empty_gunrattle.ogg", t = 63/30},
+			{s = path .. "wfoly_sm_papa90_reload_empty_end.ogg", t = 67/30},
         },
     },
     ["ready"] = {
@@ -484,9 +535,8 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
-            {s = path .. "wfoly_sm_papa90_reload_empty_arm_down.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_papa90_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -562,6 +612,24 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_sm_papa90_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_sm_papa90_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_sm_papa90_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -571,8 +639,8 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
@@ -585,6 +653,42 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(3.4, 0.1, 0.38),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
+    },
+    ["csgo_cod2019_laser_01"] = {
+    Sights = {
+    {
+        Pos = Vector(1, 15, -2),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_02"] = {
+    Sights = {
+    {
+        Pos = Vector(1, 15, -2),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_03"] = {
+    Sights = {
+    {
+        Pos = Vector(1, 15, -2),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 

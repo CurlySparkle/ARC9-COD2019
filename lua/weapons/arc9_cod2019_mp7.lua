@@ -83,17 +83,19 @@ SWEP.RPM = 968
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
     },
     {
         Mode = 1,
+		PoseParam = 1,
     },
 }
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.3
+SWEP.Recoil = 1.5
 
-SWEP.RecoilSeed = 346598
+SWEP.RecoilSeed = 888888
 
 SWEP.RecoilPatternDrift = 55
 
@@ -122,12 +124,25 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1.5
-SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilPunch = 3
+SWEP.VisualRecoilUp = 0.3
 
-SWEP.VisualRecoilSpringPunchDamping = 26
-SWEP.VisualRecoilDampingConst = 80
-SWEP.VisualRecoilSpringMagnitude = 2 / 1.67
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -147,7 +162,7 @@ SWEP.SpreadAddSights = -0.5
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.2 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.2 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
@@ -190,7 +205,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -262,7 +277,7 @@ SWEP.ShootSoundSilencedIndoor = {path .. "weap_mpapa7_fire_silenced_plr_inside_0
 --SWEP.DistantShootSound = "CSGO.MP9.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+SWEP.FiremodeSound = ""
 
 SWEP.EnterSightsSound = "weapons/cod2019/etc/smg_iron_in.ogg"
 SWEP.ExitSightsSound = "weapons/cod2019/etc/smg_iron_out.ogg"
@@ -283,15 +298,12 @@ SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before s
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.015 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/mp7/weap_mpapa7_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/mp7/weap_golf21_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -617,7 +629,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.5,
+		MinProgress = 0.85,
 		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_plr_sm_mpapa7_raise.ogg", t = 0/30},
@@ -626,7 +638,7 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_sm_mpapa7_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -678,7 +690,8 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-	IKTimeLine = {
+        Source = {"melee", "melee2"},
+	    IKTimeLine = {
             {
                 t = 0,
                 lhik = 1,
@@ -690,17 +703,34 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.6,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
         },
-        Source = {"melee", "melee2", "melee3"},
+    },
+    ["firemode_1"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "weap_mpapa7_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "weap_mpapa7_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_sm_mpapa7_inspect_02.ogg", t = 0/30},
+        },
     },
 }
 
@@ -727,7 +757,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     end
 end
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -821,7 +851,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.5, 0, -0.07),
+        Pos = Vector(1.5, 0, -0.07),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0.22, 0.5, 0),

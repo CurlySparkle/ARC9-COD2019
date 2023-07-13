@@ -91,18 +91,20 @@ SWEP.RPM = 1300
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
         -- add other attachment modifiers
     },
     {
         Mode = 1,
 		RPM = 600,
+		PoseParam = 1,
         -- add other attachment modifiers
     },
-    {
-        Mode = 3,
-		RPM = 1400
-        -- add other attachment modifiers
-    }
+    -- {
+        -- Mode = 3,
+		-- RPM = 1400
+        -- -- add other attachment modifiers
+    -- }
 }
 -------------------------- RECOIL
 
@@ -138,8 +140,8 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.9
-SWEP.VisualRecoilUp = 0.6
+SWEP.VisualRecoilPunch = 1.5
+SWEP.VisualRecoilUp = 0.3
 
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 25
@@ -164,10 +166,11 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 3
-SWEP.RecoilModifierCap = 5
+SWEP.RecoilModifierCap = 4
+SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddHipFire = 0.03
 SWEP.SpreadAddCrouch = -0.01

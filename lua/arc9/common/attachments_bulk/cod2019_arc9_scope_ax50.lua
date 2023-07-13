@@ -1,7 +1,7 @@
 local ATT = {}
 
-ATT.PrintName = "Default Scope"
-ATT.CompactName = [[Default]]
+ATT.PrintName = "AX50 Scope"
+ATT.CompactName = [[AX50 Scope]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_scope_ax50.png", "mips smooth")
 ATT.Description = [[Long-range combat scope. Provides an improved precision at longer ranges.]]
 ATT.Pros = {
@@ -14,7 +14,7 @@ ATT.Free = false
 ATT.Folder = "Scopes"
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.Category = {"cod2019_optic_ax50"}
+ATT.Category = {"cod2019_optic_ax50","cod2019_scope_snipers"}
 ATT.ActivateElements = {"scope_ax50"}
 
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_ax50.mdl"

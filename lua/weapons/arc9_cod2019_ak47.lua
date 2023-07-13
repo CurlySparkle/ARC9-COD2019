@@ -149,10 +149,10 @@ SWEP.Spread = 0.0014
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = 3
-SWEP.RecoilModifierCapMove = 0.5
+SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadMultMove = 2
+SWEP.SpreadMultMove = 1.5
 --SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddHipFire = 0.07
 SWEP.SpreadAddCrouch = -0.03
@@ -204,7 +204,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -730,7 +730,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.5, 0, 0),
+        Pos = Vector(1.5, 0, -0.07),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),

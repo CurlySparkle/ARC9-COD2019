@@ -1,7 +1,7 @@
 local ATT = {}
 
-ATT.PrintName = "Default Scope"
-ATT.CompactName = [[Default]]
+ATT.PrintName = "SPR208 Scope"
+ATT.CompactName = [[SPR208 Scope]]
 ATT.Icon = Material("entities/attachs/go_optic_schmidt.png", "mips smooth")
 ATT.Description = [[Long-range combat scope. Provides an improved precision at longer ranges.]]
 ATT.Pros = {
@@ -14,7 +14,7 @@ ATT.Free = false
 ATT.Folder = "Scopes"
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.Category = {"cod2019_optic_spr208"}
+ATT.Category = {"cod2019_optic_spr208","cod2019_scope_snipers"}
 ATT.ActivateElements = {"scope_spr208"}
 
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_spr208.mdl"

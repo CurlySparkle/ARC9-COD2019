@@ -72,7 +72,7 @@ SWEP.ClipSize = 20 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -83,9 +83,11 @@ SWEP.RPM = 900
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
     },
     {
         Mode = 1,
+		PoseParam = 1,
     },
     -- {
         -- Mode = 3,
@@ -96,11 +98,11 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1
+SWEP.Recoil = 1.25
 
-SWEP.RecoilSeed = 50729
+SWEP.RecoilSeed = -1547
 
-SWEP.RecoilPatternDrift = 35
+SWEP.RecoilPatternDrift = 25
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -108,39 +110,58 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
+SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
-SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 55 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
-SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
+SWEP.RecoilAutoControl = 0.8 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.6
-SWEP.VisualRecoilUp = 0.05
+SWEP.VisualRecoilPunch = 2.6
+SWEP.VisualRecoilUp = 0.2
+
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
+
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.1
+SWEP.SpreadMultRecoil = 1
 SWEP.RecoilModifierCap = 4
+SWEP.RecoilModifierCap = 1
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddHipFire = 0.0012
+SWEP.SpreadAddHipFire = 0.015
 SWEP.SpreadMultHipFire = 1.5
 
-SWEP.SpreadAddMove = 0.1
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
@@ -156,7 +177,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.15
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -191,7 +212,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -252,16 +273,19 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/iso/"
 
-SWEP.ShootPitchVariation = 10
+SWEP.ShootPitchVariation = 5
 SWEP.ShootSound = {path .. "weap_charlie9_fire_plr_01.ogg", path .. "weap_charlie9_fire_plr_02.ogg", path .. "weap_charlie9_fire_plr_03.ogg", path .. "weap_charlie9_fire_plr_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_charlie9_fire_silenced_plr_01.ogg", path .. "weap_charlie9_fire_silenced_plr_02.ogg", path .. "weap_charlie9_fire_silenced_plr_03.ogg", path .. "weap_charlie9_fire_silenced_plr_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_charlie9_fire_plr_inside_01.ogg", path .. "weap_charlie9_fire_plr_inside_02.ogg", path .. "weap_charlie9_fire_plr_inside_03.ogg", path .. "weap_charlie9_fire_plr_inside_04.ogg"}
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_charlie9_fire_silenced_plr_inside_01.ogg", path .. "weap_charlie9_fire_silenced_plr_inside_02.ogg", path .. "weap_charlie9_fire_silenced_plr_inside_03.ogg", path .. "weap_charlie9_fire_silenced_plr_inside_04.ogg"}
 
+SWEP.DistantShootSound = path .. "weap_charlie9_fire2_plr_01.ogg"
+SWEP.DistantShootSoundSilenced = path .. "weap_charlie9_sup_fire_plr_01.ogg"
+
 --SWEP.DistantShootSound = "CSGO.mp9.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+SWEP.FiremodeSound = ""
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_SMG"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_SMG"
@@ -281,15 +305,15 @@ SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before s
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.015 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/iso/weap_charlie9_hammer_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/iso/weap_charlie9_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
+        -- EventTable = {
+			-- {s = path .. "wfoly_sm_charlie9_reload_up.ogg", t = 0/30},
+        -- },
     },
     ["reload"] = {
         Source = "reload_short",
@@ -325,41 +349,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 51/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 22/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 24/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -393,6 +382,217 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 34/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 48/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 48/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.55,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 22/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 24/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.55,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 22/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 35/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 40/30},
+        },
+    },
+    ["reload_drum"] = {
+        Source = "reload_drum",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_charlie9_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_charlie9_reload_grab.ogg", t = 11/30},
+			{s = path .. "wfoly_sm_charlie9_reload_magout.ogg", t = 23/30},
+			{s = path .. "wfoly_sm_charlie9_reload_magin.ogg", t = 33/30},
+			{s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 51/30},
+        },
+    },
+    ["reload_drum_empty"] = {
+        Source = "reload_drum_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 20/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 34/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 48/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 48/30},
+        },
+    },
+    ["reload_drum_fast"] = {
+        Source = "reload_drum_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 22/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 24/30},
+        },
+    },
+    ["reload_drum_fast_empty"] = {
+        Source = "reload_drum_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 22/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 35/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["ready"] = {
@@ -434,7 +634,7 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_charlie9_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -510,6 +710,24 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_sm_charlie9_selectsemi_on.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "wfoly_sm_charlie9_selectsemi_off.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_sm_charlie9_inspect_03.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -517,14 +735,24 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
+        return "reload_drum_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
+        return "reload_drum_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_drum") then
+        return "reload_drum"
+    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
+        return "reload_drum_empty"
     end
 end
 
---SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -597,7 +825,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1, 0, -0.07),
+        Pos = Vector(1.5, 0, -0.07),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),

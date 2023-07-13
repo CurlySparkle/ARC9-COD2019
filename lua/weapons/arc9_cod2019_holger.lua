@@ -72,7 +72,7 @@ SWEP.ClipSize = 100 -- Self-explanatory.
 SWEP.SupplyLimit = 3 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -86,14 +86,15 @@ SWEP.Firemodes = {
     },
     {
         Mode = 1,
+		RPM = 500,
     },
 }
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1
+SWEP.Recoil = 1.1
 
-SWEP.RecoilSeed = nil
+SWEP.RecoilSeed = 142375
 
 SWEP.RecoilPatternDrift = 45
 
@@ -111,24 +112,37 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 2
+SWEP.RecoilKick = 1.6
 
 SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.5
-SWEP.VisualRecoilPunchSights = 15
 SWEP.VisualRecoilRollSights = 20
-SWEP.VisualRecoilPunch = 1.3
+SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.9
-SWEP.VisualRecoilRoll = 1.4
-SWEP.VisualRecoilSide = 0
+
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -144,7 +158,6 @@ SWEP.SpreadMultMove = 2
 SWEP.SpreadAddHipFire = 0.03
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
-
 
 -------------------------- HANDLING
 
@@ -191,7 +204,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -252,6 +265,7 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/holger/"
 local path2 = "weapons/cod2019/kilo141/"
+local path3 = "weapons/cod2019/ak47/"
 
 SWEP.ShootPitchVariation = 10
 SWEP.ShootSound = {path .. "weap_mgolf36_fire_plr_01.ogg", path .. "weap_mgolf36_fire_plr_02.ogg", path .. "weap_mgolf36_fire_plr_03.ogg", path .. "weap_mgolf36_fire_plr_04.ogg"}
@@ -261,7 +275,7 @@ SWEP.ShootSoundSilencedIndoor = {path .. "weap_mgolf36_fire_silenced_plr_inside_
 --SWEP.DistantShootSound = "CSGO.SG556.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+SWEP.FiremodeSound = ""
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
@@ -277,19 +291,16 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
-SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
+SWEP.TriggerDelayTime = 0.015 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/sa87/weap_lima86_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/sa87/weap_lima86_disconnector_plr_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/holger/weap_mgolf36_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/holger/weap_mgolf36_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -368,8 +379,159 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_end.ogg", t = 118/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+		MinProgress = 0.8,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_drum_out.ogg", t = 15/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 35/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_drum_hit_well.ogg", t = 45/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_drum_in.ogg", t = 53/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_end.ogg", t = 55/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+		MinProgress = 0.8,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_out.ogg", t = 21/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_hit_well.ogg", t = 43/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_in.ogg", t = 75/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_smack.ogg", t = 85/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_bolt_lever.ogg", t = 102/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 106/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_end.ogg", t = 118/30},
+        },
+    },
     ["reload_ar"] = {
         Source = "reload_armag",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+		MinProgress = 0.8,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 17/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 33/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 38/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 53/30},
+        },
+    },
+    ["reload_empty_ar"] = {
+        Source = "reload_armag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.95,
+		MinProgress = 0.8,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.15,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 17/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 34/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 39/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 50/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 67/30},
+        },
+    },
+    ["reload_ar_fast"] = {
+        Source = "reload_armag_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
 		DropMagAt = 0.6,
@@ -392,7 +554,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.82,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -406,8 +568,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 53/30},
         },
     },
-    ["reload_empty_ar"] = {
-        Source = "reload_armag_empty",
+    ["reload_ar_fast_empty"] = {
+        Source = "reload_armag_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.8,
 		MinProgress = 0.8,
@@ -511,7 +673,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_lm_mgolf36_reload_end.ogg", t = 0/30},
+            {s = path .. "wfoly_lm_mgolf36_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -587,9 +749,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_lm_mgolf36_inspect_01.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_inspect_02.ogg", t = 70/30},
-			{s = path .. "wfoly_lm_mgolf36_inspect_03.ogg", t = 125/30},
+            {s = path .. "wfoly_lm_mgolf36_ar_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mgolf36_ar_inspect_02.ogg", t = 70/30},
+			{s = path .. "wfoly_lm_mgolf36_ar_inspect_03.ogg", t = 125/30},
         },
     },
     ["bash"] = {
@@ -617,11 +779,53 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path3 .. "weap_akilo47_selector_off.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path3 .. "weap_akilo47_selector_on.ogg", t = 0/30},
+        },
+    },
+    ["switchsights"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "wfoly_lm_mgolf36_inspect_02.ogg", t = 0/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
 
---SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+
+    if anim == "reload" and wep:HasElement("mag_armag") and wep:HasElement("perk_speedreload") then
+        return "reload_ar_fast"
+    elseif anim == "reload_empty" and wep:HasElement("mag_armag") and wep:HasElement("perk_speedreload") then 
+        return "reload_ar_fast_empty"
+    elseif anim == "inspect" and wep:HasElement("mag_armag") and wep:HasElement("perk_speedreload") then 
+        return "inspect_ar"
+    -------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    -------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_armag") then
+        return "reload_ar"
+    elseif anim == "reload_empty" and wep:HasElement("mag_armag") then 
+        return "reload_empty_ar"
+    elseif anim == "inspect" and wep:HasElement("mag_armag") and wep:HasElement("perk_speedreload") then 
+        return "inspect_ar"
+    end
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -748,7 +952,7 @@ SWEP.Attachments = {
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
