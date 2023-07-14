@@ -92,7 +92,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.1
+SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = 142375
 
@@ -104,7 +104,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
+SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
 SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
@@ -124,8 +124,8 @@ SWEP.RecoilMultSights = 0.8
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilRollSights = 20
-SWEP.VisualRecoilPunch = 3
-SWEP.VisualRecoilUp = 0.9
+SWEP.VisualRecoilPunch = 4
+SWEP.VisualRecoilUp = 0.4
 
 SWEP.VisualRecoilMultSights = 0.5
 SWEP.VisualRecoilPunchSights = 25
@@ -151,11 +151,12 @@ SWEP.Spread = 0.002
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddHipFire = 0.05
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
@@ -169,7 +170,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.3
+SWEP.PostBashTime = 0.25
 
 -------------------------- TRACERS
 
@@ -272,8 +273,10 @@ SWEP.ShootSound = {path .. "weap_mgolf36_fire_plr_01.ogg", path .. "weap_mgolf36
 SWEP.ShootSoundSilenced = {path .. "weap_mgolf36_fire_silenced_plr_01.ogg", path .. "weap_mgolf36_fire_silenced_plr_02.ogg", path .. "weap_mgolf36_fire_silenced_plr_03.ogg", path .. "weap_mgolf36_fire_silenced_plr_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_mgolf36_fire_plr_inside_01.ogg", path .. "weap_mgolf36_fire_plr_inside_02.ogg", path .. "weap_mgolf36_fire_plr_inside_03.ogg", path .. "weap_mgolf36_fire_plr_inside_04.ogg"}
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_mgolf36_fire_silenced_plr_inside_01.ogg", path .. "weap_mgolf36_fire_silenced_plr_inside_02.ogg", path .. "weap_mgolf36_fire_silenced_plr_inside_03.ogg", path .. "weap_mgolf36_fire_silenced_plr_inside_04.ogg"}
---SWEP.DistantShootSound = "CSGO.SG556.Distance_Fire"
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+
+SWEP.DistantShootSound = path .. "weap_mgolf36_fire_plr_01_1.ogg"
+SWEP.DistantShootSoundSilenced = path .. "weap_mgolf36_sup_plr_01_1.ogg"
 
 SWEP.FiremodeSound = ""
 

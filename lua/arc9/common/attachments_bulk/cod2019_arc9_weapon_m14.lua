@@ -1,5 +1,7 @@
 local ATT = {}
 
+ATT = {}
+
 ATT.PrintName = [[Buffer Tube]]
 ATT.CompactName = [[Buffer Tube]]
 ATT.Icon = Material("entities/attachs/go_stock_none.png")
@@ -34,5 +36,27 @@ ATT.Attachments = {
     }
 }
 
-
 ARC9.LoadAttachment(ATT, "cod2019_m14_stock_tube")
+---------------------------------------------------------------------------
+-- ATT = {}
+
+-- ATT.PrintName = [[EBR Stock]]
+-- ATT.CompactName = [[EBR]]
+-- ATT.Icon = Material("entities/attachs/go_stock_none.png")
+-- ATT.Description = [[EBR Stock]]
+-- ATT.SortOrder = 0
+-- ATT.Free = false
+
+-- ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+-- ATT.Category = {"cod2019_m14_stocks"}
+-- ATT.Model = "models/weapons/cod2019/attachs/weapons/m14/attachment_vm_sn_mike14_stock_ebr.mdl"
+
+-- ATT.RHIK_Priority = 5
+-- ATT.RHIK = true
+-- ATT.BoneMerge = true
+
+-- ATT.ActivateElements = {"stock_none","stock_ebr"}
+
+-- ATT.RecoilUpMult = 0.95
+
+-- ARC9.LoadAttachment(ATT, "cod2019_m14_stock_ebr")

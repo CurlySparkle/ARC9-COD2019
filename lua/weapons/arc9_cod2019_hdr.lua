@@ -273,7 +273,9 @@ SWEP.ShootSoundSilenced = {path .. "weap_hdromeo_fire_silenced_plr_01.ogg", path
 SWEP.ShootSoundIndoor = {path .. "weap_hdromeo_fire_plr_inside_01.ogg", path .. "weap_hdromeo_fire_plr_inside_02.ogg", path .. "weap_hdromeo_fire_plr_inside_03.ogg", path .. "weap_hdromeo_fire_plr_inside_04.ogg"}
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_hdromeo_fire_silenced_plr_inside_01.ogg", path .. "weap_hdromeo_fire_silenced_plr_inside_02.ogg", path .. "weap_hdromeo_fire_silenced_plr_inside_03.ogg", path .. "weap_hdromeo_fire_silenced_plr_inside_04.ogg"}
 
---SWEP.DistantShootSound = "CSGO.Awp.Fire.Distance"
+SWEP.DistantShootSound = path .. "weap_hdromeo_fire_plr_01_01.ogg"
+SWEP.DistantShootSoundSilenced = path .. "weap_hdromeo_sup_plr_01_01.ogg"
+
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
@@ -666,8 +668,20 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.7,
+		MinProgress = 0.85,
 		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_sn_hdromeo_raise_up.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_raise_hand.ogg", t = 33/30},
@@ -677,6 +691,18 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
 		Mult = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.3,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_sn_hdromeo_reload_empty_end.ogg", t = 0/30},
         },

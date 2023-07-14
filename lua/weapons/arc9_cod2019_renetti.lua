@@ -269,12 +269,16 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/renetti/weap_mike9a3_hammer_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/renetti/weap_mike9a3_disconnector_plr_01.ogg"
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -554,6 +558,145 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 25/30},
         },
     },
+    ["reload_xmaglrg"] = {
+        Source = "reload_xmaglrg",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_magrelease.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike9_reload_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_mike9_reload_maghit.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike9_reload_magin.ogg", t = 28/30},
+			{s = path .. "wfoly_pi_mike9_reload_end.ogg", t = 31/30},
+        },
+    },
+    ["reload_xmaglrg_empty"] = {
+        Source = "reload_xmaglrg_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 37/30},
+        },
+    },
+    ["reload_xmaglrg_fast"] = {
+        Source = "reload_xmaglrg_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 15/30},
+        },
+    },
+    ["reload_xmaglrg_fast_empty"] = {
+        Source = "reload_xmaglrg_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 25/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -592,9 +735,8 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		--Mult = 0.9,
         EventTable = {
-            {s = path .. "wfoly_pi_mike9_reload_empty_fast_end.ogg", t = 0/30},
+            {s = path .. "wfoly_pi_mike9_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -654,26 +796,49 @@ SWEP.Animations = {
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
-	
------------------------------------------------------------------
+
+    --------------------------------------------------------------------------
     if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
         return "reload_xmag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
         return "reload_xmag_fast_empty"
------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_xmag") then
-        return "reload_xmag"
-    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
-        return "reload_xmag_empty"
------------------------------------------------------------------
+	--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
+        return "reload_xmaglrg_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
+        return "reload_xmaglrg_fast_empty"
+	--------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then
         return "reload_fast_empty"
+	--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then
+        return "reload_xmag_empty"
+	--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmaglrg") then
+        return "reload_xmaglrg"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmaglrg") then
+        return "reload_xmaglrg_empty"
+	--------------------------------------------------------------------------
     end
 end
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+SWEP.Hook_Think	= function(wep)
+    local vm = wep:GetOwner():GetViewModel()
+    if wep:Clip1() == 0 then
+        vm:SetPoseParameter("empty", 1)
+    else
+        vm:SetPoseParameter("empty", 0)
+    end
+	
+    local vm = wep:GetOwner():GetViewModel()
+    local delta = wep:GetSightDelta()
+    local coolilove = math.cos(delta * (math.pi / 2))
+    vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 1, 0) )
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 

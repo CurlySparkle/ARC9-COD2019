@@ -209,3 +209,22 @@ ATT.ModelAngleOffset = Angle(0, 0, 180)
 
 ARC9.LoadAttachment(ATT, "csgo_cod2019_lhik_spr208")
 ------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = "lhik"
+ATT.CompactName = "lhik"
+ATT.Description = [[]]
+
+ATT.Model = "models/weapons/cod2019/attachs/ik/lhik_50gs.mdl"
+
+ATT.SortOrder = 0
+ATT.Category = "cod2019_50gs_lhik"
+
+ATT.LHIK_Priority = 3
+ATT.LHIK = true
+ATT.BoneMerge = true
+
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+ARC9.LoadAttachment(ATT, "cod2019_lhik_50gs")

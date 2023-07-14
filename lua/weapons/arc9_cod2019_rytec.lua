@@ -268,7 +268,9 @@ SWEP.ShootSoundSilenced = {path .. "weap_xmike109_fire_silenced_plr_01.ogg", pat
 SWEP.ShootSoundIndoor = {path .. "weap_xmike109_fire_bang_plr_inside_01.ogg", path .. "weap_xmike109_fire_bang_plr_inside_02.ogg", path .. "weap_xmike109_fire_bang_plr_inside_03.ogg", path .. "weap_xmike109_fire_bang_plr_inside_04.ogg"}
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_xmike109_fire_silenced_plr_inside_01.ogg", path .. "weap_xmike109_fire_silenced_plr_inside_02.ogg", path .. "weap_xmike109_fire_silenced_plr_inside_03.ogg", path .. "weap_xmike109_fire_silenced_plr_inside_04.ogg"}
 
---SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
+SWEP.DistantShootSound = path .. "weap_xmike109_fire_plr_01_01.ogg"
+SWEP.DistantShootSoundSilenced = path .. "weap_xmike109_sup_plr_01_01.ogg"
+
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"

@@ -245,7 +245,9 @@ SWEP.ShootSoundSilenced = {path .. "weap_delta_fire_silenced_plr_01.ogg", path .
 SWEP.ShootSoundIndoor = {path .. "weap_delta_fire_plr_inside_01.ogg", path .. "weap_delta_fire_plr_inside_02.ogg", path .. "weap_delta_fire_plr_inside_03.ogg", path .. "weap_delta_fire_plr_inside_04.ogg"}
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_delta_fire_silenced_plr_inside_01.ogg", path .. "weap_delta_fire_silenced_plr_inside_02.ogg", path .. "weap_delta_fire_silenced_plr_inside_03.ogg", path .. "weap_delta_fire_silenced_plr_inside_04.ogg"}
 
---SWEP.DistantShootSound = "CSGO.g3sg1.Distance_Fire"
+SWEP.DistantShootSound = path .. "weap_delta_fire_plr_01_01.ogg"
+SWEP.DistantShootSoundSilenced = path .. "weap_delta_sup_plr_01_01.ogg"
+
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
