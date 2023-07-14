@@ -905,7 +905,8 @@ SWEP.Animations = {
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
-
+	
+--------------------------------------------------------------------------
     if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
         return "reload_xmag_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
@@ -914,6 +915,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag2") then
         return "reload_xmag2_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag2") then 
+        return "reload_xmag2_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        return "reload_xmag2_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
         return "reload_xmag2_fast_empty"
 --------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
@@ -930,6 +936,12 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_xmag2"
     elseif anim == "reload_empty" and wep:HasElement("mag_xmag2") then 
         return "reload_xmag2_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("ammo_extend") then 
+        return "reload_xmag2"
+    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+        return "reload_xmag2_empty"
+--------------------------------------------------------------------------
     end
 end
 
