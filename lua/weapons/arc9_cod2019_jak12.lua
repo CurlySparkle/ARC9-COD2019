@@ -92,9 +92,6 @@ SWEP.Firemodes = {
     },
 }
 
-SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
-
 -------------------------- RECOIL
 
 -- General recoil multiplier
@@ -116,7 +113,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 4
+SWEP.RecoilKick = 3
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
@@ -126,12 +123,24 @@ SWEP.RecoilMultSights = 0.9
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 1
-SWEP.VisualRecoilPunchSights = 20
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 50
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = -1/6
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -153,7 +162,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -257,12 +266,16 @@ SWEP.ShootSoundSilenced = {path .. "weap_aalpha12_fire_silenced_plr_01.ogg", pat
 SWEP.ShootSoundIndoor = {path .. "weap_aalpha12_fire_plr_inside_01.ogg", path .. "weap_aalpha12_fire_plr_inside_02.ogg", path .. "weap_aalpha12_fire_plr_inside_03.ogg", path .. "weap_aalpha12_fire_plr_inside_04.ogg"}
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_aalpha12_fire_silenced_plr_inside_01.ogg", path .. "weap_aalpha12_fire_silenced_plr_inside_02.ogg", path .. "weap_aalpha12_fire_silenced_plr_inside_03.ogg", path .. "weap_aalpha12_fire_silenced_plr_inside_04.ogg"}
 
---SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
+SWEP.DistantShootSound = path .. "weap_aalpha12_fire_plr_01_01.ogg"
+SWEP.DistantShootSoundSilenced = path .. "weap_aalpha12_fire_plr_sup_01_01.ogg"
+
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
 SWEP.TriggerDownSound = "weapons/cod2019/jak12/weap_aalpha12_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = ""
 
@@ -273,10 +286,6 @@ SWEP.HideBones  = {
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-		EjectAt = 0.1,
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
 		EjectAt = 0.1,
     },
     ["reload"] = {
@@ -313,40 +322,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 53/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.9,
-		DropMagAt = 0.6,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.95,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 5/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 28/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 33/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 34/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -381,18 +356,232 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_aalpha12_reload_empty_end.ogg", t = 80/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.9,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 5/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 28/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 33/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 34/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.15,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_magin.ogg", t = 35/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltpull.ogg", t = 52/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltforward.ogg", t = 58/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_end.ogg", t = 68/30},
+        },
+    },
+    ["reload_drum"] = {
+        Source = "reload_drum",
+		MinProgress = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_mvmnt.ogg", t = 10/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 24/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 39/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 44/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 53/30},
+        },
+    },
+    ["reload_drum_empty"] = {
+        Source = "reload_drum_empty",
+		MinProgress = 0.9,
+		DropMagAt = 1.2,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.22,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltpull.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_magout.ogg", t = 21/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_magin.ogg", t = 51/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltforward.ogg", t = 70/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_end.ogg", t = 80/30},
+        },
+    },
+    ["reload_drum_fast"] = {
+        Source = "reload_drum_fast",
+		MinProgress = 0.9,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 5/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 28/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 33/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 34/30},
+        },
+    },
+    ["reload_drum_fast_empty"] = {
+        Source = "reload_drum_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_magin.ogg", t = 35/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltpull.ogg", t = 52/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltforward.ogg", t = 58/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_end.ogg", t = 68/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
-		MinProgress = 0.9,
+		MinProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
                 lhik = 0,
-                rhik = 1
+                rhik = 0
             },
             {
-                t = 1,
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -405,7 +594,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.6,
+		MinProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -518,21 +707,43 @@ SWEP.Animations = {
     },
 }
 
---SWEP.Hook_Think	= ARC9.CSGO.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 -------------------------- ATTACHMENTS
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
-
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+	
+--------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
+        return "reload_drum_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
+        return "reload_drum_fast_empty"
+--------------------------------------------------------------------------
+    -- elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        -- return "reload_xmag_fast"
+    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        -- return "reload_xmag_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_drum") then 
+        return "reload_drum"
+    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
+        return "reload_drum_empty"
+--------------------------------------------------------------------------
+    -- elseif anim == "reload" and wep:HasElement("ammo_extend") then 
+        -- return "reload_xmag"
+    -- elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+        -- return "reload_xmag_empty"
+--------------------------------------------------------------------------
     end
 end
 
-SWEP.DefaultBodygroups = "00000000"
+SWEP.DefaultBodygroups = "000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
