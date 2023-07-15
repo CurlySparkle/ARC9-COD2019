@@ -765,7 +765,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     if wep:HasElement("stock_retract") then 
 	model:SetBodygroup(3,1)
 	model:SetBodygroup(7,0)
-	elseif wep:HasElement("optic_cronen") then
+	elseif wep:HasElement("optic_scope") then
 	model:SetBodygroup(5,2)
 	end
 end

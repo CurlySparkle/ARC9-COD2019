@@ -274,7 +274,9 @@ SWEP.ShootSoundSilenced = {path .. "weap_romeo870_fire_silenced_plr_01.ogg", pat
 SWEP.ShootSoundIndoor = {path .. "weap_romeo870_fire_plr_inside_01.ogg", path .. "weap_romeo870_fire_plr_inside_02.ogg", path .. "weap_romeo870_fire_plr_inside_03.ogg", path .. "weap_romeo870_fire_plr_inside_04.ogg"}
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_romeo870_fire_silenced_plr_inside_01.ogg", path .. "weap_romeo870_fire_silenced_plr_inside_02.ogg", path .. "weap_romeo870_fire_silenced_plr_inside_03.ogg", path .. "weap_romeo870_fire_silenced_plr_inside_04.ogg"}
 
---SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
+SWEP.DistantShootSound = path .. "weap_romeo870_fire_plr_01_01.ogg"
+SWEP.DistantShootSoundSilenced = path .. "weap_romeo870_sup_plr_01_01.ogg"
+
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"

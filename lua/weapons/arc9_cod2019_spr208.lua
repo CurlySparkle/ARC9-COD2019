@@ -130,7 +130,9 @@ SWEP.RecoilMultSights = 0.5
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilUp = 0.3
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilPunchSights = 30
 
 -------------------------- SPREAD
 
@@ -164,8 +166,8 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-1.37, -2, 1.05),
-    Ang = Angle(0, 0, 6.5),
+    Pos = Vector(-2.895, -2, 1.1),
+    Ang = Angle(0, 0, 2),
     Magnification = 1.1,
     ViewModelFOV = 56,
     CrosshairInSights = false
@@ -186,7 +188,7 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.4, -0.4)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -273,23 +275,10 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["cycle"] = {
         Source = "cycle",
 		--EjectAt = 0.2,
-		MinProgress = 0.8,
-		FireASAP = true,
-        EventTable = {
-            {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 10/50},
-			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.4, t = 60/50},
-        },
-    },
-    ["cycle_sights"] = {
-        Source = "cycle_ads",
-		--EjectAt = 0.2,
-		MinProgress = 0.8,
+		MinProgress = 0.75,
 		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 10/50},
@@ -330,41 +319,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 62/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		FireASAP = true,
-		DropMagAt = 0.95,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_sn_remeo700_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_remeo700_reload_magout.ogg", t = 18/30},
-			{s = path .. "wfoly_sn_remeo700_reload_maghit.ogg", t = 35/30},
-			{s = path .. "wfoly_sn_remeo700_reload_magin.ogg", t = 40/30},
-			{s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 42/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
@@ -403,8 +357,188 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_reload_empty_boltclose.ogg", t = 92/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.95,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_remeo700_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_remeo700_reload_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_sn_remeo700_reload_maghit.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_remeo700_reload_magin.ogg", t = 40/30},
+			{s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 42/30},
+        },
+    },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		EjectAt = 2,
+		DropMagAt = 0.9,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_remeo700_raise_first_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_magout.ogg", t = 20/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_maghit.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_magin.ogg", t = 40/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_rotate.ogg", t = 50/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_boltopen.ogg", t = 57/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_boltclose.ogg", t = 60/30},
+        },
+    },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_remeo700_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_remeo700_reload_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_sn_remeo700_reload_maghit.ogg", t = 40/30},
+			{s = path .. "wfoly_sn_remeo700_reload_magin.ogg", t = 60/30},
+			{s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 62/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		EjectAt = 0.4,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_remeo700_raise_first_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_boltopen.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_magout.ogg", t = 30/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_maghit.ogg", t = 56/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_magin.ogg", t = 73/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_rotate.ogg", t = 80/30},
+			{s = path .. "wfoly_sn_remeo700_reload_empty_boltclose.ogg", t = 92/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.95,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_remeo700_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_remeo700_reload_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_sn_remeo700_reload_maghit.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_remeo700_reload_magin.ogg", t = 40/30},
+			{s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 42/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
 		EjectAt = 2,
@@ -470,7 +604,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.7,
+		MinProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -490,7 +624,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -589,13 +722,45 @@ SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 -------------------------- ATTACHMENTS
 
+-- SWEP.Hook_TranslateAnimation = function (wep, anim)
+    -- --local attached = self:GetElements()
+
+    -- if anim == "reload" and wep:HasElement("perk_speedreload") then
+        -- return "reload_fast"
+    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        -- return "reload_fast_empty"
+    -- end
+-- end
+
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
-
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+	
+--------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+--------------------------------------------------------------------------
+    -- elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        -- return "reload_xmag_fast"
+    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        -- return "reload_xmag_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
+--------------------------------------------------------------------------
+    -- elseif anim == "reload" and wep:HasElement("ammo_extend") then 
+        -- return "reload_xmag"
+    -- elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+        -- return "reload_xmag_empty"
+--------------------------------------------------------------------------
     end
 end
 
@@ -681,7 +846,7 @@ SWEP.Attachments = {
         Category = {"cod2019_optic","cod2019_optic_spr208"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight_none"},
-		Installed = "cod2019_optic_scope_spr208",
+		--Installed = "cod2019_optic_scope_spr208",
         --Integral = "cod2019_optic_scope_spr208",
     },
     {

@@ -77,7 +77,7 @@ SWEP.ClipSize = 8 -- Self-explanatory.
 SWEP.SupplyLimit = 8 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -92,7 +92,7 @@ SWEP.BarrelLength = 13
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 250
+SWEP.RPM = 300
 
 SWEP.Firemodes = {
     {
@@ -121,7 +121,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 2
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
@@ -131,8 +131,8 @@ SWEP.RecoilMultSights = 0.9
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilPunch = 3
+SWEP.VisualRecoilUp = 0.3
 
 -------------------------- SPREAD
 
@@ -148,9 +148,9 @@ SWEP.VisualRecoilUp = 0.5
 -- SWEP.SpreadAddCrouch = -0.004
 -- SWEP.SpreadAddSightsMove = -0.1
 
-SWEP.Spread = 140 * ARC9.MOAToAcc
+SWEP.Spread = 200 * ARC9.MOAToAcc
 SWEP.UseDispersion = true
-SWEP.DispersionSpread = 0.01
+SWEP.DispersionSpread = 0.02
 SWEP.DispersionSpreadAddHipFire = 0.02
 --SWEP.DispersionSpreadMultMove = 1.5
 --SWEP.DispersionSpreadAddMove = 0.015
@@ -165,7 +165,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -197,7 +197,7 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.4, -0.4)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -244,7 +244,7 @@ SWEP.NoShellEject = true
 SWEP.EjectDelay = 0.15
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_shot_vlk_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {
 "weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_01.ogg",
@@ -262,14 +262,17 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/vlk/"
+local path2 = "weapons/cod2019/model680/"
 
-SWEP.ShootPitchVariation = 10
+SWEP.ShootPitchVariation = 5
 SWEP.ShootSound = {path .. "weap_mike26_fire_bang_plr_01.ogg", path .. "weap_mike26_fire_bang_plr_02.ogg", path .. "weap_mike26_fire_bang_plr_03.ogg", path .. "weap_mike26_fire_bang_plr_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_mike26_fire_silenced_bang_plr_01.ogg", path .. "weap_mike26_fire_silenced_bang_plr_02.ogg", path .. "weap_mike26_fire_silenced_bang_plr_03.ogg", path .. "weap_mike26_fire_silenced_bang_plr_04.ogg"}
 SWEP.ShootSoundIndoor = {path .. "weap_mike26_fire_bang_plr_inside_01.ogg", path .. "weap_mike26_fire_bang_plr_inside_02.ogg", path .. "weap_mike26_fire_bang_plr_inside_03.ogg", path .. "weap_mike26_fire_bang_plr_inside_04.ogg"}
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_mike26_fire_silenced_bang_plr_inside_01.ogg", path .. "weap_mike26_fire_silenced_bang_plr_inside_02.ogg", path .. "weap_mike26_fire_silenced_bang_plr_inside_03.ogg", path .. "weap_mike26_fire_silenced_bang_plr_inside_04.ogg"}
 
---SWEP.DistantShootSound = "CSGO.XM1014.Fire.Distance"
+SWEP.DistantShootSound = path .. "weap_mike26_fire_bang_plr_01_01.ogg"
+SWEP.DistantShootSoundSilenced = path2 .. "weap_romeo870_sup_plr_01_01.ogg"
+
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
@@ -279,29 +282,24 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/jak12/weap_aalpha12_prefire_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/jak12/weap_romeo870_disconnector_plr_01.ogg"
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["cycle"] = {
         Source = "pump",
 		--EjectAt = 0.2,
-		MinProgress = 0.7,
+		MinProgress = 0.4,
 		FireASAP = true,
         EventTable = {
-            {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.4, t = 2/30},
-        },
-    },
-    ["cycle_sights"] = {
-        Source = "pump_ads",
-		--EjectAt = 0.2,
-		MinProgress = 0.7,
-		FireASAP = true,
-        EventTable = {
-            {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.4, t = 2/30},
+            {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.5, t = 2/30},
         },
     },
     ["reload"] = {
@@ -335,42 +333,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 35/30},
 			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 51/30},
 			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55/30},
-        },
-    },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		DropMagAt = 0.8,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 7/30},
-			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 8/30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 24/30},
-			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 27/30},
-			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 37/30},
-			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 38/30},
         },
     },
     ["reload_empty"] = {
@@ -412,6 +374,80 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_empty_end.ogg", t = 95/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 7/30},
+			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 24/30},
+			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 27/30},
+			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 37/30},
+			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 38/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		DropMagAt = 0.75,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_pull.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 7/30},
+			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 24/30},
+			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 27/30},
+			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 37/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_forward.ogg", t = 40/30},
+			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 45/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -434,7 +470,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.7,
+		MinProgress = 0.85,
 		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sh_mark26_raise.ogg", t = 0/30},
@@ -443,7 +479,7 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_sh_mark26_reload_empty_end.ogg", t = 0/30},
+            {s = path .. "wfoly_sh_mark26_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -521,17 +557,29 @@ SWEP.Animations = {
     },
 }
 
---SWEP.Hook_Think	= ARC9.CSGO.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 -------------------------- ATTACHMENTS
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
-
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+	
+--------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
+--------------------------------------------------------------------------
     end
 end
 
@@ -592,6 +640,12 @@ SWEP.AttachmentElements = {
             {8,1},
         },
     },
+    ["vlk_barrel_heavy"] = {
+    AttPosMods = { 
+	[2] = { Pos = Vector(2, 0, 0), },
+	[4] = { Pos = Vector(3.3, -0.63, -0.56), },
+	},
+    },
 }
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -616,13 +670,13 @@ SWEP.Attachments = {
         Pos = Vector(-0.23, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle_none"},
-		ExcludeElements = {"barrel_vlk"},
+		--ExcludeElements = {"barrel_vlk"},
 		Scale = 1,
     },
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.1, 0, -0.07),
+        Pos = Vector(1.5, 0, -0.07),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -672,7 +726,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_shot"}
     },
     {
         PrintName = "Skins",

@@ -744,7 +744,11 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("sight_m13") then model:SetBodygroup(1,2) end
+    if wep:HasElement("sight_m13") then 
+	model:SetBodygroup(1,2)
+	elseif wep:HasElement("optic_scope") then
+	model:SetBodygroup(1,3)
+	end
 end
 
 SWEP.Attachments = {
@@ -759,7 +763,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.3, 0, -0.1),
+        Pos = Vector(1, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_sights_m4"},
         CorrectiveAng = Angle(0, 0, 0),
