@@ -279,7 +279,6 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 local path = "weapons/cod2019/scar/"
 
 SWEP.ShootVolume = 100
-SWEP.ShootVolumeActual = 1
 SWEP.ShootPitchVariation = 5
 SWEP.ShootSound = {path .. "weap_scharlie_fire_plr_01.ogg", path .. "weap_scharlie_fire_plr_02.ogg", path .. "weap_scharlie_fire_plr_03.ogg", path .. "weap_scharlie_fire_plr_04.ogg"}
 SWEP.ShootSoundSilenced = {path .. "weap_scharlie_fire_silenced_plr_01.ogg", path .. "weap_scharlie_fire_silenced_plr_02.ogg", path .. "weap_scharlie_fire_silenced_plr_03.ogg", path .. "weap_scharlie_fire_silenced_plr_04.ogg"}

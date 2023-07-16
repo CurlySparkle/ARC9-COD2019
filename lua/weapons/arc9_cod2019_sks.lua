@@ -117,8 +117,10 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0.05
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.03
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilPunchSights = 30
 
 -------------------------- SPREAD
 
@@ -177,7 +179,7 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.7, -0.7)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -262,9 +264,13 @@ SWEP.HideBones  = {
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["reload"] = {
         Source = "reload_short",
@@ -298,41 +304,6 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_magin_01.ogg", t = 36/30},
 			{s = path .. "wfoly_sn_sksierra_reload_magin_02.ogg", t = 45/30},
 			{s = path .. "wfoly_sn_sksierra_reload_end.ogg", t = 46/30},
-        },
-    },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		DropMagAt = 1.1,
-		FireASAP = true,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.6,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-            {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 18/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 30/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 37/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 45/30},
         },
     },
     ["reload_empty"] = {
@@ -376,6 +347,223 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 75/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		DropMagAt = 1,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 30/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 45/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		DropMagAt = 1,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 30/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 50/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 55/30},
+        },
+    },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_sksierra_reload_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_sksierra_reload_magout.ogg", t = 17/30},
+			{s = path .. "wfoly_sn_sksierra_reload_magin_01.ogg", t = 36/30},
+			{s = path .. "wfoly_sn_sksierra_reload_magin_02.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_sksierra_reload_end.ogg", t = 46/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.8,
+		DropMagAt = 0.95,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 20/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 32/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 41/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_rotate.ogg", t = 50/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 63/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 75/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		DropMagAt = 1,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 30/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 45/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.8,
+		DropMagAt = 1,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 30/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 50/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 55/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -408,12 +596,36 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.8,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 0/30},
         },
@@ -496,15 +708,49 @@ SWEP.Animations = {
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
-
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+	
+--------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("ammo_extend") then 
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+        return "reload_xmax_empty"
+--------------------------------------------------------------------------
     end
 end
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+SWEP.Hook_Think	= function(wep)
+    local vm = wep:GetOwner():GetViewModel()
+    if wep:Clip1() == 0 then
+        vm:SetPoseParameter("empty", 1)
+    else
+        vm:SetPoseParameter("empty", 0)
+    end
+	
+    local vm = wep:GetOwner():GetViewModel()
+    local delta = wep:GetSightDelta()
+    local coolilove = math.cos(delta * (math.pi / 2))
+    vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 1, 0) )
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -606,7 +852,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = {"grip","grip_xm1014"},
+        Category = "cod2019_grip",
         Bone = "tag_grip_attach",
         Pos = Vector(-2, 0, 0.05),
         Ang = Angle(0, 0, 180),
@@ -702,4 +948,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodStubbyGripPoseParam = 7
-SWEP.CodAngledGripPoseParam = 7
+SWEP.CodAngledGripPoseParam = 5
+SWEP.CodStubbyTallGripPoseParam = 0.98

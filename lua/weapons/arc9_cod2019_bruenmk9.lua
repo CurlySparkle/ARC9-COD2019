@@ -314,9 +314,6 @@ SWEP.Animations = {
     ["fire_smag"] = {
         Source = "shoot1_smag",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
@@ -399,6 +396,86 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mkilo3_reload_empty_end.ogg", t = 226/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 2.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.15,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mkilo3_reload_fast_up.ogg", t = 1/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_fast_cover_open.ogg", t = 8/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_fast_magout.ogg", t = 23/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_fast_magup.ogg", t = 35/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_fast_magin_01.ogg", t = 55/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_fast_magin_02.ogg", t = 67/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_fast_load_belt.ogg", t = 78/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_fast_close_cover.ogg", t = 106/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_fast_end.ogg", t = 122/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 1.2,
+		MagSwapTime = 2.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.15,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_down.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_charge_pull.ogg", t = 14/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_charge_push.ogg", t = 24/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_mvmnt.ogg", t = 32/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_cover_open.ogg", t = 46/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_magout.ogg", t = 63/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_magup.ogg", t = 83/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_magin_01.ogg", t = 97/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_magin_02.ogg", t = 109/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_load_belt.ogg", t = 124/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_cover_close.ogg", t = 153/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_end.ogg", t = 177/30},
+        },
+    },
     ["reload_smag"] = {
         Source = "reload_smag",
 		MinProgress = 0.8,
@@ -434,7 +511,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_end.ogg", t = 65/30},
         },
     },
-    ["reload_empty_smag"] = {
+    ["reload_smag_empty"] = {
         Source = "reload_smag_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.75,
@@ -470,6 +547,79 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_charge_pull.ogg", t = 75/30},
 			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_charge_push.ogg", t = 90/30},
 			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_end.ogg", t = 102/30},
+        },
+    },
+    ["reload_smag_fast"] = {
+        Source = "reload_smag_fast",
+		MinProgress = 0.8,
+		DropMagAt = 0.65,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_up.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_magout.ogg", t = 9/30},
+			{s = path2 .. "wpfoly_mike4_reload_lift_v2.ogg", t = 29/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_maghit.ogg", t = 32/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_magin.ogg", t = 37/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_end.ogg", t = 47/30},
+        },
+    },
+    ["reload_smag_fast_empty"] = {
+        Source = "reload_smag_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.75,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_up.ogg", t = 2/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_magout.ogg", t = 8/30},
+			{s = path2 .. "wpfoly_mike4_reload_lift_v2.ogg", t = 29/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_maghit.ogg", t = 24/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_magin.ogg", t = 26/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_magslap.ogg", t = 37/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_charge_pull.ogg", t = 46/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_charge_push.ogg", t = 56/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_smag_end.ogg", t = 68/30},
         },
     },
     ["ready"] = {
@@ -625,7 +775,41 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+	
+--------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_smag") then
+        return "reload_smag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_smag") then 
+        return "reload_smag_fast_empty"
+    elseif anim == "inspect" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_smag") then 
+        return "inspect_smag"
+    elseif anim == "fire" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_smag") then 
+        return "fire_smag"
+    elseif anim == "idle" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_smag") then 
+        return "idle_smag"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_smag") then 
+        return "reload_smag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_smag") then 
+        return "reload_smag_empty"
+    elseif anim == "inspect"and wep:HasElement("mag_smag") then 
+        return "inspect_smag"
+    elseif anim == "fire"and wep:HasElement("mag_smag") then 
+        return "fire_smag"
+    elseif anim == "idle"and wep:HasElement("mag_smag") then 
+        return "idle_smag"
+--------------------------------------------------------------------------
+    end
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -750,7 +934,7 @@ SWEP.Attachments = {
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",

@@ -76,7 +76,7 @@ SWEP.ClipSize = 14 -- Self-explanatory.
 SWEP.SupplyLimit = 8 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -127,8 +127,8 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0.2
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.3
 
 -------------------------- SPREAD
 
@@ -193,7 +193,7 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.4, -0.4)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -265,21 +265,8 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["cycle"] = {
         Source = "pump",
-		EjectAt = 0.2,
-		MinProgress = 0.6,
-		FireASAP = true,
-        EventTable = {
-            {s = "COD2019.R90.Rechamber_A", t = 1/30},
-			{s = "COD2019.R90.Rechamber_B", t = 5/30},
-        },
-    },
-    ["cycle_sights"] = {
-        Source = "pump_ads",
 		EjectAt = 0.2,
 		MinProgress = 0.6,
 		FireASAP = true,
@@ -489,7 +476,7 @@ SWEP.Animations = {
     },
 }
 
---SWEP.Hook_Think	= ARC9.CSGO.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 -------------------------- ATTACHMENTS
 

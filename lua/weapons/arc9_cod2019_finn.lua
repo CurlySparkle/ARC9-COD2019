@@ -92,7 +92,7 @@ SWEP.Recoil = 1.3
 
 --SWEP.RecoilSeed = nil
 
-SWEP.RecoilPatternDrift = 45
+SWEP.RecoilPatternDrift = 25
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -100,10 +100,10 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
+SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
-SWEP.RecoilDissipationRate = 25 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 55 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
@@ -120,11 +120,11 @@ SWEP.RecoilMultSights = 0.8
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 30
-SWEP.VisualRecoilPunch = 1.7
-SWEP.VisualRecoilUp = 0.8
+SWEP.VisualRecoilPunchSights = 50
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.4
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.1
+SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -330,16 +330,6 @@ end
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
         IKTimeLine = {
             {
                 t = 0,
@@ -573,11 +563,247 @@ SWEP.Animations = {
             },
         },
     },
+----- SAW ANIMATIONS
+    ["fire_saw"] = {
+        Source = "shoot1_saw",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+    },
+    ["reload_saw"] = {
+        Source = "reload_short_saw",
+		MinProgress = 0.9,
+		FireASAP = true,
+		MagSwapTime = 3,
+		DropMagAt = 2.15,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.05,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_sierrax_reload_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_sierrax_reload_coveropen.ogg", t = 12/30},
+			{s = path .. "wfoly_lm_sierrax_reload_magout.ogg", t = 42/30},
+			{s = path .. "wfoly_lm_sierrax_reload_rotate.ogg", t = 65/30},
+			{s = path .. "wfoly_lm_sierrax_reload_maghit.ogg", t = 86/30},
+			{s = path .. "wfoly_lm_sierrax_reload_magin.ogg", t = 98/30},
+			{s = path .. "wfoly_lm_sierrax_reload_beltpull.ogg", t = 107/30},
+			{s = path .. "wfoly_lm_sierrax_reload_bullets.ogg", t = 114/30},
+			{s = path .. "wfoly_lm_sierrax_reload_closecover.ogg", t = 143/30},
+			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 152/30},
+        },
+    },
+    ["reload_fast_saw"] = {
+        Source = "reload_fast_saw",
+		MinProgress = 0.9,
+		FireASAP = true,
+		MagSwapTime = 3,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_sierrax_reload_lift.ogg", t = 2/30},
+			{s = path .. "wfoly_lm_sierrax_reload_coveropen.ogg", t = 4/30},
+			{s = path .. "wfoly_lm_sierrax_reload_magout.ogg", t = 27/30},
+			{s = path .. "wfoly_lm_sierrax_reload_rotate.ogg", t = 52/30},
+			{s = path .. "wfoly_lm_sierrax_reload_magin.ogg", t = 62/30},
+			{s = path .. "wfoly_lm_sierrax_reload_beltpull.ogg", t = 77/30},
+			{s = path .. "wfoly_lm_sierrax_reload_bullets.ogg", t = 107/30},
+			{s = path .. "wfoly_lm_sierrax_reload_closecover.ogg", t = 117/30},
+			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 127/30},
+        },
+    },
+    ["ready_saw"] = {
+        Source = "draw_saw",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_lm_sierrax_raise_first_lift.ogg", t = 0/30},
+            {s = path .. "wfoly_lm_sierrax_raise_first_coverplate.ogg", t = 18/30},
+			{s = path .. "wfoly_lm_sierrax_raise_first_end.ogg", t = 26/30},
+        },
+    },
+    ["draw_saw"] = {
+        Source = "draw_short_saw",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_lm_sierrax_raise.ogg", t = 0/30},
+        },
+    },
+    ["holster_saw"] = {
+        Source = "holster_saw",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_lm_sierrax_reload_empty_end.ogg", t = 0/30},
+        },
+    },
+    ["idle_saw"] = {
+        Source = "idle_saw",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+    },
+    ["idle_sprint_saw"] = {
+        Source = "sprint_saw",
+    },
+    ["exit_sprint_saw"] = {
+        Source = "sprint_out_saw",
+		Mult = 2.3,
+    },
+    ["enter_sprint_saw"] = {
+        Source = "sprint_in_saw",
+		Mult = 2.3,
+    },
+    ["inspect_saw"] = {
+        Source = "lookat01_saw",
+        MinProgress = 0.1,
+        FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.3,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.45,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_lm_sierrax_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_sierrax_inspect_02.ogg", t = 48/30},
+			{s = path .. "wfoly_lm_sierrax_inspect_03.ogg", t = 123/30},
+			{s = path .. "wfoly_lm_sierrax_inspect_04.ogg", t = 135/30},
+        },
+    },
+    ["bash_saw"] = {
+        Source = {"melee_saw", "melee2_saw"},
+	    IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
 
--- SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -662,6 +888,7 @@ SWEP.Attachments = {
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight"},
+		ExcludeElements = {"stock_saw"},
     },
     {
         PrintName = "Tactical",
@@ -681,6 +908,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
+		ExcludeElements = {"stock_saw"},
     },
     {
         PrintName = "Stock",

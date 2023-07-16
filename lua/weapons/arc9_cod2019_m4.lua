@@ -319,9 +319,6 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
@@ -654,8 +651,8 @@ SWEP.AttachmentTableOverrides = {
     ["csgo_cod2019_laser_01"] = {
     Sights = {
     {
-        Pos = Vector(2, 15, -1),
-        Ang = Angle(0, 0, -45),
+        Pos = Vector(-2, 14, -1.3),
+        Ang = Angle(0, 0, 45),
         ViewModelFOV = 54,
         Magnification = 1.25,
         IgnoreExtra = false,
@@ -666,8 +663,8 @@ SWEP.AttachmentTableOverrides = {
     ["csgo_cod2019_laser_02"] = {
     Sights = {
     {
-        Pos = Vector(2, 15, -1),
-        Ang = Angle(0, 0, -45),
+        Pos = Vector(-2, 14, -1.3),
+        Ang = Angle(0, 0, 45),
         ViewModelFOV = 54,
         Magnification = 1.25,
         IgnoreExtra = false,
@@ -678,8 +675,8 @@ SWEP.AttachmentTableOverrides = {
     ["csgo_cod2019_laser_03"] = {
     Sights = {
     {
-        Pos = Vector(2, 15, -1),
-        Ang = Angle(0, 0, -45),
+        Pos = Vector(-2, 14, -1.3),
+        Ang = Angle(0, 0, 45),
         ViewModelFOV = 54,
         Magnification = 1.25,
         IgnoreExtra = false,
@@ -783,9 +780,9 @@ SWEP.Attachments = {
         PrintName = "Tactical",
         DefaultAttName = "Default",
         Category = "cod2019_tac",
-        Bone = "tag_attachments",
-        Pos = Vector(15, 1.05, -0.03),
-        Ang = Angle(0, 0, -90),
+        Bone = "tag_laser_attach",
+        Pos = Vector(2.7, 0, -0.1),
+        Ang = Angle(0, 0, 180),
     },
     {
         PrintName = "Grips",
