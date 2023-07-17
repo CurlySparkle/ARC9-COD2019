@@ -92,7 +92,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 2
+SWEP.Recoil = 1.5
 
 SWEP.RecoilSeed = 6589132
 
@@ -118,7 +118,7 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
@@ -446,6 +446,150 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 43/30},
         },
     },
+    ["reload_drum"] = {
+        Source = "reload_drum",
+		MinProgress = 0.8,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_akilo47_drum_reload_grabmag.ogg", t = 0.066},
+            {s = path .. "wfoly_ar_akilo47_drum_reload_magout_01.ogg", t = 0.5},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_twist.ogg", t = 0.96},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_magin_v2_01.ogg", t = 1.43},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_magin_v2_02.ogg", t = 1.66},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_end.ogg", t = 1.96},
+        },
+    },
+    ["reload_drum_empty"] = {
+        Source = "reload_drum_empty",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 1.15,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_mvmnt.ogg", t = 0.066},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magout_01.ogg", t = 0.73},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_01.ogg", t = 1.4},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_02.ogg", t = 1.63},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_rise.ogg", t = 2.06},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_chamber_01.ogg", t = 2.86},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_end.ogg", t = 3.16},
+        },
+    },
+    ["reload_drum_fast"] = {
+        Source = "reload_drum_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
+		--DropMagAt = 0.85,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_raise.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magout_01.ogg", t = 0.26},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magin_v2_01.ogg", t = 0.86},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magin_v2_02.ogg", t = 1.06},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_end.ogg", t = 1.26},
+        },
+    },
+    ["reload_drum_fast_empty"] = {
+        Source = "reload_drum_fast_empty",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 1.15,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_raise.ogg", t = 0},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_mvmnt.ogg", t = 0.5},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_magout_01.ogg", t = 0.63},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_01.ogg", t = 1.3},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_02.ogg", t = 1.3},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_chamber_01.ogg", t = 1.93},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_end.ogg", t = 2.03},
+        },
+    },
     ["ready"] = {
         Source = "draw",
 		MinProgress = 0.8,
@@ -485,6 +629,11 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+	            {
+                t = 0.5,
                 lhik = 1,
                 rhik = 1
             },
@@ -617,10 +766,20 @@ SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
+        return "reload_drum_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
+        return "reload_drum_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_drum") then
+        return "reload_drum"
+    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
+        return "reload_drum_empty"
     end
 end
 
@@ -711,26 +870,33 @@ SWEP.AttachmentElements = {
             {7,1},
         },
     },
+    ["barrel_custom"] = {
+    AttPosMods = { 
+	[5] = { Pos = Vector(-2, 0, -0.1), },
+	},
+    },
 }
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("barrel_custom") then 
+	model:SetBodygroup(2,2) 
+	end
+end
 
 SWEP.Attachments = {
     {
         PrintName = "Barrels",
         DefaultAttName = "Standard Barrel",
         Category = "cod2019_ak47_barrel",
-        Bone = "tag_attachments",
-        Pos = Vector(21.5, 0, 5),
+        Bone = "tag_barrel_attach",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.5, 0, -0.07),
+        Pos = Vector(1, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -784,7 +950,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_akilo47_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
