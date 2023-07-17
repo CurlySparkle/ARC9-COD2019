@@ -761,6 +761,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.HookP_NameChange = function(self, name)
+	local att = self:GetElements()
+
+	if att["cod2019_akilo47_mag_smg"] then
+		name = "AK-74"
+	end
+
+    return name
+end
+
 SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)

@@ -37,7 +37,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_lmg_m91.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-7, 5, -2),
+    TPIKPos = Vector(-9, 5, -2),
     TPIKAng = Angle(-9, -1, 175),
     Scale = 1
 }
@@ -72,13 +72,13 @@ SWEP.ClipSize = 100 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 600
+SWEP.RPM = 666
 
 SWEP.Firemodes = {
     {
@@ -88,7 +88,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.4
+SWEP.Recoil = 2
 
 SWEP.RecoilSeed = 2433426
 
@@ -114,22 +114,35 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 1.2
-SWEP.VisualRecoilUp = 0
-SWEP.VisualRecoilRoll = 1.5
-SWEP.VisualRecoilSide = 0
+SWEP.VisualRecoilPunchSights = 100
+SWEP.VisualRecoilPunch = 4
+SWEP.VisualRecoilUp = 0.3
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.3
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
+SWEP.SpreadAddShooting = -0.05
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = 1
@@ -163,8 +176,8 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-4.07, -0.9, 0.6),
-    Ang = Angle(0, 0.2, -0.6),
+    Pos = Vector(-4.08, -0.9, 0.55),
+    Ang = Angle(0, 0, -2),
     Magnification = 1.15,
     ViewModelFOV = 56,
 	CrosshairInSights = false
@@ -172,7 +185,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(-1, 0, -1.5)
+SWEP.SprintPos = Vector(-2, 0, -1.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -188,7 +201,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -256,6 +269,10 @@ SWEP.ShootSoundIndoor = {path .. "weap_kilo121_fire_plr_inside_01.ogg", path .. 
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_kilo121_fire_silenced_plr_inside_01.ogg", path .. "weap_kilo121_fire_silenced_plr_inside_02.ogg", path .. "weap_kilo121_fire_silenced_plr_inside_03.ogg", path .. "weap_kilo121_fire_silenced_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.NEGEV.Fire.Distance"
+
+SWEP.LayerSoundSilenced = path .. "weap_scharlie_sup_plr_01_01.ogg"
+SWEP.LayerSoundSilencedIndoor = path .. "weap_scharlie_sup_plr_01_01.ogg"
+
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
@@ -294,15 +311,12 @@ SWEP.TriggerDelay = 0.15 -- Set to > 0 to play the "trigger" animation before sh
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.15 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/sa87/weap_lima86_fire_first_plr_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/m91/weap_kilo121_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/sa87/weap_lima86_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -387,6 +401,112 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_kilo121_reload_empty_mvmnt01.ogg", t = 193/30},
 			{s = path .. "wfoly_lm_kilo121_reload_empty_coverclose_01.ogg", t = 201/30},
 			{s = path .. "wfoly_lm_kilo121_reload_empty_end.ogg", t = 223/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		DropMagAt = 2.2,
+		MagSwapTime = 2.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.4,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_kilo121_reload_fast_mvmnt.ogg", t = 1/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_boltopen_01.ogg", t = 10/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_boltclose_01.ogg", t = 19/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_coverrelease_01.ogg", t = 33/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_coveropen_01.ogg", t = 43/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_magout_01.ogg", t = 48/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_magin_01.ogg", t = 72/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_ammobelt_01.ogg", t = 79/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_cloth.ogg", t = 99/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_coverclose_01.ogg", t = 110/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_end.ogg", t = 120/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 1.2,
+		MagSwapTime = 2.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.4,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_boltopen_01.ogg", t = 10/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_boltclose_01.ogg", t = 20/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_lower.ogg", t = 30/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_mvmnt01.ogg", t = 40/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_coveropen_01.ogg", t = 45/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_magout_01.ogg", t = 69/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_rattle.ogg", t = 76/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_boxmag.ogg", t = 83/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_magin_01.ogg", t = 91/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_mvmnt02.ogg", t = 98/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_clean.ogg", t = 111/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_close.ogg", t = 126/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_cloth.ogg", t = 130/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_end.ogg", t = 146/30},
         },
     },
     ["ready"] = {
@@ -535,15 +655,27 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+
+    --------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    end
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(16, 0, -1.2),
+    ModelOffset = Vector(17, 0, -1.2),
 	ModelAngleOffset = Angle(0, 0, 0),
-	Scale = 0.9,
+	Scale = 1,
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.1),
@@ -591,6 +723,11 @@ SWEP.AttachmentElements = {
             {7,1},
         },
     },
+	["rail_laser"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
 }
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -620,7 +757,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(0, 0, -0.05),
+        Pos = Vector(1.5, 0, -0.15),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -631,9 +768,9 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(-1.5, -0.5, 0),
+        Pos = Vector(-7.3, -0.7, -1.5),
         Ang = Angle(0, 0, -90),
-		--InstalledElements = {"rail_laser"},
+		InstalledElements = {"rail_laser"},
     },
     {
         PrintName = "Grips",
@@ -652,7 +789,7 @@ SWEP.Attachments = {
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_adapter"},
+		--InstalledElements = {"stock_adapter"},
     },
     {
         PrintName = "Ammo",
@@ -670,7 +807,7 @@ SWEP.Attachments = {
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
@@ -724,3 +861,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 4
+SWEP.CodStubbyTallGripPoseParam = 3.4

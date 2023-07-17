@@ -120,8 +120,8 @@ SWEP.RecoilMultSights = 0.8
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 50
-SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilPunchSights = 70
+SWEP.VisualRecoilPunch = 4
 SWEP.VisualRecoilUp = 0.4
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.3
@@ -379,11 +379,53 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 152/30},
         },
     },
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.9,
+		FireASAP = true,
+		MagSwapTime = 3,
+		DropMagAt = 2.15,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.05,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_sierrax_reload_empty_lift.ogg", t = 1/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_charge.ogg", t = 30/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_coveropen.ogg", t = 57/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_magout.ogg", t = 77/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_adjust.ogg", t = 108/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_magup.ogg", t = 118/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_maghit.ogg", t = 129/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_magin.ogg", t = 137/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_bullets.ogg", t = 147/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_coverclose.ogg", t = 185/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_end.ogg", t = 192/30},
+        },
+    },
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.9,
 		FireASAP = true,
-		MagSwapTime = 3,
+		MagSwapTime = 2.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -407,15 +449,54 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_lm_sierrax_reload_lift.ogg", t = 2/30},
-			{s = path .. "wfoly_lm_sierrax_reload_coveropen.ogg", t = 4/30},
-			{s = path .. "wfoly_lm_sierrax_reload_magout.ogg", t = 27/30},
-			{s = path .. "wfoly_lm_sierrax_reload_rotate.ogg", t = 52/30},
-			{s = path .. "wfoly_lm_sierrax_reload_magin.ogg", t = 62/30},
-			{s = path .. "wfoly_lm_sierrax_reload_beltpull.ogg", t = 77/30},
-			{s = path .. "wfoly_lm_sierrax_reload_bullets.ogg", t = 107/30},
-			{s = path .. "wfoly_lm_sierrax_reload_closecover.ogg", t = 117/30},
-			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 127/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_lift.ogg", t = 2/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_coveropen.ogg", t = 4/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_magout.ogg", t = 27/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_up.ogg", t = 52/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_magin.ogg", t = 62/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_bullets.ogg", t = 77/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_coverclose.ogg", t = 107/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_end.ogg", t = 117/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		MagSwapTime = 2.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_charge.ogg", t = 11/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_coveropen.ogg", t = 31/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_magout.ogg", t = 44/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_adjust.ogg", t = 63/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_magup.ogg", t = 74/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_magin.ogg", t = 91/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_beltpull.ogg", t = 100/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_coverclose.ogg", t = 129/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_end.ogg", t = 131/30},
         },
     },
     ["ready"] = {
@@ -615,6 +696,48 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 152/30},
         },
     },
+    ["reload_empty_saw"] = {
+        Source = "reload_saw",
+		MinProgress = 0.9,
+		FireASAP = true,
+		MagSwapTime = 3,
+		DropMagAt = 2.15,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.05,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_sierrax_reload_empty_lift.ogg", t = 1/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_charge.ogg", t = 30/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_coveropen.ogg", t = 57/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_magout.ogg", t = 77/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_adjust.ogg", t = 108/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_magup.ogg", t = 118/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_maghit.ogg", t = 129/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_magin.ogg", t = 137/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_bullets.ogg", t = 147/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_coverclose.ogg", t = 185/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_end.ogg", t = 192/30},
+        },
+    },
     ["reload_fast_saw"] = {
         Source = "reload_fast_saw",
 		MinProgress = 0.9,
@@ -643,15 +766,54 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_lm_sierrax_reload_lift.ogg", t = 2/30},
-			{s = path .. "wfoly_lm_sierrax_reload_coveropen.ogg", t = 4/30},
-			{s = path .. "wfoly_lm_sierrax_reload_magout.ogg", t = 27/30},
-			{s = path .. "wfoly_lm_sierrax_reload_rotate.ogg", t = 52/30},
-			{s = path .. "wfoly_lm_sierrax_reload_magin.ogg", t = 62/30},
-			{s = path .. "wfoly_lm_sierrax_reload_beltpull.ogg", t = 77/30},
-			{s = path .. "wfoly_lm_sierrax_reload_bullets.ogg", t = 107/30},
-			{s = path .. "wfoly_lm_sierrax_reload_closecover.ogg", t = 117/30},
-			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 127/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_lift.ogg", t = 2/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_coveropen.ogg", t = 4/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_magout.ogg", t = 27/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_up.ogg", t = 52/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_magin.ogg", t = 62/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_bullets.ogg", t = 77/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_coverclose.ogg", t = 107/30},
+			{s = path .. "wfoly_lm_sierrax_reload_fast_end.ogg", t = 117/30},
+        },
+    },
+    ["reload_fast_empty_saw"] = {
+        Source = "reload_fast_empty_saw",
+		MinProgress = 0.9,
+		FireASAP = true,
+		MagSwapTime = 2.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_charge.ogg", t = 11/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_coveropen.ogg", t = 31/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_magout.ogg", t = 44/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_adjust.ogg", t = 63/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_magup.ogg", t = 74/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_magin.ogg", t = 91/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_beltpull.ogg", t = 100/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_coverclose.ogg", t = 129/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_end.ogg", t = 131/30},
         },
     },
     ["ready_saw"] = {
@@ -805,6 +967,27 @@ SWEP.Animations = {
 
 SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+
+    if anim == "reload" and wep:HasElement("stock_saw") and wep:HasElement("perk_speedreload") then
+        return "reload_fast_saw"
+    elseif anim == "reload_empty" and wep:HasElement("stock_saw") and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty_saw"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("stock_saw") then
+        return "reload_saw"
+    elseif anim == "reload_empty" and wep:HasElement("stock_saw") then 
+        return "reload_saw_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    end
+end
+
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
@@ -935,7 +1118,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
@@ -994,3 +1177,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 4
+SWEP.CodStubbyTallGripPoseParam = 3.4

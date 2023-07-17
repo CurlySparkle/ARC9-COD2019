@@ -3,8 +3,8 @@
 	"$basetexture"				"models/cod2019/bruenmk9/bruenmk9_ammo"
 	"$bumpmap"					"models/cod2019/bruenmk9/bruenmk9_ammo_n"
 	"$phongexponenttexture"		"models/cod2019/bruenmk9/bruenmk9_ammo_exp"
-	"$color2"					"[0.8 0.8 0.8]"
-	"$blendTintByBaseAlpha"		"1"
+	"$color2"					"[0.6 0.6 0.6]"
+	"$blendTintByBaseAlpha"		"0"
 
 	"$envmap"					"env_cubemap"
 	"$envmaptint"				"[ .13 .13 .13 ]"
@@ -13,7 +13,7 @@
 
 	"$phong"					"1"
 	"$phongboost"				"15"
-     //"$phongexponent"				"55"
+     "$phongexponent"				"55"
 	"$phongfresnelranges"		"[0.32 0.72 0.99]"
 	"$phongalbedotint" 			"1"
 
@@ -32,7 +32,7 @@
         {
             "specularity" "0.5"
             "min" "0"
-            "max" "0.2"
+            "max" "0.3"
         }
      }
 }
