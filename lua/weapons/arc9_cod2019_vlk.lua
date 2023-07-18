@@ -197,8 +197,8 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.7)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -713,7 +713,7 @@ SWEP.Attachments = {
     {
         PrintName = "Ammo",
         Bone = "j_mag1",
-        Category = {"go_ammo_sg"},
+        Category = {"cod2019_ammo_sg"},
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },

@@ -119,11 +119,11 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.6
 
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.2
 
@@ -200,8 +200,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -399,7 +399,7 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
-		MagSwapTime = 2.7,
+		MagSwapTime = 1.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -417,7 +417,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1.15,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -438,7 +438,7 @@ SWEP.Animations = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 1.2,
-		MagSwapTime = 2.7,
+		MagSwapTime = 2,
         IKTimeLine = {
             {
                 t = 0,
@@ -987,3 +987,4 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodStubbyTallGripPoseParam = 8

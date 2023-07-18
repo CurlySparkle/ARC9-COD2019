@@ -198,8 +198,8 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.7, -0.5, -0.7)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -425,7 +425,7 @@ SWEP.Animations = {
         Source = "reload_fast",
 		MinProgress = 0.9,
 		FireASAP = true,
-		MagSwapTime = 2.8,
+		MagSwapTime = 2,
         IKTimeLine = {
             {
                 t = 0,
@@ -463,7 +463,7 @@ SWEP.Animations = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
-		MagSwapTime = 2.8,
+		MagSwapTime = 2,
         IKTimeLine = {
             {
                 t = 0,
@@ -1177,4 +1177,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 4
-SWEP.CodStubbyTallGripPoseParam = 3.4
+SWEP.CodStubbyTallGripPoseParam = 7

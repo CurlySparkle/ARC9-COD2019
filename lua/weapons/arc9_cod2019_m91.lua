@@ -78,7 +78,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 666
+SWEP.RPM = 600
 
 SWEP.Firemodes = {
     {
@@ -100,7 +100,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
+SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
 SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
@@ -124,7 +124,7 @@ SWEP.VisualRecoilPunchSights = 100
 SWEP.VisualRecoilPunch = 4
 SWEP.VisualRecoilUp = 0.3
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.3
+SWEP.VisualRecoilSide = 0.1
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -140,21 +140,36 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.12
+SWEP.SpreadSights = 0
 
-SWEP.SpreadAddShooting = -0.05
-SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 1
-SWEP.RecoilModifierCapSights = 0
+SWEP.SpreadAddShooting = 0.08
+SWEP.SpreadAddShootingSights = 0
+--SWEP.SpreadMultRecoil = 1.5
+--SWEP.SpreadMultRecoil = 1.2
+--SWEP.RecoilModifierCap = 1
+--SWEP.RecoilModifierCapSights = 0
 
 
-SWEP.SpreadMultMove = 2
+SWEP.SpreadMultMove = 1
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.07
+--SWEP.SpreadAddHipFire = 0.07
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
+SWEP.SpreadMultSights = 0.1
 
+SWEP.SpreadHook = function(self, orig)
+    local rec = self:GetRecoilAmount()
+    local maxmult = -0.5 -- minimal ever spread mult after this (0.5 = 2x more accurate after many shots)
+    local speedofthis = 0.5 -- per shot multiplier, or just speed
+    local minshots = 3 -- minimal amount of shoots to make this thing work
+	--print(math.max(orig * maxmult, orig * (1 - (rec - minshots) * speedofthis)))
+    
+    if rec > minshots then
+
+      return  math.max(orig * maxmult, orig * (1 - (rec - minshots) * speedofthis))
+    end
+  end
 
 -------------------------- HANDLING
 
@@ -201,8 +216,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -777,7 +792,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-2.5, 0, 0),
+        Pos = Vector(-2, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"grip_none"},
@@ -861,4 +876,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 4
-SWEP.CodStubbyTallGripPoseParam = 3.4
+SWEP.CodStubbyTallGripPoseParam = 6

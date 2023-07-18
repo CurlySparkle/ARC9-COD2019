@@ -28,7 +28,7 @@ SWEP.Description = [[Reliable, well-rounded 12 gauge pump-action shotgun.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_shot_model680.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
-SWEP.DefaultBodygroups = "00000000"
+SWEP.DefaultBodygroups = "000000000000"
 
 SWEP.Slot = 3
 
@@ -158,7 +158,7 @@ end
 -- SWEP.SpreadAddCrouch = -0.004
 -- SWEP.SpreadAddSightsMove = -0.1
 
-SWEP.Spread = 200 * ARC9.MOAToAcc
+SWEP.Spread = 300 * ARC9.MOAToAcc
 SWEP.UseDispersion = true
 SWEP.DispersionSpread = 0.01
 SWEP.DispersionSpreadAddHipFire = 0.02
@@ -203,15 +203,15 @@ SWEP.SprintMidPoint = {
 }
 
 SWEP.ActivePos = Vector(0, 0, 0)
-SWEP.ActiveAng = Angle(0.6, 0.3, 0)
+SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
     Pos = Vector(0, -0.5, -0.5),
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0.6, 0.3, 0)
+SWEP.MovingPos = Vector(-1.1, -0.7, -0.9)
+SWEP.MovingAng = Angle(0, 0, -12)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0.6, 0.3, -5)
@@ -300,30 +300,10 @@ SWEP.Animations = {
             },
         },
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-    },
     ["cycle"] = {
         Source = "pump",
 		--EjectAt = 0.2,
-		MinProgress = 0.55,
-		FireASAP = true,
-        EventTable = {
-            {s = "COD2019.Model680.Rechamber_A", t = 0/30},
-			{s = "COD2019.Model680.Rechamber_B", t = 6/30},
-        },
-    },
-    ["cycle_sights"] = {
-        Source = "pump_ads",
-		--EjectAt = 0.2,
-		MinProgress = 0.55,
+		MinProgress = 0.6,
 		FireASAP = true,
         EventTable = {
             {s = "COD2019.Model680.Rechamber_A", t = 0/30},
@@ -648,12 +628,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.6,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -996,7 +976,7 @@ SWEP.Attachments = {
     {
         PrintName = "Ammo",
         Bone = "tag_attachments",
-        Category = {"go_ammo_sg"},
+        Category = {"cod2019_ammo_sg"},
         Pos = Vector(5, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
@@ -1061,6 +1041,7 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 4.3
-SWEP.CodAngledGripPoseParam = 0
-SWEP.CodStubbyGripPoseParam = 7
 SWEP.GripPoseParam2 = 0.7
+SWEP.CodAngledGripPoseParam = 0
+SWEP.CodStubbyGripPoseParam = 8
+SWEP.CodStubbyTallGripPoseParam = 9

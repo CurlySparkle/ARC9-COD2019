@@ -192,6 +192,47 @@ ATT.DrawFunc = function(swep, model, wm)
 end
 
 ARC9.LoadAttachment(ATT, "csgo_cod2019_grips_operator")
+------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = "Bipod Foregrip"
+ATT.CompactName = "Bipod F"
+ATT.Description = [[Mounted foregrip with bipod functionality.
+Provides the most stable recoil control when crouched/mounted with a heavy penalty on handling.]]
+
+ATT.Icon = Material("entities/attachs/cod2019_grip_bipod_grip.png", "mips smooth")
+
+ATT.Model = "models/weapons/cod2019/attachs/grips/grip_bipod_grip.mdl"
+
+ATT.SortOrder = 2
+ATT.Category = "cod2019_grip"
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+
+ATT.RecoilMult = 0.9
+
+ATT.AimDownSightsTimeMult = 1.15
+ATT.SprintToFireTimeMult = 1.15
+
+ATT.LHIK_Priority = 10
+ATT.LHIK = true
+
+ATT.ModelOffset = Vector(0, 0, -0.45)
+ATT.ModelAngleOffset = Angle(0, 0, 180)
+
+ATT.Bipod = true
+
+ATT.DrawFunc = function(self, model, wm)
+	if self:GetBipod() then
+		model:SetBodygroup(1,1)
+	else 
+		model:SetBodygroup(1,0)
+	end
+end
+
+ATT.BipodPos = Vector(-3, 0, 0)
+ATT.BipodAng = Angle(0, 0, 0)
+
+ARC9.LoadAttachment(ATT, "csgo_cod2019_grips_bipod")
 ------------------------------------------------------------------ SIDE GRIPS
 ATT = {}
 
