@@ -79,7 +79,7 @@ SWEP.ClipSize = 2 -- Self-explanatory.
 SWEP.SupplyLimit = 22 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -141,7 +141,7 @@ SWEP.VisualRecoilUp = 0.5
 -- SWEP.SpreadAddCrouch = -0.004
 -- SWEP.SpreadAddSightsMove = -0.1
 
-SWEP.Spread = 160 * ARC9.MOAToAcc
+SWEP.Spread = 220 * ARC9.MOAToAcc
 SWEP.UseDispersion = true
 SWEP.DispersionSpread = 0.01
 SWEP.DispersionSpreadAddHipFire = 0.02
@@ -196,8 +196,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.4, -0.4)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -580,12 +580,48 @@ end
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(11.3, -0.6, 0.69),
+    ModelOffset = Vector(1.5, -0.6, 0.6),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.8,
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.1),
+    },
+    ["csgo_cod2019_laser_01"] = {
+    Sights = {
+    {
+        Pos = Vector(2.2, 15, -0.6),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_02"] = {
+    Sights = {
+    {
+        Pos = Vector(2.2, 15, -0.6),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_03"] = {
+    Sights = {
+    {
+        Pos = Vector(2.2, 15, -0.6),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 45,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 
@@ -620,6 +656,11 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
+    ["rail_laser"] = {
+        Bodygroups = {
+            {6,2},
+        },
+    },
 }
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -649,7 +690,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.1, 0, -0.07),
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -660,9 +701,9 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(-1, -1.65, -0.95),
-        Ang = Angle(0, 0, 0),
-		InstalledElements = {"rail_grip"},
+        Pos = Vector(-0.6, -0.5, 0),
+        Ang = Angle(0, 0, -90),
+		InstalledElements = {"rail_laser"},
     },
     {
         PrintName = "Foregrip",
@@ -705,13 +746,6 @@ SWEP.Attachments = {
         Bone = "j_mag1",
         Category = {"cod2019_ammo_sg"},
         Pos = Vector(0, 0, -1.5),
-        Ang = Angle(0, 0, 0),
-    },
-    {
-        PrintName = "Mag",
-		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
-        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {

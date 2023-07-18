@@ -84,7 +84,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 339
+SWEP.RPM = 300
 
 SWEP.Firemodes = {
     {
@@ -95,7 +95,9 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 3
+SWEP.Recoil = 2
+
+SWEP.RecoilSeed = 1158
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 2 -- Multiplier for vertical recoil
@@ -124,8 +126,8 @@ SWEP.RecoilMultSights = 0.9
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.5
-SWEP.VisualRecoilPunchSights = 50
-SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilPunch = 5
 SWEP.VisualRecoilUp = 0
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.2
@@ -144,7 +146,7 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 190 * ARC9.MOAToAcc
+SWEP.Spread = 275 * ARC9.MOAToAcc
 SWEP.UseDispersion = true
 SWEP.DispersionSpread = 0.04
 SWEP.DispersionSpreadAddHipFire = 0
@@ -197,8 +199,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.4, -0.4)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.4, -0.4, -0.4)
+SWEP.MovingAng = Angle(0, 0, -11)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -266,8 +268,10 @@ SWEP.ShootSoundSilenced = {path .. "weap_aalpha12_fire_silenced_plr_01.ogg", pat
 SWEP.ShootSoundIndoor = {path .. "weap_aalpha12_fire_plr_inside_01.ogg", path .. "weap_aalpha12_fire_plr_inside_02.ogg", path .. "weap_aalpha12_fire_plr_inside_03.ogg", path .. "weap_aalpha12_fire_plr_inside_04.ogg"}
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_aalpha12_fire_silenced_plr_inside_01.ogg", path .. "weap_aalpha12_fire_silenced_plr_inside_02.ogg", path .. "weap_aalpha12_fire_silenced_plr_inside_03.ogg", path .. "weap_aalpha12_fire_silenced_plr_inside_04.ogg"}
 
-SWEP.DistantShootSound = path .. "weap_aalpha12_fire_plr_01_01.ogg"
-SWEP.DistantShootSoundSilenced = path .. "weap_aalpha12_fire_plr_sup_01_01.ogg"
+SWEP.LayerSound = path .. "weap_aalpha12_fire_plr_01_01.ogg"
+SWEP.LayerSoundIndoor = path .. "weap_aalpha12_fire_plr_01_01.ogg"
+SWEP.LayerSoundSilenced = path .. "weap_aalpha12_fire_plr_sup_01_01.ogg"
+SWEP.LayerSoundSilencedIndoor = path .. "weap_aalpha12_fire_plr_sup_01_01.ogg"
 
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
 
@@ -411,7 +415,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1.15,
+                t = 1.2,
                 lhik = 1,
                 rhik = 1
             },
@@ -419,8 +423,8 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sh_aalpha12_reload_empty_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_sh_aalpha12_reload_empty_magin.ogg", t = 35/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltpull.ogg", t = 52/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltforward.ogg", t = 58/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltpull.ogg", t = 51/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltforward.ogg", t = 56/30},
 			{s = path .. "wfoly_sh_aalpha12_reload_empty_end.ogg", t = 68/30},
         },
     },
@@ -547,7 +551,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 1.2,
                 lhik = 1,
                 rhik = 1
             },
@@ -816,7 +820,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.3, 0, -0.05),
+        Pos = Vector(1, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -836,7 +840,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-3, 0, 0),
+        Pos = Vector(-1.5, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
@@ -921,3 +925,4 @@ SWEP.GripPoseParam = 4.2
 SWEP.GripPoseParam2 = 0.7
 SWEP.CodAngledGripPoseParam = 9
 SWEP.CodStubbyGripPoseParam = 6.5
+SWEP.CodStubbyTallGripPoseParam = 10

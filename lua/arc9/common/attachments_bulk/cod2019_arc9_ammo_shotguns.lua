@@ -1,5 +1,6 @@
 local ATT = {}
 -------------------------------------------------------------------------------
+
 ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
@@ -27,6 +28,7 @@ ATT.SpreadMult = 1.25
 ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_magnum")
 
 -------------------------------------------------------------------------------
+
 ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
@@ -46,6 +48,7 @@ ATT.NormalizeNumDamage = true
 ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_bird")
 
 -------------------------------------------------------------------------------
+
 ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
@@ -71,30 +74,31 @@ ATT.NormalizeNumDamage = true
 ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_slug")
 
 -------------------------------------------------------------------------------
-ATT = {}
 
-ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.PrintName = "70mm Triple Hit Slugs"
-ATT.CompactName = "TRI"
-ATT.Icon = Material("entities/attachs/go_ammo_sg_triple.png", "mips smooth")
-ATT.Description = [[Load containing 3 short, slug-sized pellets.
-The slugs provide increased range and precision, but not as much as a full slug.]]
-ATT.SortOrder = 4
+-- ATT = {}
 
-ATT.Category = {"cod2019_ammo_sg"}
+-- ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+-- ATT.PrintName = "70mm Triple Hit Slugs"
+-- ATT.CompactName = "TRI"
+-- ATT.Icon = Material("entities/attachs/go_ammo_sg_triple.png", "mips smooth")
+-- ATT.Description = [[Load containing 3 short, slug-sized pellets.
+-- The slugs provide increased range and precision, but not as much as a full slug.]]
+-- ATT.SortOrder = 4
 
-ATT.RangeMaxMult = 1.5
-ATT.SpreadMult = 0.35
+-- ATT.Category = {"cod2019_ammo_sg"}
 
-ATT.RicochetChanceOverride = 2
+-- ATT.RangeMaxMult = 1.5
+-- ATT.SpreadMult = 0.35
 
-ATT.DamageMaxMult = 0.85
-ATT.DamageMinMult = 1.25
+-- ATT.RicochetChanceOverride = 2
 
-ATT.NumOverride = 3
-ATT.NormalizeNumDamage = true
+-- ATT.DamageMaxMult = 0.85
+-- ATT.DamageMinMult = 1.25
 
-ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_triple")
+-- ATT.NumOverride = 3
+-- ATT.NormalizeNumDamage = true
+
+-- ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_triple")
 
 -------------------------------------------------------------------------------
 ATT = {}
@@ -223,7 +227,7 @@ ATT.SortOrder = 9
 
 ATT.Category = {"cod2019_ammo_sg"}
 
-ATT.ExplosionEffect = "AC_muzzle_shotgun_db"
+ATT.ExplosionEffect = "cod2019_muzzle_db"
 ATT.ImpactDecal = "Dark"
 ATT.ImpactEffect = "cod2019_muzzle_he"
 
@@ -250,7 +254,7 @@ ATT.Hook_BulletImpact = function(wep,data)
         if vFireInstalled then
             CreateVFire(ent, data.tr.HitPos, data.tr.HitNormal, data.dmg:GetDamage() * 0.02)
         else
-            ent:Ignite(1, 0)
+            ent:Ignite(1.5, 0)
         end
     end
 
