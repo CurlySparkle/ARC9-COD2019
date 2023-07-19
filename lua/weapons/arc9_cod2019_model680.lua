@@ -275,8 +275,8 @@ SWEP.ShootSoundIndoor = {path .. "weap_romeo870_fire_plr_inside_01.ogg", path ..
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_romeo870_fire_silenced_plr_inside_01.ogg", path .. "weap_romeo870_fire_silenced_plr_inside_02.ogg", path .. "weap_romeo870_fire_silenced_plr_inside_03.ogg", path .. "weap_romeo870_fire_silenced_plr_inside_04.ogg"}
 
 SWEP.LayerSound = path .. "weap_romeo870_fire_plr_01_01.ogg"
-SWEP.LayerSoundSilenced = path .. "weap_romeo870_sup_plr_01_01.ogg"
 SWEP.LayerSoundIndoor = path .. "weap_romeo870_fire_plr_01_01.ogg"
+SWEP.LayerSoundSilenced = path .. "weap_romeo870_sup_plr_01_01.ogg"
 SWEP.LayerSoundSilencedIndoor = path .. "weap_romeo870_sup_plr_01_01.ogg"
 
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
@@ -306,8 +306,8 @@ SWEP.Animations = {
 		MinProgress = 0.6,
 		FireASAP = true,
         EventTable = {
-            {s = "COD2019.Model680.Rechamber_A", t = 0/30},
-			{s = "COD2019.Model680.Rechamber_B", t = 6/30},
+            {s = "COD2019.Model680.Rechamber_A", t = 0},
+			{s = "COD2019.Model680.Rechamber_B", t = 0.23},
         },
     },
     ["reload_start"] = {

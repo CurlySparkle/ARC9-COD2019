@@ -285,6 +285,9 @@ SWEP.ShootSoundIndoor = {path .. "weap_scharlie_fire_plr_inside_01.ogg", path ..
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_scharlie_fire_silenced_plr_inside_01.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_02.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_03.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_04.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_05.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_06.ogg"}
 
 --SWEP.DistantShootSound = nil
+SWEP.LayerSoundSilenced = {path .. "weap_scharlie_layer_plr_01.ogg", path .. "weap_scharlie_layer_plr_02.ogg", path .. "weap_scharlie_layer_plr_03.ogg", path .. "weap_scharlie_layer_plr_04.ogg"}
+SWEP.LayerSoundSilencedIndoor = {path .. "weap_scharlie_layer_plr_01.ogg", path .. "weap_scharlie_layer_plr_03.ogg", path .. "weap_scharlie_layer_plr_03.ogg", path .. "weap_scharlie_layer_plr_04.ogg"}
+
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
