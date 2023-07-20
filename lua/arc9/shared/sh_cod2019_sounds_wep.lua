@@ -58,3 +58,44 @@ sound.Add({
              "weapons/cod2019/ak47/weap_akilo47_sup_plr_06.ogg"
             }              
 })
+
+sound.Add({
+    name =           "Cod2019.ak47.smgcal.fire",
+    channel =        CHAN_WEAPON,
+    level = 140,
+    volume =         1,
+    pitch = {90,110},
+    sound = {"weapons/cod2019/ak47/weap_akilo47_smg_plr_01.ogg",
+             "weapons/cod2019/ak47/weap_akilo47_smg_plr_02.ogg",
+             "weapons/cod2019/ak47/weap_akilo47_smg_plr_03.ogg",
+             "weapons/cod2019/ak47/weap_akilo47_smg_plr_04.ogg",
+             "weapons/cod2019/ak47/weap_akilo47_smg_plr_05.ogg",
+             "weapons/cod2019/ak47/weap_akilo47_smg_plr_06.ogg"
+            }              
+})
+
+--- Asierra12 ---
+sound.Add({
+    name =           "Cod2019.asierra12.fire",
+    channel =        CHAN_WEAPON,
+    level = 140,
+    volume =         1,
+    pitch = {90,110},
+    sound = {"weapons/cod2019/oden/weap_ash12_fire_plr_01.ogg",
+             "weapons/cod2019/oden/weap_ash12_fire_plr_02.ogg",
+             "weapons/cod2019/oden/weap_ash12_fire_plr_03.ogg",
+             "weapons/cod2019/oden/weap_ash12_fire_plr_04.ogg",
+            }              
+})
+sound.Add({
+    name =           "Cod2019.asierra12.fire.s",
+    channel =        CHAN_WEAPON,
+    level = 140,
+    volume =         1,
+    pitch = {90,110},
+    sound = {"weapons/cod2019/oden/weap_ash12_sup_plr_01.ogg",
+             "weapons/cod2019/oden/weap_ash12_sup_plr_02.ogg",
+             "weapons/cod2019/oden/weap_ash12_sup_plr_03.ogg",
+             "weapons/cod2019/oden/weap_ash12_sup_plr_04.ogg",
+            }              
+})

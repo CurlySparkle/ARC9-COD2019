@@ -3,7 +3,7 @@
 --- AR ---
 sound.Add({
     name =            "Layer_AR.Outside",
-    channel =       3,
+    channel =       CHAN_LAYER,
     volume =      1.0,
     sound = {"weapons/cod2019/shared/reflection/ar/weap_refl_ar_urb/weap_refl_ar_urb_ext_close_rear_01.ogg",
             "weapons/cod2019/shared/reflection/ar/weap_refl_ar_urb/weap_refl_ar_urb_ext_close_rear_02.ogg",
@@ -16,7 +16,7 @@ sound.Add({
 })
 sound.Add({
     name =            "Layer_AR.Inside",
-    channel =       3,
+    channel =       CHAN_INDOORLAYER,
     volume =      1.0,
     sound = {"weapons/cod2019/shared/reflection/ar/weap_refl_ar_urb/weap_refl_ar_urb_int_close_rear_01.ogg",
             "weapons/cod2019/shared/reflection/ar/weap_refl_ar_urb/weap_refl_ar_urb_int_close_rear_02.ogg",
@@ -30,7 +30,7 @@ sound.Add({
 
 sound.Add({
     name =            "Layer_ARSUP.Outside",
-    channel =       3,
+    channel =       CHAN_LAYER,
 volume =      1.0,
     sound = {"weapons/cod2019/shared/reflection/ar/weap_refl_ar_urb/weap_refl_arsup_urb_ext_close_rear_01.ogg",
             "weapons/cod2019/shared/reflection/ar/weap_refl_ar_urb/weap_refl_arsup_urb_ext_close_rear_02.ogg",
@@ -43,7 +43,7 @@ volume =      1.0,
 })
 sound.Add({
     name =            "Layer_ARSUP.Inside",
-    channel =       3,
+    channel =       CHAN_INDOORLAYER,
 volume =      0.5,
     sound = {"weapons/cod2019/shared/reflection/ar/weap_refl_ar_urb/wex_arsup_urb_int_close_rear_plr_01.ogg",
             "weapons/cod2019/shared/reflection/ar/weap_refl_ar_urb/wex_arsup_urb_int_close_rear_plr_02.ogg",
@@ -57,7 +57,7 @@ volume =      0.5,
 
 sound.Add({
     name =            "Layer_Pistol.Outside",
-    channel =       3,
+    channel =       CHAN_LAYER,
     volume =      1.0,
     sound = {"weapons/cod2019/shared/reflection/pistol/weap_pist_ref_urb/weap_refl_pistol_urb_ext_close_rear_01.ogg",
             "weapons/cod2019/shared/reflection/pistol/weap_pist_ref_urb/weap_refl_pistol_urb_ext_close_rear_02.ogg",
@@ -68,7 +68,7 @@ sound.Add({
 })
 sound.Add({
     name =            "Layer_Pistol.Inside",
-    channel =       3,
+    channel =       CHAN_INDOORLAYER,
 volume =      1.0,
     sound = {"weapons/cod2019/shared/reflection/pistol/weap_pist_ref_urb/weap_refl_pistol_urb_int_close_rear_01.ogg",
             "weapons/cod2019/shared/reflection/pistol/weap_pist_ref_urb/weap_refl_pistol_urb_int_close_rear_02.ogg",
@@ -82,7 +82,7 @@ volume =      1.0,
 
 sound.Add({
     name =            "Layer_Shotgun.Outside",
-    channel =       3,
+    channel =       CHAN_LAYER,
     volume =      1.0,
     sound = {"weapons/cod2019/shared/reflection/shotgun/weap_refl_shotgun_urb/weap_refl_shotgun_urb_ext_close_rear_01.ogg",
             "weapons/cod2019/shared/reflection/shotgun/weap_refl_shotgun_urb/weap_refl_shotgun_urb_ext_close_rear_02.ogg",
@@ -95,7 +95,7 @@ sound.Add({
 })
 sound.Add({
     name =            "Layer_Shotgun.Inside",
-    channel =       3,
+    channel =       CHAN_INDOORLAYER,
 volume =      1.0,
     sound = {"weapons/cod2019/shared/reflection/shotgun/weap_refl_shotgun_urb/weap_refl_shotgun_urb_int_close_rear_01.ogg",
             "weapons/cod2019/shared/reflection/shotgun/weap_refl_shotgun_urb/weap_refl_shotgun_urb_int_close_rear_02.ogg",
@@ -108,7 +108,7 @@ volume =      1.0,
 })
 sound.Add({
     name =            "Layer_ShotgunSUP.Inside",
-    channel =       3,
+    channel =       CHAN_INDOORLAYER,
 volume =      1.0,
     sound = {"weapons/cod2019/shared/reflection/shotgun/weap_refl_shotgun_urb/wex_shotgunsup_urb_int_close_rear_plr_01.ogg",
             "weapons/cod2019/shared/reflection/shotgun/weap_refl_shotgun_urb/wex_shotgunsup_urb_int_close_rear_plr_02.ogg",
@@ -120,7 +120,7 @@ volume =      1.0,
 
 sound.Add({
     name =            "Layer_Sniper.Outside",
-    channel =       3,
+    channel =       CHAN_LAYER,
     volume =      1.0,
     sound = {"weapons/cod2019/shared/reflection/sniper/weap_refl_sniper_urb/weap_refl_sniper_urb_ext_close_rear_01.ogg",
             "weapons/cod2019/shared/reflection/sniper/weap_refl_sniper_urb/weap_refl_sniper_urb_ext_close_rear_02.ogg",
@@ -132,7 +132,7 @@ sound.Add({
 })
 sound.Add({
     name =            "Layer_Sniper.Inside",
-    channel =       3,
+    channel =       CHAN_INDOORLAYER,
 volume =      1.0,
     sound = {"weapons/cod2019/shared/reflection/sniper/weap_refl_sniper_urb/weap_refl_sniper_urb_int_close_rear_01.ogg",
             "weapons/cod2019/shared/reflection/sniper/weap_refl_sniper_urb/weap_refl_sniper_urb_int_close_rear_02.ogg",

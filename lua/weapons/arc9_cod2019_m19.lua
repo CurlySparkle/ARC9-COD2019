@@ -397,7 +397,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_end.ogg", t = 15/30},
         },
     },
-    ["reload_empty_fast"] = {
+    ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
@@ -976,6 +976,10 @@ SWEP.Attachments = {
     {
         PrintName = "Perk",
         Category = {"cod2019_perks","cod2019_perks_soh"}
+    },
+    {
+        PrintName = "View",
+        Category = "cod2019_pistols_view"
     },
     {
         PrintName = "Skins",

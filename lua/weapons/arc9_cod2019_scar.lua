@@ -279,7 +279,10 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 local path = "weapons/cod2019/scar/"
 
 SWEP.ShootSound = "Cod2019.SCAR.fire"
+SWEP.ShootSoundIndoor = "Cod2019.SCAR.fire"
+
 SWEP.ShootSoundSilenced = "Cod2019.SCAR.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.SCAR.fire.s"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_LMG.Outside"

@@ -952,9 +952,13 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_m1911_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "View",
+        Category = "cod2019_pistols_view"
     },
     {
         PrintName = "Perk",

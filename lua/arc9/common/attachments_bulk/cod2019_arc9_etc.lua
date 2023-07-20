@@ -222,3 +222,28 @@ ATT.Attachments = {
 
 ARC9.LoadAttachment(ATT, "cod2019_attach_custom_muzzles_alt")
 ------------------------------------------------------------------
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = "Alternative View"
+ATT.CompactName = "Alt View"
+ATT.Description = [[Changes the view.]]
+
+--ATT.Icon = Material("entities/attachs/go_g3_stock_collapsible.png", "mips smooth")
+
+ATT.SortOrder = 0
+ATT.Category = "cod2019_pistols_view"
+
+ATT.ActivePos = Vector(2,0,1)
+ATT.ActiveAng = Angle(0,0,9)
+
+ATT.MovingPos = Vector(1,-2,0.5)
+ATT.MovingAng = Angle(0,0,6)
+
+--ATT.CrouchPos = Vector(-3,-0.8,-3.3)
+--ATT.CrouchAng = Angle(0,0,-35)
+
+ATT.ReloadPos = Vector(0,0,0)
+ATT.ReloadAng = Angle(0,0,0)
+
+ARC9.LoadAttachment(ATT, "cod2019_view_alt_pistols")

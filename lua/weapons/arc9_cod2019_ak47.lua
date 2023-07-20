@@ -242,7 +242,7 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.085
+SWEP.ShellScale = 0.08
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
@@ -267,6 +267,7 @@ local path = "weapons/cod2019/ak47/"
 
 SWEP.ShootSound = "Cod2019.ak47.fire"
 SWEP.ShootSoundIndoor = "Cod2019.ak47.fire"
+
 SWEP.ShootSoundSilenced = "Cod2019.ak47.fire.s"
 SWEP.ShootSoundSilencedIndoor = "Cod2019.ak47.fire.s"
 
@@ -302,8 +303,8 @@ SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before s
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/ak47/weap_akilo47_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/ak47/weap_akilo47_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -642,7 +643,7 @@ SWEP.Animations = {
                 rhik = 0
             },
 	            {
-                t = 0.5,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },

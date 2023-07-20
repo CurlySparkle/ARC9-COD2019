@@ -918,6 +918,10 @@ SWEP.Attachments = {
         Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
+        PrintName = "View",
+        Category = "cod2019_pistols_view"
+    },
+    {
         PrintName = "Skins",
         --Bone = "v_weapon.Clip",
         Category = "cod2019_skins_x16",

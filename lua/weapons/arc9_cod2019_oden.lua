@@ -88,11 +88,11 @@ SWEP.Firemodes = {
         Mode = 1,
 		RPM = 500,
     },
-    {
-        Mode = 2,
-		RunawayBurst = true,
-		PostBurstDelay = 0.25
-    },
+    -- {
+        -- Mode = 2,
+		-- RunawayBurst = true,
+		-- PostBurstDelay = 0.25
+    -- },
 }
 -------------------------- RECOIL
 
@@ -131,8 +131,8 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.1
 
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.2
 
@@ -270,16 +270,26 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/oden/"
 
-SWEP.ShootPitchVariation = 10
-SWEP.ShootSound = {path .. "weap_ash12_fire_plr_01.ogg", path .. "weap_ash12_fire_plr_02.ogg", path .. "weap_ash12_fire_plr_03.ogg", path .. "weap_ash12_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_ash12_fire_silenced_plr_01.ogg", path .. "weap_ash12_fire_silenced_plr_02.ogg", path .. "weap_ash12_fire_silenced_plr_03.ogg", path .. "weap_ash12_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_ash12_fire_plr_inside_01.ogg", path .. "weap_ash12_fire_plr_inside_02.ogg", path .. "weap_ash12_fire_plr_inside_03.ogg", path .. "weap_ash12_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_ash12_fire_silenced_plr_inside_01.ogg", path .. "weap_ash12_fire_silenced_plr_inside_02.ogg", path .. "weap_ash12_fire_silenced_plr_inside_03.ogg", path .. "weap_ash12_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.asierra12.fire"
+SWEP.ShootSoundIndoor = "Cod2019.asierra12.fire"
 
---SWEP.DistantShootSound = "CSGO.SG556.Distance_Fire"
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+SWEP.ShootSoundSilenced = "Cod2019.asierra12.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.asierra12.fire.s"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+-- Non-Silenced
+SWEP.LayerSound = "Layer_AR.Outside"
+SWEP.AtmosSound = "Distant_AR2.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_AR.Inside"
+SWEP.AtmosSoundIndoor = "Distant_AR.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.AtmosSoundSilenced = "Distant_AR_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "Distant_AR_Sup.Inside"
+---------------------------------------------------
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
@@ -299,8 +309,8 @@ SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before s
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/ak47/weap_akilo47_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/ak47/weap_akilo47_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -730,6 +740,15 @@ SWEP.Attachments = {
         Category = {"cod2019_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "Stock",
+        DefaultAttName = "Standard Stock",
+        Category = "cod2019_oden_stocks",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		--InstalledElements = {"stock_none"},
     },
     {
         PrintName = "Perk",
