@@ -216,7 +216,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_shotgun"
+SWEP.MuzzleParticle = "AC_muzzle_shotgun_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
@@ -258,8 +258,10 @@ SWEP.ShootSoundSilenced = {path .. "weap_oscar12_fire_silenced_plr_01.ogg", path
 SWEP.ShootSoundIndoor = {path .. "weap_oscar12_fire_plr_inside_01.ogg", path .. "weap_oscar12_fire_plr_inside_02.ogg", path .. "weap_oscar12_fire_plr_inside_03.ogg", path .. "weap_oscar12_fire_plr_inside_04.ogg"}
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_oscar12_fire_silenced_plr_inside_01.ogg", path .. "weap_oscar12_fire_silenced_plr_inside_02.ogg", path .. "weap_oscar12_fire_silenced_plr_inside_03.ogg", path .. "weap_oscar12_fire_silenced_plr_inside_04.ogg"}
 
-SWEP.DistantShootSound = path .. "weap_oscar12_fire_plr_01_01.ogg"
-SWEP.DistantShootSoundSilenced = path .. "weap_oscar12_sup_plr_01_01.ogg"
+SWEP.LayerSound = path .. "weap_oscar12_fire_plr_01_01.ogg"
+SWEP.LayerSoundIndoor = path .. "weap_oscar12_fire_plr_01_01.ogg"
+SWEP.LayerSoundSilenced = path .. "weap_oscar12_sup_plr_01_01.ogg"
+SWEP.LayerSoundSilencedIndoor = path .. "weap_oscar12_sup_plr_01_01.ogg"
 
 SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
 

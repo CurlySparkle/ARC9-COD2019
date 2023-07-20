@@ -208,7 +208,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_pistol"
+SWEP.MuzzleParticle = "AC_muzzle_pistol_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
@@ -253,8 +253,8 @@ SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
 
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = path .. "wfoly_pi_mike1911_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_pi_mike1911_ads_down.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet",

@@ -168,8 +168,8 @@ SWEP.SpreadHook = function(self, orig)
     if rec > minshots then
 
       return  math.max(orig * maxmult, orig * (1 - (rec - minshots) * speedofthis))
-    end
-  end
+   end
+end
 
 -------------------------- HANDLING
 
@@ -244,7 +244,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_rifle"
+SWEP.MuzzleParticle = "AC_muzzle_rifle_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
@@ -252,10 +252,31 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/weapons/cod2019/shared/lmg_bullet.mdl"
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 2
+SWEP.ShellScale = 0.07
 SWEP.ShellPhysBox = Vector(1, 1, 1)
+
+SWEP.ExtraShellModels = {
+    [1] = {
+        model = "models/weapons/cod2019/shared/lmg_link.mdl",
+        physbox = Vector(1, 1, 1),
+        smoke = false
+    },
+    [2] = {
+        model = "models/weapons/cod2019/shared/lmg_link.mdl",
+        smoke = false
+    }
+}
+
+SWEP.Hook_PrimaryAttack = function(self)
+
+    self:DoEject(1, 2)
+
+    -- if self:Clip1() == self:GetCapacity() then
+        -- self:DoEject(2, 2)
+    -- end
+end
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false

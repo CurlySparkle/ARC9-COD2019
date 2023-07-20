@@ -244,7 +244,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_rifle"
+SWEP.MuzzleParticle = "AC_muzzle_rifle_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
@@ -284,9 +284,6 @@ SWEP.ShootSoundIndoor = {path .. "weap_anov94_fire_plr_inside_01.ogg", path .. "
 SWEP.ShootSoundSilencedIndoor = {path .. "weap_anov94_fire_silenced_plr_inside_01.ogg", path .. "weap_anov94_fire_silenced_plr_inside_02.ogg", path .. "weap_anov94_fire_silenced_plr_inside_03.ogg", path .. "weap_anov94_fire_silenced_plr_inside_04.ogg"}
 
 --SWEP.DistantShootSound = "CSGO.ak47.Distance_Fire"
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
-
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"

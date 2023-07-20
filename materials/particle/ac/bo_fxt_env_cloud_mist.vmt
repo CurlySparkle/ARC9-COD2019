@@ -1,0 +1,11 @@
+"SpriteCard"
+{
+	"$basetexture" "particle/Ac/bo_fxt_env_cloud_mist"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$translucent" "1"
+//      "$additive" "1"
+	"$depthblend"  "1"
+	"$depthblendscale"  "45"
+	"$blendframes" "1"
+}

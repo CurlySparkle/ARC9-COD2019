@@ -212,7 +212,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_pistol"
+SWEP.MuzzleParticle = "AC_muzzle_pistol_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
@@ -255,7 +255,8 @@ SWEP.ShootSoundSilencedIndoor = {path .. "weap_golf21_fire_silenced_plr_inside_0
 --SWEP.DistantShootSound = "CSGO.Glock.Fire.Distance"
 SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+SWEP.EnterSightsSound = path .. "wfoly_pi_golf21_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_pi_golf21_ads_down.ogg"
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"

@@ -245,7 +245,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_rifle"
+SWEP.MuzzleParticle = "AC_muzzle_rifle_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
@@ -278,19 +278,21 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/scar/"
 
-SWEP.ShootPitchVariation = 5
-SWEP.ShootSound = {path .. "weap_scharlie_fire_plr_01.ogg", path .. "weap_scharlie_fire_plr_02.ogg", path .. "weap_scharlie_fire_plr_03.ogg", path .. "weap_scharlie_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_scharlie_fire_silenced_plr_01.ogg", path .. "weap_scharlie_fire_silenced_plr_02.ogg", path .. "weap_scharlie_fire_silenced_plr_03.ogg", path .. "weap_scharlie_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_scharlie_fire_plr_inside_01.ogg", path .. "weap_scharlie_fire_plr_inside_02.ogg", path .. "weap_scharlie_fire_plr_inside_03.ogg", path .. "weap_scharlie_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_scharlie_fire_silenced_plr_inside_01.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_02.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_03.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_04.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_05.ogg", path .. "weap_scharlie_fire_silenced_plr_inside_06.ogg"}
+SWEP.ShootSound = "Cod2019.SCAR.fire"
+SWEP.ShootSoundSilenced = "Cod2019.SCAR.fire.s"
 
---SWEP.DistantShootSound = nil
-SWEP.LayerSoundSilenced = {path .. "weap_scharlie_layer_plr_01.ogg", path .. "weap_scharlie_layer_plr_02.ogg", path .. "weap_scharlie_layer_plr_03.ogg", path .. "weap_scharlie_layer_plr_04.ogg"}
-SWEP.LayerSoundSilencedIndoor = {path .. "weap_scharlie_layer_plr_01.ogg", path .. "weap_scharlie_layer_plr_03.ogg", path .. "weap_scharlie_layer_plr_03.ogg", path .. "weap_scharlie_layer_plr_04.ogg"}
-
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
-
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+-- Non-Silenced
+SWEP.LayerSound = "Layer_LMG.Outside"
+SWEP.DistantShootSound = "Distant_AR.Outside"
+SWEP.LayerSoundIndoor = "Layer_AR.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_LMG.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.DistantShootSoundSilenced = "Distant_AR_Sup.Outside"
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "Distant_AR_Sup.Inside"
+---------------------------------------------------
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"

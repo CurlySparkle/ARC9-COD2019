@@ -223,7 +223,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_shotgun"
+SWEP.MuzzleParticle = "AC_muzzle_shotgun_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
@@ -232,7 +232,12 @@ SWEP.CamQCA = 3
 SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_origin12.mdl"
-SWEP.ShellSounds = ARC9.ShotgunShellSoundsTable
+SWEP.ShellSounds = {
+    "arc9/casings/casing_12ga_1.wav",
+    "arc9/casings/casing_12ga_2.wav",
+    "arc9/casings/casing_12ga_3.wav",
+    "arc9/casings/casing_12ga_4.wav"
+}
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1.3
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)

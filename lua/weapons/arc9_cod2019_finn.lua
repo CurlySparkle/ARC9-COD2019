@@ -229,7 +229,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_rifle"
+SWEP.MuzzleParticle = "AC_muzzle_rifle_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
@@ -239,7 +239,7 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.08
+SWEP.ShellScale = 0.07
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ExtraShellModels = {
@@ -253,6 +253,15 @@ SWEP.ExtraShellModels = {
         smoke = false
     }
 }
+
+SWEP.Hook_PrimaryAttack = function(self)
+
+    self:DoEject(1, 2)
+
+    -- if self:Clip1() == self:GetCapacity() then
+        -- self:DoEject(2, 2)
+    -- end
+end
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
@@ -317,15 +326,6 @@ SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/sa87/weap_lima86_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = ""
-
-SWEP.Hook_PrimaryAttack = function(self)
-
-    self:DoEject(1, 2)
-
-    if self:Clip1() == self:GetCapacity() then
-        self:DoEject(2, 2)
-    end
-end
 
 SWEP.Animations = {
     ["fire"] = {

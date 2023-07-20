@@ -1,0 +1,10 @@
+"SpriteCard"
+{
+	"$basetexture" "particle/Ac/fx_generic_bigfuel_up_b"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$translucent" "1"
+	"$depthblend"  "1"
+	"$depthblendscale"  "50"
+	"$blendframes" "1"
+}

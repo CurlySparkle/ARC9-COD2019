@@ -101,10 +101,12 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 3
+SWEP.Recoil = 8
+
+SWEP.RecoilSeed = 65947
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 3 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
 
 SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
@@ -119,12 +121,12 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 3
+SWEP.RecoilKick = 4
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.7
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
@@ -237,7 +239,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_shotgun"
+SWEP.MuzzleParticle = "AC_muzzle_shotgun_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
@@ -246,7 +248,12 @@ SWEP.CamQCA = 3
 SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_origin12.mdl"
-SWEP.ShellSounds = ARC9.ShotgunShellSoundsTable
+SWEP.ShellSounds = {
+    "arc9/casings/casing_12ga_1.wav",
+    "arc9/casings/casing_12ga_2.wav",
+    "arc9/casings/casing_12ga_3.wav",
+    "arc9/casings/casing_12ga_4.wav"
+}
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1.3
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
@@ -704,7 +711,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_raise_first_lift.ogg", t = 0/30},
+            {s = path .. "wfoly_sh_romeo870_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -870,7 +877,7 @@ SWEP.AttachmentElements = {
     },
     ["barrel_none"] = {
         Bodygroups = {
-            {1,1},
+            {1,2},
         },
     },
     ["pump_rail"] = {
@@ -886,6 +893,11 @@ SWEP.AttachmentElements = {
     ["rail_sight_none"] = {
         Bodygroups = {
             {3,1},
+        },
+    },
+    ["front_sight_none"] = {
+        Bodygroups = {
+            {4,1},
         },
     },
     ["sight_none"] = {
@@ -909,6 +921,11 @@ SWEP.AttachmentElements = {
             {8,1},
         },
     },
+    ["barrel_long"] = {
+    AttPosMods = { 
+	[2] = { Pos = Vector(6, 0, 0), },
+	},
+    },
 }
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -920,7 +937,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrels",
         DefaultAttName = "Standard Barrel",
-        Category = "cod2019_model680_barrel",
+        Category = "cod2019_model680_barrels",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),

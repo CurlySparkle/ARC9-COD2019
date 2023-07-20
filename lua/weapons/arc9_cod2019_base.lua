@@ -58,6 +58,7 @@ SWEP.Sway = 0 -- How much the gun sways.
 
 SWEP.ShootVolume = 1000
 SWEP.FiremodeSound = ""
+SWEP.DryFireSound = ""
 
 function SWEP:MakeEnvironmentDust(radius)
     --Makes a dust enviroment effect when shooting
