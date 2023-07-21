@@ -78,12 +78,12 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 571
+SWEP.RPM = 560
 SWEP.RPMMultFirstShot = 2
 
 SWEP.RPMMultHook = function(self, a) 
-   if self:GetBurstCount() <= 3 
-   then return 2 
+   if self:GetBurstCount() <= 1 
+   then return 3 
   end 
 end
 
@@ -277,16 +277,36 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/an94/"
 
-SWEP.ShootPitchVariation = 10
-SWEP.ShootSound = {path .. "weap_anov94_fire_plr_01.ogg", path .. "weap_anov94_fire_plr_02.ogg", path .. "weap_anov94_fire_plr_03.ogg", path .. "weap_anov94_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_anov94_fire_silenced_plr_01.ogg", path .. "weap_anov94_fire_silenced_plr_02.ogg", path .. "weap_anov94_fire_silenced_plr_03.ogg", path .. "weap_anov94_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_anov94_fire_plr_inside_01.ogg", path .. "weap_anov94_fire_plr_inside_02.ogg", path .. "weap_anov94_fire_plr_inside_03.ogg", path .. "weap_anov94_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_anov94_fire_silenced_plr_inside_01.ogg", path .. "weap_anov94_fire_silenced_plr_inside_02.ogg", path .. "weap_anov94_fire_silenced_plr_inside_03.ogg", path .. "weap_anov94_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.an94.fire"
+SWEP.ShootSoundIndoor = "Cod2019.an94.fire"
 
---SWEP.DistantShootSound = "CSGO.ak47.Distance_Fire"
+SWEP.ShootSoundSilenced = "Cod2019.an94.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.an94.fire.s"
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+-- Non-Silenced
+SWEP.LayerSound = "Layer_AR.Outside"
+SWEP.AtmosSound = "Distant_AR5.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
+SWEP.AtmosSoundIndoor = "Distant_AR.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.AtmosSoundSilenced = "Distant_AR_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "Distant_AR_Sup.Inside"
+---------------------------------------------------
+
+SWEP.EnterSightsSound = path .. "wfoly_ar_anov94_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_ar_anov94_ads_down.ogg"
+
+SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/an94/weap_anov94_fire_first_plr_mech_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/an94/weap_anov94_disconnector_plr_01.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",
@@ -520,7 +540,7 @@ SWEP.Animations = {
         Source = "holster",
 		--Mult = 0.8,
         EventTable = {
-            {s = path .. "wfoly_ar_anovember94_first_raise_end.ogg", t = 0/30},
+            {s = path .. "wfoly_ar_anovember94_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {

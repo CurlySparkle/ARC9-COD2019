@@ -85,7 +85,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 343
+SWEP.RPM = 560
 
 SWEP.Firemodes = {
     {
@@ -261,21 +261,36 @@ SWEP.NoShellEject = true
 
 local path = "weapons/cod2019/725/"
 
-SWEP.ShootPitchVariation = 5
-SWEP.ShootSound = {path .. "weap_charlie725_fire_plr_swtn_01.ogg", path .. "weap_charlie725_fire_plr_swtn_02.ogg", path .. "weap_charlie725_fire_plr_swtn_03.ogg", path .. "weap_charlie725_fire_plr_swtn_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_charlie725_fire_silenced_plr_swtn_01.ogg", path .. "weap_charlie725_fire_silenced_plr_swtn_02.ogg", path .. "weap_charlie725_fire_silenced_plr_swtn_03.ogg", path .. "weap_charlie725_fire_silenced_plr_swtn_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_charlie725_fire_plr_swtn_inside_01.ogg", path .. "weap_charlie725_fire_plr_swtn_inside_02.ogg", path .. "weap_charlie725_fire_plr_swtn_inside_03.ogg", path .. "weap_charlie725_fire_plr_swtn_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_charlie725_fire_silenced_plr_swtn_inside_01.ogg", path .. "weap_charlie725_fire_silenced_plr_swtn_inside_02.ogg", path .. "weap_charlie725_fire_silenced_plr_swtn_inside_03.ogg", path .. "weap_charlie725_fire_silenced_plr_swtn_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.725.fire"
+SWEP.ShootSoundIndoor = "Cod2019.725.fire"
 
-SWEP.LayerSound = path .. "weap_charlie725_fire_plr_01_01.ogg"
-SWEP.LayerSoundSilenced = path .. "weap_charlie725_sup_plr_01_01.ogg"
-SWEP.LayerSoundIndoor = path .. "weap_charlie725_fire_plr_01_01.ogg"
-SWEP.LayerSoundSilencedIndoor = path .. "weap_charlie725_sup_plr_01_01.ogg"
+SWEP.ShootSoundSilenced = "Cod2019.725.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.725.fire.s"
 
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+-- Non-Silenced
+SWEP.LayerSound = "Layer_Shotgun.Outside"
+SWEP.AtmosSound = "Distant_Sniper.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_Sniper.Inside"
+SWEP.AtmosSoundIndoor = "Distant_Shotgun.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.AtmosSoundSilenced = "Distant_Shotgun2.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "Layer_ShotgunSUP.Inside"
+---------------------------------------------------
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = path .. "weap_sh_charlie725_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "weap_sh_charlie725_ads_down.ogg"
+
+SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/725/weap_charlie725_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = ""
 
 SWEP.Animations = {
     ["fire"] = {
@@ -491,7 +506,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_sh_charlie725_drop_down.ogg", t = 0/30},
         },
     },
     ["idle"] = {

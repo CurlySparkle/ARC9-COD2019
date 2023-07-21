@@ -100,11 +100,11 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.1
+SWEP.Recoil = 1.2
 
-SWEP.RecoilSeed = nil
+SWEP.RecoilSeed = 24366
 
-SWEP.RecoilPatternDrift = 65
+SWEP.RecoilPatternDrift = 25
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -112,7 +112,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
+SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
 SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
@@ -126,16 +126,19 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.4
 
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilPunchSights = 55
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -175,7 +178,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -271,19 +274,29 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/kilo141/"
 
-SWEP.ShootPitchVariation = 15
-SWEP.ShootSound = {path .. "weap_kilo433_fire_plr_01.ogg", path .. "weap_kilo433_fire_plr_02.ogg", path .. "weap_kilo433_fire_plr_03.ogg", path .. "weap_kilo433_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_kilo433_fire_silenced_plr_01.ogg", path .. "weap_kilo433_fire_silenced_plr_02.ogg", path .. "weap_kilo433_fire_silenced_plr_03.ogg", path .. "weap_kilo433_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_kilo433_fire_plr_inside_01.ogg", path .. "weap_kilo433_fire_plr_inside_02.ogg", path .. "weap_kilo433_fire_plr_inside_03.ogg", path .. "weap_kilo433_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_kilo433_fire_silenced_plr_inside_01.ogg", path .. "weap_kilo433_fire_silenced_plr_inside_02.ogg", path .. "weap_kilo433_fire_silenced_plr_inside_03.ogg", path .. "weap_kilo433_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.kilo141.fire"
+SWEP.ShootSoundIndoor = "Cod2019.kilo141.fire"
 
---SWEP.DistantShootSound = "CSGO.SG556.Distance_Fire"
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+SWEP.ShootSoundSilenced = "Cod2019.kilo141.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.kilo141.fire.s"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+-- Non-Silenced
+SWEP.LayerSound = "Layer_AR.Outside"
+SWEP.AtmosSound = "Distant_AR3.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_AR.Inside"
+SWEP.AtmosSoundIndoor = "Distant_AR.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.AtmosSoundSilenced = "Distant_AR_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "Distant_AR_Sup.Inside"
+---------------------------------------------------
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = path .. "weap_ar_kilo433_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "weap_ar_kilo433_ads_down.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",
@@ -643,9 +656,8 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
-            {s = path .. "wfoly_plr_ar_kilo433_reload_end.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_kilo433_drop_down.ogg", t = 0/30},
         },
     },
     ["idle"] = {

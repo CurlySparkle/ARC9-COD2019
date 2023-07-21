@@ -120,11 +120,11 @@ SWEP.RecoilMultSights = 1
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 3
-SWEP.VisualRecoilUp = 1.5
+SWEP.VisualRecoilPunch = 4
+SWEP.VisualRecoilUp = 1
 
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.2
 
@@ -271,19 +271,36 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/50gs/"
 
-SWEP.ShootPitchVariation = 10
-SWEP.ShootSound = {path .. "weap_decho_fire_plr_01.ogg", path .. "weap_decho_fire_plr_02.ogg", path .. "weap_decho_fire_plr_03.ogg", path .. "weap_decho_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_decho_fire_silenced_plr_01.ogg", path .. "weap_decho_fire_silenced_plr_02.ogg", path .. "weap_decho_fire_silenced_plr_03.ogg", path .. "weap_decho_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_decho_fire_plr_inside_01.ogg", path .. "weap_decho_fire_plr_inside_02.ogg", path .. "weap_decho_fire_plr_inside_03.ogg", path .. "weap_decho_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_decho_fire_silenced_plr_inside_01.ogg", path .. "weap_decho_fire_silenced_plr_inside_02.ogg", path .. "weap_decho_fire_silenced_plr_inside_03.ogg", path .. "weap_decho_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.50gs.fire"
+SWEP.ShootSoundIndoor = "Cod2019.50gs.fire"
 
---SWEP.DistantShootSound = "CSGO.Deagle.Fire.Distance"
-SWEP.DryFireSound = "weapons/clipempty_pistol.wav"
+SWEP.ShootSoundSilenced = "Cod2019.50gs.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.50gs.fire.s"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+-- Non-Silenced
+SWEP.LayerSound = "Layer_Pistol.Outside"
+SWEP.AtmosSound = "Distant_Pistol.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
+SWEP.AtmosSoundIndoor = "Distant_Shotgun.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.AtmosSoundSilenced = "Distant_Pistol_Mag_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "Distant_Pistol_Sup.Inside"
+---------------------------------------------------
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = path .. "wfoly_pi_decho_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_pi_decho_ads_down.ogg"
+
+SWEP.TriggerDownSound = path .. "weap_decho_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = path .. "weap_decho_disconnector_plr_01.ogg"
+
+SWEP.TriggerDelay = 0.01 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.01 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = path .. "weap_decho_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = path .. "weap_decho_disconnector_plr_01.ogg"
@@ -436,7 +453,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
         EventTable = {
             {s = path .. "wfoly_pi_decho_reload_end.ogg", t = 0/30},
         },

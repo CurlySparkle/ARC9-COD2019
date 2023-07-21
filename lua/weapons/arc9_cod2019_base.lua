@@ -56,9 +56,14 @@ SWEP.SwayMultSights = 0
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
+SWEP.CamQCA_Mult_ADS = 1
+
 SWEP.ShootVolume = 1000
 SWEP.FiremodeSound = ""
 SWEP.DryFireSound = ""
+
+SWEP.IndoorSoundHardCutoff = true
+SWEP.IndoorSoundHardCutoffRatio = 0.75
 
 function SWEP:MakeEnvironmentDust(radius)
     --Makes a dust enviroment effect when shooting

@@ -97,7 +97,7 @@ SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = 346598
 
-SWEP.RecoilPatternDrift = 55
+SWEP.RecoilPatternDrift = 25
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -125,7 +125,7 @@ SWEP.RecoilMultSights = 0.7
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilPunchSights = 55
 SWEP.VisualRecoilPunch = 0.8
 SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 5
@@ -265,19 +265,29 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/grau556/"
 
-SWEP.ShootPitchVariation = 10
-SWEP.ShootSound = {path .. "weap_sierra552_fire_plr_01.ogg", path .. "weap_sierra552_fire_plr_02.ogg", path .. "weap_sierra552_fire_plr_03.ogg", path .. "weap_sierra552_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_sierra552_fire_silenced_plr_01.ogg", path .. "weap_sierra552_fire_silenced_plr_02.ogg", path .. "weap_sierra552_fire_silenced_plr_03.ogg", path .. "weap_sierra552_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_sierra552_fire_plr_inside_01.ogg", path .. "weap_sierra552_fire_plr_inside_02.ogg", path .. "weap_sierra552_fire_plr_inside_03.ogg", path .. "weap_sierra552_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_sierra552_fire_silenced_plr_inside_01.ogg", path .. "weap_sierra552_fire_silenced_plr_inside_02.ogg", path .. "weap_sierra552_fire_silenced_plr_inside_03.ogg", path .. "weap_sierra552_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.grau556.fire"
+SWEP.ShootSoundIndoor = "Cod2019.grau556.fire"
 
---SWEP.DistantShootSound = "CSGO.SG556.Distance_Fire"
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+SWEP.ShootSoundSilenced = "Cod2019.grau556.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.grau556.fire.s"
 
-SWEP.FiremodeSound = ""
+-- Non-Silenced
+SWEP.LayerSound = "Layer_AR.Outside"
+SWEP.AtmosSound = "Distant_AR4.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_AR.Inside"
+SWEP.AtmosSoundIndoor = "Distant_AR.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.AtmosSoundSilenced = "Distant_AR_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "Distant_AR_Sup.Inside"
+---------------------------------------------------
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = "weapons/cod2019/m4a1/wfoly_ar_mike4_ads_up.ogg"
+SWEP.ExitSightsSound = "weapons/cod2019/m4a1/wfoly_ar_mike4_ads_down.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",
@@ -448,9 +458,8 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
-            {s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 0/30},
+            {s = path .. "wfoly_ar_sierra552_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {

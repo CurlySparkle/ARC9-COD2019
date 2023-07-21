@@ -266,16 +266,26 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/ram7/"
 
-SWEP.ShootPitchVariation = 10
-SWEP.ShootSound = {path .. "weap_tango21_fire_plr_01.ogg", path .. "weap_tango21_fire_plr_02.ogg", path .. "weap_tango21_fire_plr_03.ogg", path .. "weap_tango21_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_tango21_fire_silenced_plr_01.ogg", path .. "weap_tango21_fire_silenced_plr_02.ogg", path .. "weap_tango21_fire_silenced_plr_03.ogg", path .. "weap_tango21_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_tango21_fire_plr_inside_01.ogg", path .. "weap_tango21_fire_plr_inside_02.ogg", path .. "weap_tango21_fire_plr_inside_03.ogg", path .. "weap_tango21_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_tango21_fire_silenced_plr_inside_01.ogg", path .. "weap_tango21_fire_silenced_plr_inside_02.ogg", path .. "weap_tango21_fire_silenced_plr_inside_03.ogg", path .. "weap_tango21_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.ram7.fire"
+SWEP.ShootSoundIndoor = "Cod2019.ram7.fire"
 
---SWEP.DistantShootSound = "CSGO.SG556.Distance_Fire"
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+SWEP.ShootSoundSilenced = "Cod2019.ram7.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.ram7.fire.s"
 
-SWEP.FiremodeSound = ""
+-- Non-Silenced
+SWEP.LayerSound = "Layer_AR.Outside"
+SWEP.AtmosSound = "Distant_AR3.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_AR.Inside"
+SWEP.AtmosSoundIndoor = "Distant_AR.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.AtmosSoundSilenced = "Distant_AR_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "Distant_AR_Sup.Inside"
+---------------------------------------------------
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"

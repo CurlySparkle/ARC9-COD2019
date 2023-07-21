@@ -78,7 +78,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 937
+SWEP.RPM = 1100
 
 SWEP.Firemodes = {
     {
@@ -91,19 +91,19 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.2
+SWEP.Recoil = 1.5
 
 SWEP.RecoilSeed = 8778456
 
-SWEP.RecoilPatternDrift = 45
+SWEP.RecoilPatternDrift = 15
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 1.5 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 0.2 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
+SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
 SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
@@ -117,16 +117,19 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.4
+SWEP.VisualRecoilUp = 0.3
 
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.2
+SWEP.VisualRecoilSide = 0.3
+
+SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilPunchSights = 55
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -262,19 +265,29 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/famas/"
 
-SWEP.ShootPitchVariation = 13
-SWEP.ShootSound = {path .. "weap_famas_fire_plr_01.ogg", path .. "weap_famas_fire_plr_02.ogg", path .. "weap_famas_fire_plr_03.ogg", path .. "weap_famas_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_famas_fire_silenced_plr_01.ogg", path .. "weap_famas_fire_silenced_plr_02.ogg", path .. "weap_famas_fire_silenced_plr_03.ogg", path .. "weap_famas_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_famas_fire_plr_inside_01.ogg", path .. "weap_famas_fire_plr_inside_02.ogg", path .. "weap_famas_fire_plr_inside_03.ogg", path .. "weap_famas_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_famas_fire_silenced_plr_inside_01.ogg", path .. "weap_famas_fire_silenced_plr_inside_02.ogg", path .. "weap_famas_fire_silenced_plr_inside_03.ogg", path .. "weap_famas_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.famas.fire"
+SWEP.ShootSoundIndoor = "Cod2019.famas.fire"
 
---SWEP.DistantShootSound = "CSGO.Famas.Distance_Fire"
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+SWEP.ShootSoundSilenced = "Cod2019.famas.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.famas.fire.s"
 
-SWEP.FiremodeSound = ""
+-- Non-Silenced
+SWEP.LayerSound = "Layer_AR.Outside"
+SWEP.AtmosSound = "Distant_AR.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_AR.Inside"
+SWEP.AtmosSoundIndoor = "Distant_AR.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.AtmosSoundSilenced = "Distant_AR_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "Distant_AR_Sup.Inside"
+---------------------------------------------------
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = path .. "weap_ar_falpha_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "weap_ar_falpha_ads_down.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",
@@ -493,14 +506,14 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.3,
+                t = 0.4,
                 lhik = 0,
                 rhik = 1
             },
         },
 		--Mult = 0.8,
         EventTable = {
-            {s = path .. "wfoly_ar_falpha_inspect_03.ogg", t = 0/30},
+            {s = path .. "wfoly_ar_falpha_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {

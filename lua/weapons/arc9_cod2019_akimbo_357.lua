@@ -232,16 +232,29 @@ SWEP.Akimbo = true
 local path = "weapons/cod2019/357/"
 local path2 = "weapons/cod2019/50gs/"
 
-SWEP.ShootPitchVariation = 10
-SWEP.ShootSound = {path .. "weap_cpapa_fire_plr_01.ogg", path .. "weap_cpapa_fire_plr_02.ogg", path .. "weap_cpapa_fire_plr_03.ogg", path .. "weap_cpapa_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_cpapa_fire_silenced_plr_01.ogg", path .. "weap_cpapa_fire_silenced_plr_02.ogg", path .. "weap_cpapa_fire_silenced_plr_03.ogg", path .. "weap_cpapa_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_cpapa_fire_plr_inside_01.ogg", path .. "weap_cpapa_fire_plr_inside_02.ogg", path .. "weap_cpapa_fire_plr_inside_03.ogg", path .. "weap_cpapa_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_cpapa_fire_silenced_plr_inside_01.ogg", path .. "weap_cpapa_fire_silenced_plr_inside_02.ogg", path .. "weap_cpapa_fire_silenced_plr_inside_03.ogg", path .. "weap_cpapa_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.357.fire"
+SWEP.ShootSoundIndoor = "Cod2019.357.fire"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+SWEP.ShootSoundSilenced = "Cod2019.357.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.357.fire.s"
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+-- Non-Silenced
+SWEP.LayerSound = "Layer_Pistol.Outside"
+SWEP.AtmosSound = "Distant_Pistol.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
+SWEP.AtmosSoundIndoor = "Distant_Shotgun.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.AtmosSoundSilenced = "Distant_Pistol_Mag_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "Distant_Pistol_Sup.Inside"
+---------------------------------------------------
+
+SWEP.EnterSightsSound = path .. "wfoly_pi_cpapa_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_pi_cpapa_ads_down.ogg"
 
 SWEP.HideBones = {
     [1] = "j_b_loader_01",
@@ -254,9 +267,9 @@ SWEP.HideBones = {
 	[8] = "j_b_loader",
 }
 
-SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = 0.01 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
+SWEP.TriggerDelayTime = 0.01 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg"
 SWEP.TriggerUpSound = ""

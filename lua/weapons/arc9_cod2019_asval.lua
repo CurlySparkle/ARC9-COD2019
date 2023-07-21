@@ -78,7 +78,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 885
+SWEP.RPM = 895
 
 SWEP.Firemodes = {
     {
@@ -93,11 +93,11 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1
+SWEP.Recoil = 1.1
 
 SWEP.RecoilSeed = 6589132
 
-SWEP.RecoilPatternDrift = 35
+SWEP.RecoilPatternDrift = 25
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -125,9 +125,9 @@ SWEP.RecoilMultSights = 0.6
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 2.5
-SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilPunchSights = 50
+SWEP.VisualRecoilPunch = 3
+SWEP.VisualRecoilUp = 0.1
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = -1/9
 
@@ -266,19 +266,36 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/asval/"
 
-SWEP.ShootPitchVariation = 10
-SWEP.ShootSound = {path .. "weap_valpha_sup_plr_01.ogg", path .. "weap_valpha_sup_plr_02.ogg", path .. "weap_valpha_sup_plr_03.ogg", path .. "weap_valpha_sup_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_valpha_sup_plr_01.ogg", path .. "weap_valpha_sup_plr_02.ogg", path .. "weap_valpha_sup_plr_03.ogg", path .. "weap_valpha_sup_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_valpha_sup_plr_inside_01.ogg", path .. "weap_valpha_sup_plr_inside_02.ogg", path .. "weap_valpha_sup_plr_inside_03.ogg", path .. "weap_valpha_sup_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_valpha_sup_plr_inside_01.ogg", path .. "weap_valpha_sup_plr_inside_02.ogg", path .. "weap_valpha_sup_plr_inside_03.ogg", path .. "weap_valpha_sup_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.asval.fire"
+SWEP.ShootSoundIndoor = "Cod2019.asval.fire"
 
---SWEP.DistantShootSound = nil
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+SWEP.ShootSoundSilenced = "Cod2019.asval.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.asval.fire.s"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+-- Non-Silenced
+SWEP.LayerSound = "Layer_ARSUP.Outside"
+SWEP.AtmosSound = "Distant_AR_Sup.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_ARSUP.Inside"
+SWEP.AtmosSoundIndoor = "Distant_AR_Sup.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.AtmosSoundSilenced = "Distant_AR_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "Distant_AR_Sup.Inside"
+---------------------------------------------------
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
 SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+
+SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/asval/weap_mcharlie_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/asval/weap_valpha_disconnector_plr_01.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",
@@ -651,7 +668,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_ar_valpha_reload_end.ogg", t = 0/30},
+            {s = path .. "wfoly_ar_valpha_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {
