@@ -273,22 +273,29 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/iso/"
 
-SWEP.ShootPitchVariation = 5
-SWEP.ShootSound = {path .. "weap_charlie9_fire_plr_01.ogg", path .. "weap_charlie9_fire_plr_02.ogg", path .. "weap_charlie9_fire_plr_03.ogg", path .. "weap_charlie9_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_charlie9_fire_silenced_plr_01.ogg", path .. "weap_charlie9_fire_silenced_plr_02.ogg", path .. "weap_charlie9_fire_silenced_plr_03.ogg", path .. "weap_charlie9_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_charlie9_fire_plr_inside_01.ogg", path .. "weap_charlie9_fire_plr_inside_02.ogg", path .. "weap_charlie9_fire_plr_inside_03.ogg", path .. "weap_charlie9_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_charlie9_fire_silenced_plr_inside_01.ogg", path .. "weap_charlie9_fire_silenced_plr_inside_02.ogg", path .. "weap_charlie9_fire_silenced_plr_inside_03.ogg", path .. "weap_charlie9_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.iso.fire"
+SWEP.ShootSoundIndoor = "Cod2019.iso.fire"
 
-SWEP.DistantShootSound = path .. "weap_charlie9_fire2_plr_01.ogg"
-SWEP.DistantShootSoundSilenced = path .. "weap_charlie9_sup_fire_plr_01.ogg"
+SWEP.ShootSoundSilenced = "Cod2019.iso.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.iso.fire.s"
 
---SWEP.DistantShootSound = "CSGO.mp9.Distance_Fire"
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+-- Non-Silenced Outside
+SWEP.LayerSound = "layer_Pistol.Outside"
+SWEP.AtmosSound = "distant_SMG.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "layer_Pistol.Inside"
+SWEP.AtmosSoundIndoor = "distant_SMG.Inside"
+---------------------------------------------------
+-- Silenced Outside
+SWEP.LayerSoundSilenced = "layer_ARSUP.Outside"
+SWEP.AtmosSoundSilenced = "distant_SMG_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "layer_ARSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "distant_Pistol_Sup.Inside"
+---------------------------------------------------
 
-SWEP.FiremodeSound = ""
-
-SWEP.EnterSightsSound = "COD2019.Iron.In_SMG"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_SMG"
+SWEP.EnterSightsSound = path .. "wfoly_sm_charlie9_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_sm_charlie9_ads_down.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",

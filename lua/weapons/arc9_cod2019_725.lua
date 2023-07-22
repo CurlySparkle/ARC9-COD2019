@@ -278,8 +278,8 @@ SWEP.AtmosSoundIndoor = "Distant_Shotgun.Inside"
 SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
 SWEP.AtmosSoundSilenced = "Distant_Shotgun2.Outside"
 -- Inside
-SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
-SWEP.AtmosSoundSilencedIndoor = "Layer_ShotgunSUP.Inside"
+SWEP.LayerSoundSilencedIndoor = "Layer_ShotgunSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "Distant_Shotgun2.Inside"
 ---------------------------------------------------
 
 SWEP.EnterSightsSound = path .. "weap_sh_charlie725_ads_up.ogg"

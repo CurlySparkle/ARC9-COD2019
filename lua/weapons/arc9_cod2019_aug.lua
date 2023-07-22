@@ -43,8 +43,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 30 -- Damage done at point blank range
-SWEP.DamageMin = 14 -- Damage done at maximum range
+SWEP.DamageMax = 23 -- Damage done at point blank range
+SWEP.DamageMin = 11 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -119,7 +119,7 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
@@ -266,19 +266,29 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/aug/"
 
-SWEP.ShootPitchVariation = 10
-SWEP.ShootSound = {path .. "weap_augolf_fire_plr_9mm_01.ogg", path .. "weap_augolf_fire_plr_9mm_02.ogg", path .. "weap_augolf_fire_plr_9mm_03.ogg", path .. "weap_augolf_fire_plr_9mm_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_augolf_fire_silenced_plr_9mm_01.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_02.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_03.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_augolf_fire_plr_9mm_inside_01.ogg", path .. "weap_augolf_fire_plr_9mm_inside_02.ogg", path .. "weap_augolf_fire_plr_9mm_inside_03.ogg", path .. "weap_augolf_fire_plr_9mm_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_augolf_fire_silenced_plr_9mm_inside_01.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_inside_02.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_inside_03.ogg", path .. "weap_augolf_fire_silenced_plr_9mm_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.aug.fire"
+SWEP.ShootSoundIndoor = "Cod2019.aug.fire"
 
---SWEP.DistantShootSound = "CSGO.AUG.Distance_Fire"
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+SWEP.ShootSoundSilenced = "Cod2019.aug.fire.ar.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.aug.fire.ar.s"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+-- Non-Silenced Outside
+SWEP.LayerSound = "Layer_Pistol.Outside"
+SWEP.AtmosSound = "Distant_SMG.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_Pistol.Inside"
+SWEP.AtmosSoundIndoor = "Distant_SMG.Inside"
+---------------------------------------------------
+-- Silenced Outside
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.AtmosSoundSilenced = "Distant_SMG_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.AtmosSoundSilencedIndoor = "Distant_Pistol_Sup.Inside"
+---------------------------------------------------
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_SMG"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_SMG"
+SWEP.EnterSightsSound = path .. "wfoly_sm_augolf_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_sm_augolf_ads_down.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",
@@ -1031,7 +1041,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.2, 0, -0.07),
+        Pos = Vector(1.5, 0, -0.08),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),

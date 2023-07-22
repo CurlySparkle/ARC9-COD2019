@@ -113,12 +113,26 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 3
+SWEP.RecoilKick = 5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.8
+
+-------------------------- VISUAL RECOIL
+
+SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilPunch = 4
+SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0
+
+SWEP.VisualRecoilSpringPunchDamping = 100
+SWEP.VisualRecoilDampingConst = 100
+SWEP.VisualRecoilSpringMagnitude = 1
 
 -------------------------- SPREAD
 
@@ -154,7 +168,7 @@ SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -189,8 +203,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.4, -0.4)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -270,7 +284,7 @@ SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
 SWEP.AtmosSoundSilenced = "Distant_Shotgun2.Outside"
 -- Inside
 SWEP.LayerSoundSilencedIndoor = "Layer_ShotgunSUP.Inside"
-SWEP.AtmosSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.SoundSilencedIndoor = "Distant_Shotgun2.Outside"
 ---------------------------------------------------
 
 SWEP.EnterSightsSound = path .. "weap_sh_oscar12_ads_up.ogg"
@@ -292,9 +306,6 @@ SWEP.HideBones  = {
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",

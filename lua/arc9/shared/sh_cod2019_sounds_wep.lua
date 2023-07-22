@@ -654,6 +654,20 @@ sound.Add({
 		}
 })
 
+sound.Add({
+	name = "Cod2019.origin12.fire.s_inside",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/origin12/weap_oscar12_fire_silenced_plr_inside_01.ogg",
+		"weapons/cod2019/origin12/weap_oscar12_fire_silenced_plr_inside_02.ogg",
+		"weapons/cod2019/origin12/weap_oscar12_fire_silenced_plr_inside_03.ogg",
+		"weapons/cod2019/origin12/weap_oscar12_fire_silenced_plr_inside_04.ogg",
+		}
+})
+
 ---Model 680---
 
 sound.Add({
@@ -678,3 +692,275 @@ sound.Add({
 		}
 })
 
+---AUG---
+
+sound.Add({
+	name = "Cod2019.aug.fire.ar",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/aug/weap_augolf_fire_plr_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.aug.fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/aug/weap_augolf_fire_plr_9mm_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.aug.fire.ar.s",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/aug/weap_augolf_sup_fire_plr_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.aug.fire.s",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/aug/weap_augolf_sup_fire_plr_9mm_01.ogg",
+		}
+})
+
+---Bizon---
+
+sound.Add({
+	name = "Cod2019.bizon.fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/bizon/weap_beta_fire_plr_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.bizon.fire.s",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/bizon/weap_beta_sup_fire_plr_01.ogg",
+		}
+})
+
+---MP5---
+
+sound.Add({
+	name = "Cod2019.mp5.fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/mp5/weap_mpapa5_fire_plr_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.mp5.fire.s",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/mp5/weap_mpapa5_sup_fire_plr_01.ogg",
+		}
+})
+
+---MP7---
+
+sound.Add({
+	name = "Cod2019.mp7.fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/mp7/weap_mpapa7_fire_plr_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.mp7.fire.s",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/mp7/weap_mpapa7_sup_fire_plr_01.ogg",
+		}
+})
+
+---P90---
+
+sound.Add({
+	name = "Cod2019.p90.fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/p90/weap_papa90_fire_plr_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.p90.fire.s",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/p90/weap_papa90_sup_fire_plr_01.ogg",
+		}
+})
+
+---Uzi---
+
+sound.Add({
+	name = "Cod2019.uzi.fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/uzi/weap_uzulu_fire_plr_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.uzi.fire_alt",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/uzi/weap_uzulu1911_fire_plr_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.uzi.fire.s",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/uzi/weap_uzulu_sup_fire_plr_01.ogg",
+		}
+})
+
+---Iso---
+
+sound.Add({
+	name = "Cod2019.iso.fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/iso/weap_charlie9_fire_plr_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.iso.fire.s",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/iso/weap_charlie9_sup_fire_plr_01.ogg",
+		}
+})
+
+---CX9---
+
+sound.Add({
+	name = "Cod2019.cx9.fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {80,110},
+	sound = {
+		"weapons/cod2019/cx9/weap_secho_fire_plr_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.cx9.fire.s",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {80,110},
+	sound = {
+		"weapons/cod2019/cx9/weap_secho_sup_fire_plr_01.ogg",
+		}
+})
+
+---Striker45---
+
+sound.Add({
+	name = "Cod2019.striker45.fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/striker45/weap_smgolf45_fire_plr_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.striker45.fire.s",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/striker45/weap_smgolf45_sup_fire_plr_01.ogg",
+		}
+})
+
+---Vector---
+
+sound.Add({
+	name = "Cod2019.vector.fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/vector/weap_victor_fire_plr_01.ogg",
+		}
+})
+
+sound.Add({
+	name = "Cod2019.vector.fire.s",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {100,100},
+	sound = {
+		"weapons/cod2019/vector/weap_victor_sup_fire_plr_01.ogg",
+		}
+})
