@@ -326,8 +326,8 @@ SWEP.TriggerDelay = 0.1 -- Set to > 0 to play the "trigger" animation before sho
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/bruenmk9/weap_mkilo3_prefire_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/sa87/weap_lima86_disconnector_plr_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/holger/weap_mgolf36_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/holger/weap_mgolf36_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {

@@ -239,7 +239,7 @@ SWEP.ShootSoundIndoor = "Cod2019.minigun.fire"
 SWEP.LayerSound = "layer_AR.Outside"
 SWEP.DistantShootSound = "distant_LMG.Outside"
 -- Inside
-SWEP.LayerSoundIndoor = "layer_Shotgun.Inside"
+SWEP.LayerSoundIndoor = "layer_AR.Inside"
 SWEP.DistantShootSoundIndoor = "distant_LMG.Inside"
 ---------------------------------------------------
 

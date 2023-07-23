@@ -44,8 +44,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 35 -- Damage done at point blank range
-SWEP.DamageMin = 15 -- Damage done at maximum range
+SWEP.DamageMax = 36 -- Damage done at point blank range
+SWEP.DamageMin = 17 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -78,7 +78,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 571
+SWEP.RPM = 571.4285714285714
 
 SWEP.Firemodes = {
     {
@@ -100,9 +100,9 @@ SWEP.Firemodes = {
 -- General recoil multiplier
 SWEP.Recoil = 1.2
 
-SWEP.RecoilSeed = 346598
+SWEP.RecoilSeed = 984135
 
-SWEP.RecoilPatternDrift = 55
+SWEP.RecoilPatternDrift = 35
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -124,13 +124,13 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.7
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 30
+SWEP.VisualRecoilPunchSights = 55
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 5
@@ -214,7 +214,7 @@ SWEP.MovingMidPoint = {
 }
 
 SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -285,20 +285,22 @@ SWEP.ShootSoundSilenced = "Cod2019.SCAR.fire.s"
 SWEP.ShootSoundSilencedIndoor = "Cod2019.SCAR.fire.s"
 
 -- Non-Silenced
-SWEP.LayerSound = "Layer_LMG.Outside"
-SWEP.DistantShootSound = "Distant_AR.Outside"
-SWEP.LayerSoundIndoor = "Layer_AR.Inside"
-SWEP.DistantShootSoundIndoor = "Distant_LMG.Inside"
+SWEP.LayerSound = "layer_AR.Outside"
+SWEP.DistantShootSound = "distant_AR.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "layer_AR.Inside"
+SWEP.DistantShootSoundIndoor = "distant_LMG.Inside"
 ---------------------------------------------------
 -- Silenced
 SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
 SWEP.DistantShootSoundSilenced = "Distant_AR_Sup.Outside"
+-- Inside
 SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
 SWEP.DistantShootSoundSilencedIndoor = "Distant_AR_Sup.Inside"
 ---------------------------------------------------
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = "weapons/cod2019/scar/wfoly_ar_scharlie_ads_up.ogg"
+SWEP.ExitSightsSound = "weapons/cod2019/scar/wfoly_ar_scharlie_ads_down.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",
@@ -422,11 +424,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 25/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 31/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_shake.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magout.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_02.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_end.ogg", t = 35/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -527,11 +529,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 25/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 31/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_shake.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magout.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_02.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_end.ogg", t = 35/30},
         },
     },
     ["ready"] = {
@@ -572,9 +574,8 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
-            {s = path .. "wfoly_ar_scharlie_raise_first_end.ogg", t = 0/30},
+            {s = path .. "wfoly_ar_scharlie_drop_mvmnt.ogg", t = 0/30},
         },
     },
     ["idle"] = {

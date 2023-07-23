@@ -102,7 +102,7 @@ SWEP.Recoil = 1
 
 SWEP.RecoilSeed = 6213
 
-SWEP.RecoilPatternDrift = 35
+SWEP.RecoilPatternDrift = 25
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 0.5 -- Multiplier for vertical recoil
@@ -118,7 +118,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.7
+SWEP.RecoilKick = 2
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
@@ -130,8 +130,8 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 0.3
 
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.2
 
@@ -316,7 +316,7 @@ SWEP.Animations = {
         Source = "shoot1",
     },
     ["fire_sights"] = {
-        Source = "shoot1_ads",
+        Source = "shoot1",
     },
     ["reload"] = {
         Source = "reload_short",

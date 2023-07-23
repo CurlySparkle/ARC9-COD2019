@@ -38,7 +38,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_shot_origin12.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-6, 4, 0),
+    TPIKPos = Vector(-7, 4, 0),
     TPIKAng = Angle(0, 0, 180),
     Scale = 1
 }
@@ -377,11 +377,43 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 87/30},
         },
     },
+    -- ["reload_fast"] = {
+        -- Source = "reload_fast",
+		-- MinProgress = 0.8,
+		-- --DropMagAt = 0.7,
+        -- IKTimeLine = {
+            -- {
+                -- t = 0,
+                -- lhik = 1,
+                -- rhik = 0
+            -- },
+            -- {
+                -- t = 0.2,
+                -- lhik = 0,
+                -- rhik = 0
+            -- },
+            -- {
+                -- t = 0.5,
+                -- lhik = 0,
+                -- rhik = 0
+            -- },
+            -- {
+                -- t = 0.9,
+                -- lhik = 1,
+                -- rhik = 1
+            -- },
+        -- },
+        -- EventTable = {
+			-- {s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
+			-- {s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 7/30},
+			-- {s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_01.ogg", t = 25/30},
+			-- {s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 48/30},
+        -- },
+    -- },
     ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		Mult = 0.9,
-		--DropMagAt = 0.7,
+        Source = "reload_fast2",
+		MinProgress = 0.85,
+		DropMagAt = 0.7,
         IKTimeLine = {
             {
                 t = 0,
@@ -399,14 +431,14 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 5/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_01.ogg", t = 25/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 48/30},
         },
@@ -629,11 +661,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2.5,
+		Mult = 2,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2.5,
+		Mult = 2,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -696,7 +728,7 @@ SWEP.Animations = {
     },
 }
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 -------------------------- ATTACHMENTS
 

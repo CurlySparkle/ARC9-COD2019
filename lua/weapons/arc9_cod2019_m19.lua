@@ -120,11 +120,14 @@ SWEP.RecoilMultSights = 1
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilPunch = 2.5
+SWEP.VisualRecoilUp = 0.2
+SWEP.VisualRecoilRoll = 3
 SWEP.VisualRecoilSide = -1/6
+
+SWEP.VisualRecoilSpringPunchDamping = 100
+SWEP.VisualRecoilDampingConst = 100
 
 -------------------------- SPREAD
 
@@ -144,7 +147,7 @@ SWEP.SpreadAddSights = -0.5
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.1 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.2 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.1 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
