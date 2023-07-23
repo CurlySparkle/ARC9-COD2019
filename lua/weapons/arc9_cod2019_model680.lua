@@ -283,17 +283,17 @@ SWEP.ShootSoundSilencedIndoor = "Cod2019.model680.fire.s"
 
 -- Non-Silenced Outside
 SWEP.LayerSound = "Layer_Shotgun.Outside"
-SWEP.AtmosSound = "Distant_Shotgun.Outside"
+SWEP.DistantShootSound = "Distant_Shotgun.Outside"
 -- Inside
 SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
-SWEP.AtmosSoundIndoor = "Distant_LMG.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_LMG.Inside"
 ---------------------------------------------------
 -- Silenced Outside
 SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
-SWEP.AtmosSoundSilenced = "Distant_Shotgun2.Outside"
+SWEP.DistantShootSoundSilenced = "Distant_Shotgun2.Outside"
 -- Inside
 SWEP.LayerSoundSilencedIndoor = "Layer_ShotgunSUP.Inside"
-SWEP.AtmosSoundSilencedIndoor = "Distant_Shotgun2.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "Distant_Shotgun2.Inside"
 ---------------------------------------------------
 
 SWEP.EnterSightsSound = path .. "wfoly_sh_romeo870_ads_up.ogg"

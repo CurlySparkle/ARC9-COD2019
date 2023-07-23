@@ -120,16 +120,16 @@ SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilKick = 3
 
-SWEP.RecoilMultCrouch = 0.7
+SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilUp = 0.3
 
 -------------------------- SPREAD
 
@@ -243,17 +243,29 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/kar98k/"
 
-SWEP.ShootPitchVariation = 10
-SWEP.ShootSound = {path .. "weap_kilo98_fire_plr_01.ogg", path .. "weap_kilo98_fire_plr_02.ogg", path .. "weap_kilo98_fire_plr_03.ogg", path .. "weap_kilo98_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_kilo98_fire_silenced_plr_01.ogg", path .. "weap_kilo98_fire_silenced_plr_02.ogg", path .. "weap_kilo98_fire_silenced_plr_03.ogg", path .. "weap_kilo98_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_kilo98_fire_plr_inside_01.ogg", path .. "weap_kilo98_fire_plr_inside_02.ogg", path .. "weap_kilo98_fire_plr_inside_03.ogg", path .. "weap_kilo98_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_kilo98_fire_silenced_plr_inside_01.ogg", path .. "weap_kilo98_fire_silenced_plr_inside_02.ogg", path .. "weap_kilo98_fire_silenced_plr_inside_03.ogg", path .. "weap_kilo98_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.kar98k.fire"
+SWEP.ShootSoundIndoor = "Cod2019.kar98k.fire"
 
---SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
-SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
+SWEP.ShootSoundSilenced = "Cod2019.kar98k.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.kar98k.fire.s"
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+-- Non-Silenced Outside
+SWEP.LayerSound = "layer_Shotgun.Outside"
+SWEP.DistantShootSound = "distant_DMR.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "layer_Shotgun.Inside"
+SWEP.DistantShootSoundIndoor = "distant_Shotgun.Inside"
+---------------------------------------------------
+-- Silenced Outside
+SWEP.LayerSoundSilenced = "layer_Sniper.Outside"
+SWEP.DistantShootSoundSilenced = "distant_Sniper_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "layer_Sniper.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "distant_DMR_Sup.Inside"
+---------------------------------------------------
+
+SWEP.EnterSightsSound = path .. "wfoly_sn_kilo98_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_sn_kilo98_ads_down.ogg"
 
 SWEP.ReloadHideBonesFirstPerson = true
 SWEP.HideBones  = {
@@ -276,6 +288,13 @@ SWEP.ReloadHideBoneTables  = {
 	[6] = "j_b_05",
 	[7] = "j_bullet_loose",
 }
+
+-- SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+-- SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+-- SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
+
+-- SWEP.TriggerDownSound = "weapons/cod2019/mk2/weap_sbeta_fire_first_plr_01.ogg"
+-- SWEP.TriggerUpSound = ""
 
 SWEP.Animations = {
     ["fire"] = {
@@ -563,7 +582,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_kilo98_reload_end.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_kilo98_drop_cloth.ogg", t = 0.067},
+            {s = path .. "wfoly_sn_kilo98_drop_overshoulder.ogg", t = 0.133},
         },
     },
     ["idle"] = {

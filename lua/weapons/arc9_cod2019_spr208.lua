@@ -90,7 +90,7 @@ SWEP.BarrelLength = 20
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 150
+SWEP.RPM = 328
 
 SWEP.Firemodes = {
     {
@@ -254,22 +254,42 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/spr208/"
 
-SWEP.ShootPitchVariation = 10
-SWEP.ShootSound = {path .. "weap_romeo700_fire_bang_plr_01.ogg", path .. "weap_romeo700_fire_bang_plr_02.ogg", path .. "weap_romeo700_fire_bang_plr_03.ogg", path .. "weap_romeo700_fire_bang_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_romeo700_fire_silenced_bang_plr_01.ogg", path .. "weap_romeo700_fire_silenced_bang_plr_02.ogg", path .. "weap_romeo700_fire_silenced_bang_plr_03.ogg", path .. "weap_romeo700_fire_silenced_bang_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_romeo700_fire_bang_plr_inside_01.ogg", path .. "weap_romeo700_fire_bang_plr_inside_02.ogg", path .. "weap_romeo700_fire_bang_plr_inside_03.ogg", path .. "weap_romeo700_fire_bang_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_romeo700_fire_silenced_bang_plr_inside_01.ogg", path .. "weap_romeo700_fire_silenced_bang_plr_inside_02.ogg", path .. "weap_romeo700_fire_silenced_bang_plr_inside_03.ogg", path .. "weap_romeo700_fire_silenced_bang_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.spr208.fire"
+SWEP.ShootSoundIndoor = "Cod2019.spr208.fire"
 
---SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
-SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
+SWEP.ShootSoundSilenced = "Cod2019.spr208.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.spr208.fire.s"
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+-- Non-Silenced Outside
+SWEP.LayerSound = "layer_Sniper.Outside"
+SWEP.DistantShootSound = "distant_Sniper.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "layer_Shotgun.Inside"
+SWEP.DistantShootSoundIndoor = "distant_Shotgun.Inside"
+---------------------------------------------------
+-- Silenced Outside
+SWEP.LayerSoundSilenced = "layer_Sniper.Outside"
+SWEP.DistantShootSoundSilenced = "distant_DMR_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "layer_Sniper.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "distant_DMR_Sup.Inside"
+---------------------------------------------------
+
+SWEP.EnterSightsSound = path .. "wfoly_sn_remeo700_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_sn_remeo700_ads_down.ogg"
+
 
 --SWEP.ReloadHideBonesFirstPerson = true
 SWEP.HideBones  = {
     [1] = "j_mag2",
 }
+
+SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/spr208/wfoly_sn_remeo700_hammer_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/spr208/wfoly_sn_remeo700_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -379,7 +399,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -415,7 +435,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -637,7 +657,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_remeo700_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {

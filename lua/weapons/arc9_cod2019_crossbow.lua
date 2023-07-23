@@ -80,7 +80,7 @@ SWEP.NoFlash = true -- Disable light flash
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 400
+SWEP.RPM = 328
 
 SWEP.Firemodes = {
     {
@@ -213,11 +213,17 @@ SWEP.NoShellEject = true
 
 local path = "weapons/cod2019/crossbow/"
 
-SWEP.ShootSound = path .. "weap_crossbow_fire_01.ogg"
-SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
+SWEP.ShootSound = "Cod2019.crossbow.fire"
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = path .. "wfoly_sn_crossbow_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_sn_crossbow_ads_down.ogg"
+
+SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/crossbow/wfoly_sn_crossbow_hammer_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/crossbow/wfoly_sn_crossbow_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -321,9 +327,8 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
-            {s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_crossbow_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {

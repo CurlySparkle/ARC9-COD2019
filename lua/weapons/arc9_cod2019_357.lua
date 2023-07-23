@@ -234,17 +234,17 @@ SWEP.ShootSoundSilencedIndoor = "Cod2019.357.fire.s"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Pistol.Outside"
-SWEP.AtmosSound = "Distant_Pistol.Outside"
+SWEP.DistantShootSound = "Distant_Pistol.Outside"
 -- Inside
 SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
-SWEP.AtmosSoundIndoor = "Distant_Shotgun.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_Shotgun.Inside"
 ---------------------------------------------------
 -- Silenced
 SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
-SWEP.AtmosSoundSilenced = "Distant_Pistol_Mag_Sup.Outside"
+SWEP.DistantShootSoundSilenced = "Distant_Pistol_Mag_Sup.Outside"
 -- Inside
 SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
-SWEP.AtmosSoundSilencedIndoor = "Distant_Pistol_Sup.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "Distant_Pistol_Sup.Inside"
 ---------------------------------------------------
 
 SWEP.EnterSightsSound = path .. "wfoly_pi_cpapa_ads_up.ogg"

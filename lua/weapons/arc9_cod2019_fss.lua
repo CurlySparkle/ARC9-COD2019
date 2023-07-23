@@ -97,7 +97,7 @@ SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = 76523123
 
-SWEP.RecoilPatternDrift = 55
+SWEP.RecoilPatternDrift = 25
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1.2 -- Multiplier for vertical recoil
@@ -119,14 +119,30 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 0.7
-SWEP.VisualRecoilUp = 0.6
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.3
 SWEP.VisualRecoilRoll = 1
+SWEP.VisualRecoilSide = 0.3
+
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 75
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -252,19 +268,29 @@ local path = "weapons/cod2019/m4a1/"
 local path2 = "weapons/cod2019/fss/"
 local path3 = "weapons/cod2019/p90/"
 
-SWEP.ShootPitchVariation = 11
-SWEP.ShootSound = {path2 .. "weap_fss_fire_plr_01.ogg", path2 .. "weap_fss_fire_plr_02.ogg", path2 .. "weap_fss_fire_plr_03.ogg", path2 .. "weap_fss_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path2 .. "weap_fss_fire_silenced_plr_01.ogg", path2 .. "weap_fss_fire_silenced_plr_02.ogg", path2 .. "weap_fss_fire_silenced_plr_03.ogg", path2 .. "weap_fss_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path2 .. "weap_fss_fire_plr_inside_01.ogg", path2 .. "weap_fss_fire_plr_inside_02.ogg", path2 .. "weap_fss_fire_plr_inside_03.ogg", path2 .. "weap_fss_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path2 .. "weap_fss_fire_silenced_plr_inside_01.ogg", path2 .. "weap_fss_fire_silenced_plr_inside_02.ogg", path2 .. "weap_fss_fire_silenced_plr_inside_03.ogg", path2 .. "weap_fss_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.fss.fire"
+SWEP.ShootSoundIndoor = "Cod2019.fss.fire"
 
---SWEP.DistantShootSound = "CSGO.m4a4.Distance_Fire"
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+SWEP.ShootSoundSilenced = "Cod2019.fss.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.fss.fire.s"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+-- Non-Silenced
+SWEP.LayerSound = "layer_Pistol.Outside"
+SWEP.DistantShootSound = "distant_SMG.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "layer_Pistol.Inside"
+SWEP.DistantShootSoundIndoor = "distant_SMG.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "layer_ARSUP.Outside"
+SWEP.DistantShootSoundSilenced = "distant_SMG_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "distant_Pistol_Sup.Inside"
+---------------------------------------------------
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = path3 .. "wfoly_sm_papa90_ads_up.ogg"
+SWEP.ExitSightsSound = path3 .. "wfoly_sm_papa90_ads_down.ogg"
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
@@ -286,9 +312,6 @@ SWEP.HideBones  = {
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -545,9 +568,25 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "semi_on",
+        EventTable = {
+            {s = path .. "vm_p01_sm_alpha57_semiselect_toggle_on_mvmnt.ogg", t = 0/30},
+            {s = path .. "vm_p01_sm_alpha57_semiselect_toggle_on_selector.ogg", t = 4/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "semi_off",
+        EventTable = {
+            {s = path .. "vm_p01_sm_alpha57_semiselect_toggle_off_mvmnt.ogg", t = 0/30},
+            {s = path .. "vm_p01_sm_alpha57_semiselect_toggle_off_selector.ogg", t = 4/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
+
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
@@ -623,7 +662,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.5, 0, -0.03),
+        Pos = Vector(1.5, 0, -0.08),
         Ang = Angle(0, 0, 0),
         Category = "cod2019_optic",
         CorrectiveAng = Angle(0, 0, 0),
@@ -634,7 +673,7 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle",
         Bone = "tag_silencer",
-        Pos = Vector(1.05, 0, 0.15),
+        Pos = Vector(1.3, 0, 0.1),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle"},
 		Scale = 1,

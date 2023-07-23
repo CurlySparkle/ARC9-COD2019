@@ -274,14 +274,14 @@ SWEP.ShootSoundSilencedIndoor = "Cod2019.origin12.fire.s"
 
 -- Non-Silenced Outside
 SWEP.LayerSound = "Layer_Shotgun.Outside"
-SWEP.AtmosSound = "Distant_Sniper.Outside"
+SWEP.DistantShootSound = "Distant_Sniper.Outside"
 -- Inside
 SWEP.LayerSoundIndoor = "Layer_Sniper.Inside"
-SWEP.AtmosSoundIndoor = "Distant_Shotgun.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_Shotgun.Inside"
 ---------------------------------------------------
 -- Silenced Outside
 SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
-SWEP.AtmosSoundSilenced = "Distant_Shotgun2.Outside"
+SWEP.DistantShootSoundSilenced = "Distant_Shotgun2.Outside"
 -- Inside
 SWEP.LayerSoundSilencedIndoor = "Layer_ShotgunSUP.Inside"
 SWEP.SoundSilencedIndoor = "Distant_Shotgun2.Outside"

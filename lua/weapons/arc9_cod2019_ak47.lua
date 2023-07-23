@@ -273,21 +273,21 @@ SWEP.ShootSoundSilencedIndoor = "Cod2019.ak47.fire.s"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_AR.Outside"
-SWEP.AtmosSound = "Distant_AR.Outside"
+SWEP.DistantShootSound = "Distant_AR.Outside"
 -- Inside
 SWEP.LayerSoundIndoor = "Layer_AR.Inside"
-SWEP.AtmosSoundIndoor = "Distant_AR.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_AR.Inside"
 ---------------------------------------------------
 -- Silenced
 SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
-SWEP.AtmosSoundSilenced = "Distant_AR_Sup.Outside"
+SWEP.DistantShootSoundSilenced = "Distant_AR_Sup.Outside"
 -- Inside
 SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
-SWEP.AtmosSoundSilencedIndoor = "Distant_AR_Sup.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "Distant_AR_Sup.Inside"
 ---------------------------------------------------
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = "weapons/cod2019/ak47/wfoly_ar_akilo47_ads_up.ogg"
+SWEP.ExitSightsSound = "weapons/cod2019/ak47/wfoly_ar_akilo47_ads_down.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet1",
@@ -673,7 +673,7 @@ SWEP.Animations = {
         },
 		--Mult = 0.8,
         EventTable = {
-            {s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 0/30},
+            {s = path .. "wfoly_ar_akilo47_drop.ogg", t = 0/30},
         },
     },
     ["idle"] = {

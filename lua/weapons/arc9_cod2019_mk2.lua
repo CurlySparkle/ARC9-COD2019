@@ -68,7 +68,7 @@ SWEP.PhysBulletDrag = 1.25
 
 -------------------------- MAGAZINE
 
-SWEP.Ammo = "ar2" -- What ammo type this gun uses.
+SWEP.Ammo = "357" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize = 6 -- Self-explanatory.
@@ -236,17 +236,29 @@ SWEP.ShotgunReload = true
 
 local path = "weapons/cod2019/mk2/"
 
-SWEP.ShootPitchVariation = 10
-SWEP.ShootSound = {path .. "weap_sbeta_fire_plr_01.ogg", path .. "weap_sbeta_fire_plr_02.ogg", path .. "weap_sbeta_fire_plr_03.ogg", path .. "weap_sbeta_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_sbeta_fire_silenced_plr_01.ogg", path .. "weap_sbeta_fire_silenced_plr_02.ogg", path .. "weap_sbeta_fire_silenced_plr_03.ogg", path .. "weap_sbeta_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_sbeta_fire_plr_inside_01.ogg", path .. "weap_sbeta_fire_plr_inside_02.ogg", path .. "weap_sbeta_fire_plr_inside_03.ogg", path .. "weap_sbeta_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_sbeta_fire_silenced_plr_inside_01.ogg", path .. "weap_sbeta_fire_silenced_plr_inside_02.ogg", path .. "weap_sbeta_fire_silenced_plr_inside_03.ogg", path .. "weap_sbeta_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.mk2.fire"
+SWEP.ShootSoundIndoor = "Cod2019.mk2.fire"
 
---SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
-SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
+SWEP.ShootSoundSilenced = "Cod2019.mk2.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.mk2.fire.s"
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+-- Non-Silenced Outside
+SWEP.LayerSound = "layer_Shotgun.Outside"
+SWEP.DistantShootSound = "distant_Western.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "layer_Shotgun.Inside"
+SWEP.DistantShootSoundIndoor = "distant_Shotgun.Inside"
+---------------------------------------------------
+-- Silenced Outside
+SWEP.LayerSoundSilenced = "layer_Sniper.Outside"
+SWEP.DistantShootSoundSilenced = "distant_DMR_Sup.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "layer_ShotgunSUP.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "distant_DMR_Sup.Inside"
+---------------------------------------------------
+
+SWEP.EnterSightsSound = path .. "wfoly_sn_sbeta_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_sn_sbeta_ads_down.ogg"
 
 SWEP.ReloadHideBonesFirstPerson = true
 SWEP.HideBones  = {
@@ -262,6 +274,13 @@ SWEP.ReloadHideBoneTables  = {
 	[3] = "j_round_03",
 	[4] = "j_round_04",
 }
+
+SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/mk2/weap_sbeta_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = ""
 
 SWEP.Animations = {
     ["fire"] = {
@@ -399,7 +418,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.5,
+		MinProgress = 0.85,
 		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sbeta_sn_raise_up.ogg", t = 6/30},
@@ -409,7 +428,8 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_sbeta_sn_raise_settle.ogg", t = 0/30},
+            {s = path .. "wfoly_sbeta_sn_drop_start.ogg", t = 0},
+            {s = path .. "wfoly_sbeta_sn_drop_down.ogg", t = 0.4},
         },
     },
     ["idle"] = {

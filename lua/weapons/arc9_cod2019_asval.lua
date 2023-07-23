@@ -274,17 +274,17 @@ SWEP.ShootSoundSilencedIndoor = "Cod2019.asval.fire.s"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_ARSUP.Outside"
-SWEP.AtmosSound = "Distant_AR_Sup.Outside"
+SWEP.DistantShootSound = "Distant_AR_Sup.Outside"
 -- Inside
 SWEP.LayerSoundIndoor = "Layer_ARSUP.Inside"
-SWEP.AtmosSoundIndoor = "Distant_AR_Sup.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_AR_Sup.Inside"
 ---------------------------------------------------
 -- Silenced
 SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
-SWEP.AtmosSoundSilenced = "Distant_AR_Sup.Outside"
+SWEP.DistantShootSoundSilenced = "Distant_AR_Sup.Outside"
 -- Inside
 SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
-SWEP.AtmosSoundSilencedIndoor = "Distant_AR_Sup.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "Distant_AR_Sup.Inside"
 ---------------------------------------------------
 
 SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
