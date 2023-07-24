@@ -95,7 +95,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 4
+SWEP.Recoil = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -113,12 +113,12 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 5
+SWEP.RecoilKick = 5.5
 
-SWEP.RecoilMultCrouch = 0.8
+SWEP.RecoilMultCrouch = 0.9
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.9
 
 -------------------------- VISUAL RECOIL
 
@@ -178,7 +178,7 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.11, -3, 0.7),
+    Pos = Vector(-2.11, -1, 0.7),
     Ang = Angle(0, 0, 4.5),
     Magnification = 1.1,
     ViewModelFOV = 56,
@@ -203,7 +203,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
+SWEP.MovingPos = Vector(-1, -0.8, -0.8)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -297,6 +297,10 @@ SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 SWEP.TriggerDownSound = "weapons/cod2019/origin12/weap_oscar12_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = ""
 
+SWEP.BulletBones = {
+    [1] = "j_shell01",
+}
+
 --SWEP.ReloadHideBonesFirstPerson = true
 SWEP.HideBones  = {
     [1] = "j_mag2",
@@ -344,6 +348,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		MagSwapTime = 0.9,
         IKTimeLine = {
             {
                 t = 0,
@@ -414,6 +419,7 @@ SWEP.Animations = {
         Source = "reload_fast2",
 		MinProgress = 0.85,
 		DropMagAt = 0.7,
+		MagSwapTime = 0.7,
         IKTimeLine = {
             {
                 t = 0,
@@ -431,7 +437,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 1.05,
                 lhik = 1,
                 rhik = 1
             },
@@ -447,6 +453,7 @@ SWEP.Animations = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.7,
+		MagSwapTime = 0.7,
         IKTimeLine = {
             {
                 t = 0,
@@ -643,12 +650,36 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+	            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_sh_oscar12_raise_first_start.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.8,
+                lhik = 0,
+                rhik = 0
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_sh_oscar12_drop_down.ogg", t = 0/30},
         },
@@ -678,7 +709,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.15,
                 lhik = 0,
                 rhik = 0
             },
@@ -688,7 +719,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -764,7 +795,7 @@ end
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(11.3, -0.6, 0.69),
+    ModelOffset = Vector(11.3, -0.55, 0.69),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.8,
     },
@@ -772,8 +803,44 @@ SWEP.AttachmentTableOverrides = {
 	ModelAngleOffset = Angle(0, 0, 180),
     },
     ["cod2019_grips_none"] = {
-	ModelOffset = Vector(-4, -0.5, -0.7),
+	ModelOffset = Vector(-4, 0, -0.7),
 	ModelAngleOffset = Angle(0, 0, 180),
+    },
+    ["csgo_cod2019_laser_01"] = {
+    Sights = {
+    {
+        Pos = Vector(3, 15, -1),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 56,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_02"] = {
+    Sights = {
+    {
+        Pos = Vector(3, 15, -1),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 56,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_03"] = {
+    Sights = {
+    {
+        Pos = Vector(3, 15, -1),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 56,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
     },
 }
 
@@ -833,7 +900,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_attachments",
-        Pos = Vector(15, 1, 0.2),
+        Pos = Vector(15, 1.12, 0.25),
         Ang = Angle(0, 0, -90),
     },
     {
@@ -859,7 +926,7 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Stock",
         Category = {"csgo_stock","cod2019_stocks"},
         Bone = "tag_stock_attach",
-        Pos = Vector(2.2, 0, 0),
+        Pos = Vector(2.4, 0, 0.1),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_none"},
 		Scale = 1,
@@ -874,7 +941,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_origin12_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

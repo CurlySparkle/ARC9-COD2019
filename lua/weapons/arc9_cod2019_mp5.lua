@@ -101,7 +101,7 @@ SWEP.Recoil = 1.3
 
 SWEP.RecoilSeed = 564728
 
-SWEP.RecoilPatternDrift = 25
+SWEP.RecoilPatternDrift = 15
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -121,14 +121,14 @@ SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.4
-SWEP.VisualRecoilPunchSights = 20
-SWEP.VisualRecoilPunch = 1.5
+SWEP.VisualRecoilPunchSights = 55
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.2
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = -1/6
@@ -652,7 +652,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     end
 end
 
-SWEP.DefaultBodygroups = "00000000000000"
+SWEP.DefaultBodygroups = "000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -693,9 +693,14 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
-    ["stock_none"] = {
+    ["stock_adapter"] = {
         Bodygroups = {
             {3,2},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {3,3},
         },
     },
     ["sight_none"] = {
@@ -703,11 +708,16 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
+    ["stock_main_hide"] = {
+        Bodygroups = {
+            {6,1},
+        },
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("stock_retract") then model:SetBodygroup(5,1) end
+    if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
 end
 
 SWEP.Attachments = {
@@ -732,7 +742,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.3, 0, -0.07),
+        Pos = Vector(2.3, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -760,11 +770,11 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"cod2019_tube","stock_retract"},
+        Category = {"cod2019_tube","stock_retract","cod2019_mp5_stock"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_none"},
+		--InstalledElements = {"stock_none"},
 		Scale = 1,
     },
     {
@@ -836,6 +846,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 5
+SWEP.CodAngledGripPoseParam = 12
 SWEP.CodStubbyGripPoseParam = 6.5
-SWEP.CodStubbyTallGripPoseParam = 2
+SWEP.CodStubbyTallGripPoseParam = 12

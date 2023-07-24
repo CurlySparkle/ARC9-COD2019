@@ -648,23 +648,9 @@ sound.Add({
 	channel = CHAN_WEAPON,
 	level = 140,
 	volume = 1,
-	pitch = {100,100},
+	pitch = {90,110},
 	sound = {
 		"weapons/cod2019/origin12/weap_oscar12_sup_plr_01.ogg",
-		}
-})
-
-sound.Add({
-	name = "Cod2019.origin12.fire.s_inside",
-	channel = CHAN_WEAPON,
-	level = 140,
-	volume = 1,
-	pitch = {100,100},
-	sound = {
-		"weapons/cod2019/origin12/weap_oscar12_fire_silenced_plr_inside_01.ogg",
-		"weapons/cod2019/origin12/weap_oscar12_fire_silenced_plr_inside_02.ogg",
-		"weapons/cod2019/origin12/weap_oscar12_fire_silenced_plr_inside_03.ogg",
-		"weapons/cod2019/origin12/weap_oscar12_fire_silenced_plr_inside_04.ogg",
 		}
 })
 

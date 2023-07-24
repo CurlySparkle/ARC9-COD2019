@@ -118,26 +118,26 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.2
+SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.5
 
-SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilMultSights = 0.4
 SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.2
 
-SWEP.VisualRecoilSpringPunchDamping = 26
-SWEP.VisualRecoilDampingConst = 80
-SWEP.VisualRecoilSpringMagnitude = 2 / 1.67
+-- SWEP.VisualRecoilSpringPunchDamping = 26
+-- SWEP.VisualRecoilDampingConst = 80
+-- SWEP.VisualRecoilSpringMagnitude = 2 / 1.67
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -406,12 +406,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 0.85,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
@@ -442,12 +442,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 0.9,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -496,12 +496,36 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sm_smgolf45_raise_quick.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sm_smgolf45_drop.ogg", t = 0/30},
         },

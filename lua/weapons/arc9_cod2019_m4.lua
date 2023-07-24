@@ -658,6 +658,10 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0.7, 0, 0),
     },
+    ["cod2019_grips_alt_cclamp"] = {
+	ModelOffset = Vector(-1, -0.6, 0.8),
+	ModelAngleOffset = Angle(0, 0, 180),
+    },
     ["csgo_cod2019_laser_01"] = {
     Sights = {
     {
@@ -797,7 +801,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = "cod2019_grip",
+        Category = {"cod2019_grip","cod2019_grip_cclamp"},
         Bone = "tag_grip_attach",
         Pos = Vector(-3, 0, 0),
         Ang = Angle(0, 0, 180),

@@ -29,23 +29,23 @@ ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_magnum")
 
 -------------------------------------------------------------------------------
 
-ATT = {}
+-- ATT = {}
 
-ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.PrintName = "3.5mm Birdshot"
-ATT.CompactName = "BIRD"
-ATT.Icon = Material("entities/attachs/go_ammo_sg_scatter.png", "mips smooth")
-ATT.Description = [[Reduced diameter load containing more pellets.
-Spread is increased, making hitting targets more likely.]]
-ATT.SortOrder = 2
+-- ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+-- ATT.PrintName = "3.5mm Birdshot"
+-- ATT.CompactName = "BIRD"
+-- ATT.Icon = Material("entities/attachs/go_ammo_sg_scatter.png", "mips smooth")
+-- ATT.Description = [[Reduced diameter load containing more pellets.
+-- Spread is increased, making hitting targets more likely.]]
+-- ATT.SortOrder = 2
 
-ATT.Category = {"cod2019_ammo_sg"}
+-- ATT.Category = {"cod2019_ammo_sg"}
 
-ATT.NumMult = 2.5
-ATT.SpreadMult = 1.5
-ATT.NormalizeNumDamage = true
+-- ATT.NumMult = 2.5
+-- ATT.SpreadMult = 1.5
+-- ATT.NormalizeNumDamage = true
 
-ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_bird")
+-- ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_bird")
 
 -------------------------------------------------------------------------------
 
@@ -113,9 +113,12 @@ ATT.SortOrder = 5
 
 ATT.Category = {"cod2019_ammo_sg"}
 
-ATT.NumOverride = 20
-ATT.DamageMaxMult = 0.8
-ATT.DamageMinMult = 0.8
+ATT.NumMult = 1.5
+ATT.DamageMaxMult = 0.85
+ATT.DamageMinMult = 0.85
+
+ATT.RangeMinMult = 1.15
+ATT.RangeMaxMult = 1.15
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_flechette")
 
