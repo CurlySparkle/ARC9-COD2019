@@ -99,22 +99,24 @@ if SERVER then
                         filter = f,
                         mask = MASK_SHOT
                     })
-
-                    local bone = tr.Entity:TranslatePhysBoneToBone(tr.PhysicsBone) or tr.Entity:GetHitBoxBone(tr.HitBox, tr.Entity:GetHitboxSet())
-                    local matrix = tgt:GetBoneMatrix(bone or 0)
-                    if tr.Entity == tgt and bone and matrix then
-                        local pos = matrix:GetTranslation()
-                        local ang = matrix:GetAngles()
-                        self:FollowBone(tgt, bone)
-                        local n_pos, n_ang = WorldToLocal(tr.HitPos, tr.Normal:Angle(), pos, ang)
-                        self:SetLocalPos(n_pos)
-                        self:SetLocalAngles(n_ang)
-                        debugoverlay.Cross(pos, 8, 5, Color(255, 0, 255), true)
-                    elseif not tgt:IsWorld() then
-                        self:SetParent(tgt)
-                        self:GetParent():DontDeleteOnRemove(self)
-                    else
-                        self.AttachToWorld = true
+                    
+                    if IsValid(tr.Entity) then
+                        local bone = tr.Entity:TranslatePhysBoneToBone(tr.PhysicsBone) or tr.Entity:GetHitBoxBone(tr.HitBox, tr.Entity:GetHitboxSet())
+                        local matrix = tgt:GetBoneMatrix(bone or 0)
+                        if tr.Entity == tgt and bone and matrix then
+                            local pos = matrix:GetTranslation()
+                            local ang = matrix:GetAngles()
+                            self:FollowBone(tgt, bone)
+                            local n_pos, n_ang = WorldToLocal(tr.HitPos, tr.Normal:Angle(), pos, ang)
+                            self:SetLocalPos(n_pos)
+                            self:SetLocalAngles(n_ang)
+                            debugoverlay.Cross(pos, 8, 5, Color(255, 0, 255), true)
+                        elseif not tgt:IsWorld() then
+                            self:SetParent(tgt)
+                            self:GetParent():DontDeleteOnRemove(self)
+                        else
+                            self.AttachToWorld = true
+                        end
                     end
                 end
             end)

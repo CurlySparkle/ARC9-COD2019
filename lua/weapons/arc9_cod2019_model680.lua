@@ -132,7 +132,17 @@ SWEP.RecoilMultSights = 0.8
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.3
+SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilSide = -0.1
+
+SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilPunchSights = 55
+SWEP.VisualRecoilDampingConstSights = 120
+SWEP.VisualRecoilSpringPunchDampingSights = 50
+
+SWEP.VisualRecoilSpringPunchDamping = 100
+SWEP.VisualRecoilDampingConst = 100
+SWEP.VisualRecoilSpringMagnitude = 1
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -187,7 +197,7 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.18, -2, 0.4),
+    Pos = Vector(-3.18, -2.5, 0.4),
     Ang = Angle(0.95, 1, -5),
     Magnification = 1.1,
     ViewModelFOV = 56,

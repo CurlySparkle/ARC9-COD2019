@@ -126,8 +126,8 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 20
+SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.4
 
@@ -194,7 +194,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(-1, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -210,8 +210,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
-SWEP.MovingAng = Angle(0, 0, -7)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -659,7 +659,7 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(0.7, 0, 0),
     },
     ["cod2019_grips_alt_cclamp"] = {
-	ModelOffset = Vector(-1, -0.6, 0.8),
+	ModelOffset = Vector(-1, -0.5, 0.8),
 	ModelAngleOffset = Angle(0, 0, 180),
     },
     ["csgo_cod2019_laser_01"] = {
@@ -706,9 +706,14 @@ SWEP.AttachmentElements = {
             {0,1},
         },
     },
-    ["sight_alt"] = {
+    ["sight_back_folded"] = {
         Bodygroups = {
             {1,1},
+        },
+    },
+    ["sight_front_folded"] = {
+        Bodygroups = {
+            {7,1},
         },
     },
     ["sight_m13"] = {
@@ -716,9 +721,14 @@ SWEP.AttachmentElements = {
             {1,2},
         },
     },
-    ["sight_none"] = {
+    ["sight_back_none"] = {
         Bodygroups = {
             {1,3},
+        },
+    },
+    ["sight_front_none"] = {
+        Bodygroups = {
+            {7,2},
         },
     },
     ["muzzle_none"] = {
@@ -757,8 +767,10 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("sight_m13") then 
 	model:SetBodygroup(1,2)
+	model:SetBodygroup(7,2)
 	elseif wep:HasElement("optic_scope") then
 	model:SetBodygroup(1,3)
+	model:SetBodygroup(7,2)
 	end
 end
 
@@ -767,8 +779,8 @@ SWEP.Attachments = {
         PrintName = "Barrels",
         DefaultAttName = "Standard Barrel",
         Category = "cod2019_m4_barrel",
-        Bone = "tag_attachments",
-        Pos = Vector(12.5, 0, -0.55),
+        Bone = "tag_barrel_attach",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
@@ -778,7 +790,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_sights_m4"},
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sight_alt"},
+		InstalledElements = {"sight_back_folded","sight_front_folded"},
     },
     {
         PrintName = "Muzzle",
@@ -787,7 +799,7 @@ SWEP.Attachments = {
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"muzzle_none"},
+		InstalledElements = {"muzzle_none","muzzle_none2"},
 		Scale = 1,
     },
     {
