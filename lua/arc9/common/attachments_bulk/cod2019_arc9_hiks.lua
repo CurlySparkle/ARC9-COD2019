@@ -228,3 +228,23 @@ ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ARC9.LoadAttachment(ATT, "cod2019_lhik_50gs")
+------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = "One handed"
+ATT.CompactName = "One Hand"
+ATT.Description = [[Hold this weapon one handed]]
+
+ATT.Model = "models/weapons/cod2019/attachs/ik/lhik_none.mdl"
+
+ATT.SortOrder = 0
+ATT.Category = "cod2019_hold"
+
+ATT.LHIK_Priority = 3
+ATT.LHIK = true
+--ATT.BoneMerge = true
+
+ATT.ModelOffset = Vector(-22, -2, -5)
+ATT.ModelAngleOffset = Angle(0, 0, 0)
+
+ARC9.LoadAttachment(ATT, "cod2019_lhik_onehand")

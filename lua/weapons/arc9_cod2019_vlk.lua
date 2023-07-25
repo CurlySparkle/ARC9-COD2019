@@ -269,25 +269,40 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 local path = "weapons/cod2019/vlk/"
 local path2 = "weapons/cod2019/model680/"
 
-SWEP.ShootPitchVariation = 5
-SWEP.ShootSound = {path .. "weap_mike26_fire_bang_plr_01.ogg", path .. "weap_mike26_fire_bang_plr_02.ogg", path .. "weap_mike26_fire_bang_plr_03.ogg", path .. "weap_mike26_fire_bang_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_mike26_fire_silenced_bang_plr_01.ogg", path .. "weap_mike26_fire_silenced_bang_plr_02.ogg", path .. "weap_mike26_fire_silenced_bang_plr_03.ogg", path .. "weap_mike26_fire_silenced_bang_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_mike26_fire_bang_plr_inside_01.ogg", path .. "weap_mike26_fire_bang_plr_inside_02.ogg", path .. "weap_mike26_fire_bang_plr_inside_03.ogg", path .. "weap_mike26_fire_bang_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_mike26_fire_silenced_bang_plr_inside_01.ogg", path .. "weap_mike26_fire_silenced_bang_plr_inside_02.ogg", path .. "weap_mike26_fire_silenced_bang_plr_inside_03.ogg", path .. "weap_mike26_fire_silenced_bang_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.vlk.fire"
+SWEP.ShootSoundIndoor = "Cod2019.vlk.fire"
 
-SWEP.LayerSound = path .. "weap_mike26_fire_bang_plr_01_01.ogg"
-SWEP.LayerSoundIndoor = path .. "weap_mike26_fire_bang_plr_01_01.ogg"
-SWEP.LayerSoundSilenced = path .. "weap_romeo870_sup_plr_01_01.ogg"
-SWEP.LayerSoundSilencedIndoor = path .. "weap_romeo870_sup_plr_01_01.ogg"
+SWEP.ShootSoundSilenced = "Cod2019.vlk.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.vlk.fire.s"
 
-SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
+-- Non-Silenced
+SWEP.LayerSound = "Layer_Shotgun.Outside"
+SWEP.DistantShootSound = "Distant_Sniper.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_Sniper.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_Shotgun.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.DistantShootSoundSilenced = "Distant_Shotgun2.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ShotgunSUP.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "Distant_ShotgunSUP.Inside"
+---------------------------------------------------
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = path .. "wfoly_sh_mark26_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_sh_mark26_ads_down.ogg"
 
 SWEP.HideBones  = {
     [1] = "j_mag2",
 }
+
+SWEP.BulletBones = {
+    [1] = "j_shell01",
+    [2] = "j_shell02",
+    [3] = "j_shell03",
+}
+
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
@@ -408,13 +423,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 7/30},
-			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 8/30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 24/30},
-			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 27/30},
-			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 37/30},
-			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 38/30},
+			{s = path .. "wfoly_sh_mark26_reload_fast_rotate.ogg", t = 0},
+			{s = path .. "wfoly_sh_mark26_reload_fast_magout.ogg", t = 0.167},
+			{s = path .. "wfoly_sh_mark26_reload_fast_maghit.ogg", t = 1.067},
+			{s = path .. "wfoly_sh_mark26_reload_fast_magin.ogg", t = 1.333},
+			{s = path .. "wfoly_sh_mark26_reload_fast_end.ogg", t = 1.667},
         },
     },
     ["reload_fast_empty"] = {
@@ -444,15 +457,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_pull.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 7/30},
-			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 8/30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 24/30},
-			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 27/30},
-			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 37/30},
-			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_forward.ogg", t = 40/30},
-			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 45/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_bolt_pull.ogg", t = 0},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_magout.ogg", t = 0.467},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_arm_up.ogg", t = 1.033},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_magin.ogg", t = 1.4},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_rotate.ogg", t = 1.7},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_bolt_forward.ogg", t = 2.067},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_end.ogg", t = 2.4},
         },
     },
     ["ready"] = {

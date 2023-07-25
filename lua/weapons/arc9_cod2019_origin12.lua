@@ -113,7 +113,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 5.5
+SWEP.RecoilKick = 5
 
 SWEP.RecoilMultCrouch = 0.9
 SWEP.RecoilMultMove = 1.25
@@ -126,9 +126,8 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilPunch = 4
-SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilUp = 0.3
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0
 
 SWEP.VisualRecoilSpringPunchDamping = 100
 SWEP.VisualRecoilDampingConst = 100
@@ -284,7 +283,7 @@ SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
 SWEP.DistantShootSoundSilenced = "Distant_Shotgun2.Outside"
 -- Inside
 SWEP.LayerSoundSilencedIndoor = "Layer_ShotgunSUP.Inside"
-SWEP.SoundSilencedIndoor = "Distant_Shotgun2.Outside"
+SWEP.DistantShootSoundSilencedIndoor = "Distant_ShotgunSUP.Inside"
 ---------------------------------------------------
 
 SWEP.EnterSightsSound = path .. "weap_sh_oscar12_ads_up.ogg"

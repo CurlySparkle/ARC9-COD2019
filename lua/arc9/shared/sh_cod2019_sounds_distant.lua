@@ -289,6 +289,18 @@ sound.Add({
             "weapons/cod2019/shared/atmo/smg/weap_smg2_fire_plr_atmo_ext1_06.ogg"}
 })
 
+--- Launcher ---
+sound.Add({
+    name =            "Distant_Launcher.Outside",
+    channel =       CHAN_INDOORDISTANT,
+    --level = 140,
+volume =      0.5,
+    sound = {"weapons/cod2019/shared/atmo/launchers/weap_mike203_fire_plr_atmos_01.ogg",
+            "weapons/cod2019/shared/atmo/launchers/weap_mike203_fire_plr_atmos_02.ogg",
+            "weapons/cod2019/shared/atmo/launchers/weap_mike203_fire_plr_atmos_03.ogg",
+            "weapons/cod2019/shared/atmo/launchers/weap_mike203_fire_plr_atmos_04.ogg",}
+})
+
 --- Snipers ---
 
 sound.Add({
@@ -426,12 +438,12 @@ sound.Add({
     channel =       CHAN_INDOORDISTANT,
     --level = 140,
 volume =      0.5,
-    sound = {"weapons/cod2019/shared/atmo/shotgun/weap_shotgun_sup_fire_plr_atmo_int1_01.ogg",
-            "weapons/cod2019/shared/atmo/shotgun/weap_shotgun_sup_fire_plr_atmo_int1_02.ogg",
-            "weapons/cod2019/shared/atmo/shotgun/weap_shotgun_sup_fire_plr_atmo_int1_03.ogg",
-            "weapons/cod2019/shared/atmo/shotgun/weap_shotgun_sup_fire_plr_atmo_int1_04.ogg",
-            "weapons/cod2019/shared/atmo/shotgun/weap_shotgun_sup_fire_plr_atmo_int1_05.ogg",
-            "weapons/cod2019/shared/atmo/shotgun/weap_shotgun_sup_fire_plr_atmo_int1_06.ogg"}
+    sound = {"weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_int1_01.ogg",
+            "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_int1_02.ogg",
+            "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_int1_03.ogg",
+            "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_int1_04.ogg",
+            "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_int1_05.ogg",
+            "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_int1_06.ogg"}
 })
 
 --- SMG ---
@@ -446,4 +458,16 @@ volume =      0.5,
             "weapons/cod2019/shared/atmo/smg/weap_smg_fire_plr_atmo_int1_04.ogg",
             "weapons/cod2019/shared/atmo/smg/weap_smg_fire_plr_atmo_int1_05.ogg",
             "weapons/cod2019/shared/atmo/smg/weap_smg_fire_plr_atmo_int1_06.ogg"}
+})
+
+--- Launcher ---
+sound.Add({
+    name =            "Distant_Launcher.Inside",
+    channel =       CHAN_INDOORDISTANT,
+    --level = 140,
+volume =      0.5,
+    sound = {"weapons/cod2019/shared/atmo/launchers/weap_mike203_fire_plr_atmos_int1_01.ogg",
+            "weapons/cod2019/shared/atmo/launchers/weap_mike203_fire_plr_atmos_int1_02.ogg",
+            "weapons/cod2019/shared/atmo/launchers/weap_mike203_fire_plr_atmos_int1_03.ogg",
+            "weapons/cod2019/shared/atmo/launchers/weap_mike203_fire_plr_atmos_int1_04.ogg",}
 })

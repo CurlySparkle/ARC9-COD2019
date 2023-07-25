@@ -76,7 +76,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 150
+SWEP.RPM = 125
 
 SWEP.Firemodes = {
     {
@@ -195,7 +195,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_pistol_suppressed"
+SWEP.MuzzleParticle = "AC_muzzle_pistol_suppressed_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
@@ -220,14 +220,23 @@ SWEP.DropMagazineQCA = 4
 local path = "weapons/cod2019/m32/"
 
 SWEP.ShootSound = "COD2019.M32.Fire"
---SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
-SWEP.DryFireSound = "weapons/clipempty_rifle.wav"
+SWEP.ShootSoundIndoor = "COD2019.M32.Fire"
 
-SWEP.TriggerDelay = 0.01 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+-- Non-Silenced
+SWEP.LayerSound = ""
+SWEP.DistantShootSound = "Distant_Launcher.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = ""
+SWEP.DistantShootSoundIndoor = "Distant_Launcher.Inside"
+
+SWEP.EnterSightsSound = path .. "wfoly_la_mike32_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_la_mike32_ads_down.ogg"
+
+SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.01 -- Time until weapon fires.
+SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = ""
+SWEP.TriggerDownSound = "COD2019.M32.Trigger"
 SWEP.TriggerUpSound = "COD2019.M32.UnTrigger"
 
 SWEP.Animations = {

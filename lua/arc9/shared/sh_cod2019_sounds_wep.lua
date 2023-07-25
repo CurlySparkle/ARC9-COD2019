@@ -678,6 +678,83 @@ sound.Add({
 		}
 })
 
+---VLK---
+sound.Add({
+    name =           "Cod2019.vlk.fire",
+    channel =        CHAN_WEAPON,
+    level = 140,
+    volume =         1,
+    pitch = {80,110},
+    sound = {"weapons/cod2019/vlk/weap_mike26_fire_bang_plr_01.ogg",
+             "weapons/cod2019/vlk/weap_mike26_fire_bang_plr_02.ogg",
+             "weapons/cod2019/vlk/weap_mike26_fire_bang_plr_03.ogg",
+             "weapons/cod2019/vlk/weap_mike26_fire_bang_plr_04.ogg",
+             "weapons/cod2019/vlk/weap_mike26_fire_bang_plr_05.ogg",
+             "weapons/cod2019/vlk/weap_mike26_fire_bang_plr_06.ogg"
+            }              
+})
+sound.Add({
+    name =           "Cod2019.vlk.fire.db",
+    channel =        CHAN_WEAPON,
+    level = 140,
+    volume =         1,
+    pitch = {80,110},
+    sound = {"weapons/cod2019/vlk/weap_mike26_fire_bang_plr_01_db.ogg",
+    "weapons/cod2019/vlk/weap_mike26_fire_bang_plr_02_db.ogg",
+    "weapons/cod2019/vlk/weap_mike26_fire_bang_plr_03_db.ogg"}              
+})
+sound.Add({
+    name =           "Cod2019.vlk.fire.s",
+    channel =        CHAN_WEAPON,
+    level = 140,
+    volume =         1,
+    pitch = {80,110},
+    sound = {"weapons/cod2019/vlk/weap_mike26_sup_plr_01.ogg",
+            }              
+})
+
+---JAK12---
+sound.Add({
+    name =           "Cod2019.jak12.fire",
+    channel =        CHAN_WEAPON,
+    level = 140,
+    volume =         1,
+    pitch = {80,110},
+    sound = {"weapons/cod2019/jak12/weap_aalpha12_fire_plr_01.ogg",
+             "weapons/cod2019/jak12/weap_aalpha12_fire_plr_02.ogg",
+             "weapons/cod2019/jak12/weap_aalpha12_fire_plr_03.ogg",
+             "weapons/cod2019/jak12/weap_aalpha12_fire_plr_04.ogg",
+             "weapons/cod2019/jak12/weap_aalpha12_fire_plr_05.ogg",
+             "weapons/cod2019/jak12/weap_aalpha12_fire_plr_06.ogg"
+            }              
+})
+sound.Add({
+    name =           "Cod2019.jak12.fire.db",
+    channel =        CHAN_WEAPON,
+    level = 140,
+    volume =         1,
+    pitch = {80,110},
+    sound = {"weapons/cod2019/jak12/weap_aalpha12_fire_plr_01_db.ogg",
+    "weapons/cod2019/jak12/weap_aalpha12_fire_plr_02_db.ogg",
+    "weapons/cod2019/jak12/weap_aalpha12_fire_plr_03_db.ogg"}              
+})
+sound.Add({
+    name =           "Cod2019.jak12.fire.s",
+    channel =        CHAN_WEAPON,
+    level = 140,
+    volume =         1,
+    pitch = {80,110},
+    sound = {"weapons/cod2019/jak12/weap_aalpha12_fire_plr_sup_01.ogg",
+             "weapons/cod2019/jak12/weap_aalpha12_fire_plr_sup_02.ogg",
+             "weapons/cod2019/jak12/weap_aalpha12_fire_plr_sup_03.ogg",
+             "weapons/cod2019/jak12/weap_aalpha12_fire_plr_sup_04.ogg",
+             "weapons/cod2019/jak12/weap_aalpha12_fire_plr_sup_05.ogg",
+             "weapons/cod2019/jak12/weap_aalpha12_fire_plr_sup_06.ogg",
+             "weapons/cod2019/jak12/weap_aalpha12_fire_plr_sup_07.ogg"
+            }              
+})
+
+
 ---AUG---
 
 sound.Add({

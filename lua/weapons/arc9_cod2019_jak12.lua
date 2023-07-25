@@ -267,21 +267,29 @@ SWEP.NoShellEject = true
 
 local path = "weapons/cod2019/jak12/"
 
-SWEP.ShootPitchVariation = 10
-SWEP.ShootSound = {path .. "weap_aalpha12_fire_plr_01.ogg", path .. "weap_aalpha12_fire_plr_02.ogg", path .. "weap_aalpha12_fire_plr_03.ogg", path .. "weap_aalpha12_fire_plr_04.ogg"}
-SWEP.ShootSoundSilenced = {path .. "weap_aalpha12_fire_silenced_plr_01.ogg", path .. "weap_aalpha12_fire_silenced_plr_02.ogg", path .. "weap_aalpha12_fire_silenced_plr_03.ogg", path .. "weap_aalpha12_fire_silenced_plr_04.ogg"}
-SWEP.ShootSoundIndoor = {path .. "weap_aalpha12_fire_plr_inside_01.ogg", path .. "weap_aalpha12_fire_plr_inside_02.ogg", path .. "weap_aalpha12_fire_plr_inside_03.ogg", path .. "weap_aalpha12_fire_plr_inside_04.ogg"}
-SWEP.ShootSoundSilencedIndoor = {path .. "weap_aalpha12_fire_silenced_plr_inside_01.ogg", path .. "weap_aalpha12_fire_silenced_plr_inside_02.ogg", path .. "weap_aalpha12_fire_silenced_plr_inside_03.ogg", path .. "weap_aalpha12_fire_silenced_plr_inside_04.ogg"}
+SWEP.ShootSound = "Cod2019.jak12.fire"
+SWEP.ShootSoundIndoor = "Cod2019.jak12.fire"
 
-SWEP.LayerSound = path .. "weap_aalpha12_fire_plr_01_01.ogg"
-SWEP.LayerSoundIndoor = path .. "weap_aalpha12_fire_plr_01_01.ogg"
-SWEP.LayerSoundSilenced = path .. "weap_aalpha12_fire_plr_sup_01_01.ogg"
-SWEP.LayerSoundSilencedIndoor = path .. "weap_aalpha12_fire_plr_sup_01_01.ogg"
+SWEP.ShootSoundSilenced = "Cod2019.jak12.fire.s"
+SWEP.ShootSoundSilencedIndoor = "Cod2019.jak12.fire.s"
 
-SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
+-- Non-Silenced
+SWEP.LayerSound = "Layer_Shotgun.Outside"
+SWEP.DistantShootSound = "Distant_Sniper.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_Sniper.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_Shotgun.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.DistantShootSoundSilenced = "Distant_Shotgun2.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Layer_ShotgunSUP.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "Distant_ShotgunSUP.Inside"
+---------------------------------------------------
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = path .. "wfoly_sh_aalpha12_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_sh_aalpha12_ads_down.ogg"
 
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
@@ -290,6 +298,11 @@ SWEP.TriggerUpSound = ""
 
 SWEP.HideBones  = {
     [1] = "j_mag2",
+}
+
+SWEP.BulletBones = {
+    [1] = "j_ammoshell1",
+    [2] = "j_ammoshell2",
 }
 
 SWEP.Animations = {

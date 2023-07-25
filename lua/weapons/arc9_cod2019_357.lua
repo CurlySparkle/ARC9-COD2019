@@ -286,7 +286,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
@@ -305,7 +305,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
@@ -320,6 +320,42 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 64/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 75/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 78/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.85,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_cpapa_charge_reload_start.ogg", t = 0},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_cylinderopen_01.ogg", t = 0.2},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_shelleject_01.ogg", t = 0.4},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_speedloader_01.ogg", t = 0.96},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 1.05},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 1.45},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 1.66},
         },
     },
     ["ready"] = {
@@ -361,7 +397,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
             {s = path .. "wfoly_pi_cpapa_charge_reload_fast_grip.ogg", t = 0/30},
         },
@@ -444,6 +479,16 @@ SWEP.Animations = {
 
 --SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
+        return "reload_fast"
+    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        -- return "reload_fast_empty"
+    end
+end
+
 SWEP.DefaultBodygroups = "00000000000000"
 
 -- SWEP.AttachmentTableOverrides = {
@@ -508,7 +553,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optics_pistols_alt","eft_optic_small"},
         CorrectiveAng = Angle(0, 0, 0),
-		Scale = 0.8,
+		--Scale = 0.8,
 		InstalledElements = {"rail_sight"},
     },
     {
@@ -539,7 +584,14 @@ SWEP.Attachments = {
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
+    },
+    {
+		PrintName = "Extra",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Category = {"cod2019_hold"}
     },
     {
         PrintName = "Skins",

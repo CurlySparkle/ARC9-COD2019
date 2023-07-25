@@ -229,11 +229,10 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M32.Fire",
-    channel = 10,
-    volume = 1.0,
-    level = 120,
-    pitch = {90,110},
-	soundlevel = SNDLVL_GUNFIRE,
+    channel =        CHAN_WEAPON,
+    level = 90,
+    volume = 1,
+    pitch = {100,100},
     sound = {
         "weapons/cod2019/m32/weap_mike32_fire_plr_01.ogg",
 		"weapons/cod2019/m32/weap_mike32_fire_plr_02.ogg",
@@ -243,14 +242,29 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.M32.Trigger",
+    channel = CHAN_TRIGGER,
+    level = 90,
+    volume =         0.5,
+    pitch = {-2,2},
+    sound = {
+        "weapons/cod2019/m32/weap_mike32_fire_plr_mech_01.ogg",
+        "weapons/cod2019/m32/weap_mike32_fire_plr_mech_02.ogg",
+        "weapons/cod2019/m32/weap_mike32_fire_plr_mech_03.ogg",
+        "weapons/cod2019/m32/weap_mike32_fire_plr_mech_04.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.M32.UnTrigger",
-    channel = 10,
-    volume = 0.5,
-    level = 120,
-    pitch = {90,110},
-	soundlevel = SNDLVL_GUNFIRE,
+    channel = CHAN_TRIGGER,
+	volume = 0.8,
+	pitch = {100,100},
     sound = {
         "weapons/cod2019/m32/weap_mike32_fire_plr_disconnector_01.ogg",
+        "weapons/cod2019/m32/weap_mike32_fire_plr_disconnector_02.ogg",
+        "weapons/cod2019/m32/weap_mike32_fire_plr_disconnector_03.ogg",
+        "weapons/cod2019/m32/weap_mike32_fire_plr_disconnector_04.ogg",
     }
 } )
 
