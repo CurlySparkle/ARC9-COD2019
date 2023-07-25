@@ -136,7 +136,7 @@ SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = -1/9
 
-SWEP.VisualRecoilSpringPunchDamping = 26
+SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 80
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)

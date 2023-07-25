@@ -81,6 +81,7 @@ SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
+SWEP.ForceStandardCrosshair = true
 
 -------------------------- FIREMODES
 
@@ -125,12 +126,14 @@ SWEP.RecoilMultSights = 0.9
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 75
+
 SWEP.VisualRecoilPunch = 4
 SWEP.VisualRecoilUp = 0.3
 SWEP.VisualRecoilRoll = 5
 
-SWEP.VisualRecoilSpringPunchDamping = 100
-SWEP.VisualRecoilDampingConst = 100
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 20
+SWEP.VisualRecoilDampingConstSights = 50
 SWEP.VisualRecoilSpringMagnitude = 1
 
 -------------------------- SPREAD
@@ -147,9 +150,10 @@ SWEP.VisualRecoilSpringMagnitude = 1
 -- SWEP.SpreadAddCrouch = -0.004
 -- SWEP.SpreadAddSightsMove = -0.1
 
-SWEP.Spread = 220 * ARC9.MOAToAcc
+SWEP.Spread = 330 * ARC9.MOAToAcc
+SWEP.SpreadAddRecoil = 0.02
 SWEP.UseDispersion = true
-SWEP.DispersionSpread = 0.01
+SWEP.DispersionSpread = 0.04
 SWEP.DispersionSpreadAddHipFire = 0.02
 --SWEP.DispersionSpreadMultMove = 1.5
 --SWEP.DispersionSpreadAddMove = 0.015

@@ -126,8 +126,9 @@ SWEP.VisualRecoilUp = 0.2
 SWEP.VisualRecoilRoll = 3
 SWEP.VisualRecoilSide = -1/6
 
-SWEP.VisualRecoilSpringPunchDamping = 100
-SWEP.VisualRecoilDampingConst = 100
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 40
+SWEP.VisualRecoilDampingConstSights = 50
 
 -------------------------- SPREAD
 

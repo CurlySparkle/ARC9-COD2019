@@ -124,7 +124,7 @@ SWEP.RecoilKick = 3
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
@@ -132,7 +132,12 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.3
 SWEP.VisualRecoilMultSights = 1
-SWEP.VisualRecoilPunchSights = 30
+SWEP.VisualRecoilPunchSights = 55
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 5
+SWEP.VisualRecoilDampingConstSights = 50
+SWEP.VisualRecoilSpringMagnitude = 1
 
 -------------------------- SPREAD
 
@@ -629,11 +634,11 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 1,
-                rhik = 1
+                lhik = 0,
+                rhik = 0
             },
             {
-                t = 1,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },
@@ -977,4 +982,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 3.5
 SWEP.GripPoseParam2 = 0.6
 SWEP.CodStubbyGripPoseParam = 0.7
-SWEP.CodAngledGripPoseParam = 8
+SWEP.CodStubbyTallGripPoseParam = 12
+SWEP.CodAngledGripPoseParam = 14
