@@ -880,6 +880,14 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
     {
+        PrintName = "Barrels",
+        DefaultAttName = "Standard Barrel",
+        Category = "cod2019_origin12_barrel",
+        Bone = "tag_barrel_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+    },
+    {
         PrintName = "Optics",
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, 0),

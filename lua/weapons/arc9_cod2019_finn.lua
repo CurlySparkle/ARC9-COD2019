@@ -72,7 +72,7 @@ SWEP.ClipSize = 75 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -125,6 +125,11 @@ SWEP.VisualRecoilPunch = 4
 SWEP.VisualRecoilUp = 0.4
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.3
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 75
+SWEP.VisualRecoilDampingConstSights = 50
+SWEP.VisualRecoilSpringMagnitude = 1
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -979,7 +984,7 @@ SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
-
+	
     if anim == "reload" and wep:HasElement("stock_saw") and wep:HasElement("perk_speedreload") then
         return "reload_fast_saw"
     elseif anim == "reload_empty" and wep:HasElement("stock_saw") and wep:HasElement("perk_speedreload") then 
@@ -989,8 +994,10 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_saw"
     elseif anim == "reload_empty" and wep:HasElement("stock_saw") then 
         return "reload_saw_empty"
+    end
+
     --------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"

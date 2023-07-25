@@ -84,7 +84,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 190
+SWEP.RPM = 297
 
 SWEP.Firemodes = {
     {
@@ -95,7 +95,9 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 10
+SWEP.Recoil = 8
+
+SWEP.RecoilSeed = 3584
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -104,21 +106,34 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0
+SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 50 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 2
+SWEP.RecoilKick = 3
 
-SWEP.RecoilMultCrouch = 0.6
+SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilMultSights = 0.65
 
 -------------------------- VISUAL RECOIL
+
+SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 55
+
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.2
+SWEP.VisualRecoilRoll = 3
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 10
+SWEP.VisualRecoilDampingConstSights = 50
+SWEP.VisualRecoilSpringMagnitude = 1
 
 -------------------------- SPREAD
 
@@ -162,7 +177,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -2)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -178,8 +193,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.7, -0.7)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.7, -0.8, -0.8)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -216,7 +231,7 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.1
+SWEP.ShellScale = 0.08
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
@@ -276,10 +291,7 @@ SWEP.HideBones  = {
 
 SWEP.Animations = {
     ["fire"] = {
-        Source = {"shoot1"},
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
+        Source = "shoot1",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -605,12 +617,36 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+	            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sn_delta_raise_mvmnt.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sn_delta_drop_mvmnt.ogg", t = 0/30},
         },
@@ -690,7 +726,19 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendSights
+SWEP.Hook_Think	= function(wep)
+    local vm = wep:GetOwner():GetViewModel()
+    if wep:Clip1() == 0 then
+        vm:SetPoseParameter("empty", 1)
+    else
+        vm:SetPoseParameter("empty", 0)
+    end
+	
+    local vm = wep:GetOwner():GetViewModel()
+    local delta = wep:GetSightDelta()
+    local coolilove = math.cos(delta * (math.pi / 2))
+    vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 1, 0) )
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -724,6 +772,42 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0.9, 0, 0.1),
     },
+    ["csgo_cod2019_laser_01"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 18, -0.6),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 56,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_02"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 18, -0.6),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 56,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
+    ["csgo_cod2019_laser_03"] = {
+    Sights = {
+    {
+        Pos = Vector(2, 18, -0.6),
+        Ang = Angle(0, 0, -45),
+        ViewModelFOV = 56,
+        Magnification = 1.25,
+        IgnoreExtra = false,
+		KeepBaseIrons = true,
+    },
+    },
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -742,9 +826,14 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
-    ["stock_none"] = {
+    ["stock_adapter"] = {
         Bodygroups = {
             {3,1},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {3,2},
         },
     },
     ["muzzle_none"] = {
@@ -794,8 +883,8 @@ SWEP.Attachments = {
         Pos = Vector(-4, 0, 3.55),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_optic_svd"},
-		Installed = "cod2019_optic_scope_svd",
-        Integral = "cod2019_optic_scope_svd",
+		--Installed = "cod2019_optic_scope_svd",
+        --Integral = "cod2019_optic_scope_svd",
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight_rail"},
 		ExcludeElements = {"body_none"},
@@ -836,7 +925,7 @@ SWEP.Attachments = {
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_none"},
+		--InstalledElements = {"stock_none"},
     },
     {
         PrintName = "Ammo",
@@ -926,4 +1015,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 9
-SWEP.CodStubbyGripPoseParam = 7
+SWEP.CodStubbyGripPoseParam = 6
+SWEP.CodStubbyTallGripPoseParam = 1
