@@ -104,7 +104,7 @@ SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = 24366
 
-SWEP.RecoilPatternDrift = 25
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -131,7 +131,7 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 3
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.4
 
 SWEP.VisualRecoilRoll = 5
@@ -139,6 +139,10 @@ SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilMultSights = 0.3
 SWEP.VisualRecoilPunchSights = 55
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 40
+SWEP.VisualRecoilDampingConstSights = 50
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -251,7 +255,7 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.07
+SWEP.ShellScale = 0.05
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
@@ -790,6 +794,9 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0.9, 0, 0.1),
     },
+    ["cod2019_grips_alt_nocclamp"] = {
+    ModelOffset = Vector(-6, -0.5, -0.8),
+    },
     ["csgo_cod2019_laser_01"] = {
     Sights = {
     {
@@ -898,7 +905,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1, 0, -0.08),
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(1.1, 0.85, 0),
@@ -916,9 +923,9 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = "cod2019_grip",
+        Category = {"cod2019_grip","cod2019_grip_noclamp"},
         Bone = "tag_grip_attach",
-        Pos = Vector(-2.5, 0, 0),
+        Pos = Vector(-3, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"rail_grip"},
@@ -1001,5 +1008,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 10
+SWEP.CodAngledGripPoseParam = 17
+SWEP.CodStubbyTallGripPoseParam = 14
 SWEP.CodStubbyGripPoseParam = 6.6

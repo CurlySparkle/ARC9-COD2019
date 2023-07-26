@@ -25,13 +25,12 @@
     "$envmap" "env_cubemap"
     "$envmaptint" "[0.2 0.2 0.2]"
 
-     "Proxies"
-     {
+	 Proxies {
         "Arc9EnvMapTint"
         {
             "specularity" "0.5"
             "min" "0"
             "max" "0.2"
         }
-     }
+	}
 }

@@ -77,7 +77,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 450
+SWEP.RPM = 500
 
 SWEP.Firemodes = {
     {
@@ -116,8 +116,16 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilPunch = 2.5
+SWEP.VisualRecoilUp = 0.2
+SWEP.VisualRecoilRoll = 3
+SWEP.VisualRecoilSide = -1/6
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 20
+SWEP.VisualRecoilDampingConstSights = 50
 
 -------------------------- SPREAD
 

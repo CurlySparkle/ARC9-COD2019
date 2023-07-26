@@ -44,7 +44,7 @@ SWEP.ViewRecoil = false -- true
 SWEP.ViewRecoilUpMult = -5 -- 40-100
 SWEP.ViewRecoilUpMultSights = 10
 
-SWEP.PhysicalVisualRecoil = false
+SWEP.PhysicalVisualRecoil = true
 
 -- Extras
 

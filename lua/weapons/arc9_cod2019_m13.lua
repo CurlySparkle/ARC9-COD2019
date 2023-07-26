@@ -99,7 +99,7 @@ SWEP.Recoil = 1.3
 
 SWEP.RecoilSeed = 6589132
 
-SWEP.RecoilPatternDrift = 25
+SWEP.RecoilPatternDrift = 1
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -126,14 +126,18 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2.5
+SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 0.4
 
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilRoll = 55
 SWEP.VisualRecoilSide = 0.2
 
-SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 25
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 40
+SWEP.VisualRecoilDampingConstSights = 50
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -407,12 +411,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -443,12 +447,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 1.15,
                 lhik = 1,
                 rhik = 1
             },
@@ -780,7 +784,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-4, 0, -0.05),
+        Pos = Vector(-4.3, 0, -0.05),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
     },

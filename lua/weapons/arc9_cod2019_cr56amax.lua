@@ -118,7 +118,7 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.65
 
 -------------------------- VISUAL RECOIL
 
@@ -128,7 +128,7 @@ SWEP.VisualRecoilPunchSights = 55
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0
 
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = 0.4
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -205,8 +205,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -735,7 +735,7 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle",
         Bone = "tag_silencer",
-        Pos = Vector(-0.5, 0, 0),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle_none"},
 		Scale = 1,
@@ -743,7 +743,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1, 0, -0.1),
+        Pos = Vector(2, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -840,5 +840,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 4.2
-SWEP.CodStubbyGripPoseParam = 1
+SWEP.CodAngledGripPoseParam = 18
+SWEP.CodStubbyGripPoseParam = 0.7
+SWEP.CodStubbyTallGripPoseParam = 15

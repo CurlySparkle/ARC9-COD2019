@@ -55,7 +55,7 @@ ATT.SprintToFireTimeMult = 1.05
 ATT.LHIK_Priority = 10
 ATT.LHIK = true
 
-ATT.ModelOffset = Vector(0.15, 0, 0.5)
+ATT.ModelOffset = Vector(0, 0, 0.12)
 ATT.ModelAngleOffset = Angle(0, 0, 180)
 
 ATT.DrawFunc = function(swep, model, wm)
@@ -303,3 +303,24 @@ ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 180)
 
 ARC9.LoadAttachment(ATT, "cod2019_grips_alt_cclamp")
+------------------------------------------------------------------ 
+ATT = {}
+
+ATT.PrintName = "Kill the C-Clamp"
+ATT.CompactName = "No C"
+ATT.Description = [[Kills the c-clamp :D]]
+
+ATT.Icon = Material("entities/attachs/cod2019_grip_none.png", "mips smooth")
+
+ATT.Model = "models/weapons/cod2019/attachs/grips/grip_noclamp.mdl"
+
+ATT.SortOrder = 0
+ATT.Category = "cod2019_grip_noclamp"
+
+ATT.LHIK_Priority = 5
+ATT.LHIK = true
+
+ATT.ModelOffset = Vector(0, 0, 0)
+ATT.ModelAngleOffset = Angle(0, 0, 180)
+
+ARC9.LoadAttachment(ATT, "cod2019_grips_alt_nocclamp")

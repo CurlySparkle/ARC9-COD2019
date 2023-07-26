@@ -134,8 +134,8 @@ SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = -1/6
 
 SWEP.VisualRecoilSpringPunchDamping = 11
-SWEP.VisualRecoilDampingConst = 80
-SWEP.VisualRecoilSpringMagnitude = 2 / 1.67
+SWEP.VisualRecoilDampingConst = 45
+SWEP.VisualRecoilDampingConstSights = 50
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then

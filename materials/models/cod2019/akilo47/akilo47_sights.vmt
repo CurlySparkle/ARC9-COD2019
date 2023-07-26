@@ -12,12 +12,6 @@
     "$phongfresnelranges" "[1 0.5 0]"
     "$phongalbedotint" "0"
 
-    //rimlight doesn't properly show in hlmv, make sure you're changing these values in game
-    "$rimlight" "1"
-    "$rimlightexponent" "100"
-    "$rimmask" "1"
-    "$rimlightboost" "1"
-
     "$phongwarptexture"                 "models\cod2019\shared\steelwarp"
 
     "$normalmapalphaenvmapmask" "1"
@@ -25,13 +19,20 @@
     "$envmap" "env_cubemap"
     "$envmaptint" "[0.2 0.2 0.2]"
 
-     "Proxies"
-     {
+	"$detailblendmode" "4"
+	"$detailblendfactor" "0.5"
+
+	 Proxies {
+		CustomCamo {
+			camoTexture $detail
+			camoScale $detailscale
+            blend $detailblendfactor
+		}
         "Arc9EnvMapTint"
         {
             "specularity" "0.5"
             "min" "0"
             "max" "0.2"
         }
-     }
+	}
 }
