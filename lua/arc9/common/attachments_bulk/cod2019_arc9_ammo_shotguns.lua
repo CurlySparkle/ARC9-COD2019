@@ -113,7 +113,7 @@ ATT.SortOrder = 5
 
 ATT.Category = {"cod2019_ammo_sg"}
 
-ATT.NumMult = 1.5
+ATT.NumAdd = 8
 ATT.DamageMaxMult = 0.85
 ATT.DamageMinMult = 0.85
 

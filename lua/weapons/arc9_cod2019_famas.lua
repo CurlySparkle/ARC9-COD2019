@@ -95,7 +95,7 @@ SWEP.Recoil = 1.5
 
 SWEP.RecoilSeed = 8778456
 
-SWEP.RecoilPatternDrift = 15
+SWEP.RecoilPatternDrift = 1
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -125,11 +125,11 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.3
 
-SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.3
+SWEP.VisualRecoilRoll = 25
+SWEP.VisualRecoilSide = 0.5
 
-SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 55
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 5
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -310,12 +310,10 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
@@ -350,6 +348,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             {
@@ -383,7 +382,8 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		--DropMagAt = 0.8,
         IKTimeLine = {
@@ -417,7 +417,8 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		--DropMagAt = 0.8,
         IKTimeLine = {
@@ -887,4 +888,4 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 0
 SWEP.GripPoseParam2 = 0
-SWEP.CodAngledGripPoseParam = 11
+SWEP.CodAngledGripPoseParam = 3

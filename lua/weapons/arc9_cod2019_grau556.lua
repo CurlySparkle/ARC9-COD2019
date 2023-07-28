@@ -126,7 +126,7 @@ SWEP.RecoilMultSights = 0.7
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 55
-SWEP.VisualRecoilPunch = 0.8
+SWEP.VisualRecoilPunch = 1.8
 SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.2
@@ -204,8 +204,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -312,9 +312,6 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
@@ -347,6 +344,42 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_maghit.ogg", t = 35/30},
 			{s = path .. "wfoly_ar_sierra552_reload_magin.ogg", t = 41/30},
 			{s = path .. "wfoly_ar_sierra552_reload_end.ogg", t = 56/30},
+        },
+    },
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.9,
+		DropMagAt = 1.13,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_sierra552_reload_empty_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_magout.ogg", t = 22/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_maghit.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_magin.ogg", t = 45/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_roll.ogg", t = 58/30},
+			{s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 66/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 69/30},
         },
     },
     ["reload_fast"] = {
@@ -384,8 +417,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 36/30},
         },
     },
-    ["reload_empty"] = {
-        Source = "reload",
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 1.13,
         IKTimeLine = {
@@ -411,13 +444,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_sierra552_reload_empty_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_sierra552_reload_empty_magout.ogg", t = 22/30},
-			{s = path .. "wfoly_ar_sierra552_reload_empty_maghit.ogg", t = 33/30},
-			{s = path .. "wfoly_ar_sierra552_reload_empty_magin.ogg", t = 45/30},
-			{s = path .. "wfoly_ar_sierra552_reload_empty_roll.ogg", t = 58/30},
-			{s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 66/30},
-			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 69/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_rotate.ogg", t = 0},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_magout.ogg", t = 0.4},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_maghit.ogg", t = 0.9},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_magin.ogg", t = 1.167},
+			{s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 1.567},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 1.867},
         },
     },
     ["ready"] = {
@@ -693,7 +725,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.8, 0, -0.07),
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(2.1, -0.1, 0),

@@ -227,6 +227,8 @@ ATT.DrawFunc = function(self, model, wm)
 	else 
 		model:SetBodygroup(1,0)
 	end
+	
+    model:SetPoseParameter("gripstyle", self.CodStubbyTallGripPoseParam or 0)
 end
 
 ATT.BipodPos = Vector(-3, 0, 0)

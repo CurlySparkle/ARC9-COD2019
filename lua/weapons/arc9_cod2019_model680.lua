@@ -353,9 +353,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0/30},
-			{s = "COD2019.Model680.ShellIn", t = 12/30},
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 15/30},
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 17/30},
+			{s = path .. "wfoly_sh_romeo870_reload_start_shellin_01.ogg", t = 16/30},
         },
     },
     ["reload_insert"] = {
@@ -373,9 +371,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = "COD2019.Model680.ShellIn", t = 6/30},
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 9/30},
+            {s = "COD2019.Model680.ShellIn", t = 10/30},
         },
     },
     ["reload_finish"] = {
@@ -448,10 +446,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0/30},
-            {s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 7/30},
-			{s = "COD2019.Model680.ShellIn", t = 10/30},
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 13/30},
+            {s = path .. "wfoly_sh_romeo870_reload_start_fast_twist.ogg", t = 0},
+            {s = path .. "wfoly_sh_romeo870_reload_start_fast_shellin_01.ogg", t = 0.5},
         },
     },
     ["reload_insert_fast"] = {
@@ -469,9 +465,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = "COD2019.Model680.ShellIn", t = 3/30},
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0},
+            {s = "COD2019.Model680.ShellIn", t = 0.267},
         },
     },
     ["reload_finish_fast"] = {
@@ -496,7 +491,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 3/30},
+			{s = path .. "wfoly_sh_romeo870_reload_end_fast_twist.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_romeo870_reload_end_fast_shoulder.ogg", t = 16/30},
         },
     },
     ["reload_finish_empty_fast"] = {
@@ -522,10 +518,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_reload_empty_start_twist.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_reload_empty_start_open_01.ogg", t = 7/30},
-			{s = path .. "wfoly_sh_romeo870_reload_empty_start_close_01.ogg", t = 17/30},
-            {s = path .. "wfoly_sh_romeo870_reload_empty_start_end.ogg", t = 17/30},
+            {s = path .. "wfoly_sh_romeo870_reload_end_fast_twist.ogg", t = 0/30},
+			{s = "COD2019.Model680.Rechamber_A", t = 10/30},
+			{s = "COD2019.Model680.Rechamber_B", t = 17/30},
         },
     },
     ["reload"] = {
@@ -974,7 +969,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(0.5, 0, -0.07),
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_model680_optic"},
         CorrectiveAng = Angle(2, 0.1, 0),

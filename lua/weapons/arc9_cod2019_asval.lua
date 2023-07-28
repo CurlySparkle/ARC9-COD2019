@@ -97,7 +97,7 @@ SWEP.Recoil = 1.1
 
 SWEP.RecoilSeed = 6589132
 
-SWEP.RecoilPatternDrift = 25
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -119,17 +119,22 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.75
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 50
-SWEP.VisualRecoilPunch = 3
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 35
+
+SWEP.VisualRecoilPunch = 1.3
 SWEP.VisualRecoilUp = 0.1
-SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = -1/9
+SWEP.VisualRecoilRoll = 25
+SWEP.VisualRecoilSide = -0.2
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 25
+SWEP.VisualRecoilDampingConstSights = 50
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -205,8 +210,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-1, -1, -1)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -309,9 +314,6 @@ SWEP.HideBones  = {
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -569,8 +571,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 42/30},
         },
     },
-    ["reload_xmags_fast_empty"] = {
-        Source = "reload_empty_xmag_fast",
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.95,
@@ -602,7 +604,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_empty_arm.ogg", t = 25/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_maghit.ogg", t = 31/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_magin.ogg", t = 36/30},
-			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 42/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_grab_bolt.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_charge.ogg", t = 45/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 58/30},
         },
     },
     ["ready"] = {
@@ -772,7 +776,12 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
         return "reload_xmag_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
         return "reload_xmag_fast_empty"
@@ -786,6 +795,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_xmag"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_xmag_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
     end
 end
 
@@ -795,9 +809,9 @@ SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(7, -0.7, 1.75),
+    ModelOffset = Vector(0.4, -0.21, 0),
 	ModelAngleOffset = Angle(0, 0, 0),
-	Scale = 0.9,
+	Scale = 0.5,
     },
     ["csgo_cod2019_laser_cylinder_01"] = {
     Sights = {

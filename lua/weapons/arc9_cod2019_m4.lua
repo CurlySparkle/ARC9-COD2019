@@ -127,12 +127,12 @@ SWEP.RecoilMultSights = 0.8
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilPunchSights = 15
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.4
 
 SWEP.VisualRecoilSpringMagnitude = 0.8
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -765,6 +765,7 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
+	local attached = data.elements
     if wep:HasElement("sight_m13") then 
 	model:SetBodygroup(1,2)
 	model:SetBodygroup(7,2)
@@ -772,6 +773,12 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	model:SetBodygroup(1,3)
 	model:SetBodygroup(7,2)
 	end
+
+    local camo = 0
+    if attached["universal_camo"] then
+        camo = 1
+    end
+    model:SetSkin(camo)
 end
 
 SWEP.Attachments = {
