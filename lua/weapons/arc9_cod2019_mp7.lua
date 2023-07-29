@@ -93,11 +93,11 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.5
+SWEP.Recoil = 1.1
 
 SWEP.RecoilSeed = 888888
 
-SWEP.RecoilPatternDrift = 55
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -105,7 +105,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
+SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
 SWEP.RecoilDissipationRate = 55 -- How much recoil dissipates per second.
@@ -119,18 +119,22 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 3
+SWEP.VisualRecoilPunch = 1.5
 SWEP.VisualRecoilUp = 0.3
 
 SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 25
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilPunchSights = 55
+SWEP.VisualRecoilRoll = 35
 SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 40
+SWEP.VisualRecoilDampingConstSights = 50
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -162,15 +166,15 @@ SWEP.SpreadAddSights = -0.5
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.2 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.2 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -965,4 +969,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 0.7
 SWEP.GripPoseParam2 = 0
 SWEP.CodStubbyGripPoseParam = 1
-SWEP.CodAngledGripPoseParam = 3.2
+SWEP.CodAngledGripPoseParam = 3.8

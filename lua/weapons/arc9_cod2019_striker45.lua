@@ -299,10 +299,7 @@ SWEP.EnterSightsSound = path .. "wfoly_sm_smgolf45_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_sm_smgolf45_ads_down.ogg"
 
 SWEP.BulletBones = {
-    [1] = "j_bullet01",
-    [2] = "j_bullet02",
-	[3] = "j_bullet03",
-	[4] = "j_bullet04",
+    [1] = "j_bullet",
 }
 
 SWEP.HideBones  = {
