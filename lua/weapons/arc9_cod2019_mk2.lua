@@ -75,7 +75,7 @@ SWEP.ClipSize = 6 -- Self-explanatory.
 SWEP.SupplyLimit = 12 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -121,19 +121,28 @@ SWEP.RecoilKick = 3
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.65
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 25
+
 SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilUp = 0.2
+SWEP.VisualRecoilRoll = 35
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 10
+SWEP.VisualRecoilDampingConstSights = 50
+SWEP.VisualRecoilSpringMagnitude = 1
 
 -------------------------- SPREAD
 
 SWEP.Spread = 0.002
 
-SWEP.SpreadAddRecoil = 0.0002 -- Applied per unit of recoil.
+SWEP.SpreadAddRecoil = 0.05 -- Applied per unit of recoil.
 
 SWEP.SpreadAddMove = 0.1
 --SWEP.SpreadAddMidAir = 0
@@ -143,7 +152,7 @@ SWEP.SpreadAddSights = -0.1
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.4 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.35 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
@@ -286,21 +295,11 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["cycle"] = {
         Source = "cycle",
 		--EjectAt = 0.2,
-		MinProgress = 0.8,
-        EventTable = {
-            {s = path .. "wfoly_sbeta_sn_rechamber.ogg", t = 0/30},
-        },
-    },
-    ["cycle_sights"] = {
-        Source = "cycle_ads",
-		--EjectAt = 0.2,
-		MinProgress = 0.8,
+        MinProgress = 0.45,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sbeta_sn_rechamber.ogg", t = 0/30},
         },
@@ -420,6 +419,18 @@ SWEP.Animations = {
         Source = "draw_short",
 		MinProgress = 0.85,
 		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sbeta_sn_raise_up.ogg", t = 6/30},
 			{s = path .. "wfoly_sbeta_sn_raise_first_start.ogg", t = 23/30},
@@ -427,6 +438,18 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sbeta_sn_drop_start.ogg", t = 0},
             {s = path .. "wfoly_sbeta_sn_drop_down.ogg", t = 0.4},
@@ -506,7 +529,7 @@ SWEP.Animations = {
     },
 }
 
---SWEP.Hook_Think	= ARC9.CSGO.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 -------------------------- ATTACHMENTS
 
@@ -559,6 +582,17 @@ SWEP.AttachmentElements = {
     -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
 -- end
 
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+	local attached = data.elements
+	
+    local camo = 0
+    if attached["universal_camo"] then
+        camo = 1
+    end
+    model:SetSkin(camo)
+end
+
 SWEP.Attachments = {
     {
         PrintName = "Barrels",
@@ -571,7 +605,7 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"muzzle_shotgun","muzzle"},
+        Category = {"cod2019_muzzle"},
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -581,11 +615,11 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(3.5, 0, -0.05),
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
-		--InstalledElements = {"rail_sight"},
+		InstalledElements = {"sight_none"},
     },
     {
         PrintName = "Tactical",

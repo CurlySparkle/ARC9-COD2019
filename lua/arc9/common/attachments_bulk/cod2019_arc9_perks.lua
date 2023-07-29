@@ -120,6 +120,24 @@ ARC9.LoadAttachment(ATT, "cod2019_perks_bolt")
 ------------------------------------------------------------------
 ATT = {}
 
+ATT.PrintName = [[Deft Hands]]
+ATT.Description = [[Cycling your weapon 25% faster than normal.]]
+ATT.Icon = Material("entities/attachs/cod2019_perks_bolt.png", "mips smooth")
+ATT.AutoStats = true
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+
+ATT.Free = true
+
+ATT.Category = {"cod2019_perks_2_alt"}
+ATT.ActivateElements = {"perk_bolt"}
+
+--ATT.CycleTimeMult = 0.75
+--ATT.RPMMult = 1.75
+
+ARC9.LoadAttachment(ATT, "cod2019_perks_bolt")
+------------------------------------------------------------------
+ATT = {}
+
 ATT.PrintName = [[Slam Fire]]
 ATT.Description = [[Increases the weapon's firing and pumping speed.]]
 ATT.Icon = Material("entities/attachs/cod2019_perks_slamfire.png", "mips smooth")

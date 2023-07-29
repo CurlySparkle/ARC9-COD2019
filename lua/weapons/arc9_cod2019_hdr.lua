@@ -314,20 +314,8 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["cycle"] = {
         Source = "cycle",
-		--EjectAt = 0.2,
-		MinProgress = 0.8,
-        EventTable = {
-            {s = "COD2019.HDR.Rechamber", v = 0.4, t = 7/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_rechamber_boltclose_01.ogg", v = 0.4, t = 18/30},
-        },
-    },
-    ["cycle_sights"] = {
-        Source = "cycle_ads",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {

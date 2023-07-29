@@ -310,6 +310,16 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.4, t = 60/50},
         },
     },
+    ["cycle_light"] = {
+        Source = "cycle_light",
+		--EjectAt = 0.2,
+		MinProgress = 0.75,
+		FireASAP = true,
+        EventTable = {
+            {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.5, t = 0.067},
+			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.5, t = 0.9},
+        },
+    },
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
@@ -760,6 +770,9 @@ SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 	
+    if anim == "cycle" and wep:HasElement("perk_bolt") then
+        return "cycle_light"
+    end
 --------------------------------------------------------------------------
     if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
         return "reload_xmag_fast"
@@ -928,7 +941,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_2_alt"}
     },
     {
         PrintName = "Skins",

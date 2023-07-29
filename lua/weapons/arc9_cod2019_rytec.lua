@@ -318,10 +318,7 @@ end
 
 SWEP.Animations = {
     ["fire"] = {
-        Source = {"shoot1"},
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
+        Source = "shoot1",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -506,11 +503,11 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 1,
-                rhik = 1
+                lhik = 0,
+                rhik = 0
             },
             {
-                t = 1,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },
@@ -529,9 +526,9 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.5,
+                t = 0.7,
                 lhik = 0,
-                rhik = 1
+                rhik = 0
             },
         },
         EventTable = {

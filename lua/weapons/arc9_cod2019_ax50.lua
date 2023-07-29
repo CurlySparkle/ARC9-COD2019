@@ -314,20 +314,8 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["cycle"] = {
         Source = "cycle",
-		--EjectAt = 0.2,
-		MinProgress = 0.8,
-        EventTable = {
-            {s = "COD2019.AX50.Rechamber", v = 0.4, t = 6/30},
-			{s = path .. "wfoly_sn_alpha50_rechamber_02.ogg", v = 0.4, t = 19/30},
-        },
-    },
-    ["cycle_sights"] = {
-        Source = "cycle_ads",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {

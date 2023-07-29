@@ -300,21 +300,8 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["cycle"] = {
         Source = "cycle",
-		--EjectAt = 0.2,
-		MinProgress = 0.8,
-        EventTable = {
-            {s = path .. "wfoly_sn_kilo98_rechamber_boltopen_01.ogg", v = 0.4, t = 13/60},
-			{s = path .. "wfoly_sn_kilo98_rechamber_cloth.ogg", v = 0.4, t = 21/60},
-			{s = path .. "wfoly_sn_kilo98_rechamber_boltclose_01.ogg", v = 0.4, t = 36/60},
-        },
-    },
-    ["cycle_sights"] = {
-        Source = "cycle_ads",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
         EventTable = {
@@ -661,7 +648,7 @@ SWEP.Animations = {
     },
 }
 
---SWEP.Hook_Think	= ARC9.CSGO.BlendSights
+SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 -------------------------- ATTACHMENTS
 
