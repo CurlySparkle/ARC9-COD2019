@@ -232,6 +232,17 @@ SWEP.DistantShootSoundIndoor = "Distant_Launcher.Inside"
 SWEP.EnterSightsSound = path .. "wfoly_la_mike32_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_la_mike32_ads_down.ogg"
 
+SWEP.HideBones  = {
+    [1] = "j_speed_loader",
+    [2] = "j_speed_loader_cylinder",
+    [3] = "j_speed_loader_nade00",
+    [4] = "j_speed_loader_nade01",
+    [5] = "j_speed_loader_nade02",
+    [6] = "j_speed_loader_nade03",
+    [7] = "j_speed_loader_nade04",
+    [8] = "j_speed_loader_nade05" 
+}
+
 SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.

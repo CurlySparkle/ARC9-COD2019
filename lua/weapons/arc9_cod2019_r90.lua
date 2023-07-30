@@ -277,6 +277,16 @@ SWEP.DistantShootSoundSilencedIndoor = "Distant_ShotgunSUP.Inside"
 SWEP.EnterSightsSound = path .. "wfoly_sh_dpapa12_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_sh_dpapa12_ads_down.ogg"
 
+SWEP.HideBones  = {
+    [1] = "j_shell",
+    [2] = "j_fired_shell",
+    [3] = "j_group2_fired_shell02",
+    [4] = "j_group2_shell02",
+    [5] = "j_group2_shell03",
+    [6] = "j_group2_shell04",
+    [7] = "j_group2_shell05",
+}
+
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.

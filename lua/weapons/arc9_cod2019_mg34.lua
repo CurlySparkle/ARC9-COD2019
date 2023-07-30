@@ -319,6 +319,8 @@ SWEP.BulletBones = {
 
 SWEP.HideBones  = {
     [1] = "j_mag2",
+    [2] = "j_mag_lever_secondary",
+    [3] = "j_mag_handle_secondary",
 }
 
 SWEP.TriggerDelay = 0.14 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
