@@ -125,10 +125,10 @@ SWEP.RecoilMultSights = 0.8
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 20
+SWEP.VisualRecoilPunchSights = 5
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.4
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilRoll = 35
 SWEP.VisualRecoilSide = -1/6
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -189,7 +189,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -205,8 +205,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -472,6 +472,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		FireASAP = true,
 		MagSwapTime = 3.5,
+		DropMagAt = 0.3,
         IKTimeLine = {
             {
                 t = 0,
@@ -509,7 +510,7 @@ SWEP.Animations = {
         Source = "reload_ar_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.3,
         IKTimeLine = {
             {
                 t = 0,

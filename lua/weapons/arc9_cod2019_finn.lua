@@ -984,19 +984,19 @@ SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
-	
+
+    ------------------ STOCK SAW -------------------------------------------------------	
     if anim == "reload" and wep:HasElement("stock_saw") and wep:HasElement("perk_speedreload") then
         return "reload_fast_saw"
     elseif anim == "reload_empty" and wep:HasElement("stock_saw") and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty_saw"
-    --------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("stock_saw") then
-        return "reload_saw"
-    elseif anim == "reload_empty" and wep:HasElement("stock_saw") then 
-        return "reload_saw_empty"
     end
-
     --------------------------------------------------------------------------
+    if wep:HasElement("stock_saw") then
+        return anim .. "_saw"
+    end
+    --------------------------------------------------------------------------
+
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 

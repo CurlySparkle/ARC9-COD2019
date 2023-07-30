@@ -328,6 +328,13 @@ SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["reload"] = {
         Source = "reload_short",
@@ -905,5 +912,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 0.4
 SWEP.GripPoseParam2 = 0
 SWEP.CodAngledGripPoseParam = 3
-SWEP.CodStubbyGripPoseParam = 1
+SWEP.CodStubbyGripPoseParam = 0.7
 SWEP.CodStubbyTallGripPoseParam = 5
