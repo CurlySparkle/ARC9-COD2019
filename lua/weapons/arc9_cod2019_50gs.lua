@@ -360,7 +360,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_02.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_shake.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_charge_01.ogg", t = 43/30},
-			{s = path .. "wfoly_pi_decho_reload_empty_end.ogg", t = 44/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_end.ogg", t = 47/30},
         },
     },
     ["reload_fast"] = {
@@ -430,11 +430,10 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_decho_reload_empty_mvmnt.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_magout_01.ogg", t = 4/30},
-			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_01.ogg", t = 23/30},
-			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_02.ogg", t = 30/30},
-			{s = path .. "wfoly_pi_decho_reload_empty_shake.ogg", t = 30/30},
-			{s = path .. "wfoly_pi_decho_reload_empty_charge_01.ogg", t = 43/30},
-			{s = path .. "wfoly_pi_decho_reload_empty_end.ogg", t = 44/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_01.ogg", t = 14/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_02.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_charge_01.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_end.ogg", t = 25/30},
         },
     },
     ["reload_xmag"] = {

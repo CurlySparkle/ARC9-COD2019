@@ -403,12 +403,12 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_mike14_reload_empty_rotate.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_mike14_reload_empty_magout.ogg", t = 10/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magout_arm.ogg", t = 11/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_mvmnt.ogg", t = 16/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 22/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 27/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 33/30},
+            {s = path .. "wfoly_sn_mike14_reload_empty_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magout_arm.ogg", t = 10/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_mvmnt.ogg", t = 15/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 19/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 25/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 29/30},
         },
     },
     ["reload_fast_empty"] = {

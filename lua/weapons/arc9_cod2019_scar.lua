@@ -425,7 +425,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_scharlie_reload_fast_magout.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_01.ogg", t = 25/30},
 			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_02.ogg", t = 31/30},
-			{s = path .. "wfoly_ar_scharlie_reload_fast_end.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_end.ogg", t = 36/30},
         },
     },
     ["reload_fast_empty"] = {

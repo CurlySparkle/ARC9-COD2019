@@ -405,9 +405,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_dpapa12_raise_first_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_01a.ogg", t = 10/30},
-			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_02a.ogg", t = 14/30},
-			{s = path .. "wfoly_sh_dpapa12_raise_first_end.ogg", t = 19/30},
+			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_01a.ogg", t = 13/30},
+			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_02a.ogg", t = 17/30},
+			{s = path .. "wfoly_sh_dpapa12_raise_first_end.ogg", t = 24/30},
         },
     },
     ["draw"] = {
@@ -466,10 +466,10 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_dpapa12_inspect_01.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_dpapa12_inspect_02.ogg", t = 41/30},
-			{s = path .. "wfoly_sh_dpapa12_inspect_03.ogg", t = 67/30},
-			{s = path .. "wfoly_sh_dpapa12_inspect_04.ogg", t = 100/30},
-			{s = path .. "wfoly_sh_dpapa12_inspect_05.ogg", t = 126/30},
+			{s = path .. "wfoly_sh_dpapa12_inspect_02.ogg", t = 42/30},
+			{s = path .. "wfoly_sh_dpapa12_inspect_03.ogg", t = 68/30},
+			{s = path .. "wfoly_sh_dpapa12_inspect_04.ogg", t = 101/30},
+			{s = path .. "wfoly_sh_dpapa12_inspect_05.ogg", t = 127/30},
         },
     },
     ["bash"] = {

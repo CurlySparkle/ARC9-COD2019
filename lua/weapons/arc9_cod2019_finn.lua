@@ -424,7 +424,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_sierrax_reload_empty_lift.ogg", t = 1/30},
-			{s = path .. "wfoly_lm_sierrax_reload_empty_charge.ogg", t = 30/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_charge.ogg", t = 29/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_coveropen.ogg", t = 57/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_magout.ogg", t = 77/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_adjust.ogg", t = 108/30},
@@ -432,7 +432,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_empty_maghit.ogg", t = 129/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_magin.ogg", t = 137/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_bullets.ogg", t = 147/30},
-			{s = path .. "wfoly_lm_sierrax_reload_empty_coverclose.ogg", t = 185/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_coverclose.ogg", t = 184/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_end.ogg", t = 192/30},
         },
     },
@@ -540,8 +540,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_lm_sierrax_raise_first_lift.ogg", t = 0/30},
-            {s = path .. "wfoly_lm_sierrax_raise_first_coverplate.ogg", t = 18/30},
-			{s = path .. "wfoly_lm_sierrax_raise_first_end.ogg", t = 26/30},
+            {s = path .. "wfoly_lm_sierrax_raise_first_coverplate.ogg", t = 19/30},
+			{s = path .. "wfoly_lm_sierrax_raise_first_end.ogg", t = 28/30},
         },
     },
     ["draw"] = {

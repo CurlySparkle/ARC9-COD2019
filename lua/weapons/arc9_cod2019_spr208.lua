@@ -422,9 +422,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sn_remeo700_reload_up.ogg", t = 0/30},
 			{s = path .. "wfoly_sn_remeo700_reload_magout.ogg", t = 18/30},
-			{s = path .. "wfoly_sn_remeo700_reload_maghit.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_remeo700_reload_maghit.ogg", t = 30/30},
+            {s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 36/30},
 			{s = path .. "wfoly_sn_remeo700_reload_magin.ogg", t = 40/30},
-			{s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 42/30},
         },
     },
     ["reload_fast_empty"] = {

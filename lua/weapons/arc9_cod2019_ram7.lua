@@ -266,11 +266,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/ram7/"
 
-SWEP.ShootSound = "Cod2019.ram7.fire"
-SWEP.ShootSoundIndoor = "Cod2019.ram7.fire"
+SWEP.ShootSound = "COD2019.RAM7.Fire"
+SWEP.ShootSoundIndoor = "COD2019.RAM7.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.ram7.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.ram7.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.RAM7.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.RAM7.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_AR.Outside"
@@ -413,7 +413,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magout.ogg", t = 7/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_rotatemvmnt.ogg", t = 15/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_arm.ogg", t = 18/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 31/30},
@@ -450,13 +450,13 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magout.ogg", t = 7/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_rotatemvmnt.ogg", t = 15/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_arm.ogg", t = 18/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 31/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 37/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_charge.ogg", t = 44/30},
-			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 50/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_charge.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 51/30},
         },
     },
     ["ready"] = {

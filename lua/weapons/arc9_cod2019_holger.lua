@@ -382,8 +382,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_out.ogg", t = 21/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_hit_well.ogg", t = 43/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_out.ogg", t = 23/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_hit_well.ogg", t = 45/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_in.ogg", t = 75/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_smack.ogg", t = 85/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_bolt_lever.ogg", t = 102/30},
@@ -421,11 +421,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_drum_out.ogg", t = 15/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 35/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_drum_hit_well.ogg", t = 45/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_drum_in.ogg", t = 53/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_end.ogg", t = 55/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_drum_out.ogg", t = 14/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 30/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_drum_hit_well.ogg", t = 38/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_drum_in.ogg", t = 51/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_end.ogg", t = 56/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -458,13 +458,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_out.ogg", t = 21/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_hit_well.ogg", t = 43/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_in.ogg", t = 75/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_smack.ogg", t = 85/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_bolt_lever.ogg", t = 102/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 106/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_end.ogg", t = 118/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_out.ogg", t = 16/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_hit_well.ogg", t = 17/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_drum_mag_in.ogg", t = 50/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_bolt_lever.ogg", t = 63/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 67/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_end.ogg", t = 79/30},
         },
     },
     ["reload_ar"] = {
@@ -497,11 +496,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 12/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 17/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 33/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 38/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 53/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 20/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 25/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 42/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 47/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 69/30},
         },
     },
     ["reload_empty_ar"] = {
@@ -534,12 +533,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 12/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 17/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 34/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 39/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 50/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 67/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 14/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 19/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 52/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 57/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 79/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 96/30},
         },
     },
     ["reload_ar_fast"] = {
@@ -573,10 +572,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 12/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 17/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 33/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 38/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 14/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 30/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 35/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 53/30},
         },
     },
@@ -610,11 +609,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 12/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 17/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 34/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 39/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 50/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 14/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 33/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 38/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 48/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 67/30},
         },
     },
@@ -762,7 +761,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_lm_mgolf36_ar_inspect_01.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_ar_inspect_02.ogg", t = 70/30},
+			{s = path .. "wfoly_lm_mgolf36_ar_inspect_02.ogg", t = 71/30},
 			{s = path .. "wfoly_lm_mgolf36_ar_inspect_03.ogg", t = 125/30},
         },
     },
@@ -822,7 +821,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_ar_fast"
     elseif anim == "reload_empty" and wep:HasElement("mag_armag") and wep:HasElement("perk_speedreload") then 
         return "reload_ar_fast_empty"
-    elseif anim == "inspect" and wep:HasElement("mag_armag") and wep:HasElement("perk_speedreload") then 
+    elseif anim == "inspect" and wep:HasElement("mag_armag") then 
         return "inspect_ar"
     -------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then

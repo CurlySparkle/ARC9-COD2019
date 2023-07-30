@@ -372,13 +372,13 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_start.ogg", t = 0/30},
-            {s = path .. "mp5-submachinegun-foley-bolt-chrage-1.ogg", t = 6/30},
+            {s = path .. "mp5-submachinegun-foley-bolt-charge-1.ogg", t = 6/30},
             {s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magout_01.ogg", t = 25/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_rattle.ogg", t = 44/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_01.ogg", t = 52/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_02.ogg", t = 63/30},
 			{s = path .. "g3_boltpullreleasesoh.ogg", t = 78/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_end.ogg", t = 95/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_end.ogg", t = 94/30},
         },
     },
     ["reload_fast"] = {
@@ -412,7 +412,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_magout_01.ogg", t = 9/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_magin_v2_01.ogg", t = 30/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_magin_v2_02.ogg", t = 38/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_end.ogg", t = 47/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_end.ogg", t = 48/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -442,12 +442,12 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_start.ogg", t = 0},
-            {s = path .. "mp5-submachinegun-foley-bolt-chrage-1.ogg", t = 0.16},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_magout_01.ogg", t = 0.5},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_magin_v2_01.ogg", t = 1.3},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_magin_v2_02.ogg", t = 1.45},
+            {s = path .. "mp5-submachinegun-foley-bolt-charge-1.ogg", t = 0.13},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_magout_01.ogg", t = 0.7},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_magin_v2_01.ogg", t = 1.37},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_magin_v2_02.ogg", t = 1.57},
 			{s = path .. "g3_boltpullrelease.ogg", t = 2.0},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_end.ogg", t = 2.1},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_end.ogg", t = 2.3},
         },
     },
     ["ready"] = {
@@ -477,7 +477,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_plr_ar_falima_raise_start.ogg", t = 0/30},
             {s = path .. "wfoly_plr_ar_falima_raise_settle.ogg", t = 3/30},
-            {s = path .. "mp5-submachinegun-foley-bolt-chrage-1.ogg", t = 15/30},
+            {s = path .. "mp5-submachinegun-foley-bolt-charge-1.ogg", t = 15/30},
 			{s = path .. "mp5-submachinegun-foley-bolt-lock-back-1.ogg", t = 33/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_end.ogg", t = 65/30},
         },

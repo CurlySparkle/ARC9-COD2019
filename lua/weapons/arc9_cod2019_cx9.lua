@@ -396,8 +396,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_reload_empty_up.ogg", t = 0/30},
 			{s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 13/30},
 			{s = path .. "wfoly_sm_secho_reload_empty_mvmnt.ogg", t = 33/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_maghit.ogg", t = 40/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_magin.ogg", t = 43/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_maghit.ogg", t = 38/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_magin.ogg", t = 42/30},
 			{s = path .. "wfoly_sm_secho_reload_empty_charge.ogg", t = 49/30},
 			{s = path .. "wfoly_sm_secho_reload_empty_end.ogg", t = 55/30},
         },
@@ -644,7 +644,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sm_secho_raise_first_up.ogg", t = 0/30},
             {s = path .. "wfoly_sm_secho_raise_first_charge.ogg", t = 12/30},
-            {s = path .. "wfoly_sm_secho_raise_first_end.ogg", t = 20/30},
+            {s = path .. "wfoly_sm_secho_raise_first_end.ogg", t = 19/30},
         },
     },
     ["draw"] = {

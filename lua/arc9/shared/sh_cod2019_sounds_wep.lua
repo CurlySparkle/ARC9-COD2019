@@ -339,9 +339,9 @@ sound.Add({
             }              
 })
 
----Ram7---
+--- RAM-7 ---
 sound.Add({
-    name =           "Cod2019.ram7.fire",
+    name =           "COD2019.RAM7.Fire",
     channel =        CHAN_WEAPON,
     level = 140,
     volume =         1,
@@ -355,7 +355,7 @@ sound.Add({
             }              
 })
 sound.Add({
-    name =           "Cod2019.ram7.fire.s",
+    name =           "COD2019.RAM7.Fire.S",
     channel =        CHAN_WEAPON,
     level = 140,
     volume =         1,

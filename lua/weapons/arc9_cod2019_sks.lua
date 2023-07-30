@@ -357,11 +357,11 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
             {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 20/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 32/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 41/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 33/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 42/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_rotate.ogg", t = 50/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 63/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 75/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 64/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 78/30},
         },
     },
     ["reload_fast"] = {
@@ -394,8 +394,8 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
             {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 18/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 30/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 27/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 36/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 45/30},
         },
     },
@@ -429,10 +429,10 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
             {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 18/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 30/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 37/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 50/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 55/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 27/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 36/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 48/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 58/30},
         },
     },
     ["reload_xmag"] = {
@@ -507,7 +507,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 41/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_rotate.ogg", t = 50/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 63/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 75/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 78/30},
         },
     },
     ["reload_xmag_fast"] = {
@@ -540,9 +540,9 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
             {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 18/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 30/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 37/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 27/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 36/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 46/30},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -575,10 +575,10 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
             {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 18/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 30/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 37/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 27/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 36/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 50/30},
-			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 55/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 61/30},
         },
     },
     ["ready"] = {

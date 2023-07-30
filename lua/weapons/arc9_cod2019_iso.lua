@@ -422,8 +422,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 22/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 24/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 21/30},
+			{s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 25/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -457,9 +457,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 22/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 35/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 21/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 32/30},
+            {s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 32/30},
         },
     },
     ["reload_drum"] = {

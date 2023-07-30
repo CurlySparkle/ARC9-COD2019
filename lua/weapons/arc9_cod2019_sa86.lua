@@ -419,9 +419,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_lm_lima86_reload_fast_start.ogg", t = 4/30},
 			{s = path .. "wfoly_lm_lima86_reload_fast_magout_01.ogg", t = 14/30},
-			{s = path .. "wfoly_lm_lima86_reload_fast_magin_v2_01.ogg", t = 41/30},
-			{s = path .. "wfoly_lm_lima86_reload_fast_magin_v2_02.ogg", t = 48/30},
-			{s = path .. "wfoly_lm_lima86_reload_fast_end.ogg", t = 55/30},
+			{s = path .. "wfoly_lm_lima86_reload_fast_magin_v2_01.ogg", t = 38/30},
+			{s = path .. "wfoly_lm_lima86_reload_fast_magin_v2_02.ogg", t = 47/30},
+			{s = path .. "wfoly_lm_lima86_reload_fast_end.ogg", t = 54/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -454,10 +454,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_lm_lima86_reload_empty_fast_start.ogg", t = 4/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_fast_magout_01.ogg", t = 17/30},
-			{s = path .. "wfoly_lm_lima86_reload_empty_fast_hit.ogg", t = 40/30},
-			{s = path .. "wfoly_lm_lima86_reload_empty_fast_magin_v2_01.ogg", t = 47/30},
-			{s = path .. "wfoly_lm_lima86_reload_empty_fast_magin_v2_02.ogg", t = 60/30},
-			{s = path .. "wfoly_lm_lima86_reload_empty_fast_charge_01.ogg", t = 60/30},
+            {s = path .. "wfoly_lm_lima86_reload_empty_fast_magin_v2_01.ogg", t = 38/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_fast_magin_v2_02.ogg", t = 47/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_fast_charge_01.ogg", t = 59/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_fast_end.ogg", t = 71/30},
         },
     },
@@ -569,9 +568,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_lm_lima86_inspect_01.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_lima86_inspect_02.ogg", t = 41/30},
+			{s = path .. "wfoly_lm_lima86_inspect_02.ogg", t = 40/30},
 			{s = path .. "wfoly_lm_lima86_inspect_03.ogg", t = 78/30},
-			{s = path .. "wfoly_lm_lima86_inspect_04.ogg", t = 137/30},
+			{s = path .. "wfoly_lm_lima86_inspect_04.ogg", t = 138/30},
         },
     },
     ["bash"] = {
@@ -834,7 +833,7 @@ SWEP.Attachments = {
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
