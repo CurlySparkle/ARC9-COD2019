@@ -269,7 +269,8 @@ SWEP.DistantShootSoundSilencedIndoor = "distant_DMR_Sup.Inside"
 SWEP.EnterSightsSound = path .. "wfoly_sn_sbeta_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_sn_sbeta_ads_down.ogg"
 
-SWEP.ReloadHideBonesFirstPerson = true
+SWEP.ReloadHideBonesFirstPerson = false
+
 SWEP.HideBones  = {
     [1] = "j_round_01",
 	[2] = "j_round_02",

@@ -78,7 +78,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 968
+SWEP.RPM = 850
 
 SWEP.Firemodes = {
     {
@@ -93,7 +93,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.1
+SWEP.Recoil = 1.5
 
 SWEP.RecoilSeed = 888888
 
@@ -101,7 +101,7 @@ SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1.5 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -114,12 +114,13 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilKick = 2
+SWEP.RecoilKickDamping = 90
 
 SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.5
 
 -------------------------- VISUAL RECOIL
 
@@ -193,7 +194,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -0.5)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -645,12 +646,36 @@ SWEP.Animations = {
         Source = "draw_short",
 		MinProgress = 0.85,
 		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_sm_mpapa7_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.4,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_sm_mpapa7_drop.ogg", t = 0/30},
         },
@@ -969,4 +994,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 0.7
 SWEP.GripPoseParam2 = 0
 SWEP.CodStubbyGripPoseParam = 1
-SWEP.CodAngledGripPoseParam = 3.8
+SWEP.CodAngledGripPoseParam = 20

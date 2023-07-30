@@ -559,7 +559,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -595,7 +595,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
@@ -700,7 +700,44 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_remeo700_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_remeo700_inspect_02.ogg", t = 9/30},
+			{s = path .. "wfoly_sn_remeo700_inspect_03.ogg", t = 47/30},
+			{s = path .. "wfoly_sn_remeo700_inspect_04.ogg", t = 65/30},
+			{s = path .. "wfoly_sn_remeo700_inspect_05.ogg", t = 72/30},
+			{s = path .. "wfoly_sn_remeo700_inspect_06.ogg", t = 87/30},
+			{s = path .. "wfoly_sn_remeo700_inspect_07.ogg", t = 118/30},
+			{s = path .. "wfoly_sn_remeo700_inspect_08.ogg", t = 124/30},
+        },
+    },
+    ["inspect_xmag"] = {
+        Source = "lookat01_xmag",
+        MinProgress = 0.1,
+        FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
@@ -778,6 +815,8 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_xmag_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
         return "reload_xmag_fast_empty"
+    elseif anim == "inspect" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "inspect_xmag"
 --------------------------------------------------------------------------
     -- elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
         -- return "reload_xmag_fast"
@@ -793,6 +832,8 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_xmag"
     elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
         return "reload_xmag_empty"
+    elseif anim == "inspect" and wep:HasElement("mag_xmag") then 
+        return "inspect_xmag"
 --------------------------------------------------------------------------
     -- elseif anim == "reload" and wep:HasElement("ammo_extend") then 
         -- return "reload_xmag"
@@ -926,7 +967,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_spr208_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
