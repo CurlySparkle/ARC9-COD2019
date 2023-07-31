@@ -164,7 +164,7 @@ SWEP.SpreadAddSights = -0.1
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.4 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -209,7 +209,7 @@ SWEP.MovingAng = Angle(0, 0, -12)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(-3, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -318,6 +318,7 @@ SWEP.Animations = {
         Source = "cycle",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
+		FireASAP = true,
         EventTable = {
             {s = "COD2019.HDR.Rechamber", v = 0.4, t = 7/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_rechamber_boltclose_01.ogg", v = 0.4, t = 18/30},
@@ -325,7 +326,8 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		FireASAP = true,
 		DropMagAt = 1.55,
         IKTimeLine = {
             {
@@ -364,6 +366,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		FireASAP = true,
 		EjectAt = 0.35,
 		DropMagAt = 2.2,
         IKTimeLine = {
@@ -405,7 +408,8 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		FireASAP = true,
 		DropMagAt = 1.1,
         IKTimeLine = {
             {
@@ -444,6 +448,7 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
+		FireASAP = true,
 		EjectAt = 0.35,
 		DropMagAt = 1.5,
         IKTimeLine = {
@@ -485,7 +490,8 @@ SWEP.Animations = {
     },
     ["reload_xmag"] = {
         Source = "reload_xmag",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		FireASAP = true,
 		DropMagAt = 1.55,
         IKTimeLine = {
             {
@@ -524,6 +530,7 @@ SWEP.Animations = {
     ["reload_xmag_empty"] = {
         Source = "reload_empty_xmag",
 		MinProgress = 0.9,
+		FireASAP = true,
 		EjectAt = 0.35,
 		DropMagAt = 2.2,
         IKTimeLine = {
@@ -565,7 +572,8 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		FireASAP = true,
 		DropMagAt = 1.1,
         IKTimeLine = {
             {
@@ -604,6 +612,7 @@ SWEP.Animations = {
     ["reload_xmag_fast_empty"] = {
         Source = "reload_empty_xmag_fast",
 		MinProgress = 0.9,
+		FireASAP = true,
 		EjectAt = 0.35,
 		DropMagAt = 1.5,
         IKTimeLine = {
@@ -671,11 +680,11 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 1,
-                rhik = 1
+                lhik = 0,
+                rhik = 0
             },
             {
-                t = 1,
+                t = 0.5,
                 lhik = 1,
                 rhik = 1
             },
@@ -696,9 +705,9 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.3,
+                t = 0.2,
                 lhik = 0,
-                rhik = 1
+                rhik = 0
             },
         },
         EventTable = {
@@ -962,7 +971,7 @@ SWEP.Attachments = {
     {
         PrintName = "Ammo",
         Bone = "j_mag1",
-        Category = {"go_ammo","go_ammo_sniper"},
+        Category = {"cod2019_ammo","cod2019_ammo_sniper"},
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
@@ -1028,5 +1037,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 3
 SWEP.CodAngledGripPoseParam = 4
+SWEP.CodStubbyGripPoseParam = 0.5
 SWEP.CodStubbyTallGripPoseParam = 0
 SWEP.GripPoseParam2 = 0.5

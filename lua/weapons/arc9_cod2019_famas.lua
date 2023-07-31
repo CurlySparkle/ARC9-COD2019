@@ -95,7 +95,7 @@ SWEP.Recoil = 1.5
 
 SWEP.RecoilSeed = 8778456
 
-SWEP.RecoilPatternDrift = 1
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -111,7 +111,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1
+SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 
@@ -125,8 +125,8 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.3
 
-SWEP.VisualRecoilRoll = 25
-SWEP.VisualRecoilSide = 0.5
+SWEP.VisualRecoilRoll = 35
+SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 5
@@ -152,7 +152,7 @@ SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = 1
 SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadMultMove = 2
+SWEP.SpreadMultMove = 1.5
 --SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddHipFire = 0.05
 SWEP.SpreadAddCrouch = -0.03
@@ -188,7 +188,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(-1, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -204,8 +204,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.8, -0.6, -0.6)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -808,7 +808,7 @@ SWEP.Attachments = {
     {
         PrintName = "Ammo",
         Bone = "j_mag1",
-        Category = {"go_ammo"},
+        Category = {"cod2019_ammo"},
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
@@ -888,4 +888,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 0
 SWEP.GripPoseParam2 = 0
-SWEP.CodAngledGripPoseParam = 3
+SWEP.CodAngledGripPoseParam = 22
+SWEP.CodStubbyGripPoseParam = 11
+SWEP.CodStubbyTallGripPoseParam = 19

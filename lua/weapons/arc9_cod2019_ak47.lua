@@ -962,7 +962,7 @@ SWEP.Attachments = {
     {
         PrintName = "Ammo",
         Bone = "j_mag1",
-        Category = {"go_ammo"},
+        Category = {"cod2019_ammo"},
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
@@ -1038,4 +1038,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4.6
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodStubbyGripPoseParam = 6.7
-SWEP.CodAngledGripPoseParam = 9
+SWEP.CodAngledGripPoseParam = 21

@@ -209,7 +209,7 @@ SWEP.MovingAng = Angle(0, 0, -10)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -2)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -706,11 +706,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.5,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.5,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -950,7 +950,7 @@ SWEP.Attachments = {
     {
         PrintName = "Ammo",
         Bone = "j_mag1",
-        Category = {"go_ammo","go_ammo_sniper"},
+        Category = {"cod2019_ammo","cod2019_ammo_sniper"},
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
@@ -1025,6 +1025,6 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 4
-SWEP.CodAngledGripPoseParam = 1
+SWEP.CodAngledGripPoseParam = 4
 SWEP.CodStubbyGripPoseParam = 2
 SWEP.GripPoseParam2 = 0.5
