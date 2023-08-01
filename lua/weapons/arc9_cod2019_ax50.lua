@@ -667,11 +667,11 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 1,
-                rhik = 1
+                lhik = 0,
+                rhik = 0
             },
             {
-                t = 1,
+                t = 0.5,
                 lhik = 1,
                 rhik = 1
             },
@@ -689,9 +689,9 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.5,
+                t = 0.3,
                 lhik = 0,
-                rhik = 1
+                rhik = 0
             },
         },
         EventTable = {
@@ -1025,6 +1025,6 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 4
-SWEP.CodAngledGripPoseParam = 4
+SWEP.CodAngledGripPoseParam = 4.5
 SWEP.CodStubbyGripPoseParam = 2
 SWEP.GripPoseParam2 = 0.5

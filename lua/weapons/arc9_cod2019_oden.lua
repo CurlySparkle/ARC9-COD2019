@@ -193,7 +193,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -0.5)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -209,8 +209,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -805,4 +805,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 4
+SWEP.CodAngledGripPoseParam = 21.7
+SWEP.CodStubbyTallGripPoseParam = 19
