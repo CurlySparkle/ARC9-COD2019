@@ -53,6 +53,8 @@ SWEP.RicochetChance = 0.05
 
 SWEP.SwayMultSights = 0
 
+SWEP.HasSights = !SWEP.Akimbo
+
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
@@ -64,6 +66,17 @@ SWEP.DryFireSound = ""
 
 SWEP.IndoorSoundHardCutoff = true
 SWEP.IndoorSoundHardCutoffRatio = 0.75
+
+SWEP.Hook_Think	= function(wep)
+    local vm, clip, delta = wep:GetVM(), wep:Clip1(), wep:GetSightDelta()
+    local coolilove = math.cos(delta * (math.pi / 2))
+    local moveblend = math.Clamp(wep.PV_Move - delta, 0, 1)
+    -- print(delta, wep.PV_Move, moveblend)
+    vm:SetPoseParameter("bullets",wep:GetMaxClip1()-clip)
+    vm:SetPoseParameter("blend_move", moveblend)
+    vm:SetPoseParameter("empty", !wep:GetReloading() and (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
+    vm:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
+end
 
 function SWEP:MakeEnvironmentDust(radius)
     --Makes a dust enviroment effect when shooting

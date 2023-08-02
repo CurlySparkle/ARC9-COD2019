@@ -933,19 +933,19 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     end
 end
 
-SWEP.Hook_Think	= function(wep)
-    local vm = wep:GetOwner():GetViewModel()
-    if wep:Clip1() == 0 then
-        vm:SetPoseParameter("empty", 1)
-    else
-        vm:SetPoseParameter("empty", 0)
-    end
+-- SWEP.Hook_Think	= function(wep)
+--     local vm = wep:GetOwner():GetViewModel()
+--     if wep:Clip1() == 0 then
+--         vm:SetPoseParameter("empty", 1)
+--     else
+--         vm:SetPoseParameter("empty", 0)
+--     end
 	
-    local vm = wep:GetOwner():GetViewModel()
-    local delta = wep:GetSightDelta()
-    local coolilove = math.cos(delta * (math.pi / 2))
-    vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 1, 0) )
-end
+--     local vm = wep:GetOwner():GetViewModel()
+--     local delta = wep:GetSightDelta()
+--     local coolilove = math.cos(delta * (math.pi / 2))
+--     vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 1, 0) )
+-- end
 
 SWEP.DefaultBodygroups = "00000000000000"
 

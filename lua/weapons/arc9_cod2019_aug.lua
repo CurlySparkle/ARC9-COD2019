@@ -937,7 +937,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
+-- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "00000000000000"
 

@@ -661,7 +661,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     end
 end
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
+-- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.DefaultBodygroups = "00000000000000"
 

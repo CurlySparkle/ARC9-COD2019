@@ -808,7 +808,7 @@ SWEP.Hook_PrimaryAttack = function(self)
     -- end
 end
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
+-- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()

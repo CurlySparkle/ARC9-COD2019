@@ -155,13 +155,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 
 -------------------------- POSITIONS
 
-SWEP.IronSights = {
-    Pos = Vector(0, 3, 1.5),
-    Ang = Angle(0, 0, 3.5),
-    Magnification = 1.15,
-    ViewModelFOV = 56,
-	CrosshairInSights = true
-}
+SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
@@ -469,7 +463,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmptyElite
+-- SWEP.Hook_Think	= ARC9.COD2019.BlendEmptyElite
 
 SWEP.DefaultBodygroups = "00000000000000"
 

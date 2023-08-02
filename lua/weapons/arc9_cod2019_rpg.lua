@@ -361,7 +361,7 @@ SWEP.Animations = {
     },
 }
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
+-- SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
 
 -------------------------- ATTACHMENTS
 

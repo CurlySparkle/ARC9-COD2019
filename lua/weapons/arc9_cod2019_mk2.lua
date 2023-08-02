@@ -530,7 +530,7 @@ SWEP.Animations = {
     },
 }
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
+-- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 -------------------------- ATTACHMENTS
 
