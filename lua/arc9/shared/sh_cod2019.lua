@@ -40,10 +40,8 @@ end
 ARC9.COD2019.BlendSights2 = function(wep)
     local vm = wep:GetOwner():GetViewModel()
     local delta = wep:GetSightDelta()
-	--delta = 1 - delta
     local coolilove = math.cos(delta * (math.pi / 2))
     vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 1, 0) )
-	--print("blag")
 end
 
 cod2019_flashtime = 5

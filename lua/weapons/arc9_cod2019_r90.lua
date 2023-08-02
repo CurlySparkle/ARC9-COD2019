@@ -194,8 +194,8 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.8, -0.5, -0.5)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -237,7 +237,12 @@ SWEP.ShellSounds = {
     "arc9/casings/casing_12ga_1.wav",
     "arc9/casings/casing_12ga_2.wav",
     "arc9/casings/casing_12ga_3.wav",
-    "arc9/casings/casing_12ga_4.wav"
+    "arc9/casings/casing_12ga_4.wav",
+    "arc9/casings/casing_12ga_1.wav",
+    "arc9/casings/casing_12ga_2.wav",
+    "arc9/casings/casing_12ga_3.wav",
+    "arc9/casings/casing_12ga_4.wav",
+    "arc9/casings/casing_12ga_1.wav"
 }
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1.3

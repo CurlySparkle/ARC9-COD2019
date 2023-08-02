@@ -666,7 +666,7 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(0.7, 0, 0),
     },
     ["cod2019_grips_alt_cclamp"] = {
-	ModelOffset = Vector(-1, -0.5, 0.8),
+	ModelOffset = Vector(-1, -0.1, 0.8),
 	ModelAngleOffset = Angle(0, 0, 180),
     },
     ["csgo_cod2019_laser_01"] = {

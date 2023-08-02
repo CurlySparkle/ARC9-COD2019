@@ -240,7 +240,12 @@ SWEP.ShellSounds = {
     "arc9/casings/casing_12ga_1.wav",
     "arc9/casings/casing_12ga_2.wav",
     "arc9/casings/casing_12ga_3.wav",
-    "arc9/casings/casing_12ga_4.wav"
+    "arc9/casings/casing_12ga_4.wav",
+    "arc9/casings/casing_12ga_1.wav",
+    "arc9/casings/casing_12ga_2.wav",
+    "arc9/casings/casing_12ga_3.wav",
+    "arc9/casings/casing_12ga_4.wav",
+    "arc9/casings/casing_12ga_1.wav"
 }
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1.1
