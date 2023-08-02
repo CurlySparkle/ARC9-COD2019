@@ -36,7 +36,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_pist_sykov.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-5, 4, -5),
+    TPIKPos = Vector(-12, 4, -5),
     TPIKAng = Angle(0, 0, 175),
     Scale = 1
 }
@@ -155,10 +155,9 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(0.9, 7, 2.45),
+    Pos = Vector(0.9, 0, 2.45),
     Ang = Angle(0, 0, 19),
     Magnification = 1.15,
-    ViewModelFOV = 56,
 	CrosshairInSights = false
 }
 
@@ -195,10 +194,9 @@ SWEP.CustomizeNoRotate = false
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "rpg"
+SWEP.HoldType = "revolver"
 SWEP.HoldTypeSprint = "rpg"
-SWEP.HoldTypeHolstered = "rpg"
-SWEP.HoldTypeSights = "rpg"
+SWEP.HoldTypeSights = "revolver"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 

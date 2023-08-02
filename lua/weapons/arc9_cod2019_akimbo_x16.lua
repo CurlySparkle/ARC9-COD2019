@@ -32,7 +32,8 @@ SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
 SWEP.Slot = 1
 
 SWEP.MirrorVMWM = true
-SWEP.NoTPIKVMPos = false
+SWEP.NoTPIKVMPos = true
+SWEP.TPIKforcelefthand = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_akimbo_x16.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
@@ -204,7 +205,7 @@ SWEP.HoldTypeBlindfire = "pistol"
 
 -- SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_DUEL
 -- SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
--- SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
+SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
 SWEP.AnimDraw = false
 
 SWEP.Akimbo = true
