@@ -267,9 +267,6 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["dryfire"] = {
         Source = "shoot1_cycle",
         EventTable = {
