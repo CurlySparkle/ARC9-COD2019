@@ -70,7 +70,7 @@ SWEP.IndoorSoundHardCutoffRatio = 0.75
 SWEP.Hook_Think	= function(wep)
     local vm, clip, delta = wep:GetVM(), wep:Clip1(), wep:GetSightDelta()
     local coolilove = math.cos(delta * (math.pi / 2))
-    local moveblend = math.Clamp(wep.PV_Move - delta, 0, 1)
+    local moveblend = math.Clamp(math.min(wep.PV_Move, 1-wep:GetSightAmount()), 0, 1)
     -- print(delta, wep.PV_Move, moveblend)
     vm:SetPoseParameter("bullets",wep:GetMaxClip1()-clip)
     vm:SetPoseParameter("blend_move", moveblend)
