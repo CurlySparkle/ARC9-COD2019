@@ -79,7 +79,6 @@ SWEP.Hook_Think	= function(wep)
     local spd2 = math.Clamp(math.Remap(vel, 0, wspd, 0, 1), 0, 1) - spd
     local moveblend = owner:OnGround() and math.Clamp(spd-delta, 0, 1) or 0
     local walkblend = owner:OnGround() and math.Clamp(spd2-delta, 0, 1) or 0
-    print(spd, spd2)
     if vm then
         vm:SetPoseParameter("bullets",wep:GetMaxClip1() - clip)
         vm:SetPoseParameter("blend_move", moveblend)
