@@ -513,28 +513,28 @@ SWEP.Attachments = {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle_pistols",
-        Bone = "tag_silencer",
+        Bone = "tag_silencer_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
 		Scale = 1,
         DuplicateModels = {
             {
-                Bone = "tag_silencer_l",
+                Bone = "tag_silencer",
             }
         },
     },
     {
         PrintName = "Optics",
-        Bone = "tag_scope",
-        Pos = Vector(4, 0, -2.6),
+        Bone = "tag_reflex",
+        Pos = Vector(1.5, 0, 0),
         Ang = Angle(0, 0, 0),
-        Category = "csgo_rail_optic_pistols",
+        Category = "cod2019_optics_pistols_alt",
         CorrectiveAng = Angle(1.8, -1.8, 0),
 		Scale = 1,
         DuplicateModels = {
             {
-                Bone = "tag_scope_l",
+                Bone = "tag_reflex_l",
             }
         },
     },
@@ -546,11 +546,11 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
-		LaserCorrectionAngle = Angle(-1.5, 0, 0.1),
+		LaserCorrectionAngle = Angle(0.4, 0, -1.5),
         DuplicateModels = {
             {
                 Bone = "tag_laser_attach_l",
-				LaserCorrectionAngle = Angle(0.1, 0, 2),
+				LaserCorrectionAngle = Angle(-1.5, 0, -0.4),
             }
         },
     },
@@ -559,7 +559,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_m1911_grip",
         Bone = "tag_stock_attach",
-        Pos = Vector(-2.8, 0, 0.2),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
