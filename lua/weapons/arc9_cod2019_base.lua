@@ -70,29 +70,31 @@ SWEP.IndoorSoundHardCutoffRatio = 0.75
 local parmbl = {"blend_move", "blend_walk"}
 
 SWEP.Hook_Think	= function(wep)
-    local owner = wep:GetOwner()
-    if !owner:IsPlayer() then return end
-    local vm, wm, clip, delta = IsValid(wep:GetVM()) and wep:GetVM(), IsValid(wep:GetWM()) and wep:GetWM(), wep:Clip1(), wep:GetSightAmount()
-    local coolilove = math.cos(delta * (math.pi / 2))
-    local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:GetAbsVelocity():Length()
-    local spd = math.Clamp(math.Remap(vel, wspd, maxspd, 0, 1), 0, 1)
-    local spd2 = math.Clamp(math.Remap(vel, 0, wspd, 0, 1), 0, 1) - spd
-    local moveblend = owner:OnGround() and math.Clamp(spd-delta, 0, 1) or 0
-    local walkblend = owner:OnGround() and math.Clamp(spd2-delta, 0, 1) or 0
-    if vm then
-        vm:SetPoseParameter("bullets",wep:GetMaxClip1() - clip)
-        vm:SetPoseParameter("blend_move", moveblend)
-        vm:SetPoseParameter("blend_walk", walkblend)
-        vm:SetPoseParameter("empty", !wep:GetReloading() and (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
-        vm:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
-    end
-    if wm and vm and wm:GetModel() == vm:GetModel() then
-        for i = 0, wm:GetNumPoseParameters() -1 do
-            local parm = vm:GetPoseParameterName(i)
-            if table.HasValue(parmbl, parm) then continue end
-            local pmin, pmax = vm:GetPoseParameterRange(i)
-            local pval = CLIENT and math.Remap(vm:GetPoseParameter(parm), 0, 1, pmin, pmax) or vm:GetPoseParameter(parm)
-            wm:SetPoseParameter(parm, pval)
+    if CLIENT then
+        local owner = wep:GetOwner()
+        if !owner:IsPlayer() then return end
+        local vm, wm, clip, delta = IsValid(wep:GetVM()) and wep:GetVM(), IsValid(wep:GetWM()) and wep:GetWM(), wep:Clip1(), wep:GetSightAmount()
+        local coolilove = math.cos(delta * (math.pi / 2))
+        local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:GetAbsVelocity():Length()
+        local spd = math.Clamp(math.Remap(vel, wspd, maxspd, 0, 1), 0, 1)
+        local spd2 = math.Clamp(math.Remap(vel, 0, wspd, 0, 1), 0, 1) - spd
+        local moveblend = owner:OnGround() and math.Clamp(spd-delta, 0, 1) or 0
+        local walkblend = owner:OnGround() and math.Clamp(spd2-delta, 0, 1) or 0
+        if vm then
+            vm:SetPoseParameter("bullets",wep:GetMaxClip1() - clip)
+            vm:SetPoseParameter("blend_move", moveblend)
+            vm:SetPoseParameter("blend_walk", walkblend)
+            vm:SetPoseParameter("empty", !wep:GetReloading() and (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
+            vm:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
+        end
+        if wm and vm and wm:GetModel() == vm:GetModel() then
+            for i = 0, wm:GetNumPoseParameters() -1 do
+                local parm = vm:GetPoseParameterName(i)
+                if table.HasValue(parmbl, parm) then continue end
+                local pmin, pmax = vm:GetPoseParameterRange(i)
+                local pval = math.Remap(vm:GetPoseParameter(parm), 0, 1, pmin, pmax)
+                wm:SetPoseParameter(parm, pval)
+            end
         end
     end
 end
