@@ -67,6 +67,9 @@ SWEP.DryFireSound = ""
 SWEP.IndoorSoundHardCutoff = true
 SWEP.IndoorSoundHardCutoffRatio = 0.75
 
+SWEP.MovePoseParam = 0
+SWEP.WalkPoseParam = 0
+
 local parmbl = {"blend_move", "blend_walk"}
 
 SWEP.Hook_Think	= function(wep)
@@ -80,10 +83,12 @@ SWEP.Hook_Think	= function(wep)
         local spd2 = math.Clamp(math.Remap(vel, 0, wspd, 0, 1), 0, 1) - spd
         local moveblend = owner:OnGround() and math.Clamp(spd-delta, 0, 1) or 0
         local walkblend = owner:OnGround() and math.Clamp(spd2-delta, 0, 1) or 0
+        wep.MovePoseParam = Lerp(10 * FrameTime(), wep.MovePoseParam, moveblend)
+        wep.WalkPoseParam = Lerp(10 * FrameTime(), wep.WalkPoseParam, walkblend)
         if vm then
             vm:SetPoseParameter("bullets",wep:GetMaxClip1() - clip)
-            vm:SetPoseParameter("blend_move", moveblend)
-            vm:SetPoseParameter("blend_walk", walkblend)
+            vm:SetPoseParameter("blend_move", wep.MovePoseParam)
+            vm:SetPoseParameter("blend_walk", wep.WalkPoseParam)
             vm:SetPoseParameter("empty", !wep:GetReloading() and (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
             vm:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
         end
