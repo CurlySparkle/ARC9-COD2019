@@ -107,13 +107,13 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 2.4
+SWEP.RecoilKick = 3
 
 SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.4
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
@@ -157,7 +157,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-1.95, 0, 2.1),
+    Pos = Vector(-1.95, -1.5, 2.1),
     Ang = Angle(0, 0, 3.5),
     Magnification = 1.15,
 	CrosshairInSights = false

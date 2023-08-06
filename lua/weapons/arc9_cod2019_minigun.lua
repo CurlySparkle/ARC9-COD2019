@@ -180,8 +180,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -1, -1)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-1, -1, -1)
+SWEP.MovingAng = Angle(0, 0, -9)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -438,29 +438,30 @@ SWEP.AttachmentElements = {
 -- end
 
 SWEP.Attachments = {
-    {
-        PrintName = "Tactical",
-        DefaultAttName = "Default",
-        Category = "cod2019_tac",
-        Bone = "tag_attachments",
-        Pos = Vector(0, 3.2, 2.8),
-        Ang = Angle(-9.5, 0, -120),
-    },
-    {
-        PrintName = "Grips",
-        DefaultAttName = "Default",
-        Category = {"grip"},
-        Bone = "tag_attachments",
-        Pos = Vector(0, -4, 2),
-        Ang = Angle(35, 5, -110),
-		Scale = 1,
-		RejectAttachments = { 
-		["go_ubgl_m203"] = true,
-		["go_ubgl_mass26"] = true,
-		["go_ubgl_xm1014"] = true,
-		["go_grip_angled"] = true,
-		},
-    },
+    -- {
+        -- PrintName = "Tactical",
+        -- DefaultAttName = "Default",
+        -- Category = "cod2019_tac_cylinde",
+        -- Bone = "tag_laser_attach",
+        -- Pos = Vector(0, 0, 0),
+        -- Ang = Angle(0, 0, 0),
+		-- LaserCorrectionAngle = Angle(-10, 0, 0),
+    -- },
+    -- {
+        -- PrintName = "Grips",
+        -- DefaultAttName = "Default",
+        -- Category = {"grip"},
+        -- Bone = "tag_attachments",
+        -- Pos = Vector(0, -4, 2),
+        -- Ang = Angle(35, 5, -110),
+		-- Scale = 1,
+		-- RejectAttachments = { 
+		-- ["go_ubgl_m203"] = true,
+		-- ["go_ubgl_mass26"] = true,
+		-- ["go_ubgl_xm1014"] = true,
+		-- ["go_grip_angled"] = true,
+		-- },
+    -- },
     {
         PrintName = "Perk",
         Category = {"cod2019_perks","cod2019_perks_soh"}

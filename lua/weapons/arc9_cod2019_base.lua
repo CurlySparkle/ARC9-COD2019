@@ -83,8 +83,8 @@ SWEP.Hook_Think	= function(wep)
         local spd2 = math.Clamp(math.Remap(vel, 0, wspd, 0, 1), 0, 1) - spd
         local moveblend = math.Clamp(spd-delta, 0, 1) or 0
         local walkblend = math.Clamp(spd2-delta, 0, 1) or 0
-        wep.MovePoseParam = Lerp(10 * FrameTime(), wep.MovePoseParam, moveblend)
-        wep.WalkPoseParam = Lerp(10 * FrameTime(), wep.WalkPoseParam, walkblend)
+        wep.MovePoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), wep.MovePoseParam, moveblend)
+        wep.WalkPoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), wep.WalkPoseParam, walkblend)
         if vm then
             vm:SetPoseParameter("bullets",wep:GetMaxClip1() - clip)
             vm:SetPoseParameter("blend_move", wep.MovePoseParam)

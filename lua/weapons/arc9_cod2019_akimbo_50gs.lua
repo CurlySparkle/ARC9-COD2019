@@ -168,7 +168,7 @@ SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -194,13 +194,13 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(0, -1.5, -0.8)
 SWEP.MovingAng = Angle(0, 0, 0)
 
-SWEP.CrouchPos = Vector(-0.5, -0, -1)
-SWEP.CrouchAng = Angle(0, 0, -5)
+SWEP.CrouchPos = Vector(0, -2, -0.5)
+SWEP.CrouchAng = Angle(0, 0, 0)
 
-SWEP.SprintPos = Vector(0, 0, -0.5)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
