@@ -189,7 +189,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -0.5)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -205,7 +205,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.6, -0.6)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -504,11 +504,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.2,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.2,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -622,6 +622,12 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
+    ["stock_adapter"] = {
+        Bodygroups = {
+            {4,1},
+			{3,0},
+        },
+    },
     ["stock"] = {
         Bodygroups = {
             {4,1},
@@ -698,11 +704,11 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"csgo_stock","cod2019_stocks"},
+        Category = {"cod2019_tube"},
         Bone = "tag_stock_attach",
-        Pos = Vector(1.3, 0, 0),
+        Pos = Vector(0, 0, 0.03),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock"},
+		--InstalledElements = {"stock"},
     },
     {
         PrintName = "Ammo",
