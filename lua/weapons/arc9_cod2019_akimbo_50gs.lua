@@ -662,6 +662,16 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    -- {
+        -- PrintName = "rhik",
+        -- Bone = "tag_pistol_attachments",
+        -- Pos = Vector(0, 0, -1.5),
+        -- Ang = Angle(0, 0, 180),
+        -- Category = {"cod2019_50gs_rhik"},
+        -- Installed = "cod2019_50gs_rhik",
+        -- Integral = true,
+        -- Hidden = true,				
+    -- },	
 }
 
 SWEP.GripPoseParam = 4.6
