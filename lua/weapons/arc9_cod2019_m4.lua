@@ -126,14 +126,17 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilMultSights = 0.1
 SWEP.VisualRecoilPunchSights = 15
+
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.4
-
-SWEP.VisualRecoilSpringMagnitude = 0.8
 SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = 0.3
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 80
+SWEP.VisualRecoilDampingConstSights = 80
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then

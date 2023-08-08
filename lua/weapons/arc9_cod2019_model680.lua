@@ -945,6 +945,9 @@ SWEP.AttachmentElements = {
 	[2] = { Pos = Vector(6, 0, 0), },
 	},
     },
+	["sight_minidot"] = {
+    AttPosMods = { [3] = { Pos = Vector(0.5, 0, -0.1), } }	
+	}
 }
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)

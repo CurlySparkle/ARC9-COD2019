@@ -117,12 +117,16 @@ SWEP.RecoilMultSights = 0.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 1
-SWEP.VisualRecoilPunchSights = 30
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.1
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilRoll = 55
 SWEP.VisualRecoilSide = -1/6
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 10
+SWEP.VisualRecoilDampingConstSights = 50
 
 -------------------------- SPREAD
 
@@ -142,8 +146,8 @@ SWEP.SpreadAddSights = -0.5
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.1 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.1 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.2 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.2 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -850,13 +854,41 @@ end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
--- SWEP.AttachmentTableOverrides = {
-    -- ["arc9_stat_proscreen_main"] = {
-    -- ModelOffset = Vector(3, -1.15, -3.55),
-	-- ModelAngleOffset = Angle(0, 0, 0),
-	-- Scale = 0.9,
-    -- },
--- }
+SWEP.AttachmentTableOverrides = {
+    ["cod2019_optic_minireddot1"] = {
+    Sights = {
+    {
+        Pos = Vector(0, 15, -0.7),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.15,
+        ViewModelFOV = 65,
+        IgnoreExtra = false
+    },
+    },
+    },
+    ["cod2019_optic_minireddot2"] = {
+    Sights = {
+    {
+        Pos = Vector(0, 15, -0.65),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.15,
+        ViewModelFOV = 65,
+        IgnoreExtra = false
+    },
+    },
+    },
+    ["cod2019_optic_minireddot3"] = {
+    Sights = {
+    {
+        Pos = Vector(0, 15, -0.65),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.15,
+        ViewModelFOV = 65,
+        IgnoreExtra = false
+    },
+    },
+    },
+}
 
 SWEP.AttachmentElements = {
     ["mag_none"] = {
@@ -874,6 +906,9 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
+	["muzzle_comp"] = {
+    AttPosMods = { [2] = { Pos = Vector(-0.2, 0, 0), } }	
+	}
 }
 
 SWEP.Attachments = {

@@ -117,10 +117,29 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.03
 SWEP.VisualRecoilMultSights = 1
 SWEP.VisualRecoilPunchSights = 30
+
+SWEP.VisualRecoilPunch = 3
+SWEP.VisualRecoilUp = 0.4
+SWEP.VisualRecoilRoll = 25
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 80
+SWEP.VisualRecoilDampingConstSights = 80
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -179,7 +198,7 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.7, -0.5, -0.7)
+SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -655,11 +674,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.4,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.4,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -879,7 +898,7 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"csgo_stock","cod2019_stocks"},
+        Category = {"cod2019_stocks"},
         Bone = "tag_stock_attach",
         Pos = Vector(-0.2, 0, 1.2),
         Ang = Angle(5, 0, 0),
@@ -964,6 +983,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodStubbyGripPoseParam = 7
-SWEP.CodAngledGripPoseParam = 5
-SWEP.CodStubbyTallGripPoseParam = 0.98
+SWEP.CodStubbyGripPoseParam = 12
+SWEP.CodAngledGripPoseParam = 23
+SWEP.CodStubbyTallGripPoseParam = 20
