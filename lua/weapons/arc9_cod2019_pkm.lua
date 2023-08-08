@@ -183,7 +183,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(-2, 0, -2)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -631,7 +631,7 @@ SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(16, 0, -1.2),
+    ModelOffset = Vector(17, -0.2, -0.75),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
     },

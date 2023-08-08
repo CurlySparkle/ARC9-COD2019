@@ -668,7 +668,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.5, 0, -0.08),
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = "cod2019_optic",
         CorrectiveAng = Angle(0, 0, 0),
@@ -774,5 +774,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 0.4
 SWEP.GripPoseParam2 = 0
-SWEP.CodAngledGripPoseParam = 5
-SWEP.CodStubbyGripPoseParam = 6.7
+SWEP.CodAngledGripPoseParam = 24
+SWEP.CodStubbyGripPoseParam = 13

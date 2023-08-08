@@ -727,13 +727,41 @@ end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
--- SWEP.AttachmentTableOverrides = {
-    -- ["arc9_stat_proscreen_main"] = {
-    -- ModelOffset = Vector(3, -1.15, -3.55),
-	-- ModelAngleOffset = Angle(0, 0, 0),
-	-- Scale = 0.9,
-    -- },
--- }
+SWEP.AttachmentTableOverrides = {
+    ["cod2019_optic_minireddot1"] = {
+    Sights = {
+    {
+        Pos = Vector(0, 15, -0.7),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.15,
+        ViewModelFOV = 65,
+        IgnoreExtra = false
+    },
+    },
+    },
+    ["cod2019_optic_minireddot2"] = {
+    Sights = {
+    {
+        Pos = Vector(0, 15, -0.65),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.15,
+        ViewModelFOV = 65,
+        IgnoreExtra = false
+    },
+    },
+    },
+    ["cod2019_optic_minireddot3"] = {
+    Sights = {
+    {
+        Pos = Vector(0, 15, -0.65),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.15,
+        ViewModelFOV = 65,
+        IgnoreExtra = false
+    },
+    },
+    },
+}
 
 SWEP.AttachmentElements = {
     ["mag_none"] = {
@@ -774,10 +802,10 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Optics",
-        Bone = "tag_reflex",
-        Pos = Vector(1.5, 0, -0.07),
+        Bone = "tag_holo",
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optics_pistols_alt","eft_optic_small"},
+        Category = {"cod2019_optic"},
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 1,
     },

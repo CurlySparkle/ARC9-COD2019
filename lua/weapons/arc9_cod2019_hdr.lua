@@ -899,6 +899,9 @@ SWEP.AttachmentElements = {
             {7,1},
         },
     },
+	["scope_hdr"] = {
+    AttPosMods = { [3] = { Pos = Vector(7.5, 0, -0.1), } }	
+	}
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -930,8 +933,8 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Optics",
-        Bone = "tag_scope",
-        Pos = Vector(6.2, 0, 0),
+        Bone = "tag_holo",
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_optic_hdr","cod2019_scope_snipers"},
         CorrectiveAng = Angle(-0.5, 1.15, 0),
@@ -1037,6 +1040,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 3
 SWEP.CodAngledGripPoseParam = 4
-SWEP.CodStubbyGripPoseParam = 0.5
+SWEP.CodStubbyGripPoseParam = 5
 SWEP.CodStubbyTallGripPoseParam = 0
 SWEP.GripPoseParam2 = 0.5

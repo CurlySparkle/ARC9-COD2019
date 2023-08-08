@@ -100,7 +100,7 @@ SWEP.Recoil = 1.15
 
 SWEP.RecoilSeed = 6589132
 
-SWEP.RecoilPatternDrift = 35
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -108,7 +108,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
+SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
 SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
@@ -125,15 +125,16 @@ SWEP.RecoilMultSights = 0.85
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilMultSights = 0.5
 SWEP.VisualRecoilPunchSights = 25
 SWEP.VisualRecoilPunch = 2.5
-SWEP.VisualRecoilUp = 0.1
-SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = -0.1
+SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilRoll = 25
+SWEP.VisualRecoilSide = 0.5
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 80
+SWEP.VisualRecoilDampingConstSights = 200
 SWEP.VisualRecoilSpringMagnitude = 2 / 1.67
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -196,7 +197,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, -1, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -208,12 +209,12 @@ SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
+    Pos = Vector(-0.5, -0.5, -0.5),
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -721,6 +722,8 @@ SWEP.AttachmentElements = {
 	[4] = { Pos = Vector(4, -2.6, 0.05), },
 	}	
     },
+    ["cod2019_p90_b"] = {
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -750,7 +753,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(2.5, 0, -0.07),
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -766,11 +769,33 @@ SWEP.Attachments = {
 		--InstalledElements = {"rail_laser"},
     },
     {
+        PrintName = "Grips",
+        DefaultAttName = "Default",
+        Category = "cod2019_grip",
+        Bone = "tag_attachments",
+        Pos = Vector(16, 0, 0.2),
+        Ang = Angle(0, 0, 180),
+		Scale = 1,
+		InstalledElements = {"cod2019_p90_b"},
+		RequireElements = {"gsr_p90_extbarrel"},
+    },
+    {
+        PrintName = "Stock",
+        DefaultAttName = "Default",
+        Category = "cod2019_p90_stock",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-17, 0, 1),
+		--InstalledElements = {"rail_laser"},
+    },
+    {
         PrintName = "Ammo",
         Bone = "j_mag1",
         Category = {"cod2019_ammo"},
-        Pos = Vector(0, 0, -1.5),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-2, 0, 0),
     },
     {
         PrintName = "Mag",
@@ -842,5 +867,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 5
-SWEP.CodStubbyGripPoseParam = 0.5
+SWEP.CodStubbyGripPoseParam = 5.3
 SWEP.CodStubbyTallGripPoseParam = 2
