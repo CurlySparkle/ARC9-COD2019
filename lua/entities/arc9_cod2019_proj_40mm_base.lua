@@ -117,18 +117,15 @@ function ENT:Detonate()
             -- explosion_grenade_fas2
 
             --self:EmitSound(self.ExplosionSounds[math.random(1,#self.ExplosionSounds)], 125, 100, 1, CHAN_AUTO)
-			self:EmitSound("CSGO.Frag.Explode")
+			self:EmitSound("Cod2019.Frag.Explode")
 			self:EmitSound("cod2019.M32.Explode")
-			ParticleEffect("explosion_hegrenade_brief", self:GetPos(), Angle(-90, 0, 0))
-            ParticleEffect("explosion_hegrenade_interior", self:GetPos(), Angle(-90, 0, 0))
+			--ParticleEffect("explosion_hegrenade_brief", self:GetPos(), Angle(-90, 0, 0))
+            --ParticleEffect("explosion_hegrenade_interior", self:GetPos(), Angle(-90, 0, 0))
             ParticleEffect("smoke_plume", self:GetPos(), Angle(-90, 0, 0))
-            ParticleEffect("grenade_explosion_01", self:GetPos(), Angle(-90, 0, 0))
-			
-            --ParticleEffect("explosion_HE_m79_fas2", self:GetPos(), Angle(-90, 0, 0))
+            --ParticleEffect("grenade_explosion_01", self:GetPos(), Angle(-90, 0, 0))
+            ParticleEffect("explosion_grenade", self:GetPos(), Angle(-90, 0, 0))
 
             --self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)
-
-            -- Where is the sound zenith ? ???
         end
 
         util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)

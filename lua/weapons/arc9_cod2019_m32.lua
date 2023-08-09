@@ -164,11 +164,11 @@ SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
+    Pos = Vector(-0.5, -0.5, -0.5),
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -342,7 +342,7 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
-		MinProgress = 0.9,
+		MinProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -364,7 +364,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.9,
+		MinProgress = 0.8,
 		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_plr_la_mike32_raise_up.ogg", t = 0/30},

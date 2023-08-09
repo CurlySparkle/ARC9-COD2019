@@ -209,7 +209,7 @@ SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
+    Pos = Vector(-0.5, -0.5, -0.5),
     Ang = Angle(0, 0, 0)
 }
 
@@ -915,6 +915,6 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 0.4
 SWEP.GripPoseParam2 = 0
 SWEP.CodAngledGripPoseParam = 3
-SWEP.CodStubbyGripPoseParam = 0.7
---SWEP.CodStubbyTallGripPoseParam = 5
-SWEP.CodStubbyTallGripPoseParam = 0
+SWEP.CodStubbyGripPoseParam = 14
+SWEP.CodStubbyTallGripPoseParam = 5
+--SWEP.CodStubbyTallGripPoseParam = 0

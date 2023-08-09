@@ -109,6 +109,7 @@ ATT.Model = "models/weapons/cod2019/attachs/grips/grip_angled.mdl"
 ATT.SortOrder = 0
 ATT.Category = "cod2019_grip"
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.ActivateElements = {"grip_angled"}
 
 ATT.RecoilPatternDriftMult = 1.1
 ATT.RecoilAutoControlMult = 0.9
@@ -141,6 +142,7 @@ ATT.Model = "models/weapons/cod2019/attachs/grips/grip_angled02.mdl"
 ATT.SortOrder = 0.3
 ATT.Category = "cod2019_grip"
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.ActivateElements = {"grip_angled"}
 
 ATT.RecoilPatternDriftMult = 1.1
 ATT.RecoilAutoControlMult = 0.9

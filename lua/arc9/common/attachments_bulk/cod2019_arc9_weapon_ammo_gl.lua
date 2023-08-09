@@ -3,7 +3,7 @@ local ATT = {}
 ATT = {}
 
 ATT.PrintName = "Rock Nade"
-ATT.CompactName = "RN"
+ATT.CompactName = "Rock"
 ATT.Description = [[Changes the nade type to fire a singular but yet "powerful" rock.
 (Quite a stoner if you ask me...)]]
 ATT.SortOrder = 0
@@ -25,7 +25,7 @@ ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_rock")
 ATT = {}
 
 ATT.PrintName = "Flash Nade"
-ATT.CompactName = "FN"
+ATT.CompactName = "Flash"
 ATT.Description = [[Changes the nade type to fire a flashing type nade. (better watch your eyes with this one.)]]
 ATT.SortOrder = 0.5
 
@@ -43,9 +43,9 @@ ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_flash")
 ------------------------------------------------------------------------------------------
 ATT = {}
 
-ATT.PrintName = "Incendiary Nade"
-ATT.CompactName = "ICN"
-ATT.Description = [[Changes the nade type to fire an incendiary type nade.]]
+ATT.PrintName = "Napalm Nade"
+ATT.CompactName = "Napalm"
+ATT.Description = [[Changes the nade type to a fire type napalm nade that creates an aoe on impact.]]
 ATT.SortOrder = 1
 
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_inc.png", "mips smooth")
@@ -63,8 +63,8 @@ ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_inc")
 ATT = {}
 
 ATT.PrintName = "Smoke Nade"
-ATT.CompactName = "SN"
-ATT.Description = [[Changes the nade type to fire an smoking type nade.]]
+ATT.CompactName = "Smoke"
+ATT.Description = [[Changes the nade type to fire a smoking type nade.]]
 ATT.SortOrder = 1
 
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_smoke.png", "mips smooth")
@@ -78,3 +78,22 @@ ATT.ShootEnt = "arc9_cod2019_proj_40mm_smoke"
 ATT.Category = {"cod2019_ammo_gl"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_smoke")
+------------------------------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = "Gas Nade"
+ATT.CompactName = "Gas"
+ATT.Description = [[Changes the nade type to fire a gas type nade that can cover a section of an area.]]
+ATT.SortOrder = 1
+
+--ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_smoke.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+
+ATT.Free = true
+
+ATT.ShootEnt = "arc9_cod2019_proj_40mm_gas"
+
+ATT.Category = {"cod2019_ammo_gl"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_gas")

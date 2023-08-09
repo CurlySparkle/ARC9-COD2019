@@ -94,11 +94,11 @@ function ENT:Detonate()
         util.Effect( "WaterSurfaceExplosion", effectdata )
         self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
     else
-        	self:EmitSound("CSGO.Frag.Explode")
-			ParticleEffect("explosion_hegrenade_brief", self:GetPos(), Angle(-90, 0, 0))
-            ParticleEffect("explosion_hegrenade_interior", self:GetPos(), Angle(-90, 0, 0))
+        	self:EmitSound("Cod2019.Frag.Explode")
+			--ParticleEffect("explosion_hegrenade_brief", self:GetPos(), Angle(-90, 0, 0))
+            --ParticleEffect("explosion_hegrenade_interior", self:GetPos(), Angle(-90, 0, 0))
             ParticleEffect("smoke_plume", self:GetPos(), Angle(-90, 0, 0))
-            ParticleEffect("grenade_explosion_01", self:GetPos(), Angle(-90, 0, 0))
+            ParticleEffect("explosion_m79", self:GetPos(), Angle(-90, 0, 0))
         --self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)
     end
 
