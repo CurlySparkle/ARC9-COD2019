@@ -77,7 +77,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 659
+SWEP.RPM = 610
 
 SWEP.Firemodes = {
     {
@@ -95,19 +95,19 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.3
+SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = 36387
 
-SWEP.RecoilPatternDrift = 35
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1.2 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
+SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
 SWEP.RecoilDissipationRate = 25 -- How much recoil dissipates per second.
@@ -121,18 +121,22 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
+SWEP.RecoilMultSights = 0.7
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 3
-SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilPunch = 1.5
+SWEP.VisualRecoilUp = 0.3
 
 SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 25
-SWEP.VisualRecoilRoll = 55
+SWEP.VisualRecoilPunchSights = 55
+SWEP.VisualRecoilRoll = 35
 SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 30
+SWEP.VisualRecoilDampingConstSights = 50
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -157,7 +161,7 @@ SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddHipFire = 0.015
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
@@ -203,14 +207,14 @@ SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Pos = Vector(-0.5, -0.5, -0.5),
+    Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-1, -1, -1)
+SWEP.MovingAng = Angle(0, 0, -8)
 
-SWEP.CrouchPos = Vector(-0.5, -0, -1)
+SWEP.CrouchPos = Vector(-0.8, -0.8, -0.8)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -249,7 +253,7 @@ SWEP.ShellScale = 0.07
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_smg_bizon_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {
 "weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_metal_concrete_01.ogg",
@@ -286,7 +290,7 @@ SWEP.LayerSoundSilenced = "layer_ARSUP.Outside"
 SWEP.DistantShootSoundSilenced = "distant_SMG_Sup.Outside"
 -- Inside
 SWEP.LayerSoundSilencedIndoor = "layer_ARSUP.Inside"
-SWEP.DistantShootSoundSilencedIndoor = "distant_Pistol_Sup.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "Distant_Pistol_Sup.Inside"
 ---------------------------------------------------
 
 SWEP.EnterSightsSound = path .. "weap_sm_beta_ads_up.ogg"
@@ -316,7 +320,8 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
@@ -349,45 +354,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_end.ogg", t = 52/30},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_plr_sm_beta_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_empty_rotate.ogg", t = 4/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_empty_magout_01.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_01.ogg", t = 30/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_02.ogg", t = 35/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_empty_end.ogg", t = 28/30},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             {
@@ -421,8 +391,85 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_end.ogg", t = 66/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.85,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_beta_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_rotate.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_magout_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_02.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_end.ogg", t = 28/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_rotate.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_magout_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_02.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_charge_01.ogg", t = 43/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_end.ogg", t = 45/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -453,6 +500,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.9,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_plr_sm_beta_raise_up.ogg", t = 0/30},
         },

@@ -206,8 +206,8 @@ SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Pos = Vector(-0.5, -0.5, -0.5),
+    Ang = Angle(0, 0, -5)
 }
 
 SWEP.MovingPos = Vector(-1, -1, -1)
@@ -238,10 +238,11 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_pistol_suppressed"
+SWEP.MuzzleParticle = "AC_muzzle_pistol_suppressed_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
+SWEP.NoFlash = true
 
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
@@ -856,6 +857,16 @@ SWEP.AttachmentElements = {
             {0,1},
         },
     },
+    ["mag_none"] = {
+        Bodygroups = {
+            {1,1},
+        },
+    },
+    ["barrel_none"] = {
+        Bodygroups = {
+            {2,1},
+        },
+    },
     ["sight_rail"] = {
         Bodygroups = {
             {4,1},
@@ -866,7 +877,7 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
-    ["stock_tube"] = {
+    ["stock_adapter"] = {
         Bodygroups = {
             {3,2},
         },
@@ -876,16 +887,20 @@ SWEP.AttachmentElements = {
             {3,3},
         },
     },
-    ["mag_none"] = {
+    ["stock_tube"] = {
         Bodygroups = {
-            {1,1},
+            {3,2},
         },
     },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
+    if wep:HasElement("stock_retract") then 
+	model:SetBodygroup(3,1)
+	elseif wep:HasElement("stock_custom") then
+	model:SetBodygroup(3,3)
+	end
 end
 
 SWEP.Attachments = {
@@ -900,7 +915,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.5, 0, -0.1),
+        Pos = Vector(1.5, 0, 0),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0.8, -0.8, 0),
@@ -927,11 +942,11 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"cod2019_tube","stock_retract"},
+        Category = {"cod2019_stocks","stock_retract"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0.2, 0, 0),
+        Pos = Vector(1.7, 0, 0.1),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_none"},
+		InstalledElements = {"stock_adapter"},
     },
     {
         PrintName = "Ammo",

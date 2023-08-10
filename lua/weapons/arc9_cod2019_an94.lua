@@ -135,13 +135,17 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilPunch = 1.5
+SWEP.VisualRecoilUp = 0.3
 
 SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 25
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilPunchSights = 55
+SWEP.VisualRecoilRoll = 35
 SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 30
+SWEP.VisualRecoilDampingConstSights = 50
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -200,7 +204,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -212,12 +216,12 @@ SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Pos = Vector(-0.5, -0.5, -0.5),
+    Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -254,7 +258,7 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.085
+SWEP.ShellScale = 0.06
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
@@ -450,11 +454,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_anovember94_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 16/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 32/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 36/30},
-			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_anovember94_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magout.ogg", t = 16/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magin_01.ogg", t = 32/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magin_02.ogg", t = 36/30},
+			{s = path .. "wfoly_ar_anovember94_reload_end.ogg", t = 40/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -479,7 +483,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
@@ -529,13 +533,38 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.85,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_ar_anovember94_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
-		--Mult = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.3,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_ar_anovember94_drop.ogg", t = 0/30},
         },
@@ -548,11 +577,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.2,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.2,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -712,14 +741,19 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
+    ["stock_adapter"] = {
+        Bodygroups = {
+            {3,2},
+        },
+    },
     ["stock_retract"] = {
         Bodygroups = {
-            {3,1},
+            {3,2},
         },
     },
     ["stock_none"] = {
         Bodygroups = {
-            {3,2},
+            {3,3},
         },
     },
     ["muzzle"] = {
@@ -736,7 +770,11 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
+    if wep:HasElement("stock_retract") then 
+	model:SetBodygroup(3,1)
+	elseif wep:HasElement("stock_custom") then
+	model:SetBodygroup(3,3)
+	end
 end
 
 SWEP.Attachments = {
@@ -788,11 +826,11 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = "cod2019_tube",
+        Category = {"cod2019_stocks","stock_retract"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_none"},
+        Pos = Vector(1, 0.11, 0.07),
+        Ang = Angle(0, 1, 0),
+		InstalledElements = {"stock_adapter"},
     },
     {
         PrintName = "Ammo",
