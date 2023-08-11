@@ -1490,7 +1490,6 @@ sound.Add({
     "weapons/cod2019/g3a3/g3_close3_single.ogg",
     "weapons/cod2019/g3a3/g3_close4_single.ogg",
     "weapons/cod2019/g3a3/g3_close5_single.ogg",
-    "weapons/cod2019/g3a3/g3_close6_single.ogg",
 }              
 })
 sound.Add({

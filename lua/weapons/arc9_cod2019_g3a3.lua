@@ -180,8 +180,8 @@ SWEP.TracerColor = Color(255, 225, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.1, -2, 0.85),
-    Ang = Angle(0, -0.5, -3.5),
+    Pos = Vector(-3.07, -2, 0.59),
+    Ang = Angle(0, 0.2, -3),
     Magnification = 1.15,
 	ViewModelFOV = 54,
 	CrosshairInSights = false
@@ -189,7 +189,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, -1, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -201,11 +201,11 @@ SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Pos = Vector(-0.5, -0.5, -0.5),
+    Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -240,9 +240,9 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr_fal.mdl"
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 1.4
+SWEP.ShellScale = 0.07
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
@@ -450,6 +450,145 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_end.ogg", t = 2.3},
         },
     },
+    ["reload_drum"] = {
+        Source = "reload_xmag",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_ar_falima_reload_xmag_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_xmag_rattle.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magout_01.ogg", t = 17/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_01.ogg", t = 37/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_magin_v2_02.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_ar_falima_raise_start.ogg", t = 61/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_xmag_end.ogg", t = 63/30},
+        },
+    },
+    ["reload_drum_empty"] = {
+        Source = "reload_xmag_empty",
+		DropMagAt = 1.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_start.ogg", t = 0/30},
+            {s = path .. "mp5-submachinegun-foley-bolt-charge-1.ogg", t = 6/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magout_01.ogg", t = 25/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_rattle.ogg", t = 44/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_01.ogg", t = 52/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_magin_v2_02.ogg", t = 63/30},
+			{s = path .. "g3_boltpullreleasesoh.ogg", t = 78/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_xmag_end.ogg", t = 94/30},
+        },
+    },
+    ["reload_drum_fast"] = {
+        Source = "reload_xmag_fast",
+		DropMagAt = 0.9,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_rattle.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_magout_01.ogg", t = 9/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_magin_v2_02.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_xmag_end.ogg", t = 48/30},
+        },
+    },
+    ["reload_drum_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		DropMagAt = 0.9,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_start.ogg", t = 0},
+            {s = path .. "mp5-submachinegun-foley-bolt-charge-1.ogg", t = 0.13},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_magout_01.ogg", t = 0.7},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_magin_v2_01.ogg", t = 1.37},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_magin_v2_02.ogg", t = 1.57},
+			{s = path .. "g3_boltpullrelease.ogg", t = 2.0},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_xmag_end.ogg", t = 2.3},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -487,11 +626,11 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 1,
-                rhik = 1
+                lhik = 0,
+                rhik = 0
             },
             {
-                t = 1,
+                t = 0.7,
                 lhik = 1,
                 rhik = 1
             },
@@ -510,7 +649,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.5,
+                t = 0.7,
                 lhik = 0,
                 rhik = 1
             },
@@ -572,16 +711,16 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
@@ -616,17 +755,37 @@ SWEP.Animations = {
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
+-- SWEP.Hook_TranslateAnimation = function (wep, anim)
+    -- --local attached = self:GetElements()
+
+    -- if anim == "reload" and wep:HasElement("perk_speedreload") then
+        -- return "reload_fast"
+    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        -- return "reload_fast_empty"
+    -- end
+-- end
+
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
+        return "reload_drum_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
+        return "reload_drum_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_drum") then
+        return "reload_drum"
+    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
+        return "reload_drum_empty"
     end
 end
 
-SWEP.DefaultBodygroups = "00000000000000"
+SWEP.DefaultBodygroups = "000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -684,6 +843,7 @@ SWEP.AttachmentElements = {
     ["sights_none"] = {
         Bodygroups = {
             {1,1},
+            {10,1},
         },
     },
     ["barrel_none"] = {
@@ -699,6 +859,11 @@ SWEP.AttachmentElements = {
     ["mag"] = {
         Bodygroups = {
             {4,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
+            {4,2},
         },
     },
     ["pistol_grip_none"] = {
@@ -726,7 +891,17 @@ SWEP.AttachmentElements = {
 			{9,1},
         },
     },
+	["barrel_sniper"] = {
+    AttPosMods = { [5] = { Pos = Vector(8.5, 0, 0.75), } }
+	}
 }
+
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("barrel_sniper") or wep:HasElement("barrel_custom") then 
+	model:SetBodygroup(7,0) 
+	end
+end
 
 SWEP.Attachments = {
     {
@@ -734,9 +909,9 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Barrel",
         Category = {"cod2019_g3a3_barrel"},
         Bone = "tag_attachments",
-        Pos = Vector(0, 0, 05),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(6, 0, -2.2),
+		Icon_Offset = Vector(10, 0, 2.5),
     },
     {
         PrintName = "Optics",
@@ -753,7 +928,7 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle",
         Bone = "tag_silencer",
-        Pos = Vector(-1.3, 0, 0),
+        Pos = Vector(-1.3, -0.1, 0),
         Ang = Angle(0, 0, -90),
 		InstalledElements = {"muzzle_none"},
 		Scale = 1,
@@ -808,7 +983,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_g3a3_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
