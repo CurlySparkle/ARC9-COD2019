@@ -19,7 +19,7 @@ SWEP.Description = [[6 round semi-automatic high-explosive grenade launcher.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_m32.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
-SWEP.DefaultBodygroups = "00000000"
+SWEP.DefaultBodygroups = "00000000000"
 
 SWEP.Slot = 3
 
@@ -143,8 +143,8 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-4.1, -5, 0.9),
-    Ang = Angle(0, 0, -1),
+    Pos = Vector(-3.55, -5, 1.8),
+    Ang = Angle(0, -1.5, 0),
     Magnification = 1.1,
     ViewModelFOV = 56,
     CrosshairInSights = false
@@ -165,7 +165,7 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
     Pos = Vector(-0.5, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Ang = Angle(0, 0, -5)
 }
 
 SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)

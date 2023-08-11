@@ -213,14 +213,14 @@ SWEP.SprintMidPoint = {
 
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Pos = Vector(-0.5, -0.5, -0.5),
+    Ang = Angle(0, 0, -5)
 }
 
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.8, -0.6, -0.6)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -333,7 +333,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.9,
+		MinProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -404,7 +404,7 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.9,
+		MinProgress = 0.85,
 		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
@@ -476,7 +476,7 @@ SWEP.Animations = {
     },
     ["reload_drum"] = {
         Source = "reload_drum",
-		MinProgress = 0.9,
+		MinProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -547,7 +547,7 @@ SWEP.Animations = {
     },
     ["reload_drum_fast"] = {
         Source = "reload_fast_drum",
-		MinProgress = 0.9,
+		MinProgress = 0.85,
 		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
@@ -619,6 +619,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
+		MinProgress = 0.85,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -649,6 +651,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.8,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sm_secho_raise.ogg", t = 0/30},
         },
@@ -667,11 +671,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 1.8,
+		Mult = 1.9,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 1.8,
+		Mult = 1.9,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -797,9 +801,15 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
-    ["stock_none"] = {
+    ["stock_adapter"] = {
         Bodygroups = {
             {2,2},
+            {5,1},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {2,3},
         },
     },
     ["sights"] = {
@@ -814,11 +824,12 @@ SWEP.AttachmentElements = {
     },
 }
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("barrel_long") and wep.Attachments[3].Installed then model:SetBodygroup(3,3) end
-	-- if wep:HasElement("barrel_short") and wep.Attachments[3].Installed then model:SetBodygroup(3,3) end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("stock_retract") then 
+	model:SetBodygroup(2,1) 
+	end
+end
 
 SWEP.Attachments = {
     {
@@ -862,14 +873,14 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-1.3, 0, 0),
+        Pos = Vector(-1, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
     },
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"stock_retract","cod2019_cx9_stock"},
+        Category = {"stock_retract","cod2019_cx9_stock","cod2019_tube"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -884,7 +895,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag","go_mag_cx9"},
+        Category = {"cod2019_mag","cod2019_cx9_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
