@@ -946,7 +946,7 @@ SWEP.AttachmentElements = {
 	},
     },
 	["sight_minidot"] = {
-    AttPosMods = { [3] = { Pos = Vector(0.5, 0, -0.1), } }	
+    AttPosMods = { [3] = { Pos = Vector(0.5, 0, -0.1), } }
 	}
 }
 

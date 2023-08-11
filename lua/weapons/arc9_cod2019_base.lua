@@ -49,7 +49,7 @@ SWEP.PhysicalVisualRecoil = true
 SWEP.SprintVerticalOffset = false
 SWEP.CanBlindFire = false
 
-SWEP.RicochetChance = 0.05
+SWEP.RicochetChance = 0.03
 
 SWEP.SwayMultSights = 0
 

@@ -101,15 +101,15 @@ SWEP.Recoil = 1.5
 
 SWEP.RecoilSeed = 346598
 
-SWEP.RecoilPatternDrift = 45
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1.5 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
+SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
 SWEP.RecoilDissipationRate = 25 -- How much recoil dissipates per second.
@@ -118,6 +118,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilKick = 2
+SWEP.RecoilKickDamping = 90
 
 SWEP.RecoilMultCrouch = 0.8
 
@@ -132,9 +133,9 @@ SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.1
 
 SWEP.VisualRecoilMultSights = 0.5
-SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilPunchSights = 35
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.2
+SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -205,8 +206,8 @@ SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Pos = Vector(-0.5, -0.5, -0.5),
+    Ang = Angle(0, 0, -5)
 }
 
 SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
@@ -251,7 +252,7 @@ SWEP.ShellScale = 0.085
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
-SWEP.ShouldDropMagEmpty = true
+SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_rif_oden_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {
 "weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_metal_concrete_01.ogg",
@@ -389,7 +390,7 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.85,
+		MinProgress = 0.6,
 		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.45,
@@ -428,7 +429,7 @@ SWEP.Animations = {
 		MinProgress = 0.9,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.45,
+		DropMagAt = 0.65,
         IKTimeLine = {
             {
                 t = 0,
@@ -653,6 +654,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
@@ -672,6 +678,12 @@ SWEP.AttachmentElements = {
         Bodygroups = {
             {4,0},
         },
+    },
+    ["scope_sniper"] = {
+        Bodygroups = {
+            {4,1},
+        },
+		AttPosMods = { [3] = { Pos = Vector(1.5, 0, -2), } }
     },
 }
 
@@ -722,7 +734,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-4, 0, 0),
+        Pos = Vector(-2.5, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"rail_grip"},
@@ -805,5 +817,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 21.7
-SWEP.CodStubbyTallGripPoseParam = 19
+SWEP.CodAngledGripPoseParam = 25
+SWEP.CodStubbyTallGripPoseParam = 0
+SWEP.CodStubbyGripPoseParam = 15

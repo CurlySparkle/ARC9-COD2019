@@ -8,7 +8,7 @@ ATT.CompactName = [[GSR Tac]]
 ATT.Description = [[Lets you use tactical attachments from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
-ATT.SortOrder = 1
+ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_tac_pistols"
 --ATT.Folder = "Suppresors"
@@ -26,7 +26,7 @@ ATT.Attachments = {
     }
 }
 
-ARC9.LoadAttachment(ATT, "cod2019_attach_custom_laser_pstl")
+ARC9.LoadAttachment(ATT, "cod2019_attach_support_gsr_laser_pstl")
 ------------------------------------------------------------------
 ATT = {}
 
@@ -36,7 +36,7 @@ ATT.CompactName = [[GSR Optics]]
 ATT.Description = [[Lets you use optic attachments from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
-ATT.SortOrder = 1
+ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_optic"
 --ATT.Folder = "Suppresors"
@@ -54,7 +54,7 @@ ATT.Attachments = {
     }
 }
 
-ARC9.LoadAttachment(ATT, "cod2019_attach_custom_optics")
+ARC9.LoadAttachment(ATT, "cod2019_attach_support_gsr_optics")
 ------------------------------------------------------------------
 ATT = {}
 
@@ -64,7 +64,7 @@ ATT.CompactName = [[GSR Optics]]
 ATT.Description = [[Lets you use pistol optics from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
-ATT.SortOrder = 1
+ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_optics_pistols_alt"
 --ATT.Folder = "Suppresors"
@@ -82,17 +82,17 @@ ATT.Attachments = {
     }
 }
 
-ARC9.LoadAttachment(ATT, "cod2019_attach_custom_optics_pistols")
+ARC9.LoadAttachment(ATT, "cod2019_attach_support_gsr_optics_pistols")
 ------------------------------------------------------------------ MUZZLES
 ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = [[GSR Muzzles]]
-ATT.CompactName = [[GSR Muzz]]
+ATT.CompactName = [[GSR Muzzles]]
 ATT.Description = [[Lets you use muzzles from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
-ATT.SortOrder = 1
+ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_muzzle_shot"
 --ATT.Folder = "Suppresors"
@@ -110,17 +110,17 @@ ATT.Attachments = {
     }
 }
 
-ARC9.LoadAttachment(ATT, "cod2019_attach_custom_muzzles")
+ARC9.LoadAttachment(ATT, "cod2019_attach_support_gsr_muzzles")
 ------------------------------------------------------------------
 ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = [[GSR Muzzles]]
-ATT.CompactName = [[GSR Muzz]]
+ATT.CompactName = [[GSR Muzzles]]
 ATT.Description = [[Lets you use muzzles from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
-ATT.SortOrder = 1
+ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_muzzle_pistols"
 --ATT.Folder = "Suppresors"
@@ -140,17 +140,17 @@ ATT.Attachments = {
 
 ATT.Scale = 0.8
 
-ARC9.LoadAttachment(ATT, "cod2019_attach_custom_muzzles_pistols")
+ARC9.LoadAttachment(ATT, "cod2019_attach_support_gsr_muzzles_pistols")
 ------------------------------------------------------------------
 ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = [[GSR Muzzles]]
-ATT.CompactName = [[GSR Muzz]]
+ATT.CompactName = [[GSR Muzzles]]
 ATT.Description = [[Lets you use muzzles from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
-ATT.SortOrder = 1
+ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_muzzle"
 --ATT.Folder = "Suppresors"
@@ -168,4 +168,32 @@ ATT.Attachments = {
     }
 }
 
-ARC9.LoadAttachment(ATT, "cod2019_attach_custom_muzzles_alt")
+ARC9.LoadAttachment(ATT, "cod2019_attach_support_gsr_muzzles_alt")
+------------------------------------------------------------------
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = [[GSR Grips]]
+ATT.CompactName = [[GSR Grips]]
+ATT.Description = [[Lets you use grips from GSR.]]
+--ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
+
+ATT.SortOrder = 1000
+ATT.AutoStats = true
+ATT.Category = "cod2019_grip"
+--ATT.Folder = "Suppresors"
+
+--ATT.Model = "models/weapons/cod2019/attachs/silencers/attachment_vm_sh_oscar12_silencer03.mdl"
+
+ATT.Attachments = {
+    {
+        PrintName = "Muzzle",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        Category = {"grip"},
+		Scale = 1
+    }
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_attach_support_gsr_grips")
