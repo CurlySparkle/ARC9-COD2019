@@ -154,10 +154,23 @@ SWEP.SpreadAddHipFire = 0.05
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
+SWEP.SpreadHook = function(self, orig)
+    local rec = self:GetRecoilAmount()
+    local maxmult = -0.5 -- minimal ever spread mult after this (0.5 = 2x more accurate after many shots)
+    local speedofthis = 0.5 -- per shot multiplier, or just speed
+    local minshots = 5 -- minimal amount of shoots to make this thing work
+	--print(math.max(orig * maxmult, orig * (1 - (rec - minshots) * speedofthis)))
+    
+    if rec > minshots then
+
+      return  math.max(orig * maxmult, orig * (1 - (rec - minshots) * speedofthis))
+   end
+end
+
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
@@ -196,11 +209,11 @@ SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Pos = Vector(-0.5, -0.5, -0.5),
+    Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
+SWEP.MovingPos = Vector(-1, -1, -1)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
