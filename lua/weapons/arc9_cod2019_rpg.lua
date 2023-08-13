@@ -295,7 +295,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_la_rpapa7_raise_first.ogg", t = 14/30},
+            {s = path .. "wfoly_la_rpapa7_raise_first.ogg", t = 9/30},
         },
     },
     ["draw"] = {

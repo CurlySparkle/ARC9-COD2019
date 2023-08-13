@@ -452,7 +452,7 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_raise.ogg", t = 0/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_magout.ogg", t = 6/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_maghit.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_maghit.ogg", t = 19/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_01.ogg", t = 29/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_02.ogg", t = 34/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_bolt_release.ogg", t = 40/30},

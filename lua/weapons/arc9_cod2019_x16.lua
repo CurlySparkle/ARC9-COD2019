@@ -352,7 +352,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 24/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 29/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 35/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 35/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 48/30},
         },
     },
     ["reload_fast"] = {
@@ -419,7 +419,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 7/30},
 			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 15/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 23/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_fast_end.ogg", t = 28/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_end.ogg", t = 36/30},
         },
     },
     ["reload_xmag"] = {
@@ -719,8 +719,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_pi_golf21_first_raise_open_slide.ogg", t = 4/30},
-			{s = path .. "wfoly_pi_golf21_first_raise_slide_release.ogg", t = 11/30},
+            {s = path .. "wfoly_pi_golf21_first_raise_open_slide.ogg", t = 5/30},
+			{s = path .. "wfoly_pi_golf21_first_raise_slide_release.ogg", t = 10/30},
         },
     },
     ["draw"] = {

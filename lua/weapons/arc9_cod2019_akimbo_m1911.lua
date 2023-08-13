@@ -368,7 +368,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 60/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 61/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 73/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 75/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 76/30},
         },
     },
     ["ready"] = {
@@ -397,8 +397,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_pi_mike1911_first_raise_lift.ogg", t = 0/30},
-            {s = path .. "wfoly_pi_mike1911_first_raise_slide_pull.ogg", t = 10/30},
-			{s = path .. "wfoly_pi_mike1911_first_raise_slide_release.ogg", t = 11/30},
+            {s = path .. "wfoly_pi_mike1911_first_raise_slide_pull.ogg", t = 11/30},
+			{s = path .. "wfoly_pi_mike1911_first_raise_slide_release.ogg", t = 12/30},
 			{s = path .. "wfoly_pi_mike1911_first_raise_chamber_end.ogg", t = 20/30},
         },
     },

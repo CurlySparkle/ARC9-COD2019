@@ -627,7 +627,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_raise_first_up.ogg", t = 0/30},
             {s = path .. "wfoly_sn_sksierra_raise_first_charge.ogg", t = 12/30},
-            {s = path .. "wfoly_sn_sksierra_raise_first_end.ogg", t = 24/30},
+            {s = path .. "wfoly_sn_sksierra_raise_first_end.ogg", t = 23/30},
         },
     },
     ["draw"] = {

@@ -340,7 +340,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path2 .. "vm_p01_sm_alpha57_reload_adjust.ogg", t = 0/30},
-			{s = path2 .. "vm_p01_sm_alpha57_reload_magout.ogg", t = 21/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_magout.ogg", t = 22/30},
 			{s = path2 .. "vm_p01_sm_alpha57_reload_adjust.ogg", t = 37/30},
 			{s = path2 .. "vm_p01_sm_alpha57_reload_maghit.ogg", t = 60/30},
 			{s = path2 .. "vm_p01_sm_alpha57_reload_magin.ogg", t = 67/30},
@@ -410,8 +410,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_adjust.ogg", t = 0/30},
-			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_magout.ogg", t = 21/30},
-			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_mvmnt.ogg", t = 21/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_magout.ogg", t = 22/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_mvmnt.ogg", t = 22/30},
 			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_maghit.ogg", t = 60/30},
 			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_magin.ogg", t = 67/30},
 			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_charge.ogg", t = 85/30},
@@ -479,7 +479,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_charge.ogg", t = 12/30},
+			{s = path2 .. "vm_p01_sm_alpha57_reload_empty_charge.ogg", t = 11/30},
             {s = path2 .. "vm_p01_sm_alpha57_raise.ogg", t = 17/30},
         },
     },

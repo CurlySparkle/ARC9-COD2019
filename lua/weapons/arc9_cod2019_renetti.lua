@@ -393,7 +393,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 19/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 22/30},
-			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 22/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 28/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -428,7 +428,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 17/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 25/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 26/30},
         },
     },
     ["reload_xmag"] = {

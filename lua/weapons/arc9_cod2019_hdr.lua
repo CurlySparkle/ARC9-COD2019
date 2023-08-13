@@ -670,7 +670,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_sn_hdromeo_raise_first_up.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_raise_first_boltclose_01.ogg", t = 11/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_raise_first_adjust.ogg", t = 30/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_raise_first_settle.ogg", t = 43/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_raise_first_settle.ogg", t = 41/30},
         },
     },
     ["draw"] = {

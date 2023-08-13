@@ -310,8 +310,8 @@ SWEP.LayerSoundSilencedIndoor = "layer_ARSUP.Inside"
 SWEP.DistantShootSoundSilencedIndoor = "distant_Pistol_Sup.Inside"
 ---------------------------------------------------
 
-SWEP.EnterSightsSound = path .. "wfoly_sm_papa90_ads_up.ogg"
-SWEP.ExitSightsSound = path .. "wfoly_sm_papa90_ads_down.ogg"
+SWEP.EnterSightsSound = path .. "weap_sm_uzulu_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "weap_sm_uzulu_ads_down.ogg"
 
 SWEP.TriggerDelay = 0.15 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
@@ -506,9 +506,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_sm_uzulu_raise_first_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_sm_uzulu_raise_first_stock.ogg", t = 11/30},
-			{s = path .. "wfoly_plr_sm_uzulu_raise_first_extend.ogg", t = 11/30},
-			{s = path .. "wfoly_plr_sm_uzulu_raise_first_end.ogg", t = 28/30},
+            {s = path .. "wfoly_plr_sm_uzulu_raise_first_stock.ogg", t = 8/30},
+			{s = path .. "wfoly_plr_sm_uzulu_raise_first_extend.ogg", t = 9/30},
+			{s = path .. "wfoly_plr_sm_uzulu_raise_first_end.ogg", t = 29/30},
         },
     },
     ["ready_nostock"] = {
@@ -537,9 +537,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_sm_uzulu_raise_first_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_sm_uzulu_raise_first_stock.ogg", t = 11/30},
-			{s = path .. "wfoly_plr_sm_uzulu_raise_first_extend.ogg", t = 11/30},
-			{s = path .. "wfoly_plr_sm_uzulu_raise_first_end.ogg", t = 28/30},
+            {s = path .. "wfoly_plr_sm_uzulu_raise_first_stock.ogg", t = 8/30},
+			{s = path .. "wfoly_plr_sm_uzulu_raise_first_extend.ogg", t = 9/30},
+			{s = path .. "wfoly_plr_sm_uzulu_raise_first_end.ogg", t = 29/30},
         },
     },
     ["draw"] = {

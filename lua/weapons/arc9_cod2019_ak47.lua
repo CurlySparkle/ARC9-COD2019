@@ -413,9 +413,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_reload_fast_twist.ogg", t = 0.033},
-			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_01.ogg", t = 0.066},
-			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_01.ogg", t = 0.73},
-			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_02.ogg", t = 1.1},
+			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_01.ogg", t = 0.070},
+			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_01.ogg", t = 0.72},
+			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_02.ogg", t = 1.12},
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_end.ogg", t = 1.06},
         },
     },
