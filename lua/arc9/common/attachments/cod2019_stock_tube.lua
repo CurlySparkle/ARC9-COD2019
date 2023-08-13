@@ -7,7 +7,7 @@ ATT.Free = false
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Category = {"cod2019_tube"}
-ATT.Model = "models/weapons/cod2019/attachs/stock/stock_tube.mdl"
+ATT.Model = "models/weapons/cod2019/attachs/stocks/stock_tube.mdl"
 --ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 -- ATT.ModelAngleOffset = Angle(0,-90,0)
