@@ -89,8 +89,13 @@ SWEP.Hook_Think	= function(wep)
             vm:SetPoseParameter("bullets",wep:GetMaxClip1() - clip)
             vm:SetPoseParameter("blend_move", wep.MovePoseParam)
             vm:SetPoseParameter("blend_walk", wep.WalkPoseParam)
-            vm:SetPoseParameter("empty", !wep:GetReloading() and (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
+            --vm:SetPoseParameter("empty", !wep:GetReloading() and (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
             vm:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
+        end
+        if wep:Clip1() == 0 then
+            vm:SetPoseParameter("empty", (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
+        else
+            vm:SetPoseParameter("empty", (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
         end
         if wm and vm and wm:GetModel() == vm:GetModel() then
             for i = 0, wm:GetNumPoseParameters() -1 do

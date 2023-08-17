@@ -118,8 +118,28 @@ SWEP.RecoilMultSights = 0.6
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilRoll = 55
+SWEP.VisualRecoilSide = 0
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 30
+SWEP.VisualRecoilDampingConstSights = 50
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 

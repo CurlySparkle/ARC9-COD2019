@@ -195,15 +195,14 @@ SWEP.SprintMidPoint = {
 }
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Pos = Vector(-0.5, -0.5, -0.5),
+    Ang = Angle(0, 0, -5)
 }
-
 
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.7, -0.5, -0.7)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -1034,6 +1033,11 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
+    ["stock_adapter"] = {
+        Bodygroups = {
+            {4,2},
+        },
+    },
     ["stock_none"] = {
         Bodygroups = {
             {4,1},
@@ -1113,9 +1117,9 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = "cod2019_finn_stock",
+        Category = {"cod2019_finn_stock","cod2019_tube"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-0.05, 0, 0.15),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"stock_adapter"},
     },
