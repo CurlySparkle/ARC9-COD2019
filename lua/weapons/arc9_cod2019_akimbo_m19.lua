@@ -109,7 +109,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 2
 
 SWEP.RecoilMultCrouch = 0.8
 
@@ -120,8 +120,16 @@ SWEP.RecoilMultSights = 1
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilRoll = 55
+SWEP.VisualRecoilSide = -1/6
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 30
+SWEP.VisualRecoilDampingConstSights = 50
 
 -------------------------- SPREAD
 
@@ -206,6 +214,10 @@ SWEP.AnimDraw = false
 
 SWEP.Akimbo = true
 
+function SWEP:SecondaryAttack()
+    return self:MeleeAttack()
+end
+
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "AC_muzzle_pistol_fp"
@@ -284,10 +296,10 @@ SWEP.HideBones  = {
 
 SWEP.Animations = {
     ["fire_left"] = {
-        Source = "shoot1_left",
+        Source = "shoot1_right",
     },
     ["fire_right"] = {
-        Source = "shoot1_right",
+        Source = "shoot1_left",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -512,14 +524,14 @@ SWEP.Attachments = {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle_pistols",
-        Bone = "tag_silencer_l",
+        Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
 		Scale = 1,
         DuplicateModels = {
             {
-                Bone = "tag_silencer",
+                Bone = "tag_silencer_l",
             }
         },
     },

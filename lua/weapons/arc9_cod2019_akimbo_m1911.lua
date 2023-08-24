@@ -117,8 +117,28 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilRoll = 55
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 20
+SWEP.VisualRecoilDampingConstSights = 50
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -145,7 +165,12 @@ SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
+
+function SWEP:SecondaryAttack()
+    return self:MeleeAttack()
+end
+
 
 -------------------------- TRACERS
 
@@ -171,7 +196,7 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(0, -1, -1)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -458,9 +483,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_pi_mike1911_inspect_01.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike1911_inspect_01.ogg", t = 36/30},
-			{s = path .. "wfoly_pi_mike1911_inspect_01.ogg", t = 61/30},
-			{s = path .. "wfoly_pi_mike1911_inspect_01.ogg", t = 112/30},
+			{s = path .. "wfoly_pi_mike1911_inspect_02.ogg", t = 36/30},
+			{s = path .. "wfoly_pi_mike1911_inspect_03.ogg", t = 61/30},
+			{s = path .. "wfoly_pi_mike1911_inspect_04.ogg", t = 112/30},
         },
     },
     ["bash"] = {
@@ -514,7 +539,7 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle_pistols",
         Bone = "tag_silencer_l",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-0.105, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
 		Scale = 1,

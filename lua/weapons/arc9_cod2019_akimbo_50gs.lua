@@ -121,26 +121,16 @@ SWEP.RecoilMultSights = 1
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 4
-SWEP.VisualRecoilUp = 1
-
-SWEP.VisualRecoilMultSights = 0.3
+SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 75
-SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.2
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilRoll = 55
+SWEP.VisualRecoilSide = -1/6
 
-SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
-    if recamount > 5 then
-        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
-        
-        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
-        
-        return up, side * fakerandom, roll, punch
-    end
-
-    return up, side, roll, punch
-end
-
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 20
+SWEP.VisualRecoilDampingConstSights = 50
 
 -------------------------- SPREAD
 
@@ -169,6 +159,11 @@ SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
 SWEP.PostBashTime = 0.2
+
+function SWEP:SecondaryAttack()
+    return self:MeleeAttack()
+end
+
 
 -------------------------- TRACERS
 

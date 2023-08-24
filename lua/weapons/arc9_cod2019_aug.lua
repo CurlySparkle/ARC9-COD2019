@@ -872,12 +872,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 1.1,
+                t = 0.62,
                 lhik = 1,
                 rhik = 1
             },
@@ -1137,3 +1137,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 19
+SWEP.CodStubbyGripPoseParam = 2
