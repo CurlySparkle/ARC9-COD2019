@@ -109,7 +109,7 @@ SWEP.RecoilResetTime = 0.05 -- How long the gun must go before the recoil patter
 
 SWEP.RecoilAutoControl = 1
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 2
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
@@ -527,7 +527,7 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle_pistols",
         Bone = "tag_silencer_l",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-0.2, 0, -0.03),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
 		Scale = 1,

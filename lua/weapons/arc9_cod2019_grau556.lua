@@ -127,7 +127,7 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 55
 SWEP.VisualRecoilPunch = 1.8
-SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilUp = 0.6
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.2
 
@@ -200,8 +200,8 @@ SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Pos = Vector(-0.5, -0.5, -0.5),
+    Ang = Angle(0, 0, -5)
 }
 
 SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
@@ -829,5 +829,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.6
 SWEP.GripPoseParam2 = 0.6
-SWEP.CodStubbyGripPoseParam = 7
-SWEP.CodAngledGripPoseParam = 8
+SWEP.CodStubbyGripPoseParam = 1.9
+SWEP.CodAngledGripPoseParam = 7

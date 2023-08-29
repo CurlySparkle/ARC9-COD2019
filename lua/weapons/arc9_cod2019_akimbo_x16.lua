@@ -109,7 +109,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 2
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
@@ -501,6 +501,11 @@ SWEP.DefaultBodygroups = "00000000000000"
 -- }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
@@ -511,13 +516,16 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
+    ["x16_slide_auto"] = {
+    AttPosMods = { [2] = { Pos = Vector(0.2, 0, 0.03), } }
+    },
 }
 
 SWEP.Attachments = {
     {
         PrintName = "Slide",
         DefaultAttName = "Standard slide",
-        Category = "cod2019_x16_slide",
+        Category = "cod2019_x16_akimbo_slide",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -576,6 +584,11 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
+        DuplicateModels = {
+            {
+                Bone = "tag_stock_attach_l",
+            }
+        },
     },
     {
         PrintName = "Ammo",
@@ -590,6 +603,11 @@ SWEP.Attachments = {
         Category = "cod2019_mag",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+        DuplicateModels = {
+            {
+                Bone = "j_mag1_l",
+            }
+        },
     },
     {
 		PrintName = "Perk",

@@ -108,7 +108,7 @@ SWEP.RecoilResetTime = 0.05 -- How long the gun must go before the recoil patter
 
 SWEP.RecoilAutoControl = 1
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 2
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25

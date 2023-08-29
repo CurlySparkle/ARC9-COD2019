@@ -408,7 +408,7 @@ sound.Add({
 	channel = CHAN_WEAPON,
 	level = 140,
 	volume = 1,
-	pitch = {100,100},
+    pitch = {90,110},
 	sound = {
 		"weapons/cod2019/m19/weap_papa320_fire_plr_01.ogg",
 		}
@@ -419,7 +419,7 @@ sound.Add({
 	channel = CHAN_WEAPON,
 	level = 140,
 	volume = 1,
-	pitch = {100,100},
+    pitch = {90,110},
 	sound = {
 		"weapons/cod2019/m19/weap_papa320_supp_plr_01.ogg",
 		}
