@@ -841,13 +841,21 @@ end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
--- SWEP.AttachmentTableOverrides = {
-    -- ["arc9_stat_proscreen_main"] = {
-    -- ModelOffset = Vector(3, -1.15, -3.55),
-	-- ModelAngleOffset = Angle(0, 0, 0),
-	-- Scale = 0.9,
-    -- },
--- }
+SWEP.AttachmentTableOverrides = {
+    ["cod2019_view_alt_pistol"] = {
+    ActivePos = Vector(3, 0, 2.3),
+    ActiveAng = Angle(0, 0, 20),
+
+    MovingPos = Vector(2, 0, 1),
+    MovingAng = Angle(0,0,15),
+
+    CrouchPos = Vector(1, -1, 1),
+    CrouchAng = Angle(0, 0, 10),
+
+    ReloadPos = Vector(0,0,0),
+    ReloadAng = Angle(0,0,0),
+    },
+}
 
 SWEP.AttachmentElements = {
     ["mag_none"] = {

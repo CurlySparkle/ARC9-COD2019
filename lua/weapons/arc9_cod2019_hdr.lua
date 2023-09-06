@@ -799,6 +799,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_extend") then 
         return "reload_xmag_fast_empty"
     --------------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+    --------------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
@@ -807,6 +812,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload" and wep:HasElement("mag_extend") then
         return "reload_xmag"
     elseif anim == "reload_empty" and wep:HasElement("mag_extend") then 
+        return "reload_xmag_empty"
+    --------------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
         return "reload_xmag_empty"
     end
 end
@@ -869,9 +879,14 @@ SWEP.AttachmentElements = {
             {1,1},
         },
     },
-    ["mag_grip"] = {
+    ["mag_extend"] = {
         Bodygroups = {
             {2,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
+            {2,2},
         },
     },
     ["pistol_grip_none"] = {

@@ -16,7 +16,7 @@ ATT.Category = {"cod2019_mag"}
 ATT.ClipSizeMult = 1.5
 ATT.ReloadTimeMult = 1.1
 
-ATT.ActivateElements = {"ammo_extend","mag"}
+ATT.ActivateElements = {"ammo_extend","mag","mag_extend"}
 
 ARC9.LoadAttachment(ATT, "cod2019_etc_ammo_extend")
 ------------------------------------------------------------------ GRIPS
@@ -64,16 +64,16 @@ ATT.Description = [[Changes the view.]]
 ATT.SortOrder = 0
 ATT.Category = "cod2019_pistols_view"
 
-ATT.ActivePos = Vector(2,0,1)
-ATT.ActiveAng = Angle(0,0,9)
+ATT.ActivePos = Vector(2, 0, 2)
+ATT.ActiveAng = Angle(0, 0, 10)
 
 ATT.MovingPos = Vector(1,-2,0.5)
 ATT.MovingAng = Angle(0,0,6)
 
---ATT.CrouchPos = Vector(-3,-0.8,-3.3)
---ATT.CrouchAng = Angle(0,0,-35)
+ATT.CrouchPos = Vector(1, 0, 1)
+ATT.CrouchAng = Angle(0, 0, 5)
 
 ATT.ReloadPos = Vector(0,0,0)
 ATT.ReloadAng = Angle(0,0,0)
 
-ARC9.LoadAttachment(ATT, "cod2019_view_alt_pistols")
+ARC9.LoadAttachment(ATT, "cod2019_view_alt_pistol")

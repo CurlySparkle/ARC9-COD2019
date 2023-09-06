@@ -562,7 +562,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_empty_end.ogg", t = 108/30},
         },
     },
-    ["reload_xmag_fast_empty"] = {
+    ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
 		MinProgress = 0.8,
 		DropMagAt = 0.8,
@@ -598,7 +598,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 46/30},
         },
     },
-    ["reload_fast_empty"] = {
+    ["reload_xmag_fast_empty"] = {
         Source = "reload_empty_xmag_fast",
 		MinProgress = 0.9,
 		EjectAt = 0.35,
@@ -784,6 +784,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_extend") then 
         return "reload_xmag_fast_empty"
     --------------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+    --------------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
@@ -792,6 +797,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload" and wep:HasElement("mag_extend") then
         return "reload_xmag"
     elseif anim == "reload_empty" and wep:HasElement("mag_extend") then 
+        return "reload_xmag_empty"
+    --------------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
         return "reload_xmag_empty"
     end
 end
@@ -849,9 +859,14 @@ SWEP.AttachmentElements = {
             {0,1},
         },
     },
-    ["mag_none"] = {
+    ["mag_extend"] = {
         Bodygroups = {
             {1,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
+            {1,2},
         },
     },
     ["muzzle_none"] = {
