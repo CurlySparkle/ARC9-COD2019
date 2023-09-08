@@ -651,9 +651,19 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["mag_none"] = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
+    ["mag_m13"] = {
         Bodygroups = {
             {1,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
+            {1,2},
         },
     },
     ["barrel_none"] = {
@@ -772,7 +782,7 @@ SWEP.Attachments = {
         Category = {"cod2019_grau556_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"mag_none"},
+		--InstalledElements = {"mag_none"},
     },
     {
         PrintName = "Perk",

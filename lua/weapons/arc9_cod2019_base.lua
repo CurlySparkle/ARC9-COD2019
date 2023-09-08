@@ -65,7 +65,7 @@ SWEP.FiremodeSound = ""
 SWEP.DryFireSound = ""
 
 SWEP.IndoorSoundHardCutoff = true
-SWEP.IndoorSoundHardCutoffRatio = 0.75
+SWEP.IndoorSoundHardCutoffRatio = 0.7
 
 SWEP.MovePoseParam = 0
 SWEP.WalkPoseParam = 0

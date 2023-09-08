@@ -97,7 +97,7 @@ SWEP.Recoil = 1.5
 
 SWEP.RecoilSeed = 2
 
-SWEP.RecoilPatternDrift = 45
+SWEP.RecoilPatternDrift = 0
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -130,7 +130,7 @@ SWEP.VisualRecoilPunch = 2
 
 SWEP.VisualRecoilUp = 0.4
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.3
+SWEP.VisualRecoilSide = 0.5
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -309,6 +309,13 @@ SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = path .. "weap_lima86_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = path .. "weap_lima86_disconnector_plr_01.ogg"
+
+-- Jammed
+
+SWEP.Malfunction = true 
+SWEP.MalfunctionNeverLastShoot = true 
+SWEP.MalfunctionMeanShotsToFail = 300*2
+SWEP.MalfunctionMeanShotsToFailMultHot = -0.1*2
 
 SWEP.Animations = {
     ["fire"] = {
@@ -682,6 +689,61 @@ SWEP.Animations = {
             {s = path .. "wfoly_lm_lima86_inspect_01.ogg", t = 0/30},
         },
     },
+    ["jam"] = {
+        Source = "jammed",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+    },
+    ["fix"] = {
+        Source = "unjam",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_lm_lima86_raise_first_start.ogg", t = 0/30},
+            {s = path .. "wfoly_lm_lima86_raise_first_charge_01.ogg", t = 16/30},
+			{s = path .. "wfoly_lm_lima86_raise_first_end.ogg", t = 26/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -827,7 +889,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_sa87_mag"},
+        Category = {"cod2019_mag","cod2019_sa87_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
