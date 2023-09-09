@@ -716,6 +716,7 @@ SWEP.Animations = {
     },
     ["fix"] = {
         Source = "unjam",
+		EjectAt = 0.6,
         IKTimeLine = {
             {
                 t = 0,

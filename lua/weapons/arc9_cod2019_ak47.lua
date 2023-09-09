@@ -920,6 +920,7 @@ SWEP.Attachments = {
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight_rail"},
+		ExcludeElements = {"forwardoptic"},
     },
     {
         PrintName = "Muzzle",
