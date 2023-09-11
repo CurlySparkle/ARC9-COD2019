@@ -258,11 +258,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/m19/"
 
-SWEP.ShootSound = "Cod2019.m19.fire"
-SWEP.ShootSoundIndoor = "Cod2019.m19.fire"
+SWEP.ShootSound = "COD2019.M19.Fire"
+SWEP.ShootSoundIndoor = "COD2019.M19.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.m19.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.m19.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.M19.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.M19.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Pistol.Outside"
@@ -338,8 +338,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_magin_v2_01.ogg", t = 47/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magin_v2_02.ogg", t = 50/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_magin_v2_02.ogg", t = 53/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_end.ogg", t = 66/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_empty_end.ogg", t = 66/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_end.ogg", t = 63/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_end.ogg", t = 63/30},
         },
     },
     ["reload_empty"] = {

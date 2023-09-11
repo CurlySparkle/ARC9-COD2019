@@ -272,24 +272,24 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/bizon/"
 
-SWEP.ShootSound = "Cod2019.bizon.fire"
-SWEP.ShootSoundIndoor = "Cod2019.bizon.fire"
+SWEP.ShootSound = "COD2019.Bizon.Fire"
+SWEP.ShootSoundIndoor = "COD2019.Bizon.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.bizon.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.bizon.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.Bizon.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Bizon.Fire.S"
 
 -- Non-Silenced Outside
-SWEP.LayerSound = "layer_Pistol.Outside"
-SWEP.DistantShootSound = "distant_SMG.Outside"
+SWEP.LayerSound = "Layer_Pistol.Outside"
+SWEP.DistantShootSound = "Distant_SMG.Outside"
 -- Inside
-SWEP.LayerSoundIndoor = "layer_Pistol.Inside"
-SWEP.DistantShootSoundIndoor = "distant_SMG.Inside"
+SWEP.LayerSoundIndoor = "Layer_Pistol.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_SMG.Inside"
 ---------------------------------------------------
 -- Silenced Outside
-SWEP.LayerSoundSilenced = "layer_ARSUP.Outside"
-SWEP.DistantShootSoundSilenced = "distant_SMG_Sup.Outside"
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.DistantShootSoundSilenced = "Distant_SMG_Sup.Outside"
 -- Inside
-SWEP.LayerSoundSilencedIndoor = "layer_ARSUP.Inside"
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
 SWEP.DistantShootSoundSilencedIndoor = "Distant_Pistol_Sup.Inside"
 ---------------------------------------------------
 
@@ -351,7 +351,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_magout_01.ogg", t = 4/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_01.ogg", t = 35/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_02.ogg", t = 49/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_end.ogg", t = 52/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_end.ogg", t = 50/30},
         },
     },
     ["reload_empty"] = {

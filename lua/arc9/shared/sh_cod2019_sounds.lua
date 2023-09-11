@@ -1,5 +1,4 @@
--- RELOAD/EXTRA SOUNDS
-
+------------ Reload & Extra Sounds ------------
 sound.Add( {
     name = "COD2019.HDR.Rechamber",
     channel = CHAN_AUTO,
@@ -180,27 +179,29 @@ sound.Add( {
     }
 } )
 
-sound.Add({
-    name =          "Viewmodel.Small",
-    channel =       CHAN_AUTO,
-    volume =        1.0,
-    sound =             {
-    "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_01.ogg",
-    "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_02.ogg",
-    "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_03.ogg",
-    "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_04.ogg",
-    "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_05.ogg",
-    "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_06.ogg",
-    "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_07.ogg",
-    "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_08.ogg",
-    "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_09.ogg",
-     }
-})
-sound.Add({
-    name =          "Viewmodel.Medium",
-    channel =       CHAN_AUTO,
-    volume =        1.0,
-    sound =             {
+------------ Viewmodel ------------
+sound.Add( {
+    name = "Viewmodel.Small",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    sound = {
+        "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_01.ogg",
+        "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_02.ogg",
+        "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_03.ogg",
+        "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_04.ogg",
+        "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_05.ogg",
+        "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_06.ogg",
+        "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_07.ogg",
+        "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_08.ogg",
+        "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_09.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Viewmodel.Medium",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    sound = {
         "weapons/cod2019/shared/weapmvmt/medium/gear_rattle_weap_medium_01.ogg",
         "weapons/cod2019/shared/weapmvmt/medium/gear_rattle_weap_medium_02.ogg",
         "weapons/cod2019/shared/weapmvmt/medium/gear_rattle_weap_medium_03.ogg",
@@ -211,13 +212,14 @@ sound.Add({
         "weapons/cod2019/shared/weapmvmt/medium/gear_rattle_weap_medium_08.ogg",
         "weapons/cod2019/shared/weapmvmt/medium/gear_rattle_weap_medium_09.ogg",
         "weapons/cod2019/shared/weapmvmt/medium/gear_rattle_weap_medium_10.ogg",
-     }
-})
-sound.Add({
-    name =          "Viewmodel.Large",
-    channel =       CHAN_AUTO,
-    volume =        1.0,
-    sound =             {
+    }
+} )
+
+sound.Add( {
+    name = "Viewmodel.Large",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    sound = {
         "weapons/cod2019/shared/weapmvmt/large/gear_rattle_weap_large_01.ogg",
         "weapons/cod2019/shared/weapmvmt/large/gear_rattle_weap_large_02.ogg",
         "weapons/cod2019/shared/weapmvmt/large/gear_rattle_weap_large_03.ogg",
@@ -230,13 +232,14 @@ sound.Add({
         "weapons/cod2019/shared/weapmvmt/large/gear_rattle_weap_large_10.ogg",
         "weapons/cod2019/shared/weapmvmt/large/gear_rattle_weap_large_11.ogg",
         "weapons/cod2019/shared/weapmvmt/large/gear_rattle_weap_large_12.ogg",
-     }
-})
-sound.Add({
-    name =          "Viewmodel.Launcher",
-    channel =       CHAN_AUTO,
-    volume =        1.0,
-    sound =             {
+    }
+} )
+
+sound.Add( {
+    name = "Viewmodel.Launcher",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    sound = {
         "weapons/cod2019/shared/weapmvmt/launcher/gear_rattle_weap_launcher_01.ogg",
         "weapons/cod2019/shared/weapmvmt/launcher/gear_rattle_weap_launcher_02.ogg",
         "weapons/cod2019/shared/weapmvmt/launcher/gear_rattle_weap_launcher_03.ogg",
@@ -245,5 +248,5 @@ sound.Add({
         "weapons/cod2019/shared/weapmvmt/launcher/gear_rattle_weap_launcher_06.ogg",
         "weapons/cod2019/shared/weapmvmt/launcher/gear_rattle_weap_launcher_07.ogg",
         "weapons/cod2019/shared/weapmvmt/launcher/gear_rattle_weap_launcher_08.ogg",
-     }
-})
+    }
+} )

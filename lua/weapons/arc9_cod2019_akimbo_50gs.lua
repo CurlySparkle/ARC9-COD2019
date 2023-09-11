@@ -261,11 +261,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/50gs/"
 
-SWEP.ShootSound = "Cod2019.50gs.fire"
-SWEP.ShootSoundIndoor = "Cod2019.50gs.fire"
+SWEP.ShootSound = "COD2019.50GS.Fire"
+SWEP.ShootSoundIndoor = "COD2019.50GS.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.50gs.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.50gs.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.50GS.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.50GS.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Pistol.Outside"
@@ -349,10 +349,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_decho_fast_reload_empty_magout_01.ogg", t = 9/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_shake.ogg", t = 19/30},
 			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 32/30},
-			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 48/30},
-			{s = path .. "wfoly_pi_decho_fast_reload_magin_v2_01.ogg", t = 49/30},
-			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 53/30},
-			{s = path .. "wfoly_pi_decho_fast_reload_magin_v2_02.ogg", t = 54/30},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 46/30},
+			{s = path .. "wfoly_pi_decho_fast_reload_magin_v2_01.ogg", t = 47/30},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 51/30},
+			{s = path .. "wfoly_pi_decho_fast_reload_magin_v2_02.ogg", t = 52/30},
 			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 61/30},
 			{s = path .. "wfoly_pi_decho_fast_reload_end.ogg", t = 63/30},
         },
@@ -429,7 +429,8 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_pi_decho_first_raise_mvmnt.ogg", t = 0/30},
             {s = path .. "wfoly_pi_decho_first_raise_safetyoff.ogg", t = 11/30},
-			{s = path .. "wfoly_pi_decho_first_raise_end.ogg", t = 16/30},
+            {s = path .. "wfoly_pi_decho_first_raise_safetyoff.ogg", t = 13/30},
+			{s = path .. "wfoly_pi_decho_first_raise_end.ogg", t = 21/30},
         },
     },
     ["draw"] = {

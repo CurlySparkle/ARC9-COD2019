@@ -265,25 +265,25 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/pkm/"
 
-SWEP.ShootSound = "Cod2019.pkm.fire"
-SWEP.ShootSoundIndoor = "Cod2019.pkm.fire"
+SWEP.ShootSound = "COD2019.PKM.Fire"
+SWEP.ShootSoundIndoor = "COD2019.PKM.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.pkm.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.pkm.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.PKM.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.PKM.Fire.S"
 
 -- Non-Silenced Outside
-SWEP.LayerSound = "layer_AR.Outside"
-SWEP.DistantShootSound = "distant_LMG.Outside"
+SWEP.LayerSound = "Layer_AR.Outside"
+SWEP.DistantShootSound = "Distant_LMG.Outside"
 -- Inside
-SWEP.LayerSoundIndoor = "layer_Shotgun.Inside"
-SWEP.DistantShootSoundIndoor = "distant_LMG.Inside"
+SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_LMG.Inside"
 ---------------------------------------------------
 -- Silenced Outside
-SWEP.LayerSoundSilenced = "layer_ARSUP.Outside"
-SWEP.DistantShootSoundSilenced = "distant_AR_Sup.Outside"
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.DistantShootSoundSilenced = "Distant_AR_Sup.Outside"
 -- Inside
-SWEP.LayerSoundSilencedIndoor = "layer_ARSUP.Inside"
-SWEP.DistantShootSoundSilencedIndoor = "distant_AR_Sup.Inside"
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "Distant_AR_Sup.Inside"
 ---------------------------------------------------
 
 SWEP.EnterSightsSound = "weapons/cod2019/pkm/wfoly_lm_pkilo_ads_up.ogg"

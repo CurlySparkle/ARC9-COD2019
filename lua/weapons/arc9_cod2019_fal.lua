@@ -265,15 +265,15 @@ SWEP.DropMagazineQCA = 3
 
 local path = "weapons/cod2019/fal/"
 
-SWEP.ShootSound = "Cod2019.fal.fire"
-SWEP.ShootSoundIndoor = "Cod2019.fal.fire"
+SWEP.ShootSound = "COD2019.FAL.Fire"
+SWEP.ShootSoundIndoor = "COD2019.FAL.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.fal.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.fal.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.FAL.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.FAL.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_AR.Outside"
-SWEP.DistantShootSound = "Distant_br1.Outside"
+SWEP.DistantShootSound = "Distant_BR1.Outside"
 -- Inside
 SWEP.LayerSoundIndoor = "Layer_AR.Inside"
 SWEP.DistantShootSoundIndoor = "Distant_AR.Inside"

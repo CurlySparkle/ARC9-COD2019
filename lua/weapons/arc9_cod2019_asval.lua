@@ -272,11 +272,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/asval/"
 
-SWEP.ShootSound = "Cod2019.asval.fire"
-SWEP.ShootSoundIndoor = "Cod2019.asval.fire"
+SWEP.ShootSound = "COD2019.ASVAL.Fire"
+SWEP.ShootSoundIndoor = "COD2019.ASVAL.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.asval.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.asval.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.ASVAL.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.ASVAL.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_ARSUP.Outside"

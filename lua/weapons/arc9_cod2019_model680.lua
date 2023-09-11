@@ -291,11 +291,11 @@ SWEP.DropMagazineQCA = 4
 local path = "weapons/cod2019/model680/"
 local path2 = "weapons/cod2019/m13/"
 
-SWEP.ShootSound = "Cod2019.model680.fire"
-SWEP.ShootSoundIndoor = "Cod2019.model680.fire"
+SWEP.ShootSound = "COD2019.Model680.Fire"
+SWEP.ShootSoundIndoor = "COD2019.Model680.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.model680.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.model680.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.Model680.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Model680.Fire.S"
 
 -- Non-Silenced Outside
 SWEP.LayerSound = "Layer_Shotgun.Outside"

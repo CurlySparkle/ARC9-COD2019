@@ -258,11 +258,11 @@ SWEP.ManualActionChamber = 2
 
 local path = "weapons/cod2019/r90/"
 
-SWEP.ShootSound = "Cod2019.r90.fire"
-SWEP.ShootSoundIndoor = "Cod2019.r90.fire"
+SWEP.ShootSound = "COD2019.R90.Fire"
+SWEP.ShootSoundIndoor = "COD2019.R90.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.r90.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.r90.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.R90.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.R90.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Shotgun.Outside"

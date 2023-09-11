@@ -266,11 +266,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/cr56amax/"
 
-SWEP.ShootSound = "Cod2019.cr56amax.fire"
-SWEP.ShootSoundIndoor = "Cod2019.cr56amax.fire"
+SWEP.ShootSound = "COD2019.CR56AMAX.Fire"
+SWEP.ShootSoundIndoor = "COD2019.CR56AMAX.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.m4a1.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.m4a1.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.M4A1.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.M4A1.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_AR.Outside"

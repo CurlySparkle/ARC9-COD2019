@@ -245,25 +245,25 @@ SWEP.ShotgunReload = true
 
 local path = "weapons/cod2019/mk2/"
 
-SWEP.ShootSound = "Cod2019.mk2.fire"
-SWEP.ShootSoundIndoor = "Cod2019.mk2.fire"
+SWEP.ShootSound = "COD2019.MK2.Fire"
+SWEP.ShootSoundIndoor = "COD2019.MK2.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.mk2.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.mk2.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.MK2.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.MK2.Fire.S"
 
 -- Non-Silenced Outside
-SWEP.LayerSound = "layer_Shotgun.Outside"
-SWEP.DistantShootSound = "distant_Western.Outside"
+SWEP.LayerSound = "Layer_Shotgun.Outside"
+SWEP.DistantShootSound = "Distant_Western.Outside"
 -- Inside
-SWEP.LayerSoundIndoor = "layer_Shotgun.Inside"
-SWEP.DistantShootSoundIndoor = "distant_Shotgun.Inside"
+SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_Shotgun.Inside"
 ---------------------------------------------------
 -- Silenced Outside
-SWEP.LayerSoundSilenced = "layer_Sniper.Outside"
-SWEP.DistantShootSoundSilenced = "distant_DMR_Sup.Outside"
+SWEP.LayerSoundSilenced = "Layer_Sniper.Outside"
+SWEP.DistantShootSoundSilenced = "Distant_DMR_Sup.Outside"
 -- Inside
-SWEP.LayerSoundSilencedIndoor = "layer_ShotgunSUP.Inside"
-SWEP.DistantShootSoundSilencedIndoor = "distant_DMR_Sup.Inside"
+SWEP.LayerSoundSilencedIndoor = "Layer_ShotgunSUP.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "Distant_DMR_Sup.Inside"
 ---------------------------------------------------
 
 SWEP.EnterSightsSound = path .. "wfoly_sn_sbeta_ads_up.ogg"

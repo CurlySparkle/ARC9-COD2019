@@ -265,11 +265,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/famas/"
 
-SWEP.ShootSound = "Cod2019.famas.fire"
-SWEP.ShootSoundIndoor = "Cod2019.famas.fire"
+SWEP.ShootSound = "COD2019.Famas.Fire"
+SWEP.ShootSoundIndoor = "COD2019.Famas.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.famas.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.famas.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.Famas.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Famas.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_AR.Outside"

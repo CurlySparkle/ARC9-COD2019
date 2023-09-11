@@ -243,11 +243,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/50gs/"
 
-SWEP.ShootSound = "Cod2019.50gs.fire"
-SWEP.ShootSoundIndoor = "Cod2019.50gs.fire"
+SWEP.ShootSound = "COD2019.50GS.Fire"
+SWEP.ShootSoundIndoor = "COD2019.50GS.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.50gs.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.50gs.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.50GS.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.50GS.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Pistol.Outside"

@@ -256,11 +256,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/sykov/"
 
-SWEP.ShootSound = "Cod2019.sykov.fire"
-SWEP.ShootSoundIndoor = "Cod2019.sykov.fire"
+SWEP.ShootSound = "COD2019.Sykov.Fire"
+SWEP.ShootSoundIndoor = "COD2019.Sykov.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.sykov.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.sykov.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.Sykov.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Sykov.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Pistol.Outside"
@@ -424,9 +424,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_pi_mike_raise_first_up.ogg", t = 0/30},
+            {s = path .. "wfoly_pi_mike_raise_first_charge.ogg", t = 8/30},
             {s = path .. "wfoly_pi_mike_raise_first_charge.ogg", t = 10/30},
-            {s = path .. "wfoly_pi_mike_raise_first_charge.ogg", t = 12/30},
-            {s = path .. "wfoly_pi_mike_raise_first_end.ogg", t = 18/30},
+            {s = path .. "wfoly_pi_mike_raise_first_end.ogg", t = 20/30},
         },
     },
     ["draw"] = {

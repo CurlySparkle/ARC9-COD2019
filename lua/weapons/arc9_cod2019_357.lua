@@ -224,11 +224,11 @@ SWEP.ShouldDropMagEmpty = false
 
 local path = "weapons/cod2019/357/"
 
-SWEP.ShootSound = "Cod2019.357.fire"
-SWEP.ShootSoundIndoor = "Cod2019.357.fire"
+SWEP.ShootSound = "COD2019.357.Fire"
+SWEP.ShootSoundIndoor = "COD2019.357.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.357.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.357.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.357.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.357.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Pistol.Outside"

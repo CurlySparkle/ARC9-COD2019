@@ -274,25 +274,25 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/p90/"
 
-SWEP.ShootSound = "Cod2019.p90.fire"
-SWEP.ShootSoundIndoor = "Cod2019.p90.fire"
+SWEP.ShootSound = "COD2019.P90.Fire"
+SWEP.ShootSoundIndoor = "COD2019.P90.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.p90.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.p90.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.P90.Fire.s"
+SWEP.ShootSoundSilencedIndoor = "COD2019.P90.Fire.s"
 
 -- Non-Silenced Outside
-SWEP.LayerSound = "layer_Pistol.Outside"
-SWEP.DistantShootSound = "distant_SMG.Outside"
+SWEP.LayerSound = "Layer_Pistol.Outside"
+SWEP.DistantShootSound = "Distant_SMG.Outside"
 -- Inside
-SWEP.LayerSoundIndoor = "layer_Pistol.Inside"
-SWEP.DistantShootSoundIndoor = "distant_SMG.Inside"
+SWEP.LayerSoundIndoor = "Layer_Pistol.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_SMG.Inside"
 ---------------------------------------------------
 -- Silenced Outside
-SWEP.LayerSoundSilenced = "layer_ARSUP.Outside"
-SWEP.DistantShootSoundSilenced = "distant_SMG_Sup.Outside"
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
+SWEP.DistantShootSoundSilenced = "Distant_SMG_Sup.Outside"
 -- Inside
-SWEP.LayerSoundSilencedIndoor = "layer_ARSUP.Inside"
-SWEP.DistantShootSoundSilencedIndoor = "distant_Pistol_Sup.Inside"
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "Distant_Pistol_Sup.Inside"
 ---------------------------------------------------
 
 SWEP.EnterSightsSound = path .. "wfoly_sm_papa90_ads_up.ogg"
@@ -529,7 +529,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sm_papa90_raise_first_start.ogg", t = 0/37},
-            {s = path .. "wfoly_sm_papa90_raise_first_charge_01.ogg", t = 9/37},
+            {s = path .. "wfoly_sm_papa90_raise_first_charge_01.ogg", t = 10/37},
 			{s = path .. "wfoly_sm_papa90_raise_first_end.ogg", t = 17/37},
         },
     },

@@ -249,11 +249,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/renetti/"
 
-SWEP.ShootSound = "Cod2019.renetti.fire"
-SWEP.ShootSoundIndoor = "Cod2019.renetti.fire"
+SWEP.ShootSound = "COD2019.Renetti.Fire"
+SWEP.ShootSoundIndoor = "COD2019.Renetti.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.renetti.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.renetti.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.Renetti.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.Renetti.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Pistol.Outside"

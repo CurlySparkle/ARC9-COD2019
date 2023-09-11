@@ -213,7 +213,7 @@ SWEP.NoShellEject = true
 
 local path = "weapons/cod2019/crossbow/"
 
-SWEP.ShootSound = "Cod2019.crossbow.fire"
+SWEP.ShootSound = "COD2019.Crossbow.Fire"
 
 SWEP.EnterSightsSound = path .. "wfoly_sn_crossbow_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_sn_crossbow_ads_down.ogg"

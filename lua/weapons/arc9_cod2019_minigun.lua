@@ -232,15 +232,15 @@ SWEP.TriggerDelayTime = 0.45 -- Time until weapon fires.
 
 local path = "weapons/cod2019/minigun/"
 
-SWEP.ShootSound = "Cod2019.minigun.fire"
-SWEP.ShootSoundIndoor = "Cod2019.minigun.fire"
+SWEP.ShootSound = "COD2019.Minigun.Fire"
+SWEP.ShootSoundIndoor = "COD2019.Minigun.Fire"
 
 -- Non-Silenced Outside
-SWEP.LayerSound = "layer_AR.Outside"
-SWEP.DistantShootSound = "distant_LMG.Outside"
+SWEP.LayerSound = "Layer_AR.Outside"
+SWEP.DistantShootSound = "Distant_LMG.Outside"
 -- Inside
-SWEP.LayerSoundIndoor = "layer_AR.Inside"
-SWEP.DistantShootSoundIndoor = "distant_LMG.Inside"
+SWEP.LayerSoundIndoor = "Layer_AR.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_LMG.Inside"
 ---------------------------------------------------
 
 SWEP.EnterSightsSound = "weapons/cod2019/sa87/weap_ar_lima86_ads_up.ogg"

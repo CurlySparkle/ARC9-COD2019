@@ -238,7 +238,7 @@ SWEP.ShellSounds = {
     "arc9/casings/casing_12ga_1.wav",
     "arc9/casings/casing_12ga_2.wav",
     "arc9/casings/casing_12ga_3.wav",
-    "arc9/casings/casing_12ga_4.wav"
+    "arc9/casings/casing_12ga_4.wav",
 }
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1.2
@@ -262,11 +262,11 @@ SWEP.NoShellEject = true
 
 local path = "weapons/cod2019/725/"
 
-SWEP.ShootSound = "Cod2019.725.fire"
-SWEP.ShootSoundIndoor = "Cod2019.725.fire"
+SWEP.ShootSound = "COD2019.725.Fire"
+SWEP.ShootSoundIndoor = "COD2019.725.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.725.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.725.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.725.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.725.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Shotgun.Outside"

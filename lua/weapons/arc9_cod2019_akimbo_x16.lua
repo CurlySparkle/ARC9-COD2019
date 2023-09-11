@@ -270,11 +270,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/x16/"
 
-SWEP.ShootSound = "Cod2019.x16.fire"
-SWEP.ShootSoundIndoor = "Cod2019.x16.fire"
+SWEP.ShootSound = "COD2019.X16.Fire"
+SWEP.ShootSoundIndoor = "COD2019.X16.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.x16.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.x16.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.X16.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.X16.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Pistol.Outside"
@@ -347,7 +347,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 54/30},
 			{s = path .. "wfoly_pi_golf21_reload_fast_magin_v2_02.ogg", t = 57/30},
 			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 70/30},
-			{s = path .. "wfoly_pi_golf21_reload_fast_end.ogg", t = 71/30},
+			{s = path .. "wfoly_pi_golf21_reload_fast_end.ogg", t = 70/30},
         },
     },
     ["reload_empty"] = {
@@ -385,8 +385,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 55/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magin_v2_02.ogg", t = 55/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 71/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 72/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 75/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 71/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 76/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_end.ogg", t = 84/30},
         },
     },
@@ -415,8 +415,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_pi_golf21_first_raise_open_slide.ogg", t = 4/30},
-            {s = path .. "wfoly_pi_golf21_first_raise_slide_release.ogg", t = 9/30},
+            {s = path .. "wfoly_pi_golf21_first_raise_open_slide.ogg", t = 7/30},
+            {s = path .. "wfoly_pi_golf21_first_raise_slide_release.ogg", t = 12/30},
         },
     },
     ["draw"] = {

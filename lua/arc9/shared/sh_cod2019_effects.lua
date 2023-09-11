@@ -1,9 +1,9 @@
-game.AddParticles("particles/mw2019_effects.pcf")
+--- Main Files ---
 game.AddParticles("particles/mw2019_effects_fp.pcf")
---game.AddParticles("particles/mw2019_effects2.pcf")
+game.AddParticles("particles/mw2019_effects.pcf")
 game.AddParticles("particles/mw2019_tracer.pcf")
 
--- FX
+--- Precache FX ---
 PrecacheParticleSystem("AC_muzzle_725_smoke_barrel")
 PrecacheParticleSystem("AC_muzzle_smoke_barrel")
 PrecacheParticleSystem("AC_muzzle_smoke_barrel_2")

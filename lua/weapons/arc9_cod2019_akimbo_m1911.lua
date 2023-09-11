@@ -268,11 +268,11 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 local path = "weapons/cod2019/m1911/"
 
-SWEP.ShootSound = "Cod2019.m1911.fire"
-SWEP.ShootSoundIndoor = "Cod2019.m1911.fire"
+SWEP.ShootSound = "COD2019.M1911.Fire"
+SWEP.ShootSoundIndoor = "COD2019.M1911.Fire"
 
-SWEP.ShootSoundSilenced = "Cod2019.m1911.fire.s"
-SWEP.ShootSoundSilencedIndoor = "Cod2019.m1911.fire.s"
+SWEP.ShootSoundSilenced = "COD2019.M1911.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.M1911.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Pistol.Outside"
@@ -386,10 +386,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_lift.ogg", t = 5/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 7/30},
 			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_magout_01.ogg", t = 12/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 50/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 52/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 54/30},
-			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_magin_01.ogg", t = 56/30},
+			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_magin_01.ogg", t = 54/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 60/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 61/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 73/30},
