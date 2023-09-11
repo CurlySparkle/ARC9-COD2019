@@ -1,4 +1,4 @@
-AddCSLuaFiletrue()
+AddCSLuaFile()
 
 SWEP.Base = "arc9_cod2019_base"
 
