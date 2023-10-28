@@ -92,7 +92,7 @@ SWEP.Recoil = 1.5
 
 SWEP.RecoilSeed = 6767
 
-SWEP.RecoilPatternDrift = 55
+SWEP.RecoilPatternDrift = 0
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -125,7 +125,7 @@ SWEP.VisualRecoilUp = 0.6
 SWEP.VisualRecoilMultSights = 0.3
 SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.2
+SWEP.VisualRecoilSide = 1
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then

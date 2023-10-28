@@ -220,16 +220,15 @@ SWEP.MovingAng = Angle(0, 0, -8)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
--- SWEP.BarrelLength = 0
--- SWEP.NearWallPos = Vector(0, 0, -1)
--- SWEP.NearWallAng = Angle(25, 0, -35)
-
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(15, 30, 3)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1, -1, -3.2)
+SWEP.PeekAng = Angle(0, 0.2, -45)
 
 -------------------------- HoldTypes
 
