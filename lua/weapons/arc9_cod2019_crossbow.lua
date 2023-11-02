@@ -74,7 +74,7 @@ SWEP.SecondarySupplyLimit = 24 -- Amount of reserve UBGL magazines you can take.
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
-SWEP.LauncherCrosshair = false
+SWEP.ForceStandardCrosshair = true
 
 SWEP.NoFlash = true -- Disable light flash
 
@@ -156,9 +156,6 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
-SWEP.SprintAng = Angle(0, 0, 0)
-
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, 0),
     Ang = Angle(-2.5, 0, 2.5)
@@ -172,11 +169,14 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.7, -0.5, -0.7)
+SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
+
+SWEP.SprintPos = Vector(-1.5, -1, 0)
+SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(17, 35, 3)
@@ -309,7 +309,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 1,
+                t = 1.1,
                 lhik = 1,
                 rhik = 1
             },
@@ -384,7 +384,7 @@ SWEP.Animations = {
     },
 }
 
-SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+--SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
 
 -------------------------- ATTACHMENTS
 

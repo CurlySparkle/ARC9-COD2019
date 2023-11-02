@@ -601,13 +601,13 @@ SWEP.Animations = {
         },
     },
     ["firemode_1"] = {
-        Source = "semi_off",
+        Source = "semi_on",
         EventTable = {
             {s = path .. "wfoly_sm_smgolf45_selectsemi_off.ogg", t = 0/30},
         },
     },
     ["firemode_2"] = {
-        Source = "semi_on",
+        Source = "semi_off",
         EventTable = {
             {s = path .. "wfoly_sm_smgolf45_selectsemi_on.ogg", t = 0/30},
         },

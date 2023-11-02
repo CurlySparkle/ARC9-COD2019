@@ -320,6 +320,13 @@ SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 SWEP.TriggerDownSound = "weapons/cod2019/scar/weap_scharlie_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/scar/weap_scharlie_disconnector_plr_01.ogg"
 
+-- Jammed
+
+SWEP.Malfunction = true 
+SWEP.MalfunctionNeverLastShoot = true 
+SWEP.MalfunctionMeanShotsToFail = 300*2
+SWEP.MalfunctionMeanShotsToFailMultHot = -0.1*2
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
@@ -663,6 +670,43 @@ SWEP.Animations = {
         Source = "semi_on",
         EventTable = {
             {s = path .. "wfoly_ar_scharlie_inspect_02.ogg", t = 0/30},
+        },
+    },
+    ["jam"] = {
+        Source = "jam",
+        EventTable = {
+            {s = path .. "wfoly_ar_scharlie_jam_stuck.ogg", t = 0/30},
+        },
+    },
+    ["fix"] = {
+        Source = "unjam",
+		EjectAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_ar_scharlie_raise_first_rotate.ogg", t = 0/30},
+            {s = path .. "wfoly_ar_scharlie_jam_charge.ogg", t = 7/30},
+			{s = path .. "wfoly_ar_scharlie_raise_first_end.ogg", t = 23/30},
         },
     },
 }

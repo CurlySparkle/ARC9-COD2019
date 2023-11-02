@@ -127,7 +127,7 @@ SWEP.RecoilMultSights = 0.8
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.1
-SWEP.VisualRecoilPunchSights = 15
+SWEP.VisualRecoilPunchSights = 55
 
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.4
@@ -327,6 +327,13 @@ SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
+
+-- Jammed
+
+SWEP.Malfunction = true 
+SWEP.MalfunctionNeverLastShoot = true 
+SWEP.MalfunctionMeanShotsToFail = 300*2
+SWEP.MalfunctionMeanShotsToFailMultHot = -0.1*2
 
 SWEP.Animations = {
     ["fire"] = {
@@ -639,6 +646,21 @@ SWEP.Animations = {
         Source = "semi_on",
         EventTable = {
             {s = path .. "wfoly_ar_mike4_inspect_02.ogg", t = 0/30},
+        },
+    },
+    ["jam"] = {
+        Source = "jam",
+        EventTable = {
+            {s = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg", t = 0/30},
+        },
+    },
+    ["fix"] = {
+        Source = "unjam",
+		EjectAt = 0.4,
+        EventTable = {
+            {s = path .. "wpfoly_mike4_raise_v2.ogg", t = 0/30},
+            {s = path .. "wpfoly_mike4_jam_bolt.ogg", t = 7/30},
+			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 23/30},
         },
     },
 }
