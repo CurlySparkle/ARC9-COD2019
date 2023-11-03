@@ -1,28 +1,23 @@
 "VertexlitGeneric"
 {
-	"$basetexture"				"models/cod2019/p90/p90_mag_trans"
-	"$bumpmap"					"models/cod2019/p90/p90_mag_n"
-	"$phongexponenttexture"		"models/cod2019/p90/p90_mag_exp"
-	//"$color2"					"[ .2 .2 .2 ]"
-	"$blendTintByBaseAlpha"		"0"
+    "$basetexture"			"models/cod2019/p90/p90_mag_trans"
+    "$bumpmap"				"models/cod2019/p90/p90_mag_n"
+    "$phongexponenttexture"		"models/cod2019/p90/p90_mag_exp"
 
-	"$envmap"					"env_cubemap"
-	"$envmapfresnel"			".25"
-	"$envmapcoefficient"		"[0.39 0.39 0.39]"
-	"$envmaptint"		"[0.4 0.5 0.7]"
+    "$color2" "[0.8 0.5 0]"
+    //"$blendtintbybasealpha" "0"
+    
+    "$translucent"	"1"
+    "$phong" "1"
+    "$phongboost" "1"
+    "$phongalbedotint" "0"
+    "$phongfresnelranges" "[1 0.5 0]"
 
-	"$phong"					"1"
-	"$phongboost"				"20"
-     //"$phongexponent"				"55"
-	"$phongfresnelranges"		"[2 4 6]"
-	"$phongalbedotint" 			"1"
-	"$phongtint"					"[ .1 .13 .2 ]"
-	//"$phongdisablehalflambert" "1"
+    "$basemapalphaenvmapmask" "1"
+    "$envmapfresnel" "1"
 
-     "$normalmapalphaenvmapmask"              "1"
-	//"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
-	"$translucent"					"1"
-	//"$nocull"					"1"
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[.01 .01 .01]"
 
      "Proxies"
      {
@@ -30,7 +25,7 @@
         {
             "specularity" "0.5"
             "min" "0"
-            "max" "0.2"
+            "max" ".1"
         }
      }
 }

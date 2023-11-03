@@ -219,6 +219,9 @@ SWEP.MovingAng = Angle(0, 0, -8)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
+SWEP.PeekPos = Vector(-1, 4, -3.5)
+SWEP.PeekAng = Angle(0, 0, -45)
+
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(15, 30, 3)
 SWEP.CustomizeSnapshotFOV = 90
@@ -800,11 +803,11 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag_p90"},
+        Category = {"cod2019_p90_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Installed = "cod2019_p90_mag_default",
-        Integral = "cod2019_p90_mag_default",
+		--Installed = "cod2019_p90_mag_default",
+        --Integral = "cod2019_p90_mag_default",
     },
     {
         PrintName = "Perk",
