@@ -396,7 +396,7 @@ SWEP.Attachments = {
         InstalledElements = {"sights_scope"},
 		--Installed = "cod2019_optic_scope_strela",
 		--Integral = "cod2019_optic_scope_strela",
-        CorrectiveAng = Angle(-0.4, 0.4, 0),
+        CorrectiveAng = Angle(-1, -1, -90),
     },
     {
         PrintName = "Grips",
@@ -417,8 +417,8 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Ammo",
-        Bone = "j_mag1",
-        Category = {"go_ammo_rpg"},
+        Bone = "tag_launcher_attachments",
+        Category = {"cod2019_strela_ammo"},
         Pos = Vector(5, 0, 0),
         Ang = Angle(0, 0, 0),
     },

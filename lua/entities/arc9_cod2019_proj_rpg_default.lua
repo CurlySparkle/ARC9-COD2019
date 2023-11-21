@@ -95,8 +95,6 @@ function ENT:Detonate()
         self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
     else
         	self:EmitSound("Cod2019.Frag.Explode")
-			--ParticleEffect("explosion_hegrenade_brief", self:GetPos(), Angle(-90, 0, 0))
-            --ParticleEffect("explosion_hegrenade_interior", self:GetPos(), Angle(-90, 0, 0))
             ParticleEffect("smoke_plume", self:GetPos(), Angle(-90, 0, 0))
             ParticleEffect("explosion_m79", self:GetPos(), Angle(-90, 0, 0))
         --self:EmitSound("phx/kaboom.wav", 125, 100, 1, CHAN_AUTO)

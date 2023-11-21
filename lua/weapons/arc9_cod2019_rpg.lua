@@ -132,7 +132,7 @@ SWEP.RecoilPatternDrift = 20
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
-SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.8 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
@@ -150,17 +150,17 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.3, -4, -4.4),
-    Ang = Angle(-0.7, 3, -15),
+    Pos = Vector(-2.75, -3, -3.25),
+    Ang = Angle(-0.4, 16, -5),
     Magnification = 1.25,
-    ViewModelFOV = 56,
+    ViewModelFOV = 46,
     CrosshairInSights = false
 }
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
-SWEP.SprintAng = Angle(0, -16.0, 0)
+SWEP.SprintPos = Vector(0, -1, 0)
+SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, 0),
@@ -173,13 +173,13 @@ SWEP.MovingMidPoint = {
 }
 
 SWEP.ActivePos = Vector(0, 0, 0)
-SWEP.ActiveAng = Angle(0, -16.0, 0)
+SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.ActivePosShooting = Vector(0, 0, 0)
 SWEP.ActiveAngShooting = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, -16.0, 0)
+SWEP.MovingPos = Vector(0, -0.8, -1.5)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, -2, -5)
@@ -212,7 +212,7 @@ SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
-SWEP.CamQCA = 4
+SWEP.CamQCA = 3
 SWEP.CamQCA_Mult = 1
 
 SWEP.NoShellEject = true
@@ -244,9 +244,6 @@ SWEP.TriggerUpSound = ""
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload",
@@ -280,8 +277,40 @@ SWEP.Animations = {
 			{s = path .. "wfoly_la_rpapa7_reload_end.ogg", t = 50/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_start.ogg", t = 0/30},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_magin.ogg", t = 18/30},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 21/30},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_end.ogg", t = 50/30},
+        },
+    },
     ["ready"] = {
-        Source = {"draw"},
+        Source = "draw",
         IKTimeLine = {
             {
                 t = 0,
@@ -307,7 +336,7 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_la_rpapa7_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_la_rpapa7_drop_hip_rattle.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -357,13 +386,24 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = "melee",
+        Source = "melee_01",
     },
 }
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
 
 -------------------------- ATTACHMENTS
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+	
+    --------------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    end
+end
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -384,7 +424,7 @@ SWEP.AttachmentElements = {
 SWEP.Attachments = {
     {
         PrintName = "Top",
-        Bone = "tag_launcher_attachments",
+        Bone = "tag_launcher_offset",
         Pos = Vector(7.1, -0.85, 1.2),
         Ang = Angle(0, 0, 0),
         Category = {"csgo_rail_optic_ak",},
@@ -395,7 +435,7 @@ SWEP.Attachments = {
         PrintName = "Tactical",
         DefaultAttName = "Default",
         Category = "cod2019_tac",
-        Bone = "tag_launcher_attachments",
+        Bone = "tag_launcher_offset",
         Pos = Vector(15, 0.7, 0.3),
         Ang = Angle(0, 0, -90),
     },
@@ -408,7 +448,7 @@ SWEP.Attachments = {
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
@@ -454,7 +494,7 @@ SWEP.Attachments = {
     {
         PrintName = "Charm",
         Category = "charm",
-        Bone = "tag_launcher_attachments",
+        Bone = "tag_launcher_offset",
         Pos = Vector(11, -0.9, 0.3),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
@@ -462,7 +502,7 @@ SWEP.Attachments = {
     {
         PrintName = "Stats",
         Category = {"killcounter","killcounter2"},
-        Bone = "tag_launcher_attachments",
+        Bone = "tag_launcher_offset",
         Pos = Vector(16, -1, 0.2),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,

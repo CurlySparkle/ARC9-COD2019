@@ -127,11 +127,15 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
+
+SWEP.VisualRecoilMultSights = 0.7
+SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilUpSights = 0.1
+SWEP.VisualRecoilSideSights = 0.1
+SWEP.VisualRecoilRollSights = 15
+
 SWEP.VisualRecoilPunch = 1.5
 SWEP.VisualRecoilUp = 1
-
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 55
 SWEP.VisualRecoilRoll = 55
 SWEP.VisualRecoilSide = 0.3
 
@@ -197,7 +201,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, -1, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -414,12 +418,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magout.ogg", t = 6/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_maghit.ogg", t = 18/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_01.ogg", t = 29/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_02.ogg", t = 34/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_end.ogg", t = 41/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_maghit.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_magin.ogg", t = 30/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_end.ogg", t = 35/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -450,13 +453,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magout.ogg", t = 6/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_maghit.ogg", t = 19/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_01.ogg", t = 29/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_02.ogg", t = 34/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_bolt_release.ogg", t = 40/30},
-			{s = path .. "wfoly_sm_smgolf45_reload_empty_end.ogg", t = 45/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_maghit.ogg", t = 19/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_magin.ogg", t = 29/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_charge.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_end.ogg", t = 45/30},
         },
     },
     ["ready"] = {
@@ -833,4 +835,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 8
-SWEP.CodStubbyTallGripPoseParam = 19
+SWEP.CodStubbyTallGripPoseParam = 23
