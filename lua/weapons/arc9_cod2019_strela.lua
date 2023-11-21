@@ -142,8 +142,8 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.35, -9, 0.1),
-    Ang = Angle(0, 0, 15),
+    Pos = Vector(-2.3, -5, 0.7),
+    Ang = Angle(-1, 6, 15),
     Magnification = 1.25,
     ViewModelFOV = 56,
     CrosshairInSights = false
@@ -151,7 +151,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -3)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -168,10 +168,10 @@ SWEP.ActivePosShooting = Vector(0, 0, 0)
 SWEP.ActiveAngShooting = Angle(0, 0, 0)
 
 SWEP.ActivePos = Vector(0, 0, 0)
-SWEP.ActiveAng = Angle(0, -8, 0)
+SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.4, -0.4)
-SWEP.MovingAng = Angle(0, -8, 0)
+SWEP.MovingPos = Vector(-2, -1, -2)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, -8, -5)
@@ -203,7 +203,7 @@ SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
-SWEP.CamQCA = 4
+SWEP.CamQCA = 3
 SWEP.CamQCA_Mult = 1
 
 SWEP.NoShellEject = true
@@ -236,11 +236,42 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
-    },
     ["reload"] = {
         Source = "reload",
+		MinProgress = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_la_kgolf_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_la_kgolf_reload_unload_01.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_la_kgolf_reload_rotate.ogg", t = 68/30},
+			{s = path .. "wfoly_plr_la_kgolf_reload_door_01.ogg", t = 83/30},
+			{s = path .. "wfoly_plr_la_kgolf_reload_load_01.ogg", t = 105/30},
+			{s = path .. "wfoly_plr_la_kgolf_reload_end.ogg", t = 144/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
 		MinProgress = 0.8,
         IKTimeLine = {
             {
@@ -352,13 +383,24 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = "melee_01",
     },
 }
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
 
 -------------------------- ATTACHMENTS
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+	
+    --------------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    end
+end
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -389,20 +431,20 @@ SWEP.AttachmentElements = {
 SWEP.Attachments = {
     {
         PrintName = "Optics",
-        Bone = "tag_launcher_attachments",
+        Bone = "tag_launcher_offset",
         Pos = Vector(5, -3.1, 1.9),
         Ang = Angle(0, 0, -90),
         Category = {"cod2019_optic","cod2019_optic_strela"},
         InstalledElements = {"sights_scope"},
 		--Installed = "cod2019_optic_scope_strela",
 		--Integral = "cod2019_optic_scope_strela",
-        CorrectiveAng = Angle(-1, -1, -90),
+        CorrectiveAng = Angle(7, 6.2, -90),
     },
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
         Category = "cod2019_grip",
-        Bone = "tag_launcher_attachments",
+        Bone = "tag_launcher_offset",
         Pos = Vector(10, -0.83, -1.12),
         Ang = Angle(0, 0, 200),
 		Scale = 1,
@@ -411,20 +453,20 @@ SWEP.Attachments = {
         PrintName = "Tactical",
         DefaultAttName = "Default",
         Category = "cod2019_tac",
-        Bone = "tag_launcher_attachments",
+        Bone = "tag_launcher_offset",
         Pos = Vector(10, 2.1, 0.9),
         Ang = Angle(0, 0, -90),
     },
     {
         PrintName = "Ammo",
-        Bone = "tag_launcher_attachments",
+        Bone = "tag_launcher_offset",
         Category = {"cod2019_strela_ammo"},
         Pos = Vector(5, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
@@ -460,7 +502,7 @@ SWEP.Attachments = {
     {
         PrintName = "Charm",
         Category = "charm",
-        Bone = "tag_launcher_attachments",
+        Bone = "tag_launcher_offset",
         Pos = Vector(3, -1.7, 0.7),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
@@ -468,7 +510,7 @@ SWEP.Attachments = {
     {
         PrintName = "Stats",
         Category = {"killcounter","killcounter2"},
-        Bone = "tag_launcher_attachments",
+        Bone = "tag_launcher_offset",
         Pos = Vector(2, -1.5, 1.8),
         Ang = Angle(0, 0, 35),
 		CosmeticOnly = true,
