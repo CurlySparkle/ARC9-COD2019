@@ -151,7 +151,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(-1, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -176,8 +176,8 @@ SWEP.MovingAng = Angle(0, 0, -8)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, -8, -5)
 
-SWEP.CustomizeAng = Angle(90, -5, 0)
-SWEP.CustomizePos = Vector(5, 30, 4)
+SWEP.CustomizeAng = Angle(90, -5, 7)
+SWEP.CustomizePos = Vector(3, 30, 4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(-1, 15, 3)
@@ -296,12 +296,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_la_kgolf_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_unload_01.ogg", t = 32/30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_rotate.ogg", t = 68/30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_door_01.ogg", t = 83/30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_load_01.ogg", t = 105/30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_end.ogg", t = 144/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_breechopen.ogg", t = 31/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_shelldrop.ogg", t = 40/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_raise.ogg", t = 50/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_shellin.ogg", t = 75/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_breechclose.ogg", t = 80/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_end.ogg", t = 110/30},
         },
     },
     ["ready"] = {
@@ -333,7 +334,7 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = path .. "wfoly_plr_la_kgolf_raise_up.ogg", t = 0/30},
+            {s = path .. "wfoly_la_kgolf_drop_rattle.ogg", t = 0/30},
         },
     },
     ["idle"] = {
@@ -397,8 +398,6 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     --------------------------------------------------------------------------------
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast_empty"
     end
 end
 
@@ -448,6 +447,7 @@ SWEP.Attachments = {
         Pos = Vector(10, -0.83, -1.12),
         Ang = Angle(0, 0, 200),
 		Scale = 1,
+		InstalledElements = {"grip"},
     },
     {
         PrintName = "Tactical",

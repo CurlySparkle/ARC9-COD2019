@@ -1,31 +1,28 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-	"$basetexture"				"models/cod2019/strela/strela_optic"
-	"$bumpmap"					"models/cod2019/strela/strela_optic_n"
-	"$phongexptexture"		"models/cod2019/strela/strela_optic_exp"
-	"$color2"					"[0.8 0.8 0.8]"
-	"$blendTintByBaseAlpha"		"1"
+    "$basetexture" "models\cod2019\strela\strela_optic"
+    "$bumpmap" "models\cod2019\strela\strela_optic_n"
+    "$phongexponenttexture" "models\cod2019\strela\strela_optic_exp"
 
-	"$envmap"					"env_cubemap"
-	"$envmaptint"				"[ .13 .13 .13 ]"
-	"$envmapfresnel"			".25"
-	"$envmapcoefficient"		"[0.39 0.39 0.39]"
+    /////////////////
+    "$color2" "[0.8 0.8 0.8]"                                     //do not touch this
+    "$blendtintbybasealpha" "1"                             //do not touch this
+    /////////////////
 
-	"$phong"					"1"
-	"$phongboost"				"15"
-     //"$phongexp"				"55"
-	"$phongfresnelranges"		"[0.32 0.72 0.99]"
-	"$phongalbedotint" 			"1"
+    "$phong" "1"
+    "$phongboost" "1"
+    "$phongalbedotint" "1"
+    "$phongalbedoboost" "10"                                //toy around with this
+    "$phongfresnelranges" "[1 0.1 0]"
+       
+    /////////////////
+    "$normalmapalphaenvmapmask" "1"                         //do not touch this
+    /////////////////
 
-     "$normalmapalphaenvmapmask"              "1"
-	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[0.11 0.11 0.11]"                 
 
-	"$rimlight"					"0"
-	"$rimlightexp"			"80"
-	"$rimlightboost"			"0.3"
-	"$rimmask"					"0"
-	"$nocull"					"1"
-
+    //remove this if not using MWB
      "Proxies"
      {
         "Arc9EnvMapTint"
