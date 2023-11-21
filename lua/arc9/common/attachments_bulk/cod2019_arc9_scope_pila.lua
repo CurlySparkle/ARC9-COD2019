@@ -19,14 +19,15 @@ ATT.ActivateElements = {"sights_scope"}
 
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_pila.mdl"
 ATT.Scale = 1
-ATT.ModelOffset = Vector(-0.3, 3.15, 0.35)
+ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 90)
+ATT.BoneMerge = true
 
 ATT.Sights = {
     {
-        Pos = Vector(4.085, 6, -0.35),
-        Ang = Angle(0, -1, -20),
-        ViewModelFOV = 56,
+        Pos = Vector(1, 8.5, -0.35),
+        Ang = Angle(7.5, -4.3, -20),
+        ViewModelFOV = 40,
         Magnification = 1.5,
         IgnoreExtra = true,
 		CrosshairInSights = false
@@ -35,7 +36,11 @@ ATT.Sights = {
 
 ATT.RTScope = true
 ATT.RTScopeSubmatIndex = 1
-ATT.RTScopeFOV = 8
+ATT.RTScopeAdjustable = true
+ATT.RTScopeAdjustmentLevels = 2
+ATT.RTScopeFOVMin = 10
+ATT.RTScopeFOVMax = 25
+ATT.RTScopeFOV = 26
 ATT.RTScopeRes = 512
 -- ATT.RTScopeSurface = Material("models/weapons/arc9/mw3/mw3_optics/hamr_lens")
 ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/mk4_crosshair.png", "mips smooth")
