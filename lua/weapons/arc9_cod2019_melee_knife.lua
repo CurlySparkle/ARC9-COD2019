@@ -119,10 +119,10 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, 0, -1.5)
+SWEP.MovingPos = Vector(0, -1, -1)
 SWEP.MovingAng = Angle(0, 0, 0)
 
-SWEP.SprintPos = Vector(0, 0, -3)
+SWEP.SprintPos = Vector(0, -1, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(0, 0, -2)
@@ -153,8 +153,14 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-    ["draw"] = {
+    ["ready"] = {
         Source = "draw",
+        EventTable = {
+            {s = path .. "melee_knife_charge_01.ogg", t = 0/30},
+        },
+    },
+    ["draw"] = {
+        Source = "draw_short",
 		MinProgress = 0.1,
 		FireASAP = true,
         EventTable = {
@@ -163,27 +169,24 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-        EventTable = {
-            {s = path .. "melee_knife_charge_01.ogg", t = 0/30},
-        },
     },
     ["bash"] = {
-        Source = {"bash1","bash2","bash3"},
+        Source = {"melee_01","melee_02","melee_03"},
     },
     ["backstab"] = {
-        Source = "backstab"
+        Source = {"backstab_01","backstab_02"},
     },
-    -- ["idle_sprint"] = {
-        -- Source = "sprint",
-    -- },
-    -- ["enter_sprint"] = {
-        -- Source = "idle",
-        -- Time = 1.5,
-    -- },
-    -- ["exit_sprint"] = {
-        -- Source = "idle",
-        -- Time = 1.5,
-    -- },
+    ["idle_sprint"] = {
+        Source = "sprint",
+    },
+    ["exit_sprint"] = {
+        Source = "sprint_out",
+        Time = 1.3,
+    },
+    ["enter_sprint"] = {
+        Source = "sprint_in",
+        Time = 1.3,
+    },
     ["inspect"] = {
         Source = "lookat01",
         MinProgress = 0.1,
