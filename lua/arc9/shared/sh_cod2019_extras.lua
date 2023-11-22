@@ -12,6 +12,16 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.Smoke.Pop",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 140,
+    sound = {
+        "^weapons/cod2019/throwables/smoke/smoke_expl_pop.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Frag.Explode",
     channel = CHAN_STATIC,
     volume = 1.0,

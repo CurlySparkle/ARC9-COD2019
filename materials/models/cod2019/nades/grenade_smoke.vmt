@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "models/cod2019/nades/grenade_flash"
-    "$bumpmap" "models/cod2019/nades/grenade_flash_n"
-    "$phongexponenttexture" "models/cod2019/nades/grenade_flash_exp"
+    "$basetexture" "models/cod2019/nades/grenade_smoke"
+    "$bumpmap" "models/cod2019/nades/grenade_smoke_n"
+    "$phongexponenttexture" "models/cod2019/nades/grenade_smoke_exp"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this

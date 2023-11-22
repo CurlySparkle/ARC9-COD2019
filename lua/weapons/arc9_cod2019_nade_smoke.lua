@@ -10,9 +10,9 @@ SWEP.AdminOnly = false
 SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
-SWEP.PrintName = "Gas"
+SWEP.PrintName = "Smoke Nade"
 SWEP.Class = "Grenade"
-SWEP.Description = [[Explodes on impact with the ground, releasing a lingering cloud of tear gas that causes slowed movement, blurred vision, and coughing.]]
+SWEP.Description = [[Deploys a smoke screen that blocks vision and automated targeting systems.]]
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
@@ -31,8 +31,8 @@ SWEP.Firemodes = {
 
 SWEP.UseHands = true
 
-SWEP.ViewModel = "models/weapons/cod2019/c_eq_gas.mdl"
-SWEP.WorldModel = "models/weapons/cod2019/c_eq_gas.mdl"
+SWEP.ViewModel = "models/weapons/cod2019/c_eq_smoke.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/c_eq_smoke.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     Pos = Vector(0, 0, 0),
@@ -52,7 +52,7 @@ SWEP.Crosshair = true
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
-SWEP.ShootEnt = "arc9_cod2019_throwngas"
+SWEP.ShootEnt = "arc9_cod2019_thrownsmoke"
 SWEP.Ammo = "grenade"
 
 SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
@@ -78,7 +78,7 @@ SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(2, 0, -2)
+SWEP.SprintPos = Vector(0, 2, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -124,7 +124,7 @@ SWEP.AnimDraw = false
 
 SWEP.CamQCA = 1
 
-local path = "weapons/cod2019/throwables/gas/"
+local path = "weapons/cod2019/throwables/smoke/"
 
 function SWEP:SecondaryAttack()
     return self:MeleeAttack()
@@ -172,7 +172,7 @@ SWEP.Animations = {
     ["toss"] = {
         Source = "throw",
         EventTable = {
-            {s = path .. "grenade_smoke_fire_01.ogg", t = 0/30},
+            {s = path .. "grenade_smoke_fire_02.ogg", t = 0/30},
         },
         MinProgress = 0.5
     },

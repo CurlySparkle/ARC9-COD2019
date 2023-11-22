@@ -1,6 +1,6 @@
 SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_rock")
 
-SWEP.Base = "arc9_base_nade"
+SWEP.Base = "arc9_cod2019_base_nade"
 
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Specials"
@@ -80,9 +80,9 @@ SWEP.Disposable = true
 
 SWEP.HasSights = false
 
-SWEP.ViewModelFOVBase = 56
+SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, -1, -3)
+SWEP.SprintPos = Vector(0, 3, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -98,7 +98,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -1, -1)
+SWEP.MovingPos = Vector(0, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -127,23 +127,21 @@ SWEP.AnimDraw = false
 
 -------------------------- MELEE
 
-SWEP.Bash = true
-SWEP.PrimaryBash = false
-
-SWEP.BashDamage = 50
-SWEP.BashLungeRange = 0
-SWEP.BashRange = 74
-SWEP.PreBashTime = 0.1
-SWEP.PostBashTime = 0.7
+SWEP.PreBashTime = 0.2
+SWEP.PostBashTime = 0.3
 
 SWEP.ImpactForce = 25
 
 SWEP.MeleeHitSound = "rock_hit.wav"
 SWEP.MeleeHitWallSound = "rock_hit_world.wav"
-SWEP.MeleeSwingSound = "CSGO.Knife.Slash"
 
-SWEP.CamQCA = 2
-SWEP.CamQCA_Mult = 0.5
+local path = "weapons/cod2019/throwables/rock/"
+
+function SWEP:SecondaryAttack()
+    return self:MeleeAttack()
+end
+
+SWEP.CamQCA = 1
 
 SWEP.Animations = {
     ["idle"] = {
@@ -155,46 +153,54 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw",
         EventTable = {
-            {s = "weapons/cod2019/throwables/rock/wfoly_me_fists_inspect_02.ogg", t = 0/30},
+            {s = path .. "wfoly_me_fists_inspect_02.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = "weapons/cod2019/throwables/rock/wfoly_me_fists_inspect_02.ogg", t = 0/30},
+            {s = path .. "wfoly_me_fists_inspect_02.ogg", t = 0/30},
         },
     },
-    ["pullpin"] = {
-        Source = "pullpin",
-        MinProgress = 0,
-		Mult = 1.4,
-        FireASAP = true,
-    },
+    -- ["pullpin"] = {
+        -- Source = "pullout",
+        -- MinProgress = 0.666,
+        -- FireASAP = true,
+		-- Mult = 1.5,
+        -- EventTable = {
+            -- {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
+            -- {s = path .. "grenade_pin_frag_01.ogg", t = 0/30},
+        -- },
+    -- },
     ["throw"] = {
+        Source = "throw",
+		Mult = 0.9,
+        EventTable = {
+            {s = "COD2019.Rock.Throw", t = 0/30},
+        },
+        MinProgress = 0.55
+    },
+    ["toss"] = {
         Source = "throw",
         EventTable = {
             {s = "COD2019.Rock.Throw", t = 0/30},
         },
-        MinProgress = 0.2
+        MinProgress = 0.55
     },
-    ["toss"] = {
-        Source = "underhand",
-        EventTable = {
-            {s = "COD2019.Rock.Throw", t = 0},
-        },
-        MinProgress = 0.2
+    ["idle_sprint"] = {
+        Source = "sprint",
+    },
+    ["enter_sprint"] = {
+        Source = "sprint_in",
+    },
+    ["exit_sprint"] = {
+        Source = "sprint_out",
+		Mult = 3,
     },
     ["bash"] = {
-        Source = "melee"
-    },
-    ["inspect"] = {
-        Source = "lookat01",
+        Source = {"melee_miss01", "melee_miss02","melee_miss03"},
     },
 }
-
-function SWEP:SecondaryAttack()
-    return self:MeleeAttack()
-end
 
 SWEP.Attachments = {
     {

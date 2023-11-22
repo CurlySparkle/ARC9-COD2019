@@ -139,14 +139,17 @@ function SWEP:SecondaryAttack()
     return self:MeleeAttack()
 end
 
-SWEP.PreBashTime = 0.15
-SWEP.PostBashTime = 0.5
+--SWEP.Bash = true
+--SWEP.PrimaryBash = false
+SWEP.PreBashTime = 0.2
+SWEP.PostBashTime = 0.2
 
 SWEP.ImpactForce = 25
 
-SWEP.MeleeHitSound = "CSGO.Melee.HitBody"
-SWEP.MeleeHitWallSound = "CSGO.Melee.HitWall"
-SWEP.MeleeSwingSound = "CSGO.Shield.Swing"
+SWEP.MeleeHitSound = "COD2019.Melee.HitBody"
+SWEP.MeleeHitWallSound = "COD2019.Melee.HitWall"
+SWEP.MeleeSwingSound = "COD2019.Melee.Swing"
+SWEP.BackstabSound = "COD2019.Melee.HitBody"
 
 SWEP.Animations = {
     ["idle"] = {
