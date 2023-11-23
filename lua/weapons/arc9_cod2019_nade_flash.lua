@@ -1,6 +1,6 @@
 SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_flash")
 
-SWEP.Base = "arc9_base_nade"
+SWEP.Base = "arc9_cod2019_base_nade"
 
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Specials"
@@ -31,8 +31,8 @@ SWEP.Firemodes = {
 
 SWEP.UseHands = true
 
-SWEP.ViewModel = "models/weapons/cod2019/c_eq_flashbang.mdl"
-SWEP.WorldModel = "models/weapons/cod2019/c_eq_flashbang.mdl"
+SWEP.ViewModel = "models/weapons/cod2019/c_eq_flash.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/c_eq_flash.mdl"
 SWEP.MirrorVMWM = false
 SWEP.WorldModelOffset = {
     Pos = Vector(0, 0, 0),
@@ -56,7 +56,7 @@ SWEP.ShootEnt = "arc9_cod2019_thrownflash"
 SWEP.Ammo = "grenade"
 
 SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
-SWEP.Tossable = true -- When grenade is enabled, right click will toss. Set to false to disable, allowing you to aim down sights.
+SWEP.Tossable = false -- When grenade is enabled, right click will toss. Set to false to disable, allowing you to aim down sights.
 SWEP.ThrowAnimSpeed = 1
 
 SWEP.FuseTimer = 3 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
@@ -78,7 +78,7 @@ SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(2, 0, -2)
+SWEP.SprintPos = Vector(0, 2, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -94,7 +94,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(1, -1, -1)
+SWEP.MovingPos = Vector(0, -1, -1)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -131,26 +131,21 @@ function SWEP:SecondaryAttack()
     return self:MeleeAttack()
 end
 
-SWEP.BashDamage = 35
-SWEP.BashLungeRange = 0
-SWEP.BashRange = 64
-SWEP.PreBashTime = 0.18
+SWEP.PreBashTime = 0.2
 SWEP.PostBashTime = 0.2
 
 SWEP.ImpactForce = 15
-
-SWEP.MeleeHitSound = "CSGO.Melee.HitBody"
-SWEP.MeleeHitWallSound = "CSGO.Melee.HitWall"
-SWEP.MeleeSwingSound = "CSGO.Shield.Swing"
 
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
+    ["idle_primed"] = {
+        Source = "idle_primed"
+    },
     ["draw"] = {
         Source = "draw",
         EventTable = {
-            {s = path .. "grenade_pin_flash.ogg", t = 0/30},
             {s = path .. "grenade_pin_flash_cloth.ogg", t = 0/30},
         },
     },
@@ -160,17 +155,45 @@ SWEP.Animations = {
             {s = path .. "grenade_pin_flash_cloth.ogg", t = 0/30},
         },
     },
+    ["pullpin"] = {
+        Source = "pullout",
+        MinProgress = 0.666,
+        FireASAP = true,
+		Mult = 1.5,
+        EventTable = {
+            {s = path .. "grenade_pin_flash.ogg", t = 0/30},
+            {s = path .. "grenade_pin_flash_cloth.ogg", t = 0/30},
+        },
+    },
     ["throw"] = {
         Source = "throw",
         EventTable = {
-            {s = path .. "grenade_pin_flash_fire_01.ogg", t = 5/30},
+            {s = path .. "grenade_pin_flash_fire_01.ogg", t = 0/30},
         },
-        MinProgress = 0.2
+        MinProgress = 0.55
+    },
+    ["toss"] = {
+        Source = "throw",
+        EventTable = {
+            {s = path .. "grenade_pin_flash_fire_01.ogg", t = 0/30},
+        },
+        MinProgress = 0.55
+    },
+    ["idle_sprint"] = {
+        Source = "sprint",
+    },
+    ["enter_sprint"] = {
+        Source = "sprint_in",
+    },
+    ["exit_sprint"] = {
+        Source = "sprint_out",
+		Mult = 3,
     },
     ["bash"] = {
-        Source = "melee",
+        Source = {"melee_miss01", "melee_miss02","melee_miss03"},
     },
 }
+
 
 -------------------------- ATTACHMENTS
 

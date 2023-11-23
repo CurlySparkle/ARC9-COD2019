@@ -1,3 +1,5 @@
+--list.Set("ContentCategoryIcons", "ARC9 - MW2019", "arc9/logo/logo_lowvis.png")
+
 ARC9.COD2019 = {}
 
 ARC9.COD2019.BlendEmpty = function(wep)

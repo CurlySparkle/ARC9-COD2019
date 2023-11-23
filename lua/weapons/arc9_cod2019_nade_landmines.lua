@@ -1,6 +1,6 @@
 SWEP.CustomSelectIcon = Material("vgui/hud/arc9_go_nade_landmines")
 
-SWEP.Base = "arc9_base_nade"
+SWEP.Base = "arc9_cod2019_base_nade"
 
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Specials"
@@ -89,8 +89,8 @@ SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, -1, -2)
-SWEP.SprintAng = Angle(0, -5, 0)
+SWEP.SprintPos = Vector(0, -1, 0)
+SWEP.SprintAng = Angle(15, -5, 0)
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1.5, -0.15),
@@ -100,12 +100,15 @@ SWEP.SprintMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
+SWEP.ActivePosBash = Vector(0, 0, 0)
+SWEP.ActiveAngBash = Angle(0, 0, 0)
+
 SWEP.MovingMidPoint = {
     Pos = Vector(0, -0.5, -0.5),
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(0, -1, -1)
+SWEP.MovingPos = Vector(0, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -139,17 +142,9 @@ function SWEP:SecondaryAttack()
     return self:MeleeAttack()
 end
 
---SWEP.Bash = true
---SWEP.PrimaryBash = false
-SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.2
-
+SWEP.PreBashTime = 0.22
+SWEP.PostBashTime = 0.4
 SWEP.ImpactForce = 25
-
-SWEP.MeleeHitSound = "COD2019.Melee.HitBody"
-SWEP.MeleeHitWallSound = "COD2019.Melee.HitWall"
-SWEP.MeleeSwingSound = "COD2019.Melee.Swing"
-SWEP.BackstabSound = "COD2019.Melee.HitBody"
 
 SWEP.Animations = {
     ["idle"] = {
@@ -159,7 +154,7 @@ SWEP.Animations = {
         -- Source = "idle_primed"
     -- },
     ["draw"] = {
-        Source = "deploy",
+        Source = "draw",
         EventTable = {
             {s = "weapons/cod2019/throwables/mine/proxy_pull_out.ogg", t = 0/30},
         },
@@ -171,13 +166,13 @@ SWEP.Animations = {
         },
     },
     ["throw"] = {
-        Source = "throw2",
+        Source = "throw",
         EventTable = {
             {s = "weapons/cod2019/throwables/mine/proxy_throw.ogg", t = 0/30},
         },
-        MinProgress = 0.4
+        MinProgress = 0.46
     },
     ["bash"] = {
-        Source = {"melee","melee2","melee3"}
+        Source = "melee",
     },
 }

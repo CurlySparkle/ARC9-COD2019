@@ -1,6 +1,6 @@
 --SWEP.CustomSelectIcon = Material("vgui/hud/arc9_go_nade_breach")
 
-SWEP.Base = "arc9_base_nade"
+SWEP.Base = "arc9_cod2019_base_nade"
 
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Specials"
@@ -86,7 +86,7 @@ SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -4)
+SWEP.SprintPos = Vector(0, 0, -2)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -153,8 +153,8 @@ SWEP.Animations = {
         },
     },
     ["throw"] = {
-      Source = "throw_empty",
-	  Mult = 0.7,
+      Source = "throw",
+	  Mult = 1,
       MinProgress = 0.35,
       EventTable = {
             {s = path .. "grenade_blackout_throw_1.ogg", t = 3/30},
