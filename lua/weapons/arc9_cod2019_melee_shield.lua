@@ -73,7 +73,7 @@ SWEP.BashDamage = 55
 SWEP.BashLungeRange = 0
 SWEP.BashRange = 64
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.25
+SWEP.PostBashTime = 0.35
 
 SWEP.ImpactForce = 15
 
@@ -175,7 +175,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"bash1","bash2"},
+        Source = {"melee_01","melee_02","melee_03","melee_04"},
 		--MinProgress = 0.7,
     },
     ["idle_sprint"] = {
@@ -183,11 +183,11 @@ SWEP.Animations = {
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-        Time = 1.5,
+        Time = 2,
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-        Time = 1.5,
+        Time = 2,
     },
     ["inspect"] = {
         Source = "lookat01",
