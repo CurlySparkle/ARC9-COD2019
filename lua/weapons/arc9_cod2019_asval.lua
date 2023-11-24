@@ -236,6 +236,9 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 
+SWEP.PeekPos = Vector(-1, 3, -3.2)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
+
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "AC_muzzle_pistol_suppressed_fp"

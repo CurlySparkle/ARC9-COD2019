@@ -1,6 +1,6 @@
 SWEP.CustomSelectIcon = Material("vgui/hud/arc9_go_nade_claymore")
 
-SWEP.Base = "arc9_base_nade"
+SWEP.Base = "arc9_cod2019_base_nade"
 
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Specials"
@@ -35,15 +35,18 @@ SWEP.Firemodes = {
 
 SWEP.UseHands = true
 
-SWEP.ViewModel = "models/weapons/cod2019/c_eq_claymores.mdl"
+SWEP.ViewModel = "models/weapons/cod2019/c_eq_claymore.mdl"
 SWEP.WorldModel = "models/weapons/w_eq_claymore.mdl"
-SWEP.MirrorVMWM = false
+SWEP.MirrorVMWM = true
+SWEP.NoTPIKVMPos = true
+SWEP.TPIKforcelefthand = true
+SWEP.TPIKParentToSpine4 = true
 SWEP.WorldModelOffset = {
-    Pos        =    Vector(-3, 5, -7.5),
-    Ang        =    Angle(5, 7, 180),
-    Bone    =    "ValveBiped.Bip01_R_Hand",
-    TPIKPos = Vector(-7, 1, -0),
-    TPIKAng = Angle(0, 0, 180),
+    Pos = Vector(-6.5, 3, -11),
+    Ang = Angle(20, -10, 195),
+
+    TPIKPos = Vector(11, 2, 0),
+    TPIKAng = Angle(0, 90, 90),
     Scale = 1,
 }
 
@@ -76,7 +79,7 @@ SWEP.Disposable = true
 
 SWEP.ThrowTumble = false
 SWEP.ThrowOnGround = true
-SWEP.ThrowInstantly = true
+SWEP.ThrowInstantly = false
 SWEP.ShootEntInheritPlayerVelocity = false
 
 SWEP.ShootPosOffset = Vector(0, 24, 0)
@@ -87,8 +90,8 @@ SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, -1, -2)
-SWEP.SprintAng = Angle(-35, -5, 0)
+SWEP.SprintPos = Vector(2, 1, 0)
+SWEP.SprintAng = Angle(35, -5, 0)
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1.5, -0.15),
@@ -131,33 +134,24 @@ SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 
 SWEP.CamQCA = 1
-SWEP.CamQCA_Mult = 1
 
 function SWEP:SecondaryAttack()
     return self:MeleeAttack()
 end
 
-SWEP.BashDamage = 35
-SWEP.BashLungeRange = 0
-SWEP.BashRange = 64
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.5
-
+SWEP.PostBashTime = 0.25
 SWEP.ImpactForce = 15
-
-SWEP.MeleeHitSound = "CSGO.Melee.HitBody"
-SWEP.MeleeHitWallSound = "CSGO.Melee.HitWall"
-SWEP.MeleeSwingSound = "CSGO.Shield.Swing"
 
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-    -- ["idle_primed"] = {
-        -- Source = "idle_primed"
-    -- },
+    ["idle_primed"] = {
+        Source = "idle_primed"
+    },
     ["draw"] = {
-        Source = "deploy",
+        Source = "draw",
         EventTable = {
             {s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_pullback.ogg", t = 0/30},
         },
@@ -168,6 +162,11 @@ SWEP.Animations = {
             {s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_putdown.ogg", t = 0/30},
         },
     },
+    ["pullpin"] = {
+        Source = "pullpin",
+        MinProgress = 0.666,
+        FireASAP = true,
+    },
     ["throw"] = {
         Source = "throw",
         EventTable = {
@@ -177,6 +176,6 @@ SWEP.Animations = {
         MinProgress = 0.5
     },
     ["bash"] = {
-        Source = {"melee","melee2","melee3"}
+        Source = "melee",
     },
 }

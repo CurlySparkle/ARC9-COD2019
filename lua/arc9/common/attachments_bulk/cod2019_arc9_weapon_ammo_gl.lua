@@ -86,7 +86,7 @@ ATT.CompactName = "Gas"
 ATT.Description = [[Changes the nade type to fire a gas type nade that can cover a section of an area.]]
 ATT.SortOrder = 1
 
---ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_smoke.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_gas.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 

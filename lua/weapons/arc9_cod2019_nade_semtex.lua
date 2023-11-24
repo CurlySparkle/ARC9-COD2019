@@ -1,6 +1,6 @@
 SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_semtex")
 
-SWEP.Base = "arc9_base_nade"
+SWEP.Base = "arc9_cod2019_base_nade"
 
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Specials"
@@ -32,13 +32,19 @@ SWEP.Firemodes = {
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_semtex.mdl"
-SWEP.WorldModel = "models/weapons/cod2019/c_eq_semtex.mdl"
-SWEP.MirrorVMWM = false
+SWEP.WorldModel = "models/weapons/cod2019/w_eq_semtex_world.mdl"
+SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_semtex.mdl"
+SWEP.MirrorVMWMHeldOnly = true
+SWEP.MirrorVMWM = true
+SWEP.NoTPIKVMPos = true
+SWEP.TPIKforcelefthand = true
+SWEP.TPIKParentToSpine4 = true
 SWEP.WorldModelOffset = {
-    Pos = Vector(0, 0, 0),
-    Ang = Angle(-10, 0, 180),
-    TPIKPos = Vector(-10, 10, -10),
-    TPIKAng = Angle(0, 0, 180),
+    Pos = Vector(-6.5, 3, -11),
+    Ang = Angle(20, -10, 195),
+
+    TPIKPos = Vector(11, 2, 0),
+    TPIKAng = Angle(0, 90, 90),
     Scale = 1,
 }
 
@@ -56,14 +62,14 @@ SWEP.ShootEnt = "arc9_cod2019_thrownsemtex"
 SWEP.Ammo = "grenade"
 
 SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
-SWEP.Tossable = true -- When grenade is enabled, right click will toss. Set to false to disable, allowing you to aim down sights.
+SWEP.Tossable = false -- When grenade is enabled, right click will toss. Set to false to disable, allowing you to aim down sights.
 SWEP.ThrowAnimSpeed = 1
 
 SWEP.FuseTimer = 3 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
 
-SWEP.ThrowForceMin = 550 -- Minimum force that the grenade will be thrown with.
+SWEP.ThrowForceMin = 600 -- Minimum force that the grenade will be thrown with.
 SWEP.ThrowForceMax = 1000 -- Maximum force that the grenade will be thrown with.
-SWEP.TossForce = 500 -- Force that the grenade will be thrown with when right clicked.
+SWEP.TossForce = 600 -- Force that the grenade will be thrown with when right clicked.
 
 SWEP.ThrowChargeTime = 1 -- How long it takes to charge the grenade to its maximum throw force.
 
@@ -78,7 +84,7 @@ SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1.5)
+SWEP.SprintPos = Vector(0, 1, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -107,7 +113,7 @@ SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
-SWEP.ShootPosOffset = Vector(0, 15, -5)
+SWEP.ShootPosOffset = Vector(0, 15, 0)
 
 -------------------------- HoldTypes
 
@@ -118,7 +124,7 @@ SWEP.HoldTypeSights = "slam"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 
@@ -126,6 +132,13 @@ SWEP.CamQCA = 1
 SWEP.CamQCA_Mult = 1
 
 local path = "weapons/cod2019/throwables/semtex/"
+
+function SWEP:SecondaryAttack()
+    return self:MeleeAttack()
+end
+
+SWEP.PreBashTime = 0.25
+SWEP.PostBashTime = 0.25
 
 SWEP.Animations = {
     ["idle"] = {
@@ -147,13 +160,13 @@ SWEP.Animations = {
         },
     },
     ["pullpin"] = {
-        Source = "pullpin",
+        Source = "pullout",
         MinProgress = 0.666,
-        FireASAP = true,
 		Mult = 1.5,
+        FireASAP = true,
         EventTable = {
-            {s = path .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
             {s = path .. "grenade_pin_semtex.ogg", t = 0/30},
+            {s = path .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
         },
     },
     ["throw"] = {
@@ -161,24 +174,28 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "grenade_pin_semtex_fire.ogg", t = 0/30},
         },
-        MinProgress = 0.4
+        MinProgress = 0.5
     },
     ["toss"] = {
-        Source = "underhand",
+        Source = "throw",
         EventTable = {
             {s = path .. "grenade_pin_semtex_fire.ogg", t = 0/30},
         },
-        MinProgress = 0.4
+        MinProgress = 0.5
     },
-    -- ["idle_sprint"] = {
-        -- Source = "sprint",
-    -- },
-    -- ["enter_sprint"] = {
-        -- Source = "sprint_in",
-    -- },
-    -- ["exit_sprint"] = {
-        -- Source = "sprint_out",
-    -- },
+    ["idle_sprint"] = {
+        Source = "sprint",
+    },
+    ["enter_sprint"] = {
+        Source = "sprint_in",
+    },
+    ["exit_sprint"] = {
+        Source = "sprint_out",
+		Mult = 3,
+    },
+    ["bash"] = {
+        Source = {"melee_miss01", "melee_miss02","melee_miss03"},
+    },
 }
 
 -------------------------- ATTACHMENTS

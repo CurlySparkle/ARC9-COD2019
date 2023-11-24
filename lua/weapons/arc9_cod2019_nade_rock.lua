@@ -37,14 +37,19 @@ SWEP.UseHands = true
 SWEP.CanLean = false
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_rock.mdl"
-SWEP.WorldModel = "models/weapons/cod2019/w_eq_rock.mdl"
-SWEP.MirrorVMWM = false
+SWEP.WorldModel = "models/weapons/cod2019/w_eq_rock_world.mdl"
+SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_rock.mdl"
+SWEP.MirrorVMWMHeldOnly = true
+SWEP.MirrorVMWM = true
+SWEP.NoTPIKVMPos = true
+SWEP.TPIKforcelefthand = true
+SWEP.TPIKParentToSpine4 = true
 SWEP.WorldModelOffset = {
-    Pos        =    Vector(-3, 5, -7.5),
-    Ang        =    Angle(5, 7, 180),
-    Bone    =    "ValveBiped.Bip01_R_Hand",
-    TPIKPos = Vector(-7, 1, -0),
-    TPIKAng = Angle(0, 0, 180),
+    Pos = Vector(-6.5, 3, -11),
+    Ang = Angle(20, -10, 195),
+
+    TPIKPos = Vector(11, 2, 0),
+    TPIKAng = Angle(0, 90, 90),
     Scale = 1,
 }
 
@@ -121,7 +126,7 @@ SWEP.HoldTypeSights = "slam"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RELOAD_MAGIC
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_GRENADE
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 

@@ -11,7 +11,7 @@ ENT.PrintName 			= "Frag"
 ENT.Spawnable 			= false
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
-ENT.Model = "models/weapons/w_eq_cod2019_frag.mdl"
+ENT.Model = "models/weapons/cod2019/w_eq_gas_thrown.mdl"
 ENT.SphereSize = 2
 ENT.PhysMat = "grenade"
 
@@ -101,15 +101,8 @@ function ENT:Detonate()
 
         self:EmitSound("weapons/underwater_explode3.wav", 100)
     else
-        --ParticleEffect("explosion_hegrenade_brief", self:GetPos(), Angle(0, 0, 0), nil)
-        --ParticleEffect("explosion_hegrenade_interior", self:GetPos(), Angle(0, 0, 0), nil)
-        --ParticleEffect("bumpmine_detonate", self:GetPos(), Angle(0, 0, 0), nil)
-
         ParticleEffect("explosion_m79", self:GetPos(), Angle(0, 0, 0), nil)
-        --ParticleEffect("smoke_plume_b", self:GetPos(), Angle(0, 0, 0), nil)
         ParticleEffect("smoke_plume", self:GetPos(), Angle(0, 0, 0), nil)
-        --ParticleEffect("HE_shockwave", self:GetPos(), Angle(0, 0, 0), nil)
-
 
         util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 256, 200)
         util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 328, 100)

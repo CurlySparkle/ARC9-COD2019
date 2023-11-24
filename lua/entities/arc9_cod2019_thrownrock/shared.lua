@@ -13,7 +13,7 @@ ENT.Spawnable = false
 ENT.AdminSpawnable = false
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
-ENT.Model = "models/weapons/w_rock_thrown.mdl"
+ENT.Model = "models/weapons/cod2019/w_eq_rock_thrown.mdl"
 ENT.FuseTime = 3.5
 
 function ENT:Initialize()

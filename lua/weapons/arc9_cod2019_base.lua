@@ -48,6 +48,7 @@ SWEP.PhysicalVisualRecoil = true
 
 SWEP.SprintVerticalOffset = false
 SWEP.CanBlindFire = false
+SWEP.LaserAlwaysOnTargetInPeek = true
 
 SWEP.RicochetChance = 0.03
 
