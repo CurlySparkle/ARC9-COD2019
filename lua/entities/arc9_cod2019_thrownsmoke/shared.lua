@@ -20,6 +20,7 @@ function ENT:Initialize()
         self:SetSolid( SOLID_VPHYSICS )
         self:PhysicsInit( SOLID_VPHYSICS )
         self:DrawShadow( true )
+		self:SetAngles(Angle(0, 0, -75))
 
         local phys = self:GetPhysicsObject()
         if phys:IsValid() then

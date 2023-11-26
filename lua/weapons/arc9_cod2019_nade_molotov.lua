@@ -1,6 +1,6 @@
 SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_molotov")
 
-SWEP.Base = "arc9_base_nade"
+SWEP.Base = "arc9_cod2019_base_nade"
 
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Specials"
@@ -32,7 +32,9 @@ SWEP.Firemodes = {
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_molotov.mdl"
-SWEP.WorldModel = "models/weapons/cod2019/c_eq_molotov.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_eq_molotov_world.mdl"
+SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_molotov.mdl"
+SWEP.MirrorVMWMHeldOnly = true
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.TPIKforcelefthand = true
@@ -61,7 +63,7 @@ SWEP.ShootEnt = "arc9_cod2019_thrownmolotov"
 SWEP.Ammo = "grenade"
 
 SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
-SWEP.Tossable = true -- When grenade is enabled, right click will toss. Set to false to disable, allowing you to aim down sights.
+SWEP.Tossable = false -- When grenade is enabled, right click will toss. Set to false to disable, allowing you to aim down sights.
 SWEP.ThrowAnimSpeed = 1
 
 SWEP.FuseTimer = -1 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
@@ -83,7 +85,7 @@ SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -3.5)
+SWEP.SprintPos = Vector(0, 1, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -112,7 +114,7 @@ SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
-SWEP.ShootPosOffset = Vector(5, 5, -5)
+SWEP.ShootPosOffset = Vector(1, 5, 0)
 
 -------------------------- HoldTypes
 
@@ -128,63 +130,74 @@ SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 
 SWEP.CamQCA = 1
-SWEP.CamQCA_Mult = 1
 
 local path = "weapons/cod2019/throwables/molotov/"
 local path2 = "weapons/cod2019/throwables/semtex/"
+
+function SWEP:SecondaryAttack()
+    return self:MeleeAttack()
+end
+
+SWEP.PreBashTime = 0.25
+SWEP.PostBashTime = 0.25
 
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-    -- ["idle_primed"] = {
-        -- Source = "idle_primed"
-    -- },
+    ["idle_primed"] = {
+        Source = "idle_primed"
+    },
     ["draw"] = {
         Source = "draw",
+        MinProgress = 0.5,
+        FireASAP = true,
         EventTable = {
             {s = path .. "weap_molotov_pullout_01.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
-        EventTable = {
-            {s = path2 .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
-        },
     },
-    -- ["pullpin"] = {
-        -- Source = "pullpin",
-        -- MinProgress = 0.666,
-        -- FireASAP = true,
-		-- Mult = 1.5,
-        -- EventTable = {
-            -- {s = path .. "grenade_pin_semtex_cloth.ogg", t = 0/30},
-            -- {s = path .. "grenade_pin_semtex.ogg", t = 0/30},
-        -- },
-    -- },
+    ["pullpin"] = {
+        Source = "pullpin",
+        MinProgress = 0.666,
+		Mult = 1.5,
+        FireASAP = true,
+    },
     ["throw"] = {
         Source = "throw",
         EventTable = {
             {s = path .. "weap_molotov_throw_01.ogg", t = 0/30},
+            {s = path .. "weap_molotov_throw_alt.ogg", t = 0/30},
         },
-        MinProgress = 0.4
+        MinProgress = 0.45
     },
     ["toss"] = {
-        Source = "underhand",
+        Source = "throw",
         EventTable = {
             {s = path .. "weap_molotov_throw_02.ogg", t = 0/30},
         },
-        MinProgress = 0.4
+        MinProgress = 0.45
     },
-    -- ["idle_sprint"] = {
-        -- Source = "sprint",
-    -- },
-    -- ["enter_sprint"] = {
-        -- Source = "sprint_in",
-    -- },
-    -- ["exit_sprint"] = {
-        -- Source = "sprint_out",
-    -- },
+    ["idle_sprint"] = {
+        Source = "sprint",
+    },
+    ["enter_sprint"] = {
+        Source = "sprint_in",
+    },
+    ["exit_sprint"] = {
+        Source = "sprint_out",
+		Mult = 5,
+    },
+    ["bash"] = {
+        Source = {"melee_miss01", "melee_miss02","melee_miss03"},
+    },
+    ["inspect"] = {
+        Source = "inspect2",
+        MinProgress = 0.1,
+        FireASAP = true,
+    },
 }
 
 -------------------------- ATTACHMENTS

@@ -60,6 +60,7 @@ function ENT:Initialize()
 		self:PhysicsInit( SOLID_VPHYSICS )
 		self:SetCollisionGroup( COLLISION_GROUP_NONE )
 		self:DrawShadow( false )
+		self:SetAngles(Angle(0, 0, -70))
 	end
 
         local phys = self:GetPhysicsObject()

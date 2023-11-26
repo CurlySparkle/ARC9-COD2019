@@ -148,6 +148,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
+        MinProgress = 0.5,
+        FireASAP = true,
         EventTable = {
             {s = path .. "grenade_pin_smoke_cloth.ogg", t = 0/30},
         },
