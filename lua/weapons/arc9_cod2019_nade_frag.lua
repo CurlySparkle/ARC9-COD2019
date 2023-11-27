@@ -113,7 +113,7 @@ SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
-SWEP.ShootPosOffset = Vector(0, 15, -5)
+SWEP.ShootPosOffset = Vector(1, 5, 1)
 
 -------------------------- HoldTypes
 
@@ -138,7 +138,7 @@ function SWEP:SecondaryAttack()
 end
 
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.2
+SWEP.PostBashTime = 0.3
 
 SWEP.ImpactForce = 25
 

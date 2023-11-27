@@ -11,7 +11,7 @@ ENT.PrintName 			= "Frag"
 ENT.Spawnable 			= false
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 
-ENT.Model = "models/weapons/cod2019/w_eq_gas_thrown.mdl"
+ENT.Model = "models/weapons/cod2019/w_eq_frag_thrown.mdl"
 ENT.SphereSize = 2
 ENT.PhysMat = "grenade"
 
@@ -60,6 +60,7 @@ function ENT:Initialize()
 		self:PhysicsInit( SOLID_VPHYSICS )
 		self:SetCollisionGroup( COLLISION_GROUP_NONE )
 		self:DrawShadow( false )
+		self:SetAngles(Angle(0, 0, -75))
 	end
 
         local phys = self:GetPhysicsObject()
