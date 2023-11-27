@@ -761,6 +761,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["main_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag"] = {
         Bodygroups = {
             {1,1},
@@ -796,9 +801,24 @@ SWEP.AttachmentElements = {
             {3,3},
         },
     },
-    ["sights"] = {
+    ["sight_back_folded"] = {
         Bodygroups = {
             {5,1},
+        },
+    },
+    ["sight_front_folded"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
+    ["sight_back_none"] = {
+        Bodygroups = {
+            {5,2},
+        },
+    },
+    ["sight_front_none"] = {
+        Bodygroups = {
+            {8,2},
         },
     },
     ["pistol_grip_none"] = {
@@ -815,6 +835,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	model:SetBodygroup(7,0)
 	elseif wep:HasElement("optic_scope") then
 	model:SetBodygroup(5,2)
+	model:SetBodygroup(8,2)
 	end
 end
 
@@ -834,7 +855,7 @@ SWEP.Attachments = {
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"muzzle_none"},
+		InstalledElements = {"muzzle_none","muzzle"},
 		Scale = 1,
     },
     {
@@ -844,7 +865,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sights"},
+		InstalledElements = {"sight_back_folded","sight_front_folded"},
     },
     {
         PrintName = "Tactical",
