@@ -35,6 +35,8 @@ function ENT:Initialize()
         phys:Wake()
 
     end
+    phys:SetMass(10)
+    phys:ApplyTorqueCenter( VectorRand(-10,10) )
 end
 
 function ENT:Think() 

@@ -5,15 +5,40 @@ include("shared.lua")
 
 ENT.ExplosionRadius = 256
 
+local function parentEntity(data, ent, boneId)
+	local HitAng = data.HitNormal:Angle()
+	local HitPos = data.HitPos + HitAng:Forward() * -3 + HitAng:Up() * -1.5
+
+
+	if (boneId != nil) then
+		if (data.HitEntity:IsRagdoll()) then
+			boneId = data.HitEntity:TranslatePhysBoneToBone(data.PhysicsBone)
+		end
+
+		ent:FollowBone(data.HitEntity, boneId)
+		debugoverlay.Text(data.HitPos, data.HitEntity:GetBoneName(boneId), 1)
+	else
+		if (!data.HitEntity:IsWorld()) then
+			ent:SetParent(data.HitEntity)
+		end
+	end
+
+	ent:SetAngles(HitAng)
+	ent:SetPos(HitPos)
+end
+
 function ENT:Initialize()
     self:SetModel("models/weapons/cod2019/w_eq_semtex_thrown.mdl")
-    -- self:PhysicsInit(SOLID_VPHYSICS)
-    -- self:GetPhysicsObject():EnableMotion(true)
-    -- self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)]]
+    self:PhysicsInit(SOLID_VPHYSICS)
+    self:GetPhysicsObject():EnableMotion(true)
     self:SetLifeTime(1.5)
     self:AddFlags(FL_GRENADE)
     self:AddFlags(FL_ONFIRE)
     self.nextBeep = self:GetLifeTime()
+    self.isPinned = false
+    local phys = self:GetPhysicsObject()
+    phys:SetMass(10)
+    phys:ApplyTorqueCenter( VectorRand(-10,10) )
 end 
 
 function ENT:Think()
@@ -23,12 +48,21 @@ function ENT:Think()
         return
     end
 
-    self:SetLifeTime(self:GetLifeTime() - FrameTime())
+    if self.isPinned then
+        self:SetLifeTime(self:GetLifeTime() - FrameTime()) 
+    elseif CurTime() >= self.nextBeep then 
+        print("yeah")
+        BroadcastLua("Entity("..self:EntIndex().."):Beep()")
+        self.nextBeep = CurTime() + 0.35
+    end 
+
 
     if (self:GetLifeTime() > 0.1 && self:GetLifeTime() <= self.nextBeep) then
         sound.EmitHint(SOUND_DANGER, self:GetPos(), self.ExplosionRadius * 2, 1, nil) --make shit run away (nil owner so even rebels run)
-        self.nextBeep = self:GetLifeTime() * 0.75
-        BroadcastLua("Entity("..self:EntIndex().."):Beep()")
+        if self.isPinned then
+            self.nextBeep = self:GetLifeTime() * 0.75 
+            BroadcastLua("Entity("..self:EntIndex().."):Beep()")
+        end
     end
 
     if (self:GetLifeTime() <= 0) then
@@ -57,4 +91,25 @@ end
 
 function ENT:OnRemove()
     self:Explode()
+end
+
+function ENT:PhysicsCollide(colData, collider) 
+    if !self.isPinned then
+        local ent = colData.HitEntity
+        if self:CanStickToEntity(ent) then
+            self.isPinned = true
+            self:SetPos(colData.HitPos)
+            self:SetSolid(SOLID_NONE)
+            self:SetMoveType(MOVETYPE_NONE)
+            self:SetParent(ent)
+        elseif ent:IsWorld() then 
+            self.isPinned = true
+            self:SetPos(colData.HitPos)
+            self:SetMoveType(MOVETYPE_NONE)
+        end
+    end
+end
+
+function ENT:CanStickToEntity(ent) 
+    return ent != self:GetOwner() && !ent:IsWorld()
 end

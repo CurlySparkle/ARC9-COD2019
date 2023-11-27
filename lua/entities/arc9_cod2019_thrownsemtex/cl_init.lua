@@ -19,6 +19,7 @@ end
 
 function ENT:Draw(flags)
     self:DrawShadow(true)
+	self:DrawModel()
 end 
 
 function ENT:OnRemove()
