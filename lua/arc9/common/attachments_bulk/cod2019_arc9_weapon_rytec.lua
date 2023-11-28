@@ -55,10 +55,10 @@ ARC9.LoadAttachment(ATT, "cod2019_rytec_barrel_long")
 ----------------------------------------------------------------------------------------
 ATT = {}
 
-ATT.PrintName = [[10-Rounder]]
-ATT.CompactName = [[10-Round]]
+ATT.PrintName = [[10-Round Magazine]]
+ATT.CompactName = [[10R]]
 ATT.Icon = Material("entities/attachs/cod2019_rytec_mag_10.png")
-ATT.Description = [[Long magazine with 10 rounds. Improves handling.]]
+ATT.Description = [[Improves handling and reload speed at the cost of magazine capacity.]]
 ATT.Pros = {}
 ATT.Cons = {}
 ATT.SortOrder = 1

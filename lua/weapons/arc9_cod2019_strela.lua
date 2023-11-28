@@ -297,12 +297,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_la_kgolf_reload_fast_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_la_kgolf_reload_fast_breechopen.ogg", t = 31/30},
-			{s = path .. "wfoly_la_kgolf_reload_fast_shelldrop.ogg", t = 40/30},
-			{s = path .. "wfoly_la_kgolf_reload_fast_raise.ogg", t = 50/30},
-			{s = path .. "wfoly_la_kgolf_reload_fast_shellin.ogg", t = 75/30},
-			{s = path .. "wfoly_la_kgolf_reload_fast_breechclose.ogg", t = 80/30},
-			{s = path .. "wfoly_la_kgolf_reload_fast_end.ogg", t = 110/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_breechopen.ogg", t = 25/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_shelldrop.ogg", t = 34/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_raise.ogg", t = 44/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_shellin.ogg", t = 70/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_breechclose.ogg", t = 74/30},
+			{s = path .. "wfoly_la_kgolf_reload_fast_end.ogg", t = 106/30},
         },
     },
     ["ready"] = {

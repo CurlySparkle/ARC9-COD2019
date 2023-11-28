@@ -304,9 +304,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_start.ogg", t = 0/30},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_magin.ogg", t = 18/30},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 21/30},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_end.ogg", t = 50/30},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_magin.ogg", t = 17/30},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 20/30},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_end.ogg", t = 30/30},
         },
     },
     ["ready"] = {

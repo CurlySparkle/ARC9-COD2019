@@ -4,8 +4,8 @@ ATT = {}
 
 ATT.PrintName = "Rock Nade"
 ATT.CompactName = "Rock"
-ATT.Description = [[Changes the nade type to fire a singular but yet "powerful" rock.
-(Quite a stoner if you ask me...)]]
+ATT.Description = [[Changes the nade type to fire a singular but yet "powerful" rock
+(Quite a stoner, if you ask me).]]
 ATT.SortOrder = 0
 
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_rock.png", "mips smooth")
@@ -26,7 +26,8 @@ ATT = {}
 
 ATT.PrintName = "Flash Nade"
 ATT.CompactName = "Flash"
-ATT.Description = [[Changes the nade type to fire a flashing type nade. (better watch your eyes with this one.)]]
+ATT.Description = [[Changes the nade type to fire a flashing type nade
+(Better watch your eyes with this one).]]
 ATT.SortOrder = 0.5
 
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_flash.png", "mips smooth")
@@ -45,7 +46,7 @@ ATT = {}
 
 ATT.PrintName = "Napalm Nade"
 ATT.CompactName = "Napalm"
-ATT.Description = [[Changes the nade type to a fire type napalm nade that creates an aoe on impact.]]
+ATT.Description = [[Changes the nade type to a fire type napalm nade that creates an AoE on impact.]]
 ATT.SortOrder = 1
 
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_inc.png", "mips smooth")

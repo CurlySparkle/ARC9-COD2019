@@ -368,6 +368,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_ejectorrod_01.ogg", t = 32/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_01.ogg", t = 33/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_02.ogg", t = 33/30},
+            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_03.ogg", t = 33/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_arm.ogg", t = 45/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_grip.ogg", t = 46/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_speedloader_01.ogg", t = 57/30},
