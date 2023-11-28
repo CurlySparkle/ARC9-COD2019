@@ -29,8 +29,6 @@ function ENT:Detonate()
         else
 		self:EmitSound("Cod2019.Frag.Explode")
         ParticleEffect("explosion_m79", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("smoke_plume", self:GetPos(), Angle(0, 0, 0), nil)
-	
         end
 
         util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)

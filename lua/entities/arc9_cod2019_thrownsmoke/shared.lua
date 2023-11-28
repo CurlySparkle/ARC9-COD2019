@@ -6,7 +6,7 @@ ENT.Information = ""
 ENT.Spawnable = false
 ENT.AdminSpawnable = false
 
-ENT.Model = "models/weapons/cod2019/w_eq_smoke.mdl"
+ENT.Model = "models/weapons/cod2019/w_eq_smoke_thrown.mdl"
 ENT.FuseTime = 2
 ENT.ArmTime = 0
 ENT.ImpactFuse = false
@@ -40,9 +40,11 @@ end
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
         if data.Speed > 75 then
-            self:EmitSound(Sound("physics/metal/metal_grenade_impact_hard" .. math.random(1,3) .. ".wav"))
+            --self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"))
+			self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"), 75, 100, 1, CHAN_AUTO )
         elseif data.Speed > 25 then
-            self:EmitSound(Sound("physics/metal/metal_grenade_impact_soft" .. math.random(1,3) .. ".wav"))
+            --self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"))
+			self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.5, CHAN_AUTO )
         end
 
         if (CurTime() - self.SpawnTime >= self.ArmTime) and self.ImpactFuse then

@@ -10,8 +10,8 @@ if CLIENT then
     killicon.Add( "arc9_cod2019_throwngas", "vgui/killicons/cod2019_gas", Color(251, 85, 25, 255))
 end
 
-ENT.Model = "models/weapons/w_eq_gas.mdl"
-ENT.FuseTime = 0.5
+ENT.Model = "models/weapons/cod2019/w_eq_gas_thrown.mdl"
+ENT.FuseTime = 0.4
 ENT.ArmTime = 0
 ENT.FireTime = 30
 ENT.ImpactFuse = false
