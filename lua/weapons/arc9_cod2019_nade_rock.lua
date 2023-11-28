@@ -169,16 +169,11 @@ SWEP.Animations = {
             {s = path .. "wfoly_me_fists_inspect_02.ogg", t = 0/30},
         },
     },
-    -- ["pullpin"] = {
-        -- Source = "pullout",
-        -- MinProgress = 0.666,
-        -- FireASAP = true,
-		-- Mult = 1.5,
-        -- EventTable = {
-            -- {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
-            -- {s = path .. "grenade_pin_frag_01.ogg", t = 0/30},
-        -- },
-    -- },
+    ["pullpin"] = {
+        Source = "pullout",
+        MinProgress = 0.666,
+        FireASAP = true,
+    },
     ["throw"] = {
         Source = "throw",
 		Mult = 0.9,
