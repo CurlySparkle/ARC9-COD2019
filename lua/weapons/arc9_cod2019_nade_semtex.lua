@@ -65,7 +65,7 @@ SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
 SWEP.Tossable = false -- When grenade is enabled, right click will toss. Set to false to disable, allowing you to aim down sights.
 SWEP.ThrowAnimSpeed = 1
 
-SWEP.FuseTimer = 3 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
+SWEP.FuseTimer = -1 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
 
 SWEP.ThrowForceMin = 600 -- Minimum force that the grenade will be thrown with.
 SWEP.ThrowForceMax = 1000 -- Maximum force that the grenade will be thrown with.
@@ -149,7 +149,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
-        MinProgress = 0.5,
+        MinProgress = 0.3,
         FireASAP = true,
         EventTable = {
             {s = path .. "grenade_pin_semtex_cloth.ogg", t = 0/30},

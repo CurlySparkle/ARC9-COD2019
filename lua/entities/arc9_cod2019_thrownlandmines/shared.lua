@@ -40,16 +40,7 @@ function ENT:Detonate()
             util.Effect("WaterSurfaceExplosion", effectdata)
             self:EmitSound("weapons/underwater_explode3.wav", 120, 100, 1, CHAN_AUTO)
         else
-            --ParticleEffect("explosion_hegrenade_brief", pos, Angle(0, 0, 0), nil)
-            --ParticleEffect("explosion_hegrenade_interior", pos, Angle(0, 0, 0), nil)
-            ParticleEffect("grenade_explosion_01", pos, self:GetAngles(), nil)
-            ParticleEffect("weapon_decoy_ground_effect_shot", pos, Angle(0, 0, 0), nil)
-            --ParticleEffect("smoke_plume_b", pos, Angle(0, 0, 0), nil)
-            ParticleEffect("smoke_plume", pos, Angle(0, 0, 0), nil)
-            ParticleEffect("smoke_plume_c", pos, Angle(0, 0, 0), nil)
-            ParticleEffect("HE_shockwave", pos, Angle(0, 0, 0), nil)
-
-            --util.Effect("HelicopterMegaBomb", fx)
+            ParticleEffect("explosion_grenade", pos, self:GetAngles(), nil)
             local spos = pos
 
             local trs = util.TraceLine({

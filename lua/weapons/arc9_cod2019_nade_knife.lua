@@ -1,6 +1,6 @@
 SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_knife")
 
-SWEP.Base = "arc9_base_nade"
+SWEP.Base = "arc9_cod2019_base_nade"
 
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = "Specials"
@@ -33,12 +33,18 @@ SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_knife.mdl"
 SWEP.WorldModel = "models/weapons/cod2019/c_eq_knife.mdl"
-SWEP.MirrorVMWM = false
+SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_knife.mdl"
+SWEP.MirrorVMWMHeldOnly = true
+SWEP.MirrorVMWM = true
+SWEP.NoTPIKVMPos = true
+SWEP.TPIKforcelefthand = true
+SWEP.TPIKParentToSpine4 = true
 SWEP.WorldModelOffset = {
-    Pos = Vector(0, 0, 0),
-    Ang = Angle(-10, 0, 180),
-    TPIKPos = Vector(-10, 10, -10),
-    TPIKAng = Angle(0, 0, 180),
+    Pos = Vector(-6.5, 3, -11),
+    Ang = Angle(20, -10, 195),
+
+    TPIKPos = Vector(11, 2, 0),
+    TPIKAng = Angle(0, 90, 90),
     Scale = 1,
 }
 
@@ -59,7 +65,7 @@ SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
 SWEP.Tossable = false -- When grenade is enabled, right click will toss. Set to false to disable, allowing you to aim down sights.
 SWEP.ThrowAnimSpeed = 1
 
-SWEP.FuseTimer = 3 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
+SWEP.FuseTimer = -1 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
 
 SWEP.ThrowForceMin = 1300 -- Minimum force that the grenade will be thrown with.
 SWEP.ThrowForceMax = 1300 -- Maximum force that the grenade will be thrown with.
@@ -127,44 +133,53 @@ SWEP.CamQCA_Mult = 1
 
 local path = "weapons/cod2019/throwables/flashbang/"
 
-SWEP.BashDamage = 35
-SWEP.BashLungeRange = 0
-SWEP.BashRange = 64
-SWEP.PreBashTime = 0.18
-SWEP.PostBashTime = 0.2
-
+SWEP.PreBashTime = 0.2
+SWEP.PostBashTime = 0.3
 SWEP.ImpactForce = 15
-
-SWEP.MeleeHitSound = "CSGO.Melee.HitBody"
-SWEP.MeleeHitWallSound = "CSGO.Melee.HitWall"
-SWEP.MeleeSwingSound = "CSGO.Shield.Swing"
 
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
+    ["idle_primed"] = {
+        Source = "idle_primed"
+    },
     ["draw"] = {
         Source = "draw",
+        MinProgress = 0.3,
+        FireASAP = true,
         EventTable = {
             {s = "COD2019.Knife.Prepare", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.6,
         EventTable = {
             {s = "COD2019.Knife.Prepare", t = 0/30},
         },
     },
+    ["pullpin"] = {
+        Source = "pullout",
+        MinProgress = 0.666,
+        FireASAP = true,
+    },
     ["throw"] = {
-        Source = "toss",
+        Source = "throw",
+		Mult = 0.7,
         EventTable = {
             {s = "COD2019.Knife.Throw", t = 0/30},
         },
-        MinProgress = 0.3
+        MinProgress = 0.4
+    },
+    ["toss"] = {
+        Source = "throw",
+        EventTable = {
+            {s = "COD2019.Knife.Throw", t = 0/30},
+        },
+        MinProgress = 0.4
     },
     ["inspect"] = {
-        Source = "lookat01",
+        Source = "inspect2",
     },
 }
 

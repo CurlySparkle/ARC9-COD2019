@@ -19,7 +19,7 @@ ENT.SmokeTrailTime = 3
 ENT.Flare = false
 ENT.Gravity = false
 
-ENT.Damage = 100
+ENT.Damage = 256
 ENT.Radius = 200
 ENT.ImpactDamage = 1000
 

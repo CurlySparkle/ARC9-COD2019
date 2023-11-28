@@ -36,6 +36,7 @@ function ENT:Initialize()
     self:AddFlags(FL_ONFIRE)
     self.nextBeep = self:GetLifeTime()
     self.isPinned = false
+	self:SetAngles(Angle(0, 0, -70))
     local phys = self:GetPhysicsObject()
     phys:SetMass(10)
     phys:ApplyTorqueCenter( VectorRand(-10,10) )
@@ -84,9 +85,9 @@ function ENT:Explode()
     util.ScreenShake(self:GetPos(), 3500, 1111, 1, self.ExplosionRadius * 4)
 
     self:Remove()
-    -- if (IsValid(self.arrow)) then
-        -- self.arrow:Remove()
-    -- end
+    if (IsValid(self.arrow)) then
+        self.arrow:Remove()
+    end
 end
 
 function ENT:OnRemove()

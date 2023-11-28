@@ -5,8 +5,8 @@ if CLIENT then
     killicon.Add( "arc9_cod2019_thrownsemtex", "vgui/killicons/cod2019_frag", Color(251, 85, 25, 255))
 end
 
-game.AddParticles("particles/mw19_attachments.pcf")
-PrecacheParticleSystem("arrow_beep_flare")
+game.AddParticles("particles/mw19_effects.pcf")
+PrecacheParticleSystem("semtex_beep_flare")
 
 function ENT:SetupDataTables()
     self:NetworkVar("Float", 0, "LifeTime")
@@ -18,5 +18,5 @@ sound.Add({
     volume = 1,
     level = 85,
     pitch = 100,
-    sound = "viper/shared/weap_semtex_beep.ogg"
+    sound = "weapons/cod2019/throwables/semtex/weap_semtex_beep.ogg"
 }) 

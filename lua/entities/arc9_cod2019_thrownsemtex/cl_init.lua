@@ -14,7 +14,7 @@ function ENT:Beep()
 	dlight.DieTime = CurTime() + 0.1
 
     sound.Play("Cod2019.Semtex.Beep", self:GetPos())
-    ParticleEffectAttach("arrow_beep_flare", PATTACH_ABSORIGIN_FOLLOW, self, 0)
+    ParticleEffectAttach("semtex_beep_flare", PATTACH_ABSORIGIN_FOLLOW, self, 0)
 end
 
 function ENT:Draw(flags)

@@ -178,7 +178,8 @@ if SERVER then
             act:GiveAmmo(1, weapons.GetStored(self.WeaponClass).Ammo, true)
             act:Give(self.WeaponClass, true)
 
-            self:EmitSound("CSGO.Breacher.BreachUse", 75)
+            --self:EmitSound("CSGO.Breacher.BreachUse", 75)
+			self:EmitSound("weapons/shared/iw8_mp_scavenger_pack_pickup.wav", 120, 100, 1, CHAN_AUTO)
             self:Remove()
         end
     end

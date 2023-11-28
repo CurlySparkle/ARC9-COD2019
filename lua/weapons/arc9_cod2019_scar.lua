@@ -888,8 +888,8 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stock",
-        DefaultAttName = "Standard Stock",
         Category = {"stock_retract","cod2019_tube","cod2019_scar_stock"},
+        DefaultAttName = "Standard Stock",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),

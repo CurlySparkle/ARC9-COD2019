@@ -13,7 +13,7 @@ local function TargetIsValid(ent)
 end
 
 function ENT:Initialize() 
-    self:SetModel("models/weapons/cod2019/w_molotov_thrown.mdl") --set this string to the filepath of your molotov model | "models/your/filepath/yourfile.mdl"
+    self:SetModel("models/weapons/cod2019/w_eq_thermite_thrown.mdl") --set this string to the filepath of your molotov model | "models/your/filepath/yourfile.mdl"
     self:PhysicsInit(SOLID_VPHYSICS)
     self:SetMoveType(MOVETYPE_VPHYSICS)
     self:SetSolid(SOLID_VPHYSICS)
@@ -21,12 +21,7 @@ function ENT:Initialize()
 	self:SetAngles(Angle(0, 0, -70))
     self.IsIgnited = false
 	
-	--ParticleEffectAttach("weapon_molotov_thrown",PATTACH_POINT_FOLLOW,self,1)
-
-	timer.Simple(0, function()
-        if (!IsValid(self)) then return end
-        ParticleEffectAttach("weapon_molotov_thrown",PATTACH_POINT_FOLLOW,self,1)
-	end)    
+	ParticleEffectAttach("thermite_thrown_trail",PATTACH_POINT_FOLLOW,self,1)
 
     local phys = self:GetPhysicsObject()
 
@@ -77,13 +72,12 @@ function ENT:PhysicsCollide( data, phys )
         local angle = data.HitNormal
         if angle.z <= -0.6 then
             self.HitPos = self:GetPos()
-            self:EmitSound("COD2019.Molotov.Explode") --if you have a sound that should play on impact, put it here, otherwise you can delete this line
+            self:EmitSound("weapons/cod2019/throwables/molotov/inc_grenade_detonate_1.wav", 100, 100, 1) --if you have a sound that should play on impact, put it here, otherwise you can delete this line
             self:EmitSound("^weapons/cod2019/throwables/molotov/weap_molotov_burn_lp.ogg",75, 100, 1, CHAN_AUTO) --this is the sound of the pool burning "your/filepath/filename.ogg"
             self:EmitSound("weapons/cod2019/throwables/molotov/fire_loop.ogg",75, 100, 1, CHAN_AUTO) --this is the sound of the pool burning "your/filepath/filename.ogg"
             ParticleEffect( "incen_fire_pool", self.HitPos - Vector(0,0,3), Angle(0,0,0),self)
             ParticleEffect( "grenade_thick_smoke", self.HitPos - Vector(0,0,3), Angle(0,0,0),self)
 			sound.EmitHint(SOUND_DANGER, self:GetPos(), 2, 1, nil) --make shit run away (nil owner so even rebels run)
-            --ParticleEffect( "grenade_flame_b", self.HitPos - Vector(0,0,3), Angle(0,0,0),self)
             self.IsIgnited = true
             self:SetNoDraw(true)
         end

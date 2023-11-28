@@ -33,6 +33,7 @@ local particlenames = {
 	"AC_muzzle_357",
 	"AC_muzzle_357_fp",
 	"AC_muzzle_sniper_heavy",
+	"thermite_thrown_trail"
 }
 
 for k, v in pairs(particlenames) do

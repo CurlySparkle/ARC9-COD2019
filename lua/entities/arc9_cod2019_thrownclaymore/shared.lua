@@ -127,7 +127,6 @@ function ENT:Detonate()
             util.Effect("WaterSurfaceExplosion", effectdata)
             self:EmitSound("weapons/underwater_explode3.wav", 120, 100, 1, CHAN_AUTO)
         else
-            ParticleEffect("explosion_grenade", self:GetPos(), Angle(0, 0, 0), nil)
             local spos = pos
 
             local trs = util.TraceLine({
@@ -139,6 +138,8 @@ function ENT:Detonate()
             util.Decal("Scorch", trs.HitPos + trs.HitNormal, trs.HitPos - trs.HitNormal)
             self:EmitSound("COD2019.Claymore.Explode")
         end
+		
+        ParticleEffect("explosion_claymore", self:GetPos(), Angle(0, 0, 0), nil)
 
         local oldowner = self.Attacker or self:GetOwner()
         if not IsValid(oldowner) then
