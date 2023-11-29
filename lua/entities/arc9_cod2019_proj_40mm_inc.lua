@@ -52,7 +52,7 @@ function ENT:DoDetonation()
         effectdata:SetNormal(self:GetVelocity():GetNormalized())
         util.Effect("Sparks", effectdata)
         self:EmitSound("physics/metal/metal_box_break1.wav", 100, 200)
-        self:EmitSound("weapons/cod2019/throwables/molotov/inc_grenade_detonate_1.wav", 100, 100, 0.75)
+        self:EmitSound("^weapons/cod2019/throwables/molotov/inc_grenade_detonate_1.ogg", 100, 100, 0.75)
     end
 
     for i = 1, 6, 1 do

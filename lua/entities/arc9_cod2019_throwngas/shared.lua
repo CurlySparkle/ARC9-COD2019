@@ -39,6 +39,7 @@ function ENT:Initialize()
         self:SetSolid( SOLID_VPHYSICS )
         self:PhysicsInit( SOLID_VPHYSICS )
         self:DrawShadow( true )
+		self:SetAngles(Angle(0, 0, -70))
 
         local phys = self:GetPhysicsObject()
         if phys:IsValid() then
@@ -84,7 +85,7 @@ function ENT:Think()
 
             local dmg = DamageInfo()
 
-            dmg:SetDamage(5)
+            dmg:SetDamage(4)
             dmg:SetDamageType(DMG_NERVEGAS)
             dmg:SetInflictor(self)
             dmg:SetAttacker(self.Owner)
@@ -104,7 +105,7 @@ function ENT:Think()
                 end
             end
 
-            self.NextDamageTick = CurTime() + 0.3
+            self.NextDamageTick = CurTime() + 0.05
         else
             local emitter = ParticleEmitter(self:GetPos())
 

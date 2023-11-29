@@ -79,7 +79,7 @@ function ENT:PhysicsCollide( data, phys )
             self.HitPos = self:GetPos()
             self:EmitSound("COD2019.Molotov.Explode") --if you have a sound that should play on impact, put it here, otherwise you can delete this line
             self:EmitSound("^weapons/cod2019/throwables/molotov/weap_molotov_burn_lp.ogg",75, 100, 1, CHAN_AUTO) --this is the sound of the pool burning "your/filepath/filename.ogg"
-            self:EmitSound("weapons/cod2019/throwables/molotov/fire_loop.ogg",75, 100, 1, CHAN_AUTO) --this is the sound of the pool burning "your/filepath/filename.ogg"
+            self:EmitSound("^weapons/cod2019/throwables/molotov/fire_loop.ogg",75, 100, 1, CHAN_AUTO) --this is the sound of the pool burning "your/filepath/filename.ogg"
             ParticleEffect( "incen_fire_pool", self.HitPos - Vector(0,0,3), Angle(0,0,0),self)
             ParticleEffect( "grenade_thick_smoke", self.HitPos - Vector(0,0,3), Angle(0,0,0),self)
 			sound.EmitHint(SOUND_DANGER, self:GetPos(), 2, 1, nil) --make shit run away (nil owner so even rebels run)

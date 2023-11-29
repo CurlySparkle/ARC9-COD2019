@@ -113,7 +113,7 @@ SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
-SWEP.ShootPosOffset = Vector(-3, 15, -5)
+SWEP.ShootPosOffset = Vector(0, 15, -1)
 
 -------------------------- HoldTypes
 
@@ -175,14 +175,14 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "grenade_smoke_fire_01.ogg", t = 0/30},
         },
-        MinProgress = 0.5
+        MinProgress = 0.52
     },
     ["toss"] = {
         Source = "throw",
         EventTable = {
             {s = path .. "grenade_smoke_fire_01.ogg", t = 0/30},
         },
-        MinProgress = 0.5
+        MinProgress = 0.52
     },
     ["idle_sprint"] = {
         Source = "sprint",

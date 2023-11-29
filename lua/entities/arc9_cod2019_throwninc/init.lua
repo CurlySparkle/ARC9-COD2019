@@ -67,14 +67,14 @@ end
 function ENT:PhysicsCollide( data, phys )
 
     if self.IsIgnited == false then
-        self:EmitSound("physics/metal/metal_grenade_impact_hard"..math.random(1,3)..".wav",75, 100, 0.6, CHAN_AUTO)
+        self:EmitSound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0"..math.random(1,3)..".ogg",75, 100, 0.6, CHAN_AUTO)
 
         local angle = data.HitNormal
         if angle.z <= -0.6 then
             self.HitPos = self:GetPos()
-            self:EmitSound("weapons/cod2019/throwables/molotov/inc_grenade_detonate_1.wav", 100, 100, 1) --if you have a sound that should play on impact, put it here, otherwise you can delete this line
+            self:EmitSound("^weapons/cod2019/throwables/molotov/inc_grenade_detonate_1.ogg", 100, 100, 1, CHAN_AUTO) --if you have a sound that should play on impact, put it here, otherwise you can delete this line
             self:EmitSound("^weapons/cod2019/throwables/molotov/weap_molotov_burn_lp.ogg",75, 100, 1, CHAN_AUTO) --this is the sound of the pool burning "your/filepath/filename.ogg"
-            self:EmitSound("weapons/cod2019/throwables/molotov/fire_loop.ogg",75, 100, 1, CHAN_AUTO) --this is the sound of the pool burning "your/filepath/filename.ogg"
+            self:EmitSound("^weapons/cod2019/throwables/molotov/fire_loop.ogg",75, 100, 1, CHAN_AUTO) --this is the sound of the pool burning "your/filepath/filename.ogg"
             ParticleEffect( "incen_fire_pool", self.HitPos - Vector(0,0,3), Angle(0,0,0),self)
             ParticleEffect( "grenade_thick_smoke", self.HitPos - Vector(0,0,3), Angle(0,0,0),self)
 			sound.EmitHint(SOUND_DANGER, self:GetPos(), 2, 1, nil) --make shit run away (nil owner so even rebels run)
