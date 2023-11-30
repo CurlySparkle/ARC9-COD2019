@@ -231,6 +231,22 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "Distant_Pistol_Sup2.Outside",
+    channel = CHAN_DISTANT,
+    volume = 0.6,
+    --level = 140,
+    sound = {
+        "weapons/cod2019/shared/atmo/pistol/weap_pistol_sup_fire_plr_atmo_ext3_01.ogg",
+        "weapons/cod2019/shared/atmo/pistol/weap_pistol_sup_fire_plr_atmo_ext3_02.ogg",
+        "weapons/cod2019/shared/atmo/pistol/weap_pistol_sup_fire_plr_atmo_ext3_03.ogg",
+        "weapons/cod2019/shared/atmo/pistol/weap_pistol_sup_fire_plr_atmo_ext3_04.ogg",
+        "weapons/cod2019/shared/atmo/pistol/weap_pistol_sup_fire_plr_atmo_ext3_05.ogg",
+        "weapons/cod2019/shared/atmo/pistol/weap_pistol_sup_fire_plr_atmo_ext3_06.ogg",
+    }
+} )
+
+
+sound.Add( {
     name = "Distant_Pistol_Mag.Outside",
     channel = CHAN_DISTANT,
      volume = 0.45,
