@@ -289,6 +289,21 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "Distant_Shotgun_2.Outside",
+    channel = CHAN_DISTANT,
+    volume = 0.6,
+    --level = 140,
+    sound = {
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgun_fire_plr_atmo_ext2_01.ogg",
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgun_fire_plr_atmo_ext2_02.ogg",
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgun_fire_plr_atmo_ext2_03.ogg",
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgun_fire_plr_atmo_ext2_04.ogg",
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgun_fire_plr_atmo_ext2_05.ogg",
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgun_fire_plr_atmo_ext2_06.ogg",
+    }
+} )
+
+sound.Add( {
     name = "Distant_Shotgun2.Outside",
     channel = CHAN_DISTANT,
     volume = 0.6,
@@ -299,6 +314,22 @@ sound.Add( {
         "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_ext1_04.ogg",
         "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_ext1_05.ogg",
         "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_ext1_06.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Distant_Shotgun_Sub.Outside",
+    channel = CHAN_DISTANT,
+    volume = 0.6,
+    sound = {
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_ext2_01.ogg",
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_ext2_02.ogg",
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_ext2_03.ogg",
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_ext2_04.ogg",
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_ext2_05.ogg",
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_ext2_06.ogg",
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_ext2_07.ogg",
+        "weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_ext2_08.ogg",
     }
 } )
 
