@@ -1,11 +1,9 @@
 AddCSLuaFile()
 
-ENT.Type = "anim"
-ENT.Base = "arc9_cod2019_proj_base"
+ENT.Base = "arc9_cod2019_proj_40mm_base"
 ENT.PrintName = "PILA Rocket"
-
-ENT.Spawnable = false
-ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
+ENT.Type = "anim"
+ENT.DragCoefficient = 0.25
 
 
 if CLIENT then
@@ -13,25 +11,51 @@ if CLIENT then
 end
 
 ENT.Model = "models/weapons/cod2019/mags/w_eq_pila_rocket.mdl"
-
-ENT.SmokeTrailSize = 28
-ENT.SmokeTrailTime = 3
-ENT.Flare = false
+ENT.Damage = 225
+ENT.Radius = 320
 ENT.Gravity = false
 
-ENT.Damage = 256
-ENT.Radius = 200
-ENT.ImpactDamage = 1000
+function ENT:Detonate()
+    if not self:IsValid() or self.BOOM then return end
+    self.BOOM = true
 
-ENT.SeekerAngle = math.cos(math.rad(30))
-ENT.SteerSpeed = 15000
-ENT.FuseTime = 0
-ENT.Boost = 0
-ENT.BoostTarget = 500
-ENT.Lift = 0
-ENT.DragCoefficient = 0
+    if self.ExplosionEffect then
+        local effectdata = EffectData()
+        effectdata:SetOrigin(self:GetPos())
 
-ENT.LifeTime = 15
-ENT.BoostTime = 15
+        if self:WaterLevel() >= 1 then
+            util.Effect("WaterSurfaceExplosion", effectdata)
+            self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
+        else
+		self:EmitSound("Cod2019.Frag.Explode")
+        ParticleEffect("explosion_m79", self:GetPos(), Angle(0, 0, 0), nil)
+        end
 
-ENT.FireAndForget = true
+        util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
+
+        if self.GrenadePos == nil then
+            self.GrenadePos = self:GetPos()
+        end
+        if self.GrenadeDir == nil then
+            self.GrenadeDir = self:GetVelocity():GetNormalized()
+        end
+
+        local trace = util.TraceLine({
+            start = self.GrenadePos,
+            endpos = self.GrenadePos + self.GrenadeDir * 4,
+            mask = MASK_SOLID_BRUSHONLY
+        })
+        if trace.Hit then
+            self:EmitSound(self.DebrisSounds[math.random(1,#self.DebrisSounds)], 85, 100, 1, CHAN_AUTO)
+        end
+    end
+
+    self:DoDetonation()
+	self.Defused = true
+
+    if self.Scorch then
+        util.Decal(self.Scorch, self.GrenadePos, self.GrenadePos + self.GrenadeDir * 4, self)
+    end
+
+    self:Remove()
+end

@@ -3,7 +3,7 @@ AddCSLuaFile()
 ENT.Base = "arc9_cod2019_proj_40mm_base"
 ENT.PrintName = "Strela Rocket"
 ENT.Type = "anim"
-ENT.DragCoefficient = 0.25
+ENT.DragCoefficient = 0.55
 
 
 if CLIENT then
@@ -11,7 +11,7 @@ if CLIENT then
 end
 
 ENT.Model = "models/weapons/cod2019/mags/w_eq_strela_rocket.mdl"
-ENT.Damage = 150
+ENT.Damage = 175
 ENT.Radius = 300
 ENT.Gravity = false
 

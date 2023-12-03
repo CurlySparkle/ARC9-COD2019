@@ -32,7 +32,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_pila.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-8, 6, -4),
+    TPIKPos = Vector(-11, 6, -4),
     TPIKAng = Angle(-11, 0, 180),
     Scale = 1
 }
@@ -154,8 +154,8 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-1, -4, 3),
-    Ang = Angle(-1, 8, 18),
+    Pos = Vector(-2, -4, -1),
+    Ang = Angle(-5, 20, -5),
     Magnification = 1.25,
     ViewModelFOV = 56,
     CrosshairInSights = true
@@ -163,7 +163,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(-1, 0, -1.5)
+SWEP.SprintPos = Vector(-1, 0, -1.7)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -179,14 +179,14 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.5, -0.8, -0.8)
-SWEP.MovingAng = Angle(5, -2, 0)
+SWEP.MovingPos = Vector(-1, -1, -1.3)
+SWEP.MovingAng = Angle(5, -2, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, -6, -5)
 
-SWEP.CustomizeAng = Angle(90, -25, 6)
-SWEP.CustomizePos = Vector(5, 45, 6)
+SWEP.CustomizeAng = Angle(90, -5, 17)
+SWEP.CustomizePos = Vector(9, 45, 6)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(-5, 25, 3)
@@ -222,9 +222,17 @@ SWEP.NoShellEject = true
 local path = "weapons/cod2019/pila/"
 
 SWEP.ShootSound = "COD2019.Pila.Fire"
---SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
-SWEP.DryFireSound = "weapons/csgo/svd/svd_empty.ogg"
+SWEP.ShootSoundIndoor = "COD2019.Pila.Fire"
 
+-- Outside
+SWEP.LayerSound = "Layer_Sniper.Outside"
+SWEP.DistantShootSound = "Distant_Strela.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_Strela.Inside"
+---------------------------------------------------
+
+SWEP.DryFireSound = "weapons/csgo/svd/svd_empty.ogg"
 SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 
 SWEP.EnterSightsSound = "weapons/cod2019/pila/weap_la_gromeo_ads_up.ogg"
@@ -499,7 +507,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Ammo",
-        Bone = "j_mag1",
+        Bone = "j_rocket",
         Category = {"go_ammo_rpg"},
         Pos = Vector(5, 0, 0),
         Ang = Angle(0, 0, 0),
