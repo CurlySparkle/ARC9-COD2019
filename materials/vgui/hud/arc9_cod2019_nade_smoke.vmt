@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-    "$basetexture" "vgui/hud/arc9_cod2019_nade_semtex"
+    "$basetexture" "vgui/hud/arc9_cod2019_nade_smoke"
     "$ignorez" "1"
     "$nocull" "1"
     "$translucent" "1"

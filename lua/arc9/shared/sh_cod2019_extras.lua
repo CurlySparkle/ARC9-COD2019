@@ -314,7 +314,6 @@ sound.Add( {
         "weapons/cod2019/strela/weap_kgolf_fire_plr_01.ogg",
 		"weapons/cod2019/strela/weap_kgolf_fire_plr_02.ogg",
 		"weapons/cod2019/strela/weap_kgolf_fire_plr_03.ogg",
-		"weapons/cod2019/strela/weap_kgolf_fire_plr_04.ogg",
     }
 } )
 

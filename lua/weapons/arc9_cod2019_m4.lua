@@ -332,7 +332,7 @@ SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.
 
 SWEP.Malfunction = true 
 SWEP.MalfunctionNeverLastShoot = true 
-SWEP.MalfunctionMeanShotsToFail = 300*2
+SWEP.MalfunctionMeanShotsToFail = 500*2
 SWEP.MalfunctionMeanShotsToFailMultHot = -0.1*2
 
 SWEP.Animations = {

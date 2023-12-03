@@ -540,3 +540,28 @@ sound.Add( {
         "weapons/cod2019/shared/atmo/launchers/weap_mike203_fire_plr_atmos_int1_04.ogg",
     }
 } )
+
+--- Strela ---
+sound.Add( {
+    name = "Distant_Strela.Inside",
+    channel = CHAN_INDOORDISTANT,
+    --level = 140,
+    volume = 0.5,
+    sound = {
+        "weapons/cod2019/shared/atmo/launchers/weap_kgolf_fire_plr_atmo_int_01.ogg",
+        "weapons/cod2019/shared/atmo/launchers/weap_kgolf_fire_plr_atmo_int_02.ogg",
+        "weapons/cod2019/shared/atmo/launchers/weap_kgolf_fire_plr_atmo_int_03.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "Distant_Strela.Outside",
+    channel = CHAN_INDOORDISTANT,
+    --level = 140,
+    volume = 0.5,
+    sound = {
+        "weapons/cod2019/shared/atmo/launchers/weap_kgolf_fire_plr_atmo_ext_01.ogg",
+        "weapons/cod2019/shared/atmo/launchers/weap_kgolf_fire_plr_atmo_ext_02.ogg",
+        "weapons/cod2019/shared/atmo/launchers/weap_kgolf_fire_plr_atmo_ext_03.ogg",
+    }
+} )

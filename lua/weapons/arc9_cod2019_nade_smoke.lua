@@ -1,4 +1,4 @@
-SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_gas")
+SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_smoke")
 
 SWEP.Base = "arc9_cod2019_base_nade"
 
@@ -113,7 +113,7 @@ SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
-SWEP.ShootPosOffset = Vector(-3, 15, -5)
+SWEP.ShootPosOffset = Vector(0, 15, 0)
 
 -------------------------- HoldTypes
 

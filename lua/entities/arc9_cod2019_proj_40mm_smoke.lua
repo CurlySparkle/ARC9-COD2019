@@ -22,9 +22,9 @@ function ENT:DoDetonation()
         self:EmitSound("physics/metal/metal_box_break1.wav", 100, 200, 0.5)
     end
 	
-    self:EmitSound("weapons/cod2019/throwables/smoke/smoke_expl_pop.ogg", 90, 100, 1, CHAN_AUTO)
+    --self:EmitSound("weapons/cod2019/throwables/smoke/smoke_grenade_body_01.ogg", 90, 100, 1, CHAN_AUTO)
 
-    local cloud = ents.Create( "arc9_smoke" )
+    local cloud = ents.Create( "arc9_cod2019_smoke" )
 
     if !IsValid(cloud) then return end
 

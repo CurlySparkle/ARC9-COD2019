@@ -151,7 +151,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(-1, 0, 0)
+SWEP.SprintPos = Vector(-2, 0, -2)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -160,8 +160,8 @@ SWEP.SprintMidPoint = {
 }
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Pos = Vector(-0.5, -0.5, -0.5),
+    Ang = Angle(0, 0, -5)
 }
 
 SWEP.ActivePosShooting = Vector(0, 0, 0)
@@ -170,7 +170,7 @@ SWEP.ActiveAngShooting = Angle(0, 0, 0)
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-2, -1, -2)
+SWEP.MovingPos = Vector(-1.5, -1, -1.5)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -212,15 +212,36 @@ SWEP.HookP_BlockFire = function(self)
     return self:GetSightAmount() < 1
 end
 
+SWEP.ShouldDropMag = false
+SWEP.ShouldDropMagEmpty = false
+SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_eq_strela_shell.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineSounds = {
+"weapons/cod2019/shared/magazine_drops/iw8_phys_shell_drop_large_shell_concrete_01.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_shell_drop_large_shell_concrete_02.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_shell_drop_large_shell_concrete_03.ogg",
+}
+SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
+SWEP.DropMagazineTime = 0.4
+SWEP.DropMagazineQCA = 2
+SWEP.DropMagazineAng = Angle(0, -90, 0)
+
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/strela/"
 
 SWEP.ShootSound = "COD2019.Strela.Fire"
---SWEP.DistantShootSound = "CSGO.AWP.Distance_Fire"
-SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
+SWEP.ShootSoundIndoor = "COD2019.Strela.Fire"
 
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+-- Outside
+SWEP.LayerSound = "Layer_Sniper.Outside"
+SWEP.DistantShootSound = "Distant_Strela.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_Strela.Inside"
+---------------------------------------------------
+
+SWEP.DryFireSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
+SWEP.FiremodeSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
 
 SWEP.EnterSightsSound = "weapons/cod2019/strela/weap_la_kgolf_ads_up.ogg"
 SWEP.ExitSightsSound = "weapons/cod2019/strela/weap_la_kgolf_ads_down.ogg"
@@ -229,16 +250,20 @@ SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before sh
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
 SWEP.TriggerUpSound = ""
 
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
+        EventTable = {
+			{s = path .. "weap_kgolf_fire_plr_lfe_01.ogg", t = 0},
+        },
     },
     ["reload"] = {
         Source = "reload",
 		MinProgress = 0.8,
+		DropMagAt = 2.65,
         IKTimeLine = {
             {
                 t = 0,
@@ -262,17 +287,23 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_la_kgolf_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_unload_01.ogg", t = 32/30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_rotate.ogg", t = 68/30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_door_01.ogg", t = 83/30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_load_01.ogg", t = 105/30},
-			{s = path .. "wfoly_plr_la_kgolf_reload_end.ogg", t = 144/30},
+			{s = path .. "wfoly_la_kgolf_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_la_kgolf_reload_raise.ogg", t = 15/30},
+			{s = path .. "wfoly_la_kgolf_reload_rotate.ogg", t = 45/30},
+			{s = path .. "wfoly_la_kgolf_reload_breechopen.ogg", t = 52/30},
+			{s = path .. "wfoly_la_kgolf_reload_shellout.ogg", t = 65/30},
+			{s = path .. "wfoly_la_kgolf_reload_shelldrop.ogg", t = 77/30},
+			{s = path .. "wfoly_la_kgolf_reload_raise.ogg", t = 102/30},
+			{s = path .. "wfoly_la_kgolf_reload_shellin.ogg", t = 132/30},
+			{s = path .. "wfoly_la_kgolf_reload_breechclose.ogg", t = 147/30},
+			{s = path .. "wfoly_la_kgolf_reload_breechclose2.ogg", t = 152/30},
+			{s = path .. "wfoly_la_kgolf_reload_end.ogg", t = 157/30},
         },
     },
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
+		DropMagAt = 1.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -333,6 +364,18 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_la_kgolf_drop_rattle.ogg", t = 0/30},
         },
