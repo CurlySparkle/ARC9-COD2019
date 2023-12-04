@@ -54,7 +54,7 @@ SWEP.Penetration = 10 -- Units of wood that can be penetrated by this gun.
 SWEP.ImpactForce = 15
 
 SWEP.ShootEnt = "arc9_cod2019_proj_crossbow_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 7000
+SWEP.ShootEntForce = 8000
 SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets SENT.WeaponDataLink with this table.
 
 SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
@@ -175,7 +175,7 @@ SWEP.MovingAng = Angle(0, 0, -8)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(-1.5, -1, 0)
+SWEP.SprintPos = Vector(-2, -1, -1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -228,9 +228,6 @@ SWEP.TriggerUpSound = "weapons/cod2019/crossbow/wfoly_sn_crossbow_disconnector_p
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
     },
     ["reload"] = {
         Source = "reload",
@@ -527,4 +524,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.4
 SWEP.CodAngledGripPoseParam = 5.1
-SWEP.CodStubbyGripPoseParam = 6.5
+SWEP.CodStubbyGripPoseParam = 8
