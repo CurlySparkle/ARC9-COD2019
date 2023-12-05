@@ -417,6 +417,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.2,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_plr_pi_papa320_raise_up.ogg", t = 0/30},
         },

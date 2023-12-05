@@ -320,6 +320,9 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
+    ["untrigger"] = {
+        Source = "shoot1_settle",
+    },
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
@@ -583,7 +586,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,

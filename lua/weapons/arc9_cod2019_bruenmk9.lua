@@ -197,7 +197,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(-1, 0, -1.5)
+SWEP.SprintPos = Vector(-1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -225,6 +225,9 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1, 3, -4.2)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 -------------------------- HoldTypes
 
@@ -821,6 +824,15 @@ SWEP.Hook_PrimaryAttack = function(self)
     -- end
 end
 
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("mag_smag") then 
+     model:SetPoseParameter("smag_offset", 1)
+    else
+     model:SetPoseParameter("smag_offset", 0)
+    end
+end
+
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
@@ -833,10 +845,6 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_smag_fast_empty"
     elseif anim == "inspect" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_smag") then 
         return "inspect_smag"
-    elseif anim == "fire" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_smag") then 
-        return "fire_smag"
-    elseif anim == "idle" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_smag") then 
-        return "idle_smag"
 --------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
         return "reload_fast"
@@ -849,10 +857,6 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_smag_empty"
     elseif anim == "inspect"and wep:HasElement("mag_smag") then 
         return "inspect_smag"
-    elseif anim == "fire"and wep:HasElement("mag_smag") then 
-        return "fire_smag"
-    elseif anim == "idle"and wep:HasElement("mag_smag") then 
-        return "idle_smag"
 --------------------------------------------------------------------------
     end
 end

@@ -195,6 +195,9 @@ SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
+SWEP.PeekPos = Vector(-2.5, -6, -3.5)
+SWEP.PeekAng = Angle(0, 0, -45)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "revolver"
@@ -614,8 +617,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.2,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_pi_decho_raise_mvmnt.ogg", t = 0/30},
         },

@@ -64,14 +64,14 @@ ATT.Description = [[Changes the view.]]
 ATT.SortOrder = 0
 ATT.Category = "cod2019_pistols_view"
 
-ATT.ActivePos = Vector(2, 0, 2)
+ATT.ActivePos = Vector(2.5, -1.5, 1.7)
 ATT.ActiveAng = Angle(0, 0, 10)
 
-ATT.MovingPos = Vector(1,-2,0.5)
-ATT.MovingAng = Angle(0,0,6)
+ATT.MovingPos = Vector(-1,-2,-1)
+ATT.MovingAng = Angle(0,0,-8)
 
-ATT.CrouchPos = Vector(1, 0, 1)
-ATT.CrouchAng = Angle(0, 0, 5)
+ATT.CrouchPos = Vector(-1.2, 0, -1)
+ATT.CrouchAng = Angle(0, 0, -10)
 
 ATT.ReloadPos = Vector(0,0,0)
 ATT.ReloadAng = Angle(0,0,0)

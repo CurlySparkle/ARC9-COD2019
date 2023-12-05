@@ -298,7 +298,9 @@ SWEP.Animations = {
         },
     },
     ["ready"] = {
-        Source = {"draw"},
+        Source = "draw",
+		MinProgress = 0.8,
+        FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -318,6 +320,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.2,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sn_crossbow_raise.ogg", t = 0/30},
         },
@@ -410,21 +414,44 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["sights"] = {
+    ["sight_none"] = {
         Bodygroups = {
-            {1,1},
+            {5,1},
         },
     },
-    ["grip"] = {
+    ["grip_rail"] = {
         Bodygroups = {
-            {2,1},
-			{5,1},
+            {3,1},
         },
     },
     ["bolt_rock"] = {
         Bodygroups = {
-            {3,1},
-			{4,1},
+            {4,1},
+        },
+    },
+    ["bolt_hl2"] = {
+        Bodygroups = {
+            {4,2},
+        },
+    },
+    ["bolt_none"] = {
+        Bodygroups = {
+            {4,3},
+        },
+    },
+    ["wires_none"] = {
+        Bodygroups = {
+            {6,1},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {2,1},
+        },
+    },
+    ["limbs_none"] = {
+        Bodygroups = {
+            {1,1},
         },
     },
 }
@@ -436,20 +463,36 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
     {
+        PrintName = "Arms",
+        DefaultAttName = "Standard Arms",
+        Category = "cod2019_crossbow_limbs",
+        Bone = "tag_barrel_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "Wires",
+        DefaultAttName = "Standard Wires",
+        Category = "cod2019_crossbow_wires",
+        Bone = "tag_barrel_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+    },
+    {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.5, 0, -0.1),
+        Pos = Vector(1, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sights"},
+		InstalledElements = {"sight_none"},
     },
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac_pistols",
-        Bone = "tag_attachments",
-        Pos = Vector(21.5, 0, -1),
+        Category = "cod2019_tac",
+        Bone = "tag_laser_attach",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
@@ -457,9 +500,18 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-2.5, 0, 0),
+        Pos = Vector(-2.2, 0, 0),
         Ang = Angle(0, 0, 180),
-		InstalledElements = {"grip"},
+		InstalledElements = {"grip_rail"},
+    },
+    {
+        PrintName = "Stock",
+        DefaultAttName = "Standard Stock",
+        Category = "cod2019_crossbow_stock",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		--InstalledElements = {"stock"},
     },
     {
         PrintName = "Ammo",
@@ -523,5 +575,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.4
-SWEP.CodAngledGripPoseParam = 5.1
+SWEP.CodAngledGripPoseParam = 14
 SWEP.CodStubbyGripPoseParam = 8

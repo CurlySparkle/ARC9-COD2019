@@ -184,7 +184,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, -2, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -211,6 +211,9 @@ SWEP.CustomizePos = Vector(17, 35, 3)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 7, 3)
+
+SWEP.PeekPos = Vector(-1, 3, -3.2)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 -------------------------- HoldTypes
 
@@ -434,12 +437,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.5,
+                t = 0.7,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.2,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },
@@ -710,7 +713,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -948,6 +951,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.2
 SWEP.GripPoseParam2 = 0.7
-SWEP.CodAngledGripPoseParam = 9
-SWEP.CodStubbyGripPoseParam = 6.5
-SWEP.CodStubbyTallGripPoseParam = 10
+SWEP.CodAngledGripPoseParam = 28
+SWEP.CodStubbyGripPoseParam = 18
+SWEP.CodStubbyTallGripPoseParam = 24

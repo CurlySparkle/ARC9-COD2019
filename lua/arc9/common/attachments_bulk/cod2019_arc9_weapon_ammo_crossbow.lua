@@ -25,7 +25,7 @@ ATT = {}
 
 ATT.PrintName = "Explosive Contact Bolt"
 ATT.CompactName = "EXPL"
-ATT.Description = [[Crossbow bolts fitted with custom electronic high-explosive warheads.]]
+ATT.Description = [[Crossbow bolts fitted with a custom electronic small-explosive device.]]
 ATT.SortOrder = 0.5
 
 --ATT.Icon = Material("entities/attachs/go_ammo_tmj.png", "mips smooth")

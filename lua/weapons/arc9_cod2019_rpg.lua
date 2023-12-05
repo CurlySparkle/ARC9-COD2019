@@ -329,6 +329,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.4,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_la_rpapa7_raise.ogg", t = 0/30},
         },

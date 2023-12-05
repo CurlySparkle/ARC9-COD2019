@@ -474,8 +474,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.3,
+        FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,

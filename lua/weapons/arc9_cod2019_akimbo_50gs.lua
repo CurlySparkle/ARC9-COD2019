@@ -435,8 +435,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.2,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_pi_decho_fast_reload_end.ogg", t = 6/30},
             {s = path .. "wfoly_pi_decho_reload_end.ogg", t = 6/30},

@@ -364,8 +364,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.4,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_plr_la_mike32_raise_up.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_la_mike32_raise_settle.ogg", t = 15/30},

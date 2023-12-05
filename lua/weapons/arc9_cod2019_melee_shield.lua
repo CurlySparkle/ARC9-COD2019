@@ -163,6 +163,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
+		MinProgress = 0.2,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_me_riotshield_draw.ogg", t = 0/30},
         },
