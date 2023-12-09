@@ -2,7 +2,7 @@
 {
     "$basetexture"				"models/cod2019/x16/x16_body"
     "$bumpmap"					"models/cod2019/x16/x16_body_n"
-    "$phongexponenttexture"		"models/cod2019/x16/x16_body_exp"
+    "$phongexponenttexture"		       "models/cod2019/x16/x16_body_exp"
 
     /////////////////
     "$color2" "[0.8 0.8 0.8]"                                     //do not touch this
@@ -22,8 +22,10 @@
     "$envmap" "env_cubemap"
     "$envmaptint" "[0.098 0.098 0.098]"                 
 
-    //remove this if not using MWB
-     "Proxies"
+    "$detailblendmode" "4"
+    "$detailblendfactor" "0.8"
+
+    "Proxies"
      {
         "Arc9EnvMapTint"
         {
@@ -31,5 +33,12 @@
             "min" "0"
             "max" "0.2"
         }
+	   "CustomCamo" 
+        {
+		  "camoTexture" $detail
+	       "camoScale" $detailscale
+            "blend" $detailblendfactor
+            "color2" "[0.8 0.8 0.8]"
+	   }
      }
 }

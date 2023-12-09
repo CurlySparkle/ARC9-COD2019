@@ -79,7 +79,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 600
+SWEP.RPM = 600 * 1.5
 
 SWEP.Firemodes = {
     {
@@ -191,20 +191,20 @@ SWEP.SprintMidPoint = {
 }
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
+    Pos = Vector(0, -1, -0.5),
     Ang = Angle(0, 0, 0)
 }
 
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -1, -1)
+SWEP.MovingPos = Vector(0, -1.5, -1)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -0.5)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -294,9 +294,16 @@ SWEP.DistantShootSoundSilencedIndoor = "Distant_Pistol_Sup.Inside"
 SWEP.EnterSightsSound =  path .. "wfoly_pi_golf21_ads_up.ogg"
 SWEP.ExitSightsSound =  path .. "wfoly_pi_golf21_ads_down.ogg"
 
+SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/x16/weap_golf21_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/x16/weap_golf21_disconnector_plr_01.ogg"
+
 SWEP.BulletBones = {
-    [1] = "j_bullet1_l",
-	[2] = "j_bullet1",
+    [1] = "j_bullet_l",
+	[2] = "j_bullet",
 }
 
 SWEP.HideBones  = {
@@ -306,13 +313,13 @@ SWEP.HideBones  = {
 
 SWEP.Animations = {
     ["fire_left"] = {
-        Source = "shoot1_left",
+        Source = "fire_left",
     },
     ["fire_right"] = {
-        Source = "shoot1_right",
+        Source = "fire_right",
     },
     ["reload"] = {
-        Source = "reload_short",
+        Source = "reload",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
 		DropMagAt = 0.35,
@@ -351,7 +358,86 @@ SWEP.Animations = {
         },
     },
     ["reload_empty"] = {
-        Source = "reload",
+        Source = "reload_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.35,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 47/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magin_v2_01.ogg", t = 47/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 55/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magin_v2_02.ogg", t = 55/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 71/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 71/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 76/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_end.ogg", t = 84/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+		DropMagAt = 0.35,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_golf21_reload_fast_magout_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 14/30},
+			{s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 44/30},
+			{s = path .. "wfoly_pi_golf21_reload_fast_magin_v2_01.ogg", t = 49/30},
+			{s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 54/30},
+			{s = path .. "wfoly_pi_golf21_reload_fast_magin_v2_02.ogg", t = 57/30},
+			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 70/30},
+			{s = path .. "wfoly_pi_golf21_reload_fast_end.ogg", t = 70/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.35,
         IKTimeLine = {
@@ -391,7 +477,7 @@ SWEP.Animations = {
         },
     },
     ["ready"] = {
-        Source = "draw",
+        Source = "draw_first",
         IKTimeLine = {
             {
                 t = 0,
@@ -420,7 +506,7 @@ SWEP.Animations = {
         },
     },
     ["draw"] = {
-        Source = "draw_short",
+        Source = "draw",
 		MinProgress = 0.2,
         FireASAP = true,
         EventTable = {
@@ -430,7 +516,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
         EventTable = {
             {s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 0/30},
             {s = path .. "wfoly_pi_golf21_reload_fast_end.ogg", t = 5/30},
@@ -440,7 +525,7 @@ SWEP.Animations = {
         Source = "idle",
     },
     ["idle_sprint"] = {
-        Source = "sprint",
+        Source = "sprint2",
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
@@ -484,13 +569,24 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = "melee",
+        Source = {"melee","melee2","melee3"},
     },
 }
 
 -------------------------- ATTACHMENTS
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendEmptyElite
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+    --------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    end
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -508,14 +604,16 @@ SWEP.AttachmentElements = {
             {0,1},
         },
     },
-    ["mag_none"] = {
-        Bodygroups = {
-            {1,1},
-        },
-    },
     ["slide_none"] = {
         Bodygroups = {
+            {1,1},
+            {4,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
             {2,1},
+            {5,1},
         },
     },
     ["x16_slide_auto"] = {
@@ -531,6 +629,11 @@ SWEP.Attachments = {
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+        DuplicateModels = {
+            {
+                Bone = "tag_barrel_attach_l",
+            }
+        },
     },
     {
         PrintName = "Muzzle",
@@ -613,7 +716,7 @@ SWEP.Attachments = {
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
@@ -628,22 +731,22 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/pist_x16_decal_a.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_x16_decal_a.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/pist_x16_decal_b.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_x16_decal_b.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/pist_x16_decal_c.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_x16_decal_c.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/pist_x16_decal_d.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_x16_decal_d.mdl",
         Category = "stickers",
     },
     {
