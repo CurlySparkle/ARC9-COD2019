@@ -78,7 +78,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 300
+SWEP.RPM = 300 * 1.2
 
 SWEP.Firemodes = {
     {
@@ -179,20 +179,20 @@ SWEP.SprintMidPoint = {
 }
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
+    Pos = Vector(0, -0.7, -0.5),
     Ang = Angle(0, 0, 0)
 }
 
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(0, -1.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, -1, -1)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -277,6 +277,7 @@ SWEP.HideBones = {
 SWEP.TriggerDelay = 0.01 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.01 -- Time until weapon fires.
+SWEP.TriggerStartFireAnim = false
 
 SWEP.TriggerDownSound = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg"
 SWEP.TriggerUpSound = ""
@@ -304,31 +305,45 @@ SWEP.HideBones  = {
 
 SWEP.Animations = {
     ["fire_left"] = {
-        Source = "shoot1_left",
+        Source = "fire_left",
     },
     ["fire_right"] = {
-        Source = "shoot1_right",
+        Source = "fire_right",
     },
     ["dryfire_left"] = {
-        Source = "shoot1_cycle_left",
+        Source = "fire_left_charged",
         EventTable = {
 			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", v = 0.5,  t = 0/30},
         },
     },
     ["dryfire_right"] = {
-        Source = "shoot1_cycle_right",
+        Source = "fire_right_charged",
         EventTable = {
 			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", v = 0.5,  t = 0/30},
         },
     },
     ["trigger_left"] = {
-        Source = "shoot1_cycle_left",
+        Source = "fire_left_charged",
         EventTable = {
 			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", t = 0/30},
         },
     },
     ["trigger_right"] = {
-        Source = "shoot1_cycle_right",
+        Source = "fire_right_charged",
+        EventTable = {
+			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", t = 0/30},
+        },
+    },
+    ["untrigger_left"] = {
+        Source = "fire_left_charged",
+		Reverse = true,
+        EventTable = {
+			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", t = 0/30},
+        },
+    },
+    ["untrigger_right"] = {
+        Source = "fire_right_charged",
+		Reverse = true,
         EventTable = {
 			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", t = 0/30},
         },
@@ -379,8 +394,54 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 94/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_start.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_cylinderopen_01.ogg", t = 2/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cyclinderopen_01.ogg", t = 16/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_shake.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 24/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_ejectorrod_01.ogg", t = 32/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_01.ogg", t = 33/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_02.ogg", t = 33/30},
+            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_03.ogg", t = 33/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_arm.ogg", t = 45/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_grip.ogg", t = 46/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_speedloader_01.ogg", t = 57/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 78/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 60/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_arm.ogg", t = 82/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 65/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 94/30},
+        },
+    },
     ["ready"] = {
-        Source = "draw",
+        Source = "draw_first",
         IKTimeLine = {
             {
                 t = 0,
@@ -411,8 +472,8 @@ SWEP.Animations = {
         },
     },
     ["draw"] = {
-        Source = "draw_short",
-		MinProgress = 0.2,
+        Source = "draw",
+		MinProgress = 0.55,
         FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_pi_cpapa_charge_raise.ogg", t = 0/30},
@@ -420,7 +481,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
         EventTable = {
             {s = path .. "wfoly_pi_cpapa_charge_reload_fast_grip.ogg", t = 0/30},
         },
@@ -473,13 +533,25 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = "melee",
+        Source = {"melee","melee2"},
     },
 }
 
 -------------------------- ATTACHMENTS
 
 --SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+    --------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    end
+end
+
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -492,29 +564,34 @@ SWEP.DefaultBodygroups = "00000000000000"
 -- }
 
 SWEP.AttachmentElements = {
-    ["mag_none"] = {
+    ["body_none"] = {
         Bodygroups = {
-            {1,1},
+            {0,1},
+            {3,1},
         },
     },
-    ["slide_none"] = {
+    ["barrel_none"] = {
         Bodygroups = {
-            {2,1},
+            {1,1},
+            {4,1},
         },
     },
     ["grip_none"] = {
         Bodygroups = {
-            {3,1},
+            {2,1},
+            {5,1},
         },
     },
     ["rail_sight"] = {
         Bodygroups = {
-            {4,1},
+            {6,1},
+            {7,1},
         },
     },
     ["rail_laser"] = {
         Bodygroups = {
-            {5,1},
+            {8,1},
+            {9,1},
         },
     },
 }
@@ -527,19 +604,24 @@ SWEP.Attachments = {
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+        DuplicateModels = {
+            {
+                Bone = "tag_barrel_attach_l",
+            }
+        },
     },
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle_pistols",
-        Bone = "tag_silencer",
+        Bone = "tag_silencer_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
 		Scale = 1,
         DuplicateModels = {
             {
-                Bone = "tag_silencer_l",
+                Bone = "tag_silencer",
             }
         },
     },
@@ -548,10 +630,15 @@ SWEP.Attachments = {
         Bone = "tag_reflex",
         Pos = Vector(1.5, 0, -0.07),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optics_pistols_alt","eft_optic_small"},
+        Category = "cod2019_optic",
         CorrectiveAng = Angle(0, 0, 0),
-		Scale = 0.8,
+		Scale = 1,
 		InstalledElements = {"rail_sight"},
+        DuplicateModels = {
+            {
+                Bone = "tag_reflex_l",
+            }
+        },
     },
     {
         PrintName = "Tactical",
@@ -573,9 +660,13 @@ SWEP.Attachments = {
         Category = "cod2019_357_grip",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 180),
+        Ang = Angle(0, 0, 0),
 		Scale = 1,
-		--InstalledElements = {"rail_grip"},
+        DuplicateModels = {
+            {
+                Bone = "tag_stock_attach_l",
+            }
+        },
     },
     {
         PrintName = "Ammo",
@@ -586,12 +677,12 @@ SWEP.Attachments = {
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
         --Bone = "v_weapon.Clip",
-        Category = "cod2019_skins_50gs",
+        Category = "cod2019_357_skins",
 		CosmeticOnly = true,
     },
     {
@@ -631,7 +722,7 @@ SWEP.Attachments = {
         PrintName = "Stats",
         Category = "killcounter",
         Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-3, 0.05, -1.7),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },

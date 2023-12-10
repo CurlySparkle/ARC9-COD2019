@@ -141,9 +141,9 @@ SWEP.SpreadMultRecoil = 1.3
 SWEP.RecoilModifierCap = 2
 --SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadAddMove = 0.05
+SWEP.SpreadAddMove = 0.03
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.04
+SWEP.SpreadAddHipFire = 0.02
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
 
@@ -174,7 +174,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 
 SWEP.HasSights = false
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 60
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, -0.15),
@@ -255,7 +255,7 @@ SWEP.DropMagazineSounds = {
 SWEP.DropMagazineAmount = 2 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 6
-SWEP.DropMagazineAng = Angle(0, -90, 0)
+SWEP.DropMagazineAng = Angle(0, 0, 0)
 
 -------------------------- SOUNDS
 
@@ -296,10 +296,8 @@ SWEP.TriggerDownSound = path .. "weap_decho_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = path .. "weap_decho_disconnector_plr_01.ogg"
 
 SWEP.BulletBones = {
-    [1] = "j_bullet01",
-    [2] = "j_bullet02",
-	[3] = "j_bullet03",
-	[4] = "j_bullet04",
+    [1] = "j_bullet",
+    [2] = "j_bullet_l",
 }
 
 SWEP.HideBones  = {
@@ -309,13 +307,13 @@ SWEP.HideBones  = {
 
 SWEP.Animations = {
     ["fire_left"] = {
-        Source = "shoot1_left",
+        Source = "fire_left",
     },
     ["fire_right"] = {
-        Source = "shoot1_right",
+        Source = "fire_right",
     },
     ["reload"] = {
-        Source = "reload_short",
+        Source = "reload",
 		MinProgress = 0.8,
 		FireASAP = true,
 		MagSwapTime = 3.5,
@@ -358,7 +356,95 @@ SWEP.Animations = {
         },
     },
     ["reload_empty"] = {
-        Source = "reload",
+        Source = "reload_empty",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.35,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_decho_fast_reload_empty_raise.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_mvmnt.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_decho_fast_reload_empty_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_pi_decho_reload_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_shake.ogg", t = 23/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_shake.ogg", t = 27/30},
+			{s = path .. "wfoly_pi_decho_fast_reload_empty_magin_v2_01.ogg", t = 49/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_01.ogg", t = 50/30},
+			{s = path .. "wfoly_pi_decho_fast_reload_empty_magin_v2_02.ogg", t = 52/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_02.ogg", t = 53/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_shake.ogg", t = 64/30},
+			{s = path .. "wfoly_pi_decho_fast_reload_empty_end.ogg", t = 72/30},
+			{s = path .. "wfoly_pi_decho_fast_reload_empty_slide_01.ogg", t = 76/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_charge_01.ogg", t = 76/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_end.ogg", t = 76/30},
+        },
+    },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+		DropMagAt = 0.35,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_decho_fast_reload_empty_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_mvmnt.ogg", t = 2/30},
+			{s = path .. "wfoly_pi_decho_reload_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_pi_decho_fast_reload_empty_magout_01.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_shake.ogg", t = 19/30},
+			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 32/30},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 46/30},
+			{s = path .. "wfoly_pi_decho_fast_reload_magin_v2_01.ogg", t = 47/30},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 51/30},
+			{s = path .. "wfoly_pi_decho_fast_reload_magin_v2_02.ogg", t = 52/30},
+			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 61/30},
+			{s = path .. "wfoly_pi_decho_fast_reload_end.ogg", t = 63/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
 		MinProgress = 0.8,
 		FireASAP = true,
 		DropMagAt = 0.35,
@@ -403,7 +489,7 @@ SWEP.Animations = {
         },
     },
     ["ready"] = {
-        Source = "draw",
+        Source = "draw_first",
         IKTimeLine = {
             {
                 t = 0,
@@ -434,7 +520,7 @@ SWEP.Animations = {
         },
     },
     ["draw"] = {
-        Source = "draw_short",
+        Source = "draw",
 		MinProgress = 0.2,
         FireASAP = true,
         EventTable = {
@@ -495,13 +581,24 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = "melee",
+        Source = {"melee","melee2","melee3"},
     },
 }
 
 -------------------------- ATTACHMENTS
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+    --------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    end
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -514,19 +611,28 @@ SWEP.DefaultBodygroups = "00000000000000"
 -- }
 
 SWEP.AttachmentElements = {
-    ["mag_none"] = {
+    ["body_none"] = {
         Bodygroups = {
-            {1,1},
+            {0,1},
+            {4,1},
         },
     },
     ["slide_none"] = {
         Bodygroups = {
+            {1,1},
+            {4,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
             {2,1},
+            {5,1},
         },
     },
     ["grip_none"] = {
         Bodygroups = {
             {3,1},
+            {7,1},
         },
     },
 }
@@ -558,11 +664,11 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_scope",
-        Pos = Vector(-3.2, 0, 0),
+        Pos = Vector(-4.2, 0, -0.14),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optics_pistols_alt","eft_optic_small"},
         CorrectiveAng = Angle(0, 0, 0),
-		Scale = 1,
+		Scale = 1.15,
         DuplicateModels = {
             {
                 Bone = "tag_scope_l",
@@ -609,7 +715,7 @@ SWEP.Attachments = {
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
