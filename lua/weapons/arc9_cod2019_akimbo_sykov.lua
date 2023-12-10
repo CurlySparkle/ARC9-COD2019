@@ -169,7 +169,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 
 SWEP.HasSights = false
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 54
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, -0.15),
@@ -184,13 +184,13 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(0, -1, -1)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -0.5)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -247,7 +247,7 @@ SWEP.DropMagazineSounds = {
 "weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_05.ogg",
 "weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_06.ogg",
 }
-SWEP.DropMagazineAmount = 2 -- Amount of mags to drop.
+SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 6
 SWEP.DropMagazineAng = Angle(0, -90, 0)
@@ -318,16 +318,16 @@ SWEP.TriggerUpSound = "weapons/cod2019/sykov/weap_mike_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire_left"] = {
-        Source = "shoot1_left",
+        Source = "fire_left",
     },
     ["fire_right"] = {
-        Source = "shoot1_right",
+        Source = "fire_right",
     },
     ["reload"] = {
-        Source = "reload_short",
+        Source = "reload",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.35,
+		DropMagAt = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -359,9 +359,9 @@ SWEP.Animations = {
         },
     },
     ["reload_empty"] = {
-        Source = "reload",
+        Source = "reload_empty",
 		MinProgress = 0.9,
-		DropMagAt = 0.35,
+		DropMagAt = 0.7,
         IKTimeLine = {
             {
                 t = 0,
@@ -399,7 +399,7 @@ SWEP.Animations = {
         },
     },
     ["ready"] = {
-        Source = "draw",
+        Source = "draw_first",
         IKTimeLine = {
             {
                 t = 0,
@@ -430,8 +430,8 @@ SWEP.Animations = {
         },
     },
     ["draw"] = {
-        Source = "draw_short",
-		MinProgress = 0.2,
+        Source = "draw",
+		MinProgress = 0.3,
         FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_pi_mike_raise.ogg", t = 9/30},
@@ -439,7 +439,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
         EventTable = {
             {s = path .. "wfoly_pi_mike_reload_end.ogg", t = 0/30},
         },
@@ -491,13 +490,24 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = "melee",
+        Source = {"melee","melee2","melee3"},
     },
 }
 
 -------------------------- ATTACHMENTS
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendEmptyElite
+
+SWEP.Hook_TranslateAnimation = function (wep, anim)
+    --local attached = self:GetElements()
+    --------------------------------------------------------------------------
+    if anim == "reload" and wep:HasElement("perk_speedreload") then
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    end
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -510,24 +520,34 @@ SWEP.DefaultBodygroups = "00000000000000"
 -- }
 
 SWEP.AttachmentElements = {
-    ["mag_none"] = {
+    ["body_none"] = {
         Bodygroups = {
-            {1,1},
+            {0,1},
+            {4,1},
         },
     },
     ["slide_none"] = {
         Bodygroups = {
+            {1,1},
+            {4,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
             {2,1},
+            {5,1},
         },
     },
     ["grip_none"] = {
         Bodygroups = {
             {3,1},
+            {7,1},
         },
     },
-    ["rail_laser"] = {
+    ["rail_mount_laser"] = {
         Bodygroups = {
-            {4,1},
+            {8,1},
+            {9,1},
         },
     },
 }
@@ -540,6 +560,11 @@ SWEP.Attachments = {
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+        DuplicateModels = {
+            {
+                Bone = "tag_barrel_attach_l",
+            }
+        },
     },
     {
         PrintName = "Muzzle",
@@ -548,7 +573,6 @@ SWEP.Attachments = {
         Bone = "tag_silencer_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		--InstalledElements = {"muzzle_none"},
 		Scale = 1,
         DuplicateModels = {
             {
@@ -558,13 +582,17 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Optics",
-        Bone = "tag_scope",
+        Bone = "teg_reflex",
         Pos = Vector(5, 0, -2.3),
         Ang = Angle(0, 0, 0),
-        Category = "csgo_rail_optic_pistols",
+        Category = "cod2019_optic_pistols",
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 1,
-		InstalledElements = {"rail_laser"},
+        DuplicateModels = {
+            {
+                Bone = "teg_reflex_l",
+            }
+        },
     },
     {
         PrintName = "Tactical",
@@ -573,17 +601,26 @@ SWEP.Attachments = {
         Bone = "tag_laser_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"rail_laser"},
+		InstalledElements = {"rail_mount_laser"},
+        DuplicateModels = {
+            {
+                Bone = "tag_laser_attach_l",
+            }
+        },
     },
     {
         PrintName = "Grip",
         DefaultAttName = "Default",
         Category = "cod2019_sykov_grip",
         Bone = "tag_stock_attach",
-        Pos = Vector(-2.8, 0, 0.2),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
-		--InstalledElements = {"rail_grip"},
+        DuplicateModels = {
+            {
+                Bone = "tag_stock_attach_l",
+            }
+        },
     },
     {
         PrintName = "Ammo",
@@ -594,14 +631,20 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Mag",
-		Bone = "j_mag1",
+		Bone = "tag_mag_attach",
         Category = "cod2019_mag",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+
+        DuplicateModels = {
+            {
+                Bone = "tag_mag_attach_l",
+            }
+        },
     },
     {
 		PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = "Skins",
@@ -616,22 +659,22 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/pist_sykov_decal_a.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_sykov_decal_a.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/pist_sykov_decal_b.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_sykov_decal_b.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/pist_sykov_decal_c.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_sykov_decal_c.mdl",
         Category = "stickers",
     },
     {
         PrintName = "Stickers",
-        StickerModel = "models/weapons/cod2019/stickers/pist_sykov_decal_d.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_sykov_decal_d.mdl",
         Category = "stickers",
     },
     {
