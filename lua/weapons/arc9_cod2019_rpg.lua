@@ -247,7 +247,8 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -279,7 +280,8 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -329,7 +331,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.4,
+		MinProgress = 0.5,
         FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_la_rpapa7_raise.ogg", t = 0/30},

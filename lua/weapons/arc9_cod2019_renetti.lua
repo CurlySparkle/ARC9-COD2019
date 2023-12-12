@@ -894,17 +894,17 @@ SWEP.AttachmentTableOverrides = {
     },
     },
     ["cod2019_view_alt_pistol"] = {
-    ActivePos = Vector(3.5, 0, 1.5),
+    ActivePos = Vector(3.2, -1.5, 1.5),
     ActiveAng = Angle(0, 0, 20),
 
-    MovingPos = Vector(2, 0, 0.5),
-    MovingAng = Angle(0,0,10),
+    MovingPos = Vector(-1,-2,-1),
+    MovingAng = Angle(0,0,-8),
 
-    CrouchPos = Vector(1, -1, 1),
-    CrouchAng = Angle(0, 0, 10),
+    CrouchPos = Vector(-1.2, 0, -1),
+    CrouchAng = Angle(0, 0, -10),
 
     ReloadPos = Vector(0,0,0),
-    ReloadAng = Angle(0,0,0),
+    ReloadAng = Angle(0,0,0)
     },
 }
 

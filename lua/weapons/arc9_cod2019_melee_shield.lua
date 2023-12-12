@@ -84,7 +84,7 @@ SWEP.MeleeSwingSound = "COD2019.Melee.Swing"
 local path = "weapons/cod2019/melee/shield/"
 
 SWEP.BashThirdArmAnimation = {
-        rig = "models/weapons/csgo/v_shield.mdl",
+        rig = "models/weapons/cod2019/c_eq_shield.mdl",
         sequence = {"bash1", "bash2"},
         -- sequence = "melee1",
         gun_controller_attachment = 1,
@@ -138,14 +138,17 @@ SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 -------------------------- HoldTypes
 
-SWEP.HoldTypeHolstered = "none"
+SWEP.HoldType = "melee"
 SWEP.HoldTypeSprint = "melee2"
-SWEP.HoldType = "melee2"
+SWEP.HoldTypeHolstered = "normal"
+SWEP.HoldTypeSights = "melee"
+SWEP.HoldTypeCustomize = "slam"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
-SWEP.AnimDraw = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
-SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_SLAM 
+SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_PISTOL
+SWEP.AnimDraw = false
+SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_MELEE
 
 function SWEP:SecondaryAttack()
     return self:MeleeAttack()
