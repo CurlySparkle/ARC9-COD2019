@@ -171,7 +171,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 
 SWEP.HasSights = false
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 60
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, -0.15),

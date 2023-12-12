@@ -622,6 +622,12 @@ SWEP.AttachmentElements = {
             {7,1},
         },
     },
+    ["sight_mount"] = {
+        Bodygroups = {
+            {8,1},
+            {9,1},
+        },
+    },
 }
 
 
@@ -657,11 +663,12 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_reflex",
-        Pos = Vector(1.5, 0, 0),
+        Pos = Vector(1.08, 0, 0.02),
         Ang = Angle(0, 0, 0),
         Category = "cod2019_optics_pistols_alt",
         CorrectiveAng = Angle(1.8, -1.8, 0),
 		Scale = 1,
+		InstalledElements = {"sight_mount"},
         DuplicateModels = {
             {
                 Bone = "tag_reflex_l",

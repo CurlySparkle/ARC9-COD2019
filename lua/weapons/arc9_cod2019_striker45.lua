@@ -217,7 +217,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
+SWEP.MovingPos = Vector(-1, -1, -1)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -537,11 +537,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 1.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 1.7,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -667,9 +667,14 @@ SWEP.AttachmentElements = {
             {2,2},
         },
     },
-    ["stock_none"] = {
+    ["stock_adapter"] = {
         Bodygroups = {
             {3,2},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {3,3},
         },
     },
     ["stock_retract"] = {
@@ -754,7 +759,7 @@ SWEP.Attachments = {
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_none"},
+		InstalledElements = {"stock_adapter"},
 		Scale = 1,
     },
     {

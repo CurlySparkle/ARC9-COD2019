@@ -93,7 +93,7 @@ SWEP.Recoil = 1
 
 --SWEP.RecoilSeed = nil
 
-SWEP.RecoilPatternDrift = 35
+SWEP.RecoilPatternDrift = 0
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -102,7 +102,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.05
 
 SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -123,7 +123,7 @@ SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.1
 SWEP.VisualRecoilRoll = 55
-SWEP.VisualRecoilSide = 0.3
+SWEP.VisualRecoilSide = 0.5
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 20
@@ -183,7 +183,7 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 
 SWEP.HasSights = false
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 60
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, -0.15),
@@ -619,6 +619,12 @@ SWEP.AttachmentElements = {
     ["x16_slide_auto"] = {
     AttPosMods = { [2] = { Pos = Vector(0.2, 0, 0.03), } }
     },
+    ["sight_mount"] = {
+        Bodygroups = {
+            {6,1},
+            {7,1},
+        },
+    },
 }
 
 SWEP.Attachments = {
@@ -658,6 +664,7 @@ SWEP.Attachments = {
         Category = "csgo_rail_optic_pistols",
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 1,
+		InstalledElements = {"sight_mount"},
         DuplicateModels = {
             {
                 Bone = "tag_scope_l",

@@ -792,7 +792,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee","melee2"},
+        Source = {"melee","melee2","melee3"},
     },
 }
 
@@ -863,6 +863,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
@@ -871,6 +876,11 @@ SWEP.AttachmentElements = {
     ["slide_none"] = {
         Bodygroups = {
             {2,1},
+        },
+    },
+    ["sight_mount"] = {
+        Bodygroups = {
+            {3,1},
         },
     },
 }
@@ -897,11 +907,11 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_reflex",
-        Pos = Vector(1, 0, -0.05),
+        Pos = Vector(1.07, 0, 0.025),
         Ang = Angle(0, 0, 0),
         Category = "cod2019_optics_pistols_alt",
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sight_none"},
+		InstalledElements = {"sight_mount"},
 		Scale = 1,
     },
     {

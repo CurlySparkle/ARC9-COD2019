@@ -78,7 +78,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 500
+SWEP.RPM = 500 * 1.2
 
 SWEP.Firemodes = {
     {
@@ -88,7 +88,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 0.9
+SWEP.Recoil = 1.1
 
 --SWEP.RecoilSeed = nil
 
@@ -120,7 +120,7 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilUp = 0.3
 SWEP.VisualRecoilRoll = 55
 SWEP.VisualRecoilSide = -1/6
 
@@ -398,6 +398,81 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_i_reload_empty_end.ogg", t = 82/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+		DropMagAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_i_reload_down.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_mvmnt.ogg", t = 11/30},
+			{s = path .. "wfoly_pi_mike_i_reload_magout.ogg", t = 24/30},
+			{s = path .. "wfoly_pi_mike_i_reload_magin.ogg", t = 27/30},
+			{s = path .. "wfoly_pi_mike_i_reload_end.ogg", t = 37/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_i_reload_empty_down.ogg", t = 2/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_mvmnt.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_magout.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_magin.ogg", t = 47/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_magin.ogg", t = 52/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_up.ogg", t = 63/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_up.ogg", t = 67/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_charge.ogg", t = 69/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_charge.ogg", t = 78/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_end.ogg", t = 74/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_end.ogg", t = 82/30},
+        },
+    },
     ["ready"] = {
         Source = "draw_first",
         IKTimeLine = {
@@ -550,6 +625,12 @@ SWEP.AttachmentElements = {
             {9,1},
         },
     },
+    ["sight_mount"] = {
+        Bodygroups = {
+            {10,1},
+            {11,1},
+        },
+    },
 }
 
 SWEP.Attachments = {
@@ -582,15 +663,16 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Optics",
-        Bone = "teg_reflex",
-        Pos = Vector(5, 0, -2.3),
+        Bone = "j_slide",
+        Pos = Vector(-1.4, 0, 0.48),
         Ang = Angle(0, 0, 0),
-        Category = "cod2019_optic_pistols",
+        Category = "cod2019_optics_pistols_alt",
         CorrectiveAng = Angle(0, 0, 0),
+		InstalledElements = {"sight_mount"},
 		Scale = 1,
         DuplicateModels = {
             {
-                Bone = "teg_reflex_l",
+                Bone = "j_slide_l",
             }
         },
     },
