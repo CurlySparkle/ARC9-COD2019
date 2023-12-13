@@ -185,20 +185,20 @@ SWEP.SprintMidPoint = {
 }
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Pos = Vector(-0.5, -0.5, -0.5),
+    Ang = Angle(0, 0, -5)
 }
 
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-1, -1, -1)
-SWEP.MovingAng = Angle(0, 0, -10)
+SWEP.MovingPos = Vector(-1.5, -1.5, -1.5)
+SWEP.MovingAng = Angle(0, 0, -12)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, -0.5, -1.3)
+SWEP.SprintPos = Vector(0, -0.5, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
@@ -207,6 +207,9 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-0.5, 1.5, -4)
+SWEP.PeekAng = Angle(0, 0.4, -45)
 
 -------------------------- HoldTypes
 
@@ -729,7 +732,7 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag2_fast_empty"] = {
-        Source = "reload_xmag2_fast_empty",
+        Source = "reload_xmag2_empty_fast",
 		MinProgress = 0.8,
 		DropMagAt = 0.75,
         IKTimeLine = {
@@ -746,15 +749,10 @@ SWEP.Animations = {
             {
                 t = 0.5,
                 lhik = 0,
-                rhik = 0
+                rhik = 1
             },
             {
-                t = 0.7,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 1,
+                t = 0.93,
                 lhik = 1,
                 rhik = 1
             },
@@ -764,11 +762,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_sn_mike14_reload_empty_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_magout_arm.ogg", t = 11/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_mvmnt.ogg", t = 16/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 34/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 40/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_rotate.ogg", t = 47/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_charge.ogg", t = 59/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 60/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 22/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 27/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_charge.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["ready"] = {
@@ -776,21 +773,16 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 1,
+                lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.2,
-                lhik = 1,
+                t = 0.5,
+                lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.85,
+                t = 0.75,
                 lhik = 1,
                 rhik = 1
             },
@@ -845,11 +837,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 1.3,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 1.3,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -885,7 +877,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
             {
                 t = 0,
@@ -1024,6 +1016,21 @@ SWEP.AttachmentElements = {
     -- if wep:HasElement("scope_svd") then model:SetBodygroup(7,0) end
 -- end
 
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("stock_ebr") then 
+     model:SetPoseParameter("pistolgrip_pose", 1)
+    else
+     model:SetPoseParameter("pistolgrip_pose", 0)
+    end
+	
+    if wep:HasElement("stock_adapter") then 
+     model:SetPoseParameter("pistolgrip_pose", 1)
+    else
+     model:SetPoseParameter("pistolgrip_pose", 0)
+    end
+end
+
 SWEP.Attachments = {
     {
         PrintName = "Barrels",
@@ -1074,9 +1081,9 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"cod2019_m14_stocks"},
+        Category = {"cod2019_m14_stocks","cod2019_tube"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, -0.6),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_adapter"},
     },
@@ -1148,6 +1155,6 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 4
-SWEP.CodAngledGripPoseParam = 4
-SWEP.CodStubbyGripPoseParam = 6.5
+SWEP.CodAngledGripPoseParam = 14
+SWEP.CodStubbyGripPoseParam = 6
 SWEP.GripPoseParam2 = 0.5

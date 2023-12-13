@@ -14,6 +14,7 @@ ENT.PhysBoxSize = false
 ENT.SphereSize = false
 ENT.PhysMat = "grenade"
 ENT.LifeTime = 1.5
+ENT.Radius = 100
 ENT.ExplodeOnImpact = false
 ENT.SmokeTrail = false
 ENT.BounceSound = "COD2019.Flash.Bounce"
@@ -43,9 +44,62 @@ local function isCowerSupportedForNPC(npc)
     return false
 end
 
-function ENT:Detonate()
+function ENT:Initialize()
+    if SERVER then
+        self:SetModel( self.Model )
+        self:SetMoveType( MOVETYPE_VPHYSICS )
+        self:SetSolid( SOLID_VPHYSICS )
+        self:PhysicsInit( SOLID_VPHYSICS )
+        self:DrawShadow( true )
+		self:SetAngles(Angle(0, 0, -75))
+		
+        local phys = self:GetPhysicsObject()
+        if phys:IsValid() then
+            phys:Wake()
+            phys:SetBuoyancyRatio(0)
+        end
 
-    self:EmitSound("MW19_Crossbow.Flashbang")
+        self.SpawnTime = CurTime()
+
+        timer.Simple(0, function()
+            if !IsValid(self) then return end
+            self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
+        end)
+    end
+end
+
+function ENT:Detonate()
+    if not self:IsValid() then return end
+    if self.Defused then return end
+    if self:WaterLevel() > 0 then
+        local tr = util.TraceLine({
+            start = self:GetPos(),
+            endpos = self:GetPos() + Vector(0, 0, 1) * 1024,
+            filter = self,
+        })
+        local tr2 = util.TraceLine({
+            start = tr.HitPos,
+            endpos = self:GetPos(),
+            filter = self,
+            mask = MASK_WATER
+        })
+        ParticleEffect("explosion_water", tr2.HitPos + Vector(0, 0, 8), Angle(0, 0, 0), nil)
+
+        self:EmitSound("weapons/underwater_explode3.wav", 100)
+    else
+        ParticleEffect("smoke_plume", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("grenade_smoke", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("grenade_smoke_b", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("grenade_shockwave", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("grenade_shockwave_b", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("he_flares", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("explosion_lensflare", self:GetPos(), Angle(0, 0, 0), nil)
+
+        self:EmitSound("COD2019.Flash.Explode")
+    end
+	
+    util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 128, 64)
+    util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
 
     local radius = 1200
     local owner = self:GetOwner()
@@ -60,7 +114,7 @@ function ENT:Detonate()
             local distDelta = 1 - math.Clamp(dist / (radius * radius), 0, 1)
             local strength = Lerp(distDelta, 0, 2)
 
-            e:SendLua("LocalPlayer():EmitSound('MW19_Crossbow.Flashbang')")
+            e:SendLua("LocalPlayer():EmitSound('COD2019.Flash.Explode')")
             local dot = e:EyeAngles():Forward():Dot((e:GetPos() - self:GetPos()):GetNormalized())
             strength = strength * math.max(-dot, 0.1)
 
