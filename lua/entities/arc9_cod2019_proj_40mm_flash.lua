@@ -4,7 +4,8 @@ ENT.Base = "arc9_cod2019_proj_40mm_base"
 ENT.PrintName = "Flash Grenade"
 
 ENT.ExplosionEffect = false
-ENT.Scorch = false
+ENT.Scorch = true
+ENT.Boost = 0
 
 function ENT:EntityFacingFactor(theirent)
     local dir = theirent:EyeAngles():Forward()
@@ -19,93 +20,111 @@ function ENT:EntityFacingUs(theirent)
     if facingdir:Dot(dir) > -0.25 then return true end
 end
 
-function ENT:DoDetonation()
-    local tr = {}
-    tr.start = self:GetPos()
-    tr.mask = MASK_SOLID
+local BaseClass = baseclass.Get(ENT.Base)
 
-    for _, v in ipairs(player.GetAll()) do
-        tr.endpos = v:GetShootPos()
-
-        tr.filter = {self, v, v:GetActiveWeapon()}
-
-        local traceres = util.TraceLine(tr)
-
-        if not traceres.Hit or traceres.Fraction >= 1 or traceres.Fraction <= 0 then
-            v:SetNWFloat("ARC9_GSR_LastFlash", CurTime())
-            v:SetNWEntity("ARC9_GSR_LastFlashBy", self:GetOwner())
-            v:SetNWFloat("ARC9_GSR_FlashDistance", v:GetShootPos():Distance(self:GetPos()))
-            v:SetNWFloat("ARC9_GSR_FlashFactor", self:EntityFacingFactor(v))
-
-            if v:GetNWFloat("ARC9_GSR_FlashDistance", v:GetShootPos():Distance(self:GetPos())) < 1500 and v:GetNWFloat("FlashFactor", self:EntityFacingFactor(v)) < tr.endpos:Distance(self:GetPos(v)) then
-                if v:GetNWFloat("ARC9_GSR_FlashDistance", v:GetShootPos():Distance(self:GetPos())) < 1000 then
-                    v:SetDSP(37, false)
-                elseif v:GetNWFloat("ARC9_GSR_FlashDistance", v:GetShootPos():Distance(self:GetPos())) < 800 then
-                    v:SetDSP(36, false)
-                elseif v:GetNWFloat("ARC9_GSR_FlashDistance", v:GetShootPos():Distance(self:GetPos())) < 600 then
-                    v:SetDSP(35, false)
-                end
-            end
+local function isCowerSupportedForNPC(npc)
+    for _, a in pairs(npc:GetSequenceList()) do
+        if (npc:GetSequenceActivity(npc:LookupSequence(a)) == ACT_COWER) then
+            return true
         end
     end
 
+    return false
+end
+
+local lethalToNpcs = {
+"npc_barnacle",
+"npc_crow",
+"npc_pigeon",
+"npc_seagull",
+"npc_zombie",
+"npc_fastzombie",
+"npc_zombie_torso",
+"npc_zombine",
+"npc_headcrab",
+"npc_headcrab_black",
+"npc_headcrab_fast",
+"npc_headcrab_fast",
+"npc_lambdaplayer",
+}
+
+function ENT:Detonate()
+    if not self:IsValid() then return end
+    if self.Defused then return end
     if self:WaterLevel() > 0 then
         local tr = util.TraceLine({
             start = self:GetPos(),
             endpos = self:GetPos() + Vector(0, 0, 1) * 1024,
             filter = self,
         })
-
         local tr2 = util.TraceLine({
             start = tr.HitPos,
             endpos = self:GetPos(),
             filter = self,
             mask = MASK_WATER
         })
-
         ParticleEffect("explosion_water", tr2.HitPos + Vector(0, 0, 8), Angle(0, 0, 0), nil)
+
         self:EmitSound("weapons/underwater_explode3.wav", 100)
     else
-        --ParticleEffect("bumpmine_detonate", self:GetPos(), Angle(0, 0, 0), nil)
-		ParticleEffect("smoke_plume", self:GetPos(), Angle(-90, 0, 0))
-        ParticleEffect("weapon_decoy_ground_effect_shot", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("explosion_hegrenade_brief", self:GetPos(), Angle(0, 0, 0), nil)
-        self:EmitSound("CSGO.Flashbang.Explode")
+        ParticleEffect("smoke_plume", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("grenade_smoke", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("grenade_smoke_b", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("grenade_shockwave", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("grenade_shockwave_b", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("he_flares", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("explosion_lensflare", self:GetPos(), Angle(0, 0, 0), nil)
+
+        self:EmitSound("COD2019.Flash.Explode")
     end
+	
+    util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 256, 32)
+    util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
 
-    for _, v in ipairs(ents.GetAll()) do
-        if v:IsNPC() and self:EntityFacingUs(v) then
-            tr.endpos = v.GetShootPos and v:GetShootPos() or v:GetPos()
+    local radius = 1200
+    local owner = self:GetOwner()
 
-            tr.filter = {self, v, v.GetActiveWeapon and v:GetActiveWeapon() or v}
+    for _, e in pairs(ents.FindInSphere(self:GetPos(), radius)) do
+        if ((e:IsPlayer() || e:IsNPC()) && !e:IsLineOfSightClear(self:GetPos())) then
+            continue
+        end
+        
+        if (e:IsPlayer()) then
+            local dist = e:GetPos():DistToSqr(self:GetPos())
+            local distDelta = 1 - math.Clamp(dist / (radius * radius), 0, 1)
+            local strength = Lerp(distDelta, 0, 2)
 
-            local traceres = util.TraceLine(tr)
+            e:SendLua("LocalPlayer():EmitSound('COD2019.Flash.Explode')")
+            local dot = e:EyeAngles():Forward():Dot((e:GetPos() - self:GetPos()):GetNormalized())
+            strength = strength * math.max(-dot, 0.1)
 
-            if not traceres.Hit or traceres.Fraction >= 1 or traceres.Fraction <= 0 then
-                local flashdistance = tr.endpos:Distance(self:GetPos())
-                local flashtime = CurTime()
-                local distancefac = 1 - math.Clamp((flashdistance - gsr_flashdistance + gsr_flashdistancefade) / gsr_flashdistancefade, 0, 1)
-                local intensity = 1 - math.Clamp(((CurTime() - flashtime) / distancefac - gsr_flashtime + gsr_flashfade) / gsr_flashfade, 0, 1)
+            e:ScreenFade(SCREENFADE.IN, color_white, strength, strength * 0.5)
+            e:SetDSP(35)
 
-                if intensity > 0.2 then
-                    v:SetEnemy(nil)
-                    v:SetNPCState(NPC_STATE_PLAYDEAD)
+            continue
+        end
 
-                    timer.Simple(intensity * gsr_flashtime * 2, function()
-                        if not IsValid(v) then return end
-                        v:SetNPCState(NPC_STATE_IDLE)
-                    end)
+        if (e:IsNPC()) then
+            e:StartEngineTask(89, 0) --task_sound_pain
 
-                    if v.ClearEnemyMemory then
-                        v:ClearEnemyMemory()
-                    end
+            if (isCowerSupportedForNPC(e)) then
+                e:SetSchedule(SCHED_COWER)
+            else
+                if (table.HasValue(lethalToNpcs, e:GetClass())) then
+                    e:TakeDamage(e:Health(), self:GetOwner(), self || nil)
                 end
             end
+
+            continue
         end
     end
-
+	
     if SERVER then
         local dir = self.HitVelocity or self:GetVelocity()
+
+        if self.Boost <= 0 then
+            dir = Vector(0, 0, -1)
+        end
 
         self:FireBullets({
             Attacker = self,
@@ -122,10 +141,6 @@ function ENT:DoDetonation()
         })
     end
 
-    local dlight = EffectData()
-    dlight:SetOrigin(self:GetPos())
-    dlight:SetEntity(self.Owner) --i dunno, just use it!
-    util.Effect("arc9_flashbang_light", dlight)
-    self.deactivated = true
+    sound.EmitHint(SOUND_DANGER, self:GetPos(), radius, 6, nil) --needed for task (make them blinded for a little longer)
     self:Remove()
 end

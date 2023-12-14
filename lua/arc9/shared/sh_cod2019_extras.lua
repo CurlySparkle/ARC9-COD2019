@@ -40,9 +40,9 @@ sound.Add( {
     level = 120,
     pitch = {95, 110},
     sound = {
-        "weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_01.ogg",
-        "weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_02.ogg",
-        "weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_03.ogg",
+        "^weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_01.ogg",
+        "^weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_02.ogg",
+        "^weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_03.ogg",
     }
 } )
 
@@ -78,9 +78,9 @@ sound.Add( {
     level = 120,
     pitch = {95, 110},
     sound = {
-        "weapons/cod2019/throwables/flashbang/phy_flash_bounce_concrete_hard_01_ext.ogg",
-        "weapons/cod2019/throwables/flashbang/phy_flash_bounce_concrete_hard_02_ext.ogg",
-        "weapons/cod2019/throwables/flashbang/phy_flash_bounce_concrete_hard_03_ext.ogg",
+        "^weapons/cod2019/throwables/flashbang/phy_flash_bounce_concrete_hard_01_ext.ogg",
+        "^weapons/cod2019/throwables/flashbang/phy_flash_bounce_concrete_hard_02_ext.ogg",
+        "^weapons/cod2019/throwables/flashbang/phy_flash_bounce_concrete_hard_03_ext.ogg",
     }
 } )
 

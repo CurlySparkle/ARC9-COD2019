@@ -49,7 +49,7 @@ ATT.CompactName = "Napalm"
 ATT.Description = [[Changes the nade type to a fire type napalm nade that creates an AoE on impact.]]
 ATT.SortOrder = 1
 
-ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_inc.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_fire.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 

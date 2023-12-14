@@ -13,7 +13,7 @@ sound.Add({
     volume = 0.25, 
     level = 75,
     pitch = {95, 105},
-    sound = {"^weapons/cod2019/throwables/smoke/smoke_expl_pop.ogg"}
+    sound = {"^weapons/cod2019/throwables/smoke/smoke_grenade_smoke_loop.ogg"}
 }) 
 
 sound.Add({
@@ -22,7 +22,7 @@ sound.Add({
     volume = 0.25, 
     level = 75,
     pitch = {95, 105},
-    sound = {"^weapons/cod2019/crossbow/smoke_grenade_smoke_loop_end.ogg"}
+    sound = {"^weapons/cod2019/throwables/smoke/smoke_grenade_smoke_loop_end.ogg"}
 }) 
 
 sound.Add({
@@ -31,5 +31,5 @@ sound.Add({
     volume = 1, 
     level = 100,
     pitch = {95, 105},
-    sound = {"^weapons/cod2019/crossbow/smoke_expl_body_01.ogg"}
+    sound = {"^weapons/cod2019/throwables/smoke/smoke_grenade_body_01.ogg"}
 }) 
