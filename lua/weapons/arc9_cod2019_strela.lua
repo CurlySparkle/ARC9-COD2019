@@ -426,6 +426,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_la_kgolf_inspect_01.ogg", t = 1/30},
 			{s = path .. "wfoly_la_kgolf_inspect_02.ogg", t = 88/30},
 			{s = path .. "wfoly_la_kgolf_inspect_03.ogg", t = 135/30},
+			{s = path .. "wfoly_la_kgolf_reload_raise.ogg", t = 3.25},
+			{s = path .. "wfoly_la_kgolf_reload_breechopen.ogg", t = 4.21},
+			{s = path .. "wfoly_la_kgolf_reload_breechclose2.ogg", t = 6.17},
+			{s = path .. "wfoly_la_kgolf_reload_end.ogg", t = 6.62},
         },
     },
     ["bash"] = {

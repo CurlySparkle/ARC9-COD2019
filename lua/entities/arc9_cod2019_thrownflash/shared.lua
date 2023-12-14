@@ -44,6 +44,22 @@ local function isCowerSupportedForNPC(npc)
     return false
 end
 
+local lethalToNpcs = {
+"npc_barnacle",
+"npc_crow",
+"npc_pigeon",
+"npc_seagull",
+"npc_zombie",
+"npc_fastzombie",
+"npc_zombie_torso",
+"npc_zombine",
+"npc_headcrab",
+"npc_headcrab_black",
+"npc_headcrab_fast",
+"npc_headcrab_fast",
+"npc_lambdaplayer",
+}
+
 function ENT:Initialize()
     if SERVER then
         self:SetModel( self.Model )
