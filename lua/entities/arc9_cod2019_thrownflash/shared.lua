@@ -98,7 +98,7 @@ function ENT:Detonate()
         self:EmitSound("COD2019.Flash.Explode")
     end
 	
-    util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 128, 64)
+    util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 256, 32)
     util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
 
     local radius = 1200
@@ -137,6 +137,28 @@ function ENT:Detonate()
 
             continue
         end
+    end
+	
+    if SERVER then
+        local dir = self.HitVelocity or self:GetVelocity()
+
+        if self.Boost <= 0 then
+            dir = Vector(0, 0, -1)
+        end
+
+        self:FireBullets({
+            Attacker = self,
+            Damage = 0,
+            Tracer = 0,
+            Distance = 256,
+            Dir = dir,
+            Src = self:GetPos(),
+            Callback = function(att, tr, dmg)
+                if self.Scorch then
+                    util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
+                end
+            end
+        })
     end
 
     sound.EmitHint(SOUND_DANGER, self:GetPos(), radius, 6, nil) --needed for task (make them blinded for a little longer)

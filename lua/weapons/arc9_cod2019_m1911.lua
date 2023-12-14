@@ -91,7 +91,7 @@ SWEP.Recoil = 1
 
 --SWEP.RecoilSeed = nil
 
-SWEP.RecoilPatternDrift = 15
+SWEP.RecoilPatternDrift = 2
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -121,11 +121,23 @@ SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.1
 SWEP.VisualRecoilRoll = 55
-SWEP.VisualRecoilSide = -1/6
+SWEP.VisualRecoilSide = 0.5
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 30
 SWEP.VisualRecoilDampingConstSights = 50
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -200,7 +212,7 @@ SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-2.5, -6, -3.5)
+SWEP.PeekPos = Vector(-3.5, -5, -3)
 SWEP.PeekAng = Angle(0, 0, -45)
 
 -------------------------- HoldTypes
