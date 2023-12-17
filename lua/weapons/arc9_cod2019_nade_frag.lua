@@ -167,7 +167,7 @@ SWEP.Animations = {
         Source = "pullout",
         MinProgress = 0.666,
         FireASAP = true,
-		Mult = 1.5,
+		Mult = 1.3,
         EventTable = {
             {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
             {s = path .. "grenade_pin_frag_01.ogg", t = 0/30},

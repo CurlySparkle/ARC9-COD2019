@@ -164,7 +164,7 @@ SWEP.Animations = {
     ["pullpin"] = {
         Source = "pullout",
         MinProgress = 0.666,
-		Mult = 1.5,
+		Mult = 1.3,
         FireASAP = true,
         EventTable = {
             {s = path .. "grenade_pin_semtex.ogg", t = 0/30},

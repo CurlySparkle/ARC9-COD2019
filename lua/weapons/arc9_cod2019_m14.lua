@@ -1009,6 +1009,9 @@ SWEP.AttachmentElements = {
             {3,3},
         },
     },
+	["grip_angled"] = {
+    AttPosMods = { [5] = { Pos = Vector(-2.5, 0, 0), } }
+	}
 }
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)

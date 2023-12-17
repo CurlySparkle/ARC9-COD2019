@@ -191,6 +191,9 @@ SWEP.CustomizeRotateAnchor = Vector(13, 0, 0)
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 25, 3)
 
+SWEP.PeekPos = Vector(1.2, 1.5, -1.7)
+SWEP.PeekAng = Angle(0, 1, -25)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "rpg"
@@ -206,8 +209,8 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_pistol_suppressed"
-SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
+SWEP.MuzzleParticle = "muzzleflash_m79"
+SWEP.AfterShotParticle = ""
 SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1

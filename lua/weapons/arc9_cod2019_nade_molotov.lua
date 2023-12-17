@@ -148,6 +148,14 @@ SWEP.Animations = {
     ["idle_primed"] = {
         Source = "idle_primed"
     },
+    ["ready"] = {
+        Source = "draw",
+        MinProgress = 0.3,
+        FireASAP = true,
+        EventTable = {
+            {s = path .. "weap_molotov_pullout_01.ogg", t = 0/30},
+        },
+    },
     ["draw"] = {
         Source = "draw",
         MinProgress = 0.3,

@@ -99,7 +99,7 @@ SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = 6589132
 
-SWEP.RecoilPatternDrift = 25
+SWEP.RecoilPatternDrift = 10
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -108,7 +108,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.3
+SWEP.RecoilRandomSide = 0.1
 
 SWEP.RecoilDissipationRate = 50 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -126,13 +126,13 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.1
-SWEP.VisualRecoilPunchSights = 55
+SWEP.VisualRecoilMultSights = 0.4
+SWEP.VisualRecoilPunchSights = 15
 
-SWEP.VisualRecoilPunch = 3
+SWEP.VisualRecoilPunch = 1.5
 SWEP.VisualRecoilUp = 0.4
-SWEP.VisualRecoilRoll = 25
-SWEP.VisualRecoilSide = 0.3
+SWEP.VisualRecoilRoll = 50
+SWEP.VisualRecoilSide = 0.4
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 80
@@ -225,6 +225,9 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1.2, 1.5, -3.5)
+SWEP.PeekAng = Angle(0, 0.4, -45)
 
 -------------------------- HoldTypes
 
@@ -416,11 +419,149 @@ SWEP.Animations = {
         },
     },
     ["reload_fast"] = {
-        Source = "reload_short2",
+        Source = "reload_fast",
 		MinProgress = 0.8,
 		FireASAP = true,
-		DropMagAt = 0.38,
-		Mult = 0.7,
+		DropMagAt = 0.45,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_fast_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_magout_v2.ogg", t = 3/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 28/30},
+			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 35/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_empty_fast_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magout_v2.ogg", t = 5/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 25/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 34/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 44/30},
+        },
+    },
+    ["reload_smg"] = {
+        Source = "reload_calsmg",
+		MinProgress = 0.8,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_magout_v2.ogg", t = 18/30},
+			{s = path .. "wpfoly_mike4_reload_magin_01.ogg", t = 29/30},
+			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 31/30},
+			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 52/30},
+        },
+    },
+    ["reload_smg_empty"] = {
+        Source = "reload_calsmg_empty",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.39,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_empty_magout_v2.ogg", t = 5/30},
+			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 31/30},
+			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 53/30},
+			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 63/30},
+        },
+    },
+    ["reload_fast_smg"] = {
+        Source = "reload_calsmg_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.45,
         IKTimeLine = {
             {
                 t = 0,
@@ -446,13 +587,13 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_fast_lift_v2.ogg", t = 0/30},
 			{s = path .. "wpfoly_mike4_reload_fast_magout_v2.ogg", t = 5/30},
-			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 33/30},
-			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 37/30},
-			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 54/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 27/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 30/30},
+			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 35/30},
         },
     },
-    ["reload_fast_empty"] = {
-        Source = "reload_fast_empty",
+    ["reload_fast_smg_empty"] = {
+        Source = "reload_calsmg_fast_empty",
 		MinProgress = 0.8,
 		FireASAP = true,
 		DropMagAt = 0.4,
@@ -672,10 +813,20 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_smg") then
+        return "reload_smg_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_smg") then 
+        return "reload_smg_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_smg") then
+        return "reload_smg"
+    elseif anim == "reload_empty" and wep:HasElement("mag_smg") then 
+        return "reload_smg_empty"
     end
 end
 

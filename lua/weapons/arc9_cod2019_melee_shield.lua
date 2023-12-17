@@ -138,17 +138,12 @@ SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 -------------------------- HoldTypes
 
-SWEP.HoldType = "melee"
-SWEP.HoldTypeSprint = "melee2"
-SWEP.HoldTypeHolstered = "normal"
-SWEP.HoldTypeSights = "melee"
-SWEP.HoldTypeCustomize = "slam"
+SWEP.HoldTypeHolstered = "none"
+SWEP.HoldType = "melee2"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
-SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_PISTOL
-SWEP.AnimDraw = false
-SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_MELEE
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
+SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
+SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 
 function SWEP:SecondaryAttack()
     return self:MeleeAttack()
