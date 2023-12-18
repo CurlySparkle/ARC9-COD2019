@@ -300,7 +300,7 @@ sound.Add({
 --- AR ---
 sound.Add({
     name = "Distant_AR.Inside",
-    channel = CHAN_ATMO,
+    channel = CHAN_INDOORDISTANT,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -309,7 +309,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_AR_Sup.Inside",
-    channel = CHAN_ATMO,
+    channel = CHAN_INDOORDISTANT,
     pitch = {80,110},
     volume = 1,
     sound = {"weapons/cod2019/shared/atmo/AR/weap_ar_sup_fire_plr_atmo_int1_01.ogg",
@@ -323,7 +323,7 @@ sound.Add({
 --- DMR ---
 sound.Add({
     name = "Distant_DMR_Sup.Inside",
-    channel = CHAN_ATMO,
+    channel = CHAN_INDOORDISTANT,
     pitch = {80,110},
     volume = 1,
     sound = {"weapons/cod2019/shared/atmo/DMR/weap_dmr_sup_fire_plr_atmo_int1_01.ogg",
