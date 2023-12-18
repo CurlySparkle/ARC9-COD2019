@@ -193,7 +193,12 @@ sound.Add( {
     volume = 1,
     pitch = {90,110},
     sound = {
-		"^weapons/cod2019/ak47/weap_akilo47_smg_plr_01.ogg",
+		"weapons/cod2019/ak47/weap_akilo47_smg_plr_01.ogg",
+		"weapons/cod2019/ak47/weap_akilo47_smg_plr_02.ogg",
+		"weapons/cod2019/ak47/weap_akilo47_smg_plr_03.ogg",
+		"weapons/cod2019/ak47/weap_akilo47_smg_plr_04.ogg",
+		"weapons/cod2019/ak47/weap_akilo47_smg_plr_05.ogg",
+		"weapons/cod2019/ak47/weap_akilo47_smg_plr_06.ogg",
     }              
 } )
 

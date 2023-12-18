@@ -254,7 +254,7 @@ SWEP.ShootSoundSilencedIndoor = "COD2019.50GS.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Pistol.Outside"
-SWEP.DistantShootSound = "Distant_Pistol.Outside"
+SWEP.DistantShootSound = "Distant_Pistol_Mag.Outside"
 -- Inside
 SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
 SWEP.DistantShootSoundIndoor = "Distant_Shotgun.Inside"

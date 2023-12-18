@@ -194,6 +194,9 @@ SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
+SWEP.PeekPos = Vector(-1.5, -1, -4.5)
+SWEP.PeekAng = Angle(0, 0.4, -45)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "revolver"
@@ -232,7 +235,7 @@ SWEP.ShootSoundSilencedIndoor = "COD2019.357.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Pistol.Outside"
-SWEP.DistantShootSound = "Distant_Pistol.Outside"
+SWEP.DistantShootSound = "Distant_Pistol_Mag.Outside"
 -- Inside
 SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
 SWEP.DistantShootSoundIndoor = "Distant_Shotgun.Inside"
@@ -392,6 +395,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.2,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_pi_cpapa_charge_raise.ogg", t = 0/30},
         },
@@ -550,7 +555,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_reflex",
-        Pos = Vector(1.5, 0, -0.07),
+        Pos = Vector(1, 0, -0.07),
         Ang = Angle(0, 0, 0),
         Category = "cod2019_optic",
         CorrectiveAng = Angle(0, 0, 0),

@@ -239,7 +239,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M32.Fire",
-    channel =        CHAN_WEAPON,
+    channel = CHAN_WEAPON,
     level = 90,
     volume = 1,
     pitch = {100,100},
@@ -305,7 +305,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Strela.Fire",
-    channel = 10,
+    channel = CHAN_WEAPON,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -319,7 +319,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Pila.Fire",
-    channel = 10,
+    channel = CHAN_WEAPON,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -334,7 +334,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.RPG.Fire",
-    channel = 10,
+    channel = CHAN_WEAPON,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -349,7 +349,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Crossbow.Fire",
-    channel = 10,
+    channel = CHAN_WEAPON,
     volume = 1.0,
     level = 120,
     pitch = {90,110},
@@ -361,7 +361,7 @@ sound.Add( {
 
 sound.Add({
     name = "COD2019.Knife.Swing",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1,
     level = 100,
     pitch = {90, 110},
@@ -377,7 +377,7 @@ sound.Add({
 
 sound.Add({
     name = "COD2019.Knife.Hit_Flesh",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1,
     level = 100,
     pitch = {90, 110},
@@ -392,7 +392,7 @@ sound.Add({
 
 sound.Add({
     name = "COD2019.Knife.Hit_World",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1,
     level = 100,
     pitch = {90, 110},
@@ -407,7 +407,7 @@ sound.Add({
 
 sound.Add( {
     name = "COD2019.Melee.Swing",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 125,
     pitch = {95, 115},
@@ -421,7 +421,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Melee.HitBody",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 125,
     pitch = {95, 115},
@@ -435,7 +435,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Melee.HitWall",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 125,
     pitch = {95, 115},
@@ -450,7 +450,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Shield.HitBody",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 125,
     pitch = {95, 115},
@@ -464,7 +464,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Shield.HitWall",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 125,
     pitch = {95, 115},
@@ -478,7 +478,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Knife.Throw",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 125,
     pitch = {95, 115},
@@ -491,7 +491,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Knife.Prepare",
-    channel = 10,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 125,
     pitch = {95, 115},

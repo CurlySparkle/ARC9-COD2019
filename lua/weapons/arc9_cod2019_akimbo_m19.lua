@@ -282,6 +282,14 @@ SWEP.DistantShootSoundSilencedIndoor = "Layer_ARSUP.Inside"
 SWEP.EnterSightsSound = path .. "weap_pi_papa320_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "weap_pi_papa320_ads_down.ogg"
 
+SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/m19/weap_papa320_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/m19/weap_papa320_disconnector_plr_01.ogg"
+
+
 SWEP.BulletBones = {
     [1] = "j_bullet01",
     [2] = "j_bullet02",
