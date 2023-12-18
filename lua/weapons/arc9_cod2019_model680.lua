@@ -133,7 +133,7 @@ SWEP.RecoilMultSights = 0.8
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2.5
-SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilUp = 1
 SWEP.VisualRecoilSide = -0.1
 
 SWEP.VisualRecoilMultSights = 0.3
@@ -207,7 +207,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, 0, -0.5)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -793,7 +793,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee","melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -1087,4 +1087,4 @@ SWEP.GripPoseParam = 4.3
 SWEP.GripPoseParam2 = 0.7
 SWEP.CodAngledGripPoseParam = 0
 SWEP.CodStubbyGripPoseParam = 8
-SWEP.CodStubbyTallGripPoseParam = 18
+SWEP.CodStubbyTallGripPoseParam = 22

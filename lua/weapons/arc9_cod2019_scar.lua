@@ -134,7 +134,7 @@ SWEP.VisualRecoilUp = 0.3
 
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 55
-SWEP.VisualRecoilRoll = 35
+SWEP.VisualRecoilRoll = 50
 SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilSpringPunchDamping = 11
@@ -330,6 +330,9 @@ SWEP.MalfunctionMeanShotsToFailMultHot = -0.1*2
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
+        EventTable = {
+			{s = "COD2019.Scar.Mech", t = 0/30},
+        },
     },
     ["reload"] = {
         Source = "reload_short",

@@ -1,7 +1,5 @@
 AddCSLuaFile()
 ----------- OUTSIDE ------------
- 
---- AR ---
 sound.Add({
     name = "Distant_AR.Outside",
     channel = CHAN_DISTANT,
@@ -304,7 +302,8 @@ sound.Add({
     level = 140,
     pitch = {80,110},
     volume = 1,
-    sound = "^weapons/cod2019/shared/atmo/AR/weap_ar_fire_plr_atmo_int1_01.ogg"
+    --sound = "^weapons/cod2019/shared/atmo/AR/weap_ar_fire_plr_atmo_int1_01.ogg"
+    sound = "weapons/cod2019/shared/atmo/AR/weap_ar_fire_plr_atmo_int1_01.ogg"
 })
 
 sound.Add({
@@ -341,7 +340,8 @@ sound.Add({
     level = 140,
     pitch = {80,110},
     volume = 1,
-    sound = "^weapons/cod2019/shared/atmo/lmg/weap_lmg_fire_plr_atmo_int1_01.ogg"
+    --sound = "^weapons/cod2019/shared/atmo/lmg/weap_lmg_fire_plr_atmo_int1_01.ogg"
+    sound = "weapons/cod2019/shared/atmo/lmg/weap_lmg_fire_plr_atmo_int1_01.ogg"
 })
 
 --- M203 ---
@@ -351,7 +351,8 @@ sound.Add({
     level = 140,
     pitch = {80,110},
     volume = 1,
-    sound = "^weapons/cod2019/shared/atmo/launcher/weap_mike203_fire_plr_atmos_int1_01.ogg"
+    --sound = "^weapons/cod2019/shared/atmo/launcher/weap_mike203_fire_plr_atmos_int1_01.ogg"
+    sound = "weapons/cod2019/shared/atmo/launcher/weap_mike203_fire_plr_atmos_int1_01.ogg"
 })
 
 --- Pistol ---
@@ -361,7 +362,8 @@ sound.Add({
     level = 140,
     pitch = {80,110},
     volume = 1,
-    sound = "^weapons/cod2019/shared/atmo/pistol/weap_pistol_fire_plr_atmo_int1_01.ogg"
+    --sound = "^weapons/cod2019/shared/atmo/pistol/weap_pistol_fire_plr_atmo_int1_01.ogg"
+    sound = "weapons/cod2019/shared/atmo/pistol/weap_pistol_fire_plr_atmo_int1_01.ogg"
 })
 
 sound.Add({
@@ -385,6 +387,7 @@ sound.Add({
     pitch = {80,110},
     volume = 1,
     sound = "^weapons/cod2019/shared/atmo/shotgun/weap_shotgun_fire_plr_atmo_int1_01.ogg"
+    --sound = "weapons/cod2019/shared/atmo/shotgun/weap_shotgun_fire_plr_atmo_int1_01.ogg"
 })
 sound.Add({
     name = "Distant_ShotgunSUP.Inside",
@@ -406,7 +409,8 @@ sound.Add({
     level = 140,
     pitch = {80,110},
     volume = 1,
-    sound = "^weapons/cod2019/shared/atmo/smg/weap_smg_fire_plr_atmo_int1_01.ogg"
+    --sound = "^weapons/cod2019/shared/atmo/smg/weap_smg_fire_plr_atmo_int1_01.ogg"
+    sound = "weapons/cod2019/shared/atmo/smg/weap_smg_fire_plr_atmo_int1_01.ogg"
 })
 
 --- RPG ---

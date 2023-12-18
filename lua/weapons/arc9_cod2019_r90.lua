@@ -194,7 +194,7 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.8, -0.5, -0.5)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -204,7 +204,7 @@ SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(15, 30, 3)
+SWEP.CustomizePos = Vector(9, 30, 5)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
@@ -622,16 +622,16 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Ammo",
-        Bone = "j_mag1",
+        Bone = "tag_mag_attach",
         Category = {"cod2019_ammo_sg"},
-        Pos = Vector(0, 0, -1.5),
+        Pos = Vector(8, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
         PrintName = "Mag",
-		Bone = "j_mag1",
+		Bone = "tag_mag_attach",
         Category = {"cod2019_mag"},
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(8, 0, 1.5),
         Ang = Angle(0, 0, 0),
     },
     {
@@ -687,7 +687,8 @@ SWEP.Attachments = {
     },
 }
 
-SWEP.GripPoseParam = 0.3
 SWEP.CodAngledGripPoseParam = 3
 SWEP.CodStubbyGripPoseParam = 5
+SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.GripPoseParam = 0.3
 SWEP.GripPoseParam2 = 0

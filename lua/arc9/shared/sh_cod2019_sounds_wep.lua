@@ -311,6 +311,21 @@ sound.Add( {
     }              
 } )
 
+sound.Add( {
+    name = "COD2019.Scar.Mech",
+    channel = CHAN_AUTO,
+    level = 120,
+    volume = 0.7,
+    sound = {
+		"weapons/cod2019/scar/weap_scharlie_mech_plr_01.ogg",
+		"weapons/cod2019/scar/weap_scharlie_mech_plr_02.ogg",
+		"weapons/cod2019/scar/weap_scharlie_mech_plr_03.ogg",
+		"weapons/cod2019/scar/weap_scharlie_mech_plr_04.ogg",
+		"weapons/cod2019/scar/weap_scharlie_mech_plr_05.ogg",
+		"weapons/cod2019/scar/weap_scharlie_mech_plr_06.ogg"
+    }              
+} )
+
 --- FR 5.56 ---
 sound.Add( {
     name = "COD2019.Famas.Fire",
@@ -336,36 +351,6 @@ sound.Add( {
         "weapons/cod2019/famas/weap_famas_sup_plr_04.ogg",
         "weapons/cod2019/famas/weap_famas_sup_plr_05.ogg",
         "weapons/cod2019/famas/weap_famas_sup_plr_06.ogg",
-    }              
-} )
-
---- G3A3 ---
-sound.Add( {
-    name = "COD2019.G3A3.Fire",
-    channel = CHAN_WEAPON,
-    volume = 1,
-    pitch = {80,110},
-    sound = {
-		"weapons/cod2019/g3a3/g3_close1_single.ogg",
-    	"weapons/cod2019/g3a3/g3_close2_single.ogg",
-    	"weapons/cod2019/g3a3/g3_close3_single.ogg",
-    	"weapons/cod2019/g3a3/g3_close4_single.ogg",
-    	"weapons/cod2019/g3a3/g3_close5_single.ogg",
-	}              
-} )
-
-sound.Add( {
-    name = "COD2019.G3A3.Fire.S",
-    channel = CHAN_WEAPON,
-    volume = 1,
-    pitch = {80,110},
-    sound = {
-		"weapons/cod2019/g3a3/weap_scharlie_sup_plr_01.ogg",
-        "weapons/cod2019/g3a3/weap_scharlie_sup_plr_02.ogg",
-        "weapons/cod2019/g3a3/weap_scharlie_sup_plr_03.ogg",
-        "weapons/cod2019/g3a3/weap_scharlie_sup_plr_04.ogg",
-        "weapons/cod2019/g3a3/weap_scharlie_sup_plr_05.ogg",
-        "weapons/cod2019/g3a3/weap_scharlie_sup_plr_06.ogg",
     }              
 } )
 
@@ -1188,43 +1173,6 @@ sound.Add( {
 	sound = {
 		"weapons/cod2019/vector/weap_victor_sup_fire_plr_01.ogg",
 	}
-} )
-
---- FSS Hurricane ---
-sound.Add( {
-    name = "COD2019.FSS.Fire",
-    channel = CHAN_WEAPON,
-	level = 140,
-    volume = 1,
-    pitch = {80,110},
-    sound = {
-		"weapons/cod2019/fss/weap_alpha57_fire_plr_shot_01.wav",
-        "weapons/cod2019/fss/weap_alpha57_fire_plr_shot_02.wav",
-        "weapons/cod2019/fss/weap_alpha57_fire_plr_shot_03.wav",
-        "weapons/cod2019/fss/weap_alpha57_fire_plr_shot_04.wav",
-        "weapons/cod2019/fss/weap_alpha57_fire_plr_shot_05.wav",
-        "weapons/cod2019/fss/weap_alpha57_fire_plr_shot_06.wav",
-		"weapons/cod2019/fss/weap_alpha57_fire_plr_shot_07.wav",
-		"weapons/cod2019/fss/weap_alpha57_fire_plr_shot_08.wav",
-    }              
-} )
-
-sound.Add( {
-    name = "COD2019.FSS.Fire.S",
-    channel = CHAN_WEAPON,
-	level = 140,
-    volume = 1,
-    pitch = {80,110},
-    sound = {
-		"weapons/cod2019/fss/weap_alpha57_sup_plr_shot_01.wav",
-        "weapons/cod2019/fss/weap_alpha57_sup_plr_shot_02.wav",
-        "weapons/cod2019/fss/weap_alpha57_sup_plr_shot_03.wav",
-        "weapons/cod2019/fss/weap_alpha57_sup_plr_shot_04.wav",
-        "weapons/cod2019/fss/weap_alpha57_sup_plr_shot_05.wav",
-        "weapons/cod2019/fss/weap_alpha57_sup_plr_shot_06.wav",
-		"weapons/cod2019/fss/weap_alpha57_sup_plr_shot_07.wav",
-		"weapons/cod2019/fss/weap_alpha57_sup_plr_shot_08.wav",
-    }              
 } )
 
 --- ISO ---

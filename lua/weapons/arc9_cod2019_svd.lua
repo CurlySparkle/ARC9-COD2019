@@ -123,17 +123,29 @@ SWEP.RecoilMultSights = 0.65
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 55
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 15
 
-SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 0.2
-SWEP.VisualRecoilRoll = 3
+SWEP.VisualRecoilRoll = 50
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 10
 SWEP.VisualRecoilDampingConstSights = 50
 SWEP.VisualRecoilSpringMagnitude = 1
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -193,8 +205,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -1, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -1006,4 +1018,4 @@ SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 25.9
 SWEP.CodStubbyGripPoseParam = 6
-SWEP.CodStubbyTallGripPoseParam = 1
+SWEP.CodStubbyTallGripPoseParam = 22
