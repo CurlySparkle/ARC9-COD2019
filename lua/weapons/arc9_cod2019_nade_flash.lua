@@ -3,7 +3,7 @@ SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_flash")
 SWEP.Base = "arc9_cod2019_base_nade"
 
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "Specials"
+SWEP.SubCategory = "Throwable"
 
 SWEP.Spawnable = true
 SWEP.AdminOnly = false
