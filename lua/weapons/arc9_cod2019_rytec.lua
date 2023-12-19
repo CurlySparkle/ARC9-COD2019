@@ -113,7 +113,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilKick = 5
-SWEP.RecoilKickSights = 3
+SWEP.RecoilKickSights = 5
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
@@ -126,6 +126,7 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilSpringMagnitude = 5
 SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilRoll = 50
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -546,11 +547,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 1.3,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 1.3,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -630,8 +631,8 @@ SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(-1.7, -0.2, 0.8),
-	ModelAngleOffset = Angle(0, 0, 35),
+    ModelOffset = Vector(19, 0, 0),
+	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.8,
     },
     ["csgo_cod2019_laser_01"] = {
@@ -730,14 +731,14 @@ SWEP.Attachments = {
         PrintName = "Barrels",
         DefaultAttName = "Standard Barrel",
         Category = {"cod2019_rytec_barrel"},
-        Bone = "tag_attachments",
-        Pos = Vector(30, 0, 0.25),
+        Bone = "tag_barrel_attach",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
         PrintName = "Optics",
-        Bone = "tag_attachments",
-        Pos = Vector(10, 0, 2),
+        Bone = "tag_scope",
+        Pos = Vector(3, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_optic_rytec"},
         CorrectiveAng = Angle(1.5, 0.6, 0),
@@ -748,7 +749,7 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = {"cod2019_muzzle","cod2019_muzzle_shot"},
+        Category = "cod2019_muzzle",
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -779,8 +780,8 @@ SWEP.Attachments = {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
         Category = {"cod2019_rytec_stock"},
-        Bone = "tag_attachments",
-        Pos = Vector(0, 0, 0.25),
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
@@ -840,29 +841,19 @@ SWEP.Attachments = {
     {
         PrintName = "Charm",
         Category = "charm",
-        Bone = "tag_attachments",
-        Pos = Vector(9, -1.15, 0.2),
+        Bone = "tag_cosmetic",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
     },
     {
         PrintName = "Stats",
         Category = {"killcounter","killcounter2"},
-        Bone = "tag_attachments",
-        Pos = Vector(9, -1.15, 0.1),
+        Bone = "tag_cosmetic",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
-    {
-        PrintName = "lhik",
-        Bone = "tag_attachments",
-        Pos = Vector(19.5, -0.3, -0.3),
-        Ang = Angle(0, 0, 180),
-        Category = "cod2019_lhik_rytec",
-		Installed = "csgo_cod2019_lhik_rytec",
-        Integral = true,
-        Hidden = true,		
-    },	
 }
 
 SWEP.GripPoseParam = 3

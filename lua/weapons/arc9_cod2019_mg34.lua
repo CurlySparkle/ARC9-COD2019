@@ -323,9 +323,10 @@ SWEP.HideBones  = {
     [3] = "j_mag_handle_secondary",
 }
 
-SWEP.TriggerDelay = 0.14 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = 0.15 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.14 -- Time until weapon fires.
+SWEP.TriggerDelayCancellable = false
+SWEP.TriggerDelayTime = 0.15 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/mg34/weap_mgolf34_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/mg34/weap_mgolf34_disconnector_plr_01.ogg"

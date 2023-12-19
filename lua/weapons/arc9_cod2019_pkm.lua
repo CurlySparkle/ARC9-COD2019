@@ -310,12 +310,13 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
-SWEP.TriggerDelay = 0.1 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = 0.15 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
+SWEP.TriggerDelayCancellable = false
+SWEP.TriggerDelayTime = 0.15 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/pkm/weap_pkilo_prefire_plr_01.ogg"
-SWEP.TriggerUpSound = ""
+SWEP.TriggerDownSound = path .. "weap_pkilo_prefire_plr_01.ogg"
+SWEP.TriggerUpSound = path .. ""
 
 SWEP.Animations = {
     ["fire"] = {
@@ -597,7 +598,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,

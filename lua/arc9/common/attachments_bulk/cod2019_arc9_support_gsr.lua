@@ -4,7 +4,7 @@ ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = [[GSR Tacticals]]
-ATT.CompactName = [[GSR Tac]]
+ATT.CompactName = [[GSRT]]
 ATT.Description = [[Lets you use tactical attachments from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
@@ -32,7 +32,7 @@ ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = [[GSR Optics]]
-ATT.CompactName = [[GSR Optics]]
+ATT.CompactName = [[GSRO]]
 ATT.Description = [[Lets you use optic attachments from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
@@ -60,7 +60,7 @@ ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = [[GSR Optics]]
-ATT.CompactName = [[GSR Optics]]
+ATT.CompactName = [[GSRO]]
 ATT.Description = [[Lets you use pistol optics from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
@@ -88,7 +88,7 @@ ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = [[GSR Muzzles]]
-ATT.CompactName = [[GSR Muzzles]]
+ATT.CompactName = [[GSRM]]
 ATT.Description = [[Lets you use muzzles from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
@@ -116,7 +116,7 @@ ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = [[GSR Muzzles]]
-ATT.CompactName = [[GSR Muzzles]]
+ATT.CompactName = [[GSRM]]
 ATT.Description = [[Lets you use muzzles from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
@@ -146,7 +146,7 @@ ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = [[GSR Muzzles]]
-ATT.CompactName = [[GSR Muzzles]]
+ATT.CompactName = [[GSRM]]
 ATT.Description = [[Lets you use muzzles from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
@@ -174,7 +174,7 @@ ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = [[GSR Grips]]
-ATT.CompactName = [[GSR Grips]]
+ATT.CompactName = [[GSRG]]
 ATT.Description = [[Lets you use grips from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 

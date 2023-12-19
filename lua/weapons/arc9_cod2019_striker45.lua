@@ -98,19 +98,19 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.3
+SWEP.Recoil = 1.4
 
 SWEP.RecoilSeed = 6215
 
-SWEP.RecoilPatternDrift = 45
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
 SWEP.RecoilSide = 0.5 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.4
+SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
@@ -128,20 +128,20 @@ SWEP.RecoilMultSights = 0.8
 
 SWEP.UseVisualRecoil = true
 
-SWEP.VisualRecoilMultSights = 0.7
-SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilPunchSights = 5
 SWEP.VisualRecoilUpSights = 0.1
 SWEP.VisualRecoilSideSights = 0.1
 SWEP.VisualRecoilRollSights = 15
 
 SWEP.VisualRecoilPunch = 1.5
 SWEP.VisualRecoilUp = 1
-SWEP.VisualRecoilRoll = 55
-SWEP.VisualRecoilSide = 0.3
+SWEP.VisualRecoilRoll = 50
+SWEP.VisualRecoilSide = 0.5
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 30
-SWEP.VisualRecoilDampingConstSights = 80
+SWEP.VisualRecoilDampingConstSights = 120
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -229,6 +229,9 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1.2, 1.5, -3.5)
+SWEP.PeekAng = Angle(0, 0.4, -45)
 
 -------------------------- HoldTypes
 
@@ -578,7 +581,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,

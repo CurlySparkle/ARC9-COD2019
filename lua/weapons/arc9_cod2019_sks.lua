@@ -969,16 +969,6 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
-    {
-        PrintName = "lhik",
-        Bone = "tag_grip_attach",
-        Pos = Vector(-2, -0.1, 0.4),
-        Ang = Angle(0, 0, 180),
-        Category = "cod2019_lhik_sks",
-		Installed = "csgo_cod2019_lhik_sks",
-        Integral = true,
-        Hidden = true,		
-    },	
 }
 
 SWEP.GripPoseParam = 5

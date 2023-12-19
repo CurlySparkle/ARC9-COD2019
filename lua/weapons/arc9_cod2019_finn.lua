@@ -336,6 +336,7 @@ SWEP.HideBones  = {
 
 SWEP.TriggerDelay = 0.05 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/sa87/weap_lima86_fire_first_plr_01.ogg"
