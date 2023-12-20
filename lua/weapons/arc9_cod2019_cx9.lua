@@ -113,7 +113,7 @@ SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = 67676767
 
-SWEP.RecoilPatternDrift = 35
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
@@ -140,13 +140,15 @@ SWEP.RecoilMultSights = 0.85
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1.5
+SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 0.3
-
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 25
-SWEP.VisualRecoilRoll = 35
+SWEP.VisualRecoilRoll = 50
 SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 1
+SWEP.VisualRecoilSideSights = 0.1
+SWEP.VisualRecoilRollSights = 10
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -235,6 +237,9 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1.5, 3, -3.2)
+SWEP.PeekAng = Angle(-1, 1, -45)
 
 -------------------------- HoldTypes
 
@@ -822,6 +827,9 @@ SWEP.AttachmentElements = {
             {4,1},
         },
     },
+	["grip_angled"] = {
+    AttPosMods = { [5] = { Pos = Vector(-2.5, 0, 0), } }	
+	}
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -873,7 +881,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-1, 0, 0),
+        Pos = Vector(-1.1, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
     },
@@ -882,7 +890,7 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Stock",
         Category = {"stock_retract","cod2019_cx9_stock","cod2019_tube"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-0.3, 0, 0.03),
         Ang = Angle(0, 0, 0),
     },
     {
@@ -953,7 +961,7 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 3.8
-SWEP.CodAngledGripPoseParam = 4
-SWEP.CodStubbyGripPoseParam = 9
-SWEP.CodStubbyTallGripPoseParam = 17
+SWEP.CodAngledGripPoseParam = 29
+SWEP.CodStubbyGripPoseParam = 19
+SWEP.CodStubbyTallGripPoseParam = 22
 SWEP.GripPoseParam2 = 0.3

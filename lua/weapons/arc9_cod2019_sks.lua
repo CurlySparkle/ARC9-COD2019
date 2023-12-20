@@ -214,6 +214,9 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
+SWEP.PeekPos = Vector(-1, 3, -4)
+SWEP.PeekAng = Angle(-1, 1, -45)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "rpg"
@@ -846,6 +849,12 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("scope_sks") then model:SetBodygroup(4,0) end
+	
+    if wep:HasElement("heavy_stock") then 
+     model:SetPoseParameter("grip_stockhvy_offset", 1)
+    else
+     model:SetPoseParameter("grip_stockhvy_offset", 0)
+    end
 end
 
 SWEP.Attachments = {
@@ -902,7 +911,7 @@ SWEP.Attachments = {
         Bone = "tag_stock_attach",
         Pos = Vector(-0.2, 0, 1.2),
         Ang = Angle(5, 0, 0),
-		InstalledElements = {"stock_adapter"},
+		--InstalledElements = {"stock_adapter"},
     },
     {
         PrintName = "Ammo",
