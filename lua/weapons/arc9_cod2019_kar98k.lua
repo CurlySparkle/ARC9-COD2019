@@ -382,6 +382,78 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_end.ogg", t = 96/30},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		EjectAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_kilo98_reload_boltopen_01.ogg", t = 2/30},
+			{s = path .. "wfoly_sn_kilo98_reload_cloth01.ogg", t = 11/30},
+			{s = path .. "wfoly_sn_kilo98_reload_load_v2_01.ogg", t = 27/30},
+			{s = path .. "wfoly_sn_kilo98_reload_load_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_sn_kilo98_reload_cloth02.ogg", t = 61/30},
+			{s = path .. "wfoly_sn_kilo98_reload_boltclose_01.ogg", t = 65/30},
+			{s = path .. "wfoly_sn_kilo98_reload_end.ogg", t = 72/30},
+        },
+    },
+    ["reload_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.9,
+		EjectAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_kilo98_reload_empty_boltopen_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth01.ogg", t = 5/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_load_v2_01.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_load_v2_02.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth02.ogg", t = 48/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_boltclose_01.ogg", t = 55/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_end.ogg", t = 59/30},
+        },
+    },
     ["reload_start"] = {
         Source = "reload_start",
 		RestoreAmmo = 1,
@@ -452,6 +524,7 @@ SWEP.Animations = {
         Source = "reload_start_fast",
 		RestoreAmmo = 1,
 		EjectAt = 0.4,
+		Mult = 0.9,
         IKTimeLine = {
             {
                 t = 0,
@@ -465,10 +538,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_kilo98_reload_empty_cloth01.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_kilo98_reload_empty_boltopen_01.ogg", t = 3/30},
-			{s = path .. "wfoly_sn_kilo98_reload_empty_load_v2_01.ogg", t = 25/30},
-			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth02.ogg", t = 30/30},
+            {s = path .. "wfoly_sn_kilo98_reload_scope_start_boltopen_02.ogg", t = 0.033},
+			{s = path .. "wfoly_sn_kilo98_reload_scope_start_cloth.ogg", t = 0.133},
+			{s = path .. "wfoly_sn_kilo98_reload_scope_start_load_01.ogg", t = 0.767},
+			{s = path .. "wfoly_sn_kilo98_reload_scope_start_load_02.ogg", t = 0.8},
         },
     },
     ["reload_insert_fast"] = {
@@ -487,10 +560,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = "COD2019.Kar98k.ShellIn", t = 2/30},
+            {s = path .. "wfoly_sn_kilo98_reload_scope_load_01.ogg", t = 6/30},
         },
     },
     ["reload_finish_fast"] = {
         Source = "reload_end_fast",
+		Mult = 0.9,
         IKTimeLine = {
             {
                 t = 0,
@@ -509,9 +584,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth01.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_kilo98_reload_empty_boltclose_01.ogg", t = 8/30},
-			{s = path .. "wfoly_sn_kilo98_reload_empty_end.ogg", t = 10/30},
+			{s = path .. "wfoly_sn_kilo98_reload_scope_end_boltclose_01.ogg", t = 0.2},
+			{s = path .. "wfoly_sn_kilo98_reload_scope_end_cloth.ogg", t = 0.267},
+			{s = path .. "wfoly_sn_kilo98_reload_scope_end_shoulder.ogg", t = 0.633},
         },
     },
     ["ready"] = {
@@ -622,7 +697,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -654,13 +729,17 @@ SWEP.Animations = {
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
-
     if anim == "reload_start" and wep:HasElement("perk_speedreload") then
         return "reload_start_fast"
     elseif anim == "reload_insert" and wep:HasElement("perk_speedreload") then
         return "reload_insert_fast"
     elseif anim == "reload_finish" and wep:HasElement("perk_speedreload") then 
         return "reload_finish_fast"
+
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
     end
 end
 
@@ -849,5 +928,5 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.3
 SWEP.GripPoseParam2 = 0.6
-SWEP.CodAngledGripPoseParam = 14
-SWEP.CodStubbyGripPoseParam = 2
+SWEP.CodAngledGripPoseParam = 7
+SWEP.CodStubbyGripPoseParam = 12

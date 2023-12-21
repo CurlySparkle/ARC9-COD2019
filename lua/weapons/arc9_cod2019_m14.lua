@@ -294,6 +294,10 @@ SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 SWEP.TriggerDownSound = "weapons/cod2019/m14/weap_mike14_first_fire_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/m14/weap_mike14_disconnector_plr_01.ogg"
 
+SWEP.ReloadPoseParameterTables = {
+    [1] = {["pistolgrip_pose"] = 1}
+}
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
@@ -373,7 +377,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 34/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 40/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_rotate.ogg", t = 47/30},
+			{ppi = 1, t = 0/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_charge.ogg", t = 59/30},
+			{ppi = 0, t = 64/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 60/30},
         },
     },
