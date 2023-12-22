@@ -272,6 +272,7 @@ SWEP.ExitSightsSound = path .. "wfoly_pi_decho_ads_down.ogg"
 
 SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = path .. "weap_decho_fire_first_plr_01.ogg"

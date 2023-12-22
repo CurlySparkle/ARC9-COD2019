@@ -124,17 +124,17 @@ SWEP.RecoilMultSights = 0.75
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 35
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 3
 
-SWEP.VisualRecoilPunch = 1.3
+SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 0.1
 SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = -0.2
 
-SWEP.VisualRecoilSpringPunchDamping = 11
-SWEP.VisualRecoilDampingConst = 25
-SWEP.VisualRecoilDampingConstSights = 50
+-- SWEP.VisualRecoilSpringPunchDamping = 11
+-- SWEP.VisualRecoilDampingConst = 40
+-- SWEP.VisualRecoilDampingConstSights = 50
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -223,6 +223,9 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
+SWEP.PeekPos = Vector(-1, 3, -3.2)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "rpg"
@@ -236,12 +239,9 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 
-SWEP.PeekPos = Vector(-1, 3, -3.2)
-SWEP.PeekAng = Angle(-0.3, 0, -45)
-
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_pistol_suppressed_fp"
+SWEP.MuzzleParticle = "muzzleflash_suppressed"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
@@ -301,6 +301,7 @@ SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/asval/weap_mcharlie_fire_first_plr_01.ogg"
@@ -644,6 +645,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.4,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -730,7 +733,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -1021,4 +1024,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodStubbyGripPoseParam = 0
+SWEP.CodStubbyTallGripPoseParam = 22
 SWEP.CodAngledGripPoseParam = 4.1

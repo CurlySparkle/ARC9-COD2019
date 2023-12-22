@@ -318,6 +318,7 @@ SWEP.ExitSightsSound = path .. "weap_sm_uzulu_ads_down.ogg"
 
 SWEP.TriggerDelay = 0.15 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.15 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "COD2019.Uzi.Trigger"

@@ -310,6 +310,7 @@ SWEP.ExitSightsSound = path .. "wfoly_ar_anov94_ads_down.ogg"
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/an94/weap_anov94_fire_first_plr_mech_01.ogg"
@@ -334,18 +335,19 @@ SWEP.BulletBones = {
 	[16] = "j_bullet016",
 	[17] = "j_bullet017",
 	[18] = "j_bullet018",
-	[19] = "j_bullet020",
-	[20] = "j_bullet021",
-	[21] = "j_bullet022",
-	[22] = "j_bullet023",
-	[23] = "j_bullet024",
-	[24] = "j_bullet025",
-	[25] = "j_bullet026",
-	[26] = "j_bullet027",
-	[27] = "j_bullet028",
-	[28] = "j_bullet029",
-	[29] = "j_bullet030",
+	[19] = "j_bullet019",
+	[20] = "j_bullet020",
+	[21] = "j_bullet021",
+	[22] = "j_bullet022",
+	[23] = "j_bullet023",
+	[24] = "j_bullet024",
+	[25] = "j_bullet025",
+	[26] = "j_bullet026",
+	[27] = "j_bullet027",
+	[28] = "j_bullet028",
+	[29] = "j_bullet029",
 	[30] = "j_bullet030",
+	[31] = "j_bullet031",
 }
 
 --SWEP.ReloadHideBonesFirstPerson = true
@@ -580,11 +582,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2.2,
+		Mult = 1.5,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2.2,
+		Mult = 1.5,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -621,7 +623,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
             {
                 t = 0,
@@ -670,10 +672,20 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
     end
 end
 

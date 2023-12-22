@@ -225,6 +225,9 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
+SWEP.PeekPos = Vector(-1.5, 3, -3.2)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "rpg"
@@ -310,6 +313,7 @@ SWEP.HideBones  = {
 
 SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.015 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/iso/weap_charlie9_hammer_plr_01.ogg"
@@ -318,9 +322,6 @@ SWEP.TriggerUpSound = "weapons/cod2019/iso/weap_charlie9_disconnector_plr_01.ogg
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-        -- EventTable = {
-			-- {s = path .. "wfoly_sm_charlie9_reload_up.ogg", t = 0/30},
-        -- },
     },
     ["reload"] = {
         Source = "reload_short",
@@ -602,6 +603,146 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 40/30},
         },
     },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_charlie9_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_charlie9_reload_grab.ogg", t = 11/30},
+			{s = path .. "wfoly_sm_charlie9_reload_magout.ogg", t = 23/30},
+			{s = path .. "wfoly_sm_charlie9_reload_magin.ogg", t = 33/30},
+			{s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 51/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 20/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 34/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 48/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 48/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.55,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 21/30},
+			{s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 25/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.55,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 21/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 32/30},
+            {s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 32/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -652,11 +793,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 1.8,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 1.8,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -693,7 +834,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
             {
                 t = 0,
@@ -742,15 +883,35 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_fast_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
         return "reload_drum_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
         return "reload_drum_fast_empty"
-    --------------------------------------------------------------------------
+    ---------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("ammo_extend") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_xmag_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
     --------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("mag_drum") then
         return "reload_drum"
@@ -936,4 +1097,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 6
-SWEP.CodStubbyGripPoseParam = 7
+SWEP.CodStubbyGripPoseParam = 11
+SWEP.CodStubbyTallGripPoseParam = 22
