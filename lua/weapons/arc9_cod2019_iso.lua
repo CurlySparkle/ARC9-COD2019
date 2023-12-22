@@ -132,7 +132,7 @@ SWEP.VisualRecoilUp = 0.2
 
 SWEP.VisualRecoilMultSights = 0.5
 SWEP.VisualRecoilPunchSights = 25
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilRoll = 30
 SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -212,8 +212,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -492,9 +492,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sm_charlie9_reload_up.ogg", t = 0/30},
 			{s = path .. "wfoly_sm_charlie9_reload_grab.ogg", t = 11/30},
-			{s = path .. "wfoly_sm_charlie9_reload_magout.ogg", t = 23/30},
-			{s = path .. "wfoly_sm_charlie9_reload_magin.ogg", t = 33/30},
-			{s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 51/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 19/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 48/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 52/30},
         },
     },
     ["reload_drum_empty"] = {
@@ -527,9 +527,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 20/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 34/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 48/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 48/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 37/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 58/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 59/30},
         },
     },
     ["reload_drum_fast"] = {
@@ -775,6 +775,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        MinProgress = 0.4,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sm_charlie9_raise.ogg", t = 0/30},
         },
@@ -948,10 +950,24 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
-	
-    ["sights"] = {
+    ["sight_front_folded"] = {
+        Bodygroups = {
+            {6,1},
+        },
+    },
+    ["sight_back_folded"] = {
         Bodygroups = {
             {4,1},
+        },
+    },
+    ["sight_front_none"] = {
+        Bodygroups = {
+            {6,2},
+        },
+    },
+    ["sight_back_none"] = {
+        Bodygroups = {
+            {4,2},
         },
     },
     ["stock_retract"] = {
@@ -969,6 +985,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(5,1) end
+	if wep:HasElement("optic_scope") then model:SetBodygroup(4,2) end
 end
 
 SWEP.Attachments = {
@@ -997,7 +1014,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sights"},
+		InstalledElements = {"sight_back_folded","sight_front_folded"},
     },
     {
         PrintName = "Tactical",
@@ -1096,6 +1113,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 6
-SWEP.CodStubbyGripPoseParam = 11
+SWEP.CodAngledGripPoseParam = 30
+SWEP.CodStubbyGripPoseParam = 21
 SWEP.CodStubbyTallGripPoseParam = 22
