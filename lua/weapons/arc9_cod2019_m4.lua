@@ -1020,6 +1020,14 @@ SWEP.Attachments = {
 		InstalledElements = {"stock_none"},
     },
     {
+        PrintName = "Reciever",
+        Category = "cod2019_m4_reciever",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 0),
+    },
+    {
         PrintName = "Ammo",
         Bone = "j_mag1",
         Category = {"cod2019_ammo"},

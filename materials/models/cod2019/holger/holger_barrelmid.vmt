@@ -4,7 +4,7 @@
     "$bumpmap"					"models/cod2019/holger/holger_barrelmid_n"
     "$phongexponenttexture"		       "models/cod2019/holger/holger_barrelmid_exp"
 
-    "$color2" "[0 0 0]"
+    "$color2" "[0.8 0.8 0.8]"
     "$blendtintbybasealpha" "1"
 
     "$phong" "1"

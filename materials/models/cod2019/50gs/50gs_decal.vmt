@@ -1,38 +1,27 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-	"$basetexture"				"models/cod2019/50gs/50gs_decal"
-	"$bumpmap"					"models/cod2019/50gs/50gs_decal_n"
-	"$phongexponenttexture"		"models/cod2019/50gs/50gs_decal_exp"
-	"$color2"					"[0.8 0.8 0.8]"
-	//"$blendTintByBaseAlpha"		"1"
+    "$basetexture" "models/cod2019/50gs/50gs_decal"
+    "$bumpmap" "models/cod2019/50gs/50gs_decal_n"
+    "$phongexponenttexture" "models/cod2019/50gs/50gs_decal_exp"
 
-	"$envmap"					"env_cubemap"
-	"$envmaptint"				"[ .13 .13 .13 ]"
-	"$envmapfresnel"			".25"
-	"$envmapcoefficient"		"[0.39 0.39 0.39]"
+    "$phong" "1"
+    "$phongboost" "1"
+    "$phongfresnelranges" "[1 0.5 0]"
+    "$translucent"	"1"
 
-	"$phong"					"1"
-	"$phongboost"				"15"
-     //"$phongexponent"				"55"
-	"$phongfresnelranges"		"[0.32 0.72 0.99]"
-	//"$phongalbedotint" 			"1"
+    "$basemapalphaenvmapmask" "1"
+    "$envmapfresnel" "1"
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[1 1 1]"
 
-     "$normalmapalphaenvmapmask"              "1"
-	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
-
-	"$rimlight"					"0"
-	"$rimlightexponent"			"33"
-	"$rimlightboost"			"2"
-	"$rimmask"					"1"
-	"$translucent"					"1"
-
-     "Proxies"
-     {
+    //remove this if viewing outside of MWB
+    "Proxies"
+    {
         "Arc9EnvMapTint"
         {
-            "specularity" "0.5"
+            "specularity" "0.5"             //0.25, 0.5, 0.75, 1
             "min" "0"
-            "max" "0.2"
+            "max" "1"                       //change this if too bright in game
         }
-     }
+    }
 }

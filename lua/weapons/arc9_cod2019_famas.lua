@@ -822,7 +822,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Reciever",
-        DefaultAttName = "Standard Barrel",
+        DefaultAttName = "Standard Reciever",
         Category = "cod2019_famas_reciever",
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),

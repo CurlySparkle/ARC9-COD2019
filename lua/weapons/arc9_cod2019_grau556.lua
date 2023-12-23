@@ -544,7 +544,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
             {
                 t = 0,
@@ -840,5 +840,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.6
 SWEP.GripPoseParam2 = 0.6
-SWEP.CodStubbyGripPoseParam = 1.9
-SWEP.CodAngledGripPoseParam = 7
+SWEP.CodStubbyGripPoseParam = 16
+SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.CodAngledGripPoseParam = 17

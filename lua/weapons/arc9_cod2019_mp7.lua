@@ -929,6 +929,14 @@ SWEP.Attachments = {
 		InstalledElements = {"stock_adapter"},
     },
     {
+        PrintName = "Reciever",
+        Category = "cod2019_mp7_reciever",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 0),
+    },
+    {
         PrintName = "Ammo",
         Bone = "j_mag1",
         Category = {"cod2019_ammo"},
@@ -998,5 +1006,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 0.7
 SWEP.GripPoseParam2 = 0
 SWEP.CodStubbyGripPoseParam = 8
-SWEP.CodStubbyTallGripPoseParam = 15
+SWEP.CodStubbyTallGripPoseParam = 22
 SWEP.CodAngledGripPoseParam = 20
