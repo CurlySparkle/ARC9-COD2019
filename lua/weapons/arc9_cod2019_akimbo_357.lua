@@ -144,7 +144,6 @@ SWEP.SpreadAddHipFire = 0.015
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
 
-
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.1 -- How long it takes to go from hip fire to aiming down sights.
@@ -160,7 +159,6 @@ SWEP.PostBashTime = 0.2
 function SWEP:SecondaryAttack()
     return self:MeleeAttack()
 end
-
 
 -------------------------- TRACERS
 
@@ -377,7 +375,7 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_start.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_cylinderopen_01.ogg", t = 2/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cyclinderopen_01.ogg", t = 16/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderopen_01.ogg", t = 16/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_shake.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 24/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_ejectorrod_01.ogg", t = 32/30},
@@ -388,9 +386,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_grip.ogg", t = 46/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_speedloader_01.ogg", t = 57/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 78/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 84/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 86/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_arm.ogg", t = 82/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 90/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 92/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 94/30},
         },
     },
@@ -423,7 +421,7 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_start.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_cylinderopen_01.ogg", t = 2/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cyclinderopen_01.ogg", t = 16/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderopen_01.ogg", t = 16/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_shake.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 24/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_ejectorrod_01.ogg", t = 32/30},
@@ -437,7 +435,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 60/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_arm.ogg", t = 82/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 65/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 94/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 78/30},
         },
     },
     ["ready"] = {
