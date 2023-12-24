@@ -60,6 +60,8 @@ SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being a
 SWEP.ShootWhileSprint = true
 SWEP.SprintVerticalOffset = true
 SWEP.CanLean = false
+SWEP.MissileCrosshair = false
+SWEP.ForceStandardCrosshair = true
 
 SWEP.CamQCA = 1
 SWEP.CamQCA_Mult = 1
@@ -76,20 +78,20 @@ SWEP.PreBashTime = 0.2
 SWEP.PostBashTime = 0.2
 SWEP.BashDamageType = DMG_GENERIC
 
--- SWEP.Bash2 = true
--- SWEP.SecondaryBash = true
+SWEP.Bash2 = true
+SWEP.SecondaryBash = true
 
--- SWEP.Bash2Damage = 45
--- SWEP.Bash2LungeRange = 64
--- SWEP.Bash2Range = 64
--- SWEP.PreBash2Time = 0.3
--- SWEP.PostBash2Time = 0.3
--- SWEP.Bash2DamageType = DMG_GENERIC
+SWEP.Bash2Damage = 45
+SWEP.Bash2LungeRange = 64
+SWEP.Bash2Range = 64
+SWEP.PreBash2Time = 0.2
+SWEP.PostBash2Time = 0.2
+SWEP.Bash2DamageType = DMG_GENERIC
 
 SWEP.Backstab = true
 SWEP.BackstabDamage = 250
 SWEP.BackstabRange = 32
-SWEP.PreBackstabTime = 0.3
+SWEP.PreBackstabTime = 0.5
 SWEP.PostBackstabTime = 0.5
 SWEP.BackstabDamageType = DMG_GENERIC
 
@@ -122,8 +124,8 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.MovingPos = Vector(0, -1, -1)
 SWEP.MovingAng = Angle(0, 0, 0)
 
-SWEP.SprintPos = Vector(0, 1, 0)
-SWEP.SprintAng = Angle(0, 0, 8)
+SWEP.SprintPos = Vector(1.5, 1, 0)
+SWEP.SprintAng = Angle(0, 0, 15)
 
 SWEP.CrouchPos = Vector(0, 0, -2)
 SWEP.CrouchAng = Angle(0, 0, 0)
@@ -172,7 +174,10 @@ SWEP.Animations = {
         Source = "holster",
     },
     ["bash"] = {
-        Source = {"melee_01","melee_02","melee_03","melee_04","melee_05","melee_06","melee_07","melee_08"},
+        Source = {"melee_01","melee_05","melee_07"},
+    },
+    ["bash2"] = {
+        Source = {"melee_02","melee_06","melee_08"},
     },
     ["backstab"] = {
         Source = {"backstab_01","backstab_02"},

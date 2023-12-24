@@ -127,11 +127,11 @@ SWEP.RecoilMultSights = 0.8
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilRollSights = 15
 SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.4
+SWEP.VisualRecoilUp = 0.5
 
 SWEP.VisualRecoilMultSights = 0.6
 SWEP.VisualRecoilPunchSights = 25
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -361,7 +361,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
-		DropMagAt = 0.8,
+		DropMagAt = 1.2,
 		MinProgress = 0.8,
 		FireASAP = true,
         IKTimeLine = {
@@ -402,6 +402,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
 		MinProgress = 0.8,
+		DropMagAt = 0.86,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -701,11 +702,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 1.8,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 1.8,
     },
     ["inspect"] = {
         Source = "lookat01",

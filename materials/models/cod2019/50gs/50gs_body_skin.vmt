@@ -23,10 +23,10 @@
     "$envmaptint" "[0.098 0.098 0.098]"                 
 
     //remove this if not using MWB
-     "$detailblendmode" "4"
-     "$detailblendfactor" "1"
+    "$detailblendmode" "4"
+    "$detailblendfactor" "1"
 
-     "Proxies"
+    "Proxies"
      {
         "Arc9EnvMapTint"
         {

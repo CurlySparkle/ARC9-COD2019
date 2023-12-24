@@ -140,29 +140,55 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.12
-SWEP.SpreadSights = 0
+-- SWEP.Spread = 0.12
+-- SWEP.SpreadSights = 0
 
-SWEP.SpreadAddShooting = 0.08
-SWEP.SpreadAddShootingSights = 0
---SWEP.SpreadMultRecoil = 1.5
---SWEP.SpreadMultRecoil = 1.2
---SWEP.RecoilModifierCap = 1
---SWEP.RecoilModifierCapSights = 0
+-- SWEP.SpreadAddShooting = 0.08
+-- SWEP.SpreadAddShootingSights = 0
+-- --SWEP.SpreadMultRecoil = 1.5
+-- --SWEP.SpreadMultRecoil = 1.2
+-- --SWEP.RecoilModifierCap = 1
+-- --SWEP.RecoilModifierCapSights = 0
 
 
-SWEP.SpreadMultMove = 1
+-- SWEP.SpreadMultMove = 1
+-- --SWEP.SpreadAddMidAir = 0
+-- --SWEP.SpreadAddHipFire = 0.07
+-- SWEP.SpreadAddCrouch = -0.03
+-- SWEP.SpreadAddSights = -0.5
+-- SWEP.SpreadMultSights = 0.1
+
+-- SWEP.SpreadHook = function(self, orig)
+    -- local rec = self:GetRecoilAmount()
+    -- local maxmult = -0.5 -- minimal ever spread mult after this (0.5 = 2x more accurate after many shots)
+    -- local speedofthis = 0.5 -- per shot multiplier, or just speed
+    -- local minshots = 3 -- minimal amount of shoots to make this thing work
+	-- --print(math.max(orig * maxmult, orig * (1 - (rec - minshots) * speedofthis)))
+    
+    -- if rec > minshots then
+
+      -- return  math.max(orig * maxmult, orig * (1 - (rec - minshots) * speedofthis))
+   -- end
+-- end
+
+SWEP.Spread = 0.002
+
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 1
+SWEP.RecoilModifierCapSights = 0
+
+SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
---SWEP.SpreadAddHipFire = 0.07
+SWEP.SpreadAddHipFire = 0.05
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
-SWEP.SpreadMultSights = 0.1
 
 SWEP.SpreadHook = function(self, orig)
     local rec = self:GetRecoilAmount()
     local maxmult = -0.5 -- minimal ever spread mult after this (0.5 = 2x more accurate after many shots)
     local speedofthis = 0.5 -- per shot multiplier, or just speed
-    local minshots = 3 -- minimal amount of shoots to make this thing work
+    local minshots = 5 -- minimal amount of shoots to make this thing work
 	--print(math.max(orig * maxmult, orig * (1 - (rec - minshots) * speedofthis)))
     
     if rec > minshots then
@@ -216,8 +242,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -228,6 +254,10 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1.3, 3, -4)
+SWEP.PeekAng = Angle(-0.5, 0.5, -45)
+
 
 -------------------------- HoldTypes
 
@@ -670,7 +700,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
