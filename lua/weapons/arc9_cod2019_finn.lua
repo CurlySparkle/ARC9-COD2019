@@ -92,7 +92,7 @@ SWEP.Recoil = 1.3
 
 --SWEP.RecoilSeed = nil
 
-SWEP.RecoilPatternDrift = 25
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -119,12 +119,12 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 70
-SWEP.VisualRecoilPunch = 4
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 35
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.4
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.3
+SWEP.VisualRecoilSide = 0.5
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 75
@@ -635,7 +635,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
             {
                 t = 0,
@@ -952,7 +952,7 @@ SWEP.Animations = {
         },
     },
     ["bash_saw"] = {
-        Source = {"melee_saw", "melee2_saw"},
+        Source = {"melee_saw","melee2_saw","melee3_saw"},
 	    IKTimeLine = {
             {
                 t = 0,

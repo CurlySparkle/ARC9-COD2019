@@ -83,10 +83,12 @@ SWEP.RPM = 704
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 1,
     },
     {
         Mode = 1,
 		RPM = 500,
+		PoseParam = 0,
     },
 }
 -------------------------- RECOIL
@@ -123,11 +125,11 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilRollSights = 20
-SWEP.VisualRecoilPunch = 4
+SWEP.VisualRecoilRollSights = 15
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.4
 
-SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilMultSights = 0.6
 SWEP.VisualRecoilPunchSights = 25
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.2
@@ -205,8 +207,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -1, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -770,7 +772,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
             {
                 t = 0,

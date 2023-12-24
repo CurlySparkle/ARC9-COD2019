@@ -23,6 +23,9 @@
     "$envmaptint" "[0.11 0.11 0.11]"                 
 
     //remove this if not using MWB
+     "$detailblendmode" "4"
+     "$detailblendfactor" "0.7"
+
      "Proxies"
      {
         "Arc9EnvMapTint"
@@ -31,5 +34,12 @@
             "min" "0"
             "max" "0.1"
         }
+	   "CustomCamo" 
+        {
+		  "camoTexture" $detail
+	       "camoScale" $detailscale
+            "blend" $detailblendfactor
+            "color2" "[0.8 0.8 0.8]"
+	   }
      }
 }

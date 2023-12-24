@@ -4,7 +4,7 @@
     "$bumpmap"					"models/cod2019/mg34/mg34_bullet_n"
     "$phongexponenttexture"		       "models/cod2019/mg34/mg34_bullet_exp"
 
-    "$color2" "[1 1 1]"
+    "$color2" "[0.8 0.8 0.8]"
     "$blendtintbybasealpha" "1"
 
     "$phong" "1"

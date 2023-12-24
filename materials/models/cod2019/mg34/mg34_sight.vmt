@@ -4,18 +4,13 @@
     "$bumpmap"					"models/cod2019/mg34/mg34_sight_n"
     "$phongexponenttexture"		       "models/cod2019/mg34/mg34_sight_exp"
 
-    "$color2" "[1 1 1]"
+    "$color2" "[0.8 0.8 0.8]"
     "$blendtintbybasealpha" "1"
 
     "$phong" "1"
     "$phongboost" "1"
     "$phongfresnelranges" "[1 0.5 0]"
     "$phongalbedotint" "0"
-
-    "$rimlight" "0"
-    "$rimlightexponent" "100"
-    "$rimmask" "1"
-    "$rimlightboost" "1"
 
     "$normalmapalphaenvmapmask" "1"
     "$envmapfresnel" "1"

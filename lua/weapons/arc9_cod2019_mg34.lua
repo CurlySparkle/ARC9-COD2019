@@ -216,6 +216,9 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
+SWEP.PeekPos = Vector(-1.8, 3, -4)
+SWEP.PeekAng = Angle(-1, 1, -45)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "rpg"
@@ -633,7 +636,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,

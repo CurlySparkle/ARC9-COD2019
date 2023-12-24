@@ -20,12 +20,6 @@
      "$normalmapalphaenvmapmask"              "1"
 	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
 
-	"$rimlight"					"0"
-	"$rimlightexponent"			"100"
-	"$rimlightboost"			"2"
-	"$rimmask"					"1"
-	"$nocull"					"1"
-
      "Proxies"
      {
         "Arc9EnvMapTint"

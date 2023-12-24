@@ -20,15 +20,6 @@
      "$normalmapalphaenvmapmask"              "1"
 	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
 
-	"$rimlight"					"0"
-	"$rimlightexponent"			"33"
-	"$rimlightboost"			"2"
-	"$rimmask"					"1"
-	"$nocull"					"1"
-
-     "$detailblendmode" "4"
-     "$detailblendfactor" "0.7"
-
      "Proxies"
      {
         "Arc9EnvMapTint"
@@ -37,12 +28,5 @@
             "min" "0"
             "max" "0.2"
         }
-	   "CustomCamo" 
-        {
-		  "camoTexture" $detail
-	       "camoScale" $detailscale
-            "blend" $detailblendfactor
-            "color2" "[0.8 0.8 0.8]"
-	   }
      }
 }

@@ -204,8 +204,8 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -1, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -219,6 +219,9 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1.8, 3, -4)
+SWEP.PeekAng = Angle(-1, 1, -45)
 
 -------------------------- HoldTypes
 
@@ -582,7 +585,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -819,6 +822,9 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
+	["grip_angled"] = {
+    AttPosMods = { [5] = { Pos = Vector(-2.5, 0, 0), } }	
+	}
 }
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -958,4 +964,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 0.2
 SWEP.GripPoseParam2 = 0.1
-SWEP.CodAngledGripPoseParam = 3
+SWEP.CodAngledGripPoseParam = 31
+SWEP.CodStubbyGripPoseParam = 8
+SWEP.CodStubbyTallGripPoseParam = 22
