@@ -82,9 +82,11 @@ SWEP.RPM = 769
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
     },
     {
         Mode = 1,
+		PoseParam = 1,
     },
     -- {
         -- Mode = 3,
@@ -205,11 +207,11 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
-SWEP.CrouchPos = Vector(-0.5, -0, -1)
-SWEP.CrouchAng = Angle(0, 0, -5)
+SWEP.CrouchPos = Vector(-1, -1, -1)
+SWEP.CrouchAng = Angle(0, 0, -8)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(15, 30, 3)
@@ -567,12 +569,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.5,
+                t = 0.6,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 1.1,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -604,12 +606,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.5,
+                t = 0.6,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 1.15,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -895,7 +897,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -957,6 +959,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
@@ -982,7 +989,7 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
-    ["upper"] = {
+    ["upper_none"] = {
         Bodygroups = {
             {6,1},
         },
@@ -1001,6 +1008,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_armag_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_armag") then 
         return "reload_armag_fast_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
+        return "reload_drummag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
+        return "reload_drummag_fast_empty"
 --------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("mag_armag") then 
         return "reload_armag"
@@ -1055,7 +1067,7 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = {"csgo_tac","cod2019_tac"},
+        Category = "cod2019_tac",
         Bone = "tag_laser_attach",
         Pos = Vector(-5, 0, -0.4),
         Ang = Angle(0, 0, -90),
@@ -1070,6 +1082,30 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"grip"},
+    },
+    {
+        PrintName = "Rails",
+        Category = "cod2019_aug_rail",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(13, 0, 3),
+    },
+    {
+        PrintName = "Reciever",
+        Category = "cod2019_aug_reciever",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(12, 0, 2),
+    },
+    {
+        PrintName = "Stock",
+        Category = "cod2019_aug_stock",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 0),
     },
     {
         PrintName = "Ammo",
@@ -1142,3 +1178,4 @@ SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 19
 SWEP.CodStubbyGripPoseParam = 2
+SWEP.CodStubbyTallGripPoseParam = 22

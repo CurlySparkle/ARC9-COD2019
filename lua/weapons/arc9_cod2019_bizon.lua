@@ -82,9 +82,11 @@ SWEP.RPM = 610
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
     },
     {
         Mode = 1,
+		PoseParam = 1,
     },
     -- {
         -- Mode = 3,
@@ -103,7 +105,7 @@ SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1.2 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -121,7 +123,7 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.7
+SWEP.RecoilMultSights = 0.85
 
 -------------------------- VISUAL RECOIL
 
@@ -132,7 +134,7 @@ SWEP.VisualRecoilUp = 0.3
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 55
 SWEP.VisualRecoilRoll = 35
-SWEP.VisualRecoilSide = 0.2
+SWEP.VisualRecoilSide = -0.3
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 30
@@ -195,7 +197,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(0, -1, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -212,7 +214,7 @@ SWEP.MovingMidPoint = {
 }
 
 SWEP.MovingPos = Vector(-1, -1, -1)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.8, -0.8, -0.8)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -223,6 +225,9 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1, 3, -3.5)
+SWEP.PeekAng = Angle(0, 0, -45)
 
 -------------------------- HoldTypes
 
@@ -501,7 +506,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.9,
+		MinProgress = 0.4,
 		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_plr_sm_beta_raise_up.ogg", t = 0/30},
@@ -562,7 +567,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
     },
     ["firemode_1"] = {
         Source = "semi_on",
