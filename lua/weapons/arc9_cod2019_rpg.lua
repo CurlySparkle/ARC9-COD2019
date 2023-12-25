@@ -49,7 +49,7 @@ SWEP.Penetration = 0 -- Units of wood that can be penetrated by this gun.
 SWEP.ImpactForce = 15
 
 SWEP.ShootEnt = "arc9_cod2019_proj_rpg_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 4000
+SWEP.ShootEntForce = 5000
 SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets SENT.WeaponDataLink with this table.
 
 --SWEP.PhysBulletMuzzleVelocity = 960 * 39.37

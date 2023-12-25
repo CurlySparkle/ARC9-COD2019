@@ -72,8 +72,6 @@ SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
---SWEP.FiremodesOverrideHipFire = { mode = 0 }
-
 -------------------------- FIREMODES
 
 SWEP.RPM = 125

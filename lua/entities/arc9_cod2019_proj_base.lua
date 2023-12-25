@@ -1,354 +1,335 @@
 AddCSLuaFile()
 
-ENT.Type 				= "anim"
-ENT.Base 				= "base_entity"
-ENT.PrintName 			= "Base Projectile"
+ENT.Type                     = "anim"
+ENT.Base                     = "base_entity"
+ENT.RenderGroup              = RENDERGROUP_TRANSLUCENT
 
-ENT.Spawnable 			= false
-ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
+ENT.PrintName                = "Base Projectile"
+ENT.Category                 = ""
 
-ENT.Model = "models/weapons/cod2019/mags/w_eq_rpg_rocket.mdl"
-ENT.Ticks = 0
-ENT.FuseTime = 0
-ENT.Defused = false
-ENT.BoxSize = Vector(2, 2, 2)
-ENT.SmokeTrail = true
-ENT.SmokeTrailSize = 6
-ENT.SmokeTrailTime = 0.5
-ENT.Flare = false
-ENT.LifeTime = 10
-ENT.Drunkenness = 0
+ENT.Spawnable                = false
+ENT.Model                    = ""
 
-ENT.Drag = true
-ENT.Gravity = true
-ENT.DragCoefficient = 0.25
-ENT.Boost = 0
-ENT.Lift = 0
-ENT.BoostTime = 10
+local smokeimages = {"particle/particle_smokegrenade"}
+local function GetSmokeImage()
+    return smokeimages[math.random(#smokeimages)]
+end
 
-ENT.GunshipWorkaround = true
-ENT.HelicopterWorkaround = true
+ENT.Material = false // custom material
 
-ENT.Damage = 150
-ENT.Radius = 300
-ENT.ImpactDamage = nil
+ENT.IsRocket = false // projectile has a booster and will not drop.
 
-ENT.Dead = false
-ENT.DieTime = 0
+ENT.Sticky = false // projectile sticks on impact
 
-ENT.SteerSpeed = 60 -- The maximum amount of degrees per second the missile can steer.
-ENT.SeekerAngle = math.cos(35) -- The missile will lose tracking outside of this angle.
-ENT.SuperSeeker = false
-ENT.SACLOS = false -- This missile is manually guided by its shooter.
-ENT.SemiActive = false -- This missile needs to be locked on to the target at all times.
-ENT.FireAndForget = false -- This missile automatically tracks its target.
-ENT.TopAttack = false -- This missile flies up above its target before going down in a top-attack trajectory.
-ENT.TopAttackHeight = 5000
-ENT.SuperSteerBoostTime = 5 -- Time given for this projectile to adjust its trajectory from top attack to direct
-ENT.NoReacquire = false -- F&F target is permanently lost if it cannot reacquire
+ENT.InstantFuse = true // projectile is armed immediately after firing.
+ENT.TimeFuse = false // projectile will arm after this amount of time
+ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
+ENT.ImpactFuse = false // projectile explodes on impact.
+ENT.StickyFuse = false // projectile becomes timed after sticking.
 
-ENT.ShootEntData = {}
+ENT.RemoveOnImpact = false
+ENT.ExplodeOnImpact = false
+ENT.ExplodeOnDamage = false // projectile explodes when it takes damage.
+ENT.ExplodeUnderwater = false // projectile explodes when it enters water
 
-ENT.IsProjectile = true
+ENT.Defusable = false // press E on the projectile to defuse it
+ENT.DefuseOnDamage = false
 
-if SERVER then
-    local gunship = {["npc_combinegunship"] = true, ["npc_combinedropship"] = true}
+ENT.ImpactDamage = 25
+ENT.ImpactDamageSpeed = 1000
 
-    function ENT:Initialize()
-        local pb_vert = self.BoxSize[1]
-        local pb_hor = self.BoxSize[2]
+ENT.Delay = 5 // after being triggered and this amount of time has passed, the projectile will explode.
+
+ENT.Armed = false
+
+ENT.SmokeTrail = false // leaves trail of smoke
+ENT.FlareColor = nil
+ENT.FlareSizeMin = 200
+ENT.FlareSizeMax = 250
+
+ENT.AudioLoop = nil
+
+ENT.BounceSounds = nil
+
+ENT.CollisionSphere = nil
+
+function ENT:SetupDataTables()
+    self:NetworkVar("Entity", 0, "Weapon")
+end
+
+function ENT:Initialize()
+    if SERVER then
         self:SetModel(self.Model)
-        self:PhysicsInitBox( Vector(-pb_vert,-pb_hor,-pb_hor), Vector(pb_vert,pb_hor,pb_hor) )
-
-        local phys = self:GetPhysicsObject()
-        if phys:IsValid() then
-            phys:Wake()
-            phys:EnableDrag(self.Drag)
-            phys:SetDragCoefficient(self.DragCoefficient)
-            phys:EnableGravity(self.Gravity)
-            phys:SetMass(5)
-            phys:SetBuoyancyRatio(0.4)
+        self:SetMaterial(self.Material or "")
+        if self.CollisionSphere then
+            self:PhysicsInitSphere(self.CollisionSphere)
+        else
+            self:PhysicsInit(SOLID_VPHYSICS)
         end
+        self:SetMoveType(MOVETYPE_VPHYSICS)
+        self:SetSolid(SOLID_VPHYSICS)
 
         self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
-
-        self.SpawnTime = CurTime()
-
-        if self.SmokeTrail then
-            util.SpriteTrail(self, 0, Color(150, 150, 150, 150), false, self.SmokeTrailSize, 0, self.SmokeTrailTime, 1 / self.SmokeTrailSize * 0.5, "trails/smoke")
+        if self.Defusable then
+            self:SetUseType(SIMPLE_USE)
         end
-    end
 
-    function ENT:Think()
-        if self.Defused then return end
-
-        if self.SpawnTime + self.LifeTime < CurTime() then
-            self:Detonate()
+        local phys = self:GetPhysicsObject()
+        if !phys:IsValid() then
+            self:Remove()
             return
         end
 
-        if self:WaterLevel() > 0 then
-            self:Detonate()
-            return
-        end
+        phys:EnableDrag(false)
+        phys:SetDragCoefficient(0)
+        phys:SetBuoyancyRatio(0)
+        phys:Wake()
 
-        local drunk = false
-
-        if self.FireAndForget or self.SemiActive then
-            if self.SemiActive then
-                if IsValid(self.Weapon) then
-                    self.ShootEntData = self.Weapon:RunHook("Hook_GetShootEntData", {})
-                end
-            end
-
-            if self.ShootEntData.Target and IsValid(self.ShootEntData.Target) then
-                local target = self.ShootEntData.Target
-                if target.UnTrackable then self.ShootEntData.Target = nil end
-
-                -- if self.TopAttack then
-                --     local tpos = target:GetPos() + Vector(0, 0, 5000)
-                --     if self.SpawnTime + self.TopAttackTime - 1 < CurTime() or self.TopAttackReached then
-                --         tpos = target:GetPos()
-                --     end
-                --     local dir = (tpos - self:GetPos()):GetNormalized()
-                --     local dist = (tpos - self:GetPos()):Length()
-                --     local ang = dir:Angle()
-
-                --     local p = self:GetAngles().p
-                --     local y = self:GetAngles().y
-
-                --     p = math.ApproachAngle(p, ang.p, FrameTime() * self.SteerSpeed)
-                --     y = math.ApproachAngle(y, ang.y, FrameTime() * self.SteerSpeed)
-
-                --     self:SetAngles(Angle(p, y, 0))
-
-                --     if dist <= 1024 then
-                --         self.TopAttackReached = true
-                --     end
-                -- else
-                local tpos = target:EyePos()
-                if self.TopAttack and !self.TopAttackReached then
-                    tpos = tpos + Vector(0, 0, self.TopAttackHeight)
-
-                    local dist = (tpos - self:GetPos()):Length()
-
-                    if dist <= 2000 then
-                        self.TopAttackReached = true
-                        self.SuperSteerTime = CurTime() + self.SuperSteerBoostTime
-                    end
-                end
-                local dir = (tpos - self:GetPos()):GetNormalized()
-                local dot = dir:Dot(self:GetAngles():Forward())
-                local ang = dir:Angle()
-
-                if self.SuperSeeker or dot >= self.SeekerAngle or !self.TopAttackReached or (self.SuperSteerTime and self.SuperSteerTime >= CurTime()) then
-                    local p = self:GetAngles().p
-                    local y = self:GetAngles().y
-
-                    p = math.ApproachAngle(p, ang.p, FrameTime() * self.SteerSpeed)
-                    y = math.ApproachAngle(y, ang.y, FrameTime() * self.SteerSpeed)
-
-                    self:SetAngles(Angle(p, y, 0))
-                    -- self:SetVelocity(dir * 15000)
-                elseif self.NoReacquire then
-                    self.ShootEntData.Target = nil
-                    drunk = true
-                end
-                -- end
-            else
-                drunk = true
-            end
-        elseif self.SACLOS then
-            if self:GetOwner():IsValid() then
-                local tpos = self:GetOwner():GetEyeTrace().HitPos
-                local dir = (tpos - self:GetPos()):GetNormalized()
-                local dot = dir:Dot(self:GetAngles():Forward())
-                local ang = dir:Angle()
-
-                if dot >= self.SeekerAngle then
-                    local p = self:GetAngles().p
-                    local y = self:GetAngles().y
-
-                    p = math.ApproachAngle(p, ang.p, FrameTime() * self.SteerSpeed)
-                    y = math.ApproachAngle(y, ang.y, FrameTime() * self.SteerSpeed)
-
-                    self:SetAngles(Angle(p, y, 0))
-                else
-                    drunk = true
-                end
-            else
-                drunk = true
-            end
-        end
-
-        if drunk then
-            self:GetPhysicsObject():AddAngleVelocity(VectorRand() * FrameTime() * 1500)
-            --self:SetAngles(self:GetAngles() + (AngleRand() * FrameTime() * 1000 / 360))
-        end
-
-        if self.Drunkenness > 0 then
-            self:GetPhysicsObject():AddAngleVelocity(VectorRand() * FrameTime() * self.Drunkenness)
-            --self:SetAngles(self:GetAngles() + (AngleRand() * FrameTime() * self.Drunkenness / 360))
-        end
-
-        if self.BoostTime + self.SpawnTime > CurTime() then
-            local vel = self:GetVelocity():Length()
-            if !self.BoostTarget or vel < self.BoostTarget then
-                self:GetPhysicsObject():AddVelocity(self:GetForward() * self.Boost)
-            end
-            self:GetPhysicsObject():AddVelocity(Vector(0, 0, self.Lift))
-        end
-
-        local v = self:GetVelocity()
-        if v:Length() >= 1000 then
-            self:SetAngles(v:Angle())
-            self:GetPhysicsObject():SetVelocityInstantaneous(v)
-        end
-
-        -- Gunships have no physics collection, periodically trace to try and blow up in their face
-        if self.GunshipWorkaround and (self.GunshipCheck or 0 < CurTime()) then
-            self.GunshipCheck = CurTime() + 0.33
-            local tr = util.TraceLine({
-                start = self:GetPos(),
-                endpos = self:GetPos() + (self:GetVelocity() * 6 * engine.TickInterval()),
-                filter = self,
-                mask = MASK_SHOT
-            })
-            if IsValid(tr.Entity) and gunship[tr.Entity:GetClass()] then
-                self:SetPos(tr.HitPos)
-                self:Detonate()
-            end
+        if self.IsRocket then
+            phys:EnableGravity(false)
         end
     end
 
-    function ENT:Detonate()
-        if !self:IsValid() then return end
-        if self.Defused then return end
-        local effectdata = EffectData()
-            effectdata:SetOrigin( self:GetPos() )
+    self.SpawnTime = CurTime()
 
-        if self:WaterLevel() > 0 then
-            util.Effect( "WaterSurfaceExplosion", effectdata )
-            --self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
-        else
-		self:EmitSound("Cod2019.Frag.Explode")
-        ParticleEffect("explosion_m79", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("smoke_plume", self:GetPos(), Angle(0, 0, 0), nil)
+    self.NPCDamage = IsValid(self:GetOwner()) and self:GetOwner():IsNPC() and !TacRP.ConVars["npc_equality"]:GetBool()
+
+    if self.AudioLoop then
+        self.LoopSound = CreateSound(self, self.AudioLoop)
+        self.LoopSound:Play()
+    end
+
+    if self.InstantFuse then
+        self.ArmTime = CurTime()
+        self.Armed = true
+    end
+
+    self:OnInitialize()
+end
+
+function ENT:OnRemove()
+    if self.LoopSound then
+        self.LoopSound:Stop()
+    end
+end
+
+function ENT:OnTakeDamage(dmg)
+    if self.Detonated then return end
+
+    // self:TakePhysicsDamage(dmg)
+
+    if self.ExplodeOnDamage then
+        if IsValid(self:GetOwner()) and IsValid(dmg:GetAttacker()) then self:SetOwner(dmg:GetAttacker())
+        else self.Attacker = dmg:GetAttacker() or self.Attacker end
+        self:PreDetonate()
+    elseif self.DefuseOnDamage and dmg:GetDamageType() != DMG_BLAST then
+        self:EmitSound("physics/plastic/plastic_box_break" .. math.random(1, 2) .. ".wav", 70, math.Rand(95, 105))
+        local fx = EffectData()
+        fx:SetOrigin(self:GetPos())
+        fx:SetNormal(self:GetAngles():Forward())
+        fx:SetAngles(self:GetAngles())
+        util.Effect("ManhackSparks", fx)
+        self.Detonated = true
+        self:Remove()
+    end
+end
+
+function ENT:PhysicsCollide(data, collider)
+    if IsValid(data.HitEntity) and data.HitEntity:GetClass() == "func_breakable_surf" then
+        self:FireBullets({
+            Attacker = self:GetOwner(),
+            Inflictor = self,
+            Damage = 0,
+            Distance = 32,
+            Tracer = 0,
+            Src = self:GetPos(),
+            Dir = data.OurOldVelocity:GetNormalized(),
+        })
+        local pos, ang, vel = self:GetPos(), self:GetAngles(), data.OurOldVelocity
+        self:SetAngles(ang)
+        self:SetPos(pos)
+        self:GetPhysicsObject():SetVelocityInstantaneous(vel * 0.5)
+        return
+    end
+
+    if self.ImpactFuse and !self.Armed then
+        self.ArmTime = CurTime()
+        self.Armed = true
+
+        if self:Impact(data, collider) then
+            return
         end
 
-        util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), self.Radius, self.DamageOverride or self.Damage)
-
-        if SERVER then
-            self:FireBullets({
-                Attacker = self,
-                Damage = 0,
-                Tracer = 0,
-                Distance = 256,
-                Dir = self.HitVelocity or self:GetVelocity(),
-                Src = self:GetPos(),
-                Callback = function(att, tr, dmg)
-                    util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
-                end
-            })
+        if self.Delay == 0 or self.ExplodeOnImpact then
+            self:PreDetonate()
         end
-        self.Defused = true
-        -- self:Remove()
+    elseif self.ImpactDamage > 0 and IsValid(data.HitEntity) and (engine.ActiveGamemode() != "terrortown" or !data.HitEntity:IsPlayer()) then
+        local dmg = DamageInfo()
+        dmg:SetAttacker(IsValid(self:GetOwner()) and self:GetOwner() or self.Attacker)
+        dmg:SetInflictor(self)
+        dmg:SetDamage(Lerp((data.OurOldVelocity:Length() - 0.6 * self.ImpactDamageSpeed) / 0.4 * self.ImpactDamageSpeed, self.ImpactDamage / 5, self.ImpactDamage))
+        dmg:SetDamageType(DMG_CRUSH + DMG_CLUB)
+        dmg:SetDamageForce(data.OurOldVelocity)
+        dmg:SetDamagePosition(data.HitPos)
+        data.HitEntity:TakeDamageInfo(dmg)
+    elseif !self.ImpactFuse then
+        self:Impact(data, collider)
+    end
 
-        SafeRemoveEntityDelayed(self, self.SmokeTrailTime)
-        self:SetRenderMode(RENDERMODE_NONE)
-        self:SetMoveType(MOVETYPE_NONE)
+    if self.Sticky then
         self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
+        self:SetPos(data.HitPos)
+
+        self:SetAngles((-data.HitNormal):Angle())
+
+        if data.HitEntity:IsWorld() or data.HitEntity:GetSolid() == SOLID_BSP then
+            self:SetMoveType(MOVETYPE_NONE)
+            self:SetPos(data.HitPos)
+        else
+            self:SetPos(data.HitPos)
+            self:SetParent(data.HitEntity)
+        end
+
+        self:EmitSound("TacRP/weapons/plant_bomb.wav", 65)
+
+        self.Attacker = self:GetOwner()
+        self:SetOwner(NULL)
+
+        if self.StickyFuse and !self.Armed then
+            self.ArmTime = CurTime()
+            self.Armed = true
+        end
+
+        self:Stuck()
     end
 
-    function ENT:PhysicsCollide(colData, physobj)
-        if !self:IsValid() then return end
+    if data.DeltaTime < 0.1 then return end
+    if !self.BounceSounds then return end
 
-        if CurTime() - self.SpawnTime < self.FuseTime then
-            if IsValid(colData.HitEntity) then
-                local v = colData.OurOldVelocity:Length() ^ 0.5
-                local dmg = DamageInfo()
-                dmg:SetAttacker(IsValid(self:GetOwner()) and self:GetOwner() or self)
-                dmg:SetInflictor(self)
-                dmg:SetDamageType(DMG_CRUSH)
-                dmg:SetDamage(v)
-                dmg:SetDamagePosition(colData.HitPos)
-                dmg:SetDamageForce(colData.OurOldVelocity)
-                colData.HitEntity:TakeDamageInfo(dmg)
-                self:EmitSound("weapons/rpg/shotdown.wav", 80, math.random(90, 110))
-            end
-            self:Defuse()
-            return
-        end
+    local s = table.Random(self.BounceSounds)
 
-        local effectdata = EffectData()
-            effectdata:SetOrigin( self:GetPos() )
+    self:EmitSound(s)
+end
 
-        -- simulate AP damage on vehicles, mainly simfphys
-        local tgt = colData.HitEntity
-        while IsValid(tgt) do
-            if tgt.GetParent and IsValid(tgt:GetParent()) then
-                tgt = tgt:GetParent()
-            elseif tgt.GetBaseEnt and IsValid(tgt:GetBaseEnt()) then
-                tgt = tgt:GetBaseEnt()
-            else
-                break
-            end
-        end
+function ENT:OnThink()
+end
 
-        if self.ImpactDamage and IsValid(tgt) then
-            local dmg = DamageInfo()
-            dmg:SetAttacker(IsValid(self:GetOwner()) and self:GetOwner() or self)
-            dmg:SetInflictor(self)
-            dmg:SetDamageType(DMG_BLAST) -- helicopters
-            dmg:SetDamage(self.ImpactDamage)
-            dmg:SetDamagePosition(colData.HitPos)
-            dmg:SetDamageForce(self:GetForward() * self.ImpactDamage)
+function ENT:OnInitialize()
+end
 
-            if IsValid(tgt:GetOwner()) and tgt:GetOwner():GetClass() == "npc_helicopter" then
-                tgt = tgt:GetOwner()
-                dmg:ScaleDamage(0.1)
-                dmg:SetDamageType(DMG_BLAST + DMG_AIRBOAT)
-                dmg:SetDamageForce(self:GetForward() * 100)
-            end
+function ENT:DoSmokeTrail()
+    if CLIENT and self.SmokeTrail then
+        local emitter = ParticleEmitter(self:GetPos())
 
-            tgt:TakeDamageInfo(dmg)
-        end
+        local smoke = emitter:Add(GetSmokeImage(), self:GetPos())
 
-        self.HitPos = colData.HitPos
-        self.HitVelocity = colData.OurOldVelocity
+        smoke:SetStartAlpha(50)
+        smoke:SetEndAlpha(0)
+
+        smoke:SetStartSize(10)
+        smoke:SetEndSize(math.Rand(50, 75))
+
+        smoke:SetRoll(math.Rand(-180, 180))
+        smoke:SetRollDelta(math.Rand(-1, 1))
+
+        smoke:SetPos(self:GetPos())
+        smoke:SetVelocity(-self:GetAngles():Forward() * 400 + (VectorRand() * 10))
+
+        smoke:SetColor(200, 200, 200)
+        smoke:SetLighting(true)
+
+        smoke:SetDieTime(math.Rand(0.75, 1.25))
+
+        smoke:SetGravity(Vector(0, 0, 0))
+
+        emitter:Finish()
+    end
+end
+
+function ENT:Think()
+    if !IsValid(self) or self:GetNoDraw() then return end
+
+    if !self.SpawnTime then
+        self.SpawnTime = CurTime()
+    end
+
+    if !self.Armed and isnumber(self.TimeFuse) and self.SpawnTime + self.TimeFuse < CurTime() then
+        self.ArmTime = CurTime()
+        self.Armed = true
+    end
+
+    if self.Armed and self.ArmTime + self.Delay < CurTime() then
+        self:PreDetonate()
+    end
+
+    if self.ExplodeUnderwater and self:WaterLevel() > 0 then
+        self:PreDetonate()
+    end
+
+    self:DoSmokeTrail()
+
+    self:OnThink()
+end
+
+function ENT:Use(ply)
+    if !self.Defusable then return end
+
+    self:EmitSound("TacRP/weapons/rifle_jingle-1.wav")
+
+    if self.PickupAmmo then
+        ply:GiveAmmo(1, self.PickupAmmo, true)
+    end
+
+    self:Remove()
+end
+
+function ENT:RemoteDetonate()
+    self:EmitSound("TacRP/weapons/c4/relay_switch-1.wav")
+
+    self.ArmTime = CurTime()
+    self.Armed = true
+end
+
+function ENT:PreDetonate()
+    if CLIENT then return end
+
+    if !self.Detonated then
+        self.Detonated = true
+
+        if !IsValid(self.Attacker) and !IsValid(self:GetOwner()) then self.Attacker = game.GetWorld() end
+
         self:Detonate()
     end
-
-    -- Combine Helicopters are hard-coded to only take DMG_AIRBOAT damage
-    hook.Add("EntityTakeDamage", "ARC9_HelicopterWorkaround", function(ent, dmginfo)
-        if IsValid(ent:GetOwner()) and ent:GetOwner():GetClass() == "npc_helicopter" then ent = ent:GetOwner() end
-        if ent:GetClass() == "npc_helicopter" and dmginfo:GetInflictor().HelicopterWorkaround then
-            dmginfo:SetDamageType(bit.bor(dmginfo:GetDamageType(), DMG_AIRBOAT))
-        end
-    end)
 end
 
-function ENT:Defuse()
-    self.Defused = true
-    SafeRemoveEntityDelayed(self, 5)
+function ENT:Detonate()
+    // fill this in :)
 end
 
-local flaremat = Material("effects/arc9_lensflare")
+function ENT:Impact()
+end
+
+function ENT:Stuck()
+
+end
+
+function ENT:DrawTranslucent()
+    self:Draw()
+end
+
+local mat = Material("effects/ar2_altfire1b")
+
 function ENT:Draw()
-    self.SpawnTime = self.SpawnTime or CurTime()
     self:DrawModel()
 
-    if self.Flare and !self.Defused then
-        render.SetMaterial(flaremat)
-        render.DrawSprite(self:GetPos(), math.Rand(90, 110), math.Rand(90, 110), Color(255, 250, 240))
-    end
-
-    if (self.Boost or 0) > 0 and self.BoostTime + self.SpawnTime > CurTime() and (self.Tick or 0) % 3 == 0 then
-        local eff = EffectData()
-        eff:SetOrigin(self:GetPos())
-        eff:SetAngles(self:GetAngles())
-        eff:SetEntity(self)
-        eff:SetScale(1)
-        util.Effect("MuzzleEffect", eff)
+    if self.FlareColor then
+        render.SetMaterial(mat)
+        render.DrawSprite(self:GetPos() + (self:GetAngles():Forward() * -16), math.Rand(self.FlareSizeMin, self.FlareSizeMax), math.Rand(self.FlareSizeMin, self.FlareSizeMax), self.FlareColor)
     end
 end
+
+hook.Add("EntityTakeDamage", "tacrp_proj_collision", function(ent, dmginfo)
+    if IsValid(dmginfo:GetInflictor())
+            and scripted_ents.IsBasedOn(dmginfo:GetInflictor():GetClass(), "tacrp_proj_base")
+            and dmginfo:GetDamageType() == DMG_CRUSH then dmginfo:SetDamage(0) return true end
+end)
