@@ -4,14 +4,12 @@ Weapon pack from Call of Duty: Modern Warfare (2019) with only their vanilla bas
 
 If you want to make any improvements or better changes for this, feel free to make a PR (Pull Request).
 
-## Required Items
- - **ARC9** (which needs to be installed in order to make this pack work and serves as the main weapon base):
-https://github.com/HaodongMo/ARC-9
- - **[ARC9] Call of Duty: Modern Warfare Shared** (must install, serves as the main universal attachments):
-https://github.com/CurlySparkle/ARC9_Cod2019_Shared
+## 🔽 Required Items
 
-### Optional
- - **[ARC9] Gunsmith Reloaded** (official support for extra attachments):
-https://github.com/CurlySparkle/ARC9-GSR
- - **[ARC9] Escape from Tarkov Shared** (official support for extra attachments):
-https://steamcommunity.com/sharedfiles/filedetails/?id=2917343547
+ - [ARC9](https://github.com/HaodongMo/ARC-9) (which needs to be installed in order to make this pack work and serves as the main weapon base)
+ - [[ARC9] Call of Duty: Modern Warfare Shared](https://github.com/CurlySparkle/ARC9_Cod2019_Shared) (must install, serves as the main universal attachments)
+
+### 🌐 Optional
+
+ - [[ARC9] Gunsmith Reloaded](https://github.com/CurlySparkle/ARC9-GSR) (official support for extra attachments)
+ - [[ARC9] Escape from Tarkov Shared](https://steamcommunity.com/sharedfiles/filedetails/?id=2917343547) (official support for extra attachments)
