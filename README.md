@@ -1,5 +1,5 @@
 # [ARC9] Call of Duty: Modern Warfare
-Weapon pack from Call of Duty: Modern Warfare (2019) with only their vanilla base blueprints (but there's a few exceptions). There might be a lot of changes here and there in order to keep a proper balance on the weapons so they don't end up being extremely OP and have a better feeling of using them all.
+Weapon pack from [Call of Duty: Modern Warfare (2019)](https://www.callofduty.com/modernwarfare) with only their vanilla base blueprints (but there's a few exceptions). There might be a lot of changes here and there in order to keep a proper balance on the weapons so they don't end up being extremely OP and have a better feeling of using them all.
 
 
 If you want to make any improvements or better changes for this, feel free to make a PR (Pull Request).
