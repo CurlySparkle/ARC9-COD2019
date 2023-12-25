@@ -682,9 +682,14 @@ SWEP.AttachmentElements = {
             {4,1},
         },
     },
-    ["stock_none"] = {
+    ["stock_adapter"] = {
         Bodygroups = {
             {4,2},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {4,3},
         },
     },
     ["rail_grip"] = {
@@ -712,6 +717,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(4,1) end
+    if wep:HasElement("stock_none") then model:SetBodygroup(4,3) end
 end
 
 SWEP.Attachments = {
@@ -766,9 +772,8 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Stock",
         Category = {"stock_retract","cod2019_tube"},
         Bone = "tag_attachments",
-        Pos = Vector(-0.5, 0.6, -0.5),
+        Pos = Vector(-0.77, 0.6, -0.26),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_none"},
     },
     {
         PrintName = "Ammo",

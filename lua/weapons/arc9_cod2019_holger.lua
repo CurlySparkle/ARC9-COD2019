@@ -131,6 +131,10 @@ SWEP.VisualRecoilUp = 0.5
 
 SWEP.VisualRecoilMultSights = 0.6
 SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilRollSights = 0
+SWEP.VisualRecoilSideSights = 0
+SWEP.VisualRecoilUpSights = 0
+
 SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = 0.2
 
@@ -879,9 +883,14 @@ SWEP.AttachmentElements = {
             {4,1},
         },
     },
-    ["stock_none"] = {
+    ["stock_adapter"] = {
         Bodygroups = {
             {4,2},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {4,3},
         },
     },
     ["sights_none"] = {
@@ -949,9 +958,9 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"stock_retract","cod2019_holger_stock"},
+        Category = {"stock_retract","cod2019_tube","cod2019_holger_stock"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-0.86, 0, 0.23),
         Ang = Angle(0, 0, 0),
     },
     {
@@ -1023,6 +1032,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.6
-SWEP.CodAngledGripPoseParam = 19
+SWEP.CodAngledGripPoseParam = 32
 SWEP.CodStubbyGripPoseParam = 1
 SWEP.CodStubbyTallGripPoseParam = 16
