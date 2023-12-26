@@ -905,6 +905,10 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     if wep:HasElement("barrel_custom") then 
 	model:SetBodygroup(2,2) 
 	end
+	
+    if wep:HasElement("reciever_custom") then 
+	model:SetBodygroup(5,0) 
+	end
 end
 
 SWEP.Attachments = {
