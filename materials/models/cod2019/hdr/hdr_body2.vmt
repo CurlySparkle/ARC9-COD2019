@@ -21,12 +21,6 @@
      "$normalmapalphaenvmapmask"              "1"
 	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
 
-	"$rimlight"					"0"
-	"$rimlightexponent"			"33"
-	"$rimlightboost"			"2"
-	"$rimmask"					"1"
-	"$nocull"					"1"
-
 	"$detailblendmode" "0"
 	"$detailblendfactor" "0.7"
 

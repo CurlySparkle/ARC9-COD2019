@@ -12,12 +12,6 @@
     "$phongfresnelranges" "[1 0.5 0]"
     "$phongalbedotint" "0"
 
-    //rimlight doesn't properly show in hlmv, make sure you're changing these values in game
-    "$rimlight" "0"
-    "$rimlightexponent" "100"
-    "$rimmask" "1"
-    "$rimlightboost" "1"
-
     "$phongwarptexture"                 "models\cod2019\shared\steelwarp"
 
     "$normalmapalphaenvmapmask" "1"

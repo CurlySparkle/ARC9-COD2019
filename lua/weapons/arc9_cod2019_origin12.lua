@@ -213,7 +213,7 @@ SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(17, 35, 3)
+SWEP.CustomizePos = Vector(14, 30, 4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 7, 3)
@@ -501,6 +501,145 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 52/30},
         },
     },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_oscar12_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_magout_01.ogg", t = 18/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_magin_v2_01.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_magin_v2_02.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_end.ogg", t = 49/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_pull.ogg", t = 51/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		MagSwapTime = 0.9,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_01.ogg", t = 29/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_02.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_hands.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_tilt.ogg", t = 53/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_charge_01.ogg", t = 73/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 87/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		--DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 48/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.7,
+		MagSwapTime = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_02.ogg", t = 34/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_charge_01.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 52/30},
+        },
+    },
     ["reload_drum"] = {
         Source = "reload_drum",
 		MinProgress = 0.8,
@@ -537,7 +676,7 @@ SWEP.Animations = {
         },
     },
     ["reload_drum_empty"] = {
-        Source = "reload_empty_drum",
+        Source = "reload_drum_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.7,
         IKTimeLine = {
@@ -607,8 +746,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 48/30},
         },
     },
-    ["reload_drum_empty_fast"] = {
-        Source = "reload_empty_drum_fast",
+    ["reload_drum_fast_empty"] = {
+        Source = "reload_drum_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.7,
         IKTimeLine = {
@@ -667,6 +806,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        MinProgress = 0.4,
+        FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -788,6 +929,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
         return "reload_fast_empty"
 --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+--------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend_drum") then
         return "reload_drum_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend_drum") then 
@@ -806,6 +952,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload" and wep:HasElement("ammo_extend") then 
         return "reload_xmag"
     elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_empty"
+--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
         return "reload_xmag_empty"
     end
 end
@@ -949,7 +1100,7 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"csgo_stock","cod2019_stocks"},
+        Category = "cod2019_stocks",
         Bone = "tag_stock_attach",
         Pos = Vector(2.4, 0, 0.1),
         Ang = Angle(0, 0, 0),
@@ -1025,6 +1176,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 3
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodStubbyGripPoseParam = 0.5
-SWEP.CodStubbyTallGripPoseParam = 2
+SWEP.CodStubbyGripPoseParam = 9
+SWEP.CodStubbyTallGripPoseParam = 22
 SWEP.CodAngledGripPoseParam = 4.1
