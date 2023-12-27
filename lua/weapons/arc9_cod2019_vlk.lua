@@ -213,6 +213,9 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
 
+SWEP.PeekPos = Vector(-1, 3, -3.5)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "rpg"
@@ -473,6 +476,148 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_empty_fast_end.ogg", t = 2.4},
         },
     },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 11/30},
+			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 35/30},
+			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 51/30},
+			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		EjectAt = 0.1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_mark26_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_pull.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 15/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 34/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_maghit.ogg", t = 49/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_magin.ogg", t = 60/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_rotate.ogg", t = 68/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_forward.ogg", t = 80/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_end.ogg", t = 95/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_mark26_reload_fast_rotate.ogg", t = 0},
+			{s = path .. "wfoly_sh_mark26_reload_fast_magout.ogg", t = 0.167},
+			{s = path .. "wfoly_sh_mark26_reload_fast_maghit.ogg", t = 1.067},
+			{s = path .. "wfoly_sh_mark26_reload_fast_magin.ogg", t = 1.333},
+			{s = path .. "wfoly_sh_mark26_reload_fast_end.ogg", t = 1.667},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.8,
+		DropMagAt = 0.75,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_bolt_pull.ogg", t = 0},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_magout.ogg", t = 0.467},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_arm_up.ogg", t = 1.033},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_magin.ogg", t = 1.4},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_rotate.ogg", t = 1.7},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_bolt_forward.ogg", t = 2.067},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_end.ogg", t = 2.4},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -495,7 +640,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.85,
+		MinProgress = 0.5,
 		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sh_mark26_raise.ogg", t = 0/30},
@@ -556,7 +701,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
             {
                 t = 0,

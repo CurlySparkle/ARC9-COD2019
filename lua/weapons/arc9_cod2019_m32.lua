@@ -57,7 +57,7 @@ SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets 
 SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
 
 SWEP.ShootPosOffset = Vector(5, 20, -3)
-SWEP.ShootPosOffsetSights = Vector(0, 20, 0)
+SWEP.ShootPosOffsetSights = Vector(0, 20, -3)
 
 -------------------------- MAGAZINE
 
@@ -173,10 +173,13 @@ SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(17, 35, 3)
+SWEP.CustomizePos = Vector(14, 27, 4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(-3, 0, 3)
+
+SWEP.PeekPos = Vector(-1.5, 3, -4.5)
+SWEP.PeekAng = Angle(2, 2, -45)
 
 -------------------------- HoldTypes
 
@@ -390,6 +393,42 @@ SWEP.Animations = {
         Source = "sprint_in",
 		Mult = 2,
     },
+    -- ["inspect"] = {
+        -- Source = "lookat01",
+        -- MinProgress = 0.1,
+        -- FireASAP = true,
+        -- IKTimeLine = {
+            -- {
+                -- t = 0,
+                -- lhik = 1,
+                -- rhik = 0
+            -- },
+            -- {
+                -- t = 0.2,
+                -- lhik = 0,
+                -- rhik = 0
+            -- },
+            -- {
+                -- t = 0.7,
+                -- lhik = 0,
+                -- rhik = 0
+            -- },
+            -- {
+                -- t = 1.1,
+                -- lhik = 1,
+                -- rhik = 1
+            -- },
+        -- },
+        -- EventTable = {
+            -- {s = path .. "wfoly_la_mike32_inspect_01.ogg", t = 5/30},
+			-- {s = path .. "wfoly_plr_la_mike32_reload_rattle.ogg", t = 45/30},
+			-- {s = path .. "wfoly_la_mike32_inspect_02.ogg", t = 95/30},
+			-- {s = path .. "wfoly_plr_la_mike32_reload_open_01.ogg", t = 110/30},
+			-- {s = path .. "wfoly_plr_la_mike32_reload_rattle.ogg", t = 135/30},
+			-- {s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 155/30},
+			-- {s = path .. "wfoly_la_mike32_inspect_03.ogg", t = 155/30},
+        -- },
+    -- },
     ["inspect"] = {
         Source = "lookat01",
         MinProgress = 0.1,
@@ -418,16 +457,12 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_la_mike32_inspect_01.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_rattle.ogg", t = 45/30},
-			{s = path .. "wfoly_la_mike32_inspect_02.ogg", t = 95/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_open_01.ogg", t = 110/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_rattle.ogg", t = 135/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 155/30},
-			{s = path .. "wfoly_la_mike32_inspect_03.ogg", t = 155/30},
+			{s = path .. "wfoly_la_mike32_inspect_02.ogg", t = 62/30},
+			{s = path .. "wfoly_la_mike32_inspect_03.ogg", t = 142/30},
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2","melee3"},
+        Source = {"melee","melee2","melee3"},
     },
 }
 
@@ -448,23 +483,18 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["stock_none"] = {
-        Bodygroups = {
-            {3,2},
-        },
-    },
-    ["stock_retract"] = {
-        Bodygroups = {
-            {3,1},
-        },
-    },
-    ["stock_retracted"] = {
-	AttPosMods = { [5] = { Pos = Vector(-6, 0, 1.8), } }	
-    },
-    ["sights"] = {
         Bodygroups = {
             {2,1},
         },
+    },
+    ["stock_retracted"] = {
+	AttPosMods = { [5] = { Pos = Vector(-6, 0, 1.82), } }	
     },
     ["grip_none"] = {
         Bodygroups = {
@@ -473,9 +503,17 @@ SWEP.AttachmentElements = {
     },
     ["nades_rock"] = {
         Bodygroups = {
-            {5,1},
+            {3,1},
         },
     },
+    ["nades_none"] = {
+        Bodygroups = {
+            {3,2},
+        },
+    },
+	["grip_angled"] = {
+    AttPosMods = { [3] = { Pos = Vector(9, 3.9, 0), } }	
+	}
 }
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
@@ -512,7 +550,6 @@ SWEP.Attachments = {
         CorrectiveAng = Angle(0, 0, 0),
 		--Installed = "cod2019_optic_scope_m32",
         --Integral = "cod2019_optic_scope_m32",
-		InstalledElements = {"sights"},
     },
     {
         PrintName = "Tactical",
@@ -527,7 +564,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "j_forend",
-        Pos = Vector(9.55, 3.96, -0.05),
+        Pos = Vector(9.55, 3.85, 0),
         Ang = Angle(0, 0, 90),
 		Scale = 1,
 		InstalledElements = {"grip_none"},
@@ -535,7 +572,7 @@ SWEP.Attachments = {
     {
         PrintName = "Stock (Opt)",
         DefaultAttName = "Standard",
-        Category = {"csgo_origin12_tube"},
+        Category = "cod2019_m32_stock_opt",
         Bone = "tag_launcher_attachment",
         Pos = Vector(0, 0, 1),
         Ang = Angle(0, 0, 0),
@@ -544,11 +581,11 @@ SWEP.Attachments = {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
         Category = "cod2019_stocks",
-        Bone = "tag_launcher_attachment",
-        Pos = Vector(-8, 0, 1.9),
+        Bone = "tag_launcher_offset",
+        Pos = Vector(-8, 0, 1.83),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_none"},
-		Scale = 1,
+		Scale = 1.05,
     },
     {
         PrintName = "Ammo",
@@ -564,7 +601,7 @@ SWEP.Attachments = {
     {
         PrintName = "Skins",
         --Bone = "v_weapon.Clip",
-        Category = "go_skins_m32",
+        Category = "cod2019_m32_skins",
 		CosmeticOnly = true,
     },
     {
@@ -612,3 +649,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 3
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodStubbyGripPoseParam = 6
+SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.CodAngledGripPoseParam = 21
