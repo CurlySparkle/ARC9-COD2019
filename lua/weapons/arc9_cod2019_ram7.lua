@@ -97,7 +97,7 @@ SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = 8778456
 
-SWEP.RecoilPatternDrift = 15
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -105,8 +105,8 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomUp = 0.1
+SWEP.RecoilRandomSide = 0.3
 
 SWEP.RecoilDissipationRate = 55 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -124,12 +124,12 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2.5
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.5
 
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 25
-SWEP.VisualRecoilRoll = 25
+SWEP.VisualRecoilRoll = 35
 SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -163,7 +163,7 @@ SWEP.SpreadMultJump = 2
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -202,20 +202,20 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -0.7)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.PeekPos = Vector(-1.5, 0, -3)
 SWEP.PeekAng = Angle(0, 0.4, -45)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(15, 30, 3)
+SWEP.CustomizePos = Vector(11, 28, 4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
@@ -513,11 +513,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -554,7 +554,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
             {
                 t = 0,
@@ -694,6 +694,9 @@ SWEP.AttachmentElements = {
             {4,1},
         },
     },
+	["grip_angled"] = {
+    AttPosMods = { [5] = { Pos = Vector(-2.6, 0, 0), } }	
+	}
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -817,5 +820,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.4
-SWEP.CodStubbyGripPoseParam = 0
-SWEP.CodAngledGripPoseParam = 5
+SWEP.CodStubbyGripPoseParam = 6
+SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.CodAngledGripPoseParam = 33
