@@ -20,13 +20,20 @@
      "$normalmapalphaenvmapmask"              "1"
 	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
 
-    "Proxies"
-    {
+	"$detailblendmode" "4"
+	"$detailblendfactor" "0.7"
+
+	 Proxies {
+		CustomCamo {
+			camoTexture $detail
+			camoScale $detailscale
+            blend $detailblendfactor
+		}
         "Arc9EnvMapTint"
         {
             "specularity" "0.5"
             "min" "0"
             "max" "0.2"
         }
-    }
+	}
 }

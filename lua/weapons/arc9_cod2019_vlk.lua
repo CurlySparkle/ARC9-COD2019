@@ -159,7 +159,7 @@ SWEP.DispersionSpreadAddHipFire = 0.02
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -198,8 +198,8 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.7)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -660,11 +660,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -738,7 +738,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
         return "reload_xmag_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
-        return "reload_xmag_fast_empty"
+        return "reload_fast_empty"
 --------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
         return "reload_fast"
@@ -748,7 +748,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload" and wep:HasElement("mag_xmag") then 
         return "reload_xmag"
     elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
-        return "reload_xmag_empty"
+        return "reload_empty"
 --------------------------------------------------------------------------
     end
 end
@@ -803,6 +803,7 @@ SWEP.AttachmentElements = {
     ["stock_none"] = {
         Bodygroups = {
             {7,1},
+            {8,1},
         },
     },
     ["stock_tube_none"] = {
@@ -813,7 +814,6 @@ SWEP.AttachmentElements = {
     ["vlk_barrel_heavy"] = {
     AttPosMods = { 
 	[2] = { Pos = Vector(2, 0, 0), },
-	[4] = { Pos = Vector(3.3, -0.63, -0.56), },
 	},
     },
 }
@@ -855,18 +855,18 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail",
         Bone = "tag_laser_attach",
-        Pos = Vector(-1.5, -1, -1.8),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(-0.7, -1.5, 0.5),
+        Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
     },
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"csgo_stock","cod2019_stocks"},
+        Category = "cod2019_tube",
         Bone = "tag_stock_attach",
-        Pos = Vector(1.2, 0, -0.03),
+        Pos = Vector(-0.01, 0, -0.03),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_none"},
     },
@@ -890,7 +890,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_vlk_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

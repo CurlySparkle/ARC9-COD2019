@@ -98,11 +98,11 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1
+SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = 6213
 
-SWEP.RecoilPatternDrift = 25
+SWEP.RecoilPatternDrift = 1
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 0.5 -- Multiplier for vertical recoil
@@ -111,7 +111,7 @@ SWEP.RecoilSide = 2 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.3
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -120,9 +120,9 @@ SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilKick = 2
 
-SWEP.RecoilMultCrouch = 0.8
+SWEP.RecoilMultCrouch = 0.85
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.85
 
 -------------------------- VISUAL RECOIL
 
@@ -130,9 +130,12 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 0.3
 
-SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 25
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilUpSights = 0
+SWEP.VisualRecoilSideSights = 0
+
+SWEP.VisualRecoilRoll = 15
 SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -166,7 +169,7 @@ SWEP.SpreadAddSights = -0.5
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -208,18 +211,21 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(15, 30, 3)
+SWEP.CustomizePos = Vector(12, 27, 4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1, 3, -3)
+SWEP.PeekAng = Angle(0, 0, -45)
 
 -------------------------- HoldTypes
 
@@ -507,7 +513,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-        MinProgress = 0.8,
+        MinProgress = 0.5,
         FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sm_victor_raise.ogg", t = 0/30},
@@ -527,11 +533,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -568,7 +574,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
             {
                 t = 0,
@@ -754,11 +760,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac_cylinde",
+        Category = "cod2019_tac_rail",
         Bone = "tag_laser_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-0.7, -1.5, 0.5),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"tag_laser"},
+		--InstalledElements = {"tag_laser"},
     },
     {
         PrintName = "Grips",
@@ -856,3 +862,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
+SWEP.CodStubbyGripPoseParam = 5.5
+SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.CodAngledGripPoseParam = 21

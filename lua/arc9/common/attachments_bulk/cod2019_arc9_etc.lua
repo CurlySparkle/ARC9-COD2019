@@ -77,3 +77,119 @@ ATT.ReloadPos = Vector(0,0,0)
 ATT.ReloadAng = Angle(0,0,0)
 
 ARC9.LoadAttachment(ATT, "cod2019_view_alt_pistol")
+------------------------------------------------------------------ Laser Attach Rail
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = [[Laser Attach]]
+ATT.CompactName = [[Laser Attach]]
+ATT.Description = [[Lets you attach laser types on your weapon.]]
+ATT.Icon = Material("entities/attachs/cod2019_attach_laser_rail.png", "mips smooth")
+
+ATT.SortOrder = 1
+ATT.AutoStats = true
+ATT.Category = "cod2019_tac_rail"
+ATT.ModelOffset = Vector(0, 0, 0)
+-- ATT.Folder = "Tactical"
+
+ATT.Model = "models/weapons/cod2019/attachs/attach_laser_rail.mdl"
+
+ATT.Attachments = {
+    {
+        PrintName = "Tactical",
+        Pos = Vector(0, 1.21, 0.43),
+        Ang = Angle(0, 0, -90),
+        Icon_Offset = Vector(0, 0, 0),
+        Category = "cod2019_tac",
+		Scale = 1,
+    }
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_attach_laser_rail")
+------------------------------------------------------------------ Laser Attach Rail 2 (Cylinder)
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = [[Laser Attach C]]
+ATT.CompactName = [[Laser Attach C]]
+ATT.Description = [[Lets you attach laser cylinder types on your weapon.]]
+ATT.Icon = Material("entities/attachs/cod2019_attach_laser_rail_2.png", "mips smooth")
+
+ATT.SortOrder = 1
+ATT.AutoStats = true
+ATT.Category = "cod2019_tac_rail"
+ATT.ModelOffset = Vector(0, 0, 0)
+-- ATT.Folder = "Tactical"
+
+ATT.Model = "models/weapons/cod2019/attachs/attach_laser_rail_2.mdl"
+
+ATT.Attachments = {
+    {
+        PrintName = "Tactical",
+        Pos = Vector(-0.52, 1.5, 0.5),
+        Ang = Angle(0, 0, -90),
+        Icon_Offset = Vector(0, 0, 0),
+        Category = "cod2019_tac_cylinde",
+		Scale = 1,
+    }
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_attach_laser_rail_2")
+------------------------------------------------------------------ Laser Attach Cylinder
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = [[Laser Attach]]
+ATT.CompactName = [[Laser Attach]]
+ATT.Description = [[Lets you attach laser types on your weapon.]]
+ATT.Icon = Material("entities/attachs/cod2019_attach_laser_cylinder.png", "mips smooth")
+
+ATT.SortOrder = 1
+ATT.AutoStats = true
+ATT.Category = "cod2019_tac_rail_cylinder"
+ATT.ModelOffset = Vector(0, 0, 0)
+-- ATT.Folder = "Tactical"
+
+ATT.Model = "models/weapons/cod2019/attachs/attach_laser_cylinder.mdl"
+
+ATT.Attachments = {
+    {
+        PrintName = "Tactical",
+        Pos = Vector(0, 1.17, 0),
+        Ang = Angle(0, 0, -90),
+        Icon_Offset = Vector(0, 0, 0),
+        Category = "cod2019_tac",
+		Scale = 1,
+    }
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_attach_laser_cylinder")
+------------------------------------------------------------------ Laser Attach Cylinder 2
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = [[Laser Attach C]]
+ATT.CompactName = [[Laser Attach C]]
+ATT.Description = [[Lets you attach cylinder laser types on your weapon.]]
+ATT.Icon = Material("entities/attachs/cod2019_attach_laser_cylinder_2.png", "mips smooth")
+
+ATT.SortOrder = 1
+ATT.AutoStats = true
+ATT.Category = "cod2019_tac_rail_cylinder"
+ATT.ModelOffset = Vector(0, 0, 0)
+-- ATT.Folder = "Tactical"
+
+ATT.Model = "models/weapons/cod2019/attachs/attach_laser_cylinder_2.mdl"
+
+ATT.Attachments = {
+    {
+        PrintName = "Tactical",
+        Pos = Vector(-0.5, 1.37, 0),
+        Ang = Angle(0, 0, -90),
+        Icon_Offset = Vector(0, 0, 0),
+        Category = "cod2019_tac_cylinde",
+		Scale = 1,
+    }
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_attach_laser_cylinder_2")

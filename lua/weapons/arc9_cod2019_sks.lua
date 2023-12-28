@@ -858,6 +858,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     else
      model:SetPoseParameter("grip_stockhvy_offset", 0)
     end
+    if wep:HasElement("heavy_stock") then model:SetBodygroup(3,2) end
 end
 
 SWEP.Attachments = {
@@ -914,7 +915,7 @@ SWEP.Attachments = {
         Bone = "tag_stock_attach",
         Pos = Vector(-0.2, 0, 1.2),
         Ang = Angle(5, 0, 0),
-		--InstalledElements = {"stock_adapter"},
+		InstalledElements = {"stock_adapter"},
     },
     {
         PrintName = "Ammo",

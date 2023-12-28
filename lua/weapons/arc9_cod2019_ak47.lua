@@ -417,9 +417,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_reload_fast_twist.ogg", t = 0.033},
-			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_01.ogg", t = 0.070},
-			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_01.ogg", t = 0.72},
-			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_02.ogg", t = 1.12},
+			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_02.ogg", t = 0.070},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_01.ogg", t = 0.65},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 1.05},
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_end.ogg", t = 1.06},
         },
     },
@@ -728,7 +728,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
             {
                 t = 0,
@@ -943,9 +943,9 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac_cylinde",
+        Category = "cod2019_tac_rail_cylinder",
         Bone = "tag_laser_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-0.34, -1.34, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"tag_laser"},
     },
@@ -1047,4 +1047,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4.6
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodStubbyGripPoseParam = 6
+SWEP.CodStubbyTallGripPoseParam = 22
 SWEP.CodAngledGripPoseParam = 21

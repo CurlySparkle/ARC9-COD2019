@@ -95,7 +95,7 @@ SWEP.Recoil = 1.5
 
 SWEP.RecoilSeed = 8778456
 
-SWEP.RecoilPatternDrift = 5
+SWEP.RecoilPatternDrift = 3
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -104,7 +104,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.1
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.2
 
 SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -122,11 +122,11 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 0.3
 
-SWEP.VisualRecoilRoll = 35
-SWEP.VisualRecoilSide = 0.3
+SWEP.VisualRecoilRoll = 25
+SWEP.VisualRecoilSide = 0.4
 
 SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 5
@@ -162,7 +162,7 @@ SWEP.SpreadAddSights = -0.5
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -216,6 +216,9 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-2, 3, -3.5)
+SWEP.PeekAng = Angle(-2, 2, -45)
 
 -------------------------- HoldTypes
 
@@ -526,11 +529,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -567,7 +570,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -790,11 +793,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail_cylinder",
         Bone = "tag_laser_attach",
-        Pos = Vector(-5, 0.1, -0.85),
-        Ang = Angle(0, 0, -90),
-		InstalledElements = {"rail_grip"},
+        Pos = Vector(-0.34, -1.34, 0),
+        Ang = Angle(0, 0, 0),
+		--InstalledElements = {""},
     },
     {
         PrintName = "Grips",
