@@ -417,7 +417,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_reload_fast_twist.ogg", t = 0.033},
-			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_02.ogg", t = 0.070},
+            {s = path .. "wfoly_ar_akilo47_reload_fast_magout_01.ogg", t = 0.16},
+			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_02.ogg", t = 0.22},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_01.ogg", t = 0.65},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 1.05},
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_end.ogg", t = 1.06},
@@ -452,9 +453,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_twist.ogg", t = 0.033},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_maghit_01.ogg", t = 0.13},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_01.ogg", t = 0.66},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 1.03},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_maghit_01.ogg", t = 0.13},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_01.ogg", t = 0.64},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 1.01},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_chamber_01.ogg", t = 1.36},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_end.ogg", t = 1.6},
         },
