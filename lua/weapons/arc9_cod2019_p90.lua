@@ -100,7 +100,7 @@ SWEP.Recoil = 1.15
 
 SWEP.RecoilSeed = 6589132
 
-SWEP.RecoilPatternDrift = 5
+SWEP.RecoilPatternDrift = 1
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -109,7 +109,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.1
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.2
 
 SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -125,12 +125,15 @@ SWEP.RecoilMultSights = 0.85
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.5
-SWEP.VisualRecoilPunchSights = 25
-SWEP.VisualRecoilPunch = 2.5
+SWEP.VisualRecoilMultSights = 0.4
+SWEP.VisualRecoilPunchSights = 1
+SWEP.VisualRecoilSideSights = 0.2
+SWEP.VisualRecoilUpSights = 0.2
+
+SWEP.VisualRecoilPunch = 1.5
 SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 25
-SWEP.VisualRecoilSide = 0.5
+SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 80
@@ -155,7 +158,7 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.5
-SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCap = 1
 SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
@@ -171,7 +174,7 @@ SWEP.SpreadAddSights = -0.5
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -197,7 +200,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, -1, 0)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -559,11 +562,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -862,7 +865,7 @@ SWEP.Attachments = {
         PrintName = "Charm",
         Category = "charm",
         Bone = "tag_cosmetic",
-        Pos = Vector(-2.5, 0, 0),
+        Pos = Vector(-1.5, 0.05, -1.8),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
     },

@@ -3,34 +3,31 @@
 	"$basetexture"				"models/cod2019/bruenmk9/bruenmk9_body1"
 	"$bumpmap"					"models/cod2019/bruenmk9/bruenmk9_body1_n"
 	"$phongexponenttexture"		"models/cod2019/bruenmk9/bruenmk9_body1_exp"
-	"$color2"					"[0.8 0.8 0.8]"
-	"$blendTintByBaseAlpha"		"1"
 
-	"$envmap"					"env_cubemap"
-	"$envmaptint"				"[ .13 .13 .13 ]"
-	"$envmapfresnel"			".25"
-	"$envmapcoefficient"		"[0.39 0.39 0.39]"
+    /////////////////
+    "$color2" "[0.8 0.8 0.8]"                                     //do not touch this
+    "$blendtintbybasealpha" "1"                             //do not touch this
+    /////////////////
 
-	"$phong"					"1"
-	"$phongboost"				"15"
-     //"$phongexponent"				"55"
-	"$phongfresnelranges"		"[0.32 0.72 0.99]"
-	"$phongalbedotint" 			"1"
+    "$phong" "1"
+    "$phongboost" "1"
+    "$phongalbedotint" "1"
+    "$phongalbedoboost" "10"                                //toy around with this
+    "$phongfresnelranges" "[1 0.1 0]"
+       
+    /////////////////
+    "$normalmapalphaenvmapmask" "1"                         //do not touch this
+    /////////////////
 
-     "$normalmapalphaenvmapmask"              "1"
-	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[0.376 0.325 0.259]"   
 
-	"$rimlight"					"0"
-	"$rimlightexponent"			"33"
-	"$rimlightboost"			"2"
-	"$rimmask"					"1"
-	"$nocull"					"1"
+    "$detailblendmode" "4"
+    "$detailblendfactor" "0.7"         
 
-     "$detailblendmode" "4"
-     "$detailblendfactor" "0.7"
-
-     "Proxies"
-     {
+    //remove this if not using MWB
+    "Proxies"
+    {
         "Arc9EnvMapTint"
         {
             "specularity" "0.5"
@@ -44,5 +41,5 @@
             "blend" $detailblendfactor
             "color2" "[0.8 0.8 0.8]"
 	   }
-     }
+    }
 }

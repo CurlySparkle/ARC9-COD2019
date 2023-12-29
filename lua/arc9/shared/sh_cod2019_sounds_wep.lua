@@ -1,5 +1,6 @@
 ------------ Akimbos/Handguns ------------
 
+------------ Pistols ------------
 --- .50 GS ---
 sound.Add( {
 	name = "COD2019.50GS.Fire",
