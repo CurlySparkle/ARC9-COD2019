@@ -331,9 +331,9 @@ SWEP.MalfunctionMeanShotsToFailMultHot = -0.1*2
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
-        EventTable = {
-			{s = "COD2019.Scar.Mech", t = 0/30},
-        },
+        -- EventTable = {
+			-- {s = "COD2019.Scar.Mech", t = 0/30},
+        -- },
     },
     ["reload"] = {
         Source = "reload_short",

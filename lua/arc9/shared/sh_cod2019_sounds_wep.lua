@@ -292,7 +292,7 @@ sound.Add( {
     volume = 1,
     pitch = {90,110},
     sound = {
-		"^weapons/cod2019/scar/weap_scharlie_fire_plr_01.ogg",
+		"weapons/cod2019/scar/weap_scharlie_fire_plr_01.ogg",
     }              
 } )
 
@@ -316,14 +316,10 @@ sound.Add( {
     name = "COD2019.Scar.Mech",
     channel = CHAN_AUTO,
     level = 120,
-    volume = 0.7,
+    volume = 0.5,
+    pitch = {90,110},
     sound = {
-		"weapons/cod2019/scar/weap_scharlie_mech_plr_01.ogg",
-		"weapons/cod2019/scar/weap_scharlie_mech_plr_02.ogg",
-		"weapons/cod2019/scar/weap_scharlie_mech_plr_03.ogg",
-		"weapons/cod2019/scar/weap_scharlie_mech_plr_04.ogg",
-		"weapons/cod2019/scar/weap_scharlie_mech_plr_05.ogg",
-		"weapons/cod2019/scar/weap_scharlie_mech_plr_06.ogg"
+		"weapons/cod2019/scar/weap_scharlie_mech_plr_01.ogg"
     }              
 } )
 
