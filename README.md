@@ -1,3 +1,7 @@
+<p align="center">
+ <img src="https://github.com/CurlySparkle/ARC9-COD2019/assets/12680810/1de3b3fb-e867-4343-8ce9-1a69a53b5dad" />
+</p>
+
 # [ARC9] Call of Duty: Modern Warfare
 Weapon pack from [Call of Duty: Modern Warfare (2019)](https://www.callofduty.com/modernwarfare) with only their vanilla base blueprints (but there's a few exceptions). There might be a lot of changes here and there in order to keep a proper balance on the weapons so they don't end up being extremely OP and have a better feeling of using them all.
 
