@@ -179,6 +179,7 @@ ATT.Firemodes = {
     },
     {
         Mode = 1,
+		RPMMult = 1.5,
 		PoseParam = 1,
     },
 }
@@ -201,7 +202,7 @@ ATT.RunawayBurst = true
 ATT.PostBurstDelay = 0.15
 --ATT.TracerEffect = "ARC9_tracer"
 
-ATT.FiremodesOverride = {
+ATT.Firemodes = {
     {
         Mode = 2,
 		PoseParam = 0,
@@ -209,6 +210,7 @@ ATT.FiremodesOverride = {
     },
     {
         Mode = 1,
+		RPMMult = 1.5,
 		PoseParam = 1,
     },
 }

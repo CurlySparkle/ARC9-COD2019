@@ -70,6 +70,8 @@ ATT.RicochetChanceOverride = 1
 ATT.NumOverride = 1
 ATT.NormalizeNumDamage = true
 
+ATT.MuzzleParticle = "muzzleflash_slug"
+ATT.MuzzleParticleSilenced = "AC_muzzle_shotgun_suppressed"
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_slug")
 
@@ -153,6 +155,9 @@ ATT.ImpactDecal = "FadingScorch"
 ATT.Override_DamageType = DMG_BLAST + DMG_AIRBOAT
 ATT.DamageType = DMG_BLAST + DMG_AIRBOAT
 
+ATT.MuzzleParticle = "muzzleflash_M3"
+ATT.MuzzleParticleSilenced = "AC_muzzle_shotgun_suppressed"
+
 ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_frag")
 
 -------------------------------------------------------------------------------
@@ -214,6 +219,9 @@ ATT.ExplosionDamageOverride = 25
 ATT.ExplosionEffect = "cod2019_muzzle_he"
 ATT.ImpactDecal = "FadingScorch"
 
+ATT.MuzzleParticle = "muzzleflash_M3"
+ATT.MuzzleParticleSilenced = "AC_muzzle_shotgun_suppressed"
+
 ATT.DamageType = DMG_BLAST + DMG_AIRBOAT
 ATT.DamageTypeOverride = DMG_BLAST + DMG_AIRBOAT
 
@@ -233,6 +241,9 @@ ATT.Category = {"cod2019_ammo_sg"}
 ATT.ExplosionEffect = "cod2019_muzzle_db"
 ATT.ImpactDecal = "Dark"
 ATT.ImpactEffect = "cod2019_muzzle_he"
+
+ATT.MuzzleParticle = "muzzleflash_shotgun"
+ATT.MuzzleParticleSilenced = "AC_muzzle_shotgun_suppressed"
 
 ATT.DamageType = DMG_BURN + DMG_SLOWBURN
 ATT.DamageTypeOverride = DMG_BURN + DMG_SLOWBURN

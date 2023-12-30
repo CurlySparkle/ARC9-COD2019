@@ -237,6 +237,7 @@ SWEP.AnimDraw = false
 
 SWEP.MuzzleParticle = "AC_muzzle_sniper_heavy"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
+SWEP.TracerEffect = "cod2019_tracer_slow"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
@@ -859,6 +860,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 3
 SWEP.GripPoseParam2 = 0.1
-SWEP.CodStubbyGripPoseParam = 1
+SWEP.CodStubbyGripPoseParam = 7.9
 SWEP.CodAngledGripPoseParam = 32.7
 SWEP.CodStubbyTallGripPoseParam = 22
