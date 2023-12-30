@@ -178,7 +178,7 @@ SWEP.SpreadAddSights = -0.5
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -220,8 +220,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
-SWEP.MovingAng = Angle(0, 0, 0)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -327,6 +327,13 @@ SWEP.TriggerUpSound = "weapons/cod2019/kilo141/weap_kilo433_disconnector_plr_01.
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["reload"] = {
         Source = "reload_short",
@@ -460,7 +467,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1,
+                t = 1.1,
                 lhik = 1,
                 rhik = 1
             },
@@ -474,6 +481,79 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 26/30},
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_charge_01.ogg", t = 37/30},
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 47/30},
+        },
+    },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_ar_kilo433_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_settle.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_magout_01.ogg", t = 22/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_magin_v2_01.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_magin_v2_02.ogg", t = 42/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_rattle.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_end.ogg", t = 66/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_reach.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_tilt.ogg", t = 15/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_01.ogg", t = 28/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_charge_01.ogg", t = 57/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 73/30},
         },
     },
     ["reload_drum"] = {
@@ -655,12 +735,36 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.4,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_ar_kilo433_raise_up.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.35,
+                lhik = 0,
+                rhik = 0
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_plr_ar_kilo433_drop_down.ogg", t = 0/30},
         },
@@ -673,11 +777,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 1.5,
+		Mult = 2.5,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 1.5,
+		Mult = 2.5,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -779,6 +883,10 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
         return "reload_drum_empty"
 --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("ammo_extend") then 
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_empty"
     end
 end
 
@@ -842,9 +950,14 @@ SWEP.AttachmentElements = {
             {0,1},
         },
     },
-    ["mag_none"] = {
+    ["mag_extend"] = {
         Bodygroups = {
             {1,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
+            {1,2},
         },
     },
     ["barrel_none"] = {

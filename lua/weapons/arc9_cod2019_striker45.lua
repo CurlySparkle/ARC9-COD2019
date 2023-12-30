@@ -106,7 +106,7 @@ SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 0.5 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.7 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -132,16 +132,16 @@ SWEP.VisualRecoilMultSights = 1
 SWEP.VisualRecoilPunchSights = 5
 SWEP.VisualRecoilUpSights = 0.1
 SWEP.VisualRecoilSideSights = 0.1
-SWEP.VisualRecoilRollSights = 15
+SWEP.VisualRecoilRollSights = 5
 
 SWEP.VisualRecoilPunch = 1.5
-SWEP.VisualRecoilUp = 1
-SWEP.VisualRecoilRoll = 50
+SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilRoll = 15
 SWEP.VisualRecoilSide = 0.5
 
-SWEP.VisualRecoilSpringPunchDamping = 11
-SWEP.VisualRecoilDampingConst = 30
-SWEP.VisualRecoilDampingConstSights = 120
+-- SWEP.VisualRecoilSpringPunchDamping = 11
+-- SWEP.VisualRecoilDampingConst = 30
+-- SWEP.VisualRecoilDampingConstSights = 120
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -161,7 +161,7 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 2.5
+SWEP.RecoilModifierCap = 1.7
 SWEP.RecoilModifierCapMove = 1
 SWEP.RecoilModifierCapSights = 0
 
@@ -640,7 +640,7 @@ end
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
-SWEP.DefaultBodygroups = "000000000000000"
+SWEP.DefaultBodygroups = "00000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -676,14 +676,14 @@ SWEP.AttachmentElements = {
             {3,2},
         },
     },
-    ["stock_none"] = {
-        Bodygroups = {
-            {3,3},
-        },
-    },
     ["stock_retract"] = {
         Bodygroups = {
             {3,1},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {3,3},
         },
     },
     ["grip_none"] = {
@@ -705,8 +705,8 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("stock_retract") then model:SetBodygroup(3,1)
-	elseif wep:HasElement("body_ump") then model:SetBodygroup(2,2)
+    if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
+	if wep:HasElement("body_ump") then model:SetBodygroup(2,2)
 	end
 end
 
@@ -761,9 +761,9 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Stock",
         Category = {"cod2019_tube","stock_retract","cod2019_striker45_stock"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-0.78, 0, 0.27),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_adapter"},
+		--InstalledElements = {"stock_adapter"},
 		Scale = 1,
     },
     {
