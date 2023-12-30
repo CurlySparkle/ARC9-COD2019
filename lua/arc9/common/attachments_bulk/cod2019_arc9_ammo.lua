@@ -120,6 +120,8 @@ ATT.Category = {"cod2019_ammo"}
 
 ATT.TracerNum = 1
 ATT.TracerSizeAdd = 1
+ATT.AlwaysPhysBullet = true
+ATT.NeverPhysBullet = false
 
 ATT.TracerColorHook = function(swep, col)
     if IsValid(swep:GetOwner()) and swep:GetOwner():IsPlayer() then

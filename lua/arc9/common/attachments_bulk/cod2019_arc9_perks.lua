@@ -161,20 +161,25 @@ ATT.Description = [[Changes fire mode to 3-round burst.]]
 ATT.Icon = Material("entities/attachs/cod2019_perks_burst.png", "mips smooth")
 ATT.AutoStats = true
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-
 ATT.Free = true
+
+ATT.RunawayBurst = true
+ATT.PostBurstDelay = 0.15
+--ATT.TracerEffect = "ARC9_tracer"
 
 ATT.Category = {"cod2019_perks_burst"}
 ATT.ActivateElements = {"perk_burst"}
 
-ATT.FiremodesOverride = {
+ATT.Firemodes = {
     {
         Mode = 3,
         RunawayBurst = true,
-        PostBurstDelay = 0.15,
+		PoseParam = 0,
+		TracerEffect = "ARC9_tracer"
     },
     {
         Mode = 1,
+		PoseParam = 1,
     },
 }
 
@@ -187,20 +192,24 @@ ATT.Description = [[Changes fire mode to 2-round burst.]]
 ATT.Icon = Material("entities/attachs/cod2019_perks_burst_2.png", "mips smooth")
 ATT.AutoStats = true
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-
 ATT.Free = true
 
 ATT.Category = {"cod2019_perks_burst_2"}
 ATT.ActivateElements = {"perk_burst"}
 
+ATT.RunawayBurst = true
+ATT.PostBurstDelay = 0.15
+--ATT.TracerEffect = "ARC9_tracer"
+
 ATT.FiremodesOverride = {
     {
         Mode = 2,
-        RunawayBurst = true,
-        PostBurstDelay = 0.15,
+		PoseParam = 0,
+		TracerEffect = "ARC9_tracer"
     },
     {
         Mode = 1,
+		PoseParam = 1,
     },
 }
 

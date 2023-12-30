@@ -113,7 +113,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.1
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.2
 
 SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -135,7 +135,7 @@ SWEP.VisualRecoilPunch = 1.5
 SWEP.VisualRecoilUp = 0.4
 
 SWEP.VisualRecoilRoll = 25
-SWEP.VisualRecoilSide = 0.2
+SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilMultSights = 0.5
 SWEP.VisualRecoilPunchSights = 1
