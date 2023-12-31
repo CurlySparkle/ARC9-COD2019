@@ -225,6 +225,7 @@ SWEP.Akimbo = true
 
 SWEP.MuzzleParticle = "AC_muzzle_desert_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
+SWEP.TracerEffect = "cod2019_tracer_small"
 SWEP.MuzzleEffectQCA = 1
 SWEP.MuzzleEffectQCAEvenShot = 2
 SWEP.CaseEffectQCA = 4
