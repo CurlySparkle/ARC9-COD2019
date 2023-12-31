@@ -76,7 +76,7 @@ SWEP.Ammo = "buckshot" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 0 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize = 2 -- Self-explanatory.
-SWEP.SupplyLimit = 22 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.SupplyLimit = 64 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
@@ -90,7 +90,14 @@ SWEP.RPM = 560
 
 SWEP.Firemodes = {
     {
+	    PrintName = "Single-Shot",
         Mode = 1,
+    },
+    {
+        PrintName = "Double-Shot",
+        Mode = 1,
+		AmmoPerShot = 2,
+		Num = 6 * 2,
     },
 }
 
@@ -125,8 +132,12 @@ SWEP.RecoilMultSights = 0.9
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilMultSights = 0.7
+SWEP.VisualRecoilPunchSights = 25
+
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilRoll = 25
 
 -------------------------- SPREAD
 
@@ -155,7 +166,7 @@ SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire
 SWEP.Sway = 0 -- How much the gun sways.
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -197,7 +208,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.5, -0.5, -0.5)
+SWEP.MovingPos = Vector(-1, -0.5, -1)
 SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -227,7 +238,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_shotgun_fp"
+SWEP.MuzzleParticle = "muzzleflash_shotgun"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.TracerEffect = "cod2019_tracer_slow"
 SWEP.MuzzleEffectQCA = 1
@@ -301,6 +312,9 @@ SWEP.TriggerUpSound = ""
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
+    },
+    ["fire_scope"] = {
+        Source = "shoot1_scope",
     },
     ["reload"] = {
         Source = "reload_short",
@@ -520,11 +534,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -560,8 +574,42 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_charlie725_inspect_05.ogg", t = 132/30},
         },
     },
+    ["inspect_scope"] = {
+        Source = "lookat01_scope",
+        MinProgress = 0.1,
+        FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sh_charlie725_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_charlie725_inspect_02.ogg", t = 42/30},
+			{s = path .. "wfoly_sh_charlie725_inspect_03.ogg", t = 76/30},
+			{s = path .. "wfoly_sh_charlie725_inspect_04.ogg", t = 106/30},
+			{s = path .. "wfoly_sh_charlie725_inspect_05.ogg", t = 132/30},
+        },
+    },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -585,6 +633,18 @@ SWEP.Animations = {
             },
         },
     },
+    ["firemode_1"] = {
+        Source = "firemode",
+        EventTable = {
+            {s = path .. "weap_charlie725_fire_first_plr_01.ogg", t = 0/30},
+        },
+    },
+    ["firemode_2"] = {
+        Source = "firemode",
+        EventTable = {
+            {s = path .. "weap_charlie725_fire_first_plr_01.ogg", t = 0/30},
+        },
+    },
 }
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
@@ -593,6 +653,12 @@ SWEP.Animations = {
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
+
+    if anim == "fire" and wep:HasElement("optic_scope") then
+        return "fire_scope"
+    elseif anim == "inspect" and wep:HasElement("optic_scope") then 
+        return "inspect_scope"
+    end
 
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
@@ -836,6 +902,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.2
 SWEP.GripPoseParam2 = 0.3
-SWEP.CodStubbyGripPoseParam = 7
+SWEP.CodStubbyGripPoseParam = 6
 SWEP.CodStubbyTallGripPoseParam = 1
 SWEP.CodAngledGripPoseParam = 15

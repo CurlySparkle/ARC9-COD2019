@@ -223,8 +223,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.1, -0.9)
-SWEP.MovingAng = Angle(-0.4, 0.1, -8)
+SWEP.MovingPos = Vector(-1, -0.5, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0.6, 0.3, -5)
@@ -253,7 +253,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_shotgun_fp"
+SWEP.MuzzleParticle = "muzzleflash_shotgun"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.TracerEffect = "cod2019_tracer_slow"
 SWEP.MuzzleEffectQCA = 1
