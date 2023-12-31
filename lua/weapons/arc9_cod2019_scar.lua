@@ -372,7 +372,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
-		DropMagAt = 0.95,
+		DropMagAt = 0.65,
         IKTimeLine = {
             {
                 t = 0,
@@ -407,7 +407,7 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
-		MagSwapTime = 1.5,
+		MagSwapTime = 0.5,
 		DropMagAt = 0.55,
         IKTimeLine = {
             {
@@ -442,7 +442,7 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.8,
-		MagSwapTime = 1.5,
+		MagSwapTime = 0.5,
 		DropMagAt = 0.55,
         IKTimeLine = {
             {
@@ -512,7 +512,7 @@ SWEP.Animations = {
     ["reload_xmags_fast"] = {
         Source = "reload_xmags_fast",
 		MinProgress = 0.8,
-		MagSwapTime = 1.5,
+		MagSwapTime = 0.5,
 		DropMagAt = 0.55,
         IKTimeLine = {
             {
@@ -542,6 +542,146 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_01.ogg", t = 25/30},
 			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_02.ogg", t = 31/30},
 			{s = path .. "wfoly_ar_scharlie_reload_fast_end.ogg", t = 35/30},
+        },
+    },
+    ["reload_dmr"] = {
+        Source = "reload_dmr",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magout.ogg", t = 19/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_01.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_02.ogg", t = 44/30},
+			{s = path .. "wfoly_ar_scharlie_reload_end.ogg", t = 49/30},
+        },
+    },
+    ["reload_dmr_empty"] = {
+        Source = "reload_dmr_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 44/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 54/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_bolt_release.ogg", t = 64/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 67/30},
+        },
+    },
+    ["reload_dmr_fast"] = {
+        Source = "reload_dmr_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 0.5,
+		DropMagAt = 0.55,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_fast_shake.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magout.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_02.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_end.ogg", t = 36/30},
+        },
+    },
+    ["reload_dmr_fast_empty"] = {
+        Source = "reload_dmr_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 0.5,
+		DropMagAt = 0.55,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_bolt_release.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 45/30},
         },
     },
     ["ready"] = {
@@ -719,6 +859,17 @@ SWEP.Animations = {
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
+	
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_dmr") then
+        return "reload_dmr_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_dmr") then 
+        return "reload_dmr_fast_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_dmr") then
+        return "reload_dmr"
+    elseif anim == "reload_empty" and wep:HasElement("mag_dmr") then 
+        return "reload_dmr_empty"
+    end
 
     if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
         return "reload_xmags_fast"
@@ -910,7 +1061,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_scar_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
