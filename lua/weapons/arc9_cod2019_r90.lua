@@ -609,11 +609,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
-        Bone = "tag_grip_attach",
-        Pos = Vector(-0.9, 1.5, 1.4),
-        Ang = Angle(0, 0, -90),
-		InstalledElements = {"rail_laser"},
+        Category = "cod2019_tac_rail",
+        Bone = "tag_laser_attach",
+        Pos = Vector(2.5, 0, -0.11),
+        Ang = Angle(0, 0, 0),
+		--InstalledElements = {"rail_laser"},
     },
     {
         PrintName = "Grips",
