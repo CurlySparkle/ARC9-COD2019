@@ -307,7 +307,7 @@ SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/725/weap_charlie725_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = ""
+SWEP.TriggerUpSound = "weapons/cod2019/model680/weap_romeo870_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -769,7 +769,7 @@ SWEP.Attachments = {
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Category = "cod2019_muzzle_shot",
+        Category = "cod2019_muzzle_shot_db",
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
