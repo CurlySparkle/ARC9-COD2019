@@ -638,7 +638,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 1
             },
@@ -654,14 +654,14 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sm_augolf_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_augolf_reload_magout_01.ogg", t = 13/30},
-			{s = path .. "wfoly_sm_augolf_reload_magout_cloth.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_magout_01.ogg", t = 12/30},
+			{s = path .. "wfoly_sm_augolf_reload_magout_cloth.ogg", t = 12/30},
 			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 28/30},
-			{s = path .. "wfoly_sm_augolf_reload_magin_v2_01.ogg", t = 39/30},
-			{s = path .. "wfoly_sm_augolf_reload_magin_v2_02.ogg", t = 47/30},
-			{s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 54/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_magin_v2_01.ogg", t = 38/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 44/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_end.ogg", t = 50/30},
         },
     },
     ["reload_drummag_empty"] = {
@@ -676,7 +676,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 1
             },
@@ -694,14 +694,14 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_boltopen.ogg", t = 8/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_rotate.ogg", t = 9/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magout_01.ogg", t = 25/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 32/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_rotate.ogg", t = 9/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_magout_01.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 35/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 40/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_01.ogg", t = 55/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_02.ogg", t = 63/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 75/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 75/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_magin_v2_01.ogg", t = 55/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 60/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 77/30},
+			{s = path .. "wfoly_sm_augolf_reload_waffle_end.ogg", t = 82/30},
         },
     },
     ["reload_drummag_fast"] = {
@@ -732,14 +732,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sm_augolf_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_augolf_reload_magout_01.ogg", t = 13/30},
-			{s = path .. "wfoly_sm_augolf_reload_magout_cloth.ogg", t = 13/30},
-			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 28/30},
-			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 28/30},
-			{s = path .. "wfoly_sm_augolf_reload_magin_v2_01.ogg", t = 39/30},
-			{s = path .. "wfoly_sm_augolf_reload_magin_v2_02.ogg", t = 47/30},
-			{s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 54/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magout_01.ogg", t = 9/30},
+            {s = path .. "wfoly_sm_augolf_reload_fast_waffle_mvmnt.ogg", t = 14/30},
+			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 24/30},
+			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 27/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_end.ogg", t = 37/30},
         },
     },
     ["reload_drummag_fast_empty"] = {
@@ -770,16 +769,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_boltopen.ogg", t = 8/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_rotate.ogg", t = 9/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magout_01.ogg", t = 25/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 32/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 40/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_01.ogg", t = 55/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_02.ogg", t = 63/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 75/30},
-			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 75/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_mvmnt.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magout_01.ogg", t = 9/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 14/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_end.ogg", t = 47/30},
         },
     },
     ["ready"] = {
@@ -999,6 +995,11 @@ SWEP.AttachmentElements = {
             {7,1},
         },
     },
+    ["stock_none"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
 }
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
@@ -1067,11 +1068,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail_cylinder",
         Bone = "tag_laser_attach",
-        Pos = Vector(-5, 0, -0.4),
-        Ang = Angle(0, 0, -90),
-		InstalledElements = {"rail_laser"},
+        Pos = Vector(-0.34, -1.34, 0),
+        Ang = Angle(0, 0, 0),
+		--InstalledElements = {"rail_laser"},
     },
     {
         PrintName = "Grips",
