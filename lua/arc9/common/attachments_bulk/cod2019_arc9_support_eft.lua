@@ -8,6 +8,7 @@ ATT.Description = "Enables the ability to equip grips from the EFT packs.\n\nNot
 
 ATT.SortOrder = 10000
 ATT.Category = "cod2019_grip"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.MenuCategory = "ARC9 - MW19 Attachments"
 ATT.Attachments = {
     {
@@ -30,6 +31,7 @@ ATT.Description = "Enables the ability to equip muzzles from the EFT packs.\n\nN
 
 ATT.SortOrder = 10000
 ATT.Category = "cod2019_muzzle"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.MenuCategory = "ARC9 - MW19 Attachments"
 ATT.Attachments = {
     {
@@ -51,6 +53,7 @@ ATT.Description = "Enables the ability to equip scopes from the EFT packs.\n\nNo
 
 ATT.SortOrder = 10000
 ATT.Category = "cod2019_optic"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.MenuCategory = "ARC9 - MW19 Attachments"
 ATT.Attachments = {
     {
@@ -72,6 +75,7 @@ ATT.Description = "Enables the ability to equip scopes from the EFT packs.\n\nNo
 
 ATT.SortOrder = 10000
 ATT.Category = "cod2019_optics_pistols_alt"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.MenuCategory = "ARC9 - MW19 Attachments"
 ATT.Attachments = {
     {
@@ -93,6 +97,7 @@ ATT.Description = "Enables the ability to equip stocks from the EFT packs.\n\nNo
 
 ATT.SortOrder = 10000
 ATT.Category = "cod2019_stocks"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.MenuCategory = "ARC9 - MW19 Attachments"
 ATT.Attachments = {
     {

@@ -550,6 +550,8 @@ L["mw19_weapon_knife"] = "Knife"
 L["mw19_weapon_stick"] = "Kali Sticks"
 L["mw19_weapon_sword"] = "Dual Kodachis"
 
+L["mw19_weapon_akimbo"] = "%s Akimbo"
+
 //////////// Weapon Descriptions
 L["mw19_weapon_kilo141_desc"] = "Fully automatic assault rifle with an ergonomic design that improves handling, and a steady fire rate helps stay on target."
 L["mw19_weapon_fal_desc"] = "A semi-automatic assault rifle with a high rate of fire for faster follow up shots."

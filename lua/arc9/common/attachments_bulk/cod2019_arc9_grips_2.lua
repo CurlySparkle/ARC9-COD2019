@@ -2,8 +2,8 @@ local ATT = {}
 ------------------------------------------------------------------ SIDE GRIPS
 ATT = {}
 
-ATT.PrintName = "Foregrip"
-ATT.CompactName = "Foregrip"
+ATT.PrintName = "ARC Foregrip"
+ATT.CompactName = "ARC"
 ATT.Description = [[Extended foregrip reduces vertical recoil and provides stability from the hip for fast paced guerilla tactics.]]
 
 ATT.Icon = Material("entities/attachs/cod2019_attach_grip_origin.png", "mips smooth")
@@ -40,6 +40,7 @@ ATT.Model = "models/weapons/cod2019/attachs/grips/grip_none.mdl"
 
 ATT.SortOrder = 0
 ATT.Category = "cod2019_grip_none"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 
 ATT.LHIK_Priority = 5
 ATT.LHIK = true
@@ -61,6 +62,7 @@ ATT.Model = "models/weapons/cod2019/attachs/grips/grip_cclamp.mdl"
 
 ATT.SortOrder = 0
 ATT.Category = "cod2019_grip_cclamp"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 
 ATT.LHIK_Priority = 5
 ATT.LHIK = true
@@ -82,6 +84,7 @@ ATT.Model = "models/weapons/cod2019/attachs/grips/grip_noclamp.mdl"
 
 ATT.SortOrder = 0
 ATT.Category = "cod2019_grip_noclamp"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 
 ATT.LHIK_Priority = 5
 ATT.LHIK = true

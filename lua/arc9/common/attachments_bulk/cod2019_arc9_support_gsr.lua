@@ -11,6 +11,7 @@ ATT.Description = [[Lets you use tactical attachments from GSR.]]
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_tac_pistols"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 --ATT.Folder = "Suppresors"
 
 --ATT.Model = "models/weapons/cod2019/attachs/silencers/attachment_vm_sh_oscar12_silencer03.mdl"
@@ -39,6 +40,7 @@ ATT.Description = [[Lets you use optic attachments from GSR.]]
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_optic"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 --ATT.Folder = "Suppresors"
 
 --ATT.Model = "models/weapons/cod2019/attachs/silencers/attachment_vm_sh_oscar12_silencer03.mdl"
@@ -67,6 +69,7 @@ ATT.Description = [[Lets you use pistol optics from GSR.]]
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_optics_pistols_alt"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 --ATT.Folder = "Suppresors"
 
 --ATT.Model = "models/weapons/cod2019/attachs/silencers/attachment_vm_sh_oscar12_silencer03.mdl"
@@ -95,6 +98,7 @@ ATT.Description = [[Lets you use muzzles from GSR.]]
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_muzzle_shot"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 --ATT.Folder = "Suppresors"
 
 --ATT.Model = "models/weapons/cod2019/attachs/silencers/attachment_vm_sh_oscar12_silencer03.mdl"
@@ -123,6 +127,7 @@ ATT.Description = [[Lets you use muzzles from GSR.]]
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_muzzle_pistols"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 --ATT.Folder = "Suppresors"
 
 --ATT.Model = "models/weapons/cod2019/attachs/silencers/attachment_vm_sh_oscar12_silencer03.mdl"
@@ -153,6 +158,7 @@ ATT.Description = [[Lets you use muzzles from GSR.]]
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_muzzle"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 --ATT.Folder = "Suppresors"
 
 --ATT.Model = "models/weapons/cod2019/attachs/silencers/attachment_vm_sh_oscar12_silencer03.mdl"
@@ -181,6 +187,7 @@ ATT.Description = [[Lets you use grips from GSR.]]
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_grip"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 --ATT.Folder = "Suppresors"
 
 --ATT.Model = "models/weapons/cod2019/attachs/silencers/attachment_vm_sh_oscar12_silencer03.mdl"
