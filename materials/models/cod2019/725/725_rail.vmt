@@ -17,15 +17,7 @@
     "$envmap" "env_cubemap"
     "$envmaptint" "[0.2 0.2 0.2]"
 
-    "$detailblendmode" "4"
-    "$detailblendfactor" "0.7"
-
 	 Proxies {
-		CustomCamo {
-			camoTexture $detail
-			camoScale $detailscale
-            blend $detailblendfactor
-		}
         "Arc9EnvMapTint"
         {
             "specularity" "0.5"

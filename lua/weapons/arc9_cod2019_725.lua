@@ -740,9 +740,19 @@ SWEP.AttachmentElements = {
             {4,1},
         },
     },
+    ["rail_grip_none"] = {
+        Bodygroups = {
+            {4,1},
+        },
+    },
     ["rail_sight"] = {
         Bodygroups = {
             {5,1},
+        },
+    },
+    ["rail_none"] = {
+        Bodygroups = {
+            {5,2},
         },
     },
     ["rail_laser"] = {
@@ -752,10 +762,11 @@ SWEP.AttachmentElements = {
     },
 }
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("rail_none") then model:SetBodygroup(5,2) end
+    if wep:HasElement("rail_grip_none") then model:SetBodygroup(4,0) end
+end
 
 SWEP.Attachments = {
     {
@@ -788,11 +799,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail_alt",
         Bone = "tag_laser_attach",
-        Pos = Vector(-0.6, -0.5, 0),
-        Ang = Angle(0, 0, -90),
-		InstalledElements = {"rail_laser"},
+        Pos = Vector(0, -0.85, -0.1),
+        Ang = Angle(0, 0, 0),
+		--InstalledElements = {"rail_laser"},
     },
     {
         PrintName = "Foregrip",
