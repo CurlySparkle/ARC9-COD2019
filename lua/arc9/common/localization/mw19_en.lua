@@ -236,9 +236,202 @@ L["cod2019_attach_laser_cylinder_2.compactname"] = "Laser Att." -- UO
 L["cod2019_attach_laser_cylinder_2.description"] = "Allows the installation of small, cylindrical laser sights onto your weapon." -- UO
 
 ////////////////////  Grips
--- L["cod2019_attach_grip_foregrip_side.printname"] = "Lightweight Extended Mag" -- UO
--- L["cod2019_attach_grip_foregrip_side.compactname"] = "Light EM" -- UO
--- L["cod2019_attach_grip_foregrip_side.description"] = "Custom extended magazines holding <color=100,255,100>20%</color> more ammunition." -- UO
+L["cod2019_attach_grip_foregrip_side.printname"] = "ARC Foregrip" -- UO
+L["cod2019_attach_grip_foregrip_side.compactname"] = "ARC" -- UO
+L["cod2019_attach_grip_foregrip_side.description"] = "Extended foregrip that reduces vertical recoil and provides stability when firing from the hip for fast-paced guerilla tactics." -- UO
+
+L["cod2019_grips_none.printname"] = "Alternative Holding" -- UO
+L["cod2019_grips_none.compactname"] = "Alt. Hold" -- UO
+L["cod2019_grips_none.description"] = "Alternative holding style." -- UO
+
+L["cod2019_grips_alt_cclamp.printname"] = "C-Clamp Holding" -- UO
+L["cod2019_grips_alt_cclamp.compactname"] = "C-Clamp" -- UO
+L["cod2019_grips_alt_cclamp.description"] = "Alternative holding style." -- UO
+
+L["cod2019_grips_alt_nocclamp.printname"] = "No C-Clamp Holding" -- UO
+L["cod2019_grips_alt_nocclamp.compactname"] = "No C-C" -- UO
+L["cod2019_grips_alt_nocclamp.description"] = "Alternative holding style." -- UO
+
+////////////////////  Perks
+L["cod2019_perks_soh.printname"] = "Sleight of Hand"
+L["cod2019_perks_soh.compactname"] = "SoH"
+L["cod2019_perks_soh.description"] = "Training in reloading faster when under pressure."
+
+L["cod2019_perks_soh_alt.printname"] = "Sleight of Hand"
+L["cod2019_perks_soh_alt.compactname"] = "SoH"
+L["cod2019_perks_soh_alt.description"] = "Training in reloading faster when under pressure."
+
+L["cod2019_perks_speedmelee.printname"] = "Fast Melee"
+L["cod2019_perks_speedmelee.compactname"] = "Melee"
+L["cod2019_perks_speedmelee.description"] = "Training in executing melee maneuvers with great speed."
+
+L["cod2019_perks_heavyhitter.printname"] = "Heavy Hitter"
+L["cod2019_perks_heavyhitter.compactname"] = "Hitter"
+L["cod2019_perks_heavyhitter.description"] = "Melee produces greater stun on targets."
+
+L["cod2019_perks_enforcer.printname"] = "Enforcer" -- UO
+L["cod2019_perks_enforcer.compactname"] = "Enforcer" -- UO
+L["cod2019_perks_enforcer.description"] = "Grants the user 30% resistance to all damage." -- UO
+
+L["cod2019_perks_bolt.printname"] = "Deft Hands" -- UO
+L["cod2019_perks_bolt.compactname"] = "Deft" -- UO
+L["cod2019_perks_bolt.description"] = "Training with your weapon allows you to cycle the weapon faster." -- UO
+
+L["cod2019_perks_slamfire.printname"] = "Slamfire" -- UO
+L["cod2019_perks_slamfire.compactname"] = "Slamfire" -- UO
+L["cod2019_perks_slamfire.description"] = "Bruteforce the weapon to fire and cycle the weapon much quicker at the cost of reduced accuracy." -- UO
+
+L["cod2019_perks_burst.printname"] = "Burst"
+L["cod2019_perks_burst.compactname"] = "Burst"
+L["cod2019_perks_burst.description"] = "Changes fire mode to <color=100,255,100>3-round</color> burst."
+
+L["cod2019_perks_burst_2.printname"] = "Burst"
+L["cod2019_perks_burst_2.compactname"] = "Burst"
+L["cod2019_perks_burst_2.description"] = "Changes fire mode to <color=100,255,100>2-round</color> burst."
+
+////////////////////  Scopes
+L["cod2019_optic_scope_pila.printname"] = "PILA Scope" -- UO
+L["cod2019_optic_scope_pila.compactname"] = "PILA" -- UO
+L["cod2019_optic_scope_pila.description"] = "Advanced optic with <color=100,255,100>4.0x</color> magnification provides excellent target acquisition."
+
+L["cod2019_model680_iron.printname"] = "Remove Sight Mount" -- UO
+L["cod2019_model680_iron.compactname"] = "R. Sight M." -- UO
+L["cod2019_model680_iron.description"] = "Removes the sight mount on the Model 680, making it sleeker." -- UO
+
+////////////////////  Stocks
+L["cod2019_stock_vlk.printname"] = "VLK Rogue Stock" -- UO
+L["cod2019_stock_vlk.compactname"] = "VLK Rogue" -- UO
+L["cod2019_stock_vlk.description"] = "Stock designed for agility while aiming down sights." -- Taken from FORGE TAC Ultralight (VLK Rogue)
+
+L["cod2019_stock_amax.printname"] = "CR-56 AMAX Stock" -- UO
+L["cod2019_stock_amax.compactname"] = "CR-56 AMAX" -- UO
+L["cod2019_stock_amax.description"] = "Ultralight stock speeds up weapon handling and movement at the expensve of aiming stability." -- Taken from CR-56 EXO (CR-56 AMAX)
+
+L["cod2019_stock_slima.printname"] = "Slima Stock" -- UO
+L["cod2019_stock_slima.compactname"] = "Slima" -- UO
+L["cod2019_stock_slima.description"] = "Tactical stock streamlined for close quarters combat. Gets you on target faster." -- Taken from FSS Close Quarters Stock (FN SCAR 17)
+
+L["cod2019_stock_m4.printname"] = "Desert Storm Stock" -- UO
+L["cod2019_stock_m4.compactname"] = "Storm" -- UO
+L["cod2019_stock_m4.description"] = "Heavy duty stock provides stability while aiming." -- Taken from M-16 Stock (M4A1)
+
+L["cod2019_stock_origin12.printname"] = "Origin Stock" -- UO
+L["cod2019_stock_origin12.compactname"] = "Origin" -- UO
+L["cod2019_stock_origin12.description"] = "Stock designed for agility while aiming down sights." -- Taken from FORGE TAC Ultralight (Origin 12 Shotgun)
+
+L["cod2019_m32_stock_retract.printname"] = "Shortened Stock" -- UO
+L["cod2019_m32_stock_retract.compactname"] = "Shortened" -- UO
+L["cod2019_m32_stock_retract.description"] = "Shortens the stock to allow for <color=100,255,100>higher agility.</color>" -- UO
+
+////////////////////  Buffer Tubes
+L["cod2019_stock_tube.printname"] = "Desert Storm Buffer Tube" -- UO
+L["cod2019_stock_tube.compactname"] = "Storm" -- UO
+L["cod2019_stock_tube.description"] = "Buffer tube made out of aluminium. Allows installation of aftermarket stocks." -- UO
+
+L["cod2019_stock_tube_vlk.printname"] = "VLK Buffer Tube" -- UO
+L["cod2019_stock_tube_vlk.compactname"] = "VLK" -- UO
+L["cod2019_stock_tube_vlk.description"] = "Custom made buffer tube that allows installation of aftermarket stocks." -- UO
+
+L["cod2019_stock_tube_origin12.printname"] = "FTAC Tube" -- UO
+L["cod2019_stock_tube_origin12.compactname"] = "FTAC" -- UO
+L["cod2019_stock_tube_origin12.description"] = "Heavy-duty buffer tube that allows installation of aftermarket stocks." -- UO
+
+L["cod2019_m14_stock_tube.printname"] = "EBR Tube" -- UO
+L["cod2019_m14_stock_tube.compactname"] = "EBR" -- UO
+L["cod2019_m14_stock_tube.description"] = "Heavy-duty buffer tube that allows installation of aftermarket stocks." -- UO
+
+////////////////////  EFT (Escape from Tarkov) Support
+L["cod2019_eft_grips.printname"] = "Escape from Tarkov Support" -- UO
+L["cod2019_eft_grips.compactname"] = "EFT" -- UO
+L["cod2019_eft_grips.description"] = "Allows installation of foregrips from the Escape from Tarkov addons." -- UO
+
+L["cod2019_eft_muzzle.printname"] = "Escape from Tarkov Support" -- UO
+L["cod2019_eft_muzzle.compactname"] = "EFT" -- UO
+L["cod2019_eft_muzzle.description"] = "Allows installation of muzzle attachments from the Escape from Tarkov addons." -- UO
+
+L["cod2019_eft_scopes.printname"] = "Escape from Tarkov Support" -- UO
+L["cod2019_eft_scopes.compactname"] = "EFT" -- UO
+L["cod2019_eft_scopes.description"] = "Allows installation of optics from the Escape from Tarkov addons." -- UO
+
+L["cod2019_eft_scopes_pistol.printname"] = "Escape from Tarkov Support" -- UO
+L["cod2019_eft_scopes_pistol.compactname"] = "EFT" -- UO
+L["cod2019_eft_scopes_pistol.description"] = "Allows installation of optics from the Escape from Tarkov addons." -- UO
+
+L["cod2019_eft_stocks.printname"] = "Escape from Tarkov Support" -- UO
+L["cod2019_eft_stocks.compactname"] = "EFT" -- UO
+L["cod2019_eft_stocks.description"] = "Allows installation of stocks from the Escape from Tarkov addons." -- UO
+
+////////////////////  GSR (Gunsmith Reloaded) Support
+L["cod2019_attach_support_gsr_laser_pstl.printname"] = "Gunsmith Reloaded Support" -- UO
+L["cod2019_attach_support_gsr_laser_pstl.compactname"] = "GSR" -- UO
+L["cod2019_attach_support_gsr_laser_pstl.description"] = "Allows installation of laser attachments from the Gunsmith Reloaded addon." -- UO
+
+L["cod2019_attach_support_gsr_optics.printname"] = "Gunsmith Reloaded Support" -- UO
+L["cod2019_attach_support_gsr_optics.compactname"] = "GSR" -- UO
+L["cod2019_attach_support_gsr_optics.description"] = "Allows installation of optics from the Gunsmith Reloaded addon." -- UO
+
+L["cod2019_attach_support_gsr_optics_pistols.printname"] = "Gunsmith Reloaded Support" -- UO
+L["cod2019_attach_support_gsr_optics_pistols.compactname"] = "GSR" -- UO
+L["cod2019_attach_support_gsr_optics_pistols.description"] = "Allows installation of optics from the Gunsmith Reloaded addon." -- UO
+
+L["cod2019_attach_support_gsr_muzzles.printname"] = "Gunsmith Reloaded Support" -- UO
+L["cod2019_attach_support_gsr_muzzles.compactname"] = "GSR" -- UO
+L["cod2019_attach_support_gsr_muzzles.description"] = "Allows installation of muzzle attachments from the Gunsmith Reloaded addon." -- UO
+
+L["cod2019_attach_support_gsr_muzzles_pistols.printname"] = "Gunsmith Reloaded Support" -- UO
+L["cod2019_attach_support_gsr_muzzles_pistols.compactname"] = "GSR" -- UO
+L["cod2019_attach_support_gsr_muzzles_pistols.description"] = "Allows installation of muzzle attachments from the Gunsmith Reloaded addon." -- UO
+
+L["cod2019_attach_support_gsr_muzzles_alt.printname"] = "Gunsmith Reloaded Support" -- UO
+L["cod2019_attach_support_gsr_muzzles_alt.compactname"] = "GSR" -- UO
+L["cod2019_attach_support_gsr_muzzles_alt.description"] = "Allows installation of muzzle attachments from the Gunsmith Reloaded addon." -- UO
+
+L["cod2019_attach_support_gsr_grips.printname"] = "Gunsmith Reloaded Support" -- UO
+L["cod2019_attach_support_gsr_grips.compactname"] = "GSR" -- UO
+L["cod2019_attach_support_gsr_grips.description"] = "Allows installation of foregrips from the Gunsmith Reloaded addon." -- UO
+
+////////////////////  Custom Crossbow Ammo
+L["cod2019_ammo_crossbow_rock.printname"] = "FTAC Boulder 30g Rock" -- UO
+L["cod2019_ammo_crossbow_rock.compactname"] = "Boulder" -- UO
+L["cod2019_ammo_crossbow_rock.description"] = "Replaces the aerodynamic bolts with a <color=100,255,100>rock</color>.\n\nFor that <color=100,255,100>stoner</color> within us all." -- UO
+
+L["cod2019_ammo_crossbow_he.printname"] = "FTAC Contact 20\" Bolts" -- UO
+L["cod2019_ammo_crossbow_he.compactname"] = "Contact" -- UO
+L["cod2019_ammo_crossbow_he.description"] = "Bolts with a <color=255,255,100>low pressure explosive compound</color> imbedded within the arrowhead. <color=255,100,100>Bolts can not be recovered</color>, and are undetectable by trophy systems." -- UO
+
+////////////////////  Custom MGL-32 Ammo
+L["cod2019_ammo_gl_rock.printname"] = "40mm Boulder" -- UO
+L["cod2019_ammo_gl_rock.compactname"] = "Boulder" -- UO
+L["cod2019_ammo_gl_rock.description"] = "Custom 40mm shells filled with <color=100,255,100>rocks</color>." -- UO
+
+L["cod2019_ammo_gl_flash.printname"] = "40mm Flash" -- UO
+L["cod2019_ammo_gl_flash.compactname"] = "Flash" -- UO
+L["cod2019_ammo_gl_flash.description"] = "Custom 40mm shells filled with non-lethal <color=100,255,100>Flash</color> rounds designed to temporarily blind your enemy." -- UO, partially taken from M203 40mm Flash
+
+L["cod2019_ammo_gl_inc.printname"] = "40mm Incendiary" -- UO
+L["cod2019_ammo_gl_inc.compactname"] = "Incendiary" -- UO
+L["cod2019_ammo_gl_inc.description"] = "Custom 40mm shells filled with lethal <color=100,255,100>Incendiary</color> rounds." -- UO, partially taken from M203 40mm Incendiary
+
+L["cod2019_ammo_gl_smoke.printname"] = "40mm Smokescreen" -- UO
+L["cod2019_ammo_gl_smoke.compactname"] = "Smoke" -- UO
+L["cod2019_ammo_gl_smoke.description"] = "Custom 40mm shells filled with non-lethal <color=100,255,100>Smoke</color> rounds designed to coneal your movement." -- UO, partially taken from M203 40mm Smokescreen
+
+L["cod2019_ammo_gl_gas.printname"] = "40mm Gas" -- UO
+L["cod2019_ammo_gl_gas.compactname"] = "Gas" -- UO
+L["cod2019_ammo_gl_gas.description"] = "Custom 40mm shells filled with semi-lethal <color=100,255,100>Gas</color> rounds that create a gas cloud at the impact area.\nMultiple shots within the same area will <color=100,255,100>increase its lethality</color>." -- UO
+
+////////////////////  Rytec Atts. before they are actually added, remove when the proper ones are introduced
+L["cod2019_rytec_barrel_short.printname"] = "Short Barrel" -- UO
+L["cod2019_rytec_barrel_short.compactname"] = "Short" -- UO
+L["cod2019_rytec_barrel_short.description"] = "Compact barrel for the Rytec AMR allowing increased agility at the cost of recoil control." -- UO
+
+L["cod2019_rytec_barrel_long.printname"] = "Long Barrel" -- UO
+L["cod2019_rytec_barrel_long.compactname"] = "Long" -- UO
+L["cod2019_rytec_barrel_long.description"] = "Long barrel for the Rytec AMR allowing increased range and accuracy at the cost of agility." -- UO
+
+L["cod2019_rytec_mag_10.printname"] = "10-Round Magazine" -- UO
+L["cod2019_rytec_mag_10.compactname"] = "10R" -- UO
+L["cod2019_rytec_mag_10.description"] = "Extended magazine holding <color=100,255,100>10 rounds</color>." -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
