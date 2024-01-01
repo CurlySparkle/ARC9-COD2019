@@ -16,9 +16,20 @@ xbowbolt = lineb .. "Changes ammo type to <color=255,255,100>Crossbow Bolts</col
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Various Universal Information
 //////////////////// Trivia
+/////////// Caliber
+L["mw19_caliber"] = "Caliber1"
 
-/////////// Manufacturer
-L["mw19_manufacturer"] = "Manufacturer1"
+L["mw19_caliber_7.62x39mm"] = "7.62x39mm Soviet"
+L["mw19_caliber_7.62x51mm"] = "7.62x51mm"
+L["mw19_caliber_5.56x45mm"] = "5.56x45mm"
+L["mw19_caliber_5.45x39mm"] = "5.45x39mm"
+L["mw19_caliber_12gauge"] = "12 Gauge"
+L["mw19_caliber_50ae"] = ".50 AE"
+L["mw19_caliber_5.7x28mm"] = "FN 5.7x28mm"
+L["mw19_caliber_4.6x30mm"] = "HK 4.6x30mm"
+L["mw19_caliber_9x19mm"] = "9x19mm Parabellum"
+L["mw19_caliber_.338"] = ".338 Lapua"
+L["mw19_caliber_.308"] = ".308 Winchester"
 
 /////////// Country of Origin
 L["mw19_country"] = "Country of Origin2"
@@ -38,25 +49,54 @@ L["mw19_country_switzerland"] = "Switzerland"
 L["mw19_country_uk"] = "United Kingdom"
 L["mw19_country_usa"] = "United States"
 
-/////////// Caliber
-L["mw19_caliber"] = "Caliber3"
-
-L["mw19_caliber_7.62x39mm"] = "7.62x39mm Soviet"
-L["mw19_caliber_7.62x51mm"] = "7.62x51mm"
-L["mw19_caliber_5.56x45mm"] = "5.56x45mm"
-L["mw19_caliber_5.45x39mm"] = "5.45x39mm"
-L["mw19_caliber_12gauge"] = "12 Gauge"
-L["mw19_caliber_50ae"] = ".50 AE"
-L["mw19_caliber_5.7x28mm"] = "FN 5.7x28mm"
-L["mw19_caliber_4.6x30mm"] = "HK 4.6x30mm"
-L["mw19_caliber_9x19mm"] = "9x19mm Parabellum"
-L["mw19_caliber_.338"] = ".338 Lapua"
-L["mw19_caliber_.308"] = ".308 Winchester"
-
 /////////// Manufacturer
-L["mw19_manufacturer"] = "Manufacturer2"
+L["mw19_manufacturer"] = "Manufacturer3"
 
-L["mw19_manufacturer_ai"] = "Accuracy International" -- TEMP
+L["mw19_manufacturer_singuard"] = "Singuard Arms" -- Kilo 141
+
+L["mw19_manufacturer_forgetac"] = "FORGE TAC Manufacturing" -- M4A1, FR 5.56, FN Scar 17, RAM-7, P90, Striker 45, Fennec, CX-9, R9-0, Holger-26, EBR-14, .50 GS
+
+L["mw19_manufacturer_tempus"] = "Tempus Armament Inc." -- M13, 725, Bruen Mk9, FiNN LMG
+
+L["mw19_manufacturer_verdansk"] = "Verdansk Arms Plant" -- AN-94, AS VAL, SKS
+
+L["mw19_manufacturer_fss"] = "FSS" -- MP5, MP7, M91, MK2 Carbine
+
+L["mw19_manufacturer_cronen"] = "Cronen Industries" -- Uzi
+
+L["mw19_manufacturer_zlr"] = "ZLR Special Inc." -- ISO, RAAL MG
+
+L["mw19_manufacturer_xrk"] = "XRK" -- Model 680, JAK-12, M19
+
+L["mw19_manufacturer_vlk"] = "VLK Inc." -- VLK Rogue
+
+L["mw19_manufacturer_sloan"] = "Sloan Precision" -- SP-R 208
+
+L["mw19_manufacturer_cronen"] = "Cronen" -- AX-50
+
+L["mw19_manufacturer_silverfield"] = "Silverfield Ordnance" -- Rytec AMR, Renetti
+
+L["mw19_manufacturer_corvus"] = "Corvus Defence" -- M19
+
+L["mw19_manufacturer_stvol"] = "Stvol Tactical" -- PILA
+
+L["mw19_manufacturer_unknown"] = "???" -- FAL, Oden, AK-47, Grau 5.56, CR-56 AMAX, AUG, PP19 Bizon, SA87, MG34, Kar98k, Dragunov, Riot Shield, X16, 1911, .357, Sykov, Strela-P, JOKR, RPG-7, MGL-32, Knife, Kali Sticks, Dual Kodachis
+
+/////////// Weight
+L["mw19_weight"] = "Weight (Loaded)4"
+L["mw19_weight_val"] = "%s kg / %s lb"
+
+/////////// Projectile Weight
+L["mw19_weight_projectile"] = "Projectile Weight5"
+L["mw19_weight_projectile_val"] = "%s g"
+
+/////////// Muzzle Energy
+L["mw19_muzzle_energy"] = "Muzzle Energy6"
+L["mw19_muzzle_energy_val"] = "%s joules"
+
+/////////// Muzzle Velocity
+L["mw19_muzzle_velocity"] = "Muzzle Velocity7"
+L["mw19_muzzle_velocity_val"] = "%s m/s | %s ft/s"
 
 /////////// Authors
 L["mw19_assets"] = "Assets1"
@@ -436,14 +476,150 @@ L["cod2019_rytec_mag_10.description"] = "Extended magazine holding <color=100,25
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
 //////////////////// Assault Rifles
-//////////// Alpha, Kilo 141
+//////////// Weapon Names
 L["mw19_weapon_kilo141"] = "Kilo 141"
-L["mw19_weapon_kilo141_desc"] = "Fully automatic assault rifle with an ergonomic design that improves handling, and a steady fire rate helps stay on target."
-
-L["mw19_weapon_kilo141_manufacturer"] = "MANUFACTURERNAME"
-
-//////////// Bravo, FAL
 L["mw19_weapon_fal"] = "FAL"
-L["mw19_weapon_fal_desc"] = "A semi-automatic assault rifle with a high rate of fire for faster follow up shots."
+L["mw19_weapon_m4a1"] = "M4A1"
+L["mw19_weapon_fr556"] = "FR 5.56"
+L["mw19_weapon_oden"] = "Oden"
+L["mw19_weapon_m13"] = "M13"
+L["mw19_weapon_scar"] = "FN Scar 17"
+L["mw19_weapon_ak47"] = "AK-47"
+L["mw19_weapon_ram7"] = "RAM-7"
+L["mw19_weapon_grau"] = "Grau 5.56"
+L["mw19_weapon_cr56"] = "CR-56 AMAX"
+L["mw19_weapon_an94"] = "AN-94"
+L["mw19_weapon_asval"] = "AS VAL"
 
-L["mw19_weapon_fal_manufacturer"] = "FN Herstal"
+L["mw19_weapon_aug"] = "AUG"
+L["mw19_weapon_p90"] = "P90"
+L["mw19_weapon_mp5"] = "MP5"
+L["mw19_weapon_uzi"] = "Uzi"
+L["mw19_weapon_pp19"] = "PP19 Bizon"
+L["mw19_weapon_mp7"] = "MP7"
+L["mw19_weapon_striker"] = "Striker 45"
+L["mw19_weapon_fennec"] = "Fennec"
+L["mw19_weapon_iso"] = "ISO"
+L["mw19_weapon_cx9"] = "CX-9"
+
+L["mw19_weapon_m680"] = "Model 680"
+L["mw19_weapon_r90"] = "R9-0"
+L["mw19_weapon_725"] = "725"
+L["mw19_weapon_origin12"] = "Origin 12 Shotgun"
+L["mw19_weapon_vlk"] = "VLK Rogue"
+L["mw19_weapon_aa12"] = "JAK-12"
+
+L["mw19_weapon_pkm"] = "PKM"
+L["mw19_weapon_sa87"] = "SA87"
+L["mw19_weapon_m91"] = "M91"
+L["mw19_weapon_mg34"] = "MG34"
+L["mw19_weapon_holger"] = "Holger-26"
+L["mw19_weapon_bruen"] = "Bruen Mk9"
+L["mw19_weapon_finn"] = "FiNN LMG"
+L["mw19_weapon_raal"] = "RAAL MG"
+
+L["mw19_weapon_ebr"] = "EBR-14"
+L["mw19_weapon_mk2"] = "MK2 Carbine"
+L["mw19_weapon_kar98"] = "Kar98k"
+L["mw19_weapon_crossbow"] = "Crossbow"
+L["mw19_weapon_sks"] = "SKS"
+L["mw19_weapon_spr"] = "SP-R 208"
+
+L["mw19_weapon_dragunov"] = "Dragunov"
+L["mw19_weapon_hdr"] = "HDR"
+L["mw19_weapon_ax50"] = "AX-50"
+L["mw19_weapon_rytec"] = "Rytec AMR"
+
+L["mw19_weapon_shield"] = "Riot Shield"
+
+L["mw19_weapon_glock"] = "X16"
+L["mw19_weapon_1911"] = "1911"
+L["mw19_weapon_357"] = ".357"
+L["mw19_weapon_m19"] = "M19"
+L["mw19_weapon_deagle"] = ".50 GS"
+L["mw19_weapon_m9"] = "Renetti"
+L["mw19_weapon_makarov"] = "Sykov"
+
+L["mw19_weapon_pila"] = "PILA"
+L["mw19_weapon_strela"] = "Strela-P"
+L["mw19_weapon_javelin"] = "JOKR"
+L["mw19_weapon_rpg"] = "RPG-7"
+L["mw19_weapon_mgl"] = "MGL-32"
+
+L["mw19_weapon_knife"] = "Knife"
+L["mw19_weapon_stick"] = "Kali Sticks"
+L["mw19_weapon_sword"] = "Dual Kodachis"
+
+//////////// Weapon Descriptions
+L["mw19_weapon_kilo141_desc"] = "Fully automatic assault rifle with an ergonomic design that improves handling, and a steady fire rate helps stay on target."
+L["mw19_weapon_fal_desc"] = "A semi-automatic assault rifle with a high rate of fire for faster follow up shots."
+L["mw19_weapon_m4a1_desc"] = "A fully automatic, all-purpose assault rifle. Control your shots and this weapon can be very effective at range."
+L["mw19_weapon_fr556_desc"] = "A 3 round burst bullpup assault rifle. A well placed burst can be extremely deadly at intermittent ranges."
+L["mw19_weapon_oden_desc"] = "A fully automatic bullpup assault rifle maintains a slow cyclic rate to help control hard hitting 12.7 x 55mm ammunition."
+L["mw19_weapon_m13_desc"] = "Automatic assault rifle featuring a short stroke piston system that keeps the fire rate high and the recoil low."
+L["mw19_weapon_scar_desc"] = "Large caliber, fully automatic assault rifle that provides high damage over long ranges."
+L["mw19_weapon_ak47_desc"] = "Very reliable automatic assault rifle chambered in 7.62mm Soviet. Large caliber ammunition requires skill to control recoil."
+L["mw19_weapon_ram7_desc"] = "A fully automatic bullpup assault rifle with a compact design that lends itself to close-quarter engagements."
+L["mw19_weapon_grau_desc"] = "This modular 5.56 weapon platform is lightweight and maneuverable, with exceptional range. Precision engineering and world class aftermarket barrels give this weapon extreme potential."
+L["mw19_weapon_cr56_desc"] = "This lightweight 7.62 x 39mm full auto assault rifle is compact and powerful. Built exclusively for military use, the standard issue rifle is deadly at mid range combat and easily configured for a variety of assault tactics."
+L["mw19_weapon_an94_desc"] = "Cutting edge 5.45x39mm Russian assault rifle with a unique <color=255,255,100>hyberburst</color> feature. The initial shot from each trigger pull fires a rapid 2-round burst before perceived recoil is felt, creating a tightly grouped cluster with increased damage potential. This mechanism is fed by a canted magazine, and a reciprocating receiver helps keep control of the recoil."
+L["mw19_weapon_asval_desc"] = "Chambered in <color=255,255,100>subsonic</color> 9x19mm and integrally <color=255,255,100>suppressed</color>, the AS VAL is a powerhouse built for stealth, accuracy and penetration. This weapon will excel in the hands of an operator able to control heavy recoil and a high rate of fire."
+
+L["mw19_weapon_aug_desc"] = "A modular, fully automatic weapon configured for mobility and close range combat."
+L["mw19_weapon_p90_desc"] = "An automatic bullpup submachine gun. The unique top mounted magazine hold carries ample high velocity 5.7 x 28mm ammunition."
+L["mw19_weapon_mp5_desc"] = "A fully automatic 9mm submachine gun. A perfect balance of stability, mobility and lethality."
+L["mw19_weapon_uzi_desc"] = "A fully automatic open bolt submachine gun. Simple, steady, effective."
+L["mw19_weapon_pp19_desc"] = "Well-balanced automatic submachine gun with a high capacity helical magazine."
+L["mw19_weapon_mp7_desc"] = "Compact by design, this fully automatic weapon has a high rate of fire and low recoil."
+L["mw19_weapon_striker_desc"] = "A hard hitting submachine gun chambered in .45 Auto that will shred at longer distances than other weapons in its class. Moderate rate of fire keeps the gun in control while fully automatic."
+L["mw19_weapon_fennec_desc"] = "An aggressive full auto submachine gun with buttery smooth recoil and a blazing fast rate of fire that is exceptional for strategic room clearing and holding down the front line."
+L["mw19_weapon_iso_desc"] = "Precision crafted 9mm submachine gun with a fast rate of fire. This lightweight and reliable firearm is designed to control the close-range battlefield."
+L["mw19_weapon_cx9_desc"] = "Excellent maneuverability and a fast fire rate make this blowback-operated SMG a formidable weapon in close-quarters engagements."
+
+L["mw19_weapon_m680_desc"] = "A reliable, well-rounded 12 gauge pump-action shotgun."
+L["mw19_weapon_r90_desc"] = "Double barrels provide two rapid shots before each re-chamber."
+L["mw19_weapon_725_desc"] = "Break action shotgun with 2 round capacity. A long back-bored barrel and cylindrical choke keeps spread tight and lethal over extended ranges."
+L["mw19_weapon_origin12_desc"] = "A semi-automatic shotgun with a large ammo capacity allows for continuous firing. Effective at close range."
+L["mw19_weapon_vlk_desc"] = "An agile 12-gauge mag fed shotgun from VLK with extensive options to modify range, stability, and maneuverability."
+L["mw19_weapon_aa12_desc"] = "Fully automatic open bolt shotgun with a recoil reducing gas blowback system. This combat shotgun unloads high volumes of lead down range at a steady rate."
+
+L["mw19_weapon_pkm_desc"] = "A fully automatic light machine gun firing 7.62mm ammunition for high damage at a moderate fire rate."
+L["mw19_weapon_sa87_desc"] = "A fully automatic bullpup light machine gun. Lower rate of fire and 5.56mm ammunition keeps this rifle stable and effective at long ranges."
+L["mw19_weapon_m91_desc"] = "Robust light machine gun sacrifices mobility for stability. High caliber sustained fire will neutralize targets at long ranges."
+L["mw19_weapon_mg34_desc"] = "Fully automatic weapon with a high rate of fire and punishing 7.62 Mauser ammunition. Salvaged WW2 machine guns are still reliable and deadly on the battlefield."
+L["mw19_weapon_holger_desc"] = "A versatile fully automatic 5.56mm light machine gun. Modular design can be configured for a broad range of engagements."
+L["mw19_weapon_bruen_desc"] = "This air-cooled open bolt 5.56 light machine gun features a competitive rate of fire and excellent stability that will dominate the mid to long range battlefield."
+L["mw19_weapon_finn_desc"] = "An ultra-light open bolt 5.56 machine gun with a low cyclic rate and advanced recoil controls, giving the FiNN exceptional full-auto accuracy."
+L["mw19_weapon_raal_desc"] = "The Reconnaissance Auxiliary Assault Lightweight Machine Gun uses a low fire rate and reciprocating barrel to mitigate the powerful .338 Norma Mag recoil. Advanced titanium construction keeps the weight manageable."
+
+L["mw19_weapon_ebr_desc"] = "A semi-automatic long range marksman rifle balances rate of fire with lethality."
+L["mw19_weapon_mk2_desc"] = "Highly accurate lever action rifle. Will neutralize an enemy with one well placed round to the head or chest."
+L["mw19_weapon_kar98_desc"] = "Bolt action rifle chambered in 7.62 Mauser. A WW2 relic that is still extremely lethal in the hands of a rebel marksman."
+L["mw19_weapon_crossbow_desc"] = "Silent and agile, this high-performance crossbow fires 20\" bolts with exceptional lethality. Exclusive customization, distinct functionality, and unique ammunition types put this weapon in a class of its own. Standard 20.0\" bolts are recoverable, and are undetectable by trophy systems."
+L["mw19_weapon_sks_desc"] = "Lightweight, semi-auto Carbine chambered in 7.62x39mm. This hard hitting and agile Soviet rifle focuses on utility over accuracy. It flaunts a faster fire rate than other weapons in its class, but a carefully placed round will eliminate the need for follow up shots entirely. This classic DMR has seen a lot of battles, and its unique gunsmith configurations reflect a diverse service history."
+L["mw19_weapon_spr_desc"] = "Reliable, hard-hitting .300 Win bolt action rifle from Sloan Precision. This weapon's extensive military and civilian use gives rise to an abundance of customization."
+
+L["mw19_weapon_dragunov_desc"] = "A soviet workhorse chambered in 7.62mm x 54mmR. This gas-operated, semi-automatic sniper rifle allows for rapid follow-up shots."
+L["mw19_weapon_hdr_desc"] = "An anti-material bolt action sniper rifle chambered in 12.7x108mm ammunition. 745 gr bullets have a lower muzzle velocity, but are devastating at very long ranges."
+L["mw19_weapon_ax50_desc"] = "Hard hitting, bolt action sniper rifle with .50 cal BMG ammunition. Its tungsten sabot tipped bullets are fast and powerful, but require precise shots over long distances."
+L["mw19_weapon_rytec_desc"] = "This semi-automatic Anti-Material Rifle is chambered in .50 BMG for dominant long range assaults. A 25x59mm high-explosive payload variant is officially listed as \"experimental\", but has been deployed on multiple classified missions with great effectiveness."
+
+L["mw19_weapon_shield_desc"] = "Ballistic-proof and explosive-resistant shield with increased melee damage."
+
+L["mw19_weapon_glock_desc"] = "A semi-automatic pistol chambered in .45 ACP ammunition. A reliable fallback when you find yourself in close quarters."
+L["mw19_weapon_1911_desc"] = "A well-rounded, semi-automatic sidearm with a moderate rate of fire. Slightly more range than your average .45 ACP pistol."
+L["mw19_weapon_357_desc"] = "Double action revolver firing .357 Magnum ammunition for powerful damage over extended ranges."
+L["mw19_weapon_m19_desc"] = "Semi-automatic 9mm pistol, excellent stability with a rapid cycle rate."
+L["mw19_weapon_deagle_desc"] = "The most powerful semi-automatic handgun available, deals heavy damage up to intermediate ranges."
+L["mw19_weapon_m9_desc"] = "Well rounded semi-auto 9mm pistol. This unassuming sidearm excels in close range combat, and features gunsmithing capabilities unique to the pistol class that permit a variety of engagement strategies."
+L["mw19_weapon_makarov_desc"] = "A dependable fallback in close quarters, this double-action/single-action sidearm comes with a few custom gunsmith mods that make it an outstanding addition to any arsenal."
+
+L["mw19_weapon_pila_desc"] = "Portable infrared surface-to-air missile launcher with a free-fire option. Self-propelled missiles have a higher speed, and moderate explosive yield."
+L["mw19_weapon_strela_desc"] = "84mm recoilless launcher lobs an explosive projectile at a very high velocity. The unguided armor piercing round has a low explosive yield, but is devastating against vehicles on contact."
+L["mw19_weapon_javelin_desc"] = "Fire and forget lock-on portable missile launcher with a large explosive yield. Infrared guided missiles take a top-attack trajectory, ensuring destruction of heavily armored vehicles."
+L["mw19_weapon_rpg_desc"] = "Unguided, self-propelled rocket launcher fires a slower projectile with a high-explosive yield."
+L["mw19_weapon_mgl_desc"] = "Rapid firing grenade launcher fed with a 6-round rotating cylinder. Can utilize a variety of 40mm rounds for various roles." -- UO
+
+L["mw19_weapon_knife_desc"] = "A CQC tactical knife. Standard military issue, employed for fast, quiet, and deadly wetwork."
+L["mw19_weapon_stick_desc"] = "Dual wielding batons allow operators to approach their targets with great agility. Sturdy, lightweight design enables rapid attacks for zoning your enemies."
+L["mw19_weapon_sword_desc"] = "Hand forged carbon steel blades provide the sharpest edge possible for silently slicing through your enemies."
