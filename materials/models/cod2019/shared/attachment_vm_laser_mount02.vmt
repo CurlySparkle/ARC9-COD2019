@@ -1,8 +1,8 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-    "$basetexture"				"models/cod2019/shared/attachment_vm_laser_mount03"
-    "$bumpmap"					"models/cod2019/shared/attachment_vm_laser_mount03_n"
-    "$phongexponenttexture"		"models/cod2019/shared/attachment_vm_laser_mount03_exp"
+    "$basetexture" "models\cod2019\shared\attachment_vm_laser_mount02_rgb"
+    "$bumpmap" "models\cod2019\shared\attachment_vm_laser_mount02_n"
+    "$phongexponenttexture" "models\cod2019\shared\attachment_vm_laser_mount02_e"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
@@ -20,15 +20,16 @@
     /////////////////
 
     "$envmap" "env_cubemap"
-    "$envmaptint" "[0.133 0.118 0.094]"                 
+    "$envmaptint" "[0.094 0.094 0.094]"                 
 
+    //remove this if not using MWB
     "Proxies"
-     {
+    {
         "Arc9EnvMapTint"
         {
-            "specularity" "0.5"
             "min" "0"
-            "max" "0.2"
+            "max" "1"
+            "color" "[0.094 0.094 0.094]"
         }
-     }
+    }
 }
