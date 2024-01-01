@@ -21,7 +21,7 @@ SWEP.Trivia = {
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward/Valve/New World Interactive"
+    Assets = "Activision/Infinity Ward"
 }
 
 SWEP.Description = [[A versatile fully automatic 5.56mm light machine gun. Modular design can be configured for a broad range of engagements.]]

@@ -20,7 +20,7 @@ SWEP.Trivia = {
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward/Valve/New World Interactive"
+    Assets = "Activision/Infinity Ward"
 }
 
 SWEP.Description = [[Double action revolver firing .357 Magnum ammunition for powerful damage over extended ranges.]]

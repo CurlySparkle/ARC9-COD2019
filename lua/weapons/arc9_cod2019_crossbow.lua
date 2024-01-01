@@ -15,7 +15,7 @@ SWEP.Trivia = {
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward/Valve/New World Interactive"
+    Assets = "Activision/Infinity Ward"
 }
 
 SWEP.Description = [[Silent and agile, this high-performance crossbow fires 20.0" bolts with exceptional lethality. Exclusive customization, distinct functionality, and unique ammunition types put this weapon in a class of its own. Standard 20.0" bolts are recoverable, and are undetectable by trophy systems.]]

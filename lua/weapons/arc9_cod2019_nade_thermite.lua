@@ -16,7 +16,7 @@ SWEP.Description = [[Obscures an area in white fog and burns those who come clos
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward"
+    Assets = "Activision/Infinity Ward"
 }
 
 SWEP.Slot = 4

@@ -21,7 +21,7 @@ SWEP.Trivia = {
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward/Valve/New World Interactive"
+    Assets = "Activision/Infinity Ward"
 }
 
 SWEP.Description = [[A machine gun that appears in a portable form with high rate of fire around 3,000 RPM.]]

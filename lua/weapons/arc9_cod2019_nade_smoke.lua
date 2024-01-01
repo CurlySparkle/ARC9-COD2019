@@ -16,7 +16,7 @@ SWEP.Description = [[Deploys a smoke screen that blocks vision and automated tar
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward"
+    Assets = "Activision/Infinity Ward"
 }
 
 SWEP.Slot = 4

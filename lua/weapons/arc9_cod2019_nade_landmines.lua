@@ -1,4 +1,4 @@
-SWEP.CustomSelectIcon = Material("vgui/hud/arc9_go_nade_landmines")
+SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_landmines")
 
 SWEP.Base = "arc9_cod2019_base_nade"
 
@@ -22,7 +22,7 @@ SWEP.Trivia = {
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/TheOnly8Z/Firmeteran",
-    Assets = "Infinity Ward"
+    Assets = "Activision/Infinity Ward"
 }
 
 SWEP.Slot = 4

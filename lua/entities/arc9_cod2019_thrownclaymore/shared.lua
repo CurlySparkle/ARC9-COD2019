@@ -21,6 +21,10 @@ ENT.Radius = 300
 ENT.NextBeepTime = 0
 ENT.DetectionRangeSqr = ENT.DetectionRange * ENT.DetectionRange
 
+if CLIENT then
+    killicon.Add( "arc9_cod2019_thrownclaymore", "VGUI/killicons/cod2019_claymore", Color(251, 85, 25, 255))
+end
+
 function ENT:GetLaserPos()
     return self:GetPos() + self:GetForward() * self.LaserOffset.x + self:GetRight() * self.LaserOffset.y + self:GetUp() * self.LaserOffset.z
 end

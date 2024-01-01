@@ -2,7 +2,7 @@ ENT.Base = "base_entity"
 ENT.Type = "anim"
 
 if CLIENT then
-    killicon.Add( "arc9_cod2019_thrownsemtex", "vgui/killicons/cod2019_frag", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_thrownsemtex", "vgui/killicons/cod2019_semtex", Color(251, 85, 25, 255))
 end
 
 game.AddParticles("particles/mw19_effects.pcf")

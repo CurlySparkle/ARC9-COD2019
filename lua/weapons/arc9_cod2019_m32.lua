@@ -12,7 +12,7 @@ SWEP.Class = "Grenade Launcher"
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward/Valve/New World Interactive"
+    Assets = "Activision/Infinity Ward"
 }
 
 SWEP.Description = [[6 round semi-automatic high-explosive grenade launcher.]]

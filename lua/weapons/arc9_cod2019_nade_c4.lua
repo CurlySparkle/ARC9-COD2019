@@ -1,5 +1,3 @@
---SWEP.CustomSelectIcon = Material("vgui/hud/arc9_go_nade_breach")
-
 SWEP.Base = "arc9_cod2019_base_nade"
 
 SWEP.Category = "ARC9 - MW2019"
@@ -21,7 +19,7 @@ SWEP.Trivia = {
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward"
+    Assets = "Activision/Infinity Ward"
 }
 
 SWEP.Slot = 4

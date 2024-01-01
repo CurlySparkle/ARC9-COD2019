@@ -12,7 +12,7 @@ SWEP.Class = "Rocket Launcher"
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Palindrone/Firmeteran",
-    Assets = "Infinity Ward/Valve/New World Interactive"
+    Assets = "Activision/Infinity Ward"
 }
 
 SWEP.Description = [[Unguided, self-propelled rocket launcher fires a slower projectile with a high-explosive yield.]]
