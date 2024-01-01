@@ -218,7 +218,7 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 7, 3)
 
-SWEP.PeekPos = Vector(-1, 3, -3.2)
+SWEP.PeekPos = Vector(-2, 3, -3.2)
 SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 -------------------------- HoldTypes
@@ -1014,11 +1014,16 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    -- ["mag"] = {
-        -- Bodygroups = {
-            -- {1,1},
-        -- },
-    -- },
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
+            {1,1},
+        },
+    },
     ["stock_none"] = {
         Bodygroups = {
             {3,1},
@@ -1035,6 +1040,21 @@ SWEP.AttachmentElements = {
     ["grip_none"] = {
         Bodygroups = {
             {5,1},
+        },
+    },
+    ["barrel_long"] = {
+        Bodygroups = {
+            {6,1},
+        },
+    },
+    ["barrel_small"] = {
+        Bodygroups = {
+            {6,2},
+        },
+    },
+    ["barrel_none"] = {
+        Bodygroups = {
+            {6,3},
         },
     },
 }
