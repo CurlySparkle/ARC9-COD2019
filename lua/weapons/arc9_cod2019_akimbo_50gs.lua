@@ -622,13 +622,13 @@ SWEP.AttachmentElements = {
     ["slide_none"] = {
         Bodygroups = {
             {1,1},
-            {4,1},
+            {5,1},
         },
     },
     ["mag_none"] = {
         Bodygroups = {
             {2,1},
-            {5,1},
+            {1,1},
         },
     },
     ["grip_none"] = {
@@ -653,7 +653,7 @@ SWEP.Attachments = {
     {
         PrintName = "Slide",
         DefaultAttName = "Standard slide",
-        Category = "cod2019_50gs_slide",
+        Category = "cod2019_50gs_slide_akimbo",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -704,7 +704,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grip",
         DefaultAttName = "Default",
-        Category = "cod2019_50gs_grip",
+        Category = "cod2019_50gs_grip_akimbo",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 180),
@@ -721,7 +721,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_50gs_mag_akimbo"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -772,21 +772,8 @@ SWEP.Attachments = {
         PrintName = "Stats",
         Category = "killcounter",
         Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, -1),
+        Pos = Vector(0, 0.1, -0.5),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
-    -- {
-        -- PrintName = "rhik",
-        -- Bone = "tag_pistol_attachments",
-        -- Pos = Vector(0, 0, -1.5),
-        -- Ang = Angle(0, 0, 180),
-        -- Category = {"cod2019_50gs_rhik"},
-        -- Installed = "cod2019_50gs_rhik",
-        -- Integral = true,
-        -- Hidden = true,				
-    -- },	
 }
-
-SWEP.GripPoseParam = 4.6
-SWEP.GripPoseParam2 = 0.6

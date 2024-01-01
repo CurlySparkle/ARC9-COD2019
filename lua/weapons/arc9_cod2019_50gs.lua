@@ -195,7 +195,7 @@ SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-2.5, -6, -3.5)
+SWEP.PeekPos = Vector(-1, -3, -5)
 SWEP.PeekAng = Angle(0, 0, -45)
 
 -------------------------- HoldTypes
@@ -578,11 +578,155 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_decho_reload_empty_mvmnt.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_01.ogg", t = 14/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_02.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_charge_01.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_end.ogg", t = 25/30},
+        },
+    },
+    ["reload_xmaglrg"] = {
+        Source = "reload_xmaglrg",
+		MinProgress = 0.8,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_decho_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_decho_reload_magout_01.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 36/30},
+			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 42/30},
+        },
+    },
+    ["reload_xmaglrg_empty"] = {
+        Source = "reload_xmaglrg_empty",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_decho_reload_empty_mvmnt.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magout_01.ogg", t = 4/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_01.ogg", t = 23/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_02.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_shake.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_charge_01.ogg", t = 43/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_end.ogg", t = 44/30},
+        },
+    },
+    ["reload_xmaglrg_fast"] = {
+        Source = "reload_xmaglrg_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_decho_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_decho_reload_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 14/30},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 24/30},
+        },
+    },
+    ["reload_xmaglrg_fast_empty"] = {
+        Source = "reload_xmaglrg_fast_empty",
+		MinProgress = 0.8,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_decho_reload_empty_mvmnt.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_01.ogg", t = 14/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_02.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_charge_01.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_decho_reload_empty_end.ogg", t = 25/30},
         },
     },
     ["ready"] = {
@@ -678,7 +822,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee","melee2"},
+        Source = {"melee","melee2","melee3"},
     },
 }
 
@@ -694,9 +838,9 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_xmag_fast_empty"
 	--------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
-        return "mag_xmaglrg_fast"
+        return "reload_xmaglrg_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
-        return "mag_xmaglrg_fast_empty"
+        return "reload_xmaglrg_fast_empty"
 	--------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
@@ -818,7 +962,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Optics",
-        Bone = "tag_holo",
+        Bone = "tag_reflex",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic"},
@@ -854,7 +998,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_50gs_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
