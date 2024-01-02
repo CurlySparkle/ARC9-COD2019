@@ -200,7 +200,7 @@ SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-2.5, -6, -3.5)
+SWEP.PeekPos = Vector(-2.5, 0, -1.5)
 SWEP.PeekAng = Angle(0, 0, -45)
 
 -------------------------- HoldTypes
@@ -969,14 +969,14 @@ SWEP.AttachmentTableOverrides = {
     ActivePos = Vector(2.5, 0, 1.5),
     ActiveAng = Angle(0, 0, 17),
 
-    MovingPos = Vector(1,-2,0.5),
-    MovingAng = Angle(0,0,6),
+    MovingPos = Vector(-1,-2,-1),
+    MovingAng = Angle(0,0,-8),
 
-    CrouchPos = Vector(1, -1, 1),
-    CrouchAng = Angle(0, 0, 10),
+    CrouchPos = Vector(-1.2, 0, -1),
+    CrouchAng = Angle(0, 0, -10),
 
     ReloadPos = Vector(0,0,0),
-    ReloadAng = Angle(0,0,0),
+    ReloadAng = Angle(0,0,0)
     },
 }
 

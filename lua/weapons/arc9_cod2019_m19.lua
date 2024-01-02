@@ -865,6 +865,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
         return "reload_xmaglrg_fast_empty"
 	--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        return "reload_xmag_fast_empty"
+	--------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then
@@ -879,6 +884,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_xmaglrg"
     elseif anim == "reload_empty" and wep:HasElement("mag_xmaglrg") then
         return "reload_xmaglrg_empty"
+	--------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("ammo_extend") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then
+        return "reload_xmag_empty"
 	--------------------------------------------------------------------------
     end
 end
@@ -908,9 +918,19 @@ SWEP.DefaultBodygroups = "00000000000000"
 -- }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
+        },
+    },
+    ["mag"] = {
+        Bodygroups = {
+            {1,2},
         },
     },
     ["slide_none"] = {

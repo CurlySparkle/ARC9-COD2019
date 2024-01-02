@@ -618,6 +618,12 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
+    ["mag"] = {
+        Bodygroups = {
+            {2,2},
+            {5,2},
+        },
+    },
 }
 SWEP.Attachments = {
     {

@@ -204,7 +204,7 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-1, -1, -1)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
 SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -567,12 +567,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.6,
                 lhik = 1,
                 rhik = 1
             },
@@ -791,6 +791,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
@@ -836,7 +841,7 @@ SWEP.Attachments = {
     {
         PrintName = "Barrels",
         DefaultAttName = "Standard Barrel",
-        Category = "cod2019_sa87_barrel",
+        Category = "cod2019_sa86_barrel",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -965,5 +970,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 0.2
 SWEP.GripPoseParam2 = 0.1
 SWEP.CodAngledGripPoseParam = 31
-SWEP.CodStubbyGripPoseParam = 8
+SWEP.CodStubbyGripPoseParam = 17
 SWEP.CodStubbyTallGripPoseParam = 22

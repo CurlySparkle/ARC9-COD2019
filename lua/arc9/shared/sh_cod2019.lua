@@ -1,4 +1,4 @@
---list.Set("ContentCategoryIcons", "ARC9 - MW2019", "arc9/logo/logo_lowvis.png")
+list.Set("ContentCategoryIcons", "ARC9 - MW2019", "vgui/mw_icon2.png")
 
 -- ARC9.COD2019 = {}
 
