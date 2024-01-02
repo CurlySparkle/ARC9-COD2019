@@ -551,11 +551,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike1911_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 17/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_lift.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 13/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 16/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 20/30},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -586,16 +586,15 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike1911_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 8/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 17/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 25/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_lift.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 18/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 17/30},
         },
     },
-    ["reload_xmaglrg"] = {
-        Source = "reload_xmaglrg",
+    ["reload_mmag"] = {
+        Source = "reload_mmag",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
         IKTimeLine = {
@@ -627,8 +626,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_end.ogg", t = 32/30},
         },
     },
-    ["reload_xmaglrg_empty"] = {
-        Source = "reload_xmaglrg_empty",
+    ["reload_mmag_empty"] = {
+        Source = "reload_mmag_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.8,
         IKTimeLine = {
@@ -662,8 +661,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 39/30},
         },
     },
-    ["reload_xmaglrg_fast"] = {
-        Source = "reload_xmaglrg_fast",
+    ["reload_mmag_fast"] = {
+        Source = "reload_mmag_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.5,
@@ -697,8 +696,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 15/30},
         },
     },
-    ["reload_xmaglrg_fast_empty"] = {
-        Source = "reload_xmaglrg_fast_empty",
+    ["reload_mmag_fast_empty"] = {
+        Source = "reload_mmag_fast_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
 		DropMagAt = 0.4,
@@ -841,10 +840,10 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
         return "reload_xmag_fast_empty"
 	--------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
-        return "reload_xmaglrg_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
-        return "reload_xmaglrg_fast_empty"
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_mmag") then
+        return "reload_mmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_mmag") then
+        return "reload_mmag_fast_empty"
 	--------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
@@ -856,10 +855,10 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then
         return "reload_xmag_empty"
 	--------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_xmaglrg") then
-        return "reload_xmaglrg"
-    elseif anim == "reload_empty" and wep:HasElement("mag_xmaglrg") then
-        return "reload_xmaglrg_empty"
+    elseif anim == "reload" and wep:HasElement("mag_mmag") then
+        return "reload_mmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_mmag") then
+        return "reload_mmag_empty"
 	--------------------------------------------------------------------------
     end
 end

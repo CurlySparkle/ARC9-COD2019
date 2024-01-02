@@ -202,8 +202,8 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -217,6 +217,9 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1.5, 3, -4)
+SWEP.PeekAng = Angle(-0.5, 0.5, -45)
 
 -------------------------- HoldTypes
 
@@ -339,8 +342,8 @@ SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.05 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/sa87/weap_lima86_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = ""
+SWEP.TriggerDownSound = "weapons/cod2019/finn/weap_sierrax_prefire_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/finn/weap_sierrax_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {
@@ -441,6 +444,7 @@ SWEP.Animations = {
 		MinProgress = 0.9,
 		FireASAP = true,
 		MagSwapTime = 2,
+		DropMagAt = 1.3,
         IKTimeLine = {
             {
                 t = 0,
@@ -479,6 +483,7 @@ SWEP.Animations = {
 		MinProgress = 0.9,
 		FireASAP = true,
 		MagSwapTime = 2,
+		DropMagAt = 1.9,
         IKTimeLine = {
             {
                 t = 0,
@@ -758,6 +763,7 @@ SWEP.Animations = {
 		MinProgress = 0.9,
 		FireASAP = true,
 		MagSwapTime = 3,
+		DropMagAt = 1.3,
         IKTimeLine = {
             {
                 t = 0,
@@ -796,6 +802,7 @@ SWEP.Animations = {
 		MinProgress = 0.9,
 		FireASAP = true,
 		MagSwapTime = 2.8,
+		DropMagAt = 1.9,
         IKTimeLine = {
             {
                 t = 0,
@@ -1088,7 +1095,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.5, 0, -0.1),
+        Pos = Vector(2, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),

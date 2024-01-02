@@ -384,7 +384,7 @@ SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.15 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m91/weap_kilo121_prefire_plr_01.ogg"
+SWEP.TriggerDownSound = "weapons/cod2019/pkm/weap_pkilo_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/sa87/weap_lima86_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
@@ -839,11 +839,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail_cylinder",
         Bone = "tag_laser_attach",
-        Pos = Vector(-7.3, -0.7, -1.5),
-        Ang = Angle(0, 0, -90),
-		InstalledElements = {"rail_laser"},
+        Pos = Vector(-0.34, -1.34, 0),
+        Ang = Angle(0, 0, 0),
+		--InstalledElements = {"rail_laser"},
     },
     {
         PrintName = "Grips",
@@ -874,7 +874,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = "cod2019_m91_mag",
+        Category = {"cod2019_m91_mag","cod2019_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
