@@ -731,10 +731,10 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail_cylinder",
         Bone = "tag_laser_attach",
-        Pos = Vector(-4, -0.35, 0.45),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(-0.34, -1.34, 0),
+        Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
     },
     {
@@ -831,6 +831,7 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 4
+SWEP.CodStubbyTallGripPoseParam = 22
 
 -- SWEP.EFTshellsfunnytable = {
     -- ["j_b_07"] = true,

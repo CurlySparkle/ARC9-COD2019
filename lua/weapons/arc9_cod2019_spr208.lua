@@ -154,7 +154,7 @@ SWEP.SpreadAddSights = -0.5
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -207,6 +207,9 @@ SWEP.CustomizePos = Vector(17, 35, 3)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
+
+SWEP.PeekPos = Vector(-1, 2, -3.7)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 -------------------------- HoldTypes
 
@@ -306,6 +309,28 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.75,
 		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 10/50},
 			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.4, t = 60/50},
@@ -316,6 +341,28 @@ SWEP.Animations = {
 		--EjectAt = 0.2,
 		MinProgress = 0.75,
 		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.5, t = 0.067},
 			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.5, t = 0.9},
@@ -329,7 +376,7 @@ SWEP.Animations = {
             {
                 t = 0,
                 lhik = 1,
-                rhik = 0
+                rhik = 1
             },
             {
                 t = 0.2,
@@ -365,20 +412,20 @@ SWEP.Animations = {
             {
                 t = 0,
                 lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 1,
                 rhik = 0
             },
             {
-                t = 0.2,
-                lhik = 0,
+                t = 0.7,
+                lhik = 1,
                 rhik = 0
             },
             {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
+                t = 1.15,
                 lhik = 1,
                 rhik = 1
             },
@@ -402,17 +449,17 @@ SWEP.Animations = {
             {
                 t = 0,
                 lhik = 1,
-                rhik = 0
+                rhik = 1
             },
             {
                 t = 0.2,
                 lhik = 0,
-                rhik = 0
+                rhik = 1
             },
             {
                 t = 0.7,
                 lhik = 0,
-                rhik = 0
+                rhik = 1
             },
             {
                 t = 0.9,
@@ -438,16 +485,21 @@ SWEP.Animations = {
             {
                 t = 0,
                 lhik = 1,
-                rhik = 0
+                rhik = 1
             },
             {
                 t = 0.2,
                 lhik = 0,
-                rhik = 0
+                rhik = 1
             },
             {
-                t = 0.5,
+                t = 0.4,
                 lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 1,
                 rhik = 0
             },
             {
@@ -474,7 +526,7 @@ SWEP.Animations = {
             {
                 t = 0,
                 lhik = 1,
-                rhik = 0
+                rhik = 1
             },
             {
                 t = 0.2,
@@ -510,20 +562,20 @@ SWEP.Animations = {
             {
                 t = 0,
                 lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 1,
                 rhik = 0
             },
             {
-                t = 0.2,
-                lhik = 0,
+                t = 0.7,
+                lhik = 1,
                 rhik = 0
             },
             {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
+                t = 1.15,
                 lhik = 1,
                 rhik = 1
             },
@@ -547,17 +599,17 @@ SWEP.Animations = {
             {
                 t = 0,
                 lhik = 1,
-                rhik = 0
+                rhik = 1
             },
             {
                 t = 0.2,
                 lhik = 0,
-                rhik = 0
+                rhik = 1
             },
             {
                 t = 0.7,
                 lhik = 0,
-                rhik = 0
+                rhik = 1
             },
             {
                 t = 0.9,
@@ -583,20 +635,25 @@ SWEP.Animations = {
             {
                 t = 0,
                 lhik = 1,
-                rhik = 0
+                rhik = 1
             },
             {
                 t = 0.2,
                 lhik = 0,
-                rhik = 0
+                rhik = 1
             },
             {
-                t = 0.5,
+                t = 0.4,
                 lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 1,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -619,12 +676,12 @@ SWEP.Animations = {
             {
                 t = 0,
                 lhik = 0,
-                rhik = 1
+                rhik = 0
             },
             {
                 t = 0.5,
                 lhik = 0,
-                rhik = 1
+                rhik = 0
             },
             {
                 t = 1,
@@ -640,7 +697,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.85,
+		MinProgress = 0.6,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -684,11 +741,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2.5,
+		Mult = 2.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2.5,
+		Mult = 2.7,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -698,12 +755,17 @@ SWEP.Animations = {
             {
                 t = 0,
                 lhik = 1,
-                rhik = 0
+                rhik = 1
             },
             {
                 t = 0.1,
                 lhik = 0,
-                rhik = 0
+                rhik = 1
+            },
+            {
+                t = 0.35,
+                lhik = 0,
+                rhik = 1
             },
             {
                 t = 0.7,
@@ -735,12 +797,17 @@ SWEP.Animations = {
             {
                 t = 0,
                 lhik = 1,
-                rhik = 0
+                rhik = 1
             },
             {
                 t = 0.1,
                 lhik = 0,
-                rhik = 0
+                rhik = 1
+            },
+            {
+                t = 0.35,
+                lhik = 0,
+                rhik = 1
             },
             {
                 t = 0.7,
@@ -765,7 +832,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -819,10 +886,10 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "inspect" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
         return "inspect_xmag"
 --------------------------------------------------------------------------
-    -- elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
-        -- return "reload_xmag_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
-        -- return "reload_xmag_fast_empty"
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_fast_empty"
 --------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
         return "reload_fast"
@@ -836,10 +903,10 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "inspect" and wep:HasElement("mag_xmag") then 
         return "inspect_xmag"
 --------------------------------------------------------------------------
-    -- elseif anim == "reload" and wep:HasElement("ammo_extend") then 
-        -- return "reload_xmag"
-    -- elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
-        -- return "reload_xmag_empty"
+    elseif anim == "reload" and wep:HasElement("ammo_extend") then 
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+        return "reload_xmag_empty"
 --------------------------------------------------------------------------
     end
 end
@@ -953,7 +1020,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-2, 0, 0),
+        Pos = Vector(-2.2, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		--InstalledElements = {"guard_none"},
@@ -1036,6 +1103,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 3.5
 SWEP.GripPoseParam2 = 0.6
-SWEP.CodStubbyGripPoseParam = 0.7
+SWEP.CodStubbyGripPoseParam = 6
 SWEP.CodStubbyTallGripPoseParam = 12
-SWEP.CodAngledGripPoseParam = 14
+SWEP.CodAngledGripPoseParam = 35
