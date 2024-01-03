@@ -227,6 +227,9 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
+SWEP.PeekPos = Vector(-1.5, 3, -4)
+SWEP.PeekAng = Angle(-0.5, 0.5, -45)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "rpg"
@@ -703,6 +706,11 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
+    ["barrel_thing_none"] = {
+        Bodygroups = {
+            {10,1},
+        },
+    },
     ["muzzle_none"] = {
         Bodygroups = {
             {3,1},
@@ -785,7 +793,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = "cod2019_grips_side",
+        Category = {"cod2019_grips_side","cod2019_raal_grip"},
         Bone = "tag_grip_attach",
         Pos = Vector(1.1, 0.1, 0),
         Ang = Angle(0, 0, 180),

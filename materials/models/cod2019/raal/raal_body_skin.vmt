@@ -1,0 +1,39 @@
+"VertexLitGeneric"
+{
+    "$basetexture"				"models/cod2019/raal/raal_body"
+    "$bumpmap"					"models/cod2019/raal/raal_body_n"
+    "$phongexponenttexture"		       "models/cod2019/raal/raal_body_exp"
+
+    "$color2" "[0.8 0.8 0.8]"
+    "$blendtintbybasealpha" "1"
+
+    "$phong" "1"
+    "$phongboost" "1"
+    "$phongfresnelranges" "[1 0.5 0]"
+    "$phongalbedotint" "0"
+
+    "$normalmapalphaenvmapmask" "1"
+    "$envmapfresnel" "1"
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[0.2 0.2 0.2]"
+
+    "$detailblendmode" "4"
+    "$detailblendfactor" "1"
+
+    "Proxies"
+     {
+        "Arc9EnvMapTint"
+        {
+            "specularity" "0.5"
+            "min" "0"
+            "max" "0.2"
+        }
+	   "CustomCamo" 
+        {
+		  "camoTexture" $detail
+	       "camoScale" $detailscale
+            "blend" $detailblendfactor
+            "color2" "[0.8 0.8 0.8]"
+	   }
+     }
+}

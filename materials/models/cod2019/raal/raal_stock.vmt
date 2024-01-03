@@ -18,7 +18,7 @@
     "$envmaptint" "[0.2 0.2 0.2]"
 
     "$detailblendmode" "4"
-    "$detailblendfactor" "0.7"
+    "$detailblendfactor" "0.9"
 
     "Proxies"
      {
