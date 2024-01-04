@@ -20,7 +20,7 @@ SWEP.Trivia = {
 
 SWEP.Credits = {
     Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Infinity Ward/Valve/New World Interactive"
+    Assets = "Activision/Infinity Ward"
 }
 
 SWEP.Description = [[A well-rounded semi-automatic side arm with a moderate rate of fire. Slightly more range than your average .45 ACP pistol.]]
@@ -554,7 +554,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_empty_lift.ogg", t = 1/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 13/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 16/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 15/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 20/30},
         },
     },
