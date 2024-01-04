@@ -155,13 +155,13 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 1.6
+SWEP.RecoilModifierCap = 1.2
 SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.03
+SWEP.SpreadAddHipFire = 0.02
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
@@ -546,11 +546,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2.4,
+		Mult = 2.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2.4,
+		Mult = 2.7,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -587,7 +587,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
             {
                 t = 0,
@@ -656,7 +656,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     end
 end
 
-SWEP.DefaultBodygroups = "000000000000000"
+SWEP.DefaultBodygroups = "0000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -687,9 +687,14 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
-    ["foregrip_none"] = {
+    ["foregrip_tac2"] = {
         Bodygroups = {
             {4,1},
+        },
+    },
+    ["foregrip_none"] = {
+        Bodygroups = {
+            {4,2},
         },
     },
     ["stock_retract"] = {
@@ -722,6 +727,8 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
+    if wep:HasElement("sight_default") then model:SetBodygroup(5,0) end
+    --if wep:HasElement("barrel_supp") then model:SetBodygroup(4,2) end
 end
 
 SWEP.Attachments = {
@@ -741,6 +748,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle_none"},
+		ExcludeElements = {"barrel_supp"},
 		Scale = 1,
     },
     {
@@ -755,11 +763,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail",
         Bone = "tag_laser_attach",
-        Pos = Vector(5.4, -0.8, -1.1),
-        Ang = Angle(0, 0, -90),
-		--InstalledElements = {"foregrip_none"},
+        Pos = Vector(-0.7, -1.5, 0.5),
+        Ang = Angle(0, 0, 0),
+		InstalledElements = {"sights"},
     },
     {
         PrintName = "Grips",
@@ -769,7 +777,7 @@ SWEP.Attachments = {
         Pos = Vector(-3, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
-		InstalledElements = {"foregrip_none"},
+		InstalledElements = {"foregrip_tac2"},
     },
     {
         PrintName = "Stock",
@@ -806,6 +814,10 @@ SWEP.Attachments = {
     {
         PrintName = "Perk",
         Category = {"cod2019_perks","cod2019_perks_soh"}
+    },
+    {
+        PrintName = "ETC",
+        Category = "cod2019_mp5_alt"
     },
     {
         PrintName = "Skins",

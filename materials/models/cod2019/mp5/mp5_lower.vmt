@@ -21,7 +21,7 @@
 	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
 
 	"$detailblendmode" "4"
-	"$detailblendfactor" "0"
+	"$detailblendfactor" "0.5"
 
 	 Proxies {
 		CustomCamo {

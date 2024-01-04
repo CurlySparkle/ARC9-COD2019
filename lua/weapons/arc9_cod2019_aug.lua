@@ -557,6 +557,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		FireASAP = true,
 		MagSwapTime = 3.5,
+		DropMagAt = 0.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -593,7 +594,7 @@ SWEP.Animations = {
         Source = "reload_armag_fast_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -709,6 +710,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		FireASAP = true,
 		MagSwapTime = 3.5,
+		DropMagAt = 0.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -745,7 +747,7 @@ SWEP.Animations = {
         Source = "reload_drummag_fast_empty",
 		MinProgress = 0.9,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.5,
         IKTimeLine = {
             {
                 t = 0,

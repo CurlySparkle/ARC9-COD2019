@@ -603,13 +603,13 @@ SWEP.AttachmentElements = {
     ["body_none"] = {
         Bodygroups = {
             {0,1},
-            {4,1},
+            {3,1},
         },
     },
     ["slide_none"] = {
         Bodygroups = {
             {1,1},
-            {3,1},
+            {4,1},
         },
     },
     ["mag_none"] = {
@@ -629,10 +629,11 @@ SWEP.Attachments = {
     {
         PrintName = "Slide",
         DefaultAttName = "Standard slide",
-        Category = "cod2019_m19_slide",
+        Category = "cod2019_m19_slide_akimbo",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-3, 0, 0),
         DuplicateModels = {
             {
                 Bone = "tag_barrel_attach_l",
@@ -686,7 +687,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grip",
         DefaultAttName = "Default",
-        Category = "cod2019_grip",
+        Category = "cod2019_grip_akimbo",
         Bone = "tag_stock_attach",
         Pos = Vector(-2.8, 0, 0.2),
         Ang = Angle(0, 0, 180),
@@ -707,7 +708,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "tag_mag_attach",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_m19_mag_akimbo"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         DuplicateModels = {

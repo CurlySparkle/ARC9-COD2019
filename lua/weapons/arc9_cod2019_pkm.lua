@@ -683,9 +683,14 @@ SWEP.AttachmentElements = {
             {4,2},
         },
     },
-	["sight_none"] = {
+	["sight_back_none"] = {
         Bodygroups = {
             {5,1},
+        },
+    },
+	["sight_front_none"] = {
+        Bodygroups = {
+            {8,1},
         },
     },
 	["grip_none"] = {
@@ -697,7 +702,7 @@ SWEP.AttachmentElements = {
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
     -- local model = data.model
-    -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,1) end
+    -- if wep:HasElement("barrel_short") then model:SetBodygroup(2,1) end
 -- end
 
 SWEP.Attachments = {
@@ -726,7 +731,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sight_none"},
+		InstalledElements = {"sight_back_none","sight_front_none"},
     },
     {
         PrintName = "Tactical",

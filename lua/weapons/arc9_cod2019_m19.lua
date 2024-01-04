@@ -954,6 +954,7 @@ SWEP.Attachments = {
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-3, 0, 0),
     },
     {
         PrintName = "Muzzle",
