@@ -484,6 +484,7 @@ SWEP.Animations = {
         Source = "reload_drum",
 		MinProgress = 0.85,
 		FireASAP = true,
+		DropMagAt = 0.75,
         IKTimeLine = {
             {
                 t = 0,
@@ -507,18 +508,19 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0/30},
-            {s = path .. "wfoly_sm_secho_reload_magout.ogg", t = 12/30},
-			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 25/30},
-			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 36/30},
-			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 45/30},
+            {s = path .. "wfoly_sm_secho_reload_fast_drum_up.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_secho_reload_fast_drum_drumout.ogg", t = 14/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_mvmnt.ogg", t = 35/30},
+			{s = path .. "wfoly_sm_secho_reload_fast_drum_drumhit.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_secho_reload_fast_drum_drumin.ogg", t = 47/30},
+			{s = path .. "wfoly_sm_secho_reload_fast_drum_end.ogg", t = 45/30},
         },
     },
     ["reload_drum_empty"] = {
         Source = "reload_empty_drum",
 		MinProgress = 0.9,
 		FireASAP = true,
-		DropMagAt = 1,
+		DropMagAt = 0.65,
         IKTimeLine = {
             {
                 t = 0,
@@ -542,13 +544,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sm_secho_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 13/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_mvmnt.ogg", t = 33/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_maghit.ogg", t = 40/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_magin.ogg", t = 43/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_charge.ogg", t = 49/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_end.ogg", t = 55/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_up.ogg", t = 1/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumout.ogg", t = 11/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_mvmnt.ogg", t = 33/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumhit.ogg", t = 41/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumin.ogg", t = 45/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_charge.ogg", t = 47/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_end.ogg", t = 67/30},
         },
     },
     ["reload_drum_fast"] = {
@@ -573,21 +575,21 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0/30},
-            {s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 4/30},
-			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 15/30},
-            {s = path .. "wfoly_sm_secho_reload_end.ogg", t = 23/30},
-			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 25/30},
+            {s = path .. "wfoly_sm_secho_reload_fast_drum_up.ogg", t = 0/30},
+            {s = path .. "wfoly_sm_secho_reload_fast_drum_drumout.ogg", t = 4/30},
+			{s = path .. "wfoly_sm_secho_reload_fast_drum_drumhit.ogg", t = 15/30},
+            {s = path .. "wfoly_sm_secho_reload_fast_drum_end.ogg", t = 23/30},
+			{s = path .. "wfoly_sm_secho_reload_fast_drum_drumin.ogg", t = 25/30},
         },
     },
     ["reload_drum_fast_empty"] = {
-        Source = "reload_fast_empty",
+        Source = "reload_empty_drum_fast",
 		MinProgress = 0.9,
 		FireASAP = true,
 		DropMagAt = 0.5,
@@ -608,19 +610,19 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sm_secho_reload_empty_up.ogg", t = 0/30},
-            {s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 4/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_mvmnt.ogg", t = 10/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_maghit.ogg", t = 15/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_magin.ogg", t = 25/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_charge.ogg", t = 35/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_end.ogg", t = 30/30},
+            {s = path .. "wfoly_sm_secho_reload_empty_fast_drum_up.ogg", t = 3/30},
+            {s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumout.ogg", t = 7/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_mvmnt.ogg", t = 25/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumhit.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumin.ogg", t = 31/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_charge.ogg", t = 32/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_end.ogg", t = 43/30},
         },
     },
     ["ready"] = {
@@ -715,8 +717,41 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_inspect_end.ogg", t = 104/30},
         },
     },
+    ["inspect_drum"] = {
+        Source = "lookat01_drum",
+		MinProgress = 0.1,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.15,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.4,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumout.ogg", t = 12/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumhit.ogg", t = 64/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumin.ogg", t = 67/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_end.ogg", t = 137/30},
+        },
+    },
     ["bash"] = {
-        Source = {"melee", "melee2", "melee3"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -775,6 +810,9 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_drum"
     elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
         return "reload_drum_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "inspect" and wep:HasElement("mag_drum") then
+        return "inspect_drum"
     end
 end
 
@@ -792,6 +830,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag"] = {
         Bodygroups = {
             {1,1},
@@ -800,6 +843,11 @@ SWEP.AttachmentElements = {
     ["mag_mp5"] = {
         Bodygroups = {
             {1,2},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
+            {1,3},
         },
     },
     ["stock_retract"] = {

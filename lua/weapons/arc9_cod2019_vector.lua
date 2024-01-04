@@ -479,6 +479,153 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_victor_reload_empty_end.ogg", t = 58/30},
         },
     },
+    ["reload_drum"] = {
+        Source = "reload_drum",
+        MinProgress = 0.9,
+        FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_victor_reload_drum_up.ogg", t = 3/30},
+			{s = path .. "wfoly_sm_victor_reload_drum_drumout.ogg", t = 15/30},
+			{s = path .. "wfoly_sm_victor_reload_drum_arm.ogg", t = 23/30},
+			{s = path .. "wfoly_sm_victor_reload_drum_drumhit.ogg", t = 57/30},
+			{s = path .. "wfoly_sm_victor_reload_drum_drumin.ogg", t = 68/30},
+			{s = path .. "wfoly_sm_victor_reload_drum_end.ogg", t = 83/30},
+        },
+    },
+    ["reload_drum_empty"] = {
+        Source = "reload_drum_empty",
+        MinProgress = 0.9,
+        FireASAP = true,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_drumout.ogg", t = 22/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_arm.ogg", t = 44/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_drumhit.ogg", t = 51/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_drumhin.ogg", t = 60/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_charge.ogg", t = 80/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_end.ogg", t = 95/30},
+        },
+    },
+    ["reload_drum_fast"] = {
+        Source = "reload_fast_drum",
+        MinProgress = 0.9,
+        FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_victor_reload_drum_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_victor_reload_drum_drumout.ogg", t = 11/30},
+			{s = path .. "wfoly_sm_victor_reload_drum_arm.ogg", t = 34/30},
+			{s = path .. "wfoly_sm_victor_reload_drum_drumhit.ogg", t = 38/30},
+			{s = path .. "wfoly_sm_victor_reload_drum_drumin.ogg", t = 47/30},
+			{s = path .. "wfoly_sm_victor_reload_drum_end.ogg", t = 53/30},
+        },
+    },
+    ["reload_drum_fast_empty"] = {
+        Source = "reload_fast_drum_empty",
+        MinProgress = 0.9,
+        FireASAP = true,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_drumout.ogg", t = 12/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_arm.ogg", t = 33/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_drumhit.ogg", t = 41/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_drumin.ogg", t = 44/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_slap.ogg", t = 55/30},
+			{s = path .. "wfoly_sm_victor_reload_empty_drum_end.ogg", t = 64/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         MinProgress = 0.9,
@@ -667,10 +814,23 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
+        return "reload_drum_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
+        return "reload_drum_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_drum") then
+        return "reload_drum"
+    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
+        return "reload_drum_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "inspect" and wep:HasElement("mag_drum") then
+        return "inspect_drum"
     end
 end
 
@@ -862,6 +1022,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodStubbyGripPoseParam = 5.5
+SWEP.CodStubbyGripPoseParam = 23
 SWEP.CodStubbyTallGripPoseParam = 22
-SWEP.CodAngledGripPoseParam = 21
+SWEP.CodAngledGripPoseParam = 36

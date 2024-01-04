@@ -833,6 +833,15 @@ SWEP.Attachments = {
 		Icon_Offset = Vector(0, 0, 0),
     },
     {
+        PrintName = "Stock",
+        DefaultAttName = "Standard Stock",
+        Category = "cod2019_famas_stock",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-18, 0, -2),
+    },
+    {
         PrintName = "Perk",
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst"}
     },
