@@ -455,19 +455,19 @@ L["cod2019_ammo_gl_rock.description"] = "Anpassade 40mm patroner fyllda med <col
 
 L["cod2019_ammo_gl_flash.printname"] = "40mm Chock" -- UO
 L["cod2019_ammo_gl_flash.compactname"] = "Chock" -- UO
-L["cod2019_ammo_gl_flash.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Chock</color>patroner designade att temporärligt blända din fiende." -- UO, partially taken from M203 40mm Flash
+L["cod2019_ammo_gl_flash.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Chock</color>granater designade att temporärligt blända din fiende." -- UO, partially taken from M203 40mm Flash
 
 L["cod2019_ammo_gl_inc.printname"] = "40mm Brand" -- UO
 L["cod2019_ammo_gl_inc.compactname"] = "Brand" -- UO
-L["cod2019_ammo_gl_inc.description"] = "Anpassade 40mm patroner fyllda med dödliga <color=100,255,100>Brand</color>skott." -- UO, partially taken from M203 40mm Incendiary
+L["cod2019_ammo_gl_inc.description"] = "Anpassade 40mm patroner fyllda med dödliga <color=100,255,100>Brand</color>granater." -- UO, partially taken from M203 40mm Incendiary
 
 L["cod2019_ammo_gl_smoke.printname"] = "40mm Rökskärm" -- UO
 L["cod2019_ammo_gl_smoke.compactname"] = "Rök" -- UO
-L["cod2019_ammo_gl_smoke.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Rök</color>patroner designade att gömma din rörelse." -- UO, partially taken from M203 40mm Smokescreen
+L["cod2019_ammo_gl_smoke.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Rök</color>granater designade att gömma din rörelse." -- UO, partially taken from M203 40mm Smokescreen
 
 L["cod2019_ammo_gl_gas.printname"] = "40mm Gas" -- UO
 L["cod2019_ammo_gl_gas.compactname"] = "Gas" -- UO
-L["cod2019_ammo_gl_gas.description"] = "Anpassade 40mm patroner fyllda med delvist dödliga <color=100,255,100>Gas</color> patroner som skapar ett gasmoln vid träffpunkten.\nFlertal skott i samma område <color=100,255,100>ökar dess dödlighet</color>."
+L["cod2019_ammo_gl_gas.description"] = "Anpassade 40mm patroner fyllda med delvist dödliga <color=100,255,100>Gas</color>granater som skapar ett gasmoln vid träffpunkten.\nFlertal skott i samma område <color=100,255,100>ökar dess dödlighet</color>." -- UO
 
 ////////////////////  Rytec Atts. before they are actually added, remove when the proper ones are introduced
 L["cod2019_rytec_barrel_short.printname"] = "Kort Pipa" -- UO
