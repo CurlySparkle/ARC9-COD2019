@@ -555,8 +555,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_end.ogg", t = 82/30},
         },
     },
-    ["reload_fast_xmag"] = {
-        Source = "reload_fast_xmag",
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
 		--DropMagAt = 0.7,
@@ -590,8 +590,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 37/30},
         },
     },
-    ["reload_fast_xmag_empty"] = {
-        Source = "reload_fast_xmag_empty",
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.6,
@@ -964,7 +964,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_uzi_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
