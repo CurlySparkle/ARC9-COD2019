@@ -214,7 +214,7 @@ SWEP.SprintAng = Angle(0, 0, 0)
 SWEP.PeekPos = Vector(-1.5, 0, -3)
 SWEP.PeekAng = Angle(0, 0.4, -45)
 
-SWEP.CustomizeAng = Angle(90, 0, 0)
+SWEP.CustomizeAng = Angle(90, 0, 1)
 SWEP.CustomizePos = Vector(11, 28, 4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
@@ -994,6 +994,11 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
+    ["foregrip_none"] = {
+        Bodygroups = {
+            {5,1},
+        },
+    },
     ["muzzle_none"] = {
         Bodygroups = {
             {3,1},
@@ -1002,6 +1007,11 @@ SWEP.AttachmentElements = {
     ["sights"] = {
         Bodygroups = {
             {4,1},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {6,1},
         },
     },
 	["grip_angled"] = {
@@ -1077,6 +1087,24 @@ SWEP.Attachments = {
 		RejectAttachments = { 
 		["cod2019_attach_xmag_60"] = true
 		},
+    },
+    {
+        PrintName = "Reciever",
+        DefaultAttName = "Standard Reciever",
+        Category = "cod2019_ram7_reciever",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(7, 0, 1),
+    },
+    {
+        PrintName = "Stock",
+        DefaultAttName = "Standard Stock",
+        Category = "cod2019_ram7_stock",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 0),
     },
     {
         PrintName = "Perk",
