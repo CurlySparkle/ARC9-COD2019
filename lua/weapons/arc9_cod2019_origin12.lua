@@ -212,7 +212,7 @@ SWEP.MovingAng = Angle(0, 0, -8)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.CustomizeAng = Angle(90, 0, 0)
+SWEP.CustomizeAng = Angle(90, 0, 1)
 SWEP.CustomizePos = Vector(14, 30, 4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
@@ -805,6 +805,48 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_raise_first_end.ogg", t = 27/30},
         },
     },
+    ["ready_xmag"] = {
+        Source = {"draw_xmag"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_sh_oscar12_raise_first_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_oscar12_raise_first_magin_01.ogg", t = 9/30},
+			{s = path .. "wfoly_plr_sh_oscar12_raise_first_end_hit.ogg", t = 23/30},
+			{s = path .. "wfoly_plr_sh_oscar12_raise_first_end.ogg", t = 27/30},
+        },
+    },
+    ["ready_drum"] = {
+        Source = {"draw_drum"},
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_plr_sh_oscar12_raise_first_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_oscar12_raise_first_magin_01.ogg", t = 9/30},
+			{s = path .. "wfoly_plr_sh_oscar12_raise_first_end_hit.ogg", t = 23/30},
+			{s = path .. "wfoly_plr_sh_oscar12_raise_first_end.ogg", t = 27/30},
+        },
+    },
     ["draw"] = {
         Source = "draw_short",
         MinProgress = 0.4,
@@ -935,20 +977,24 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
         return "reload_xmag_fast_empty"
 --------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend_drum") then
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
         return "reload_drum_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend_drum") then 
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
         return "reload_drum_fast_empty"
+    elseif anim == "ready" and wep:HasElement("mag_drum") then 
+        return "ready_drum"
 --------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
 --------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("ammo_extend_drum") then 
+    elseif anim == "reload" and wep:HasElement("mag_drum") then 
         return "reload_drum"
-    elseif anim == "reload_empty" and wep:HasElement("ammo_extend_drum") then 
+    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
         return "reload_drum_empty"
+    elseif anim == "ready" and wep:HasElement("mag_drum") then 
+        return "ready_drum"
 --------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("ammo_extend") then 
         return "reload_xmag"
