@@ -330,11 +330,11 @@ L["cod2019_perks_slamfire.printname"] = "Slamfire" -- UO
 L["cod2019_perks_slamfire.compactname"] = "Slamfire" -- UO
 L["cod2019_perks_slamfire.description"] = "Tvinga vapnet att skjuta och ladda vapnet mycket snabbare med kostnad på sänkt träffsäkerhet." -- UO
 
-L["cod2019_perks_burst.printname"] = "Salvo"
+L["cod2019_perks_burst.printname"] = "Salvoeld"
 L["cod2019_perks_burst.compactname"] = "Salvo"
 L["cod2019_perks_burst.description"] = "Ändrar skjutläget till <color=100,255,100>3-skott</color>salvo."
 
-L["cod2019_perks_burst_2.printname"] = ARC9:GetPhrase("cod2019_perks_burst.printname")
+L["cod2019_perks_burst_2.printname"] = "Salvoeld (x2)"
 L["cod2019_perks_burst_2.compactname"] = ARC9:GetPhrase("cod2019_perks_burst.compactname")
 L["cod2019_perks_burst_2.description"] = "Ändrar skjutläget till <color=100,255,100>2-skott</color>salvo."
 

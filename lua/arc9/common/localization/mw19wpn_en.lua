@@ -330,11 +330,11 @@ L["cod2019_perks_slamfire.printname"] = "Slamfire" -- UO
 L["cod2019_perks_slamfire.compactname"] = "Slamfire" -- UO
 L["cod2019_perks_slamfire.description"] = "Bruteforce the weapon to fire and cycle the weapon much quicker at the cost of reduced accuracy." -- UO
 
-L["cod2019_perks_burst.printname"] = "Burst"
+L["cod2019_perks_burst.printname"] = "Burst Fire"
 L["cod2019_perks_burst.compactname"] = "Burst"
 L["cod2019_perks_burst.description"] = "Changes fire mode to <color=100,255,100>3-round</color> burst."
 
-L["cod2019_perks_burst_2.printname"] = ARC9:GetPhrase("cod2019_perks_burst.printname")
+L["cod2019_perks_burst_2.printname"] = "Burst Fire (x2)"
 L["cod2019_perks_burst_2.compactname"] = ARC9:GetPhrase("cod2019_perks_burst.compactname")
 L["cod2019_perks_burst_2.description"] = "Changes fire mode to <color=100,255,100>2-round</color> burst."
 
