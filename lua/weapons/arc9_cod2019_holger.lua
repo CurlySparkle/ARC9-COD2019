@@ -507,7 +507,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 20/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 21/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 25/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 42/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 47/30},
@@ -544,7 +544,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 14/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 15/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 19/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 52/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 57/30},
@@ -585,8 +585,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 9/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 14/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 30/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 35/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 31/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 36/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 53/30},
         },
     },
