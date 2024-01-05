@@ -576,7 +576,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -854,6 +854,8 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_empty_ar"
     -------------------------------------------------------------------------
     elseif anim == "inspect" and wep:HasElement("mag_armag") then 
+        return "inspect_ar"
+    elseif anim == "inspect" and wep:HasElement("mag_xmag") then 
         return "inspect_ar"
     end
 end

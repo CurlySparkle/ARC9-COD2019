@@ -1022,6 +1022,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(4,1) end
+    if wep:HasElement("optic_scope") then model:SetBodygroup(4,2) end
 end
 
 SWEP.Attachments = {
