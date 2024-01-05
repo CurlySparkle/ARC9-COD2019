@@ -204,8 +204,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.6, -0.6)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -425,6 +425,147 @@ SWEP.Animations = {
 		FireASAP = true,
 		MagSwapTime = 1.5,
 		--DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 22/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_chamber_01.ogg", t = 40/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 55/30},
+        },
+    },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.85,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_twist.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_falpha_magout_01.ogg", t = 19/30},
+			{s = path .. "wfoly_ar_falpha_reload_maghit_01.ogg", t = 37/30},
+			{s = path .. "wfoly_ar_falpha_reload_magin_01.ogg", t = 44/30},
+			{s = path .. "wfoly_ar_falpha_reload_end.ogg", t = 52/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 11/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 38/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_chamber_01.ogg", t = 62/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 75/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.85,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		--DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 12/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 45/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.45,
         IKTimeLine = {
             {
                 t = 0,
@@ -685,10 +826,20 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
     end
 end
 
@@ -819,7 +970,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_famas_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

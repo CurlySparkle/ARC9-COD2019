@@ -471,6 +471,152 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_lima86_reload_empty_fast_end.ogg", t = 71/30},
         },
     },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.85,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+		DropMagAt = 1.1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_lima86_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_lima86_reload_magout_01.ogg", t = 25/30},
+			{s = path .. "wfoly_lm_lima86_reload_rotate.ogg", t = 36/30},
+			{s = path .. "wfoly_lm_lima86_reload_magin_v2_01.ogg", t = 56/30},
+			{s = path .. "wfoly_lm_lima86_reload_magin_v2_02.ogg", t = 70/30},
+			{s = path .. "wfoly_lm_lima86_reload_end_01.ogg", t = 87/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 1.1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_lima86_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_magout_01.ogg", t = 25/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_magin_v2_01.ogg", t = 55/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_magin_v2_02.ogg", t = 72/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_rotate.ogg", t = 75/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_charge_01.ogg", t = 93/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_end.ogg", t = 75/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.85,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+		DropMagAt = 0.9,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_lima86_reload_fast_start.ogg", t = 4/30},
+			{s = path .. "wfoly_lm_lima86_reload_fast_magout_01.ogg", t = 14/30},
+			{s = path .. "wfoly_lm_lima86_reload_fast_magin_v2_01.ogg", t = 38/30},
+			{s = path .. "wfoly_lm_lima86_reload_fast_magin_v2_02.ogg", t = 47/30},
+			{s = path .. "wfoly_lm_lima86_reload_fast_end.ogg", t = 54/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.9,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_lima86_reload_empty_fast_start.ogg", t = 4/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_fast_magout_01.ogg", t = 17/30},
+            {s = path .. "wfoly_lm_lima86_reload_empty_fast_magin_v2_01.ogg", t = 38/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_fast_magin_v2_02.ogg", t = 47/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_fast_charge_01.ogg", t = 59/30},
+			{s = path .. "wfoly_lm_lima86_reload_empty_fast_end.ogg", t = 71/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -788,6 +934,12 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(1, 0, 0.1),
     },
+    ["cod2019_attach_xmag_50"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/sa86/attachment_vm_lm_lima86_xmags.mdl",
+    },
+    ["cod2019_attach_xmag_60"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/sa86/attachment_vm_lm_lima86_xmags2.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -910,7 +1062,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag","cod2019_sa87_mag"},
+        Category = {"cod2019_mag","cod2019_sa87_mag","cod2019_mag_xmag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
