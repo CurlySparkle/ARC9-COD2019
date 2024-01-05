@@ -489,6 +489,284 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 44/30},
         },
     },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_magout_v2.ogg", t = 18/30},
+			{s = path .. "wpfoly_mike4_reload_magin_01.ogg", t = 29/30},
+			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 31/30},
+			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 52/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.39,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_empty_magout_v2.ogg", t = 5/30},
+			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 31/30},
+			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 53/30},
+			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 63/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.45,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_fast_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_magout_v2.ogg", t = 3/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 28/30},
+			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 35/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_empty_fast_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magout_v2.ogg", t = 5/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 25/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 34/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 44/30},
+        },
+    },
+    ["reload_xmaglrg"] = {
+        Source = "reload_xmaglrg",
+		MinProgress = 0.8,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_magout_v2.ogg", t = 18/30},
+			{s = path .. "wpfoly_mike4_reload_magin_01.ogg", t = 29/30},
+			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 31/30},
+			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 52/30},
+        },
+    },
+    ["reload_xmaglrg_empty"] = {
+        Source = "reload_xmaglrg_empty",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.39,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_empty_magout_v2.ogg", t = 5/30},
+			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 31/30},
+			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 53/30},
+			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 63/30},
+        },
+    },
+    ["reload_xmaglrg_fast"] = {
+        Source = "reload_xmaglrg_fast",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.45,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_fast_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_magout_v2.ogg", t = 3/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 28/30},
+			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 35/30},
+        },
+    },
+    ["reload_xmaglrg_fast_empty"] = {
+        Source = "reload_xmaglrg_fast_empty",
+		MinProgress = 0.8,
+		FireASAP = true,
+		DropMagAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wpfoly_mike4_reload_empty_fast_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magout_v2.ogg", t = 5/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 25/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 34/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 44/30},
+        },
+    },
     ["reload_smg"] = {
         Source = "reload_calsmg",
 		MinProgress = 0.8,
@@ -819,10 +1097,30 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_smg") then 
         return "reload_smg_fast_empty"
     --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
+        return "reload_xmaglrg_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then 
+        return "reload_xmaglrg_fast_empty"
+    --------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmaglrg") then
+        return "reload_xmaglrg"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmaglrg") then 
+        return "reload_xmaglrg_empty"
     --------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("mag_smg") then
         return "reload_smg"
@@ -881,6 +1179,13 @@ SWEP.AttachmentTableOverrides = {
 		KeepBaseIrons = true,
     },
     },
+    },
+    ["cod2019_attach_xmag_50"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_xmags.mdl",
+    },
+    ["cod2019_attach_xmag_60"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_xmags2.mdl",
+	ActivateElements = {"mag_none","mag_xmaglrg"}
     },
 }
 

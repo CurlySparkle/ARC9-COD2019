@@ -556,6 +556,81 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 73/30},
         },
     },
+    ["reload_xmag_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.48,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_reach.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_tilt.ogg", t = 15/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_01.ogg", t = 22/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 26/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 39/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.48,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_reach.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_tilt.ogg", t = 15/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_01.ogg", t = 22/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_magin_v2_02.ogg", t = 26/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_charge_01.ogg", t = 37/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 47/30},
+        },
+    },
     ["reload_drum"] = {
         Source = "reload_drum",
 		MinProgress = 0.8,
@@ -873,6 +948,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
         return "reload_drum_fast_empty"
 --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+--------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
@@ -883,9 +963,9 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
         return "reload_drum_empty"
 --------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("ammo_extend") then 
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then 
         return "reload_xmag"
-    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
         return "reload_xmag_empty"
     end
 end
@@ -941,6 +1021,12 @@ SWEP.AttachmentTableOverrides = {
 		KeepBaseIrons = true,
     },
     },
+    },
+    ["cod2019_attach_xmag_50"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/kilo141/attachment_vm_ar_kilo433_xmags.mdl",
+    },
+    ["cod2019_attach_xmag_60"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_ar_mcharlie_xmags2.mdl",
     },
 }
 
@@ -1071,7 +1157,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag","cod2019_kilo141_mag"},
+        Category = {"cod2019_mag","cod2019_kilo141_mag","cod2019_mag_xmag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

@@ -453,6 +453,146 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 1.867},
         },
     },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_sierra552_reload_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_sierra552_reload_magout.ogg", t = 21/30},
+			{s = path .. "wfoly_ar_sierra552_reload_maghit.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_sierra552_reload_magin.ogg", t = 41/30},
+			{s = path .. "wfoly_ar_sierra552_reload_end.ogg", t = 56/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 1.13,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_sierra552_reload_empty_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_magout.ogg", t = 22/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_maghit.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_magin.ogg", t = 45/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_roll.ogg", t = 58/30},
+			{s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 66/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 69/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 1,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_sierra552_reload_empty_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_magout.ogg", t = 19/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_maghit.ogg", t = 30/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_magin.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 36/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 1.13,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_sierra552_reload_empty_rotate.ogg", t = 0},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_magout.ogg", t = 0.4},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_maghit.ogg", t = 0.9},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_magin.ogg", t = 1.167},
+			{s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 1.567},
+			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 1.867},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -593,10 +733,30 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
+        return "reload_xmaglrg_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then 
+        return "reload_xmaglrg_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmaglrg") then
+        return "reload_xmaglrg"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmaglrg") then 
+        return "reload_xmaglrg_empty"
     end
 end
 
@@ -648,6 +808,14 @@ SWEP.AttachmentTableOverrides = {
 		KeepBaseIrons = true,
     },
     },
+    },
+    ["cod2019_attach_xmag_50"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/grau556/attachment_vm_ar_sierra552_xmags.mdl",
+	ActivateElements = {"mag_none","mag_xmag"}
+    },
+    ["cod2019_attach_xmag_60"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/grau556/attachment_vm_ar_sierra552_xmagslrg.mdl",
+	ActivateElements = {"mag_none","mag_xmag"}
     },
 }
 
@@ -785,7 +953,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_grau556_mag"},
+        Category = {"cod2019_grau556_mag","cod2019_mag_xmag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"mag_none"},

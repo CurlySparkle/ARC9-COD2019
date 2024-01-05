@@ -463,6 +463,300 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 51/30},
         },
     },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_tango21_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_tango21_reload_magout.ogg", t = 14/30},
+			{s = path .. "wfoly_ar_tango21_reload_mag_hit.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_tango21_reload_magin.ogg", t = 42/30},
+			{s = path .. "wfoly_ar_tango21_reload_end.ogg", t = 59/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_tango21_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_rotatemvmnt.ogg", t = 23/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_arm.ogg", t = 28/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 41/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 49/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_rotate.ogg", t = 56/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_charge.ogg", t = 68/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 77/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.54,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_tango21_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_rotatemvmnt.ogg", t = 15/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_arm.ogg", t = 18/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 37/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 42/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.54,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_tango21_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_rotatemvmnt.ogg", t = 15/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_arm.ogg", t = 18/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 37/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_charge.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 51/30},
+        },
+    },
+    ["reload_drum"] = {
+        Source = "reload_drum",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_tango21_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_tango21_reload_magout.ogg", t = 14/30},
+			{s = path .. "wfoly_ar_tango21_reload_mag_hit.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_tango21_reload_magin.ogg", t = 42/30},
+			{s = path .. "wfoly_ar_tango21_reload_end.ogg", t = 59/30},
+        },
+    },
+    ["reload_drum_empty"] = {
+        Source = "reload_drum_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_tango21_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_rotatemvmnt.ogg", t = 23/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_arm.ogg", t = 28/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 41/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 49/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_rotate.ogg", t = 56/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_charge.ogg", t = 68/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 77/30},
+        },
+    },
+    ["reload_drum_fast"] = {
+        Source = "reload_drum_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.54,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_tango21_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_rotatemvmnt.ogg", t = 15/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_arm.ogg", t = 18/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 37/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 42/30},
+        },
+    },
+    ["reload_drum_fast_empty"] = {
+        Source = "reload_drum_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.54,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_tango21_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_rotatemvmnt.ogg", t = 15/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_arm.ogg", t = 18/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 37/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_charge.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 51/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -605,22 +899,30 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
---------------------------------------------------------------------------
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
         return "reload_xmag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
         return "reload_xmag_fast_empty"
---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
+        return "reload_drum_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
+        return "reload_drum_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_drum") then 
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
         return "reload_xmag"
-    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
         return "reload_xmag_empty"
---------------------------------------------------------------------------
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_drum") then
+        return "reload_drum"
+    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
+        return "reload_drum_empty"
     end
 end
 
@@ -670,7 +972,15 @@ SWEP.AttachmentTableOverrides = {
 		KeepBaseIrons = true,
     },
     },
-    },d
+    },
+    ["cod2019_attach_xmag_50"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/ram7/attachment_vm_ar_tango21_xmags.mdl",
+	ActivateElements = {"mag_none","mag_xmag"}
+    },
+    ["cod2019_attach_xmag_60"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/ram7/attachment_vm_ar_tango21_drummag.mdl",
+	ActivateElements = {"mag_none","mag_drum"}
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -761,9 +1071,12 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_ram7_mag","cod2019_mag_xmag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		RejectAttachments = { 
+		["cod2019_attach_xmag_60"] = true
+		},
     },
     {
         PrintName = "Perk",

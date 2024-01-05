@@ -156,13 +156,13 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 2
+SWEP.RecoilModifierCap = 1.3
 SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadMultMove = 2
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddHipFire = 0.04
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
@@ -195,7 +195,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(-1, 0, 0)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -832,8 +832,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_ar_fast"
     elseif anim == "reload_empty" and wep:HasElement("mag_armag") and wep:HasElement("perk_speedreload") then 
         return "reload_ar_fast_empty"
-    elseif anim == "inspect" and wep:HasElement("mag_armag") then 
-        return "inspect_ar"
+    -------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") and wep:HasElement("perk_speedreload") then
+        return "reload_ar_fast"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") and wep:HasElement("perk_speedreload") then 
+        return "reload_ar_fast_empty"
     -------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
@@ -844,7 +847,13 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_ar"
     elseif anim == "reload_empty" and wep:HasElement("mag_armag") then 
         return "reload_empty_ar"
-    elseif anim == "inspect" and wep:HasElement("mag_armag") and wep:HasElement("perk_speedreload") then 
+    -------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_ar"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_empty_ar"
+    -------------------------------------------------------------------------
+    elseif anim == "inspect" and wep:HasElement("mag_armag") then 
         return "inspect_ar"
     end
 end
@@ -859,6 +868,12 @@ SWEP.AttachmentTableOverrides = {
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(1, 0, 0.1),
+    },
+    ["cod2019_attach_xmag_50"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_ar_mcharlie_xmags.mdl",
+    },
+    ["cod2019_attach_xmag_60"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_ar_mcharlie_xmags2.mdl",
     },
 }
 
@@ -973,7 +988,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_holger_mag"},
+        Category = {"cod2019_holger_mag","cod2019_mag_xmag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
