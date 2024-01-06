@@ -1106,9 +1106,24 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
-    ["sights"] = {
+    ["sights_back_folded"] = {
         Bodygroups = {
             {3,1},
+        },
+    },
+    ["sights_front_folded"] = {
+        Bodygroups = {
+            {7,1},
+        },
+    },
+    ["sights_back_none"] = {
+        Bodygroups = {
+            {3,2},
+        },
+    },
+    ["sights_front_none"] = {
+        Bodygroups = {
+            {7,2},
         },
     },
 	["stock_adapter"] = {
@@ -1135,6 +1150,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
+    if wep:HasElement("barrel_long") then model:SetBodygroup(7,2) end
 end
 
 
@@ -1154,7 +1170,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sights"},
+		InstalledElements = {"sights_back_folded","sights_front_folded"},
     },
     {
         PrintName = "Muzzle",
@@ -1164,6 +1180,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle_none"},
+		ExcludeElements = {"barrel_suppressed"},
 		Scale = 1,
     },
     {
