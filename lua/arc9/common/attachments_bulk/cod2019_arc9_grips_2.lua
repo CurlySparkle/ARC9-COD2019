@@ -13,12 +13,13 @@ ATT.Model = "models/weapons/cod2019/attachs/grips/grip_origin12.mdl"
 ATT.SortOrder = 1
 ATT.Category = "cod2019_grips_side"
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_side2")
 
-ATT.RecoilAutoControlMult = 1.1
-ATT.RecoilMult = 0.9
-
-ATT.AimDownSightsTimeMult = 1.05
-ATT.SprintToFireTimeMult = 1.05
+ATT.AimDownSightsTimeAdd = 0.019
+ATT.VisualRecoilMult = 0.8
+ATT.RecoilMult = 0.8
+ATT.SpeedMult = 0.96
+ATT.SpeedMultSights = 0.84
 
 ATT.LHIK_Priority = 10
 ATT.LHIK = true

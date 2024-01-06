@@ -314,13 +314,18 @@ SWEP.TriggerDownSound = "weapons/cod2019/ak47/weap_akilo47_fire_first_plr_01.ogg
 SWEP.TriggerUpSound = "weapons/cod2019/ak47/weap_akilo47_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
+    -- ["enter_sights"] = {
+        -- Source = "idle",
+        -- IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+    -- },
     ["fire"] = {
         Source = "shoot1",
+        IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.55,
+		FireASAP = false,
         IKTimeLine = {
             {
                 t = 0,
@@ -328,17 +333,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.75,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -355,8 +360,8 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.725,
+		FireASAP = false,
 		DropMagAt = 1.15,
         IKTimeLine = {
             {
@@ -370,12 +375,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.75,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -391,8 +396,8 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.625,
+		FireASAP = false,
 		DropMagAt = 0.85,
         IKTimeLine = {
             {
@@ -427,8 +432,8 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.725,
+		FireASAP = false,
 		DropMagAt = 1.15,
         IKTimeLine = {
             {
@@ -463,8 +468,8 @@ SWEP.Animations = {
     },
     ["reload_drum"] = {
         Source = "reload_drum",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.625,
+		FireASAP = false,
         IKTimeLine = {
             {
                 t = 0,
@@ -498,46 +503,9 @@ SWEP.Animations = {
     },
     ["reload_drum_empty"] = {
         Source = "reload_drum_empty",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.75,
+		FireASAP = false,
 		DropMagAt = 1.15,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.95,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_mvmnt.ogg", t = 0.066},
-			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magout_01.ogg", t = 0.73},
-			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_01.ogg", t = 1.4},
-			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_02.ogg", t = 1.6},
-			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_rise.ogg", t = 2.06},
-			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_chamber_01.ogg", t = 2.86},
-			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_end.ogg", t = 3.16},
-        },
-    },
-    ["reload_drum_fast"] = {
-        Source = "reload_drum_fast",
-		MinProgress = 0.8,
-		FireASAP = true,
-		--DropMagAt = 0.85,
         IKTimeLine = {
             {
                 t = 0,
@@ -555,7 +523,44 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1,
+                t = 0.575,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_mvmnt.ogg", t = 0.066},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magout_01.ogg", t = 0.73},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_01.ogg", t = 1.4},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_02.ogg", t = 1.6},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_rise.ogg", t = 2.06},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_chamber_01.ogg", t = 2.86},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_end.ogg", t = 3.16},
+        },
+    },
+    ["reload_drum_fast"] = {
+        Source = "reload_drum_fast",
+		MinProgress = 0.625,
+		FireASAP = false,
+		--DropMagAt = 0.85,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.65,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
                 lhik = 1,
                 rhik = 1
             },
@@ -570,8 +575,8 @@ SWEP.Animations = {
     },
     ["reload_drum_fast_empty"] = {
         Source = "reload_drum_fast_empty",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.75,
+		FireASAP = false,
 		DropMagAt = 1.15,
         IKTimeLine = {
             {
@@ -585,12 +590,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.65,
                 lhik = 1,
                 rhik = 1
             },
@@ -608,7 +613,7 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw",
 		MinProgress = 0.8,
-		FireASAP = true,
+		FireASAP = false,
         IKTimeLine = {
             {
                 t = 0,
@@ -640,7 +645,7 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw_short",
 		MinProgress = 0.8,
-		FireASAP = true,
+		FireASAP = false,
         IKTimeLine = {
             {
                 t = 0,
@@ -697,7 +702,7 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
-		MinProgress = 0.1,
+		MinProgress = 0.9,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -711,12 +716,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.4,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.6,
+                t = 0.95,
                 lhik = 1,
                 rhik = 1
             },

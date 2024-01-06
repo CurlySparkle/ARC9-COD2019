@@ -112,6 +112,7 @@ L["mw19_category_weapon_lmg"] = "LMGS"
 L["mw19_category_weapon_marksman"] = "MARKSMAN RIFLES"
 L["mw19_category_weapon_sniper"] = "SNIPER RIFLES"
 L["mw19_category_weapon_melee"] = "MELEE"
+L["mw19_category_weapon_throwable"] = "LETHAL + TACTICAL"
 
 L["mw19_category_weapon_handgun"] = "HANDGUNS"
 L["mw19_category_weapon_handgun_akimbo"] = "HANDGUNS - AKIMBO"
@@ -125,6 +126,7 @@ L["mw19_class_weapon_lmg"] = "Light Machine Gun"
 L["mw19_class_weapon_marksman"] = "Marksman Rifle"
 L["mw19_class_weapon_sniper"] = "Sniper Rifle"
 L["mw19_class_weapon_melee"] = "Melee"
+L["mw19_class_weapon_grenade"] = "Grenade" -- UO
 
 L["mw19_class_weapon_handgun"] = "Handgun"
 L["mw19_class_weapon_launcher"] = "Launcher"
@@ -182,6 +184,7 @@ L["mw19_category_receiver"] = "Receiver" -- UO
 //////////////////// Folder Names
 -- Other
 L["mw19_folder_other2"] = "Other" -- UO
+L["mw19_folder_side2"] = "Side" -- UO
 
 //////////////////// Firemodes
 -- L["mw19_firemode_pump"] = "PUMP"
@@ -561,6 +564,28 @@ L["mw19_weapon_sword"] = "Dual Kodachis"
 
 L["mw19_weapon_akimbo"] = "%s Akimbo"
 
+L["mw19_weapon_nade_claymore"] = "Claymore"
+L["mw19_weapon_nade_frag"] = "Frag Grenade"
+L["mw19_weapon_nade_molotov"] = "Molotov Cocktail"
+L["mw19_weapon_nade_c4"] = "C4"
+L["mw19_weapon_nade_semtex"] = "Semtex"
+L["mw19_weapon_nade_knife"] = "Throwing Knife"
+L["mw19_weapon_nade_proximity"] = "Proximity Mine"
+L["mw19_weapon_nade_thermite"] = "Thermite"
+
+L["mw19_weapon_nade_flash"] = "Flash Grenade"
+L["mw19_weapon_nade_stun"] = "Stun Grenade"
+L["mw19_weapon_nade_smoke"] = "Smoke Grenade"
+L["mw19_weapon_nade_snapshot"] = "Snapshot Grenade"
+L["mw19_weapon_nade_heartbeat"] = "Heartbeat Sensor"
+L["mw19_weapon_nade_stim"] = "Stim"
+L["mw19_weapon_nade_decoy"] = "Decoy Grenade"
+L["mw19_weapon_nade_gas"] = "Gas Grenade"
+
+L["mw19_weapon_minigun"] = "Minigun"
+L["mw19_weapon_fists"] = "Fists" -- UO
+L["mw19_weapon_nade_rock"] = "Rock" -- UO
+
 //////////// Weapon Descriptions
 L["mw19_weapon_kilo141_desc"] = "Fully automatic assault rifle with an ergonomic design that improves handling, and a steady fire rate helps stay on target."
 L["mw19_weapon_fal_desc"] = "A semi-automatic assault rifle with a high rate of fire for faster follow up shots."
@@ -634,3 +659,25 @@ L["mw19_weapon_mgl_desc"] = "Rapid firing grenade launcher fed with a 6-round ro
 L["mw19_weapon_knife_desc"] = "A CQC tactical knife. Standard military issue, employed for fast, quiet, and deadly wetwork."
 L["mw19_weapon_stick_desc"] = "Dual wielding batons allow operators to approach their targets with great agility. Sturdy, lightweight design enables rapid attacks for zoning your enemies."
 L["mw19_weapon_sword_desc"] = "Hand forged carbon steel blades provide the sharpest edge possible for silently slicing through your enemies."
+
+L["mw19_weapon_nade_claymore_desc"] = "Proximity-activated explosive mine."
+L["mw19_weapon_nade_frag_desc"] = "Cookable fragmentation grenade."
+L["mw19_weapon_nade_molotov_desc"] = "Improvised incendiary device that explodes on impact."
+L["mw19_weapon_nade_c4_desc"] = "Large explosive that sticks to surfaces and can be detonated remotely with {ATTACK} when the equipment is depleted.\n\nDouble-tapping {USE} always detonates the explosives."
+L["mw19_weapon_nade_semtex_desc"] = "Timed sticky grenade."
+L["mw19_weapon_nade_knife_desc"] = "Retrievable knife that can be thrown to quickly and quietly eliminate enemies."
+L["mw19_weapon_nade_proximity_desc"] = "Proximity-triggered explosive that deals heavy damage to vehicles."
+L["mw19_weapon_nade_thermite_desc"] = "Explosive which burns fiercely for a short time after impact. Sticks to surfaces."
+
+L["mw19_weapon_nade_flash_desc"] = "Blinds and deafens targets."
+L["mw19_weapon_nade_stun_desc"] = "Slows victim's movement and aiming."
+L["mw19_weapon_nade_smoke_desc"] = "Deploys a smoke screen that blocks vision."
+L["mw19_weapon_nade_snapshot_desc"] = "Provides a momentary glimpse of enemies within the blast radius for your squad."
+L["mw19_weapon_nade_heartbeat_desc"] = "A tablet that displays rough information about nearby enemies."
+L["mw19_weapon_nade_stim_desc"] = "Military stimulant that cauterizes combat wounds and refreshes Tactical Sprint."
+L["mw19_weapon_nade_decoy_desc"] = "Counter-intel grenade that simulates fake gunfire and radar signatures that confuse the enemy."
+L["mw19_weapon_nade_gas_desc"] = "Explodes on impact with the ground, releasing a lingering cloud of tear gas that causes slowed movement, blurred vision, and coughing."
+
+L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
+L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO
+L["mw19_weapon_nade_rock_desc"] = "For when you need to hit an enemy with a \"non-lethal\" item, or if you need to provide a distraction in order to sneak past guards." -- UO
