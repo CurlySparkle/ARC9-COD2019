@@ -42,7 +42,6 @@ ATT.RTScopeFOVMin = 10
 ATT.RTScopeFOVMax = 25
 ATT.RTScopeFOV = 26
 ATT.RTScopeRes = 512
--- ATT.RTScopeSurface = Material("models/weapons/arc9/mw3/mw3_optics/hamr_lens")
 ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/mk4_crosshair.png", "mips smooth")
 ATT.RTScopeReticleScale = 1
 ATT.RTScopeShadowIntensity = 0

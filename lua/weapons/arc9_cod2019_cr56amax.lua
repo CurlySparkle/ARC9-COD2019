@@ -82,10 +82,12 @@ SWEP.RPM = 680
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
         -- add other attachment modifiers
     },
     {
         Mode = 1,
+		PoseParam = 1,
         -- add other attachment modifiers
     }
 }
@@ -112,7 +114,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1
+SWEP.RecoilKick = 1.3
 
 SWEP.RecoilMultCrouch = 0.8
 
@@ -129,7 +131,7 @@ SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0
 
 SWEP.VisualRecoilRoll = 25
-SWEP.VisualRecoilSide = 0.4
+SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -156,7 +158,7 @@ SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadMultMove = 1.5
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.07
+SWEP.SpreadAddHipFire = 0.04
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
