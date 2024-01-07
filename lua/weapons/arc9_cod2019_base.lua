@@ -66,7 +66,7 @@ SWEP.FiremodeSound = ""
 SWEP.DryFireSound = ""
 
 SWEP.IndoorSoundHardCutoff = true
---SWEP.IndoorSoundHardCutoffRatio = 0.7
+--SWEP.IndoorSoundHardCutoffRatio = 0.1
 
 --SWEP.BobSettingsMove =  {1.25, 1, 1.5,    1.25, -3.5, 0.95}
 --SWEP.BobSettingsSpeed = {0.9, 1, 0.92,    1, 1.02, 0.9}

@@ -288,17 +288,17 @@ SWEP.ShootSoundIndoor = "COD2019.Striker45.Fire"
 SWEP.ShootSoundSilenced = "COD2019.Striker45.Fire.S"
 SWEP.ShootSoundSilencedIndoor = "COD2019.Striker45.Fire.S"
 
--- Non-Silenced Outside
+-- -- Non-Silenced Outside
 SWEP.LayerSound = "Layer_Pistol.Outside"
 SWEP.DistantShootSound = "Distant_SMG2.Outside"
--- Inside
+-- -- Inside
 SWEP.LayerSoundIndoor = "Layer_Pistol.Inside"
 SWEP.DistantShootSoundIndoor = "Distant_SMG.Inside"
----------------------------------------------------
--- Silenced Outside
+-- ---------------------------------------------------
+-- -- Silenced Outside
 SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
 SWEP.DistantShootSoundSilenced = "Distant_SMG_Sup.Outside"
--- Inside
+-- -- Inside
 SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
 SWEP.DistantShootSoundSilencedIndoor = "Distant_Pistol_Sup.Inside"
 ---------------------------------------------------
