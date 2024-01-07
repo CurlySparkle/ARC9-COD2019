@@ -154,9 +154,9 @@ SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being a
 -------------------------- MELEE
 
 SWEP.Bash = true
-SWEP.PrimaryBash = false
+SWEP.SecondaryBash = true
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.255
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 

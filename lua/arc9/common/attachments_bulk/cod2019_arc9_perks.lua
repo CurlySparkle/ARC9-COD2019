@@ -47,7 +47,8 @@ ATT.Free = true
 ATT.Category = "cod2019_perks"
 ATT.ActivateElements = {"perk_speedmelee"}
 
-ATT.PostBashTime = 0.1
+-- ATT.PostBashTime = 0.1
+ATT.BashSpeedMult = 1.15
 
 ARC9.LoadAttachment(ATT, "cod2019_perks_speedmelee")
 ------------------------------------------------------------------
