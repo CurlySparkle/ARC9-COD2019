@@ -670,10 +670,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_drumout_01.ogg", t = 13/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_drumout_01.ogg", t = 11/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_drumin_01.ogg", t = 32/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_02.ogg", t = 47/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_end.ogg", t = 51/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_02.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_end.ogg", t = 56/30},
         },
     },
     ["reload_drum_empty"] = {
@@ -704,8 +704,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_drumout_01.ogg", t = 4/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_drumin_01.ogg", t = 29/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_drumout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_drumin_01.ogg", t = 32/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_02.ogg", t = 48/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_hands.ogg", t = 45/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_tilt.ogg", t = 53/30},
@@ -742,9 +742,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_drumout_01.ogg", t = 4/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_drumin_01.ogg", t = 26/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_end.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_drumout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_drumin_01.ogg", t = 27/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_end.ogg", t = 45/30},
         },
     },
     ["reload_drum_fast_empty"] = {
@@ -776,11 +776,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_drumout_01.ogg", t = 4/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_drumin_01.ogg", t = 29/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_drumout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_drumin_01.ogg", t = 27/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_tilt.ogg", t = 33/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_charge_01.ogg", t = 39/30},
-			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_end.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_end.ogg", t = 45/30},
         },
     },
     ["ready"] = {

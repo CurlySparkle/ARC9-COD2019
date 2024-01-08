@@ -637,8 +637,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_ar_galima_raise_first_rotate.ogg", t = 0/30},
-            {s = path .. "wfoly_ar_galima_raise_first_bolt_pull.ogg", t = 9/30},
-            {s = path .. "wfoly_ar_galima_raise_first_bolt_forward.ogg", t = 21/30},
+            {s = path .. "wfoly_ar_galima_raise_first_bolt_pull.ogg", t = 11/30},
+            {s = path .. "wfoly_ar_galima_raise_first_bolt_forward.ogg", t = 23/30},
 			{s = path .. "wfoly_ar_galima_raise_first_end.ogg", t = 29/30},
         },
     },

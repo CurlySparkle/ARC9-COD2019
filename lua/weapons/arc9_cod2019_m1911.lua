@@ -759,8 +759,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_pi_mike1911_first_raise_lift.ogg", t = 0/30},
-            {s = path .. "wfoly_pi_mike1911_first_raise_slide_pull.ogg", t = 8/30},
-			{s = path .. "wfoly_pi_mike1911_first_raise_slide_release.ogg", t = 18/30},
+            {s = path .. "wfoly_pi_mike1911_first_raise_slide_pull.ogg", t = 10/30},
+			{s = path .. "wfoly_pi_mike1911_first_raise_slide_release.ogg", t = 20/30},
 			{s = path .. "wfoly_pi_mike1911_first_raise_chamber_end.ogg", t = 21/30},
         },
     },

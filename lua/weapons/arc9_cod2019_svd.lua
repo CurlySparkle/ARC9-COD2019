@@ -626,8 +626,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_delta_raise_first_mvmnt.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_delta_raise_first_charge_01.ogg", t = 11/30},
-            {s = path .. "wfoly_sn_delta_raise_first_end.ogg", t = 29/30},
+            {s = path .. "wfoly_sn_delta_raise_first_charge_01.ogg", t = 12/30},
+            {s = path .. "wfoly_sn_delta_raise_first_end.ogg", t = 27/30},
         },
     },
     ["draw"] = {

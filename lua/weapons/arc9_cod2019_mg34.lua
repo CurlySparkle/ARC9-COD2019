@@ -546,8 +546,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_lm_mgolf34_raise_first_pull.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_lm_mgolf34_raise_first_start.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_lm_mgolf34_raise_first_boltopen_01.ogg", t = 28/30},
+            {s = path .. "wfoly_plr_lm_mgolf34_raise_first_start.ogg", t = 6/30},
+			{s = path .. "wfoly_plr_lm_mgolf34_raise_first_boltopen_01.ogg", t = 31/30},
 			{s = path .. "wfoly_plr_lm_mgolf34_raise_first_boltclose_01.ogg", t = 40/30},
 			{s = path .. "wfoly_plr_lm_mgolf34_raise_first_end.ogg", t = 56/30},
         },

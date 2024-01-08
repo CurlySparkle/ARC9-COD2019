@@ -779,9 +779,9 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_pi_papa320_raise_first_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_pi_papa320_raise_first_open_01.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_pi_papa320_raise_first_close_01.ogg", t = 17/30},
-			{s = path .. "wfoly_plr_pi_papa320_raise_first_end.ogg", t = 20/30},
+            {s = path .. "wfoly_plr_pi_papa320_raise_first_open_01.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_pi_papa320_raise_first_close_01.ogg", t = 19/30},
+			{s = path .. "wfoly_plr_pi_papa320_raise_first_end.ogg", t = 24/30},
         },
     },
     ["draw"] = {

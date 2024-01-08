@@ -388,7 +388,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_papa90_reload_arm_maghit.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_papa90_reload_magin_v2_01.ogg", t = 44/30},
 			{s = path .. "wfoly_sm_papa90_reload_magin_v2_02.ogg", t = 49/30},
-			{s = path .. "wfoly_sm_papa90_reload_hitmag_01.ogg", t = 60/30},
+			{s = path .. "wfoly_sm_papa90_reload_hitmag_01.ogg", t = 61/30},
 			{s = path .. "wfoly_sm_papa90_reload_end.ogg", t = 73/30},
         },
     },

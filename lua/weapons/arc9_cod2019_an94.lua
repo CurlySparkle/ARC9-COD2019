@@ -530,11 +530,11 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_ar_anovember94_first_raise_up.ogg", t = 0/30},
-            {s = path .. "wfoly_ar_anovember94_first_raise_mvmnt.ogg", t = 8/30},
-            {s = path .. "wfoly_ar_anovember94_first_raise_grabbolt.ogg", t = 12/30},
-			{s = path .. "wfoly_ar_anovember94_first_raise_boltpull.ogg", t = 14/30},
-			{s = path .. "wfoly_ar_anovember94_first_raise_boltforward.ogg", t = 20/30},
-			{s = path .. "wfoly_ar_anovember94_first_raise_end.ogg", t = 30/30},
+            {s = path .. "wfoly_ar_anovember94_first_raise_mvmnt.ogg", t = 12/30},
+            {s = path .. "wfoly_ar_anovember94_first_raise_grabbolt.ogg", t = 16/30},
+			{s = path .. "wfoly_ar_anovember94_first_raise_boltpull.ogg", t = 18/30},
+			{s = path .. "wfoly_ar_anovember94_first_raise_boltforward.ogg", t = 24/30},
+			{s = path .. "wfoly_ar_anovember94_first_raise_end.ogg", t = 34/30},
         },
     },
     ["draw"] = {

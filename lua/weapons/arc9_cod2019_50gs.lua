@@ -758,7 +758,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_pi_decho_first_raise_mvmnt.ogg", t = 0/30},
-            {s = path .. "wfoly_pi_decho_first_raise_safetyoff.ogg", t = 11/30},
+            {s = path .. "wfoly_pi_decho_first_raise_safetyoff.ogg", t = 12/30},
 			{s = path .. "wfoly_pi_decho_first_raise_end.ogg", t = 18/30},
         },
     },
