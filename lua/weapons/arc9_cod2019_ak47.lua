@@ -4,18 +4,18 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "Assault Rifles"
+SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_ar") or "Assault Rifles"
 
-SWEP.PrintName = "AK-47"
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_ak47") or "AK-47"
 
-SWEP.Class = "Assault Rifle"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Assault Rifle"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Russia",
-    ["Caliber"] = "7.62x39mm",
-    ["Weight (Loaded)"] = "4.79 kg",
-    ["Projectile Weight"] = "121.9 gr",
-    ["Muzzle Velocity"] = "2,350 ft/s",
-    ["Muzzle Energy"] = "2,027 joules"
+    [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_russia"),
+    [ ARC9:GetPhrase("mw19_caliber") ] = "7.62x39mm",
+    [ ARC9:GetPhrase("mw19_weight") ] = "4.79 kg",
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "121.9 gr",
+    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,350 ft/s",
+    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "2,027 joules"
 }
 
 SWEP.Credits = {
@@ -23,7 +23,7 @@ SWEP.Credits = {
     Assets = "Activision/Infinity Ward"
 }
 
-SWEP.Description = [[Very reliable automatic assault rifle chambered in 7.62mm Soviet. Large caliber ammunition requires skill to control recoil.]]
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_ak47_desc") or [[Very reliable automatic assault rifle chambered in 7.62mm Soviet. Large caliber ammunition requires skill to control recoil.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_ak47.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
@@ -107,7 +107,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 100 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 5 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
@@ -120,6 +120,9 @@ SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.8
 
+SWEP.RecoilPerShot = 0.5
+SWEP.RecoilMax = 1.5
+
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
@@ -128,7 +131,9 @@ SWEP.VisualRecoilPunchSights = 25
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.3
+SWEP.VisualRecoilSide = 0.05
+
+SWEP.VisualRecoilSideSights = 0.3
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -144,20 +149,21 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.0014
+SWEP.Spread = 0.04
 
-SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 2
-SWEP.RecoilModifierCap = 4
-SWEP.RecoilModifierCapMove = 0
-SWEP.RecoilModifierCapSights = 0
+SWEP.SpreadAddRecoil = 0.04
 
-SWEP.SpreadMultMove = 1.5
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.04
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadAddMove = 0.025
+SWEP.SpreadAddMidAir = 0.075
 SWEP.SpreadAddCrouch = -0.03
-SWEP.SpreadAddSights = -0.5
+SWEP.SpreadAddSights = -(SWEP.Spread)
+-- SWEP.SpreadAddSights = -(SWEP.Spread + (SWEP.SpreadAddMove / 2))
 
+SWEP.SpreadMultRecoil = 1
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
+SWEP.RecoilModifierCapSights = 0.05
 
 -------------------------- HANDLING
 
@@ -218,7 +224,7 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1, 3, -3.2)
+SWEP.PeekPos = Vector(0, 4, -4)
 SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 -------------------------- HoldTypes
@@ -315,10 +321,10 @@ SWEP.TriggerDownSound = "weapons/cod2019/ak47/weap_akilo47_fire_first_plr_01.ogg
 SWEP.TriggerUpSound = "weapons/cod2019/ak47/weap_akilo47_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
-    -- ["enter_sights"] = {
-        -- Source = "idle",
-        -- IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-    -- },
+    ["enter_sights"] = {
+        Source = "idle",
+        IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+    },
     ["fire"] = {
         Source = "shoot1",
         IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
@@ -703,7 +709,7 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
-		MinProgress = 0.9,
+		MinProgress = 0.01,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -824,42 +830,42 @@ SWEP.AttachmentTableOverrides = {
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
     },
-    ["cod2019_laser_02_cylinde_alt"] = {
-    Sights = {
-    {
-        Pos = Vector(-1, 21, -2),
-        Ang = Angle(0, 0, 45),
-        ViewModelFOV = 45,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["cod2019_laser_01_cylinde_alt"] = {
-    Sights = {
-    {
-        Pos = Vector(-1, 21, -2),
-        Ang = Angle(0, 0, 45),
-        ViewModelFOV = 45,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["cod2019_laser_03_cylinde_alt"] = {
-    Sights = {
-    {
-        Pos = Vector(-1, 21, -2),
-        Ang = Angle(0, 0, 45),
-        ViewModelFOV = 45,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
+    -- ["cod2019_laser_02_cylinde_alt"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(-1, 21, -2),
+        -- Ang = Angle(0, 0, 45),
+        -- ViewModelFOV = 45,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["cod2019_laser_01_cylinde_alt"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(-1, 21, -2),
+        -- Ang = Angle(0, 0, 45),
+        -- ViewModelFOV = 45,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["cod2019_laser_03_cylinde_alt"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(-1, 21, -2),
+        -- Ang = Angle(0, 0, 45),
+        -- ViewModelFOV = 45,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
 }
 
 SWEP.AttachmentElements = {

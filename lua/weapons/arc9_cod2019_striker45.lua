@@ -4,19 +4,19 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "Submachine Guns"
+SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_smg") or "Submachine Guns"
 
-SWEP.PrintName = "Striker 45"
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_striker") or "Striker 45"
 
-SWEP.Class = "Submachine Gun"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_smg") or "Submachine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "FORGE TAC",
-    ["Caliber"] = ".45 ACP",
-    ["Weight (Loaded)"] = "2.7 kg",
-    ["Projectile Weight"] = "230 gr",
-    ["Muzzle Velocity"] = "900 ft/s",
-    ["Muzzle Energy"] = "561 joules"
+    [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_usa"),
+    [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_forgetac"),
+    [ ARC9:GetPhrase("mw19_caliber") ] = ".45 ACP",
+    [ ARC9:GetPhrase("mw19_weight") ] = "2.7 kg",
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "230 gr",
+    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "900 ft/s",
+    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "561 joules"
 }
 
 SWEP.Credits = {
@@ -24,7 +24,7 @@ SWEP.Credits = {
     Assets = "Activision/Infinity Ward"
 }
 
-SWEP.Description = [[A hard hitting submachine gun chambered in .45 Auto that will shred at longer distances than other weapons in its class. Moderate rate of fire keeps the gun in control while fully automatic.]]
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_striker_desc") or [[A hard hitting submachine gun chambered in .45 Auto that will shred at longer distances than other weapons in its class. Moderate rate of fire keeps the gun in control while fully automatic.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_smg_striker45.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"

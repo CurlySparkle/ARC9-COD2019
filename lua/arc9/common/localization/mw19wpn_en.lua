@@ -50,6 +50,7 @@ L["mw19_country_sweden"] = "Sweden"
 L["mw19_country_switzerland"] = "Switzerland"
 L["mw19_country_uk"] = "United Kingdom"
 L["mw19_country_usa"] = "United States"
+L["mw19_country_japan"] = "Japan"
 
 /////////// Manufacturer
 L["mw19_manufacturer"] = "Manufacturer3" -- UO
@@ -599,7 +600,7 @@ L["mw19_weapon_ram7_desc"] = "A fully automatic bullpup assault rifle with a com
 L["mw19_weapon_grau_desc"] = "This modular 5.56 weapon platform is lightweight and maneuverable, with exceptional range. Precision engineering and world class aftermarket barrels give this weapon extreme potential."
 L["mw19_weapon_cr56_desc"] = "This lightweight 7.62 x 39mm full auto assault rifle is compact and powerful. Built exclusively for military use, the standard issue rifle is deadly at mid range combat and easily configured for a variety of assault tactics."
 L["mw19_weapon_an94_desc"] = "Cutting edge 5.45x39mm Russian assault rifle with a unique <color=255,255,100>hyberburst</color> feature. The initial shot from each trigger pull fires a rapid 2-round burst before perceived recoil is felt, creating a tightly grouped cluster with increased damage potential. This mechanism is fed by a canted magazine, and a reciprocating receiver helps keep control of the recoil."
-L["mw19_weapon_asval_desc"] = "Chambered in <color=255,255,100>subsonic</color> 9x19mm and integrally <color=255,255,100>suppressed</color>, the AS VAL is a powerhouse built for stealth, accuracy and penetration. This weapon will excel in the hands of an operator able to control heavy recoil and a high rate of fire."
+L["mw19_weapon_asval_desc"] = "Chambered in <color=255,255,100>subsonic</color> 9x39mm and integrally <color=255,255,100>suppressed</color>, the AS VAL is a powerhouse built for stealth, accuracy and penetration. This weapon will excel in the hands of an operator able to control heavy recoil and a high rate of fire."
 
 L["mw19_weapon_aug_desc"] = "A modular, fully automatic weapon configured for mobility and close range combat."
 L["mw19_weapon_p90_desc"] = "An automatic bullpup submachine gun. The unique top mounted magazine hold carries ample high velocity 5.7 x 28mm ammunition."

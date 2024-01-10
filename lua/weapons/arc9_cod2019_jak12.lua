@@ -4,19 +4,19 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "Shotguns"
+SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_shotgun") or "Shotguns"
 
-SWEP.PrintName = "JAK-12"
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_aa12") or "JAK-12"
 
-SWEP.Class = "Shotgun"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_shotgun") or "Shotgun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "XRX",
-    ["Caliber"] = "12-gauge",
-    ["Weight (Loaded)"] = "5.5 kg",
-    ["Projectile Weight"] = "493 gr",
-    ["Muzzle Velocity"] = "1,100 ft/s",
-    ["Muzzle Energy"] = "1,796 joules"
+    [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_usa"),
+    [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_xrk"),
+    [ ARC9:GetPhrase("mw19_caliber") ] = "12-gauge",
+    [ ARC9:GetPhrase("mw19_weight") ] = "5.5 kg",
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "493 gr",
+    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "1,100 ft/s",
+    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "1,796 joules"
 }
 
 SWEP.Credits = {
@@ -24,7 +24,7 @@ SWEP.Credits = {
     Assets = "Activision/Infinity Ward"
 }
 
-SWEP.Description = [[Fully automatic open bolt shotgun with a recoil reducing gas blowback system. This combat shotgun unloads high volumes of lead down range at a steady rate.]]
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_aa12_desc") or [[Fully automatic open bolt shotgun with a recoil reducing gas blowback system. This combat shotgun unloads high volumes of lead down range at a steady rate.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_shot_jak12.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"

@@ -4,19 +4,19 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "Assault Rifles"
+SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_ar") or "Assault Rifles"
 
-SWEP.PrintName = "AN-94"
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_an94") or "AN-94"
 
-SWEP.Class = "Assault Rifle"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Assault Rifle"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Russia",
-    ["Manufacturer"] = "Verdansk Arms Plant",
-    ["Caliber"] = "5.45×39mm",
-    ["Weight (Loaded)"] = "3.85 kg",
-    ["Projectile Weight"] = "63.3 gr",
-    ["Muzzle Velocity"] = "2,953 ft/s",
-    ["Muzzle Energy"] = "1,662 joules"
+    [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_russia"),
+    [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_verdansk"),
+    [ ARC9:GetPhrase("mw19_caliber") ] = "5.45×39mm",
+    [ ARC9:GetPhrase("mw19_weight") ] = "3.85 kg",
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "63.3 gr",
+    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,953 ft/s",
+    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "1,662 joules"
 }
 
 SWEP.Credits = {
@@ -24,7 +24,7 @@ SWEP.Credits = {
     Assets = "Activision/Infinity Ward"
 }
 
-SWEP.Description = [[Cutting edge 5.45x39mm Russian assault rifle with a unique hyperburst feature. The initial shot from each trigger pull fires a rapid 2-round burst before perceived recoil is felt, creating a tightly grouped cluster with increased damage potential. This mechanism is fed by a canted magazine, and a reciprocating receiver helps keep control of the recoil.]]
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_an94_desc") or [[Cutting edge 5.45x39mm Russian assault rifle with a unique hyperburst feature. The initial shot from each trigger pull fires a rapid 2-round burst before perceived recoil is felt, creating a tightly grouped cluster with increased damage potential. This mechanism is fed by a canted magazine, and a reciprocating receiver helps keep control of the recoil.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_an94.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"

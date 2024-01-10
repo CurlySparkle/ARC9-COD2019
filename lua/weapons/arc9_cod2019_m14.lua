@@ -4,19 +4,19 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "Marksman Rifles"
+SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_marksman") or "Marksman Rifles"
 
-SWEP.PrintName = "EBR-14"
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_ebr") or "EBR-14"
 
-SWEP.Class = "Marksman Rifle"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_marksman") or "Marksman Rifle"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "FORGE TAC",
-    ["Caliber"] = "7.62×51mm NATO",
-    ["Weight (Loaded)"] = "5.1 kg",
-    ["Projectile Weight"] = "175 gr",
-    ["Muzzle Velocity"] = "2,800 ft/s",
-    ["Muzzle Energy"] = "4,131 joules"
+    [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_usa"),
+    [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_forgetac"),
+    [ ARC9:GetPhrase("mw19_caliber") ] = "7.62×51mm NATO",
+    [ ARC9:GetPhrase("mw19_weight") ] = "5.1 kg",
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "175 gr",
+    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,800 ft/s",
+    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "4,131 joules"
 }
 
 SWEP.Credits = {
@@ -24,7 +24,7 @@ SWEP.Credits = {
     Assets = "Activision/Infinity Ward"
 }
 
-SWEP.Description = [[Semi-automatic long range battle rifle balances rate of fire with lethality.]]
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_ebr_desc") or [[Semi-automatic long range battle rifle balances rate of fire with lethality.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_m14.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_g3sg1.mdl"

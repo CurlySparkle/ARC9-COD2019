@@ -4,19 +4,19 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "Marksman Rifles"
+SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_marksman") or "Marksman Rifles"
 
-SWEP.PrintName = "SP-R 208"
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_spr") or "SP-R 208"
 
-SWEP.Class = "Marksman Rifle"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_marksman") or "Marksman Rifle"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "Sloan Precision",
-    ["Caliber"] = ".300 Winchester Magnum",
-    ["Weight (Loaded)"] = "5 kg",
-    ["Projectile Weight"] = "180 gr",
-    ["Muzzle Velocity"] = "2,480 ft/s",
-    ["Muzzle Energy"] = "3,333 joules"
+    [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_usa"),
+    [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_sloan"),
+    [ ARC9:GetPhrase("mw19_caliber") ] = ".300 Winchester Magnum",
+    [ ARC9:GetPhrase("mw19_weight") ] = "5 kg",
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "180 gr",
+    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,480 ft/s",
+    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "3,333 joules"
 }
 
 SWEP.Credits = {
@@ -24,7 +24,7 @@ SWEP.Credits = {
     Assets = "Activision/Infinity Ward"
 }
 
-SWEP.Description = [[Reliable, hard-hitting .300 Win bolt action rifle from Sloan Precision. This weapon's extensive military and civilian use gives rise to an abundance of customization.]]
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_spr_desc") or [[Reliable, hard-hitting .300 Win bolt action rifle from Sloan Precision. This weapon's extensive military and civilian use gives rise to an abundance of customization.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_spr208.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"

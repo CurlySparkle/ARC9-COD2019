@@ -4,19 +4,19 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "Assault Rifles"
+SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_ar") or "Assault Rifles"
 
-SWEP.PrintName = "FN Scar 17"
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_scar") or "FN Scar 17"
 
-SWEP.Class = "Assault Rifle"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Assault Rifle"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Belgium",
-    ["Manufacturer"] = "FORGE TAC",
-    ["Caliber"] = "7.62×51mm NATO",
-    ["Weight (Loaded)"] = "3.58 kg",
-    ["Projectile Weight"] = "144 gr",
-    ["Muzzle Velocity"] = "2,342 ft/s",
-    ["Muzzle Energy"] = "2,378 joules"
+    [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_belgium"),
+    [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_forgetac"),
+    [ ARC9:GetPhrase("mw19_caliber") ] = "7.62×51mm NATO",
+    [ ARC9:GetPhrase("mw19_weight") ] = "3.58 kg",
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "144 gr",
+    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,342 ft/s",
+    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "2,378 joules"
 }
 
 SWEP.Credits = {
@@ -24,7 +24,7 @@ SWEP.Credits = {
     Assets = "Activision/Infinity Ward"
 }
 
-SWEP.Description = [[Large caliber, fully automatic assault rifle that provides high damage over long ranges.]]
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_scar_desc") or [[Large caliber, fully automatic assault rifle that provides high damage over long ranges.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_scar.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"

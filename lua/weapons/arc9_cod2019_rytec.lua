@@ -4,19 +4,19 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "Sniper Rifles"
+SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_sniper") or "Sniper Rifles"
 
-SWEP.PrintName = "Rytec AMR"
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_rytec") or "Rytec AMR"
 
-SWEP.Class = "Sniper Rifle"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_sniper") or "Sniper Rifle"
 SWEP.Trivia = {
-    ["Country of Origin"] = "United States",
-    ["Manufacturer"] = "Silverfield Ordnance",
-    ["Caliber"] = ".50 BMG",
-    ["Weight (Loaded)"] = "15.1 kg",
-    ["Projectile Weight"] = "360 gr",
-    ["Muzzle Velocity"] = "1,390 ft/s",
-    ["Muzzle Energy"] = "2,094 joules"
+    [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_usa"),
+    [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_silverfield"),
+    [ ARC9:GetPhrase("mw19_caliber") ] = ".50 BMG",
+    [ ARC9:GetPhrase("mw19_weight") ] = "15.1 kg",
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "360 gr",
+    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "1,390 ft/s",
+    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "2,094 joules"
 }
 
 SWEP.Credits = {
@@ -24,7 +24,7 @@ SWEP.Credits = {
     Assets = "Activision/Infinity Ward"
 }
 
-SWEP.Description = [[Semi-automatic Anti-Materiel Rifle is chambered in .50 BMG for dominant long range assaults. A 25x59mm high-explosive payload variant is officially listed as "experimental", but has been deployed on multiple classified missions with great effectiveness.]]
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_rytec_desc") or [[Semi-automatic Anti-Materiel Rifle is chambered in .50 BMG for dominant long range assaults. A 25x59mm high-explosive payload variant is officially listed as "experimental", but has been deployed on multiple classified missions with great effectiveness.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_rytec.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"

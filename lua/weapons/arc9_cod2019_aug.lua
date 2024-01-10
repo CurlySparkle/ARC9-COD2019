@@ -4,18 +4,18 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "Submachine Guns"
+SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_smg") or "Submachine Guns"
 
-SWEP.PrintName = "AUG"
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_aug") or "AUG"
 
-SWEP.Class = "Submachine Gun"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_smg") or "Submachine Gun"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Austria",
-    ["Caliber"] = "9×19mm Parabellum",
-    ["Weight (Loaded)"] = "3.2 kg",
-    ["Projectile Weight"] = "124 gr",
-    ["Muzzle Velocity"] = "3,182 ft/s",
-    ["Muzzle Energy"] = "3,780 joules"
+    [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_austria"),
+    [ ARC9:GetPhrase("mw19_caliber") ] = "9×19mm Parabellum",
+    [ ARC9:GetPhrase("mw19_weight") ] = "3.2 kg",
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "124 gr",
+    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "3,182 ft/s",
+    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "3,780 joules"
 }
 
 SWEP.Credits = {
@@ -23,7 +23,7 @@ SWEP.Credits = {
     Assets = "Activision/Infinity Ward"
 }
 
-SWEP.Description = [[A modular fully automatic weapon configured for mobility and close range combat.]]
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_aug_desc") or [[A modular fully automatic weapon configured for mobility and close range combat.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_smg_aug.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"

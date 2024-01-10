@@ -4,19 +4,19 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = "Assault Rifles"
+SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_ar") or "Assault Rifles"
 
-SWEP.PrintName = "Kilo 141"
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_kilo141") or "Kilo 141"
 
-SWEP.Class = "Assault Rifle"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Assault Rifle"
 SWEP.Trivia = {
-    ["Country of Origin"] = "Germany",
-    ["Manufacturer"] = "Singuard Arms",
-    ["Caliber"] = "5.56×45mm NATO",
-    ["Weight (Loaded)"] = "3.25 kg",
-    ["Projectile Weight"] = "62 gr",
-    ["Muzzle Velocity"] = "2,624 ft/s",
-    ["Muzzle Energy"] = "1,285 joules"
+    [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_germany"),
+    [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_singuard"),
+    [ ARC9:GetPhrase("mw19_caliber") ] = "5.56×45mm NATO",
+    [ ARC9:GetPhrase("mw19_weight") ] = "3.25 kg",
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "62 gr",
+    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,624 ft/s",
+    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "1,285 joules"
 }
 
 SWEP.Credits = {
@@ -24,7 +24,7 @@ SWEP.Credits = {
     Assets = "Activision/Infinity Ward"
 }
 
-SWEP.Description = [[Fully automatic assault rifle with an ergonomic design that improves handling, and a steady fire rate helps stay on target.]]
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_kilo141_desc") or [[Fully automatic assault rifle with an ergonomic design that improves handling, and a steady fire rate helps stay on target.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_kilo141.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
