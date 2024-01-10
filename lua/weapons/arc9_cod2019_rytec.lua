@@ -243,6 +243,17 @@ SWEP.ShellModel = "models/weapons/cod2019/shared/shell_rytec.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
+SWEP.ShellSounds = {
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg"
+}
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
@@ -607,6 +618,19 @@ SWEP.Animations = {
                 lhik = 1,
                 rhik = 1
             },
+        },
+    },
+    ["enter_bipod"] = {
+        Source = "bipod_in",
+    },
+    ["exit_bipod"] = {
+        Source = "bipod_out",
+    },
+    ["switchsights"] = {
+        Source = "hybrid_off",
+        EventTable = {
+            {s = "Viewmodel.SwitchSight", t = 0/30},
+			{s = "switchsights/wpfoly_hybrid_toggle_off.ogg", t = 5/30},
         },
     },
 }
