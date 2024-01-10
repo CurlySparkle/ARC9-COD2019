@@ -4,8 +4,8 @@
     "$bumpmap" "models/cod2019/akilo47/akilo47_sights_n"
     "$phongexponenttexture" "models/cod2019/akilo47/akilo47_sights_exp"
 
-    "$color2" "[0 0 0]"
-    "$blendtintbybasealpha" "1"
+    "$color2" "[0.8 0.8 0.8]"
+    "$blendtintbybasealpha" "0"
 
     "$phong" "1"
     "$phongboost" "1"
@@ -20,7 +20,7 @@
     "$envmaptint" "[0.2 0.2 0.2]"
 
 	"$detailblendmode" "4"
-	"$detailblendfactor" "0.5"
+	"$detailblendfactor" "0.4"
 
 	 Proxies {
 		CustomCamo {

@@ -871,10 +871,15 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("mag_dmr") then 
         return "reload_dmr_empty"
     end
-
+    ---------------------------------------------------------------------------
     if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
         return "reload_xmags_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
+        return "reload_fast_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmags_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
         return "reload_fast_empty"
     ---------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then
@@ -884,8 +889,13 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     ---------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("ammo_extend") then
         return "reload_xmags"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
+    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
+        return "reload_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmags"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_empty"
     end
 end
 
@@ -907,7 +917,7 @@ SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(7.8, -0.5, 1),
+    ModelOffset = Vector(14, -0.85, -1.24),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
     },
@@ -1028,9 +1038,9 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(-1, 1.15, -1.97),
-        Ang = Angle(0, 0, -90),
-		InstalledElements = {"rail_laser"},
+        Pos = Vector(1.5, 0, -0.1),
+        Ang = Angle(0, 0, 180),
+		--InstalledElements = {"rail_laser"},
     },
     {
         PrintName = "Grips",
@@ -1113,7 +1123,7 @@ SWEP.Attachments = {
         PrintName = "Stats",
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, -1),
+        Pos = Vector(-6, 0.4, 1.2),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },

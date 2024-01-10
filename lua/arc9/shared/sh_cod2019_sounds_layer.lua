@@ -23,7 +23,7 @@ sound.Add({
     volume =         1,
     level =          140,
     pitch =          {90,110},
-    sound =          "^weapons/cod2019/shared/reflection/ar/weap_refl_ar_urb/weap_refl_arsup_urb_ext_dist_lr_01.wav"
+    sound =          "^weapons/cod2019/shared/reflection/ar/weap_refl_ar_urb/weap_refl_arsup_urb_ext_dist_lr_01.ogg"
 })
 sound.Add({
     name =           "Layer_ARSUP.Inside",

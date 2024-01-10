@@ -538,17 +538,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.15,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.5,
+                t = 0.7,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -572,17 +572,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.15,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.5,
+                t = 0.7,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.2,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -629,7 +629,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.85,
+		MinProgress = 0.4,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -715,6 +715,41 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_aalpha12_inspect_06.ogg", t = 105/30},
         },
     },
+    ["inspect_drum"] = {
+        Source = "lookat01_drum",
+        MinProgress = 0.1,
+        FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sh_aalpha12_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_02.ogg", t = 12/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_03.ogg", t = 55/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_04.ogg", t = 66/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_05.ogg", t = 103/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_06.ogg", t = 105/30},
+        },
+    },
     ["bash"] = {
         Source = {"melee","melee2","melee3"},
         IKTimeLine = {
@@ -754,6 +789,8 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_drum_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
         return "reload_drum_fast_empty"
+    elseif anim == "inspect" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
+        return "inspect_drum"
 --------------------------------------------------------------------------
     -- elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
         -- return "reload_xmag_fast"
@@ -769,6 +806,8 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_drum"
     elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
         return "reload_drum_empty"
+    elseif anim == "inspect" and wep:HasElement("mag_drum") then 
+        return "inspect_drum"
 --------------------------------------------------------------------------
     -- elseif anim == "reload" and wep:HasElement("ammo_extend") then 
         -- return "reload_xmag"
@@ -895,7 +934,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_jak12_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

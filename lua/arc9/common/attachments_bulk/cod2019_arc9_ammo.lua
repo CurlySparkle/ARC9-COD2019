@@ -149,7 +149,8 @@ ATT.Icon = Material("entities/attachs/cod2019_ammo_db.png", "mips smooth")
 ATT.Description = [[Incendiary ammunition engulfs targets in a wall of fire and sparks. 3000 °F magnesium shards torch enemies, dealing heavy damage over time while ignited.]]
 ATT.SortOrder = 0.5
 
-ATT.Category = {"cod2019_ammo"}
+ATT.Category = {"cod2019_ammo","cod2019_ammo_special"}
+--ATT.RequireElements = {"cod2019_sniper_mag"}
 
 ATT.ExplosionEffect = "cod2019_muzzle_he"
 ATT.ImpactDecal = "Dark"
@@ -206,7 +207,8 @@ ATT.Description = [[Explosive ammunition that sacrifice direct damage in favor o
 The effect is spectacular, but little explosive filler can be put inside most bullets.]]
 ATT.SortOrder = 0.6
 
-ATT.Category = {"cod2019_ammo_sniper"}
+ATT.Category = {"cod2019_ammo_sniper","cod2019_ammo_special"}
+--ATT.RequireElements = {"cod2019_sniper_mag"}
 
 ATT.SpreadMult = 0.3
 ATT.RicochetChance = 0

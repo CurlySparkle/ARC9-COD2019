@@ -44,9 +44,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 91 -- Damage done at point blank range
-SWEP.DamageMin = 55 -- Damage done at maximum range
-
+SWEP.DamageMax = 175 -- Damage done at point blank range
+SWEP.DamageMin = 80 -- Damage done at maximum range
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
 SWEP.RangeMin = 1000 -- How far bullets retain their maximum damage for.
@@ -55,14 +54,6 @@ SWEP.RangeMax = 8000 -- In Hammer units, how far bullets can travel before deali
 SWEP.Penetration = 25 -- Units of wood that can be penetrated by this gun.
 
 SWEP.ImpactForce = 15
-
-SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 2,
-    [HITGROUP_CHEST] = 1,
-    [HITGROUP_LEFTARM] = 0.9,
-    [HITGROUP_RIGHTARM] = 0.9,
-}
-
 
 -------------------------- PHYS BULLET BALLISTICS
 
@@ -75,7 +66,7 @@ SWEP.PhysBulletDrag = 1.5
 SWEP.Ammo = "sniperPenetratedRound" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
-SWEP.ClipSize = 5 -- Self-explanatory.
+SWEP.ClipSize = 10 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
@@ -85,7 +76,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 165
+SWEP.RPM = 150
 
 SWEP.Firemodes = {
     {
@@ -112,8 +103,8 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 5
-SWEP.RecoilKickSights = 5
+SWEP.RecoilKick = 3
+SWEP.RecoilKickSights = 3
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
@@ -192,7 +183,7 @@ SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
     Ang = Angle(0, 0, -45),
 }
 
-SWEP.ViewModelFOVBase = 60
+SWEP.ViewModelFOVBase = 65
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, 0, 0),
@@ -207,7 +198,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-1, -0.5, -1)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
 SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -393,12 +384,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_xmike109_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_xmike109_reload_magout.ogg", t = 12/30},
-			{s = path .. "wfoly_sn_xmike109_reload_arm.ogg", t = 36/30},
-			{s = path .. "wfoly_sn_xmike109_reload_magin_01.ogg", t = 46/30},
-			{s = path .. "wfoly_sn_xmike109_reload_magin_02.ogg", t = 56/30},
-			{s = path .. "wfoly_sn_xmike109_reload_end.ogg", t = 58/30},
+            {s = path .. "wfoly_sn_xmike109_reload_fast_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sn_xmike109_reload_fast_magout.ogg", t = 11/30},
+			{s = path .. "wfoly_sn_xmike109_reload_fast_arm.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_xmike109_reload_fast_magin_01.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_xmike109_reload_fast_magin_02.ogg", t = 55/30},
+			{s = path .. "wfoly_sn_xmike109_reload_fast_end.ogg", t = 57/30},
         },
     },
     ["reload_empty"] = {
@@ -467,14 +458,15 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_xmike109_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_magout.ogg", t = 16/30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_arm.ogg", t = 36/30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_magin_01.ogg", t = 46/30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_magin_02.ogg", t = 56/30},
-			{s = path .. "wfoly_sn_xmike109_first_raise_bolt_pull.ogg", t = 83/30},
-			{s = path .. "wfoly_sn_xmike109_first_raise_bolt_release.ogg", t = 95/30},
-			{s = path .. "wfoly_sn_xmike109_reload_empty_end.ogg", t = 100/30},
+            {s = path .. "wfoly_sn_xmike109_reload_empty_fast_up.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_xmike109_reload_empty_fast_grab.ogg", t = 10/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_fast_magout.ogg", t = 15/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_fast_arm.ogg", t = 35/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_fast_magin_01.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_fast_magin_02.ogg", t = 55/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_fast_pullbolt.ogg", t = 83/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_fast_magrelease.ogg", t = 95/30},
+			{s = path .. "wfoly_sn_xmike109_reload_empty_fast_end.ogg", t = 100/30},
         },
     },
     ["ready"] = {
@@ -553,11 +545,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 1.3,
+		Mult = 2,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 1.3,
+		Mult = 2,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -633,7 +625,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     end
 end
 
-SWEP.DefaultBodygroups = "00000000000000"
+SWEP.DefaultBodygroups = "0000000000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -680,31 +672,27 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["mag"] = {
+    ["body_none"] = {
         Bodygroups = {
-            {1,1},
+            {0,1},
         },
     },
-    ["barrel_long"] = {
+    ["mag_none"] = {
         Bodygroups = {
-            {2,1},
-			{3,1},
-        },
-	AttPosMods = { [3] = { Pos = Vector(6, 0, 0.1), } }	
-    },
-    ["barrel_short"] = {
-        Bodygroups = {
-            {2,2},
-			{3,2},
-        },
-	AttPosMods = { [3] = { Pos = Vector(-5, 0, 0), } }	
-    },
-    ["muzzle"] = {
-        Bodygroups = {
-            {3,3},
+            {1,2},
         },
     },
-    ["no_stock"] = {
+    ["barrel_none"] = {
+        Bodygroups = {
+			{2,1},
+        },
+    },
+    ["muzzle_none"] = {
+        Bodygroups = {
+            {3,1},
+        },
+    },
+    ["stock_none"] = {
         Bodygroups = {
             {4,1},
         },
@@ -712,6 +700,11 @@ SWEP.AttachmentElements = {
     ["rail_grip"] = {
         Bodygroups = {
             {6,1},
+        },
+    },
+    ["bipod"] = {
+        Bodygroups = {
+            {6,2},
         },
     },
     ["rail_laser"] = {
@@ -728,8 +721,7 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("barrel_long") and wep.Attachments[3].Installed then model:SetBodygroup(3,3) end
-	if wep:HasElement("barrel_short") and wep.Attachments[3].Installed then model:SetBodygroup(3,3) end
+    if wep:HasElement("bipod") then model:SetBodygroup(6,2) end
 end
 
 SWEP.Attachments = {
@@ -759,28 +751,41 @@ SWEP.Attachments = {
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"muzzle",},
+		InstalledElements = {"muzzle_none"},
 		Scale = 1.2,
     },
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
-        Bone = "tag_attachments",
-        Pos = Vector(22.8, 1.32, 0.15),
-        Ang = Angle(0, 0, -90),
-		InstalledElements = {"rail_laser",},
-		LaserCorrectionAngle = Angle(0, 10, 0),
+        Category = "cod2019_tac_rail",
+        Bone = "tag_laser_attach",
+        Pos = Vector(-0.7, -1.5, 0.5),
+        Ang = Angle(0, 0, 0),
+		--InstalledElements = {"rail_laser",},
+		--LaserCorrectionAngle = Angle(0, 10, 0),
     },
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = "cod2019_grip",
+        Category = {"cod2019_grip"},
         Bone = "tag_attachments",
         Pos = Vector(18.7, 0.11, -1.2),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
-		InstalledElements = {"rail_grip",},
+		InstalledElements = {"rail_grip"},
+    },
+    {
+        PrintName = "Bipod",
+        DefaultAttName = "Default",
+        Category = {"cod2019_rytec_bipod"},
+        Bone = "tag_bipod_attach",
+        Pos = Vector(0,0, 0),
+        Ang = Angle(0, 0, 0),
+		Scale = 1,
+		InstalledElements = {"rail_grip"},
+		-- ExcludeElements = {"grip_bottom"},
+		Hidden = true,
+        MergeSlots = {5},
     },
     {
         PrintName = "Stock",
@@ -796,11 +801,16 @@ SWEP.Attachments = {
         Category = {"cod2019_ammo","cod2019_ammo_sniper"},
         Pos = Vector(0, -1.5, -1.5),
         Ang = Angle(0, 0, 0),
+		ExcludeElements = {"mag_ftac"},
+		RejectAttachments = { 
+		["cod2019_ammo_db"] = true,
+		["cod2019_ammo_he"] = true 
+		}
     },
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = "cod2019_rytec_mag",
+        Category = {"cod2019_rytec_mag","cod2019_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

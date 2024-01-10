@@ -412,12 +412,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.5,
+                t = 0.7,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 0.95,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -447,12 +447,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.5,
+                t = 0.7,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 1,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -464,6 +464,144 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_magin.ogg", t = 33/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_charge.ogg", t = 41/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_end.ogg", t = 49/30},
+        },
+    },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_magout.ogg", t = 22/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_magin.ogg", t = 45/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_maghit.ogg", t = 47/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_end.ogg", t = 56/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_magin.ogg", t = 47/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_charge.ogg", t = 64/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_end.ogg", t = 70/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.8,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_maghit.ogg", t = 20/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_magin.ogg", t = 32/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_end.ogg", t = 40/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_magin.ogg", t = 33/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_charge.ogg", t = 41/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_end.ogg", t = 49/30},
         },
     },
     ["ready"] = {
@@ -632,10 +770,20 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+    --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
     end
 end
 
@@ -751,7 +899,7 @@ SWEP.Attachments = {
     {
         PrintName = "Grips",
         DefaultAttName = "Default",
-        Category = "cod2019_grip",
+        Category = {"cod2019_grip","cod2019_striker45_grip"},
         Bone = "tag_grip_attach",
         Pos = Vector(-2, 0, 0),
         Ang = Angle(0, 0, 180),
@@ -785,7 +933,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag","cod2019_mag_striker45"},
+        Category = {"cod2019_mag","cod2019_striker45_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -844,5 +992,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 8
-SWEP.CodStubbyTallGripPoseParam = 23
+SWEP.CodAngledGripPoseParam = 17
+SWEP.CodStubbyGripPoseParam = 24
+SWEP.CodStubbyTallGripPoseParam = 25

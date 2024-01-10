@@ -96,10 +96,10 @@ SWEP.Recoil = 1.5
 
 SWEP.RecoilSeed = 6589132
 
-SWEP.RecoilPatternDrift = 35
+SWEP.RecoilPatternDrift = 0
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 0.8 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
 SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
@@ -112,7 +112,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1
+SWEP.RecoilKick = 1.2
 
 SWEP.RecoilMultCrouch = 0.8
 
@@ -124,11 +124,11 @@ SWEP.RecoilMultSights = 0.8
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilPunchSights = 25
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = -1/6
+SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -147,14 +147,14 @@ end
 SWEP.Spread = 0.0014
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 3
+SWEP.SpreadMultRecoil = 2
+SWEP.RecoilModifierCap = 4
 SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadMultMove = 1.5
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.07
+SWEP.SpreadAddHipFire = 0.04
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -0.5
 
@@ -188,7 +188,7 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
+SWEP.SprintPos = Vector(-2, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -294,9 +294,10 @@ SWEP.EnterSightsSound = "weapons/cod2019/ak47/wfoly_ar_akilo47_ads_up.ogg"
 SWEP.ExitSightsSound = "weapons/cod2019/ak47/wfoly_ar_akilo47_ads_down.ogg"
 
 SWEP.BulletBones = {
-    [1] = "j_bullet1",
-    [2] = "j_bullet2",
-    [3] = "j_bullet3",
+    [1] = {"j_bullet1","j_ammo1"},
+    [2] = {"j_bullet2","j_ammo2"},
+    [3] = {"j_bullet3","j_ammo3"},
+    [4] = {"j_bullet4","j_ammo4"}
 }
 
 SWEP.HideBones  = {
@@ -784,7 +785,9 @@ SWEP.Animations = {
 SWEP.HookP_NameChange = function(self, name)
 	local att = self:GetElements()
 
-	if att["cod2019_akilo47_mag_smg"] then
+	if att["cod2019_akilo47_mag_smg"] and att["cod2019_akilo47_barrel_smg"] then
+		name = "AKSU-74"
+	elseif att["cod2019_akilo47_mag_smg"] then
 		name = "AK-74"
 	end
 
@@ -875,9 +878,14 @@ SWEP.AttachmentElements = {
             {4,1},
         },
     },
-    ["stock"] = {
+    ["stock_adapter"] = {
         Bodygroups = {
             {3,1},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {3,2},
         },
     },
     ["barrel"] = {
@@ -930,7 +938,7 @@ SWEP.Attachments = {
     {
         PrintName = "Optics",
         Bone = "tag_holo",
-        Pos = Vector(1.5, 0, -0.1),
+        Pos = Vector(1, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
@@ -954,7 +962,8 @@ SWEP.Attachments = {
         Bone = "tag_laser_attach",
         Pos = Vector(-0.34, -1.34, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"tag_laser"},
+		--InstalledElements = {"tag_laser"},
+		ExcludeElements = {"barrel_smg"},
     },
     {
         PrintName = "Grips",
@@ -969,11 +978,11 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = "cod2019_tube",
+        Category = {"cod2019_tube","cod2019_ak47_stock"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock"},
+		--InstalledElements = {"stock"},
     },
     {
         PrintName = "Ammo",
@@ -997,6 +1006,15 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		Icon_Offset = Vector(13, 0, 4.8),
+    },
+    {
+        PrintName = "Pistol Grip",
+        DefaultAttName = "Standard Barrel",
+        Category = "cod2019_ak47_pistlgrip",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(9, 0, 2),
     },
     {
         PrintName = "Perk",
@@ -1053,6 +1071,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.6
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodStubbyGripPoseParam = 6
+SWEP.CodStubbyGripPoseParam = 22
 SWEP.CodStubbyTallGripPoseParam = 22
 SWEP.CodAngledGripPoseParam = 21

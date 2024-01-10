@@ -94,8 +94,8 @@ SWEP.Firemodes = {
         -- add other attachment modifiers
     },
     {
-        Mode = 3,
-        RPM = 800,
+        Mode = 2,
+        RPM = 1000,
 		PostBurstDelay = 0.2,
 		RunawayBurst = true,
 		PoseParam = 1
@@ -220,8 +220,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -504,6 +504,294 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 50/30},
         },
     },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_anovember94_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_arm.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magout.ogg", t = 22/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magin_01.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magin_02.ogg", t = 47/30},
+			{s = path .. "wfoly_ar_anovember94_reload_armdown.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_anovember94_reload_end.ogg", t = 62/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.85,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_anovember94_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 24/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltpull.ogg", t = 54/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltforward.ogg", t = 63/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 68/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_anovember94_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magout.ogg", t = 16/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magin_01.ogg", t = 32/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magin_02.ogg", t = 36/30},
+			{s = path .. "wfoly_ar_anovember94_reload_end.ogg", t = 40/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_anovember94_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 16/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 32/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 36/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltpull.ogg", t = 39/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltforward.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 50/30},
+        },
+    },
+    ["reload_xmagslrg"] = {
+        Source = "reload_xmagslrg",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_anovember94_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_arm.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magout.ogg", t = 22/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magin_01.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magin_02.ogg", t = 47/30},
+			{s = path .. "wfoly_ar_anovember94_reload_armdown.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_anovember94_reload_end.ogg", t = 62/30},
+        },
+    },
+    ["reload_xmagslrg_empty"] = {
+        Source = "reload_xmagslrg_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.85,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_anovember94_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 24/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltpull.ogg", t = 54/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltforward.ogg", t = 63/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 68/30},
+        },
+    },
+    ["reload_xmagslrg_fast"] = {
+        Source = "reload_xmagslrg_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_anovember94_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magout.ogg", t = 16/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magin_01.ogg", t = 32/30},
+			{s = path .. "wfoly_ar_anovember94_reload_magin_02.ogg", t = 36/30},
+			{s = path .. "wfoly_ar_anovember94_reload_end.ogg", t = 40/30},
+        },
+    },
+    ["reload_xmagslrg_fast_empty"] = {
+        Source = "reload_xmagslrg_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_anovember94_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magout.ogg", t = 16/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_01.ogg", t = 32/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_magin_02.ogg", t = 36/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltpull.ogg", t = 39/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_boltforward.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_anovember94_reload_empty_end.ogg", t = 50/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -539,7 +827,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.85,
+		MinProgress = 0.5,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -678,6 +966,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
         return "reload_xmag_fast_empty"
     ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmagslrg") then
+        return "reload_xmagslrg_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmagslrg") then 
+        return "reload_xmagslrg_fast_empty"
+    ---------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
@@ -687,6 +980,11 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_xmag"
     elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
         return "reload_xmag_empty"
+    ---------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmagslrg") then
+        return "reload_xmagslrg"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmagslrg") then 
+        return "reload_xmagslrg_empty"
     end
 end
 
@@ -744,12 +1042,27 @@ SWEP.AttachmentTableOverrides = {
     },
     },
     },
+    ["cod2019_attach_xmag_50"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/an94/attachment_vm_ar_anov94_xmags.mdl",
+	DropMagazineModel = "models/weapons/cod2019/attachs/weapons/an94/attachment_vm_ar_anov94_xmags.mdl",
+	ActivateElements = {"mag_none","mag_xmag"}
+    },
+    ["cod2019_attach_xmag_60"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/an94/attachment_vm_ar_anov94_xmagslrg.mdl",
+	DropMagazineModel = "models/weapons/cod2019/attachs/weapons/an94/attachment_vm_ar_anov94_xmagslrg.mdl",
+	ActivateElements = {"mag_none","mag_xmagslrg"}
+    },
 }
 
 SWEP.AttachmentElements = {
     ["body_none"] = {
         Bodygroups = {
             {0,1},
+        },
+    },
+    ["barrel_none"] = {
+        Bodygroups = {
+            {2,1},
         },
     },
     ["sight_rail"] = {
@@ -772,7 +1085,7 @@ SWEP.AttachmentElements = {
             {3,3},
         },
     },
-    ["muzzle"] = {
+    ["muzzle_none"] = {
         Bodygroups = {
             {4,1},
         },
@@ -818,7 +1131,7 @@ SWEP.Attachments = {
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"muzzle"},
+		InstalledElements = {"muzzle_none"},
 		Scale = 1,
     },
     {
@@ -842,7 +1155,7 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
-        Category = {"cod2019_stocks","stock_retract"},
+        Category = {"cod2019_stocks","stock_retract","cod2019_an94_stock"},
         Bone = "tag_stock_attach",
         Pos = Vector(1, 0.11, 0.07),
         Ang = Angle(0, 1, 0),
@@ -858,7 +1171,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag","cod2019_an94_mag"},
+        Category = {"cod2019_mag","cod2019_an94_mag","cod2019_mag_xmag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -919,3 +1232,4 @@ SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 27
 SWEP.CodStubbyGripPoseParam = 17
+SWEP.CodStubbyTallGripPoseParam = 24

@@ -473,13 +473,13 @@ L["cod2019_ammo_gl_gas.compactname"] = "Gas" -- UO
 L["cod2019_ammo_gl_gas.description"] = "Custom 40mm shells filled with semi-lethal <color=100,255,100>Gas</color> rounds that create a gas cloud at the impact area.\nMultiple shots within the same area will <color=100,255,100>increase its lethality</color>." -- UO
 
 ////////////////////  Rytec Atts. before they are actually added, remove when the proper ones are introduced
-L["cod2019_rytec_barrel_short.printname"] = "Short Barrel" -- UO
-L["cod2019_rytec_barrel_short.compactname"] = "Short" -- UO
-L["cod2019_rytec_barrel_short.description"] = "Compact barrel for the Rytec AMR allowing increased agility at the cost of recoil control." -- UO
+L["cod2019_rytec_barrel_short.printname"] = "FORGE TAC Elite" -- UO
+L["cod2019_rytec_barrel_short.compactname"] = "FTAC Elite" -- UO
+L["cod2019_rytec_barrel_short.description"] = "FTAC's Elite titanium-cobalt barrel sacrifices accuracy and range for speed and agility." -- UO
 
-L["cod2019_rytec_barrel_long.printname"] = "Long Barrel" -- UO
-L["cod2019_rytec_barrel_long.compactname"] = "Long" -- UO
-L["cod2019_rytec_barrel_long.description"] = "Long barrel for the Rytec AMR allowing increased range and accuracy at the cost of agility." -- UO
+L["cod2019_rytec_barrel_long.printname"] = "FORGE TAC Precision 20.0" -- UO
+L["cod2019_rytec_barrel_long.compactname"] = "FTAC Precision" -- UO
+L["cod2019_rytec_barrel_long.description"] = "This beast of a barrel provides maximum recoil control and shot stability at the cost of mobility and bullet velocity." -- UO
 
 L["cod2019_rytec_mag_10.printname"] = "10-Round Magazine" -- UO
 L["cod2019_rytec_mag_10.compactname"] = "10R" -- UO

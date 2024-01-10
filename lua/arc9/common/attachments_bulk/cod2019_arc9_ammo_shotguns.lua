@@ -6,7 +6,7 @@ ATT = {}
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = "8.5mm Magnum Buckshot"
 ATT.CompactName = "MAG"
-ATT.Icon = Material("entities/attachs/go_ammo_sg_magnum.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_magnum.png", "mips smooth")
 ATT.Description = [[High-power buckshot load with fewer larger lead pellets.
 Provides better close range power, but range and precision is worse.]]
 ATT.SortOrder = 1
@@ -54,7 +54,7 @@ ATT = {}
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = "70mm Full-bore Slug"
 ATT.CompactName = "SLUG"
-ATT.Icon = Material("entities/attachs/go_ammo_sg_slug.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_slug.png", "mips smooth")
 ATT.Description = [[Single large projectile loaded in the shotshell.
 The aerodynamic pellet has much higher effective range.]]
 ATT.SortOrder = 3
@@ -108,7 +108,7 @@ ATT = {}
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = "Flechette"
 ATT.CompactName = "FLE"
-ATT.Icon = Material("entities/attachs/go_ammo_sg_flechette.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_flechette.png", "mips smooth")
 ATT.Description = [[Load containing thin, dart-shaped projectiles.
 Provides a tighter spread and better range as well as much higher penetration, but much lower stopping power.]]
 ATT.SortOrder = 5
@@ -130,7 +130,7 @@ ATT = {}
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = "70mm \"FRAG-12\" High Explosive"
 ATT.CompactName = "FRAG"
-ATT.Icon = Material("entities/attachs/go_ammo_sg_he.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_he.png", "mips smooth")
 ATT.Description = [[Load containing an explosive compound, dealing damage in a small radius.
 Effectiveness is limited by the small caliber size.]]
 ATT.SortOrder = 6
@@ -166,7 +166,7 @@ ATT = {}
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = "10mm Rebounder Rounds"
 ATT.CompactName = "RBD"
-ATT.Icon = Material("entities/attachs/go_ammo_sg_magnum.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_magnum.png", "mips smooth")
 ATT.Description = [[Load containing specialized pellets with a high chance to ricochet.
 The pellet will bounce at any angle, and increases damage dramatically as it ricochets.
 However, it does minimal damage on direct impact.]]
@@ -196,7 +196,7 @@ ATT = {}
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.PrintName = "70mm \"FRAG-12\" High Explosive X4"
 ATT.CompactName = "FRAG X4"
-ATT.Icon = Material("entities/attachs/go_ammo_sg_he_x4.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_he_x4.png", "mips smooth")
 ATT.Description = [[Load containing 4 explosive rounds, deals an mid amount of damage with small radius blast.
 Effectiveness is limited by the small caliber size.]]
 ATT.SortOrder = 8

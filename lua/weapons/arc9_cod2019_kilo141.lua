@@ -636,7 +636,8 @@ SWEP.Animations = {
         Source = "reload_drum",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.7,
+		DropMagAt = 1.1,
+		MagSwapTime = 1.15,
         IKTimeLine = {
             {
                 t = 0,
@@ -644,12 +645,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.22,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.6,
                 lhik = 0,
                 rhik = 0
             },
@@ -660,18 +666,20 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_settle.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_magout_01.ogg", t = 22/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_magin_01.ogg", t = 32/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_grab.ogg", t = 50/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_end.ogg", t = 66/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_drumout_01.ogg", t = 20/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_grab.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_drumin_v2_01.ogg", t = 37/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_drumin_v2_02.ogg", t = 41/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_grab.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_end.ogg", t = 66/30},
         },
     },
     ["reload_drum_empty"] = {
         Source = "reload_drum_empty",
 		MinProgress = 0.9,
-		DropMagAt = 0.7,
+		DropMagAt = 1.1,
+		MagSwapTime = 1.15,
         IKTimeLine = {
             {
                 t = 0,
@@ -680,16 +688,21 @@ SWEP.Animations = {
             },
             {
                 t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.4,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.6,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 1,
                 lhik = 1,
                 rhik = 1
             },
@@ -708,8 +721,8 @@ SWEP.Animations = {
     ["reload_drum_fast"] = {
         Source = "reload_drum_fast",
 		MinProgress = 0.8,
-		MagSwapTime = 3.5,
-		DropMagAt = 0.7,
+		MagSwapTime = 1,
+		DropMagAt = 0.9,
         IKTimeLine = {
             {
                 t = 0,
@@ -717,12 +730,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.25,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.6,
                 lhik = 0,
                 rhik = 0
             },
@@ -735,16 +753,17 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_settle.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_magout_01.ogg", t = 22/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_magin_01.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_magout_01.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_magin_01.ogg", t = 39/30},
 			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_grab.ogg", t = 50/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_end.ogg", t = 66/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_end.ogg", t = 53/30},
         },
     },
     ["reload_drum_fast_empty"] = {
         Source = "reload_drum_fast_empty",
 		MinProgress = 0.9,
-		DropMagAt = 0.7,
+		DropMagAt = 0.9,
+		MagSwapTime = 1,
         IKTimeLine = {
             {
                 t = 0,
@@ -753,29 +772,34 @@ SWEP.Animations = {
             },
             {
                 t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.5,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.6,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_drumout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_drumout_01.ogg", t = 7/30},
 			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_grab.ogg", t = 5/30},
 			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_settle.ogg", t = 15/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_drumin_v2_01.ogg", t = 28/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_drumin_v2_02.ogg", t = 38/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_charge_01.ogg", t = 57/30},
-			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_end.ogg", t = 73/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_drumin_v2_01.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_drumin_v2_02.ogg", t = 37/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_charge_01.ogg", t = 53/30},
+			{s = path .. "wfoly_plr_ar_kilo433_reload_drum_fast_empty_end.ogg", t = 55/30},
         },
     },
     ["ready"] = {
@@ -1101,6 +1125,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle_none"},
+		ExcludeElements = {"barrel_suppressed"},
 		Scale = 1,
     },
     {
