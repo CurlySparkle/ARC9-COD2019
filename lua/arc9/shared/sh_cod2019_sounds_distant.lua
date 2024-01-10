@@ -97,7 +97,7 @@ sound.Add({
     level = 140,
     pitch = {80,110},
     volume = 1,
-    sound = "^weapons/cod2019/shared/atmo/dmr/weap_dmr_fire_plr_atmo_ext1_01.ogg"
+    sound = "weapons/cod2019/shared/atmo/dmr/weap_dmr_fire_plr_atmo_ext1_01.ogg"
 })
 
 sound.Add({
@@ -242,7 +242,7 @@ sound.Add({
     volume = 1,
     level = 140,
     pitch = {80,110},
-    sound = "^weapons/cod2019/shared/atmo/sniper/weap_sniper_fire_plr_atmo_ext1_01.ogg"
+    sound = "weapons/cod2019/shared/atmo/sniper/weap_sniper2_fire_plr_atmo_ext1_01.ogg"
 })
 
 sound.Add({

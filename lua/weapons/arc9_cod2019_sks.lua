@@ -117,7 +117,9 @@ SWEP.RecoilMultSights = 0.7
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilSideSights = 0.1
+SWEP.VisualRecoilRollSights = 2
 SWEP.VisualRecoilPunchSights = 30
 
 SWEP.VisualRecoilPunch = 3
@@ -918,6 +920,17 @@ SWEP.Attachments = {
         Pos = Vector(-0.2, 0, 1.2),
         Ang = Angle(5, 0, 0),
 		InstalledElements = {"stock_adapter"},
+    },
+    {
+        PrintName = "Stock2",
+        DefaultAttName = "Default",
+        Category = {"cod2019_sks_stock"},
+        Bone = "tag_stock_attach",
+        Pos = Vector(0,0, 0),
+        Ang = Angle(0, 0, 0),
+		Scale = 1,
+		Hidden = true,
+        MergeSlots = {6},
     },
     {
         PrintName = "Ammo",

@@ -1,8 +1,8 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-    "$basetexture"			"models/cod2019/rytec/rytec_rounds"
-    "$bumpmap"				"models/cod2019/rytec/rytec_rounds_n"
-    "$phongexponenttexture"		"models/cod2019/rytec/rytec_rounds_exp"
+    "$basetexture" "models\cod2019\rytec\rytec_rounds_rgb"
+    "$bumpmap" "models\cod2019\rytec\rytec_rounds_n"
+    "$phongexponenttexture" "models\cod2019\rytec\rytec_rounds_e"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
@@ -25,7 +25,7 @@
     //remove this if not using MWB
     "Proxies"
     {
-        "MwEnvMapTint"
+        "Arc9EnvMapTint"
         {
             "min" "0"
             "max" "1"

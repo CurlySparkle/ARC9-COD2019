@@ -50,7 +50,10 @@ SWEP.SprintVerticalOffset = false
 SWEP.CanBlindFire = false
 SWEP.LaserAlwaysOnTargetInPeek = true
 
-SWEP.RicochetChance = 0.03
+SWEP.EnterBipodSound = "Viewmodel.BipodDeploy"
+SWEP.ExitBipodSound = "Viewmodel.BipodExit"
+
+SWEP.RicochetChance = 0.02
 
 SWEP.SwayMultSights = 0
 

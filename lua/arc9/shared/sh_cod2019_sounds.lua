@@ -250,3 +250,41 @@ sound.Add( {
         "weapons/cod2019/shared/weapmvmt/launcher/gear_rattle_weap_launcher_08.ogg",
     }
 } )
+
+sound.Add({
+    name = "Viewmodel.BipodDeploy",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    sound = {
+        "weapons/cod2019/shared/mount/enter1.ogg",
+        "weapons/cod2019/shared/mount/enter2.ogg",
+        "weapons/cod2019/shared/mount/enter3.ogg",
+        "weapons/cod2019/shared/mount/enter4.ogg",
+        "weapons/cod2019/shared/mount/enter5.ogg"
+    }
+})
+
+sound.Add({
+    name = "Viewmodel.BipodExit",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    sound = {
+        "weapons/cod2019/shared/mount/exit1.ogg",
+        "weapons/cod2019/shared/mount/exit2.ogg",
+        "weapons/cod2019/shared/mount/exit3.ogg",
+        "weapons/cod2019/shared/mount/exit4.ogg"
+    }
+})
+
+sound.Add({
+    name = "Viewmodel.SwitchSight",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    sound = {
+        "switchsights/switch1.ogg",
+        "switchsights/switch2.ogg",
+        "switchsights/switch3.ogg",
+        "switchsights/switch4.ogg",
+        "switchsights/switch5.ogg"
+    }
+})
