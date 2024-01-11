@@ -121,12 +121,12 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.85
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.4
+SWEP.VisualRecoilMultSights = 0.1
 SWEP.VisualRecoilPunchSights = 15
 
 SWEP.VisualRecoilPunch = 1.5
@@ -1063,12 +1063,6 @@ SWEP.Animations = {
             {s = path .. "weap_m4_selector_semi_on_03.ogg", t = 0/30},
         },
     },
-    ["switchsights"] = {
-        Source = "semi_on",
-        EventTable = {
-            {s = path .. "wfoly_ar_mike4_inspect_02.ogg", t = 0/30},
-        },
-    },
     ["jam"] = {
         Source = "jam",
         EventTable = {
@@ -1082,6 +1076,49 @@ SWEP.Animations = {
             {s = path .. "wpfoly_mike4_raise_v2.ogg", t = 0/30},
             {s = path .. "wpfoly_mike4_jam_bolt.ogg", t = 7/30},
 			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 23/30},
+        },
+    },
+    ["enter_bipod"] = {
+        Source = "bipod_in",
+    },
+    ["exit_bipod"] = {
+        Source = "bipod_out",
+    },
+    ["hybrid_on"] = {
+        Source = "hybrid_on",
+
+        EventTable = {
+            {s = "Viewmodel.SwitchSight", t = 0/30},
+			{s = "switchsights/wpfoly_hybrid_toggle_on.ogg", t = 5/30},
+        },
+    },
+    ["hybrid_off"] = {
+        Source = "hybrid_off",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = "Viewmodel.SwitchSight", t = 0/30},
+			{s = "switchsights/wpfoly_hybrid_toggle_off.ogg", t = 5/30},
         },
     },
 }
@@ -1127,6 +1164,16 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_smg"
     elseif anim == "reload_empty" and wep:HasElement("mag_smg") then 
         return "reload_smg_empty"
+    end
+	
+    wep.MWHybridSwitching = nil
+    if anim == "switchsights" then
+        if wep:HasElement("hybrid_scope") then
+            wep.MWHybridSwitching = true
+            return wep:GetMultiSight() == 1 and "hybrid_on" or "hybrid_off"
+        else
+            return false
+        end
     end
 end
 

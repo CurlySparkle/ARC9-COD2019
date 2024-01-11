@@ -130,7 +130,7 @@ SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire
 SWEP.Sway = 0 -- How much the gun sways.
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.4 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -175,12 +175,12 @@ SWEP.MovingAng = Angle(0, 0, -8)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(-2, -1, -1)
+SWEP.SprintPos = Vector(-5, -1, -1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(17, 35, 3)
-SWEP.CustomizeRotateAnchor = Vector(17, -2.25, -4)
+SWEP.CustomizeRotateAnchor = Vector(16, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 7, 3)
@@ -341,11 +341,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2.5,
+		Mult = 2.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2.5,
+		Mult = 2.7,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -384,6 +384,70 @@ SWEP.Animations = {
     ["bash"] = {
         Source = {"melee", "melee2"},
     },
+    ["enter_bipod"] = {
+        Source = "bipod_in",
+    },
+    ["exit_bipod"] = {
+        Source = "bipod_out",
+    },
+    ["hybrid_on"] = {
+        Source = "hybrid_on",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = "Viewmodel.SwitchSight", t = 0/30},
+			{s = "switchsights/wpfoly_hybrid_toggle_on.ogg", t = 5/30},
+        },
+    },
+    ["hybrid_off"] = {
+        Source = "hybrid_off",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = "Viewmodel.SwitchSight", t = 0/30},
+			{s = "switchsights/wpfoly_hybrid_toggle_off.ogg", t = 5/30},
+        },
+    },
 }
 
 --SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
@@ -397,6 +461,16 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
         return "reload_fast"
     -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         -- return "reload_fast_empty"
+    end
+	
+    wep.MWHybridSwitching = nil
+    if anim == "switchsights" then
+        if wep:HasElement("hybrid_scope") then
+            wep.MWHybridSwitching = true
+            return wep:GetMultiSight() == 1 and "hybrid_on" or "hybrid_off"
+        else
+            return false
+        end
     end
 end
 

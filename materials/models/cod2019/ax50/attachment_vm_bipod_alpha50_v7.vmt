@@ -1,0 +1,35 @@
+"VertexLitGeneric"
+{
+    "$basetexture" "models\cod2019\ax50\attachment_vm_bipod_alpha50_v7_rgb"
+    "$bumpmap" "models\cod2019\ax50\attachment_vm_bipod_alpha50_v7_n"
+    "$phongexponenttexture" "models\cod2019\ax50\attachment_vm_bipod_alpha50_v7_e"
+
+    /////////////////
+    "$color2" "[0 0 0]"                                     //do not touch this
+    "$blendtintbybasealpha" "1"                             //do not touch this
+    /////////////////
+
+    "$phong" "1"
+    "$phongboost" "1"
+    "$phongalbedotint" "1"
+    "$phongalbedoboost" "10"                                //toy around with this
+    "$phongfresnelranges" "[1 0.1 0]"
+       
+    /////////////////
+    "$normalmapalphaenvmapmask" "1"                         //do not touch this
+    /////////////////
+
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[0.149 0.153 0.149]"                 
+
+    //remove this if not using MWB
+    "Proxies"
+    {
+        "Arc9EnvMapTint"
+        {
+            "min" "0"
+            "max" "1"
+            "color" "[0.149 0.153 0.149]"
+        }
+    }
+}

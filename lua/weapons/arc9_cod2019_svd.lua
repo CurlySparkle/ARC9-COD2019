@@ -205,7 +205,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(-1, -1, -1)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
 SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
@@ -218,6 +218,9 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1.2, 1.5, -4)
+SWEP.PeekAng = Angle(0, 0.4, -45)
 
 -------------------------- HoldTypes
 
@@ -737,6 +740,70 @@ SWEP.Animations = {
             },
         },
     },
+    ["enter_bipod"] = {
+        Source = "bipod_in",
+    },
+    ["exit_bipod"] = {
+        Source = "bipod_out",
+    },
+    ["hybrid_on"] = {
+        Source = "hybrid_on",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = "Viewmodel.SwitchSight", t = 0/30},
+			{s = "switchsights/wpfoly_hybrid_toggle_on.ogg", t = 5/30},
+        },
+    },
+    ["hybrid_off"] = {
+        Source = "hybrid_off",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = "Viewmodel.SwitchSight", t = 0/30},
+			{s = "switchsights/wpfoly_hybrid_toggle_off.ogg", t = 5/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -776,6 +843,16 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
     end
+	
+    wep.MWHybridSwitching = nil
+    if anim == "switchsights" then
+        if wep:HasElement("hybrid_scope") then
+            wep.MWHybridSwitching = true
+            return wep:GetMultiSight() == 1 and "hybrid_on" or "hybrid_off"
+        else
+            return false
+        end
+    end
 end
 
 SWEP.AttachmentTableOverrides = {
@@ -786,42 +863,6 @@ SWEP.AttachmentTableOverrides = {
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(0.9, 0, 0.1),
-    },
-    ["csgo_cod2019_laser_01"] = {
-    Sights = {
-    {
-        Pos = Vector(2, 18, -0.6),
-        Ang = Angle(0, 0, -45),
-        ViewModelFOV = 56,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["csgo_cod2019_laser_02"] = {
-    Sights = {
-    {
-        Pos = Vector(2, 18, -0.6),
-        Ang = Angle(0, 0, -45),
-        ViewModelFOV = 56,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["csgo_cod2019_laser_03"] = {
-    Sights = {
-    {
-        Pos = Vector(2, 18, -0.6),
-        Ang = Angle(0, 0, -45),
-        ViewModelFOV = 56,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
     },
 }
 
@@ -917,11 +958,11 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail_cylinder",
         Bone = "tag_laser_attach",
-        Pos = Vector(-7, -0.48, 0.4),
-        Ang = Angle(0, 0, -90),
-		InstalledElements = {"laser_rail"},
+        Pos = Vector(-0.34, -1.34, 0),
+        Ang = Angle(0, 0, 0),
+		--InstalledElements = {"laser_rail"},
     },
     {
         PrintName = "Grips",
