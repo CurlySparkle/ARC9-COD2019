@@ -24,9 +24,9 @@ ATT.VisualRecoilMult = 0.8
 ATT.RecoilMult = 0.8
 ATT.SpeedMult = 0.96
 ATT.SpeedMultSights = 0.84
-ATT.SpreadMultBipod = 0.5
+ATT.SpreadBipod = -0.05
 
-ATT.BipodPos = Vector(-3, 0, 0)
+ATT.BipodPos = Vector(-1.5, -4, 1)
 ATT.BipodAng = Angle(0, 0, 0)
 
 ARC9.LoadAttachment(ATT, "cod2019_raal_grip_bipod")
