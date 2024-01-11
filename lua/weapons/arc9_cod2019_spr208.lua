@@ -692,7 +692,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_raise_first_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_remeo700_raise_first_boltclose.ogg", t = 6/30},
+			{s = path .. "wfoly_sn_remeo700_raise_first_boltclose.ogg", t = 7/30},
 			{s = path .. "wfoly_sn_remeo700_raise_first_end.ogg", t = 22/30},
         },
     },

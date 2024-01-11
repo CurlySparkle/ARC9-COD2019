@@ -513,7 +513,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sn_alpha50_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_alpha50_reload_magout_01.ogg", t = 18/30},
+			{s = path .. "wfoly_sn_alpha50_reload_magout_01.ogg", t = 19/30},
 			{s = path .. "wfoly_sn_alpha50_reload_arm.ogg", t = 40/30},
 			{s = path .. "wfoly_sn_alpha50_reload_maghit.ogg", t = 57/30},
 			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_01.ogg", t = 62/30},
@@ -661,7 +661,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_alpha50_raise_first.ogg", t = 7/30},
-			{s = path .. "wfoly_sn_alpha50_raise_first_boltclose_01.ogg", t = 14/30},
+			{s = path .. "wfoly_sn_alpha50_raise_first_boltclose_01.ogg", t = 15/30},
         },
     },
     ["draw"] = {

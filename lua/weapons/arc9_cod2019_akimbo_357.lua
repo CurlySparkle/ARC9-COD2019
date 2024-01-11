@@ -463,7 +463,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_pi_cpapa_first_raise_start.ogg", t = 2/30},
             {s = path .. "wfoly_pi_cpapa_first_raise_cylinderopen_01.ogg", t = 3/30},
-			{s = path .. "wfoly_pi_cpapa_first_raise_cylinderclose_01.ogg", t = 11/30},
+			{s = path .. "wfoly_pi_cpapa_first_raise_cylinderclose_01.ogg", t = 13/30},
 			{s = path .. "wfoly_pi_cpapa_first_raise_end.ogg", t = 15/30},
         },
     },

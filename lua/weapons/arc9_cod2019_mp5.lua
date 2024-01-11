@@ -469,7 +469,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mpapa5_reload_empty_cloth.ogg", t = 21/30},
 			{s = path .. "wfoly_sm_mpapa5_reload_empty_magin_v2_01.ogg", t = 31/30},
 			{s = path .. "wfoly_sm_mpapa5_reload_empty_magin_v2_02.ogg", t = 38/30},
-			{s = path .. "wfoly_pi_mpapa5_reload_empty_boltclose_01.ogg", t = 44/30},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_boltclose_01.ogg", t = 43/30},
 			{s = path .. "wfoly_pi_mpapa5_reload_empty_end.ogg", t = 46/30},
         },
     },
@@ -499,7 +499,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_pi_mpapa5_raise_first_mvmnt.ogg", t = 0/30},
-            {s = path .. "wfoly_pi_mpapa5_raise_first_closebolt_01.ogg", t = 15/30},
+            {s = path .. "wfoly_pi_mpapa5_raise_first_closebolt_01.ogg", t = 16/30},
 			{s = path .. "wfoly_pi_mpapa5_raise_first_end.ogg", t = 24/30},
         },
     },

@@ -354,11 +354,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sm_beta_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_rotate.ogg", t = 4/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_rotate.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_magout_01.ogg", t = 7/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_01.ogg", t = 35/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_02.ogg", t = 49/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_end.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_end.ogg", t = 49/30},
         },
     },
     ["reload_empty"] = {
@@ -390,8 +390,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_empty_rotate.ogg", t = 4/30},
-			{s = path .. "wfoly_plr_sm_beta_reload_empty_magout_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_rotate.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_magout_01.ogg", t = 6/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_01.ogg", t = 36/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_02.ogg", t = 50/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_charge_01.ogg", t = 61/30},
@@ -501,8 +501,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_plr_sm_beta_raise_first_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_sm_beta_raise_first_charge.ogg", t = 13/30},
-			{s = path .. "wfoly_plr_sm_beta_raise_first_end.ogg", t = 28/30},
+            {s = path .. "wfoly_plr_sm_beta_raise_first_charge.ogg", t = 15/30},
+			{s = path .. "wfoly_plr_sm_beta_raise_first_end.ogg", t = 32/30},
         },
     },
     ["draw"] = {
