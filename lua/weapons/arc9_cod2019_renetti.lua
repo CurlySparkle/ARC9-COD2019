@@ -20,8 +20,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_m9_desc") or [[Well rounded semi-auto 9mm pistol. This unassuming sidearm excels in close range combat, and features gunsmithing capabilities unique to the pistol class that permit a variety of engagement styles.]]
@@ -863,39 +863,39 @@ end
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
-    ["cod2019_optic_minireddot1"] = {
-    Sights = {
-    {
-        Pos = Vector(0, 15, -0.7),
-        Ang = Angle(0, 0, 0),
-        Magnification = 1.15,
-        ViewModelFOV = 65,
-        IgnoreExtra = false
-    },
-    },
-    },
-    ["cod2019_optic_minireddot2"] = {
-    Sights = {
-    {
-        Pos = Vector(0, 15, -0.65),
-        Ang = Angle(0, 0, 0),
-        Magnification = 1.15,
-        ViewModelFOV = 65,
-        IgnoreExtra = false
-    },
-    },
-    },
-    ["cod2019_optic_minireddot3"] = {
-    Sights = {
-    {
-        Pos = Vector(0, 15, -0.65),
-        Ang = Angle(0, 0, 0),
-        Magnification = 1.15,
-        ViewModelFOV = 65,
-        IgnoreExtra = false
-    },
-    },
-    },
+    -- ["cod2019_optic_minireddot1"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(0, 15, -0.7),
+        -- Ang = Angle(0, 0, 0),
+        -- Magnification = 1.15,
+        -- ViewModelFOV = 65,
+        -- IgnoreExtra = false
+    -- },
+    -- },
+    -- },
+    -- ["cod2019_optic_minireddot2"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(0, 15, -0.65),
+        -- Ang = Angle(0, 0, 0),
+        -- Magnification = 1.15,
+        -- ViewModelFOV = 65,
+        -- IgnoreExtra = false
+    -- },
+    -- },
+    -- },
+    -- ["cod2019_optic_minireddot3"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(0, 15, -0.65),
+        -- Ang = Angle(0, 0, 0),
+        -- Magnification = 1.15,
+        -- ViewModelFOV = 65,
+        -- IgnoreExtra = false
+    -- },
+    -- },
+    -- },
     ["cod2019_view_alt_pistol"] = {
     ActivePos = Vector(3.9, -1.5, 1.5),
     ActiveAng = Angle(0, 0, 20),

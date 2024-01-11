@@ -20,8 +20,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_oden_desc") or [[Fully automatic bullpup battle rifle maintains a slow cycle rate to help control hard hitting 12.7x55mm ammunition.]]

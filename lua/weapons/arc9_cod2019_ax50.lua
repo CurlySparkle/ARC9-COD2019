@@ -20,8 +20,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_ax50_desc") or [[Hard hitting, bolt action sniper rifle with .50 cal BMG ammunition. Its tungsten sabot tipped bullets are fast and powerful, but require precise shots over long distances.]]

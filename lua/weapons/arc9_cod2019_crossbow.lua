@@ -14,8 +14,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_crossbow_desc") or [[Silent and agile, this high-performance crossbow fires 20.0" bolts with exceptional lethality. Exclusive customization, distinct functionality, and unique ammunition types put this weapon in a class of its own. Standard 20.0" bolts are recoverable, and are undetectable by trophy systems.]]

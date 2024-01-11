@@ -20,8 +20,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_minigun_desc") or [[A machine gun that appears in a portable form with high rate of fire around 3,000 RPM.]]

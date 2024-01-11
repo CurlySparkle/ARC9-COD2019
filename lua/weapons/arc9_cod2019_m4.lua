@@ -20,8 +20,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_m4a1_desc") or [[A fully automatic, all-purpose assault rifle. Control your shots and this weapon can be very effective at range.]]
@@ -1192,42 +1192,42 @@ SWEP.AttachmentTableOverrides = {
 	ModelOffset = Vector(-1, -0.1, 0.8),
 	ModelAngleOffset = Angle(0, 0, 180),
     },
-    ["csgo_cod2019_laser_01"] = {
-    Sights = {
-    {
-        Pos = Vector(-2, 14, -1.3),
-        Ang = Angle(0, 0, 45),
-        ViewModelFOV = 54,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["csgo_cod2019_laser_02"] = {
-    Sights = {
-    {
-        Pos = Vector(-2, 14, -1.3),
-        Ang = Angle(0, 0, 45),
-        ViewModelFOV = 54,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["csgo_cod2019_laser_03"] = {
-    Sights = {
-    {
-        Pos = Vector(-2, 14, -1.3),
-        Ang = Angle(0, 0, 45),
-        ViewModelFOV = 54,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
+    -- ["csgo_cod2019_laser_01"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(-2, 14, -1.3),
+        -- Ang = Angle(0, 0, 45),
+        -- ViewModelFOV = 54,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["csgo_cod2019_laser_02"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(-2, 14, -1.3),
+        -- Ang = Angle(0, 0, 45),
+        -- ViewModelFOV = 54,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["csgo_cod2019_laser_03"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(-2, 14, -1.3),
+        -- Ang = Angle(0, 0, 45),
+        -- ViewModelFOV = 54,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
     ["cod2019_attach_xmag_50"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_xmags.mdl",
     },

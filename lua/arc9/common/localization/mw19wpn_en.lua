@@ -102,8 +102,8 @@ L["mw19_muzzle_velocity"] = "Muzzle Velocity7"
 L["mw19_muzzle_velocity_val"] = "%s m/s | %s ft/s"
 
 /////////// Authors -- UO
-L["mw19_assets"] = "Assets1"
-L["mw19_author"] = "Author2"
+L["mw19_assets"] = "Assets2"
+L["mw19_author"] = "Author1"
 
 /////////// Weapon Categories
 L["mw19_category_weapon_ar"] = "ASSAULT RIFLES"

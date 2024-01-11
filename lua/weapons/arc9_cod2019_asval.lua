@@ -20,8 +20,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_asval_desc") or [[Chambered in subsonic 9x39mm and integrally suppressed, the AS VAL is a powerhouse built for stealth, accuracy, and penetration. This weapon will excel in the hands of an operator able to control heavy recoil and a high rate of fire.]]
@@ -820,42 +820,42 @@ SWEP.AttachmentTableOverrides = {
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.5,
     },
-    ["csgo_cod2019_laser_cylinder_01"] = {
-    Sights = {
-    {
-        Pos = Vector(-1.5, 15, -3),
-        Ang = Angle(0, -0.8, 45),
-        ViewModelFOV = 45,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["csgo_cod2019_laser_cylinder_02"] = {
-    Sights = {
-    {
-        Pos = Vector(0.3, 24, -2.5),
-        Ang = Angle(0.15, 1, 5),
-        ViewModelFOV = 45,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["csgo_cod2019_laser_cylinder_03"] = {
-    Sights = {
-    {
-        Pos = Vector(-1.5, 15, -3),
-        Ang = Angle(0, -0.8, 45),
-        ViewModelFOV = 45,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
+    -- ["csgo_cod2019_laser_cylinder_01"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(-1.5, 15, -3),
+        -- Ang = Angle(0, -0.8, 45),
+        -- ViewModelFOV = 45,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["csgo_cod2019_laser_cylinder_02"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(0.3, 24, -2.5),
+        -- Ang = Angle(0.15, 1, 5),
+        -- ViewModelFOV = 45,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["csgo_cod2019_laser_cylinder_03"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(-1.5, 15, -3),
+        -- Ang = Angle(0, -0.8, 45),
+        -- ViewModelFOV = 45,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
 }
 
 SWEP.AttachmentElements = {

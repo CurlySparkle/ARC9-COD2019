@@ -11,8 +11,8 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_rpg") or "RPG-7"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_launcher") or "Rocket Launcher"
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Palindrone/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Palindrone/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_rpg_desc") or [[Unguided, self-propelled rocket launcher fires a slower projectile with a high-explosive yield.]]

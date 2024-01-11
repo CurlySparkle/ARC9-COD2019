@@ -20,8 +20,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_origin12_desc") or [[Semi-automatic shotgun with large ammo capacity allows for continuous firing. Effective at close range.]]
@@ -1035,42 +1035,42 @@ SWEP.AttachmentTableOverrides = {
 	ModelOffset = Vector(-4, 0, -0.7),
 	ModelAngleOffset = Angle(0, 0, 180),
     },
-    ["csgo_cod2019_laser_01"] = {
-    Sights = {
-    {
-        Pos = Vector(3, 15, -1),
-        Ang = Angle(0, 0, -45),
-        ViewModelFOV = 56,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["csgo_cod2019_laser_02"] = {
-    Sights = {
-    {
-        Pos = Vector(3, 15, -1),
-        Ang = Angle(0, 0, -45),
-        ViewModelFOV = 56,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["csgo_cod2019_laser_03"] = {
-    Sights = {
-    {
-        Pos = Vector(3, 15, -1),
-        Ang = Angle(0, 0, -45),
-        ViewModelFOV = 56,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
+    -- ["csgo_cod2019_laser_01"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(3, 15, -1),
+        -- Ang = Angle(0, 0, -45),
+        -- ViewModelFOV = 56,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["csgo_cod2019_laser_02"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(3, 15, -1),
+        -- Ang = Angle(0, 0, -45),
+        -- ViewModelFOV = 56,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["csgo_cod2019_laser_03"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(3, 15, -1),
+        -- Ang = Angle(0, 0, -45),
+        -- ViewModelFOV = 56,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
 }
 
 SWEP.AttachmentElements = {

@@ -19,8 +19,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_mg34_desc") or [[Fully automatic weapon with a high rate of fire and punishing 7.92 Mauser ammunition. Salvaged WW2 machine guns are still reliable and deadly on the battlefield.]]
@@ -764,42 +764,42 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.1),
     },
-    ["csgo_cod2019_laser_01"] = {
-    Sights = {
-    {
-        Pos = Vector(2, 23, -1),
-        Ang = Angle(0, 0, -45),
-        ViewModelFOV = 45,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["csgo_cod2019_laser_02"] = {
-    Sights = {
-    {
-        Pos = Vector(2, 23, -1),
-        Ang = Angle(0, 0, -45),
-        ViewModelFOV = 45,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["csgo_cod2019_laser_03"] = {
-    Sights = {
-    {
-        Pos = Vector(2, 23, -1),
-        Ang = Angle(0, 0, -45),
-        ViewModelFOV = 45,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
+    -- ["csgo_cod2019_laser_01"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(2, 23, -1),
+        -- Ang = Angle(0, 0, -45),
+        -- ViewModelFOV = 45,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["csgo_cod2019_laser_02"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(2, 23, -1),
+        -- Ang = Angle(0, 0, -45),
+        -- ViewModelFOV = 45,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["csgo_cod2019_laser_03"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(2, 23, -1),
+        -- Ang = Angle(0, 0, -45),
+        -- ViewModelFOV = 45,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
 }
 
 SWEP.AttachmentElements = {

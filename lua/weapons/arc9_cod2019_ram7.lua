@@ -20,8 +20,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_ram7_desc") or [[A fully automatic bullpup assault rifle with a compact design that lends itself to close-quarter engagements.]]
@@ -938,42 +938,42 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.1),
     },
-    ["csgo_cod2019_laser_01"] = {
-    Sights = {
-    {
-        Pos = Vector(2.5, 15, -1),
-        Ang = Angle(1.7, 0.8, -45),
-        ViewModelFOV = 45,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["csgo_cod2019_laser_02"] = {
-    Sights = {
-    {
-        Pos = Vector(2.5, 15, -1),
-        Ang = Angle(1.7, 0.8, -45),
-        ViewModelFOV = 45,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["csgo_cod2019_laser_03"] = {
-    Sights = {
-    {
-        Pos = Vector(2.5, 15, -1),
-        Ang = Angle(1.7, 0.8, -45),
-        ViewModelFOV = 45,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
+    -- ["csgo_cod2019_laser_01"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(2.5, 15, -1),
+        -- Ang = Angle(1.7, 0.8, -45),
+        -- ViewModelFOV = 45,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["csgo_cod2019_laser_02"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(2.5, 15, -1),
+        -- Ang = Angle(1.7, 0.8, -45),
+        -- ViewModelFOV = 45,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["csgo_cod2019_laser_03"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(2.5, 15, -1),
+        -- Ang = Angle(1.7, 0.8, -45),
+        -- ViewModelFOV = 45,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
     ["cod2019_attach_xmag_50"] = {
     Model = "models/weapons/cod2019/attachs/weapons/ram7/attachment_vm_ar_tango21_xmags.mdl",
 	ActivateElements = {"mag_none","mag_xmag"}

@@ -101,8 +101,8 @@ L["mw19_muzzle_velocity"] = "Mynningshastighet7"
 L["mw19_muzzle_velocity_val"] = "%s m/s | %s ft/s"
 
 /////////// Authors -- UO
-L["mw19_assets"] = "Tillgångar1"
-L["mw19_author"] = "Skapare2"
+L["mw19_assets"] = "Tillgångar2"
+L["mw19_author"] = "Skapare1"
 
 /////////// Weapon Categories
 L["mw19_category_weapon_ar"] = "AUTOMATKARBINER"

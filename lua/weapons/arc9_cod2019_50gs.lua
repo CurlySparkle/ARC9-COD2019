@@ -20,8 +20,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_deagle_desc") or [[The most powerful semi-automatic handgun available, deals heavy damage up to intermediate ranges.]]
@@ -878,39 +878,39 @@ end
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
-    ["cod2019_optic_minireddot1"] = {
-    Sights = {
-    {
-        Pos = Vector(0, 15, -0.7),
-        Ang = Angle(0, 0, 0),
-        Magnification = 1.15,
-        ViewModelFOV = 65,
-        IgnoreExtra = false
-    },
-    },
-    },
-    ["cod2019_optic_minireddot2"] = {
-    Sights = {
-    {
-        Pos = Vector(0, 15, -0.65),
-        Ang = Angle(0, 0, 0),
-        Magnification = 1.15,
-        ViewModelFOV = 65,
-        IgnoreExtra = false
-    },
-    },
-    },
-    ["cod2019_optic_minireddot3"] = {
-    Sights = {
-    {
-        Pos = Vector(0, 15, -0.65),
-        Ang = Angle(0, 0, 0),
-        Magnification = 1.15,
-        ViewModelFOV = 65,
-        IgnoreExtra = false
-    },
-    },
-    },
+    -- ["cod2019_optic_minireddot1"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(0, 15, -0.7),
+        -- Ang = Angle(0, 0, 0),
+        -- Magnification = 1.15,
+        -- ViewModelFOV = 65,
+        -- IgnoreExtra = false
+    -- },
+    -- },
+    -- },
+    -- ["cod2019_optic_minireddot2"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(0, 15, -0.65),
+        -- Ang = Angle(0, 0, 0),
+        -- Magnification = 1.15,
+        -- ViewModelFOV = 65,
+        -- IgnoreExtra = false
+    -- },
+    -- },
+    -- },
+    -- ["cod2019_optic_minireddot3"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(0, 15, -0.65),
+        -- Ang = Angle(0, 0, 0),
+        -- Magnification = 1.15,
+        -- ViewModelFOV = 65,
+        -- IgnoreExtra = false
+    -- },
+    -- },
+    -- },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -969,6 +969,7 @@ SWEP.Attachments = {
         Category = {"cod2019_optic"},
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 1,
+        ExtraSightDistance = 8,
     },
     {
         PrintName = "Tactical",

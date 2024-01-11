@@ -11,8 +11,8 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_mgl") or "MGL-32"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_launcher") or "Grenade Launcher"
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_mgl_desc") or [[6 round semi-automatic high-explosive grenade launcher.]]

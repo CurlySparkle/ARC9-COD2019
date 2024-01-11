@@ -11,8 +11,8 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_shield") or "Riot Shield"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_melee") or "Melee"
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_shield_desc") or [[Ballistic-proof and explosive-resistant shield with increased melee damage.]]

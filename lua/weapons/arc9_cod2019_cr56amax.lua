@@ -19,8 +19,8 @@ SWEP.Trivia = {
 }
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_cr56_desc") or [[This lightweight 7.62x39mm full auto assault rifle is compact and powerful. Built exclusively for military use, the standard issue rifle is deadly at mid range combat and easily configured for a variety of assault tactics.]]
@@ -815,42 +815,42 @@ SWEP.AttachmentTableOverrides = {
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
     },
-    ["cod2019_laser_01_cylinde_alt"] = {
-    Sights = {
-    {
-        Pos = Vector(-1, 17, -1),
-        Ang = Angle(0, 0, 45),
-        ViewModelFOV = 54,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["cod2019_laser_02_cylinde_alt"] = {
-    Sights = {
-    {
-        Pos = Vector(-1, 17, -1),
-        Ang = Angle(0, 0, 45),
-        ViewModelFOV = 54,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
-    ["cod2019_laser_03_cylinde_alt"] = {
-    Sights = {
-    {
-        Pos = Vector(-1, 17, -1),
-        Ang = Angle(0, 0, 45),
-        ViewModelFOV = 54,
-        Magnification = 1.25,
-        IgnoreExtra = false,
-		KeepBaseIrons = true,
-    },
-    },
-    },
+    -- ["cod2019_laser_01_cylinde_alt"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(-1, 17, -1),
+        -- Ang = Angle(0, 0, 45),
+        -- ViewModelFOV = 54,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["cod2019_laser_02_cylinde_alt"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(-1, 17, -1),
+        -- Ang = Angle(0, 0, 45),
+        -- ViewModelFOV = 54,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
+    -- ["cod2019_laser_03_cylinde_alt"] = {
+    -- Sights = {
+    -- {
+        -- Pos = Vector(-1, 17, -1),
+        -- Ang = Angle(0, 0, 45),
+        -- ViewModelFOV = 54,
+        -- Magnification = 1.25,
+        -- IgnoreExtra = false,
+		-- KeepBaseIrons = true,
+    -- },
+    -- },
+    -- },
 }
 
 SWEP.AttachmentElements = {

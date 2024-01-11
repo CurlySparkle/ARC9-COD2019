@@ -15,8 +15,8 @@ SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Grenade"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_frag_desc") or [[Cookable fragmentation grenade.]]
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Slot = 4

@@ -15,8 +15,8 @@ SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_throwable") or "Throwable"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_knife_desc") or [[Retrievable knife that is lethal on impact.]]
 
 SWEP.Credits = {
-    Author = "Twilight Sparkle/Firmeteran",
-    Assets = "Activision/Infinity Ward"
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
 }
 
 SWEP.Slot = 4
