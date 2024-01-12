@@ -203,14 +203,14 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.9, -1, -1)
-SWEP.MovingAng = Angle(0, 0, -12)
+SWEP.MovingPos = Vector(-1, -0.8, -1.5)
+SWEP.MovingAng = Angle(0, 0, -10)
 
-SWEP.CrouchPos = Vector(-0.5, -0, -1)
+SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(-1, -1, -1)
-SWEP.SprintAng = Angle(0, 0, 0)
+SWEP.SprintPos = Vector(1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(20, 40, 3)
@@ -218,6 +218,9 @@ SWEP.CustomizeRotateAnchor = Vector(20, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
+
+SWEP.PeekPos = Vector(-0.2, 1.5, -5)
+SWEP.PeekAng = Angle(0, 0.4, -45)
 
 -------------------------- HoldTypes
 
@@ -243,11 +246,22 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/weapons/cod2019/shared/shell_rytec.mdl"
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 1
+SWEP.ShellScale = 0.1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.EjectDelay = 0.4
+SWEP.ShellSounds = {
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg"
+}
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
@@ -299,6 +313,12 @@ SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/svd/weap_delta_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/svd/weap_delta_disconnector_plr_01.ogg"
+
+SWEP.BulletBones = {
+    [1] = {"j_bullet1","j_ammo1"},
+    [2] = {"j_bullet2","j_ammo2"},
+    [3] = {"j_bullet3","j_ammo3"},
+}
 
 SWEP.HideBones  = {
     [1] = "j_mag2",
@@ -558,18 +578,18 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_eject_01.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_01.ogg", t = 10/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_02.ogg", t = 22/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magout_01.ogg", t = 39/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_magout_01.ogg", t = 39/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_03.ogg", t = 40/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_04.ogg", t = 65/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magin_v2_01.ogg", t = 81/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magin_v2_02.ogg", t = 97/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_magin_v2_01.ogg", t = 81/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_magin_v2_02.ogg", t = 97/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_cloth_v2_05.ogg", t = 98/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_end.ogg", t = 103/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_load_01.ogg", t = 114/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_end.ogg", t = 103/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_boltclose_01.ogg", t = 114/30},
         },
     },
     ["reload_xmag_fast"] = {
@@ -600,15 +620,15 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_01.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_magout_01.ogg", t = 16/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_magout_01.ogg", t = 16/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_02.ogg", t = 16/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_rattle.ogg", t = 26/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_shake.ogg", t = 26/30},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_cloth_v2_03.ogg", t = 48/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_01.ogg", t = 54/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_02.ogg", t = 57/30},
-			{s = path .. "wfoly_plr_sn_hdromeo_reload_end.ogg", t = 67/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_magin_v2_01.ogg", t = 54/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_magin_v2_02.ogg", t = 57/30},
+			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_end.ogg", t = 67/30},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -677,7 +697,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.85,
+		MinProgress = 0.5,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -699,7 +719,6 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -724,11 +743,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 2.7,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -746,8 +765,13 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.4,
                 lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 1,
                 rhik = 0
             },
             {
@@ -763,7 +787,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-       Source = {"melee", "melee2"},
+       Source = {"melee","melee2","melee3"},
        IKTimeLine = {
             {
                 t = 0,
@@ -788,7 +812,7 @@ SWEP.Animations = {
         },
     },
     ["enter_bipod"] = {
-        Source = "bipod_in",
+        Source = "bipod_out",
     },
     ["exit_bipod"] = {
         Source = "bipod_out",
@@ -906,42 +930,14 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(1, 0, 0),
     },
-    -- ["csgo_cod2019_laser_01"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-2.5, 25, -1),
-        -- Ang = Angle(-0.5, -1.4, 45),
-        -- ViewModelFOV = 64,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_02"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-2.5, 25, -1),
-        -- Ang = Angle(-0.5, -1.4, 45),
-        -- ViewModelFOV = 64,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_03"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-2.5, 25, -1),
-        -- Ang = Angle(-0.5, -1.4, 45),
-        -- ViewModelFOV = 64,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
+    ["cod2019_rytec_bipod"] = {
+    BipodPos = Vector(-1.5, -3, 0),
+    BipodAng = Angle(-1, 0, -7)
+    },
+    ["cod2019_ax50_bipod"] = {
+    BipodPos = Vector(-1.5, -3, 0),
+    BipodAng = Angle(-1, 0, -7)
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -1020,7 +1016,7 @@ SWEP.Attachments = {
         Pos = Vector(-0.23, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
-		Scale = 1,
+		Scale = 1.2,
     },
     {
         PrintName = "Optics",
@@ -1038,7 +1034,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(0, 0, -0.1),
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 180),
 		--InstalledElements = {"rail_laser"},
     },
@@ -1063,16 +1059,32 @@ SWEP.Attachments = {
 		InstalledElements = {"guard_none"},
     },
     {
+        PrintName = "Bipod",
+        DefaultAttName = "Default",
+        Category = {"cod2019_rytec_bipod","cod2019_ax50_bipod"},
+        Bone = "tag_bipod_attach",
+        Pos = Vector(0,0, 0),
+        Ang = Angle(0, 0, 0),
+		Scale = 1,
+		Hidden = true,
+        MergeSlots = {6},
+    },
+    {
         PrintName = "Ammo",
         Bone = "j_mag1",
         Category = {"cod2019_ammo","cod2019_ammo_sniper"},
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
+		ExcludeElements = {"mag_ftac"},
+		RejectAttachments = { 
+		["cod2019_ammo_db"] = true,
+		["cod2019_ammo_he"] = true 
+		}
     },
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_hdr_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -1131,6 +1143,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 3
 SWEP.CodAngledGripPoseParam = 4
-SWEP.CodStubbyGripPoseParam = 5
-SWEP.CodStubbyTallGripPoseParam = 0
+SWEP.CodStubbyGripPoseParam = 22
+SWEP.CodStubbyTallGripPoseParam = 18
 SWEP.GripPoseParam2 = 0.5

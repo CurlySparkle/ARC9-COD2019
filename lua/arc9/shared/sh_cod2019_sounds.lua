@@ -136,7 +136,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.MK2.Load",
-    channel = 138,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -151,7 +151,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.MK2.Shellin",
-    channel = 138,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -166,7 +166,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Uzi.Trigger",
-    channel = 138,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},

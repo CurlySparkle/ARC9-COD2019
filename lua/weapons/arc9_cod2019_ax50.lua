@@ -38,7 +38,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_ax50.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-5, 6, -2),
+    TPIKPos = Vector(-8, 6, -1),
     TPIKAng = Angle(-9, 0, 170),
     Scale = 1
 }
@@ -204,14 +204,14 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
+SWEP.MovingPos = Vector(-1, -0.5, -1)
 SWEP.MovingAng = Angle(0, 0, -10)
 
-SWEP.CrouchPos = Vector(-0.5, -0, -1)
+SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, 0)
-SWEP.SprintAng = Angle(0, 0, 0)
+SWEP.SprintPos = Vector(1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(20, 40, 3)
@@ -249,6 +249,17 @@ SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.EjectDelay = 0.4
+SWEP.ShellSounds = {
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg"
+}
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
@@ -304,6 +315,11 @@ SWEP.TriggerUpSound = "weapons/cod2019/svd/weap_delta_disconnector_plr_01.ogg"
 
 SWEP.HideBones  = {
     [1] = "j_mag2",
+}
+
+SWEP.BulletBones = {
+    [1] = "j_bullet_01",
+    [2] = "j_bullet_02",
 }
 
 function SWEP:PrimaryAttack()
@@ -749,7 +765,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -774,10 +790,10 @@ SWEP.Animations = {
         },
     },
     ["enter_bipod"] = {
-        Source = "bipod_in",
+        Source = "bipod_out",
     },
     ["exit_bipod"] = {
-        Source = "bipod_out",
+        Source = "bipod_in",
     },
     ["hybrid_on"] = {
         Source = "hybrid_on",
@@ -910,6 +926,11 @@ SWEP.AttachmentElements = {
             {1,2},
         },
     },
+    ["barrel_none"] = {
+        Bodygroups = {
+            {7,1},
+        },
+    },
     ["muzzle_none"] = {
         Bodygroups = {
             {2,1},
@@ -939,10 +960,17 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
+	local attached = data.elements
     if wep:HasElement("stock_retract") then 
 	model:SetBodygroup(5,0)
 	model:SetBodygroup(6,0)	
 	end
+	
+    local camo = 0
+    if attached["universal_camo"] then
+        camo = 1
+    end
+    model:SetSkin(camo)
 end
 
 SWEP.Attachments = {
@@ -980,7 +1008,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(0, 0, -0.1),
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 180),
 		--InstalledElements = {"rail_laser"},
     },
@@ -1019,6 +1047,11 @@ SWEP.Attachments = {
         Category = {"cod2019_ammo","cod2019_ammo_sniper"},
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
+		ExcludeElements = {"mag_ftac"},
+		RejectAttachments = { 
+		["cod2019_ammo_db"] = true,
+		["cod2019_ammo_he"] = true 
+		}
     },
     {
         PrintName = "Mag",
@@ -1082,5 +1115,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.CodAngledGripPoseParam = 4.5
-SWEP.CodStubbyGripPoseParam = 2
+SWEP.CodStubbyGripPoseParam = 6
+SWEP.CodStubbyTallGripPoseParam = 22
 SWEP.GripPoseParam2 = 0.5

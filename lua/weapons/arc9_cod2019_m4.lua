@@ -126,7 +126,7 @@ SWEP.RecoilMultSights = 0.85
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.1
+SWEP.VisualRecoilMultSights = 0.5
 SWEP.VisualRecoilPunchSights = 15
 
 SWEP.VisualRecoilPunch = 1.5
@@ -1390,7 +1390,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag","cod2019_m4_mag"},
+        Category = {"cod2019_mag","cod2019_m4_mag","cod2019_mag_xmag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

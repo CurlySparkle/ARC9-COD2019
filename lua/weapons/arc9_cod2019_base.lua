@@ -21,6 +21,8 @@ SWEP.AlwaysPhysBullet = false
 SWEP.NeverPhysBullet = true
 SWEP.TracerEffect = "cod2019_tracer"
 
+SWEP.NoDynamicKillIcon = true
+
 SWEP.BashDamage = 55
 SWEP.BashLungeRange = 0
 SWEP.BashRange = 64
