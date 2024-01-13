@@ -77,7 +77,7 @@ ATT = {}
 
 ATT.PrintName = "Kill the C-Clamp"
 ATT.CompactName = "No C"
-ATT.Description = [[Kills the c-clamp :D]]
+ATT.Description = [[Kills the Clamp :D]]
 
 ATT.Icon = Material("entities/attachs/cod2019_grip_none.png", "mips smooth")
 

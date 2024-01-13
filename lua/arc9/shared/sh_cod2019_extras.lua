@@ -96,6 +96,17 @@ sound.Add({
     "^shared/frag_expl_04.ogg",} 
 })
 
+sound.Add({
+    name = "COD2019.DB_Hit",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 100,
+    sound = {
+    "^shared/wpn_shotgun_fire_db_01.ogg",
+	"^shared/wpn_shotgun_fire_db_02.ogg",
+    "^shared/wpn_shotgun_fire_db_03.ogg",} 
+})
+
 sound.Add( {
     name = "COD2019.Claymore.Explode",
     channel = CHAN_STATIC,

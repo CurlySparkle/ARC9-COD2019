@@ -571,14 +571,6 @@ SWEP.Attachments = {
 		InstalledElements = {"grip_none"},
     },
     {
-        PrintName = "Stock (Opt)",
-        DefaultAttName = "Standard",
-        Category = "cod2019_m32_stock_opt",
-        Bone = "tag_launcher_attachment",
-        Pos = Vector(0, 0, 1),
-        Ang = Angle(0, 0, 0),
-    },
-    {
         PrintName = "Stock",
         DefaultAttName = "Standard Stock",
         Category = "cod2019_stocks",

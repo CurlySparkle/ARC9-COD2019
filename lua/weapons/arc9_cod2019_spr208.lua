@@ -365,8 +365,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.5, t = 0.067},
-			{s = path .. "wfoly_sn_remeo700_rechamber_grab.ogg", v = 0.5, t = 0.9},
+            {s = path .. "wfoly_sn_remeo700_rechamber_boltl_bolt.ogg", v = 0.5, t = 0.067},
+			{s = path .. "wfoly_sn_remeo700_rechamber_boltl_grab.ogg", v = 0.5, t = 0.9},
         },
     },
     ["reload"] = {
@@ -858,7 +858,7 @@ SWEP.Animations = {
         },
     },
     ["enter_bipod"] = {
-        Source = "bipod_in",
+        Source = "bipod_out",
     },
     ["exit_bipod"] = {
         Source = "bipod_out",
@@ -940,7 +940,9 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 	
-    if anim == "cycle" and wep:HasElement("perk_bolt") then
+    if anim == "cycle" and wep:HasElement("bolt_light") then
+        return "cycle_light"
+    elseif anim == "cycle" and wep:HasElement("perk_bolt") then
         return "cycle_light"
     end
 --------------------------------------------------------------------------
@@ -1101,11 +1103,27 @@ SWEP.Attachments = {
 		--InstalledElements = {"guard_none"},
     },
     {
+        PrintName = "Bipod",
+        DefaultAttName = "Default",
+        Category = {"cod2019_rytec_bipod","cod2019_ax50_bipod"},
+        Bone = "tag_grip_attach",
+        Pos = Vector(-1,0, 0),
+        Ang = Angle(0, 0, 180),
+		Scale = 1,
+		Hidden = true,
+        MergeSlots = {6},
+    },
+    {
         PrintName = "Ammo",
         Bone = "j_mag1",
         Category = {"cod2019_ammo","cod2019_ammo_sniper"},
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
+		ExcludeElements = {"mag_ftac"},
+		RejectAttachments = { 
+		["cod2019_ammo_db"] = true,
+		["cod2019_ammo_he"] = true 
+		}
     },
     {
         PrintName = "Mag",
@@ -1115,17 +1133,26 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
+        PrintName = "Bolt",
+        DefaultAttName = "Standard Bolt",
+        Category = "cod2019_spr208_bolt",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(1.5, 0, 1.5),
+    },
+    {
         PrintName = "Reciever",
         DefaultAttName = "Standard Barrel",
         Category = "cod2019_spr208_reciever",
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(0, 0, 0),
+		Icon_Offset = Vector(8, 0, 2),
     },
     {
         PrintName = "Perk",
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_2_alt"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_alt"}
     },
     {
         PrintName = "Skins",
