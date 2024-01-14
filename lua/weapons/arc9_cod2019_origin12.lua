@@ -190,9 +190,6 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
-SWEP.SprintAng = Angle(0, 0, 0)
-
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, 0),
     Ang = Angle(-2.5, 0, 2.5)
@@ -209,8 +206,11 @@ SWEP.MovingMidPoint = {
 SWEP.MovingPos = Vector(-1, -0.8, -0.8)
 SWEP.MovingAng = Angle(0, 0, -8)
 
-SWEP.CrouchPos = Vector(-0.5, -0, -1)
+SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
+
+SWEP.SprintPos = Vector(1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 1)
 SWEP.CustomizePos = Vector(14, 30, 4)
@@ -276,7 +276,7 @@ SWEP.DropMagazineSounds = {
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 3
-SWEP.DropMagazineAng = Angle(0, -90, 0)
+SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 SWEP.EjectDelay = 0.1
 
@@ -717,7 +717,7 @@ SWEP.Animations = {
         Source = "reload_drum_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 0.6,
-		DropMagAt = 0.7,
+		DropMagAt = 0.55,
         IKTimeLine = {
             {
                 t = 0,
@@ -750,7 +750,7 @@ SWEP.Animations = {
     ["reload_drum_fast_empty"] = {
         Source = "reload_drum_fast_empty",
 		MinProgress = 0.9,
-		DropMagAt = 0.7,
+		DropMagAt = 0.55,
 		MagSwapTime = 0.6,
         IKTimeLine = {
             {

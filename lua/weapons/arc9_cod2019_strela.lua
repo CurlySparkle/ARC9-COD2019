@@ -151,9 +151,6 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(-2, 0, -2)
-SWEP.SprintAng = Angle(0, 0, 0)
-
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, 0),
     Ang = Angle(-2.5, 0, 2.5)
@@ -173,8 +170,11 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.MovingPos = Vector(-1.5, -1, -1.5)
 SWEP.MovingAng = Angle(0, 0, -8)
 
-SWEP.CrouchPos = Vector(-0.5, -0, -1)
-SWEP.CrouchAng = Angle(0, -8, -5)
+SWEP.CrouchPos = Vector(-1, -0.5, -1)
+SWEP.CrouchAng = Angle(0, 0, -5)
+
+SWEP.SprintPos = Vector(1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, -5, 7)
 SWEP.CustomizePos = Vector(3, 30, 4)

@@ -112,19 +112,19 @@ SWEP.RecoilKick = 3
 SWEP.RecoilMultCrouch = 0.6
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.7
+SWEP.RecoilMultSights = 0.85
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilSideSights = 0.1
 SWEP.VisualRecoilRollSights = 2
-SWEP.VisualRecoilPunchSights = 30
+SWEP.VisualRecoilPunchSights = 15
 
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.4
-SWEP.VisualRecoilRoll = 25
+SWEP.VisualRecoilRoll = 15
 SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilSpringPunchDamping = 11
@@ -203,11 +203,11 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
 SWEP.MovingAng = Angle(0, 0, -8)
 
-SWEP.CrouchPos = Vector(-0.5, -0, -1)
+SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, 0)
-SWEP.SprintAng = Angle(0, 0, 0)
+SWEP.SprintPos = Vector(1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(17, 35, 2)
@@ -935,7 +935,7 @@ SWEP.Attachments = {
     {
         PrintName = "Ammo",
         Bone = "j_mag1",
-        Category = "go_ammo",
+        Category = "cod2019_ammo",
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
@@ -1001,6 +1001,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodStubbyGripPoseParam = 12
+SWEP.CodStubbyGripPoseParam = 22
 SWEP.CodAngledGripPoseParam = 23
 SWEP.CodStubbyTallGripPoseParam = 20

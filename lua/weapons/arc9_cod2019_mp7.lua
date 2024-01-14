@@ -125,7 +125,7 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilPunch = 1.3
 SWEP.VisualRecoilUp = 0.3
 
 SWEP.VisualRecoilMultSights = 0.2
@@ -426,12 +426,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_fast_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_fast_magout.ogg", t = 7/30},
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 14/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_01.ogg", t = 21/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_02.ogg", t = 32/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 41/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_fast_magin_v2_01.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_fast_magin_v2_02.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_fast_end.ogg", t = 41/30},
         },
     },
     ["reload_fast_empty"] = {
@@ -461,14 +461,160 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magout.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_magout.ogg", t = 5/30},
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 10/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_01.ogg", t = 20/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_02.ogg", t = 30/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_bolt_release.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_magin_v2_01.ogg", t = 20/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_magin_v2_02.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_bolt_release.ogg", t = 40/30},
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 40/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_end.ogg", t = 45/30},
+        },
+    },
+    ["reload_mmag"] = {
+        Source = "reload_mmag",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_xmag_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_mag_release.ogg", t = 10/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_xmag_magout.ogg", t = 19/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_xmag_magin_v2_01.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_xmag_magin_v2_02.ogg", t = 43/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_mvmnt.ogg", t = 46/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_xmag_end.ogg", t = 49/30},
+        },
+    },
+    ["reload_mmag_empty"] = {
+        Source = "reload_mmag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.65,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_mvmnt.ogg", t = 14/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_magin_v2_02.ogg", t = 36/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_bolt_release.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_mvmnt.ogg", t = 49/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_end.ogg", t = 58/30},
+        },
+    },
+    ["reload_mmag_fast"] = {
+        Source = "reload_mmag_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_mvmnt.ogg", t = 14/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_magin_v2_01.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_magin_v2_02.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_end.ogg", t = 50/30},
+        },
+    },
+    ["reload_mmag_fast_empty"] = {
+        Source = "reload_mmag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_mvmnt.ogg", t = 14/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_magin_v2_01.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_magin_v2_02.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_bolt_release.ogg", t = 44/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_mvmnt.ogg", t = 49/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_end.ogg", t = 58/30},
         },
     },
     ["reload_xmag"] = {
@@ -498,13 +644,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_xmag_lift.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sm_mpapa7_reload_mag_release.ogg", t = 10/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_magout.ogg", t = 19/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_magin_v2_01.ogg", t = 35/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_magin_v2_02.ogg", t = 43/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_mvmnt.ogg", t = 46/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_end.ogg", t = 49/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_xmag_magout.ogg", t = 19/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_xmag_magin_v2_01.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_xmag_magin_v2_02.ogg", t = 43/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_mvmnt.ogg", t = 46/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_xmag_end.ogg", t = 49/30},
         },
     },
     ["reload_xmag_empty"] = {
@@ -534,14 +680,14 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magout.ogg", t = 7/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 14/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_01.ogg", t = 25/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_02.ogg", t = 36/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_bolt_release.ogg", t = 45/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 49/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 58/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_mvmnt.ogg", t = 14/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_magin_v2_01.ogg", t = 25/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_magin_v2_02.ogg", t = 36/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_bolt_release.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_mvmnt.ogg", t = 49/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_end.ogg", t = 58/30},
         },
     },
     ["reload_xmag_fast"] = {
@@ -572,18 +718,18 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magout.ogg", t = 7/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 14/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_01.ogg", t = 21/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_02.ogg", t = 32/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_mvmnt.ogg", t = 14/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_magin_v2_01.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_magin_v2_02.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_xmag_end.ogg", t = 31/30},
         },
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_empty",
 		MinProgress = 0.9,
-		DropMagAt = 0.5,
+		DropMagAt = 0.7,
         IKTimeLine = {
             {
                 t = 0,
@@ -607,14 +753,14 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magout.ogg", t = 7/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 14/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_01.ogg", t = 21/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_magin_v2_02.ogg", t = 32/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_bolt_release.ogg", t = 44/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_mvmnt.ogg", t = 49/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_end.ogg", t = 58/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_mvmnt.ogg", t = 14/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_magin_v2_01.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_magin_v2_02.ogg", t = 32/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_bolt_release.ogg", t = 44/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_mvmnt.ogg", t = 49/30},
+			{s = path .. "wfoly_plr_sm_mpapa7_reload_empty_fast_xmag_end.ogg", t = 50/30},
         },
     },
     ["ready"] = {
@@ -847,10 +993,20 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
         return "reload_xmag_fast_empty"
 -----------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_mmag") then
+        return "reload_mmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_mmag") then 
+        return "reload_mmag_fast_empty"
+-----------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("mag_xmag") then
         return "reload_xmag"
     elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
         return "reload_xmag_empty"
+-----------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_mmag") then
+        return "reload_mmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_mmag") then 
+        return "reload_mmag_empty"
 -----------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
@@ -888,6 +1044,11 @@ SWEP.AttachmentElements = {
     ["body_none"] = {
         Bodygroups = {
             {0,1},
+        },
+    },
+    ["barrel_none"] = {
+        Bodygroups = {
+            {7,1},
         },
     },
     ["mag_none"] = {
@@ -1015,7 +1176,7 @@ SWEP.Attachments = {
     {
         PrintName = "Mag",
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_mp7_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
