@@ -654,10 +654,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_plr_sm_uzulu_raise_first_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_sm_uzulu_raise_first_stock.ogg", t = 8/30},
-			{s = path .. "wfoly_plr_sm_uzulu_raise_first_extend.ogg", t = 9/30},
-			{s = path .. "wfoly_plr_sm_uzulu_raise_first_end.ogg", t = 29/30},
+            {s = path .. "wfoly_plr_sm_uzulu_raise_first_start.ogg", t = 0.0},
+            {s = path .. "wfoly_plr_sm_uzulu_raise_first_stock.ogg", t = 0.3},
+			{s = path .. "wfoly_plr_sm_uzulu_raise_first_extend.ogg", t = 0.333},
+			{s = path .. "wfoly_plr_sm_uzulu_raise_first_end.ogg", t = 1.0},
         },
     },
     ["ready_nostock"] = {

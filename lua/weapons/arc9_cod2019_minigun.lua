@@ -312,10 +312,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 43/30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 107/30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 137/30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 0.13},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 1.5},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 3.5},
+			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 4.5},
         },
     },
     ["reload_fast"] = {
@@ -344,16 +344,16 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 5/30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 30/30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 76/30},
-			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 90/30},
+			{s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 0.13},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 0.85},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 2.5},
+			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 3},
         },
     },
     ["draw"] = {
         Source = "draw",
         EventTable = {
-            {s = path .. "wfoly_lm_sierrax_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_lm_sierrax_raise.ogg", t = 5/30},
         },
     },
     ["holster"] = {
@@ -405,7 +405,7 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_lm_dblmg_inspect_01.ogg", t = 18/30},
 			{s = path .. "wfoly_lm_dblmg_inspect_02.ogg", t = 56/30},
-			{s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 105/30},
+			{s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 109/30},
         },
     },
     ["bash"] = {
