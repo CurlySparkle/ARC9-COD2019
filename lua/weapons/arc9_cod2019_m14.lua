@@ -917,7 +917,7 @@ SWEP.Animations = {
         Source = "bipod_out",
     },
     ["hybrid_on"] = {
-        Source = "hybrid_on",
+        Source = "hybrid_off",
         IKTimeLine = {
             {
                 t = 0,
@@ -946,7 +946,7 @@ SWEP.Animations = {
         },
     },
     ["hybrid_off"] = {
-        Source = "hybrid_off",
+        Source = "hybrid_on",
         IKTimeLine = {
             {
                 t = 0,
