@@ -125,11 +125,11 @@ SWEP.RecoilMultSights = 0.8
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1.5
+SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 0.3
 
 SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 55
+SWEP.VisualRecoilPunchSights = 15
 SWEP.VisualRecoilRoll = 35
 SWEP.VisualRecoilSide = 0.3
 
@@ -194,9 +194,6 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
-SWEP.SprintAng = Angle(0, 0, 0)
-
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, -0.15),
     Ang = Angle(0, 0, 0)
@@ -210,11 +207,14 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -9)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
-SWEP.CrouchPos = Vector(-0.5, -0, -1)
+SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
+
+SWEP.SprintPos = Vector(1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(15, 30, 3)
@@ -972,10 +972,10 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac_alt",
+        Category = "cod2019_tac_rail",
         Bone = "tag_laser_attach",
-        Pos = Vector(0, -0.4, -1.32),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(-0.7, -1.5, 0.5),
+        Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
     },
     {
@@ -1074,6 +1074,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 0.7
 SWEP.GripPoseParam2 = 0
-SWEP.CodStubbyGripPoseParam = 8
-SWEP.CodStubbyTallGripPoseParam = 22
-SWEP.CodAngledGripPoseParam = 20
+SWEP.CodStubbyGripPoseParam = 26
+SWEP.CodStubbyTallGripPoseParam = 26
+SWEP.CodAngledGripPoseParam = 37

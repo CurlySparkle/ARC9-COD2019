@@ -88,7 +88,7 @@ sound.Add({
     name = "COD2019.HE_ExplosiveHit",
     channel = CHAN_AUTO,
     volume = 1.0,
-    level = 100,
+    level = 75,
     sound = {
     "^shared/frag_expl_01.ogg",
 	"^shared/frag_expl_02.ogg",
@@ -99,8 +99,8 @@ sound.Add({
 sound.Add({
     name = "COD2019.DB_Hit",
     channel = CHAN_AUTO,
-    volume = 1.0,
-    level = 100,
+    volume = 0.5,
+    level = 75,
     sound = {
     "^shared/wpn_shotgun_fire_db_01.ogg",
 	"^shared/wpn_shotgun_fire_db_02.ogg",

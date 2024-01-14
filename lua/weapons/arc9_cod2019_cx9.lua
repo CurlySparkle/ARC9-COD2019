@@ -225,11 +225,11 @@ SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
 SWEP.MovingAng = Angle(0, 0, -8)
 
-SWEP.CrouchPos = Vector(-0.5, -0, -1)
+SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, 0)
-SWEP.SprintAng = Angle(0, 0, 0)
+SWEP.SprintPos = Vector(1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(15, 30, 3)
@@ -995,9 +995,9 @@ SWEP.Attachments = {
     {
         PrintName = "Tactical",
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
-        Bone = "tag_attachments",
-        Pos = Vector(10.5, 0.9, -0.56),
+        Category = "cod2019_tac_rail",
+        Bone = "tag_laser_show",
+        Pos = Vector(0, 0.11, 0),
         Ang = Angle(0, 0, -90),
     },
     {

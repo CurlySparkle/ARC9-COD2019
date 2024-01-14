@@ -152,9 +152,9 @@ ATT.SortOrder = 0.5
 ATT.Category = {"cod2019_ammo","cod2019_ammo_special"}
 --ATT.RequireElements = {"cod2019_sniper_mag"}
 
-ATT.ExplosionEffect = "cod2019_muzzle_he"
+ATT.ExplosionEffect = "cod2019_muzzle_db"
 ATT.ImpactDecal = "Dark"
-ATT.ImpactEffect = "cod2019_muzzle_he"
+ATT.ImpactEffect = "cod2019_muzzle_db"
 
 ATT.DamageType = DMG_BURN + DMG_SLOWBURN
 ATT.DamageTypeOverride = DMG_BURN + DMG_SLOWBURN

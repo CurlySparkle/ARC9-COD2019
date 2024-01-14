@@ -846,7 +846,13 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee","melee2"},
+        Source = {"melee","melee2","melee3"},
+    },
+    ["enter_bipod"] = {
+        Source = "jog_in",
+    },
+    ["exit_bipod"] = {
+        Source = "jog_out",
     },
 }
 
@@ -1073,3 +1079,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.6
 SWEP.GripPoseParam2 = 0.6
+SWEP.CodStubbyGripPoseParam = 23
+SWEP.CodStubbyTallGripPoseParam = 23
+SWEP.CodAngledGripPoseParam = 36
