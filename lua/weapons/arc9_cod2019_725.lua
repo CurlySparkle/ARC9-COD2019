@@ -221,8 +221,8 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 7, 3)
 
-SWEP.PeekPos = Vector(-1, 3, -3.2)
-SWEP.PeekAng = Angle(-0.3, 0, -45)
+SWEP.PeekPos = Vector(1.5, 2, -2)
+SWEP.PeekAng = Angle(0, 0, -15)
 
 -------------------------- HoldTypes
 
@@ -317,14 +317,17 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["fire_scope"] = {
         Source = "shoot1_scope",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.65,
-		FireASAP = false,
+		MinProgress = 0.8,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		DropMagAt = 0.6,
 		--EjectAt = 0.65,
         IKTimeLine = {
@@ -334,7 +337,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
@@ -360,8 +363,9 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.725,
-		FireASAP = false,
+		MinProgress = 0.8,
+		RefillProgress = 0.725,
+		FireASAP = true,
 		DropMagAt = 0.6,
 		--EjectAt = 0.65,
         IKTimeLine = {
@@ -371,7 +375,124 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.65,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_charlie725_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 3/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 29/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 43/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 47/30},
+        },
+    },
+    ["reload_empty"] = {
+        Source = "reload",
+		MinProgress = 0.8,
+		RefillProgress = 0.675,
+		FireASAP = true,
+		DropMagAt = 0.6,
+		--EjectAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_open_01.ogg", t = 6/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 33/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 43/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 49/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 60/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 70/30},
+        },
+    },
+    ["reload_empty_fast"] = {
+        Source = "reload_fast_empty",
+		MinProgress = 0.8,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 0.6,
+		--EjectAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.65,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_open_01.ogg", t = 3/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_01.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 31/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 48/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 48/30},
+        },
+    },
+	
+    ["reload_scope"] = {
+        Source = "reload_scope",
+		MinProgress = 0.8,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		DropMagAt = 0.6,
+		--EjectAt = 0.65,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
@@ -388,6 +509,44 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 44/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 53/30},
+			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 66/30},
+        },
+    },
+    ["reload_fast_scope"] = {
+        Source = "reload_fast_scope",
+		MinProgress = 0.8,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		DropMagAt = 0.6,
+		--EjectAt = 0.65,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.65,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sh_charlie725_reload_start.ogg", t = 0/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 3/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 29/30},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 35/30},
@@ -395,10 +554,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 47/30},
         },
     },
-    ["reload_empty"] = {
-        Source = "reload",
-		MinProgress = 0.675,
-		FireASAP = false,
+    ["reload_empty_scope"] = {
+        Source = "reload_empty_scope",
+		MinProgress = 0.8,
+		RefillProgress = 0.675,
+		FireASAP = true,
 		DropMagAt = 0.6,
 		--EjectAt = 0.7,
         IKTimeLine = {
@@ -408,17 +568,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.5,
+                t = 0.7,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -433,10 +593,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 70/30},
         },
     },
-    ["reload_fast_empty"] = {
-        Source = "reload_fast_empty",
-		MinProgress = 0.75,
-		FireASAP = false,
+    ["reload_empty_fast_scope"] = {
+        Source = "reload_fast_scope_empty",
+		MinProgress = 0.8,
+		RefillProgress = 0.1,
+		FireASAP = true,
 		DropMagAt = 0.6,
 		--EjectAt = 0.7,
         IKTimeLine = {
@@ -451,12 +612,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.5,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.7,
                 lhik = 1,
                 rhik = 1
             },
@@ -561,12 +722,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -595,12 +756,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -722,19 +883,18 @@ SWEP.Animations = {
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
-
-    if anim == "fire" and wep:HasElement("optic_scope") then
-        return "fire_scope"
-    elseif anim == "inspect" and wep:HasElement("optic_scope") then 
-        return "inspect_scope"
-    end
-
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast_empty"
-    end
+	local soh = wep:HasElement("perk_speedreload")
+	local scope = wep:HasElement("optic_scope")
 	
+	if soh then
+		if scope then return anim .. "_fast_scope"
+		else return anim .. "_fast" end
+	end
+	
+	if scope then
+		return anim .. "_scope"
+	end
+
     wep.MWHybridSwitching = nil
     if anim == "switchsights" then
         if wep:HasElement("hybrid_scope") then
@@ -855,6 +1015,7 @@ SWEP.Attachments = {
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(14, 0, 0.15),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
@@ -885,10 +1046,10 @@ SWEP.Attachments = {
 		--InstalledElements = {"rail_laser"},
     },
     {
-        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+        PrintName = ARC9:GetPhrase("mw19_category_grip"),
         Category = "cod2019_725_foregrip",
         Bone = "tag_attachments",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(3, 0, -1.25),
         Ang = Angle(0, 0, 0),
     },
     {
@@ -908,6 +1069,7 @@ SWEP.Attachments = {
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-4, 0, -1),
 		InstalledElements = {"rail_grip"},
     },
     -- {

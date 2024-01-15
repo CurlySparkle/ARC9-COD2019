@@ -181,6 +181,7 @@ L["mw19_category_boltassembly"] = "Bultmontering"
 -- Custom ones for the addon
 L["mw19_category_ammo"] = "Ammo" -- UO
 L["mw19_category_function"] = "Funktionalitet" -- UO
+L["mw19_category_grip"] = "Framgrepp" -- UO
 L["mw19_category_rails"] = "Skenor" -- UO
 L["mw19_category_receiver"] = "Låda" -- UO
 L["mw19_category_skins"] = "Utseenden" -- UO

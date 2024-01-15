@@ -331,8 +331,9 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.55,
-		FireASAP = false,
+		MinProgress = 0.8,
+		RefillProgress = 0.55,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -368,7 +369,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.725,
-		FireASAP = false,
+		FireASAP = true,
 		DropMagAt = 1.15,
         IKTimeLine = {
             {
@@ -404,7 +405,7 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.625,
-		FireASAP = false,
+		FireASAP = true,
 		DropMagAt = 0.85,
         IKTimeLine = {
             {
@@ -440,7 +441,7 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.725,
-		FireASAP = false,
+		FireASAP = true,
 		DropMagAt = 1.15,
         IKTimeLine = {
             {
@@ -475,8 +476,9 @@ SWEP.Animations = {
     },
     ["reload_drum"] = {
         Source = "reload_drum",
-		MinProgress = 0.625,
-		FireASAP = false,
+		MinProgress = 0.8,
+		RefillProgress = 0.625,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -510,8 +512,9 @@ SWEP.Animations = {
     },
     ["reload_drum_empty"] = {
         Source = "reload_drum_empty",
-		MinProgress = 0.75,
-		FireASAP = false,
+		MinProgress = 0.8,
+		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 1.15,
         IKTimeLine = {
             {
@@ -547,8 +550,9 @@ SWEP.Animations = {
     },
     ["reload_drum_fast"] = {
         Source = "reload_drum_fast",
-		MinProgress = 0.625,
-		FireASAP = false,
+		MinProgress = 0.8,
+		RefillProgress = 0.625,
+		FireASAP = true,
 		--DropMagAt = 0.85,
         IKTimeLine = {
             {
@@ -582,8 +586,9 @@ SWEP.Animations = {
     },
     ["reload_drum_fast_empty"] = {
         Source = "reload_drum_fast_empty",
-		MinProgress = 0.75,
-		FireASAP = false,
+		MinProgress = 0.8,
+		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 1.15,
         IKTimeLine = {
             {
@@ -619,8 +624,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
-		MinProgress = 0.8,
-		FireASAP = false,
+		MinProgress = 0.95,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,

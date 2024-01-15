@@ -182,6 +182,7 @@ L["mw19_category_boltassembly"] = "Bolt Assembly"
 -- Custom ones for the addon
 L["mw19_category_ammo"] = "Ammo" -- UO
 L["mw19_category_function"] = "Functionality" -- UO
+L["mw19_category_grip"] = "Foregrip" -- UO
 L["mw19_category_rails"] = "Rails" -- UO
 L["mw19_category_receiver"] = "Receiver" -- UO
 L["mw19_category_skins"] = "Skins" -- UO
