@@ -68,7 +68,7 @@ SWEP.ClipSize = 1 -- Self-explanatory.
 SWEP.SupplyLimit = 12 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 12 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 SWEP.MissileCrosshair = true
@@ -246,6 +246,10 @@ SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg
 SWEP.TriggerUpSound = ""
 
 SWEP.Animations = {
+	["enter_sights"] = {
+		Source = "idle",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+	},
     ["fire"] = {
         Source = "shoot1",
     },
@@ -430,77 +434,77 @@ SWEP.AttachmentElements = {
 }
 
 SWEP.Attachments = {
+    -- {
+        -- PrintName = "Top",
+        -- Bone = "tag_launcher_offset",
+        -- Pos = Vector(7.1, -0.85, 1.2),
+        -- Ang = Angle(0, 0, 0),
+        -- Category = {"csgo_rail_optic_ak",},
+        -- InstalledElements = {"sights"},
+        -- CorrectiveAng = Angle(-0.4, 0.4, 0),
+    -- },
+    -- {
+        -- PrintName = ARC9:GetPhrase("mw19_category_laser"),
+        -- DefaultAttName = "Default",
+        -- Category = "cod2019_tac",
+        -- Bone = "tag_launcher_offset",
+        -- Pos = Vector(15, 0.7, 0.3),
+        -- Ang = Angle(0, 0, -90),
+    -- },
     {
-        PrintName = "Top",
-        Bone = "tag_launcher_offset",
-        Pos = Vector(7.1, -0.85, 1.2),
-        Ang = Angle(0, 0, 0),
-        Category = {"csgo_rail_optic_ak",},
-        InstalledElements = {"sights"},
-        CorrectiveAng = Angle(-0.4, 0.4, 0),
-    },
-    {
-        PrintName = "Tactical",
-        DefaultAttName = "Default",
-        Category = "cod2019_tac",
-        Bone = "tag_launcher_offset",
-        Pos = Vector(15, 0.7, 0.3),
-        Ang = Angle(0, 0, -90),
-    },
-    {
-        PrintName = "Ammo",
+        PrintName = ARC9:GetPhrase("mw19_category_ammo"),
         Bone = "j_mag1",
         Category = {"go_ammo_rpg"},
         Pos = Vector(5, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
-		PrintName = "Perk",
+		PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
-        PrintName = "Skins",
+        PrintName = ARC9:GetPhrase("mw19_category_skins"),
         --Bone = "v_weapon.Clip",
         Category = "go_skins_rpg",
 		CosmeticOnly = true,
     },
     {
-        PrintName = "Cosmetic",
+        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         CosmeticOnly = true,
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_rpg_decal_a.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_rpg_decal_b.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_rpg_decal_c.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_rpg_decal_d.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_rpg_decal_e.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_rpg_decal_f.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Charm",
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = "charm",
         Bone = "tag_launcher_offset",
         Pos = Vector(11, -0.9, 0.3),
@@ -508,7 +512,7 @@ SWEP.Attachments = {
 		Scale = 1.5,
     },
     {
-        PrintName = "Stats",
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = {"killcounter","killcounter2"},
         Bone = "tag_launcher_offset",
         Pos = Vector(16, -1, 0.2),

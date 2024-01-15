@@ -315,6 +315,10 @@ SWEP.TriggerDownSound = path .. "weap_galima_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = path .. "weap_galima_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
+	["enter_sights"] = {
+		Source = "idle",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+	},
     ["fire"] = {
         Source = "shoot1",
     },
@@ -971,7 +975,7 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
     {
-        PrintName = "Barrels",
+        PrintName = ARC9:GetPhrase("mw19_category_barrel"),
         DefaultAttName = "Standard Barrel",
         Category = "cod2019_cr56_barrel",
         Bone = "tag_barrel_attach",
@@ -979,7 +983,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Muzzle",
+        PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
         DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle",
         Bone = "tag_silencer",
@@ -989,7 +993,7 @@ SWEP.Attachments = {
 		Scale = 1,
     },
     {
-        PrintName = "Optics",
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
@@ -997,7 +1001,7 @@ SWEP.Attachments = {
         CorrectiveAng = Angle(0, 0, 0),
     },
     {
-        PrintName = "Tactical",
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
         Category = "cod2019_tac_rail",
         Bone = "tag_laser_attach",
@@ -1006,7 +1010,7 @@ SWEP.Attachments = {
 		--InstalledElements = {"tag_laser"},
     },
     {
-        PrintName = "Grips",
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
@@ -1016,7 +1020,7 @@ SWEP.Attachments = {
 		InstalledElements = {"rail_grip"},
     },
     {
-        PrintName = "Stock",
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
         DefaultAttName = "Standard Stock",
         Category = {"cod2019_stocks","cod2019_cr56_stock"},
         Bone = "tag_stock_attach",
@@ -1025,7 +1029,7 @@ SWEP.Attachments = {
 		InstalledElements = {"stock_none"},
     },
     {
-        PrintName = "Reciever",
+        PrintName = ARC9:GetPhrase("mw19_category_receiver"),
         Category = "cod2019_cr56_reciever",
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
@@ -1033,51 +1037,51 @@ SWEP.Attachments = {
 		Icon_Offset = Vector(0, 0, 0),
     },
     {
-        PrintName = "Ammo",
+        PrintName = ARC9:GetPhrase("mw19_category_ammo"),
         Bone = "j_mag1",
         Category = {"cod2019_ammo"},
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Mag",
+        PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "j_mag1",
         Category = {"cod2019_mag","cod2019_cr56_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Perk",
+        PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
-        PrintName = "Skins",
+        PrintName = ARC9:GetPhrase("mw19_category_skins"),
         --Bone = "v_weapon.Clip",
         Category = "cod2019_skins_cr56",
 		CosmeticOnly = true,
     },
     {
-        PrintName = "Cosmetic",
+        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         CosmeticOnly = true,
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/rif_cr56amax_decal_a.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/rif_cr56amax_decal_b.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/rif_cr56amax_decal_c.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Charm",
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = "charm",
         Bone = "tag_cosmetic",
         Pos = Vector(0.5, 0, 0),
@@ -1085,7 +1089,7 @@ SWEP.Attachments = {
 		Scale = 1.5,
     },
     {
-        PrintName = "Stats",
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
         Pos = Vector(0, 0, -1),

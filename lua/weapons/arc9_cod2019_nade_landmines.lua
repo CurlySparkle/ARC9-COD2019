@@ -30,7 +30,7 @@ SWEP.Slot = 4
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "PLANT"
+        PrintName = ARC9:GetPhrase("mw19_firemode_plant")
         -- add other attachment modifiers
     },
 }

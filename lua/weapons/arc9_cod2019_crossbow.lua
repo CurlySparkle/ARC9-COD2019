@@ -227,6 +227,10 @@ SWEP.TriggerDownSound = "weapons/cod2019/crossbow/wfoly_sn_crossbow_hammer_plr_0
 SWEP.TriggerUpSound = "weapons/cod2019/crossbow/wfoly_sn_crossbow_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
+	["enter_sights"] = {
+		Source = "idle",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+	},
     ["fire"] = {
         Source = "shoot1",
     },
@@ -538,7 +542,7 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
     {
-        PrintName = "Arms",
+        PrintName = ARC9:GetPhrase("mw19_category_arms"),
         DefaultAttName = "Standard Arms",
         Category = "cod2019_crossbow_limbs",
         Bone = "tag_barrel_attach",
@@ -546,7 +550,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Wires",
+        PrintName = ARC9:GetPhrase("mw19_category_cable"),
         DefaultAttName = "Standard Wires",
         Category = "cod2019_crossbow_wires",
         Bone = "tag_barrel_attach",
@@ -554,7 +558,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Optics",
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
         Bone = "tag_holo",
         Pos = Vector(1, 0, -0.1),
         Ang = Angle(0, 0, 0),
@@ -563,7 +567,7 @@ SWEP.Attachments = {
 		InstalledElements = {"sight_none"},
     },
     {
-        PrintName = "Tactical",
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
@@ -571,7 +575,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Grips",
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
@@ -580,7 +584,7 @@ SWEP.Attachments = {
 		InstalledElements = {"grip_rail"},
     },
     {
-        PrintName = "Stock",
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
         DefaultAttName = "Standard Stock",
         Category = "cod2019_crossbow_stock",
         Bone = "tag_stock_attach",
@@ -589,49 +593,49 @@ SWEP.Attachments = {
 		--InstalledElements = {"stock"},
     },
     {
-        PrintName = "Ammo",
+        PrintName = ARC9:GetPhrase("mw19_category_bolt"),
         Bone = "j_mag1",
         Category = {"cod2019_ammo_crossbow"},
         Pos = Vector(0, -1.5, -1.5),
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Perk",
+        PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
-        PrintName = "Skins",
+        PrintName = ARC9:GetPhrase("mw19_category_skins"),
         --Bone = "v_weapon.Clip",
         Category = "cod2019_skins_crossbow",
 		CosmeticOnly = true,
     },
     {
-        PrintName = "Cosmetic",
+        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         CosmeticOnly = true,
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_crossbow_decal_a.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_crossbow_decal_b.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_crossbow_decal_c.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_crossbow_decal_d.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Charm",
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = "charm",
         Bone = "tag_attachments",
         Pos = Vector(6, -0.7, -1.5),
@@ -639,7 +643,7 @@ SWEP.Attachments = {
 		Scale = 1.5,
     },
     {
-        PrintName = "Stats",
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = {"killcounter","killcounter2"},
         Bone = "tag_attachments",
         Pos = Vector(2.5, -0.3, 1.4),

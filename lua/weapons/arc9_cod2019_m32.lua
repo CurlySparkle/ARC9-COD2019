@@ -254,6 +254,10 @@ SWEP.TriggerDownSound = "COD2019.M32.Trigger"
 SWEP.TriggerUpSound = "COD2019.M32.UnTrigger"
 
 SWEP.Animations = {
+	["enter_sights"] = {
+		Source = "idle",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+	},
     ["fire"] = {
         Source = "shoot1",
     },
@@ -543,7 +547,7 @@ end
 
 SWEP.Attachments = {
     {
-        PrintName = "Optics",
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
         Bone = "tag_scope",
         Pos = Vector(1.3, 0, -0.1),
         Ang = Angle(0, 0, 0),
@@ -553,7 +557,7 @@ SWEP.Attachments = {
         --Integral = "cod2019_optic_scope_m32",
     },
     {
-        PrintName = "Tactical",
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "j_forend",
@@ -561,7 +565,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 180),
     },
     {
-        PrintName = "Grips",
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "j_forend",
@@ -571,7 +575,7 @@ SWEP.Attachments = {
 		InstalledElements = {"grip_none"},
     },
     {
-        PrintName = "Stock",
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
         DefaultAttName = "Standard Stock",
         Category = "cod2019_stocks",
         Bone = "tag_launcher_offset",
@@ -581,49 +585,49 @@ SWEP.Attachments = {
 		Scale = 1.05,
     },
     {
-        PrintName = "Ammo",
+        PrintName = ARC9:GetPhrase("mw19_category_ammo"),
         Bone = "j_mag1",
         Category = {"cod2019_ammo_gl"},
         Pos = Vector(0, -1.5, -1.5),
         Ang = Angle(0, 0, 0),
     },
     {
-		PrintName = "Perk",
+		PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
-        PrintName = "Skins",
+        PrintName = ARC9:GetPhrase("mw19_category_skins"),
         --Bone = "v_weapon.Clip",
         Category = "cod2019_m32_skins",
 		CosmeticOnly = true,
     },
     {
-        PrintName = "Cosmetic",
+        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         CosmeticOnly = true,
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_m32_decal_a.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_m32_decal_b.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_m32_decal_c.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_m32_decal_d.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Charm",
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = "charm",
         Bone = "tag_launcher_attachment",
         Pos = Vector(-4.8, -0.5, 1),
@@ -631,7 +635,7 @@ SWEP.Attachments = {
 		Scale = 1.5,
     },
     {
-        PrintName = "Stats",
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
         Pos = Vector(0, 0, 0),

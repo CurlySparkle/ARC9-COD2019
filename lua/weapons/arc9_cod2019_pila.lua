@@ -276,6 +276,10 @@ SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg
 SWEP.TriggerUpSound = ""
 
 SWEP.Animations = {
+	["enter_sights"] = {
+		Source = "idle",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+	},
     ["fire"] = {
         Source = "shoot1",
     },
@@ -489,74 +493,75 @@ end
 
 SWEP.Attachments = {
     {
-        PrintName = "Optics",
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
         Bone = "tag_launcher_offset",
         Pos = Vector(1, -3.1, 0.75),
         Ang = Angle(0, 0, -70),
-        Category = {"cod2019_optic","cod2019_optic_pila"},
+        -- Category = {"cod2019_optic","cod2019_optic_pila"},
+        Category = {"cod2019_optic_pila"},
         InstalledElements = {"sights"},
 		--Installed = "cod2019_optic_scope_pila",
 		--Integral = "cod2019_optic_scope_pila",
         CorrectiveAng = Angle(-0.4, 0.4, 0),
     },
+    -- {
+        -- PrintName = ARC9:GetPhrase("mw19_category_laser"),
+        -- DefaultAttName = "Default",
+        -- Category = "cod2019_tac",
+        -- Bone = "tag_launcher_offset",
+        -- Pos = Vector(13.5, -0.03, 3.1),
+        -- Ang = Angle(0, 0, 180),
+		-- InstalledElements = {"laser_rail"},
+    -- },
     {
-        PrintName = "Tactical",
-        DefaultAttName = "Default",
-        Category = "cod2019_tac",
-        Bone = "tag_launcher_offset",
-        Pos = Vector(13.5, -0.03, 3.1),
-        Ang = Angle(0, 0, 180),
-		InstalledElements = {"laser_rail"},
-    },
-    {
-        PrintName = "Ammo",
+        PrintName = ARC9:GetPhrase("mw19_category_ammo"),
         Bone = "j_rocket",
         Category = {"go_ammo_rpg"},
         Pos = Vector(5, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
-		PrintName = "Perk",
+		PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh_2"}
     },
     {
-        PrintName = "Skins",
+        PrintName = ARC9:GetPhrase("mw19_category_skins"),
         --Bone = "v_weapon.Clip",
         Category = "go_skins_pila",
 		CosmeticOnly = true,
     },
     {
-        PrintName = "Cosmetic",
+        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         CosmeticOnly = true,
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_pila_decal_a.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_pila_decal_b.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_pila_decal_c.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_pila_decal_d.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_pila_decal_e.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Charm",
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = "charm",
         Bone = "tag_launcher_offset",
         Pos = Vector(15.7, -2.2, -0.1),
@@ -564,7 +569,7 @@ SWEP.Attachments = {
 		Scale = 2,
     },
     {
-        PrintName = "Stats",
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = {"killcounter","killcounter2"},
         Bone = "tag_launcher_offset",
         Pos = Vector(5, -1.7, 0),

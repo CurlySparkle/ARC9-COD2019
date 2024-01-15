@@ -255,6 +255,10 @@ SWEP.TriggerDownSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
 SWEP.TriggerUpSound = ""
 
 SWEP.Animations = {
+	["enter_sights"] = {
+		Source = "idle",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+	},
     ["fire"] = {
         Source = "shoot1",
         EventTable = {
@@ -479,78 +483,79 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
     {
-        PrintName = "Optics",
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
         Bone = "tag_launcher_offset",
         Pos = Vector(5, -3.1, 1.9),
         Ang = Angle(0, 0, -90),
-        Category = {"cod2019_optic","cod2019_optic_strela"},
+        -- Category = {"cod2019_optic","cod2019_optic_strela"},
+        Category = {"cod2019_optic_strela"},
         InstalledElements = {"sights_scope"},
 		--Installed = "cod2019_optic_scope_strela",
 		--Integral = "cod2019_optic_scope_strela",
         CorrectiveAng = Angle(7, 6.2, -90),
     },
+    -- {
+        -- PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+        -- DefaultAttName = "Default",
+        -- Category = "cod2019_grip",
+        -- Bone = "tag_launcher_offset",
+        -- Pos = Vector(10, -0.83, -1.12),
+        -- Ang = Angle(0, 0, 200),
+		-- Scale = 1,
+		-- InstalledElements = {"grip"},
+    -- },
+    -- {
+        -- PrintName = ARC9:GetPhrase("mw19_category_laser"),
+        -- DefaultAttName = "Default",
+        -- Category = "cod2019_tac",
+        -- Bone = "tag_launcher_offset",
+        -- Pos = Vector(10, 2.1, 0.9),
+        -- Ang = Angle(0, 0, -90),
+    -- },
     {
-        PrintName = "Grips",
-        DefaultAttName = "Default",
-        Category = "cod2019_grip",
-        Bone = "tag_launcher_offset",
-        Pos = Vector(10, -0.83, -1.12),
-        Ang = Angle(0, 0, 200),
-		Scale = 1,
-		InstalledElements = {"grip"},
-    },
-    {
-        PrintName = "Tactical",
-        DefaultAttName = "Default",
-        Category = "cod2019_tac",
-        Bone = "tag_launcher_offset",
-        Pos = Vector(10, 2.1, 0.9),
-        Ang = Angle(0, 0, -90),
-    },
-    {
-        PrintName = "Ammo",
+        PrintName = ARC9:GetPhrase("mw19_category_ammo"),
         Bone = "tag_launcher_offset",
         Category = {"cod2019_strela_ammo"},
         Pos = Vector(5, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
-		PrintName = "Perk",
+		PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
-        PrintName = "Skins",
+        PrintName = ARC9:GetPhrase("mw19_category_skins"),
         --Bone = "v_weapon.Clip",
         Category = "go_skins_pila",
 		CosmeticOnly = true,
     },
     {
-        PrintName = "Cosmetic",
+        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         CosmeticOnly = true,
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_strela_decal_a.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_strela_decal_b.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_strela_decal_c.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_strela_decal_d.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Charm",
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = "charm",
         Bone = "tag_launcher_offset",
         Pos = Vector(3, -1.7, 0.7),
@@ -558,7 +563,7 @@ SWEP.Attachments = {
 		Scale = 1.5,
     },
     {
-        PrintName = "Stats",
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = {"killcounter","killcounter2"},
         Bone = "tag_launcher_offset",
         Pos = Vector(2, -1.5, 1.8),

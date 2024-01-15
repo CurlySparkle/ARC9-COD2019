@@ -23,7 +23,7 @@ ATT.RecoilUpMult = 0.95
 
 ATT.Attachments = {
     {
-        PrintName = "Stock",
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
         Pos = Vector(-1.3, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(-3, 0, 0),
@@ -58,7 +58,7 @@ ATT.AimDownSightsTimeMult = 0.95
 
 ATT.Attachments = {
     {
-        PrintName = "Stock",
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
         Pos = Vector(-1.3, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(-3, 0, 0),
@@ -94,7 +94,7 @@ ATT.SpreadMult = 0.9
 
 ATT.Attachments = {
     {
-        PrintName = "Stock",
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
         Pos = Vector(-1.3, 0, -0.05),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(-3, 0, 0),

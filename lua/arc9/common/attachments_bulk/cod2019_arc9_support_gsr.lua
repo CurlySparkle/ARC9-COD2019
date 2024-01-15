@@ -18,7 +18,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 
 ATT.Attachments = {
     {
-        PrintName = "Tactical",
+        PrintName = ARC9:GetPhrase("mw19_category_laser") .. " (GSR)",
         Pos = Vector(-0.5, 0, -0.2),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -47,7 +47,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 
 ATT.Attachments = {
     {
-        PrintName = "Optics",
+        PrintName = ARC9:GetPhrase("mw19_category_optic") .. " (GSR)",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -76,7 +76,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 
 ATT.Attachments = {
     {
-        PrintName = "Optics",
+        PrintName = ARC9:GetPhrase("mw19_category_optic") .. " (GSR)",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -105,7 +105,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 
 ATT.Attachments = {
     {
-        PrintName = "Muzzle",
+        PrintName = ARC9:GetPhrase("mw19_category_muzzle") .. " (GSR)",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -134,7 +134,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 
 ATT.Attachments = {
     {
-        PrintName = "Muzzle",
+        PrintName = ARC9:GetPhrase("mw19_category_muzzle") .. " (GSR)",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -165,7 +165,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 
 ATT.Attachments = {
     {
-        PrintName = "Muzzle",
+        PrintName = ARC9:GetPhrase("mw19_category_muzzle") .. " (GSR)",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -194,7 +194,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 
 ATT.Attachments = {
     {
-        PrintName = "Muzzle",
+        PrintName = ARC9:GetPhrase("mw19_category_muzzle") .. " (GSR)",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),

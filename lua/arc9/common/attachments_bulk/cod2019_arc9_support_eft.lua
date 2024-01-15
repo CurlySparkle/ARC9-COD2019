@@ -12,7 +12,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.MenuCategory = "ARC9 - MW19 Attachments"
 ATT.Attachments = {
     {
-        PrintName = "Grip",
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel") .. " (EFT)",
         Category = {"eft_foregrip_small", "eft_foregrip_large"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 180),
@@ -35,7 +35,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.MenuCategory = "ARC9 - MW19 Attachments"
 ATT.Attachments = {
     {
-        PrintName = "Muzzle",
+        PrintName = ARC9:GetPhrase("mw19_category_muzzle") .. " (EFT)",
         Category = {"eft_ar15_muzzle"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -57,7 +57,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.MenuCategory = "ARC9 - MW19 Attachments"
 ATT.Attachments = {
     {
-        PrintName = "Optics",
+        PrintName = ARC9:GetPhrase("mw19_category_optic") .. " (EFT)",
         Category = {"eft_optic_large", "eft_optic_medium", "eft_optic_small"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -79,7 +79,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.MenuCategory = "ARC9 - MW19 Attachments"
 ATT.Attachments = {
     {
-        PrintName = "Optics",
+        PrintName = ARC9:GetPhrase("mw19_category_optic") .. " (EFT)",
         Category = {"eft_optic_small"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -101,7 +101,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.MenuCategory = "ARC9 - MW19 Attachments"
 ATT.Attachments = {
     {
-        PrintName = "Stock",
+        PrintName = ARC9:GetPhrase("mw19_category_stock") .. " (EFT)",
         Category = {"eft_ar_stock"},
         Pos = Vector(5, 0, 0.85),
         Ang = Angle(0, 0, 0),

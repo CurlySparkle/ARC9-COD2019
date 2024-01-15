@@ -179,7 +179,14 @@ L["mw19_category_pumpgrip"] = "Pumpgrepp"
 L["mw19_category_boltassembly"] = "Bultmontering"
 
 -- Custom ones for the addon
+L["mw19_category_ammo"] = "Ammo" -- UO
+L["mw19_category_function"] = "Funktionalitet" -- UO
+L["mw19_category_rails"] = "Skenor" -- UO
 L["mw19_category_receiver"] = "Låda" -- UO
+L["mw19_category_skins"] = "Utseenden" -- UO
+L["mw19_category_slide"] = "Slide" -- UO, "Pistol Slide"
+L["mw19_category_stats"] = "Statistik" -- UO
+L["mw19_category_view"] = "Vy" -- UO
 
 //////////////////// Folder Names
 -- Other

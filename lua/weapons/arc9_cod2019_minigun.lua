@@ -264,6 +264,10 @@ SWEP.BulletBones = {
 }
 
 SWEP.Animations = {
+	["enter_sights"] = {
+		Source = "idle",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+	},
     ["fire"] = {
         Source = "shoot1",
         EventTable = {
@@ -440,7 +444,7 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
     -- {
-        -- PrintName = "Tactical",
+        -- PrintName = ARC9:GetPhrase("mw19_category_laser"),
         -- DefaultAttName = "Default",
         -- Category = "cod2019_tac_cylinde",
         -- Bone = "tag_laser_attach",
@@ -449,7 +453,7 @@ SWEP.Attachments = {
 		-- LaserCorrectionAngle = Angle(-10, 0, 0),
     -- },
     -- {
-        -- PrintName = "Grips",
+        -- PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
         -- DefaultAttName = "Default",
         -- Category = {"grip"},
         -- Bone = "tag_attachments",
@@ -464,37 +468,37 @@ SWEP.Attachments = {
 		-- },
     -- },
     {
-        PrintName = "Perk",
+        PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
-        PrintName = "Skins",
+        PrintName = ARC9:GetPhrase("mw19_category_skins"),
         --Bone = "Clip",
         Category = "go_skins_minigun",
 		CosmeticOnly = true,
     },
     {
-        PrintName = "Cosmetic",
+        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         CosmeticOnly = true,
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_minigun_decal_a.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_minigun_decal_b.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_minigun_decal_c.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Charm",
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = "charm",
         Bone = "tag_attachments",
         Pos = Vector(-4.7, -0.5, 3),
@@ -502,7 +506,7 @@ SWEP.Attachments = {
 		Scale = 2,
     },
     {
-        PrintName = "Stats",
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = {"killcounter","killcounter2"},
         Bone = "tag_attachments",
         Pos = Vector(-2.5, 0.5, 2.4),

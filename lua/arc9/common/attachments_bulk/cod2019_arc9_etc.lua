@@ -37,7 +37,7 @@ ATT.Folder = "Grips"
 
 ATT.Attachments = {
     {
-        PrintName = "Grip",
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
         Pos = Vector(-0.2, 0, 0.05),
         Ang = Angle(0, 0, 180),
         Icon_Offset = Vector(0, 0, 0),
@@ -96,7 +96,7 @@ ATT.Model = "models/weapons/cod2019/attachs/attach_laser_rail.mdl"
 
 ATT.Attachments = {
     {
-        PrintName = "Tactical",
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
         Pos = Vector(0, 1.21, 0.43),
         Ang = Angle(0, 0, -90),
         Icon_Offset = Vector(0, 0, 0),
@@ -125,7 +125,7 @@ ATT.Model = "models/weapons/cod2019/attachs/attach_laser_rail_2.mdl"
 
 ATT.Attachments = {
     {
-        PrintName = "Tactical",
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
         Pos = Vector(-0.52, 1.5, 0.5),
         Ang = Angle(0, 0, -90),
         Icon_Offset = Vector(0, 0, 0),
@@ -154,7 +154,7 @@ ATT.Model = "models/weapons/cod2019/attachs/attach_laser_cylinder.mdl"
 
 ATT.Attachments = {
     {
-        PrintName = "Tactical",
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
         Pos = Vector(0, 1.17, 0),
         Ang = Angle(0, 0, -90),
         Icon_Offset = Vector(0, 0, 0),
@@ -183,7 +183,7 @@ ATT.Model = "models/weapons/cod2019/attachs/attach_laser_cylinder_2.mdl"
 
 ATT.Attachments = {
     {
-        PrintName = "Tactical",
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
         Pos = Vector(-0.5, 1.37, 0),
         Ang = Angle(0, 0, -90),
         Icon_Offset = Vector(0, 0, 0),
@@ -212,7 +212,7 @@ ATT.Model = "models/weapons/cod2019/attachs/attach_laser_rail_alt_2.mdl"
 
 ATT.Attachments = {
     {
-        PrintName = "Tactical",
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
         Pos = Vector(-0.1, 0.24, -0.01),
         Ang = Angle(0, 0, -90),
         Icon_Offset = Vector(0, 0, 0),
@@ -241,7 +241,7 @@ ATT.Model = "models/weapons/cod2019/attachs/attach_laser_cylinder_alt.mdl"
 
 ATT.Attachments = {
     {
-        PrintName = "Tactical",
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
         Pos = Vector(-0.55, 0.78, -0.01),
         Ang = Angle(0, 0, -90),
         Icon_Offset = Vector(0, 0, 0),

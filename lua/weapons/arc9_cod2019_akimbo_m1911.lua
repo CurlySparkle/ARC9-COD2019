@@ -638,7 +638,7 @@ SWEP.AttachmentElements = {
 
 SWEP.Attachments = {
     {
-        PrintName = "Slide",
+        PrintName = ARC9:GetPhrase("mw19_category_slide"),
         DefaultAttName = "Standard slide",
         Category = "cod2019_m1911_slide_akimbo",
         Bone = "tag_barrel_attach",
@@ -651,7 +651,7 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = "Muzzle",
+        PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
         DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle_pistols",
         Bone = "tag_silencer_l",
@@ -666,7 +666,7 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = "Optics",
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
         Bone = "tag_reflex",
         Pos = Vector(1.08, 0, 0.02),
         Ang = Angle(0, 0, 0),
@@ -681,7 +681,7 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = "Tactical",
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
         Category = "cod2019_tac_pistols",
         Bone = "tag_laser_attach",
@@ -697,7 +697,7 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = "Grip",
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
         DefaultAttName = "Default",
         Category = "cod2019_m1911_grip_akimbo",
         Bone = "tag_stock_attach",
@@ -712,14 +712,14 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = "Ammo",
+        PrintName = ARC9:GetPhrase("mw19_category_ammo"),
         Bone = "j_mag1",
         Category = {"cod2019_ammo"},
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Mag",
+        PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "tag_mag_attach",
         Category = {"cod2019_mag","cod2019_m1911_mag_akimbo"},
         Pos = Vector(0, 0, 0),
@@ -731,42 +731,42 @@ SWEP.Attachments = {
         },
     },
     {
-		PrintName = "Perk",
+		PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
-        PrintName = "Skins",
+        PrintName = ARC9:GetPhrase("mw19_category_skins"),
         --Bone = "v_weapon.Clip",
         Category = "cod2019_skins_m1911",
 		CosmeticOnly = true,
     },
     {
-        PrintName = "Cosmetic",
+        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = "universal_camo",
         CosmeticOnly = true,
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/akimbo_m1911_decal_a.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/akimbo_m1911_decal_b.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/akimbo_m1911_decal_c.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/akimbo_m1911_decal_d.mdl",
         Category = "stickers",
     },
     {
-        PrintName = "Charm",
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = "charm",
         Bone = "tag_cosmetic",
         Pos = Vector(0.5, 0, 0),
@@ -774,7 +774,7 @@ SWEP.Attachments = {
 		Scale = 1,
     },
     {
-        PrintName = "Stats",
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = "killcounter",
         Bone = "tag_cosmetic",
         Pos = Vector(0, 0, -1),

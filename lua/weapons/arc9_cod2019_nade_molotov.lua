@@ -24,7 +24,7 @@ SWEP.Slot = 4
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "Throwable"
+        PrintName = ARC9:GetPhrase("mw19_firemode_throwable")
         -- add other attachment modifiers
     },
 }
@@ -213,7 +213,7 @@ SWEP.Animations = {
 
 -- SWEP.Attachments = {
     -- {
-        -- PrintName = "Functions",
+        -- PrintName = ARC9:GetPhrase("mw19_category_function"),
         -- Category = {"go_nade_type"},
     -- },
 -- }

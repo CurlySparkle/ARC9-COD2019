@@ -180,7 +180,14 @@ L["mw19_category_pumpgrip"] = "Pump Grip"
 L["mw19_category_boltassembly"] = "Bolt Assembly"
 
 -- Custom ones for the addon
+L["mw19_category_ammo"] = "Ammo" -- UO
+L["mw19_category_function"] = "Functionality" -- UO
+L["mw19_category_rails"] = "Rails" -- UO
 L["mw19_category_receiver"] = "Receiver" -- UO
+L["mw19_category_skins"] = "Skins" -- UO
+L["mw19_category_slide"] = "Slide" -- UO, "Pistol Slide"
+L["mw19_category_stats"] = "Stats" -- UO
+L["mw19_category_view"] = "View" -- UO
 
 //////////////////// Folder Names
 -- Other
@@ -189,6 +196,11 @@ L["mw19_folder_side2"] = "Side" -- UO
 
 //////////////////// Firemodes
 -- L["mw19_firemode_pump"] = "PUMP"
+
+L["mw19_firemode_single"] = "SINGLE" -- UO
+L["mw19_firemode_double"] = "DOUBLE" -- UO
+L["mw19_firemode_throwable"] = "THROWABLE" -- UO
+L["mw19_firemode_plant"] = "PLANT" -- UO, "Plant" the bomb
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Base Attachments

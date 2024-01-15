@@ -49,7 +49,7 @@ SWEP.SecondarySupplyLimit = 0 -- Amount of reserve UBGL magazines you can take.
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "MELEE"
+        PrintName = ARC9:GetPhrase("mw19_category_weapon_melee"),
         -- add other attachment modifiers
     },
 }
@@ -205,7 +205,7 @@ SWEP.Animations = {
 
 SWEP.Attachments = {
     {
-        PrintName = "Perk",
+        PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = "go_perk_melee",
     },
 }

@@ -28,7 +28,7 @@ SWEP.Slot = 4
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "Throwable"
+        PrintName = ARC9:GetPhrase("mw19_firemode_throwable")
         -- add other attachment modifiers
     },
 }
@@ -207,16 +207,16 @@ SWEP.Animations = {
 
 SWEP.Attachments = {
     {
-        PrintName = "Perk",
+        PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"go_perk_melee"},
     },
     {
-        PrintName = "Cosmetic",
+        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         CosmeticOnly = true,
     },
     {
-        PrintName = "Stickers",
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/rock_a.mdl",
         Category = "stickers",
     },
