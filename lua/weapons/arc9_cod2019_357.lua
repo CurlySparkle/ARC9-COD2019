@@ -330,7 +330,7 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.85,
+		MinProgress = 0.8,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {

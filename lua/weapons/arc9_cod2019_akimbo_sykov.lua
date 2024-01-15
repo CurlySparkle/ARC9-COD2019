@@ -252,6 +252,7 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/sykov/"
+local path2 = "weapons/cod2019/renetti/"
 
 SWEP.ShootSound = "COD2019.Sykov.Fire"
 SWEP.ShootSoundIndoor = "COD2019.Sykov.Fire"
@@ -323,7 +324,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.8,
+		MinProgress = 0.75,
 		MagSwapTime = 3.5,
 		DropMagAt = 0.8,
         IKTimeLine = {
@@ -352,13 +353,15 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_i_reload_down.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_mvmnt.ogg", t = 11/30},
 			{s = path .. "wfoly_pi_mike_i_reload_magout.ogg", t = 24/30},
-			{s = path .. "wfoly_pi_mike_i_reload_magin.ogg", t = 40/30},
+			{s = path .. "wfoly_pi_mike_i_reload_magout.ogg", t = 26/30},
+			{s = path .. "wfoly_pi_mike_i_reload_magin.ogg", t = 37.5/30},
+			{s = path .. "wfoly_pi_mike_i_reload_magin.ogg", t = 42.5/30},
 			{s = path .. "wfoly_pi_mike_i_reload_end.ogg", t = 56/30},
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.85,
 		DropMagAt = 0.7,
         IKTimeLine = {
             {
@@ -385,20 +388,21 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_mike_i_reload_empty_down.ogg", t = 2/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_mvmnt.ogg", t = 15/30},
-			{s = path .. "wfoly_pi_mike_i_reload_empty_magout.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_magout.ogg", t = 22.5/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_magout.ogg", t = 26.5/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_magin.ogg", t = 47/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_magin.ogg", t = 52/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_up.ogg", t = 63/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_up.ogg", t = 67/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_charge.ogg", t = 69/30},
-			{s = path .. "wfoly_pi_mike_i_reload_empty_charge.ogg", t = 78/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_charge.ogg", t = 74/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_end.ogg", t = 74/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_end.ogg", t = 82/30},
         },
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.725,
 		MagSwapTime = 3.5,
 		DropMagAt = 0.4,
         IKTimeLine = {
@@ -426,14 +430,16 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_mike_i_reload_down.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_mvmnt.ogg", t = 11/30},
-			{s = path .. "wfoly_pi_mike_i_reload_magout.ogg", t = 24/30},
-			{s = path .. "wfoly_pi_mike_i_reload_magin.ogg", t = 27/30},
+			{s = path .. "wfoly_pi_mike_i_reload_magout.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_mike_i_reload_magout.ogg", t = 19/30},
+			{s = path .. "wfoly_pi_mike_i_reload_magin.ogg", t = 26/30},
+			{s = path .. "wfoly_pi_mike_i_reload_magin.ogg", t = 29/30},
 			{s = path .. "wfoly_pi_mike_i_reload_end.ogg", t = 37/30},
         },
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.8,
 		DropMagAt = 0.7,
         IKTimeLine = {
             {
@@ -460,13 +466,14 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_mike_i_reload_empty_down.ogg", t = 2/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_mvmnt.ogg", t = 15/30},
-			{s = path .. "wfoly_pi_mike_i_reload_empty_magout.ogg", t = 23/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_magout.ogg", t = 19/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_magout.ogg", t = 22/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_magin.ogg", t = 31/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_magin.ogg", t = 36/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_up.ogg", t = 43/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_up.ogg", t = 47/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_charge.ogg", t = 50/30},
-			{s = path .. "wfoly_pi_mike_i_reload_empty_charge.ogg", t = 56/30},
+			{s = path .. "wfoly_pi_mike_i_reload_empty_charge.ogg", t = 54/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_end.ogg", t = 58/30},
 			{s = path .. "wfoly_pi_mike_i_reload_empty_end.ogg", t = 66/30},
         },
@@ -558,7 +565,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_pi_mike_inspect_01.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike_inspect_02.ogg", t = 62/30},
+			{s = path2 .. "wfoly_pi_mike9_inspect_03.ogg", t = 62/30},
 			{s = path .. "wfoly_pi_mike_inspect_03.ogg", t = 112/30},
         },
     },

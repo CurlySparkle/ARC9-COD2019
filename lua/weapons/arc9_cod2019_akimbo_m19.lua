@@ -314,7 +314,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.725,
 		MagSwapTime = 3.5,
 		DropMagAt = 0.35,
         IKTimeLine = {
@@ -355,7 +355,7 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.825,
 		DropMagAt = 0.35,
         IKTimeLine = {
             {
@@ -390,14 +390,14 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_magin_v2_02.ogg", t = 56/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_magin_v2_02.ogg", t = 55/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_charge_01.ogg", t = 72/30},
-			{s = path .. "wfoly_plr_pi_papa320_reload_empty_charge_01.ogg", t = 77/30},
+			{s = path .. "wfoly_plr_pi_papa320_reload_empty_charge_01.ogg", t = 75/30},
             {s = path .. "wfoly_plr_pi_papa320_reload_end.ogg", t = 77/30},
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_end.ogg", t = 77/30},
         },
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.725,
 		MagSwapTime = 3.5,
 		DropMagAt = 0.4,
         IKTimeLine = {
@@ -438,7 +438,7 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.825,
 		DropMagAt = 0.35,
         IKTimeLine = {
             {

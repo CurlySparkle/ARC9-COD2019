@@ -137,3 +137,13 @@ function SWEP:MakeEnvironmentDust(radius)
         util.Effect(bInWater && "waterripple" || "ThumperDust", data)
     end
 end
+
+SWEP.HookP_NameChange = function(self, name)
+    local att = self:GetElements()
+
+	if self.Akimbo then
+		name = string.format( ARC9:GetPhrase("mw19_weapon_akimbo"), name )
+	end
+
+    return name
+end

@@ -312,8 +312,8 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.675,
+		FireASAP = false,
 		MagSwapTime = 3.5,
 		DropMagAt = 0.35,
         IKTimeLine = {
@@ -355,8 +355,8 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.825,
+		FireASAP = false,
 		DropMagAt = 0.35,
         IKTimeLine = {
             {
@@ -400,8 +400,8 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.75,
+		FireASAP = false,
 		MagSwapTime = 3.5,
 		DropMagAt = 0.35,
         IKTimeLine = {
@@ -443,8 +443,8 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.8,
-		FireASAP = true,
+		MinProgress = 0.75,
+		FireASAP = false,
 		DropMagAt = 0.35,
         IKTimeLine = {
             {

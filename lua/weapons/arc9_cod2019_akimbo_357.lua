@@ -346,7 +346,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
@@ -386,7 +386,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 78/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 86/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_arm.ogg", t = 82/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 92/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 90/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 94/30},
         },
     },

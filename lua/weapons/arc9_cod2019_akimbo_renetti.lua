@@ -317,7 +317,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.8,
+		MinProgress = 0.725,
 		MagSwapTime = 3.5,
 		DropMagAt = 0.35,
         IKTimeLine = {
@@ -347,8 +347,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_fast_raise.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magout.ogg", t = 6/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 9/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magin.ogg", t = 26/30},
-			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 28/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magin.ogg", t = 35/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 38/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 56/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 67/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_fast_end.ogg", t = 67/30},
@@ -356,7 +356,7 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.8,
 		DropMagAt = 0.35,
         IKTimeLine = {
             {
@@ -395,7 +395,7 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.7,
 		MagSwapTime = 3.5,
 		DropMagAt = 0.35,
         IKTimeLine = {
@@ -425,16 +425,16 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_fast_raise.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magout.ogg", t = 6/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 9/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magin.ogg", t = 23/30},
-			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 25/30},
-			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 27/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magin.ogg", t = 19/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 34/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 46/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_fast_end.ogg", t = 47/30},
         },
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.775,
 		DropMagAt = 0.35,
         IKTimeLine = {
             {
@@ -463,12 +463,12 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 1/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 11/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 50/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magin.ogg", t = 51/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_fast_charge.ogg", t = 68/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 71/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_fast_end.ogg", t = 73/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 73/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magin.ogg", t = 36/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_charge.ogg", t = 56/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 58/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_end.ogg", t = 60/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 60/30},
         },
     },
     ["ready"] = {

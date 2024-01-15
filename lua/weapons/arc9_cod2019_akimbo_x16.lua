@@ -318,7 +318,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.8,
+		MinProgress = 0.7,
 		MagSwapTime = 3.5,
 		DropMagAt = 0.35,
         IKTimeLine = {
@@ -346,9 +346,10 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_fast_magout_01.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 3/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 14/30},
-			{s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 44/30},
-			{s = path .. "wfoly_pi_golf21_reload_fast_magin_v2_01.ogg", t = 49/30},
+			{s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 44/30},
+			{s = path .. "wfoly_pi_golf21_reload_fast_magin_v2_02.ogg", t = 49/30},
 			{s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 54/30},
 			{s = path .. "wfoly_pi_golf21_reload_fast_magin_v2_02.ogg", t = 57/30},
 			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 70/30},
@@ -357,7 +358,7 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.825,
 		DropMagAt = 0.35,
         IKTimeLine = {
             {
@@ -384,9 +385,11 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 4/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 6/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magout_01.ogg", t = 6/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 47/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magin_v2_01.ogg", t = 47/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 47/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magin_v2_02.ogg", t = 47/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 55/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magin_v2_02.ogg", t = 55/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 72/30},
@@ -397,7 +400,7 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.7,
 		MagSwapTime = 3.5,
 		DropMagAt = 0.35,
         IKTimeLine = {
@@ -425,9 +428,10 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_fast_magout_01.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 2/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 14/30},
-			{s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 28/30},
-			{s = path .. "wfoly_pi_golf21_reload_fast_magin_v2_01.ogg", t = 33/30},
+			{s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 28/30},
+			{s = path .. "wfoly_pi_golf21_reload_fast_magin_v2_02.ogg", t = 33/30},
 			{s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 38/30},
 			{s = path .. "wfoly_pi_golf21_reload_fast_magin_v2_02.ogg", t = 41/30},
 			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 50/30},
@@ -436,7 +440,7 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.8,
 		DropMagAt = 0.35,
         IKTimeLine = {
             {
@@ -463,14 +467,16 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 4/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magout_01.ogg", t = 4/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 6/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magout_01.ogg", t = 6/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 37/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magin_v2_01.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magin_v2_02.ogg", t = 37/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 45/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magin_v2_02.ogg", t = 45/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 55/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 55/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 60/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 57.5/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_end.ogg", t = 68/30},
         },
     },
