@@ -1,4 +1,7 @@
 AddCSLuaFile()
+if CLIENT then
+    killicon.Add( "arc9_cod2019_sn_svd", "vgui/killicons/cod2019_sn_svd.png", Color(251, 85, 25, 255))
+end
 
 SWEP.Base = "arc9_cod2019_base"
 

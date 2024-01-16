@@ -1,4 +1,7 @@
 AddCSLuaFile()
+if CLIENT then
+    killicon.Add( "arc9_cod2019_sm_aug", "vgui/killicons/cod2019_sm_aug.png", Color(251, 85, 25, 255))
+end
 
 SWEP.Base = "arc9_cod2019_base"
 
@@ -103,7 +106,7 @@ SWEP.RecoilPatternDrift = 35
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1.2 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -121,7 +124,7 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.85
 
 -------------------------- VISUAL RECOIL
 
@@ -131,7 +134,7 @@ SWEP.VisualRecoilPunchSights = 5
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.4
 SWEP.VisualRecoilRoll = 35
-SWEP.VisualRecoilSide = -1/6
+SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -165,7 +168,7 @@ SWEP.SpreadAddSights = -0.5
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -859,11 +862,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 3,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 2,
+		Mult = 3,
     },
     ["inspect"] = {
         Source = "lookat01",

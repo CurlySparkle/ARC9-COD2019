@@ -1,7 +1,7 @@
 AddCSLuaFile()
 --SWEP.CustomSelectIcon = Material("vgui/selection/cod2019_sh_725.png")
 if CLIENT then
-    killicon.Add( "arc9_cod2019_725", "vgui/killicons/cod2019_sh_725.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_sh_725", "vgui/killicons/cod2019_sh_725.png", Color(251, 85, 25, 255))
 end
 
 SWEP.Base = "arc9_cod2019_base"

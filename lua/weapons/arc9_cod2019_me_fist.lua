@@ -1,4 +1,7 @@
 AddCSLuaFile()
+if CLIENT then
+    killicon.Add( "arc9_cod2019_me_fist", "vgui/killicons/cod2019_me_fist.png", Color(251, 85, 25, 255))
+end
 
 SWEP.Base = "arc9_cod2019_base"
 
@@ -151,9 +154,9 @@ SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_FIST
 
-function SWEP:SecondaryAttack()
-    return self:MeleeAttack()
-end
+-- function SWEP:SecondaryAttack()
+    -- return self:MeleeAttack()
+-- end
 
 SWEP.HideBones  = {
     [1] = "tag_torso",
@@ -175,7 +178,7 @@ SWEP.Animations = {
         Source = "holster",
     },
     ["bash"] = {
-        Source = {"melee_01","melee_05","melee_07"},
+        Source = {"melee_01","melee_05","melee_07","melee_02","melee_06","melee_08"},
     },
     ["bash2"] = {
         Source = {"melee_02","melee_06","melee_08"},
