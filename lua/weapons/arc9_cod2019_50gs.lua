@@ -328,11 +328,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_decho_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_decho_reload_magout_01.ogg", t = 15/30},
-			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 30/30},
-			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 36/30},
-			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 42/30},
+			{s = path .. "wfoly_pi_decho_reload_raise.ogg", t = 0.033},
+			{s = path .. "wfoly_pi_decho_reload_magout_01.ogg", t = 0.56},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 1.03},
+			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 1.23},
+			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 1.5},
         },
     },
     ["reload_empty"] = {
@@ -403,11 +403,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_decho_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_decho_reload_magout_01.ogg", t = 4/30},
-			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 14/30},
-			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 24/30},
+			{s = path .. "wfoly_pi_decho_fast_reload_raise.ogg", t = 0.033},
+			{s = path .. "wfoly_pi_decho_fast_reload_magout_01.ogg", t = 0.2},
+			{s = path .. "wfoly_pi_decho_fast_reload_magin_v2_01.ogg", t = 0.53},
+			{s = path .. "wfoly_pi_decho_fast_reload_magin_v2_02.ogg", t = 0.66},
+			{s = path .. "wfoly_pi_decho_fast_reload_end.ogg", t = 0.73},
         },
     },
     ["reload_fast_empty"] = {
@@ -773,9 +773,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_pi_decho_first_raise_mvmnt.ogg", t = 0/30},
-            {s = path .. "wfoly_pi_decho_first_raise_safetyoff.ogg", t = 12/30},
-			{s = path .. "wfoly_pi_decho_first_raise_end.ogg", t = 18/30},
+            {s = path .. "wfoly_pi_decho_first_raise_mvmnt.ogg", t = 0.1},
+            {s = path .. "wfoly_pi_decho_first_raise_safetyoff.ogg", t = 0.44},
+			{s = path .. "wfoly_pi_decho_first_raise_end.ogg", t = 0.7},
         },
     },
     ["draw"] = {

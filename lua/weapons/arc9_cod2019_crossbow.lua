@@ -260,12 +260,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sn_crossbow_reload_rotate.ogg", t = 4/30},
-			{s = path .. "wfoly_sn_crossbow_reload_pull_string.ogg", t = 12/30},
-			{s = path .. "wfoly_sn_crossbow_reload_load_arrow.ogg", t = 55/30},
-			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_01.ogg", t = 65/30},
-			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_02.ogg", t = 70/30},
-			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 75/30},
+			{s = path .. "wfoly_sn_crossbow_reload_rotate.ogg", t = 0.133},
+			{s = path .. "wfoly_sn_crossbow_reload_pull_string.ogg", t = 0.433},
+			{s = path .. "wfoly_sn_crossbow_reload_load_arrow.ogg", t = 1.833},
+			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_01.ogg", t = 2.167},
+			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_02.ogg", t = 2.367},
+			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 2.5},
         },
     },
     ["reload_fast"] = {
@@ -294,12 +294,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sn_crossbow_reload_rotate.ogg", t = 2/30},
-			{s = path .. "wfoly_sn_crossbow_reload_pull_string.ogg", t = 2/30},
-			{s = path .. "wfoly_sn_crossbow_reload_load_arrow.ogg", t = 35/30},
-			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_01.ogg", t = 45/30},
-			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_02.ogg", t = 50/30},
-			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 52/30},
+			{s = path .. "wfoly_sn_crossbow_reload_fast_rotate.ogg", t = 0.1},
+			{s = path .. "wfoly_sn_crossbow_reload_fast_pull_string.ogg", t = 0.40},
+			{s = path .. "wfoly_sn_crossbow_reload_fast_arrow_up.ogg", t = 1.07},
+			{s = path .. "wfoly_sn_crossbow_reload_fast_load_arrow_01.ogg", t = 1.4},
+			{s = path .. "wfoly_sn_crossbow_reload_fast_load_arrow_02.ogg", t = 1.6},
+			{s = path .. "wfoly_sn_crossbow_reload_fast_end.ogg", t = 1.7},
         },
     },
     ["ready"] = {
@@ -319,8 +319,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_crossbow_raise_first_safety_off.ogg", t = 9/30},
-			{s = path .. "wfoly_sn_crossbow_raise_first_end.ogg", t = 16/30},
+            {s = path .. "wfoly_sn_crossbow_raise_first_safety_off.ogg", t = 0.333},
+			{s = path .. "wfoly_sn_crossbow_raise_first_end.ogg", t = 0.567},
         },
     },
     ["draw"] = {

@@ -801,9 +801,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_mike14_raise_first_mvmnt.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_mike14_raise_first_charge.ogg", t = 12/30},
-            {s = path .. "wfoly_sn_mike14_raise_first_end.ogg", t = 18/30},
+            {s = path .. "wfoly_sn_mike14_raise_first_mvmnt.ogg", t = 0.2},
+            {s = path .. "wfoly_sn_mike14_raise_first_charge.ogg", t = 0.467},
+            {s = path .. "wfoly_sn_mike14_raise_first_end.ogg", t = 0.633},
         },
     },
     ["draw"] = {
@@ -883,10 +883,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_mike14_inspect_01.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_mike14_inspect_02.ogg", t = 37/30},
-            {s = path .. "wfoly_sn_mike14_inspect_03.ogg", t = 72/30},
-			{s = path .. "wfoly_sn_mike14_inspect_04.ogg", t = 124/30},
+            {s = path .. "wfoly_sn_mike14_inspect_01.ogg", t = 0.0},
+            {s = path .. "wfoly_sn_mike14_inspect_02.ogg", t = 1.367},
+            {s = path .. "wfoly_sn_mike14_inspect_03.ogg", t = 2.333},
+			{s = path .. "wfoly_sn_mike14_inspect_04.ogg", t = 4.2},
         },
     },
     ["bash"] = {
