@@ -1,8 +1,8 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-    "$basetexture"				"models/cod2019/r90/r90_shell"
-    "$bumpmap"					"models/cod2019/r90/r90_shell_n"
-    "$phongexponenttexture"		"models/cod2019/r90/r90_shell_exp"
+    "$basetexture" "models\cod2019\r90\r90_shell_rgb"
+    "$bumpmap" "models\cod2019\r90\r90_shell_n"
+    "$phongexponenttexture" "models\cod2019\r90\r90_shell_e"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
@@ -19,18 +19,17 @@
     "$normalmapalphaenvmapmask" "1"                         //do not touch this
     /////////////////
 
-    "$envmap"					"env_cubemap"
-    "$envmaptint"				"[ .13 .13 .13 ]"
-    "$envmapfresnel"			".25"
-    "$envmapcoefficient"		"[0.39 0.39 0.39]"          
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[0.263 0.204 0.137]"                 
 
-     "Proxies"
-     {
+    //remove this if not using MWB
+    "Proxies"
+    {
         "Arc9EnvMapTint"
         {
-            "specularity" "0.5"
             "min" "0"
-            "max" "0.2"
+            "max" "1"
+            "color" "[0.263 0.204 0.137]"
         }
-     }
+    }
 }
