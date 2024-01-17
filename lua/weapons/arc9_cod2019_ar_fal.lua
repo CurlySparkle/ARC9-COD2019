@@ -158,7 +158,7 @@ SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadAddMove = 0.05
 --SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.06
+SWEP.SpreadAddHipFire = 0.05
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
 
@@ -205,8 +205,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -220,6 +220,9 @@ SWEP.CustomizeRotateAnchor = Vector(15, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(0, 13, 3)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-0.8, 1.7, -2.5)
+SWEP.PeekAng = Angle(0, 0.4, -45)
 
 -------------------------- HoldTypes
 
@@ -263,6 +266,7 @@ SWEP.DropMagazineSounds = {
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.9
 SWEP.DropMagazineQCA = 3
+SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
 
@@ -551,9 +555,9 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag_fast"] = {
-        Source = "reload_xmag_fast",
+        Source = "reload_fast2",
 		MinProgress = 0.85,
-		DropMagAt = 0.8,
+		DropMagAt = 0.82,
 		FireASAP = true,
 		DropMagazineQCA = 5,
         IKTimeLine = {
@@ -579,13 +583,13 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 6/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 7/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 30/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 38/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 47/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 47/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_fast_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_fast_rattle.ogg", t = 6/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_magin_v2_02.ogg", t = 38/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_elbow", t = 47/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_end.ogg", t = 47/30},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -616,16 +620,15 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_plr_ar_falima_reload_empty_start.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_ar_falima_reload_empty_rotate.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_ar_falima_reload_empty_shake.ogg", t = 14/30},
-            {s = path .. "wfoly_plr_ar_falima_reload_empty_magout_01.ogg", t = 21/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_elbow.ogg", t = 31/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_arm.ogg", t = 40/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_01.ogg", t = 47/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_magin_v2_02.ogg", t = 57/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltclose_01.ogg", t = 66/30},
-			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 70/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_fast_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_fast_rotate.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_ar_falima_reload_empty_fast_magout_01.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_dropmag.ogg", t = 31/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_grabmag.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_magin_v2_01.ogg", t = 47/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_magin_v2_02.ogg", t = 57/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_charge_01.ogg", t = 66/30},
+			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_end.ogg", t = 70/30},
         },
     },
     ["ready"] = {
@@ -664,7 +667,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.7,
+		MinProgress = 0.5,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -709,11 +712,11 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-        Time = 1.1,
+        Time = 1,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-        Time = 1.1,
+        Time = 1,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -750,7 +753,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -902,6 +905,16 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
+    ["foregrip_none"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,2},
@@ -928,12 +941,18 @@ SWEP.AttachmentElements = {
             {7,1},
         },
     },
-    ["barrel_short"] = {
+    ["sight_adapter_none"] = {
+        Bodygroups = {
+            {3,2},
+            {7,2},
+        },
+    },
+    ["barrel_none"] = {
         Bodygroups = {
             {4,1},
 			{5,1},
         },
-	AttPosMods = { [3] = { Pos = Vector(20.35, 0, -0.3), } }	
+
     },
     ["muzzle"] = {
         Bodygroups = {
@@ -949,6 +968,14 @@ SWEP.AttachmentElements = {
     AttPosMods = { [5] = { Pos = Vector(-2.75, 0, 0), } }	
 	}
 }
+
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+	local attached = data.elements
+	if wep:HasElement("sight_adapter_none") then
+	model:SetBodygroup(3,0)
+	end
+end
 
 SWEP.Attachments = {
     {
@@ -982,18 +1009,18 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
-        Bone = "tag_attachments",
-        Pos = Vector(14.5, 1.27, -0.43),
-        Ang = Angle(0, 0, -90),
-		InstalledElements = {"laser_mount"},
+        Category = "cod2019_tac_rail_alt",
+        Bone = "tag_laser_attach",
+        Pos = Vector(-0.7, -0.6, -0.5),
+        Ang = Angle(0, 0, -30),
+		--InstalledElements = {"laser_mount"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-1.5, 0, 0),
+        Pos = Vector(-1.55, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
     },
@@ -1019,7 +1046,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
         Bone = "j_mag1",
         Category = {"cod2019_ammo"},
-        Pos = Vector(0, -1.5, -1.5),
+        Pos = Vector(0, 0, -2),
         Ang = Angle(0, 0, 0),
     },
     {
@@ -1085,6 +1112,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 3
 SWEP.GripPoseParam2 = 0.3
-SWEP.CodAngledGripPoseParam = 4
+SWEP.CodAngledGripPoseParam = 3
 SWEP.CodStubbyGripPoseParam = 1
 SWEP.CodStubbyTallGripPoseParam = 3

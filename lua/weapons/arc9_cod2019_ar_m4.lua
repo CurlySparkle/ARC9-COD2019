@@ -130,16 +130,16 @@ SWEP.RecoilMultSights = 0.85
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.5
-SWEP.VisualRecoilPunchSights = 15
+SWEP.VisualRecoilPunchSights = 7
 
-SWEP.VisualRecoilPunch = 1.5
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.4
-SWEP.VisualRecoilRoll = 50
+SWEP.VisualRecoilRoll = 15
 SWEP.VisualRecoilSide = 0.4
 
-SWEP.VisualRecoilSpringPunchDamping = 11
-SWEP.VisualRecoilDampingConst = 80
-SWEP.VisualRecoilDampingConstSights = 80
+--SWEP.VisualRecoilSpringPunchDamping = 11
+--SWEP.VisualRecoilDampingConst = 80
+--SWEP.VisualRecoilDampingConstSights = 80
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -275,7 +275,7 @@ SWEP.DropMagazineSounds = {
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 3
-SWEP.DropMagazineAng = Angle(0, -90, 0)
+SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
 
@@ -350,6 +350,18 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+    },
+    ["dryfire"] = {
+        Source = "bipod_in",
+		MinProgress = 0.01,
+		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -1086,10 +1098,10 @@ SWEP.Animations = {
         },
     },
     ["enter_bipod"] = {
-        Source = "bipod_in",
+        Source = "bipod_out",
     },
     ["exit_bipod"] = {
-        Source = "bipod_out",
+        Source = "bipod_in",
     },
     ["hybrid_on"] = {
         Source = "hybrid_on",
@@ -1366,7 +1378,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = {"cod2019_grip","cod2019_grip_cclamp"},
         Bone = "tag_grip_attach",
-        Pos = Vector(-3, 0, 0),
+        Pos = Vector(-3, 0, -0.05),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
     },
@@ -1458,6 +1470,6 @@ SWEP.GripPoseParam = 0.4
 SWEP.GripPoseParam2 = 0
 SWEP.CodAngledGripPoseParam = 2
 SWEP.CodStubbyGripPoseParam = 14
-SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.CodStubbyTallGripPoseParam = 26
 --SWEP.CodStubbyTallGripPoseParam = 15
 --SWEP.CodStubbyTallGripPoseParam = 0
