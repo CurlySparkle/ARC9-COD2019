@@ -1129,7 +1129,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
-        Category = {"stock_retract","cod2019_tube","cod2019_scar_stock"},
+        Category = {"cod2019_tube","cod2019_scar_stock"},
         DefaultAttName = "Standard Stock",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),

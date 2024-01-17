@@ -1,4 +1,43 @@
 local ATT = {}
+
+local stats_vlight = {
+	SpeedMultSights = 1.17,
+	AimDownSightsTimeAdd = -0.016,
+	VisualRecoilMult = 1.02,
+	RecoilMult = 1.02,
+}
+
+local stats_light = {
+	SpeedMultSights = 1.15,
+	VisualRecoilMult = 1.025,
+	RecoilMult = 1.025,
+}
+
+local stats_medium = {
+    AimDownSightsTimeAdd = -0.027,
+}
+
+local stats_heavy = {
+	SpeedMultSights = 0.89,
+	VisualRecoilMult = 0.95,
+	RecoilMult = 0.95,
+}
+
+local stats_vheavy = {
+	SpeedMultSights = 0.82,
+	VisualRecoilMult = 0.9,
+	RecoilMult = 0.9,
+}
+
+local stats_none = {
+    AimDownSightsTimeAdd = -0.039,
+	VisualRecoilMult = 1.3,
+	RecoilMult = 1.3,
+	SpreadMultMove = 0.94,
+	SpeedMult = 1.04,
+	SpeedMultSights = 1.2,
+}
+
 -------------------------------------------------------------------------------
 ATT = {}
 
@@ -17,14 +56,10 @@ ATT.Category = "cod2019_stocks"
 
 ATT.Model = "models/weapons/cod2019/attachs/stocks/stock_vlk.mdl"
 
+table.Merge(ATT, stats_light)
+
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0.03)
-
-ATT.RecoilMult = 0.9
-ATT.AimDownSightsTimeMult = 0.9
-ATT.SprintToFireTimeMult = 1.1
-ATT.DeployTimeMult = 1.1
-ATT.HolsterTimeMult = 1.1
 
 ARC9.LoadAttachment(ATT, "cod2019_stock_vlk")
 -------------------------------------------------------------------------------
@@ -45,14 +80,10 @@ ATT.Category = "cod2019_stocks"
 
 ATT.Model = "models/weapons/cod2019/attachs/stocks/stock_amax.mdl"
 
+table.Merge(ATT, stats_vlight)
+
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0.05)
-
-ATT.RecoilMult = 0.85
-ATT.AimDownSightsTimeMult = 0.85
-ATT.SprintToFireTimeMult = 1.2
-ATT.DeployTimeMult = 1.15
-ATT.HolsterTimeMult = 1.15
 
 ARC9.LoadAttachment(ATT, "cod2019_stock_amax")
 -------------------------------------------------------------------------------
@@ -73,13 +104,10 @@ ATT.Category = "cod2019_stocks"
 
 ATT.Model = "models/weapons/cod2019/attachs/stocks/stock_slima.mdl"
 
+table.Merge(ATT, stats_medium)
+
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0.1)
-
-ATT.RecoilMult = 1.15
-ATT.AimDownSightsTimeMult = 0.8
-ATT.DeployTimeMult = 1.15
-ATT.HolsterTimeMult = 1.15
 
 ARC9.LoadAttachment(ATT, "cod2019_stock_slima")
 -------------------------------------------------------------------------------
@@ -100,13 +128,10 @@ ATT.Category = "cod2019_stocks"
 
 ATT.Model = "models/weapons/cod2019/attachs/stocks/stock_m4.mdl"
 
+table.Merge(ATT, stats_heavy)
+
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
-
-ATT.RecoilMult = 0.9
-ATT.AimDownSightsTimeMult = 1.1
-ATT.DeployTimeMult = 1.1
-ATT.HolsterTimeMult = 1.1
 
 ARC9.LoadAttachment(ATT, "cod2019_stock_m4")
 -------------------------------------------------------------------------------
@@ -127,10 +152,9 @@ ATT.Category = "cod2019_stocks"
 
 ATT.Model = "models/weapons/cod2019/attachs/stocks/stock_origin12.mdl"
 
+table.Merge(ATT, stats_light)
+
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
-
-ATT.RecoilMult = 1.2
-ATT.AimDownSightsTimeMult = 0.8
 
 ARC9.LoadAttachment(ATT, "cod2019_stock_origin12")

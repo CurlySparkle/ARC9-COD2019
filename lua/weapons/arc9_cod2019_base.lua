@@ -151,7 +151,7 @@ SWEP.HookP_NameChange = function(self, name)
 		else
 			name = string.format( ARC9:GetPhrase("mw19_weapon_att_hybrid") or "%s Hybrid", name )
 		end
-	elseif att["hybrid_scope"] then
+	elseif att["hybrid_scope"] or att["hybrid_scope_int"] then
 		name = string.format( ARC9:GetPhrase("mw19_weapon_att_hybrid") or "%s Hybrid", name )
 	elseif att["optic_thermal"] then
 		name = string.format( ARC9:GetPhrase("mw19_weapon_att_thermal") or "%s Thermal", name )
