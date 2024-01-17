@@ -38,10 +38,10 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_rif_asval.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-12, 6, -7.5),
-    Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-5, 5, -2),
-    TPIKAng = Angle(-9, 0, 170),
+    Pos = Vector(-4, 3, -4),
+    Ang = Angle(-7.5, 0, 180),
+    TPIKPos = Vector(-8.5, 4, -5),
+    TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1
 }
 
@@ -232,10 +232,10 @@ SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "rpg"
+SWEP.HoldType = "ar2"
 SWEP.HoldTypeSprint = "rpg"
-SWEP.HoldTypeHolstered = "rpg"
-SWEP.HoldTypeSights = "rpg"
+SWEP.HoldTypeHolstered = "passive"
+SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 

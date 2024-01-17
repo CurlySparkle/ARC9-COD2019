@@ -37,10 +37,10 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_rif_ak47.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-12, 6, -7.5),
+    Pos = Vector(-3.5, 3, -6),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-5, 5, -2),
-    TPIKAng = Angle(-9, 0, 170),
+    TPIKPos = Vector(-8.5, 4.5, -6),
+    TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1
 }
 
@@ -85,10 +85,12 @@ SWEP.RPM = 561
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 0,
         -- add other attachment modifiers
     },
     {
         Mode = 1,
+		PoseParam = 1,
         -- add other attachment modifiers
     }
 }
@@ -232,10 +234,10 @@ SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "rpg"
+SWEP.HoldType = "ar2"
 SWEP.HoldTypeSprint = "rpg"
-SWEP.HoldTypeHolstered = "rpg"
-SWEP.HoldTypeSights = "rpg"
+SWEP.HoldTypeHolstered = "passive"
+SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
@@ -315,6 +317,17 @@ SWEP.HideBones  = {
     [3] = "j_bullet2_secondary",
 }
 
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag2",
+    },
+    [2] = {
+        "j_mag1",
+        "j_bullet_secondary",
+        "j_bullet2_secondary",
+    },
+}
+
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
@@ -367,6 +380,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_01.ogg", t = 42/30},
 			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_02.ogg", t = 44/30},
 			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 65/30},
+            {hide = 1, t = 0/30},
+            {hide = 0, t = 5/30},
+            {hide = 1, t = 60/30},
         },
     },
     ["reload_empty"] = {
