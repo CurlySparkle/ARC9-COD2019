@@ -13,8 +13,10 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Free = false
 
 ATT.Category = {"cod2019_mag"}
+
 ATT.ClipSizeMult = 1.2
 ATT.ReloadTimeMult = 1.1
+ATT.RecoilMult = 1.1
 
 ATT.ActivateElements = {"ammo_extend","mag","mag_extend"}
 

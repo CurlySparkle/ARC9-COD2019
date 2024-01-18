@@ -132,8 +132,8 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.4
 SWEP.VisualRecoilPunchSights = 5
 SWEP.VisualRecoilRollSights = 0.1
-SWEP.VisualRecoilSideSights = 0.1
-SWEP.VisualRecoilUpSights = 0.1
+SWEP.VisualRecoilSideSights = 0
+SWEP.VisualRecoilUpSights = 0
 
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.2
@@ -333,6 +333,12 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+    },
+    ["dryfire"] = {
+        Source = "dryfire",
+		MinProgress = 0.01,
+		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
@@ -808,7 +814,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
     if wep:HasElement("sight_default") then model:SetBodygroup(5,0) end
-    --if wep:HasElement("barrel_supp") then model:SetBodygroup(4,2) end
+    if wep:HasElement("foregrip_none") then model:SetBodygroup(4,2) end
 end
 
 SWEP.Attachments = {
@@ -951,5 +957,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 12
-SWEP.CodStubbyGripPoseParam = 1.9
+SWEP.CodStubbyGripPoseParam = 22.2
 SWEP.CodStubbyTallGripPoseParam = 12
