@@ -985,6 +985,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	elseif wep:HasElement("stock_custom") then
 	model:SetBodygroup(3,3)
 	end
+    if wep:HasElement("scope_svd") then model:SetBodygroup(4,0) end
 end
 
 SWEP.Attachments = {
@@ -1001,14 +1002,14 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, 0),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic",},
+        Category = {"cod2019_optic", "cod2019_optic_svd"},
         CorrectiveAng = Angle(0.8, -0.8, 0),
 		InstalledElements = {"sight_rail"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
-        Category = "cod2019_tac_alt",
+        Category = "cod2019_tac",
         Bone = "tag_laser_attach",
         Pos = Vector(-0.5, 2, 0.4),
         Ang = Angle(0, 0, -50),
@@ -1026,7 +1027,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
         DefaultAttName = "Standard Stock",
-        Category = {"cod2019_stocks","stock_retract"},
+        Category = {"cod2019_stocks", "cod2019_asval_stocks"},
         Bone = "tag_stock_attach",
         Pos = Vector(1.7, 0, 0.1),
         Ang = Angle(0, 0, 0),

@@ -1150,7 +1150,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "j_mag1",
-        Category = {"cod2019_mag","cod2019_scar_mag"},
+        Category = {"cod2019_scar_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
