@@ -91,7 +91,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.3
+SWEP.Recoil = 1.4
 
 --SWEP.RecoilSeed = nil
 
@@ -117,13 +117,17 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.95
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.5
-SWEP.VisualRecoilPunchSights = 35
+SWEP.VisualRecoilPunchSights = 15
+SWEP.VisualRecoilUpSights = 0
+SWEP.VisualRecoilRollSights = 0
+SWEP.VisualRecoilSideSights = 0
+
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.4
 SWEP.VisualRecoilRoll = 5

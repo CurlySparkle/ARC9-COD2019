@@ -123,23 +123,21 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.85
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilRollSights = 15
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.5
-
-SWEP.VisualRecoilMultSights = 0.6
-SWEP.VisualRecoilPunchSights = 25
-SWEP.VisualRecoilRollSights = 0
-SWEP.VisualRecoilSideSights = 0
-SWEP.VisualRecoilUpSights = 0
-
 SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilMultSights = 0.4
+SWEP.VisualRecoilPunchSights = 15
+SWEP.VisualRecoilRollSights = 0.1
+SWEP.VisualRecoilSideSights = 0.1
+SWEP.VisualRecoilUpSights = 0.1
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then

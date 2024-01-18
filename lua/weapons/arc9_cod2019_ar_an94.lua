@@ -133,7 +133,7 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.7
+SWEP.RecoilMultSights = 0.85
 
 -------------------------- VISUAL RECOIL
 
@@ -141,10 +141,12 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 1.5
 SWEP.VisualRecoilUp = 0.3
 
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 55
+SWEP.VisualRecoilMultSights = 0.4
+SWEP.VisualRecoilPunchSights = 15
 SWEP.VisualRecoilRoll = 35
 SWEP.VisualRecoilSide = 0.2
+SWEP.VisualRecoilUpSights = 0
+SWEP.VisualRecoilSideSights = 0
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 30
@@ -366,6 +368,12 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+    },
+    ["dryfire"] = {
+        Source = "dryfire",
+		MinProgress = 0.01,
+		FireASAP = true,
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {

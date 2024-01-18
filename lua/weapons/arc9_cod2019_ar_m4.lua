@@ -102,7 +102,7 @@ SWEP.Recoil = 1.2
 
 SWEP.RecoilSeed = 6589132
 
-SWEP.RecoilPatternDrift = 10
+SWEP.RecoilPatternDrift = 15
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -111,7 +111,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.3
 
 SWEP.RecoilDissipationRate = 50 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -130,7 +130,9 @@ SWEP.RecoilMultSights = 0.85
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.5
-SWEP.VisualRecoilPunchSights = 7
+SWEP.VisualRecoilPunchSights = 10
+SWEP.VisualRecoilUpSights = 0
+SWEP.VisualRecoilSideSights = 0
 
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.4
@@ -359,7 +361,7 @@ SWEP.Animations = {
         },
     },
     ["dryfire"] = {
-        Source = "bipod_in",
+        Source = "bipod_out",
 		MinProgress = 0.01,
 		FireASAP = true,
         IKTimeLine = {
@@ -1098,10 +1100,10 @@ SWEP.Animations = {
         },
     },
     ["enter_bipod"] = {
-        Source = "bipod_out",
+        Source = "bipod_in",
     },
     ["exit_bipod"] = {
-        Source = "bipod_in",
+        Source = "bipod_out",
     },
     ["hybrid_on"] = {
         Source = "hybrid_on",

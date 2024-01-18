@@ -111,7 +111,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.1
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.3
 
 SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -124,7 +124,7 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.7
+SWEP.RecoilMultSights = 0.85
 
 -------------------------- VISUAL RECOIL
 
@@ -132,11 +132,14 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 0.4
 
-SWEP.VisualRecoilRoll = 50
-SWEP.VisualRecoilSide = 0.2
+SWEP.VisualRecoilRoll = 25
+SWEP.VisualRecoilSide = 0.3
 
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 25
+SWEP.VisualRecoilMultSights = 0.4
+SWEP.VisualRecoilPunchSights = 5
+SWEP.VisualRecoilUpSights = 0
+SWEP.VisualRecoilRollSights = 0
+SWEP.VisualRecoilSideSights = 0
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 40
@@ -365,6 +368,12 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+    },
+    ["dryfire"] = {
+        Source = "dryfire",
+		MinProgress = 0.01,
+		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
@@ -1115,42 +1124,6 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_loading"] = {
     ModelOffset = Vector(0, 0, 0.1),
     },
-    -- ["csgo_cod2019_laser_01"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-2, 17.5, -1),
-        -- Ang = Angle(0, 0, 45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_02"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-2, 17.5, -1),
-        -- Ang = Angle(0, 0, 45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_03"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-2, 17.5, -1),
-        -- Ang = Angle(0, 0, 45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
     ["cod2019_attach_xmag_50"] = {
     Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_ar_mcharlie_xmags.mdl",
     },
@@ -1218,7 +1191,7 @@ SWEP.AttachmentElements = {
         },
     },
 	["grip_angled"] = {
-    AttPosMods = { [5] = { Pos = Vector(-2.5, 0, -0.05), } }	
+    AttPosMods = { [5] = { Pos = Vector(-2.6, 0, 0), } }	
 	}
 }
 
@@ -1361,7 +1334,7 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.6
-SWEP.CodStubbyGripPoseParam = 11.6
-SWEP.CodAngledGripPoseParam = 13
+SWEP.CodStubbyGripPoseParam = 27
+SWEP.CodAngledGripPoseParam = 38
 --SWEP.CodStubbyTallGripPoseParam = 15
 SWEP.CodStubbyTallGripPoseParam = 22

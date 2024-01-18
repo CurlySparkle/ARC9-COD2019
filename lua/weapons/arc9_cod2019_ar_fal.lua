@@ -119,7 +119,7 @@ SWEP.RecoilKick = 2
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.85
 
 -------------------------- VISUAL RECOIL
 
@@ -128,7 +128,7 @@ SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 1
 
 SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 85
+SWEP.VisualRecoilPunchSights = 55
 SWEP.VisualRecoilUpSights = 0.2
 
 SWEP.VisualRecoilRoll = 5
@@ -322,6 +322,18 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+    },
+    ["dryfire"] = {
+        Source = "bipod_out",
+		MinProgress = 0.01,
+		FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["reload"] = {
         Source = "reload_short",
@@ -633,7 +645,7 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
-		MinProgress = 0.8,
+		MinProgress = 0.7,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -1032,7 +1044,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		Scale = 1,
-		InstalledElements = {"stock_adapter"},
+		--InstalledElements = {"stock_adapter"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
