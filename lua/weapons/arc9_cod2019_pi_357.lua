@@ -74,7 +74,7 @@ SWEP.ClipSize = 6 -- Self-explanatory.
 SWEP.SupplyLimit = 12 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -576,7 +576,7 @@ SWEP.Attachments = {
         Bone = "tag_reflex",
         Pos = Vector(1, 0, -0.07),
         Ang = Angle(0, 0, 0),
-        Category = "cod2019_optic",
+        Category = "cod2019_optic_pistol",
         CorrectiveAng = Angle(0, 0, 0),
 		--Scale = 0.8,
 		InstalledElements = {"rail_sight"},

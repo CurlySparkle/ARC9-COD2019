@@ -637,9 +637,9 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
         Bone = "tag_reflex",
-        Pos = Vector(1.5, 0, -0.07),
+        Pos = Vector(1, 0, -0.07),
         Ang = Angle(0, 0, 0),
-        Category = "cod2019_optic",
+        Category = {"cod2019_optic_pistol"},
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 1,
 		InstalledElements = {"rail_sight"},

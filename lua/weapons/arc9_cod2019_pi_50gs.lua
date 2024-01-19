@@ -985,10 +985,9 @@ SWEP.Attachments = {
         Bone = "tag_reflex",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic"},
+        Category = {"cod2019_optic_pistol"},
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 1,
-        ExtraSightDistance = 8,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),

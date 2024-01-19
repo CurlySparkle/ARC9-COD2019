@@ -674,15 +674,15 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
-        Bone = "tag_scope",
-        Pos = Vector(-4.2, 0, -0.14),
+        Bone = "tag_reflex",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optics_pistols_alt","eft_optic_small"},
+        Category = {"cod2019_optic_pistol"},
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 1.15,
         DuplicateModels = {
             {
-                Bone = "tag_scope_l",
+                Bone = "tag_reflex_l",
             }
         },
     },

@@ -19,7 +19,7 @@ local missingloc = "\n\nNotis: Icke-lokaliserad text; Prenumerera på <color=255
 ///////////////////////////// Various Universal Information
 //////////////////// Trivia
 /////////// Caliber -- UO
-L["mw19_caliber"] = "Caliber1"
+L["mw19_caliber"] = "Kaliber1"
 
 L["mw19_caliber_7.62x39mm"] = "7.62x39mm Sovjet"
 L["mw19_caliber_7.62x51mm"] = "7.62x51mm"
@@ -105,18 +105,18 @@ L["mw19_assets"] = "Tillgångar2"
 L["mw19_author"] = "Skapare1"
 
 /////////// Weapon Categories
-L["mw19_category_weapon_ar"] = "AUTOMATKARBINER"
-L["mw19_category_weapon_smg"] = "KPISTAR"
-L["mw19_category_weapon_shotgun"] = "HAGELBÖSSOR"
-L["mw19_category_weapon_lmg"] = "KULSPRUTOR"
-L["mw19_category_weapon_marksman"] = "MARKSMAN-GEVÄR"
-L["mw19_category_weapon_sniper"] = "PRICKSKYTTEGEVÄR"
-L["mw19_category_weapon_melee"] = "NÄRSTRID"
-L["mw19_category_weapon_throwable"] = "KASTBARA VAPEN"
+L["mw19_category_weapon_ar"] = "Primär, Automatkarbiner"
+L["mw19_category_weapon_smg"] = "Primär, KPistar"
+L["mw19_category_weapon_shotgun"] = "Primär, Hagelbössor"
+L["mw19_category_weapon_lmg"] = "Primär, Kulsprutor"
+L["mw19_category_weapon_marksman"] = "Primär, Marksman-Gevär"
+L["mw19_category_weapon_sniper"] = "Primär, Prickskytteg."
+L["mw19_category_weapon_melee"] = "Sekundär, Närstridsvapen"
+L["mw19_category_weapon_throwable"] = "Kastbara Vapen"
 
-L["mw19_category_weapon_handgun"] = "PISTOLER"
-L["mw19_category_weapon_handgun_akimbo"] = "PISTOLER - AKIMBO"
-L["mw19_category_weapon_launcher"] = "KASTARE"
+L["mw19_category_weapon_handgun"] = "Sekundär, Pistoler"
+L["mw19_category_weapon_handgun_akimbo"] = "Sekundär, Pistoler (Akimbo)"
+L["mw19_category_weapon_launcher"] = "Sekundär, Kastare"
 
 /////////// Weapon Classes
 L["mw19_class_weapon_ar"] = "Automatkarbin"
@@ -282,17 +282,7 @@ L["cod2019_attach_laser_rail.printname"] = "Lasertillbehör" -- UO
 L["cod2019_attach_laser_rail.compactname"] = "Lasertill." -- UO
 L["cod2019_attach_laser_rail.description"] = "Tillåter installering av lasersikten på ditt vapen." -- UO
 
-L["cod2019_attach_laser_rail_2.printname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.printname")
-L["cod2019_attach_laser_rail_2.compactname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.compactname")
 L["cod2019_attach_laser_rail_2.description"] = "Tillåter installering av smål, cylindriska lasersikten på ditt vapen." -- UO
-
-L["cod2019_attach_laser_cylinder.printname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.printname")
-L["cod2019_attach_laser_cylinder.compactname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.compactname")
-L["cod2019_attach_laser_cylinder.description"] = ARC9:GetPhrase("cod2019_attach_laser_rail.description")
-
-L["cod2019_attach_laser_cylinder_2.printname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.printname")
-L["cod2019_attach_laser_cylinder_2.compactname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.compactname")
-L["cod2019_attach_laser_cylinder_2.description"] = ARC9:GetPhrase("cod2019_attach_laser_rail_2.description")
 
 ////////////////////  Grips
 L["cod2019_attach_grip_foregrip_side.printname"] = "ARC-Framgrepp" -- UO
@@ -305,20 +295,14 @@ L["cod2019_grips_none.description"] = "Alternativ hållningsstil." -- UO
 
 L["cod2019_grips_alt_cclamp.printname"] = "C-Clamp-Hållande" -- UO
 L["cod2019_grips_alt_cclamp.compactname"] = "C-Clamp" -- UO
-L["cod2019_grips_alt_cclamp.description"] = ARC9:GetPhrase("cod2019_grips_none.description")
 
 L["cod2019_grips_alt_nocclamp.printname"] = "Ingen C-Clamp-Hållande" -- UO
 L["cod2019_grips_alt_nocclamp.compactname"] = "Ingen C-C" -- UO
-L["cod2019_grips_alt_nocclamp.description"] = ARC9:GetPhrase("cod2019_grips_none.description")
 
 ////////////////////  Perks
 L["cod2019_perks_soh.printname"] = "Fingerfärdighet"
 L["cod2019_perks_soh.compactname"] = "FF"
 L["cod2019_perks_soh.description"] = "Träna att ladda om snabbare under press."
-
-L["cod2019_perks_soh_alt.printname"] = ARC9:GetPhrase("cod2019_perks_soh.printname")
-L["cod2019_perks_soh_alt.compactname"] = ARC9:GetPhrase("cod2019_perks_soh.compactname")
-L["cod2019_perks_soh_alt.description"] = ARC9:GetPhrase("cod2019_perks_soh.description")
 
 L["cod2019_perks_speedmelee.printname"] = "Snabb Närstrid"
 L["cod2019_perks_speedmelee.compactname"] = "Närstrid"
@@ -345,7 +329,6 @@ L["cod2019_perks_burst.compactname"] = "Salvo"
 L["cod2019_perks_burst.description"] = "Ändrar skjutläget till <color=100,255,100>3-skott</color>salvo."
 
 L["cod2019_perks_burst_2.printname"] = "Salvoeld (x2)"
-L["cod2019_perks_burst_2.compactname"] = ARC9:GetPhrase("cod2019_perks_burst.compactname")
 L["cod2019_perks_burst_2.description"] = "Ändrar skjutläget till <color=100,255,100>2-skott</color>salvo."
 
 ////////////////////  Scopes
@@ -397,27 +380,16 @@ L["cod2019_stock_tube_origin12.description"] = "Tungt bufferrör som tillåter i
 
 L["cod2019_m14_stock_tube.printname"] = "EBR-Rör" -- UO
 L["cod2019_m14_stock_tube.compactname"] = "EBR" -- UO
-L["cod2019_m14_stock_tube.description"] = ARC9:GetPhrase("cod2019_stock_tube_origin12.description")
 
 ////////////////////  EFT (Escape from Tarkov) Support
 L["cod2019_eft_grips.printname"] = "\"Escape from Tarkov\"-Stöd" -- UO
 L["cod2019_eft_grips.compactname"] = "EFT" -- UO
 L["cod2019_eft_grips.description"] = "Tillåter installering av framgrepp från \"Escape from Tarkov\"-tilläggen." -- UO
 
-L["cod2019_eft_muzzle.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
-L["cod2019_eft_muzzle.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
 L["cod2019_eft_muzzle.description"] = "Tillåter installering av mynningstillbehör från \"Escape from Tarkov\"-tilläggen." -- UO
 
-L["cod2019_eft_scopes.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
-L["cod2019_eft_scopes.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
 L["cod2019_eft_scopes.description"] = "Tillåter installering av riktmedel från \"Escape from Tarkov\"-tilläggen." -- UO
 
-L["cod2019_eft_scopes_pistol.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
-L["cod2019_eft_scopes_pistol.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
-L["cod2019_eft_scopes_pistol.description"] = ARC9:GetPhrase("cod2019_eft_scopes.description")
-
-L["cod2019_eft_stocks.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
-L["cod2019_eft_stocks.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
 L["cod2019_eft_stocks.description"] = "Tillåter installering av kolvar från \"Escape from Tarkov\"-tilläggen." -- UO
 
 ////////////////////  GSR (Gunsmith Reloaded) Support
@@ -425,28 +397,10 @@ L["cod2019_attach_support_gsr_laser_pstl.printname"] = "\"Gunsmith Reloaded\"-St
 L["cod2019_attach_support_gsr_laser_pstl.compactname"] = "GSR" -- UO
 L["cod2019_attach_support_gsr_laser_pstl.description"] = "Tillåter installering av lasertillbehör från \"Gunsmith Reloaded\"-tillägget." -- UO
 
-L["cod2019_attach_support_gsr_optics.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
-L["cod2019_attach_support_gsr_optics.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
 L["cod2019_attach_support_gsr_optics.description"] = "Tillåter installering av riktmedel från \"Gunsmith Reloaded\"-tillägget." -- UO
 
-L["cod2019_attach_support_gsr_optics_pistols.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
-L["cod2019_attach_support_gsr_optics_pistols.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
-L["cod2019_attach_support_gsr_optics_pistols.description"] = ARC9:GetPhrase("cod2019_attach_support_gsr_optics.description")
-
-L["cod2019_attach_support_gsr_muzzles.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
-L["cod2019_attach_support_gsr_muzzles.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
 L["cod2019_attach_support_gsr_muzzles.description"] = "Tillåter installering av mynningstillbehör från \"Gunsmith Reloaded\"-tillägget." -- UO
 
-L["cod2019_attach_support_gsr_muzzles_pistols.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
-L["cod2019_attach_support_gsr_muzzles_pistols.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
-L["cod2019_attach_support_gsr_muzzles_pistols.description"] = ARC9:GetPhrase("cod2019_attach_support_gsr_muzzles.description")
-
-L["cod2019_attach_support_gsr_muzzles_alt.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
-L["cod2019_attach_support_gsr_muzzles_alt.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
-L["cod2019_attach_support_gsr_muzzles_alt.description"] = ARC9:GetPhrase("cod2019_attach_support_gsr_muzzles.description")
-
-L["cod2019_attach_support_gsr_grips.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
-L["cod2019_attach_support_gsr_grips.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
 L["cod2019_attach_support_gsr_grips.description"] = "Tillåter installering av framgrepp från \"Gunsmith Reloaded\"-tillägget." -- UO
 
 ////////////////////  Custom Crossbow Ammo
@@ -482,7 +436,6 @@ L["cod2019_ammo_gl_gas.description"] = "Anpassade 40mm patroner fyllda med delvi
 ////////////////////  Rytec Atts. before they are actually added, remove when the proper ones are introduced
 L["cod2019_rytec_barrel_short.printname"] = "Kort Pipa" -- UO
 L["cod2019_rytec_barrel_short.compactname"] = "Kort" -- UO
-L["cod2019_rytec_barrel_short.description"] = "Compact barrel for the Rytec AMR allowing increased agility at the cost of recoil control." -- UO
 L["cod2019_rytec_barrel_short.description"] = "Kompakt pipa till Rytec AMR tillåter ökad rörlighet med kostnad på rekylkontroll." -- UO
 
 L["cod2019_rytec_barrel_long.printname"] = "Lång Pipa" -- UO
@@ -609,9 +562,9 @@ L["mw19_weapon_cr56_desc"] = "Denna lätta 7.62 x 39mm helautomatiska automatkar
 L["mw19_weapon_an94_desc"] = "Toppmodern 5.45x39mm rysk automatkarbin ned en unik <color=255,255,100>hyper-salvo</color> funktion. Det första skottet vid varje avtryckning skjuter ett snabbt 2-skottsalvo innan den uppfattade rekylen känns, vilket skapar en tajt grupp kloster med ökad skadepotential. Denna mekanisk matas med ett kantat magasin, och en fram- och återgående låda hjälper hålla kontroll över rekylen."
 L["mw19_weapon_asval_desc"] = "Matad med <color=255,255,100>subsonisk</color> 9x39mm och internt <color=255,255,100>ljuddämpad</color>, AS VAL är ett kraftfullt vapen gjort för smygande, träffsäkerhet och penetrering. Detta vapen är bäst i händerna på en operatör som kan hantera den tunga rekylen och höga eldhastigheten."
 
-L["mw19_weapon_aug_desc"] = "A modular, fully automatic weapon configured for mobility and close range combat."
-L["mw19_weapon_p90_desc"] = "An automatic bullpup submachine gun. The unique top mounted magazine hold carries ample high velocity 5.7 x 28mm ammunition."
-L["mw19_weapon_mp5_desc"] = "A fully automatic 9mm submachine gun. A perfect balance of stability, mobility and lethality."
+L["mw19_weapon_aug_desc"] = "Modulär och helautomatiskt vapen konfiguerad för rörlighet och närstridsangrepp."
+L["mw19_weapon_p90_desc"] = "En helautomatisk bullpup-kulsprutepistol. Det unika toppmonterade magasinet håller högre antal, hög hastighet 5.7 x 28mm ammunition."
+L["mw19_weapon_mp5_desc"] = "Helautomatisk 9mm kulsprutepistol. En perfekt balans av stabilitet, förlighet och dödlighet."
 L["mw19_weapon_uzi_desc"] = "A fully automatic open bolt submachine gun. Simple, steady, effective."
 L["mw19_weapon_pp19_desc"] = "Well-balanced automatic submachine gun with a high capacity helical magazine."
 L["mw19_weapon_mp7_desc"] = "Compact by design, this fully automatic weapon has a high rate of fire and low recoil."
