@@ -142,9 +142,9 @@ SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilMultSights = 0.5
 SWEP.VisualRecoilPunchSights = 5
-SWEP.VisualRecoilRollSights = 0
-SWEP.VisualRecoilSideSights = 0.1
-SWEP.VisualRecoilUpSights = 0.1
+SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilSideSights = 0
+SWEP.VisualRecoilUpSights = 0
 
 -- SWEP.VisualRecoilSpringPunchDamping = 11
 -- SWEP.VisualRecoilDampingConst = 40
@@ -236,6 +236,9 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1.5, 1.5, -3.5)
+SWEP.PeekAng = Angle(0, 0.4, -45)
 
 -------------------------- HoldTypes
 

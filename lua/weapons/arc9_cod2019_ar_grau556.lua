@@ -129,12 +129,13 @@ SWEP.RecoilMultSights = 0.85
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.4
 SWEP.VisualRecoilPunchSights = 15
-SWEP.VisualRecoilUpSights = 0.1
-SWEP.VisualRecoilSideSights = 0.1
+SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilSideSights = 0
+SWEP.VisualRecoilUpSights = 0
 
-SWEP.VisualRecoilPunch = 1.8
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.6
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = 0.5
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -207,8 +208,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -323,6 +324,12 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+    },
+    ["dryfire"] = {
+        Source = "dryfire",
+		MinProgress = 0.01,
+		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
@@ -890,10 +897,12 @@ SWEP.AttachmentTableOverrides = {
     -- },
     ["cod2019_attach_xmag_50"] = {
     Model = "models/weapons/cod2019/attachs/weapons/grau556/attachment_vm_ar_sierra552_xmags.mdl",
+    DropMagazineModel = "models/weapons/cod2019/attachs/weapons/grau556/attachment_vm_ar_sierra552_xmags.mdl",
 	ActivateElements = {"mag_none","mag_xmag"}
     },
     ["cod2019_attach_xmag_60"] = {
     Model = "models/weapons/cod2019/attachs/weapons/grau556/attachment_vm_ar_sierra552_xmagslrg.mdl",
+    DropMagazineModel = "models/weapons/cod2019/attachs/weapons/grau556/attachment_vm_ar_sierra552_xmagslrg.mdl",
 	ActivateElements = {"mag_none","mag_xmag"}
     },
 }
@@ -998,11 +1007,11 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail_alt",
         Bone = "tag_laser_attach",
-        Pos = Vector(-1, -0.5, 0.18),
-        Ang = Angle(0, 0, -90),
-		InstalledElements = {"rail_laser"},
+        Pos = Vector(-0.6, -0.8, 0.15),
+        Ang = Angle(0, 0, 0),
+		--InstalledElements = {"rail_laser"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
@@ -1092,6 +1101,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.6
 SWEP.GripPoseParam2 = 0.6
-SWEP.CodStubbyGripPoseParam = 16
-SWEP.CodStubbyTallGripPoseParam = 22
-SWEP.CodAngledGripPoseParam = 17
+SWEP.CodStubbyGripPoseParam = 21.6
+SWEP.CodStubbyTallGripPoseParam = 26
+SWEP.CodAngledGripPoseParam = 33

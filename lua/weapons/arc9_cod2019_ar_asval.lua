@@ -129,10 +129,11 @@ SWEP.RecoilMultSights = 0.85
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.5
 SWEP.VisualRecoilPunchSights = 6
-SWEP.VisualRecoilUpSights = 0
+SWEP.VisualRecoilRollSights = 5
 SWEP.VisualRecoilSideSights = 0
+SWEP.VisualRecoilUpSights = 0
 
-SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilPunch = 1.7
 SWEP.VisualRecoilUp = 0.1
 SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = -0.2
@@ -159,7 +160,7 @@ SWEP.Spread = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 4
+SWEP.RecoilModifierCap = 2
 SWEP.RecoilModifierCapMove = 1
 SWEP.RecoilModifierCapSights = 0
 
@@ -213,7 +214,7 @@ SWEP.MovingMidPoint = {
 }
 
 SWEP.MovingPos = Vector(-1, -1, -1)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -229,7 +230,7 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1, 3, -3.2)
+SWEP.PeekPos = Vector(-0.8, 3, -2.5)
 SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 -------------------------- HoldTypes
@@ -329,6 +330,12 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+    },
+    ["dryfire"] = {
+        Source = "dryfire",
+		MinProgress = 0.01,
+		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
@@ -1000,7 +1007,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
         Bone = "tag_holo",
-        Pos = Vector(1.5, 0, 0),
+        Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic", "cod2019_optic_svd"},
         CorrectiveAng = Angle(0.8, -0.8, 0),
@@ -1009,10 +1016,10 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail_alt",
         Bone = "tag_laser_attach",
-        Pos = Vector(-0.5, 2, 0.4),
-        Ang = Angle(0, 0, -50),
+        Pos = Vector(-0.5, 0.5, 0.5),
+        Ang = Angle(0, 0, 140),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
@@ -1051,7 +1058,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_asval_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -1110,6 +1117,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodStubbyGripPoseParam = 0
+SWEP.CodStubbyGripPoseParam = 26
 SWEP.CodStubbyTallGripPoseParam = 22
-SWEP.CodAngledGripPoseParam = 4.1
+SWEP.CodAngledGripPoseParam = 39

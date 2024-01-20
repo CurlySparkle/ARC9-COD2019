@@ -125,19 +125,19 @@ SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.9
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
 
-SWEP.VisualRecoilMultSights = 0.4
-SWEP.VisualRecoilPunchSights = 15
-SWEP.VisualRecoilRollSights = 0.1
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 5
+SWEP.VisualRecoilRollSights = 5
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
-SWEP.VisualRecoilPunch = 1.5
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 15
 SWEP.VisualRecoilSide = 0.5
@@ -217,8 +217,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(-1, -1, -1)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -322,8 +322,8 @@ SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.015 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = path .. "weap_smgolf45_fire_hammer_01.ogg"
-SWEP.TriggerUpSound = path .. "weap_smgolf45_disconnector_plr_01.ogg"
+SWEP.TriggerDownSound = path .. "weap_charlie9_hammer_plr_01.ogg"
+SWEP.TriggerUpSound = path .. "weap_charlie9_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
 	["enter_sights"] = {
@@ -332,6 +332,12 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+    },
+    ["dryfire"] = {
+        Source = "dryfire",
+		MinProgress = 0.01,
+		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",

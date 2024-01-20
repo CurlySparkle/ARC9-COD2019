@@ -111,6 +111,20 @@ SWEP.RecoilKick = 1.5
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 
+-------------------------- VISUAL RECOIL
+
+SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilMultSights = 0.4
+SWEP.VisualRecoilPunchSights = 15
+SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilSideSights = 0
+SWEP.VisualRecoilUpSights = 0
+
+SWEP.VisualRecoilPunch = 3
+SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilSide = 0.3
+
 -------------------------- SPREAD
 
 SWEP.Spread = 0.008
@@ -166,8 +180,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)

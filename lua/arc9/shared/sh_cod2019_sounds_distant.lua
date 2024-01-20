@@ -115,7 +115,7 @@ sound.Add({
     level = 140,
     pitch = {80,110},
     volume = 1,
-    sound = "^weapons/cod2019/shared/atmo/lmg/weap_lmg_fire_plr_atmo_ext1_01.ogg"
+    sound = "weapons/cod2019/shared/atmo/lmg/weap_lmg_fire_plr_atmo_ext1_01.ogg"
 })
 
 --- M203 ---

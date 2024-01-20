@@ -149,8 +149,8 @@ ATT.DamageMinOverride = 10
 
 ATT.ExplosionRadiusOverride = 75
 ATT.ExplosionDamageOverride = 80
-ATT.ExplosionEffect = "csgo_muzzle_he" -- placeholder
-ATT.ImpactDecal = "FadingScorch"
+ATT.ExplosionEffect = "cod2019_muzzle_he" -- placeholder
+ATT.ImpactDecal = "Dark"
 
 ATT.Override_DamageType = DMG_BLAST + DMG_AIRBOAT
 ATT.DamageType = DMG_BLAST + DMG_AIRBOAT
@@ -216,7 +216,7 @@ ATT.DamageMinOverride = 10
 
 ATT.ExplosionRadiusOverride = 65
 ATT.ExplosionDamageOverride = 25
-ATT.ExplosionEffect = "cod2019_muzzle_he"
+ATT.ExplosionEffect = "cod2019_muzzle_he" -- placeholder
 ATT.ImpactDecal = "FadingScorch"
 
 ATT.MuzzleParticle = "muzzleflash_M3"

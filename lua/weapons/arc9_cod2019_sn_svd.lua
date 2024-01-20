@@ -128,6 +128,9 @@ SWEP.RecoilMultSights = 0.65
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.5
 SWEP.VisualRecoilPunchSights = 15
+SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilSideSights = 0
+SWEP.VisualRecoilUpSights = 0
 
 SWEP.VisualRecoilPunch = 1
 SWEP.VisualRecoilUp = 0.2
@@ -317,6 +320,12 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+    },
+    ["dryfire"] = {
+        Source = "dryfire",
+		MinProgress = 0.3,
+		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
@@ -612,6 +621,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
+        MinProgress = 0.7,
+        FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -642,6 +653,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        MinProgress = 0.5,
+        FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -815,20 +828,6 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
--- SWEP.Hook_Think	= function(wep)
---     local vm = wep:GetOwner():GetViewModel()
---     if wep:Clip1() == 0 then
---         vm:SetPoseParameter("empty", 1)
---     else
---         vm:SetPoseParameter("empty", 0)
---     end
-	
---     local vm = wep:GetOwner():GetViewModel()
---     local delta = wep:GetSightDelta()
---     local coolilove = math.cos(delta * (math.pi / 2))
---     vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 1, 0) )
--- end
-
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
@@ -929,6 +928,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("scope_svd") then model:SetBodygroup(7,0) end
+    if wep:HasElement("stock_custom") then model:SetBodygroup(3,2) end
 end
 
 SWEP.Attachments = {
@@ -984,7 +984,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
         DefaultAttName = "Standard Stock",
-        Category = "cod2019_tube",
+        Category = {"cod2019_tube","cod2019_svd_stock"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -1068,5 +1068,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 25.9
-SWEP.CodStubbyGripPoseParam = 6
-SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.CodStubbyGripPoseParam = 22
+SWEP.CodStubbyTallGripPoseParam = 26

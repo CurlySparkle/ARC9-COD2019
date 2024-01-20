@@ -117,6 +117,12 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 10
 SWEP.VisualRecoilUp = 15
 
+SWEP.VisualRecoilMultSights = 0.7
+SWEP.VisualRecoilPunchSights = 13
+SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilSideSights = 0
+SWEP.VisualRecoilUpSights = 0.1
+
 -------------------------- SPREAD
 
 SWEP.Spread = 0.001
