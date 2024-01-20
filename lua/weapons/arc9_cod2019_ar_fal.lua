@@ -37,11 +37,11 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_rif_fal.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-9.5, 6.2, -5.5),
-    Ang = Angle(-7, 0, 180),
-    Scale = 1,
-    TPIKPos = Vector(-7, 5, -2),
-    TPIKAng = Angle(-9, 0, 175),
+    Pos = Vector(-3.5, 3, -6),
+    Ang = Angle(-5, 0, 180),
+    TPIKPos = Vector(-8.5, 4.5, -6),
+    TPIKAng = Angle(-12.5, -1, 165),
+    Scale = 1
 }
 
 -------------------------- DAMAGE PROFILE
@@ -338,6 +338,7 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.85,
+		RefillProgress = 0.65,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -346,7 +347,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
@@ -375,6 +376,7 @@ SWEP.Animations = {
         Source = "reload",
 		DropMagAt = 1.5,
 		MinProgress = 0.85,
+		RefillProgress = 0.775,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -383,12 +385,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.125,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.175,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.725,
                 lhik = 0,
                 rhik = 0
             },
@@ -415,6 +422,7 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.85,
+		RefillProgress = 0.65,
 		DropMagAt = 0.9,
 		FireASAP = true,
         IKTimeLine = {
@@ -424,17 +432,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.675,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -453,10 +461,16 @@ SWEP.Animations = {
         Source = "reload_fast_empty",
 		DropMagAt = 1.5,
 		MinProgress = 0.85,
+		RefillProgress = 0.75,
 		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.15,
                 lhik = 1,
                 rhik = 0
             },
@@ -466,12 +480,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.75,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.875,
                 lhik = 1,
                 rhik = 1
             },
@@ -492,6 +506,7 @@ SWEP.Animations = {
     ["reload_xmag"] = {
         Source = "reload_xmag",
 		MinProgress = 0.85,
+		RefillProgress = 0.65,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -500,7 +515,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
@@ -529,6 +544,7 @@ SWEP.Animations = {
         Source = "reload_xmag_empty",
 		DropMagAt = 1.5,
 		MinProgress = 0.85,
+		RefillProgress = 0.775,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -537,17 +553,22 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.125,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.175,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.725,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.875,
                 lhik = 1,
                 rhik = 1
             },
@@ -569,6 +590,7 @@ SWEP.Animations = {
     ["reload_xmag_fast"] = {
         Source = "reload_fast2",
 		MinProgress = 0.85,
+		RefillProgress = 0.65,
 		DropMagAt = 0.82,
 		FireASAP = true,
 		DropMagazineQCA = 5,
@@ -579,17 +601,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.675,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -608,10 +630,16 @@ SWEP.Animations = {
         Source = "reload_xmag_fast_empty",
 		DropMagAt = 1.4,
 		MinProgress = 0.85,
+		RefillProgress = 0.75,
 		FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.15,
                 lhik = 1,
                 rhik = 0
             },
@@ -621,12 +649,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.75,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.9,
+                t = 0.875,
                 lhik = 1,
                 rhik = 1
             },
@@ -746,12 +774,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.3,
+                t = 0.8,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 0.75,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
