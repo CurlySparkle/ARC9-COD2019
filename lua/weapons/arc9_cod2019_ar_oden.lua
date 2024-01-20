@@ -38,10 +38,10 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_rif_oden.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-12, 6, -7.5),
+    Pos = Vector(-4.5, 3, -6.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-6.5, 5, -2),
-    TPIKAng = Angle(-9, 0, 175),
+    TPIKPos = Vector(-6, 4.5, -6),
+    TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1
 }
 
@@ -335,30 +335,13 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		RefillProgress = 0.725,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+            { t = 0, lhik = 1,  rhik = 0 },
+		},
         EventTable = {
 			{s = path .. "wfoly_ar_asierra12_reload_rotate.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 10/30},
@@ -369,30 +352,13 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		RefillProgress = 0.8,
+		FireASAP = true,
 		DropMagAt = 0.9,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.95,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+            { t = 0, lhik = 1,  rhik = 0 },
+		},
         EventTable = {
 			{s = path .. "wfoly_ar_asierra12_reload_empty_rotate.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_asierra12_reload_empty_magout_01.ogg", t = 11/30},
@@ -406,32 +372,14 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.6,
+		MinProgress = 0.65,
+		RefillProgress = 0.5,
 		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.45,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+            { t = 0, lhik = 1,  rhik = 0 },
+		},
         EventTable = {
 			{s = path .. "wfoly_ar_asierra12_reload_rotate.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 4/30},
@@ -443,31 +391,13 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.65,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+            { t = 0, lhik = 1,  rhik = 0 },
+		},
         EventTable = {
 			{s = path .. "wfoly_ar_asierra12_reload_rotate.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_asierra12_reload_magout_01.ogg", t = 4/30},
@@ -480,26 +410,7 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1,  rhik = 0 },
         },
         EventTable = {
             {s = path .. "wfoly_ar_asierra12_raise_first_up.ogg", t = 0/30},
@@ -510,16 +421,7 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw_short",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1,  rhik = 0 },
         },
         EventTable = {
             {s = path .. "wfoly_ar_asierra12_raise.ogg", t = 0/30},
@@ -534,7 +436,7 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.3,
+                t = 0.15,
                 lhik = 0,
                 rhik = 1
             },

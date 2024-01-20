@@ -38,10 +38,10 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_rif_scar.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-12, 6, -7.5),
+    Pos = Vector(-3.5, 3, -6),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-8.4, 5.5, -2.3),
-    TPIKAng = Angle(-9, 0, 175),
+    TPIKPos = Vector(-9.5, 4.5, -6),
+    TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1
 }
 
@@ -235,8 +235,8 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1, 0, -3.2)
-SWEP.PeekAng = Angle(0, 0.2, -45)
+SWEP.PeekPos = Vector(-1, 4, -4)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 -------------------------- HoldTypes
 
@@ -343,13 +343,13 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
-        -- EventTable = {
-			-- {s = "COD2019.Scar.Mech", t = 0/30},
-        -- },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		RefillProgress = 0.625,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
@@ -358,12 +358,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
@@ -384,6 +384,8 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 0.65,
         IKTimeLine = {
             {
@@ -392,17 +394,22 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.15,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.3,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.75,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -419,6 +426,8 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
+		RefillProgress = 0.625,
+		FireASAP = true,
 		MagSwapTime = 0.5,
 		DropMagAt = 0.55,
         IKTimeLine = {
@@ -428,12 +437,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.6,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
@@ -453,7 +462,9 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		RefillProgress = 0.725,
+		FireASAP = true,
 		MagSwapTime = 0.5,
 		DropMagAt = 0.55,
         IKTimeLine = {
@@ -463,7 +474,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
@@ -489,7 +500,9 @@ SWEP.Animations = {
     },
     ["reload_xmags"] = {
         Source = "reload_xmags",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		RefillProgress = 0.625,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
@@ -498,12 +511,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
@@ -524,6 +537,8 @@ SWEP.Animations = {
     ["reload_xmags_fast"] = {
         Source = "reload_xmags_fast",
 		MinProgress = 0.8,
+		RefillProgress = 0.625,
+		FireASAP = true,
 		MagSwapTime = 0.5,
 		DropMagAt = 0.55,
         IKTimeLine = {
@@ -533,17 +548,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.6,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -558,7 +573,9 @@ SWEP.Animations = {
     },
     ["reload_dmr"] = {
         Source = "reload_dmr",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		RefillProgress = 0.625,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
@@ -567,12 +584,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
@@ -593,7 +610,9 @@ SWEP.Animations = {
     ["reload_dmr_empty"] = {
         Source = "reload_dmr_empty",
 		MinProgress = 0.9,
-		DropMagAt = 0.6,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 0.65,
         IKTimeLine = {
             {
                 t = 0,
@@ -601,17 +620,22 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.15,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.3,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.75,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -628,6 +652,8 @@ SWEP.Animations = {
     ["reload_dmr_fast"] = {
         Source = "reload_dmr_fast",
 		MinProgress = 0.8,
+		RefillProgress = 0.625,
+		FireASAP = true,
 		MagSwapTime = 0.5,
 		DropMagAt = 0.55,
         IKTimeLine = {
@@ -637,17 +663,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.6,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.85,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -662,7 +688,9 @@ SWEP.Animations = {
     },
     ["reload_dmr_fast_empty"] = {
         Source = "reload_dmr_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		MagSwapTime = 0.5,
 		DropMagAt = 0.55,
         IKTimeLine = {
@@ -672,7 +700,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
