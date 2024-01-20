@@ -101,7 +101,8 @@ SWEP.Firemodes = {
         RPM = 1000,
 		PostBurstDelay = 0.2,
 		RunawayBurst = true,
-		PoseParam = 1
+		PoseParam = 1,
+		TracerEffect = "ARC9_tracer"
     }
 }
 -------------------------- RECOIL
@@ -122,7 +123,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 100 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 5 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
@@ -134,6 +135,9 @@ SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.85
+
+SWEP.RecoilPerShot = 0.5
+SWEP.RecoilMax = 1.5
 
 -------------------------- VISUAL RECOIL
 
@@ -168,19 +172,21 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.03
 
-SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 2
-SWEP.RecoilModifierCapMove = 0.5
-SWEP.RecoilModifierCapSights = 0
+SWEP.SpreadAddRecoil = 0.04
 
-SWEP.SpreadMultMove = 2
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadAddMove = 0.02
+SWEP.SpreadAddMidAir = 0.045
 SWEP.SpreadAddCrouch = -0.03
-SWEP.SpreadAddSights = -0.5
+SWEP.SpreadAddSights = -(SWEP.Spread)
+-- SWEP.SpreadAddSights = -(SWEP.Spread + (SWEP.SpreadAddMove / 2))
+
+SWEP.SpreadMultRecoil = 1
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
+SWEP.RecoilModifierCapSights = 0.05
 
 -------------------------- HANDLING
 

@@ -156,13 +156,13 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.04
+SWEP.Spread = 0.0325
 
 SWEP.SpreadAddRecoil = 0.04
 
 SWEP.SpreadAddHipFire = 0
-SWEP.SpreadAddMove = 0.025
-SWEP.SpreadAddMidAir = 0.075
+SWEP.SpreadAddMove = 0.02
+SWEP.SpreadAddMidAir = 0.045
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -(SWEP.Spread)
 -- SWEP.SpreadAddSights = -(SWEP.Spread + (SWEP.SpreadAddMove / 2))
@@ -349,7 +349,7 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.825,
 		RefillProgress = 0.55,
 		FireASAP = true,
         IKTimeLine = {
@@ -389,7 +389,8 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.725,
+		MinProgress = 0.85,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		DropMagAt = 1.15,
         IKTimeLine = {
@@ -425,7 +426,8 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.625,
+		MinProgress = 0.85,
+		RefillProgress = 0.625,
 		FireASAP = true,
 		DropMagAt = 0.85,
         IKTimeLine = {
@@ -461,7 +463,8 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.725,
+		MinProgress = 0.85,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		DropMagAt = 1.15,
         IKTimeLine = {
@@ -533,7 +536,7 @@ SWEP.Animations = {
     },
     ["reload_drum_empty"] = {
         Source = "reload_drum_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
 		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 1.15,
@@ -607,7 +610,7 @@ SWEP.Animations = {
     },
     ["reload_drum_fast_empty"] = {
         Source = "reload_drum_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
 		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 1.15,
