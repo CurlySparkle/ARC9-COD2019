@@ -167,7 +167,7 @@ SWEP.SpreadAddHipFire = 0
 SWEP.SpreadAddMove = 0.015
 SWEP.SpreadAddMidAir = 0.045
 SWEP.SpreadAddCrouch = -0.03
-SWEP.SpreadAddSights = -(SWEP.Spread)
+SWEP.SpreadAddSights = -0.5
 -- SWEP.SpreadAddSights = -(SWEP.Spread + (SWEP.SpreadAddMove / 2))
 
 SWEP.SpreadMultRecoil = 1
@@ -307,8 +307,8 @@ SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
 SWEP.DistantShootSoundSilencedIndoor = "Distant_AR_Sup.Inside"
 ---------------------------------------------------
 
-SWEP.EnterSightsSound = "COD2019.Iron.In_Rifle"
-SWEP.ExitSightsSound = "COD2019.Iron.Out_Rifle"
+SWEP.EnterSightsSound = "weapons/cod2019/ak47/wfoly_ar_akilo47_ads_up.ogg"
+SWEP.ExitSightsSound = "weapons/cod2019/ak47/wfoly_ar_akilo47_ads_down.ogg"
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
