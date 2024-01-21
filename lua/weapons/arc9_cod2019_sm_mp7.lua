@@ -799,9 +799,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_plr_sm_mpapa7_raise_first_lift.ogg", t = 0/30},
-            {s = path .. "wfoly_plr_sm_mpapa7_raise_first_charge.ogg", t = 12/30},
-			{s = path .. "wfoly_plr_sm_mpapa7_raise_first_end.ogg", t = 21/30},
+            {s = path .. "wfoly_plr_sm_mpapa7_raise_first_lift.ogg", t = 0.033},
+            {s = path .. "wfoly_plr_sm_mpapa7_raise_first_charge.ogg", t = 0.4},
+			{s = path .. "wfoly_plr_sm_mpapa7_raise_first_end.ogg", t = 0.8},
         },
     },
     ["draw"] = {

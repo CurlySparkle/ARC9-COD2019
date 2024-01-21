@@ -710,9 +710,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_raise_first_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_raise_first_chamber_e.ogg", t = 6/30},
-			{s = path .. "wfoly_sh_romeo870_raise_first_shoulder.ogg", t = 18/30},
+            {s = path .. "wfoly_sh_romeo870_raise_first_lift.ogg", t = 0.0},
+			{s = path .. "wfoly_sh_romeo870_raise_first_chamber_e.ogg", t = 0.2},
+			{s = path .. "wfoly_sh_romeo870_raise_first_shoulder.ogg", t = 0.633},
         },
     },
     ["draw"] = {
@@ -802,11 +802,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_inspect_01.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_inspect_02.ogg", t = 41/30},
-			{s = path .. "wfoly_sh_romeo870_inspect_03.ogg", t = 69/30},
-			{s = path .. "wfoly_sh_romeo870_inspect_04.ogg", t = 100/30},
-			{s = path .. "wfoly_sh_romeo870_inspect_05.ogg", t = 126/30},
+            {s = path .. "wfoly_sh_romeo870_inspect_01.ogg", t = 0.033},
+			{s = path .. "wfoly_sh_romeo870_inspect_02.ogg", t = 1.5},
+			{s = path .. "wfoly_sh_romeo870_inspect_03.ogg", t = 2.5},
+			{s = path .. "wfoly_sh_romeo870_inspect_04.ogg", t = 3.667},
+			{s = path .. "wfoly_sh_romeo870_inspect_05.ogg", t = 4.367},
         },
     },
     ["bash"] = {
