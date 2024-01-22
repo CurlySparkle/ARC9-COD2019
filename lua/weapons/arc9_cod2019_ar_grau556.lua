@@ -222,7 +222,7 @@ SWEP.CrouchAng = Angle(0, 0, -5)
 SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
-SWEP.CustomizeAng = Angle(90, 0, 0)
+SWEP.CustomizeAng = Angle(90, 0, 1)
 SWEP.CustomizePos = Vector(15, 30, 3)
 SWEP.CustomizeRotateAnchor = Vector(15, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
@@ -638,6 +638,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
+        MinProgress = 0.7,
+        FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -668,6 +670,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        MinProgress = 0.4,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_ar_sierra552_raise.ogg", t = 0/30},
         },
@@ -752,13 +756,13 @@ SWEP.Animations = {
         },
     },
     ["firemode_1"] = {
-        Source = "semi_on",
+        Source = "semi_off",
         EventTable = {
             {s = path .. "wfoly_ar_sierra552_fire_switch_on.ogg", t = 0/30},
         },
     },
     ["firemode_2"] = {
-        Source = "semi_off",
+        Source = "semi_on",
         EventTable = {
             {s = path .. "wfoly_ar_sierra552_fire_switch_off.ogg", t = 0/30},
         },
@@ -831,6 +835,18 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+SWEP.HookP_NameChange = function(self, name)
+	local att = self:GetElements()
+	if att["cod2019_grau556_barrel_long"] then
+		name = "SG 550"
+	end	
+	
+	if att["cod2019_grau556_barrel_heavy"] then
+		name = "IMBEL IA2"
+	end
+    return name
+end
+
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
@@ -873,7 +889,7 @@ end
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
-SWEP.DefaultBodygroups = "00000000000000"
+SWEP.DefaultBodygroups = "000000000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -884,42 +900,6 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0.9, 0, 0.1),
     },
-    -- ["csgo_cod2019_laser_01"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(2, 15, -1),
-        -- Ang = Angle(0.3, 2, -45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_02"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(2, 15, -1),
-        -- Ang = Angle(0.3, 2, -45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_03"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(2, 15, -1),
-        -- Ang = Angle(0.3, 2, -45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
     ["cod2019_attach_xmag_50"] = {
     Model = "models/weapons/cod2019/attachs/weapons/grau556/attachment_vm_ar_sierra552_xmags.mdl",
     DropMagazineModel = "models/weapons/cod2019/attachs/weapons/grau556/attachment_vm_ar_sierra552_xmags.mdl",
@@ -988,9 +968,19 @@ SWEP.AttachmentElements = {
             {7,1},
         },
     },
-    ["sight_none"] = {
+    ["sight_front_folded"] = {
         Bodygroups = {
             {8,1},
+        },
+    },
+    ["sight_front_none"] = {
+        Bodygroups = {
+            {8,2},
+        },
+    },
+    ["sight_back_none"] = {
+        Bodygroups = {
+            {9,1},
         },
     },
 }
@@ -999,6 +989,10 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(4,1) end
     if wep:HasElement("stock_none") then model:SetBodygroup(4,3) end
+    if wep:HasElement("barrel_custom") then 
+	model:SetBodygroup(8,2)
+	model:SetBodygroup(5,0)
+	end
 end
 
 SWEP.Attachments = {
@@ -1027,7 +1021,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(2.1, -0.1, 0),
-		InstalledElements = {"sight_none"},
+		InstalledElements = {"sight_front_folded","sight_back_none"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
@@ -1043,7 +1037,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-2.8, 0, 0.2),
+        Pos = Vector(-2.8, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"rail_grip"},
