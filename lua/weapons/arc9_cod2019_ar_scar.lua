@@ -138,7 +138,7 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 1.7
 SWEP.VisualRecoilUp = 0.3
 
-SWEP.VisualRecoilMultSights = 0.4
+SWEP.VisualRecoilMultSights = 0.5
 SWEP.VisualRecoilPunchSights = 15
 SWEP.VisualRecoilRollSights = 5
 SWEP.VisualRecoilSideSights = 0
@@ -285,7 +285,7 @@ SWEP.DropMagazineSounds = {
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 3
-SWEP.DropMagazineAng = Angle(0, -90, 0)
+SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
 
@@ -546,6 +546,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		MagSwapTime = 0.5,
 		DropMagAt = 0.55,
+		DropMagAt = 0.45,
         IKTimeLine = {
             {
                 t = 0,
@@ -761,12 +762,41 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.3,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.6,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_ar_scharlie_raise_movment.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.4,
+                lhik = 0,
+                rhik = 1
+            },
+        },
         EventTable = {
             {s = path .. "wfoly_ar_scharlie_drop_mvmnt.ogg", t = 0/30},
         },
@@ -959,6 +989,14 @@ SWEP.Animations = {
 }
 
 -------------------------- ATTACHMENTS
+
+SWEP.HookP_NameChange = function(self, name)
+	local att = self:GetElements()
+	if att["cod2019_scar_mag_ar"] then
+		name = "SCAR-L"
+	end	
+    return name
+end
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
@@ -1184,7 +1222,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "j_mag1",
-        Category = {"cod2019_scar_mag"},
+        Category = {"cod2019_scar_mag","cod2019_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
