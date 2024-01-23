@@ -125,7 +125,7 @@ SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.85
 
 -------------------------- VISUAL RECOIL
 
@@ -216,8 +216,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -278,7 +278,7 @@ SWEP.DropMagazineSounds = {
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 3
-SWEP.DropMagazineAng = Angle(0, -90, 0)
+SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
 
@@ -688,7 +688,7 @@ SWEP.Animations = {
         Source = "reload_xmag_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.55,
+		DropMagAt = 0.43,
         IKTimeLine = {
             {
                 t = 0,
@@ -723,7 +723,7 @@ SWEP.Animations = {
         Source = "reload_empty_xmag_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.55,
+		DropMagAt = 0.43,
         IKTimeLine = {
             {
                 t = 0,
@@ -977,7 +977,7 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     ---------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("ammo_extend") then
         return "reload_xmag"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
         return "reload_xmag_empty"
     ---------------------------------------------------------------------------
     elseif anim == "reload" and wep:HasElement("mag_xmag") then
@@ -1050,6 +1050,11 @@ SWEP.AttachmentElements = {
             {4,2},
         },
     },
+    ["stock_adapter"] = {
+        Bodygroups = {
+            {5,2},
+        },
+    },
     ["stock_retract"] = {
         Bodygroups = {
             {5,1},
@@ -1057,9 +1062,12 @@ SWEP.AttachmentElements = {
     },
     ["stock_none"] = {
         Bodygroups = {
-            {5,2},
+            {5,3},
         },
     },
+	["grip_angled"] = {
+    AttPosMods = { [5] = { Pos = Vector(-2.2, 0, 0), } }	
+	}
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -1085,6 +1093,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle_none"},
+		ExcludeElements = {"Barrel_supp"},
 		Scale = 1,
     },
     {
@@ -1099,10 +1108,10 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail",
         Bone = "tag_laser_attach",
-        Pos = Vector(1, -0.8, -1),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(-0.6, -1.5, 0.5),
+        Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
     },
     {
@@ -1110,7 +1119,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-2, 0, 0),
+        Pos = Vector(-1.3, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
     },
@@ -1121,7 +1130,7 @@ SWEP.Attachments = {
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_none"},
+		--InstalledElements = {"stock_none"},
 		Scale = 1,
     },
     {
