@@ -1388,7 +1388,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
         DefaultAttName = "Default",
-        Category = {"cod2019_grip","cod2019_grip_cclamp"},
+        Category = {"cod2019_grip","cod2019_grip_cclamp", "cod2019_grip_ubgl"},
         Bone = "tag_grip_attach",
         Pos = Vector(-3, 0, -0.05),
         Ang = Angle(0, 0, 180),
@@ -1475,6 +1475,19 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, -1),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
+    },
+
+    -- here to not make presets bad
+    {
+        PrintName = ARC9:GetPhrase("uplp_category_ubgl") or "ubgl",
+        Category = {"uplp_m203_rail"},
+        -- DefaultIcon = Material(defatt2 .. "grip.png", "mips smooth"),
+        Bone = "tag_grip_attach",
+        Pos = Vector(-3.5, 0, -1.5),
+        Ang = Angle(0, 180, 0),
+        -- ExcludeElements = {"uplp_no_grip", "uplp_no_ubgl"},
+        MergeSlots = {5}, 
+        Hidden = true,
     },
 }
 
