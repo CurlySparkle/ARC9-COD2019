@@ -946,9 +946,16 @@ SWEP.AttachmentElements = {
     ["stock_adapter"] = {
         Bodygroups = {
             {4,2},
+            {10,1},
         },
     },
     ["stock_none"] = {
+        Bodygroups = {
+            {4,3},
+            {10,1},
+        },
+    },
+    ["stock_none2"] = {
         Bodygroups = {
             {4,3},
         },
@@ -1045,7 +1052,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
         DefaultAttName = "Standard Stock",
-        Category = {"stock_retract","cod2019_tube"},
+        Category = {"stock_retract","cod2019_tube","cod2019_grau556_stock"},
         Bone = "tag_attachments",
         Pos = Vector(-0.77, 0.6, -0.26),
         Ang = Angle(0, 0, 0),
