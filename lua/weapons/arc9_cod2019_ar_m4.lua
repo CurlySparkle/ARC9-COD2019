@@ -1388,7 +1388,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
         DefaultAttName = "Default",
-        Category = {"cod2019_grip","cod2019_grip_cclamp"},
+        Category = {"cod2019_grip","cod2019_grip_cclamp","cod2019_grip_ubgl"},
         Bone = "tag_grip_attach",
         Pos = Vector(-3, 0, -0.05),
         Ang = Angle(0, 0, 180),
