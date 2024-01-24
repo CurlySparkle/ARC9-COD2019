@@ -434,7 +434,7 @@ SWEP.Animations = {
         },
     },
     ["reload_fast_empty"] = {
-        Source = "reload_empty",
+        Source = "reload_fast_empty",
 		MinProgress = 0.8,
 		DropMagAt = 0.75,
         IKTimeLine = {
@@ -454,23 +454,18 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 1,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
             {s = path .. "wfoly_sn_mike14_reload_empty_rotate.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_mike14_reload_empty_magout.ogg", t = 10/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magout_arm.ogg", t = 11/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_mvmnt.ogg", t = 16/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 34/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 40/30},
+            {s = path .. "wfoly_sn_mike14_reload_empty_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magout_arm.ogg", t = 10/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_mvmnt.ogg", t = 15/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 19/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 25/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_rotate.ogg", t = 47/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_charge.ogg", t = 59/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 60/30},
@@ -751,7 +746,7 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag2_fast_empty"] = {
-        Source = "reload_xmag2_empty_fast",
+        Source = "reload_xmag2_fast_empty",
 		MinProgress = 0.8,
 		DropMagAt = 0.75,
         IKTimeLine = {
