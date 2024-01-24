@@ -1,6 +1,6 @@
 AddCSLuaFile()
 if CLIENT then
-    killicon.Add( "arc9_cod2019_la_strela", "vgui/killicons/cod2019_la_strela.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_strela_default", "vgui/killicons/cod2019_la_strela.png", Color(251, 85, 25, 255))
 end
 
 SWEP.Base = "arc9_cod2019_base"
@@ -41,6 +41,7 @@ SWEP.WorldModelOffset = {
 }
 
 SWEP.CanPeek = false
+SWEP.AimAssist = false
 
 -------------------------- DAMAGE PROFILE
 
@@ -139,7 +140,7 @@ SWEP.RecoilPatternDrift = 20
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
-SWEP.Speed = 0.85 -- Walk speed multiplier
+SWEP.SpeedMult = 0.85 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.5 -- When aiming
 SWEP.SpeedMultShooting = 0.25
 

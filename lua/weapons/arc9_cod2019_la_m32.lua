@@ -1,6 +1,10 @@
 AddCSLuaFile()
 if CLIENT then
-    killicon.Add( "arc9_cod2019_la_m32", "vgui/killicons/cod2019_la_m32.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_40mm_flash", "vgui/killicons/cod2019_la_m32.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_40mm_gas", "vgui/killicons/cod2019_la_m32.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_40mm_hel", "vgui/killicons/cod2019_la_m32.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_40mm_inc", "vgui/killicons/cod2019_la_m32.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_40mm_smoke", "vgui/killicons/cod2019_la_m32.png", Color(251, 85, 25, 255))
 end
 
 SWEP.Base = "arc9_cod2019_base"
@@ -38,6 +42,7 @@ SWEP.WorldModelOffset = {
 }
 
 SWEP.CanPeek = false
+SWEP.AimAssist = false
 
 -------------------------- DAMAGE PROFILE
 
@@ -153,7 +158,7 @@ SWEP.RecoilModifierCapSights = 0
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
-SWEP.Speed = 0.9 -- Walk speed multiplier
+SWEP.SpeedMult = 0.9 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.6 -- When aiming
 SWEP.SpeedMultShooting = 0.75
 

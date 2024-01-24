@@ -185,6 +185,10 @@ SWEP.RecoilModifierCapSights = 0.05
 
 -------------------------- HANDLING
 
+SWEP.SpeedMult = 0.9 -- Walk speed multiplier
+SWEP.SpeedMultSights = 0.8 -- When aiming
+SWEP.SpeedMultShooting = 0.9
+
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
