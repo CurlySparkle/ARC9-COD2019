@@ -1308,9 +1308,16 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
+    ["stock_adapter"] = {
+        Bodygroups = {
+            {3,1},
+            {4,1},
+        },
+    },
     ["stock_none"] = {
         Bodygroups = {
             {3,1},
+            {4,1},
         },
     },
     ["stock_main"] = {
@@ -1401,11 +1408,11 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
         DefaultAttName = "Standard Stock",
-        Category = {"cod2019_stocks"},
+        Category = {"cod2019_tube","cod2019_m4_stock"},
         Bone = "tag_stock_attach",
-        Pos = Vector(1.2, 0, 0.05),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_none"},
+		--InstalledElements = {"stock"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
@@ -1485,7 +1492,7 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 0.4
 SWEP.GripPoseParam2 = 0
 SWEP.CodAngledGripPoseParam = 2
-SWEP.CodStubbyGripPoseParam = 14
+SWEP.CodStubbyGripPoseParam = 26
 SWEP.CodStubbyTallGripPoseParam = 26
 --SWEP.CodStubbyTallGripPoseParam = 15
 --SWEP.CodStubbyTallGripPoseParam = 0

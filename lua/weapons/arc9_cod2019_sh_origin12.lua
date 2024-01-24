@@ -206,8 +206,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-1, -0.8, -0.8)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -215,7 +215,7 @@ SWEP.CrouchAng = Angle(0, 0, -5)
 SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
-SWEP.CustomizeAng = Angle(90, 0, 1)
+SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(14, 30, 4)
 SWEP.CustomizeRotateAnchor = Vector(14, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
