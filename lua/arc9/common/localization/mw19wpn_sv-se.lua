@@ -287,7 +287,7 @@ L["cod2019_attach_laser_rail_2.description"] = "Tillåter installering av smål,
 ////////////////////  Grips
 L["cod2019_attach_grip_foregrip_side.printname"] = "ARC-Framgrepp" -- UO
 L["cod2019_attach_grip_foregrip_side.compactname"] = "ARC" -- UO
-L["cod2019_attach_grip_foregrip_side.description"] = ARC9:GetPhrase("csgo_cod2019_grips_merc.description") or "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics." .. missingloc
+L["cod2019_attach_grip_foregrip_side.description"] = ARC9:GetPhrase("cod2019_grips_merc.description") or "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics." .. missingloc
 
 L["cod2019_grips_none.printname"] = "Alternativ Hållande" -- UO
 L["cod2019_grips_none.compactname"] = "Alt. Håll." -- UO

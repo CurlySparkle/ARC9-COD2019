@@ -599,7 +599,7 @@ SWEP.Animations = {
     ["reload_empty_fast_scope"] = {
         Source = "reload_fast_scope_empty",
 		MinProgress = 0.8,
-		RefillProgress = 0.1,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		DropMagAt = 0.6,
 		--EjectAt = 0.7,
@@ -894,6 +894,8 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 	local scope = wep:HasElement("optic_scope")
 	
 	if soh then
+		if scope and anim == "inspect" then return "inspect_scope" end
+		
 		if scope then return anim .. "_fast_scope"
 		else return anim .. "_fast" end
 	end
