@@ -332,12 +332,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_mike9_reload_magrelease.ogg", t = 2/30},
 			{s = path .. "wfoly_pi_mike9_reload_magout.ogg", t = 10/30},
-			{s = path .. "wfoly_pi_mike9_reload_maghit.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_mike9_reload_magin.ogg", t = 28/30},
-			{s = path .. "wfoly_pi_mike9_reload_end.ogg", t = 33/30},
+			{s = path .. "wfoly_pi_mike9_reload_maghit.ogg", t = 23/30},
+			{s = path .. "wfoly_pi_mike9_reload_magin.ogg", t = 29/30},
+			{s = path .. "wfoly_pi_mike9_reload_end.ogg", t = 34/30},
         },
     },
     ["reload_empty"] = {
@@ -367,11 +366,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 7/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 37/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 41/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["reload_fast"] = {
@@ -402,9 +401,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike9_reload_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_raise.ogg", t = 1/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 8/30},
-			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 19/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 18/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 22/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 28/30},
         },
@@ -437,11 +436,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 8/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 17/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 25/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 26/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magin.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_charge.ogg", t = 27/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_end.ogg", t = 31/30},
         },
     },
     ["reload_xmag"] = {
@@ -747,9 +746,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_pi_mike9_raise_first_up.ogg", t = 0/30},
+            {s = path .. "wfoly_pi_mike9_raise_first_up.ogg", t = 1/30},
             {s = path .. "wfoly_pi_mike9_raise_first_hammer.ogg", t = 12/30},
-			{s = path .. "wfoly_pi_mike9_raise_first_end.ogg", t = 18/30},
+			{s = path .. "wfoly_pi_mike9_raise_first_end.ogg", t = 16/30},
         },
     },
     ["draw"] = {
@@ -807,11 +806,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_pi_mike9_inspect_01.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike9_inspect_02.ogg", t = 34/30},
-			{s = path .. "wfoly_pi_mike9_inspect_03.ogg", t = 58/30},
-			{s = path .. "wfoly_pi_mike9_inspect_04.ogg", t = 92/30},
-			{s = path .. "wfoly_pi_mike9_inspect_05.ogg", t = 111/30},
+            {s = path .. "wfoly_pi_mike9_inspect_01.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike9_inspect_02.ogg", t = 38/30},
+			{s = path .. "wfoly_pi_mike9_inspect_03.ogg", t = 61/30},
+			{s = path .. "wfoly_pi_mike9_inspect_04.ogg", t = 98/30},
+			{s = path .. "wfoly_pi_mike9_inspect_05.ogg", t = 114/30},
         },
     },
     ["bash"] = {
