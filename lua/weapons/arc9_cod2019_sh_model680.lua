@@ -377,8 +377,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_reload_start_shellin_01.ogg", t = 16/30},
+            {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0.0},
+			{s = path .. "wfoly_sh_romeo870_reload_start_shellin_01.ogg", t = 0.533},
         },
     },
     ["reload_insert"] = {
@@ -396,9 +396,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 9/30},
-            {s = "COD2019.Model680.ShellIn", t = 10/30},
+			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0.0},
+			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 0.3},
+            {s = "COD2019.Model680.ShellIn", t = 0.333},
         },
     },
     ["reload_finish"] = {
@@ -423,7 +423,7 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 3/30},
+			{s = path .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 0.0},
         },
     },
     ["reload_finish_empty"] = {
@@ -449,10 +449,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_reload_empty_start_twist.ogg", t = 0/30},
-            {s = "COD2019.Model680.Rechamber_A", t = 8/30},
-			{s = "COD2019.Model680.Rechamber_B", t = 15/30},
-            {s = path .. "wfoly_sh_romeo870_reload_empty_start_end.ogg", t = 14/30},
+            {s = path .. "wfoly_sh_romeo870_reload_empty_start_twist.ogg", t = 0.0},
+            {s = "COD2019.Model680.Rechamber_A", t = 0.367},
+			{s = "COD2019.Model680.Rechamber_B", t = 0.6},
+            {s = path .. "wfoly_sh_romeo870_reload_empty_start_end.ogg", t = 0.633},
             
         },
     },
@@ -517,8 +517,8 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_romeo870_reload_end_fast_twist.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_reload_end_fast_shoulder.ogg", t = 16/30},
+			{s = path .. "wfoly_sh_romeo870_reload_end_fast_twist.ogg", t = 0.0},
+			{s = path .. "wfoly_sh_romeo870_reload_end_fast_shoulder.ogg", t = 0.533},
         },
     },
     ["reload_finish_empty_fast"] = {
@@ -544,9 +544,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_romeo870_reload_end_fast_twist.ogg", t = 0/30},
-			{s = "COD2019.Model680.Rechamber_A", t = 10/30},
-			{s = "COD2019.Model680.Rechamber_B", t = 17/30},
+            {s = path .. "wfoly_sh_romeo870_reload_end_fast_twist.ogg", t = 0.0},
+			{s = "COD2019.Model680.Rechamber_A", t = 0.333},
+			{s = "COD2019.Model680.Rechamber_B", t = 0.567},
         },
     },
     ["reload"] = {
@@ -577,12 +577,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_magout.ogg", t = 21/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_magup.ogg", t = 25/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_maghit.ogg", t = 55/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_magin.ogg", t = 59/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_end.ogg", t = 63/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_raise.ogg", t = 0.133},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_magout.ogg", t = 0.667},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_magup.ogg", t = 1.133},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_maghit.ogg", t = 1.533},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_magin.ogg", t = 1.967},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_end.ogg", t = 2.1},
         },
     },
     ["reload_empty"] = {
@@ -613,14 +613,14 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_romeo870_rechamber_v2_01a.ogg", t = 3/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_raise.ogg", t = 15/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_magout.ogg", t = 27/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_magup.ogg", t = 45/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_maghit.ogg", t = 60/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_magin.ogg", t = 65/30},
-			{s = path .. "wfoly_sh_romeo870_rechamber_v2_02a.ogg", t = 83/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_end.ogg", t = 84/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_pump_foreend.ogg", t = 0.0},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_raise.ogg", t = 0.367},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_magout.ogg", t = 0.833},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_magup.ogg", t = 1.4},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_maghit.ogg", t = 1.7},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_magin.ogg", t = 2.2},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_chamber.ogg", t = 2.5},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_end.ogg", t = 3.0},
         },
     },
     ["reload_mag_fast"] = {
@@ -651,11 +651,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magout.ogg", t = 10/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magup.ogg", t = 20/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magin.ogg", t = 30/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_end.ogg", t = 45/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_raise.ogg", t = 0.0},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magout.ogg", t = 0.3},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magup.ogg", t = 0.733},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magin.ogg", t = 1.0},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_end.ogg", t = 1.467},
         },
     },
     ["reload_mag_empty_fast"] = {
@@ -686,13 +686,12 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_romeo870_rechamber_v2_01a.ogg", t = 3/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magout.ogg", t = 19/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magup.ogg", t = 32/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magin.ogg", t = 38/30},
-			{s = path .. "wfoly_sh_romeo870_rechamber_v2_02a.ogg", t = 55/30},
-			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_end.ogg", t = 59/30},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_fast_pump_foreend.ogg", t = 0.033},
+            {s = path .. "wfoly_sh_romeo870_caldb_reload_empty_fast_magout.ogg", t = 0.5},
+            {s = path .. "wfoly_sh_romeo870_caldb_reload_empty_fast_magup.ogg", t = 1.067},
+            {s = path .. "wfoly_sh_romeo870_caldb_reload_empty_fast_magin.ogg", t = 1.267},
+            {s = path .. "wfoly_sh_romeo870_caldb_reload_empty_fast_chamber.ogg", t = 1.833},
+			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_fast_end.ogg", t = 2.067},
         },
     },
     ["ready"] = {

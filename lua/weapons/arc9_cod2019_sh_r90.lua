@@ -322,8 +322,8 @@ SWEP.Animations = {
 		MinProgress = 0.6,
 		FireASAP = true,
         EventTable = {
-            {s = "COD2019.R90.Rechamber_A", t = 1/30},
-			{s = "COD2019.R90.Rechamber_B", t = 5/30},
+            {s = "COD2019.R90.Rechamber_A", t = 0.09},
+			{s = "COD2019.R90.Rechamber_B", t = 0.24},
         },
     },
     ["reload_start"] = {
@@ -432,10 +432,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_dpapa12_raise_first_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_01a.ogg", t = 14/30},
-			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_02a.ogg", t = 18/30},
-			{s = path .. "wfoly_sh_dpapa12_raise_first_end.ogg", t = 26/30},
+            {s = path .. "wfoly_sh_dpapa12_raise_first_lift.ogg", t = 0.033},
+			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_01a.ogg", t = 17/30},
+			{s = path .. "wfoly_sh_dpapa12_rechamber_chamber_v3_02a.ogg", t = 22/30},
+			{s = path .. "wfoly_sh_dpapa12_raise_first_end.ogg", t = 0.96},
         },
     },
     ["draw"] = {
@@ -493,11 +493,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sh_dpapa12_inspect_01.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_dpapa12_inspect_02.ogg", t = 42/30},
-			{s = path .. "wfoly_sh_dpapa12_inspect_03.ogg", t = 68/30},
-			{s = path .. "wfoly_sh_dpapa12_inspect_04.ogg", t = 101/30},
-			{s = path .. "wfoly_sh_dpapa12_inspect_05.ogg", t = 127/30},
+            {s = path .. "wfoly_sh_dpapa12_inspect_01.ogg", t = 0.033},
+			{s = path .. "wfoly_sh_dpapa12_inspect_02.ogg", t = 1.4},
+			{s = path .. "wfoly_sh_dpapa12_inspect_03.ogg", t = 2.43},
+			{s = path .. "wfoly_sh_dpapa12_inspect_04.ogg", t = 3.36},
+			{s = path .. "wfoly_sh_dpapa12_inspect_05.ogg", t = 4.23},
         },
     },
     ["bash"] = {
