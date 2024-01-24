@@ -159,8 +159,8 @@ SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire
 SWEP.Sway = 0 -- How much the gun sways.
 
 SWEP.SpeedMult = 0.9 -- Walk speed multiplier
-SWEP.SpeedMultSights = 0.6 -- When aiming
-SWEP.SpeedMultShooting = 0.75
+SWEP.SpeedMultSights = 0.8 -- When aiming
+SWEP.SpeedMultShooting = 0.8
 
 SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.

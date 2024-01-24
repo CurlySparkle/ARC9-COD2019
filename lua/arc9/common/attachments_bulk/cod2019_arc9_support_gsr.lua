@@ -21,7 +21,7 @@ ATT.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_laser") .. " (GSR)",
         Pos = Vector(-0.5, 0, -0.2),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
+        Icon_Offset = Vector(-0.5, 0, -1.25),
         Category = "csgo_tac_pistols",
 		Scale = 1
     }
@@ -50,8 +50,13 @@ ATT.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_optic") .. " (GSR)",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 1.5),
         Category = "csgo_optic",
+		RejectAttachments = {
+		["go_cod_scopes"] = true,
+		["go_eft_scopes"] = true,
+		["go_gas_scopes"] = true,
+		},
 		Scale = 1
     }
 }
@@ -79,8 +84,13 @@ ATT.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_optic") .. " (GSR)",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 1.5),
         Category = "csgo_optics_pistols",
+		RejectAttachments = {
+		["go_cod_scopes_pistol"] = true,
+		["go_eft_scopes_pistol"] = true,
+		["go_gas_scopes_pistol"] = true,
+		},
 		Scale = 1
     }
 }
@@ -110,6 +120,11 @@ ATT.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
         Category = {"muzzle_shotgun","muzzle"},
+		RejectAttachments = {
+		["go_cod_muzzle"] = true,
+		["go_eft_muzzle"] = true,
+		["go_gas_muzzle"] = true,
+		},
 		Scale = 1
     }
 }
@@ -137,8 +152,13 @@ ATT.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_muzzle") .. " (GSR)",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
+        Icon_Offset = Vector(1.5, 0, 0),
         Category = {"muzzle_pistols","muzzle"},
+		RejectAttachments = {
+		["go_cod_muzzle"] = true,
+		["go_eft_muzzle"] = true,
+		["go_gas_muzzle"] = true,
+		},
 		Scale = 1
     }
 }
@@ -168,7 +188,12 @@ ATT.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_muzzle") .. " (GSR)",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
+        Icon_Offset = Vector(1.5, 0, 0),
+		RejectAttachments = {
+		["go_cod_muzzle"] = true,
+		["go_eft_muzzle"] = true,
+		["go_gas_muzzle"] = true,
+		},
         Category = {"muzzle"},
 		Scale = 1
     }
@@ -199,7 +224,14 @@ ATT.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
         Category = {"grip"},
-		Scale = 1
+		RejectAttachments = {
+		["go_cod_grips"] = true,
+		["go_eft_grips"] = true,
+		["go_ubgl_m203"] = true,
+		["go_ubgl_mass26"] = true,
+		["go_ubgl_xm1014"] = true,
+		},
+		Scale = 1,
     }
 }
 
