@@ -37,6 +37,8 @@ SWEP.WorldModelOffset = {
     Scale = 1
 }
 
+SWEP.CanPeek = false
+
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 100 -- Damage done at point blank range
@@ -111,6 +113,9 @@ SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.9
 
+SWEP.RecoilPerShot = 1
+SWEP.RecoilMax = 1
+
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
@@ -125,14 +130,21 @@ SWEP.VisualRecoilUpSights = 0.1
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.001
-SWEP.SpreadAddRecoil = 0.03
+SWEP.Spread = 0.02
 
-SWEP.SpreadMultSights = 0.1
-SWEP.SpreadAddHipFire = 0.01
---SWEP.SpreadAddMove = 0
---SWEP.SpreadAddMidAir = 0
--- SWEP.SpreadAddRecoil = math.rad(5/37.5) -- 0
+SWEP.SpreadAddRecoil = 0.01
+
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadAddMove = 0.005
+SWEP.SpreadAddMidAir = 0.01
+SWEP.SpreadAddCrouch = -0.03
+SWEP.SpreadAddSights = -(SWEP.Spread)
+-- SWEP.SpreadAddSights = -(SWEP.Spread + (SWEP.SpreadAddMove / 2))
+
+SWEP.SpreadMultRecoil = 1
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
+SWEP.RecoilModifierCapSights = 0
 
 SWEP.RecoilPatternDrift = 20
 
@@ -140,6 +152,10 @@ SWEP.RecoilPatternDrift = 20
 
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
+
+SWEP.Speed = 0.85 -- Walk speed multiplier
+SWEP.SpeedMultSights = 0.5 -- When aiming
+SWEP.SpeedMultShooting = 0.25
 
 SWEP.AimDownSightsTime = 0.8 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
@@ -264,7 +280,9 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.95,
+		FireASAP = true,
+		RefillProgress = 0.75,
 		FireASAP = true,
         IKTimeLine = {
             {
@@ -297,8 +315,9 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.9,
+		MinProgress = 0.95,
 		FireASAP = true,
+		RefillProgress = 0.75,
         IKTimeLine = {
             {
                 t = 0,
