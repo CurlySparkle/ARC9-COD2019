@@ -123,8 +123,8 @@ SWEP.RecoilMultSights = 0.85
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.4
-SWEP.VisualRecoilPunchSights = 15
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 10
 SWEP.VisualRecoilRollSights = 5
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
@@ -205,9 +205,6 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(-2, 0, 0)
-SWEP.SprintAng = Angle(0, 0, 0)
-
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, -0.15),
     Ang = Angle(0, 0, 0)
@@ -221,11 +218,14 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.7, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
-SWEP.CrouchPos = Vector(-0.5, -0, -1)
+SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
+
+SWEP.SprintPos = Vector(1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(19, 40, 5)
@@ -367,6 +367,12 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+    },
+    ["dryfire"] = {
+        Source = "dryfire",
+		MinProgress = 0.01,
+		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
@@ -531,6 +537,169 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_slima_reload_empty_fast_end.ogg", t = 165/30},
         },
     },
+    ["reload_smag"] = {
+        Source = "reload_smag",
+		MinProgress = 0.8,
+		MagSwapTime = 3,
+		DropMagAt = 2.9,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_slima_reload_lower.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_slima_reload_top_cover_open.ogg", t = 20/30},
+			{s = path .. "wfoly_lm_slima_reload_clean_tray.ogg", t = 35/30},
+			{s = path .. "wfoly_lm_slima_reload_arm_down.ogg", t = 66/30},
+			{s = path .. "wfoly_lm_slima_reload_magout.ogg", t = 84/30},
+			{s = path .. "wfoly_lm_slima_reload_lift.ogg", t = 102/30},
+			{s = path .. "wfoly_lm_slima_reload_maghit.ogg", t = 126/30},
+			{s = path .. "wfoly_lm_slima_reload_magin.ogg", t = 140/30},
+			{s = path .. "wfoly_lm_slima_reload_bullets_into_tray.ogg", t = 152/30},
+			{s = path .. "wfoly_lm_slima_reload_top_cover_close.ogg", t = 197/30},
+			{s = path .. "wfoly_lm_slima_reload_end.ogg", t = 214/30},
+        },
+    },
+    ["reload_smag_empty"] = {
+        Source = "reload_smag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 2.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.15,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_slima_reload_empty_lower.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_bolt_pull.ogg", t = 15/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_bolt_close.ogg", t = 29/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_settle.ogg", t = 41/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_top_cover_open.ogg", t = 58/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_clean_tray.ogg", t = 75/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_lift.ogg", t = 90/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_magout.ogg", t = 102/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_maghit.ogg", t = 138/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_magin.ogg", t = 148/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_bullets_into_tray.ogg", t = 165/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_top_cover_close.ogg", t = 204/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_end.ogg", t = 226/30},
+        },
+    },
+    ["reload_smag_fast"] = {
+        Source = "reload_smag_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 2,
+		DropMagAt = 2.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.15,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.98,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_slima_reload_fast_lower.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_top_cover_open.ogg", t = 6/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_clean_tray.ogg", t = 35/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_magout.ogg", t = 48/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_raise.ogg", t = 71/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_maghit.ogg", t = 88/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_magin.ogg", t = 97/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_bullets_into_tray.ogg", t = 104/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_top_cover_close.ogg", t = 135/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_end.ogg", t = 142/30},
+        },
+    },
+    ["reload_smag_fast_empty"] = {
+        Source = "reload_smag_fast_empty",
+		MinProgress = 0.8,
+		MagSwapTime = 2,
+		DropMagAt = 2.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_lower.ogg", t = 1/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_bolt_pull.ogg", t = 18/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_bolt_close.ogg", t = 23/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_top_cover_pop.ogg", t = 39/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_magout.ogg", t = 51/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_maghit.ogg", t = 81/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_magin.ogg", t = 105/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_bullets_into_tray.ogg", t = 114/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_top_cover_close.ogg", t = 137/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_end.ogg", t = 165/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -648,7 +817,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee", "melee2"},
+        Source = {"melee","melee2","melee3"},
         IKTimeLine = {
             {
                 t = 0,
@@ -744,12 +913,20 @@ SWEP.Animations = {
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
+    if anim == "reload" and wep:HasElement("mag_smag") and wep:HasElement("perk_speedreload") then
+        return "reload_smag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("mag_smag") and wep:HasElement("perk_speedreload") then 
+        return "reload_smag_fast_empty"
     --------------------------------------------------------------------------
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
     --------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_smag") then
+        return "reload_smag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_smag") then 
+        return "reload_smag_empty"
     end
 
     wep.MWHybridSwitching = nil
@@ -872,8 +1049,8 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(0.3, 1.2, -1.9),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(1.5, 0, -0.1),
+        Ang = Angle(0, 0, 180),
 		--InstalledElements = {"rail_laser"},
     },
     {
