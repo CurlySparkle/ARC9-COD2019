@@ -1006,7 +1006,7 @@ SWEP.AttachmentElements = {
     },
     ["muzzle"] = {
         Bodygroups = {
-			{5,2},
+			{5,1},
         },
     },
     ["laser_mount"] = {
