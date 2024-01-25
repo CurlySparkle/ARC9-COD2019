@@ -219,10 +219,10 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 
 ATT.Attachments = {
     {
-        PrintName = ARC9:GetPhrase("mw19_category_muzzle") .. " (GSR)",
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel") .. " (GSR)",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 1.5),
         Category = {"grip"},
 		RejectAttachments = {
 		["go_cod_grips"] = true,
