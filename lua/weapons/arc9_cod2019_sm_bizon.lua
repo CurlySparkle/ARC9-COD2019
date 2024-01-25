@@ -217,7 +217,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(-1, -1, -1)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
 SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
@@ -230,7 +230,7 @@ SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(15, 30, 3)
 SWEP.CustomizeRotateAnchor = Vector(15, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
+SWEP.CustomizeSnapshotPos = Vector(-1, 5, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -484,6 +484,154 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_end.ogg", t = 45/30},
         },
     },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.85,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_beta_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_rotate.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_01.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_02.ogg", t = 49/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_end.ogg", t = 49/30},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_rotate.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_magout_01.ogg", t = 6/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_01.ogg", t = 36/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_02.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_charge_01.ogg", t = 61/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_end.ogg", t = 66/30},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.85,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_beta_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_rotate.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_magout_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_02.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_end.ogg", t = 28/30},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_rotate.ogg", t = 4/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_magout_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_02.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_charge_01.ogg", t = 43/30},
+			{s = path .. "wfoly_plr_sm_beta_reload_empty_end.ogg", t = 45/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
 		MinProgress = 0.9,
@@ -606,10 +754,20 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
+    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+        return "reload_xmag_fast"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_fast_empty"
+    ------------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
+    ------------------------------------------------------------------------------
+    elseif anim == "reload" and wep:HasElement("mag_xmag") then
+        return "reload_xmag"
+    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+        return "reload_xmag_empty"
     end
 end
 
@@ -707,6 +865,12 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(5,1) end
+	
+    if wep:HasElement("mag_xmag") then 
+     model:SetPoseParameter("grip_xmag_offset", 1)
+    else
+     model:SetPoseParameter("grip_xmag_offset", 0)
+    end
 end
 
 SWEP.Attachments = {
@@ -740,10 +904,10 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail_alt",
         Bone = "tag_laser_attach",
-        Pos = Vector(-1, -0.5, 0),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(-0.93, -0.76, 0.006),
+        Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
     },
     {
@@ -774,7 +938,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_bizon_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -816,16 +980,16 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = "charm",
-        Bone = "tag_cosmetic",
-        Pos = Vector(-2.5, 0, 0),
+        Bone = "tag_attachments",
+        Pos = Vector(1, -0.8, 1.5),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = {"killcounter","killcounter2"},
-        Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, 0),
+        Bone = "tag_attachments",
+        Pos = Vector(7, -0.8, 1.5),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },

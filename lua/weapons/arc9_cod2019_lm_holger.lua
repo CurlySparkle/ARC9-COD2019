@@ -110,7 +110,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.1
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.5
 
 SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -123,7 +123,7 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.85
+SWEP.RecoilMultSights = 0.9
 
 -------------------------- VISUAL RECOIL
 
@@ -227,7 +227,7 @@ SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
 SWEP.PeekPos = Vector(-1.5, 3, -3.2)
-SWEP.PeekAng = Angle(0, 0, -45)
+SWEP.PeekAng = Angle(-0.5, 1, -45)
 
 -------------------------- HoldTypes
 
