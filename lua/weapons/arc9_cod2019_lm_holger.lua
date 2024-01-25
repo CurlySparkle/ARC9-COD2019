@@ -209,7 +209,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-1, -1, -1)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
 SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
@@ -1012,7 +1012,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle_none"},
-		ExcludeElements = {"barrel_spitfire"},
+		--ExcludeElements = {"barrel_spitfire"},
 		Scale = 1,
     },
     {
@@ -1029,8 +1029,8 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(4, 0, -3),
-        Ang = Angle(0, 0, 0),
+        Pos = Vector(1.5, 0, -0.1),
+        Ang = Angle(0, 0, 180),
 		--InstalledElements = {"rail_laser"},
 		ExcludeElements = {"barrel_spitfire"},
     },
@@ -1039,7 +1039,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-3.5, 0, 0.1),
+        Pos = Vector(-2.6, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
@@ -1122,6 +1122,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.6
-SWEP.CodAngledGripPoseParam = 32
-SWEP.CodStubbyGripPoseParam = 1
+SWEP.CodAngledGripPoseParam = 31.8
+SWEP.CodStubbyGripPoseParam = 17
 SWEP.CodStubbyTallGripPoseParam = 16
