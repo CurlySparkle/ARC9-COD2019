@@ -46,22 +46,32 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 34 -- Damage done at point blank range
-SWEP.DamageMin = 9 -- Damage done at maximum range
+SWEP.DamageMax = 49 -- Damage done at point blank range
+SWEP.DamageMin = 45 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 3000 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 9000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 20 / ARC9.HUToM
+SWEP.RangeMax = 43 / ARC9.HUToM
 
 SWEP.Penetration = 11 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.25
 
 SWEP.ImpactForce = 11
 
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.62,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.PhysBulletMuzzleVelocity = 3150 * 12
+SWEP.PhysBulletMuzzleVelocity = 380 / ARC9.HUToM
 SWEP.PhysBulletGravity = 1.5
 SWEP.PhysBulletDrag = 1
 
@@ -80,17 +90,20 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 650
+SWEP.RPM = 500
 
 SWEP.Firemodes = {
     {
-        Mode = -1,
-		PoseParam = 0,
-    },
-    {
         Mode = 1,
 		PoseParam = 1,
-    }
+    },
+    {
+        Mode = -1,
+		PoseParam = 0,
+		RPM = 700,
+		DamageMaxMult = 0.65,
+		DamageMinMult = 0.65,
+    },
 }
 -------------------------- RECOIL
 
@@ -174,8 +187,8 @@ SWEP.SpeedMult = 1 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.9 -- When aiming
 SWEP.SpeedMultShooting = 0.9
 
-SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.26 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -828,13 +841,13 @@ SWEP.Animations = {
         },
     },
     ["firemode_1"] = {
-        Source = "semi_on",
+        Source = "semi_off",
         EventTable = {
             {s = path .. "weap_ar_falima_selector_on.ogg", t = 0/30},
         },
     },
     ["firemode_2"] = {
-        Source = "semi_off",
+        Source = "semi_on",
         EventTable = {
             {s = path .. "weap_ar_falima_selector_off.ogg", t = 0/30},
         },

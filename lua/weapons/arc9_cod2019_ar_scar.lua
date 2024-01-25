@@ -47,22 +47,32 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 36 -- Damage done at point blank range
-SWEP.DamageMin = 17 -- Damage done at maximum range
+SWEP.DamageMax = 35 -- Damage done at point blank range
+SWEP.DamageMin = 32 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 2000 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 7000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 30 / ARC9.HUToM
+SWEP.RangeMax = 31 / ARC9.HUToM
 
 SWEP.Penetration = 8 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.15
 
 SWEP.ImpactForce = 8
 
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.6,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.PhysBulletMuzzleVelocity = 1512 * 12
+SWEP.PhysBulletMuzzleVelocity = 850 / ARC9.HUToM
 SWEP.PhysBulletGravity = 1.5
 SWEP.PhysBulletDrag = 1.15
 
@@ -81,7 +91,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 571.4285714285714
+SWEP.RPM = 571
 
 SWEP.Firemodes = {
     {
@@ -92,11 +102,6 @@ SWEP.Firemodes = {
         Mode = 1,
 		PoseParam = 1,
     },
-    -- {
-        -- Mode = 3,
-		-- RunawayBurst = true,
-		-- PostBurstDelay = 0.3
-    -- },
 }
 -------------------------- RECOIL
 
@@ -188,7 +193,7 @@ SWEP.SpeedMultSights = 0.9 -- When aiming
 SWEP.SpeedMultShooting = 0.9
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 

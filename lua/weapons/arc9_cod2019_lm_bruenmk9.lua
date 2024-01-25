@@ -106,7 +106,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.1
 
-SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 5 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
@@ -118,6 +118,9 @@ SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.9
+
+SWEP.RecoilPerShot = 0.25
+SWEP.RecoilMax = 2
 
 -------------------------- VISUAL RECOIL
 
@@ -148,18 +151,21 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.0325
 
-SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 1
-SWEP.RecoilModifierCapSights = 0
+SWEP.SpreadAddRecoil = 0.04
 
-SWEP.SpreadMultMove = 2
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadAddMove = 0.02
+SWEP.SpreadAddMidAir = 0.045
 SWEP.SpreadAddCrouch = -0.03
-SWEP.SpreadAddSights = -0.5
+SWEP.SpreadAddSights = -(SWEP.Spread * 2.75)
+-- SWEP.SpreadAddSights = -(SWEP.Spread + (SWEP.SpreadAddMove / 2))
+
+SWEP.SpreadMultRecoil = 1
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
+SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadHook = function(self, orig)
     local rec = self:GetRecoilAmount()
@@ -176,6 +182,10 @@ end
 
 
 -------------------------- HANDLING
+
+SWEP.SpeedMult = 0.95 -- Walk speed multiplier
+SWEP.SpeedMultSights = 0.8 -- When aiming
+SWEP.SpeedMultShooting = 0.8
 
 SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.

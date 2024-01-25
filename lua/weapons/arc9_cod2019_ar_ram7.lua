@@ -47,22 +47,32 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 28 -- Damage done at point blank range
-SWEP.DamageMin = 16 -- Damage done at maximum range
+SWEP.DamageMax = 26 -- Damage done at point blank range
+SWEP.DamageMin = 23 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 1000 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 5000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 27 / ARC9.HUToM
+SWEP.RangeMax = 28 / ARC9.HUToM
 
 SWEP.Penetration = 8 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.15
 
 SWEP.ImpactForce = 8
 
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.475,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.PhysBulletMuzzleVelocity = 3150 * 12
+SWEP.PhysBulletMuzzleVelocity = 850 / ARC9.HUToM
 SWEP.PhysBulletGravity = 1.5
 SWEP.PhysBulletDrag = 1.25
 
@@ -178,8 +188,8 @@ SWEP.SpeedMult = 1 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.9 -- When aiming
 SWEP.SpeedMultShooting = 0.9
 
-SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.22 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
