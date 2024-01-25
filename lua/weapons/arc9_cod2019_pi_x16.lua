@@ -95,7 +95,7 @@ SWEP.Recoil = 1
 
 --SWEP.RecoilSeed = nil
 
-SWEP.RecoilPatternDrift = 35
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -115,21 +115,33 @@ SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.4
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 75
-SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.5
-SWEP.VisualRecoilRoll = 55
-SWEP.VisualRecoilSide = -1/6
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 10
+SWEP.VisualRecoilPunch = 1.5
+SWEP.VisualRecoilUp = 0.3
+SWEP.VisualRecoilRoll = 25
+SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 30
 SWEP.VisualRecoilDampingConstSights = 50
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -193,8 +205,8 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -0.5)
-SWEP.SprintAng = Angle(0, 0, 0)
+SWEP.SprintPos = Vector(1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, -25, 0)
 SWEP.CustomizePos = Vector(16, 30, 3)
@@ -204,7 +216,7 @@ SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-2.5, -6, -3.5)
+SWEP.PeekPos = Vector(-3.2, -3, -3.5)
 SWEP.PeekAng = Angle(0, 0, -45)
 
 -------------------------- HoldTypes
@@ -250,7 +262,7 @@ SWEP.DropMagazineSounds = {
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 3
-SWEP.DropMagazineAng = Angle(0, -90, 0)
+SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
 
@@ -468,9 +480,10 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 23/30},
-			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 35/30},
+			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 25/30},
+            {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 31/30},
+			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 37/30},
         },
     },
     ["reload_xmag_empty"] = {
@@ -501,19 +514,19 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 1/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 16/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 24/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 29/30},
+            {s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 18/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 25/30},
+            {s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 35/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 35/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 43/30},
         },
     },
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.5,
+		DropMagAt = 0.47,
         IKTimeLine = {
             {
                 t = 0,
@@ -537,15 +550,16 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 3/30},
-			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 15/30},
-			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_golf21_reload_fast_magout_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 15/30},
+            {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_golf21_reload_fast_end.ogg", t = 28/30},
         },
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
 		MinProgress = 0.9,
-		DropMagAt = 0.5,
+		DropMagAt = 0.47,
         IKTimeLine = {
             {
                 t = 0,
@@ -569,12 +583,11 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 7/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 15/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magout_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 18/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 22/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 25/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_end.ogg", t = 32/30},
         },
     },
     ["reload_xmaglrg"] = {
@@ -905,6 +918,7 @@ SWEP.Attachments = {
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-4, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
@@ -939,11 +953,24 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
         DefaultAttName = "Default",
         Category = "cod2019_x16_grip",
-        Bone = "tag_stock_attach",
+        Bone = "tag_pistol_attachments",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
-		--InstalledElements = {"rail_grip"},
+        DuplicateModels = {
+            {
+                Bone = "tag_pistol_attachments_l",
+            }
+        },
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
+        DefaultAttName = "Default",
+        Category = "cod2019_x16_stock",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Scale = 1,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
@@ -955,7 +982,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "j_mag1",
-        Category = "cod2019_mag",
+        Category = {"cod2019_mag","cod2019_x16_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

@@ -697,12 +697,25 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
         DefaultAttName = "Default",
-        Category = "cod2019_x16_grip",
-        Bone = "tag_stock_attach",
+        Category = "cod2019_x16_akimbo_grip",
+        Bone = "tag_pistol_attachments",
         Pos = Vector(-2.8, 0, 0.2),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
-		--InstalledElements = {"rail_grip"},
+        DuplicateModels = {
+            {
+                Bone = "tag_pistol_attachments_l",
+            }
+        },
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
+        DefaultAttName = "Default",
+        Category = "cod2019_x16_akimbo_stock",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Scale = 1,
         DuplicateModels = {
             {
                 Bone = "tag_stock_attach_l",
@@ -719,7 +732,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "j_mag1",
-        Category = "cod2019_mag",
+        Category = {"cod2019_mag","cod2019_x16_akimbo_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         DuplicateModels = {
