@@ -37,8 +37,8 @@ SWEP.WorldModelOffset = {
     Scale = 1
 }
 
-SWEP.CanPeek = false
-SWEP.AimAssist = false
+SWEP.CantPeek = true
+SWEP.NoAimAssist = true
 
 -------------------------- DAMAGE PROFILE
 
