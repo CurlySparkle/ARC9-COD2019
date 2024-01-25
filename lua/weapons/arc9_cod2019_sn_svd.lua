@@ -726,9 +726,9 @@ SWEP.Animations = {
             },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_delta_inspect_01.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_delta_inspect_02.ogg", t = 53/30},
-            {s = path .. "wfoly_sn_delta_inspect_03.ogg", t = 113/30},
+            {s = path .. "wfoly_sn_delta_inspect_01.ogg", t = 0.1},
+            {s = path .. "wfoly_sn_delta_inspect_02.ogg", t = 1.767},
+            {s = path .. "wfoly_sn_delta_inspect_03.ogg", t = 3.8},
         },
     },
     ["bash"] = {
