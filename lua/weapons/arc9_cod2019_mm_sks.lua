@@ -825,14 +825,19 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["mag"] = {
+    -- ["mag"] = {
+        -- Bodygroups = {
+            -- {1,1},
+        -- },
+    -- },
+    -- ["mag_none"] = {
+        -- Bodygroups = {
+            -- {1,1},
+        -- },
+    -- },
+    ["mag_xmag"] = {
         Bodygroups = {
             {1,1},
-        },
-    },
-    ["mag_none"] = {
-        Bodygroups = {
-            {1,2},
         },
     },
     ["muzzle_none"] = {

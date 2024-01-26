@@ -21,15 +21,15 @@ local missingloc = "\n\nNote: Non-Localized string; Subscribe to <color=255,255,
 /////////// Caliber -- UO
 L["mw19_caliber"] = "Caliber1"
 
-L["mw19_caliber_7.62x39mm"] = "7.62x39mm Soviet"
-L["mw19_caliber_7.62x51mm"] = "7.62x51mm"
-L["mw19_caliber_5.56x45mm"] = "5.56x45mm"
-L["mw19_caliber_5.45x39mm"] = "5.45x39mm"
+L["mw19_caliber_7.62x39mm"] = "7.62×39mm Soviet"
+L["mw19_caliber_7.62x51mm"] = "7.62×51mm"
+L["mw19_caliber_5.56x45mm"] = "5.56×45mm"
+L["mw19_caliber_5.45x39mm"] = "5.45×39mm"
 L["mw19_caliber_12gauge"] = "12 Gauge"
 L["mw19_caliber_50ae"] = ".50 AE"
-L["mw19_caliber_5.7x28mm"] = "FN 5.7x28mm"
-L["mw19_caliber_4.6x30mm"] = "HK 4.6x30mm"
-L["mw19_caliber_9x19mm"] = "9x19mm Parabellum"
+L["mw19_caliber_5.7x28mm"] = "FN 5.7×28mm"
+L["mw19_caliber_4.6x30mm"] = "HK 4.6×30mm"
+L["mw19_caliber_9x19mm"] = "9×19mm Parabellum"
 L["mw19_caliber_.338"] = ".338 Lapua"
 L["mw19_caliber_.308"] = ".308 Winchester"
 

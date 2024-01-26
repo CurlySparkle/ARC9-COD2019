@@ -834,6 +834,9 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.15),
     },
+    ["cod2019_optic_scope_kar98k"] = {
+	ShotgunReload = true,
+    },
     ["cod2019_optic_scope_vz"] = {
     ModelOffset = Vector(-8.1, 0, -0.5),
 	ShotgunReload = true,
