@@ -834,6 +834,10 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.15),
     },
+    ["cod2019_optic_scope_vz"] = {
+    ModelOffset = Vector(-8.1, 0, -0.5),
+	ShotgunReload = true,
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -877,8 +881,8 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
 	
-    if wep:HasElement("scope_kar98k") then 
-	model:SetBodygroup(2,0)	
+    if wep:HasElement("scope_kar98k") or wep:HasElement("cod2019_optic_scope_vz") then 
+		model:SetBodygroup(2,2)	
 	end
 end
 
@@ -909,8 +913,9 @@ SWEP.Attachments = {
         Category = {"cod2019_optic","cod2019_optic_kar98k"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight_rail"},
-		--Installed = "cod2019_optic_scope_spr208",
-        --Integral = "cod2019_optic_scope_spr208",
+		RejectAttachments = {
+			["cod2019_optic_scope_mike14"] = true,
+		},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
