@@ -624,7 +624,7 @@ SWEP.AttachmentElements = {
         },
     },
     ["x16_slide_auto"] = {
-    AttPosMods = { [2] = { Pos = Vector(0.2, 0, 0.03), } }
+    AttPosMods = { [2] = { Pos = Vector(0, 0, 0), } }
     },
     ["sight_mount"] = {
         Bodygroups = {
@@ -665,16 +665,16 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
-        Bone = "tag_scope",
-        Pos = Vector(5, 0, -2.3),
+        Bone = "tag_reflex",
+        Pos = Vector(1.08, 0, 0.02),
         Ang = Angle(0, 0, 0),
-        Category = "csgo_rail_optic_pistols",
+        Category = "cod2019_optics_pistols_alt",
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 1,
 		InstalledElements = {"sight_mount"},
         DuplicateModels = {
             {
-                Bone = "tag_scope_l",
+                Bone = "tag_reflex_l",
             }
         },
     },
@@ -699,8 +699,8 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_x16_akimbo_grip",
         Bone = "tag_pistol_attachments",
-        Pos = Vector(-2.8, 0, 0.2),
-        Ang = Angle(0, 0, 180),
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
 		Scale = 1,
         DuplicateModels = {
             {

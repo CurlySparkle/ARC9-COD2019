@@ -217,3 +217,24 @@ ATT.Firemodes = {
 }
 
 ARC9.LoadAttachment(ATT, "cod2019_perks_burst_2")
+------------------------------------------------------------------
+ATT = {}
+
+ATT.PrintName = [[Tactical Sprint]]
+ATT.Description = [[Training in glutens giving you a more tactical sprinting.]]
+ATT.Icon = Material("entities/attachs/cod2019_perks_supersprint.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+
+ATT.Free = true
+
+ATT.Category = "cod2019_perks_ss"
+ATT.ActivateElements = {"perk_super_sprint"}
+
+ATT.SpeedSprint = 1.25
+ATT.CamQCA_MultSprint = 0.5
+
+ATT.SprintPos = Vector(0, 0, 0)
+ATT.SprintAng = Angle(0, 0, 0)
+
+ARC9.LoadAttachment(ATT, "cod2019_perks_super_sprint")
