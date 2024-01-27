@@ -715,6 +715,7 @@ SWEP.Animations = {
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
 		Mult = 1.8,
     },
     ["inspect"] = {
