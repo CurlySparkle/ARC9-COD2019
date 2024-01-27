@@ -517,8 +517,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_empty_fast_lift_v2.ogg", t = 0},
-			{s = path .. "wpfoly_mike4_reload_empty_fast_magout_v2.ogg", t = 0.23},
-			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 0.83},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magout_v2.ogg", t = 0.25},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 0.85},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 1.1},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 1.4},
         },

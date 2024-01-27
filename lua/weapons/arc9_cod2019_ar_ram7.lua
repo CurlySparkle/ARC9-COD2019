@@ -503,8 +503,8 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_fast_up.ogg", t = 0.0},
 			{s = path .. "wfoly_ar_tango21_reload_empty_fast_magout.ogg", t = 0.167},
-			{s = path .. "wfoly_ar_tango21_reload_empty_fast_magin.ogg", t = 1.133},
-			{s = path .. "wfoly_ar_tango21_reload_empty_fast_bolt_forward.ogg", t = 1.467},
+			{s = path .. "wfoly_ar_tango21_reload_empty_fast_magin.ogg", t = 1.12},
+			{s = path .. "wfoly_ar_tango21_reload_empty_fast_bolt_forward.ogg", t = 1.42},
 			{s = path .. "wfoly_ar_tango21_reload_empty_fast_end.ogg", t = 1.9},
         },
     },
