@@ -730,7 +730,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 0.5,
+                t = 0.1,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
                 lhik = 0,
                 rhik = 1
             },
@@ -742,6 +747,11 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.1,
                 lhik = 0,
                 rhik = 1
             },
