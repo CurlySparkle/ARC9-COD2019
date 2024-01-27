@@ -13,6 +13,7 @@ SWEP.MeleeSwingSound = "COD2019.Melee.Swing"
 SWEP.BackstabSound = "COD2019.Melee.HitBody"
 
 SWEP.BashWhileSprint = true
+SWEP.BashCancelsReload = true
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.DefaultBodygroups = "0000000000"

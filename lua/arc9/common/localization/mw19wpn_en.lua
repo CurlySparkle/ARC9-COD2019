@@ -355,6 +355,10 @@ L["cod2019_perks_burst_2.printname"] = "Burst Fire (x2)"
 L["cod2019_perks_burst_2.compactname"] = ARC9:GetPhrase("cod2019_perks_burst.compactname")
 L["cod2019_perks_burst_2.description"] = "Changes fire mode to <color=100,255,100>2-round</color> burst."
 
+L["cod2019_perks_super_sprint.printname"] = "Tactical Sprint" -- UO
+L["cod2019_perks_super_sprint.compactname"] = "Tac. Sprint" -- UO
+L["cod2019_perks_super_sprint.description"] = "Provides an altered stance when sprinting which significantly improves sprint speed at the cost of heavily reduced sprint-to-fire speed." -- UO
+
 ////////////////////  Scopes
 L["cod2019_optic_scope_pila.printname"] = "PILA Scope" -- UO
 L["cod2019_optic_scope_pila.compactname"] = "PILA" -- UO

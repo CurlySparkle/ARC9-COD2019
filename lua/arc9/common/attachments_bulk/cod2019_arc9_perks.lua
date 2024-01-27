@@ -231,8 +231,9 @@ ATT.Free = true
 ATT.Category = "cod2019_perks_ss"
 ATT.ActivateElements = {"perk_super_sprint"}
 
-ATT.SpeedSprint = 1.25
-ATT.CamQCA_MultSprint = 0.5
+ATT.SpeedSprint = 1.2
+ATT.CamQCA_MultSprint = 0.25
+ATT.SprintToFireTimeMult = 1.1
 
 ATT.SprintPos = Vector(0, 0, 0)
 ATT.SprintAng = Angle(0, 0, 0)
