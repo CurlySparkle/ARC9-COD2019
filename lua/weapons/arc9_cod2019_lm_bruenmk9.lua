@@ -38,31 +38,41 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_lmg_bruenmk9.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-12, 6, -7.5),
+    Pos = Vector(-7, 4, -7),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-7, 5, -2),
-    TPIKAng = Angle(-9, 0, 175),
+    TPIKPos = Vector(-8.5, 4.5, -6),
+    TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1
 }
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 28 -- Damage done at point blank range
-SWEP.DamageMin = 20 -- Damage done at maximum range
+SWEP.DamageMax = 31 -- Damage done at point blank range
+SWEP.DamageMin = 28 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 2000 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 7000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 27 / ARC9.HUToM
+SWEP.RangeMax = 28 / ARC9.HUToM
 
 SWEP.Penetration = 15 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.15
 
 SWEP.ImpactForce = 12
 
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.475,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.PhysBulletMuzzleVelocity = 3000 * 12
+SWEP.PhysBulletMuzzleVelocity = 810 / ARC9.HUToM
 SWEP.PhysBulletGravity = 1.5
 SWEP.PhysBulletDrag = 1.5
 
@@ -81,7 +91,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 752
+SWEP.RPM = 750
 
 SWEP.Firemodes = {
     {
@@ -160,7 +170,6 @@ SWEP.SpreadAddMove = 0.02
 SWEP.SpreadAddMidAir = 0.045
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -(SWEP.Spread * 2.75)
--- SWEP.SpreadAddSights = -(SWEP.Spread + (SWEP.SpreadAddMove / 2))
 
 SWEP.SpreadMultRecoil = 1
 SWEP.RecoilModifierCap = 3
@@ -187,8 +196,8 @@ SWEP.SpeedMult = 0.95 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.8 -- When aiming
 SWEP.SpeedMultShooting = 0.8
 
-SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.45 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -244,8 +253,8 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1, 3, -4.2)
-SWEP.PeekAng = Angle(-0.3, 0, -45)
+SWEP.PeekPos = Vector(2, 2, -1)
+SWEP.PeekAng = Angle(0, 0, 5)
 
 -------------------------- HoldTypes
 
@@ -374,13 +383,17 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["fire_smag"] = {
         Source = "shoot1_smag",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		FireASAP = true,
+		RefillProgress = 0.825,
 		MagSwapTime = 3,
         IKTimeLine = {
             {
@@ -394,12 +407,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.825,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.15,
+                t = 0.925,
                 lhik = 1,
                 rhik = 1
             },
@@ -419,8 +432,11 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
-		DropMagAt = 1.2,
+		MinProgress = 0.95,
+		FireASAP = true,
+		RefillProgress = 0.875,
+		MagSwapTime = 3.5,
+		DropMagAt = 4,
         IKTimeLine = {
             {
                 t = 0,
@@ -428,17 +444,22 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.1,
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.3,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.875,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.15,
+                t = 0.925,
                 lhik = 1,
                 rhik = 1
             },
@@ -462,7 +483,9 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.8,
 		MagSwapTime = 1.5,
         IKTimeLine = {
             {
@@ -476,12 +499,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.775,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1,
+                t = 0.875,
                 lhik = 1,
                 rhik = 1
             },
@@ -500,9 +523,11 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.9,
-		DropMagAt = 1.2,
-		MagSwapTime = 2,
+		MinProgress = 0.925,
+		FireASAP = true,
+		RefillProgress = 0.825,
+		MagSwapTime = 2.5,
+		DropMagAt = 2.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -510,17 +535,22 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.1,
+                t = 0.225,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.25,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.825,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.15,
+                t = 0.925,
                 lhik = 1,
                 rhik = 1
             },
@@ -542,7 +572,9 @@ SWEP.Animations = {
     },
     ["reload_smag"] = {
         Source = "reload_smag",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.625,
 		DropMagAt = 0.65,
         IKTimeLine = {
             {
@@ -578,6 +610,8 @@ SWEP.Animations = {
     ["reload_smag_empty"] = {
         Source = "reload_smag_empty",
 		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.75,
 		DropMagAt = 0.75,
         IKTimeLine = {
             {
@@ -591,12 +625,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.925,
                 lhik = 1,
                 rhik = 1
             },
@@ -615,7 +649,9 @@ SWEP.Animations = {
     },
     ["reload_smag_fast"] = {
         Source = "reload_smag_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		FireASAP = true,
+		RefillProgress = 0.65,
 		DropMagAt = 0.65,
         IKTimeLine = {
             {
@@ -651,6 +687,8 @@ SWEP.Animations = {
     ["reload_smag_fast_empty"] = {
         Source = "reload_smag_fast_empty",
 		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.75,
 		DropMagAt = 0.75,
         IKTimeLine = {
             {
@@ -664,12 +702,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.725,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.1,
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
             },
@@ -690,21 +728,16 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.5,
+                t = 0.7,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -754,17 +787,22 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.1,
+                t = 0.05,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.15,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.3,
+                t = 0.7,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.45,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -787,17 +825,22 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
+                t = 0.05,
+                lhik = 1,
+                rhik = 0
+            },
+            {
                 t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.3,
+                t = 0.7,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.45,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },
@@ -1010,10 +1053,12 @@ SWEP.AttachmentElements = {
     },
 }
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,1) end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("grip") or wep:HasElement("grip_angled") or wep:HasElement("grip_angled") then 
+		model:SetBodygroup(6,1)
+	end
+end
 
 SWEP.Attachments = {
     {

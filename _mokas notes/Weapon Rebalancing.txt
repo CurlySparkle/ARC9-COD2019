@@ -1,7 +1,8 @@
-[All]
+- All
 Added BodyDamageMults.
 
-[AK-47]
+[Assault Rifles]
+- AK-47
 RPM: 550 > 545
 DamageMax: 35 > 36
 DamageMin: 15 > 33
@@ -11,7 +12,7 @@ PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 AimDownSightsTime: 0.3 > 0.25
 SprintToFireTime: 0.3 > 0.375
 
-[AN-94]
+ - AN-94
 RPM: 560 > 571
 DamageMax: 29 > 31
 DamageMin: 12 > 25
@@ -21,8 +22,8 @@ PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 AimDownSightsTime: 0.3 > 0.26
 SprintToFireTime: 0.5 > 0.375
 
-[AS VAL]
-RPM: 895 > 896 (big whoop)
+ - AS VAL
+RPM: 895 > 896
 DamageMax: 30 > 27
 DamageMin: 11 > 23
 RangeMax: 178m > 32m
@@ -31,7 +32,7 @@ PhysBulletMuzzleVelocity: 400 m/s > 380 m/s
 AimDownSightsTime: 0.3 > 0.23
 SprintToFireTime: 0.5 > 0.375
 
-[CR-56 AMAX]
+ - CR-56 AMAX
 RPM: 680 > 632
 DamageMax: 33 > 31
 DamageMin: 14 > 28
@@ -41,7 +42,7 @@ PhysBulletMuzzleVelocity: 400 m/s > 680 m/s
 AimDownSightsTime: 0.3 > 0.28
 SprintToFireTime: 0.4 > 0.375
 
-[FAL]
+ - FAL
 RPM: 650 > 500 (700 when in Auto)
 DamageMax: 34 > 49 (Mult. of 0.65 when in Auto: 37)
 DamageMin: 9 > 45 (Mult of of 0.65 when in Auto: 34)
@@ -52,7 +53,7 @@ AimDownSightsTime: 0.3 > 0.26
 SprintToFireTime: 0.3 > 0.375
 Firemodes: Swapped -1 and 1 (Semi first, Auto second)
 
-[FR 5.56]
+ - FR 5.56
 RPM: 1100 > 1091
 DamageMax: Unchanged (Mult. of 0.7 when in Auto: 28)
 DamageMin: 14 > 40 (Mult of of 0.6 when in Auto: 24)
@@ -61,7 +62,7 @@ RangeMin : 40m > 30m
 PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 SprintToFireTime: 0.3 > 0.375
 
-[Grau 5.56]
+ - Grau 5.56
 RPM: 680 > 732
 DamageMax: 28 > 29
 DamageMin: 16 > 24
@@ -71,7 +72,7 @@ PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 AimDownSightsTime: 0.3 > 0.22
 SprintToFireTime: 0.5 > 0.375
 
-[Kilo 141]
+ - Kilo 141
 DamageMax: 28 > 28
 DamageMin: 18 > 22
 RangeMax: 178m > 32m
@@ -80,8 +81,8 @@ PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 AimDownSightsTime: 0.3 > 0.24
 SprintToFireTime: 0.3 > 0.375
 
-[M4A1]
-RPM: 810 > 811 (big whoop, bite me)
+ - M4A1
+RPM: 810 > 811
 DamageMax: 28 > 27
 DamageMin: 18 > 23
 RangeMax: 203m > 27m
@@ -90,8 +91,8 @@ PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 AimDownSightsTime: 0.4 > 0.24
 SprintToFireTime: 0.4 > 0.375
 
-[M13]
-RPM: 895.5223880597015 > 896 (a-yo wtf?)
+ - M13
+RPM: 895.5223880597015 > 896
 DamageMax: 25 > 24
 DamageMin: 13 > 20
 RangeMax: 102m > 34m
@@ -100,7 +101,7 @@ PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 AimDownSightsTime: 0.3 > 0.24
 SprintToFireTime: 0.5 > 0.375
 
-[Oden]
+ - Oden
 RPM: 410 > 414
 DamageMax: 40 > 48
 DamageMin: 20 > 36
@@ -110,8 +111,8 @@ PhysBulletMuzzleVelocity: 766 m/s > 880 m/s
 AimDownSightsTime: 0.3 > 0.35
 SprintToFireTime: 0.3 > 0.375
 
-[RAM-7]
-RPM: 855 > 857 (fat woop eat my bum)
+ - RAM-7
+RPM: 855 > 857
 DamageMax: 28 > 26
 DamageMin: 16 > 23
 RangeMax: 127m > 28m
@@ -120,7 +121,7 @@ PhysBulletMuzzleVelocity: 960 m/s > 850 m/s
 AimDownSightsTime: 0.3 > 0.22
 SprintToFireTime: 0.3 > 0.375
 
-[FN Scar 17]
+ - FN Scar 17
 RPM: 571.4285714285714 > 571
 DamageMax: 36 > 35
 DamageMin: 17 > 32
@@ -128,3 +129,94 @@ RangeMax: 178m > 31m
 RangeMin : 51m > 30m
 PhysBulletMuzzleVelocity: 461 m/s > 850 m/s
 SprintToFireTime: 0.3 > 0.375
+
+
+[LMGs]
+- Bruen Mk9
+RPM: 752 > 750
+DamageMax: 28 > 31
+DamageMin: 20 > 28
+RangeMax: 178m > 27m
+RangeMin : 51m > 26m
+PhysBulletMuzzleVelocity: 914 m/s > 810 m/s
+AimDownSightsTime: 0.5 > 0.45
+SprintToFireTime: 0.5 > 0.375
+
+- FiNN LMG
+RPM: 630 > 632
+DamageMin: 18 > 22
+RangeMax: 178m > 30
+RangeMin : 51m > 29
+PhysBulletMuzzleVelocity: 914 m/s > 810m/s
+AimDownSightsTime: 0.5 > 0.35
+SprintToFireTime: 0.5 > 0.375
+
+- Holger-26
+RPM: 752 > 
+DamageMax: 28 > 
+DamageMin: 20 > 
+RangeMax: 203m > 
+RangeMin : 51m > 
+PhysBulletMuzzleVelocity: 400 m/s > 
+AimDownSightsTime: 0.3 > 
+SprintToFireTime: 0.3 > 
+
+- M91
+RPM: 752 > 
+DamageMax: 28 > 
+DamageMin: 20 > 
+RangeMax: 203m > 
+RangeMin : 51m > 
+PhysBulletMuzzleVelocity: 400 m/s > 
+AimDownSightsTime: 0.3 > 
+SprintToFireTime: 0.3 > 
+
+- MG34
+RPM: 752 > 
+DamageMax: 28 > 
+DamageMin: 20 > 
+RangeMax: 203m > 
+RangeMin : 51m > 
+PhysBulletMuzzleVelocity: 400 m/s > 
+AimDownSightsTime: 0.3 > 
+SprintToFireTime: 0.3 > 
+
+- Minigun
+RPM: 752 > 
+DamageMax: 28 > 
+DamageMin: 20 > 
+RangeMax: 203m > 
+RangeMin : 51m > 
+PhysBulletMuzzleVelocity: 400 m/s > 
+AimDownSightsTime: 0.3 > 
+SprintToFireTime: 0.3 > 
+
+- PKM
+RPM: 752 > 
+DamageMax: 28 > 
+DamageMin: 20 > 
+RangeMax: 203m > 
+RangeMin : 51m > 
+PhysBulletMuzzleVelocity: 400 m/s > 
+AimDownSightsTime: 0.3 > 
+SprintToFireTime: 0.3 > 
+
+- RAAL MG
+RPM: 752 > 
+DamageMax: 28 > 
+DamageMin: 20 > 
+RangeMax: 203m > 
+RangeMin : 51m > 
+PhysBulletMuzzleVelocity: 400 m/s > 
+AimDownSightsTime: 0.3 > 
+SprintToFireTime: 0.3 > 
+
+- SA87
+RPM: 752 > 
+DamageMax: 28 > 
+DamageMin: 20 > 
+RangeMax: 203m > 
+RangeMin : 51m > 
+PhysBulletMuzzleVelocity: 400 m/s > 
+AimDownSightsTime: 0.3 > 
+SprintToFireTime: 0.3 > 
