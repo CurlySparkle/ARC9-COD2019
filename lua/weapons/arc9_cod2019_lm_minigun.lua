@@ -226,6 +226,7 @@ SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 0.1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
+SWEP.ShellSounds = ARC9.COD2019_556_Table
 
 SWEP.TriggerDelay = 0.45 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 

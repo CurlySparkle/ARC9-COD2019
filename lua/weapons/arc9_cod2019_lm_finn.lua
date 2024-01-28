@@ -288,6 +288,7 @@ SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 0.07
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
+SWEP.ShellSounds = ARC9.COD2019_556_Table
 
 SWEP.ExtraShellModels = {
     [1] = {
@@ -583,6 +584,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        MinProgress = 0.3,
+        FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,
@@ -646,8 +649,10 @@ SWEP.Animations = {
         IKTimeLine = { -- little shakey shakey
 		{ t = 0, lhik = 1,  rhik = 1 },
 		{ t = 0.05, lhik = 1,  rhik = 1 },
-		{ t = 0.1, lhik = 0.75,  rhik = 1 },
-		{ t = 0.2, lhik = 1,  rhik = 1 },
+		{ t = 0.1, lhik = 0,  rhik = 1 },
+		{ t = 0.5, lhik = 0,  rhik = 1 },
+		{ t = 0.7, lhik = 0,  rhik = 1 },
+		{ t = 0.85, lhik = 1,  rhik = 1 },
 		},
         EventTable = {
             {s = path .. "wfoly_lm_sierrax_inspect_01.ogg", t = 0/30},
@@ -965,6 +970,8 @@ SWEP.Animations = {
     },
     ["draw_saw"] = {
         Source = "draw_short_saw",
+        MinProgress = 0.35,
+        FireASAP = true,
         IKTimeLine = {
             {
                 t = 0,

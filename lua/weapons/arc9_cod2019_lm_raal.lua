@@ -265,6 +265,7 @@ SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 0.08
 SWEP.ShellPhysBox = Vector(1, 1, 1)
+SWEP.ShellSounds = ARC9.COD2019_338_Table
 
 SWEP.ExtraShellModels = {
     [1] = {

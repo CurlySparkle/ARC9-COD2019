@@ -232,6 +232,7 @@ SWEP.ShellModel = "models/weapons/cod2019/shared/shell_Kar98k.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1.5
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
+SWEP.ShellSounds = ARC9.COD2019_338_Table
 
 SWEP.EjectDelay = 0.45
 

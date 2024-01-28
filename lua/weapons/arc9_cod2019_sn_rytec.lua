@@ -246,17 +246,7 @@ SWEP.ShellModel = "models/weapons/cod2019/shared/shell_rytec.mdl"
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
-SWEP.ShellSounds = {
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg"
-}
+SWEP.ShellSounds = ARC9.COD2019_50bmg_Table
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false

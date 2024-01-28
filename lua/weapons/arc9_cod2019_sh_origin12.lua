@@ -250,17 +250,7 @@ SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_origin12.mdl"
-SWEP.ShellSounds = {
-    "arc9/casings/casing_12ga_1.wav",
-    "arc9/casings/casing_12ga_2.wav",
-    "arc9/casings/casing_12ga_3.wav",
-    "arc9/casings/casing_12ga_4.wav",
-    "arc9/casings/casing_12ga_1.wav",
-    "arc9/casings/casing_12ga_2.wav",
-    "arc9/casings/casing_12ga_3.wav",
-    "arc9/casings/casing_12ga_4.wav",
-    "arc9/casings/casing_12ga_1.wav"
-}
+SWEP.ShellSounds = ARC9.COD2019_Shotgun_Table
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 1.2
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)

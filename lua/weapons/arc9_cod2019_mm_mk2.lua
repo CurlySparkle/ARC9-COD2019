@@ -243,6 +243,7 @@ SWEP.ShellScale = 1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.NoShellEject = true
 SWEP.EjectDelay = 0.15
+SWEP.ShellSounds = ARC9.COD2019_338_Table
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
