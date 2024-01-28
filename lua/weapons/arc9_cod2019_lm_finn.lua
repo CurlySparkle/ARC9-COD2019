@@ -394,6 +394,12 @@ SWEP.Animations = {
         Source = "shoot1",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
 	},
+    ["dryfire"] = {
+        Source = "dryfire",
+		MinProgress = 0.01,
+		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+    },
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.925,
@@ -753,6 +759,12 @@ SWEP.Animations = {
                 rhik = 1
             },
         },
+    },
+    ["dryfire_saw"] = {
+        Source = "dryfire_saw",
+		MinProgress = 0.01,
+		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload_saw"] = {
         Source = "reload_short_saw",

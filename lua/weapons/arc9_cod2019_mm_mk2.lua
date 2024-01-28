@@ -317,6 +317,12 @@ SWEP.Animations = {
             {s = path .. "wfoly_sbeta_sn_rechamber.ogg", t = 0/30},
         },
     },
+    ["dryfire"] = {
+        Source = "dryfire",
+		MinProgress = 0.01,
+		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+    },
     ["reload_start"] = {
         Source = "reload_start",
 		RestoreAmmo = 1,

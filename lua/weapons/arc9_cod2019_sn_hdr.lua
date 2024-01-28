@@ -353,6 +353,12 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_rechamber_boltclose_01.ogg", v = 0.4, t = 0.6},
         },
     },
+    ["dryfire"] = {
+        Source = "dryfire",
+		MinProgress = 0.01,
+		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+    },
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.85,
