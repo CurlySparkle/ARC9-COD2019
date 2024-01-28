@@ -413,15 +413,15 @@ L["cod2019_m14_stock_tube.description"] = ARC9:GetPhrase("cod2019_stock_tube_ori
 ////////////////////  EFT (Escape from Tarkov) Support
 L["cod2019_eft_grips.printname"] = "Escape from Tarkov Support" -- UO
 L["cod2019_eft_grips.compactname"] = "EFT" -- UO
-L["cod2019_eft_grips.description"] = "Allows installation of foregrips from the Escape from Tarkov addons." -- UO
+L["cod2019_eft_grips.description"] = "Allows installation of foregrips from the Escape from Tarkov addons.\n\nNote: Not optimised - may cause visual glitches.\n\"Ergonomics\" have no effect." -- UO
 
 L["cod2019_eft_muzzle.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
 L["cod2019_eft_muzzle.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
-L["cod2019_eft_muzzle.description"] = "Allows installation of muzzle attachments from the Escape from Tarkov addons." -- UO
+L["cod2019_eft_muzzle.description"] = "Allows installation of muzzle attachments from the Escape from Tarkov addons.\n\nNote: Not optimised - may cause visual glitches.\n\"Ergonomics\" have no effect." -- UO
 
 L["cod2019_eft_scopes.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
 L["cod2019_eft_scopes.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
-L["cod2019_eft_scopes.description"] = "Allows installation of optics from the Escape from Tarkov addons." -- UO
+L["cod2019_eft_scopes.description"] = "Allows installation of optics from the Escape from Tarkov addons.\n\nNote: Not optimised - may cause visual glitches.\n\"Ergonomics\" have no effect." -- UO
 
 L["cod2019_eft_scopes_pistol.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
 L["cod2019_eft_scopes_pistol.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
@@ -429,16 +429,16 @@ L["cod2019_eft_scopes_pistol.description"] = ARC9:GetPhrase("cod2019_eft_scopes.
 
 L["cod2019_eft_stocks.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
 L["cod2019_eft_stocks.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
-L["cod2019_eft_stocks.description"] = "Allows installation of stocks from the Escape from Tarkov addons." -- UO
+L["cod2019_eft_stocks.description"] = "Allows installation of stocks from the Escape from Tarkov addons.\n\nNote: Not optimised - may cause visual glitches.\n\"Ergonomics\" have no effect." -- UO
 
 ////////////////////  GSR (Gunsmith Reloaded) Support
 L["cod2019_attach_support_gsr_laser_pstl.printname"] = "Gunsmith Reloaded Support" -- UO
 L["cod2019_attach_support_gsr_laser_pstl.compactname"] = "GSR" -- UO
-L["cod2019_attach_support_gsr_laser_pstl.description"] = "Allows installation of laser attachments from the Gunsmith Reloaded addon." -- UO
+L["cod2019_attach_support_gsr_laser_pstl.description"] = "Allows installation of laser attachments from the Gunsmith Reloaded addon.\n\nNote: Not optimised - may cause visual glitches." -- UO
 
 L["cod2019_attach_support_gsr_optics.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
 L["cod2019_attach_support_gsr_optics.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
-L["cod2019_attach_support_gsr_optics.description"] = "Allows installation of optics from the Gunsmith Reloaded addon." -- UO
+L["cod2019_attach_support_gsr_optics.description"] = "Allows installation of optics from the Gunsmith Reloaded addons.\n\nNote: Not optimised - may cause visual glitches." -- UO
 
 L["cod2019_attach_support_gsr_optics_pistols.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
 L["cod2019_attach_support_gsr_optics_pistols.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
@@ -446,7 +446,7 @@ L["cod2019_attach_support_gsr_optics_pistols.description"] = ARC9:GetPhrase("cod
 
 L["cod2019_attach_support_gsr_muzzles.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
 L["cod2019_attach_support_gsr_muzzles.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
-L["cod2019_attach_support_gsr_muzzles.description"] = "Allows installation of muzzle attachments from the Gunsmith Reloaded addon." -- UO
+L["cod2019_attach_support_gsr_muzzles.description"] = "Allows installation of muzzle attachments from the Gunsmith Reloaded addon.\n\nNote: Not optimised - may cause visual glitches." -- UO
 
 L["cod2019_attach_support_gsr_muzzles_pistols.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
 L["cod2019_attach_support_gsr_muzzles_pistols.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
@@ -458,7 +458,7 @@ L["cod2019_attach_support_gsr_muzzles_alt.description"] = ARC9:GetPhrase("cod201
 
 L["cod2019_attach_support_gsr_grips.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
 L["cod2019_attach_support_gsr_grips.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
-L["cod2019_attach_support_gsr_grips.description"] = "Allows installation of foregrips from the Gunsmith Reloaded addon." -- UO
+L["cod2019_attach_support_gsr_grips.description"] = "Allows installation of foregrips from the Gunsmith Reloaded addon.\n\nNote: Not optimised - may cause visual glitches." -- UO
 
 ////////////////////  Custom Crossbow Ammo
 L["cod2019_ammo_crossbow_rock.printname"] = "FTAC Boulder 30g Rock" -- UO

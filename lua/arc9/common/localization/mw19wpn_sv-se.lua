@@ -384,24 +384,24 @@ L["cod2019_m14_stock_tube.compactname"] = "EBR" -- UO
 ////////////////////  EFT (Escape from Tarkov) Support
 L["cod2019_eft_grips.printname"] = "\"Escape from Tarkov\"-Stöd" -- UO
 L["cod2019_eft_grips.compactname"] = "EFT" -- UO
-L["cod2019_eft_grips.description"] = "Tillåter installering av framgrepp från \"Escape from Tarkov\"-tilläggen." -- UO
+L["cod2019_eft_grips.description"] = "Tillåter installering av framgrepp från \"Escape from Tarkov\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar.\n\"Ergonomics\" har ingen effekt." -- UO
 
-L["cod2019_eft_muzzle.description"] = "Tillåter installering av mynningstillbehör från \"Escape from Tarkov\"-tilläggen." -- UO
+L["cod2019_eft_muzzle.description"] = "Tillåter installering av mynningstillbehör från \"Escape from Tarkov\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar.\n\"Ergonomics\" har ingen effekt." -- UO
 
-L["cod2019_eft_scopes.description"] = "Tillåter installering av riktmedel från \"Escape from Tarkov\"-tilläggen." -- UO
+L["cod2019_eft_scopes.description"] = "Tillåter installering av riktmedel från \"Escape from Tarkov\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar.\n\"Ergonomics\" har ingen effekt." -- UO
 
-L["cod2019_eft_stocks.description"] = "Tillåter installering av kolvar från \"Escape from Tarkov\"-tilläggen." -- UO
+L["cod2019_eft_stocks.description"] = "Tillåter installering av kolvar från \"Escape from Tarkov\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar.\n\"Ergonomics\" har ingen effekt." -- UO
 
 ////////////////////  GSR (Gunsmith Reloaded) Support
 L["cod2019_attach_support_gsr_laser_pstl.printname"] = "\"Gunsmith Reloaded\"-Stöd" -- UO
 L["cod2019_attach_support_gsr_laser_pstl.compactname"] = "GSR" -- UO
-L["cod2019_attach_support_gsr_laser_pstl.description"] = "Tillåter installering av lasertillbehör från \"Gunsmith Reloaded\"-tillägget." -- UO
+L["cod2019_attach_support_gsr_laser_pstl.description"] = "Tillåter installering av lasertillbehör från \"Gunsmith Reloaded\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar." -- UO
 
-L["cod2019_attach_support_gsr_optics.description"] = "Tillåter installering av riktmedel från \"Gunsmith Reloaded\"-tillägget." -- UO
+L["cod2019_attach_support_gsr_optics.description"] = "Tillåter installering av riktmedel från \"Gunsmith Reloaded\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar." -- UO
 
-L["cod2019_attach_support_gsr_muzzles.description"] = "Tillåter installering av mynningstillbehör från \"Gunsmith Reloaded\"-tillägget." -- UO
+L["cod2019_attach_support_gsr_muzzles.description"] = "Tillåter installering av mynningstillbehör från \"Gunsmith Reloaded\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar." -- UO
 
-L["cod2019_attach_support_gsr_grips.description"] = "Tillåter installering av framgrepp från \"Gunsmith Reloaded\"-tillägget." -- UO
+L["cod2019_attach_support_gsr_grips.description"] = "Tillåter installering av framgrepp från \"Gunsmith Reloaded\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar." -- UO
 
 ////////////////////  Custom Crossbow Ammo
 L["cod2019_ammo_crossbow_rock.printname"] = "FTAC Boulder 30g Sten" -- UO
@@ -578,7 +578,7 @@ L["mw19_weapon_r90_desc"] = "Dubbla pipor erbjuder två snabba skott innan omlad
 L["mw19_weapon_725_desc"] = "Dubbelstudsare hagelbössa med 2-skott kapacitet. En lång bakhål pipa och cylindrisk choke håller spridningen tajt och dödlig över förlängda räckvidder."
 L["mw19_weapon_origin12_desc"] = "Halvautomatisk hagelbössa med stor ammunitionskapacitet tillåter kontinuerlig eld. Effektiv på nära distanser."
 L["mw19_weapon_vlk_desc"] = "En rörlig kaliber 12, magasinmatad hagelbössa från VLK med omfattande alternativ att anpassa räckvidd, stabilitet, och manövrering."
-L["mw19_weapon_aa12_desc"] = "Helautomatisk hagelbössa med öppen bult med ett rekylsänkande gas-blowback-system. Denna stridshagelbössa skickar ut höga volym av hagel mot måltavlan i en stadig hastighet."
+L["mw19_weapon_aa12_desc"] = "Helautomatisk hagelbössa med öppen bult med ett rekylsänkande gaslåssystem. Denna stridshagelbössa skickar ut höga volym av hagel mot måltavlan i en stadig hastighet."
 
 L["mw19_weapon_pkm_desc"] = "Helautomatisk lätt kulspruta som skjuter 7,62mm ammunition med hög skada med en måttlig eldhastighet."
 L["mw19_weapon_sa87_desc"] = "Helautomatisk lätt kulspruta av typen bullpup. Lägre eldhastighet och 5,56mm ammunition håller detta geväret stabilt och effektivt vid långa räckvidder."
@@ -596,20 +596,20 @@ L["mw19_weapon_crossbow_desc"] = "Tyst och rörlig, denna hög prestanda armbors
 L["mw19_weapon_sks_desc"] = "Lätt, halvautomatisk Karbin matat med 7,62x39mm. Detta hårt träffande och rörliga Sovjetiska gevär fokuserar på nytta istället för träffsäkerhet. Den prunkar en snabbare eldhastighet än andra vapen i dess klass, men ett välplacerat skott kan eliminera behovet av efterföljande skott helt och hållet. Denna klassiska DMR har sett många strider, och dess unika vapensmide konfigueringar reflekterar en mångfaldig servicehistorik."
 L["mw19_weapon_spr_desc"] = "Pålitlig, hårt träffande .300 Win cylinderrepetergevär från Sloan Precision. Detta vapens omfattande militära och civila användning ger ett överflöd av anpassningsalternativ."
 
-L["mw19_weapon_dragunov_desc"] = "A soviet workhorse chambered in 7.62mm x 54mmR. This gas-operated, semi-automatic sniper rifle allows for rapid follow-up shots."
-L["mw19_weapon_hdr_desc"] = "An anti-material bolt action sniper rifle chambered in 12.7x108mm ammunition. 745 gr bullets have a lower muzzle velocity, but are devastating at very long ranges."
-L["mw19_weapon_ax50_desc"] = "Hard hitting, bolt action sniper rifle with .50 cal BMG ammunition. Its tungsten sabot tipped bullets are fast and powerful, but require precise shots over long distances."
-L["mw19_weapon_rytec_desc"] = "This semi-automatic Anti-Material Rifle is chambered in .50 BMG for dominant long range assaults. A 25x59mm high-explosive payload variant is officially listed as \"experimental\", but has been deployed on multiple classified missions with great effectiveness."
+L["mw19_weapon_dragunov_desc"] = "En Sovjetisk arbetshäst matad med 7,62x54mmR. Denna gaslåssystem, halvautomatiska prickskyttegeväret tillåter för snabba efterföljande skott."
+L["mw19_weapon_hdr_desc"] = "Cylinderrepeter antimaterialgevär matad med 12,7x108mm ammunition. 745 gr kulor har en lägre mynningshastighet men är katastrofal vid längre räckvidder."
+L["mw19_weapon_ax50_desc"] = "Hårt träffande cylinderrepeter prickskyttegevär med kaliber .50 BMG ammunition. Dess volfram drivspegel-doppade kulor är snabba och kraftfulla, men kräver träffsäkra skott vid längre distanser."
+L["mw19_weapon_rytec_desc"] = "Detta halvautomatiska antimaterialgeväret är matad med .50 BMG för dominerande angrepp på långa räckvidder. En 25x59mm sprängmedel version är officiellt nämnd som \"experimental\", men har skickats ut på flertal hemliga uppdrag med hög effektivitet."
 
-L["mw19_weapon_shield_desc"] = "Ballistic-proof and explosive-resistant shield with increased melee damage."
+L["mw19_weapon_shield_desc"] = "Skottsäker och explosivt skyddande sköld med ökad närstridsskada."
 
-L["mw19_weapon_glock_desc"] = "A semi-automatic pistol chambered in .45 ACP ammunition. A reliable fallback when you find yourself in close quarters."
-L["mw19_weapon_1911_desc"] = "A well-rounded, semi-automatic sidearm with a moderate rate of fire. Slightly more range than your average .45 ACP pistol."
-L["mw19_weapon_357_desc"] = "Double action revolver firing .357 Magnum ammunition for powerful damage over extended ranges."
-L["mw19_weapon_m19_desc"] = "Semi-automatic 9mm pistol, excellent stability with a rapid cycle rate."
-L["mw19_weapon_deagle_desc"] = "The most powerful semi-automatic handgun available, deals heavy damage up to intermediate ranges."
-L["mw19_weapon_m9_desc"] = "Well rounded semi-auto 9mm pistol. This unassuming sidearm excels in close range combat, and features gunsmithing capabilities unique to the pistol class that permit a variety of engagement strategies."
-L["mw19_weapon_makarov_desc"] = "A dependable fallback in close quarters, this double-action/single-action sidearm comes with a few custom gunsmith mods that make it an outstanding addition to any arsenal."
+L["mw19_weapon_glock_desc"] = "Halvautomatisk pistol matad med .45 ACP ammunition. Pålitlig reserv om du befinner dig i närstridsanfall."
+L["mw19_weapon_1911_desc"] = "Ett välbalanserat, halvautomatiskt sidovapen med en måttlig eldhastighet. Lite mer räckvidd än din normala .45 ACP pistol."
+L["mw19_weapon_357_desc"] = "\"Double Action\"-revolver skjuter .357 Magnum-ammunition för kraftfull skada vid förlängda räckvidder."
+L["mw19_weapon_m19_desc"] = "Halvautomatisk 9mm pistol, utmärkt stabilitet med en snabb eldhastighet."
+L["mw19_weapon_deagle_desc"] = "Det mest kraftfulla halvautomatiska handvapnet tillgängligt, gör hög skada upp till mellanliggande räckvidd."
+L["mw19_weapon_m9_desc"] = "Välbalanserad halvautomatisk 9mm pistol. Detta anspråkslösa sidovapnet utmärker sig i närstridsangrepp och har vapensmide förmågor unikt till pistolklassen vilket tillåter diverse strategier till strider."
+L["mw19_weapon_makarov_desc"] = "Pålitlig reservvapen i närstrid, detta \"double-/single-action\"-sidovapen har ett antal anpassade vapensmide modifikationer vilket gör den till ett utestående tillägg till vilken arsenal som helst."
 
 L["mw19_weapon_pila_desc"] = "Portable infrared surface-to-air missile launcher with a free-fire option. Self-propelled missiles have a higher speed, and moderate explosive yield."
 L["mw19_weapon_strela_desc"] = "84mm recoilless launcher lobs an explosive projectile at a very high velocity. The unguided armor piercing round has a low explosive yield, but is devastating against vehicles on contact."
