@@ -124,13 +124,13 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.85
+SWEP.RecoilMultSights = 0.75
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 5
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 1
 SWEP.VisualRecoilRollSights = 5
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
@@ -198,9 +198,6 @@ SWEP.IronSights = {
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, 0)
-SWEP.SprintAng = Angle(0, 0, 0)
-
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, -0.15),
     Ang = Angle(0, 0, 0)
@@ -217,8 +214,11 @@ SWEP.MovingMidPoint = {
 SWEP.MovingPos = Vector(-1, -0.8, -1)
 SWEP.MovingAng = Angle(0, 0, -10)
 
-SWEP.CrouchPos = Vector(-1, -1, -1)
-SWEP.CrouchAng = Angle(0, 0, -8)
+SWEP.CrouchPos = Vector(-1, -0.5, -1)
+SWEP.CrouchAng = Angle(0, 0, -5)
+
+SWEP.SprintPos = Vector(1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(15, 30, 3)
@@ -1049,7 +1049,7 @@ SWEP.AttachmentElements = {
             {4,1},
         },
     },
-    ["sights"] = {
+    ["sights_none"] = {
         Bodygroups = {
             {5,1},
         },
@@ -1057,6 +1057,11 @@ SWEP.AttachmentElements = {
     ["upper_none"] = {
         Bodygroups = {
             {6,1},
+        },
+    },
+    ["upper_rail_none"] = {
+        Bodygroups = {
+            {9,1},
         },
     },
     ["rail_laser"] = {
@@ -1140,9 +1145,9 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic",},
+        Category = {"cod2019_optic","cod2019_aug_optic"},
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sights"},
+		InstalledElements = {"sights_none"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
@@ -1257,5 +1262,5 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 19
-SWEP.CodStubbyGripPoseParam = 2
-SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.CodStubbyGripPoseParam = 26
+SWEP.CodStubbyTallGripPoseParam = 26
