@@ -384,24 +384,24 @@ L["cod2019_m14_stock_tube.compactname"] = "EBR" -- UO
 ////////////////////  EFT (Escape from Tarkov) Support
 L["cod2019_eft_grips.printname"] = "\"Escape from Tarkov\"-Stöd" -- UO
 L["cod2019_eft_grips.compactname"] = "EFT" -- UO
-L["cod2019_eft_grips.description"] = "Tillåter installering av framgrepp från \"Escape from Tarkov\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar.\n\"Ergonomics\" har ingen effekt." -- UO
+L["cod2019_eft_grips.description"] = "Tillåter installering av framgrepp från \"<color=255,255,100>Escape from Tarkov</color>\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>.\n\"Ergonomics\" har <color=255,100,100>ingen effekt</color>." -- UO
 
-L["cod2019_eft_muzzle.description"] = "Tillåter installering av mynningstillbehör från \"Escape from Tarkov\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar.\n\"Ergonomics\" har ingen effekt." -- UO
+L["cod2019_eft_muzzle.description"] = "Tillåter installering av mynningstillbehör från \"<color=255,255,100>Escape from Tarkov</color>\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>.\n\"Ergonomics\" har <color=255,100,100>ingen effekt</color>." -- UO
 
-L["cod2019_eft_scopes.description"] = "Tillåter installering av riktmedel från \"Escape from Tarkov\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar.\n\"Ergonomics\" har ingen effekt." -- UO
+L["cod2019_eft_scopes.description"] = "Tillåter installering av riktmedel från \"<color=255,255,100>Escape from Tarkov</color>\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>.\n\"Ergonomics\" har <color=255,100,100>ingen effekt</color>." -- UO
 
-L["cod2019_eft_stocks.description"] = "Tillåter installering av kolvar från \"Escape from Tarkov\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar.\n\"Ergonomics\" har ingen effekt." -- UO
+L["cod2019_eft_stocks.description"] = "Tillåter installering av kolvar från \"<color=255,255,100>Escape from Tarkov</color>\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>.\n\"Ergonomics\" har <color=255,100,100>ingen effekt</color>." -- UO
 
 ////////////////////  GSR (Gunsmith Reloaded) Support
 L["cod2019_attach_support_gsr_laser_pstl.printname"] = "\"Gunsmith Reloaded\"-Stöd" -- UO
 L["cod2019_attach_support_gsr_laser_pstl.compactname"] = "GSR" -- UO
-L["cod2019_attach_support_gsr_laser_pstl.description"] = "Tillåter installering av lasertillbehör från \"Gunsmith Reloaded\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar." -- UO
+L["cod2019_attach_support_gsr_laser_pstl.description"] = "Tillåter installering av lasertillbehör från \"<color=255,255,100>Gunsmith Reloaded</color>\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>." -- UO
 
-L["cod2019_attach_support_gsr_optics.description"] = "Tillåter installering av riktmedel från \"Gunsmith Reloaded\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar." -- UO
+L["cod2019_attach_support_gsr_optics.description"] = "Tillåter installering av riktmedel från \"<color=255,255,100>Gunsmith Reloaded</color>\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>." -- UO
 
-L["cod2019_attach_support_gsr_muzzles.description"] = "Tillåter installering av mynningstillbehör från \"Gunsmith Reloaded\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar." -- UO
+L["cod2019_attach_support_gsr_muzzles.description"] = "Tillåter installering av mynningstillbehör från \"<color=255,255,100>Gunsmith Reloaded</color>\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>." -- UO
 
-L["cod2019_attach_support_gsr_grips.description"] = "Tillåter installering av framgrepp från \"Gunsmith Reloaded\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka visuella glitchar." -- UO
+L["cod2019_attach_support_gsr_grips.description"] = "Tillåter installering av framgrepp från \"<color=255,255,100>Gunsmith Reloaded</color>\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>." -- UO
 
 ////////////////////  Custom Crossbow Ammo
 L["cod2019_ammo_crossbow_rock.printname"] = "FTAC Boulder 30g Sten" -- UO
