@@ -149,10 +149,6 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 
-function SWEP:SecondaryAttack()
-    return self:MeleeAttack()
-end
-
 SWEP.Animations = {
     ["blowback"] = {
         Source = "blowback",

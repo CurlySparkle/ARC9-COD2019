@@ -154,10 +154,6 @@ SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_FIST
 
--- function SWEP:SecondaryAttack()
-    -- return self:MeleeAttack()
--- end
-
 SWEP.HideBones  = {
     [1] = "tag_torso",
 }

@@ -152,14 +152,13 @@ AimDownSightsTime: 0.5 > 0.35
 SprintToFireTime: 0.5 > 0.375
 
 - Holger-26
-RPM: 752 > 
-DamageMax: 28 > 
-DamageMin: 20 > 
-RangeMax: 203m > 
-RangeMin : 51m > 
-PhysBulletMuzzleVelocity: 400 m/s > 
-AimDownSightsTime: 0.3 > 
-SprintToFireTime: 0.3 > 
+RPM: 704 > 706
+DamageMin: 18 > 23
+RangeMax: 178m > 49m
+RangeMin : 51m > 48m
+PhysBulletMuzzleVelocity: 722 m/s > 810 m/s
+AimDownSightsTime: 0.5 > 0.36
+SprintToFireTime: 0.5 > 0.375
 
 - M91
 RPM: 752 > 
