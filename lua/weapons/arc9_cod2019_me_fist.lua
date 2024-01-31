@@ -28,6 +28,7 @@ SWEP.Slot = 0
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.NoTPIK = true
+SWEP.TPIKNoSprintAnim = true 
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_melee_fist.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-10, 2, 0),

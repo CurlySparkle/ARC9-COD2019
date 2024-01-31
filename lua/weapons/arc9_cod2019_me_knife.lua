@@ -28,6 +28,7 @@ SWEP.Slot = 0
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.NoTPIK = true
+SWEP.TPIKNoSprintAnim = true 
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_melee_knife_oscar.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-6.5, -3, 0),

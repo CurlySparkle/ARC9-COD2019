@@ -37,6 +37,7 @@ SWEP.Slot = 1
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.TPIKforcelefthand = true
+SWEP.TPIKNoSprintAnim = true 
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_akimbo_m19.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
