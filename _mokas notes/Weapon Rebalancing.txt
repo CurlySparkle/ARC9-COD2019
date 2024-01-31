@@ -161,44 +161,33 @@ AimDownSightsTime: 0.5 > 0.36
 SprintToFireTime: 0.5 > 0.375
 
 - M91
-RPM: 752 > 
-DamageMax: 28 > 
-DamageMin: 20 > 
-RangeMax: 203m > 
-RangeMin : 51m > 
-PhysBulletMuzzleVelocity: 400 m/s > 
-AimDownSightsTime: 0.3 > 
-SprintToFireTime: 0.3 > 
+RPM: 600 > 667
+DamageMax: 35 > 32
+DamageMin: 25 > 31
+RangeMax: 178m > 30m
+RangeMin : 51m > 29m
+PhysBulletMuzzleVelocity: 914 m/s > 810 m/s
+AimDownSightsTime: 0.8 > 0.42
+SprintToFireTime: 0.5 > 0.375
 
 - MG34
-RPM: 752 > 
-DamageMax: 28 > 
-DamageMin: 20 > 
-RangeMax: 203m > 
-RangeMin : 51m > 
-PhysBulletMuzzleVelocity: 400 m/s > 
-AimDownSightsTime: 0.3 > 
-SprintToFireTime: 0.3 > 
-
-- Minigun
-RPM: 752 > 
-DamageMax: 28 > 
-DamageMin: 20 > 
-RangeMax: 203m > 
-RangeMin : 51m > 
-PhysBulletMuzzleVelocity: 400 m/s > 
-AimDownSightsTime: 0.3 > 
-SprintToFireTime: 0.3 > 
+RPM: 878 > 857
+DamageMax: 38 > 29
+DamageMin: 23 > 27
+RangeMax: 178m > 35m
+RangeMin : 51m > 34m
+PhysBulletMuzzleVelocity: 914 m/s > 765 m/s
+AimDownSightsTime: 0.6 > 0.472
+SprintToFireTime: 0.5 > 0.375
 
 - PKM
-RPM: 752 > 
-DamageMax: 28 > 
-DamageMin: 20 > 
-RangeMax: 203m > 
-RangeMin : 51m > 
-PhysBulletMuzzleVelocity: 400 m/s > 
-AimDownSightsTime: 0.3 > 
-SprintToFireTime: 0.3 > 
+RPM: 750 > 
+DamageMax: 31 > 32
+RangeMax: 178m > 37m
+RangeMin : 51m > 36m
+PhysBulletMuzzleVelocity: 914 m/s > 825 m/s
+AimDownSightsTime: 0.8 > 0.42
+SprintToFireTime: 0.5 > 0.375
 
 - RAAL MG
 RPM: 752 > 

@@ -41,7 +41,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_minigun.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-10, 5, 5),
+    TPIKPos = Vector(-7, 5, -1),
     TPIKAng = Angle(0, 0, 180),
     Scale = 1
 }
@@ -125,19 +125,23 @@ SWEP.VisualRecoilPunch = 1
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.08
 
 SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1.1
 SWEP.RecoilModifierCap = 0.3
 
---SWEP.SpreadAddMove = 0.1
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.08
+SWEP.SpreadAddMove = 0.05
+SWEP.SpreadAddMidAir = 0.1
+SWEP.SpreadAddHipFire = 0
 SWEP.SpreadAddCrouch = -0.03
-SWEP.SpreadAddSights = 0
+SWEP.SpreadAddSights = -0.06
 
 -------------------------- HANDLING
+
+SWEP.SpeedMult = 0.85 -- Walk speed multiplier
+SWEP.SpeedMultSights = 0.65 -- When aiming
+SWEP.SpeedMultShooting = 0.4
 
 SWEP.AimDownSightsTime = 1 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
@@ -161,7 +165,7 @@ SWEP.IronSights = {
     Ang = Angle(0, 0, 0),
     Magnification = 1.4,
     ViewModelFOV = 44,
-    CrosshairInSights = false
+    CrosshairInSights = true,
 }
 SWEP.HasSights = true
 
