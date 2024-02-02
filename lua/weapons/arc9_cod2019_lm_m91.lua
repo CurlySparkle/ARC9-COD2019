@@ -674,6 +674,58 @@ SWEP.Animations = {
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
 		Mult = 2.3,
     },
+    ["super_sprint_idle"] = {
+        Source = "super_sprint",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+        },
+    },
+    ["super_sprint_in"] = {
+        Source = "super_sprint_in",
+		Mult = 2.3,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 0,
+                rhik = 1
+            },
+        },
+    },
+    ["super_sprint_out"] = {
+        Source = "super_sprint_out",
+		Mult = 2.3,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+    },
     ["inspect"] = {
         Source = "lookat01",
 		MinProgress = 0.1,
@@ -815,6 +867,14 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
         return "reload_fast_empty"
     --------------------------------------------------------------------------
+    end
+	
+    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
+        return "super_sprint_idle"
+    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
+        return "super_sprint_in"
+    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
+        return "super_sprint_out"
     end
 	
     wep.MWHybridSwitching = nil
@@ -966,7 +1026,7 @@ SWEP.Attachments = {
     },
     {
 		PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"}
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
