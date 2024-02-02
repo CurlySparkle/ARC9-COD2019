@@ -516,7 +516,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_augolf_reload_waffle_magin_v2_01.ogg", t = 38/30},
-			{s = path .. "wfoly_sm_augolf_reload_waffle_magin_v2_02.ogg", t = 46/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 46/30},
 			{s = path .. "wfoly_sm_augolf_reload_waffle_end.ogg", t = 50/30},
         },
     },
@@ -881,7 +881,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.3,
+		Mult = 3.7,
         IKTimeLine = {
             {
                 t = 0,
@@ -902,7 +902,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.3,
+		Mult = 3.7,
         IKTimeLine = {
             {
                 t = 0,
