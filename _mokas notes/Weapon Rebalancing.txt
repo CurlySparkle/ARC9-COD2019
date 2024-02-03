@@ -181,7 +181,6 @@ AimDownSightsTime: 0.6 > 0.472
 SprintToFireTime: 0.5 > 0.375
 
 - PKM
-RPM: 750 > 
 DamageMax: 31 > 32
 RangeMax: 178m > 37m
 RangeMin : 51m > 36m
@@ -190,21 +189,18 @@ AimDownSightsTime: 0.8 > 0.42
 SprintToFireTime: 0.5 > 0.375
 
 - RAAL MG
-RPM: 752 > 
-DamageMax: 28 > 
-DamageMin: 20 > 
-RangeMax: 203m > 
-RangeMin : 51m > 
-PhysBulletMuzzleVelocity: 400 m/s > 
-AimDownSightsTime: 0.3 > 
-SprintToFireTime: 0.3 > 
+RPM: 553 > 556
+RangeMax: 178m > 39m
+RangeMin : 51m > 38m
+PhysBulletMuzzleVelocity: 914 m/s > 730 m/s
+AimDownSightsTime: 0.8 > 0.46
+SprintToFireTime: 0.5 > 0.375
 
 - SA87
-RPM: 752 > 
-DamageMax: 28 > 
-DamageMin: 20 > 
-RangeMax: 203m > 
-RangeMin : 51m > 
-PhysBulletMuzzleVelocity: 400 m/s > 
-AimDownSightsTime: 0.3 > 
-SprintToFireTime: 0.3 > 
+DamageMax: 29 > 37
+DamageMin: 15 > 31
+RangeMax: 178m > 47m
+RangeMin : 51m > 46m
+PhysBulletMuzzleVelocity: 722 m/s > 970 m/s
+AimDownSightsTime: 0.3 > 0.42
+SprintToFireTime: 0.5 > 0.375

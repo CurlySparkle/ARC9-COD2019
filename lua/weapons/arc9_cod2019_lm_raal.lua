@@ -39,10 +39,10 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_lmg_raal.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-12, 6, -7.5),
+    Pos = Vector(-4, 4.25, -8.75),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-7, 4, -2),
-    TPIKAng = Angle(-9, -1, 175),
+    TPIKPos = Vector(-9, 5.5, -6),
+    TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1
 }
 
@@ -53,17 +53,27 @@ SWEP.DamageMin = 34 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 2000 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 7000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 38 / ARC9.HUToM
+SWEP.RangeMax = 39 / ARC9.HUToM
 
 SWEP.Penetration = 15 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.15
 
 SWEP.ImpactForce = 12
 
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.6,
+    [HITGROUP_CHEST] = 1.075,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.PhysBulletMuzzleVelocity = 3000 * 12
+SWEP.PhysBulletMuzzleVelocity = 730 / ARC9.HUToM
 SWEP.PhysBulletGravity = 1.5
 SWEP.PhysBulletDrag = 1.5
 
@@ -82,7 +92,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 553
+SWEP.RPM = 556
 
 SWEP.Firemodes = {
     {
@@ -107,7 +117,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.1
 SWEP.RecoilRandomSide = 0.1
 
-SWEP.RecoilDissipationRate = 55 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 5 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
@@ -119,6 +129,9 @@ SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.85
+
+SWEP.RecoilMax = 2.5
+SWEP.RecoilPerShot = 0.75
 
 -------------------------- VISUAL RECOIL
 
@@ -148,19 +161,20 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.0325
 
-SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 2
-SWEP.RecoilModifierCapSights = 0
+SWEP.SpreadAddRecoil = 0.04
 
-
-SWEP.SpreadMultMove = 2
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.05
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadAddMove = 0.02
+SWEP.SpreadAddMidAir = 0.045
 SWEP.SpreadAddCrouch = -0.03
-SWEP.SpreadAddSights = -0.5
+SWEP.SpreadAddSights = -(SWEP.Spread * 2.75)
+
+SWEP.SpreadMultRecoil = 1
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
+SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadHook = function(self, orig)
     local rec = self:GetRecoilAmount()
@@ -182,8 +196,8 @@ SWEP.SpeedMult = 0.95 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.8 -- When aiming
 SWEP.SpeedMultShooting = 0.8
 
-SWEP.AimDownSightsTime = 0.8 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.46 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -239,8 +253,8 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1.5, 3, -4)
-SWEP.PeekAng = Angle(-0.5, 0.5, -45)
+SWEP.PeekPos = Vector(2, 2, -1)
+SWEP.PeekAng = Angle(0, 0, 5)
 
 -------------------------- HoldTypes
 
@@ -372,6 +386,7 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["dryfire"] = {
         Source = "dryfire",
@@ -381,7 +396,9 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.95,
+		FireASAP = true,
+		RefillProgress = 0.85,
 		MagSwapTime = 3,
 		DropMagAt = 2.9,
         IKTimeLine = {
@@ -391,17 +408,22 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
+                t = 0.025,
+                lhik = 1,
+                rhik = 0
+            },
+            {
                 t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.825,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1,
+                t = 0.925,
                 lhik = 1,
                 rhik = 1
             },
@@ -422,8 +444,11 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
-		DropMagAt = 2.8,
+		MinProgress = 0.95,
+		FireASAP = true,
+		RefillProgress = 0.85,
+		MagSwapTime = 3,
+		DropMagAt = 4,
         IKTimeLine = {
             {
                 t = 0,
@@ -431,17 +456,22 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.1,
+                t = 0.2,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.25,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.85,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1.15,
+                t = 0.925,
                 lhik = 1,
                 rhik = 1
             },
@@ -464,9 +494,11 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
-		MagSwapTime = 3,
-		DropMagAt = 2.5,
+		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.85,
+		MagSwapTime = 2.25,
+		DropMagAt = 2,
         IKTimeLine = {
             {
                 t = 0,
@@ -474,7 +506,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.15,
+                t = 0.025,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.125,
                 lhik = 0,
                 rhik = 0
             },
@@ -504,8 +541,10 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.8,
-		MagSwapTime = 3,
+		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.8,
+		MagSwapTime = 2.25,
 		DropMagAt = 2.5,
         IKTimeLine = {
             {
@@ -514,7 +553,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.1,
+                t = 0.225,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.275,
                 lhik = 0,
                 rhik = 0
             },
@@ -524,7 +568,7 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 1,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -544,7 +588,9 @@ SWEP.Animations = {
     },
     ["reload_smag"] = {
         Source = "reload_smag",
-		MinProgress = 0.8,
+		MinProgress = 0.95,
+		FireASAP = true,
+		RefillProgress = 0.85,
 		MagSwapTime = 3,
 		DropMagAt = 2.9,
         IKTimeLine = {
@@ -554,159 +600,47 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
+                t = 0.025,
+                lhik = 1,
+                rhik = 0
+            },
+            {
                 t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.8,
+                t = 0.825,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
         },
         EventTable = {
 			{s = path .. "wfoly_lm_slima_reload_lower.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_slima_reload_top_cover_open.ogg", t = 20/30},
-			{s = path .. "wfoly_lm_slima_reload_clean_tray.ogg", t = 35/30},
-			{s = path .. "wfoly_lm_slima_reload_arm_down.ogg", t = 66/30},
-			{s = path .. "wfoly_lm_slima_reload_magout.ogg", t = 84/30},
-			{s = path .. "wfoly_lm_slima_reload_lift.ogg", t = 102/30},
-			{s = path .. "wfoly_lm_slima_reload_maghit.ogg", t = 126/30},
-			{s = path .. "wfoly_lm_slima_reload_magin.ogg", t = 140/30},
-			{s = path .. "wfoly_lm_slima_reload_bullets_into_tray.ogg", t = 152/30},
-			{s = path .. "wfoly_lm_slima_reload_top_cover_close.ogg", t = 197/30},
-			{s = path .. "wfoly_lm_slima_reload_end.ogg", t = 214/30},
+			{s = path .. "wfoly_lm_slima_reload_top_cover_open.ogg", t = 17/30},
+			{s = path .. "wfoly_lm_slima_reload_clean_tray.ogg", t = 27.5/30},
+			{s = path .. "wfoly_lm_slima_reload_arm_down.ogg", t = 50/30},
+			{s = path .. "wfoly_lm_slima_reload_magout.ogg", t = 70/30},
+			{s = path .. "wfoly_lm_slima_reload_lift.ogg", t = 85/30},
+			{s = path .. "wfoly_lm_slima_reload_maghit.ogg", t = 100/30},
+			{s = path .. "wfoly_lm_slima_reload_magin.ogg", t = 106/30},
+			{s = path .. "wfoly_lm_slima_reload_bullets_into_tray.ogg", t = 122/30},
+			{s = path .. "wfoly_lm_slima_reload_top_cover_close.ogg", t = 160/30},
+			{s = path .. "wfoly_lm_slima_reload_end.ogg", t = 174/30},
         },
     },
     ["reload_smag_empty"] = {
         Source = "reload_smag_empty",
-		MinProgress = 0.9,
-		DropMagAt = 2.8,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 1.15,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_lm_slima_reload_empty_lower.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_bolt_pull.ogg", t = 15/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_bolt_close.ogg", t = 29/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_settle.ogg", t = 41/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_top_cover_open.ogg", t = 58/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_clean_tray.ogg", t = 75/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_lift.ogg", t = 90/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_magout.ogg", t = 102/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_maghit.ogg", t = 138/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_magin.ogg", t = 148/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_bullets_into_tray.ogg", t = 165/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_top_cover_close.ogg", t = 204/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_end.ogg", t = 226/30},
-        },
-    },
-    ["reload_smag_fast"] = {
-        Source = "reload_smag_fast",
-		MinProgress = 0.8,
-		MagSwapTime = 2,
-		DropMagAt = 2.5,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.15,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.98,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_lm_slima_reload_fast_lower.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_slima_reload_fast_top_cover_open.ogg", t = 6/30},
-			{s = path .. "wfoly_lm_slima_reload_fast_clean_tray.ogg", t = 35/30},
-			{s = path .. "wfoly_lm_slima_reload_fast_magout.ogg", t = 48/30},
-			{s = path .. "wfoly_lm_slima_reload_fast_raise.ogg", t = 71/30},
-			{s = path .. "wfoly_lm_slima_reload_fast_maghit.ogg", t = 88/30},
-			{s = path .. "wfoly_lm_slima_reload_fast_magin.ogg", t = 97/30},
-			{s = path .. "wfoly_lm_slima_reload_fast_bullets_into_tray.ogg", t = 104/30},
-			{s = path .. "wfoly_lm_slima_reload_fast_top_cover_close.ogg", t = 135/30},
-			{s = path .. "wfoly_lm_slima_reload_fast_end.ogg", t = 142/30},
-        },
-    },
-    ["reload_smag_fast_empty"] = {
-        Source = "reload_smag_fast_empty",
-		MinProgress = 0.8,
-		MagSwapTime = 2,
-		DropMagAt = 2.5,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.95,
-                lhik = 1,
-                rhik = 1
-            },
-        },
-        EventTable = {
-			{s = path .. "wfoly_lm_slima_reload_empty_fast_lower.ogg", t = 1/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_fast_bolt_pull.ogg", t = 18/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_fast_bolt_close.ogg", t = 23/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_fast_top_cover_pop.ogg", t = 39/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_fast_magout.ogg", t = 51/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_fast_maghit.ogg", t = 81/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_fast_magin.ogg", t = 105/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_fast_bullets_into_tray.ogg", t = 114/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_fast_top_cover_close.ogg", t = 137/30},
-			{s = path .. "wfoly_lm_slima_reload_empty_fast_end.ogg", t = 165/30},
-        },
-    },
-    ["ready"] = {
-        Source = "draw",
+		MinProgress = 0.95,
+		FireASAP = true,
+		RefillProgress = 0.85,
+		MagSwapTime = 3,
+		DropMagAt = 3.5,
         IKTimeLine = {
             {
                 t = 0,
@@ -719,14 +653,138 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.5,
+                t = 0.25,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_slima_reload_empty_lower.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_bolt_pull.ogg", t = 12/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_bolt_close.ogg", t = 23/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_settle.ogg", t = 31/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_top_cover_open.ogg", t = 48/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_clean_tray.ogg", t = 62.5/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_lift.ogg", t = 70/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_magout.ogg", t = 95/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_maghit.ogg", t = 118/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_magin.ogg", t = 125/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_bullets_into_tray.ogg", t = 145/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_top_cover_close.ogg", t = 174/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_end.ogg", t = 190/30},
+        },
+    },
+    ["reload_smag_fast"] = {
+        Source = "reload_smag_fast",
+		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.8,
+		MagSwapTime = 2.25,
+		DropMagAt = 2,
+        IKTimeLine = {
+            {
+                t = 0,
                 lhik = 1,
                 rhik = 0
             },
             {
-                t = 0.95,
+                t = 0.025,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.125,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.8,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
                 lhik = 1,
                 rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_slima_reload_fast_lower.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_top_cover_open.ogg", t = 6/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_clean_tray.ogg", t = 35/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_magout.ogg", t = 48/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_raise.ogg", t = 61/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_maghit.ogg", t = 78/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_magin.ogg", t = 87/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_bullets_into_tray.ogg", t = 94/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_top_cover_close.ogg", t = 122.5/30},
+			{s = path .. "wfoly_lm_slima_reload_fast_end.ogg", t = 125/30},
+        },
+    },
+    ["reload_smag_fast_empty"] = {
+        Source = "reload_smag_fast_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.8,
+		MagSwapTime = 2.25,
+		DropMagAt = 2.15,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.225,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.275,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.775,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_lower.ogg", t = 1/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_bolt_pull.ogg", t = 14/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_bolt_close.ogg", t = 19/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_top_cover_pop.ogg", t = 39/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_magout.ogg", t = 47.5/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_maghit.ogg", t = 61/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_magin.ogg", t = 85/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_bullets_into_tray.ogg", t = 94/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_top_cover_close.ogg", t = 117/30},
+			{s = path .. "wfoly_lm_slima_reload_empty_fast_end.ogg", t = 120/30},
+        },
+    },
+    ["ready"] = {
+        Source = "draw",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
             },
         },
         EventTable = {
@@ -738,36 +796,14 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
             {s = path .. "wfoly_lm_slima_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 1
-            },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
             {s = path .. "wfoly_lm_slima_drop.ogg", t = 0/30},
         },
@@ -850,17 +886,22 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.1,
+                t = 0.05,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.125,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.5,
+                t = 0.55,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.75,
+                t = 0.625,
                 lhik = 1,
                 rhik = 1
             },
