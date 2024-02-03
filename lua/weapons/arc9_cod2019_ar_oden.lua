@@ -134,7 +134,7 @@ SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.7
 
 SWEP.RecoilPerShot = 1
-SWEP.RecoilMax = 2
+SWEP.RecoilMax = 3
 
 -------------------------- VISUAL RECOIL
 
@@ -167,16 +167,15 @@ end
 
 SWEP.Spread = 0.03
 
-SWEP.SpreadAddRecoil = 0.04
+SWEP.SpreadAddRecoil = 0.01
 
 SWEP.SpreadAddHipFire = 0
 SWEP.SpreadAddMove = 0.03
 SWEP.SpreadAddMidAir = 0.045
 SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -(SWEP.Spread * 2.75)
--- SWEP.SpreadAddSights = -(SWEP.Spread + (SWEP.SpreadAddMove / 2))
 
-SWEP.SpreadMultRecoil = 1
+SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = 3
 SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0.05
