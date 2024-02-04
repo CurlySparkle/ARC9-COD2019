@@ -128,7 +128,7 @@ SWEP.VisualRecoilPunch = 1
 SWEP.Spread = 0.08
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.2.1
+SWEP.SpreadMultRecoil = 1.21
 SWEP.RecoilModifierCap = 0.3
 
 SWEP.SpreadAddMove = 0.05
