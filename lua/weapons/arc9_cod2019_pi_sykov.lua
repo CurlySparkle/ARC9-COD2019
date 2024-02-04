@@ -193,8 +193,8 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -0.5)
-SWEP.SprintAng = Angle(0, 0, 0)
+SWEP.SprintPos = Vector(1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, -25, 0)
 SWEP.CustomizePos = Vector(16, 30, 3)
@@ -1114,14 +1114,13 @@ SWEP.Attachments = {
 		InstalledElements = {"rail_laser"},
     },
     {
-        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+        PrintName = "Grip",
         DefaultAttName = "Default",
         Category = "cod2019_sykov_grip",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
-		--InstalledElements = {"rail_grip"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),

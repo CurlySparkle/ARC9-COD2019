@@ -126,11 +126,23 @@ SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.3
 SWEP.VisualRecoilRoll = 55
-SWEP.VisualRecoilSide = -1/6
+SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 10
 SWEP.VisualRecoilDampingConstSights = 50
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -596,13 +608,15 @@ end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
--- SWEP.AttachmentTableOverrides = {
-    -- ["arc9_stat_proscreen_main"] = {
-    -- ModelOffset = Vector(3, -1.15, -3.55),
-	-- ModelAngleOffset = Angle(0, 0, 0),
-	-- Scale = 0.9,
-    -- },
--- }
+SWEP.AttachmentTableOverrides = {
+    ["cod2019_sykov_slide_auto"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/sykov/attachment_vm_pi_mike_barauto_akimbo.mdl"
+    },
+    ["cod2019_sykov_mag_xmag"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/sykov/attachment_vm_pi_mike_xmags_akimbo.mdl",
+	ClipSizeOverride = 40
+    },
+}
 
 SWEP.AttachmentElements = {
     ["body_none"] = {
@@ -614,7 +628,7 @@ SWEP.AttachmentElements = {
     ["slide_none"] = {
         Bodygroups = {
             {1,1},
-            {4,1},
+            {5,1},
         },
     },
     ["mag_none"] = {
@@ -648,12 +662,12 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_slide"),
         DefaultAttName = "Standard slide",
         Category = "cod2019_sykov_slide",
-        Bone = "tag_barrel_attach",
+        Bone = "tag_barrel_attach_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         DuplicateModels = {
             {
-                Bone = "tag_barrel_attach_l",
+                Bone = "tag_barrel_attach",
             }
         },
     },
@@ -701,7 +715,7 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+        PrintName = "Grip",
         DefaultAttName = "Default",
         Category = "cod2019_sykov_grip",
         Bone = "tag_stock_attach",
@@ -724,7 +738,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "tag_mag_attach",
-        Category = "cod2019_mag",
+        Category = {"cod2019_mag","cod2019_sykov_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 
