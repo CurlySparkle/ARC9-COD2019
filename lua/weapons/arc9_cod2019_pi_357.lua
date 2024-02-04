@@ -615,7 +615,7 @@ end
 
 SWEP.Attachments = {
     {
-        PrintName = ARC9:GetPhrase("mw19_category_slide"),
+        PrintName = ARC9:GetPhrase("mw19_category_barrel"),
         DefaultAttName = "Standard slide",
         Category = "cod2019_357_slide",
         Bone = "tag_barrel_attach",
@@ -652,7 +652,7 @@ SWEP.Attachments = {
 		InstalledElements = {"rail_laser"},
     },
     {
-        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
         Category = "cod2019_357_grip",
         Bone = "tag_stock_attach",

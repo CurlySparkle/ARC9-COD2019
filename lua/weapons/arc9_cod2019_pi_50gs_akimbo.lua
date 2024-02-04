@@ -603,15 +603,20 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     end
 end
 
-SWEP.DefaultBodygroups = "00000000000000"
+SWEP.DefaultBodygroups = "000000000000000000"
 
--- SWEP.AttachmentTableOverrides = {
-    -- ["arc9_stat_proscreen_main"] = {
-    -- ModelOffset = Vector(3, -1.15, -3.55),
-	-- ModelAngleOffset = Angle(0, 0, 0),
-	-- Scale = 0.9,
-    -- },
--- }
+SWEP.AttachmentTableOverrides = {
+    ["cod2019_50gs_slide_ext2"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_slide_ext02_akimbo.mdl"
+    },
+    ["cod2019_50gs_mag_13"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_xmags2_akimbo.mdl",
+	ClipSizeOverride = 13 * 2
+    },
+    ["cod2019_50gs_grip_custom"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_cust_grip_akimbo.mdl"
+    },
+}
 
 SWEP.AttachmentElements = {
     ["body_none"] = {
@@ -629,7 +634,7 @@ SWEP.AttachmentElements = {
     ["mag_none"] = {
         Bodygroups = {
             {2,1},
-            {1,1},
+            {6,1},
         },
     },
     ["grip_none"] = {
@@ -654,7 +659,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_slide"),
         DefaultAttName = "Standard slide",
-        Category = "cod2019_50gs_slide_akimbo",
+        Category = "cod2019_50gs_slide",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -703,9 +708,9 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
-        Category = "cod2019_50gs_grip_akimbo",
+        Category = "cod2019_50gs_grip",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 180),
@@ -722,7 +727,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "j_mag1",
-        Category = {"cod2019_mag","cod2019_50gs_mag_akimbo"},
+        Category = {"cod2019_mag","cod2019_50gs_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },

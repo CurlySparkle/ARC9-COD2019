@@ -599,13 +599,21 @@ end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
--- SWEP.AttachmentTableOverrides = {
-    -- ["arc9_stat_proscreen_main"] = {
-    -- ModelOffset = Vector(3, -1.15, -3.55),
-	-- ModelAngleOffset = Angle(0, 0, 0),
-	-- Scale = 0.9,
-    -- },
--- }
+SWEP.AttachmentTableOverrides = {
+    ["cod2019_x16_slide_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_slide_auto_akimbo.mdl"
+    },
+    ["cod2019_x16_mag_xmag2"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_mag_xmags2_akimbo.mdl",
+	ClipSizeOverride = 26 * 2
+    },
+    ["cod2019_x16_stock"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_stock_akimbo.mdl"
+    },
+    ["cod2019_x16_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_pistolgrip_tape_akimbo.mdl"
+    },
+}
 
 SWEP.AttachmentElements = {
     ["body_none"] = {
@@ -640,7 +648,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_slide"),
         DefaultAttName = "Standard slide",
-        Category = "cod2019_x16_akimbo_slide",
+        Category = "cod2019_x16_slide",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -697,9 +705,9 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
-        Category = "cod2019_x16_akimbo_grip",
+        Category = "cod2019_x16_grip",
         Bone = "tag_pistol_attachments",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -713,7 +721,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
         DefaultAttName = "Default",
-        Category = "cod2019_x16_akimbo_stock",
+        Category = "cod2019_x16_stock",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -734,7 +742,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "j_mag1",
-        Category = {"cod2019_mag","cod2019_x16_akimbo_mag"},
+        Category = {"cod2019_mag","cod2019_x16_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         DuplicateModels = {

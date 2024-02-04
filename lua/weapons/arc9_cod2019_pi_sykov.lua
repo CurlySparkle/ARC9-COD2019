@@ -1114,7 +1114,7 @@ SWEP.Attachments = {
 		InstalledElements = {"rail_laser"},
     },
     {
-        PrintName = "Grip",
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
         Category = "cod2019_sykov_grip",
         Bone = "tag_stock_attach",

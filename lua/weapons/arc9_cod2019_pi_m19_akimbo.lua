@@ -597,13 +597,11 @@ end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
--- SWEP.AttachmentTableOverrides = {
-    -- ["arc9_stat_proscreen_main"] = {
-    -- ModelOffset = Vector(3, -1.15, -3.55),
-	-- ModelAngleOffset = Angle(0, 0, 0),
-	-- Scale = 0.9,
-    -- },
--- }
+SWEP.AttachmentTableOverrides = {
+    ["cod2019_m19_slide_ext"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_barrel_ext_akimbo.mdl"
+    },
+}
 
 SWEP.AttachmentElements = {
     ["body_none"] = {
@@ -635,7 +633,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_slide"),
         DefaultAttName = "Standard slide",
-        Category = "cod2019_m19_slide_akimbo",
+        Category = "cod2019_m19_slide",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -691,9 +689,9 @@ SWEP.Attachments = {
         },
     },
     {
-        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
-        Category = "cod2019_grip_akimbo",
+        Category = "cod2019_grip",
         Bone = "tag_stock_attach",
         Pos = Vector(-2.8, 0, 0.2),
         Ang = Angle(0, 0, 180),
@@ -714,7 +712,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "tag_mag_attach",
-        Category = {"cod2019_mag","cod2019_m19_mag_akimbo"},
+        Category = {"cod2019_mag","cod2019_m19_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         DuplicateModels = {

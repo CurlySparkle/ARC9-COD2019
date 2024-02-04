@@ -1044,7 +1044,7 @@ SWEP.Attachments = {
 		--InstalledElements = {"rail_laser"},
     },
     {
-        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
         Category = "cod2019_m1911_grip",
         Bone = "tag_stock_attach",
