@@ -91,7 +91,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1
+SWEP.Recoil = 1.1
 
 --SWEP.RecoilSeed = nil
 
@@ -99,12 +99,12 @@ SWEP.RecoilPatternDrift = 35
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.3 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.3
 
 SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -115,21 +115,21 @@ SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilMultSights = 0.8
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.2
-SWEP.VisualRecoilPunchSights = 75
-SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 15
+SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.1
 SWEP.VisualRecoilRoll = 55
-SWEP.VisualRecoilSide = -1/6
+SWEP.VisualRecoilSide = 0.3
 
-SWEP.VisualRecoilSpringPunchDamping = 11
-SWEP.VisualRecoilDampingConst = 10
-SWEP.VisualRecoilDampingConstSights = 50
+--SWEP.VisualRecoilSpringPunchDamping = 11
+--SWEP.VisualRecoilDampingConst = 10
+--SWEP.VisualRecoilDampingConstSights = 50
 
 -------------------------- SPREAD
 
@@ -1048,6 +1048,16 @@ SWEP.Attachments = {
 		--InstalledElements = {"rail_grip"},
     },
     {
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
+        DefaultAttName = "Default",
+        Category = "cod2019_renetti_stock",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 180),
+		Scale = 1,
+		--InstalledElements = {"rail_grip"},
+    },
+    {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
         Bone = "j_mag1",
         Category = "cod2019_ammo",
@@ -1057,7 +1067,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		Bone = "j_mag1",
-        Category = "cod2019_mag",
+        Category = {"cod2019_mag","cod2019_renetti_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -1067,7 +1077,8 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_view"),
-        Category = "cod2019_pistols_view"
+        Category = "cod2019_pistols_view",
+		ExcludeElements = {"stock"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_skins"),

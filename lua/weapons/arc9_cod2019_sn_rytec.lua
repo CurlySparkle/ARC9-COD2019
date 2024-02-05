@@ -320,7 +320,11 @@ end
 
 SWEP.Animations = {
 	["enter_sights"] = {
-		Source = "idle",
+		Source = "ads_in",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+	},
+	["exit_sights"] = {
+		Source = "ads_out",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
 	},
     ["fire"] = {
