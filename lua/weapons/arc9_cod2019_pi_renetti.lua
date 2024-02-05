@@ -173,6 +173,20 @@ SWEP.IronSights = {
 	CrosshairInSights = false
 }
 
+SWEP.IronSightsHook = function(self) -- If any attachments equipped should alter Irons
+    local attached = self:GetElements()
+
+    if attached["cod2019_renetti_stock"] then
+        return {
+			Pos = Vector(-2.4, -6, 0.525),
+			Ang = Angle(0, 0.1, 0.5),
+			Magnification = 1.15,
+			CrosshairInSights = false
+        }
+    end
+
+end
+
 SWEP.ViewModelFOVBase = 65
 
 SWEP.SprintMidPoint = {
@@ -869,6 +883,582 @@ SWEP.Animations = {
     ["bash"] = {
         Source = {"melee","melee2"},
     },
+	
+-- stock
+	["stock_enter_sights"] = {
+		Source = "idle_stock",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+	},
+    ["stock_fire"] = {
+        Source = "shoot1_stock",
+    },
+    ["stock_dryfire"] = {
+        Source = "dryfire_stock",
+    },
+    ["stock_reload"] = {
+        Source = "reload_short_stock",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_magrelease.ogg", t = 2/30},
+			{s = path .. "wfoly_pi_mike9_reload_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_pi_mike9_reload_maghit.ogg", t = 23/30},
+			{s = path .. "wfoly_pi_mike9_reload_magin.ogg", t = 29/30},
+			{s = path .. "wfoly_pi_mike9_reload_end.ogg", t = 34/30},
+        },
+    },
+    ["stock_reload_empty"] = {
+        Source = "reload_stock",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 40/30},
+        },
+    },
+    ["stock_reload_fast"] = {
+        Source = "reload_fast_stock",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.43,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_fast_raise.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 18/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 22/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 28/30},
+        },
+    },
+    ["stock_reload_fast_empty"] = {
+        Source = "reload_fast_empty_stock",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.43,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magout.ogg", t = 7/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_magin.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_charge.ogg", t = 27/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_fast_end.ogg", t = 31/30},
+        },
+    },
+    ["stock_reload_xmag"] = {
+        Source = "reload_xmag_stock",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_magrelease.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike9_reload_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_mike9_reload_maghit.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike9_reload_magin.ogg", t = 28/30},
+			{s = path .. "wfoly_pi_mike9_reload_end.ogg", t = 31/30},
+        },
+    },
+    ["stock_reload_xmag_empty"] = {
+        Source = "reload_xmag_empty_stock",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 37/30},
+        },
+    },
+    ["stock_reload_xmag_fast"] = {
+        Source = "reload_xmag_fast_stock",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 15/30},
+        },
+    },
+    ["stock_reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty_stock",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 25/30},
+        },
+    },
+    ["stock_reload_xmaglrg"] = {
+        Source = "reload_xmaglrg_stock",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_magrelease.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike9_reload_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_mike9_reload_maghit.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike9_reload_magin.ogg", t = 28/30},
+			{s = path .. "wfoly_pi_mike9_reload_end.ogg", t = 31/30},
+        },
+    },
+    ["stock_reload_xmaglrg_empty"] = {
+        Source = "reload_xmaglrg_empty_stock",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 37/30},
+        },
+    },
+    ["stock_reload_xmaglrg_fast"] = {
+        Source = "reload_xmaglrg_fast_stock",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_fast_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 15/30},
+        },
+    },
+    ["stock_reload_xmaglrg_fast_empty"] = {
+        Source = "reload_xmaglrg_fast_empty_stock",
+		MinProgress = 0.9,
+		FireASAP = true,
+		DropMagAt = 0.4,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike9_reload_empty_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 25/30},
+        },
+    },
+    ["stock_ready"] = {
+        Source = "draw_stock",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.2,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.5,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_pi_mike9_raise_first_up.ogg", t = 1/30},
+            {s = path .. "wfoly_pi_mike9_raise_first_hammer.ogg", t = 12/30},
+			{s = path .. "wfoly_pi_mike9_raise_first_end.ogg", t = 16/30},
+        },
+    },
+    ["stock_draw"] = {
+        Source = "draw_short_stock",
+		MinProgress = 0.2,
+        FireASAP = true,
+        EventTable = {
+            {s = path .. "wfoly_pi_mike9_raise.ogg", t = 0/30},
+        },
+    },
+    ["stock_holster"] = {
+        Source = "holster_stock",
+        EventTable = {
+            {s = path .. "wfoly_pi_mike9_drop.ogg", t = 0/30},
+        },
+    },
+    ["stock_idle"] = {
+        Source = "idle_stock",
+    },
+    ["stock_idle_sprint"] = {
+        Source = "sprint_stock",
+    },
+    ["stock_exit_sprint"] = {
+        Source = "sprint_out_stock",
+		NoStatAffectors = true
+    },
+    ["stock_enter_sprint"] = {
+        Source = "sprint_in_stock",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+		NoStatAffectors = true
+    },
+    ["stock_super_sprint_idle"] = {
+        Source = "super_sprint_stock",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+        },
+    },
+    ["stock_super_sprint_in"] = {
+        Source = "super_sprint_in_stock",
+		Mult = 5,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.35,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 0,
+                rhik = 1
+            },
+        },
+    },
+    ["stock_super_sprint_out"] = {
+        Source = "super_sprint_out_stock",
+		Mult = 3,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+    },
+    ["stock_inspect"] = {
+        Source = "lookat01_stock",
+        MinProgress = 0.1,
+        FireASAP = true,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 0
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.7,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 1.1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
+        EventTable = {
+            {s = path .. "wfoly_pi_mike9_inspect_01.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike9_inspect_02.ogg", t = 38/30},
+			{s = path .. "wfoly_pi_mike9_inspect_03.ogg", t = 61/30},
+			{s = path .. "wfoly_pi_mike9_inspect_04.ogg", t = 98/30},
+			{s = path .. "wfoly_pi_mike9_inspect_05.ogg", t = 114/30},
+        },
+    },
+    ["stock_bash"] = {
+        Source = {"melee_stock","melee2_stock"},
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -876,34 +1466,64 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
-    --------------------------------------------------------------------------
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
-        return "reload_xmag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
-        return "reload_xmag_fast_empty"
-	--------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
-        return "reload_xmaglrg_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
-        return "reload_xmaglrg_fast_empty"
-	--------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then
-        return "reload_fast_empty"
-	--------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_xmag") then
-        return "reload_xmag"
-    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then
-        return "reload_xmag_empty"
-	--------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_xmaglrg") then
-        return "reload_xmaglrg"
-    elseif anim == "reload_empty" and wep:HasElement("mag_xmaglrg") then
-        return "reload_xmaglrg_empty"
-	--------------------------------------------------------------------------
-    end
-	
+	if wep:HasElement("cod2019_renetti_stock") then 
+		--------------------------------------------------------------------------
+		if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+			return "stock_reload_xmag_fast"
+		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+			return "stock_reload_xmag_fast_empty"
+		--------------------------------------------------------------------------
+		elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
+			return "stock_reload_xmaglrg_fast"
+		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
+			return "stock_reload_xmaglrg_fast_empty"
+		--------------------------------------------------------------------------
+		elseif anim == "reload" and wep:HasElement("perk_speedreload") then
+			return "stock_reload_fast"
+		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then
+			return "stock_reload_fast_empty"
+		--------------------------------------------------------------------------
+		elseif anim == "reload" and wep:HasElement("mag_xmag") then
+			return "stock_reload_xmag"
+		elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then
+			return "stock_reload_xmag_empty"
+		--------------------------------------------------------------------------
+		elseif anim == "reload" and wep:HasElement("mag_xmaglrg") then
+			return "stock_reload_xmaglrg"
+		elseif anim == "reload_empty" and wep:HasElement("mag_xmaglrg") then
+			return "stock_reload_xmaglrg_empty"
+		--------------------------------------------------------------------------
+		else return "stock_" .. anim
+		end
+	end
+	if !wep:HasElement("cod2019_renetti_stock") then
+		if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+			return "reload_xmag_fast"
+		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+			return "reload_xmag_fast_empty"
+		--------------------------------------------------------------------------
+		elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
+			return "reload_xmaglrg_fast"
+		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
+			return "reload_xmaglrg_fast_empty"
+		--------------------------------------------------------------------------
+		elseif anim == "reload" and wep:HasElement("perk_speedreload") then
+			return "reload_fast"
+		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then
+			return "reload_fast_empty"
+		--------------------------------------------------------------------------
+		elseif anim == "reload" and wep:HasElement("mag_xmag") then
+			return "reload_xmag"
+		elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then
+			return "reload_xmag_empty"
+		--------------------------------------------------------------------------
+		elseif anim == "reload" and wep:HasElement("mag_xmaglrg") then
+			return "reload_xmaglrg"
+		elseif anim == "reload_empty" and wep:HasElement("mag_xmaglrg") then
+			return "reload_xmaglrg_empty"
+		--------------------------------------------------------------------------
+		end
+	end
     if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
         return "super_sprint_idle"
     elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
@@ -1023,7 +1643,7 @@ SWEP.Attachments = {
         Bone = "tag_reflex",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
-        Category = "cod2019_optic",
+        Category = "cod2019_optic_pistol",
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 1,
 		InstalledElements = {"rail_sight"},
@@ -1042,7 +1662,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_renetti_grip",
         Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(0, 0, 2),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
