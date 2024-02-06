@@ -33,10 +33,10 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_crossbow.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-11, 6, -2.5),
-    Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-8, 5, -2),
-    TPIKAng = Angle(-9, 0, 170),
+    Pos = Vector(-5, 3.25, -6.75),
+    Ang = Angle(-5, 0, 180),
+    TPIKPos = Vector(-8.5, 4.5, -6),
+    TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1
 }
 
@@ -57,7 +57,7 @@ SWEP.Penetration = 10 -- Units of wood that can be penetrated by this gun.
 SWEP.ImpactForce = 15
 
 SWEP.ShootEnt = "arc9_cod2019_proj_crossbow_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 8000
+SWEP.ShootEntForce = 80 / ARC9.HUToM
 SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets SENT.WeaponDataLink with this table.
 
 SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
@@ -83,7 +83,7 @@ SWEP.NoFlash = true -- Disable light flash
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 328
+SWEP.RPM = 375
 
 SWEP.Firemodes = {
     {
@@ -106,8 +106,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
-SWEP.RecoilDissipationRateSights = 50
+SWEP.RecoilDissipationRate = 5 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 10 -- Multiplier for automatic recoil control.
@@ -119,21 +118,32 @@ SWEP.RecoilMultMove = 1.25
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0
-SWEP.SpreadAddRecoil = 0.05
+SWEP.Spread = 0.0325
 
-SWEP.SpreadMultSights = -0.1
-SWEP.SpreadAddHipFire = 0.03
---SWEP.SpreadAddMove = 0
---SWEP.SpreadAddMidAir = 05
+SWEP.SpreadAddRecoil = 0.075
+
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadAddMove = 0.02
+SWEP.SpreadAddMidAir = 0.045
+SWEP.SpreadAddCrouch = -0.03
+SWEP.SpreadAddSights = -(SWEP.Spread * 1.75)
+
+SWEP.SpreadMultRecoil = 1.2
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
+SWEP.RecoilModifierCapSights = 0
 
 -------------------------- HANDLING
+
+SWEP.SpeedMult = 1 -- Walk speed multiplier
+SWEP.SpeedMultSights = 0.9 -- When aiming
+SWEP.SpeedMultShooting = 0.9
 
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
-SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.35 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -236,10 +246,13 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.75,
         IKTimeLine = {
             {
                 t = 0,
@@ -247,17 +260,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.775,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -273,7 +286,9 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.7,
         IKTimeLine = {
             {
                 t = 0,
@@ -281,17 +296,17 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.775,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 1,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -316,7 +331,12 @@ SWEP.Animations = {
                 rhik = 1
             },
             {
-                t = 1.1,
+                t = 0.45,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.7,
                 lhik = 1,
                 rhik = 1
             },
@@ -330,12 +350,14 @@ SWEP.Animations = {
         Source = "draw_short",
 		MinProgress = 0.2,
         FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
             {s = path .. "wfoly_sn_crossbow_raise.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
             {s = path .. "wfoly_sn_crossbow_drop.ogg", t = 0/30},
         },
@@ -418,12 +440,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.2,
+                t = 0.1,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.4,
+                t = 0.45,
                 lhik = 0,
                 rhik = 0
             },

@@ -13,6 +13,7 @@ smg1_grenade = lineb .. "Byter patrontyp till <color=255,255,100>Gevärsgranater
 xbowbolt = lineb .. "Byter patrontyp till <color=255,255,100>Armborst Bultar</color>.",
 }
 
+local baseatt = "\nDetta är ett <color=255,255,100>BAS TILLÄGG</color> tillbehör."
 local missingloc = "\n\nNotis: Icke-lokaliserad text; Prenumerera på <color=255,255,100>SHARED-tillägget</color> för översatta texter."
 
 //////////////////////////////////////////////////////////////////////
@@ -268,7 +269,7 @@ L["cod2019_ammo_sg_db.description"] = "Laddning innehåller magnesium skott som 
 ////////////////////  Etc.
 L["cod2019_etc_ammo_extend.printname"] = "Lättvikt Förstorat Magasin" -- UO
 L["cod2019_etc_ammo_extend.compactname"] = "Lättvikt FM" -- UO
-L["cod2019_etc_ammo_extend.description"] = "Anpassat förstorat magasin som innehåller <color=100,255,100>20%</color> mer ammunition." -- UO
+L["cod2019_etc_ammo_extend.description"] = "Anpassat förstorat magasin som innehåller <color=100,255,100>20%</color> mer ammunition." .. baseatt -- UO
 
 L["cod2019_attach_grip_support.printname"] = "Stöd för Framgrepp" -- UO
 L["cod2019_attach_grip_support.compactname"] = "Stöd F." -- UO
@@ -287,7 +288,7 @@ L["cod2019_attach_laser_rail_2.description"] = "Tillåter installering av smål,
 ////////////////////  Grips
 L["cod2019_attach_grip_foregrip_side.printname"] = "ARC-Framgrepp" -- UO
 L["cod2019_attach_grip_foregrip_side.compactname"] = "ARC" -- UO
-L["cod2019_attach_grip_foregrip_side.description"] = ARC9:GetPhrase("cod2019_grips_merc.description") or "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics." .. missingloc
+L["cod2019_attach_grip_foregrip_side.description"] = ARC9:GetPhrase("cod2019_grips_merc.description") .. baseatt or "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics.".. baseatt .. missingloc
 
 L["cod2019_grips_none.printname"] = "Alternativ Hållande" -- UO
 L["cod2019_grips_none.compactname"] = "Alt. Håll." -- UO
@@ -334,7 +335,7 @@ L["cod2019_perks_burst_2.description"] = "Ändrar skjutläget till <color=100,25
 ////////////////////  Scopes
 L["cod2019_optic_scope_pila.printname"] = "PILA-Riktmedel" -- UO
 L["cod2019_optic_scope_pila.compactname"] = "PILA" -- UO
-L["cod2019_optic_scope_pila.description"] = ARC9:GetPhrase("cod2019_optic_scope_mike14.description") or "High power <color=100,255,100>4.4x</color> scope for long range encounters. <color=255,100,100>Optic glint visible to enemies.</color>" .. missingloc
+L["cod2019_optic_scope_pila.description"] = ARC9:GetPhrase("cod2019_optic_scope_mike14.description") .. baseatt or "High power <color=100,255,100>4.4x</color> scope for long range encounters. <color=255,100,100>Optic glint visible to enemies.</color>".. baseatt .. missingloc
 
 L["cod2019_model680_iron.printname"] = "Ta Bort Siktfäste" -- UO
 L["cod2019_model680_iron.compactname"] = "Ta Bort S." -- UO
@@ -343,27 +344,27 @@ L["cod2019_model680_iron.description"] = "Tar bort siktfästet på Modell 680 vi
 ////////////////////  Stocks
 L["cod2019_stock_vlk.printname"] = "VLK Rogue-Kolv" -- UO
 L["cod2019_stock_vlk.compactname"] = "VLK Rogue" -- UO
-L["cod2019_stock_vlk.description"] = ARC9:GetPhrase("cod2019_stock_light.description") or "Stock designed for agility while aiming down sights." .. missingloc
+L["cod2019_stock_vlk.description"] = ARC9:GetPhrase("cod2019_stock_light.description") .. baseatt or "Stock designed for agility while aiming down sights.".. baseatt .. missingloc
 
 L["cod2019_stock_amax.printname"] = "CR-56 AMAX-Kolv" -- UO
 L["cod2019_stock_amax.compactname"] = "CR-56 AMAX" -- UO
-L["cod2019_stock_amax.description"] = ARC9:GetPhrase("cod2019_stock_vlight.description") or "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics." .. missingloc
+L["cod2019_stock_amax.description"] = ARC9:GetPhrase("cod2019_stock_vlight.description") .. baseatt or "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics.".. baseatt .. missingloc
 
 L["cod2019_stock_slima.printname"] = "Slima-Kolv" -- UO
 L["cod2019_stock_slima.compactname"] = "Slima" -- UO
-L["cod2019_stock_slima.description"] = ARC9:GetPhrase("cod2019_stock_medium.description") or "Tactical stock streamlined for close quarters combat. Gets you on target faster." .. missingloc
+L["cod2019_stock_slima.description"] = ARC9:GetPhrase("cod2019_stock_medium.description") .. baseatt or "Tactical stock streamlined for close quarters combat. Gets you on target faster.".. baseatt .. missingloc
 
 L["cod2019_stock_m4.printname"] = "Ökenstorm Kolv" -- UO
 L["cod2019_stock_m4.compactname"] = "Storm" -- UO
-L["cod2019_stock_m4.description"] = ARC9:GetPhrase("cod2019_stock_heavy.description") or "Heavy duty stock keeps your aim steady for precision shots." .. missingloc
+L["cod2019_stock_m4.description"] = ARC9:GetPhrase("cod2019_stock_heavy.description") .. baseatt or "Heavy duty stock keeps your aim steady for precision shots.".. baseatt .. missingloc
 
 L["cod2019_stock_origin12.printname"] = "Origin-Kolv" -- UO
 L["cod2019_stock_origin12.compactname"] = "Origin" -- UO
-L["cod2019_stock_origin12.description"] = ARC9:GetPhrase("cod2019_stock_light.description") or "Stock designed for agility while aiming down sights." .. missingloc
+L["cod2019_stock_origin12.description"] = ARC9:GetPhrase("cod2019_stock_light.description") .. baseatt or "Stock designed for agility while aiming down sights.".. baseatt .. missingloc
 
 L["cod2019_m32_stock_retract.printname"] = "Förkortad Kolv" -- UO
 L["cod2019_m32_stock_retract.compactname"] = "Förkortad" -- UO
-L["cod2019_m32_stock_retract.description"] = "Förkortar kolven för att tillåta <color=100,255,100>högre rörlighet.</color>" -- UO
+L["cod2019_m32_stock_retract.description"] = "Förkortar kolven för att tillåta <color=100,255,100>högre rörlighet.</color>" .. baseatt -- UO
 
 ////////////////////  Buffer Tubes
 L["cod2019_stock_tube.printname"] = "Ökenstorm Bufferrör" -- UO
@@ -377,9 +378,6 @@ L["cod2019_stock_tube_vlk.description"] = "Anpassat bufferrör som tillåter ins
 L["cod2019_stock_tube_origin12.printname"] = "FTAC-Rör" -- UO
 L["cod2019_stock_tube_origin12.compactname"] = "FTAC" -- UO
 L["cod2019_stock_tube_origin12.description"] = "Tungt bufferrör som tillåter installering av kolvar från eftermarknaden" -- UO
-
-L["cod2019_m14_stock_tube.printname"] = "EBR-Rör" -- UO
-L["cod2019_m14_stock_tube.compactname"] = "EBR" -- UO
 
 ////////////////////  EFT (Escape from Tarkov) Support
 L["cod2019_eft_grips.printname"] = "\"Escape from Tarkov\"-Stöd" -- UO

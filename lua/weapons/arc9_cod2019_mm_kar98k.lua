@@ -30,7 +30,7 @@ SWEP.Description = ARC9:GetPhrase("mw19_weapon_kar98_desc") or [[Bolt action rif
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_kar98k.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
-SWEP.DefaultBodygroups = "00000000"
+SWEP.DefaultBodygroups = "00001000"
 
 SWEP.Slot = 3
 
@@ -47,24 +47,34 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 86 -- Damage done at point blank range
-SWEP.DamageMin = 57 -- Damage done at maximum range
+SWEP.DamageMax = 95 -- Damage done at point blank range
+SWEP.DamageMin = 75 -- Damage done at maximum range
 
 SWEP.Num = 1
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 2000 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 11000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 48 / ARC9.HUToM
+SWEP.RangeMax = 49 / ARC9.HUToM
 
 SWEP.Penetration = 15 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.5
 
 SWEP.ImpactForce = 15
 
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 3.16,
+    [HITGROUP_CHEST] = 1.8,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.PhysBulletMuzzleVelocity = 2580 * 12
+SWEP.PhysBulletMuzzleVelocity = 625 / ARC9.HUToM
 SWEP.PhysBulletGravity = 0.5
 SWEP.PhysBulletDrag = 1
 
@@ -115,8 +125,8 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
-SWEP.RecoilDissipationRateSights = 50
+SWEP.RecoilDissipationRate = 2.5 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRateSights = 5
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
@@ -136,20 +146,33 @@ SWEP.VisualRecoilUp = 0.3
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.065
 
-SWEP.SpreadAddRecoil = 0.0002 -- Applied per unit of recoil.
+SWEP.SpreadAddRecoil = 0.05
 
-SWEP.SpreadMultMove = 1.5
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.09
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadAddMove = 0.03
+SWEP.SpreadAddMidAir = 0.045
 SWEP.SpreadAddCrouch = -0.03
-SWEP.SpreadAddSights = -0.5
+SWEP.SpreadAddSights = -(SWEP.Spread)
+
+SWEP.SpreadMultRecoil = 1.1
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
+SWEP.RecoilModifierCapSights = 0.05
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SpeedMult = 1 -- Walk speed multiplier
+SWEP.SpeedMultSights = 0.9 -- When aiming
+SWEP.SpeedMultShooting = 0.9
+
+SWEP.AimDownSightsTime = 0.29 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being able to fire.
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- MELEE
 
@@ -203,6 +226,9 @@ SWEP.CustomizeRotateAnchor = Vector(20, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
+
+SWEP.PeekPos = Vector(2, 2, -1)
+SWEP.PeekAng = Angle(0, 0, 5)
 
 -------------------------- HoldTypes
 
@@ -309,11 +335,13 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["cycle"] = {
         Source = "cycle",
 		--EjectAt = 0.2,
 		MinProgress = 0.8,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
             {s = path .. "wfoly_sn_kilo98_rechamber_boltopen_01.ogg", v = 0.4, t = 13/60},
 			{s = path .. "wfoly_sn_kilo98_rechamber_cloth.ogg", v = 0.4, t = 21/60},
@@ -330,28 +358,7 @@ SWEP.Animations = {
         Source = "reload_short",
 		MinProgress = 0.8,
 		EjectAt = 0.5,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.95,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
 			{s = path .. "wfoly_sn_kilo98_reload_boltopen_01.ogg", t = 0/30},
 			{s = path .. "wfoly_sn_kilo98_reload_cloth01.ogg", t = 7/30},
@@ -366,28 +373,7 @@ SWEP.Animations = {
         Source = "reload",
 		MinProgress = 0.9,
 		EjectAt = 0.5,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_boltopen_01.ogg", t = 0/30},
 			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth01.ogg", t = 5/30},
@@ -402,28 +388,7 @@ SWEP.Animations = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		EjectAt = 0.4,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
 			{s = path .. "wfoly_sn_kilo98_reload_fast_boltopen_01.ogg", t = 4/30},
 			{s = path .. "wfoly_sn_kilo98_reload_fast_clotharm.ogg", t = 9/30},
@@ -438,28 +403,7 @@ SWEP.Animations = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
 		EjectAt = 0.5,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.95,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_fast_boltopen_01.ogg", t = 0/30},
             {s = path .. "wfoly_sn_kilo98_reload_empty_fast_mvmnt.ogg", t = 5/30},
@@ -473,65 +417,28 @@ SWEP.Animations = {
         Source = "reload_start",
 		RestoreAmmo = 1,
 		EjectAt = 0.5,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 1
-            },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
             {s = path .. "wfoly_sn_kilo98_reload_empty_cloth01.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_kilo98_reload_empty_boltopen_01.ogg", t = 8/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_boltopen_01.ogg", t = 0/30},
 			{s = path .. "wfoly_sn_kilo98_reload_empty_load_v2_01.ogg", t = 34/30},
 			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth02.ogg", t = 51/30},
         },
     },
     ["reload_insert"] = {
         Source = "reload_loop",
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 0,
-                rhik = 1
-            },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
 			{s = "COD2019.Kar98k.ShellIn", t = 0/30},
+            {s = path .. "wfoly_sn_kilo98_reload_empty_load_v2_01.ogg", t = 4/30},
         },
     },
     ["reload_finish"] = {
         Source = "reload_end",
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth01.ogg", t = 0/30},
-			{s = path .. "wfoly_sn_kilo98_reload_empty_boltclose_01.ogg", t = 8/30},
+			{s = path .. "wfoly_sn_kilo98_reload_empty_boltclose_01.ogg", t = 6/30},
 			{s = path .. "wfoly_sn_kilo98_reload_empty_end.ogg", t = 10/30},
         },
     },
@@ -540,18 +447,7 @@ SWEP.Animations = {
 		RestoreAmmo = 1,
 		EjectAt = 0.4,
 		Mult = 0.9,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
             {s = path .. "wfoly_sn_kilo98_reload_scope_start_boltopen_02.ogg", t = 0.033},
 			{s = path .. "wfoly_sn_kilo98_reload_scope_start_cloth.ogg", t = 0.133},
@@ -561,18 +457,7 @@ SWEP.Animations = {
     },
     ["reload_insert_fast"] = {
         Source = "reload_loop_fast",
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
 			{s = "COD2019.Kar98k.ShellIn", t = 2/30},
             {s = path .. "wfoly_sn_kilo98_reload_scope_load_01.ogg", t = 6/30},
@@ -581,23 +466,7 @@ SWEP.Animations = {
     ["reload_finish_fast"] = {
         Source = "reload_end_fast",
 		Mult = 0.9,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
 			{s = path .. "wfoly_sn_kilo98_reload_scope_end_boltclose_01.ogg", t = 0.2},
 			{s = path .. "wfoly_sn_kilo98_reload_scope_end_cloth.ogg", t = 0.267},
@@ -608,12 +477,12 @@ SWEP.Animations = {
         Source = "draw",
         IKTimeLine = {
             {
-                t = 0,
+                t = 0.6,
                 lhik = 0,
                 rhik = 1
             },
             {
-                t = 1,
+                t = 0.825,
                 lhik = 1,
                 rhik = 1
             },
@@ -649,6 +518,11 @@ SWEP.Animations = {
         IKTimeLine = {
             {
                 t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.3,
                 lhik = 1,
                 rhik = 1
             },
@@ -705,12 +579,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.4,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.63,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },
@@ -893,6 +767,7 @@ SWEP.AttachmentElements = {
     },
     ["rail_grip"] = {
         Bodygroups = {
+            {4,0},
             {5,1},
         },
     },

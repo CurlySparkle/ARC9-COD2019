@@ -7,7 +7,7 @@ RPM: 550 > 545
 DamageMax: 35 > 36
 DamageMin: 15 > 33
 RangeMax: 203m > 28m
-RangeMin : 51m > 27m
+RangeMin: 51m > 27m
 PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 AimDownSightsTime: 0.3 > 0.25
 SprintToFireTime: 0.3 > 0.375
@@ -17,7 +17,7 @@ RPM: 560 > 571
 DamageMax: 29 > 31
 DamageMin: 12 > 25
 RangeMax: 203m > 44m
-RangeMin : 51m > 21m
+RangeMin: 51m > 21m
 PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 AimDownSightsTime: 0.3 > 0.26
 SprintToFireTime: 0.5 > 0.375
@@ -27,7 +27,7 @@ RPM: 895 > 896
 DamageMax: 30 > 27
 DamageMin: 11 > 23
 RangeMax: 178m > 32m
-RangeMin : 51m > 31m
+RangeMin: 51m > 31m
 PhysBulletMuzzleVelocity: 400 m/s > 380 m/s
 AimDownSightsTime: 0.3 > 0.23
 SprintToFireTime: 0.5 > 0.375
@@ -37,7 +37,7 @@ RPM: 680 > 632
 DamageMax: 33 > 31
 DamageMin: 14 > 28
 RangeMax: 178m > 29m
-RangeMin : 51m > 28m
+RangeMin: 51m > 28m
 PhysBulletMuzzleVelocity: 400 m/s > 680 m/s
 AimDownSightsTime: 0.3 > 0.28
 SprintToFireTime: 0.4 > 0.375
@@ -47,7 +47,7 @@ RPM: 650 > 500 (700 when in Auto)
 DamageMax: 34 > 49 (Mult. of 0.65 when in Auto: 37)
 DamageMin: 9 > 45 (Mult of of 0.65 when in Auto: 34)
 RangeMax: 229m > 43m
-RangeMin : 76m > 20m
+RangeMin: 76m > 20m
 PhysBulletMuzzleVelocity: 400 m/s > 680 m/s
 AimDownSightsTime: 0.3 > 0.26
 SprintToFireTime: 0.3 > 0.375
@@ -58,7 +58,7 @@ RPM: 1100 > 1091
 DamageMax: Unchanged (Mult. of 0.7 when in Auto: 28)
 DamageMin: 14 > 40 (Mult of of 0.6 when in Auto: 24)
 RangeMax: 178m > 31m
-RangeMin : 40m > 30m
+RangeMin: 40m > 30m
 PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 SprintToFireTime: 0.3 > 0.375
 
@@ -67,7 +67,7 @@ RPM: 680 > 732
 DamageMax: 28 > 29
 DamageMin: 16 > 24
 RangeMax: 178m > 32m
-RangeMin : 51m > 31m
+RangeMin: 51m > 31m
 PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 AimDownSightsTime: 0.3 > 0.22
 SprintToFireTime: 0.5 > 0.375
@@ -76,7 +76,7 @@ SprintToFireTime: 0.5 > 0.375
 DamageMax: 28 > 28
 DamageMin: 18 > 22
 RangeMax: 178m > 32m
-RangeMin : 51m > 31m
+RangeMin: 51m > 31m
 PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 AimDownSightsTime: 0.3 > 0.24
 SprintToFireTime: 0.3 > 0.375
@@ -86,7 +86,7 @@ RPM: 810 > 811
 DamageMax: 28 > 27
 DamageMin: 18 > 23
 RangeMax: 203m > 27m
-RangeMin : 51m > 26m
+RangeMin: 51m > 26m
 PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 AimDownSightsTime: 0.4 > 0.24
 SprintToFireTime: 0.4 > 0.375
@@ -96,7 +96,7 @@ RPM: 895.5223880597015 > 896
 DamageMax: 25 > 24
 DamageMin: 13 > 20
 RangeMax: 102m > 34m
-RangeMin : 23m > 33m
+RangeMin: 23m > 33m
 PhysBulletMuzzleVelocity: 400 m/s > 850 m/s
 AimDownSightsTime: 0.3 > 0.24
 SprintToFireTime: 0.5 > 0.375
@@ -106,7 +106,7 @@ RPM: 410 > 414
 DamageMax: 40 > 48
 DamageMin: 20 > 36
 RangeMax: 203m > 44m
-RangeMin : 51m > 43m
+RangeMin: 51m > 43m
 PhysBulletMuzzleVelocity: 766 m/s > 880 m/s
 AimDownSightsTime: 0.3 > 0.35
 SprintToFireTime: 0.3 > 0.375
@@ -116,7 +116,7 @@ RPM: 855 > 857
 DamageMax: 28 > 26
 DamageMin: 16 > 23
 RangeMax: 127m > 28m
-RangeMin : 25m > 27m
+RangeMin: 25m > 27m
 PhysBulletMuzzleVelocity: 960 m/s > 850 m/s
 AimDownSightsTime: 0.3 > 0.22
 SprintToFireTime: 0.3 > 0.375
@@ -126,7 +126,7 @@ RPM: 571.4285714285714 > 571
 DamageMax: 36 > 35
 DamageMin: 17 > 32
 RangeMax: 178m > 31m
-RangeMin : 51m > 30m
+RangeMin: 51m > 30m
 PhysBulletMuzzleVelocity: 461 m/s > 850 m/s
 SprintToFireTime: 0.3 > 0.375
 
@@ -137,7 +137,7 @@ RPM: 752 > 750
 DamageMax: 28 > 31
 DamageMin: 20 > 28
 RangeMax: 178m > 27m
-RangeMin : 51m > 26m
+RangeMin: 51m > 26m
 PhysBulletMuzzleVelocity: 914 m/s > 810 m/s
 AimDownSightsTime: 0.5 > 0.45
 SprintToFireTime: 0.5 > 0.375
@@ -146,7 +146,7 @@ SprintToFireTime: 0.5 > 0.375
 RPM: 630 > 632
 DamageMin: 18 > 22
 RangeMax: 178m > 30
-RangeMin : 51m > 29
+RangeMin: 51m > 29
 PhysBulletMuzzleVelocity: 914 m/s > 810m/s
 AimDownSightsTime: 0.5 > 0.35
 SprintToFireTime: 0.5 > 0.375
@@ -155,7 +155,7 @@ SprintToFireTime: 0.5 > 0.375
 RPM: 704 > 706
 DamageMin: 18 > 23
 RangeMax: 178m > 49m
-RangeMin : 51m > 48m
+RangeMin: 51m > 48m
 PhysBulletMuzzleVelocity: 722 m/s > 810 m/s
 AimDownSightsTime: 0.5 > 0.36
 SprintToFireTime: 0.5 > 0.375
@@ -165,7 +165,7 @@ RPM: 600 > 667
 DamageMax: 35 > 32
 DamageMin: 25 > 31
 RangeMax: 178m > 30m
-RangeMin : 51m > 29m
+RangeMin: 51m > 29m
 PhysBulletMuzzleVelocity: 914 m/s > 810 m/s
 AimDownSightsTime: 0.8 > 0.42
 SprintToFireTime: 0.5 > 0.375
@@ -175,7 +175,7 @@ RPM: 878 > 857
 DamageMax: 38 > 29
 DamageMin: 23 > 27
 RangeMax: 178m > 35m
-RangeMin : 51m > 34m
+RangeMin: 51m > 34m
 PhysBulletMuzzleVelocity: 914 m/s > 765 m/s
 AimDownSightsTime: 0.6 > 0.472
 SprintToFireTime: 0.5 > 0.375
@@ -183,7 +183,7 @@ SprintToFireTime: 0.5 > 0.375
 - PKM
 DamageMax: 31 > 32
 RangeMax: 178m > 37m
-RangeMin : 51m > 36m
+RangeMin: 51m > 36m
 PhysBulletMuzzleVelocity: 914 m/s > 825 m/s
 AimDownSightsTime: 0.8 > 0.42
 SprintToFireTime: 0.5 > 0.375
@@ -191,7 +191,7 @@ SprintToFireTime: 0.5 > 0.375
 - RAAL MG
 RPM: 553 > 556
 RangeMax: 178m > 39m
-RangeMin : 51m > 38m
+RangeMin: 51m > 38m
 PhysBulletMuzzleVelocity: 914 m/s > 730 m/s
 AimDownSightsTime: 0.8 > 0.46
 SprintToFireTime: 0.5 > 0.375
@@ -200,7 +200,63 @@ SprintToFireTime: 0.5 > 0.375
 DamageMax: 29 > 37
 DamageMin: 15 > 31
 RangeMax: 178m > 47m
-RangeMin : 51m > 46m
+RangeMin: 51m > 46m
 PhysBulletMuzzleVelocity: 722 m/s > 970 m/s
 AimDownSightsTime: 0.3 > 0.42
 SprintToFireTime: 0.5 > 0.375
+
+[Marksman Rifles]
+- Crossbow
+ShootEntForce: 8000 > "80 / ARC9.HUToM"
+RPM: 328 > 375
+AimDownSightsTime: 0.3 > 0.35
+SprintToFireTime: 0.3 > 0.375
+
+- Kar98k
+DamageMax: 86 > 95
+DamageMin: 57 > 75
+RangeMax: 279m > 49m
+RangeMin: 51m > 48m
+PhysBulletMuzzleVelocity: 786 m/s > 625 m/s
+AimDownSightsTime: 0.5 > 0.29
+SprintToFireTime: 0.5 > 0.375
+
+- EBR-14
+RPM: 
+DamageMax: 
+DamageMin: 
+RangeMax: 
+RangeMin: 
+PhysBulletMuzzleVelocity: 
+AimDownSightsTime: 
+SprintToFireTime: 
+
+- MK2 Carbine
+RPM: 
+DamageMax: 
+DamageMin: 
+RangeMax: 
+RangeMin: 
+PhysBulletMuzzleVelocity: 
+AimDownSightsTime: 
+SprintToFireTime: 
+
+- SKS
+RPM: 
+DamageMax: 
+DamageMin: 
+RangeMax: 
+RangeMin: 
+PhysBulletMuzzleVelocity: 
+AimDownSightsTime: 
+SprintToFireTime: 
+
+- SP-R 208
+RPM: 
+DamageMax: 
+DamageMin: 
+RangeMax: 
+RangeMin: 
+PhysBulletMuzzleVelocity: 
+AimDownSightsTime: 
+SprintToFireTime: 
