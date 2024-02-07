@@ -241,21 +241,19 @@ AimDownSightsTime: 0.35 > 0.25
 SprintToFireTime: 0.5 > 0.273
 
 - SKS
-RPM: 
-DamageMax: 
-DamageMin: 
-RangeMax: 
-RangeMin: 
-PhysBulletMuzzleVelocity: 
-AimDownSightsTime: 
-SprintToFireTime: 
+RPM: 315 > 333
+DamageMax: 48 > 52
+DamageMin: 18 > 45
+RangeMax: 203m > 82m
+RangeMin: 51m > 50m
+PhysBulletMuzzleVelocity: 853 m/s > 700 m/s
+AimDownSightsTime: 0.5 > 0.27
+SprintToFireTime: 0.5 > 0.375
 
 - SP-R 208
-RPM: 
-DamageMax: 
-DamageMin: 
-RangeMax: 
-RangeMin: 
-PhysBulletMuzzleVelocity: 
-AimDownSightsTime: 
-SprintToFireTime: 
+DamageMin: 44 > 50
+RangeMax: 279m > 73m
+RangeMin: 51m > 44m
+PhysBulletMuzzleVelocity: 786 m/s > 580 m/s
+AimDownSightsTime: 0.3 > 0.35
+SprintToFireTime: 0.3 > 0.375

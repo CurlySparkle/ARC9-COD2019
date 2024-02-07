@@ -38,7 +38,7 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_kar98k.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-5, 4, -5.25),
+    Pos = Vector(-4, 4, -5.75),
     Ang = Angle(-5, 0, 180),
     TPIKPos = Vector(-7, 4, -5.5),
     TPIKAng = Angle(-12.5, -1, 165),
@@ -126,7 +126,6 @@ SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
 SWEP.RecoilDissipationRate = 2.5 -- How much recoil dissipates per second.
-SWEP.RecoilDissipationRateSights = 5
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
