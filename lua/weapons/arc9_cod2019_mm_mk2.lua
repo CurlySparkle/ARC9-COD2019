@@ -39,33 +39,43 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_mk2.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-11, 6, -2.5),
-    Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-5, 3, 0),
-    TPIKAng = Angle(-10, 3, 180),
+    Pos = Vector(-5, 4, -5.25),
+    Ang = Angle(-5, 0, 180),
+    TPIKPos = Vector(-5, 4, -5.5),
+    TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1
 }
 
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 90 -- Damage done at point blank range
-SWEP.DamageMin = 56 -- Damage done at maximum range
+SWEP.DamageMin = 70 -- Damage done at maximum range
 
 SWEP.Num = 1
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 3250 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 8000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 24 / ARC9.HUToM
+SWEP.RangeMax = 25 / ARC9.HUToM
 
 SWEP.Penetration = 11 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.25
 
 SWEP.ImpactForce = 11
 
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.61,
+    [HITGROUP_CHEST] = 1.2,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.PhysBulletMuzzleVelocity = 2800 * 12
+SWEP.PhysBulletMuzzleVelocity = 679 / ARC9.HUToM
 SWEP.PhysBulletGravity = 1.5
 SWEP.PhysBulletDrag = 1.25
 
@@ -86,7 +96,7 @@ SWEP.ManualAction = true
 SWEP.NoLastCycle = false
 
 SWEP.ManualAction = true
-SWEP.ManualActionNoLastCycle = false
+SWEP.ManualActionNoLastCycle = true
 
 -------------------------- FIREMODES
 
@@ -101,7 +111,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 4
+SWEP.Recoil = 2
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 3 -- Multiplier for vertical recoil
@@ -113,8 +123,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
-SWEP.RecoilDissipationRateSights = 50
+SWEP.RecoilDissipationRate = 2.5 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
@@ -143,20 +152,33 @@ SWEP.VisualRecoilSpringMagnitude = 1
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.065
 
-SWEP.SpreadAddRecoil = 0.05 -- Applied per unit of recoil.
+SWEP.SpreadAddRecoil = 0.05
 
-SWEP.SpreadAddMove = 0.1
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.05
-SWEP.SpreadAddCrouch = -0.01
-SWEP.SpreadAddSights = -0.1
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadAddMove = 0.03
+SWEP.SpreadAddMidAir = 0.045
+SWEP.SpreadAddCrouch = -0.03
+SWEP.SpreadAddSights = -(SWEP.Spread)
+
+SWEP.SpreadMultRecoil = 1.1
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
+SWEP.RecoilModifierCapSights = 0.05
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.35 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SpeedMult = 1 -- Walk speed multiplier
+SWEP.SpeedMultSights = 0.9 -- When aiming
+SWEP.SpeedMultShooting = 0.9
+
+SWEP.AimDownSightsTime = 0.25 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.234 -- How long it takes to go from sprinting to being able to fire.
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- MELEE
 
@@ -223,7 +245,7 @@ SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 
@@ -308,6 +330,7 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["cycle"] = {
         Source = "cycle",
@@ -517,12 +540,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.4,
+                t = 0.8,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.6,
+                t = 0.9,
                 lhik = 1,
                 rhik = 1
             },

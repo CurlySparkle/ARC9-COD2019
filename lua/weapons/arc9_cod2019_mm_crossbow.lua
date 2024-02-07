@@ -145,6 +145,10 @@ SWEP.Sway = 0 -- How much the gun sways.
 SWEP.AimDownSightsTime = 0.35 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being able to fire.
 
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
+
 -------------------------- MELEE
 
 SWEP.Bash = true
@@ -207,7 +211,7 @@ SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 

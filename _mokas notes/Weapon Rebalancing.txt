@@ -222,24 +222,23 @@ AimDownSightsTime: 0.5 > 0.29
 SprintToFireTime: 0.5 > 0.375
 
 - EBR-14
-RPM: 
-DamageMax: 
-DamageMin: 
-RangeMax: 
-RangeMin: 
-PhysBulletMuzzleVelocity: 
-AimDownSightsTime: 
-SprintToFireTime: 
+RPM: 297 > 273
+DamageMax: 50 > 60
+DamageMin: 23 > 46
+RangeMax: 203m > 86m
+RangeMin: 25m > 63m
+PhysBulletMuzzleVelocity: 853 m/s > 700 m/s
+AimDownSightsTime: 0.5 > 0.3
+SprintToFireTime: 0.5 > 0.375
+ClipSize = 15 > 10
 
 - MK2 Carbine
-RPM: 
-DamageMax: 
-DamageMin: 
-RangeMax: 
-RangeMin: 
-PhysBulletMuzzleVelocity: 
-AimDownSightsTime: 
-SprintToFireTime: 
+DamageMin: 56 > 70
+RangeMax: 203m > 25m
+RangeMin: 83m > 24m
+PhysBulletMuzzleVelocity: 853 m/s > 679 m/s
+AimDownSightsTime: 0.35 > 0.25
+SprintToFireTime: 0.5 > 0.273
 
 - SKS
 RPM: 
