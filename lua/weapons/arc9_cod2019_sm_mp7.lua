@@ -865,7 +865,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.5,
+		Mult = 3.1,
         IKTimeLine = {
             {
                 t = 0,
@@ -886,7 +886,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.5,
+		Mult = 3.1,
         IKTimeLine = {
             {
                 t = 0,
@@ -1105,6 +1105,10 @@ SWEP.AttachmentTableOverrides = {
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(0.1, 0, 0.1),
+    },
+    ["cod2019_perks_super_sprint"] = {
+    SprintPos = Vector(-2.5, 0, 2.2),
+    SprintAng = Angle(0, 0, 0)
     },
 }
 

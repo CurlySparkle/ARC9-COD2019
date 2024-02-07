@@ -354,7 +354,11 @@ SWEP.TriggerUpSound = "weapons/cod2019/ak47/weap_akilo47_disconnector_plr_01.ogg
 
 SWEP.Animations = {
     ["enter_sights"] = {
-        Source = "idle",
+        Source = "ads_in",
+        IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+    },
+    ["exit_sights"] = {
+        Source = "ads_out",
         IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["fire"] = {

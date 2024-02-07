@@ -83,7 +83,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 600
+SWEP.RPM = 353 * 2
 
 SWEP.Firemodes = {
     {
@@ -106,7 +106,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.5
 
 SWEP.RecoilDissipationRate = 50 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0.05 -- How long the gun must go before the recoil pattern starts to reset.
@@ -127,7 +127,7 @@ SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.1
 SWEP.VisualRecoilRoll = 55
-SWEP.VisualRecoilSide = 0
+SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 30
@@ -153,7 +153,7 @@ SWEP.SpreadAddRecoil = 0.01
 SWEP.SpreadMultRecoil = 1
 SWEP.RecoilModifierCap = 2
 
-SWEP.SpreadAddMove = 0.05
+SWEP.SpreadAddMove = 0.02
 --SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddHipFire = 0.015
 SWEP.SpreadAddCrouch = -0.01
@@ -592,13 +592,20 @@ end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
--- SWEP.AttachmentTableOverrides = {
-    -- ["arc9_stat_proscreen_main"] = {
-    -- ModelOffset = Vector(3, -1.15, -3.55),
-	-- ModelAngleOffset = Angle(0, 0, 0),
-	-- Scale = 0.9,
-    -- },
--- }
+SWEP.AttachmentTableOverrides = {
+    ["cod2019_renetti_slide_auto"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_barauto_akimbo.mdl"
+    },
+    ["cod2019_renetti_mag_xmag"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_xmags_akimbo.mdl",
+	ClipSizeOverride = 20 * 2
+    },
+    ["cod2019_renetti_stock"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_stock_akimbo.mdl",
+    SprintPos = Vector(-1, 0, -1),
+    SprintAng = Angle(0, 0, 0)
+    },
+}
 
 SWEP.AttachmentElements = {
     ["body_none"] = {
@@ -610,13 +617,13 @@ SWEP.AttachmentElements = {
     ["slide_none"] = {
         Bodygroups = {
             {1,1},
-            {4,1},
+            {5,1},
         },
     },
     ["mag_none"] = {
         Bodygroups = {
             {2,1},
-            {5,1},
+            {6,1},
         },
     },
     ["grip_none"] = {

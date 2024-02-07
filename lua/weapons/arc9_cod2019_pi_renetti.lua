@@ -806,7 +806,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 5,
+		Mult = 4,
         IKTimeLine = {
             {
                 t = 0,
@@ -827,7 +827,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 3,
+		Mult = 4,
         IKTimeLine = {
             {
                 t = 0,
@@ -1466,6 +1466,14 @@ SWEP.Animations = {
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
 
+    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
+        return "super_sprint_idle"
+    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
+        return "super_sprint_in"
+    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
+        return "super_sprint_out"
+    end
+
 	if wep:HasElement("cod2019_renetti_stock") then 
 		--------------------------------------------------------------------------
 		if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
@@ -1524,13 +1532,6 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 		--------------------------------------------------------------------------
 		end
 	end
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
-    end
 end
 
 -- SWEP.Hook_Think	= function(wep)
@@ -1751,3 +1752,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.6
 SWEP.GripPoseParam2 = 0.6
+SWEP.CodStubbyGripPoseParam = 26
+SWEP.CodStubbyTallGripPoseParam = 26
+SWEP.CodAngledGripPoseParam = 37

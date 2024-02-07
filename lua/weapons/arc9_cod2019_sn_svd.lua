@@ -127,7 +127,7 @@ SWEP.RecoilMultSights = 0.65
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.5
-SWEP.VisualRecoilPunchSights = 15
+SWEP.VisualRecoilPunchSights = 5
 SWEP.VisualRecoilRollSights = 5
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
@@ -703,14 +703,55 @@ SWEP.Animations = {
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+        },
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
 		Mult = 2.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 0,
+                rhik = 1
+            },
+        },
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
 		Mult = 2.7,
+        IKTimeLine = {
+            {
+                t = 0,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 1
+            },
+            {
+                t = 1,
+                lhik = 1,
+                rhik = 1
+            },
+        },
     },
     ["inspect"] = {
         Source = "lookat01",
