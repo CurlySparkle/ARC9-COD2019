@@ -145,7 +145,7 @@ SWEP.VisualRecoilUp = 0.3
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.065
+SWEP.Spread = 0.1
 
 SWEP.SpreadAddRecoil = 0.05
 

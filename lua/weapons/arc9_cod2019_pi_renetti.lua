@@ -170,7 +170,8 @@ SWEP.IronSights = {
     Pos = Vector(1.15, 0, 2.65),
     Ang = Angle(0, 0, 20),
     Magnification = 1.15,
-	CrosshairInSights = false
+	CrosshairInSights = false,
+	ViewModelFOV = nil,
 }
 
 SWEP.IronSightsHook = function(self) -- If any attachments equipped should alter Irons
@@ -219,8 +220,13 @@ SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
+SWEP.PeekMaxFOV = SWEP.ViewModelFOVBase
+
 SWEP.PeekPos = Vector(-2.7, -4, -2)
 SWEP.PeekAng = Angle(0, 0, -45)
+
+SWEP.PeekPosReloading = Vector(1.5, 0, -2)
+SWEP.PeekAngReloading = Angle(0, 0, 0)
 
 -------------------------- HoldTypes
 
@@ -228,7 +234,7 @@ SWEP.HoldType = "revolver"
 SWEP.HoldTypeSprint = "rpg"
 SWEP.HoldTypeSights = "revolver"
 SWEP.HoldTypeCustomize = "slam"
-SWEP.HoldTypeBlindfire = "pistol"
+SWEP.HoldTypeBlindfire = "revolver"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
@@ -321,7 +327,10 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.6,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             {
