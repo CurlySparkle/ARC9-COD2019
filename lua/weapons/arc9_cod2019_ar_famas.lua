@@ -251,6 +251,11 @@ SWEP.CustomizeNoRotate = false
 SWEP.PeekPos = Vector(-2, 3, -3.5)
 SWEP.PeekAng = Angle(-2, 2, -45)
 
+SWEP.PeekMaxFOV = 45
+
+SWEP.PeekPosReloading = Vector(1, 4, 0)
+SWEP.PeekAngReloading = Angle(-0.3, 0, 2.5)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "ar2"

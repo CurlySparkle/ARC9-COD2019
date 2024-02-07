@@ -1,0 +1,10 @@
+1) Justera statistiken - Eldhastighet, skada, räckvidd, fysiska skott mynningshastigheten, siktetiden och spring-till-siktetiden.
+2) Justera animationer - Lägga till "RefillProgress", "FireASAP" (på omladdningar), justera "MinProgress" och IK-tidslinjen.
+3) Justera Peek - lägga till "PeekPosReloading", "PeekAngReloading" och "PeekMaxFOV".
+
+
+( For the ones who do not speak Meatball )
+1) Adjust stats - Firing speed, damage, range, physical bullet muzzle velocity, aiming speed and sprint-to-fire speed.
+2) Adjust animations - Add "RefillProgress", "FireASAP" (on reloads), adjust "MinProgress" and IK timeline.
+3) Adjust Peek - Add "PeekPosReloading", "PeekAngReloading" and "PeekMaxFOV".
+

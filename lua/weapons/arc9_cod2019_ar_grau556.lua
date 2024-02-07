@@ -246,6 +246,11 @@ SWEP.CustomizeNoRotate = false
 SWEP.PeekPos = Vector(-1, 1, -3)
 SWEP.PeekAng = Angle(-0.3, 0.05, -45)
 
+SWEP.PeekMaxFOV = 55
+
+SWEP.PeekPosReloading = Vector(1, 4, -2)
+SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "ar2"
@@ -430,7 +435,7 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
 		RefillProgress = 0.675,
 		FireASAP = true,
 		MagSwapTime = 1.5,
