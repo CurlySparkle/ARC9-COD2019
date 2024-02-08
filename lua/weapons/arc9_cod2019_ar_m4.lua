@@ -255,7 +255,7 @@ SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 SWEP.PeekMaxFOV = 55
 
-SWEP.PeekPosReloading = Vector(1, 4, -2)
+SWEP.PeekPosReloading = Vector(0, 4, -2)
 SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
 
 -------------------------- HoldTypes
@@ -386,7 +386,8 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.8625,
 		RefillProgress = 0.575,
 		FireASAP = true,
         IKTimeLine = {
@@ -421,7 +422,8 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
 		RefillProgress = 0.7,
 		FireASAP = true,
 		DropMagAt = 0.39,
@@ -457,7 +459,7 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
 		RefillProgress = 0.625,
 		FireASAP = true,
 		DropMagAt = 0.45,
@@ -493,7 +495,8 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		PeekProgress = 0.8,
 		RefillProgress = 0.7,
 		FireASAP = true,
 		DropMagAt = 0.4,
@@ -529,7 +532,8 @@ SWEP.Animations = {
     },
     ["reload_xmag"] = {
         Source = "reload_xmag",
-		MinProgress = 0.825,
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
 		RefillProgress = 0.55,
 		FireASAP = true,
         IKTimeLine = {
@@ -564,7 +568,8 @@ SWEP.Animations = {
     },
     ["reload_xmag_empty"] = {
         Source = "reload_xmag_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		PeekProgress = 0.8,
 		RefillProgress = 0.7,
 		FireASAP = true,
 		DropMagAt = 0.39,
@@ -600,7 +605,7 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
 		RefillProgress = 0.625,
 		FireASAP = true,
 		DropMagAt = 0.45,
@@ -636,7 +641,8 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		PeekProgress = 0.8,
 		RefillProgress = 0.675,
 		FireASAP = true,
 		DropMagAt = 0.4,
@@ -672,7 +678,8 @@ SWEP.Animations = {
     },
     ["reload_xmaglrg"] = {
         Source = "reload_xmaglrg",
-		MinProgress = 0.825,
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
 		RefillProgress = 0.55,
 		FireASAP = true,
         IKTimeLine = {
@@ -707,8 +714,9 @@ SWEP.Animations = {
     },
     ["reload_xmaglrg_empty"] = {
         Source = "reload_xmaglrg_empty",
-		MinProgress = 0.825,
-		RefillProgress = 0.725,
+		MinProgress = 0.85,
+		PeekProgress = 0.8,
+		RefillProgress = 0.7,
 		FireASAP = true,
 		DropMagAt = 0.39,
         IKTimeLine = {
@@ -743,7 +751,7 @@ SWEP.Animations = {
     },
     ["reload_xmaglrg_fast"] = {
         Source = "reload_xmaglrg_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
 		RefillProgress = 0.625,
 		FireASAP = true,
 		DropMagAt = 0.45,
@@ -779,7 +787,8 @@ SWEP.Animations = {
     },
     ["reload_xmaglrg_fast_empty"] = {
         Source = "reload_xmaglrg_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		PeekProgress = 0.8,
 		RefillProgress = 0.675,
 		FireASAP = true,
 		DropMagAt = 0.4,
@@ -815,7 +824,8 @@ SWEP.Animations = {
     },
     ["reload_smg"] = {
         Source = "reload_calsmg",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.8625,
 		RefillProgress = 0.575,
 		FireASAP = true,
         IKTimeLine = {
@@ -850,7 +860,8 @@ SWEP.Animations = {
     },
     ["reload_smg_empty"] = {
         Source = "reload_calsmg_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
 		RefillProgress = 0.7,
 		FireASAP = true,
 		DropMagAt = 0.39,
@@ -886,8 +897,8 @@ SWEP.Animations = {
     },
     ["reload_fast_smg"] = {
         Source = "reload_calsmg_fast",
-		MinProgress = 0.8,
-		RefillProgress = 0.7,
+		MinProgress = 0.85,
+		RefillProgress = 0.625,
 		FireASAP = true,
 		DropMagAt = 0.45,
         IKTimeLine = {
@@ -922,8 +933,9 @@ SWEP.Animations = {
     },
     ["reload_fast_smg_empty"] = {
         Source = "reload_calsmg_fast_empty",
-		MinProgress = 0.825,
-		RefillProgress = 0.55,
+		MinProgress = 0.85,
+		PeekProgress = 0.8,
+		RefillProgress = 0.7,
 		FireASAP = true,
 		DropMagAt = 0.4,
         IKTimeLine = {
@@ -972,12 +984,12 @@ SWEP.Animations = {
                 rhik = 0
             },
             {
-                t = 0.5,
+                t = 0.65,
                 lhik = 0,
                 rhik = 0
             },
             {
-                t = 0.7,
+                t = 0.8,
                 lhik = 1,
                 rhik = 1
             },

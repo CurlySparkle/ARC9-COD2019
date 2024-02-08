@@ -248,7 +248,7 @@ SWEP.PeekAng = Angle(-0.3, 0.05, -45)
 
 SWEP.PeekMaxFOV = 55
 
-SWEP.PeekPosReloading = Vector(1, 4, -2)
+SWEP.PeekPosReloading = Vector(0, 4, -2)
 SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
 
 -------------------------- HoldTypes
@@ -398,6 +398,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		PeekProgress = 0.825,
 		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 1.13,
@@ -435,7 +436,8 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.85,
+		MinProgress = 0.9,
+		PeekProgress = 0.8725,
 		RefillProgress = 0.675,
 		FireASAP = true,
 		MagSwapTime = 1.5,
@@ -473,6 +475,7 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.85,
 		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 1.13,
@@ -509,7 +512,8 @@ SWEP.Animations = {
     },
     ["reload_xmag"] = {
         Source = "reload_xmag",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		PeekProgress = 0.8,
 		RefillProgress = 0.55,
 		FireASAP = true,
 		MagSwapTime = 3.5,
@@ -546,6 +550,7 @@ SWEP.Animations = {
     ["reload_xmag_empty"] = {
         Source = "reload_xmag_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.81,
 		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 1.13,
@@ -583,7 +588,8 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		PeekProgress = 0.815,
 		RefillProgress = 0.675,
 		FireASAP = true,
 		MagSwapTime = 1.5,
@@ -621,6 +627,7 @@ SWEP.Animations = {
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.825,
 		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 1.13,

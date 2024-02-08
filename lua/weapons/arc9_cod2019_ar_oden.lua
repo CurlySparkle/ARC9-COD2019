@@ -248,7 +248,7 @@ SWEP.PeekAng = Angle(-0.3, 0.3, -45)
 
 SWEP.PeekMaxFOV = 55
 
-SWEP.PeekPosReloading = Vector(1, 4, -2)
+SWEP.PeekPosReloading = Vector(0, 4, -2)
 SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
 
 -------------------------- HoldTypes
@@ -350,10 +350,12 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.9,
+		PeekProgress = 0.875,
 		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 3.5,
@@ -372,6 +374,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.925,
+		PeekProgress = 0.875,
 		RefillProgress = 0.8,
 		FireASAP = true,
 		DropMagAt = 0.9,
@@ -393,6 +396,7 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.65,
+		PeekProgress = 0.6,
 		RefillProgress = 0.5,
 		FireASAP = true,
 		MagSwapTime = 1.5,
@@ -412,6 +416,7 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.875,
 		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
