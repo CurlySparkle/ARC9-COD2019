@@ -246,10 +246,10 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.PeekMaxFOV = 45
 
-SWEP.PeekPos = Vector(0, 4, -4)
+SWEP.PeekPos = Vector(-1, 4, -4)
 SWEP.PeekAng = Angle(-0.3, 0, -50)
 
-SWEP.PeekPosReloading = Vector(1, 4, -2)
+SWEP.PeekPosReloading = Vector(0, 4, -2)
 SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
 
 -------------------------- HoldTypes
@@ -772,44 +772,20 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.5,
+		Mult = 3,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.35,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 0,
-                rhik = 1
-            },
+            {t = 0, lhik = 1, rhik = 1},
+            {t = 0.3, lhik = 1,rhik = 1},
+            {t = 0.5, lhik = 0,rhik = 1},
         },
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.5,
+		Mult = 3,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            {t = 0, lhik = 0, rhik = 1},
+            {t = 0.3, lhik = 0,rhik = 1},
+			{t = 0.5, lhik = 1,rhik = 1},
         },
     },
     ["inspect"] = {
