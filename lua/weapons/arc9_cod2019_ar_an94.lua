@@ -712,6 +712,7 @@ SWEP.Animations = {
     ["reload_xmagslrg"] = {
         Source = "reload_xmagslrg",
 		MinProgress = 0.9,
+		PeekProgress = 0.825,
 		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 3.5,
