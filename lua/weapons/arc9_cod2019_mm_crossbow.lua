@@ -395,42 +395,18 @@ SWEP.Animations = {
         Source = "super_sprint_in",
 		Mult = 2.5,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 0,
-                rhik = 1
-            },
+            {t = 0, lhik = 1, rhik = 1},
+            {t = 0.3, lhik = 1,rhik = 1},
+            {t = 0.5, lhik = 0,rhik = 1},
         },
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
 		Mult = 2.7,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            {t = 0, lhik = 0, rhik = 1},
+            {t = 0.3, lhik = 0,rhik = 1},
+			{t = 0.5, lhik = 1,rhik = 1},
         },
     },
     ["inspect"] = {
