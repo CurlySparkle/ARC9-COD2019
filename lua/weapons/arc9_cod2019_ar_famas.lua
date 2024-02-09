@@ -216,6 +216,20 @@ SWEP.IronSights = {
 	CrosshairInSights = false
 }
 
+SWEP.IronSightsHook = function(self) -- If any attachments equipped should alter Irons
+    local attached = self:GetElements()
+
+    if attached["cod2019_famas_upper_railcust"] then
+        return {
+			Pos = Vector(-3.75, -6, 1.2),
+			Ang = Angle(0, -0.5, -3.5),
+			Magnification = 1.15,
+			CrosshairInSights = false
+        }
+    end
+
+end
+
 SWEP.ViewModelFOVBase = 65
 
 SWEP.SprintMidPoint = {
@@ -748,7 +762,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.3,
+		Mult = 2.7,
         IKTimeLine = {
             {
                 t = 0,
@@ -769,7 +783,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.3,
+		Mult = 2.8,
         IKTimeLine = {
             {
                 t = 0,
@@ -1079,6 +1093,16 @@ SWEP.AttachmentElements = {
     -- if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
 -- end
 
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+	if wep:HasElement("railcust") then model:SetBodygroup(4,2) end
+    if wep:HasElement("railcust") then 
+     model:SetPoseParameter("railcust", 1)
+    else
+     model:SetPoseParameter("railcust", 0)
+    end
+end
+
 SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
@@ -1106,6 +1130,7 @@ SWEP.Attachments = {
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sights_none"},
+		ExcludeElements = {"railcust"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
@@ -1219,5 +1244,6 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 0
 SWEP.GripPoseParam2 = 0
 SWEP.CodAngledGripPoseParam = 22
-SWEP.CodStubbyGripPoseParam = 11
-SWEP.CodStubbyTallGripPoseParam = 19
+SWEP.CodStubbyGripPoseParam = 10
+--SWEP.CodStubbyTallGripPoseParam = 19
+SWEP.CodStubbyTallGripPoseParam = 26
