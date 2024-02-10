@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-    "$basetexture"				"models/cod2019/famas/famas_mag"
-    "$bumpmap"					"models/cod2019/famas/famas_mag_n"
-    "$phongexponenttexture"		       "models/cod2019/famas/famas_mag_exp"
+    "$basetexture" "models/cod2019/famas/famas_mag"
+    "$bumpmap" "models/cod2019/famas/famas_mag_n"
+    "$phongexponenttexture" "models/cod2019/famas/famas_mag_exp"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
@@ -12,23 +12,30 @@
     "$phong" "1"
     "$phongboost" "1"
     "$phongalbedotint" "1"
-    "$phongalbedoboost" "10"                                //toy around with this
+    "$phongalbedoboost" "30"                                //toy around with this
     "$phongfresnelranges" "[1 0.1 0]"
+
+    //rimlight doesn't properly show in hlmv, make sure you're changing these values in game
+    "$rimlight" "1"
+    "$rimlightexponent" "100"
+    "$rimmask" "1"
+    "$rimlightboost" "1"
        
     /////////////////
     "$normalmapalphaenvmapmask" "1"                         //do not touch this
     /////////////////
 
     "$envmap" "env_cubemap"
-    "$envmaptint" "[0.133 0.118 0.094]"                 
+    "$envmaptint" "[0.431 0.396 0.357]"                 
 
+    //remove this if not using MWB
     "Proxies"
-     {
+    {
         "Arc9EnvMapTint"
         {
-            "specularity" "0.5"
             "min" "0"
-            "max" "0.2"
+            "max" "1"
+            "color" "[0.431 0.396 0.357]"
         }
-     }
+    }
 }

@@ -12,7 +12,7 @@
     "$phong" "1"
     "$phongboost" "1"
     "$phongalbedotint" "1"
-    "$phongalbedoboost" "10"                                //toy around with this
+    "$phongalbedoboost" "30"                                //toy around with this
     "$phongfresnelranges" "[1 0.1 0]"
        
     /////////////////
@@ -26,9 +26,9 @@
      {
         "Arc9EnvMapTint"
         {
-            "specularity" "0.5"
             "min" "0"
-            "max" "0.1"
+            "max" "0.5"
+            "color" "[0.196 0.192 0.188]"
         }
      }
 }
