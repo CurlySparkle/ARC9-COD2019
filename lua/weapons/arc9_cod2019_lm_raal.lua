@@ -402,31 +402,11 @@ SWEP.Animations = {
 		MagSwapTime = 3,
 		DropMagAt = 2.9,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.025,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.825,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.925,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.025, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 0, rhik = 0 },
+            { t = 0.925, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_lm_slima_reload_lower.ogg", t = 0/30},
@@ -450,31 +430,11 @@ SWEP.Animations = {
 		MagSwapTime = 3,
 		DropMagAt = 4,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.25,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.925,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.25, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 0, rhik = 0 },
+            { t = 0.925, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_lm_slima_reload_empty_lower.ogg", t = 0/30},
@@ -500,31 +460,11 @@ SWEP.Animations = {
 		MagSwapTime = 2.25,
 		DropMagAt = 2,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.025,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.125,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.025, lhik = 1, rhik = 0 },
+            { t = 0.125, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_lm_slima_reload_fast_lower.ogg", t = 0/30},
@@ -547,31 +487,11 @@ SWEP.Animations = {
 		MagSwapTime = 2.25,
 		DropMagAt = 2.5,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.225,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.275,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.225, lhik = 1, rhik = 0 },
+            { t = 0.275, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_lm_slima_reload_empty_fast_lower.ogg", t = 1/30},
@@ -594,31 +514,11 @@ SWEP.Animations = {
 		MagSwapTime = 3,
 		DropMagAt = 2.9,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.025,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.825,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.025, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_lm_slima_reload_lower.ogg", t = 0/30},
@@ -642,31 +542,11 @@ SWEP.Animations = {
 		MagSwapTime = 3,
 		DropMagAt = 3.5,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.25,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.25, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_lm_slima_reload_empty_lower.ogg", t = 0/30},
@@ -692,31 +572,11 @@ SWEP.Animations = {
 		MagSwapTime = 2.25,
 		DropMagAt = 2,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.025,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.125,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.025, lhik = 1, rhik = 0 },
+            { t = 0.125, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_lm_slima_reload_fast_lower.ogg", t = 0/30},
@@ -739,31 +599,11 @@ SWEP.Animations = {
 		MagSwapTime = 2.25,
 		DropMagAt = 2.15,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.225,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.275,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.775,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.225, lhik = 1, rhik = 0 },
+            { t = 0.275, lhik = 0, rhik = 0 },
+            { t = 0.775, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_lm_slima_reload_empty_fast_lower.ogg", t = 1/30},
@@ -781,11 +621,7 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
+            { t = 0, lhik = 1, rhik = 0 },
         },
         EventTable = {
             {s = path .. "wfoly_lm_slima_raise_first_lift.ogg", t = 0/30},
@@ -826,53 +662,25 @@ SWEP.Animations = {
     ["super_sprint_idle"] = {
         Source = "super_sprint",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
+            { t = 0, lhik = 0, rhik = 1 },
         },
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
 		Mult = 2.5,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.35,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 0,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.35, lhik = 1, rhik = 1 },
+            { t = 1, lhik = 0, rhik = 1 },
         },
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
 		Mult = 2.5,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 0, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
     },
     ["inspect"] = {
@@ -880,31 +688,11 @@ SWEP.Animations = {
 		MinProgress = 0.1,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.05,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.125,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.55,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.625,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.05, lhik = 1, rhik = 0 },
+            { t = 0.125, lhik = 0, rhik = 0 },
+            { t = 0.55, lhik = 0, rhik = 0 },
+            { t = 0.625, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_lm_slima_inspect_01.ogg", t = 0/30},
@@ -918,26 +706,10 @@ SWEP.Animations = {
     ["bash"] = {
         Source = {"melee","melee2","melee3"},
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
     },
     ["enter_bipod"] = {
@@ -949,26 +721,10 @@ SWEP.Animations = {
     ["hybrid_on"] = {
         Source = "hybrid_on",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = "Viewmodel.SwitchSight", t = 0/30},
@@ -978,26 +734,10 @@ SWEP.Animations = {
     ["hybrid_off"] = {
         Source = "hybrid_off",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.5, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = "Viewmodel.SwitchSight", t = 0/30},

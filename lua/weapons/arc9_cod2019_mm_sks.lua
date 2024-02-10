@@ -354,26 +354,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.55,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_raise.ogg", t = 0.0},
@@ -390,31 +374,11 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		DropMagAt = 0.95,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.575,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.575, lhik = 1, rhik = 0 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0.0},
@@ -434,26 +398,10 @@ SWEP.Animations = {
 		DropMagAt = 1,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.65,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_fast_raise.ogg", t = 0.033},
@@ -470,26 +418,10 @@ SWEP.Animations = {
 		DropMagAt = 1,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.775,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.875,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.775, lhik = 0, rhik = 1 },
+            { t = 0.875, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_fast_raise.ogg", t = 0.033},
@@ -507,26 +439,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.55,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_raise.ogg", t = 0/30},
@@ -543,31 +459,11 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		DropMagAt = 0.95,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.575,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.575, lhik = 1, rhik = 0 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
@@ -587,26 +483,10 @@ SWEP.Animations = {
 		DropMagAt = 1,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.65,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
@@ -623,26 +503,10 @@ SWEP.Animations = {
 		DropMagAt = 1,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.775,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.875,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.775, lhik = 0, rhik = 1 },
+            { t = 0.875, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
@@ -656,26 +520,10 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_raise_first_up.ogg", t = 0.033},
@@ -688,16 +536,8 @@ SWEP.Animations = {
 		MinProgress = 0.4,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.5, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_raise.ogg", t = 0/30},
@@ -706,16 +546,8 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.5, lhik = 0, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 0/30},
@@ -739,53 +571,25 @@ SWEP.Animations = {
     ["super_sprint_idle"] = {
         Source = "super_sprint",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
+            { t = 0, lhik = 0, rhik = 1 },
         },
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
 		Mult = 2.3,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 0,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 1, rhik = 1 },
+            { t = 1, lhik = 0, rhik = 1 },
         },
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
 		Mult = 2.3,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 0, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
     },
     ["inspect"] = {
@@ -793,26 +597,10 @@ SWEP.Animations = {
         MinProgress = 0.1,
         FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.45,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.525,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.45, lhik = 0, rhik = 1 },
+            { t = 0.525, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sksierra_inspect_01.ogg", t = 0.033},
@@ -824,26 +612,10 @@ SWEP.Animations = {
     ["bash"] = {
         Source = {"melee", "melee2"},
 	    IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.6,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
     },
 }

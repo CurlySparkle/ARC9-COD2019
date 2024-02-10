@@ -377,28 +377,6 @@ SWEP.Animations = {
 		RefillProgress = 0.575,
 		FireASAP = true,
 		MagSwapTime = 3.5,
-        IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
-        },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_twist.ogg", t = 0.033},
 			{s = path .. "wfoly_ar_falpha_magout_01.ogg", t = 0.66},
@@ -415,26 +393,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.725,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.725, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0},
@@ -453,26 +415,10 @@ SWEP.Animations = {
 		MagSwapTime = 1.5,
 		--DropMagAt = 0.8,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_fast_twist.ogg", t = 0.033},
@@ -491,26 +437,10 @@ SWEP.Animations = {
 		MagSwapTime = 1.5,
 		--DropMagAt = 0.8,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_empty_fast_twist.ogg", t = 0.033},
@@ -529,26 +459,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.675,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.875,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.675, lhik = 0, rhik = 0 },
+            { t = 0.875, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_twist.ogg", t = 0/30},
@@ -565,26 +479,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.875,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.875, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
@@ -603,26 +501,10 @@ SWEP.Animations = {
 		MagSwapTime = 1.5,
 		--DropMagAt = 0.6,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
@@ -640,26 +522,10 @@ SWEP.Animations = {
 		MagSwapTime = 1.5,
 		DropMagAt = 0.45,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
@@ -672,26 +538,10 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_ar_falpha_raise_first.ogg", t = 3/30},
@@ -701,16 +551,8 @@ SWEP.Animations = {
     ["draw"] = {
         Source = "draw_short",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_ar_falpha_raise.ogg", t = 0/30},
@@ -719,16 +561,8 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.4,
-                lhik = 0,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.4, lhik = 0, rhik = 1 },
         },
 		--Mult = 0.8,
         EventTable = {
@@ -753,53 +587,25 @@ SWEP.Animations = {
     ["super_sprint_idle"] = {
         Source = "super_sprint",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
+            { t = 0, lhik = 0, rhik = 1 },
         },
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
 		Mult = 2.7,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 0,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 1, rhik = 1 },
+            { t = 1, lhik = 0, rhik = 1 },
         },
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
 		Mult = 2.8,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 0, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
     },
     ["inspect"] = {
@@ -807,26 +613,10 @@ SWEP.Animations = {
         MinProgress = 0.1,
         FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_ar_falpha_inspect_01.ogg", t = 0},
@@ -839,51 +629,19 @@ SWEP.Animations = {
     ["bash"] = {
         Source = {"melee","melee2","melee3"},
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
     },
     ["firemode_1"] = {
         Source = "semi_on",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "weap_falpha_selector_on.ogg", t = 0/30},
@@ -892,26 +650,10 @@ SWEP.Animations = {
     ["firemode_2"] = {
         Source = "semi_off",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "weap_falpha_selector_off.ogg", t = 0/30},
@@ -926,26 +668,10 @@ SWEP.Animations = {
     ["hybrid_on"] = {
         Source = "hybrid_on",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = "Viewmodel.SwitchSight", t = 0/30},
@@ -955,26 +681,143 @@ SWEP.Animations = {
     ["hybrid_off"] = {
         Source = "hybrid_off",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.5, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = "Viewmodel.SwitchSight", t = 0/30},
+			{s = "switchsights/wpfoly_hybrid_toggle_off.ogg", t = 5/30},
+        },
+    },
+	
+-- Valorisé
+    ["reload_valorise"] = {
+        Source = "reload_railcrust",
+		MinProgress = 0.85,
+		PeekProgress = 0.8375,
+		RefillProgress = 0.575,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_twist.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_falpha_magout_01.ogg", t = 0.66},
+			{s = path .. "wfoly_ar_falpha_reload_maghit_01.ogg", t = 1.16},
+			{s = path .. "wfoly_ar_falpha_reload_magin_01.ogg", t = 1.43},
+			{s = path .. "wfoly_ar_falpha_reload_end.ogg", t = 1.76},
+        },
+    },
+    ["reload_empty_valorise"] = {
+        Source = "reload_empty_railcrust",
+		MinProgress = 0.9,
+		PeekProgress = 0.875,
+		RefillProgress = 0.775,
+		FireASAP = true,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.725, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 0.4},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 1.27},
+			{s = path .. "wfoly_ar_falpha_reload_empty_chamber_01.ogg", t = 2.06},
+			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 2.6},
+        },
+    },
+    ["reload_fast_valorise"] = {
+        Source = "reload_fast_railcrust",
+		MinProgress = 0.85,
+		PeekProgress = 0.825,
+		RefillProgress = 0.575,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		--DropMagAt = 0.8,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_fast_twist.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_falpha_reload_fast_magout_01.ogg", t = 0.43},
+            {s = path .. "wfoly_ar_falpha_reload_fast_shake.ogg", t = 0.56},
+			{s = path .. "wfoly_ar_falpha_reload_fast_magin_01.ogg", t = 0.84},
+			{s = path .. "wfoly_ar_falpha_reload_fast_end.ogg", t = 1.56},
+        },
+    },
+    ["reload_fast_empty_valorise"] = {
+        Source = "reload_fast_railcrust_empty",
+		MinProgress = 0.9,
+		PeekProgress = 0.825,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		--DropMagAt = 0.8,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_empty_fast_twist.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_falpha_reload_empty_fast_magout_01.ogg", t = 0.23},
+			{s = path .. "wfoly_ar_falpha_reload_empty_fast_magin_01.ogg", t = 0.88},
+            {s = path .. "wfoly_ar_falpha_reload_empty_fast_lower.ogg", t = 1.25},
+			{s = path .. "wfoly_ar_falpha_reload_empty_fast_chamber_01.ogg", t = 1.47},
+			{s = path .. "wfoly_ar_falpha_reload_empty_fast_end.ogg", t = 2},
+        },
+    },
+    ["ready_valorise"] = {
+        Source = "draw_railcrust",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_ar_falpha_raise_first.ogg", t = 3/30},
+            {s = path .. "wfoly_ar_falpha_raise_boltrelease.ogg", t = 26/30},
+        },
+    },
+    ["holster_valorise"] = {
+        Source = "holster_railcrust",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.4, lhik = 0, rhik = 1 },
+        },
+		--Mult = 0.8,
+        EventTable = {
+            {s = path .. "wfoly_ar_falpha_drop.ogg", t = 0/30},
+        },
+    },
+    ["hybrid_on_valorise"] = {
+        Source = "hybrid_on_railcust",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = "Viewmodel.SwitchSight", t = 0/30},
+			{s = "switchsights/wpfoly_hybrid_toggle_on.ogg", t = 5/30},
+        },
+    },
+    ["hybrid_off_valorise"] = {
+        Source = "hybrid_off_railcust",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.5, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = "Viewmodel.SwitchSight", t = 0/30},
@@ -986,23 +829,33 @@ SWEP.Animations = {
 -------------------------- ATTACHMENTS
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
-    --local attached = self:GetElements()
-
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
-        return "reload_xmag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
-        return "reload_xmag_fast_empty"
-    --------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast_empty"
-    --------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_xmag") then
-        return "reload_xmag"
-    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
-        return "reload_xmag_empty"
-    end
+    -- local attach = self:GetElements()
+	
+	if wep:HasElement("railcust") then
+		if anim == "reload" and wep:HasElement("perk_speedreload") then
+			return "reload_fast"
+		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+			return "reload_fast_empty"
+		else
+			return anim .. "_valorise"
+		end
+	else
+		if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
+			return "reload_xmag_fast"
+		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
+			return "reload_xmag_fast_empty"
+		--------------------------------------------------------------------------
+		elseif anim == "reload" and wep:HasElement("perk_speedreload") then
+			return "reload_fast"
+		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+			return "reload_fast_empty"
+		--------------------------------------------------------------------------
+		elseif anim == "reload" and wep:HasElement("mag_xmag") then
+			return "reload_xmag"
+		elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
+			return "reload_xmag_empty"
+		end
+	end
 	
     if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
         return "super_sprint_idle"
@@ -1011,12 +864,16 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
         return "super_sprint_out"
     end
-	
+
     wep.MWHybridSwitching = nil
     if anim == "switchsights" then
         if wep:HasElement("hybrid_scope") then
             wep.MWHybridSwitching = true
-            return wep:GetMultiSight() == 1 and "hybrid_on" or "hybrid_off"
+			if wep:HasElement("railcust") then
+				return wep:GetMultiSight() == 1 and "hybrid_on_valorise" or "hybrid_off_valorise"
+			else
+				return wep:GetMultiSight() == 1 and "hybrid_on" or "hybrid_off"
+			end
         else
             return false
         end

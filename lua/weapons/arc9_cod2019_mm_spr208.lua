@@ -338,26 +338,10 @@ SWEP.Animations = {
 		MinProgress = 0.75,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.3,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.55,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.3, lhik = 1, rhik = 0 },
+            { t = 0.55, lhik = 1, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_rechamber_bolt.ogg", v = 0.4, t = 0.0},
@@ -370,26 +354,10 @@ SWEP.Animations = {
 		MinProgress = 0.75,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.3,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.55,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.3, lhik = 1, rhik = 0 },
+            { t = 0.55, lhik = 1, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_rechamber_boltl_bolt.ogg", v = 0.5, t = 0.067},
@@ -408,26 +376,10 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.75, lhik = 1, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_remeo700_reload_up.ogg", t = 0.1},
@@ -445,26 +397,10 @@ SWEP.Animations = {
 		EjectAt = 0.4,
 		DropMagAt = 1.5,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 1, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_remeo700_reload_empty_boltopen.ogg", t = 0.067},
@@ -482,26 +418,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		DropMagAt = 0.95,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.725,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.725, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_remeo700_reload_fast_up.ogg", t = 0.0},
@@ -519,31 +439,11 @@ SWEP.Animations = {
 		EjectAt = 2,
 		DropMagAt = 0.9,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.45,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.65,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.45, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 1, rhik = 0 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_remeo700_reload_empty_fast_up.ogg", t = 0.0},
@@ -561,26 +461,10 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.75, lhik = 1, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_remeo700_reload_xmags_up.ogg", t = 0.033},
@@ -598,26 +482,10 @@ SWEP.Animations = {
 		EjectAt = 0.4,
 		DropMagAt = 0.8,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 1, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_remeo700_reload_empty_xmags_up.ogg", t = 0.033},
@@ -636,26 +504,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		DropMagAt = 0.95,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.725,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.725, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_remeo700_reload_fast_xmags_up.ogg", t = 0.133},
@@ -673,31 +525,11 @@ SWEP.Animations = {
 		EjectAt = 2,
 		DropMagAt = 0.9,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.45,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.65,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.45, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 1, rhik = 0 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_remeo700_reload_empty_fast_xmags_up.ogg", t = 0.0},
@@ -714,21 +546,9 @@ SWEP.Animations = {
 		MinProgress = 0.9,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.75,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.925,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.75, lhik = 1, rhik = 0 },
+            { t = 0.925, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_raise_first_up.ogg", t = 0.033},
@@ -741,16 +561,8 @@ SWEP.Animations = {
 		MinProgress = 0.6,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.6,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.6, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_raise.ogg", t = 0/30},
@@ -759,21 +571,9 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.3,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 0
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.3, lhik = 1, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_remeo700_drop.ogg", t = 0/30},
@@ -856,26 +656,10 @@ SWEP.Animations = {
     ["bash"] = {
         Source = {"melee","melee2","melee3"},
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
     },
     ["enter_bipod"] = {
@@ -887,26 +671,10 @@ SWEP.Animations = {
     ["hybrid_on"] = {
         Source = "hybrid_off",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = "Viewmodel.SwitchSight", t = 0/30},
@@ -916,26 +684,10 @@ SWEP.Animations = {
     ["hybrid_off"] = {
         Source = "hybrid_on",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.5, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = "Viewmodel.SwitchSight", t = 0/30},

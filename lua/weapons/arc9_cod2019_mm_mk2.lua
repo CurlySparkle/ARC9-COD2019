@@ -351,16 +351,8 @@ SWEP.Animations = {
         Source = "reload_start",
 		RestoreAmmo = 1,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sbeta_sn_reload_start_beginning.ogg", t = 0/30},
@@ -371,16 +363,8 @@ SWEP.Animations = {
     ["reload_insert"] = {
         Source = "reload_loop",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = "COD2019.MK2.Load", t = 0/37},
@@ -390,21 +374,9 @@ SWEP.Animations = {
     ["reload_finish"] = {
         Source = "reload_end",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.4,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.4, lhik = 1, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sbeta_sn_reload_end_finish.ogg", t = 0/30},
@@ -414,21 +386,9 @@ SWEP.Animations = {
         Source = "reload_end_empty",
 		EjectAt = 0.4,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.5, lhik = 1, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sbeta_sn_reload_end_start.ogg", t = 0/30},
@@ -440,16 +400,8 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 0, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sbeta_sn_raise_first_start.ogg", t = 0/30},
@@ -463,16 +415,8 @@ SWEP.Animations = {
 		MinProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sbeta_sn_raise_up.ogg", t = 6/30},
@@ -482,16 +426,8 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.6,
-                lhik = 0,
-                rhik = 0
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.6, lhik = 0, rhik = 0 },
         },
         EventTable = {
             {s = path .. "wfoly_sbeta_sn_drop_start.ogg", t = 0},
@@ -529,26 +465,10 @@ SWEP.Animations = {
         MinProgress = 0.1,
         FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.9,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_sbeta_inspect_01.ogg", t = 0/30},
@@ -560,26 +480,10 @@ SWEP.Animations = {
     ["bash"] = {
         Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.1,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.8,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
     },
     ["enter_bipod"] = {
@@ -591,26 +495,10 @@ SWEP.Animations = {
     ["hybrid_on"] = {
         Source = "hybrid_off",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.5,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = "Viewmodel.SwitchSight", t = 0/30},
@@ -620,26 +508,10 @@ SWEP.Animations = {
     ["hybrid_off"] = {
         Source = "hybrid_on",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 0.85,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.5, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = "Viewmodel.SwitchSight", t = 0/30},

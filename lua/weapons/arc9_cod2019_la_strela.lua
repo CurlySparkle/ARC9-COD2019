@@ -292,26 +292,10 @@ SWEP.Animations = {
 		RefillProgress = 0.8,
 		DropMagAt = 2.65,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_la_kgolf_reload_raise.ogg", t = 0/30},
@@ -334,26 +318,10 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		DropMagAt = 1.5,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_la_kgolf_reload_fast_rotate.ogg", t = 0/30},
@@ -368,16 +336,8 @@ SWEP.Animations = {
     ["ready"] = {
         Source = {"draw"},
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 0,
-                rhik = 1
-            },
-            {
-                t = 1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 0, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_plr_la_kgolf_raise_first_up.ogg", t = 3/30},
@@ -396,16 +356,8 @@ SWEP.Animations = {
     ["holster"] = {
         Source = "holster",
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 1
-            },
-            {
-                t = 0.5,
-                lhik = 0,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.5, lhik = 0, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_la_kgolf_drop_rattle.ogg", t = 0/30},
@@ -442,26 +394,10 @@ SWEP.Animations = {
         MinProgress = 0.1,
         FireASAP = true,
         IKTimeLine = {
-            {
-                t = 0,
-                lhik = 1,
-                rhik = 0
-            },
-            {
-                t = 0.2,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 0.7,
-                lhik = 0,
-                rhik = 0
-            },
-            {
-                t = 1.1,
-                lhik = 1,
-                rhik = 1
-            },
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 1.1, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_la_kgolf_inspect_01.ogg", t = 1/30},
