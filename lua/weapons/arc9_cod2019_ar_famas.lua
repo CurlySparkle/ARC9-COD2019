@@ -150,7 +150,7 @@ SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = 0.4
 
 SWEP.VisualRecoilMultSights = 0.3
-SWEP.VisualRecoilPunchSights = 7
+SWEP.VisualRecoilPunchSights = 5
 SWEP.VisualRecoilRollSights = 5
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
@@ -693,6 +693,10 @@ SWEP.Animations = {
     },
 	
 -- Valorisé
+    ["fire_valorise"] = {
+        Source = "shoot1_railcrust",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+    },
     ["reload_valorise"] = {
         Source = "reload_railcrust",
 		MinProgress = 0.85,
@@ -830,7 +834,15 @@ SWEP.Animations = {
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     -- local attach = self:GetElements()
-	
+
+    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
+        return "super_sprint_idle"
+    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
+        return "super_sprint_in"
+    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
+        return "super_sprint_out"
+    end
+
 	if wep:HasElement("railcust") then
 		if anim == "reload" and wep:HasElement("perk_speedreload") then
 			return "reload_fast"
@@ -857,14 +869,6 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
 		end
 	end
 	
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
-    end
-
     wep.MWHybridSwitching = nil
     if anim == "switchsights" then
         if wep:HasElement("hybrid_scope") then
@@ -1029,7 +1033,7 @@ SWEP.Attachments = {
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(0, 0, 0),
+		Icon_Offset = Vector(8, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
