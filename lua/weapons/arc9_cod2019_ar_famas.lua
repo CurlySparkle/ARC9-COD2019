@@ -377,6 +377,12 @@ SWEP.Animations = {
 		RefillProgress = 0.575,
 		FireASAP = true,
 		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_twist.ogg", t = 0.033},
 			{s = path .. "wfoly_ar_falpha_magout_01.ogg", t = 0.66},
@@ -704,6 +710,12 @@ SWEP.Animations = {
 		RefillProgress = 0.575,
 		FireASAP = true,
 		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
         EventTable = {
 			{s = path .. "wfoly_ar_falpha_reload_twist.ogg", t = 0.033},
 			{s = path .. "wfoly_ar_falpha_magout_01.ogg", t = 0.66},
@@ -834,6 +846,7 @@ SWEP.Animations = {
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     -- local attach = self:GetElements()
+	local soh = wep:HasElement("perk_speedreload")
 
     if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
         return "super_sprint_idle"
@@ -844,10 +857,10 @@ SWEP.Hook_TranslateAnimation = function (wep, anim)
     end
 
 	if wep:HasElement("railcust") then
-		if anim == "reload" and wep:HasElement("perk_speedreload") then
-			return "reload_fast"
-		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-			return "reload_fast_empty"
+		if anim == "reload" then
+			if soh then return "reload_fast_valorise" else return "reload_valorise" end
+		elseif anim == "reload_empty" then
+			if soh then return "reload_fast_empty_valorise" else return "reload_empty_valorise" end
 		else
 			return anim .. "_valorise"
 		end
