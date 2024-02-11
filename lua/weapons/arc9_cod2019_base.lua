@@ -142,9 +142,9 @@ end
 SWEP.HookP_NameChange = function(self, name)
     local att = self:GetElements()
 
-	if self.Akimbo then
-		name = string.format( ARC9:GetPhrase("mw19_weapon_akimbo"), name )
-	end
+	-- if self.Akimbo then
+		-- name = string.format( ARC9:GetPhrase("mw19_weapon_akimbo"), name )
+	-- end
 
 	if att["cod2019_optic_picatinny"] and att["optic_small"] then
 		if att["optic_thermal"] then

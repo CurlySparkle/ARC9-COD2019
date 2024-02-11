@@ -656,11 +656,14 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.15),
     },
-    ["cod2019_optic_scope_kar98k"] = {
+    ["cod2019_kar98k_scope"] = {
+    -- ModelOffset = Vector(-8.1, 0, -0.5),
 	ShotgunReload = true,
     },
-    ["cod2019_kar98k_scope"] = {
-    ModelOffset = Vector(-8.1, 0, -0.5),
+    ["cod2019_optic_scope_vz"] = {
+	ShotgunReload = true,
+    },
+    ["cod2019_crossbow_scope"] = {
 	ShotgunReload = true,
     },
 }
@@ -717,7 +720,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
 	
-    if wep:HasElement("scope_kar98k") or wep:HasElement("cod2019_optic_scope_vz") then 
+    if wep:HasElement("scope_kar98k") then 
 		model:SetBodygroup(7,0)	
 	end
 end
