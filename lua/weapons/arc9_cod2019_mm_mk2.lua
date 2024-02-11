@@ -568,7 +568,7 @@ SWEP.AttachmentElements = {
     },
     ["barrel_none"] = {
         Bodygroups = {
-            {3,2},
+            {3,1},
         },
     },
     ["stock_none"] = {
@@ -726,6 +726,10 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_view"),
+        Category = "cod2019_mk2_view"
+    },
 }
 
 SWEP.GripPoseParam = 4.5
@@ -733,3 +737,4 @@ SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 17
 SWEP.CodStubbyGripPoseParam = 22
 SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.BipodSlide = 0.6

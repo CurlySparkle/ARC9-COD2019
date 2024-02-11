@@ -30,7 +30,7 @@ SWEP.Description = ARC9:GetPhrase("mw19_weapon_kar98_desc") or [[Bolt action rif
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_kar98k.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
-SWEP.DefaultBodygroups = "00001000"
+SWEP.DefaultBodygroups = "0000000000000"
 
 SWEP.Slot = 3
 
@@ -141,7 +141,11 @@ SWEP.RecoilMultSights = 0.8
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.3
+SWEP.VisualRecoilUp = 0.5
+SWEP.VisualRecoilRoll = 25
+
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 5
 
 -------------------------- SPREAD
 
@@ -226,8 +230,10 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
 
-SWEP.PeekPos = Vector(2, 2, -1)
-SWEP.PeekAng = Angle(0, 0, 5)
+SWEP.PeekPos = Vector(-1, 4, -4)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
+
+SWEP.PeekMaxFOV = 54
 
 -------------------------- HoldTypes
 
@@ -653,7 +659,7 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_optic_scope_kar98k"] = {
 	ShotgunReload = true,
     },
-    ["cod2019_optic_scope_vz"] = {
+    ["cod2019_kar98k_scope"] = {
     ModelOffset = Vector(-8.1, 0, -0.5),
 	ShotgunReload = true,
     },
@@ -665,9 +671,19 @@ SWEP.AttachmentElements = {
             {1,1},
         },
     },
-    ["sight_rail"] = {
+    ["rail_sight"] = {
+        Bodygroups = {
+            {7,1},
+        },
+    },
+    ["sight_front_none"] = {
         Bodygroups = {
             {2,1},
+        },
+    },
+    ["sight_back_none"] = {
+        Bodygroups = {
+            {9,1},
         },
     },
     ["stock_none"] = {
@@ -693,7 +709,7 @@ SWEP.AttachmentElements = {
     },
     ["loader_none"] = {
         Bodygroups = {
-            {7,1},
+            {8,1},
         },
     },
 }
@@ -702,7 +718,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
 	
     if wep:HasElement("scope_kar98k") or wep:HasElement("cod2019_optic_scope_vz") then 
-		model:SetBodygroup(2,2)	
+		model:SetBodygroup(7,0)	
 	end
 end
 
@@ -732,7 +748,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_optic_kar98k"},
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sight_rail"},
+		InstalledElements = {"rail_sight"},
 		RejectAttachments = {
 			["cod2019_optic_scope_mike14"] = true,
 		},
@@ -740,10 +756,10 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail_cylinder",
         Bone = "tag_laser_attach",
-        Pos = Vector(-10, -0.5, -0.5),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(-0.34, -1.34, 0),
+        Ang = Angle(0, 0, 0),
 		InstalledElements = {"rail_laser"},
     },
     {
@@ -831,9 +847,15 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },
+    {
+        PrintName = "Extra",
+        Category = "cod2019_kar98k_etc"
+    },
 }
 
 SWEP.GripPoseParam = 4.3
 SWEP.GripPoseParam2 = 0.6
 SWEP.CodAngledGripPoseParam = 7
-SWEP.CodStubbyGripPoseParam = 12
+SWEP.CodStubbyGripPoseParam = 22
+SWEP.CodStubbyTallGripPoseParam = 26
+SWEP.BipodSlide = 0.4

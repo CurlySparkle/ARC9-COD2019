@@ -93,7 +93,7 @@ SWEP.Firemodes = {
 SWEP.Recoil = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
-SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
+SWEP.RecoilUp = 2 -- Multiplier for vertical recoil
 SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
@@ -111,8 +111,8 @@ SWEP.RecoilKickSights = 3
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.6
-SWEP.RecoilMultCrouch = 0.7
+SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultCrouch = 0.8
 
 -------------------------- VISUAL RECOIL
 
@@ -217,6 +217,11 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(0, 25, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
+
+SWEP.PeekPos = Vector(-1.5, 4, -4)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
+
+SWEP.PeekMaxFOV = 46
 
 -------------------------- HoldTypes
 
@@ -441,6 +446,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+        MinProgress = 0.3,
+        FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 0 },
             { t = 0.6, lhik = 1, rhik = 1 },
@@ -454,7 +461,7 @@ SWEP.Animations = {
         Source = "holster",
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_xmike109_first_raise_end.ogg", t = 0/30},
