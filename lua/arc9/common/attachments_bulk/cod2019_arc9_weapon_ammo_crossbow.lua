@@ -1,5 +1,5 @@
 local ATT = {}
-
+-------------------------------------------------------------------------------
 ATT = {}
 
 ATT.PrintName = "Rock Bolt"
@@ -8,7 +8,7 @@ ATT.Description = [[Changes the bolt type to fire a singular but yet "powerful" 
 (Quite a stoner if you ask me...)]]
 ATT.SortOrder = 0
 
---ATT.Icon = Material("entities/attachs/go_ammo_tmj.png", "mips smooth")
+ATT.Icon = Material("entities/arc9_cod2019_nade_rock.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
@@ -28,7 +28,7 @@ ATT.CompactName = "EXPL"
 ATT.Description = [[Crossbow bolts fitted with a custom electronic small-explosive device.]]
 ATT.SortOrder = 0.5
 
---ATT.Icon = Material("entities/attachs/go_ammo_tmj.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/mm/crossbow/cod2019_mm_crossbow_mag.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
@@ -39,3 +39,4 @@ ATT.ShootEnt = "arc9_cod2019_proj_crossbow_he"
 ATT.Category = {"cod2019_ammo_crossbow"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_crossbow_he")
+-------------------------------------------------------------------------------

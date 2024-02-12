@@ -79,6 +79,7 @@ if SERVER then
     function ENT:Think()
         local effectdata = EffectData()
         effectdata:SetOrigin( self:GetPos() )
+        effectdata:SetAngles( self:GetAngles() )
         if self.Stuck then
             if self.DetonateTime < CurTime() then
                 util.BlastDamage(self, self:GetOwner(), self:GetPos(), 128, 150)
@@ -88,7 +89,7 @@ if SERVER then
                     util.Effect( "WaterSurfaceExplosion", effectdata )
                     self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
                 else
-				    ParticleEffect("AC_muzzle_desert", self:GetPos(), Angle(0, 0, 0), nil)
+				    ParticleEffect("muzzleflash_slug", self:GetPos(), Angle(0, 0, 0), nil)
 					self:EmitSound("COD2019.HE_ExplosiveHit")
                 end
                 self:Remove()

@@ -105,7 +105,7 @@ SWEP.Recoil = 1.6
 
 SWEP.RecoilSeed = 675846694
 
-SWEP.RecoilPatternDrift = 45
+SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 0.7 -- Multiplier for vertical recoil
@@ -113,8 +113,8 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomUp = 0.1
+SWEP.RecoilRandomSide = 0.2
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -144,7 +144,7 @@ SWEP.VisualRecoilUpSights = 0
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.3
+SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -221,8 +221,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, -5)
 }
 
-SWEP.MovingPos = Vector(-1, -1, -1)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -527,7 +527,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.5,
+		Mult = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.35, lhik = 1, rhik = 1 },
@@ -536,7 +536,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.5,
+		Mult = 3,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -750,6 +750,18 @@ SWEP.Attachments = {
 		InstalledElements = {"grip_none"},
     },
     {
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+        DefaultAttName = "Default",
+        Category = {"cod2019_grips_side"},
+        Bone = "tag_grip_attach",
+        Pos = Vector(0, -1, 1.8),
+        Ang = Angle(0, 0, 180),
+		InstalledElements = {"grip_none","grip_side"},
+		-- ExcludeElements = {"grip_bottom"},
+		Hidden = true,
+        MergeSlots = {5},
+    },
+    {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
         DefaultAttName = "Standard Stock",
         Category = {"cod2019_pkm_stock","cod2019_tube"},
@@ -832,8 +844,9 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 4
+SWEP.CodAngledGripPoseParam = 40
 SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.CodStubbyGripPoseParam = 26
 
 -- SWEP.EFTshellsfunnytable = {
     -- ["j_b_07"] = true,

@@ -57,7 +57,7 @@ SWEP.Penetration = 10 -- Units of wood that can be penetrated by this gun.
 SWEP.ImpactForce = 15
 
 SWEP.ShootEnt = "arc9_cod2019_proj_crossbow_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 80 / ARC9.HUToM
+SWEP.ShootEntForce = 6000
 SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets SENT.WeaponDataLink with this table.
 
 SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
@@ -186,8 +186,8 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -568,6 +568,7 @@ SWEP.Attachments = {
         Category = {"cod2019_ammo_crossbow"},
         Pos = Vector(0, -1.5, -1.5),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-3, 0, 1.5),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
@@ -625,4 +626,4 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.4
 SWEP.CodAngledGripPoseParam = 14
-SWEP.CodStubbyGripPoseParam = 8
+SWEP.CodStubbyGripPoseParam = 26
