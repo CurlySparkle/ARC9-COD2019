@@ -184,6 +184,7 @@ L["mw19_category_boltassembly"] = "Bolt Assembly"
 L["mw19_category_ammo"] = "Ammo" -- UO
 L["mw19_category_function"] = "Functionality" -- UO
 L["mw19_category_grip"] = "Foregrip" -- UO
+L["mw19_category_misc"] = "Misc." -- UO
 L["mw19_category_rails"] = "Rails" -- UO
 L["mw19_category_receiver"] = "Receiver" -- UO
 L["mw19_category_skins"] = "Skins" -- UO
@@ -206,6 +207,9 @@ L["mw19_firemode_plant"] = "PLANT" -- UO, "Plant" the bomb
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Base Attachments
+-- Stats
+L["mw19_optic_stat_zoom2"] = "Zoom Level" -- Most scopes
+
 ////////////////////  Ammo
 L["cod2019_ammo_ap.printname"] = "Armor Piercing Rounds" -- UO
 L["cod2019_ammo_ap.compactname"] = "AP" -- UO
@@ -460,45 +464,32 @@ L["cod2019_attach_support_gsr_grips.description"] = "Allows installation of fore
 ////////////////////  Custom Crossbow Ammo
 L["cod2019_ammo_crossbow_rock.printname"] = "FTAC Boulder 30g Rock" -- UO
 L["cod2019_ammo_crossbow_rock.compactname"] = "Boulder" -- UO
-L["cod2019_ammo_crossbow_rock.description"] = "Replaces the aerodynamic bolts with a <color=100,255,100>rock</color>.\n\nFor that <color=100,255,100>stoner</color> within us all." -- UO
+L["cod2019_ammo_crossbow_rock.description"] = "Replaces the aerodynamic bolts with a <color=100,255,100>rock</color>.\n\nFor that <color=100,255,100>stoner</color> within us all." .. baseatt -- UO
 
 L["cod2019_ammo_crossbow_he.printname"] = "FTAC Contact 20\" Bolts" -- UO
 L["cod2019_ammo_crossbow_he.compactname"] = "Contact" -- UO
-L["cod2019_ammo_crossbow_he.description"] = "Bolts with a <color=255,255,100>low pressure explosive compound</color> imbedded within the arrowhead. <color=255,100,100>Bolts can not be recovered</color>, and are undetectable by trophy systems." -- UO
+L["cod2019_ammo_crossbow_he.description"] = "Bolts with a <color=255,255,100>low pressure explosive compound</color> imbedded within the arrowhead. <color=255,100,100>Bolts can not be recovered</color>, and are undetectable by trophy systems." .. baseatt -- UO
 
 ////////////////////  Custom MGL-32 Ammo
 L["cod2019_ammo_gl_rock.printname"] = "40mm Boulder" -- UO
 L["cod2019_ammo_gl_rock.compactname"] = "Boulder" -- UO
-L["cod2019_ammo_gl_rock.description"] = "Custom 40mm shells filled with <color=100,255,100>rocks</color>." -- UO
+L["cod2019_ammo_gl_rock.description"] = "Custom 40mm shells filled with <color=100,255,100>rocks</color>." .. baseatt -- UO
 
 L["cod2019_ammo_gl_flash.printname"] = "40mm Flash" -- UO
 L["cod2019_ammo_gl_flash.compactname"] = "Flash" -- UO
-L["cod2019_ammo_gl_flash.description"] = "Custom 40mm shells filled with non-lethal <color=100,255,100>Flash</color> rounds designed to temporarily blind your enemy." -- UO, partially taken from M203 40mm Flash
+L["cod2019_ammo_gl_flash.description"] = "Custom 40mm shells filled with non-lethal <color=100,255,100>Flash</color> rounds designed to temporarily blind your enemy." .. baseatt -- UO, partially taken from M203 40mm Flash
 
 L["cod2019_ammo_gl_inc.printname"] = "40mm Incendiary" -- UO
 L["cod2019_ammo_gl_inc.compactname"] = "Incendiary" -- UO
-L["cod2019_ammo_gl_inc.description"] = "Custom 40mm shells filled with lethal <color=100,255,100>Incendiary</color> rounds." -- UO, partially taken from M203 40mm Incendiary
+L["cod2019_ammo_gl_inc.description"] = "Custom 40mm shells filled with lethal <color=100,255,100>Incendiary</color> rounds." .. baseatt -- UO, partially taken from M203 40mm Incendiary
 
 L["cod2019_ammo_gl_smoke.printname"] = "40mm Smokescreen" -- UO
 L["cod2019_ammo_gl_smoke.compactname"] = "Smoke" -- UO
-L["cod2019_ammo_gl_smoke.description"] = "Custom 40mm shells filled with non-lethal <color=100,255,100>Smoke</color> rounds designed to coneal your movement." -- UO, partially taken from M203 40mm Smokescreen
+L["cod2019_ammo_gl_smoke.description"] = "Custom 40mm shells filled with non-lethal <color=100,255,100>Smoke</color> rounds designed to coneal your movement." .. baseatt -- UO, partially taken from M203 40mm Smokescreen
 
 L["cod2019_ammo_gl_gas.printname"] = "40mm Gas" -- UO
 L["cod2019_ammo_gl_gas.compactname"] = "Gas" -- UO
-L["cod2019_ammo_gl_gas.description"] = "Custom 40mm shells filled with semi-lethal <color=100,255,100>Gas</color> rounds that create a gas cloud at the impact area.\nMultiple shots within the same area will <color=100,255,100>increase its lethality</color>." -- UO
-
-////////////////////  Rytec Atts. before they are actually added, remove when the proper ones are introduced
-L["cod2019_rytec_barrel_short.printname"] = "FORGE TAC Elite" -- UO
-L["cod2019_rytec_barrel_short.compactname"] = "FTAC Elite" -- UO
-L["cod2019_rytec_barrel_short.description"] = "FTAC's Elite titanium-cobalt barrel sacrifices accuracy and range for speed and agility." -- UO
-
-L["cod2019_rytec_barrel_long.printname"] = "FORGE TAC Precision 20.0" -- UO
-L["cod2019_rytec_barrel_long.compactname"] = "FTAC Precision" -- UO
-L["cod2019_rytec_barrel_long.description"] = "This beast of a barrel provides maximum recoil control and shot stability at the cost of mobility and bullet velocity." -- UO
-
-L["cod2019_rytec_mag_10.printname"] = "10-Round Magazine" -- UO
-L["cod2019_rytec_mag_10.compactname"] = "10R" -- UO
-L["cod2019_rytec_mag_10.description"] = "Extended magazine holding <color=100,255,100>10 rounds</color>." -- UO
+L["cod2019_ammo_gl_gas.description"] = "Custom 40mm shells filled with semi-lethal <color=100,255,100>Gas</color> rounds that create a gas cloud at the impact area.\nMultiple shots within the same area will <color=100,255,100>increase its lethality</color>." .. baseatt -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments

@@ -4,11 +4,11 @@ ATT.PrintName = "Default Scope"
 ATT.CompactName = [[Default]]
 ATT.Icon = Material("entities/attachs/cod2019_optic_pila.png", "mips smooth")
 ATT.Description = [[Long-range combat scope. Provides an improved precision at longer ranges.]]
-ATT.Pros = {
-    "+ 8x Zoom",
-    "+ Clearer sight picture"
+
+ATT.CustomPros = {
+    [ ARC9:GetPhrase("mw19_optic_stat_zoom2") ] = "4.4x"
 }
-ATT.Cons = {}
+
 ATT.SortOrder = 4
 ATT.Free = false
 -- ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
@@ -25,10 +25,10 @@ ATT.BoneMerge = true
 
 ATT.Sights = {
     {
-        Pos = Vector(1, 16, -0.35),
-        Ang = Angle(22.3, -18.7, -18),
-        ViewModelFOV = 15,
-        Magnification = 1.5,
+        Pos = Vector(1, 8, -0.35),
+        Ang = Angle(22.375, -17.1, -18),
+        ViewModelFOV = 44,
+        Magnification = 1.25,
         IgnoreExtra = true,
 		CrosshairInSights = false
     },
@@ -36,11 +36,11 @@ ATT.Sights = {
 
 ATT.RTScope = true
 ATT.RTScopeSubmatIndex = 1
-ATT.RTScopeAdjustable = true
-ATT.RTScopeAdjustmentLevels = 2
-ATT.RTScopeFOVMin = 10
-ATT.RTScopeFOVMax = 25
-ATT.RTScopeFOV = 26
+-- ATT.RTScopeAdjustable = true
+-- ATT.RTScopeAdjustmentLevels = 2
+-- ATT.RTScopeFOVMin = 10
+-- ATT.RTScopeFOVMax = 25
+ATT.RTScopeFOV = 44 / 4.4
 ATT.RTScopeRes = 512
 ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/mk4_crosshair.png", "mips smooth")
 ATT.RTScopeReticleScale = 1

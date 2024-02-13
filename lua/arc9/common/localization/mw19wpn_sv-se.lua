@@ -183,6 +183,7 @@ L["mw19_category_boltassembly"] = "Bultmontering"
 L["mw19_category_ammo"] = "Ammo" -- UO
 L["mw19_category_function"] = "Funktionalitet" -- UO
 L["mw19_category_grip"] = "Framgrepp" -- UO
+L["mw19_category_misc"] = "Diverse" -- UO
 L["mw19_category_rails"] = "Skenor" -- UO
 L["mw19_category_receiver"] = "Låda" -- UO
 L["mw19_category_skins"] = "Utseenden" -- UO
@@ -199,6 +200,9 @@ L["mw19_folder_other2"] = "Annat" -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Base Attachments
+-- Stats
+L["mw19_optic_stat_zoom2"] = "Zoom-nivå" -- Most scopes
+
 ////////////////////  Ammo
 L["cod2019_ammo_ap.printname"] = "Pansarbrytande Patroner" -- UO
 L["cod2019_ammo_ap.compactname"] = "PB" -- UO
@@ -404,45 +408,32 @@ L["cod2019_attach_support_gsr_grips.description"] = "Tillåter installering av f
 ////////////////////  Custom Crossbow Ammo
 L["cod2019_ammo_crossbow_rock.printname"] = "FTAC Boulder 30g Sten" -- UO
 L["cod2019_ammo_crossbow_rock.compactname"] = "Boulder" -- UO
-L["cod2019_ammo_crossbow_rock.description"] = "Ersätter dem aerodynamiska pilarna med en <color=100,255,100>sten</color>.\n\nFör den <color=100,255,100>stonern</color> i oss alla." -- UO
+L["cod2019_ammo_crossbow_rock.description"] = "Ersätter dem aerodynamiska pilarna med en <color=100,255,100>sten</color>.\n\nFör den <color=100,255,100>stonern</color> i oss alla." .. baseatt -- UO
 
 L["cod2019_ammo_crossbow_he.printname"] = "FTAC Kontakt 510mm Pilar" -- UO
 L["cod2019_ammo_crossbow_he.compactname"] = "Kontakt" -- UO
-L["cod2019_ammo_crossbow_he.description"] = "Pilar med <color=255,255,100>lågtrycks sprängmedel</color> inbyggda i pilspetsen. <color=255,100,100>Pilar kan inte återhämtas</color> och är oupptäckbara av trofésystem." -- UO
+L["cod2019_ammo_crossbow_he.description"] = "Pilar med <color=255,255,100>lågtrycks sprängmedel</color> inbyggda i pilspetsen. <color=255,100,100>Pilar kan inte återhämtas</color> och är oupptäckbara av trofésystem." .. baseatt -- UO
 
 ////////////////////  Custom MGL-32 Ammo
 L["cod2019_ammo_gl_rock.printname"] = "40mm Boulder" -- UO
 L["cod2019_ammo_gl_rock.compactname"] = "Boulder" -- UO
-L["cod2019_ammo_gl_rock.description"] = "Anpassade 40mm patroner fyllda med <color=100,255,100>stenar</color>." -- UO
+L["cod2019_ammo_gl_rock.description"] = "Anpassade 40mm patroner fyllda med <color=100,255,100>stenar</color>." .. baseatt -- UO
 
 L["cod2019_ammo_gl_flash.printname"] = "40mm Chock" -- UO
 L["cod2019_ammo_gl_flash.compactname"] = "Chock" -- UO
-L["cod2019_ammo_gl_flash.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Chock</color>granater designade att temporärligt blända din fiende." -- UO, partially taken from M203 40mm Flash
+L["cod2019_ammo_gl_flash.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Chock</color>granater designade att temporärligt blända din fiende." .. baseatt -- UO, partially taken from M203 40mm Flash
 
 L["cod2019_ammo_gl_inc.printname"] = "40mm Brand" -- UO
 L["cod2019_ammo_gl_inc.compactname"] = "Brand" -- UO
-L["cod2019_ammo_gl_inc.description"] = "Anpassade 40mm patroner fyllda med dödliga <color=100,255,100>Brand</color>granater." -- UO, partially taken from M203 40mm Incendiary
+L["cod2019_ammo_gl_inc.description"] = "Anpassade 40mm patroner fyllda med dödliga <color=100,255,100>Brand</color>granater." .. baseatt -- UO, partially taken from M203 40mm Incendiary
 
 L["cod2019_ammo_gl_smoke.printname"] = "40mm Rökskärm" -- UO
 L["cod2019_ammo_gl_smoke.compactname"] = "Rök" -- UO
-L["cod2019_ammo_gl_smoke.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Rök</color>granater designade att gömma din rörelse." -- UO, partially taken from M203 40mm Smokescreen
+L["cod2019_ammo_gl_smoke.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Rök</color>granater designade att gömma din rörelse." .. baseatt -- UO, partially taken from M203 40mm Smokescreen
 
 L["cod2019_ammo_gl_gas.printname"] = "40mm Gas" -- UO
 L["cod2019_ammo_gl_gas.compactname"] = "Gas" -- UO
-L["cod2019_ammo_gl_gas.description"] = "Anpassade 40mm patroner fyllda med delvist dödliga <color=100,255,100>Gas</color>granater som skapar ett gasmoln vid träffpunkten.\nFlertal skott i samma område <color=100,255,100>ökar dess dödlighet</color>." -- UO
-
-////////////////////  Rytec Atts. before they are actually added, remove when the proper ones are introduced
-L["cod2019_rytec_barrel_short.printname"] = "Kort Pipa" -- UO
-L["cod2019_rytec_barrel_short.compactname"] = "Kort" -- UO
-L["cod2019_rytec_barrel_short.description"] = "Kompakt pipa till Rytec AMR tillåter ökad rörlighet med kostnad på rekylkontroll." -- UO
-
-L["cod2019_rytec_barrel_long.printname"] = "Lång Pipa" -- UO
-L["cod2019_rytec_barrel_long.compactname"] = "Lång" -- UO
-L["cod2019_rytec_barrel_long.description"] = "Lång pipa till Rytec AMR vilket ökar räckvidden och träffsäkerheten med kostnad på rörlighet." -- UO
-
-L["cod2019_rytec_mag_10.printname"] = "10-Patronersmagasin" -- UO
-L["cod2019_rytec_mag_10.compactname"] = "10P" -- UO
-L["cod2019_rytec_mag_10.description"] = "Förstorat magasin som håller <color=100,255,100>10 patroner</color>." -- UO
+L["cod2019_ammo_gl_gas.description"] = "Anpassade 40mm patroner fyllda med delvist dödliga <color=100,255,100>Gas</color>granater som skapar ett gasmoln vid träffpunkten.\nFlertal skott i samma område <color=100,255,100>ökar dess dödlighet</color>." .. baseatt -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments

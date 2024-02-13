@@ -1013,7 +1013,7 @@ SWEP.Attachments = {
 		CosmeticOnly = true,
     },
     {
-        PrintName = "Extra",
+        PrintName = ARC9:GetPhrase("mw19_category_misc"),
         Category = "cod2019_m14_extra"
     },
 }
