@@ -48,7 +48,7 @@ SWEP.WorldModelOffset = {
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 60 -- Damage done at point blank range
-SWEP.DamageMin = 46 -- Damage done at maximum range
+SWEP.DamageMin = 36 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -115,7 +115,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0
+SWEP.RecoilRandomSide = 0.3
 
 SWEP.RecoilDissipationRate = 7.5 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -136,7 +136,7 @@ SWEP.RecoilMax = 2
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.5
-SWEP.VisualRecoilPunchSights = 15
+SWEP.VisualRecoilPunchSights = 5
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilRollSights = 0.5
 SWEP.VisualRecoilUpSights = 0
@@ -232,6 +232,8 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.PeekPos = Vector(-0.5, 1.5, -4)
 SWEP.PeekAng = Angle(0, 0.4, -45)
+
+SWEP.PeekMaxFOV = 54
 
 -------------------------- HoldTypes
 
@@ -659,7 +661,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.3,
+		Mult = 2.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 1, rhik = 1 },
@@ -668,7 +670,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.3,
+		Mult = 2.7,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -839,6 +841,11 @@ SWEP.AttachmentElements = {
             {1,2},
         },
     },
+    ["barrel_none"] = {
+        Bodygroups = {
+            {4,1},
+        },
+    },
     ["muzzle_none"] = {
         Bodygroups = {
             {2,1},
@@ -1004,6 +1011,10 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, -1),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
+    },
+    {
+        PrintName = "Extra",
+        Category = "cod2019_m14_extra"
     },
 }
 
