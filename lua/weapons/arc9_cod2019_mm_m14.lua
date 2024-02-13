@@ -141,7 +141,7 @@ SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilRollSights = 0.5
 SWEP.VisualRecoilUpSights = 0
 
-SWEP.VisualRecoilPunch = 3
+SWEP.VisualRecoilPunch = 5
 SWEP.VisualRecoilUp = 0
 SWEP.VisualRecoilRoll = 5
 SWEP.VisualRecoilSide = 0.5
@@ -871,10 +871,10 @@ SWEP.AttachmentElements = {
 	}
 }
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("scope_svd") then model:SetBodygroup(7,0) end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("stock_custom") then model:SetBodygroup(3,3) end
+end
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model

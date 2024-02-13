@@ -57,8 +57,8 @@ SWEP.Num = 6
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 500
-SWEP.RangeMax = 3000
+SWEP.RangeMin = 15 / ARC9.HUToM
+SWEP.RangeMax = 20 / ARC9.HUToM
 
 SWEP.Penetration = 5 -- Units of wood that can be penetrated by this gun.
 
@@ -594,11 +594,11 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.5,
+		Mult = 2,
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.5,
+		Mult = 4,
     },
     ["inspect"] = {
         Source = "lookat01",

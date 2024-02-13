@@ -50,15 +50,14 @@ SWEP.WorldModelOffset = {
 
 SWEP.DamageMax = 90 -- Damage done at point blank range
 SWEP.DamageMin = 35 -- Damage done at maximum range
-
 SWEP.DistributeDamage = true
 
 SWEP.Num = 6
 
-SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
+SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 500 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 3000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 10 / ARC9.HUToM
+SWEP.RangeMax = 15 / ARC9.HUToM
 
 SWEP.Penetration = 10 -- Units of wood that can be penetrated by this gun.
 

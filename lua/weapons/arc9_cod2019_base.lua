@@ -24,6 +24,8 @@ SWEP.TracerEffect = "cod2019_tracer"
 
 SWEP.NoDynamicKillIcon = true
 
+SWEP.DamageRand = 0
+
 SWEP.BashDamage = 55
 SWEP.BashLungeRange = 0
 SWEP.BashRange = 64
