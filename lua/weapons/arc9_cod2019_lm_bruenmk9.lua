@@ -161,7 +161,7 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.0325
+SWEP.Spread = 0.05
 
 SWEP.SpreadAddRecoil = 0.01
 
@@ -855,6 +855,12 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     if wep:HasElement("grip") or wep:HasElement("grip_angled") or wep:HasElement("grip_angled") then 
 		model:SetBodygroup(6,1)
 	end
+	
+    if wep:HasElement("mag_smag") then 
+     model:SetPoseParameter("smag_offset", 1)
+    else
+     model:SetPoseParameter("smag_offset", 0)
+    end
 end
 
 SWEP.Attachments = {

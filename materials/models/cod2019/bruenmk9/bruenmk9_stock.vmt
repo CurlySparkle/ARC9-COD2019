@@ -5,7 +5,7 @@
 	"$phongexponenttexture"		"models/cod2019/bruenmk9/bruenmk9_stock_exp"
 
     /////////////////
-    "$color2" "[0 0 0]"                                     //do not touch this
+    "$color2" "[1 1 1]"                                     //do not touch this
     "$blendtintbybasealpha" "1"                             //do not touch this
     /////////////////
 
@@ -20,15 +20,25 @@
     /////////////////
 
     "$envmap" "env_cubemap"
-    "$envmaptint" "[0.376 0.325 0.259]"            
+    "$envmaptint" "[0.376 0.325 0.259]"
+
+    "$detailblendmode" "4"
+    "$detailblendfactor" "0.4"               
 
     //remove this if not using MWB
     "Proxies"
     {
-        "MwEnvMapTint"
+        "Arc9EnvMapTint"
         {
             "min" "0"
             "max" "0.2"
         }
+	   "CustomCamo" 
+        {
+		  "camoTexture" $detail
+	       "camoScale" $detailscale
+            "blend" $detailblendfactor
+            "color2" "[0.8 0.8 0.8]"
+	   }
     }
 }
