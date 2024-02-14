@@ -360,8 +360,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_la_mike32_reload_cylinder_01.ogg", t = 72/30},
 			{s = path .. "wfoly_plr_la_mike32_reload_armdown.ogg", t = 95/30},
 			{s = path .. "wfoly_plr_la_mike32_reload_grab2.ogg", t = 103/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 110/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_end.ogg", t = 112/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 117/30},
+			{s = path .. "wfoly_plr_la_mike32_reload_end.ogg", t = 119/30},
         },
     },
     ["ready"] = {
@@ -464,6 +464,33 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+--- Fast & Tac. Sprint ---
+local Translate_Fast = {
+    ["reload"] = "reload_fast",
+}
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
+    --local attached = self:GetElements()
+
+    local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
+    end
+
+    if speedload then
+        if Translate_Fast[anim] then
+            return Translate_Fast[anim]
+            end
+        end
+    end
+
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
     ModelOffset = Vector(5.5, -0.05, -1.65),
@@ -509,24 +536,6 @@ SWEP.AttachmentElements = {
     AttPosMods = { [3] = { Pos = Vector(9, 3.9, 0), } }	
 	}
 }
-
-SWEP.Hook_TranslateAnimation = function (wep, anim)
-    --local attached = self:GetElements()
-
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
-        return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then
-        -- return "reload_fast_empty"
-    end
-	
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
-    end
-end
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model

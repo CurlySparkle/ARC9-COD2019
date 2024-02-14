@@ -693,46 +693,61 @@ SWEP.Animations = {
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
-SWEP.Hook_TranslateAnimation = function (wep, anim)
+--- 30, 50, & 60 (AR) Round Mags ---
+local Translate_AR = {
+    ["reload"] = "reload_ar",
+    ["reload_empty"] = "reload_empty_ar",
+	["inspect"] = "inspect_ar",
+}
+local Translate_AR_Fast = {
+    ["reload"] = "reload_ar_fast",
+    ["reload_empty"] = "reload_ar_fast_empty",
+	["inspect"] = "inspect_ar",
+}
+
+--- Fast & Tac. Sprint ---
+local Translate_Fast = {
+    ["reload"] = "reload_fast",
+    ["reload_empty"] = "reload_fast_empty",
+}
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("mag_armag") and wep:HasElement("perk_speedreload") then
-        return "reload_ar_fast"
-    elseif anim == "reload_empty" and wep:HasElement("mag_armag") and wep:HasElement("perk_speedreload") then 
-        return "reload_ar_fast_empty"
-    -------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_xmag") and wep:HasElement("perk_speedreload") then
-        return "reload_ar_fast"
-    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") and wep:HasElement("perk_speedreload") then 
-        return "reload_ar_fast_empty"
-    -------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast_empty"
-    -------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_armag") then
-        return "reload_ar"
-    elseif anim == "reload_empty" and wep:HasElement("mag_armag") then 
-        return "reload_empty_ar"
-    -------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_xmag") then
-        return "reload_ar"
-    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
-        return "reload_empty_ar"
-    -------------------------------------------------------------------------
-    elseif anim == "inspect" and wep:HasElement("mag_armag") then 
-        return "inspect_ar"
-    elseif anim == "inspect" and wep:HasElement("mag_xmag") then 
-        return "inspect_ar"
+    local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+    local ar = wep:HasElement("mag_armag")
+    local xmag = wep:HasElement("mag_xmag")
+
+    if xmag and speedload and Translate_AR_Fast[anim] then 
+        return Translate_AR_Fast[anim]
+    elseif xmag and Translate_AR[anim] then 
+        return Translate_AR[anim]
+    elseif super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
     end
-	
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
+
+    if speedload then
+		if ar then
+            if Translate_AR_Fast[anim] then
+                return Translate_AR_Fast[anim]
+            end
+        else 
+            if Translate_Fast[anim] then
+                return Translate_Fast[anim]
+            end
+        end
+    else
+		if ar then
+            if Translate_AR[anim] then
+                return Translate_AR[anim]
+            end
+        end
     end
 	
     wep.MWHybridSwitching = nil

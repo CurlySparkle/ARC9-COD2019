@@ -867,42 +867,80 @@ SWEP.Animations = {
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
-SWEP.Hook_TranslateAnimation = function (wep, anim)
+--- ChainSAW ---
+local Translate_SAW = {
+	["enter_sights"] = "enter_sights_saw",
+    ["fire"] = "fire_saw",
+	["dryfire"] = "dryfire_saw",
+    ["reload"] = "reload_saw",
+    ["reload_empty"] = "reload_empty_saw",
+	["ready"] = "ready_saw",
+	["draw"] = "draw_saw",
+	["holster"] = "holster_saw",
+	["idle"] = "idle_saw",
+	["idle_sprint"] = "idle_sprint_saw",
+    ["enter_sprint"] = "enter_sprint_saw",
+    ["exit_sprint"] = "exit_sprint_saw",
+	["inspect"] = "inspect_saw",
+}
+local Translate_SAW_Fast = {
+	["enter_sights"] = "enter_sights_saw",
+    ["fire"] = "fire_saw",
+	["dryfire"] = "dryfire_saw",
+    ["reload"] = "reload_fast_saw",
+    ["reload_empty"] = "reload_fast_empty_saw",
+	["ready"] = "ready_saw",
+	["draw"] = "draw_saw",
+	["holster"] = "holster_saw",
+	["idle"] = "idle_saw",
+	["idle_sprint"] = "idle_sprint_saw",
+    ["enter_sprint"] = "enter_sprint_saw",
+    ["exit_sprint"] = "exit_sprint_saw",
+	["inspect"] = "inspect_saw",
+}
+
+--- Fast & Tac. Sprint ---
+local Translate_Fast = {
+    ["reload"] = "reload_fast",
+    ["reload_empty"] = "reload_fast_empty",
+}
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+	["idle_sprint_saw"] = "super_sprint_idle_saw",
+    ["enter_sprint_saw"] = "super_sprint_in_saw",
+    ["exit_sprint_saw"] = "super_sprint_out_saw",
+	
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
-    ------------------ STOCK SAW --------------------------------------------
-    if anim == "idle_sprint" and wep:HasElement("stock_saw") and wep:HasElement("perk_speedreload") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("stock_saw") and wep:HasElement("perk_speedreload") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("stock_saw") and wep:HasElement("perk_speedreload") then 
-        return "super_sprint_out"
-    -------------------------------------------------------------------------		
-    elseif anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
+    local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+	local saw = wep:HasElement("stock_saw")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
     end
 
-    ------------------ STOCK SAW -------------------------------------------------------	
-    if anim == "reload" and wep:HasElement("stock_saw") and wep:HasElement("perk_speedreload") then
-        return "reload_fast_saw"
-    elseif anim == "reload_empty" and wep:HasElement("stock_saw") and wep:HasElement("perk_speedreload") then 
-        return "reload_fast_empty_saw"
-    end
-    --------------------------------------------------------------------------
-    if wep:HasElement("stock_saw") then
-        return anim .. "_saw"
-    end
-    --------------------------------------------------------------------------
-
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast_empty"
-    --------------------------------------------------------------------------
+    if speedload then
+		if saw then
+            if Translate_SAW_Fast[anim] then
+                return Translate_SAW_Fast[anim]
+            end
+        else
+            if Translate_Fast[anim] then
+                return Translate_Fast[anim]
+            end
+        end
+    else
+		if saw then
+            if Translate_SAW[anim] then
+                return Translate_SAW[anim]
+            end
+        end
     end
 	
     wep.MWHybridSwitching = nil

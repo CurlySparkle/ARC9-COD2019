@@ -325,7 +325,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 0.13},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 0.85},
+			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 0.86},
 			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 2.5},
 			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 3},
         },
@@ -382,13 +382,21 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (wep, anim)
+local Translate_Fast = {
+    ["reload"] = "reload_fast",
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
-        return "reload_fast"
+    local speedload = wep:HasElement("perk_speedreload")
+
+    if speedload then
+        if Translate_Fast[anim] then
+            return Translate_Fast[anim]
+            end
+        end
     end
-end
 
 SWEP.AttachmentElements = {
     -- ["stock_none"] = {
