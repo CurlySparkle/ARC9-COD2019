@@ -554,6 +554,7 @@ end
 SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
+		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
         Bone = "tag_scope",
         Pos = Vector(1.3, 0, -0.1),
         Ang = Angle(0, 0, 0),
@@ -582,6 +583,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
+		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
         DefaultAttName = "Standard Stock",
         Category = "cod2019_stocks",
         Bone = "tag_launcher_offset",
@@ -592,6 +594,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
+		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "j_mag1",
         Category = {"cod2019_ammo_gl"},
         Pos = Vector(0, -1.5, -1.5),

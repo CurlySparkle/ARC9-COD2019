@@ -389,6 +389,7 @@ end
 SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
+		DefaultIcon = Material("arc9/def_att_icons/barrel.png", "mips smooth"),
         DefaultAttName = "Standard slide",
         Category = "cod2019_357_slide",
         Bone = "tag_barrel_attach_l",
@@ -417,6 +418,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
+		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
         Bone = "tag_reflex_l",
         Pos = Vector(1, 0, -0.07),
         Ang = Angle(0, 0, 0),
@@ -461,6 +463,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
+		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "j_gun_left",
         Category = {"cod2019_ammo"},
         Pos = Vector(-7, 0, 2.25),

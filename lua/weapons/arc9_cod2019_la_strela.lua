@@ -478,6 +478,7 @@ SWEP.AttachmentElements = {
 SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
+		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
         Bone = "tag_launcher_offset",
         Pos = Vector(5, -3.1, 1.9),
         Ang = Angle(0, 0, -90),
@@ -508,6 +509,7 @@ SWEP.Attachments = {
     -- },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
+		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_launcher_offset",
         Category = {"cod2019_strela_ammo"},
         Pos = Vector(5, 0, 0),
