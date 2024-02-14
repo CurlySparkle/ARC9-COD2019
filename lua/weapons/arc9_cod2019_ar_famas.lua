@@ -844,43 +844,80 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (wep, anim)
-    -- local attach = self:GetElements()
-	local soh = wep:HasElement("perk_speedreload")
+--- Valorisé ---
+local Translate_Valorise = {
+    ["fire"] = "fire_valorise",
+    ["reload"] = "reload_valorise",
+    ["reload_empty"] = "reload_empty_valorise",
+	["ready"] = "ready_valorise",
+	["holster"] = "holster_valorise",
+}
+local Translate_Valorise_Fast = {
+    ["fire"] = "fire_valorise",
+    ["reload"] = "reload_fast_valorise",
+    ["reload_empty"] = "reload_fast_empty_valorise",
+	["ready"] = "ready_valorise",
+	["holster"] = "holster_valorise",
+}
 
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
+--- 50 & 60 Round Mags ---
+local Translate_XMag = {
+    ["reload"] = "reload_xmag",
+    ["reload_empty"] = "reload_xmag_empty",
+}
+local Translate_XMag_Fast = {
+    ["reload"] = "reload_xmag_fast",
+    ["reload_empty"] = "reload_xmag_fast_empty",
+}
+
+--- Fast & Tac. Sprint ---
+local Translate_Fast = {
+    ["reload"] = "reload_fast",
+    ["reload_empty"] = "reload_fast_empty",
+}
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
+    --local attached = self:GetElements()
+
+    local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+	local railcust = wep:HasElement("railcust")
+    local xmag = wep:HasElement("mag_xmag")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
     end
 
-	if wep:HasElement("railcust") then
-		if anim == "reload" then
-			if soh then return "reload_fast_valorise" else return "reload_valorise" end
-		elseif anim == "reload_empty" then
-			if soh then return "reload_fast_empty_valorise" else return "reload_empty_valorise" end
-		else
-			return anim .. "_valorise"
-		end
-	else
-		if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
-			return "reload_xmag_fast"
-		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
-			return "reload_xmag_fast_empty"
-		--------------------------------------------------------------------------
-		elseif anim == "reload" and wep:HasElement("perk_speedreload") then
-			return "reload_fast"
-		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-			return "reload_fast_empty"
-		--------------------------------------------------------------------------
-		elseif anim == "reload" and wep:HasElement("mag_xmag") then
-			return "reload_xmag"
-		elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
-			return "reload_xmag_empty"
-		end
-	end
+    if speedload then
+		if railcust then
+            if Translate_Valorise_Fast[anim] then
+                return Translate_Valorise_Fast[anim]
+            end 
+        elseif xmag then
+            if Translate_XMag_Fast[anim] then
+                return Translate_XMag_Fast[anim]
+            end 
+        else
+            if Translate_Fast[anim] then
+                return Translate_Fast[anim]
+            end
+        end
+    else
+		if railcust then
+            if Translate_Valorise[anim] then
+                return Translate_Valorise[anim]
+        elseif xmag then
+            if Translate_XMag[anim] then
+                return Translate_XMag[anim]
+            end
+        end
+    end
+end
 	
     wep.MWHybridSwitching = nil
     if anim == "switchsights" then

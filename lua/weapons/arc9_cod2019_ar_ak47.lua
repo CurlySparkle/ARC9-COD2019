@@ -714,7 +714,7 @@ end
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
---- Drum ---
+--- Drum Mags ---
 local Translate_Drum = {
     ["reload"] = "reload_drum",
     ["reload_empty"] = "reload_drum_empty",

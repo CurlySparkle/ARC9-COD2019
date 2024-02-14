@@ -763,53 +763,72 @@ SWEP.HookP_NameChange = function(self, name)
     return name
 end
 
-SWEP.Hook_TranslateAnimation = function (wep, anim)
+--- 30 & 10 (DMR) Round Mags ---
+local Translate_XMags = {
+    ["reload"] = "reload_xmags",
+    ["reload_empty"] = "reload_empty",
+}
+local Translate_XMags_Fast = {
+    ["reload"] = "reload_xmags_fast",
+    ["reload_empty"] = "reload_fast_empty",
+}
+local Translate_DMR = {
+    ["reload"] = "reload_dmr",
+    ["reload_empty"] = "reload_dmr_empty",
+}
+local Translate_DMR_Fast = {
+    ["reload"] = "reload_dmr_fast",
+    ["reload_empty"] = "reload_dmr_fast_empty",
+}
+
+--- Fast & Tac. Sprint ---
+local Translate_Fast = {
+    ["reload"] = "reload_fast",
+    ["reload_empty"] = "reload_fast_empty",
+}
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
-	
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_dmr") then
-        return "reload_dmr_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_dmr") then 
-        return "reload_dmr_fast_empty"
-    ---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_dmr") then
-        return "reload_dmr"
-    elseif anim == "reload_empty" and wep:HasElement("mag_dmr") then 
-        return "reload_dmr_empty"
+
+    local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+    local xmags = wep:HasElement("mag_xmags")
+    local dmr = wep:HasElement("mag_dmr")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
     end
-    ---------------------------------------------------------------------------
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
-        return "reload_xmags_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
-        return "reload_fast_empty"
-    ---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
-        return "reload_xmags_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
-        return "reload_fast_empty"
-    ---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast_empty"
-    ---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("ammo_extend") then
-        return "reload_xmags"
-    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
-        return "reload_empty"
-    ---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_xmag") then
-        return "reload_xmags"
-    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
-        return "reload_empty"
+
+    if speedload then
+        if dmr then
+            if Translate_DMR_Fast[anim] then
+                return Translate_DMR_Fast[anim]
+            end
+        elseif xmags then
+			if Translate_XMags_Fast[anim] then
+				return Translate_XMags_Fast[anim]
+            end
+        else
+            if Translate_Fast[anim] then
+                return Translate_Fast[anim]
+            end
+        end
+    else
+	    if dmr then
+            if Translate_DMR[anim] then
+                return Translate_DMR[anim]
+        elseif xmags then
+            if Translate_XMags[anim] then
+                return Translate_XMags[anim]
+            end
+        end
     end
-	
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
-    end
+end
 	
     wep.MWHybridSwitching = nil
     if anim == "switchsights" then

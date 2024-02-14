@@ -822,7 +822,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
---- 45 & 60 Mags ---
+--- 45 & 60 Round Mags ---
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
