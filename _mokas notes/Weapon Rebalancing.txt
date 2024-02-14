@@ -257,3 +257,67 @@ RangeMin: 51m > 44m
 PhysBulletMuzzleVelocity: 786 m/s > 580 m/s
 AimDownSightsTime: 0.3 > 0.35
 SprintToFireTime: 0.3 > 0.375
+
+[Handguns]
+- .50 GS
+DamageMax: 
+DamageMin: 
+RangeMax: 
+RangeMin: 
+PhysBulletMuzzleVelocity: 
+AimDownSightsTime: 
+SprintToFireTime: 
+
+- .357
+DamageMax: 
+DamageMin: 
+RangeMax: 
+RangeMin: 
+PhysBulletMuzzleVelocity: 
+AimDownSightsTime: 
+SprintToFireTime: 
+
+- M19
+DamageMax: 
+DamageMin: 
+RangeMax: 
+RangeMin: 
+PhysBulletMuzzleVelocity: 
+AimDownSightsTime: 
+SprintToFireTime: 
+
+- 1911
+DamageMax: 
+DamageMin: 
+RangeMax: 
+RangeMin: 
+PhysBulletMuzzleVelocity: 
+AimDownSightsTime: 
+SprintToFireTime: 
+
+- Renetti
+DamageMax: 
+DamageMin: 
+RangeMax: 
+RangeMin: 
+PhysBulletMuzzleVelocity: 
+AimDownSightsTime: 
+SprintToFireTime: 
+
+- Sykov
+DamageMax: 
+DamageMin: 
+RangeMax: 
+RangeMin: 
+PhysBulletMuzzleVelocity: 
+AimDownSightsTime: 
+SprintToFireTime: 
+
+- X16
+DamageMax: 
+DamageMin: 
+RangeMax: 
+RangeMin: 
+PhysBulletMuzzleVelocity: 
+AimDownSightsTime: 
+SprintToFireTime: 

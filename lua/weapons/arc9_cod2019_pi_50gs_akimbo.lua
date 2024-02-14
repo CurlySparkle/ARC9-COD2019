@@ -102,6 +102,8 @@ SWEP.CamQCA = 7
 SWEP.CamQCA_Mult = 1
 
 SWEP.DropMagazineAmount = 2
+SWEP.DropMagazineTime = 0.4
+SWEP.DropMagazineQCA = 6
 
 -------------------------- SOUNDS
 
@@ -371,12 +373,13 @@ end
 
 SWEP.Attachments = {
     {
-        PrintName = ARC9:GetPhrase("mw19_category_slide"),
+        PrintName = ARC9:GetPhrase("mw19_category_barrel"),
         DefaultAttName = "Standard slide",
         Category = "cod2019_50gs_slide",
         Bone = "tag_barrel_attach_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-2, 0, 0.5),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
@@ -428,6 +431,7 @@ SWEP.Attachments = {
         Bone = "tag_stock_attach_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 180),
+		Icon_Offset = Vector(-1, 0, -2),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
         DuplicateModels = {
@@ -438,17 +442,19 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
-        Bone = "j_mag1_l",
+        Bone = "tag_mag_attach_l",
         Category = {"cod2019_ammo"},
-        Pos = Vector(0, 0, -1.5),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-1, 0, 1.25),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
-		Bone = "j_mag1_l",
+		Bone = "tag_mag_attach_l",
         Category = {"cod2019_mag","cod2019_50gs_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-0.75, 0, 2.5),
     },
     {
 		PrintName = ARC9:GetPhrase("mw19_category_perk"),
@@ -502,7 +508,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = "killcounter",
         Bone = "tag_cosmetic_l",
-        Pos = Vector(0, 0.1, -0.5),
+        Pos = Vector(-1.5, -0.05, -0),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
         DuplicateModels = {

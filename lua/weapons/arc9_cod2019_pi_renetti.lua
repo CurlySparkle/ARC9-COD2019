@@ -1,6 +1,7 @@
 AddCSLuaFile()
 if CLIENT then
     killicon.Add( "arc9_cod2019_pi_renetti", "vgui/killicons/cod2019_pi_renetti.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_pi_renetti_akimbo", "vgui/killicons/cod2019_pi_akimbo_renetti.png", Color(251, 85, 25, 255))
 end
 
 SWEP.Base = "arc9_cod2019_base"
@@ -1056,51 +1057,9 @@ end
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
-    -- ["cod2019_optic_minireddot1"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(0, 15, -0.7),
-        -- Ang = Angle(0, 0, 0),
-        -- Magnification = 1.15,
-        -- ViewModelFOV = 65,
-        -- IgnoreExtra = false
-    -- },
-    -- },
-    -- },
-    -- ["cod2019_optic_minireddot2"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(0, 15, -0.65),
-        -- Ang = Angle(0, 0, 0),
-        -- Magnification = 1.15,
-        -- ViewModelFOV = 65,
-        -- IgnoreExtra = false
-    -- },
-    -- },
-    -- },
-    -- ["cod2019_optic_minireddot3"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(0, 15, -0.65),
-        -- Ang = Angle(0, 0, 0),
-        -- Magnification = 1.15,
-        -- ViewModelFOV = 65,
-        -- IgnoreExtra = false
-    -- },
-    -- },
-    -- },
-    ["cod2019_view_alt_pistol"] = {
-    ActivePos = Vector(3.9, -1.5, 1.5),
-    ActiveAng = Angle(0, 0, 20),
-
-    MovingPos = Vector(-1,-2,-1),
-    MovingAng = Angle(0,0,-8),
-
-    CrouchPos = Vector(-1.2, 0, -1),
-    CrouchAng = Angle(0, 0, -10),
-
-    ReloadPos = Vector(0,0,0),
-    ReloadAng = Angle(0,0,0)
+    ["cod2019_renetti_stock"] = {
+	CustomizeAng = Angle(0, 0, 0),
+	CustomizePos = Vector(17, 25, 3),
     },
 }
 

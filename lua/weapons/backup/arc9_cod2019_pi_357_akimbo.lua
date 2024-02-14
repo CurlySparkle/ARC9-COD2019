@@ -1,6 +1,5 @@
 AddCSLuaFile()
 if CLIENT then
-    killicon.Add( "arc9_cod2019_pi_357", "vgui/killicons/cod2019_pi_357.png", Color(251, 85, 25, 255))
     killicon.Add( "arc9_cod2019_pi_357_akimbo", "vgui/killicons/cod2019_pi_akimbo_357.png", Color(251, 85, 25, 255))
 end
 
@@ -8,7 +7,7 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_handgun") or "Handguns"
+SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_handgun_akimbo") or "Akimbos"
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_357") or ".357"
 
@@ -16,7 +15,7 @@ SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_handgun") or "Handgun"
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_usa"),
     [ ARC9:GetPhrase("mw19_caliber") ] = ".357 Magnum",
-    [ ARC9:GetPhrase("mw19_weight") ] = "1.1 kg",
+    [ ARC9:GetPhrase("mw19_weight") ] = "2.2 kg",
     [ ARC9:GetPhrase("mw19_weight_projectile") ] = "125 gr",
     [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "1,450 ft/s",
     [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "791 joules"
@@ -29,26 +28,28 @@ SWEP.Credits = {
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_357_desc") or [[Double action revolver firing .357 Magnum ammunition for powerful damage over extended ranges.]]
 
-SWEP.ViewModel = "models/weapons/cod2019/c_pist_357.mdl"
+SWEP.ViewModel = "models/weapons/cod2019/c_akimbo_357.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
 
 SWEP.Slot = 1
 
 SWEP.MirrorVMWM = true
-SWEP.NoTPIKVMPos = false
-SWEP.WorldModelMirror = "models/weapons/cod2019/c_pist_357.mdl"
+SWEP.NoTPIKVMPos = true
+SWEP.TPIKforcelefthand = true
+SWEP.TPIKNoSprintAnim = true 
+SWEP.WorldModelMirror = "models/weapons/cod2019/c_akimbo_357.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-12, 4, -5),
-    TPIKAng = Angle(0, 0, 175),
+    TPIKPos = Vector(-15, 7.5, -15),
+    TPIKAng = Angle(-3, 0, 180),
     Scale = 1
 }
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 100 -- Damage done at point blank range
-SWEP.DamageMin = 28 -- Damage done at maximum range
+SWEP.DamageMax = 70 -- Damage done at point blank range
+SWEP.DamageMin = 47 -- Damage done at maximum range
 
 SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -71,17 +72,17 @@ SWEP.PhysBulletDrag = 2.5
 SWEP.Ammo = "357" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 0 -- The amount of rounds this gun can chamber.
-SWEP.ClipSize = 6 -- Self-explanatory.
-SWEP.SupplyLimit = 12 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.ClipSize = 12 -- Self-explanatory.
+SWEP.SupplyLimit = 8 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 150
+SWEP.RPM = 300 * 1.2
 
 SWEP.Firemodes = {
     {
@@ -117,13 +118,21 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 1
 
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
-SWEP.VisualRecoilUp = 0
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilRoll = 55
+SWEP.VisualRecoilSide = -1/6
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 20
+SWEP.VisualRecoilDampingConstSights = 50
 
 -------------------------- SPREAD
 
@@ -132,14 +141,12 @@ SWEP.Spread = 0.002
 SWEP.SpreadAddRecoil = 0.02
 SWEP.SpreadMultRecoil = 1.3
 SWEP.RecoilModifierCap = 3
-SWEP.RecoilModifierCapSights = 0
 
 SWEP.SpreadAddMove = 0.05
 --SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddHipFire = 0.015
 SWEP.SpreadAddCrouch = -0.01
 SWEP.SpreadAddSights = -0.5
-
 
 -------------------------- HANDLING
 
@@ -149,9 +156,9 @@ SWEP.SprintToFireTime = 0.1 -- How long it takes to go from sprinting to being a
 -------------------------- MELEE
 
 SWEP.Bash = true
-SWEP.PrimaryBash = false
+SWEP.SecondaryBash = true
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.15
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -160,14 +167,9 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 
 -------------------------- POSITIONS
 
-SWEP.IronSights = {
-    Pos = Vector(-1.95, -1.5, 2.1),
-    Ang = Angle(0, 0, 3.5),
-    Magnification = 1.15,
-	CrosshairInSights = false
-}
+SWEP.HasSights = false
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 60
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, -0.15),
@@ -175,43 +177,41 @@ SWEP.SprintMidPoint = {
 }
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
+    Pos = Vector(0, -0.7, -0.5),
     Ang = Angle(0, 0, 0)
 }
 
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -0.5, -0.5)
+SWEP.MovingPos = Vector(0, -1.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(1, 0, -1)
-SWEP.SprintAng = Angle(0, 0, 25)
+SWEP.SprintPos = Vector(-1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, -5)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(14, 25, 3)
-SWEP.CustomizeRotateAnchor = Vector(14, -2.25, -4)
+SWEP.CustomizePos = Vector(17, 32, 3)
+SWEP.CustomizeRotateAnchor = Vector(17, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1.5, -1, -4.5)
-SWEP.PeekAng = Angle(0, 0.4, -45)
-
 -------------------------- HoldTypes
 
-SWEP.HoldType = "revolver"
-SWEP.HoldTypeSprint = "rpg"
-SWEP.HoldTypeSights = "revolver"
+SWEP.HoldType = "duel"
+SWEP.HoldTypeSprint = "duel"
+SWEP.HoldTypeHolstered = "duel"
+SWEP.HoldTypeSights = "duel"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
-SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
+-- SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_DUEL
+SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
 SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
@@ -220,18 +220,24 @@ SWEP.MuzzleParticle = "AC_muzzle_desert_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.TracerEffect = "cod2019_tracer_small"
 SWEP.MuzzleEffectQCA = 1
-SWEP.ProceduralViewQCA = 1
+SWEP.MuzzleEffectQCAEvenShot = 2
+SWEP.CaseEffectQCA = 4
+SWEP.CaseEffectQCAEvenShot = 3
+SWEP.AfterShotQCA = 1
+SWEP.AfterShotQCAEvenShot = 2
 
-SWEP.CamQCA = 4
+SWEP.CamQCA = 7
 SWEP.CamQCA_Mult = 1
 
 SWEP.NoShellEject = true
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
+SWEP.Akimbo = true
 
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/357/"
+local path2 = "weapons/cod2019/50gs/"
 
 SWEP.ShootSound = "COD2019.357.Fire"
 SWEP.ShootSoundIndoor = "COD2019.357.Fire"
@@ -241,7 +247,7 @@ SWEP.ShootSoundSilencedIndoor = "COD2019.357.Fire.S"
 
 -- Non-Silenced
 SWEP.LayerSound = "Layer_Pistol.Outside"
-SWEP.DistantShootSound = "Distant_Pistol_Mag.Outside"
+SWEP.DistantShootSound = "Distant_Pistol.Outside"
 -- Inside
 SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
 SWEP.DistantShootSoundIndoor = "Distant_Shotgun.Inside"
@@ -268,52 +274,108 @@ SWEP.HideBones = {
 	[8] = "j_b_loader",
 }
 
-SWEP.TriggerDelay = 0.075 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = 0.01 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.075 -- Time until weapon fires.
+SWEP.TriggerDelayTime = 0.01 -- Time until weapon fires.
+SWEP.TriggerStartFireAnim = false
+
+SWEP.TriggerDownSound = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg"
+SWEP.TriggerUpSound = ""
+
+SWEP.HideBones  = {
+    [1] = "j_mag1",
+    [2] = "j_mag1_l",
+    [3] = "j_b_loader",
+    [4] = "j_b_loader_l",
+    [5] = "j_b_loader_top",
+    [6] = "j_b_loader_top_l",
+    [7] = "j_b_loader_01",
+    [8] = "j_b_loader_02",
+    [9] = "j_b_loader_03",
+    [10] = "j_b_loader_04",
+    [11] = "j_b_loader_05",
+    [12] = "j_b_loader_06",
+    [13] = "j_b_loader_01_l",
+    [14] = "j_b_loader_02_l",
+    [15] = "j_b_loader_03_l",
+    [16] = "j_b_loader_04_l",
+    [17] = "j_b_loader_05_l",
+    [18] = "j_b_loader_06_l",
+}
 
 SWEP.Animations = {
-	["enter_sights"] = {
-		Source = "idle",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-	},
-    ["fire"] = {
-        Source = "shoot1",
+    ["fire_left"] = {
+        Source = "fire_left",
     },
-    ["dryfire"] = {
-        Source = "shoot1_cycle",
+    ["fire_right"] = {
+        Source = "fire_right",
+    },
+    ["dryfire_left"] = {
+        Source = "fire_left_charged",
+        EventTable = {
+			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", v = 0.5,  t = 0/30},
+        },
+    },
+    ["dryfire_right"] = {
+        Source = "fire_right_charged",
+        EventTable = {
+			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", v = 0.5,  t = 0/30},
+        },
+    },
+    ["trigger_left"] = {
+        Source = "fire_left_charged",
         EventTable = {
 			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", t = 0/30},
         },
     },
-    ["trigger"] = {
-        Source = "shoot1_cycle",
+    ["trigger_right"] = {
+        Source = "fire_right_charged",
+        EventTable = {
+			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", t = 0/30},
+        },
+    },
+    ["untrigger_left"] = {
+        Source = "fire_left_charged",
+		Reverse = true,
+        EventTable = {
+			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", t = 0/30},
+        },
+    },
+    ["untrigger_right"] = {
+        Source = "fire_right_charged",
+		Reverse = true,
         EventTable = {
 			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", t = 0/30},
         },
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.85,
+		MinProgress = 0.9,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_cpapa_charge_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_cylinderopen_01.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_shake.ogg", t = 15/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_shelleject_01.ogg", t = 17/30},
-            {s = path .. "wfoly_pi_cpapa_charge_reload_shelleject_02.ogg", t = 17/30},
-            {s = path .. "wfoly_pi_cpapa_charge_reload_shelleject_03.ogg", t = 17/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_arm.ogg", t = 27/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_speedloader_01.ogg", t = 50/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 64/30},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 75/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_start.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_cylinderopen_01.ogg", t = 2/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderopen_01.ogg", t = 16/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_shake.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 24/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_ejectorrod_01.ogg", t = 32/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_01.ogg", t = 33/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_02.ogg", t = 33/30},
+            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_03.ogg", t = 33/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_arm.ogg", t = 45/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_grip.ogg", t = 46/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_speedloader_01.ogg", t = 57/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 78/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 86/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_arm.ogg", t = 82/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 90/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 94/30},
         },
     },
     ["reload_fast"] = {
@@ -324,24 +386,30 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_start.ogg", t = 0},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderopen_01.ogg", t = 0.2},
-            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_grip.ogg", t = 0.35},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_01.ogg", t = 0.4},
-            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_02.ogg", t = 0.4},
-            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_03.ogg", t = 0.4},
-            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_arm.ogg", t = 0.78},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_speedloader_01.ogg", t = 0.96},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_ejectorrod_01.ogg", t = 1.06},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 1.6},
-			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 1.84},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_start.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_cylinderopen_01.ogg", t = 2/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderopen_01.ogg", t = 16/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_shake.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 24/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_ejectorrod_01.ogg", t = 32/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_01.ogg", t = 33/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_02.ogg", t = 33/30},
+            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_03.ogg", t = 33/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_arm.ogg", t = 45/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_grip.ogg", t = 46/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_speedloader_01.ogg", t = 57/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 78/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 60/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_arm.ogg", t = 82/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 65/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 78/30},
         },
     },
     ["ready"] = {
-        Source = "draw",
+        Source = "draw_first",
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -349,16 +417,16 @@ SWEP.Animations = {
             { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
-            {s = path .. "wfoly_pi_cpapa_first_raise_start.ogg", t = 12/30},
-            {s = path .. "wfoly_pi_cpapa_first_raise_cylinderopen_01.ogg", t = 12/30},
-			{s = path .. "wfoly_pi_cpapa_first_raise_cylinderclose_01.ogg", t = 23/30},
-			{s = path .. "wfoly_pi_cpapa_first_raise_end.ogg", t = 27/30},
+            {s = path .. "wfoly_pi_cpapa_first_raise_start.ogg", t = 2/30},
+            {s = path .. "wfoly_pi_cpapa_first_raise_cylinderopen_01.ogg", t = 3/30},
+			{s = path .. "wfoly_pi_cpapa_first_raise_cylinderclose_01.ogg", t = 13/30},
+			{s = path .. "wfoly_pi_cpapa_first_raise_end.ogg", t = 15/30},
         },
     },
     ["draw"] = {
-        Source = "draw_short",
-		MinProgress = 0.2,
-		FireASAP = true,
+        Source = "draw",
+		MinProgress = 0.55,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_pi_cpapa_charge_raise.ogg", t = 0/30},
         },
@@ -384,30 +452,6 @@ SWEP.Animations = {
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
 		NoStatAffectors = true
     },
-    ["super_sprint_idle"] = {
-        Source = "super_sprint",
-        IKTimeLine = {
-            { t = 0, lhik = 0, rhik = 1 },
-        },
-    },
-    ["super_sprint_in"] = {
-        Source = "super_sprint_in",
-		Mult = 10,
-        IKTimeLine = {
-            { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.35, lhik = 1, rhik = 1 },
-            { t = 1, lhik = 0, rhik = 1 },
-        },
-    },
-    ["super_sprint_out"] = {
-        Source = "super_sprint_out",
-		Mult = 2.5,
-        IKTimeLine = {
-            { t = 0, lhik = 0, rhik = 1 },
-            { t = 0.1, lhik = 0, rhik = 1 },
-            { t = 1, lhik = 1, rhik = 1 },
-        },
-    },
     ["inspect"] = {
         Source = "lookat01",
 		MinProgress = 0.1,
@@ -421,18 +465,12 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_pi_cpapa_inspect_01.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_cpapa_inspect_02.ogg", t = 34/30},
-			{s = path .. "wfoly_pi_cpapa_inspect_03.ogg", t = 58/30},
-			{s = path .. "wfoly_pi_cpapa_inspect_04.ogg", t = 111/30},
+			{s = path .. "wfoly_pi_cpapa_inspect_03.ogg", t = 62/30},
+			{s = path .. "wfoly_pi_cpapa_inspect_04.ogg", t = 114/30},
         },
     },
     ["bash"] = {
         Source = {"melee","melee2"},
-	    IKTimeLine = {
-            { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.6, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
-        },
     },
 }
 
@@ -442,21 +480,15 @@ SWEP.Animations = {
 
 SWEP.Hook_TranslateAnimation = function (wep, anim)
     --local attached = self:GetElements()
-
+    --------------------------------------------------------------------------
     if anim == "reload" and wep:HasElement("perk_speedreload") then
         return "reload_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        -- return "reload_fast_empty"
-    end
-	
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
+    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
+        return "reload_fast_empty"
+    --------------------------------------------------------------------------
     end
 end
+
 
 SWEP.DefaultBodygroups = "00000000000000"
 
@@ -469,29 +501,34 @@ SWEP.DefaultBodygroups = "00000000000000"
 -- }
 
 SWEP.AttachmentElements = {
-    ["mag_none"] = {
+    ["body_none"] = {
         Bodygroups = {
-            {1,1},
+            {0,1},
+            {3,1},
         },
     },
-    ["slide_none"] = {
+    ["barrel_none"] = {
         Bodygroups = {
-            {2,1},
+            {1,1},
+            {4,1},
         },
     },
     ["grip_none"] = {
         Bodygroups = {
-            {3,1},
+            {2,1},
+            {5,1},
         },
     },
     ["rail_sight"] = {
         Bodygroups = {
-            {3,1},
+            {6,1},
+            {7,1},
         },
     },
     ["rail_laser"] = {
         Bodygroups = {
-            {4,1},
+            {8,1},
+            {9,1},
         },
     },
 }
@@ -514,35 +551,55 @@ SWEP.Attachments = {
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+        DuplicateModels = {
+            {
+                Bone = "tag_barrel_attach_l",
+            }
+        },
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
         DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle_pistols",
-        Bone = "tag_silencer",
+        Bone = "tag_silencer_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"muzzle_none"},
 		Scale = 1,
+        DuplicateModels = {
+            {
+                Bone = "tag_silencer",
+            }
+        },
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
         Bone = "tag_reflex",
         Pos = Vector(1, 0, -0.07),
         Ang = Angle(0, 0, 0),
-        Category = "cod2019_optic_pistol",
+        Category = {"cod2019_optic_pistol"},
         CorrectiveAng = Angle(0, 0, 0),
-		--Scale = 0.8,
+		Scale = 1,
 		InstalledElements = {"rail_sight"},
+        DuplicateModels = {
+            {
+                Bone = "tag_reflex_l",
+            }
+        },
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
         Category = "cod2019_tac_pistols",
         Bone = "tag_laser_attach",
-        Pos = Vector(-1.1, 0, 0),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"rail_laser"},
+        DuplicateModels = {
+            {
+                Bone = "tag_laser_attach_l",
+            }
+        },
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
@@ -550,32 +607,29 @@ SWEP.Attachments = {
         Category = "cod2019_357_grip",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 180),
+        Ang = Angle(0, 0, 0),
 		Scale = 1,
-		--InstalledElements = {"rail_grip"},
+        DuplicateModels = {
+            {
+                Bone = "tag_stock_attach_l",
+            }
+        },
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
         Bone = "j_mag1",
-        Category = "cod2019_ammo",
+        Category = {"cod2019_ammo"},
         Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
     },
     {
 		PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"}
-    },
-    {
-		PrintName = ARC9:GetPhrase("mw19_category_stock"),
-        Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-        Category = {"cod2019_hold"}
+        Category = {"cod2019_perks","cod2019_perks_soh"}
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
         --Bone = "v_weapon.Clip",
-        Category = "cod2019_skins_50gs",
+        Category = "cod2019_357_skins",
 		CosmeticOnly = true,
     },
     {
@@ -615,7 +669,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = "killcounter",
         Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-3, 0.05, -1.7),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },

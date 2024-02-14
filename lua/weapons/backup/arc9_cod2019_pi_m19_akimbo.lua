@@ -1,12 +1,38 @@
 AddCSLuaFile()
-include( "arc9_cod2019_pi_m19.lua" )
+if CLIENT then
+    killicon.Add( "arc9_cod2019_pi_m19_akimbo", "vgui/killicons/cod2019_pi_akimbo_m19.png", Color(251, 85, 25, 255))
+end
 
-SWEP.PrintName = string.format( ARC9:GetPhrase("mw19_weapon_akimbo"), SWEP.PrintName )
+SWEP.Base = "arc9_cod2019_base"
 
+SWEP.Spawnable = true
+SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_handgun_akimbo") or "Akimbos"
 
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_m19") or "M19"
+
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_handgun") or "Handgun"
+SWEP.Trivia = {
+    [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_usa"),
+    [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_corvus"),
+    [ ARC9:GetPhrase("mw19_caliber") ] = "9×19mm Parabellum",
+    [ ARC9:GetPhrase("mw19_weight") ] = "1.66 kg",
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "124 gr",
+    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "1,198 ft/s",
+    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "536 joules"
+}
+
+SWEP.Credits = {
+    [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
+    [ ARC9:GetPhrase("mw19_assets") ] = "Activision/Infinity Ward"
+}
+
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_m19_desc") or [[Semi-automatic 9mm pistol, excellent stability with a rapid cycle rate.]]
+
 SWEP.ViewModel = "models/weapons/cod2019/c_akimbo_m19.mdl"
-SWEP.WorldModel = "models/weapons/cod2019/w_pist_50gs.mdl"
+SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+
+SWEP.Slot = 1
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
@@ -16,25 +42,130 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_akimbo_m19.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-12.5, 9, -15),
+    TPIKPos = Vector(-15, 7.5, -15),
     TPIKAng = Angle(-3, 0, 180),
     Scale = 1
 }
 
+-------------------------- DAMAGE PROFILE
+
+SWEP.DamageMax = 33 -- Damage done at point blank range
+SWEP.DamageMin = 13 -- Damage done at maximum range
+
+SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
+
+SWEP.RangeMin = 600 -- How far bullets retain their maximum damage for.
+SWEP.RangeMax = 4000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+
+SWEP.Penetration = 2 -- Units of wood that can be penetrated by this gun.
+SWEP.RicochetChance = 0.2
+
+SWEP.ImpactForce = 8
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 1100 * 12
+SWEP.PhysBulletGravity = 1.5
+SWEP.PhysBulletDrag = 1.15
+
 -------------------------- MAGAZINE
 
-SWEP.ChamberSize = 2
-SWEP.ClipSizeOverride = SWEP.ClipSize * 2
+SWEP.Ammo = "pistol" -- What ammo type this gun uses.
+
+SWEP.ChamberSize = 2 -- The amount of rounds this gun can chamber.
+SWEP.ClipSize = 34 -- Self-explanatory.
+SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
+
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
+SWEP.DrawCrosshair = true
+SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = SWEP.RPM * 1.75
+SWEP.RPM = 600 * 2
+
+SWEP.Firemodes = {
+    {
+        Mode = 1,
+    },
+}
+-------------------------- RECOIL
+
+-- General recoil multiplier
+SWEP.Recoil = 1
+
+--SWEP.RecoilSeed = nil
+
+SWEP.RecoilPatternDrift = 35
+
+-- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
+SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+
+-- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
+-- This type of recoil CANNOT be predicted.
+SWEP.RecoilRandomUp = 0.3
+SWEP.RecoilRandomSide = 0.1
+
+SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
+SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
+
+SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
+
+SWEP.RecoilKick = 2
+
+SWEP.RecoilMultCrouch = 0.8
+
+SWEP.RecoilMultMove = 1.25
+SWEP.RecoilAutoControlMultHipFire = 0.5
+SWEP.RecoilMultSights = 1
+
+-------------------------- VISUAL RECOIL
+
+SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilMultSights = 0.2
+SWEP.VisualRecoilPunchSights = 75
+SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilRoll = 55
+SWEP.VisualRecoilSide = -1/6
+
+SWEP.VisualRecoilSpringPunchDamping = 11
+SWEP.VisualRecoilDampingConst = 30
+SWEP.VisualRecoilDampingConstSights = 50
+
+-------------------------- SPREAD
+
+SWEP.Spread = 0.002
+
+SWEP.SpreadAddRecoil = 0.01
+SWEP.SpreadMultRecoil = 1.3
+SWEP.RecoilModifierCap = 5
+
+SWEP.SpreadAddMove = 0.05
+--SWEP.SpreadAddMidAir = 0
+SWEP.SpreadAddHipFire = 0.01
+SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddSights = 0.01
+
+
+-------------------------- HANDLING
+
+SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
+SWEP.Bash = true
 SWEP.SecondaryBash = true
 SWEP.PreBashTime = 0.2
 SWEP.PostBashTime = 0.2
+
+-------------------------- TRACERS
+
+SWEP.TracerNum = 1 -- Tracer every X
+SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if tracer effect supports it. For physical bullets, this is compressed down to 9-bit color.
 
 -------------------------- POSITIONS
 
@@ -55,21 +186,20 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(0, -1.5, -0.8)
+SWEP.MovingPos = Vector(0, -0.5, -0.5)
 SWEP.MovingAng = Angle(0, 0, 0)
 
-SWEP.CrouchPos = Vector(0, -1.5, -1)
+SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
 SWEP.SprintPos = Vector(-1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, -5)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(19, 32.5, 4.25)
--- SWEP.CustomizeRotateAnchor = Vector(19, 5, -4.25)
-SWEP.CustomizeRotateAnchor = Vector(19, 0, -4.25)
+SWEP.CustomizePos = Vector(19, 30, 3)
+SWEP.CustomizeRotateAnchor = Vector(19, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(1, -5, 1)
+SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -82,15 +212,22 @@ SWEP.HoldTypeSights = "duel"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
---SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_DUEL
--- SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_RPG
+-- SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_DUEL
+-- SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
 SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
 SWEP.AnimDraw = false
 
 SWEP.Akimbo = true
 
+function SWEP:SecondaryAttack()
+    return self:MeleeAttack()
+end
+
 -------------------------- EFFECTS
 
+SWEP.MuzzleParticle = "AC_muzzle_pistol_fp"
+SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
+SWEP.TracerEffect = "cod2019_tracer_small"
 SWEP.MuzzleEffectQCA = 1
 SWEP.MuzzleEffectQCAEvenShot = 2
 SWEP.CaseEffectQCA = 4
@@ -101,13 +238,64 @@ SWEP.AfterShotQCAEvenShot = 2
 SWEP.CamQCA = 7
 SWEP.CamQCA_Mult = 1
 
-SWEP.DropMagazineAmount = 2
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_9mm_hr.mdl"
+SWEP.ShellSounds = ARC9.COD2019_9mm_Table
+SWEP.ShellCorrectAng = Angle(0, 0, 0)
+SWEP.ShellScale = 0.06
+SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
+
+SWEP.ShouldDropMag = false
+SWEP.ShouldDropMagEmpty = false
+SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_pist_m19_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineSounds = {
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_poly_concrete_01.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_poly_concrete_02.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_poly_concrete_03.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_poly_concrete_04.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_poly_concrete_05.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_poly_concrete_06.ogg",
+}
+SWEP.DropMagazineAmount = 2 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 6
+SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/m19/"
+
+SWEP.ShootSound = "COD2019.M19.Fire"
+SWEP.ShootSoundIndoor = "COD2019.M19.Fire"
+
+SWEP.ShootSoundSilenced = "COD2019.M19.Fire.S"
+SWEP.ShootSoundSilencedIndoor = "COD2019.M19.Fire.S"
+
+-- Non-Silenced
+SWEP.LayerSound = "Layer_Pistol.Outside"
+SWEP.DistantShootSound = "Distant_Pistol.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = "Layer_Pistol.Inside"
+SWEP.DistantShootSoundIndoor = "Distant_Pistol.Inside"
+---------------------------------------------------
+-- Silenced
+SWEP.LayerSoundSilenced = "Distant_Pistol_Mag_Sup.Outside"
+SWEP.DistantShootSoundSilenced = "Layer_ARSUP.Outside"
+-- Inside
+SWEP.LayerSoundSilencedIndoor = "Distant_Pistol_Sup.Inside"
+SWEP.DistantShootSoundSilencedIndoor = "Layer_ARSUP.Inside"
+---------------------------------------------------
+
+SWEP.EnterSightsSound = path .. "weap_pi_papa320_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "weap_pi_papa320_ads_down.ogg"
+
+SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayCancellable = false
+SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
+
+SWEP.TriggerDownSound = "weapons/cod2019/m19/weap_papa320_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/m19/weap_papa320_disconnector_plr_01.ogg"
+
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",
@@ -347,16 +535,16 @@ SWEP.AttachmentElements = {
 }
 SWEP.Attachments = {
     {
-        PrintName = ARC9:GetPhrase("mw19_category_barrel"),
+        PrintName = ARC9:GetPhrase("mw19_category_slide"),
         DefaultAttName = "Standard slide",
         Category = "cod2019_m19_slide",
-        Bone = "tag_barrel_attach_l",
+        Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		Icon_Offset = Vector(-3, 0, 0),
         DuplicateModels = {
             {
-                Bone = "tag_barrel_attach",
+                Bone = "tag_barrel_attach_l",
             }
         },
     },
@@ -377,7 +565,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
-        Bone = "tag_reflex_l",
+        Bone = "tag_reflex",
         Pos = Vector(1.1, 0, 0),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optics_pistols_alt","eft_optic_small"},
@@ -386,7 +574,7 @@ SWEP.Attachments = {
 		InstalledElements = {"sight_none"},
         DuplicateModels = {
             {
-                Bone = "tag_reflex",
+                Bone = "tag_reflex_l",
             }
         },
     },
@@ -394,13 +582,13 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
         Category = "cod2019_tac_pistols",
-        Bone = "tag_laser_attach_l",
+        Bone = "tag_laser_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
         DuplicateModels = {
             {
-                Bone = "tag_laser_attach",
+                Bone = "tag_laser_attach_l",
             }
         },
     },
@@ -408,34 +596,32 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
         Category = "cod2019_grip",
-        Bone = "tag_stock_attach_l",
+        Bone = "tag_stock_attach",
         Pos = Vector(-2.8, 0, 0.2),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
         DuplicateModels = {
             {
-                Bone = "tag_stock_attach",
+                Bone = "tag_stock_attach_l",
             }
         },
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
-        Bone = "tag_mag_attach_l",
+        Bone = "j_mag1",
         Category = {"cod2019_ammo"},
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(0, 0, -1.5),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(-0.5, 0, 1.25),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
-		Bone = "tag_mag_attach_l",
+		Bone = "tag_mag_attach",
         Category = {"cod2019_mag","cod2019_m19_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(-0.25, 0, 2.5),
         DuplicateModels = {
             {
-                Bone = "tag_mag_attach",
+                Bone = "tag_mag_attach_l",
             }
         },
     },
@@ -491,3 +677,6 @@ SWEP.Attachments = {
 		CosmeticOnly = true,
     },
 }
+
+SWEP.GripPoseParam = 4.6
+SWEP.GripPoseParam2 = 0.6
