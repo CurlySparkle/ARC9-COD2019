@@ -642,7 +642,7 @@ SWEP.Animations = {
         Source = {"melee","melee2"},
     },
 	
--- stock
+-- Stock Anims
 	["stock_enter_sights"] = {
 		Source = "idle_stock",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
@@ -969,75 +969,124 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (wep, anim)
+--- Stock ---
+local Translate_Stock = {
+	["enter_sights"] = "stock_enter_sights",
+	["dryfire"] = "stock_dryfire",
+    ["reload"] = "stock_reload",
+    ["reload_empty"] = "stock_reload_empty",
+	["reload_xmag"] = "stock_reload_xmag",
+	["reload_xmag_empty"] = "stock_reload_xmag_empty",
+	["reload_xmaglrg"] = "stock_reload_xmaglrg",
+	["reload_xmaglrg_empty"] = "stock_reload_xmaglrg_empty",
+	["ready"] = "stock_ready",
+	["draw"] = "stock_draw",
+	["holster"] = "stock_holster",
+	["idle"] = "stock_idle",
+	["idle_sprint"] = "stock_idle_sprint",
+    ["enter_sprint"] = "stock_enter_sprint",
+    ["exit_sprint"] = "stock_exit_sprint",
+	["inspect"] = "stock_inspect",
+    ["bash"] = "stock_bash",
+}
+local Translate_Stock_Fast = {
+	["enter_sights"] = "stock_enter_sights",
+	["dryfire"] = "stock_dryfire",
+    ["reload"] = "stock_reload_fast",
+    ["reload_empty"] = "stock_reload_fast_empty",
+	["reload_xmag"] = "stock_reload_xmag_fast",
+	["reload_xmag_empty"] = "stock_reload_xmag_fast_empty",
+	["reload_xmaglrg"] = "stock_reload_xmaglrg_fast",
+	["reload_xmaglrg_empty"] = "stock_reload_xmaglrg_fast_empty",
+	["ready"] = "stock_ready",
+	["draw"] = "stock_draw",
+	["holster"] = "stock_holster",
+	["idle"] = "stock_idle",
+	["idle_sprint"] = "stock_idle_sprint",
+    ["enter_sprint"] = "stock_enter_sprint",
+    ["exit_sprint"] = "stock_exit_sprint",
+	["inspect"] = "stock_inspect",
+    ["bash"] = "stock_bash",
+}
+
+--- 21 Round Mags ---
+local Translate_XMag = {
+    ["reload"] = "reload_xmag",
+    ["reload_empty"] = "reload_xmag_empty",
+}
+local Translate_XMag_Fast = {
+    ["reload"] = "reload_xmag_fast",
+    ["reload_empty"] = "reload_xmag_fast_empty",
+}
+local Translate_XMagslrg = {
+    ["reload"] = "reload_xmagslrg",
+    ["reload_empty"] = "reload_xmagslrg_empty",
+}
+local Translate_XMagslrg_Fast = {
+    ["reload"] = "reload_xmagslrg_fast",
+    ["reload_empty"] = "reload_xmagslrg_fast_empty",
+}
+
+--- Fast & Tac. Sprint ---
+local Translate_Fast = {
+    ["reload"] = "reload_fast",
+    ["reload_empty"] = "reload_fast_empty",
+}
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+	["stock_idle_sprint"] = "stock_super_sprint_idle",
+    ["stock_enter_sprint"] = "stock_super_sprint_in",
+    ["stock_exit_sprint"] = "stock_super_sprint_out",
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
+    local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+	local xmag = wep:HasElement("mag_xmag")
+    local xmagslrg = wep:HasElement("mag_xmagslrg")
+	local stock = wep:HasElement("cod2019_renetti_stock")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
     end
 
-	if wep:HasElement("cod2019_renetti_stock") then 
-		--------------------------------------------------------------------------
-		if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
-			return "stock_reload_xmag_fast"
-		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
-			return "stock_reload_xmag_fast_empty"
-		--------------------------------------------------------------------------
-		elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
-			return "stock_reload_xmaglrg_fast"
-		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
-			return "stock_reload_xmaglrg_fast_empty"
-		--------------------------------------------------------------------------
-		elseif anim == "reload" and wep:HasElement("perk_speedreload") then
-			return "stock_reload_fast"
-		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then
-			return "stock_reload_fast_empty"
-		--------------------------------------------------------------------------
-		elseif anim == "reload" and wep:HasElement("mag_xmag") then
-			return "stock_reload_xmag"
-		elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then
-			return "stock_reload_xmag_empty"
-		--------------------------------------------------------------------------
-		elseif anim == "reload" and wep:HasElement("mag_xmaglrg") then
-			return "stock_reload_xmaglrg"
-		elseif anim == "reload_empty" and wep:HasElement("mag_xmaglrg") then
-			return "stock_reload_xmaglrg_empty"
-		--------------------------------------------------------------------------
-		else return "stock_" .. anim
-		end
-	end
-	if !wep:HasElement("cod2019_renetti_stock") then
-		if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
-			return "reload_xmag_fast"
-		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
-			return "reload_xmag_fast_empty"
-		--------------------------------------------------------------------------
-		elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
-			return "reload_xmaglrg_fast"
-		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmaglrg") then
-			return "reload_xmaglrg_fast_empty"
-		--------------------------------------------------------------------------
-		elseif anim == "reload" and wep:HasElement("perk_speedreload") then
-			return "reload_fast"
-		elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then
-			return "reload_fast_empty"
-		--------------------------------------------------------------------------
-		elseif anim == "reload" and wep:HasElement("mag_xmag") then
-			return "reload_xmag"
-		elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then
-			return "reload_xmag_empty"
-		--------------------------------------------------------------------------
-		elseif anim == "reload" and wep:HasElement("mag_xmaglrg") then
-			return "reload_xmaglrg"
-		elseif anim == "reload_empty" and wep:HasElement("mag_xmaglrg") then
-			return "reload_xmaglrg_empty"
-		--------------------------------------------------------------------------
-		end
-	end
+    if speedload then
+		if stock then
+            if Translate_Stock_Fast[anim] then
+                return Translate_Stock_Fast[anim]
+            end
+		elseif xmag then
+            if Translate_XMag_Fast[anim] then
+                return Translate_XMag_Fast[anim]
+            end
+		elseif xmagslrg then
+            if Translate_XMagslrg_Fast[anim] then
+                return Translate_XMagslrg_Fast[anim]
+            end
+        else
+            if Translate_Fast[anim] then
+                return Translate_Fast[anim]
+            end
+        end
+    else
+		if stock then
+            if Translate_Stock[anim] then
+                return Translate_Stock[anim]
+			end
+		elseif xmag then
+			if Translate_XMag[anim] then
+                return Translate_XMag[anim]
+			end
+		elseif xmagslrg then
+			if Translate_XMagslrg[anim] then
+                return Translate_XMagslrg[anim]
+            end
+        end
+    end
 end
 
 -- SWEP.Hook_Think	= function(wep)

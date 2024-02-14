@@ -882,6 +882,7 @@ local Translate_SAW = {
     ["enter_sprint"] = "enter_sprint_saw",
     ["exit_sprint"] = "exit_sprint_saw",
 	["inspect"] = "inspect_saw",
+    ["bash"] = "bash_saw",
 }
 local Translate_SAW_Fast = {
 	["enter_sights"] = "enter_sights_saw",
@@ -897,6 +898,7 @@ local Translate_SAW_Fast = {
     ["enter_sprint"] = "enter_sprint_saw",
     ["exit_sprint"] = "exit_sprint_saw",
 	["inspect"] = "inspect_saw",
+    ["bash"] = "bash_saw",
 }
 
 --- Fast & Tac. Sprint ---

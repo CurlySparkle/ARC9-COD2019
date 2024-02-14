@@ -293,16 +293,22 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (wep, anim)
+local Translate_Fast = {
+    ["reload"] = "reload_fast",
+    ["reload_empty"] = "reload_fast_empty",
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
-    --------------------------------------------------------------------------
-    if anim == "reload" and wep:HasElement("perk_speedreload") then
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast_empty"
-    --------------------------------------------------------------------------
+
+    local speedload = wep:HasElement("perk_speedreload")
+
+    if speedload then
+        if Translate_Fast[anim] then
+            return Translate_Fast[anim]
+            end
+        end
     end
-end
 
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty

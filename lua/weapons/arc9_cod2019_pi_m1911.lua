@@ -411,8 +411,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_pi_mike1911_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike1911_reload_magout_01.ogg", t = 12/30},
-			{s = path .. "wfoly_pi_mike1911_reload_magin_01.ogg", t = 23/30},
+			{s = path .. "wfoly_pi_mike1911_reload_magout_01.ogg", t = 14/30},
+			{s = path .. "wfoly_pi_mike1911_reload_magin_v2_01.ogg", t = 24/30},
+            {s = path .. "wfoly_pi_mike1911_reload_magin_v2_02.ogg", t = 31/30},
 			{s = path .. "wfoly_pi_mike1911_reload_end.ogg", t = 32/30},
         },
     },
@@ -640,43 +641,71 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (wep, anim)
+--- 15 Round Mags ---
+local Translate_XMag = {
+    ["reload"] = "reload_xmag",
+    ["reload_empty"] = "reload_xmag_empty",
+}
+local Translate_XMag_Fast = {
+    ["reload"] = "reload_xmag_fast",
+    ["reload_empty"] = "reload_xmag_fast_empty",
+}
+local Translate_MMag = {
+    ["reload"] = "reload_mmag",
+    ["reload_empty"] = "reload_mmag_empty",
+}
+local Translate_MMag_Fast = {
+    ["reload"] = "reload_mmag_fast",
+    ["reload_empty"] = "reload_mmag_fast_empty",
+}
+
+--- Fast & Tac. Sprint ---
+local Translate_Fast = {
+    ["reload"] = "reload_fast",
+    ["reload_empty"] = "reload_fast_empty",
+}
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
-    --------------------------------------------------------------------------
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
-        return "reload_xmag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
-        return "reload_xmag_fast_empty"
-	--------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_mmag") then
-        return "reload_mmag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_mmag") then
-        return "reload_mmag_fast_empty"
-	--------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then
-        return "reload_fast_empty"
-	--------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_xmag") then
-        return "reload_xmag"
-    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then
-        return "reload_xmag_empty"
-	--------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_mmag") then
-        return "reload_mmag"
-    elseif anim == "reload_empty" and wep:HasElement("mag_mmag") then
-        return "reload_mmag_empty"
-	--------------------------------------------------------------------------
+    local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+    local xmag = wep:HasElement("mag_xmag")
+    local mmag = wep:HasElement("mag_mmag")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
     end
-	
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
+
+    if speedload then
+        if xmag then
+            if Translate_XMag_Fast[anim] then
+                return Translate_XMag_Fast[anim]
+            end
+        elseif mmag then
+            if Translate_Translate_MMag_Fast[anim] then
+                return Translate_Translate_MMag_Fast[anim]
+            end 
+        else
+            if Translate_Fast[anim] then
+                return Translate_Fast[anim]
+            end
+        end
+    else 
+        if xmag then
+            if Translate_XMag[anim] then
+                return Translate_XMag[anim]
+            end
+        elseif mmag then
+            if Translate_MMag[anim] then
+                return Translate_MMag[anim]
+            end
+        end
     end
 end
 
