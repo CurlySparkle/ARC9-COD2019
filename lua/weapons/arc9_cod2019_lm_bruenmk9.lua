@@ -197,7 +197,7 @@ SWEP.SpeedMultSights = 0.8 -- When aiming
 SWEP.SpeedMultShooting = 0.8
 
 SWEP.AimDownSightsTime = 0.45 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.45 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -255,6 +255,8 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.PeekPos = Vector(2, 2, -1)
 SWEP.PeekAng = Angle(0, 0, 5)
+
+SWEP.PeekMaxFOV = 54
 
 -------------------------- HoldTypes
 
@@ -852,7 +854,7 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("grip") or wep:HasElement("grip_angled") or wep:HasElement("grip_angled") then 
+    if wep:HasElement("bipod") then 
 		model:SetBodygroup(6,1)
 	end
 	
@@ -905,7 +907,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-4, 0, 0),
+        Pos = Vector(-2.7, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
@@ -999,4 +1001,6 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodStubbyTallGripPoseParam = 8
+SWEP.CodStubbyTallGripPoseParam = 27
+SWEP.CodStubbyGripPoseParam = 29
+SWEP.CodAngledGripPoseParam = 41
