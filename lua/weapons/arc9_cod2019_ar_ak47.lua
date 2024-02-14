@@ -714,33 +714,56 @@ end
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
-SWEP.Hook_TranslateAnimation = function (wep, anim)
+--- Drum ---
+local Translate_Drum = {
+    ["reload"] = "reload_drum",
+    ["reload_empty"] = "reload_drum_empty",
+}
+local Translate_Drum_Fast = {
+    ["reload"] = "reload_drum_fast",
+    ["reload_empty"] = "reload_drum_fast_empty",
+}
+
+--- Fast & Tac. Sprint ---
+local Translate_Fast = {
+    ["reload"] = "reload_fast",
+    ["reload_empty"] = "reload_fast_empty",
+}
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
-        return "reload_drum_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
-        return "reload_drum_fast_empty"
-    --------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") then
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast_empty"
-    --------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_drum") then
-        return "reload_drum"
-    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
-        return "reload_drum_empty"
+    local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+    local drum = wep:HasElement("mag_drum")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
     end
-	
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
+
+    if speedload then
+        if drum then
+            if Translate_Drum_Fast[anim] then
+                return Translate_Drum_Fast[anim]
+            end
+        else
+            if Translate_Fast[anim] then
+                return Translate_Fast[anim]
+            end
+        end
+    else 
+        if drum then
+            if Translate_Drum[anim] then
+                return Translate_Drum[anim]
+            end
+        end
     end
-	
+
     wep.MWHybridSwitching = nil
     if anim == "switchsights" then
         if wep:HasElement("hybrid_scope") then
