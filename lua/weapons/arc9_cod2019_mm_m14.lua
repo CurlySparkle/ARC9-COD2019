@@ -529,7 +529,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_mike14_reload_mvmnt.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_mike14_reload_magout.ogg", t = 4/30},
+            {s = path .. "wfoly_sn_mike14_reload_magout.ogg", t = 6/30},
 			{s = path .. "wfoly_sn_mike14_reload_arm.ogg", t = 25/30},
 			{s = path .. "wfoly_sn_mike14_reload_magin_v2_01.ogg", t = 32/30},
 			{s = path .. "wfoly_sn_mike14_reload_magin_v2_02.ogg", t = 38/30},
@@ -551,14 +551,14 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sn_mike14_reload_empty_rotate.ogg", t = 0/30},
-            {s = path .. "wfoly_sn_mike14_reload_empty_magout.ogg", t = 10/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magout_arm.ogg", t = 11/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_mvmnt.ogg", t = 16/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 34/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 40/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_rotate.ogg", t = 47/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_charge.ogg", t = 57/30},
-			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 60/30},
+            {s = path .. "wfoly_sn_mike14_reload_empty_magout.ogg", t = 16/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magout_arm.ogg", t = 17/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_mvmnt.ogg", t = 22/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_01.ogg", t = 33/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_magin_v2_02.ogg", t = 39/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_rotate.ogg", t = 49/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_charge.ogg", t = 59/30},
+			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 62/30},
         },
     },
     ["reload_xmag2_fast"] = {
@@ -739,54 +739,77 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (wep, anim)
+--- 15 & 20 Round Mags ---
+local Translate_XMag = {
+    ["reload"] = "reload_xmag",
+    ["reload_empty"] = "reload_xmag_empty",
+}
+local Translate_XMag_Fast = {
+    ["reload"] = "reload_xmag_fast",
+    ["reload_empty"] = "reload_xmag_fast_empty",
+}
+local Translate_XMag2 = {
+    ["reload"] = "reload_xmag2",
+    ["reload_empty"] = "reload_xmag2_empty",
+}
+local Translate_XMag2_Fast = {
+    ["reload"] = "reload_xmag2_fast",
+    ["reload_empty"] = "reload_xmag2_fast_empty",
+}
+
+--- Fast & Tac. Sprint ---
+local Translate_Fast = {
+    ["reload"] = "reload_fast",
+    ["reload_empty"] = "reload_fast_empty",
+}
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
-	
---------------------------------------------------------------------------
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then
-        return "reload_xmag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag") then 
-        return "reload_xmag_fast_empty"
---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag2") then
-        return "reload_xmag2_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_xmag2") then 
-        return "reload_xmag2_fast_empty"
---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
-        return "reload_xmag2_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
-        return "reload_xmag2_fast_empty"
---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast_empty"
---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_xmag") then 
-        return "reload_xmag"
-    elseif anim == "reload_empty" and wep:HasElement("mag_xmag") then 
-        return "reload_xmag_empty"
---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_xmag2") then 
-        return "reload_xmag2"
-    elseif anim == "reload_empty" and wep:HasElement("mag_xmag2") then 
-        return "reload_xmag2_empty"
---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("ammo_extend") then 
-        return "reload_xmag2"
-    elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
-        return "reload_xmag2_empty"
---------------------------------------------------------------------------
+
+    local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+    local xmag = wep:HasElement("mag_xmag")
+    local xmag2 = wep:HasElement("mag_xmag2")
+    local ammoex = wep:HasElement("ammo_extend")
+
+    if ammoex and speedload and Translate_XMag2_Fast[anim] then
+        return Translate_XMag2_Fast[anim]
+    elseif ammoex and Translate_XMag2[anim] then
+        return Translate_XMag2[anim]
+    elseif super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
     end
-	
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
+
+    if speedload then
+        if xmag2 then
+            if Translate_XMag2_Fast[anim] then
+                return Translate_XMag2_Fast[anim]
+            end
+        elseif xmag then
+			if Translate_XMag_Fast[anim] then
+				return Translate_XMag_Fast[anim]
+            end
+        else
+            if Translate_Fast[anim] then
+                return Translate_Fast[anim]
+            end
+        end
+    else 
+        if xmag2 then
+            if Translate_XMag2[anim] then
+                return Translate_XMag2[anim]
+        elseif xmag then
+            if Translate_XMag[anim] then
+                return Translate_XMag[anim]
+            end
+        end
     end
+end
 	
     wep.MWHybridSwitching = nil
     if anim == "switchsights" then
