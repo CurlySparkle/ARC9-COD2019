@@ -971,6 +971,7 @@ SWEP.Animations = {
 
 --- Stock ---
 local Translate_Stock = {
+	["fire"] = "stock_fire",
 	["enter_sights"] = "stock_enter_sights",
 	["dryfire"] = "stock_dryfire",
     ["reload"] = "stock_reload",
@@ -990,6 +991,7 @@ local Translate_Stock = {
     ["bash"] = "stock_bash",
 }
 local Translate_Stock_Fast = {
+	["fire"] = "stock_fire",
 	["enter_sights"] = "stock_enter_sights",
 	["dryfire"] = "stock_dryfire",
     ["reload"] = "stock_reload_fast",
@@ -1107,7 +1109,7 @@ SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["cod2019_renetti_stock"] = {
-	CustomizeAng = Angle(0, 0, 0),
+	CustomizeAng = Angle(90, 0, 0),
 	CustomizePos = Vector(17, 25, 3),
     },
 }

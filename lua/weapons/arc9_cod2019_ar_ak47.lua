@@ -300,6 +300,8 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 SWEP.DropMagazineQCAHook = function(swep, old) 
   local curanim = swep:GetIKAnimation() or ""
   if curanim == "reload_smg_empty" then return 5 end
+  if curanim == "reload_smg_fast" then return 5 end
+  if curanim == "reload_smg_fast_empty" then return 5 end
 end
 
 -------------------------- SOUNDS
@@ -606,7 +608,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		DropMagAt = 0.85,
+		DropMagAt = 1.03,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
