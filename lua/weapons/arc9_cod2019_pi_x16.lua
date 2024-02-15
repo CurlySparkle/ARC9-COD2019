@@ -1007,7 +1007,15 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local xmagslrg = wep:HasElement("mag_xmagslrg")
 	local stock = wep:HasElement("cod2019_x16_stock")
 
-    if super_sprint and Translate_TacSprint[anim] then
+    if xmag and speedload and Translate_Stock_Fast[anim] then
+        return Translate_Stock_Fast[anim]
+    elseif xmagslrg and speedload and Translate_Stock_Fast[anim] then
+        return Translate_Stock_Fast[anim]
+    elseif xmag and Translate_Stock[anim] then
+        return Translate_Stock[anim]
+    elseif xmagslrg and Translate_Stock[anim] then
+        return Translate_Stock[anim]
+    elseif super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
     end
 
