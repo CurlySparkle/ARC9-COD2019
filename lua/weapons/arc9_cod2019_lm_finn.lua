@@ -1010,6 +1010,14 @@ SWEP.AttachmentElements = {
             {6,1},
         },
     },
+    ["ziptie"] = {
+        Bodygroups = {
+            {7,1},
+        },
+    },
+	["stock_none2"] = {
+    AttPosMods = { [7] = { Pos = Vector(-0.3, 0, 0.14), } }
+	}
 }
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -1026,6 +1034,15 @@ SWEP.Attachments = {
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+    },
+    {
+        PrintName = "Adverse",
+        Category = "cod2019_finn_ziptie",
+        Bone = "tag_barrel_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(4, 0, 0),
+		ExcludeElements = {"barrel_custom"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),

@@ -618,6 +618,38 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1 },
         },
     },
+    ["enter_bipod"] = {
+        Source = "bipod_in",
+    },
+    ["exit_bipod"] = {
+        Source = "bipod_out",
+    },
+    ["hybrid_on"] = {
+        Source = "hybrid_on",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = "Viewmodel.SwitchSight", t = 0/30},
+			{s = "switchsights/wpfoly_hybrid_toggle_on.ogg", t = 5/30},
+        },
+    },
+    ["hybrid_off"] = {
+        Source = "hybrid_off",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.5, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = "Viewmodel.SwitchSight", t = 0/30},
+			{s = "switchsights/wpfoly_hybrid_toggle_off.ogg", t = 5/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -674,6 +706,16 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
             end
+        end
+    end
+	
+    wep.MWHybridSwitching = nil
+    if anim == "switchsights" then
+        if wep:HasElement("hybrid_scope") then
+            wep.MWHybridSwitching = true
+            return wep:GetMultiSight() == 1 and "hybrid_on" or "hybrid_off"
+        else
+            return false
         end
     end
 end
@@ -778,7 +820,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
         Bone = "tag_scope",
-        Pos = Vector(1.5, 0, -0.1),
+        Pos = Vector(0.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_optic_sks", "cod2019_optic_big"},
         CorrectiveAng = Angle(0, 0, 0),
@@ -808,7 +850,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-2, 0, 0.05),
+        Pos = Vector(-1.5, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		--InstalledElements = {"grip_rail"},
@@ -908,3 +950,4 @@ SWEP.GripPoseParam2 = 0.5
 SWEP.CodStubbyGripPoseParam = 22
 SWEP.CodAngledGripPoseParam = 23
 SWEP.CodStubbyTallGripPoseParam = 20
+SWEP.BipodSlide = 0.85
