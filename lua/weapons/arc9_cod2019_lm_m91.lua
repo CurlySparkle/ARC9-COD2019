@@ -513,6 +513,127 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_end.ogg", t = 146/30},
         },
     },
+	["reload_scope"] = {
+        Source = "reload_scope",
+		MinProgress = 0.95,
+		FireASAP = true,
+		RefillProgress = 0.825,
+		MagSwapTime = 3,
+		DropMagAt = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.25, lhik = 1, rhik = 0 },
+            { t = 0.3, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_kilo121_reload_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_kilo121_reload_boltopen_01.ogg", t = 23/30},
+			{s = path .. "wfoly_lm_kilo121_reload_boltclose_01.ogg", t = 37/30},
+			{s = path .. "wfoly_lm_kilo121_reload_lower.ogg", t = 44/30},
+			{s = path .. "wfoly_lm_kilo121_reload_coveropen_01.ogg", t = 65/30},
+			{s = path .. "wfoly_lm_kilo121_reload_magout_01.ogg", t = 86/30},
+			{s = path .. "wfoly_lm_kilo121_reload_boxmag.ogg", t = 110/30},
+			{s = path .. "wfoly_lm_kilo121_reload_magin_01.ogg", t = 128/30},
+			{s = path .. "wfoly_lm_kilo121_reload_click_01.ogg", t = 151/30},
+			{s = path .. "wfoly_lm_kilo121_reload_coverclose_01.ogg", t = 174/30},
+			{s = path .. "wfoly_lm_kilo121_reload_end.ogg", t = 201/30},
+        },
+    },
+    ["reload_scope_empty"] = {
+        Source = "reload_scope_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.85,
+		MagSwapTime = 3,
+		DropMagAt = 4.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.225, lhik = 1, rhik = 0 },
+            { t = 0.275, lhik = 0, rhik = 0 },
+            { t = 0.875, lhik = 0, rhik = 0 },
+            { t = 0.925, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_kilo121_reload_empty_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_boltopen_01.ogg", t = 23/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_boltclose_01.ogg", t = 37/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_lower.ogg", t = 44/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_coveropen_01.ogg", t = 65/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_clean.ogg", t = 83/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_inspect.ogg", t = 106/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_magout_01.ogg", t = 114/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_raise_01.ogg", t = 126/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_boxmag.ogg", t = 142/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_magin_01.ogg", t = 155/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_beltmvmnt.ogg", t = 164/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_click_01.ogg", t = 176/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_mvmnt01.ogg", t = 193/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_coverclose_01.ogg", t = 201/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_end.ogg", t = 223/30},
+        },
+    },
+    ["reload_scope_fast"] = {
+        Source = "reload_fast_scope",
+		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.75,
+		MagSwapTime = 1.75,
+		DropMagAt = 2.2,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.25, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_kilo121_reload_fast_mvmnt.ogg", t = 1/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_boltopen_01.ogg", t = 8/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_boltclose_01.ogg", t = 17/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_coverrelease_01.ogg", t = 33/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_coveropen_01.ogg", t = 43/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_magout_01.ogg", t = 48/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_magin_01.ogg", t = 72/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_ammobelt_01.ogg", t = 79/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_cloth.ogg", t = 99/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_coverclose_01.ogg", t = 108/30},
+			{s = path .. "wfoly_lm_kilo121_reload_fast_end.ogg", t = 123/30},
+        },
+    },
+    ["reload_scope_fast_empty"] = {
+        Source = "reload_fast_scope_empty",
+		MinProgress = 0.9,
+		FireASAP = true,
+		RefillProgress = 0.75,
+		MagSwapTime = 1.75,
+		DropMagAt = 2.6,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.25, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 0, rhik = 0 },
+            { t = 0.875, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_boltopen_01.ogg", t = 8/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_boltclose_01.ogg", t = 18/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_lower.ogg", t = 30/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_mvmnt01.ogg", t = 40/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_coveropen_01.ogg", t = 45/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_magout_01.ogg", t = 69/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_rattle.ogg", t = 76/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_boxmag.ogg", t = 83/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_magin_01.ogg", t = 92/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_mvmnt02.ogg", t = 98/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_clean.ogg", t = 111/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_close.ogg", t = 125/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_cloth.ogg", t = 130/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_end.ogg", t = 146/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -659,6 +780,14 @@ local Translate_Fast = {
     ["reload"] = "reload_fast",
     ["reload_empty"] = "reload_fast_empty",
 }
+local Translate_Scope = {
+    ["reload"] = "reload_scope",
+    ["reload_empty"] = "reload_scope_empty",
+}
+local Translate_Scope_Fast = {
+    ["reload"] = "reload_scope_fast",
+    ["reload_empty"] = "reload_scope_fast_empty",
+}
 local Translate_TacSprint = {
     ["idle_sprint"] = "super_sprint_idle",
     ["enter_sprint"] = "super_sprint_in",
@@ -670,16 +799,23 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
+	local scope = wep:HasElement("optic_scope")
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
     end
 
     if speedload then
-        if Translate_Fast[anim] then
-            return Translate_Fast[anim]
-            end
-        end
+		if scope then
+			if Translate_Scope_Fast[anim] then return Translate_Scope_Fast[anim] end
+		else
+			if Translate_Fast[anim] then return Translate_Fast[anim] end
+		end
+	else
+		if scope then
+			if Translate_Scope[anim] then return Translate_Scope[anim] end
+		end
+	end
 	
     wep.MWHybridSwitching = nil
     if anim == "switchsights" then

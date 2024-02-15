@@ -759,13 +759,13 @@ end
 
 --- 60 Round Mags ---
 local Translate_SMag = {
-    ["fire"] = "fire_smag",
+    -- ["fire"] = "fire_smag",
     ["reload"] = "reload_smag",
     ["reload_empty"] = "reload_smag_empty",
     ["inspect"] = "inspect_smag",
 }
 local Translate_SMag_Fast = {
-    ["fire"] = "fire_smag",
+    -- ["fire"] = "fire_smag",
     ["reload"] = "reload_smag_fast",
     ["reload_empty"] = "reload_smag_fast_empty",
     ["inspect"] = "inspect_smag",
