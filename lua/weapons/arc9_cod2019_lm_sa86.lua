@@ -46,13 +46,13 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 37 -- Damage done at point blank range
-SWEP.DamageMin = 31 -- Damage done at maximum range
+SWEP.DamageMax = 29 -- Damage done at point blank range
+SWEP.DamageMin = 15 -- Damage done at maximum range
 
-SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
+SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 2000 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 7000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 20 / ARC9.HUToM -- How far bullets retain their maximum damage for.
+SWEP.RangeMax = 45 / ARC9.HUToM -- In Hammer units, how far bullets can travel before dealing DamageMin.
 
 SWEP.Penetration = 13 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.15

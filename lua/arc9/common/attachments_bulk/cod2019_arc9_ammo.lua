@@ -210,7 +210,7 @@ ATT.SortOrder = 0.6
 ATT.Category = {"cod2019_ammo_sniper","cod2019_ammo_special"}
 --ATT.RequireElements = {"cod2019_sniper_mag"}
 
-ATT.SpreadMult = 0.3
+--ATT.SpreadMult = 0.3
 ATT.RicochetChance = 0
 
 ATT.PhysBulletGravityMult = 3

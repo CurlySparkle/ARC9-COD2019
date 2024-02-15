@@ -53,7 +53,7 @@ SWEP.DamageMin = 70 -- Damage done at maximum range
 
 SWEP.Num = 1
 
-SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
+SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
 SWEP.RangeMin = 24 / ARC9.HUToM
 SWEP.RangeMax = 25 / ARC9.HUToM

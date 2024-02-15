@@ -52,7 +52,7 @@ SWEP.WorldModelOffset = {
 SWEP.DamageMax = 91 -- Damage done at point blank range
 SWEP.DamageMin = 55 -- Damage done at maximum range
 
-SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
+SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
 SWEP.RangeMin = 500 -- How far bullets retain their maximum damage for.
 SWEP.RangeMax = 3500 -- In Hammer units, how far bullets can travel before dealing DamageMin.

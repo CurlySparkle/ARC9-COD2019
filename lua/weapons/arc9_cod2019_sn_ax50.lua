@@ -53,7 +53,7 @@ SWEP.DamageMin = 54 -- Damage done at maximum range
 
 SWEP.Num = 1
 
-SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
+SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
 SWEP.RangeMin = 2000 -- How far bullets retain their maximum damage for.
 SWEP.RangeMax = 11000 -- In Hammer units, how far bullets can travel before dealing DamageMin.

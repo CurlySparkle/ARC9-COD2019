@@ -50,7 +50,7 @@ SWEP.WorldModelOffset = {
 SWEP.DamageMax = 31 -- Damage done at point blank range
 SWEP.DamageMin = 25 -- Damage done at maximum range
 
-SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
+SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
 SWEP.RangeMin = 21 / ARC9.HUToM
 SWEP.RangeMax = 44 / ARC9.HUToM

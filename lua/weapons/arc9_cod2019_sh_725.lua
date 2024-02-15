@@ -56,7 +56,7 @@ SWEP.DistributeDamage = true
 
 SWEP.Num = 6
 
-SWEP.DamageRand = 0.1 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
+SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
 SWEP.RangeMin = 20 / ARC9.HUToM
 SWEP.RangeMax = 20 / ARC9.HUToM
