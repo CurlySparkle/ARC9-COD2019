@@ -665,35 +665,44 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (wep, anim)
+--- 6-Round & 8-Round Mags, Fast and Tac. Sprint ---
+local Translate_Mag_Fast = {
+    ["reload"] = "reload_mag_fast",
+    ["reload_empty"] = "reload_mag_empty_fast",
+}
+local Translate_Fast = {
+    ["reload_start"] = "reload_start_fast",
+    ["reload_insert"] = "reload_insert_fast",
+    ["reload_finish"] = "reload_finish_fast",
+    ["reload_finish_empty"] = "reload_finish_empty_fast",
+}
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("shot_mag") then
-        return "reload_mag_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("shot_mag") then 
-        return "reload_mag_empty_fast"
---------------------------------------------------------------
-    -- elseif anim == "reload" and wep:HasElement("shot_mag") then 
-        -- return "reload_mag"
-    -- elseif anim == "reload_empty" and wep:HasElement("shot_mag") then 
-        -- return "reload_mag_empty"
---------------------------------------------------------------
-    elseif anim == "reload_start" and wep:HasElement("perk_speedreload") then
-        return "reload_start_fast"
-    elseif anim == "reload_insert" and wep:HasElement("perk_speedreload") then 
-        return "reload_insert_fast"
-    elseif anim == "reload_finish" and wep:HasElement("perk_speedreload") then 
-        return "reload_finish_fast"
-    elseif anim == "reload_finish_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_finish_empty_fast"
+    local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+    local mag = wep:HasElement("shot_mag")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
     end
-	
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
+
+    if speedload then
+	    if mag then
+            if Translate_Mag_Fast[anim] then
+                return Translate_Mag_Fast[anim]
+            end
+        else
+			if Translate_Fast[anim] then
+				return Translate_Fast[anim]
+            end
+        end
     end
 	
     wep.MWHybridSwitching = nil

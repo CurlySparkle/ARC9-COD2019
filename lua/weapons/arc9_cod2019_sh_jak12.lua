@@ -399,12 +399,12 @@ SWEP.Animations = {
             { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_mvmnt.ogg", t = 10/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 24/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 39/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 44/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 53/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0.0},
+			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 0.4},
+			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 1.45},
+			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 1.75},
+            {s = path .. "wfoly_sh_aalpha12_reload_mvmnt.ogg", t = 1.95},
+			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 2.1},
         },
     },
     ["reload_drum_empty"] = {
@@ -418,11 +418,11 @@ SWEP.Animations = {
             { t = 1.22, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltpull.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_magout.ogg", t = 21/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_magin.ogg", t = 51/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltforward.ogg", t = 70/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_end.ogg", t = 80/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltpull.ogg", t = 0.1},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_magout.ogg", t = 0.8},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_magin.ogg", t = 1.95},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltforward.ogg", t = 2.6},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_end.ogg", t = 3},
         },
     },
     ["reload_drum_fast"] = {
@@ -437,10 +437,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 5/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 28/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 33/30},
-			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 34/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 31/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 38/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 41/30},
         },
     },
     ["reload_drum_fast_empty"] = {
@@ -454,7 +454,7 @@ SWEP.Animations = {
             { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_sh_aalpha12_reload_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_sh_aalpha12_reload_empty_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_sh_aalpha12_reload_empty_magin.ogg", t = 35/30},
 			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltpull.ogg", t = 52/30},
 			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltforward.ogg", t = 58/30},
@@ -624,47 +624,56 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.Hook_TranslateAnimation = function (wep, anim)
+--- 32-Round Drum Mags ---
+local Translate_Drum = {
+    ["reload"] = "reload_drum",
+    ["reload_empty"] = "reload_drum_empty",
+    ["inspect"] = "inspect_drum",
+}
+local Translate_Drum_Fast = {
+    ["reload"] = "reload_drum_fast",
+    ["reload_empty"] = "reload_drum_fast_empty",
+    ["inspect"] = "inspect_drum",
+}
+
+--- Fast & Tac. Sprint ---
+local Translate_Fast = {
+    ["reload"] = "reload_fast",
+    ["reload_empty"] = "reload_fast_empty",
+}
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+}
+
+SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
-	
---------------------------------------------------------------------------
-    if anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then
-        return "reload_drum_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
-        return "reload_drum_fast_empty"
-    elseif anim == "inspect" and wep:HasElement("perk_speedreload") and wep:HasElement("mag_drum") then 
-        return "inspect_drum"
---------------------------------------------------------------------------
-    -- elseif anim == "reload" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then
-        -- return "reload_xmag_fast"
-    -- elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") and wep:HasElement("ammo_extend") then 
-        -- return "reload_xmag_fast_empty"
---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast"
-    elseif anim == "reload_empty" and wep:HasElement("perk_speedreload") then 
-        return "reload_fast_empty"
---------------------------------------------------------------------------
-    elseif anim == "reload" and wep:HasElement("mag_drum") then 
-        return "reload_drum"
-    elseif anim == "reload_empty" and wep:HasElement("mag_drum") then 
-        return "reload_drum_empty"
-    elseif anim == "inspect" and wep:HasElement("mag_drum") then 
-        return "inspect_drum"
---------------------------------------------------------------------------
-    -- elseif anim == "reload" and wep:HasElement("ammo_extend") then 
-        -- return "reload_xmag"
-    -- elseif anim == "reload_empty" and wep:HasElement("ammo_extend") then 
-        -- return "reload_xmag_empty"
---------------------------------------------------------------------------
+
+    local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+    local drum = wep:HasElement("mag_drum")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
     end
-	
-    if anim == "idle_sprint" and wep:HasElement("perk_super_sprint") then
-        return "super_sprint_idle"
-    elseif anim == "enter_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_in"
-    elseif anim == "exit_sprint" and wep:HasElement("perk_super_sprint") then 
-        return "super_sprint_out"
+
+    if speedload then
+        if drum then
+            if Translate_Drum_Fast[anim] then
+                return Translate_Drum_Fast[anim]
+            end
+        else
+            if Translate_Fast[anim] then
+                return Translate_Fast[anim]
+            end
+        end
+    else 
+        if drum then
+            if Translate_Drum[anim] then
+                return Translate_Drum[anim]
+            end
+        end
     end
 	
     wep.MWHybridSwitching = nil
