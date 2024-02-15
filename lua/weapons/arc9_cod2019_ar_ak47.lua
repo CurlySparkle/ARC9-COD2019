@@ -297,6 +297,11 @@ SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, 0)
 
+SWEP.DropMagazineQCAHook = function(swep, old) 
+  local curanim = swep:GetIKAnimation() or ""
+  if curanim == "reload_smg_empty" then return 5 end
+end
+
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/ak47/"
@@ -546,6 +551,98 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_end.ogg", t = 2.04},
         },
     },
+    ["reload_smg"] = {
+        Source = "reload_mw22",
+		MinProgress = 0.95,
+		PeekProgress = 0.865,
+		RefillProgress = 0.75,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0},
+            { t = 0.2, lhik = 0, rhik = 0},
+            { t = 0.75, lhik = 0, rhik = 0},
+            { t = 0.95, lhik = 1, rhik = 1},
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_akilo47_reload_grab.ogg", t = 0.033},
+            {s = path .. "wfoly_ar_akilo47_reload_fast_magout_02.ogg", t = 0.41},
+            {s = path .. "wfoly_ar_akilo47_reload_magin_v2_01.ogg", t = 1.13},
+			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_02.ogg", t = 1.53},
+            {s = path .. "wfoly_ar_akilo47_reload_maghit.ogg", t = 1.66},
+			{s = path .. "wfoly_ar_akilo47_reload_click.ogg", t = 1.83},
+			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 1.95},
+            {hide = 1, t = 0/30},
+            {hide = 0, t = 5/30},
+            {hide = 1, t = 60/30},
+        },
+    },
+    ["reload_smg_empty"] = {
+        Source = "reload_mw22_empty",
+		MinProgress = 0.95,
+		RefillProgress = 0.85,
+		FireASAP = true,
+		DropMagAt = 1.6,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0},
+            { t = 0.2, lhik = 1, rhik = 0},
+            { t = 0.3, lhik = 0, rhik = 0},
+            { t = 0.75, lhik = 0, rhik = 0},
+            { t = 0.8, lhik = 0, rhik = 0},
+            { t = 1.1, lhik = 1, rhik = 1},
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_twist.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_boltback_01.ogg", t = 7/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_maghit_01.ogg", t = 31/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_01.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 55/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_boltforward_01.ogg", t = 60/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_end.ogg", t = 66/30},
+        },
+    },
+    ["reload_smg_fast"] = {
+        Source = "reload_mw22_fast",
+		MinProgress = 0.85,
+		PeekProgress = 0.865,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		DropMagAt = 0.85,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0},
+            { t = 0.2, lhik = 0, rhik = 0},
+            { t = 0.7, lhik = 0, rhik = 0},
+            { t = 0.85, lhik = 1, rhik = 1},
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_akilo47_reload_fast_twist.ogg", t = 0.033},
+            {s = path .. "wfoly_ar_akilo47_reload_fast_magout_01.ogg", t = 0.066},
+			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_01.ogg", t = 0.73},
+			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_02.ogg", t = 1.1},
+			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_end.ogg", t = 1.06},
+        },
+    },
+    ["reload_smg_fast_empty"] = {
+        Source = "reload_mw22_fast_empty",
+		MinProgress = 0.85,
+		PeekProgress = 0.865,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		DropMagAt = 1.15,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0},
+            { t = 0.2, lhik = 0, rhik = 0},
+            { t = 0.7, lhik = 0, rhik = 0},
+            { t = 0.95, lhik = 1, rhik = 1},
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_twist.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_maghit_01.ogg", t = 0.13},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_01.ogg", t = 0.64},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 1.01},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_chamber_01.ogg", t = 1.36},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_end.ogg", t = 1.6},
+        },
+    },
     ["ready"] = {
         Source = "draw",
 		MinProgress = 0.95,
@@ -714,6 +811,16 @@ end
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
+--- 545 Mags ---
+local Translate_SMG = {
+    ["reload"] = "reload_smg",
+    ["reload_empty"] = "reload_smg_empty",
+}
+-- local Translate_SMG_Fast = {
+    -- ["reload"] = "reload_smg_fast",
+    -- ["reload_empty"] = "reload_smg_fast_empty",
+-- }
+
 --- Drum Mags ---
 local Translate_Drum = {
     ["reload"] = "reload_drum",
@@ -741,6 +848,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local drum = wep:HasElement("mag_drum")
+    local smg = wep:HasElement("mag_545")
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
@@ -756,10 +864,24 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
                 return Translate_Fast[anim]
             end
         end
+        -- if smg then
+            -- if Translate_SMG_Fast[anim] then
+                -- return Translate_SMG_Fast[anim]
+            -- end
+        -- else
+            -- if Translate_Fast[anim] then
+                -- return Translate_Fast[anim]
+            -- end
+        -- end
     else 
         if drum then
             if Translate_Drum[anim] then
                 return Translate_Drum[anim]
+            end
+        end
+        if smg then
+            if Translate_SMG[anim] then
+                return Translate_SMG[anim]
             end
         end
     end
