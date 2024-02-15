@@ -791,7 +791,13 @@ SWEP.AttachmentTableOverrides = {
 	Scale = 0.8,
     },
     ["go_grip_angled"] = {
-    ModelOffset = Vector(0.7, 0, 0.1),
+		ModelOffset = Vector(0.7, 0, 0.1),
+    },
+    ["cod2019_optic_hybrid_west02"] = {
+		ModelOffset = Vector(-3.25, 0, 0.1),
+    },
+    ["cod2019_optic_reflex_west05_hybrid"] = {
+		ModelOffset = Vector(-4, 0, 0.1),
     },
 }
 
@@ -884,7 +890,7 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic",},
+        Category = {"cod2019_optic", "cod2019_optic_big"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sights"},
 		Scale = 1,

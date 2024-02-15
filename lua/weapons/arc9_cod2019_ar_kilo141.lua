@@ -1036,7 +1036,7 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic",},
+        Category = {"cod2019_optic", "cod2019_optic_big"},
         CorrectiveAng = Angle(1.1, 0.85, 0),
 		InstalledElements = {"sights"},
     },

@@ -780,7 +780,7 @@ SWEP.Attachments = {
         Bone = "tag_scope",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic","cod2019_optic_sks"},
+        Category = {"cod2019_optic","cod2019_optic_sks", "cod2019_optic_big"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"rail_sight"},
     },

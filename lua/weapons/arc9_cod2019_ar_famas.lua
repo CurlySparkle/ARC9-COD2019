@@ -851,6 +851,8 @@ local Translate_Valorise = {
     ["reload_empty"] = "reload_empty_valorise",
 	["ready"] = "ready_valorise",
 	["holster"] = "holster_valorise",
+	["hybrid_on"] = "hybrid_on_valorise",
+	["hybrid_off"] = "hybrid_off_valorise",
 }
 local Translate_Valorise_Fast = {
     ["fire"] = "fire_valorise",
@@ -858,6 +860,8 @@ local Translate_Valorise_Fast = {
     ["reload_empty"] = "reload_fast_empty_valorise",
 	["ready"] = "ready_valorise",
 	["holster"] = "holster_valorise",
+	["hybrid_on"] = "hybrid_on_valorise",
+	["hybrid_off"] = "hybrid_off_valorise",
 }
 
 --- 50 & 60 Round Mags ---
@@ -923,11 +927,7 @@ end
     if anim == "switchsights" then
         if wep:HasElement("hybrid_scope") then
             wep.MWHybridSwitching = true
-			if wep:HasElement("railcust") then
-				return wep:GetMultiSight() == 1 and "hybrid_on_valorise" or "hybrid_off_valorise"
-			else
-				return wep:GetMultiSight() == 1 and "hybrid_on" or "hybrid_off"
-			end
+			return wep:GetMultiSight() == 1 and "hybrid_on" or "hybrid_off"
         else
             return false
         end
@@ -1037,13 +1037,13 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
-        Bone = "tag_holo",
+        Bone = "tag_scope",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic",},
+        Category = {"cod2019_optic", "cod2019_optic_big"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sights_none"},
-		ExcludeElements = {"railcust"},
+		-- ExcludeElements = {"railcust"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),

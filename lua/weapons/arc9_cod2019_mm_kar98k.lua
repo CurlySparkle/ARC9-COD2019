@@ -662,6 +662,14 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_crossbow_scope"] = {
 	ShotgunReload = true,
     },
+    ["cod2019_optic_hybrid_west02"] = {
+		ModelOffset = Vector(-2.75, 0, 0.1),
+		ShotgunReload = true,
+    },
+    ["cod2019_optic_reflex_west05_hybrid"] = {
+		ModelOffset = Vector(-4, 0, 0.1),
+		ShotgunReload = true,
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -747,7 +755,7 @@ SWEP.Attachments = {
         Bone = "tag_scope",
         Pos = Vector(2.5, 0, -0.07),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic","cod2019_optic_kar98k"},
+        Category = {"cod2019_optic","cod2019_optic_kar98k", "cod2019_optic_big"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"rail_sight"},
 		RejectAttachments = {

@@ -774,6 +774,12 @@ SWEP.AttachmentTableOverrides = {
     DropMagazineModel = "models/weapons/cod2019/attachs/weapons/grau556/attachment_vm_ar_sierra552_xmagslrg.mdl",
 	ActivateElements = {"mag_none","mag_xmag"}
     },
+    ["cod2019_optic_hybrid_west02"] = {
+		ModelOffset = Vector(-2.1, 0, 0.1),
+    },
+    ["cod2019_optic_reflex_west05_hybrid"] = {
+		ModelOffset = Vector(-3, 0, 0.1),
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -892,7 +898,7 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic",},
+        Category = {"cod2019_optic", "cod2019_optic_big"},
         CorrectiveAng = Angle(2.1, -0.1, 0),
 		InstalledElements = {"sight_front_folded","sight_back_none"},
     },
