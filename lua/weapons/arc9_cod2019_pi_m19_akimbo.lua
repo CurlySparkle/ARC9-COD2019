@@ -30,6 +30,11 @@ SWEP.ClipSizeOverride = SWEP.ClipSize * 2
 
 SWEP.RPM = SWEP.RPM * 1.75
 
+-------------------------- VISUAL RECOIL
+
+SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilSide = 0
+
 -------------------------- MELEE
 
 SWEP.SecondaryBash = true
@@ -386,7 +391,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
         Bone = "tag_reflex_l",
-        Pos = Vector(1.1, 0, 0),
+        Pos = Vector(1, 0, 0),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optics_pistols_alt","eft_optic_small"},
         CorrectiveAng = Angle(0, 0, 0),
@@ -415,7 +420,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
-        Category = "cod2019_grip",
+        Category = "cod2019_grip_m19",
         Bone = "tag_stock_attach_l",
         Pos = Vector(-2.8, 0, 0.2),
         Ang = Angle(0, 0, 180),
@@ -431,9 +436,8 @@ SWEP.Attachments = {
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach_l",
         Category = {"cod2019_ammo"},
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(1, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(-0.5, 0, 1.25),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
@@ -442,7 +446,6 @@ SWEP.Attachments = {
         Category = {"cod2019_mag","cod2019_m19_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(-0.25, 0, 2.5),
         DuplicateModels = {
             {
                 Bone = "tag_mag_attach",
@@ -495,9 +498,14 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = "killcounter",
-        Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, -1),
+        Bone = "tag_weapon_left",
+        Pos = Vector(-5., -0.6, 1.85),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
+        DuplicateModels = {
+            {
+                Bone = "tag_weapon",
+            }
+        },
     },
 }

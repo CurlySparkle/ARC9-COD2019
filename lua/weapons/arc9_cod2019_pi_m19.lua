@@ -36,34 +36,44 @@ SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
 SWEP.Slot = 1
 
 SWEP.MirrorVMWM = true
-SWEP.NoTPIKVMPos = false
+SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_pist_m19.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-12, 6, -7.5),
-    Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-12, 4, -5),
+    Pos = Vector(-11, 1.5, -5.25),
+    Ang = Angle(-5, 0, 190),
+    TPIKPos = Vector(-14, 3, -4.5),
     TPIKAng = Angle(0, 0, 175),
     Scale = 1
 }
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 33 -- Damage done at point blank range
-SWEP.DamageMin = 13 -- Damage done at maximum range
+SWEP.DamageMax = 36 -- Damage done at point blank range
+SWEP.DamageMin = 30 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 600 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 4000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 10 / ARC9.HUToM
+SWEP.RangeMax = 19 / ARC9.HUToM
 
 SWEP.Penetration = 2 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.2
 
 SWEP.ImpactForce = 8
 
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 2,
+    [HITGROUP_CHEST] = 1.175,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 0.925,
+    [HITGROUP_RIGHTARM] = 0.925,
+    [HITGROUP_LEFTLEG] = 0.925,
+    [HITGROUP_RIGHTLEG] = 0.925,
+}
+
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.PhysBulletMuzzleVelocity = 1100 * 12
+SWEP.PhysBulletMuzzleVelocity = 360 / ARC9.HUToM
 SWEP.PhysBulletGravity = 1.5
 SWEP.PhysBulletDrag = 1.15
 
@@ -82,7 +92,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 600
+SWEP.RPM = 333
 
 SWEP.Firemodes = {
     {
@@ -107,7 +117,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.1
 
-SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
@@ -119,6 +129,9 @@ SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 1
+
+SWEP.RecoilPerShot = 2
+SWEP.RecoilMax = 3
 
 -------------------------- VISUAL RECOIL
 
@@ -136,31 +149,32 @@ SWEP.VisualRecoilDampingConstSights = 50
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.0325
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.3
-SWEP.RecoilModifierCap = 5
+
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadAddMove = 0.025
+SWEP.SpreadAddMidAir = 0.045
+SWEP.SpreadAddCrouch = -0.03
+SWEP.SpreadAddSights = -(SWEP.Spread * 1.2)
+
+SWEP.SpreadMultRecoil = 1.1
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
-
-SWEP.SpreadAddMove = 0.05
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.015
-SWEP.SpreadAddCrouch = -0.01
-SWEP.SpreadAddSights = -0.5
-
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.2 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.1 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.15 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.24 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
 SWEP.Bash = true
 SWEP.PrimaryBash = false
-SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.15
+SWEP.PreBashTime = 0.15
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -201,15 +215,18 @@ SWEP.SprintPos = Vector(-1, -1, -1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(16, 25, 3)
-SWEP.CustomizeRotateAnchor = Vector(16, -2.25, -4)
+SWEP.CustomizePos = Vector(16, 25, 5)
+SWEP.CustomizeRotateAnchor = Vector(16, -2.25, -5)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
+SWEP.CustomizeSnapshotPos = Vector(0.5, -5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-2.5, -2, -3.5)
+SWEP.PeekPos = Vector(-2.5, -3.5, -3.5)
 SWEP.PeekAng = Angle(0, 0, -45)
+
+SWEP.PeekPosReloading = Vector(-1, -2.5, -2)
+SWEP.PeekAngReloading = Angle(0, 0, -20)
 
 -------------------------- HoldTypes
 
@@ -310,17 +327,20 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		PeekProgress = 0.775,
+		RefillProgress = 0.575,
 		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_start.ogg", t = 0/30},
@@ -334,13 +354,15 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_start.ogg", t = 0/30},
@@ -356,14 +378,16 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
+		PeekProgress = 0.75,
+		RefillProgress = 0.525,
 		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.45, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_fast_start.ogg", t = 0/30},
@@ -376,13 +400,15 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_fast_start.ogg", t = 0/30},
@@ -395,14 +421,16 @@ SWEP.Animations = {
     },
     ["reload_xmag"] = {
         Source = "reload_xmag",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		PeekProgress = 0.775,
+		RefillProgress = 0.575,
 		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_start.ogg", t = 0/30},
@@ -416,13 +444,15 @@ SWEP.Animations = {
     ["reload_xmag_empty"] = {
         Source = "reload_xmag_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_start.ogg", t = 0/30},
@@ -438,14 +468,16 @@ SWEP.Animations = {
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
 		MinProgress = 0.8,
+		PeekProgress = 0.75,
+		RefillProgress = 0.525,
 		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.45, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_start.ogg", t = 0/30},
@@ -460,13 +492,15 @@ SWEP.Animations = {
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_start.ogg", t = 0/30},
@@ -481,14 +515,16 @@ SWEP.Animations = {
     },
     ["reload_xmaglrg"] = {
         Source = "reload_xmaglrg",
-		MinProgress = 0.8,
+		MinProgress = 0.85,
+		PeekProgress = 0.775,
+		RefillProgress = 0.575,
 		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_start.ogg", t = 0/30},
@@ -502,13 +538,15 @@ SWEP.Animations = {
     ["reload_xmaglrg_empty"] = {
         Source = "reload_xmaglrg_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_start.ogg", t = 0/30},
@@ -524,14 +562,16 @@ SWEP.Animations = {
     ["reload_xmaglrg_fast"] = {
         Source = "reload_xmaglrg_fast",
 		MinProgress = 0.8,
+		PeekProgress = 0.75,
+		RefillProgress = 0.525,
 		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.45, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_start.ogg", t = 0/30},
@@ -546,13 +586,15 @@ SWEP.Animations = {
     ["reload_xmaglrg_fast_empty"] = {
         Source = "reload_xmaglrg_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_pi_papa320_reload_empty_start.ogg", t = 0/30},
@@ -568,10 +610,9 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
-            { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.5, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 1, rhik = 1 },
+            { t = 0, lhik = 0, rhik = 0 },
+            { t = 0.45, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_plr_pi_papa320_raise_first_start.ogg", t = 0/30},
@@ -640,8 +681,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_pi_papa320_inspect_01.ogg", t = 1/30},
@@ -824,16 +865,16 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
-        Bone = "j_mag1",
+        Bone = "tag_mag_attach",
         Category = {"cod2019_ammo"},
-        Pos = Vector(0, 0, -1.5),
+        Pos = Vector(1, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		DefaultIcon = Material("arc9/def_att_icons/mag_ar.png", "mips smooth"),
-		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+		Bone = "tag_mag_attach",
+        Category = {"cod2019_mag","cod2019_m19_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -887,8 +928,8 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = "killcounter",
-        Bone = "j_slide",
-        Pos = Vector(1.3, -0.6, -0.2),
+        Bone = "tag_weapon",
+        Pos = Vector(-5., -0.6, 1.85),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },

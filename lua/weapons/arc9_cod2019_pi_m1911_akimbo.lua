@@ -440,7 +440,6 @@ SWEP.Attachments = {
         Category = {"cod2019_ammo"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(-2.5, 0, -1.5),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
@@ -449,7 +448,6 @@ SWEP.Attachments = {
         Category = {"cod2019_mag","cod2019_m1911_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(-2.25, 0, -0.5),
         DuplicateModels = {
             {
                 Bone = "tag_mag_attach",

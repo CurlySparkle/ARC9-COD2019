@@ -466,9 +466,8 @@ SWEP.Attachments = {
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach_l",
         Category = "cod2019_ammo",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(1, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(-1, 0, 0.75),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
@@ -477,7 +476,6 @@ SWEP.Attachments = {
         Category = {"cod2019_mag","cod2019_renetti_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(-0.75, 0, 2),
         DuplicateModels = {
             {
                 Bone = "tag_mag_attach",

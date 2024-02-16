@@ -35,34 +35,44 @@ SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
 SWEP.Slot = 1
 
 SWEP.MirrorVMWM = true
-SWEP.NoTPIKVMPos = false
+SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_pist_357.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-12, 6, -7.5),
+    Pos = Vector(-7, 3.25, -5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-12, 4, -5),
+    TPIKPos = Vector(-13, 3, -4.5),
     TPIKAng = Angle(0, 0, 175),
     Scale = 1
 }
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 100 -- Damage done at point blank range
-SWEP.DamageMin = 28 -- Damage done at maximum range
+SWEP.DamageMax = 77 -- Damage done at point blank range
+SWEP.DamageMin = 52 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 400 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 1500 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 25 / ARC9.HUToM
+SWEP.RangeMax = 26 / ARC9.HUToM
 
 SWEP.Penetration = 4 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.35
 
 SWEP.ImpactForce = 11
 
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.4,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 0.95,
+    [HITGROUP_LEFTARM] = 0.915,
+    [HITGROUP_RIGHTARM] = 0.915,
+    [HITGROUP_LEFTLEG] = 0.915,
+    [HITGROUP_RIGHTLEG] = 0.915,
+}
+
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.PhysBulletMuzzleVelocity = 1921 * 12
+SWEP.PhysBulletMuzzleVelocity = 470 / ARC9.HUToM
 SWEP.PhysBulletGravity = 1.5
 SWEP.PhysBulletDrag = 2.5
 
@@ -81,7 +91,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 150
+SWEP.RPM = 120
 
 SWEP.Firemodes = {
     {
@@ -106,7 +116,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.1
 
-SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
@@ -119,6 +129,9 @@ SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.8
 
+SWEP.RecoilPerShot = 3
+SWEP.RecoilMax = 5
+
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
@@ -127,24 +140,25 @@ SWEP.VisualRecoilUp = 0
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.0325
 
-SWEP.SpreadAddRecoil = 0.02
-SWEP.SpreadMultRecoil = 1.3
+SWEP.SpreadAddRecoil = 0.01
+
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadAddMove = 0.025
+SWEP.SpreadAddMidAir = 0.045
+SWEP.SpreadAddCrouch = -0.03
+SWEP.SpreadAddSights = -(SWEP.Spread * 1.2)
+
+SWEP.SpreadMultRecoil = 1.1
 SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
-
-SWEP.SpreadAddMove = 0.05
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.015
-SWEP.SpreadAddCrouch = -0.01
-SWEP.SpreadAddSights = -0.5
-
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.1 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.1 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.25 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.149 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -192,10 +206,10 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(14, 25, 3)
-SWEP.CustomizeRotateAnchor = Vector(14, -2.25, -4)
+SWEP.CustomizePos = Vector(13.5, 25, 4)
+SWEP.CustomizeRotateAnchor = Vector(13.5, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
+SWEP.CustomizeSnapshotPos = Vector(1, -5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -551,7 +565,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac_pistols",
         Bone = "tag_laser_attach",
-        Pos = Vector(-1.1, 0, 0),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"rail_laser"},
     },
@@ -562,15 +576,16 @@ SWEP.Attachments = {
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 180),
+		Icon_Offset = Vector(0, 0, 2),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
-        Bone = "j_mag1",
+        Bone = "j_gun",
         Category = "cod2019_ammo",
-        Pos = Vector(0, 0, -1.5),
+        Pos = Vector(-7, 0, 2.25),
         Ang = Angle(0, 0, 0),
     },
     {
@@ -628,7 +643,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = "killcounter",
         Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-3, 0.05, -1.7),
         Ang = Angle(0, 0, 0),
 		CosmeticOnly = true,
     },

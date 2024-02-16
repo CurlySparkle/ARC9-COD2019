@@ -260,31 +260,33 @@ SprintToFireTime: 0.3 > 0.375
 
 [Handguns]
 - .50 GS
-DamageMax: 
-DamageMin: 
-RangeMax: 
-RangeMin: 
-PhysBulletMuzzleVelocity: 
-AimDownSightsTime: 
-SprintToFireTime: 
+RPM: 200 > 167
+DamageMin: 55 > 65
+RangeMax: 102m > 18m
+RangeMin: 15m > 17m
+PhysBulletMuzzleVelocity: 541 m/s > 470 m/s
+AimDownSightsTime: 0.1 > 0.23
+SprintToFireTime: 0.1 > 0.149
 
 - .357
-DamageMax: 
-DamageMin: 
-RangeMax: 
-RangeMin: 
-PhysBulletMuzzleVelocity: 
-AimDownSightsTime: 
-SprintToFireTime: 
+RPM: 150 > 120
+DamageMax: 100 > 77
+DamageMin: 28 > 52
+RangeMax: 38m > 26m
+RangeMin: 10m > 25m
+PhysBulletMuzzleVelocity: 586 m/s > 440 m/s
+AimDownSightsTime: 0.1 > 0.25
+SprintToFireTime: 0.1 > 0.149
 
 - M19
-DamageMax: 
-DamageMin: 
-RangeMax: 
-RangeMin: 
-PhysBulletMuzzleVelocity: 
-AimDownSightsTime: 
-SprintToFireTime: 
+RPM: 600 > 333
+DamageMax: 33 > 36
+DamageMin: 13 > 30
+RangeMax: 102m > 19m
+RangeMin: 15m > 10m
+PhysBulletMuzzleVelocity: 335 m/s > 360 m/s
+AimDownSightsTime: 0.2 > 0.15
+SprintToFireTime: 0.1 > 0.24
 
 - 1911
 DamageMax: 

@@ -161,24 +161,24 @@ L["mw19_category_reargrip"] = "Задняя рукоять"
 L["mw19_category_perk"] = "Перк"
 
 -- Specific to the Crossbow Marksman Rifle
-L["mw19_category_cable"] = "Cable"
-L["mw19_category_arms"] = "Arms"
-L["mw19_category_bolt"] = "Bolt"
+L["mw19_category_cable"] = "Трос"
+L["mw19_category_arms"] = "Плечи"
+L["mw19_category_bolt"] = "Болт"
 
 -- Specific to Handguns
-L["mw19_category_triggeraction"] = "Trigger Action"
+L["mw19_category_triggeraction"] = "Спусковой механизм"
 
 -- Specific to the R9-0 Shotgun
-L["mw19_category_pumps"] = "Pumps"
+L["mw19_category_pumps"] = "Помпы"
 
 -- Specific to the 725 Shotgun
-L["mw19_category_guard"] = "Guard"
+L["mw19_category_guard"] = "Спусковая скоба"
 
 -- Specific to the VLK Rogue Shotgun
-L["mw19_category_pumpgrip"] = "Pump Grip"
+L["mw19_category_pumpgrip"] = "Помповая рукоять"
 
 -- Specific to the SP-R 208 Marksman Rifle
-L["mw19_category_boltassembly"] = "Bolt Assembly"
+L["mw19_category_boltassembly"] = "Затворный механизм"
 
 -- Custom ones for the addon
 L["mw19_category_ammo"] = "Ammo" -- UO
