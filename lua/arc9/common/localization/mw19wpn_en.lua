@@ -18,6 +18,12 @@ local missingloc = "\n\nNote: Non-Localized string; Subscribe to <color=255,255,
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Various Universal Information
+//////////////////// Settings
+L["settings.mw19"] = "Addon - MW19"
+L["settings.mw19.warzonestats"] = "Warzone Stats"
+L["settings.mw19.warzonestats.title"] = "Enable Warzone Stats"
+L["settings.mw19.warzonestats.desc"] = "Changes the stats on all* weapons and attachments to have stats more accurate to Modern Warfare 2019 / Warzone.\n\nThis is a server variable. Requires restart to take affect.\n\n\n*Some weapons and attachments will not behave differently."
+
 //////////////////// Trivia
 /////////// Caliber -- UO
 L["mw19_caliber"] = "Caliber1"

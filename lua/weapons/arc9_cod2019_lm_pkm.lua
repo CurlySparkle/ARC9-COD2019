@@ -862,69 +862,7 @@ SWEP.CodAngledGripPoseParam = 40
 SWEP.CodStubbyTallGripPoseParam = 22
 SWEP.CodStubbyGripPoseParam = 26
 
--- SWEP.EFTshellsfunnytable = {
-    -- ["j_b_07"] = true,
-    -- ["j_b_08"] = true,
-    -- ["j_b_09"] = true,
-    -- ["j_b_10"] = true,
-    -- ["j_b_11"] = true,
-    -- ["j_b_12"] = true,
-    -- ["j_b_13"] = true,
-    -- ["j_b_14"] = true,
-    -- ["j_b_15"] = true,
-    -- ["j_b_16"] = true,
--- }
+-- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
+if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
 
--- SWEP.Hook_PrimaryAttack = function(swep)
-    -- local gets = swep:GetEFTShootedRounds()
-    -- if gets > math.random(20,25) then
-        -- swep:SetEFTShootedRounds(0)
-        -- swep:DropMagazine()
-    -- else
-        -- swep:SetEFTShootedRounds(gets + 1)
-        -- -- swep:DropMagazine()
-    -- end
--- end
-
--- SWEP.Hook_HideBones = function(swep, bons)
-    -- if bons["j_mag1"] then return bons end -- hiding everything
-
-    -- local gets = swep:GetEFTShootedRounds()
-    
-    -- for i = 1, 25 do 
-        -- local funnynum = string.format("%03d", i)
-
-        -- if i > gets then
-            -- swep.EFTshellsfunnytable["j_b_" .. funnynum] = true 
-        -- else
-            -- swep.EFTshellsfunnytable["j_b_" .. funnynum] = false  
-        -- end
-    -- end
-    -- return swep.EFTshellsfunnytable
--- end
-
--- SWEP.DropMagazineModel = "models/weapons/cod2019/mags/pkm_belt_dropped.mdl"
-
--- SWEP.DropMagazineModelHook = function(swep, old)
-    -- if swep:GetReloading() then
-        -- return "models/weapons/cod2019/mags/w_lmg_pkm_mag.mdl"
-    -- end
-    -- return "models/weapons/cod2019/mags/pkm_belt_dropped.mdl"
--- end
-
--- local funnyvec = Vector(-100, 0, 0)
--- local funnyvec2 = Vector(-40, 30, 0)
--- SWEP.DropMagazineVelocityHook = function(swep, old)
-    -- if swep:GetReloading() then return funnyvec end
-    -- return funnyvec2
--- end
-
--- -- ewww
--- DEFINE_BASECLASS(SWEP.Base)
--- function SWEP:SetupDataTables(...)
-    -- BaseClass.SetupDataTables(self, ...)
-    -- self:NetworkVar("Int", 11, "EFTShootedRounds")
-    -- --self:NetworkVar("Bool", 27, "EFTArmedDryfire")
-    -- self:SetEFTShootedRounds(0)
-    -- --self:SetEFTArmedDryfire(true)
--- end
+end

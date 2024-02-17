@@ -18,6 +18,12 @@ local missingloc = "\n\nNotis: Icke-lokaliserad text; Prenumerera på <color=255
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Various Universal Information
+//////////////////// Settings
+L["settings.mw19"] = "Tillägg - MW19"
+L["settings.mw19.warzonestats"] = "Warzone-Statistik"
+L["settings.mw19.warzonestats.title"] = "Aktivera Warzone-Statistik"
+L["settings.mw19.warzonestats.desc"] = "Ändrar statistiken på alla* vapen och tillbehör så dem har statistik som är mer likt Modern Warfare 2019 / Warzone.\n\nDetta är en servervariabel. Kräver omstart för att ta effekt.\n\n\n*Vissa vapen och tillbehör kommer inte bete sig annorlunda."
+
 //////////////////// Trivia
 /////////// Caliber -- UO
 L["mw19_caliber"] = "Kaliber1"
