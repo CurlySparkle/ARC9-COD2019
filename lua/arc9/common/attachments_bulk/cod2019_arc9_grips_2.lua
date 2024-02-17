@@ -1,3 +1,5 @@
+local statcon = GetConVar("arc9_mw19_stats_warzone"):GetBool()
+
 local ATT = {}
 ------------------------------------------------------------------ SIDE GRIPS
 ATT = {}
@@ -15,11 +17,21 @@ ATT.Category = "cod2019_grips_side"
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Folder = ARC9:GetPhrase("mw19_folder_side2")
 
-ATT.AimDownSightsTimeAdd = 0.019
-ATT.VisualRecoilMult = 0.8
-ATT.RecoilMult = 0.8
-ATT.SpeedMult = 0.96
-ATT.SpeedMultSights = 0.84
+if statcon then
+	ATT.AimDownSightsTimeAdd = 0.011
+	ATT.VisualRecoilMult = 0.91
+	ATT.RecoilMult = 0.91
+	ATT.SpreadMultHipFire = 0.947
+	ATT.SpeedMult = 0.98
+	ATT.SpeedMultSights = 0.85
+	ATT.RecoilRandomSideMult = 0.95
+else
+	ATT.AimDownSightsTimeAdd = 0.019
+	ATT.VisualRecoilMult = 0.8
+	ATT.RecoilMult = 0.8
+	ATT.SpeedMult = 0.96
+	ATT.SpeedMultSights = 0.84
+end
 
 ATT.LHIK_Priority = 10
 ATT.LHIK = true
