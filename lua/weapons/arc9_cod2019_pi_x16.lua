@@ -179,8 +179,8 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(0.65, 0, 3.35),
-    Ang = Angle(0, 0, 20),
+    Pos = Vector(0.7, 0, 3.3),
+    Ang = Angle(0, 0.25, 21),
     Magnification = 1.15,
 	CrosshairInSights = false
 }
@@ -190,7 +190,7 @@ SWEP.IronSightsHook = function(self) -- If any attachments equipped should alter
 
     if attached["cod2019_x16_stock"] then
         return {
-			Pos = Vector(-3.625, -6, 0.85),
+			Pos = Vector(-3.625, -4, 0.85),
 			Ang = Angle(0, 0.1, 0),
 			Magnification = 1.15,
 			CrosshairInSights = false

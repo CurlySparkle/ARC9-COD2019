@@ -316,7 +316,7 @@ SWEP.AttachmentTableOverrides = {
 	FiremodesOverride = {
     {
         Mode = 6,
-		RPM = 882 * 2,
+		RPMMult = 1.25,
         RunawayBurst = true,
 		TracerEffect = "ARC9_tracer"
     },

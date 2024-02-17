@@ -182,8 +182,8 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3.5, -3, 1.2),
-    Ang = Angle(0, 0, -4.5),
+    Pos = Vector(-3.485, -3, 1.25),
+    Ang = Angle(0, 0.2, -3.5),
     Magnification = 1.1,
     ViewModelFOV = 56,
     CrosshairInSights = false
@@ -220,8 +220,8 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
 
-SWEP.PeekPos = Vector(-1, 4, -4)
-SWEP.PeekAng = Angle(-0.3, 0, -45)
+SWEP.PeekPos = Vector(2, 0.5, -1.5)
+SWEP.PeekAng = Angle(0, 0, -10)
 
 SWEP.PeekMaxFOV = 54
 

@@ -289,22 +289,22 @@ AimDownSightsTime: 0.2 > 0.15
 SprintToFireTime: 0.1 > 0.24
 
 - 1911
-DamageMax: 
-DamageMin: 
-RangeMax: 
-RangeMin: 
-PhysBulletMuzzleVelocity: 
-AimDownSightsTime: 
-SprintToFireTime: 
+RPM: 500 > 286
+DamageMax: 33 > 36
+DamageMin: 16 > 30
+RangeMax: 76m > 24m
+AimDownSightsTime: 0.1 > 0.15
+SprintToFireTime: 0.1 > 0.244
 
 - Renetti
-DamageMax: 
-DamageMin: 
-RangeMax: 
-RangeMin: 
-PhysBulletMuzzleVelocity: 
-AimDownSightsTime: 
-SprintToFireTime: 
+RPM: 600 > 353
+DamageMax: 33 > 36
+DamageMin: 18 > 30
+RangeMax: 108m > 20m
+RangeMin: 15m > 10m
+PhysBulletMuzzleVelocity: 396 m/s > 253 m/s
+AimDownSightsTime: 0.2 > 0.15
+SprintToFireTime: 0.2 > 0.244
 
 - Sykov
 DamageMax: 

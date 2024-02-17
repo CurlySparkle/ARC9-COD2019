@@ -438,7 +438,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach_l",
         Category = {"cod2019_ammo"},
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(1, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
