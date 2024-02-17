@@ -438,7 +438,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach_l",
         Category = {"cod2019_ammo"},
-        Pos = Vector(1, 0, 0),
+        Pos = Vector(-0.5, 0, -3),
         Ang = Angle(0, 0, 0),
     },
     {
@@ -446,7 +446,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("arc9/def_att_icons/mag_ar.png", "mips smooth"),
 		Bone = "tag_mag_attach_l",
         Category = {"cod2019_mag","cod2019_m1911_mag"},
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-1.5, 0, -3),
         Ang = Angle(0, 0, 0),
         DuplicateModels = {
             {
