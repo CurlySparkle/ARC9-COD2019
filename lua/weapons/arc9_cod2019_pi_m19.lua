@@ -48,13 +48,13 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 36 -- Damage done at point blank range
-SWEP.DamageMin = 30 -- Damage done at maximum range
+SWEP.DamageMax = 26 -- Damage done at point blank range
+SWEP.DamageMin = 18 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
 SWEP.RangeMin = 10 / ARC9.HUToM
-SWEP.RangeMax = 19 / ARC9.HUToM
+SWEP.RangeMax = 28 / ARC9.HUToM
 
 SWEP.Penetration = 2 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.2
@@ -92,7 +92,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 333
+SWEP.RPM = 600
 
 SWEP.Firemodes = {
     {
@@ -104,25 +104,25 @@ SWEP.Firemodes = {
 -- General recoil multiplier
 SWEP.Recoil = 1
 
---SWEP.RecoilSeed = nil
+SWEP.RecoilSeed = 610312
 
 SWEP.RecoilPatternDrift = 35
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.3 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomUp = 0.1
+SWEP.RecoilRandomSide = 0.3
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 1.36
 
 SWEP.RecoilMultCrouch = 0.8
 
@@ -141,11 +141,23 @@ SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilPunch = 2.5
 SWEP.VisualRecoilUp = 0.2
 SWEP.VisualRecoilRoll = 3
-SWEP.VisualRecoilSide = -1/6
+SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 20
 SWEP.VisualRecoilDampingConstSights = 50
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- SPREAD
 
@@ -160,7 +172,7 @@ SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -(SWEP.Spread * 1.2)
 
 SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCap = 1.5
 SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
@@ -222,11 +234,13 @@ SWEP.CustomizeSnapshotPos = Vector(0.5, -5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-2.5, -3.5, -3.5)
+SWEP.PeekPos = Vector(-2.5, -1.5, -3.5)
 SWEP.PeekAng = Angle(0, 0, -45)
 
 SWEP.PeekPosReloading = Vector(-1, -2.5, -2)
 SWEP.PeekAngReloading = Angle(0, 0, -20)
+
+SWEP.PeekMaxFOV = 54
 
 -------------------------- HoldTypes
 
@@ -658,7 +672,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 10,
+		Mult = 4.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.35, lhik = 1, rhik = 1 },
@@ -959,6 +973,8 @@ SWEP.BodyDamageMults = {
     [HITGROUP_LEFTLEG] = 0.925,
     [HITGROUP_RIGHTLEG] = 0.925,
 }
+
+SWEP.RecoilModifierCap = 3
 
 -------------------------- PHYS BULLET BALLISTICS
 SWEP.PhysBulletMuzzleVelocity = 360 / ARC9.HUToM

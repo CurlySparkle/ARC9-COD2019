@@ -47,13 +47,13 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 36 -- Damage done at point blank range
-SWEP.DamageMin = 30 -- Damage done at maximum range
+SWEP.DamageMax = 51 -- Damage done at point blank range
+SWEP.DamageMin = 22 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 13 / ARC9.HUToM
-SWEP.RangeMax = 24 / ARC9.HUToM
+SWEP.RangeMin = 7 / ARC9.HUToM
+SWEP.RangeMax = 23 / ARC9.HUToM
 
 SWEP.Penetration = 1 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.25
@@ -91,7 +91,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 286
+SWEP.RPM = 450
 
 SWEP.Firemodes = {
     {
@@ -103,7 +103,7 @@ SWEP.Firemodes = {
 -- General recoil multiplier
 SWEP.Recoil = 1
 
---SWEP.RecoilSeed = nil
+SWEP.RecoilSeed = 123456
 
 SWEP.RecoilPatternDrift = 2
 
@@ -121,7 +121,7 @@ SWEP.RecoilResetTime = 0.05 -- How long the gun must go before the recoil patter
 
 SWEP.RecoilAutoControl = 1
 
-SWEP.RecoilKick = 1.5
+SWEP.RecoilKick = 1.7
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
@@ -169,7 +169,7 @@ SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -(SWEP.Spread * 1.2)
 
 SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCap = 1
 SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
@@ -231,11 +231,13 @@ SWEP.CustomizeSnapshotPos = Vector(0.5, -5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-3.5, -4, -3)
+SWEP.PeekPos = Vector(-2.5, 0, -3)
 SWEP.PeekAng = Angle(0, 0, -45)
 
 SWEP.PeekPosReloading = Vector(-1, -1, -2)
 SWEP.PeekAngReloading = Angle(0, 0, -20)
+
+SWEP.PeekMaxFOV = 54
 
 -------------------------- HoldTypes
 
@@ -953,5 +955,14 @@ SWEP.GripPoseParam2 = 0.6
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 36 -- Damage done at point blank range
+SWEP.DamageMin = 30 -- Damage done at maximum range
 
+SWEP.RangeMin = 13 / ARC9.HUToM
+SWEP.RangeMax = 24 / ARC9.HUToM
+-------------------------- FIREMODES
+SWEP.RPM = 286
+
+SWEP.RecoilModifierCap = 3
 end

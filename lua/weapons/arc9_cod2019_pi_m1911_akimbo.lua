@@ -181,7 +181,7 @@ SWEP.Animations = {
         Source = "reload_fast",
 		MinProgress = 0.725,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.5,
+		DropMagAt = 0.6,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -410,11 +410,11 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
-		LaserCorrectionAngle = Angle(0, 0, 0),
+		--LaserCorrectionAngle = Angle(0, 0, 0),
         DuplicateModels = {
             {
                 Bone = "tag_laser_attach",
-				LaserCorrectionAngle = Angle(0, 0, 0),
+				--LaserCorrectionAngle = Angle(0, 0, 0),
             }
         },
     },

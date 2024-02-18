@@ -48,13 +48,13 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 91 -- Damage done at point blank range
-SWEP.DamageMin = 65 -- Damage done at maximum range
+SWEP.DamageMax = 59 -- Damage done at point blank range
+SWEP.DamageMin = 28 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 16 / ARC9.HUToM
-SWEP.RangeMax = 17 / ARC9.HUToM
+SWEP.RangeMin = 10 / ARC9.HUToM
+SWEP.RangeMax = 30 / ARC9.HUToM
 
 SWEP.Penetration = 4 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.35
@@ -92,7 +92,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 167
+SWEP.RPM = 200
 
 SWEP.Firemodes = {
     {
@@ -104,7 +104,7 @@ SWEP.Firemodes = {
 -- General recoil multiplier
 SWEP.Recoil = 3
 
---SWEP.RecoilSeed = nil
+SWEP.RecoilSeed = 4445523
 
 SWEP.RecoilPatternDrift = 35
 
@@ -958,5 +958,11 @@ SWEP.GripPoseParam2 = 0.6
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+SWEP.DamageMax = 91 -- Damage done at point blank range
+SWEP.DamageMin = 65 -- Damage done at maximum range
 
+SWEP.RangeMin = 16 / ARC9.HUToM
+SWEP.RangeMax = 17 / ARC9.HUToM
+
+SWEP.RPM = 167
 end
