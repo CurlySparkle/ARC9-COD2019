@@ -117,7 +117,7 @@ SWEP.RecoilSide = 1.5 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.1
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.3
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -459,7 +459,7 @@ SWEP.Animations = {
         Source = "holster",
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.15, lhik = 0, rhik = 1 },
+            { t = 0.4, lhik = 0, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_ar_asierra12_drop.ogg", t = 0/30},
@@ -738,7 +738,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		DefaultIcon = Material("arc9/def_att_icons/mag_ar.png", "mips smooth"),
 		Bone = "j_mag1",
-        Category = {"cod2019_mag"},
+        Category = {"cod2019_mag","cod2019_oden_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -746,7 +746,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
 		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
         DefaultAttName = "Standard Stock",
-        Category = "cod2019_oden_stocks",
+        Category = "cod2019_oden_stock",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -809,7 +809,7 @@ SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 25
 SWEP.CodStubbyTallGripPoseParam = 22
-SWEP.CodStubbyGripPoseParam = 6
+SWEP.CodStubbyGripPoseParam = 17
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then

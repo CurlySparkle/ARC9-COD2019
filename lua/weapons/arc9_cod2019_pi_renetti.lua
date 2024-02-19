@@ -48,13 +48,13 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 36 -- Damage done at point blank range
-SWEP.DamageMin = 30 -- Damage done at maximum range
+SWEP.DamageMax = 28 -- Damage done at point blank range
+SWEP.DamageMin = 17 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
 SWEP.RangeMin = 10 / ARC9.HUToM
-SWEP.RangeMax = 20 / ARC9.HUToM
+SWEP.RangeMax = 25 / ARC9.HUToM
 
 SWEP.Penetration = 2 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.2
@@ -92,7 +92,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 353
+SWEP.RPM = 600
 
 SWEP.Firemodes = {
     {
@@ -104,18 +104,18 @@ SWEP.Firemodes = {
 -- General recoil multiplier
 SWEP.Recoil = 1.1
 
---SWEP.RecoilSeed = nil
+SWEP.RecoilSeed = 610312
 
-SWEP.RecoilPatternDrift = 35
+SWEP.RecoilPatternDrift = 1
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 0.3 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.3
+SWEP.RecoilRandomUp = 0.1
+SWEP.RecoilRandomSide = 0.5
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -139,7 +139,7 @@ SWEP.VisualRecoilPunchSights = 15
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.1
 SWEP.VisualRecoilRoll = 55
-SWEP.VisualRecoilSide = 0.3
+SWEP.VisualRecoilSide = 0.1
 
 --SWEP.VisualRecoilSpringPunchDamping = 11
 --SWEP.VisualRecoilDampingConst = 10
@@ -158,7 +158,7 @@ SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -(SWEP.Spread * 1.2)
 
 SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCap = 1.7
 SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
@@ -1377,5 +1377,13 @@ SWEP.CodAngledGripPoseParam = 37
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+SWEP.DamageMax = 36 -- Damage done at point blank range
+SWEP.DamageMin = 30 -- Damage done at maximum range
 
+SWEP.RangeMin = 10 / ARC9.HUToM
+SWEP.RangeMax = 20 / ARC9.HUToM
+
+SWEP.RecoilModifierCap = 3
+
+SWEP.RPM = 353
 end
