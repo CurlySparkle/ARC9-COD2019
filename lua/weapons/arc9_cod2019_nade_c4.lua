@@ -144,7 +144,7 @@ SWEP.Animations = {
         Source = "draw",
         EventTable = {
             {s = path .. "weap_detpack_pullout.ogg", t = 0/30},
-            {s = path .. "weap_detpack_button.ogg", t = 8/30},
+            {s = path .. "weap_detpack_button.ogg", t = 8/30, v = 0.1,},
         },
     },
     ["holster"] = {
