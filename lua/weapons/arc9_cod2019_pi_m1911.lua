@@ -4,6 +4,8 @@ if CLIENT then
     killicon.Add( "arc9_cod2019_pi_m1911_akimbo", "vgui/killicons/cod2019_pi_akimbo_m1911.png", Color(251, 85, 25, 255))
 end
 
+SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_pi_m1911.png"
+
 SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true

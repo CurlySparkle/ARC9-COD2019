@@ -4,6 +4,8 @@ if CLIENT then
 end
 
 
+SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_lm_pkm.png"
+
 SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true

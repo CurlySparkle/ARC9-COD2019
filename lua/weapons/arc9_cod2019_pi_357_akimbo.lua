@@ -5,6 +5,8 @@ SWEP.PrintName = string.format( ARC9:GetPhrase("mw19_weapon_akimbo"), SWEP.Print
 
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_handgun_akimbo") or "Akimbos"
 
+SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_pi_357_akimbo.png"
+
 SWEP.ViewModel = "models/weapons/cod2019/c_akimbo_357.mdl"
 SWEP.WorldModel = "models/weapons/cod2019/w_pist_50gs.mdl"
 

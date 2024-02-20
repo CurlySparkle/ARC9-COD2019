@@ -3,6 +3,8 @@ SWEP.Base = "arc9_cod2019_base_nade"
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_throwable") or "Throwable"
 
+SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_nade_c4.png"
+
 SWEP.Spawnable = true
 SWEP.AdminOnly = false
 SWEP.NoDynamicKillIcon = false

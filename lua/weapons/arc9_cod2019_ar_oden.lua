@@ -3,6 +3,8 @@ if CLIENT then
     killicon.Add( "arc9_cod2019_ar_oden", "vgui/killicons/cod2019_ar_oden.png", Color(251, 85, 25, 255))
 end
 
+SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_ar_oden.png"
+
 SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
@@ -511,8 +513,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.4, lhik = 0, rhik = 0 },
-            { t = 0.6, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_ar_asierra12_inspect_01.ogg", t = 0},
