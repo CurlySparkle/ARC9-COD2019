@@ -133,6 +133,14 @@ table.Merge(ATT, stats_heavy)
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 
+ATT.DrawFunc = function(swep, model, wm)
+    if swep:GetElements()["universal_camo"] then
+        model:SetSkin(1)
+    else
+        model:SetSkin(0)
+    end
+end
+
 ARC9.LoadAttachment(ATT, "cod2019_stock_m4")
 -------------------------------------------------------------------------------
 ATT = {}
