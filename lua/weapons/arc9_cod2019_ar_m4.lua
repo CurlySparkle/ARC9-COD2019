@@ -322,22 +322,22 @@ SWEP.EnterSightsSound = path .. "wfoly_ar_mike4_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_ar_mike4_ads_down.ogg"
 
 SWEP.BulletBones = {
-    [1] = "j_b_01",
-    [2] = "j_b_02",
-    [3] = "j_b_03",
-    [4] = "j_b_04",
-    [5] = "j_b_05",
-    [6] = "j_b_06",
-    [7] = "j_b_07",
-    [8] = "j_b_08",
-    [9] = "j_b_09",
-    [10] = "j_b_10",
-    [11] = "j_b_11",
-    [12] = "j_b_12",
-    [13] = "j_b_13",
-    [14] = "j_b_14",
-    [15] = "j_b_15",
-    [16] = "j_b_16",
+    [1] = {"j_b_01"},
+    [2] = {"j_b_02"},
+    [3] = {"j_b_03"},
+    [4] = {"j_b_04"},
+    [5] = {"j_b_05"},
+    [6] = {"j_b_06"},
+    [7] = {"j_b_07"},
+    [8] = {"j_b_08"},
+    [9] = {"j_b_09"},
+    [10] = {"j_b_010"},
+    [11] = {"j_b_011"},
+    [12] = {"j_b_012"},
+    [13] = {"j_b_013"},
+    [14] = {"j_b_014"},
+    [15] = {"j_b_015"},
+    [16] = {"j_b_016"},
 }
 
 SWEP.HideBones  = {
@@ -676,8 +676,8 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_fast_lift_v2.ogg", t = 0/30},
 			{s = path .. "wpfoly_mike4_reload_fast_magout_v2.ogg", t = 5/30},
-			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 27/30},
-			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 30/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 22/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 25/30},
 			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 35/30},
         },
     },
@@ -918,17 +918,17 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     end
 
     if speedload then
-        if xmag then
-            if Translate_XMag_Fast[anim] then
-                return Translate_XMag_Fast[anim]
+        if smg then
+            if Translate_SMG_Fast[anim] then
+                return Translate_SMG_Fast[anim]
             end
         elseif xmagslrg then
             if Translate_XMagslrg_Fast[anim] then
                 return Translate_XMagslrg_Fast[anim]
             end
-		elseif smg then
-            if Translate_SMG_Fast[anim] then
-                return Translate_SMG_Fast[anim]
+		elseif xmag then
+            if Translate_XMag_Fast[anim] then
+                return Translate_XMag_Fast[anim]
             end 
         else
             if Translate_Fast[anim] then
@@ -936,16 +936,16 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             end
         end
     else 
-        if xmag then
-            if Translate_XMag[anim] then
-                return Translate_XMag[anim]
+        if smg then
+            if Translate_SMG[anim] then
+                return Translate_SMG[anim]
             end
         elseif xmagslrg then
             if Translate_XMagslrg[anim] then
                 return Translate_XMagslrg[anim]
 		elseif smg then
-            if Translate_SMG[anim] then
-                return Translate_SMG[anim]
+            if Translate_XMag[anim] then
+                return Translate_XMag[anim]
             end
         end
     end
@@ -962,7 +962,7 @@ end
     end
 end
 
-SWEP.DefaultBodygroups = "00000000000000"
+SWEP.DefaultBodygroups = "000000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -1102,6 +1102,8 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	model:SetBodygroup(1,3)
 	model:SetBodygroup(7,2)
 	end
+	
+    if wep:HasElement("barrel_custom") then model:SetBodygroup(7,2) end
 
     local camo = 0
     if attached["universal_camo"] then
@@ -1147,6 +1149,7 @@ SWEP.Attachments = {
         Bone = "tag_laser_attach",
         Pos = Vector(2.7, 0, -0.1),
         Ang = Angle(0, 0, 180),
+		ExcludeElements = {"barrel_m16"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
