@@ -919,7 +919,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     end
 end
 
-SWEP.DefaultBodygroups = "0000000000000000"
+SWEP.DefaultBodygroups = "0000000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -989,6 +989,12 @@ SWEP.AttachmentElements = {
 			{4,1},
         },
     },
+	["stock_none"] = {
+        Bodygroups = {
+            {2,2},
+			{4,2},
+        },
+    },
     ["barrel_none"] = {
         Bodygroups = {
             {5,1},
@@ -1007,7 +1013,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
-    if wep:HasElement("barrel_long") then model:SetBodygroup(7,2) end
+    if wep:HasElement("barrel_long") or wep:HasElement("barrel_custom") then model:SetBodygroup(7,2) end
 end
 
 
@@ -1063,11 +1069,11 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
 		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
         DefaultAttName = "Standard Stock",
-        Category = {"stock_retract","cod2019_tube"},
+        Category = {"stock_retract","cod2019_tube","cod2019_m13_stock"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_adapter"},
+		--InstalledElements = {"stock_adapter"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
