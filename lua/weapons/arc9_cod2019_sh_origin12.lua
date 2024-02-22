@@ -486,7 +486,8 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.5, lhik = 0, rhik = 0 },
-            { t = 0.9, lhik = 1, rhik = 1 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
@@ -700,9 +701,10 @@ SWEP.Animations = {
         FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.15, lhik = 0, rhik = 0 },
+            { t = 0.08, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.95, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sh_oscar12_inspect_01.ogg", t = 0.0},
@@ -859,6 +861,10 @@ SWEP.AttachmentTableOverrides = {
 	ModelOffset = Vector(-4, 0, -0.7),
 	ModelAngleOffset = Angle(0, 0, 180),
     },
+    ["cod2019_origin12_grip_none2"] = {
+	ModelOffset = Vector(-4.2, 0, 1.35),
+	ModelAngleOffset = Angle(0, 0, 180),
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -953,7 +959,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
         DefaultAttName = "Default",
-        Category = {"cod2019_grip","cod2019_grip_none"},
+        Category = {"cod2019_grip","cod2019_grip_none","cod2019_origin12_grip"},
         Bone = "tag_grip_attach",
         Pos = Vector(-3.5, 0, 0),
         Ang = Angle(0, 0, 180),
