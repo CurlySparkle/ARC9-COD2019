@@ -876,7 +876,6 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		Icon_Offset = Vector(-4, 0, -1),
-		InstalledElements = {"rail_grip"},
     },
     -- {
         -- PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
