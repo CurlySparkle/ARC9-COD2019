@@ -810,7 +810,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		DefaultIcon = Material("arc9/def_att_icons/mag_ar.png", "mips smooth"),
-		Bone = "j_mag1",
+		Bone = "tag_mag_attach",
         Category = {"cod2019_mag","cod2019_jak12_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
