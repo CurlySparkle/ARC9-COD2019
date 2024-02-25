@@ -37,7 +37,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_jokr.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-9, 8, -4),
     Ang = Angle(-17, 3, 190),
-    TPIKPos = Vector(-4, 7.5, -5),
+    TPIKPos = Vector(-10, 7.5, -5),
     TPIKAng = Angle(-9, 0, 175),
     Scale = 1
 }
@@ -48,7 +48,7 @@ SWEP.NoAimAssist = true
 -------------------------- DAMAGE PROFILE
 
 SWEP.ShootEnt = "arc9_cod2019_proj_strela_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 5000
+SWEP.ShootEntForce = 6000
 
 SWEP.ShootPosOffset = Vector(5, 10, -5)
 SWEP.ShootPosOffsetSights = Vector(5, 10, -5)
@@ -192,13 +192,18 @@ SWEP.IronSights = {
     CrosshairInSights = false
 }
 
+--- RT Reticle ---
 SWEP.RTScope = true
 SWEP.RTScopeSubmatIndex = 7
 SWEP.RTScopeFOV = 56 / 2 -- FOV multiplied by zoom level
 SWEP.RTScopeReticle = Material("hud/arc9_cod2019/overlays/jokr_crosshair.png")
-SWEP.RTScopeColorable = true
-SWEP.RTScopeShadowIntensity = 1
+SWEP.RTScopeColorable = false
+SWEP.RTScopeShadowIntensity = 0
+SWEP.RTScopeNoShadow = true
+SWEP.RTScopeBlackBox = true
+SWEP.RTScopeBlackBoxShadow = false
 SWEP.ScopeScreenRatio = 1
+--------------------------
 
 SWEP.ViewModelFOVBase = 65
 
@@ -228,7 +233,7 @@ SWEP.SprintPos = Vector(1, 0, -2.5)
 SWEP.SprintAng = Angle(0, -2, 0)
 
 SWEP.CustomizeAng = Angle(90, -5, 7)
-SWEP.CustomizePos = Vector(3, 30, 4)
+SWEP.CustomizePos = Vector(6, 37, 6)
 SWEP.CustomizeRotateAnchor = Vector(3, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
@@ -259,10 +264,6 @@ SWEP.CamQCA = 3
 SWEP.CamQCA_Mult = 1
 
 SWEP.NoShellEject = true
-
-SWEP.HookP_BlockFire = function(self)
-    return self:GetSightAmount() < 1
-end
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
@@ -304,6 +305,10 @@ SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
 SWEP.TriggerUpSound = ""
+
+SWEP.HookP_BlockFire = function(self)
+    return self:GetSightAmount() < 1
+end
 
 SWEP.Animations = {
 	["enter_sights"] = {
@@ -388,23 +393,23 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 3,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 2,
+		Mult = 3,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2,
+		Mult = 3,
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2,
+		Mult = 3,
     },
     ["inspect"] = {
         Source = "lookat01",
