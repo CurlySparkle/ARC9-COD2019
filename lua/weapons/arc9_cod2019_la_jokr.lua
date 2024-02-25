@@ -25,7 +25,7 @@ SWEP.Credits = {
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_javelin_desc") or [[Fire and forget lock-on portable missile launcher with a large explosive yield. Infrared guided missiles take a top-attack trajectory, ensuring destruction of heavily armored vehicles.]]
 
-SWEP.ViewModel = "models/weapons/cod2019/c_eq_strela.mdl"
+SWEP.ViewModel = "models/weapons/cod2019/c_eq_jokr.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
