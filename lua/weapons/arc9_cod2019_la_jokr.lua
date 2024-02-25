@@ -156,6 +156,27 @@ SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
 SWEP.PostBashTime = 0.6
 
+-------------------------- LOCKON -- RESOURCE INTENSIVE - INVESTIGATE?
+
+-- SWEP.LockOnSights = true
+
+-- SWEP.LockOnAutoaim = true -- Gun will shoot directly towards lockon target
+
+-- SWEP.LocksLiving = true -- Locks on to any NPC or player
+-- SWEP.LocksGround = true -- Will lock on to any entity deemed a ground target and not an air target
+-- SWEP.LocksAir = true -- Will lock on to any entity deemed an air target, and not a ground target
+
+-- SWEP.LockOnRange = 100000 -- How far away the lockon can be
+-- SWEP.LockOnFOV = 10 -- How wide the lockon can be
+-- SWEP.LockedOnFOV = 20 -- FOV needed to maintain a lock
+
+-- SWEP.LockOnTime = 0.5 -- How long it takes to lock on, in seconds
+
+-- SWEP.LockOnSound = nil -- Sound to play when locking on
+-- SWEP.LockedOnSound = nil -- Sound to play when successfully locked target
+
+-- SWEP.LockOnHUD = true -- Show a box around locked targets
+
 -------------------------- TRACERS
 
 SWEP.TracerNum = 1 -- Tracer every X
@@ -164,12 +185,20 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.3, -5, 0.7),
-    Ang = Angle(-0.4, 6, 15),
+    Pos = Vector(-1.475, -10, 0.86),
+    Ang = Angle(0, 15, 9.25),
     Magnification = 1.25,
     ViewModelFOV = 56,
     CrosshairInSights = false
 }
+
+SWEP.RTScope = true
+SWEP.RTScopeSubmatIndex = 7
+SWEP.RTScopeFOV = 56 / 2 -- FOV multiplied by zoom level
+SWEP.RTScopeReticle = Material("hud/arc9_cod2019/overlays/jokr_crosshair.png")
+SWEP.RTScopeColorable = true
+SWEP.RTScopeShadowIntensity = 1
+SWEP.ScopeScreenRatio = 1
 
 SWEP.ViewModelFOVBase = 65
 
@@ -533,11 +562,3 @@ SWEP.Attachments = {
 		CosmeticOnly = true,
     },
 }
-
-SWEP.RTScope = true
-SWEP.RTScopeSubmatIndex = 8
-SWEP.RTScopeFOV = 10
-SWEP.RTScopeReticle = Material("hud/arc9_cod2019/overlays/jokr_crosshair.png")
-SWEP.RTScopeColorable = true
-SWEP.RTScopeShadowIntensity = 1
-SWEP.ScopeScreenRatio = 1
