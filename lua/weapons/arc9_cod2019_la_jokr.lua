@@ -534,7 +534,10 @@ SWEP.Attachments = {
     },
 }
 
-SWEP.GripPoseParam = 3
-SWEP.GripPoseParam2 = 0.5
-SWEP.CodStubbyGripPoseParam = 8
-SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.RTScope = true
+SWEP.RTScopeSubmatIndex = 8
+SWEP.RTScopeFOV = 10
+SWEP.RTScopeReticle = Material("hud/arc9_cod2019/overlays/jokr_crosshair.png")
+SWEP.RTScopeColorable = true
+SWEP.RTScopeShadowIntensity = 1
+SWEP.ScopeScreenRatio = 1
