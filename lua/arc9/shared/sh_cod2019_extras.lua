@@ -358,6 +358,18 @@ sound.Add( {
 } )
 
 sound.Add( {
+    name = "COD2019.JOKR.Fire",
+    channel = CHAN_WEAPON,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/jokr/weap_juliet_launch_01.ogg",
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Crossbow.Fire",
     channel = CHAN_WEAPON,
     volume = 1.0,
