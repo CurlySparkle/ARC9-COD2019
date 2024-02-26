@@ -32,7 +32,7 @@ SWEP.DefaultBodygroups = "00000000"
 SWEP.Slot = 3
 
 SWEP.MirrorVMWM = true
-SWEP.NoTPIKVMPos = true
+SWEP.NoTPIKVMPos = false
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_jokr.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-9, 8, -4),
@@ -185,10 +185,10 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-1.475, -10, 0.86),
+    Pos = Vector(-0.65, -5, 1.59),
     Ang = Angle(0, 15, 9.25),
     Magnification = 1.25,
-    ViewModelFOV = 56,
+    ViewModelFOV = 16,
     CrosshairInSights = false
 }
 
@@ -272,8 +272,8 @@ SWEP.CrouchAng = Angle(0, 0, -5)
 SWEP.SprintPos = Vector(1, 0, -2.5)
 SWEP.SprintAng = Angle(0, -2, 0)
 
-SWEP.CustomizeAng = Angle(90, -5, 7)
-SWEP.CustomizePos = Vector(6, 37, 6)
+SWEP.CustomizeAng = Angle(90, -5, 20)
+SWEP.CustomizePos = Vector(8, 37, 3)
 SWEP.CustomizeRotateAnchor = Vector(3, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
@@ -343,7 +343,7 @@ SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before sh
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
+SWEP.TriggerDownSound = ""
 SWEP.TriggerUpSound = ""
 
 SWEP.HookP_BlockFire = function(self)

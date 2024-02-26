@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "models\cod2019\jokr\wpn_p29_la_juliet_missile_v0_rgb"
-    "$bumpmap" "models\cod2019\jokr\wpn_p29_la_juliet_missile_v0_n"
-    "$phongexponenttexture" "models\cod2019\jokr\wpn_p29_la_juliet_missile_v0_e"
+    "$basetexture" "models\cod2019\jokr\weapon_vm_la_juliet_tube_rocket_rgb"
+    "$bumpmap" "models\cod2019\jokr\weapon_vm_la_juliet_tube_rocket_n"
+    "$phongexponenttexture" "models\cod2019\jokr\weapon_vm_la_juliet_tube_rocket_e"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
@@ -20,7 +20,7 @@
     /////////////////
 
     "$envmap" "env_cubemap"
-    "$envmaptint" "[0.216 0.212 0.204]"                 
+    "$envmaptint" "[0.098 0.098 0.098]"                 
 
     //remove this if not using MWB
     "Proxies"
@@ -29,7 +29,7 @@
         {
             "min" "0"
             "max" "1"
-            "color" "[0.216 0.212 0.204]"
+            "color" "[0.098 0.098 0.098]"
         }
     }
 }

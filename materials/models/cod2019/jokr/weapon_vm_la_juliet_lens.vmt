@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-	"$basetexture"			"models/cod2019/jokr/wpn_p29_la_juliet_sight1_lens_v0_rgb"
-	"$bumpmap"				"models/cod2019/jokr/wpn_p29_la_juliet_sight1_lens_v0_n" 
-	"$phongexponenttexture"	"models/cod2019/jokr/wpn_p29_la_juliet_sight1_lens_v0_e"
+	"$basetexture"			"models/cod2019/jokr/weapon_vm_la_juliet_lens_rgb"
+	"$bumpmap"				"models/cod2019/jokr/weapon_vm_la_juliet_lens_n" 
+	"$phongexponenttexture"	"models/cod2019/jokr/weapon_vm_la_juliet_lens_e"
 	
 	$phong	"1"
 	$phongboost	"0.5"
