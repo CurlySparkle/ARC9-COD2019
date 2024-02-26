@@ -733,12 +733,17 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
+    ["rail_sidegrip"] = {
+        Bodygroups = {
+            {6,1},
+        },
+    },
 }
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("barrel_long") then model:SetBodygroup(6,0) end
+end
 
 SWEP.Attachments = {
     {
@@ -788,6 +793,19 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+        DefaultAttName = "Default",
+        Category = {"cod2019_grips_side","cod2019_origin12_grips"},
+        Category = {"cod2019_grips_side"},
+        Bone = "tag_grip_attach",
+        Pos = Vector(-1.5, -1, 1.84),
+        Ang = Angle(0, 0, 180),
+		Scale = 1,
+		InstalledElements = {"rail_sidegrip"},
+		Hidden = true,
+        MergeSlots = {5},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
