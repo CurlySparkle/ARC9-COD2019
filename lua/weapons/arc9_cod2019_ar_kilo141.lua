@@ -990,6 +990,12 @@ SWEP.AttachmentElements = {
 			{6,0},
         },
     },
+    ["stock_none"] = {
+        Bodygroups = {
+            {3,2},
+			{6,0},
+        },
+    },
     ["sights"] = {
         Bodygroups = {
             {5,1},
@@ -1069,7 +1075,7 @@ SWEP.Attachments = {
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_adapter"},
+		--InstalledElements = {"stock_adapter"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),

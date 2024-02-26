@@ -200,10 +200,50 @@ SWEP.RTScopeReticle = Material("hud/arc9_cod2019/overlays/jokr_crosshair.png")
 SWEP.RTScopeColorable = false
 SWEP.RTScopeShadowIntensity = 0
 SWEP.RTScopeNoShadow = true
-SWEP.RTScopeBlackBox = true
+SWEP.RTScopeBlackBox = false
 SWEP.RTScopeBlackBoxShadow = false
 SWEP.ScopeScreenRatio = 1
---------------------------
+SWEP.RTScopeReticleScale = 1
+
+SWEP.RTScopeFLIR = true
+SWEP.RTScopeFLIRSolid = false -- Solid color FLIR instead of like a shaded look
+SWEP.RTScopeFLIRCCCold = { -- Color correction drawn only on FLIR targets
+    [ "$pp_colour_addr" ] = 0,
+    [ "$pp_colour_addg" ] = 0,
+    [ "$pp_colour_addb" ] = 0,
+    [ "$pp_colour_brightness" ] = 1.54,
+    [ "$pp_colour_contrast" ] = 0.1,
+    [ "$pp_colour_colour" ] = 0,
+    [ "$pp_colour_mulr" ] = 0,
+    [ "$pp_colour_mulg" ] = 0,
+    [ "$pp_colour_mulb" ] = 0
+}
+SWEP.RTScopeFLIRCCHot = { -- Color correction drawn only on FLIR targets
+    ["$pp_colour_addr"] = 1,
+    ["$pp_colour_addg"] = 1,
+    ["$pp_colour_addb"] = 1,
+    ["$pp_colour_brightness"] = -0.59,
+    ["$pp_colour_contrast"] = 1,
+    ["$pp_colour_colour"] = 0,
+    ["$pp_colour_mulr"] = 0,
+    ["$pp_colour_mulg"] = 0,
+    ["$pp_colour_mulb"] = 0
+}
+
+local noise = Material("models/cod2019/shared/mw19_thermalnoise")
+local shadow = Material("arc9/shadow_square")
+
+SWEP.RTScopeDrawFunc = function(swep, rtsize)
+cam.Start2D()
+surface.SetMaterial(noise)
+surface.SetDrawColor(255,255,255)
+surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), (rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), rtsize, rtsize, math.Rand(0, 360))
+surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), (rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), rtsize * 2, rtsize * 2, math.Rand(0, 360))
+cam.End2D()
+
+DrawBloom( 0.65, 2, 9, 9, 1, 1, 1, 1, 1 )
+end
+----------------------------------------------------
 
 SWEP.ViewModelFOVBase = 65
 
@@ -350,7 +390,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_la_juliet_reload_start.ogg", t = 1/30},
-			{s = path .. "wfoly_la_juliet_reload_rocketin_01.ogg", t = 21/30},
+			{s = path .. "wfoly_la_juliet_reload_rocketin_01.ogg", t = 10/30},
 			{s = path .. "wfoly_la_juliet_reload_end.ogg", t = 34/30},
         },
     },

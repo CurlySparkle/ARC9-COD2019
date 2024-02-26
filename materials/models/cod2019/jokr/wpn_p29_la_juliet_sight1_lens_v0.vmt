@@ -1,0 +1,23 @@
+"VertexlitGeneric"
+{
+	"$basetexture"			"models/cod2019/jokr/wpn_p29_la_juliet_sight1_lens_v0_rgb"
+	"$bumpmap"				"models/cod2019/jokr/wpn_p29_la_juliet_sight1_lens_v0_n" 
+	"$phongexponenttexture"	"models/cod2019/jokr/wpn_p29_la_juliet_sight1_lens_v0_e"
+	
+	$phong	"1"
+	$phongboost	"0.5"
+	$phongexponent	"30"
+	$phongfresnelranges	"[1 0.5 0]"
+
+	$envmap	"env_cubemap"
+	$envmaptint	"[.5 .5 .5]"
+	$normalmapalphaenvmapmask	"1"
+	$envmapfresnel	"5"
+
+	$rimlight	"1"
+	$rimmask	"1"
+	$rimlightboost	"1"
+	$rimlightexponent	"100"
+}
+
+
