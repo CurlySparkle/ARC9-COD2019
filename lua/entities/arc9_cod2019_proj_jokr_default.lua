@@ -25,18 +25,6 @@ ENT.SmokeTrail = true
 ENT.FlareColor = Color(155, 155, 155)
 ENT.Radius = 300
 
-ENT.SeekerAngle = math.cos(math.rad(35))
-ENT.SteerSpeed = 5000
-ENT.Boost = 1500
-ENT.Lift = 80
-
-ENT.FireAndForget = true
-ENT.TopAttack = true -- This missile flies up above its target before going down in a top-attack trajectory.
-ENT.TopAttackHeight = 5000
-ENT.SuperSeeker = false
-ENT.SuperSteerBoostTime = 5
-ENT.NoReacquire = true
-
 function ENT:Impact(data, collider)
     if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
         local attacker = self.Attacker or self:GetOwner()
