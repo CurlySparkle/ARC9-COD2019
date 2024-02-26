@@ -13,7 +13,7 @@ SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_frag") or "Frag"
-SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Grenade"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Grenade"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_frag_desc") or [[Cookable fragmentation grenade.]]
 
 SWEP.Credits = {
@@ -117,6 +117,10 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
 SWEP.ShootPosOffset = Vector(1, 5, 1)
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- HoldTypes
 

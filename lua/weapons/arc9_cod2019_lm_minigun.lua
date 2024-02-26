@@ -9,7 +9,7 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
-SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_special") or "Specials"
+SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_lmg") or "Specials"
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_minigun") or "Minigun"
 
@@ -17,11 +17,11 @@ SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Machine Guns"
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_usa"),
     [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_fss"),
-    [ ARC9:GetPhrase("mw19_caliber") ] = "7.62×51mm NATO",
-    [ ARC9:GetPhrase("mw19_weight") ] = "19 kg",
-    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "147 gr",
-    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,800 ft/s",
-    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "3,470 joules"
+    [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_762"),
+    [ ARC9:GetPhrase("mw19_weight") ] = string.format(ARC9:GetPhrase("mw19_weight_val"), 19, 19 * 2.20),
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = string.format(ARC9:GetPhrase("mw19_weight_projectile_val"), 147),
+    -- [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,800 ft/s",
+    -- [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "3,470 joules"
 }
 
 SWEP.Credits = {

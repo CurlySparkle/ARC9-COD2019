@@ -17,11 +17,11 @@ SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_marksman") or "Marksman Rifle"
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_usa"),
     [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_sloan"),
-    [ ARC9:GetPhrase("mw19_caliber") ] = ".300 Winchester Magnum",
-    [ ARC9:GetPhrase("mw19_weight") ] = "5 kg",
-    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "180 gr",
-    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,480 ft/s",
-    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "3,333 joules"
+    [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_300"),
+    [ ARC9:GetPhrase("mw19_weight") ] = string.format(ARC9:GetPhrase("mw19_weight_val"), 5, 5 * 2.20),
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = string.format(ARC9:GetPhrase("mw19_weight_projectile_val"), 180),
+    -- [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,480 ft/s",
+    -- [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "3,333 joules"
 }
 
 SWEP.Credits = {
@@ -178,6 +178,10 @@ SWEP.SpeedMultShooting = 0.9
 
 SWEP.AimDownSightsTime = 0.35 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being able to fire.
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- MELEE
 

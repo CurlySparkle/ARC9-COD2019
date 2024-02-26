@@ -11,7 +11,7 @@ SWEP.NoDynamicKillIcon = false
 SWEP.NotForNPCs = true
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_c4") or "C4"
-SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Special Explosives"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Special Explosives"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_c4_desc") or [[Large explosive that sticks to surfaces and can be detonated remotely with Right Click.]]
 
 SWEP.Trivia = {
@@ -120,6 +120,10 @@ SWEP.ShootPosOffset = Vector(0, 15, -2)
 
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- HoldTypes
 

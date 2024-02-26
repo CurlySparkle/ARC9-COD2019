@@ -17,11 +17,11 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_pkm") or "PKM"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lmg") or "Light Machine Gun"
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_sovietunion"),
-    [ ARC9:GetPhrase("mw19_caliber") ] = "7.62×54mmR",
-    [ ARC9:GetPhrase("mw19_weight") ] = "9.2 kg",
-    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "181 gr",
-    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,707 ft/s",
-    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "3,994 joules"
+    [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_762mmr"),
+    [ ARC9:GetPhrase("mw19_weight") ] = string.format(ARC9:GetPhrase("mw19_weight_val"), 9.2, 9.2 * 2.20),
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = string.format(ARC9:GetPhrase("mw19_weight_projectile_val"), 181),
+    -- [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,707 ft/s",
+    -- [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "3,994 joules"
 }
 
 SWEP.Credits = {

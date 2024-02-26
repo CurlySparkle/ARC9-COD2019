@@ -16,11 +16,11 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_dragunov") or "Dragunov"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_sniper") or "Sniper Rifle"
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_switzerland"),
-    [ ARC9:GetPhrase("mw19_caliber") ] = "7.62×54mmR",
-    [ ARC9:GetPhrase("mw19_weight") ] = "4.4 kg",
-    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "144 gr",
-    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,723 ft/s",
-    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "3,215 joules"
+    [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_762mmr"),
+    [ ARC9:GetPhrase("mw19_weight") ] = string.format(ARC9:GetPhrase("mw19_weight_val"), 4.4, 4.4 * 2.20),
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = string.format(ARC9:GetPhrase("mw19_weight_projectile_val"), 144),
+    -- [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,723 ft/s",
+    -- [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "3,215 joules"
 }
 
 SWEP.Credits = {

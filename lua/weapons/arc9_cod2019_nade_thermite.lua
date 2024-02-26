@@ -13,7 +13,7 @@ SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_thermite") or "Thermite Nade"
-SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Grenade"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Grenade"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_thermite_desc") or [[Obscures an area in white fog and burns those who come close.]]
 
 SWEP.Credits = {
@@ -118,6 +118,10 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
 SWEP.ShootPosOffset = Vector(0, 15, 0)
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- HoldTypes
 

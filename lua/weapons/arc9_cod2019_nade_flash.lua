@@ -13,7 +13,7 @@ SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_flash") or "Flashbang"
-SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Grenade"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_tactical") or "Grenade"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_flash_desc") or [[Blinds and deafens targets.]]
 
 SWEP.Credits = {
@@ -117,6 +117,10 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
 SWEP.ShootPosOffset = Vector(0, 15, 0)
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- HoldTypes
 

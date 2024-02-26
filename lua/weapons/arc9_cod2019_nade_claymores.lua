@@ -13,7 +13,7 @@ SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_claymore") or "Claymore"
-SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Proximity Explosive"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Proximity Explosive"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_claymore_desc") or [[Proximity-activated explosive mine.]]
 
 SWEP.Trivia = {
@@ -122,6 +122,10 @@ SWEP.CustomizeSnapshotPos = Vector(-13, 10, 3)
 SWEP.CustomizeRotateAnchor = Vector(-5, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- HoldTypes
 

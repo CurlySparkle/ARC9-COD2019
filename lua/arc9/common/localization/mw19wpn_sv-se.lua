@@ -13,7 +13,6 @@ smg1_grenade = lineb .. "Byter patrontyp till <color=255,255,100>Gevärsgranater
 xbowbolt = lineb .. "Byter patrontyp till <color=255,255,100>Armborst Bultar</color>.",
 }
 
-local baseatt = "\nDetta är ett <color=255,255,100>BAS TILLÄGG</color> tillbehör."
 local missingloc = "\n\nNotis: Icke-lokaliserad text; Prenumerera på <color=255,255,100>SHARED-tillägget</color> för översatta texter."
 
 //////////////////////////////////////////////////////////////////////
@@ -26,22 +25,33 @@ L["settings.mw19.warzonestats.desc"] = "Ändrar statistiken på alla* vapen och 
 
 //////////////////// Trivia
 /////////// Caliber -- UO
-L["mw19_caliber"] = "Kaliber1"
+L["mw19_caliber"] = "Kaliber3"
 
-L["mw19_caliber_7.62x39mm"] = "7,62×39mm Sovjet"
-L["mw19_caliber_7.62x51mm"] = "7,62×51mm"
-L["mw19_caliber_5.56x45mm"] = "5,56×45mm"
-L["mw19_caliber_5.45x39mm"] = "5,45×39mm"
-L["mw19_caliber_12gauge"] = "12 Kaliber"
-L["mw19_caliber_50ae"] = ".50 AE"
-L["mw19_caliber_5.7x28mm"] = "FN 5.7×28mm"
-L["mw19_caliber_4.6x30mm"] = "HK 4.6×30mm"
-L["mw19_caliber_9x19mm"] = "9×19mm Parabellum"
-L["mw19_caliber_.338"] = ".338 Lapua"
-L["mw19_caliber_.308"] = ".308 Winchester"
+L["mw19_caliber_556"] = "5.56 NATO" -- Kilo 141, M4A1, FR 5.56, M13, RAM-7, Grau 5.56, SA87, Holger-26, Bruen Mk9, FiNN LMG
+L["mw19_caliber_762"] = "7.62 NATO" -- FAL, FN Scar 17, M91, EBR-14
+L["mw19_caliber_762soviet"] = "7.62 Soviet" -- AK-47, CR-56 AMAX, SKS
+L["mw19_caliber_762mmr"] = "7.62x54mmR" -- PKM, Dragunov
+L["mw19_caliber_762mauser"] = "7.62 Mauser" -- MG34, Kar98k
+L["mw19_caliber_545"] = "5.45×39mm" -- AN-94
+L["mw19_caliber_127x55"] = "12.7×55mm" -- Oden
+L["mw19_caliber_127x108"] = "12.7×108mm" -- HDR
+L["mw19_caliber_939"] = "9×39mm" -- AS VAL
+L["mw19_caliber_919"] = "9mm Parabellum" -- AUG, MP5, Uzi, ISO, CX-9, M19, Renetti
+L["mw19_caliber_57x28"] = "5.7x28mm" -- P90
+L["mw19_caliber_918"] = "9mm Makarov" -- PP19 Bizon, Sykov
+L["mw19_caliber_46x30"] = "4.6x30mm" -- MP7
+L["mw19_caliber_45acp"] = ".45 ACP" -- Striker 45, Fennec, X16, 1911
+L["mw19_caliber_12gauge"] = "12 Gauge" -- All Shotguns
+L["mw19_caliber_338"] = ".338 Norma Mag" -- RAAL MG
+L["mw19_caliber_45-70"] = ".45-70 Government" -- MK2 Carbine
+L["mw19_caliber_bolt"] = "20.0\" Bolt" -- Crossbow
+L["mw19_caliber_300"] = ".300 Win Mag" -- SP-R 208
+L["mw19_caliber_50bmg"] = ".50 BMG" -- AX-50, Rytec AMR
+L["mw19_caliber_357"] = ".357 Magnum" -- .357
+L["mw19_caliber_50p"] = ".50 pistol" -- .50 GS
 
 /////////// Country of Origin -- UO
-L["mw19_country"] = "Ursprungsland2"
+L["mw19_country"] = "Ursprungsland1"
 
 L["mw19_country_austria"] = "Österrike"
 L["mw19_country_belgium"] = "Belgien"
@@ -57,9 +67,10 @@ L["mw19_country_sweden"] = "Sverige"
 L["mw19_country_switzerland"] = "Schweiz"
 L["mw19_country_uk"] = "Storbritannien"
 L["mw19_country_usa"] = "Förenta Staterna"
+L["mw19_country_japan"] = "Japan"
 
 /////////// Manufacturer
-L["mw19_manufacturer"] = "Tillverkare3" -- UO
+L["mw19_manufacturer"] = "Tillverkare2" -- UO
 
 L["mw19_manufacturer_singuard"] = "Singuard Arms" -- Kilo 141
 
@@ -93,7 +104,7 @@ L["mw19_manufacturer_unknown"] = "???" -- FAL, Oden, AK-47, Grau 5.56, CR-56 AMA
 
 /////////// Weight -- UO
 L["mw19_weight"] = "Vikt (Laddad)4"
-L["mw19_weight_val"] = "%s kg / %s lb"
+L["mw19_weight_val"] = "%s kg / ~%s lb"
 
 /////////// Projectile Weight -- UO
 L["mw19_weight_projectile"] = "Projektilvikt5"
@@ -119,7 +130,7 @@ L["mw19_category_weapon_lmg"] = "Primär, Kulsprutor"
 L["mw19_category_weapon_marksman"] = "Primär, Marksman-Gevär"
 L["mw19_category_weapon_sniper"] = "Primär, Prickskytteg."
 L["mw19_category_weapon_melee"] = "Sekundär, Närstridsvapen"
-L["mw19_category_weapon_throwable"] = "Kastbara Vapen"
+L["mw19_category_weapon_throwable"] = "Dödlig & Taktisk Utrustning"
 
 L["mw19_category_weapon_handgun"] = "Sekundär, Pistoler"
 L["mw19_category_weapon_handgun_akimbo"] = "Sekundär, Pistoler (Akimbo)"
@@ -133,6 +144,8 @@ L["mw19_class_weapon_lmg"] = "Lätt Kulspruta"
 L["mw19_class_weapon_marksman"] = "Marksman-Gevär"
 L["mw19_class_weapon_sniper"] = "Prickskyttegevär"
 L["mw19_class_weapon_melee"] = "Närstridsvapen"
+L["mw19_class_weapon_lethal"] = "Lethal"
+L["mw19_class_weapon_tactical"] = "Tactical"
 L["mw19_class_weapon_grenade"] = "Granat" -- UO
 
 L["mw19_class_weapon_handgun"] = "Pistol"
@@ -279,7 +292,7 @@ L["cod2019_ammo_sg_db.description"] = "Laddning innehåller magnesium skott som 
 ////////////////////  Etc.
 L["cod2019_etc_ammo_extend.printname"] = "Lättvikt Förstorat Magasin" -- UO
 L["cod2019_etc_ammo_extend.compactname"] = "Lättvikt FM" -- UO
-L["cod2019_etc_ammo_extend.description"] = "Anpassat förstorat magasin som innehåller <color=100,255,100>20%</color> mer ammunition." .. baseatt -- UO
+L["cod2019_etc_ammo_extend.description"] = "Anpassat förstorat magasin som innehåller <color=100,255,100>20%</color> mer ammunition." -- UO
 
 L["cod2019_attach_grip_support.printname"] = "Stöd för Framgrepp" -- UO
 L["cod2019_attach_grip_support.compactname"] = "Stöd F." -- UO
@@ -298,7 +311,7 @@ L["cod2019_attach_laser_rail_2.description"] = "Tillåter installering av smål,
 ////////////////////  Grips
 L["cod2019_attach_grip_foregrip_side.printname"] = "ARC-Framgrepp" -- UO
 L["cod2019_attach_grip_foregrip_side.compactname"] = "ARC" -- UO
-L["cod2019_attach_grip_foregrip_side.description"] = ARC9:GetPhrase("cod2019_grips_merc.description") .. baseatt or "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics.".. baseatt .. missingloc
+L["cod2019_attach_grip_foregrip_side.description"] = ARC9:GetPhrase("cod2019_grips_merc.description") or "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics." .. missingloc
 
 L["cod2019_grips_none.printname"] = "Alternativ Hållande" -- UO
 L["cod2019_grips_none.compactname"] = "Alt. Håll." -- UO
@@ -345,7 +358,7 @@ L["cod2019_perks_burst_2.description"] = "Ändrar skjutläget till <color=100,25
 ////////////////////  Scopes
 L["cod2019_optic_scope_pila.printname"] = "PILA-Riktmedel" -- UO
 L["cod2019_optic_scope_pila.compactname"] = "PILA" -- UO
-L["cod2019_optic_scope_pila.description"] = ARC9:GetPhrase("cod2019_optic_scope_mike14.description") .. baseatt or "High power <color=100,255,100>4.4x</color> scope for long range encounters. <color=255,100,100>Optic glint visible to enemies.</color>".. baseatt .. missingloc
+L["cod2019_optic_scope_pila.description"] = ARC9:GetPhrase("cod2019_optic_scope_mike14.description") or "High power <color=100,255,100>4.4x</color> scope for long range encounters. <color=255,100,100>Optic glint visible to enemies.</color>" .. missingloc
 
 L["cod2019_model680_iron.printname"] = "Ta Bort Siktfäste" -- UO
 L["cod2019_model680_iron.compactname"] = "Ta Bort S." -- UO
@@ -354,27 +367,27 @@ L["cod2019_model680_iron.description"] = "Tar bort siktfästet på Modell 680 vi
 ////////////////////  Stocks
 L["cod2019_stock_vlk.printname"] = "VLK Rogue-Kolv" -- UO
 L["cod2019_stock_vlk.compactname"] = "VLK Rogue" -- UO
-L["cod2019_stock_vlk.description"] = ARC9:GetPhrase("cod2019_stock_light.description") .. baseatt or "Stock designed for agility while aiming down sights.".. baseatt .. missingloc
+L["cod2019_stock_vlk.description"] = ARC9:GetPhrase("cod2019_stock_light.description") or "Stock designed for agility while aiming down sights." .. missingloc
 
 L["cod2019_stock_amax.printname"] = "CR-56 AMAX-Kolv" -- UO
 L["cod2019_stock_amax.compactname"] = "CR-56 AMAX" -- UO
-L["cod2019_stock_amax.description"] = ARC9:GetPhrase("cod2019_stock_vlight.description") .. baseatt or "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics.".. baseatt .. missingloc
+L["cod2019_stock_amax.description"] = ARC9:GetPhrase("cod2019_stock_vlight.description") or "Ultralight stock speeds up weapon handling and movement at the expense of aiming stability." .. missingloc
 
 L["cod2019_stock_slima.printname"] = "Slima-Kolv" -- UO
 L["cod2019_stock_slima.compactname"] = "Slima" -- UO
-L["cod2019_stock_slima.description"] = ARC9:GetPhrase("cod2019_stock_medium.description") .. baseatt or "Tactical stock streamlined for close quarters combat. Gets you on target faster.".. baseatt .. missingloc
+L["cod2019_stock_slima.description"] = ARC9:GetPhrase("cod2019_stock_medium.description") or "Tactical stock streamlined for close quarters combat. Gets you on target faster." .. missingloc
 
 L["cod2019_stock_m4.printname"] = "Ökenstorm Kolv" -- UO
 L["cod2019_stock_m4.compactname"] = "Storm" -- UO
-L["cod2019_stock_m4.description"] = ARC9:GetPhrase("cod2019_stock_heavy.description") .. baseatt or "Heavy duty stock keeps your aim steady for precision shots.".. baseatt .. missingloc
+L["cod2019_stock_m4.description"] = ARC9:GetPhrase("cod2019_stock_heavy.description") or "Heavy duty stock keeps your aim steady for precision shots." .. missingloc
 
 L["cod2019_stock_origin12.printname"] = "Origin-Kolv" -- UO
 L["cod2019_stock_origin12.compactname"] = "Origin" -- UO
-L["cod2019_stock_origin12.description"] = ARC9:GetPhrase("cod2019_stock_light.description") .. baseatt or "Stock designed for agility while aiming down sights.".. baseatt .. missingloc
+L["cod2019_stock_origin12.description"] = ARC9:GetPhrase("cod2019_stock_light.description") or "Stock designed for agility while aiming down sights." .. missingloc
 
 L["cod2019_m32_stock_retract.printname"] = "Förkortad Kolv" -- UO
 L["cod2019_m32_stock_retract.compactname"] = "Förkortad" -- UO
-L["cod2019_m32_stock_retract.description"] = "Förkortar kolven för att tillåta <color=100,255,100>högre rörlighet.</color>" .. baseatt -- UO
+L["cod2019_m32_stock_retract.description"] = "Förkortar kolven för att tillåta <color=100,255,100>högre rörlighet.</color>" -- UO
 
 ////////////////////  Buffer Tubes
 L["cod2019_stock_tube.printname"] = "Ökenstorm Bufferrör" -- UO
@@ -414,32 +427,32 @@ L["cod2019_attach_support_gsr_grips.description"] = "Tillåter installering av f
 ////////////////////  Custom Crossbow Ammo
 L["cod2019_ammo_crossbow_rock.printname"] = "FTAC Boulder 30g Sten" -- UO
 L["cod2019_ammo_crossbow_rock.compactname"] = "Boulder" -- UO
-L["cod2019_ammo_crossbow_rock.description"] = "Ersätter dem aerodynamiska pilarna med en <color=100,255,100>sten</color>.\n\nFör den <color=100,255,100>stonern</color> i oss alla." .. baseatt -- UO
+L["cod2019_ammo_crossbow_rock.description"] = "Ersätter dem aerodynamiska pilarna med en <color=100,255,100>sten</color>.\n\nFör den <color=100,255,100>stonern</color> i oss alla." -- UO
 
 L["cod2019_ammo_crossbow_he.printname"] = "FTAC Kontakt 510mm Pilar" -- UO
 L["cod2019_ammo_crossbow_he.compactname"] = "Kontakt" -- UO
-L["cod2019_ammo_crossbow_he.description"] = "Pilar med <color=255,255,100>lågtrycks sprängmedel</color> inbyggda i pilspetsen. <color=255,100,100>Pilar kan inte återhämtas</color> och är oupptäckbara av trofésystem." .. baseatt -- UO
+L["cod2019_ammo_crossbow_he.description"] = "Pilar med <color=255,255,100>lågtrycks sprängmedel</color> inbyggda i pilspetsen. <color=255,100,100>Pilar kan inte återhämtas</color> och är oupptäckbara av trofésystem." -- UO
 
 ////////////////////  Custom MGL-32 Ammo
 L["cod2019_ammo_gl_rock.printname"] = "40mm Boulder" -- UO
 L["cod2019_ammo_gl_rock.compactname"] = "Boulder" -- UO
-L["cod2019_ammo_gl_rock.description"] = "Anpassade 40mm patroner fyllda med <color=100,255,100>stenar</color>." .. baseatt -- UO
+L["cod2019_ammo_gl_rock.description"] = "Anpassade 40mm patroner fyllda med <color=100,255,100>stenar</color>." -- UO
 
 L["cod2019_ammo_gl_flash.printname"] = "40mm Chock" -- UO
 L["cod2019_ammo_gl_flash.compactname"] = "Chock" -- UO
-L["cod2019_ammo_gl_flash.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Chock</color>granater designade att temporärligt blända din fiende." .. baseatt -- UO, partially taken from M203 40mm Flash
+L["cod2019_ammo_gl_flash.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Chock</color>granater designade att temporärligt blända din fiende." -- UO, partially taken from M203 40mm Flash
 
 L["cod2019_ammo_gl_inc.printname"] = "40mm Brand" -- UO
 L["cod2019_ammo_gl_inc.compactname"] = "Brand" -- UO
-L["cod2019_ammo_gl_inc.description"] = "Anpassade 40mm patroner fyllda med dödliga <color=100,255,100>Brand</color>granater." .. baseatt -- UO, partially taken from M203 40mm Incendiary
+L["cod2019_ammo_gl_inc.description"] = "Anpassade 40mm patroner fyllda med dödliga <color=100,255,100>Brand</color>granater." -- UO, partially taken from M203 40mm Incendiary
 
 L["cod2019_ammo_gl_smoke.printname"] = "40mm Rökskärm" -- UO
 L["cod2019_ammo_gl_smoke.compactname"] = "Rök" -- UO
-L["cod2019_ammo_gl_smoke.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Rök</color>granater designade att gömma din rörelse." .. baseatt -- UO, partially taken from M203 40mm Smokescreen
+L["cod2019_ammo_gl_smoke.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Rök</color>granater designade att gömma din rörelse." -- UO, partially taken from M203 40mm Smokescreen
 
 L["cod2019_ammo_gl_gas.printname"] = "40mm Gas" -- UO
 L["cod2019_ammo_gl_gas.compactname"] = "Gas" -- UO
-L["cod2019_ammo_gl_gas.description"] = "Anpassade 40mm patroner fyllda med delvist dödliga <color=100,255,100>Gas</color>granater som skapar ett gasmoln vid träffpunkten.\nFlertal skott i samma område <color=100,255,100>ökar dess dödlighet</color>." .. baseatt -- UO
+L["cod2019_ammo_gl_gas.description"] = "Anpassade 40mm patroner fyllda med delvist dödliga <color=100,255,100>Gas</color>granater som skapar ett gasmoln vid träffpunkten.\nFlertal skott i samma område <color=100,255,100>ökar dess dödlighet</color>." -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments

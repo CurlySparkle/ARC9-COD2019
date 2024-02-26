@@ -18,11 +18,11 @@ SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_handgun") or "Handgun"
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_usa"),
     [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_forgetac"),
-    [ ARC9:GetPhrase("mw19_caliber") ] = ".50 Action Express",
-    [ ARC9:GetPhrase("mw19_weight") ] = "2 kg",
-    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "300 gr",
-    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "1,542 ft/s",
-    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "2,148 joules"
+    [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_50pistol"),
+    [ ARC9:GetPhrase("mw19_weight") ] = string.format(ARC9:GetPhrase("mw19_weight_val"), 2, 2 * 2.20),
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = string.format(ARC9:GetPhrase("mw19_weight_projectile_val"), 300),
+    -- [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "1,542 ft/s",
+    -- [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "2,148 joules"
 }
 
 SWEP.Credits = {

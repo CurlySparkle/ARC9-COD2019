@@ -16,11 +16,11 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_kar98") or "Kar98k"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_marksman") or "Marksman Rifle"
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_germany"),
-    [ ARC9:GetPhrase("mw19_caliber") ] = "7.92×57mm Mauser",
-    [ ARC9:GetPhrase("mw19_weight") ] = "3.7 kg",
-    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "178.2 gr",
-    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,493 ft/s",
-    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "3,335 joules"
+    [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_762mauser"),
+    [ ARC9:GetPhrase("mw19_weight") ] = string.format(ARC9:GetPhrase("mw19_weight_val"), 3.7, 3.7 * 2.20),
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = string.format(ARC9:GetPhrase("mw19_weight_projectile_val"), 178.2),
+    -- [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,493 ft/s",
+    -- [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "3,335 joules"
 }
 
 SWEP.Credits = {

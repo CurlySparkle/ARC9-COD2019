@@ -70,6 +70,8 @@ ATT.RicochetChanceOverride = 1
 ATT.NumOverride = 1
 ATT.NormalizeNumDamage = true
 
+ATT.NoAimAssist = true
+
 ATT.MuzzleParticle = "muzzleflash_slug"
 ATT.MuzzleParticleSilenced = "AC_muzzle_shotgun_suppressed"
 
@@ -158,6 +160,8 @@ ATT.DamageType = DMG_BLAST + DMG_AIRBOAT
 ATT.MuzzleParticle = "muzzleflash_M3"
 ATT.MuzzleParticleSilenced = "AC_muzzle_shotgun_suppressed"
 
+ATT.NoAimAssist = true
+
 ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_frag")
 
 -------------------------------------------------------------------------------
@@ -224,6 +228,8 @@ ATT.MuzzleParticleSilenced = "AC_muzzle_shotgun_suppressed"
 
 ATT.DamageType = DMG_BLAST + DMG_AIRBOAT
 ATT.DamageTypeOverride = DMG_BLAST + DMG_AIRBOAT
+
+ATT.NoAimAssist = true
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_frag_x4")
 -------------------------------------------------------------------------------
