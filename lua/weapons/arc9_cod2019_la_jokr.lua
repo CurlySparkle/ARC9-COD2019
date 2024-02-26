@@ -48,7 +48,7 @@ SWEP.NoAimAssist = true
 -------------------------- DAMAGE PROFILE
 
 SWEP.ShootEnt = "arc9_cod2019_proj_jokr_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 6000
+SWEP.ShootEntForce = 5000
 
 SWEP.ShootPosOffset = Vector(5, 10, -5)
 SWEP.ShootPosOffsetSights = Vector(5, 10, -5)
