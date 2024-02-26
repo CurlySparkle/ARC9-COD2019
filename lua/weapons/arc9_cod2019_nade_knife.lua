@@ -13,7 +13,7 @@ SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_knife") or "Throwing Knife"
-SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_throwable") or "Throwable"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Throwable"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_knife_desc") or [[Retrievable knife that is lethal on impact.]]
 
 SWEP.Credits = {
@@ -117,6 +117,10 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
 SWEP.ShootPosOffset = Vector(0, 10, -5)
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- HoldTypes
 

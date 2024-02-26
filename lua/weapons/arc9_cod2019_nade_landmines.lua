@@ -13,7 +13,7 @@ SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_proximity") or "Landmine"
-SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Proximity Explosive"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Proximity Explosive"
 
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_proximity_desc") or [[Pressure-triggered explosive that deals heavy damage.]]
 
@@ -87,6 +87,10 @@ SWEP.ThrowInstantly = true
 SWEP.ShootEntInheritPlayerVelocity = true
 
 SWEP.ShootPosOffset = Vector(0, 30, -7)
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- POSITIONS
 

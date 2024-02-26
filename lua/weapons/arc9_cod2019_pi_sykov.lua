@@ -17,11 +17,11 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_makarov") or "Sykov"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_handgun") or "Handgun"
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_sovietunion"),
-    [ ARC9:GetPhrase("mw19_caliber") ] = "9×18mm Makarov",
-    [ ARC9:GetPhrase("mw19_weight") ] = "730 g",
-    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "92.6 gr",
-    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "1,030 ft/s",
-    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "296 joules"
+    [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_918"),
+    [ ARC9:GetPhrase("mw19_weight") ] = string.format(ARC9:GetPhrase("mw19_weight_val"), 0.73, 0.73 * 2.20),
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = string.format(ARC9:GetPhrase("mw19_weight_projectile_val"), 92.6),
+    -- [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "1,030 ft/s",
+    -- [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "296 joules"
 }
 
 SWEP.Credits = {
@@ -200,10 +200,10 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, -25, 0)
-SWEP.CustomizePos = Vector(16, 30, 3)
-SWEP.CustomizeRotateAnchor = Vector(16, -2.25, -4)
+SWEP.CustomizePos = Vector(15, 30, 3)
+SWEP.CustomizeRotateAnchor = Vector(15, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
+SWEP.CustomizeSnapshotPos = Vector(0.25, -10, 3)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 

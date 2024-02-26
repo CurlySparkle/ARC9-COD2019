@@ -13,7 +13,7 @@ SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_gas") or "Gas"
-SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_ar") or "Grenade"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_tactical") or "Grenade"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_gas_desc") or [[Explodes on impact with the ground, releasing a lingering cloud of tear gas that causes slowed movement, blurred vision, and coughing.]]
 
 SWEP.Credits = {
@@ -117,6 +117,10 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
 SWEP.ShootPosOffset = Vector(0, 15, -1)
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- HoldTypes
 

@@ -16,11 +16,11 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_pp19") or "PP19 Bizon"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_smg") or "Submachine Gun"
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_russia"),
-    [ ARC9:GetPhrase("mw19_caliber") ] = "9×18mm Makarov",
-    [ ARC9:GetPhrase("mw19_weight") ] = "2.1 kg",
-    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "95 gr",
-    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "1,050 ft/s",
-    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "315 joules"
+    [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_918"),
+    [ ARC9:GetPhrase("mw19_weight") ] = string.format(ARC9:GetPhrase("mw19_weight_val"), 2.1, 2.1 * 2.20),
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = string.format(ARC9:GetPhrase("mw19_weight_projectile_val"), 95),
+    -- [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "1,050 ft/s",
+    -- [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "315 joules"
 }
 
 SWEP.Credits = {

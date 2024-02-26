@@ -17,11 +17,11 @@ SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_smg") or "Submachine Gun"
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_belgium"),
     [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_forgetac"),
-    [ ARC9:GetPhrase("mw19_caliber") ] = "5.7×28mm FN",
-    [ ARC9:GetPhrase("mw19_weight") ] = "2.6 kg",
-    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "27 gr",
-    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,350 ft/s",
-    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "449 joules"
+    [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_57x28"),
+    [ ARC9:GetPhrase("mw19_weight") ] = string.format(ARC9:GetPhrase("mw19_weight_val"), 2.6, 2.6 * 2.20),
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = string.format(ARC9:GetPhrase("mw19_weight_projectile_val"), 27),
+    -- [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,350 ft/s",
+    -- [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "449 joules"
 }
 
 SWEP.Credits = {

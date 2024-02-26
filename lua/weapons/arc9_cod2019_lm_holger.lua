@@ -17,11 +17,11 @@ SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lmg") or "Light Machine Gun"
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_germany"),
     [ ARC9:GetPhrase("mw19_manufacturer") ] = ARC9:GetPhrase("mw19_manufacturer_forgetac"),
-    [ ARC9:GetPhrase("mw19_caliber") ] = "5.56×45mm NATO",
-    [ ARC9:GetPhrase("mw19_weight") ] = "3.63 kg",
-    [ ARC9:GetPhrase("mw19_weight_projectile") ] = "62 gr",
-    [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "3,018 ft/s",
-    [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "1,700 joules"
+    [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_556"),
+    [ ARC9:GetPhrase("mw19_weight") ] = string.format(ARC9:GetPhrase("mw19_weight_val"), 3.63, 3.63 * 2.20),
+    [ ARC9:GetPhrase("mw19_weight_projectile") ] = string.format(ARC9:GetPhrase("mw19_weight_projectile_val"), 62),
+    -- [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "3,018 ft/s",
+    -- [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "1,700 joules"
 }
 
 SWEP.Credits = {
@@ -881,7 +881,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
 		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
         DefaultAttName = "Standard Stock",
-        Category = {"stock_retract","cod2019_tube","cod2019_holger_stock"},
+        Category = {"cod2019_tube","cod2019_holger_stock"},
         Bone = "tag_stock_attach",
         Pos = Vector(-0.86, 0, 0.23),
         Ang = Angle(0, 0, 0),

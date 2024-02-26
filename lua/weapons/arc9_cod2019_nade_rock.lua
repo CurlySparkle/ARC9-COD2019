@@ -13,7 +13,7 @@ SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_rock") or "Rock"
-SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_throwable") or "Throwable"
+SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_tactical") or "Throwable"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_rock_desc") or [[The experimental rock, very deadly and quite a "Stoner" upon hitting enemies.]]
 SWEP.Trivia = {
     ["Country"] = "Nova Pangea",
@@ -119,6 +119,10 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
 SWEP.ShootPosOffset = Vector(0, 15, -5)
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- HoldTypes
 
