@@ -245,8 +245,10 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1.5, 3, -3.2)
+SWEP.PeekPos = Vector(-1.3, 2, -2.7)
 SWEP.PeekAng = Angle(-1, 1, -45)
+
+SWEP.PeekMaxFOV = 54
 
 -------------------------- HoldTypes
 
@@ -774,7 +776,7 @@ SWEP.AttachmentElements = {
     ["stock_adapter"] = {
         Bodygroups = {
             {2,2},
-            {5,1},
+            {5,0},
         },
     },
     ["stock_none"] = {
@@ -858,7 +860,7 @@ SWEP.Attachments = {
         DefaultAttName = "Standard Stock",
         Category = {"cod2019_cx9_stock","cod2019_tube"},
         Bone = "tag_stock_attach",
-        Pos = Vector(-0.3, 0, 0.03),
+        Pos = Vector(-0.2, 0, 0.06),
         Ang = Angle(0, 0, 0),
     },
     {
