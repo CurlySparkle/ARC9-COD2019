@@ -63,16 +63,15 @@ ATT.SortOrder = 3
 ATT.Category = {"cod2019_ammo_sg"}
 
 ATT.SpreadMult = 0.5
--- ATT.SpreadMultHipFire = 1
 ATT.RangeMaxMult = 1.5
 
 ATT.RicochetChanceAdd = 1
 
 ATT.NumOverride = 1
-ATT.DistributeDamage = false
 
 ATT.DamageMinMult = 2.5
 ATT.DamageMaxMult = 2.5
+ATT.ImpactForceMult = 5
 
 ATT.NoAimAssist = true
 
