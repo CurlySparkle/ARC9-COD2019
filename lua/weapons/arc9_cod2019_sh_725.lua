@@ -42,10 +42,10 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_shot_725.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-11, 6, -2.5),
-    Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-2, 4, -2),
-    TPIKAng = Angle(-8, 0, 180),
+    Pos = Vector(-2, 3.5, -5.5),
+    Ang = Angle(-5, 0, 180),
+    TPIKPos = Vector(-5, 5, -5),
+    TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1
 }
 
@@ -174,15 +174,14 @@ SWEP.Spread = 0.075
 SWEP.SpreadAddRecoil = 0.01
 
 SWEP.SpreadAddHipFire = SWEP.Spread * 0
-SWEP.SpreadAddMove = SWEP.Spread * 0.1
-SWEP.SpreadAddMidAir = SWEP.Spread * 1.2
+SWEP.SpreadAddMove = SWEP.Spread * 0.2
+SWEP.SpreadAddMidAir = SWEP.Spread * 0.5
 SWEP.SpreadAddCrouch = -SWEP.Spread * 0.1
 SWEP.SpreadAddSights = -SWEP.Spread * 0.35
 
 SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCap = SWEP.RecoilMax
 SWEP.RecoilModifierCapMove = 0
-SWEP.RecoilModifierCapSights = 0.05
 
 -------------------------- HANDLING
 
@@ -239,11 +238,11 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(17, 35, 3)
-SWEP.CustomizeRotateAnchor = Vector(17, -2.25, -4)
+SWEP.CustomizePos = Vector(15, 32.5, 3)
+SWEP.CustomizeRotateAnchor = Vector(15, -2.5, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(0, 7, 3)
+SWEP.CustomizeSnapshotPos = Vector(0, 25, 5)
 
 SWEP.PeekPos = Vector(-1, -2, -4)
 SWEP.PeekAng = Angle(-0.3, 0, -45)
@@ -259,7 +258,7 @@ SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 
