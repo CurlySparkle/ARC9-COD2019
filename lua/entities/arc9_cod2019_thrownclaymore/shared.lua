@@ -47,7 +47,7 @@ function ENT:OnPlant()
     self:EmitSound("weapons/cod2019/throwables/claymore/wpfoly_claymore_plant_0" .. math.random(1, 3) .. ".ogg", 80, 100)
     timer.Simple(math.max(0, self.ArmDelay - 1.2), function()
         if IsValid(self) then
-            self:EmitSound( "weapons/csgo/breachcharges/breach_warning_beep_01.wav", 75, 100, 1, CHAN_AUTO )
+            self:EmitSound( "weapons/cod2019/throwables/claymore/wpfoly_claymore_sensors_on.ogg", 75, 100, 1, CHAN_AUTO )
         end
     end)
 end
@@ -170,8 +170,8 @@ function ENT:Detonate()
             Spread = Vector(math.rad(180), math.rad(30), 0),
             Callback = function(att, tr, dmg)
                 if IsValid(tr.Entity) then
-                    if not tr.Entity.GSR_ClaymoreLastHit or tr.Entity.GSR_ClaymoreLastHit[1] ~= CurTime() then
-                        tr.Entity.GSR_ClaymoreLastHit = {CurTime(), 0}
+                    if not tr.Entity.MW19_ClaymoreLastHit or tr.Entity.MW19_ClaymoreLastHit[1] ~= CurTime() then
+                        tr.Entity.MW19_ClaymoreLastHit = {CurTime(), 0}
                     end
 
                     if IsValid(oldowner) then
@@ -180,8 +180,10 @@ function ENT:Detonate()
 
                     dmg:SetDamageType(DMG_BLAST)
                     dmg:ScaleDamage(Lerp(tr.Fraction ^ 2, 1, 0.5))
-                    dmg:ScaleDamage(Lerp(math.max(0, (tr.Entity.GSR_ClaymoreLastHit[2] - 100) / 400), 1, 0.25))
-                    tr.Entity.GSR_ClaymoreLastHit[2] = tr.Entity.GSR_ClaymoreLastHit[2] + dmg:GetDamage()
+                    dmg:ScaleDamage(Lerp(math.max(0, (tr.Entity.MW19_ClaymoreLastHit[2] - 100) / 400), 1, 0.25))
+                    tr.Entity.MW19_ClaymoreLastHit[2] = tr.Entity.MW19_ClaymoreLastHit[2] + dmg:GetDamage()
+					ParticleEffect("explosion_claymore", self:GetPos(), Angle(0, 0, 0), nil)
+					util.Decal("Scorch", tr.HitPos + tr.HitNormal, tr.HitPos - tr.HitNormal)
                 end
             end
         }

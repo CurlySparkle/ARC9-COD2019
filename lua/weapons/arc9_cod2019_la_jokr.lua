@@ -50,8 +50,11 @@ SWEP.NoAimAssist = true
 SWEP.ShootEnt = "arc9_cod2019_proj_jokr_default" -- Set to an entity to launch it out of this weapon.
 SWEP.ShootEntForce = 5000
 
-SWEP.ShootPosOffset = Vector(5, 10, -5)
-SWEP.ShootPosOffsetSights = Vector(5, 10, -5)
+SWEP.ShootPosOffset = Vector(5, 0, -5)
+SWEP.ShootAngOffset = Angle(0, 0, 0)
+
+SWEP.ShootPosOffsetSights = Vector(5, 0, -5)
+SWEP.ShootAngOffsetSights = Angle(0, 0, 0)
 
 SWEP.PushBackForce = 5
 
@@ -78,6 +81,12 @@ SWEP.Firemodes = {
         Mode = -1,
         PrintName = "TOP",
         TopAttack = true
+    },
+    {
+        Mode = -1,
+        PrintName = "SACLOS",
+        TopAttack = false,
+        ShootEnt = "arc9_cod2019_proj_jokr_saclos"
     },
 }
 
@@ -194,6 +203,11 @@ SWEP.IronSights = {
     CrosshairInSights = false
 }
 
+SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
+    Pos = Vector(1.4, -2, 0),
+    Ang = Angle(0.45, 0, 0.23),
+}
+
 --- RT Reticle ---
 SWEP.RTScope = true
 SWEP.RTScopeSubmatIndex = 7
@@ -248,11 +262,6 @@ end
 ----------------------------------------------------
 
 SWEP.ViewModelFOVBase = 65
-
-SWEP.SprintMidPoint = {
-    Pos = Vector(0, -1, 0),
-    Ang = Angle(-2.5, 0, 2.5)
-}
 
 SWEP.MovingMidPoint = {
     Pos = Vector(-0.5, -0.5, -0.5),
@@ -350,6 +359,48 @@ SWEP.TriggerUpSound = ""
 
 SWEP.HookP_BlockFire = function(self)
     return self:GetSightAmount() < 1
+end
+
+SWEP.NextBeepTime = 0
+SWEP.TargetEntity = nil
+SWEP.StartTrackTime = 0
+SWEP.LockTime = 3
+
+SWEP.Hook_GetShootEntData = function(self, data)
+    local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 1)
+
+    if tracktime >= 1 and self.TargetEntity and IsValid(self.TargetEntity) then
+        data.Target = self.TargetEntity
+    end
+end
+
+SWEP.Hook_HUDPaintBackground = function(self)
+    if self:GetSightAmount() >= 0.75 then
+        if !self:GetCurrentFiremodeTable().TopAttack then
+            surface.SetDrawColor(255, 255, 255)
+
+            local x = ScrW() / 2
+            local y = ScrH() / 2
+
+            surface.DrawLine(0, y, ScrW(), y)
+            surface.DrawLine(x, 0, x, ScrH())
+        else
+            if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
+                local toscreen = self.TargetEntity:GetPos():ToScreen()
+
+                local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
+
+                surface.SetDrawColor(255, 255, 255)
+
+                if tracktime >= 1 then
+                    surface.SetDrawColor(255, 0, 0)
+                end
+
+                surface.DrawLine(0, toscreen.y, ScrW(), toscreen.y)
+                surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH())
+            end
+        end
+    end
 end
 
 SWEP.Animations = {

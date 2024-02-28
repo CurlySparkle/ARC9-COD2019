@@ -44,8 +44,8 @@ ENT.Armed = false
 
 ENT.SmokeTrail = false // leaves trail of smoke
 ENT.FlareColor = nil
-ENT.FlareSizeMin = 200
-ENT.FlareSizeMax = 250
+ENT.FlareSizeMin = 50
+ENT.FlareSizeMax = 100
 
 ENT.AudioLoop = nil
 
@@ -353,8 +353,8 @@ function ENT:Draw()
     end
 end
 
-hook.Add("EntityTakeDamage", "tacrp_proj_collision", function(ent, dmginfo)
+hook.Add("EntityTakeDamage", "cod2019_proj_collision", function(ent, dmginfo)
     if IsValid(dmginfo:GetInflictor())
-            and scripted_ents.IsBasedOn(dmginfo:GetInflictor():GetClass(), "tacrp_proj_base")
+            and scripted_ents.IsBasedOn(dmginfo:GetInflictor():GetClass(), "arc9_cod2019_proj_base")
             and dmginfo:GetDamageType() == DMG_CRUSH then dmginfo:SetDamage(0) return true end
 end)

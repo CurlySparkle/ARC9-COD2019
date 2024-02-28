@@ -588,6 +588,27 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 45/30},
         },
     },
+    ["reload_ar"] = {
+        Source = "reload_ar",
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_01.ogg", t = 30/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_02.ogg", t = 42/30},
+			{s = path .. "wfoly_ar_scharlie_reload_end.ogg", t = 45/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -766,6 +787,14 @@ SWEP.HookP_NameChange = function(self, name)
 end
 
 --- 30 & 10 (DMR) Round Mags ---
+local Translate_AR = {
+    ["reload"] = "reload_ar",
+    ["reload_empty"] = "reload_empty",
+}
+local Translate_AR_Fast = {
+    ["reload"] = "reload_xmags_fast",
+    ["reload_empty"] = "reload_fast_empty",
+}
 local Translate_XMags = {
     ["reload"] = "reload_xmags",
     ["reload_empty"] = "reload_empty",
@@ -800,6 +829,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmags = wep:HasElement("mag_xmags")
+    local armag = wep:HasElement("mag_armag")
     local dmr = wep:HasElement("mag_dmr")
 
     if super_sprint and Translate_TacSprint[anim] then
@@ -807,7 +837,11 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     end
 
     if speedload then
-        if dmr then
+        if armag then
+            if Translate_AR_Fast[anim] then
+                return Translate_AR_Fast[anim]
+            end
+        elseif dmr then
             if Translate_DMR_Fast[anim] then
                 return Translate_DMR_Fast[anim]
             end
@@ -821,6 +855,11 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             end
         end
     else
+	    if armag then
+            if Translate_AR[anim] then
+                return Translate_AR[anim]
+            end
+        end
 	    if dmr then
             if Translate_DMR[anim] then
                 return Translate_DMR[anim]
