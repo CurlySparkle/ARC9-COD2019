@@ -51,17 +51,17 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 132 -- Damage done at point blank range
-SWEP.DamageMin = 51 -- Damage done at maximum range
+SWEP.DamageMax = 132 / 6 -- Damage done at point blank range
+SWEP.DamageMin = 51 / 6 -- Damage done at maximum range
 
-SWEP.DistributeDamage = true
+SWEP.DistributeDamage = false
 
 SWEP.Num = 6
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
 SWEP.RangeMin = 20 / ARC9.HUToM
-SWEP.RangeMax = 20 / ARC9.HUToM
+SWEP.RangeMax = 40 / ARC9.HUToM
 
 SWEP.Penetration = 1 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.1
@@ -103,7 +103,8 @@ SWEP.Firemodes = {
         PrintName = ARC9:GetPhrase("mw19_firemode_double"),
         Mode = 1,
 		AmmoPerShot = 2,
-		Num = 6 * 2,
+		NumMult = 2,
+		RecoilPerShot = 4,
     },
 }
 
@@ -122,8 +123,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
-SWEP.RecoilDissipationRateSights = 50
+SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
@@ -134,6 +134,9 @@ SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.9
+
+SWEP.RecoilPerShot = 2
+SWEP.RecoilMax = 4
 
 -------------------------- VISUAL RECOIL
 
@@ -159,12 +162,27 @@ SWEP.VisualRecoilRoll = 25
 -- SWEP.SpreadAddCrouch = -0.004
 -- SWEP.SpreadAddSightsMove = -0.1
 
-SWEP.Spread = 220 * ARC9.MOAToAcc
-SWEP.UseDispersion = true
-SWEP.DispersionSpread = 0.01
-SWEP.DispersionSpreadAddHipFire = 0.02
+-- SWEP.Spread = 220 * ARC9.MOAToAcc
+-- SWEP.UseDispersion = true
+-- SWEP.DispersionSpread = 0.01
+-- SWEP.DispersionSpreadAddHipFire = 0.02
 --SWEP.DispersionSpreadMultMove = 1.5
 --SWEP.DispersionSpreadAddMove = 0.015
+
+SWEP.Spread = 0.075
+
+SWEP.SpreadAddRecoil = 0.01
+
+SWEP.SpreadAddHipFire = SWEP.Spread * 0
+SWEP.SpreadAddMove = SWEP.Spread * 0.1
+SWEP.SpreadAddMidAir = SWEP.Spread * 1.2
+SWEP.SpreadAddCrouch = -SWEP.Spread * 0.1
+SWEP.SpreadAddSights = -SWEP.Spread * 0.35
+
+SWEP.SpreadMultRecoil = 1.1
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
+SWEP.RecoilModifierCapSights = 0.05
 
 -------------------------- HANDLING
 
@@ -966,5 +984,33 @@ SWEP.CodAngledGripPoseParam = 15
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 52
+SWEP.DamageMin = 18
+
+SWEP.DistributeDamage = false
+
+SWEP.Num = 8
+
+SWEP.RangeMin = 2 / ARC9.HUToM
+SWEP.RangeMax = 16.8 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.035,
+    [HITGROUP_CHEST] = 1.01,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 300 / ARC9.HUToM
+
+-------------------------- FIREMODES
+
+SWEP.RPM = 171
 
 end

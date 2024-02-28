@@ -1,4 +1,5 @@
 local ATT = {}
+local warzonestats = GetConVar("arc9_mw19_stats_warzone"):GetBool() -- Warzone Stat Variable
 -------------------------------------------------------------------------------
 
 ATT = {}
@@ -61,16 +62,41 @@ ATT.SortOrder = 3
 
 ATT.Category = {"cod2019_ammo_sg"}
 
-ATT.SpreadMult = 0.15
-ATT.SpreadMultHipFire = 0.75
+ATT.SpreadMult = 0.5
+-- ATT.SpreadMultHipFire = 1
 ATT.RangeMaxMult = 1.5
 
-ATT.RicochetChanceOverride = 1
+ATT.RicochetChanceAdd = 1
 
 ATT.NumOverride = 1
-ATT.NormalizeNumDamage = true
+ATT.DistributeDamage = false
+
+ATT.DamageMinMult = 2.5
+ATT.DamageMaxMult = 2.5
 
 ATT.NoAimAssist = true
+
+if !warzonestats then -- Regular Stats
+	ATT.BodyDamageMults = {
+		[HITGROUP_HEAD] = 2,
+		[HITGROUP_CHEST] = 1.75,
+		[HITGROUP_STOMACH] = 1.5,
+		[HITGROUP_LEFTARM] = 1,
+		[HITGROUP_RIGHTARM] = 1,
+		[HITGROUP_LEFTLEG] = 1,
+		[HITGROUP_RIGHTLEG] = 1,
+	}
+else -- Warzone Stats
+	ATT.BodyDamageMults = {
+		[HITGROUP_HEAD] = 1.2,
+		[HITGROUP_CHEST] = 0.9,
+		[HITGROUP_STOMACH] = 0.75,
+		[HITGROUP_LEFTARM] = 0.5,
+		[HITGROUP_RIGHTARM] = 0.5,
+		[HITGROUP_LEFTLEG] = 0.5,
+		[HITGROUP_RIGHTLEG] = 0.5,
+	}
+end
 
 ATT.MuzzleParticle = "muzzleflash_slug"
 ATT.MuzzleParticleSilenced = "AC_muzzle_shotgun_suppressed"
