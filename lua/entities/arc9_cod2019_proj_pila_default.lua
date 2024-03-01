@@ -4,7 +4,7 @@ ENT.Base                     = "arc9_cod2019_proj_base"
 ENT.PrintName                = "Pila Rocket"
 ENT.Spawnable                = false
 
-ENT.Model                    = "models/weapons/cod2019/mags/w_eq_rpg_rocket.mdl"
+ENT.Model                    = "models/weapons/cod2019/mags/w_eq_pila_rocket.mdl"
 
 ENT.IsRocket = true // projectile has a booster and will not drop.
 
@@ -18,7 +18,7 @@ ENT.ExplodeUnderwater = true
 ENT.Delay = 0
 ENT.SafetyFuse = 0
 
-ENT.AudioLoop = "models/weapons/cod2019/mags/w_eq_pila_rocket.mdl"
+ENT.AudioLoop = "weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
 
 ENT.SmokeTrail = true
 

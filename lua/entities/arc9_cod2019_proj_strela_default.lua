@@ -6,7 +6,7 @@ ENT.Spawnable                = false
 
 ENT.Model                    = "models/weapons/cod2019/mags/w_eq_rpg_rocket.mdl"
 
-ENT.IsRocket = true // projectile has a booster and will not drop.
+ENT.IsRocket = false // projectile has a booster and will not drop.
 
 ENT.InstantFuse = false // projectile is armed immediately after firing.
 ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.

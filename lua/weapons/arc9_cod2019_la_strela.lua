@@ -50,8 +50,8 @@ SWEP.NoAimAssist = true
 SWEP.ShootEnt = "arc9_cod2019_proj_strela_default" -- Set to an entity to launch it out of this weapon.
 SWEP.ShootEntForce = 5000
 
-SWEP.ShootPosOffset = Vector(5, 10, -5)
-SWEP.ShootPosOffsetSights = Vector(5, 10, -5)
+SWEP.ShootPosOffset = Vector(5, 5, -5)
+SWEP.ShootPosOffsetSights = Vector(5, 5, -5)
 
 SWEP.PushBackForce = 5
 
@@ -76,6 +76,7 @@ SWEP.RPM = 300
 SWEP.Firemodes = {
     {
         Mode = 1,
+		PrintName = "Launcher",
     },
 }
 

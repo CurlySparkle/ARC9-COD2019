@@ -18,7 +18,7 @@ ENT.ExplodeUnderwater = true
 ENT.Delay = 0
 ENT.SafetyFuse = 0.01
 
-ENT.AudioLoop = "weapons/cod2019/jokr/weap_juliet_proj_lp_01.ogg"
+ENT.AudioLoop = "weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
 
 ENT.SmokeTrail = true
 
@@ -28,53 +28,23 @@ ENT.FlareSizeMax = 50
 ENT.Radius = 300
 
 --- Stuff
-ENT.SteerSpeed = 50
-ENT.SteerDelay = 0
+ENT.SeekerAngle = math.cos(math.rad(100))
+ENT.SteerSpeed = 50000
+ENT.FuseTime = 0
+ENT.Boost = 1500
+ENT.Lift = 80
 
-ENT.MaxSpeed = 4000
-ENT.Acceleration = 1500
-ENT.SteerBrake = 2000
-ENT.MinSpeed = 1500
-ENT.AlwaysSteer = false
+ENT.FireAndForget = false 
+ENT.TopAttack = false  -- This missile flies up above its target before going down in a top-attack trajectory.
+ENT.TopAttackHeight = 5000
+ENT.SuperSeeker = false 
+ENT.SuperSteerBoostTime = 5
+ENT.NoReacquire = false 
 
-function ENT:OnThink()
-    if CLIENT or (self.SteerDelay + self.SpawnTime) > CurTime() then return end
-    local wep = self.Inflictor
-    if IsValid(wep) and !wep:GetReloading() and IsValid(wep:GetOwner()) and wep:GetOwner():IsPlayer() and wep:GetOwner():Alive() then
-        local pos_tr = wep:GetMuzzleOrigin()
-        local ang = wep:GetShootDir()
+ENT.ShootEntData = {}
 
-        local tr = util.TraceLine({
-            start = pos_tr,
-            endpos = pos_tr + (ang:Forward() * 30000),
-            mask = MASK_VISIBLE,
-            filter = self:GetOwner()
-        })
-        if tr.Hit then
-            self.TargetPos = tr.HitPos
-        end
-    elseif !self.AlwaysSteer then
-        self.TargetPos = nil
-    end
-end
-
-function ENT:PhysicsUpdate(phys)
-    local v = phys:GetVelocity()
-    if self.TargetPos and (self.SteerDelay + self.SpawnTime) <= CurTime() then
-        local tgtang = (self.TargetPos - self:GetPos()):Angle()
-        local p = self:GetAngles().p
-        local y = self:GetAngles().y
-
-        local diff = self.SteerBrake * math.min((math.abs(math.AngleDifference(p, tgtang.p)) + math.abs(math.AngleDifference(y, tgtang.y))) / (self.SteerSpeed * 2), 1)
-        p = math.ApproachAngle(p, tgtang.p, FrameTime() * self.SteerSpeed)
-        y = math.ApproachAngle(y, tgtang.y, FrameTime() * self.SteerSpeed)
-
-        self:SetAngles(Angle(p, y, 0))
-        phys:SetVelocityInstantaneous(self:GetForward() * math.Clamp(v:Length() + (self.Acceleration - diff) * FrameTime(), self.MinSpeed, self.MaxSpeed))
-    else
-        phys:SetVelocityInstantaneous(self:GetForward() * math.Clamp(v:Length() + self.Acceleration * FrameTime(), self.MinSpeed, self.MaxSpeed))
-    end
-end
+ENT.IsProjectile = true
+ENT.SACLOS = true
 
 function ENT:Impact(data, collider)
     if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
@@ -116,16 +86,94 @@ function ENT:Impact(data, collider)
     end
 end
 
+function ENT:OnThink()
+        local drunk = false
+
+        if self.FireAndForget or self.SemiActive then
+            if self.SemiActive then
+                if IsValid(self.Weapon) then
+                    self.ShootEntData = self.Weapon:RunHook("Hook_GetShootEntData", {})
+                end
+            end
+
+            if self.ShootEntData.Target and IsValid(self.ShootEntData.Target) then
+                local target = self.ShootEntData.Target
+                if target.UnTrackable then self.ShootEntData.Target = nil end
+				
+                local tpos = target:EyePos()
+                if self.TopAttack and !self.TopAttackReached then
+                    tpos = tpos + Vector(0, 0, self.TopAttackHeight)
+
+                    local dist = (tpos - self:GetPos()):Length()
+
+                    if dist <= 3000 then
+                        self.TopAttackReached = true
+                        self.SuperSteerTime = CurTime() + self.SuperSteerBoostTime
+                    end
+                end
+                local dir = (tpos - self:GetPos()):GetNormalized()
+                local dot = dir:Dot(self:GetAngles():Forward())
+                local ang = dir:Angle()
+
+                if self.SuperSeeker or dot >= self.SeekerAngle or !self.TopAttackReached or (self.SuperSteerTime and self.SuperSteerTime >= CurTime()) then
+                    local p = self:GetAngles().p
+                    local y = self:GetAngles().y
+
+                    p = math.ApproachAngle(p, ang.p, FrameTime() * self.SteerSpeed)
+                    y = math.ApproachAngle(y, ang.y, FrameTime() * self.SteerSpeed)
+
+                    self:SetAngles(Angle(p, y, 0))
+                    -- self:SetVelocity(dir * 15000)
+                elseif self.NoReacquire then
+                    self.ShootEntData.Target = nil
+                    drunk = false
+                end
+                -- end
+            else
+                drunk = false
+            end
+        elseif self.SACLOS then
+            if self:GetOwner():IsValid() then
+                local tpos = self:GetOwner():GetEyeTrace().HitPos
+                local dir = (tpos - self:GetPos()):GetNormalized()
+                local dot = dir:Dot(self:GetAngles():Forward())
+                local ang = dir:Angle()
+
+                if dot >= self.SeekerAngle then
+                    local p = self:GetAngles().p
+                    local y = self:GetAngles().y
+
+                    p = math.ApproachAngle(p, ang.p, FrameTime() * self.SteerSpeed)
+                    y = math.ApproachAngle(y, ang.y, FrameTime() * self.SteerSpeed)
+
+                    self:SetAngles(Angle(p, y, 0))
+                else
+                    drunk = false
+                end
+            else
+                drunk = false
+            end
+        end
+
+        if drunk then
+            self:SetAngles(self:GetAngles() + (AngleRand() * FrameTime() * 1000 / 360))
+        end
+
+        if SERVER then
+        self:GetPhysicsObject():AddVelocity(Vector(0, 0, self.Lift) + self:GetForward() * self.Boost)
+		end
+end
+
 function ENT:Detonate()
     local attacker = self.Attacker or self:GetOwner()
 
     if self.NPCDamage then
-        util.BlastDamage(self, attacker, self:GetPos(), 328, 120)
+        util.BlastDamage(self, attacker, self:GetPos(), 350, 125)
     else
-        util.BlastDamage(self, attacker, self:GetPos(), 328, 250)
+        util.BlastDamage(self, attacker, self:GetPos(), 350, 175)
         self:FireBullets({
             Attacker = attacker,
-            Damage = 600,
+            Damage = 1000,
             Tracer = 0,
             Src = self:GetPos(),
             Dir = self:GetForward(),
@@ -134,7 +182,7 @@ function ENT:Detonate()
             IgnoreEntity = self,
             Callback = function(atk, btr, dmginfo)
                 dmginfo:SetDamageType(DMG_AIRBOAT + DMG_BLAST) // airboat damage for helicopters and LVS vehicles
-                dmginfo:SetDamageForce(self:GetForward() * 22000) // LVS uses this to calculate penetration!
+                dmginfo:SetDamageForce(self:GetForward() * 20000) // LVS uses this to calculate penetration!
             end,
         })
     end
@@ -145,11 +193,23 @@ function ENT:Detonate()
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
     else
-        ParticleEffect("explosion_m79", self:GetPos(), Angle(-90, 0, 0))
+        --util.Effect("Explosion", fx)
+		ParticleEffect("explosion_m79", self:GetPos(), Angle(-90, 0, 0))
     end
 
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
+    self:FireBullets({
+        Attacker = attacker,
+        Damage = 0,
+        Tracer = 0,
+        Distance = 20000,
+        Dir = self:GetVelocity(),
+        Src = self:GetPos(),
+        Callback = function(att, tr, dmg)
+            util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
+        end
+    })
 
     self:Remove()
 end

@@ -91,6 +91,7 @@ SWEP.RPM = 125
 SWEP.Firemodes = {
     {
         Mode = 1,
+		PrintName = "Launcher",
     },
 }
 

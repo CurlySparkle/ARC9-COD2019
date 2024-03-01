@@ -84,6 +84,18 @@ SWEP.Firemodes = {
     },
     {
         Mode = -1,
+        PrintName = "Guided-Fire",
+        TopAttack = false,
+        ShootEnt = "arc9_cod2019_proj_jokr_saclos",
+		-- ToggleOnF = true,
+        -- LaserColorPlayer = true,
+        -- Laser = true,
+        -- LaserStrength = 4,
+        -- LaserColor = Color(0, 255, 0),
+        -- LaserAttachment = 4,
+    },
+    {
+        Mode = -1,
         PrintName = "Dumb-Fire",
         TopAttack = false,
         ShootEnt = "arc9_cod2019_proj_jokr_default2",
@@ -212,9 +224,9 @@ SWEP.RTScopeFLIRCCCold = { -- Color correction drawn only on FLIR targets
     [ "$pp_colour_addr" ] = 0,
     [ "$pp_colour_addg" ] = 0,
     [ "$pp_colour_addb" ] = 0,
-    [ "$pp_colour_brightness" ] = 1.54,
-    [ "$pp_colour_contrast" ] = 0.1,
-    [ "$pp_colour_colour" ] = 0,
+    [ "$pp_colour_brightness" ] = 0,
+    [ "$pp_colour_contrast" ] = 0.5,
+    [ "$pp_colour_colour" ] = 0.5,
     [ "$pp_colour_mulr" ] = 0,
     [ "$pp_colour_mulg" ] = 0,
     [ "$pp_colour_mulb" ] = 0
@@ -389,7 +401,7 @@ SWEP.Hook_HUDPaintBackground = function(self)
 SWEP.NextBeepTime = 0
 SWEP.TargetEntity = nil
 SWEP.StartTrackTime = 0
-SWEP.LockTime = 3
+SWEP.LockTime = 1
 
 SWEP.Hook_Think2 = function(self)
     if self:GetSightAmount() >= 0.75 and self:Clip1() > 0 and self:GetCurrentFiremodeTable().TopAttack then
@@ -408,7 +420,7 @@ SWEP.Hook_Think2 = function(self)
             if CLIENT then
                 self:EmitSound("weapons/cod2019/jokr/lockon_start.wav", 75, 100)
             end
-            self.NextBeepTime = CurTime() + 1
+            self.NextBeepTime = CurTime() + 0.5
         end
         -- end
 

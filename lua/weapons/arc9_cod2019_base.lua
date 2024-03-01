@@ -80,30 +80,30 @@ SWEP.HasSights = !SWEP.Akimbo
 
 local parmbl = {"blend_move", "blend_walk"}
 
-SWEP.Hook_Think	= function(wep)
+SWEP.Hook_Think	= function(self)
     if CLIENT then
-        local owner = wep:GetOwner()
+        local owner = self:GetOwner()
         if !owner:IsPlayer() then return end
-        local vm, wm, clip, delta = IsValid(wep:GetVM()) and wep:GetVM(), IsValid(wep:GetWM()) and wep:GetWM(), wep:Clip1(), wep:GetSightAmount()
+        local vm, wm, clip, delta = IsValid(self:GetVM()) and self:GetVM(), IsValid(self:GetWM()) and self:GetWM(), self:Clip1(), self:GetSightAmount()
         local coolilove = math.cos(delta * (math.pi / 2))
-        local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1-wep.CustomizeDelta) or 0
+        local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1-self.CustomizeDelta) or 0
         local spd = math.Clamp(math.Remap(vel, wspd, maxspd, 0, 1), 0, 1)
         local spd2 = math.Clamp(math.Remap(vel, 0, wspd, 0, 1), 0, 1) - spd
         local moveblend = math.Clamp(spd-delta, 0, 1) or 0
         local walkblend = math.Clamp(spd2-delta, 0, 1) or 0
-        wep.MovePoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), wep.MovePoseParam, moveblend)
-        wep.WalkPoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), wep.WalkPoseParam, walkblend)
+        self.MovePoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.MovePoseParam, moveblend)
+        self.WalkPoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.WalkPoseParam, walkblend)
         if vm then
-            vm:SetPoseParameter("bullets",wep:GetMaxClip1() - clip)
-            vm:SetPoseParameter("blend_move", wep.MovePoseParam)
-            vm:SetPoseParameter("blend_walk", wep.WalkPoseParam)
-            --vm:SetPoseParameter("empty", !wep:GetReloading() and (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
+            vm:SetPoseParameter("bullets",self:GetMaxClip1() - clip)
+            vm:SetPoseParameter("blend_move", self.MovePoseParam)
+            vm:SetPoseParameter("blend_walk", self.WalkPoseParam)
+            --vm:SetPoseParameter("empty", !self:GetReloading() and (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
             vm:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
         end
-        if wep:Clip1() == 0 then
-            vm:SetPoseParameter("empty", (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
+        if self:Clip1() == 0 then
+            vm:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
         else
-            vm:SetPoseParameter("empty", (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
+            vm:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
         end
         if wm and vm and wm:GetModel() == vm:GetModel() then
             for i = 0, wm:GetNumPoseParameters() -1 do
@@ -115,7 +115,7 @@ SWEP.Hook_Think	= function(wep)
             end
         end
     end
-	wep:Hook_Think2()
+	self:Hook_Think2()
 end
 
 SWEP.Hook_Think2 = function(self)

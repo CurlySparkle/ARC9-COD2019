@@ -309,26 +309,26 @@ end
 
 SWEP.Hook_HUDPaintBackground = function(self)
     if self:GetSightAmount() >= 0.75 then
-            if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
-                local toscreen = self.TargetEntity:GetPos():ToScreen()
-                local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
+        if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
+             local toscreen = self.TargetEntity:GetPos():ToScreen()
+             local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
 
-                surface.SetDrawColor(255, 255, 255)
+             surface.SetDrawColor(255, 255, 255)
 
-                if tracktime >= 1 then
-                    surface.SetDrawColor(255, 0, 0)
-                end
-                surface.DrawOutlinedRect( toscreen.x-ScrW()/50, toscreen.y-ScrW()/50, 50, 50,2 )
-            end
+             if tracktime >= 1 then
+                surface.SetDrawColor(255, 0, 0)
+             end
+           surface.DrawOutlinedRect( toscreen.x-ScrW()/50, toscreen.y-ScrW()/50, 50, 50,2 )
         end
     end
+end
 
 ---- LOCK-IN FUNCTIONS
 
 SWEP.NextBeepTime = 0
 SWEP.TargetEntity = nil
 SWEP.StartTrackTime = 0
-SWEP.LockTime = 3
+SWEP.LockTime = 2
 
 SWEP.Hook_Think2 = function(self)
     if self:GetSightAmount() >= 0.75 and self:Clip1() > 0 and self:GetCurrentFiremodeTable().TopAttack then
