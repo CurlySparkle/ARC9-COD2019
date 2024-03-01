@@ -116,9 +116,9 @@ SWEP.CustomizeRotateAnchor = Vector(1, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
-SWEP.ShootPosOffset = Vector(0, 15, -2)
+SWEP.ShootPosOffset = Vector(0, 5, -2)
 
-SWEP.CamQCA = 4
+SWEP.CamQCA = 1
 SWEP.CamQCA_Mult = 1
 
 -------------------------- AIM ASSIST
@@ -173,6 +173,20 @@ SWEP.Animations = {
             {s = path .. "weap_detpack_foley_down.ogg", t = 9/30},
         },
     },
+    ["idle_sprint"] = {
+        Source = "",
+    },
+    ["exit_sprint"] = {
+        Source = "",
+		Mult = 2,
+    },
+    ["enter_sprint"] = {
+        Source = "",
+		Mult = 2,
+    },
+    ["bash"] = {
+        Source = "melee",
+    },
 --  Empty Sequences
     ["idle_detonator"] = {
       Source = "idle_empty",
@@ -205,5 +219,19 @@ SWEP.Animations = {
             {s = path .. "weap_detpack_trigger.ogg", t = 0/30},
             {s = path .. "weap_detpack_foley_down.ogg", t = 9/30},
         },
+    },
+    ["idle_sprint_detonator"] = {
+        Source = "sprint_empty",
+    },
+    ["exit_sprint_detonator"] = {
+        Source = "sprint_out_empty",
+		Mult = 3,
+    },
+    ["enter_sprint_detonator"] = {
+        Source = "sprint_in_empty",
+		Mult = 2,
+    },
+    ["bash_detonator"] = {
+        Source = "melee_empty",
     },
 }

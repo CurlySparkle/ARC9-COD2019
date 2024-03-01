@@ -79,14 +79,20 @@ SWEP.RPM = 300
 SWEP.Firemodes = {
     {
         Mode = -1,
-        PrintName = "TOP",
+        PrintName = "Lock-On",
         TopAttack = true
     },
     {
         Mode = -1,
-        PrintName = "SACLOS",
+        PrintName = "Dumb-Fire",
         TopAttack = false,
-        ShootEnt = "arc9_cod2019_proj_jokr_saclos"
+        ShootEnt = "arc9_cod2019_proj_jokr_default2",
+		-- ToggleOnF = true,
+        -- LaserColorPlayer = true,
+        -- Laser = true,
+        -- LaserStrength = 4,
+        -- LaserColor = Color(0, 255, 0),
+        -- LaserAttachment = 4,
     },
 }
 
@@ -166,27 +172,6 @@ SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
 SWEP.PostBashTime = 0.6
-
--------------------------- LOCKON -- RESOURCE INTENSIVE - INVESTIGATE?
-
--- SWEP.LockOnSights = true
-
--- SWEP.LockOnAutoaim = true -- Gun will shoot directly towards lockon target
-
--- SWEP.LocksLiving = true -- Locks on to any NPC or player
--- SWEP.LocksGround = true -- Will lock on to any entity deemed a ground target and not an air target
--- SWEP.LocksAir = true -- Will lock on to any entity deemed an air target, and not a ground target
-
--- SWEP.LockOnRange = 100000 -- How far away the lockon can be
--- SWEP.LockOnFOV = 10 -- How wide the lockon can be
--- SWEP.LockedOnFOV = 20 -- FOV needed to maintain a lock
-
--- SWEP.LockOnTime = 0.5 -- How long it takes to lock on, in seconds
-
--- SWEP.LockOnSound = nil -- Sound to play when locking on
--- SWEP.LockedOnSound = nil -- Sound to play when successfully locked target
-
--- SWEP.LockOnHUD = true -- Show a box around locked targets
 
 -------------------------- TRACERS
 
@@ -311,6 +296,16 @@ SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
+--- LASER FUNCTION
+SWEP.ToggleOnF = true
+SWEP.LaserColorPlayer = true
+SWEP.Laser = true
+SWEP.TacticalName = "Laser"
+SWEP.LaserStrength = 4
+SWEP.LaserColor = Color(255, 0, 0)
+SWEP.LaserAttachment = 4
+------------------------------------
+
 SWEP.CamQCA = 3
 SWEP.CamQCA_Mult = 1
 
@@ -357,14 +352,13 @@ SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 SWEP.TriggerDownSound = ""
 SWEP.TriggerUpSound = ""
 
+SWEP.BulletBones = {
+    [1] = {"j_rocket","j_frontfin_1","j_frontfin_2","j_rearfin_1","j_rearfin_2","j_rearfin_3","j_rearfin_4"},
+}
+
 SWEP.HookP_BlockFire = function(self)
     return self:GetSightAmount() < 1
 end
-
-SWEP.NextBeepTime = 0
-SWEP.TargetEntity = nil
-SWEP.StartTrackTime = 0
-SWEP.LockTime = 3
 
 SWEP.Hook_GetShootEntData = function(self, data)
     local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 1)
@@ -376,18 +370,8 @@ end
 
 SWEP.Hook_HUDPaintBackground = function(self)
     if self:GetSightAmount() >= 0.75 then
-        if !self:GetCurrentFiremodeTable().TopAttack then
-            surface.SetDrawColor(255, 255, 255)
-
-            local x = ScrW() / 2
-            local y = ScrH() / 2
-
-            surface.DrawLine(0, y, ScrW(), y)
-            surface.DrawLine(x, 0, x, ScrH())
-        else
             if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
                 local toscreen = self.TargetEntity:GetPos():ToScreen()
-
                 local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
 
                 surface.SetDrawColor(255, 255, 255)
@@ -395,11 +379,95 @@ SWEP.Hook_HUDPaintBackground = function(self)
                 if tracktime >= 1 then
                     surface.SetDrawColor(255, 0, 0)
                 end
-
-                surface.DrawLine(0, toscreen.y, ScrW(), toscreen.y)
-                surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH())
+                surface.DrawOutlinedRect( toscreen.x-ScrW()/50, toscreen.y-ScrW()/50, 50, 50,2 )
             end
         end
+    end
+
+---- LOCK-IN FUNCTIONS
+
+SWEP.NextBeepTime = 0
+SWEP.TargetEntity = nil
+SWEP.StartTrackTime = 0
+SWEP.LockTime = 3
+
+SWEP.Hook_Think2 = function(self)
+    if self:GetSightAmount() >= 0.75 and self:Clip1() > 0 and self:GetCurrentFiremodeTable().TopAttack then
+
+        if self.NextBeepTime > CurTime() then return end
+
+        local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
+
+        -- if CLIENT then
+        if tracktime >= 1 and self.TargetEntity then
+            if CLIENT then
+                self:EmitSound("weapons/cod2019/jokr/lockon.wav", 75, 100)
+            end
+            self.NextBeepTime = CurTime() + 0.1
+        else
+            if CLIENT then
+                self:EmitSound("weapons/cod2019/jokr/lockon_start.wav", 75, 100)
+            end
+            self.NextBeepTime = CurTime() + 1
+        end
+        -- end
+
+        local targets = ents.FindInCone(self:GetShootPos() + (self:GetShootDir():Forward() * 32), self:GetShootDir():Forward(), 30000, math.cos(math.rad(10)))
+
+        local best = nil
+        local targetscore = 0
+
+        for _, ent in ipairs(targets) do
+            -- if ent:Health() <= 0 then continue end
+            -- if !(ent:IsPlayer() or ent:IsNPC() or ent:GetOwner():IsValid()) then continue end
+            if ent:IsWorld() then continue end
+            if ent == self:GetOwner() then continue end
+            if ent.IsProjectile then continue end
+            if ent.UnTrackable then continue end
+
+            local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
+            local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
+
+            if vol <= 100000 and !ent:IsPlayer() or !ent:IsNextBot() then continue end
+
+            local dot = (ent:GetPos() - self:GetShootPos()):GetNormalized():Dot(self:GetShootDir():Forward())
+
+            local entscore = 1
+
+            if ent:IsPlayer() then entscore = entscore + 5 end
+            if ent:IsNextBot() then entscore = entscore + 6 end
+            if ent:IsNPC() then entscore = entscore + 2 end
+            if ent:IsVehicle() then entscore = entscore + 10 end
+            if ent:Health() > 0 then entscore = entscore + 5 end
+
+            entscore = entscore + dot * 5
+
+            entscore = entscore + (ent.ARC9TrackingScore or 0)
+
+            if entscore > targetscore then
+                local tr = util.TraceLine({
+                    start = self:GetShootPos(),
+                    endpos = ent:WorldSpaceCenter(),
+                    filter = self:GetOwner(),
+                    mask = MASK_SHOT
+                })
+                if tr.Entity == ent then
+                best = ent
+                bestang = dot
+                targetscore = entscore
+                end
+            end
+        end
+
+        if !best then self.TargetEntity = nil return end
+
+        if !self.TargetEntity then
+            self.StartTrackTime = CurTime()
+        end
+
+        self.TargetEntity = best
+    else
+        self.TargetEntity = nil
     end
 end
 
@@ -523,6 +591,12 @@ SWEP.Animations = {
     ["bash"] = {
         Source = "melee_01",
     },
+    ["firemode_1"] = {
+        Source = "firemode",
+    },
+    ["firemode_2"] = {
+        Source = "firemode",
+	},
 }
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
@@ -608,6 +682,15 @@ SWEP.Attachments = {
         -- Pos = Vector(5, 0, 0),
         -- Ang = Angle(0, 0, 0),
     -- },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
+        DefaultAttName = "Default",
+        Category = "cod2019_tac_rail_alt",
+        Bone = "tag_launcher_offset",
+        Pos = Vector(8, -4, 6.3),
+        Ang = Angle(0, 0, -90),
+		--InstalledElements = {"rail_laser"},
+    },
     {
 		PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"}

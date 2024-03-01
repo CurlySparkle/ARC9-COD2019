@@ -61,11 +61,7 @@ SWEP.EnterBipodSound = "Viewmodel.BipodDeploy"
 SWEP.ExitBipodSound = "Viewmodel.BipodExit"
 
 SWEP.RicochetChance = 0.02
-
 SWEP.SwayMultSights = 0
-
-SWEP.HasSights = !SWEP.Akimbo
-
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
@@ -78,11 +74,9 @@ SWEP.DryFireSound = ""
 SWEP.IndoorSoundHardCutoff = true
 --SWEP.IndoorSoundHardCutoffRatio = 0.1
 
---SWEP.BobSettingsMove =  {1.25, 1, 1.5,    1.25, -3.5, 0.95}
---SWEP.BobSettingsSpeed = {0.9, 1, 0.92,    1, 1.02, 0.9}
-
 SWEP.MovePoseParam = 0
 SWEP.WalkPoseParam = 0
+SWEP.HasSights = !SWEP.Akimbo
 
 local parmbl = {"blend_move", "blend_walk"}
 
@@ -121,6 +115,10 @@ SWEP.Hook_Think	= function(wep)
             end
         end
     end
+	wep:Hook_Think2()
+end
+
+SWEP.Hook_Think2 = function(self)
 end
 
 function SWEP:MakeEnvironmentDust(radius)
@@ -163,92 +161,4 @@ SWEP.HookP_NameChange = function(self, name)
 	end
 
     return name
-end
-
----- JOKR FUNCTIONS
-
-SWEP.Hook_Think2 = SWEP.Hook_Think
-SWEP.Hook_Think = function(self)
-    self:Hook_Think2()
-	
-    if self:GetSightAmount() >= 0.75 and self:Clip1() > 0 and self:GetCurrentFiremodeTable().TopAttack then
-
-        if self.NextBeepTime > CurTime() then return end
-
-        local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
-
-        -- if CLIENT then
-        if tracktime >= 1 and self.TargetEntity then
-            if CLIENT then
-                self:EmitSound("weapons/cod2019/jokr/lockon.wav", 75, 100)
-            end
-            self.NextBeepTime = CurTime() + 0.1
-        else
-            if CLIENT then
-                self:EmitSound("weapons/cod2019/jokr/lockon_start.wav", 75, 100)
-            end
-            self.NextBeepTime = CurTime() + 1
-        end
-        -- end
-
-        local targets = ents.FindInCone(self:GetShootPos() + (self:GetShootDir():Forward() * 32), self:GetShootDir():Forward(), 30000, math.cos(math.rad(10)))
-
-        local best = nil
-        local targetscore = 0
-
-        for _, ent in ipairs(targets) do
-            -- if ent:Health() <= 0 then continue end
-            -- if !(ent:IsPlayer() or ent:IsNPC() or ent:GetOwner():IsValid()) then continue end
-            if ent:IsWorld() then continue end
-            if ent == self:GetOwner() then continue end
-            if ent.IsProjectile then continue end
-            if ent.UnTrackable then continue end
-
-            local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
-            local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
-
-            if vol <= 100000 then continue end
-
-            local dot = (ent:GetPos() - self:GetShootPos()):GetNormalized():Dot(self:GetShootDir():Forward())
-
-            local entscore = 1
-
-            if ent:IsPlayer() then entscore = entscore + 7 end
-            if ent:IsNPC() then entscore = entscore + 5 end
-            if ent:IsNextBot() then entscore = entscore + 6 end
-            if ent:IsVehicle() then entscore = entscore + 10 end
-            if ent:Health() > 0 then entscore = entscore + 5 end
-
-            entscore = entscore + dot * 5
-
-            entscore = entscore + (ent.ARC9TrackingScore or 0)
-
-            if entscore > targetscore then
-                -- local tr = util.TraceLine({
-                --     start = self:GetShootPos(),
-                --     endpos = ent:GetPos(),
-                --     filter = self:GetOwner(),
-                --     mask = MASK_VISIBLE_AND_NPCS
-                -- })
-
-                -- PrintTable(tr)
-
-                -- if tr.Entity == ent then
-                best = ent
-                bestang = dot
-                targetscore = entscore
-                -- end
-            end
-        end
-
-        if !best then self.TargetEntity = nil return end
-
-        if !self.TargetEntity then
-            self.StartTrackTime = CurTime()
-        end
-
-        self.TargetEntity = best
-    else
-        self.TargetEntity = nil
-    end
 end

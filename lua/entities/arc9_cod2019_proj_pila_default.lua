@@ -25,6 +25,26 @@ ENT.SmokeTrail = true
 ENT.FlareColor = Color(155, 155, 155)
 ENT.Radius = 300
 
+--- Stuff
+ENT.SeekerAngle = math.cos(math.rad(35))
+ENT.SteerSpeed = 10000
+ENT.FuseTime = 0
+ENT.Boost = 1500
+ENT.Lift = 80
+ENT.DragCoefficient = 0.1
+ENT.LifeTime = 20
+
+ENT.FireAndForget = true
+ENT.TopAttack = false -- This missile flies up above its target before going down in a top-attack trajectory.
+ENT.TopAttackHeight = 5000
+ENT.SuperSeeker = false
+ENT.SuperSteerBoostTime = 5
+ENT.NoReacquire = true
+
+ENT.ShootEntData = {}
+
+ENT.IsProjectile = true
+
 function ENT:Impact(data, collider)
     if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
         local attacker = self.Attacker or self:GetOwner()
@@ -63,6 +83,84 @@ function ENT:Impact(data, collider)
         self:Remove()
         return true
     end
+end
+
+function ENT:OnThink()
+        local drunk = false
+
+        if self.FireAndForget or self.SemiActive then
+            if self.SemiActive then
+                if IsValid(self.Weapon) then
+                    self.ShootEntData = self.Weapon:RunHook("Hook_GetShootEntData", {})
+                end
+            end
+
+            if self.ShootEntData.Target and IsValid(self.ShootEntData.Target) then
+                local target = self.ShootEntData.Target
+                if target.UnTrackable then self.ShootEntData.Target = nil end
+				
+                local tpos = target:EyePos()
+                if self.TopAttack and !self.TopAttackReached then
+                    tpos = tpos + Vector(0, 0, self.TopAttackHeight)
+
+                    local dist = (tpos - self:GetPos()):Length()
+
+                    if dist <= 3000 then
+                        self.TopAttackReached = true
+                        self.SuperSteerTime = CurTime() + self.SuperSteerBoostTime
+                    end
+                end
+                local dir = (tpos - self:GetPos()):GetNormalized()
+                local dot = dir:Dot(self:GetAngles():Forward())
+                local ang = dir:Angle()
+
+                if self.SuperSeeker or dot >= self.SeekerAngle or !self.TopAttackReached or (self.SuperSteerTime and self.SuperSteerTime >= CurTime()) then
+                    local p = self:GetAngles().p
+                    local y = self:GetAngles().y
+
+                    p = math.ApproachAngle(p, ang.p, FrameTime() * self.SteerSpeed)
+                    y = math.ApproachAngle(y, ang.y, FrameTime() * self.SteerSpeed)
+
+                    self:SetAngles(Angle(p, y, 0))
+                    -- self:SetVelocity(dir * 15000)
+                elseif self.NoReacquire then
+                    self.ShootEntData.Target = nil
+                    drunk = false
+                end
+                -- end
+            else
+                drunk = false
+            end
+        elseif self.SACLOS then
+            if self:GetOwner():IsValid() then
+                local tpos = self:GetOwner():GetEyeTrace().HitPos
+                local dir = (tpos - self:GetPos()):GetNormalized()
+                local dot = dir:Dot(self:GetAngles():Forward())
+                local ang = dir:Angle()
+
+                if dot >= self.SeekerAngle then
+                    local p = self:GetAngles().p
+                    local y = self:GetAngles().y
+
+                    p = math.ApproachAngle(p, ang.p, FrameTime() * self.SteerSpeed)
+                    y = math.ApproachAngle(y, ang.y, FrameTime() * self.SteerSpeed)
+
+                    self:SetAngles(Angle(p, y, 0))
+                else
+                    drunk = false
+                end
+            else
+                drunk = false
+            end
+        end
+
+        if drunk then
+            self:SetAngles(self:GetAngles() + (AngleRand() * FrameTime() * 1000 / 360))
+        end
+
+        if SERVER then
+        self:GetPhysicsObject():AddVelocity(Vector(0, 0, self.Lift) + self:GetForward() * self.Boost)
+		end
 end
 
 function ENT:Detonate()

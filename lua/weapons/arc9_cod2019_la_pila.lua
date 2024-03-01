@@ -91,6 +91,13 @@ SWEP.RPM = 300
 SWEP.Firemodes = {
     {
         Mode = 1,
+        PrintName = "Lock-on",
+        TopAttack = true
+    },
+    {
+        Mode = 1,
+        PrintName = "Dumb-fire",
+        TopAttack = false,
     },
 }
 
@@ -184,8 +191,22 @@ SWEP.IronSights = {
     Ang = Angle(-5, 20, -5),
     Magnification = 1.25,
     ViewModelFOV = 56,
-    CrosshairInSights = true
+    CrosshairInSights = false
 }
+
+--- RT Reticle ---
+SWEP.RTScope = true
+SWEP.RTScopeSubmatIndex = 1
+SWEP.RTScopeFOV = 44 / 4.4 -- FOV multiplied by zoom level
+SWEP.RTScopeReticle = Material("hud/arc9_cod2019/overlays/mk4_crosshair.png")
+SWEP.RTScopeColorable = false
+SWEP.RTScopeShadowIntensity = 1
+SWEP.RTScopeNoShadow = false
+SWEP.RTScopeBlackBox = false
+SWEP.RTScopeBlackBoxShadow = false
+SWEP.ScopeScreenRatio = 1
+SWEP.RTScopeReticleScale = 1
+----------------------------------------------------
 
 SWEP.ViewModelFOVBase = 65
 
@@ -202,17 +223,17 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-1, -1, -1.3)
-SWEP.MovingAng = Angle(5, -2, -8)
+SWEP.MovingPos = Vector(-1.2, -0.8, -0.8)
+SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(1, 0, -1)
-SWEP.SprintAng = Angle(0, 0, 25)
+SWEP.SprintPos = Vector(1, 0, -0)
+SWEP.SprintAng = Angle(-6, -6, 0)
 
-SWEP.CustomizeAng = Angle(90, -5, 17)
-SWEP.CustomizePos = Vector(9, 45, 6)
+SWEP.CustomizeAng = Angle(90, -25, 6)
+SWEP.CustomizePos = Vector(4, 40, 6)
 SWEP.CustomizeRotateAnchor = Vector(9, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
@@ -265,41 +286,129 @@ SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
 SWEP.EnterSightsSound = "weapons/cod2019/pila/weap_la_gromeo_ads_up.ogg"
 SWEP.ExitSightsSound = "weapons/cod2019/pila/weap_la_gromeo_ads_down.ogg"
 
-SWEP.HookP_BlockFire = function(self)
-    return self:GetSightAmount() < 1
-end
-
--- SWEP.LockOn = false
--- SWEP.LockOnSights = true
-
--- Use LockOnSights = true to lock only in sights
--- LockOn will provide targeting data in ENT.ShootEntData
-
--- This shit broken bruh
-
--- SWEP.LockOnAutoaim = true -- Gun will shoot directly towards lockon target
-
--- SWEP.LocksLiving = true -- Locks on to any NPC or player
--- SWEP.LocksGround = true -- Will lock on to any entity deemed a ground target and not an air target
--- SWEP.LocksAir = true -- Will lock on to any entity deemed an air target, and not a ground target
-
--- SWEP.LockOnRange = 100000 -- How far away the lockon can be
--- SWEP.LockOnFOV = 65 -- How wide the lockon can be
--- SWEP.LockedOnFOV = 65 -- FOV needed to maintain a lock
-
--- SWEP.LockOnTime = 0.5 -- How long it takes to lock on, in seconds
-
--- SWEP.LockOnSound = "weapons/cod2019/pila/lockon_start.wav" -- Sound to play when locking on
--- SWEP.LockedOnSound = "weapons/cod2019/pila/lockon.wav" -- Sound to play when successfully locked target
-
--- SWEP.LockOnHUD = true -- Show a box around locked targets
-
 SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = ""
+
+SWEP.FiremodeSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
+
+SWEP.HookP_BlockFire = function(self)
+    return self:GetSightAmount() < 1
+end
+
+SWEP.Hook_GetShootEntData = function(self, data)
+    local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 1)
+
+    if tracktime >= 1 and self.TargetEntity and IsValid(self.TargetEntity) then
+        data.Target = self.TargetEntity
+    end
+end
+
+SWEP.Hook_HUDPaintBackground = function(self)
+    if self:GetSightAmount() >= 0.75 then
+            if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
+                local toscreen = self.TargetEntity:GetPos():ToScreen()
+                local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
+
+                surface.SetDrawColor(255, 255, 255)
+
+                if tracktime >= 1 then
+                    surface.SetDrawColor(255, 0, 0)
+                end
+                surface.DrawOutlinedRect( toscreen.x-ScrW()/50, toscreen.y-ScrW()/50, 50, 50,2 )
+            end
+        end
+    end
+
+---- LOCK-IN FUNCTIONS
+
+SWEP.NextBeepTime = 0
+SWEP.TargetEntity = nil
+SWEP.StartTrackTime = 0
+SWEP.LockTime = 3
+
+SWEP.Hook_Think2 = function(self)
+    if self:GetSightAmount() >= 0.75 and self:Clip1() > 0 and self:GetCurrentFiremodeTable().TopAttack then
+
+        if self.NextBeepTime > CurTime() then return end
+
+        local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
+
+        -- if CLIENT then
+        if tracktime >= 1 and self.TargetEntity then
+            if CLIENT then
+                self:EmitSound("weapons/cod2019/jokr/lockon.wav", 75, 100)
+            end
+            self.NextBeepTime = CurTime() + 0.1
+        else
+            if CLIENT then
+                self:EmitSound("weapons/cod2019/jokr/lockon_start.wav", 75, 100)
+            end
+            self.NextBeepTime = CurTime() + 1
+        end
+        -- end
+
+        local targets = ents.FindInCone(self:GetShootPos() + (self:GetShootDir():Forward() * 32), self:GetShootDir():Forward(), 30000, math.cos(math.rad(10)))
+
+        local best = nil
+        local targetscore = 0
+
+        for _, ent in ipairs(targets) do
+            -- if ent:Health() <= 0 then continue end
+            -- if !(ent:IsPlayer() or ent:IsNPC() or ent:GetOwner():IsValid()) then continue end
+            if ent:IsWorld() then continue end
+            if ent == self:GetOwner() then continue end
+            if ent.IsProjectile then continue end
+            if ent.UnTrackable then continue end
+
+            local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
+            local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
+
+            if vol <= 100000 and !ent:IsPlayer() or !ent:IsNextBot() then continue end
+
+            local dot = (ent:GetPos() - self:GetShootPos()):GetNormalized():Dot(self:GetShootDir():Forward())
+
+            local entscore = 1
+
+            if ent:IsPlayer() then entscore = entscore + 5 end
+            if ent:IsNextBot() then entscore = entscore + 6 end
+            if ent:IsNPC() then entscore = entscore + 2 end
+            if ent:IsVehicle() then entscore = entscore + 10 end
+            if ent:Health() > 0 then entscore = entscore + 5 end
+
+            entscore = entscore + dot * 5
+
+            entscore = entscore + (ent.ARC9TrackingScore or 0)
+
+            if entscore > targetscore then
+                local tr = util.TraceLine({
+                    start = self:GetShootPos(),
+                    endpos = ent:WorldSpaceCenter(),
+                    filter = self:GetOwner(),
+                    mask = MASK_SHOT
+                })
+                if tr.Entity == ent then
+                best = ent
+                bestang = dot
+                targetscore = entscore
+                end
+            end
+        end
+
+        if !best then self.TargetEntity = nil return end
+
+        if !self.TargetEntity then
+            self.StartTrackTime = CurTime()
+        end
+
+        self.TargetEntity = best
+    else
+        self.TargetEntity = nil
+    end
+end
 
 SWEP.Animations = {
 	["enter_sights"] = {
@@ -395,6 +504,17 @@ SWEP.Animations = {
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
 		Mult = 2,
     },
+    ["super_sprint_idle"] = {
+        Source = "super_sprint",
+    },
+    ["super_sprint_in"] = {
+        Source = "super_sprint_in",
+		Mult = 2,
+    },
+    ["super_sprint_out"] = {
+        Source = "super_sprint_out",
+		Mult = 2,
+    },
     ["inspect"] = {
         Source = "lookat01",
         MinProgress = 0.1,
@@ -415,20 +535,37 @@ SWEP.Animations = {
     ["bash"] = {
         Source = "melee_miss",
     },
+    ["firemode_1"] = {
+        Source = "firemode",
+    },
+    ["firemode_2"] = {
+        Source = "firemode",
+	},
 }
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
 
 -------------------------- ATTACHMENTS
 
+--- Fast & Tac. Sprint ---
 local Translate_Fast = {
     ["reload"] = "reload_fast",
+}
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
 }
 
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
     local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
+    end
 
     if speedload then
         if Translate_Fast[anim] then
@@ -442,6 +579,10 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(0, 0, 0),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.8,
+    },
+    ["cod2019_perks_super_sprint"] = {
+    SprintPos = Vector(1, 0, -0),
+    SprintAng = Angle(-6, -6, 0)
     },
 }
 
@@ -474,19 +615,20 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 end
 
 SWEP.Attachments = {
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_optic"),
-		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
-        Bone = "tag_launcher_offset",
-        Pos = Vector(1, -3.1, 0.75),
-        Ang = Angle(0, 0, -70),
-        -- Category = {"cod2019_optic","cod2019_optic_pila"},
-        Category = {"cod2019_optic_pila"},
-        InstalledElements = {"sights"},
-		--Installed = "cod2019_optic_scope_pila",
-		--Integral = "cod2019_optic_scope_pila",
-        CorrectiveAng = Angle(-0.4, 0.4, 0),
-    },
+    -- {
+        -- PrintName = ARC9:GetPhrase("mw19_category_optic"),
+		-- DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
+        -- Bone = "tag_launcher_offset",
+        -- Pos = Vector(1, -3.1, 0.75),
+        -- Ang = Angle(0, 0, -70),
+        -- -- Category = {"cod2019_optic","cod2019_optic_pila"},
+        -- Category = {"cod2019_optic_pila"},
+        -- InstalledElements = {"sights"},
+		-- Installed = "cod2019_optic_scope_pila",
+		-- Integral = "cod2019_optic_scope_pila",
+        -- CorrectiveAng = Angle(-0.4, 0.4, 0),
+		-- Hidden = true,
+    -- },
     -- {
         -- PrintName = ARC9:GetPhrase("mw19_category_laser"),
         -- DefaultAttName = "Default",
@@ -506,7 +648,7 @@ SWEP.Attachments = {
     },
     {
 		PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh_2"}
+        Category = {"cod2019_perks","cod2019_perks_soh_2","cod2019_perks_ss"}
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
