@@ -187,8 +187,8 @@ SWEP.TracerColor = Color(255, 255, 155) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2, -4, -1),
-    Ang = Angle(-5, 20, -5),
+    Pos = Vector(-0.425, -4.85, 2.365),
+    Ang = Angle(0, 5, 20),
     Magnification = 1.25,
     ViewModelFOV = 56,
     CrosshairInSights = false
@@ -197,7 +197,7 @@ SWEP.IronSights = {
 --- RT Reticle ---
 SWEP.RTScope = true
 SWEP.RTScopeSubmatIndex = 1
-SWEP.RTScopeFOV = 44 / 4.4 -- FOV multiplied by zoom level
+SWEP.RTScopeFOV = 44 / 1.25 -- FOV multiplied by zoom level
 SWEP.RTScopeReticle = Material("hud/arc9_cod2019/overlays/mk4_crosshair.png")
 SWEP.RTScopeColorable = false
 SWEP.RTScopeShadowIntensity = 1
@@ -205,7 +205,7 @@ SWEP.RTScopeNoShadow = false
 SWEP.RTScopeBlackBox = false
 SWEP.RTScopeBlackBoxShadow = false
 SWEP.ScopeScreenRatio = 1
-SWEP.RTScopeReticleScale = 1
+SWEP.RTScopeReticleScale = 1.15
 ----------------------------------------------------
 
 SWEP.ViewModelFOVBase = 65
