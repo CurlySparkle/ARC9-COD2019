@@ -48,12 +48,12 @@ SWEP.NoAimAssist = true
 -------------------------- DAMAGE PROFILE
 
 SWEP.ShootEnt = "arc9_cod2019_proj_jokr_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 5000
+SWEP.ShootEntForce = 4000
 
-SWEP.ShootPosOffset = Vector(5, 0, -5)
+SWEP.ShootPosOffset = Vector(5, -1, -5)
 SWEP.ShootAngOffset = Angle(0, 0, 0)
 
-SWEP.ShootPosOffsetSights = Vector(5, 0, -5)
+SWEP.ShootPosOffsetSights = Vector(5, -1, -5)
 SWEP.ShootAngOffsetSights = Angle(0, 0, 0)
 
 SWEP.PushBackForce = 5
@@ -413,14 +413,14 @@ SWEP.Hook_Think2 = function(self)
         -- if CLIENT then
         if tracktime >= 1 and self.TargetEntity then
             if CLIENT then
-                self:EmitSound("weapons/cod2019/jokr/lockon.wav", 75, 100)
+                self:EmitSound("weapons/cod2019/jokr/JOKR_ui_reticle_locked.ogg", 75, 100)
             end
-            self.NextBeepTime = CurTime() + 0.1
+            self.NextBeepTime = CurTime() + 0.15
         else
             if CLIENT then
-                self:EmitSound("weapons/cod2019/jokr/lockon_start.wav", 75, 100)
+                self:EmitSound("weapons/cod2019/jokr/JOKR_ui_reticle_tracking.ogg", 75, 100)
             end
-            self.NextBeepTime = CurTime() + 0.5
+            self.NextBeepTime = CurTime() + 0.4
         end
         -- end
 
@@ -440,7 +440,7 @@ SWEP.Hook_Think2 = function(self)
             local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
             local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
 
-            if vol <= 100000 and !ent:IsPlayer() or !ent:IsNextBot() then continue end
+            if vol <= 100000 and !ent:IsPlayer() then continue end
 
             local dot = (ent:GetPos() - self:GetShootPos()):GetNormalized():Dot(self:GetShootDir():Forward())
 

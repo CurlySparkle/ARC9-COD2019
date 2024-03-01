@@ -367,7 +367,7 @@ SWEP.Hook_Think2 = function(self)
             local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
             local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
 
-            if vol <= 100000 and !ent:IsPlayer() or !ent:IsNextBot() then continue end
+            if vol <= 100000 and !ent:IsPlayer() then continue end
 
             local dot = (ent:GetPos() - self:GetShootPos()):GetNormalized():Dot(self:GetShootDir():Forward())
 
