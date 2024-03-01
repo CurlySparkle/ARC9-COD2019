@@ -642,7 +642,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "j_rocket",
-        Category = {"go_ammo_rpg"},
+        Category = {"cod2019_pila_ammo"},
         Pos = Vector(5, 0, 0),
         Ang = Angle(0, 0, 0),
     },

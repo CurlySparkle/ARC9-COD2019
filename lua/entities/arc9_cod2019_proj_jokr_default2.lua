@@ -26,20 +26,22 @@ ENT.FlareColor = Color(155, 155, 155)
 ENT.Radius = 300
 
 --- Stuff
-ENT.SeekerAngle = math.cos(math.rad(35))
-ENT.SteerSpeed = 5000
+ENT.SeekerAngle = math.cos(math.rad(35)) -- The missile will lose tracking outside of this angle.
+ENT.SteerSpeed = 5000 -- The maximum amount of degrees per second the missile can steer.
 ENT.FuseTime = 0
 ENT.Boost = 1500
 ENT.Lift = 80
 ENT.DragCoefficient = 0.1
 ENT.LifeTime = 20
 
-ENT.FireAndForget = false
+ENT.FireAndForget = true -- This missile automatically tracks its target.
 ENT.TopAttack = true -- This missile flies up above its target before going down in a top-attack trajectory.
 ENT.TopAttackHeight = 5000
 ENT.SuperSeeker = false
 ENT.SuperSteerBoostTime = 5
-ENT.NoReacquire = true
+ENT.NoReacquire = true -- F&F target is permanently lost if it cannot reacquire
+ENT.SACLOS = false -- This missile is manually guided by its shooter.
+ENT.SemiActive = false -- This missile needs to be locked on to the target at all times.
 
 ENT.ShootEntData = {}
 

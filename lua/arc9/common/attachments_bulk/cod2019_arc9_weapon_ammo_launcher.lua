@@ -1,5 +1,6 @@
 local ATT = {}
-
+------------------------------------------ M32 Ammo Types
+---------------------
 ATT = {}
 
 ATT.PrintName = "Rock Nade"
@@ -98,3 +99,58 @@ ATT.ShootEnt = "arc9_cod2019_proj_40mm_gas"
 ATT.Category = {"cod2019_ammo_gl"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_gas")
+------------------------------------------ PILA Ammo Types
+---------------------
+ATT = {}
+
+ATT.PrintName = "Guided Rocket"
+ATT.CompactName = "Guided"
+ATT.Description = [[Changes the rocket type with a guiding mechanic.]]
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_launcher_guide.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEnt = "arc9_cod2019_proj_jokr_saclos"
+
+ATT.Category = {"cod2019_pila_ammo"}
+
+ATT.Firemodes = {
+    {
+        Mode = 1,
+        PrintName = "Guided",
+        TopAttack = false
+    },
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_pila_ammo_guided")
+------------------------------------------ JOKR Ammo Types
+---------------------
+ATT = {}
+
+ATT.PrintName = "Guided Rocket"
+ATT.CompactName = "Guided"
+ATT.Description = [[Changes the rocket type with a guiding mechanic.]]
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_launcher_guide.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEnt = "arc9_cod2019_proj_jokr_saclos"
+
+ATT.Category = {"cod2019_jokr_ammo"}
+
+ATT.Firemodes = {
+    {
+        Mode = 1,
+        PrintName = "Guided",
+        TopAttack = false
+    },
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_jokr_ammo_guided")
+---------------------------------------------------------------------

@@ -80,13 +80,21 @@ SWEP.Detonator = true
 
 -------------------------- HANDLING
 SWEP.SprintToFireTime = 0.2 -- How long it takes to go from sprinting to being able to fire.
+
+-------------------------- MELEE
+
+SWEP.Bash = true
+SWEP.PrimaryBash = false
+SWEP.PreBashTime = 0.2
+SWEP.PostBashTime = 0.2
+
 -------------------------- POSITIONS
 
 SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -2)
+SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
@@ -116,7 +124,7 @@ SWEP.CustomizeRotateAnchor = Vector(1, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 
-SWEP.ShootPosOffset = Vector(0, 5, -2)
+SWEP.ShootPosOffset = Vector(0, 5, 0)
 
 SWEP.CamQCA = 1
 SWEP.CamQCA_Mult = 1
@@ -174,14 +182,14 @@ SWEP.Animations = {
         },
     },
     ["idle_sprint"] = {
-        Source = "",
+        Source = "sprint",
     },
     ["exit_sprint"] = {
-        Source = "",
+        Source = "sprint_out",
 		Mult = 2,
     },
     ["enter_sprint"] = {
-        Source = "",
+        Source = "sprint_in",
 		Mult = 2,
     },
     ["bash"] = {
