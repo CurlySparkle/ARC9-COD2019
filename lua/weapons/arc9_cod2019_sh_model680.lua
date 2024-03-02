@@ -41,19 +41,17 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_shot_model680.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-11, 6, -2.5),
-    Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-5, 3, 0),
-    TPIKAng = Angle(-10, 3, 180),
+    Pos = Vector(-1, 3.5, -5.5),
+    Ang = Angle(-5, 0, 180),
+    TPIKPos = Vector(-5, 5, -5),
+    TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1
 }
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 103 -- Damage done at point blank range
-SWEP.DamageMin = 40 -- Damage done at maximum range
-
-SWEP.DistributeDamage = true
+SWEP.DamageMax = 103 / 6 -- Damage done at point blank range
+SWEP.DamageMin = 40 / 6 -- Damage done at maximum range
 
 SWEP.Num = 6
 
@@ -64,7 +62,7 @@ SWEP.RangeMax = 20 / ARC9.HUToM
 
 SWEP.Penetration = 5 -- Units of wood that can be penetrated by this gun.
 
-SWEP.ImpactForce = 11
+SWEP.ImpactForce = 2.5
 
 -------------------------- PHYS BULLET BALLISTICS
 
@@ -121,8 +119,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 40 -- How much recoil dissipates per second.
-SWEP.RecoilDissipationRateSights = 50
+SWEP.RecoilDissipationRate = 7.5 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
@@ -133,6 +130,9 @@ SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.8
+
+SWEP.RecoilPerShot = 3
+SWEP.RecoilMax = 3
 
 -------------------------- VISUAL RECOIL
 
@@ -163,25 +163,19 @@ end
 
 -------------------------- SPREAD
 
--- SWEP.Spread = 0.035
+SWEP.Spread = 0.075
 
--- SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
+SWEP.SpreadAddRecoil = 0.01
 
--- SWEP.SpreadAddSights = 0.5
--- SWEP.SpreadAddMove = 0.055
--- --SWEP.SpreadAddMidAir = 0
--- SWEP.SpreadAddHipFire = 0.065
--- SWEP.SpreadMultHipFire = 1
--- SWEP.SpreadAddCrouch = -0.004
--- SWEP.SpreadAddSightsMove = -0.1
+SWEP.SpreadAddHipFire = SWEP.Spread * 0
+SWEP.SpreadAddMove = SWEP.Spread * 0.2
+SWEP.SpreadAddMidAir = SWEP.Spread * 0.5
+SWEP.SpreadAddCrouch = -SWEP.Spread * 0.1
+SWEP.SpreadAddSights = -SWEP.Spread * 0.33
 
-SWEP.Spread = 300 * ARC9.MOAToAcc
-SWEP.SpreadAddRecoil = 0.02
-SWEP.UseDispersion = true
-SWEP.DispersionSpread = 0.01
-SWEP.DispersionSpreadAddHipFire = 0.02
---SWEP.DispersionSpreadMultMove = 1.5
---SWEP.DispersionSpreadAddMove = 0.015
+SWEP.SpreadMultRecoil = 1.1
+SWEP.RecoilModifierCap = SWEP.RecoilMax
+SWEP.RecoilModifierCapMove = 0
 
 -------------------------- HANDLING
 
@@ -234,15 +228,20 @@ SWEP.MovingAng = Angle(0, 0, -10)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0.6, 0.3, -5)
 
-SWEP.PeekPos = Vector(-1, 1.5, -3.2)
-SWEP.PeekAng = Angle(0, 0.4, -45)
-
 SWEP.CustomizeAng = Angle(90, 0, 2)
-SWEP.CustomizePos = Vector(15, 30, 3)
-SWEP.CustomizeRotateAnchor = Vector(15, -2.25, -4)
+SWEP.CustomizePos = Vector(11, 30, 3)
+SWEP.CustomizeRotateAnchor = Vector(11, -2.75, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
+
+SWEP.PeekPos = Vector(-0.5, 1.5, -4)
+SWEP.PeekAng = Angle(0, 0.4, -45)
+
+SWEP.PeekMaxFOV = 55
+
+SWEP.PeekPosReloading = Vector(0, 4, -2)
+SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
 
 -------------------------- HoldTypes
 
@@ -253,7 +252,7 @@ SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 
@@ -335,15 +334,14 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
-        IKTimeLine = {
-            { t = 0, lhik = 1, rhik = 1 },
-        },
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["cycle"] = {
         Source = "pump",
 		--EjectAt = 0.2,
 		MinProgress = 0.6,
 		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
             {s = "COD2019.Model680.Rechamber_A", t = 0},
 			{s = "COD2019.Model680.Rechamber_B", t = 0.23},
@@ -459,15 +457,20 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_mag_short",
-		MinProgress = 0.8,
+		MinProgress = 0.95,
+		RefillProgress = 0.75,
+		PeekProgress = 0.9,
 		FireASAP = true,
-		DropMagAt = 1.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
+		MinProgress = 0.95,
+		RefillProgress = 0.75,
+		PeekProgress = 0.9,
+		FireASAP = true,
         EventTable = {
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_raise.ogg", t = 0.133},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_magout.ogg", t = 0.667},
@@ -479,14 +482,17 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_mag_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.95,
+		RefillProgress = 0.775,
+		PeekProgress = 0.9,
 		FireASAP = true,
 		DropMagAt = 1.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.5, lhik = 0, rhik = 0 },
-            { t = 1, lhik = 1, rhik = 1 },
+            { t = 0.125, lhik = 1, rhik = 0 },
+            { t = 0.175, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_pump_foreend.ogg", t = 0.0},
@@ -502,12 +508,14 @@ SWEP.Animations = {
     ["reload_mag_fast"] = {
         Source = "reload_mag_fast_short",
 		MinProgress = 0.9,
+		RefillProgress = 0.7,
+		PeekProgress = 0.825,
 		FireASAP = true,
 		DropMagAt = 0.6,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -520,14 +528,17 @@ SWEP.Animations = {
     },
     ["reload_mag_empty_fast"] = {
         Source = "reload_mag_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.95,
+		RefillProgress = 0.775,
+		PeekProgress = 0.9,
 		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.6, lhik = 0, rhik = 0 },
-            { t = 0.9, lhik = 1, rhik = 1 },
+            { t = 0.125, lhik = 1, rhik = 0 },
+            { t = 0.175, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_fast_pump_foreend.ogg", t = 0.033},
@@ -609,8 +620,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.4, lhik = 0, rhik = 0 },
-            { t = 0.6, lhik = 1, rhik = 1 },
+            { t = 0.875, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sh_romeo870_inspect_01.ogg", t = 0.033},
@@ -975,5 +986,27 @@ SWEP.CodStubbyTallGripPoseParam = 26
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 51
+SWEP.DamageMin = 18
+
+SWEP.Num = 8
+
+SWEP.RangeMin = 3.3 / ARC9.HUToM
+SWEP.RangeMax = 15.7 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.01,
+    [HITGROUP_CHEST] = 1.01,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 0.975,
+    [HITGROUP_RIGHTARM] = 0.975,
+    [HITGROUP_LEFTLEG] = 0.775,
+    [HITGROUP_RIGHTLEG] = 0.775,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 300 / ARC9.HUToM
 
 end

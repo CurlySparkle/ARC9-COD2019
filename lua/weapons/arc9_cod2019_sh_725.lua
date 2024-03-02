@@ -150,25 +150,6 @@ SWEP.VisualRecoilRoll = 25
 
 -------------------------- SPREAD
 
--- SWEP.Spread = 0.035
-
--- SWEP.SpreadAddRecoil = 0.02 -- Applied per unit of recoil.
-
--- SWEP.SpreadAddMove = 0.03
--- --SWEP.SpreadAddMidAir = 0
--- SWEP.SpreadAddHipFire = 0.035
--- SWEP.SpreadMultHipFire = 0.9
--- SWEP.SpreadMultSights = 1
--- SWEP.SpreadAddCrouch = -0.004
--- SWEP.SpreadAddSightsMove = -0.1
-
--- SWEP.Spread = 220 * ARC9.MOAToAcc
--- SWEP.UseDispersion = true
--- SWEP.DispersionSpread = 0.01
--- SWEP.DispersionSpreadAddHipFire = 0.02
---SWEP.DispersionSpreadMultMove = 1.5
---SWEP.DispersionSpreadAddMove = 0.015
-
 SWEP.Spread = 0.075
 
 SWEP.SpreadAddRecoil = 0.01
@@ -244,10 +225,10 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 25, 5)
 
-SWEP.PeekPos = Vector(-1, -2, -4)
+SWEP.PeekPos = Vector(0, 2, -4)
 SWEP.PeekAng = Angle(-0.3, 0, -45)
 
-SWEP.PeekMaxFOV = 54
+SWEP.PeekMaxFOV = 60
 
 -------------------------- HoldTypes
 

@@ -153,11 +153,6 @@ end
 
 -------------------------- SPREAD
 
--- SWEP.Spread = 275 * ARC9.MOAToAcc
--- SWEP.UseDispersion = true
--- SWEP.DispersionSpread = 0.04
--- SWEP.DispersionSpreadAddHipFire = 0
-
 SWEP.Spread = 0.075
 
 SWEP.SpreadAddRecoil = 0.01
