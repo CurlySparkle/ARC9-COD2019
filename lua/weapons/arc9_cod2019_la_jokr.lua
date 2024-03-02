@@ -382,19 +382,21 @@ end
 
 SWEP.Hook_HUDPaintBackground = function(self)
     if self:GetSightAmount() >= 0.75 then
-            if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
-                local toscreen = self.TargetEntity:GetPos():ToScreen()
-                local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
-
+        if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
+             local toscreen = self.TargetEntity:GetPos():ToScreen()
+             local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
+             
+             if tracktime >= 1 then
+                surface.SetDrawColor(255, 0, 0)
+                surface.DrawLine(0, toscreen.y, ScrW(), toscreen.y)
+                surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH()) 
+             else
                 surface.SetDrawColor(255, 255, 255)
-
-                if tracktime >= 1 then
-                    surface.SetDrawColor(255, 0, 0)
-                end
                 surface.DrawOutlinedRect( toscreen.x-ScrW()/50, toscreen.y-ScrW()/50, 50, 50,2 )
-            end
+             end
         end
     end
+end
 
 ---- LOCK-IN FUNCTIONS
 
@@ -416,9 +418,14 @@ SWEP.Hook_Think2 = function(self)
                 self:EmitSound("weapons/cod2019/jokr/JOKR_ui_reticle_locked.ogg", 75, 100)
             end
             self.NextBeepTime = CurTime() + 0.15
-        else
+        elseif tracktime >= 0 and self.TargetEntity then
             if CLIENT then
                 self:EmitSound("weapons/cod2019/jokr/JOKR_ui_reticle_tracking.ogg", 75, 100)
+            end
+            self.NextBeepTime = CurTime() + 0.4
+        else
+            if CLIENT then
+                self:EmitSound("", 75, 100)
             end
             self.NextBeepTime = CurTime() + 0.4
         end
@@ -450,7 +457,6 @@ SWEP.Hook_Think2 = function(self)
             if ent:IsNextBot() then entscore = entscore + 6 end
             if ent:IsNPC() then entscore = entscore + 2 end
             if ent:IsVehicle() then entscore = entscore + 10 end
-            if ent:Health() > 0 then entscore = entscore + 5 end
 
             entscore = entscore + dot * 5
 

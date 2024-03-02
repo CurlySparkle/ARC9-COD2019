@@ -91,14 +91,14 @@ SWEP.RPM = 300
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "Lock-on",
+        PrintName = "Lock-on/Dumb-fire",
         TopAttack = true
     },
-    {
-        Mode = 1,
-        PrintName = "Dumb-fire",
-        TopAttack = false,
-    },
+    -- {
+        -- Mode = 1,
+        -- PrintName = "Dumb-fire",
+        -- TopAttack = false,
+    -- },
 }
 
 -------------------------- RECOIL
@@ -205,7 +205,7 @@ SWEP.RTScopeNoShadow = false
 SWEP.RTScopeBlackBox = false
 SWEP.RTScopeBlackBoxShadow = false
 SWEP.ScopeScreenRatio = 1
-SWEP.RTScopeReticleScale = 1.15
+SWEP.RTScopeReticleScale = 1.1
 ----------------------------------------------------
 
 SWEP.ViewModelFOVBase = 65
@@ -280,8 +280,8 @@ SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
 SWEP.DistantShootSoundIndoor = "Distant_Strela.Inside"
 ---------------------------------------------------
 
-SWEP.DryFireSound = "weapons/csgo/svd/svd_empty.ogg"
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
+SWEP.DryFireSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
+SWEP.FiremodeSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
 
 SWEP.EnterSightsSound = "weapons/cod2019/pila/weap_la_gromeo_ads_up.ogg"
 SWEP.ExitSightsSound = "weapons/cod2019/pila/weap_la_gromeo_ads_down.ogg"
@@ -290,7 +290,7 @@ SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before sh
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
+SWEP.TriggerDownSound = ""
 SWEP.TriggerUpSound = ""
 
 SWEP.FiremodeSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
@@ -312,13 +312,15 @@ SWEP.Hook_HUDPaintBackground = function(self)
         if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
              local toscreen = self.TargetEntity:GetPos():ToScreen()
              local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
-
-             surface.SetDrawColor(255, 255, 255)
-
+             
              if tracktime >= 1 then
                 surface.SetDrawColor(255, 0, 0)
+                surface.DrawLine(0, toscreen.y, ScrW(), toscreen.y)
+                surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH()) 
+             else
+                surface.SetDrawColor(255, 255, 255)
+                surface.DrawOutlinedRect( toscreen.x-ScrW()/50, toscreen.y-ScrW()/50, 50, 50,2 )
              end
-           surface.DrawOutlinedRect( toscreen.x-ScrW()/50, toscreen.y-ScrW()/50, 50, 50,2 )
         end
     end
 end
@@ -328,7 +330,7 @@ end
 SWEP.NextBeepTime = 0
 SWEP.TargetEntity = nil
 SWEP.StartTrackTime = 0
-SWEP.LockTime = 2
+SWEP.LockTime = 1
 
 SWEP.Hook_Think2 = function(self)
     if self:GetSightAmount() >= 0.75 and self:Clip1() > 0 and self:GetCurrentFiremodeTable().TopAttack then
@@ -340,14 +342,19 @@ SWEP.Hook_Think2 = function(self)
         -- if CLIENT then
         if tracktime >= 1 and self.TargetEntity then
             if CLIENT then
-                self:EmitSound("weapons/cod2019/jokr/lockon.wav", 75, 100)
+                self:EmitSound("weapons/cod2019/jokr/JOKR_ui_reticle_locked.ogg", 75, 100)
             end
-            self.NextBeepTime = CurTime() + 0.1
+            self.NextBeepTime = CurTime() + 0.15
+        elseif tracktime >= 0 and self.TargetEntity then
+            if CLIENT then
+                self:EmitSound("weapons/cod2019/jokr/JOKR_ui_reticle_tracking.ogg", 75, 100)
+            end
+            self.NextBeepTime = CurTime() + 0.4
         else
             if CLIENT then
-                self:EmitSound("weapons/cod2019/jokr/lockon_start.wav", 75, 100)
+                self:EmitSound("", 75, 100)
             end
-            self.NextBeepTime = CurTime() + 1
+            self.NextBeepTime = CurTime() + 0.4
         end
         -- end
 
@@ -377,7 +384,6 @@ SWEP.Hook_Think2 = function(self)
             if ent:IsNextBot() then entscore = entscore + 6 end
             if ent:IsNPC() then entscore = entscore + 2 end
             if ent:IsVehicle() then entscore = entscore + 10 end
-            if ent:Health() > 0 then entscore = entscore + 5 end
 
             entscore = entscore + dot * 5
 
