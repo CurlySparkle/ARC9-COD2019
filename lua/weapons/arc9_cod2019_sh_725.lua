@@ -9,6 +9,7 @@ SWEP.Base = "arc9_cod2019_base"
 
 SWEP.CustomCrosshair = true
 SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+SWEP.CustomCrosshairSize = 30
 
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
