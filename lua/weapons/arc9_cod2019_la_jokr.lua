@@ -79,12 +79,12 @@ SWEP.RPM = 300
 SWEP.Firemodes = {
     {
         Mode = -1,
-        PrintName = "Lock-On",
+        PrintName = ARC9:GetPhrase("mw19_firemode_lockon_top"),
         TopAttack = true
     },
     {
         Mode = -1,
-        PrintName = "Lock-On-Area",
+        PrintName = ARC9:GetPhrase("mw19_firemode_lockon"),
         TopAttack = false,
         ShootEnt = "arc9_cod2019_proj_jokr_default2",
 		-- ToggleOnF = true,

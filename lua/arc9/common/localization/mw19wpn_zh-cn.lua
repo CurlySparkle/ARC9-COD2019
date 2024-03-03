@@ -123,18 +123,18 @@ L["mw19_assets"] = "Assets2"
 L["mw19_author"] = "Author1"
 
 /////////// Weapon Categories
-L["mw19_category_weapon_ar"] = "主要武器，突擊步"
-L["mw19_category_weapon_smg"] = "主要武器，衝鋒槍"
-L["mw19_category_weapon_shotgun"] = "主要武器，霰彈槍"
-L["mw19_category_weapon_lmg"] = "主要武器，輕機槍"
-L["mw19_category_weapon_marksman"] = "主要武器，射手步槍"
-L["mw19_category_weapon_sniper"] = "主要武器，狙擊步槍"
-L["mw19_category_weapon_melee"] = "次要武器，近戰"
+L["mw19_category_weapon_ar"] = "突擊步"
+L["mw19_category_weapon_smg"] = "衝鋒槍"
+L["mw19_category_weapon_shotgun"] = "霰彈槍"
+L["mw19_category_weapon_lmg"] = "輕機槍"
+L["mw19_category_weapon_marksman"] = "射手步槍"
+L["mw19_category_weapon_sniper"] = "狙擊步槍"
+L["mw19_category_weapon_melee"] = "近戰"
 L["mw19_category_weapon_throwable"] = "致命道具和戰術道具"
 
-L["mw19_category_weapon_handgun"] = "次要武器，手槍"
-L["mw19_category_weapon_handgun_akimbo"] = "次要武器，手槍 (雙武器)"
-L["mw19_category_weapon_launcher"] = "次要武器，發射器"
+L["mw19_category_weapon_handgun"] = "手槍"
+L["mw19_category_weapon_handgun_akimbo"] = "手槍 (雙武器)"
+L["mw19_category_weapon_launcher"] = "發射器"
 
 /////////// Weapon Classes
 L["mw19_class_weapon_ar"] = "突擊步槍"
@@ -223,6 +223,11 @@ L["mw19_firemode_single"] = "SINGLE" -- UO
 L["mw19_firemode_double"] = "DOUBLE" -- UO
 L["mw19_firemode_throwable"] = "THROWABLE" -- UO
 L["mw19_firemode_plant"] = "PLANT" -- UO, "Plant" the bomb
+L["mw19_firemode_melee"] = "MELEE" -- UO
+L["mw19_firemode_lockon"] = "LOCK-ON" -- UO
+L["mw19_firemode_lockon_top"] = "LOCK-ON (TOP-DOWN)" -- UO
+L["mw19_firemode_guided"] = "GUIDED" -- UO
+L["mw19_firemode_unguided"] = "UNGUIDED" -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Base Attachments

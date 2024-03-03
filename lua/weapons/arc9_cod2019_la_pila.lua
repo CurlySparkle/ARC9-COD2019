@@ -91,8 +91,8 @@ SWEP.RPM = 300
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = "Lock-on/Dumb-fire",
-        TopAttack = true
+        PrintName = ARC9:GetPhrase("mw19_firemode_lockon") .. " / " .. ARC9:GetPhrase("mw19_firemode_unguided"),
+        TopAttack = false
     },
     -- {
         -- Mode = 1,

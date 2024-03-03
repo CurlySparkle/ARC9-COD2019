@@ -30,16 +30,16 @@ L["mw19_caliber"] = "Caliber3"
 L["mw19_caliber_556"] = "5.56 NATO" -- Kilo 141, M4A1, FR 5.56, M13, RAM-7, Grau 5.56, SA87, Holger-26, Bruen Mk9, FiNN LMG
 L["mw19_caliber_762"] = "7.62 NATO" -- FAL, FN Scar 17, M91, EBR-14
 L["mw19_caliber_762soviet"] = "7.62 Soviet" -- AK-47, CR-56 AMAX, SKS
-L["mw19_caliber_762mmr"] = "7.62x54mmR" -- PKM, Dragunov
+L["mw19_caliber_762mmr"] = "7.62×54mmR" -- PKM, Dragunov
 L["mw19_caliber_762mauser"] = "7.62 Mauser" -- MG34, Kar98k
 L["mw19_caliber_545"] = "5.45×39mm" -- AN-94
 L["mw19_caliber_127x55"] = "12.7×55mm" -- Oden
 L["mw19_caliber_127x108"] = "12.7×108mm" -- HDR
 L["mw19_caliber_939"] = "9×39mm" -- AS VAL
 L["mw19_caliber_919"] = "9mm Parabellum" -- AUG, MP5, Uzi, ISO, CX-9, M19, Renetti
-L["mw19_caliber_57x28"] = "5.7x28mm" -- P90
+L["mw19_caliber_57x28"] = "5.7×28mm" -- P90
 L["mw19_caliber_918"] = "9mm Makarov" -- PP19 Bizon, Sykov
-L["mw19_caliber_46x30"] = "4.6x30mm" -- MP7
+L["mw19_caliber_46x30"] = "4.6×30mm" -- MP7
 L["mw19_caliber_45acp"] = ".45 ACP" -- Striker 45, Fennec, X16, 1911
 L["mw19_caliber_12gauge"] = "12 Gauge" -- All Shotguns
 L["mw19_caliber_338"] = ".338 Norma Mag" -- RAAL MG
@@ -123,18 +123,18 @@ L["mw19_assets"] = "Assets2"
 L["mw19_author"] = "Author1"
 
 /////////// Weapon Categories
-L["mw19_category_weapon_ar"] = "Primary, Assault Rifles"
-L["mw19_category_weapon_smg"] = "Primary, SMGs"
-L["mw19_category_weapon_shotgun"] = "Primary, Shotguns"
-L["mw19_category_weapon_lmg"] = "Primary, LMGs"
-L["mw19_category_weapon_marksman"] = "Primary, Marksman Rifles"
-L["mw19_category_weapon_sniper"] = "Primary, Sniper Rifles"
-L["mw19_category_weapon_melee"] = "Secondary, Melee"
+L["mw19_category_weapon_ar"] = "Assault Rifles"
+L["mw19_category_weapon_smg"] = "SMGs"
+L["mw19_category_weapon_shotgun"] = "Shotguns"
+L["mw19_category_weapon_lmg"] = "LMGs"
+L["mw19_category_weapon_marksman"] = "Marksman Rifles"
+L["mw19_category_weapon_sniper"] = "Sniper Rifles"
+L["mw19_category_weapon_melee"] = "Melee"
 L["mw19_category_weapon_throwable"] = "Lethal & Tactical"
 
-L["mw19_category_weapon_handgun"] = "Secondary, Handguns"
-L["mw19_category_weapon_handgun_akimbo"] = "Secondary, Handguns (Akimbo)"
-L["mw19_category_weapon_launcher"] = "Secondary, Launchers"
+L["mw19_category_weapon_handgun"] = "Handguns"
+L["mw19_category_weapon_handgun_akimbo"] = "Handguns (Akimbo)"
+L["mw19_category_weapon_launcher"] = "Launchers"
 
 /////////// Weapon Classes
 L["mw19_class_weapon_ar"] = "Assault Rifle"
@@ -222,6 +222,11 @@ L["mw19_firemode_single"] = "SINGLE" -- UO
 L["mw19_firemode_double"] = "DOUBLE" -- UO
 L["mw19_firemode_throwable"] = "THROWABLE" -- UO
 L["mw19_firemode_plant"] = "PLANT" -- UO, "Plant" the bomb
+L["mw19_firemode_melee"] = "MELEE" -- UO
+L["mw19_firemode_lockon"] = "LOCK-ON" -- UO
+L["mw19_firemode_lockon_top"] = "LOCK-ON (TOP-DOWN)" -- UO
+L["mw19_firemode_guided"] = "GUIDED" -- UO
+L["mw19_firemode_unguided"] = "UNGUIDED" -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Base Attachments
@@ -508,6 +513,14 @@ L["cod2019_ammo_gl_smoke.description"] = "Custom 40mm shells filled with non-let
 L["cod2019_ammo_gl_gas.printname"] = "40mm Gas" -- UO
 L["cod2019_ammo_gl_gas.compactname"] = "Gas" -- UO
 L["cod2019_ammo_gl_gas.description"] = "Custom 40mm shells filled with semi-lethal <color=100,255,100>Gas</color> rounds that create a gas cloud at the impact area.\nMultiple shots within the same area will <color=100,255,100>increase its lethality</color>." -- UO
+
+L["cod2019_pila_ammo_guided.printname"] = "Guided Rockets" -- UO
+L["cod2019_pila_ammo_guided.compactname"] = "Guided" -- UO
+L["cod2019_pila_ammo_guided.description"] = "Replaces the unguided rockets with <color=100,255,100>guided</color> high-explosive rockets." -- UO
+
+L["cod2019_jokr_ammo_guided.printname"] = ARC9:GetPhrase("cod2019_pila_ammo_guided.printname")
+L["cod2019_jokr_ammo_guided.compactname"] = ARC9:GetPhrase("cod2019_pila_ammo_guided.compactname")
+L["cod2019_jokr_ammo_guided.description"] = "Replaces the lock-on rockets with <color=100,255,100>guided</color> high-explosive rockets. <color=255,100,100>Removes the lock-on feature</color>." -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments

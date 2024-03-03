@@ -76,7 +76,7 @@ SWEP.RPM = 300
 SWEP.Firemodes = {
     {
         Mode = 1,
-		PrintName = "Launcher",
+		PrintName = ARC9:GetPhrase("mw19_firemode_unguided"),
     },
 }
 

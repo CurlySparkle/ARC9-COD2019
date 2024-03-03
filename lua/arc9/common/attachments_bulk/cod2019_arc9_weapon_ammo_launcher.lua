@@ -120,7 +120,7 @@ ATT.Category = {"cod2019_pila_ammo"}
 ATT.Firemodes = {
     {
         Mode = 1,
-        PrintName = "Guided",
+        PrintName = ARC9:GetPhrase("mw19_firemode_guided"),
         TopAttack = false
     },
 }
@@ -147,7 +147,7 @@ ATT.Category = {"cod2019_jokr_ammo"}
 ATT.Firemodes = {
     {
         Mode = 1,
-        PrintName = "Guided",
+        PrintName = ARC9:GetPhrase("mw19_firemode_guided"),
         TopAttack = false
     },
 }

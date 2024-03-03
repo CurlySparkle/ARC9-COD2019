@@ -74,6 +74,7 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.Bash = true
 SWEP.PrimaryBash = true
+SWEP.SecondaryBash = false
 
 SWEP.BashDamage = 55
 SWEP.BashLungeRange = 64

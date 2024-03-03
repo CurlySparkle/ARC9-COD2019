@@ -30,16 +30,16 @@ L["mw19_caliber"] = "Калибр3"
 L["mw19_caliber_556"] = "5,56 NATO" -- Kilo 141, M4A1, FR 5.56, M13, RAM-7, Grau 5.56, SA87, Holger-26, Bruen Mk9, FiNN LMG
 L["mw19_caliber_762"] = "7,62 NATO" -- FAL, FN Scar 17, M91, EBR-14
 L["mw19_caliber_762soviet"] = "7,62 Soviet" -- AK-47, CR-56 AMAX, SKS
-L["mw19_caliber_762mmr"] = "7,62x54mmR" -- PKM, Dragunov
+L["mw19_caliber_762mmr"] = "7,62×54mmR" -- PKM, Dragunov
 L["mw19_caliber_762mauser"] = "7,62 Mauser" -- MG34, Kar98k
 L["mw19_caliber_545"] = "5,45×39mm" -- AN-94
-L["mw19_caliber_127x55"] = "12,7×55mm" -- Oden
-L["mw19_caliber_127x108"] = "12,7×108mm" -- HDR
+L["mw19_caliber_127x55"] = "12.7×55mm" -- Oden
+L["mw19_caliber_127x108"] = "12.7×108mm" -- HDR
 L["mw19_caliber_939"] = "9×39mm" -- AS VAL
 L["mw19_caliber_919"] = "9mm Parabellum" -- AUG, MP5, Uzi, ISO, CX-9, M19, Renetti
-L["mw19_caliber_57x28"] = "5,7x28mm" -- P90
+L["mw19_caliber_57x28"] = "5.7×28mm" -- P90
 L["mw19_caliber_918"] = "9mm Makarov" -- PP19 Bizon, Sykov
-L["mw19_caliber_46x30"] = "4,6x30mm" -- MP7
+L["mw19_caliber_46x30"] = "4.6×30mm" -- MP7
 L["mw19_caliber_45acp"] = ".45 ACP" -- Striker 45, Fennec, X16, 1911
 L["mw19_caliber_12gauge"] = "12 Gauge" -- All Shotguns
 L["mw19_caliber_338"] = ".338 Norma Mag" -- RAAL MG
@@ -123,18 +123,18 @@ L["mw19_assets"] = "Материалы2"
 L["mw19_author"] = "Авторы1"
 
 /////////// Weapon Categories
-L["mw19_category_weapon_ar"] = "Основное, Штурмовые винтовки"
-L["mw19_category_weapon_smg"] = "Основное, Пистолеты-пулеметы"
-L["mw19_category_weapon_shotgun"] = "Основное, Дробовики"
-L["mw19_category_weapon_lmg"] = "Основное, Ручные пулеметы"
-L["mw19_category_weapon_marksman"] = "Основное, Пехотные винтовки"
-L["mw19_category_weapon_sniper"] = "Основное, Снайперские винтовки"
-L["mw19_category_weapon_melee"] = "Дополнительное, Ближний Бой"
+L["mw19_category_weapon_ar"] = "Штурмовые винтовки"
+L["mw19_category_weapon_smg"] = "Пистолеты-пулеметы"
+L["mw19_category_weapon_shotgun"] = "Дробовики"
+L["mw19_category_weapon_lmg"] = "Ручные пулеметы"
+L["mw19_category_weapon_marksman"] = "Пехотные винтовки"
+L["mw19_category_weapon_sniper"] = "Снайперские винтовки"
+L["mw19_category_weapon_melee"] = "Ближний Бой"
 L["mw19_category_weapon_throwable"] = "Боевое снаряжение и Тактическое"
 
-L["mw19_category_weapon_handgun"] = "Дополнительное, Пистолеты"
-L["mw19_category_weapon_handgun_akimbo"] = "Дополнительное, Пистолеты (Парное)"
-L["mw19_category_weapon_launcher"] = "Дополнительное, Пусковые установки"
+L["mw19_category_weapon_handgun"] = "Пистолеты"
+L["mw19_category_weapon_handgun_akimbo"] = "Пистолеты (Парное)"
+L["mw19_category_weapon_launcher"] = "Пусковые установки"
 
 /////////// Weapon Classes
 L["mw19_class_weapon_ar"] = "Штурмовая винтовка"
@@ -222,6 +222,11 @@ L["mw19_firemode_single"] = "SINGLE" -- UO
 L["mw19_firemode_double"] = "DOUBLE" -- UO
 L["mw19_firemode_throwable"] = "THROWABLE" -- UO
 L["mw19_firemode_plant"] = "PLANT" -- UO, "Plant" the bomb
+L["mw19_firemode_melee"] = "MELEE" -- UO
+L["mw19_firemode_lockon"] = "LOCK-ON" -- UO
+L["mw19_firemode_lockon_top"] = "LOCK-ON (TOP-DOWN)" -- UO
+L["mw19_firemode_guided"] = "GUIDED" -- UO
+L["mw19_firemode_unguided"] = "UNGUIDED" -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Base Attachments

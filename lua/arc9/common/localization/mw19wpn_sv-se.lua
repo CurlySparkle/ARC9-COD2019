@@ -27,24 +27,24 @@ L["settings.mw19.warzonestats.desc"] = "Ändrar statistiken på alla* vapen och 
 /////////// Caliber -- UO
 L["mw19_caliber"] = "Kaliber3"
 
-L["mw19_caliber_556"] = "5.56 NATO" -- Kilo 141, M4A1, FR 5.56, M13, RAM-7, Grau 5.56, SA87, Holger-26, Bruen Mk9, FiNN LMG
-L["mw19_caliber_762"] = "7.62 NATO" -- FAL, FN Scar 17, M91, EBR-14
-L["mw19_caliber_762soviet"] = "7.62 Soviet" -- AK-47, CR-56 AMAX, SKS
-L["mw19_caliber_762mmr"] = "7.62x54mmR" -- PKM, Dragunov
-L["mw19_caliber_762mauser"] = "7.62 Mauser" -- MG34, Kar98k
-L["mw19_caliber_545"] = "5.45×39mm" -- AN-94
-L["mw19_caliber_127x55"] = "12.7×55mm" -- Oden
-L["mw19_caliber_127x108"] = "12.7×108mm" -- HDR
+L["mw19_caliber_556"] = "5,56 NATO" -- Kilo 141, M4A1, FR 5.56, M13, RAM-7, Grau 5.56, SA87, Holger-26, Bruen Mk9, FiNN LMG
+L["mw19_caliber_762"] = "7,62 NATO" -- FAL, FN Scar 17, M91, EBR-14
+L["mw19_caliber_762soviet"] = "7,62 Sovjet" -- AK-47, CR-56 AMAX, SKS
+L["mw19_caliber_762mmr"] = "7,62×54mmR" -- PKM, Dragunov
+L["mw19_caliber_762mauser"] = "7,62 Mauser" -- MG34, Kar98k
+L["mw19_caliber_545"] = "5,45×39mm" -- AN-94
+L["mw19_caliber_127x55"] = "12,7×55mm" -- Oden
+L["mw19_caliber_127x108"] = "12,7×108mm" -- HDR
 L["mw19_caliber_939"] = "9×39mm" -- AS VAL
 L["mw19_caliber_919"] = "9mm Parabellum" -- AUG, MP5, Uzi, ISO, CX-9, M19, Renetti
-L["mw19_caliber_57x28"] = "5.7x28mm" -- P90
+L["mw19_caliber_57x28"] = "5,7×28mm" -- P90
 L["mw19_caliber_918"] = "9mm Makarov" -- PP19 Bizon, Sykov
-L["mw19_caliber_46x30"] = "4.6x30mm" -- MP7
+L["mw19_caliber_46x30"] = "4,6×30mm" -- MP7
 L["mw19_caliber_45acp"] = ".45 ACP" -- Striker 45, Fennec, X16, 1911
 L["mw19_caliber_12gauge"] = "12 Gauge" -- All Shotguns
 L["mw19_caliber_338"] = ".338 Norma Mag" -- RAAL MG
 L["mw19_caliber_45-70"] = ".45-70 Government" -- MK2 Carbine
-L["mw19_caliber_bolt"] = "20.0\" Bolt" -- Crossbow
+L["mw19_caliber_bolt"] = "508mm Pil" -- Crossbow
 L["mw19_caliber_300"] = ".300 Win Mag" -- SP-R 208
 L["mw19_caliber_50bmg"] = ".50 BMG" -- AX-50, Rytec AMR
 L["mw19_caliber_357"] = ".357 Magnum" -- .357
@@ -123,18 +123,18 @@ L["mw19_assets"] = "Tillgångar2"
 L["mw19_author"] = "Skapare1"
 
 /////////// Weapon Categories
-L["mw19_category_weapon_ar"] = "Primär, Automatkarbiner"
-L["mw19_category_weapon_smg"] = "Primär, KPistar"
-L["mw19_category_weapon_shotgun"] = "Primär, Hagelbössor"
-L["mw19_category_weapon_lmg"] = "Primär, Kulsprutor"
-L["mw19_category_weapon_marksman"] = "Primär, Marksman-Gevär"
-L["mw19_category_weapon_sniper"] = "Primär, Prickskytteg."
-L["mw19_category_weapon_melee"] = "Sekundär, Närstridsvapen"
+L["mw19_category_weapon_ar"] = "Automatkarbiner"
+L["mw19_category_weapon_smg"] = "Kulsprutepistoler"
+L["mw19_category_weapon_shotgun"] = "Hagelbössor"
+L["mw19_category_weapon_lmg"] = "Kulsprutor"
+L["mw19_category_weapon_marksman"] = "Marksman-Gevär"
+L["mw19_category_weapon_sniper"] = "Prickskyttegevär"
+L["mw19_category_weapon_melee"] = "Närstridsvapen"
 L["mw19_category_weapon_throwable"] = "Dödlig & Taktisk Utrustning"
 
-L["mw19_category_weapon_handgun"] = "Sekundär, Pistoler"
-L["mw19_category_weapon_handgun_akimbo"] = "Sekundär, Pistoler (Akimbo)"
-L["mw19_category_weapon_launcher"] = "Sekundär, Kastare"
+L["mw19_category_weapon_handgun"] = "Sidovapen"
+L["mw19_category_weapon_handgun_akimbo"] = "Sidovapen (Akimbo)"
+L["mw19_category_weapon_launcher"] = "Kastare"
 
 /////////// Weapon Classes
 L["mw19_class_weapon_ar"] = "Automatkarbin"
@@ -213,9 +213,20 @@ L["mw19_category_view"] = "Vy" -- UO
 //////////////////// Folder Names
 -- Other
 L["mw19_folder_other2"] = "Annat" -- UO
+L["mw19_folder_side2"] = "Sida" -- UO
 
 //////////////////// Firemodes
 -- L["mw19_firemode_pump"] = "PUMP"
+
+L["mw19_firemode_single"] = "ENKEL" -- UO
+L["mw19_firemode_double"] = "DUBBEL" -- UO
+L["mw19_firemode_throwable"] = "KASTBAR" -- UO
+L["mw19_firemode_plant"] = "UTPLACERBAR" -- UO, "Plant" the bomb
+L["mw19_firemode_melee"] = "NÄRSTRID" -- UO
+L["mw19_firemode_lockon"] = "SPÅRNING" -- UO
+L["mw19_firemode_lockon_top"] = "SPÅRNING (FRÅN OVAN)" -- UO
+L["mw19_firemode_guided"] = "STYRD" -- UO
+L["mw19_firemode_unguided"] = "OSTYRD" -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Base Attachments

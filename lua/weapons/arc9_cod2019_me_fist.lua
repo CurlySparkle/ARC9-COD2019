@@ -85,7 +85,7 @@ SWEP.PostBashTime = 0.2
 SWEP.BashDamageType = DMG_GENERIC
 
 SWEP.Bash2 = true
-SWEP.SecondaryBash = true
+SWEP.SecondaryBash = false
 
 SWEP.Bash2Damage = 45
 SWEP.Bash2LungeRange = 64
