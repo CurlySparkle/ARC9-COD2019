@@ -179,7 +179,7 @@ if SERVER then
             act:Give(self.WeaponClass, true)
 
             --self:EmitSound("CSGO.Breacher.BreachUse", 75)
-			self:EmitSound("weapons/shared/iw8_mp_scavenger_pack_pickup.wav", 120, 100, 1, CHAN_AUTO)
+			self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 120, 100, 1, CHAN_AUTO)
             self:Remove()
         end
     end

@@ -34,7 +34,7 @@ ENT.Lift = 80
 ENT.DragCoefficient = 0.1
 ENT.LifeTime = 20
 
-ENT.FireAndForget = true -- This missile automatically tracks its target.
+ENT.FireAndForget = false -- This missile automatically tracks its target.
 ENT.TopAttack = true -- This missile flies up above its target before going down in a top-attack trajectory.
 ENT.TopAttackHeight = 5000
 ENT.SuperSeeker = false

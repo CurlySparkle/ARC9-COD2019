@@ -67,10 +67,10 @@ SWEP.ThrowAnimSpeed = 1
 
 SWEP.FuseTimer = -1 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
 
-SWEP.ThrowForceMin = 1000 -- Minimum force that the grenade will be thrown with.
-SWEP.ThrowForceMax = 1000 -- Maximum force that the grenade will be thrown with.
-SWEP.TossForce = 1000 -- Force that the grenade will be thrown with when right clicked.
-SWEP.ShootEntInheritPlayerVelocity = false
+SWEP.ThrowForceMin = 600 -- Minimum force that the grenade will be thrown with.
+SWEP.ThrowForceMax = 600 -- Maximum force that the grenade will be thrown with.
+SWEP.TossForce = 600 -- Force that the grenade will be thrown with when right clicked.
+SWEP.ShootEntInheritPlayerVelocity = true
 
 SWEP.ThrowChargeTime = 1 -- How long it takes to charge the grenade to its maximum throw force.
 
@@ -148,15 +148,25 @@ SWEP.AnimDraw = false
 
 local path = "weapons/cod2019/throwables/c4/"
 
+function SWEP:SecondaryAttack()
+    return self:MeleeAttack()
+end
+
+SWEP.DefaultBodygroups = "00000000"
+
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
+        EventTable = {
+            {ind = 1, bg = 1, t = 0/30},
+        },
     },
     ["draw"] = {
         Source = "draw",
         EventTable = {
-            {s = path .. "weap_detpack_pullout.ogg", t = 0/30},
-            {s = path .. "weap_detpack_button.ogg", t = 8/30, v = 0.1,},
+            {s = path .. "grenade_pin_c4_cloth.ogg", t = 0/30},
+            {s = path .. "grenade_pin_c4.ogg", t = 8/30},
+			{ind = 1, bg = 1, t = 0/30},
         },
     },
     ["holster"] = {
@@ -167,8 +177,7 @@ SWEP.Animations = {
     },
     ["throw"] = {
       Source = "throw",
-	  Mult = 1,
-      MinProgress = 0.35,
+      MinProgress = 0.33,
       EventTable = {
             {s = path .. "grenade_blackout_throw_1.ogg", t = 3/30},
         },
@@ -194,6 +203,11 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = "melee",
+    },
+    ["inspect"] = {
+        Source = "lookat01",
+        MinProgress = 0.1,
+        FireASAP = true,
     },
 --  Empty Sequences
     ["idle_detonator"] = {
@@ -241,5 +255,10 @@ SWEP.Animations = {
     },
     ["bash_detonator"] = {
         Source = "melee_empty",
+    },
+    ["inspect_detonator"] = {
+        Source = "lookat01_empty",
+        MinProgress = 0.1,
+        FireASAP = true,
     },
 }

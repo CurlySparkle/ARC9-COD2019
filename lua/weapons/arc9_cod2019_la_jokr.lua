@@ -32,7 +32,7 @@ SWEP.DefaultBodygroups = "00000000"
 SWEP.Slot = 3
 
 SWEP.MirrorVMWM = true
-SWEP.NoTPIKVMPos = false
+SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_jokr.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-9, 8, -4),

@@ -7,10 +7,6 @@ SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_sh_r90.png"
 
 SWEP.Base = "arc9_cod2019_base"
 
-SWEP.CustomCrosshair = true
-SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
-SWEP.CustomCrosshairSize = 30
-
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_shotgun") or "Shotguns"
@@ -90,6 +86,10 @@ SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 SWEP.ForceStandardCrosshair = true
+
+SWEP.CustomCrosshair = true
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+SWEP.CustomCrosshairSize = 30
 
 SWEP.ManualAction = true
 SWEP.NoLastCycle = true

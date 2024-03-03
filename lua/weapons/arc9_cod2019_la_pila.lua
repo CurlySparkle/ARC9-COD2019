@@ -65,8 +65,8 @@ SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets 
 
 --SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
 
-SWEP.ShootPosOffset = Vector(5, 20, -5)
-SWEP.ShootPosOffsetSights = Vector(0, 20, 0)
+SWEP.ShootPosOffset = Vector(5, 0, -5)
+SWEP.ShootPosOffsetSights = Vector(0, 0, 0)
 
 SWEP.PushBackForce = 5
 
@@ -92,7 +92,7 @@ SWEP.Firemodes = {
     {
         Mode = 1,
         PrintName = ARC9:GetPhrase("mw19_firemode_lockon") .. " / " .. ARC9:GetPhrase("mw19_firemode_unguided"),
-        TopAttack = false
+        TopAttack = true
     },
     -- {
         -- Mode = 1,
@@ -295,6 +295,10 @@ SWEP.TriggerUpSound = ""
 
 SWEP.FiremodeSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
 
+SWEP.BulletBones = {
+    [1] = {"j_rocket","j_frontfin_1","j_frontfin_2","j_rearfin_1","j_rearfin_2","j_rearfin_3","j_rearfin_4"},
+}
+
 SWEP.HookP_BlockFire = function(self)
     return self:GetSightAmount() < 1
 end
@@ -318,8 +322,9 @@ SWEP.Hook_HUDPaintBackground = function(self)
                 surface.DrawLine(0, toscreen.y, ScrW(), toscreen.y)
                 surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH()) 
              else
-                surface.SetDrawColor(255, 255, 255)
-                surface.DrawOutlinedRect( toscreen.x-ScrW()/50, toscreen.y-ScrW()/50, 50, 50,2 )
+                surface.SetDrawColor(255, 0, 0)
+                --surface.DrawOutlinedRect( toscreen.x-ScrW()/50, toscreen.y-ScrW()/50, 50, 50,2 )
+				surface.DrawCircle(toscreen.x, toscreen.y, 30, Color( 255, 0, 0 ) )
              end
         end
     end
@@ -330,7 +335,7 @@ end
 SWEP.NextBeepTime = 0
 SWEP.TargetEntity = nil
 SWEP.StartTrackTime = 0
-SWEP.LockTime = 1
+SWEP.LockTime = 1.1
 
 SWEP.Hook_Think2 = function(self)
     if self:GetSightAmount() >= 0.75 and self:Clip1() > 0 and self:GetCurrentFiremodeTable().TopAttack then
@@ -347,9 +352,9 @@ SWEP.Hook_Think2 = function(self)
             self.NextBeepTime = CurTime() + 0.15
         elseif tracktime >= 0 and self.TargetEntity then
             if CLIENT then
-                self:EmitSound("weapons/cod2019/jokr/JOKR_ui_reticle_tracking.ogg", 75, 100)
+                self:EmitSound("weapons/cod2019/jokr/JOKR_ui_reticle_tracking.ogg", 75, 90)
             end
-            self.NextBeepTime = CurTime() + 0.4
+            self.NextBeepTime = CurTime() + 0.3
         else
             if CLIENT then
                 self:EmitSound("", 75, 100)

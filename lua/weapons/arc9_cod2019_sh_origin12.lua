@@ -7,10 +7,6 @@ SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_sh_origin12.png"
 
 SWEP.Base = "arc9_cod2019_base"
 
-SWEP.CustomCrosshair = true
-SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
-SWEP.CustomCrosshairSize = 30
-
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_shotgun") or "Shotguns"
@@ -91,6 +87,10 @@ SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 SWEP.ForceStandardCrosshair = true
 
+SWEP.CustomCrosshair = true
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+SWEP.CustomCrosshairSize = 30
+
 -------------------------- FIREMODES
 
 SWEP.RPM = 300
@@ -158,13 +158,27 @@ SWEP.VisualRecoilSpringMagnitude = 1
 -- SWEP.SpreadAddCrouch = -0.004
 -- SWEP.SpreadAddSightsMove = -0.1
 
-SWEP.Spread = 330 * ARC9.MOAToAcc
-SWEP.SpreadAddRecoil = 0.02
-SWEP.UseDispersion = true
-SWEP.DispersionSpread = 0.04
-SWEP.DispersionSpreadAddHipFire = 0.02
+-- SWEP.Spread = 220 * ARC9.MOAToAcc
+-- SWEP.SpreadAddRecoil = 0.02
+-- SWEP.UseDispersion = true
+-- SWEP.DispersionSpread = 0.04
+-- SWEP.DispersionSpreadAddHipFire = 0.02
 --SWEP.DispersionSpreadMultMove = 1.5
 --SWEP.DispersionSpreadAddMove = 0.015
+
+SWEP.Spread = 0.1
+
+SWEP.SpreadAddRecoil = 0.01
+
+SWEP.SpreadAddHipFire = SWEP.Spread * 0
+SWEP.SpreadAddMove = SWEP.Spread * 0.2
+SWEP.SpreadAddMidAir = SWEP.Spread * 0.2
+SWEP.SpreadAddCrouch = -SWEP.Spread * 0.1
+SWEP.SpreadAddSights = -SWEP.Spread * 0.2
+
+SWEP.SpreadMultRecoil = 1.1
+SWEP.RecoilModifierCap = SWEP.RecoilMax
+SWEP.RecoilModifierCapMove = 0
 
 -------------------------- HANDLING
 

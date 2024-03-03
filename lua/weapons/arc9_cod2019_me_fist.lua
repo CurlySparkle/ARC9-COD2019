@@ -177,7 +177,7 @@ SWEP.Animations = {
         Source = "holster",
     },
     ["bash"] = {
-        Source = {"melee_01","melee_05","melee_07","melee_02","melee_06","melee_08"},
+        Source = {"melee_01","melee_05","melee_07"},
     },
     ["bash2"] = {
         Source = {"melee_02","melee_06","melee_08"},
