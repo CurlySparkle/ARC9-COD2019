@@ -16,12 +16,20 @@ xbowbolt = lineb .. "Changes ammo type to <color=255,255,100>Crossbow Bolts</col
 local missingloc = "\n\nNote: Non-Localized string; Subscribe to <color=255,255,100>SHARED PACK</color> for translated strings."
 
 //////////////////////////////////////////////////////////////////////
+////////////////////////////////////////// Notes
+-- 1) If "-- UO" is listed after the string, it is unofficial and its translation is not taken from MW19.
+-- Therefore they will either remain untranslated (and remain in English) or require community contribution to fix.
+
+-- 2) If a string uses "ARC9:GetPhrase" in it, then do not touch it. It uses another localization as its quick access.
+
+-- 3) If the string has the above text and an " or " after it, do not translate the text after it.
+
 ///////////////////////////// Various Universal Information
 //////////////////// Settings
-L["settings.mw19"] = "Addon - MW19"
-L["settings.mw19.warzonestats"] = "Warzone Stats"
-L["settings.mw19.warzonestats.title"] = "Enable Warzone Stats"
-L["settings.mw19.warzonestats.desc"] = "Changes the stats on all* weapons and attachments to have stats more accurate to Modern Warfare 2019 / Warzone.\n\nThis is a server variable. Requires restart to take affect.\n\n\n*Some weapons and attachments will not behave differently."
+L["settings.mw19"] = "Addon - MW19" -- UO
+L["settings.mw19.warzonestats"] = "Warzone Stats" -- UO
+L["settings.mw19.warzonestats.title"] = "Enable Warzone Stats" -- UO
+L["settings.mw19.warzonestats.desc"] = "Changes the stats on all* weapons and attachments to have stats more accurate to Modern Warfare 2019 / Warzone.\n\nThis is a server variable. Requires restart to take affect.\n\n\n*Some weapons and attachments will not behave differently." -- UO
 
 //////////////////// Trivia
 /////////// Caliber -- UO
@@ -100,8 +108,6 @@ L["mw19_manufacturer_corvus"] = "Corvus Defence" -- M19
 
 L["mw19_manufacturer_stvol"] = "Stvol Tactical" -- PILA
 
-L["mw19_manufacturer_unknown"] = "???" -- FAL, Oden, AK-47, Grau 5.56, CR-56 AMAX, AUG, PP19 Bizon, SA87, MG34, Kar98k, Dragunov, Riot Shield, X16, 1911, .357, Sykov, Strela-P, JOKR, RPG-7, MGL-32, Knife, Kali Sticks, Dual Kodachis
-
 /////////// Weight -- UO
 L["mw19_weight"] = "Weight (Loaded)4"
 L["mw19_weight_val"] = "%s kg / ~%s lb"
@@ -178,11 +184,6 @@ L["mw19_category_magazine"] = "Magazine"
 L["mw19_category_reargrip"] = "Rear Grip"
 L["mw19_category_perk"] = "Perk"
 
--- Specific to the Crossbow Marksman Rifle
-L["mw19_category_cable"] = "Cable"
-L["mw19_category_arms"] = "Arms"
-L["mw19_category_bolt"] = "Bolt"
-
 -- Specific to Handguns
 L["mw19_category_triggeraction"] = "Trigger Action"
 
@@ -194,6 +195,11 @@ L["mw19_category_guard"] = "Guard"
 
 -- Specific to the VLK Rogue Shotgun
 L["mw19_category_pumpgrip"] = "Pump Grip"
+
+-- Specific to the Crossbow Marksman Rifle
+L["mw19_category_cable"] = "Cable"
+L["mw19_category_arms"] = "Arms"
+L["mw19_category_bolt"] = "Bolt"
 
 -- Specific to the SP-R 208 Marksman Rifle
 L["mw19_category_boltassembly"] = "Bolt Assembly"
@@ -263,7 +269,7 @@ L["cod2019_ammo_he.printname"] = "High Explosive Rounds" -- UO
 L["cod2019_ammo_he.compactname"] = "HE" -- UO
 L["cod2019_ammo_he.description"] = "Explosive ammunition that sacrifice direct damage in favor of dealing damage in a radius around the impact area.\nThe effect is spectacular, but very little explosive filler can be put inside the bullets." -- UO
 
--- Shotgun Ammo
+////////// Shotgun Ammo
 L["cod2019_ammo_sg_magnum.printname"] = "8.5mm Magnum Buckshot" -- UO
 L["cod2019_ammo_sg_magnum.compactname"] = "MAG" -- UO
 L["cod2019_ammo_sg_magnum.description"] = "High-powered buckshot loaded with fewer but larger lead pellets.\nProvides better close range power, but worsened range and accuracy." -- UO

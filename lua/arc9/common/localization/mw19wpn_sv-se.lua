@@ -16,12 +16,20 @@ xbowbolt = lineb .. "Byter patrontyp till <color=255,255,100>Armborst Bultar</co
 local missingloc = "\n\nNotis: Icke-lokaliserad text; Prenumerera på <color=255,255,100>SHARED-tillägget</color> för översatta texter."
 
 //////////////////////////////////////////////////////////////////////
+////////////////////////////////////////// Notes
+-- 1) If "-- UO" is listed after the string, it is unofficial and its translation is not taken from MW19.
+-- Therefore they will either remain untranslated (and remain in English) or require community contribution to fix.
+
+-- 2) If a string uses "ARC9:GetPhrase" in it, then do not touch it. It uses another localization as its quick access.
+
+-- 3) If the string has the above text and an " or " after it, do not translate the text after it.
+
 ///////////////////////////// Various Universal Information
 //////////////////// Settings
-L["settings.mw19"] = "Tillägg - MW19"
-L["settings.mw19.warzonestats"] = "Warzone-Statistik"
-L["settings.mw19.warzonestats.title"] = "Aktivera Warzone-Statistik"
-L["settings.mw19.warzonestats.desc"] = "Ändrar statistiken på alla* vapen och tillbehör så dem har statistik som är mer likt Modern Warfare 2019 / Warzone.\n\nDetta är en servervariabel. Kräver omstart för att ta effekt.\n\n\n*Vissa vapen och tillbehör kommer inte bete sig annorlunda."
+L["settings.mw19"] = "Tillägg - MW19" -- UO
+L["settings.mw19.warzonestats"] = "Warzone-Statistik" -- UO
+L["settings.mw19.warzonestats.title"] = "Aktivera Warzone-Statistik" -- UO
+L["settings.mw19.warzonestats.desc"] = "Ändrar statistiken på alla* vapen och tillbehör så dem har statistik som är mer likt Modern Warfare 2019 / Warzone.\n\nDetta är en servervariabel. Kräver omstart för att ta effekt.\n\n\n*Vissa vapen och tillbehör kommer inte bete sig annorlunda." -- UO
 
 //////////////////// Trivia
 /////////// Caliber -- UO
@@ -41,14 +49,14 @@ L["mw19_caliber_57x28"] = "5,7×28mm" -- P90
 L["mw19_caliber_918"] = "9mm Makarov" -- PP19 Bizon, Sykov
 L["mw19_caliber_46x30"] = "4,6×30mm" -- MP7
 L["mw19_caliber_45acp"] = ".45 ACP" -- Striker 45, Fennec, X16, 1911
-L["mw19_caliber_12gauge"] = "12 Gauge" -- All Shotguns
+L["mw19_caliber_12gauge"] = "Kaliber 12" -- All Shotguns
 L["mw19_caliber_338"] = ".338 Norma Mag" -- RAAL MG
-L["mw19_caliber_45-70"] = ".45-70 Government" -- MK2 Carbine
+L["mw19_caliber_45-70"] = ".45-70 Regering" -- MK2 Carbine
 L["mw19_caliber_bolt"] = "508mm Pil" -- Crossbow
 L["mw19_caliber_300"] = ".300 Win Mag" -- SP-R 208
 L["mw19_caliber_50bmg"] = ".50 BMG" -- AX-50, Rytec AMR
 L["mw19_caliber_357"] = ".357 Magnum" -- .357
-L["mw19_caliber_50p"] = ".50 pistol" -- .50 GS
+L["mw19_caliber_50p"] = ".50 Pistol" -- .50 GS
 
 /////////// Country of Origin -- UO
 L["mw19_country"] = "Ursprungsland1"
@@ -72,35 +80,33 @@ L["mw19_country_japan"] = "Japan"
 /////////// Manufacturer
 L["mw19_manufacturer"] = "Tillverkare2" -- UO
 
-L["mw19_manufacturer_singuard"] = "Singuard Arms" -- Kilo 141
+-- L["mw19_manufacturer_singuard"] = "Singuard Arms" -- Kilo 141
 
-L["mw19_manufacturer_forgetac"] = "FORGE TAC Manufacturing" -- M4A1, FR 5.56, FN Scar 17, RAM-7, P90, Striker 45, Fennec, CX-9, R9-0, Holger-26, EBR-14, .50 GS
+-- L["mw19_manufacturer_forgetac"] = "FORGE TAC Manufacturing" -- M4A1, FR 5.56, FN Scar 17, RAM-7, P90, Striker 45, Fennec, CX-9, R9-0, Holger-26, EBR-14, .50 GS
 
-L["mw19_manufacturer_tempus"] = "Tempus Armament Inc." -- M13, 725, Bruen Mk9, FiNN LMG
+-- L["mw19_manufacturer_tempus"] = "Tempus Armament Inc." -- M13, 725, Bruen Mk9, FiNN LMG
 
-L["mw19_manufacturer_verdansk"] = "Verdansk Arms Plant" -- AN-94, AS VAL, SKS
+-- L["mw19_manufacturer_verdansk"] = "Verdansk Arms Plant" -- AN-94, AS VAL, SKS
 
-L["mw19_manufacturer_fss"] = "FSS" -- MP5, MP7, M91, MK2 Carbine
+-- L["mw19_manufacturer_fss"] = "FSS" -- MP5, MP7, M91, MK2 Carbine
 
-L["mw19_manufacturer_cronen"] = "Cronen Industries" -- Uzi
+-- L["mw19_manufacturer_cronen"] = "Cronen Industries" -- Uzi
 
-L["mw19_manufacturer_zlr"] = "ZLR Special Inc." -- ISO, RAAL MG
+-- L["mw19_manufacturer_zlr"] = "ZLR Special Inc." -- ISO, RAAL MG
 
-L["mw19_manufacturer_xrk"] = "XRK" -- Model 680, JAK-12, M19
+-- L["mw19_manufacturer_xrk"] = "XRK" -- Model 680, JAK-12, M19
 
-L["mw19_manufacturer_vlk"] = "VLK Inc." -- VLK Rogue
+-- L["mw19_manufacturer_vlk"] = "VLK Inc." -- VLK Rogue
 
-L["mw19_manufacturer_sloan"] = "Sloan Precision" -- SP-R 208
+-- L["mw19_manufacturer_sloan"] = "Sloan Precision" -- SP-R 208
 
-L["mw19_manufacturer_cronen"] = "Cronen" -- AX-50
+-- L["mw19_manufacturer_cronen"] = "Cronen" -- AX-50
 
-L["mw19_manufacturer_silverfield"] = "Silverfield Ordnance" -- Rytec AMR, Renetti
+-- L["mw19_manufacturer_silverfield"] = "Silverfield Ordnance" -- Rytec AMR, Renetti
 
-L["mw19_manufacturer_corvus"] = "Corvus Defence" -- M19
+-- L["mw19_manufacturer_corvus"] = "Corvus Defence" -- M19
 
-L["mw19_manufacturer_stvol"] = "Stvol Tactical" -- PILA
-
-L["mw19_manufacturer_unknown"] = "???" -- FAL, Oden, AK-47, Grau 5.56, CR-56 AMAX, AUG, PP19 Bizon, SA87, MG34, Kar98k, Dragunov, Riot Shield, X16, 1911, .357, Sykov, Strela-P, JOKR, RPG-7, MGL-32, Knife, Kali Sticks, Dual Kodachis
+-- L["mw19_manufacturer_stvol"] = "Stvol Tactical" -- PILA
 
 /////////// Weight -- UO
 L["mw19_weight"] = "Vikt (Laddad)4"
@@ -152,14 +158,6 @@ L["mw19_class_weapon_handgun"] = "Pistol"
 L["mw19_class_weapon_launcher"] = "Kastare"
 
 //////////////////////////////////////////////////////////////////////
-////////////////////////////////////////// Notes
--- 1) If "-- UO" is listed after the string, it is unofficial and its translation is not taken from MW19.
--- Therefore they will either remain untranslated (and remain in English) or require community contribution to fix.
-
--- 2) If a string uses "ARC9:GetPhrase" in it, then do not touch it. It uses another localization as its quick access.
-
--- 3) If the string has the above text and an " or " after it, do not translate the text after it.
-
 ///////////////////////////// Attachments
 //////////////////// Customize
 L["mw19_category_camouflage"] = "Kamouflage"
@@ -178,11 +176,6 @@ L["mw19_category_magazine"] = "Magasin"
 L["mw19_category_reargrip"] = "Bakre Grepp"
 L["mw19_category_perk"] = "Färdighet"
 
--- Specific to the Crossbow Marksman Rifle
-L["mw19_category_cable"] = "Kabel"
-L["mw19_category_arms"] = "Armar"
-L["mw19_category_bolt"] = "Pil"
-
 -- Specific to Handguns
 L["mw19_category_triggeraction"] = "Avtryckare"
 
@@ -194,6 +187,11 @@ L["mw19_category_guard"] = "Skydd"
 
 -- Specific to the VLK Rogue Shotgun
 L["mw19_category_pumpgrip"] = "Pumpgrepp"
+
+-- Specific to the Crossbow Marksman Rifle
+L["mw19_category_cable"] = "Kabel"
+L["mw19_category_arms"] = "Armar"
+L["mw19_category_bolt"] = "Pil"
 
 -- Specific to the SP-R 208 Marksman Rifle
 L["mw19_category_boltassembly"] = "Bultmontering"
@@ -257,28 +255,19 @@ L["cod2019_ammo_tracer_col.description"] = "Ammunition med spårljus färgade f�
 L["cod2019_ammo_db.printname"] = "Brandpatroner" -- UO
 L["cod2019_ammo_db.compactname"] = "BRAND" -- UO
 L["cod2019_ammo_db.description"] = "Brandpatroner som tänder fyr på måltavlor vid träff." -- UO
--- L["cod2019_ammo_db.description"] = "Brandpatroner som har en chans att tända fyr på måltavlor vid träff." -- UO
 
 L["cod2019_ammo_he.printname"] = "Explosiva Patroner" -- UO
 L["cod2019_ammo_he.compactname"] = "HE" -- UO
 L["cod2019_ammo_he.description"] = "Explosiv ammunition som offrar direkt skada för att kunna göra skada i en radie runt träffpunkten.\nEffekten är spektakulär men väldigt lite sprängmedel kan sättas in i patronerna." -- UO
 
--- Shotgun Ammo
+////////// Shotgun Ammo
 L["cod2019_ammo_sg_magnum.printname"] = "8.5mm Magnum Hagelskott" -- UO
 L["cod2019_ammo_sg_magnum.compactname"] = "MAG" -- UO
 L["cod2019_ammo_sg_magnum.description"] = "Högt kraftfull hagelskott laddade med färre men större hagelskott.\nErbjuder bättre kraft i närstrid men värre räckvidd och träffsäkerhet." -- UO
 
--- L["cod2019_ammo_sg_bird.printname"] = "3.5mm Fågelskott" -- UO
--- L["cod2019_ammo_sg_bird.compactname"] = "FÅGEL" -- UO
--- L["cod2019_ammo_sg_bird.description"] = "Sänkt diameter laddning innehåller ett högre antal skott.\nSpridningen ökas vilket gör det lättare att träffa fler måltavlor." -- UO
-
 L["cod2019_ammo_sg_slug.printname"] = "70mm Helhål Sluggpatron" -- UO
 L["cod2019_ammo_sg_slug.compactname"] = "SLUGG" -- UO
 L["cod2019_ammo_sg_slug.description"] = "En enkel projektil laddad i en hagelpatron.\nDet aerodynamiska skottet har mycket högre effektiv räckvidd." -- UO
-
--- L["cod2019_ammo_sg_triple.printname"] = "70mm Trippelträff Sluggpatroner" -- UO
--- L["cod2019_ammo_sg_triple.compactname"] = "TRI" -- UO
--- L["cod2019_ammo_sg_triple.description"] = "Laddning innehåller tre korta, sluggstora skott.\nSluggarna erbjuder högre effektiv räckvidd och träffsäkerhet, men inte lika mycket som helhåliga sluggpatronen." -- UO
 
 L["cod2019_ammo_sg_flechette.printname"] = "Flechetteskott" -- UO
 L["cod2019_ammo_sg_flechette.compactname"] = "FLE" -- UO
@@ -553,8 +542,8 @@ L["mw19_weapon_nade_knife"] = "Kastbar Kniv"
 L["mw19_weapon_nade_proximity"] = "Närhetsmina"
 L["mw19_weapon_nade_thermite"] = "Thermit"
 
-L["mw19_weapon_nade_flash"] = "Chockgranat"
-L["mw19_weapon_nade_stun"] = "Distraktionsgranat"
+L["mw19_weapon_nade_flash"] = "Distraktionsgranat"
+L["mw19_weapon_nade_stun"] = "Chockgranat"
 L["mw19_weapon_nade_smoke"] = "Rökgranat"
 L["mw19_weapon_nade_snapshot"] = "Snapshot-Granat"
 L["mw19_weapon_nade_heartbeat"] = "Hjärtslagssensor"
@@ -630,34 +619,34 @@ L["mw19_weapon_deagle_desc"] = "Det mest kraftfulla halvautomatiska handvapnet t
 L["mw19_weapon_m9_desc"] = "Välbalanserad halvautomatisk 9mm pistol. Detta anspråkslösa sidovapnet utmärker sig i närstridsangrepp och har vapensmide förmågor unikt till pistolklassen vilket tillåter diverse strategier till strider."
 L["mw19_weapon_makarov_desc"] = "Pålitlig reservvapen i närstrid, detta \"double-/single-action\"-sidovapen har ett antal anpassade vapensmide modifikationer vilket gör den till ett utestående tillägg till vilken arsenal som helst."
 
-L["mw19_weapon_pila_desc"] = "Portable infrared surface-to-air missile launcher with a free-fire option. Self-propelled missiles have a higher speed, and moderate explosive yield."
-L["mw19_weapon_strela_desc"] = "84mm recoilless launcher lobs an explosive projectile at a very high velocity. The unguided armor piercing round has a low explosive yield, but is devastating against vehicles on contact."
-L["mw19_weapon_javelin_desc"] = "Fire and forget lock-on portable missile launcher with a large explosive yield. Infrared guided missiles take a top-attack trajectory, ensuring destruction of heavily armored vehicles."
-L["mw19_weapon_rpg_desc"] = "Unguided, self-propelled rocket launcher fires a slower projectile with a high-explosive yield."
-L["mw19_weapon_mgl_desc"] = "Rapid firing grenade launcher fed with a 6-round rotating cylinder. Can utilize a variety of 40mm rounds for various roles." -- UO
+L["mw19_weapon_pila_desc"] = "Portabel infraröd luftvärnsrobot med ett fritt skjutlägesalternativ. Självstyrda robotar har en högre hastighet och måttlig explosiv avkastning."
+L["mw19_weapon_strela_desc"] = "Rekylfri 84mm raketgevär skjuter en explosiv projektil i väldigt hög hastighet. Den oguidade pansarbrytande granaten har en låg explosiv avkastning, men är förödande mot fordon vid kontakt."
+L["mw19_weapon_javelin_desc"] = "Portabel \"Fire-and-forget\" pansarvärnsrobot med hög explosiv avkastning. Infraröd guidade missiler använder en \"top-attack\"-teknik vilket garanterar förstörelse av tungt bepansrade fordon."
+L["mw19_weapon_rpg_desc"] = "Oguidad, raketdrivet raketgevär skjuter en söligare projektil med en hög explosiv avkastning."
+L["mw19_weapon_mgl_desc"] = "Snabbskjutande granatkastare matad med en roterande cylinder som håller 6 skott. Kan använda flertal olika 40mm-granater för diverse roller." -- UO
 
-L["mw19_weapon_knife_desc"] = "A CQC tactical knife. Standard military issue, employed for fast, quiet, and deadly wetwork."
-L["mw19_weapon_stick_desc"] = "Dual wielding batons allow operators to approach their targets with great agility. Sturdy, lightweight design enables rapid attacks for zoning your enemies."
-L["mw19_weapon_sword_desc"] = "Hand forged carbon steel blades provide the sharpest edge possible for silently slicing through your enemies."
+L["mw19_weapon_knife_desc"] = "En taktisk kniv för närstrid. Standard militärutrustning, utdelad för snabba, tysta och dödliga våtarbeten."
+L["mw19_weapon_stick_desc"] = "Dubbla batonger tillåter operatörer att närma deras måltavlor med otrolig rörlighet. Stadig och lätt design tillåter snabba angrepp för zonering av dina fiender."
+L["mw19_weapon_sword_desc"] = "Handsmidda blad av kolstål erbjuder det vassaste möjliga alternativet för att ljudlöst slajsa din väg genom dina fiender."
 
-L["mw19_weapon_nade_claymore_desc"] = "Proximity-activated explosive mine."
-L["mw19_weapon_nade_frag_desc"] = "Cookable fragmentation grenade."
-L["mw19_weapon_nade_molotov_desc"] = "Improvised incendiary device that explodes on impact."
-L["mw19_weapon_nade_c4_desc"] = "Large explosive that sticks to surfaces and can be detonated remotely with {ATTACK} when the equipment is depleted.\n\nDouble-tapping {USE} always detonates the explosives."
-L["mw19_weapon_nade_semtex_desc"] = "Timed sticky grenade."
-L["mw19_weapon_nade_knife_desc"] = "Retrievable knife that can be thrown to quickly and quietly eliminate enemies."
-L["mw19_weapon_nade_proximity_desc"] = "Proximity-triggered explosive that deals heavy damage to vehicles."
-L["mw19_weapon_nade_thermite_desc"] = "Explosive which burns fiercely for a short time after impact. Sticks to surfaces."
+L["mw19_weapon_nade_claymore_desc"] = "Närhetsaktiverad explosiv mina."
+L["mw19_weapon_nade_frag_desc"] = "Handgrant med armerbar rivtändare."
+L["mw19_weapon_nade_molotov_desc"] = "Hemmagjord eldgranat som sprängs vid kontakt."
+L["mw19_weapon_nade_c4_desc"] = "Stort sprängmedel som fastnar på ytor som kan fjärrdetoneras med {ATTACK} när utrustningen är slut.\n\nDubbeltryckning av {USE} spränger alltid sprängmedlen."
+L["mw19_weapon_nade_semtex_desc"] = "Klistergranat med timer."
+L["mw19_weapon_nade_knife_desc"] = "Återhämtningsbar kniv som kan snabbt kastas för att ljudlöst eliminera fiender."
+L["mw19_weapon_nade_proximity_desc"] = "Närhetsaktiverad sprängmedel som orsakar tunga skador till fordon."
+L["mw19_weapon_nade_thermite_desc"] = "Sprängmedel som starkt brinner under en kort tid efter träff. Fastnar på ytor."
 
-L["mw19_weapon_nade_flash_desc"] = "Blinds and deafens targets."
-L["mw19_weapon_nade_stun_desc"] = "Slows victim's movement and aiming."
-L["mw19_weapon_nade_smoke_desc"] = "Deploys a smoke screen that blocks vision."
-L["mw19_weapon_nade_snapshot_desc"] = "Provides a momentary glimpse of enemies within the blast radius for your squad."
-L["mw19_weapon_nade_heartbeat_desc"] = "A tablet that displays rough information about nearby enemies."
-L["mw19_weapon_nade_stim_desc"] = "Military stimulant that cauterizes combat wounds and refreshes Tactical Sprint."
-L["mw19_weapon_nade_decoy_desc"] = "Counter-intel grenade that simulates fake gunfire and radar signatures that confuse the enemy."
-L["mw19_weapon_nade_gas_desc"] = "Explodes on impact with the ground, releasing a lingering cloud of tear gas that causes slowed movement, blurred vision, and coughing."
+L["mw19_weapon_nade_flash_desc"] = "Bländer och dövar offer."
+L["mw19_weapon_nade_stun_desc"] = "Saktar ned offrets rörelse och sikte."
+L["mw19_weapon_nade_smoke_desc"] = "Skickar ut en rökskärm som blockerar vyn."
+L["mw19_weapon_nade_snapshot_desc"] = "Erbjuder en tillfällig blick av fiender inne i sprängområdet till din trupp."
+L["mw19_weapon_nade_heartbeat_desc"] = "En platta som visar ungefärlig information om nära fiender."
+L["mw19_weapon_nade_stim_desc"] = "Militär stimulerande medel som bränner stridssår och förfriskar Taktisk Sprint."
+L["mw19_weapon_nade_decoy_desc"] = "Spiongranat som simulerar falsk vapeneld och radarsignaturer för att förvirra fienden."
+L["mw19_weapon_nade_gas_desc"] = "Exploderar vid kontakt med marken och släpper ut ett dröjande moln av tårgas som orsakar saktar ner rörelsen, orsakar suddig vy och hostande."
 
-L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
-L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO
-L["mw19_weapon_nade_rock_desc"] = "For when you need to hit an enemy with a \"non-lethal\" item, or if you need to provide a distraction in order to sneak past guards." -- UO
+L["mw19_weapon_minigun_desc"] = "Portabel gatlingkulspruta med en väldigt hög eldhastighet." -- UO
+L["mw19_weapon_fists_desc"] = "När allt annat misslyckas så får du slå din väg ut. Kom ihåg att knytnävarna inte kräver omladdning, så dem är alltid snabba." -- UO
+L["mw19_weapon_nade_rock_desc"] = "När du behöver träffa en fiende med ett \"inte lika dödligt\" föremål, eller när du behöver orsaka en distraktion för att smyga dig förbi vakter." -- UO

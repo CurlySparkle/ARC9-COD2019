@@ -62,7 +62,8 @@ ATT.SortOrder = 3
 
 ATT.Category = {"cod2019_ammo_sg"}
 
-ATT.SpreadMult = 0.5
+ATT.SpreadMult = 0.85
+ATT.SpreadMultSights = 0.25
 ATT.RangeMaxMult = 1.5
 
 ATT.RicochetChanceAdd = 1
