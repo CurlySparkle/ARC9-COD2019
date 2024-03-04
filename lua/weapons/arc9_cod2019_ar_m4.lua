@@ -979,48 +979,16 @@ SWEP.AttachmentTableOverrides = {
 	ModelOffset = Vector(-1, -0.1, 0.8),
 	ModelAngleOffset = Angle(0, 0, 180),
     },
-    -- ["csgo_cod2019_laser_01"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-2, 14, -1.3),
-        -- Ang = Angle(0, 0, 45),
-        -- ViewModelFOV = 54,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_02"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-2, 14, -1.3),
-        -- Ang = Angle(0, 0, 45),
-        -- ViewModelFOV = 54,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_03"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-2, 14, -1.3),
-        -- Ang = Angle(0, 0, 45),
-        -- ViewModelFOV = 54,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
     ["cod2019_attach_xmag_50"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_xmags.mdl",
     },
     ["cod2019_attach_xmag_60"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_xmags2.mdl",
 	ActivateElements = {"mag_none","mag_xmaglrg"}
+    },
+    ["cod2019_stock_none"] = {
+    Icon = Material("entities/attachs/cod2019_stock_tube_padded.png", "mips smooth"),
+    Model = "models/weapons/cod2019/attachs/stocks/attachment_vm_ar_mike4_stockno.mdl",
     },
 }
 
@@ -1062,14 +1030,14 @@ SWEP.AttachmentElements = {
     },
     ["stock_adapter"] = {
         Bodygroups = {
-            {3,1},
+            {4,1},
             {4,1},
         },
     },
     ["stock_none"] = {
         Bodygroups = {
             {3,1},
-            {4,1},
+            {3,1},
         },
     },
     ["stock_main"] = {
@@ -1106,6 +1074,8 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	end
 	
     if wep:HasElement("barrel_custom") then model:SetBodygroup(7,2) end
+	
+    -- if wep:HasElement("cod2019_stock_none") then model:SetBodygroup(4,0) end
 
     local camo = 0
     if attached["universal_camo"] then
@@ -1166,11 +1136,15 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
 		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
         DefaultAttName = "Standard Stock",
-        Category = {"cod2019_tube","cod2019_m4_stock"},
+        Category = {"cod2019_tube", "cod2019_m4_stock"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		--InstalledElements = {"stock"},
+		InstalledElements = {"stock_none"},
+		RejectAttachments = {
+			["cod2019_stock_none"] = true,
+			["cod2019_stock_m4"] = true,
+		},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
@@ -1178,7 +1152,7 @@ SWEP.Attachments = {
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(0, 0, 0),
+		Icon_Offset = Vector(3.5, 0, -1),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),

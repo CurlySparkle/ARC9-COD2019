@@ -17,14 +17,12 @@ ATT.ActivateElements = {"rail_sight_none"}
 
 ATT.Sights = {
     {
-        Pos = Vector(0, 6.5, 0.1),
+        Pos = Vector(1.25, 9, -0.9),
         Ang = Angle(0, 1.5, 0),
-        Reticle = nil, -- Same as ATT.RTScopeReticle or HoloSightReticle but this sight only. Better cache material somewhere outside this structure: local Reticle1 = Material("reticle1.png", "mips smooth") and here you type only Reticle1). If not defined, will use ATT.RTScopeReticle/HoloSightReticle
-
-
         Magnification = 1.15,
         IsIronSight = true,
-        KeepBaseIrons = false
+        KeepBaseIrons = false,
+		CrosshairInSights = true,
     }
 }
 

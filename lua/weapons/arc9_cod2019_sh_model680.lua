@@ -169,7 +169,7 @@ end
 
 SWEP.Spread = 0.075
 
-SWEP.SpreadAddRecoil = 0
+SWEP.SpreadAddRecoil = 0.01
 
 SWEP.SpreadAddHipFire = SWEP.Spread * 0
 SWEP.SpreadAddMove = SWEP.Spread * 0.2
