@@ -82,7 +82,11 @@ SWEP.SecondarySupplyLimit = 12 -- Amount of reserve UBGL magazines you can take.
 SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
-SWEP.MissileCrosshair = true
+SWEP.MissileCrosshair = false
+
+SWEP.CustomCrosshair = true
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+SWEP.CustomCrosshairSize = 22
 
 -------------------------- FIREMODES
 
@@ -144,7 +148,7 @@ SWEP.VisualRecoilUpSights = 0.1
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.02
+SWEP.Spread = 0
 
 SWEP.SpreadAddRecoil = 0.01
 
@@ -592,8 +596,8 @@ SWEP.AttachmentTableOverrides = {
 	Scale = 0.8,
     },
     ["cod2019_perks_super_sprint"] = {
-    SprintPos = Vector(1, 0, -0),
-    SprintAng = Angle(-6, -6, 0)
+    SprintPos = Vector(0, 0, -0),
+    SprintAng = Angle(-15, -6, 0)
     },
 }
 

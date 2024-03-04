@@ -43,6 +43,7 @@ ENT.Delay = 5 // after being triggered and this amount of time has passed, the p
 ENT.Armed = false
 
 ENT.SmokeTrail = false // leaves trail of smoke
+ENT.Flare = true
 ENT.FlareColor = nil
 ENT.FlareSizeMin = 50
 ENT.FlareSizeMax = 100
@@ -346,11 +347,12 @@ local mat = Material("effects/ar2_altfire1b")
 
 function ENT:Draw()
     self:DrawModel()
-
+   if self.Flare then
     if self.FlareColor then
         render.SetMaterial(mat)
         render.DrawSprite(self:GetPos() + (self:GetAngles():Forward() * -16), math.Rand(self.FlareSizeMin, self.FlareSizeMax), math.Rand(self.FlareSizeMin, self.FlareSizeMax), self.FlareColor)
     end
+   end
 end
 
 hook.Add("EntityTakeDamage", "cod2019_proj_collision", function(ent, dmginfo)

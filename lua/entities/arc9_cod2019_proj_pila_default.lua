@@ -23,6 +23,9 @@ ENT.AudioLoop = "weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
 ENT.SmokeTrail = true
 
 ENT.FlareColor = Color(155, 155, 155)
+ENT.FlareSizeMin = 10
+ENT.FlareSizeMax = 50
+
 ENT.Radius = 300
 
 --- Stuff

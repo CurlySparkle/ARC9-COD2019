@@ -232,10 +232,10 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 25, 5)
 
-SWEP.PeekPos = Vector(0, 2, -4)
+SWEP.PeekPos = Vector(-1, 0, -4.3)
 SWEP.PeekAng = Angle(-0.3, 0, -45)
 
-SWEP.PeekMaxFOV = 60
+SWEP.PeekMaxFOV = 54
 
 -------------------------- HoldTypes
 
@@ -967,7 +967,7 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.2
 SWEP.GripPoseParam2 = 0.3
-SWEP.CodStubbyGripPoseParam = 6
+SWEP.CodStubbyGripPoseParam = 30
 SWEP.CodStubbyTallGripPoseParam = 1
 SWEP.CodAngledGripPoseParam = 15
 

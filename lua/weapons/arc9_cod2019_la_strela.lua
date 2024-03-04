@@ -67,7 +67,11 @@ SWEP.SecondarySupplyLimit = 12 -- Amount of reserve UBGL magazines you can take.
 SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
-SWEP.MissileCrosshair = true
+SWEP.MissileCrosshair = false
+
+SWEP.CustomCrosshair = true
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+SWEP.CustomCrosshairSize = 22
 
 -------------------------- FIREMODES
 

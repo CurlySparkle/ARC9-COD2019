@@ -21,6 +21,7 @@ ENT.SafetyFuse = 0.05
 ENT.AudioLoop = "models/weapons/cod2019/mags/w_eq_strela_rocket.mdl"
 
 ENT.SmokeTrail = true
+ENT.Flare = false
 
 ENT.FlareColor = Color(155, 155, 155)
 ENT.Radius = 300
