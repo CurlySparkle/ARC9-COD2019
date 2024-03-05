@@ -217,6 +217,9 @@ L["mw19_category_stats"] = "Stats" -- UO
 L["mw19_category_view"] = "View" -- UO
 
 //////////////////// Folder Names
+-- Stocks
+L["mw19_folder_tube2"] = "Tube" -- UO
+
 -- Other
 L["mw19_folder_other2"] = "Other" -- UO
 L["mw19_folder_side2"] = "Side" -- UO
@@ -309,7 +312,7 @@ L["cod2019_ammo_sg_db.description"] = "Load containing magnesium pellets that li
 ////////////////////  Etc.
 L["cod2019_etc_ammo_extend.printname"] = "Lightweight Extended Mag" -- UO
 L["cod2019_etc_ammo_extend.compactname"] = "Light EM" -- UO
-L["cod2019_etc_ammo_extend.description"] = "Custom extended magazines holding <color=100,255,100>20%</color> more ammunition." -- UO
+L["cod2019_etc_ammo_extend.description"] = "Custom extended magazines holding <color=100,255,100>33%</color> more ammunition." -- UO
 
 L["cod2019_attach_grip_support.printname"] = "Grip Support" -- UO
 L["cod2019_attach_grip_support.compactname"] = "Grip S." -- UO
@@ -352,6 +355,10 @@ L["cod2019_grips_alt_nocclamp.printname"] = "No C-Clamp Holding" -- UO
 L["cod2019_grips_alt_nocclamp.compactname"] = "No C-C" -- UO
 L["cod2019_grips_alt_nocclamp.description"] = ARC9:GetPhrase("cod2019_grips_none.description")
 
+L["cod2019_striker45_noclamp.printname"] = ARC9:GetPhrase("cod2019_grips_alt_nocclamp.printname")
+L["cod2019_striker45_noclamp.compactname"] = ARC9:GetPhrase("cod2019_grips_alt_nocclamp.compactname")
+L["cod2019_striker45_noclamp.description"] = ARC9:GetPhrase("cod2019_grips_none.description")
+
 ////////////////////  Perks
 L["cod2019_perks_soh.printname"] = "Sleight of Hand"
 L["cod2019_perks_soh.compactname"] = "SoH"
@@ -376,6 +383,10 @@ L["cod2019_perks_enforcer.description"] = "Grants the user 30% resistance to all
 L["cod2019_perks_bolt.printname"] = "Deft Hands" -- UO
 L["cod2019_perks_bolt.compactname"] = "Deft" -- UO
 L["cod2019_perks_bolt.description"] = "Training with your weapon allows you to cycle the weapon faster." -- UO
+
+L["cod2019_perks_bolt_alt.printname"] = ARC9:GetPhrase("cod2019_perks_bolt.printname")
+L["cod2019_perks_bolt_alt.compactname"] = ARC9:GetPhrase("cod2019_perks_bolt.compactname")
+L["cod2019_perks_bolt_alt.description"] = ARC9:GetPhrase("cod2019_perks_bolt.description")
 
 L["cod2019_perks_slamfire.printname"] = "Slamfire" -- UO
 L["cod2019_perks_slamfire.compactname"] = "Slamfire" -- UO

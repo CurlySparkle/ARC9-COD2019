@@ -209,6 +209,9 @@ L["mw19_category_stats"] = "Stats" -- UO
 L["mw19_category_view"] = "View" -- UO
 
 //////////////////// Folder Names
+-- Stocks
+-- L["mw19_folder_tube2"] = "Tube" -- UO
+
 -- Other
 -- L["mw19_folder_other2"] = "Other" -- UO
 -- L["mw19_folder_side2"] = "Side" -- UO
@@ -296,7 +299,7 @@ L["mw19_optic_stat_zoom2"] = "Zoomstufe" -- Most scopes
 ////////////////////  Etc.
 -- L["cod2019_etc_ammo_extend.printname"] = "Lightweight Extended Mag" -- UO
 -- L["cod2019_etc_ammo_extend.compactname"] = "Light EM" -- UO
--- L["cod2019_etc_ammo_extend.description"] = "Custom extended magazines holding <color=100,255,100>20%</color> more ammunition." -- UO
+-- L["cod2019_etc_ammo_extend.description"] = "Custom extended magazines holding <color=100,255,100>33%</color> more ammunition." -- UO
 
 -- L["cod2019_attach_grip_support.printname"] = "Grip Support" -- UO
 -- L["cod2019_attach_grip_support.compactname"] = "Grip S." -- UO

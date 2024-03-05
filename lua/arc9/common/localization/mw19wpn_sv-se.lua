@@ -209,6 +209,9 @@ L["mw19_category_stats"] = "Statistik" -- UO
 L["mw19_category_view"] = "Vy" -- UO
 
 //////////////////// Folder Names
+-- Stocks
+L["mw19_folder_tube2"] = "Rör" -- UO
+
 -- Other
 L["mw19_folder_other2"] = "Annat" -- UO
 L["mw19_folder_side2"] = "Sida" -- UO
@@ -292,7 +295,7 @@ L["cod2019_ammo_sg_db.description"] = "Laddning innehåller magnesium skott som 
 ////////////////////  Etc.
 L["cod2019_etc_ammo_extend.printname"] = "Lättvikt Förstorat Magasin" -- UO
 L["cod2019_etc_ammo_extend.compactname"] = "Lättvikt FM" -- UO
-L["cod2019_etc_ammo_extend.description"] = "Anpassat förstorat magasin som innehåller <color=100,255,100>20%</color> mer ammunition." -- UO
+L["cod2019_etc_ammo_extend.description"] = "Anpassat förstorat magasin som innehåller <color=100,255,100>33%</color> mer ammunition." -- UO
 
 L["cod2019_attach_grip_support.printname"] = "Stöd för Framgrepp" -- UO
 L["cod2019_attach_grip_support.compactname"] = "Stöd F." -- UO
