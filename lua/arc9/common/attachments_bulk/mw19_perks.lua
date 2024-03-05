@@ -22,8 +22,6 @@ ATT.CustomPros = {
 	[ ARC9:GetPhrase("autostat.reloadtime") ] = "+20%"
 }
 
---ATT.ReloadTimeMult = 0.80
-
 ARC9.LoadAttachment(ATT, "cod2019_perks_soh")
 
 /////////////////////////// -- cod2019_perks_soh_alt

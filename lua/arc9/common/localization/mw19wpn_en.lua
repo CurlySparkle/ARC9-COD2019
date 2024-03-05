@@ -415,23 +415,23 @@ L["cod2019_model680_iron.description"] = "Removes the sight mount on the Model 6
 
 ////////////////////  Stocks
 L["cod2019_stock_vlk.printname"] = "VLK Rogue Stock" -- UO
-L["cod2019_stock_vlk.compactname"] = "VLK Rogue" -- UO
+L["cod2019_stock_vlk.compactname"] = "Rogue" -- UO
 L["cod2019_stock_vlk.description"] = ARC9:GetPhrase("mw19stockdesc.light") or "Stock designed for agility while aiming down sights." .. missingloc
 
 L["cod2019_stock_amax.printname"] = "CR-56 AMAX Stock" -- UO
-L["cod2019_stock_amax.compactname"] = "CR-56 AMAX" -- UO
+L["cod2019_stock_amax.compactname"] = "AMAX" -- UO
 L["cod2019_stock_amax.description"] = ARC9:GetPhrase("mw19stockdesc.vlight") or "Ultralight stock speeds up weapon handling and movement at the expense of aiming stability." .. missingloc
 
-L["cod2019_stock_slima.printname"] = "Slima Stock" -- UO
-L["cod2019_stock_slima.compactname"] = "Slima" -- UO
+L["cod2019_stock_slima.printname"] = "RAAL MG Stock" -- UO
+L["cod2019_stock_slima.compactname"] = "RAAL MG" -- UO
 L["cod2019_stock_slima.description"] = ARC9:GetPhrase("mw19stockdesc.medium") or "Tactical stock streamlined for close quarters combat. Gets you on target faster." .. missingloc
 
-L["cod2019_stock_m4.printname"] = "Desert Storm Stock" -- UO
-L["cod2019_stock_m4.compactname"] = "Storm" -- UO
+L["cod2019_stock_m4.printname"] = "M4A1 Stock" -- UO
+L["cod2019_stock_m4.compactname"] = "M4A1" -- UO
 L["cod2019_stock_m4.description"] = ARC9:GetPhrase("mw19stockdesc.heavy") or "Heavy duty stock keeps your aim steady for precision shots." .. missingloc
 
-L["cod2019_stock_origin12.printname"] = "Origin Stock" -- UO
-L["cod2019_stock_origin12.compactname"] = "Origin" -- UO
+L["cod2019_stock_origin12.printname"] = "Origin 12 Shotgun Stock" -- UO
+L["cod2019_stock_origin12.compactname"] = "Origin 12" -- UO
 L["cod2019_stock_origin12.description"] = ARC9:GetPhrase("mw19stockdesc.light") or "Stock designed for agility while aiming down sights." .. missingloc
 
 L["cod2019_m32_stock_retract.printname"] = "Shortened Stock" -- UO
@@ -439,15 +439,15 @@ L["cod2019_m32_stock_retract.compactname"] = "Shortened" -- UO
 L["cod2019_m32_stock_retract.description"] = "Shortens the stock to allow for <color=100,255,100>higher agility.</color>" -- UO
 
 ////////////////////  Buffer Tubes
-L["cod2019_stock_tube.printname"] = "Desert Storm Buffer Tube" -- UO
-L["cod2019_stock_tube.compactname"] = "Storm" -- UO
+L["cod2019_stock_tube.printname"] = "FTAC Light Buffer Tube" -- UO
+L["cod2019_stock_tube.compactname"] = "FTAC L." -- UO
 L["cod2019_stock_tube.description"] = "Buffer tube made out of aluminium. Allows installation of aftermarket stocks." -- UO
 
 L["cod2019_stock_tube_vlk.printname"] = "VLK Buffer Tube" -- UO
 L["cod2019_stock_tube_vlk.compactname"] = "VLK" -- UO
 L["cod2019_stock_tube_vlk.description"] = "Custom made buffer tube that allows installation of aftermarket stocks." -- UO
 
-L["cod2019_stock_tube_origin12.printname"] = "FTAC Tube" -- UO
+L["cod2019_stock_tube_origin12.printname"] = "FTAC Buffer Tube" -- UO
 L["cod2019_stock_tube_origin12.compactname"] = "FTAC" -- UO
 L["cod2019_stock_tube_origin12.description"] = "Heavy-duty buffer tube that allows installation of aftermarket stocks." -- UO
 

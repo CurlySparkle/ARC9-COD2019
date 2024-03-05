@@ -101,7 +101,7 @@ ATT.PrintName = "VLK Stock"
 ATT.CompactName = "VLK"
 ATT.Description = "VLK stock that helps on aiming speed and has little of recoil control."
 ATT.Icon = Material("entities/attachs/cod2019_stock_vlk.png", "mips smooth")
-ATT.SortOrder = 5.4
+ATT.SortOrder = 2
 ATT.Desc_Pros = {
 }
 ATT.Desc_Cons = {
@@ -111,7 +111,11 @@ ATT.Category = "cod2019_stocks"
 
 ATT.Model = "models/weapons/cod2019/attachs/stocks/stock_vlk.mdl"
 
-table.Merge(ATT, stats_light)
+if !warzonestats then -- Regular Stats
+	table.Merge(ATT, stats_light.gmod)
+else -- Warzone Stats
+	table.Merge(ATT, stats_light.wz)
+end
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0.03)
@@ -126,7 +130,7 @@ ATT.PrintName = "AMAX Stock"
 ATT.CompactName = "AMAX"
 ATT.Description = "AMAX stock that helps even more on aiming speed/recoil with the cost of handling speed."
 ATT.Icon = Material("entities/attachs/cod2019_stock_amax.png", "mips smooth")
-ATT.SortOrder = 5.5
+ATT.SortOrder = 1
 ATT.Desc_Pros = {
 }
 ATT.Desc_Cons = {
@@ -136,7 +140,11 @@ ATT.Category = "cod2019_stocks"
 
 ATT.Model = "models/weapons/cod2019/attachs/stocks/stock_amax.mdl"
 
-table.Merge(ATT, stats_vlight)
+if !warzonestats then -- Regular Stats
+	table.Merge(ATT, stats_vlight.gmod)
+else -- Warzone Stats
+	table.Merge(ATT, stats_vlight.wz)
+end
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0.05)
@@ -151,7 +159,7 @@ ATT.PrintName = "Slima Stock"
 ATT.CompactName = "Slima"
 ATT.Description = "Slima stock that improves aiming speed with the cost of more recoil and less handling."
 ATT.Icon = Material("entities/attachs/cod2019_stock_slima.png", "mips smooth")
-ATT.SortOrder = 6
+ATT.SortOrder = 3
 ATT.Desc_Pros = {
 }
 ATT.Desc_Cons = {
@@ -161,7 +169,11 @@ ATT.Category = "cod2019_stocks"
 
 ATT.Model = "models/weapons/cod2019/attachs/stocks/stock_slima.mdl"
 
-table.Merge(ATT, stats_medium)
+if !warzonestats then -- Regular Stats
+	table.Merge(ATT, stats_medium.gmod)
+else -- Warzone Stats
+	table.Merge(ATT, stats_medium.wz)
+end
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0.1)
@@ -176,7 +188,7 @@ ATT.PrintName = "M4 Stock"
 ATT.CompactName = "M4"
 ATT.Description = "M4 stock that improves recoil with the cost of less speed."
 ATT.Icon = Material("entities/attachs/cod2019_stock_m4.png", "mips smooth")
-ATT.SortOrder = 6.5
+ATT.SortOrder = 4
 ATT.Desc_Pros = {
 }
 ATT.Desc_Cons = {
@@ -186,7 +198,11 @@ ATT.Category = "cod2019_stocks"
 
 ATT.Model = "models/weapons/cod2019/attachs/stocks/stock_m4.mdl"
 
-table.Merge(ATT, stats_heavy)
+if !warzonestats then -- Regular Stats
+	table.Merge(ATT, stats_heavy.gmod)
+else -- Warzone Stats
+	table.Merge(ATT, stats_heavy.wz)
+end
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
@@ -209,7 +225,7 @@ ATT.PrintName = "Origin Stock"
 ATT.CompactName = "Origin"
 ATT.Description = "Origin stock that improves ADS speed with the cost of more recoil."
 ATT.Icon = Material("entities/attachs/cod2019_stock_origin12.png", "mips smooth")
-ATT.SortOrder = 6.5
+ATT.SortOrder = 2
 ATT.Desc_Pros = {
 }
 ATT.Desc_Cons = {
@@ -219,7 +235,11 @@ ATT.Category = "cod2019_stocks"
 
 ATT.Model = "models/weapons/cod2019/attachs/stocks/stock_origin12.mdl"
 
-table.Merge(ATT, stats_light)
+if !warzonestats then -- Regular Stats
+	table.Merge(ATT, stats_light.gmod)
+else -- Warzone Stats
+	table.Merge(ATT, stats_light.wz)
+end
 
 ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
