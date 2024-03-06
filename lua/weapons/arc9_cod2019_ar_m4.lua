@@ -1233,5 +1233,29 @@ SWEP.CodStubbyTallGripPoseParam = 26
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 27
+SWEP.DamageMin = 23
+
+SWEP.RangeMin = 26 / ARC9.HUToM
+SWEP.RangeMax = 27 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.475,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 850 / ARC9.HUToM
+
+-------------------------- FIREMODES
+
+SWEP.RPM = 811
 
 end

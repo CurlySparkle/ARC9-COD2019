@@ -233,6 +233,7 @@ L["mw19_firemode_unguided"] = "OSTYRD" -- UO
 ///////////////////////////// Base Attachments
 -- Stats
 L["mw19_optic_stat_zoom2"] = "Zoom-nivå" -- Most scopes
+L["mw19_ammo_stat_ignite_chance"] = "Vid träff: Chans att tända fyr på offret" -- UO
 
 ////////////////////  Ammo
 L["cod2019_ammo_ap.printname"] = "Pansarbrytande Patroner" -- UO
@@ -257,7 +258,7 @@ L["cod2019_ammo_tracer_col.description"] = "Ammunition med spårljus färgade f�
 
 L["cod2019_ammo_db.printname"] = "Brandpatroner" -- UO
 L["cod2019_ammo_db.compactname"] = "BRAND" -- UO
-L["cod2019_ammo_db.description"] = "Brandpatroner som tänder fyr på måltavlor vid träff." -- UO
+L["cod2019_ammo_db.description"] = "Brandpatroner som har en chans att tända fyr på måltavlor vid träff." -- UO
 
 L["cod2019_ammo_he.printname"] = "Explosiva Patroner" -- UO
 L["cod2019_ammo_he.compactname"] = "HE" -- UO

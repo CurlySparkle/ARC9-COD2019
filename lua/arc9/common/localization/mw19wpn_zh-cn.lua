@@ -234,6 +234,7 @@ L["mw19_category_view"] = "View" -- UO
 ///////////////////////////// Base Attachments
 -- Stats
 -- L["mw19_optic_stat_zoom2"] = "Zoom Level" -- Most scopes
+-- L["mw19_ammo_stat_ignite_chance"] = "On Hit: Chance to Ignite Target" -- UO
 
 ////////////////////  Ammo
 -- L["cod2019_ammo_ap.printname"] = "Armor Piercing Rounds" -- UO
@@ -258,7 +259,7 @@ L["mw19_category_view"] = "View" -- UO
 
 -- L["cod2019_ammo_db.printname"] = "Incendiary Rounds" -- UO
 -- L["cod2019_ammo_db.compactname"] = "Inc." -- UO
--- L["cod2019_ammo_db.description"] = "Incendiary ammunition that light targets on fire on hit." -- UO
+-- L["cod2019_ammo_db.description"] = "Incendiary ammunition that has a change to light targets on fire on hit." -- UO
 
 -- L["cod2019_ammo_he.printname"] = "High Explosive Rounds" -- UO
 -- L["cod2019_ammo_he.compactname"] = "HE" -- UO

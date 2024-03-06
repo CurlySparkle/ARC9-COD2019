@@ -166,6 +166,10 @@ ATT.DamageMinMult = 0.9
 
 ATT.RicochetChance = 0
 
+ATT.CustomPros = {
+	[ ARC9:GetPhrase("mw19_ammo_stat_ignite_chance") ] = "25%",
+}
+
 local cov = 1 -- ??
 
 local badblood = { -- it's actually the good type
@@ -180,10 +184,12 @@ ATT.Hook_BulletImpact = function(wep,data)
     local test2 = (!ent:GetBloodColor() or badblood[ent:GetBloodColor()]) and true or false
 
     if IsValid(ent) and !test1 then
-        if vFireInstalled then
-            CreateVFire(ent, data.tr.HitPos, data.tr.HitNormal, data.dmg:GetDamage() * 0.02)
-        else
-            ent:Ignite(1.5, 0)
+        if math.Rand(0, 1) <= 0.25 then
+            if vFireInstalled then
+                CreateVFire(ent, data.tr.HitPos, data.tr.HitNormal, data.dmg:GetDamage() * 0.02)
+            else
+                ent:Ignite(1.5, 0)
+            end
         end
     end
 
