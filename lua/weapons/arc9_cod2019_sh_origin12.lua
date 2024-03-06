@@ -477,8 +477,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.6, lhik = 0, rhik = 0 },
-            { t = 0.75, lhik = 1, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_start.ogg", t = 0/30},
@@ -559,6 +559,7 @@ SWEP.Animations = {
 		RefillProgress = 0.55,
 		PeekProgress = 0.85,
 		FireASAP = true,
+		DropMagAt = 0.5,
 		MagSwapTime = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -579,7 +580,7 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		PeekProgress = 0.85,
 		FireASAP = true,
-		DropMagAt = 0.7,
+		DropMagAt = 0.5,
 		MagSwapTime = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },

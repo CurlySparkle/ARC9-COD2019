@@ -24,34 +24,6 @@ ENT.SmokeTrail = false
 
 ENT.BounceSound = "Cod2019.Frag.Bounce"
 
--- function ENT:Initialize()
-        -- self:SetModel(self.Model)
-        -- if self.PhysBoxSize then
-            -- self:PhysicsInitBox(-self.PhysBoxSize, self.PhysBoxSize)
-        -- elseif self.SphereSize then
-            -- self:PhysicsInitSphere(self.SphereSize, self.PhysMat)
-        -- else
-            -- self:PhysicsInit(SOLID_VPHYSICS)
-            -- self:SetSolid(SOLID_VPHYSICS)
-        -- end
-
-        -- local phys = self:GetPhysicsObject()
-        -- if phys:IsValid() then
-            -- phys:Wake()
-            -- phys:EnableDrag(self.Drag)
-            -- phys:SetDragCoefficient(self.DragCoefficient)
-            -- phys:EnableGravity(self.Gravity)
-            -- phys:SetMass(self.Mass)
-            -- phys:SetBuoyancyRatio(0.4)
-        -- end
-
-        -- if self.SmokeTrail then
-            -- util.SpriteTrail(self, 0, Color( 255 , 255 , 255 ), false, self.SmokeTrailSize, 0, self.SmokeTrailTime, 1 / self.SmokeTrailSize * 0.5, self.SmokeTrailMat)
-        -- end
-
-        -- self.SpawnTime = CurTime()
--- end
-
 function ENT:Initialize()
 	if SERVER then
 		self:SetModel(self.Model)
@@ -103,7 +75,6 @@ function ENT:Detonate()
         self:EmitSound("weapons/underwater_explode3.wav", 100)
     else
         ParticleEffect("explosion_m79", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("smoke_plume", self:GetPos(), Angle(0, 0, 0), nil)
 
         util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 256, 200)
         util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 328, 100)
@@ -112,27 +83,26 @@ function ENT:Detonate()
         self:EmitSound("Cod2019.Frag.Explode")
     end
 
-    if SERVER then
-        local dir = self.HitVelocity or self:GetVelocity()
+    local dlight = ents.Create("light_dynamic")
+    dlight:SetPos(self:GetPos())
+    dlight:SetKeyValue("brightness", "4")
+    dlight:SetKeyValue("distance", "200")
+    dlight:SetKeyValue("r", "255")
+    dlight:SetKeyValue("g", "150")
+    dlight:SetKeyValue("b", "0")
+    dlight:SetKeyValue("_light", "255 150 0")
+    dlight:Spawn()
+    dlight:Activate()
+    dlight:Fire("TurnOn", "", 0)
 
-        if self.Boost <= 0 then
-            dir = Vector(0, 0, -1)
+    timer.Simple(0.2, function()
+        if IsValid(dlight) then
+            dlight:Remove()
         end
+    end)
 
-        self:FireBullets({
-            Attacker = self,
-            Damage = 0,
-            Tracer = 0,
-            Distance = 256,
-            Dir = dir,
-            Src = self:GetPos(),
-            Callback = function(att, tr, dmg)
-                if self.Scorch then
-                    util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
-                end
-            end
-        })
-    end
+	util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
+	
     self.Defused = true
 
     SafeRemoveEntityDelayed(self, self.SmokeTrailTime)

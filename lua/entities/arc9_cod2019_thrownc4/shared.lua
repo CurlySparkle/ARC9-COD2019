@@ -11,6 +11,8 @@ ENT.MaxS = Vector(2, 2, 4)
 ENT.ArmDelay = 0.4
 ENT.Radius = 300
 
+PrecacheParticleSystem("small_smoke_effect3")
+
 if SERVER then
     util.AddNetworkString("cod2019_doorbust")
 
@@ -19,6 +21,7 @@ if SERVER then
 
     function ENT:OnPlant()
         self:EmitSound("Cod2019.C4.Plant")
+		ParticleEffect("small_smoke_effect3", self:GetPos(), self:GetAngles(), nil)
     end
 
     function ENT:Detonate()
@@ -32,6 +35,7 @@ if SERVER then
         self:SetParent(NULL)
 
         local pos = self:GetPos()
+        local ang = self:GetAngles()
 
         if IsValid(door) and string.find(door:GetClass(), "door") then
 
@@ -72,7 +76,7 @@ if SERVER then
 
                 local spos = pos
                 local trs = util.TraceLine({start = spos + Vector(0,0,64), endpos = spos + Vector(0,0,-32), filter = self})
-                util.Decal("Scorch", trs.HitPos + trs.HitNormal, trs.HitPos - trs.HitNormal)
+				util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
             end
         end
 

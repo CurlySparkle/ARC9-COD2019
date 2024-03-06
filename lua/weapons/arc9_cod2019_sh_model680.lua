@@ -835,9 +835,9 @@ SWEP.AttachmentElements = {
 	[2] = { Pos = Vector(6, 0, 0), },
 	},
     },
-	["sight_minidot"] = {
-    AttPosMods = { [3] = { Pos = Vector(0.5, 0, -0.1), } }
-	}
+	-- ["sight_minidot"] = {
+    -- AttPosMods = { [3] = { Pos = Vector(0.5, 0, -0.1), } }
+	-- }
 }
 
 -- SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -869,7 +869,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
         Bone = "tag_holo",
-        Pos = Vector(1.5, 0, -0.1),
+        Pos = Vector(0.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_model680_optic"},
         CorrectiveAng = Angle(2, 0.1, 0),

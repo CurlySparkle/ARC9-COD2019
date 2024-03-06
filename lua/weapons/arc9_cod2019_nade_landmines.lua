@@ -73,9 +73,9 @@ SWEP.ThrowAnimSpeed = 1
 
 SWEP.FuseTimer = -1 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
 
-SWEP.ThrowForceMin = 750 -- Minimum force that the grenade will be thrown with.
-SWEP.ThrowForceMax = 750 -- Maximum force that the grenade will be thrown with.
-SWEP.TossForce = 750 -- Force that the grenade will be thrown with when right clicked.
+SWEP.ThrowForceMin = 550 -- Minimum force that the grenade will be thrown with.
+SWEP.ThrowForceMax = 550 -- Maximum force that the grenade will be thrown with.
+SWEP.TossForce = 550 -- Force that the grenade will be thrown with when right clicked.
 
 SWEP.ThrowChargeTime = 0 -- How long it takes to charge the grenade to its maximum throw force.
 
@@ -86,7 +86,7 @@ SWEP.ThrowOnGround = false
 SWEP.ThrowInstantly = true
 SWEP.ShootEntInheritPlayerVelocity = true
 
-SWEP.ShootPosOffset = Vector(0, 30, -7)
+SWEP.ShootPosOffset = Vector(0, 15, -10)
 
 -------------------------- AIM ASSIST
 
@@ -182,9 +182,14 @@ SWEP.Animations = {
         EventTable = {
             {s = "weapons/cod2019/throwables/mine/proxy_throw.ogg", t = 0/30},
         },
-        MinProgress = 0.46
+        MinProgress = 0.44
     },
     ["bash"] = {
         Source = "melee",
+    },
+    ["inspect"] = {
+        Source = "lookat01",
+        MinProgress = 0.1,
+        FireASAP = true,
     },
 }

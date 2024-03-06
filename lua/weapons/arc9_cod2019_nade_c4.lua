@@ -78,6 +78,8 @@ SWEP.ThrowTumble = true -- Grenade tumbles when thrown.
 SWEP.Disposable = true 
 SWEP.Detonator = true
 
+SWEP.Akimbo = true
+
 -------------------------- HANDLING
 SWEP.SprintToFireTime = 0.2 -- How long it takes to go from sprinting to being able to fire.
 

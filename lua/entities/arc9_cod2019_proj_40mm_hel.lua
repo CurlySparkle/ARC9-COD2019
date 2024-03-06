@@ -98,16 +98,6 @@ function ENT:Detonate()
     end
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-    self:FireBullets({
-        Attacker = attacker,
-        Damage = 0,
-        Tracer = 0,
-        Distance = 20000,
-        Dir = self:GetVelocity(),
-        Src = self:GetPos(),
-        Callback = function(att, tr, dmg)
-            util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
-        end
-    })
+    util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
     self:Remove()
 end

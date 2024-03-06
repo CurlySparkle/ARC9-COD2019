@@ -40,6 +40,10 @@ SWEP.WorldModelOffset = {
 SWEP.DefaultBodygroups = "00"
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
+
+SWEP.CustomCrosshair = true
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+SWEP.CustomCrosshairSize = 22
 -------------------------- MAGAZINE
 
 SWEP.Ammo = "" -- What ammo type this gun uses.

@@ -21,6 +21,8 @@ ENT.Radius = 300
 ENT.NextBeepTime = 0
 ENT.DetectionRangeSqr = ENT.DetectionRange * ENT.DetectionRange
 
+PrecacheParticleSystem("small_smoke_effect3")
+
 if CLIENT then
     killicon.Add( "arc9_cod2019_thrownclaymore", "VGUI/killicons/cod2019_claymore", Color(251, 85, 25, 255))
 end
@@ -45,6 +47,7 @@ end
 
 function ENT:OnPlant()
     self:EmitSound("weapons/cod2019/throwables/claymore/wpfoly_claymore_plant_0" .. math.random(1, 3) .. ".ogg", 80, 100)
+	ParticleEffect("small_smoke_effect3", self:GetPos(), self:GetAngles(), nil)
     timer.Simple(math.max(0, self.ArmDelay - 1.2), function()
         if IsValid(self) then
             self:EmitSound( "weapons/cod2019/throwables/claymore/wpfoly_claymore_sensors_on.ogg", 75, 100, 1, CHAN_AUTO )
@@ -143,7 +146,7 @@ function ENT:Detonate()
             self:EmitSound("COD2019.Claymore.Explode")
         end
 		
-        ParticleEffect("explosion_claymore", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("explosion_HE_claymore", self:GetPos(), Angle(0, 0, 0), nil)
 
         local oldowner = self.Attacker or self:GetOwner()
         if not IsValid(oldowner) then

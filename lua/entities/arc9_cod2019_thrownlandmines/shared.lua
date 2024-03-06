@@ -10,12 +10,15 @@ ENT.DetectionRange = 96
 ENT.ArmDelay = 3
 ENT.Radius = 300
 
+PrecacheParticleSystem("small_smoke_effect3")
+
 if CLIENT then
     killicon.Add( "arc9_cod2019_thrownlandmines", "VGUI/killicons/cod2019_landmines", Color(251, 85, 25, 255))
 end
 
 function ENT:OnPlant()
     self:EmitSound("weapons/cod2019/throwables/mine/proxy_plant_01.ogg", 75, 100, 1, CHAN_AUTO)
+	ParticleEffect("small_smoke_effect3", self:GetPos(), self:GetAngles(), nil)
 end
 
 function ENT:Think()

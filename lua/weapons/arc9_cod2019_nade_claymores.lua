@@ -187,4 +187,9 @@ SWEP.Animations = {
     ["bash"] = {
         Source = "melee",
     },
+    ["inspect"] = {
+        Source = "lookat01",
+        MinProgress = 0.1,
+        FireASAP = true,
+    },
 }
