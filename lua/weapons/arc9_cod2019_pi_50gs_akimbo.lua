@@ -330,6 +330,9 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 SWEP.DefaultBodygroups = "000000000000000000"
 
 SWEP.AttachmentTableOverrides = {
+    ["cod2019_50gs_slide_ext"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_slide_ext_akimbo.mdl"
+    },
     ["cod2019_50gs_slide_ext2"] = {
     Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_slide_ext02_akimbo.mdl"
     },
@@ -389,6 +392,11 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		Icon_Offset = Vector(-2, 0, 0.5),
+        DuplicateModels = {
+            {
+                Bone = "tag_barrel_attach",
+            }
+        },
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),

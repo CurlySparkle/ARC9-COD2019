@@ -190,7 +190,7 @@ SWEP.Animations = {
         Source = "reload_fast",
 		MinProgress = 0.725,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.4,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -214,7 +214,7 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.825,
-		DropMagAt = 0.35,
+		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -329,6 +329,16 @@ SWEP.DefaultBodygroups = "00000000000000"
 SWEP.AttachmentTableOverrides = {
     ["cod2019_m19_slide_ext"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_barrel_ext_akimbo.mdl"
+    },
+    ["cod2019_m19_slide_vented"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_slide_black_akimbo.mdl"
+    },
+    ["cod2019_m19_slide_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_slide_vented_akimbo.mdl"
+    },
+    ["cod2019_m19_mag_ext2"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_mag_ext2_akimbo.mdl",
+	ClipSizeOverride = 64,
     },
 }
 

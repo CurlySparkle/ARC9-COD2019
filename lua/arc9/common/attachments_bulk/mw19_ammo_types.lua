@@ -121,8 +121,10 @@ ATT.Category = "cod2019_ammo"
 
 ATT.TracerNum = 1
 ATT.TracerSizeAdd = 1
-ATT.AlwaysPhysBullet = true
-ATT.NeverPhysBullet = false
+--ATT.AlwaysPhysBullet = false
+--ATT.NeverPhysBullet = false
+ATT.TracerEffect = "arc9_tracer"
+ATT.TracerSize = 3
 
 ATT.TracerColorHook = function(swep, col)
     if IsValid(swep:GetOwner()) and swep:GetOwner():IsPlayer() then
