@@ -135,12 +135,13 @@ SWEP.SprintAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(0, 0, -2)
 SWEP.CrouchAng = Angle(0, 0, 0)
 
-SWEP.CustomizeAng = Angle(0, -55, -50)
-SWEP.CustomizePos = Vector(-10, 29, 4)
+SWEP.CustomizeAng = Angle(70, 0, 0)
+SWEP.CustomizePos = Vector(10, 20, 4)
 SWEP.CustomizeRotateAnchor = Vector(-10, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
-SWEP.CustomizeSnapshotPos = Vector(0, 0, 3)
+SWEP.CustomizeSnapshotPos = Vector(1, 0, 0)
+SWEP.CustomizeNoRotate = true
 
 -------------------------- HoldTypes
 
@@ -204,6 +205,13 @@ SWEP.Animations = {
     },
 }
 
+SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
+}
 -------------------------- ATTACHMENTS
 
 SWEP.Attachments = {
@@ -213,36 +221,13 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
-        --Bone = "v_weapon.Clip",
-        Category = "go_skins_shield",
+        Category = "cod2019_knife_models",
+		InstalledElements = {"body_none"},
 		CosmeticOnly = true,
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/eq_shield_decal_a.mdl",
-        Category = "stickers",
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/eq_shield_decal_b.mdl",
-        Category = "stickers",
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/eq_shield_decal_c.mdl",
-        Category = "stickers",
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         CosmeticOnly = true,
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_stats"),
-        Category = "killcounter",
-        Bone = "tag_riotshield_offset",
-        Pos = Vector(4, -1.3, 4.2),
-        Ang = Angle(0, 90, 0),
-		CosmeticOnly = true,
     },
 }
