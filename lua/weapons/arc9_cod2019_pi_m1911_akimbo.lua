@@ -318,6 +318,12 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
+    ["cod2019_m1911_slide_long"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_barlong_akimbo.mdl",
+    },
+    ["cod2019_m1911_slide_short"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_barshort_akimbo.mdl",
+    },
     ["cod2019_m1911_mag_15"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_xmags_akimbo.mdl",
 	ClipSizeOverride = 15 * 2
@@ -409,7 +415,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac_pistols",
         Bone = "tag_laser_attach_l",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-1, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
 		--LaserCorrectionAngle = Angle(0, 0, 0),

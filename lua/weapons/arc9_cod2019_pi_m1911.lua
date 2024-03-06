@@ -222,8 +222,8 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(0, 0, -0.5)
-SWEP.SprintAng = Angle(0, 0, 0)
+SWEP.SprintPos = Vector(2, 0, -2)
+SWEP.SprintAng = Angle(-1, 5, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(15, 27.5, 5)
@@ -865,7 +865,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac_pistols",
         Bone = "tag_laser_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-1, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
     },

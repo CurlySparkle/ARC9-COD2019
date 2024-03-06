@@ -154,9 +154,9 @@ ATT.SortOrder = 0.5
 
 ATT.Category = {"cod2019_ammo", "cod2019_ammo_special"}
 
-ATT.ExplosionEffect = "cod2019_muzzle_db"
+ATT.ExplosionEffect = "cod2019_muzzle_inc"
 ATT.ImpactDecal = "Dark"
-ATT.ImpactEffect = "cod2019_muzzle_db"
+ATT.ImpactEffect = "cod2019_muzzle_inc"
 
 ATT.DamageType = DMG_BURN + DMG_SLOWBURN
 ATT.DamageTypeOverride = DMG_BURN + DMG_SLOWBURN
@@ -165,6 +165,8 @@ ATT.DamageMaxMult = 0.9
 ATT.DamageMinMult = 0.9
 
 ATT.RicochetChance = 0
+
+ATT.TracerEffect = "cod2019_tracer_inc"
 
 ATT.CustomPros = {
 	[ ARC9:GetPhrase("mw19_ammo_stat_ignite_chance") ] = "25%",
@@ -460,6 +462,7 @@ ATT.ImpactEffect = "cod2019_muzzle_he"
 
 ATT.MuzzleParticle = "muzzleflash_shotgun"
 ATT.MuzzleParticleSilenced = "AC_muzzle_shotgun_suppressed"
+ATT.TracerEffect = "cod2019_tracer_inc"
 
 ATT.DamageType = DMG_BURN + DMG_SLOWBURN
 ATT.DamageTypeOverride = DMG_BURN + DMG_SLOWBURN

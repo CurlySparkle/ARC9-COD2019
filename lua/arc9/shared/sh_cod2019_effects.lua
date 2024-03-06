@@ -17,6 +17,8 @@ local particlenames = {
     "mw2019_tracer_fast",
 	"mw2019_tracer_slow",
 	"mw2019_tracer_small",
+	"mw2019_tracer_inc",
+	"weapon_tracers_incendiary",
 	"AC_muzzle_rifle",
 	"AC_muzzle_rifle_fp",
 	"AC_muzzle_sniper",
