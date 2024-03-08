@@ -34,7 +34,7 @@ function EFFECT:Init(data)
         pcf:SetControlPoint(1,self.EndPos)
         pcf:StartEmission()
     end
-    timer.Simple(3.0, function()
+    timer.Simple(1.5, function()
         if IsValid(pcf) then
             pcf:StopEmissionAndDestroyImmediately()
         end

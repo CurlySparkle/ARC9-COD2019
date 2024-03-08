@@ -21,6 +21,8 @@ SWEP.DefaultBodygroups = "0000000000"
 SWEP.AlwaysPhysBullet = false
 SWEP.NeverPhysBullet = true
 SWEP.TracerEffect = "cod2019_tracer"
+SWEP.TracerSize = 0
+SWEP.TracerNum = 0
 
 SWEP.NoDynamicKillIcon = true
 

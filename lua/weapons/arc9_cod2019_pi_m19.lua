@@ -104,7 +104,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1
+SWEP.Recoil = 1.1
 
 SWEP.RecoilSeed = 610312
 
@@ -112,12 +112,12 @@ SWEP.RecoilPatternDrift = 35
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 0.3 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.1
-SWEP.RecoilRandomSide = 0.3
+SWEP.RecoilRandomUp = 0.2
+SWEP.RecoilRandomSide = 0.1
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -142,7 +142,7 @@ SWEP.VisualRecoilMultSights = 0.2
 SWEP.VisualRecoilPunchSights = 75
 SWEP.VisualRecoilPunch = 2.5
 SWEP.VisualRecoilUp = 0.2
-SWEP.VisualRecoilRoll = 3
+SWEP.VisualRecoilRoll = 15
 SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilSpringPunchDamping = 11
@@ -163,7 +163,7 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.0325
+SWEP.Spread = 0.02
 
 SWEP.SpreadAddRecoil = 0.01
 
@@ -174,13 +174,13 @@ SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -(SWEP.Spread * 1.2)
 
 SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 1.5
+SWEP.RecoilModifierCap = 1.1
 SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.15 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.24 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.24 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
@@ -242,7 +242,7 @@ SWEP.PeekAng = Angle(0, 0, -45)
 SWEP.PeekPosReloading = Vector(-1, -2.5, -2)
 SWEP.PeekAngReloading = Angle(0, 0, -20)
 
-SWEP.PeekMaxFOV = 54
+SWEP.PeekMaxFOV = 64
 
 -------------------------- HoldTypes
 

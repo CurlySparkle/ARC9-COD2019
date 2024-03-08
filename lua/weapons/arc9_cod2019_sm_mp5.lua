@@ -124,9 +124,9 @@ SWEP.RecoilAutoControl = 0.8 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilKick = 1.5
 
-SWEP.RecoilMultCrouch = 0.8
+SWEP.RecoilMultCrouch = 0.9
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.8
+SWEP.RecoilMultSights = 0.9
 
 -------------------------- VISUAL RECOIL
 
@@ -236,6 +236,8 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.PeekPos = Vector(-1, 3, -4.5)
 SWEP.PeekAng = Angle(-0.3, 0, -45)
+
+SWEP.PeekMaxFOV = 54
 
 -------------------------- HoldTypes
 
