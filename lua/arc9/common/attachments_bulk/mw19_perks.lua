@@ -190,7 +190,7 @@ ATT.Firemodes = {
         Mode = 3,
         RunawayBurst = true,
 		PoseParam = 0,
-		TracerEffect = "ARC9_tracer"
+		--TracerEffect = "ARC9_tracer"
     },
     {
         Mode = 1,
@@ -222,7 +222,7 @@ ATT.Firemodes = {
     {
         Mode = 2,
 		PoseParam = 0,
-		TracerEffect = "ARC9_tracer"
+		--TracerEffect = "ARC9_tracer"
     },
     {
         Mode = 1,

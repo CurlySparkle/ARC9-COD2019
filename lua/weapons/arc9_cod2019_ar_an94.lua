@@ -115,7 +115,7 @@ SWEP.Firemodes = {
 		PostBurstDelay = 0.2,
 		RunawayBurst = true,
 		PoseParam = 1,
-		TracerEffect = "ARC9_tracer"
+		--TracerEffect = "ARC9_tracer"
     }
 }
 -------------------------- RECOIL
@@ -129,12 +129,12 @@ SWEP.RecoilPatternDrift = 45
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.3 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.3
+SWEP.RecoilRandomSide = 0.5
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -165,7 +165,7 @@ SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
 SWEP.VisualRecoilRoll = 35
-SWEP.VisualRecoilSide = -0.05
+SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilSpringPunchDamping = 11
 SWEP.VisualRecoilDampingConst = 30
@@ -892,7 +892,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         end
     end
 	
-    wep.MWHybridSwitching = nil
+    --wep.MWHybridSwitching = nil
     if anim == "switchsights" then
         if wep:HasElement("hybrid_scope") then
             wep.MWHybridSwitching = true

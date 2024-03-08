@@ -15,13 +15,11 @@ ATT.SortOrder = 0
 ATT.Icon = Material("entities/attachs/cod2019_ammo_tmj.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-
 ATT.Free = true
 
 ATT.Category = "cod2019_ammo"
 
 ATT.PhysBulletMuzzleVelocityMult = 1.1
-
 ATT.DamageMaxMult = 0.9
 ATT.DamageMinMult = 0.9
 ATT.DamageType = DMG_AIRBOAT
@@ -42,9 +40,7 @@ ATT.SortOrder = 0.1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_ricochet.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-
 ATT.Free = true
-
 ATT.Category = "cod2019_ammo"
 
 ATT.DamageMaxMult = 0.85
@@ -67,15 +63,11 @@ ATT.SortOrder = 0.2
 ATT.Category = "cod2019_ammo"
 
 ATT.SpreadMult = 1.06
-
 ATT.PhysBulletMuzzleVelocityMult = 0.9
-
 ATT.DamageMaxMult = 1.25
 ATT.DamageMinMult = 0.85
-
 ATT.PenetrationMult = 0
 ATT.ArmorPiercingMult = 0.25
-
 ATT.RicochetChanceMult = 0
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_fra")
@@ -93,15 +85,10 @@ ATT.SortOrder = 0.3
 ATT.Category = "cod2019_ammo"
 
 ATT.TracerNum = 0
-
 ATT.PhysBulletMuzzleVelocityMult = 0.85
-
 ATT.RangeMaxMult = 0.85
-
 ATT.PenetrationMult = 0.75
-
 ATT.ShootVolumeMult = 0.9
-
 ATT.RecoilMult = 0.9
 ATT.VisualRecoilMult = 0.9
 
@@ -120,11 +107,8 @@ ATT.SortOrder = 0.4
 ATT.Category = "cod2019_ammo"
 
 ATT.TracerNum = 1
-ATT.TracerSizeAdd = 1
---ATT.AlwaysPhysBullet = false
---ATT.NeverPhysBullet = false
 ATT.TracerEffect = "arc9_tracer"
-ATT.TracerSize = 3
+ATT.TracerSize = 5
 
 ATT.TracerColorHook = function(swep, col)
     if IsValid(swep:GetOwner()) and swep:GetOwner():IsPlayer() then
@@ -163,8 +147,8 @@ ATT.DamageTypeOverride = DMG_BURN + DMG_SLOWBURN
 
 ATT.DamageMaxMult = 0.9
 ATT.DamageMinMult = 0.9
-
 ATT.RicochetChance = 0
+ATT.Penetration = 0
 
 ATT.TracerEffect = "cod2019_tracer_inc"
 
@@ -190,7 +174,7 @@ ATT.Hook_BulletImpact = function(wep,data)
             if vFireInstalled then
                 CreateVFire(ent, data.tr.HitPos, data.tr.HitNormal, data.dmg:GetDamage() * 0.02)
             else
-                ent:Ignite(1.5, 0)
+                ent:Ignite(2.5, 0)
             end
         end
     end
@@ -219,13 +203,12 @@ ATT.SortOrder = 0.6
 ATT.Category = {"cod2019_ammo_sniper","cod2019_ammo_special"}
 
 ATT.RicochetChance = 0
+ATT.Penetration = 0
 
 ATT.PhysBulletGravityMult = 3
 ATT.PhysBulletMuzzleVelocityMult = 0.75
-
 ATT.DamageMaxOverride = 100
 ATT.DamageMinOverride = 75
-
 ATT.ExplosionRadiusOverride = 100
 ATT.ExplosionDamageOverride = 200
 ATT.ExplosionEffect = "cod2019_muzzle_he" -- placeholder

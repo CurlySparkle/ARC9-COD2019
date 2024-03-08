@@ -541,7 +541,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         return Translate_TacSprint[anim]
     end
 
-    wep.MWHybridSwitching = nil
+    --wep.MWHybridSwitching = nil
     if anim == "switchsights" then
         if wep:HasElement("hybrid_scope") then
             wep.MWHybridSwitching = true

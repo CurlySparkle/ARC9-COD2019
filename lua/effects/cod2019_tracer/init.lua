@@ -1,4 +1,5 @@
 EFFECT.TracerName = "mw2019_tracer"
+EFFECT.Color = Color(255, 255, 255)
 
 function EFFECT:Init(data)
     self.WeaponEnt = data:GetEntity()
