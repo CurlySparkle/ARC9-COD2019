@@ -34,25 +34,25 @@ xbowbolt = lineb .. "Changes ammo type to <color=255,255,100>Crossbow Bolts</col
 L["mw19_caliber_556"] = "5.56 NATO" -- Kilo 141, M4A1, FR 5.56, M13, RAM-7, Grau 5.56, SA87, Holger-26, Bruen Mk9, FiNN LMG
 L["mw19_caliber_762"] = "7.62 NATO" -- FAL, FN Scar 17, M91, EBR-14
 L["mw19_caliber_762soviet"] = "7.62 Soviet" -- AK-47, CR-56 AMAX, SKS
-L["mw19_caliber_762mmr"] = "7.62x54mmR" -- PKM, Dragunov
+L["mw19_caliber_762mmr"] = "7.62 x 54mmR" -- PKM, Dragunov
 L["mw19_caliber_762mauser"] = "7.62 Mauser" -- MG34, Kar98k
-L["mw19_caliber_545"] = "5.45×39mm" -- AN-94
-L["mw19_caliber_127x55"] = "12.7×55mm" -- Oden
-L["mw19_caliber_127x108"] = "12.7×108mm" -- HDR
-L["mw19_caliber_939"] = "9×39mm" -- AS VAL
+L["mw19_caliber_545"] = "5.45 × 39mm" -- AN-94
+L["mw19_caliber_127x55"] = "12.7 × 55mm" -- Oden
+L["mw19_caliber_127x108"] = "12.7 × 108mm" -- HDR
+L["mw19_caliber_939"] = "9 × 39mm" -- AS VAL
 L["mw19_caliber_919"] = "9mm Parabellum" -- AUG, MP5, Uzi, ISO, CX-9, M19, Renetti
-L["mw19_caliber_57x28"] = "5.7x28mm" -- P90
+L["mw19_caliber_57x28"] = "5.7 x 28mm" -- P90
 L["mw19_caliber_918"] = "9mm Makarov" -- PP19 Bizon, Sykov
-L["mw19_caliber_46x30"] = "4.6x30mm" -- MP7
+L["mw19_caliber_46x30"] = "4.6 x 30mm" -- MP7
 L["mw19_caliber_45acp"] = ".45 ACP" -- Striker 45, Fennec, X16, 1911
 L["mw19_caliber_12gauge"] = "12 Gauge" -- All Shotguns
-L["mw19_caliber_338"] = ".338 Norma Mag" -- RAAL MG
+L["mw19_caliber_338"] = ".338普通彈匣" -- RAAL MG
 L["mw19_caliber_45-70"] = ".45-70 Government" -- MK2 Carbine
-L["mw19_caliber_bolt"] = "20.0\" Bolt" -- Crossbow
+L["mw19_caliber_bolt"] = "20.0\"弩箭" -- Crossbow
 L["mw19_caliber_300"] = ".300 Win Mag" -- SP-R 208
 L["mw19_caliber_50bmg"] = ".50 BMG" -- AX-50, Rytec AMR
 L["mw19_caliber_357"] = ".357 Magnum" -- .357
-L["mw19_caliber_50p"] = ".50 pistol" -- .50 GS
+L["mw19_caliber_50p"] = ".50手槍" -- .50 GS
 
 /////////// Country of Origin -- UO
 -- L["mw19_country"] = "Country of Origin1"
