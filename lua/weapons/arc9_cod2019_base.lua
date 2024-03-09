@@ -146,11 +146,28 @@ end
 SWEP.HookP_NameChange = function(self, name)
     local att = self:GetElements()
 
-	-- if self.Akimbo then
-		-- name = string.format( ARC9:GetPhrase("mw19_weapon_akimbo"), name )
-	-- end
+	-- Assault Rifle, AK-47
+	if att["cod2019_akilo47_mag_smg"] and att["cod2019_akilo47_barrel_smg"] then
+		name = "AKSU-74"
+	elseif att["cod2019_akilo47_mag_smg"] then
+		name = "AK-74"
+	end
+	
+	-- Assault Rifle, Grau 5.56
+	if att["cod2019_grau556_barrel_long"] then
+		name = "SG 550"
+	end	
+	
+	if att["cod2019_grau556_barrel_heavy"] then
+		name = "IMBEL IA2"
+	end
+	
+	-- Assault Rifle, FN Scar-17
+	if att["cod2019_scar_mag_ar"] then
+		name = "SCAR-L"
+	end	
 
-	if att["optic"] and att["optic_small"] then
+	if att["optic"] and att["optic_small"] then -- Hybrid Sight Name Change
 		if att["optic_thermal"] then
 			name = string.format( ARC9:GetPhrase("mw19_weapon_att_hybrid_thermal") or "%s Hybrid Thermal", name )
 		else
@@ -160,6 +177,10 @@ SWEP.HookP_NameChange = function(self, name)
 		name = string.format( ARC9:GetPhrase("mw19_weapon_att_hybrid") or "%s Hybrid", name )
 	elseif att["optic_thermal"] then
 		name = string.format( ARC9:GetPhrase("mw19_weapon_att_thermal") or "%s Thermal", name )
+	end
+
+	if att["arc9_stat_stattrak"] then
+		name = "StatTrak™ " .. name
 	end
 
     return name

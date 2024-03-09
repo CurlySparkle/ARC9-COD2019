@@ -13,16 +13,12 @@ smg1_grenade = lineb .. "Changes ammo type to <color=255,255,100>Rifle Grenades<
 xbowbolt = lineb .. "Changes ammo type to <color=255,255,100>Crossbow Bolts</color>.",
 }
 
-local missingloc = "\n\nNote: Non-Localized string; Subscribe to <color=255,255,100>SHARED PACK</color> for translated strings."
-
 //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////// Notes
 -- 1) If "-- UO" is listed after the string, it is unofficial and its translation is not taken from MW19.
 -- Therefore they will either remain untranslated (and remain in English) or require community contribution to fix.
 
 -- 2) If a string uses "ARC9:GetPhrase" in it, then do not touch it. It uses another localization as its quick access.
-
--- 3) If the string has the above text and an " or " after it, do not translate the text after it.
 
 ///////////////////////////// Various Universal Information
 //////////////////// Settings
@@ -164,8 +160,6 @@ L["mw19_class_weapon_launcher"] = "Launcher"
 
 -- 2) If a string uses "ARC9:GetPhrase" in it, then do not touch it. It uses another localization as its quick access.
 
--- 3) If the string has the above text and an " or " after it, do not translate the text after it.
-
 ///////////////////////////// Attachments
 //////////////////// Customize
 L["mw19_category_camouflage"] = "Camouflage"
@@ -277,17 +271,9 @@ L["cod2019_ammo_sg_magnum.printname"] = "8.5mm Magnum Buckshot" -- UO
 L["cod2019_ammo_sg_magnum.compactname"] = "MAG" -- UO
 L["cod2019_ammo_sg_magnum.description"] = "High-powered buckshot loaded with fewer but larger lead pellets.\nProvides better close range power, but worsened range and accuracy." -- UO
 
--- L["cod2019_ammo_sg_bird.printname"] = "3.5mm Birdshot" -- UO
--- L["cod2019_ammo_sg_bird.compactname"] = "BIRD" -- UO
--- L["cod2019_ammo_sg_bird.description"] = "Reduced diameter load containing a higher quantity of pallets.\nThe spread is increased which makes hitting more targets easier." -- UO
-
 L["cod2019_ammo_sg_slug.printname"] = "70mm Full-bore Slug" -- UO
 L["cod2019_ammo_sg_slug.compactname"] = "SLUG" -- UO
 L["cod2019_ammo_sg_slug.description"] = "A single large projectile loaded into a shotgun shell.\nThe aerodynamic pellet has much higher effective range." -- UO
-
--- L["cod2019_ammo_sg_triple.printname"] = "70mm Triple Hit Slugs" -- UO
--- L["cod2019_ammo_sg_triple.compactname"] = "TRI" -- UO
--- L["cod2019_ammo_sg_triple.description"] = "Load containing three short, slug-sized pellets.\nThe slugs provide increased effective range and accuracy, but not as much as the full-bore slug." -- UO
 
 L["cod2019_ammo_sg_flechette.printname"] = "Flechette Shells" -- UO
 L["cod2019_ammo_sg_flechette.compactname"] = "FLE" -- UO
@@ -341,7 +327,7 @@ L["cod2019_attach_laser_cylinder_2.description"] = ARC9:GetPhrase("cod2019_attac
 ////////////////////  Grips
 L["cod2019_attach_grip_foregrip_side.printname"] = "ARC Foregrip" -- UO
 L["cod2019_attach_grip_foregrip_side.compactname"] = "ARC" -- UO
-L["cod2019_attach_grip_foregrip_side.description"] = ARC9:GetPhrase("cod2019_grips_merc.description") or "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics." .. missingloc
+L["cod2019_attach_grip_foregrip_side.description"] = "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics." -- cod2019_grips_merc.description
 
 L["cod2019_grips_none.printname"] = "Alternative Holding" -- UO
 L["cod2019_grips_none.compactname"] = "Alt. Hold" -- UO
@@ -396,7 +382,7 @@ L["cod2019_perks_burst.printname"] = "Burst Fire"
 L["cod2019_perks_burst.compactname"] = "Burst"
 L["cod2019_perks_burst.description"] = "Changes fire mode to <color=100,255,100>3-round</color> burst."
 
-L["cod2019_perks_burst_2.printname"] = "Burst Fire (x2)"
+L["cod2019_perks_burst_2.printname"] = ARC9:GetPhrase("cod2019_perks_burst.printname")
 L["cod2019_perks_burst_2.compactname"] = ARC9:GetPhrase("cod2019_perks_burst.compactname")
 L["cod2019_perks_burst_2.description"] = "Changes fire mode to <color=100,255,100>2-round</color> burst."
 
@@ -405,10 +391,6 @@ L["cod2019_perks_super_sprint.compactname"] = "Tac. Sprint" -- UO
 L["cod2019_perks_super_sprint.description"] = "Provides an altered stance when sprinting which significantly improves sprint speed at the cost of heavily reduced sprint-to-fire speed." -- UO
 
 ////////////////////  Scopes
-L["cod2019_optic_scope_pila.printname"] = "PILA Scope" -- UO
-L["cod2019_optic_scope_pila.compactname"] = "PILA" -- UO
-L["cod2019_optic_scope_pila.description"] = ARC9:GetPhrase("cod2019_optic_scope_mike14.description") or "High power <color=100,255,100>4.4x</color> scope for long range encounters. <color=255,100,100>Optic glint visible to enemies.</color>" .. missingloc
-
 L["cod2019_model680_iron.printname"] = "Remove Sight Mount" -- UO
 L["cod2019_model680_iron.compactname"] = "R. Sight M." -- UO
 L["cod2019_model680_iron.description"] = "Removes the sight mount on the Model 680, making it sleeker." -- UO
@@ -416,23 +398,23 @@ L["cod2019_model680_iron.description"] = "Removes the sight mount on the Model 6
 ////////////////////  Stocks
 L["cod2019_stock_vlk.printname"] = "VLK Rogue Stock" -- UO
 L["cod2019_stock_vlk.compactname"] = "Rogue" -- UO
-L["cod2019_stock_vlk.description"] = ARC9:GetPhrase("mw19stockdesc.light") or "Stock designed for agility while aiming down sights." .. missingloc
+L["cod2019_stock_vlk.description"] = "Stock designed for agility while aiming down sights." -- mw19stockdesc.light
 
 L["cod2019_stock_amax.printname"] = "CR-56 AMAX Stock" -- UO
 L["cod2019_stock_amax.compactname"] = "AMAX" -- UO
-L["cod2019_stock_amax.description"] = ARC9:GetPhrase("mw19stockdesc.vlight") or "Ultralight stock speeds up weapon handling and movement at the expense of aiming stability." .. missingloc
+L["cod2019_stock_amax.description"] = "Ultralight stock speeds up weapon handling and movement at the expense of aiming stability." -- mw19stockdesc.vlight
 
 L["cod2019_stock_slima.printname"] = "RAAL MG Stock" -- UO
 L["cod2019_stock_slima.compactname"] = "RAAL MG" -- UO
-L["cod2019_stock_slima.description"] = ARC9:GetPhrase("mw19stockdesc.medium") or "Tactical stock streamlined for close quarters combat. Gets you on target faster." .. missingloc
+L["cod2019_stock_slima.description"] = "Tactical stock streamlined for close quarters combat. Gets you on target faster." -- mw19stockdesc.medium
 
 L["cod2019_stock_m4.printname"] = "M4A1 Stock" -- UO
 L["cod2019_stock_m4.compactname"] = "M4A1" -- UO
-L["cod2019_stock_m4.description"] = ARC9:GetPhrase("mw19stockdesc.heavy") or "Heavy duty stock keeps your aim steady for precision shots." .. missingloc
+L["cod2019_stock_m4.description"] = "Heavy duty stock keeps your aim steady for precision shots." -- mw19stockdesc.heavy
 
 L["cod2019_stock_origin12.printname"] = "Origin 12 Shotgun Stock" -- UO
 L["cod2019_stock_origin12.compactname"] = "Origin 12" -- UO
-L["cod2019_stock_origin12.description"] = ARC9:GetPhrase("mw19stockdesc.light") or "Stock designed for agility while aiming down sights." .. missingloc
+L["cod2019_stock_origin12.description"] = ARC9:GetPhrase("cod2019_stock_vlk.description")
 
 L["cod2019_m32_stock_retract.printname"] = "Shortened Stock" -- UO
 L["cod2019_m32_stock_retract.compactname"] = "Shortened" -- UO
@@ -636,7 +618,7 @@ L["mw19_weapon_nade_stim"] = "Stim"
 L["mw19_weapon_nade_decoy"] = "Decoy Grenade"
 L["mw19_weapon_nade_gas"] = "Gas Grenade"
 
-L["mw19_weapon_minigun"] = "Minigun"
+L["mw19_weapon_minigun"] = "Minigun"-- UO
 L["mw19_weapon_fists"] = "Fists" -- UO
 L["mw19_weapon_nade_rock"] = "Rock" -- UO
 

@@ -778,14 +778,6 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.HookP_NameChange = function(self, name)
-	local att = self:GetElements()
-	if att["cod2019_scar_mag_ar"] then
-		name = "SCAR-L"
-	end	
-    return name
-end
-
 --- 30 & 10 (DMR) Round Mags ---
 local Translate_AR = {
     ["reload"] = "reload_ar",

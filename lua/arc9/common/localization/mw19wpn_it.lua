@@ -31,47 +31,47 @@ xbowbolt = lineb .. "Changes ammo type to <color=255,255,100>Crossbow Bolts</col
 /////////// Caliber -- UO
 -- L["mw19_caliber"] = "Caliber3"
 
-L["mw19_caliber_556"] = "5,56 NATO" -- Kilo 141, M4A1, FR 5.56, M13, RAM-7, Grau 5.56, SA87, Holger-26, Bruen Mk9, FiNN LMG
-L["mw19_caliber_762"] = "7,62 NATO" -- FAL, FN Scar 17, M91, EBR-14
-L["mw19_caliber_762soviet"] = "7,62 russisch" -- AK-47, CR-56 AMAX, SKS
-L["mw19_caliber_762mmr"] = "7,62×54mmR" -- PKM, Dragunov
+L["mw19_caliber_556"] = "NATO 5,56" -- Kilo 141, M4A1, FR 5.56, M13, RAM-7, Grau 5.56, SA87, Holger-26, Bruen Mk9, FiNN LMG
+L["mw19_caliber_762"] = "NATO 7,62" -- FAL, FN Scar 17, M91, EBR-14
+L["mw19_caliber_762soviet"] = "Soviet 7,62" -- AK-47, CR-56 AMAX, SKS
+L["mw19_caliber_762mmr"] = "7,62 × 54 mm R" -- PKM, Dragunov
 L["mw19_caliber_762mauser"] = "7,62 Mauser" -- MG34, Kar98k
-L["mw19_caliber_545"] = "5,45×39mm" -- AN-94
-L["mw19_caliber_127x55"] = "12,7×55mm" -- Oden
-L["mw19_caliber_127x108"] = "12,7×108mm" -- HDR
-L["mw19_caliber_939"] = "9×39mm" -- AS VAL
-L["mw19_caliber_919"] = "9mm Parabellum" -- AUG, MP5, Uzi, ISO, CX-9, M19, Renetti
-L["mw19_caliber_57x28"] = "5,7×28mm" -- P90
-L["mw19_caliber_918"] = "9mm Makarov" -- PP19 Bizon, Sykov
-L["mw19_caliber_46x30"] = "4.6×30mm" -- MP7
+L["mw19_caliber_545"] = "5,45 × 39 mm" -- AN-94
+L["mw19_caliber_127x55"] = "12,7 × 55 mm" -- Oden
+L["mw19_caliber_127x108"] = "12,7 × 108 mm" -- HDR
+L["mw19_caliber_939"] = "9 × 39 mm" -- AS VAL
+L["mw19_caliber_919"] = "9 mm Parabellum" -- AUG, MP5, Uzi, ISO, CX-9, M19, Renetti
+L["mw19_caliber_57x28"] = "5,7 × 28 mm" -- P90
+L["mw19_caliber_918"] = "9 mm Makarov" -- PP19 Bizon, Sykov
+L["mw19_caliber_46x30"] = "4,6 × 30 mm" -- MP7
 L["mw19_caliber_45acp"] = ".45 ACP" -- Striker 45, Fennec, X16, 1911
-L["mw19_caliber_12gauge"] = "Kaliber 12" -- All Shotguns
-L["mw19_caliber_338"] = ".338 Norma Mag" -- RAAL MG
-L["mw19_caliber_45-70"] = ".45-70 Regierung" -- MK2 Carbine
-L["mw19_caliber_bolt"] = "20.0\" Bolzen" -- Crossbow
-L["mw19_caliber_300"] = ".300 Win Mag" -- SP-R 208
+L["mw19_caliber_12gauge"] = "Calibro 12" -- All Shotguns
+L["mw19_caliber_338"] = "Caricatore .338 Norma" -- RAAL MG
+L["mw19_caliber_45-70"] = ".45-70 Government" -- MK2 Carbine
+L["mw19_caliber_bolt"] = "Dardo 20.0\"" -- Crossbow
+L["mw19_caliber_300"] = "Win Mag .300" -- SP-R 208
 L["mw19_caliber_50bmg"] = ".50 BMG" -- AX-50, Rytec AMR
 L["mw19_caliber_357"] = ".357 Magnum" -- .357
-L["mw19_caliber_50p"] = ".50 Pistole" -- .50 GS
+L["mw19_caliber_50p"] = "Pistola calibro .50" -- .50 GS
 
 /////////// Country of Origin -- UO
 -- L["mw19_country"] = "Country of Origin1"
 
-L["mw19_country_austria"] = "Österreich"
-L["mw19_country_belgium"] = "Belgien"
-L["mw19_country_czechrepublic"] = "Tschechische Republik"
-L["mw19_country_france"] = "Frankreich"
-L["mw19_country_germany"] = "Deutschland"
-L["mw19_country_israel"] = "Israel"
-L["mw19_country_italy"] = "Italien"
-L["mw19_country_russia"] = "Russland"
-L["mw19_country_southafrica"] = "Südafrika"
-L["mw19_country_sovietunion"] = "Sowjetunion"
-L["mw19_country_sweden"] = "Schweden"
-L["mw19_country_switzerland"] = "Schweiz"
-L["mw19_country_uk"] = "Vereinigtes Königreich"
-L["mw19_country_usa"] = "Vereinigte Staaten"
-L["mw19_country_japan"] = "Japan"
+L["mw19_country_austria"] = "Austria"
+L["mw19_country_belgium"] = "Belgio"
+L["mw19_country_czechrepublic"] = "Repubblica Ceca"
+L["mw19_country_france"] = "Francia"
+L["mw19_country_germany"] = "Germania"
+L["mw19_country_israel"] = "Israele"
+L["mw19_country_italy"] = "Italia"
+L["mw19_country_russia"] = "Russia"
+L["mw19_country_southafrica"] = "Sudafrica"
+L["mw19_country_sovietunion"] = "Unione Sovietica"
+L["mw19_country_sweden"] = "Svezia"
+L["mw19_country_switzerland"] = "Svizzera"
+L["mw19_country_uk"] = "Regno Unito"
+L["mw19_country_usa"] = "Stati Uniti"
+L["mw19_country_japan"] = "Giappone"
 
 /////////// Manufacturer
 -- L["mw19_manufacturer"] = "Manufacturer2" -- UO
@@ -125,84 +125,90 @@ L["mw19_country_japan"] = "Japan"
 -- L["mw19_author"] = "Author1"
 
 /////////// Weapon Categories
-L["mw19_category_weapon_ar"] = "Sturmgewehre"
-L["mw19_category_weapon_smg"] = "MPs"
-L["mw19_category_weapon_shotgun"] = "Schrotflinten"
-L["mw19_category_weapon_lmg"] = "Leichte MGs"
-L["mw19_category_weapon_marksman"] = "DMRs"
-L["mw19_category_weapon_sniper"] = "Scharfschützengewehre"
-L["mw19_category_weapon_melee"] = "Nahkampf"
-L["mw19_category_weapon_throwable"] = "Primär & Taktik"
+L["mw19_category_weapon_ar"] = "Fucili d'assalto"
+L["mw19_category_weapon_smg"] = "Mitragliette"
+L["mw19_category_weapon_shotgun"] = "A canna liscia"
+L["mw19_category_weapon_lmg"] = "Mitragliatrice leggere"
+L["mw19_category_weapon_marksman"] = "Fucili tattici"
+L["mw19_category_weapon_sniper"] = "Ficili di precisione"
+L["mw19_category_weapon_melee"] = "Mischia"
+L["mw19_category_weapon_throwable"] = "Letale & Tattico"
 
-L["mw19_category_weapon_handgun"] = "Handfeuer-Waffen"
-L["mw19_category_weapon_handgun_akimbo"] = "Handfeuer-Waffen (Akimbo)"
-L["mw19_category_weapon_launcher"] = "Werfer"
+L["mw19_category_weapon_handgun"] = "Pistole"
+L["mw19_category_weapon_handgun_akimbo"] = "Pistole (Doppia arma)"
+L["mw19_category_weapon_launcher"] = "Lanciatori"
 
 /////////// Weapon Classes
-L["mw19_class_weapon_ar"] = "Sturmgewehr"
-L["mw19_class_weapon_smg"] = "MP"
-L["mw19_class_weapon_shotgun"] = "Schrotflinte"
-L["mw19_class_weapon_lmg"] = "LMG"
-L["mw19_class_weapon_marksman"] = "DMR"
-L["mw19_class_weapon_sniper"] = "Scharfschützengewehr"
-L["mw19_class_weapon_melee"] = "Nahkampf"
-L["mw19_class_weapon_lethal"] = "Primär"
-L["mw19_class_weapon_tactical"] = "Taktik"
-L["mw19_class_weapon_grenade"] = "Granate" -- UO
+L["mw19_class_weapon_ar"] = "Fucile d'assalto"
+L["mw19_class_weapon_smg"] = "Mitraglietta"
+L["mw19_class_weapon_shotgun"] = "Fucile a canna liscia"
+L["mw19_class_weapon_lmg"] = "Mitragliatrice leggera"
+L["mw19_class_weapon_marksman"] = "Fucile tattico"
+L["mw19_class_weapon_sniper"] = "Fucile di precisione"
+L["mw19_class_weapon_melee"] = "Mischia"
+L["mw19_class_weapon_lethal"] = "Letale"
+L["mw19_class_weapon_tactical"] = "Taqttico"
+L["mw19_class_weapon_grenade"] = "Granata" -- UO
 
-L["mw19_class_weapon_handgun"] = "Handfeuerwaffe"
-L["mw19_class_weapon_launcher"] = "Werfer"
+L["mw19_class_weapon_handgun"] = "Pistola"
+L["mw19_class_weapon_launcher"] = "Lanciatore"
 
 //////////////////////////////////////////////////////////////////////
+////////////////////////////////////////// Notes
+-- 1) If "-- UO" is listed after the string, it is unofficial and its translation is not taken from MW19.
+-- Therefore they will either remain untranslated (and remain in English) or require community contribution to fix.
+
+-- 2) If a string uses "ARC9:GetPhrase" in it, then do not touch it. It uses another localization as its quick access.
+
 ///////////////////////////// Attachments
 //////////////////// Customize
-L["mw19_category_camouflage"] = "Tarnung"
-L["mw19_category_reticle"] = "Fadenkreuz"
-L["mw19_category_charm"] = "Talisman"
-L["mw19_category_sticker"] = "Sticker"
+L["mw19_category_camouflage"] = "Mimetica"
+L["mw19_category_reticle"] = "Mirino"
+L["mw19_category_charm"] = "Portafortuna"
+L["mw19_category_sticker"] = "Adesivo"
 
 //////////////////// Attachment Categories
-L["mw19_category_muzzle"] = "Mündung"
-L["mw19_category_barrel"] = "Lauf"
+L["mw19_category_muzzle"] = "Volata"
+L["mw19_category_barrel"] = "Canna"
 L["mw19_category_laser"] = "Laser"
-L["mw19_category_optic"] = "Visier"
-L["mw19_category_stock"] = "Schaft"
-L["mw19_category_underbarrel"] = "Unterlauf"
-L["mw19_category_magazine"] = "Magazin"
-L["mw19_category_reargrip"] = "Griff"
-L["mw19_category_perk"] = "Extra"
+L["mw19_category_optic"] = "Ottica"
+L["mw19_category_stock"] = "Calcio"
+L["mw19_category_underbarrel"] = "Sottocanna"
+L["mw19_category_magazine"] = "Caricatore"
+L["mw19_category_reargrip"] = "Impugnatura"
+L["mw19_category_perk"] = "Specialità"
 
 -- Specific to Handguns
-L["mw19_category_triggeraction"] = "Abzug"
+L["mw19_category_triggeraction"] = "Azione grilletto"
 
 -- Specific to the R9-0 Shotgun
-L["mw19_category_pumps"] = "Pumps"
+L["mw19_category_pumps"] = "Pompe"
 
 -- Specific to the 725 Shotgun
-L["mw19_category_guard"] = "Handschutz"
+L["mw19_category_guard"] = "Guardia"
 
 -- Specific to the VLK Rogue Shotgun
-L["mw19_category_pumpgrip"] = "Vorderschaft-Griff"
+L["mw19_category_pumpgrip"] = "Impugnatura pompa"
 
 -- Specific to the Crossbow Marksman Rifle
-L["mw19_category_cable"] = "Kabel"
-L["mw19_category_arms"] = "Wurfarme"
-L["mw19_category_bolt"] = "Bolzen"
+L["mw19_category_cable"] = "Cavo"
+L["mw19_category_arms"] = "Braccia"
+L["mw19_category_bolt"] = "Dardo"
 
 -- Specific to the SP-R 208 Marksman Rifle
-L["mw19_category_boltassembly"] = "Bolzenmechanismus"
+L["mw19_category_boltassembly"] = "Sicura"
 
 -- Custom ones for the addon
-L["mw19_category_ammo"] = "Munition" -- UO
-L["mw19_category_function"] = "Functionality" -- UO
-L["mw19_category_grip"] = "Griff" -- UO
-L["mw19_category_misc"] = "Misc." -- UO
-L["mw19_category_rails"] = "Rails" -- UO
-L["mw19_category_receiver"] = "Receiver" -- UO
-L["mw19_category_skins"] = "Skins" -- UO
-L["mw19_category_slide"] = "Slide" -- UO, "Pistol Slide"
-L["mw19_category_stats"] = "Stats" -- UO
-L["mw19_category_view"] = "View" -- UO
+-- L["mw19_category_ammo"] = "Ammo" -- UO
+-- L["mw19_category_function"] = "Functionality" -- UO
+-- L["mw19_category_grip"] = "Foregrip" -- UO
+-- L["mw19_category_misc"] = "Misc." -- UO
+-- L["mw19_category_rails"] = "Rails" -- UO
+-- L["mw19_category_receiver"] = "Receiver" -- UO
+-- L["mw19_category_skins"] = "Skins" -- UO
+-- L["mw19_category_slide"] = "Slide" -- UO, "Pistol Slide"
+-- L["mw19_category_stats"] = "Stats" -- UO
+-- L["mw19_category_view"] = "View" -- UO
 
 //////////////////// Folder Names
 -- Stocks
@@ -228,7 +234,7 @@ L["mw19_category_view"] = "View" -- UO
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Base Attachments
 -- Stats
-L["mw19_optic_stat_zoom2"] = "Zoomstufe" -- Most scopes
+L["mw19_optic_stat_zoom2"] = "Livello zoom" -- Most scopes
 -- L["mw19_ammo_stat_ignite_chance"] = "On Hit: Chance to Ignite Target" -- UO
 
 ////////////////////  Ammo
@@ -324,17 +330,17 @@ L["mw19_optic_stat_zoom2"] = "Zoomstufe" -- Most scopes
 -- L["cod2019_grips_alt_nocclamp.compactname"] = "No C-C" -- UO
 
 ////////////////////  Perks
-L["cod2019_perks_soh.printname"] = "Finderfertigkeit"
-L["cod2019_perks_soh.compactname"] = "FF"
-L["cod2019_perks_soh.description"] = "Training im schnellen Nachladen unter Druck."
+L["cod2019_perks_soh.printname"] = "Gioco di prestigio"
+L["cod2019_perks_soh.compactname"] = "GDP"
+L["cod2019_perks_soh.description"] = "Ricarichi piü in fretta nelle situazioni più concitate."
 
-L["cod2019_perks_speedmelee.printname"] = "Schneller Nahkampf"
-L["cod2019_perks_speedmelee.compactname"] = "S. Nahk."
-L["cod2019_perks_speedmelee.description"] = "Training im Ausführen von Nahkampfmanövern in hohem Tempo."
+L["cod2019_perks_speedmelee.printname"] = "Corpo a corpo rapido"
+L["cod2019_perks_speedmelee.compactname"] = "CaC R."
+L["cod2019_perks_speedmelee.description"] = "Esegui attacchi corpo a corpo con grande valocità."
 
-L["cod2019_perks_heavyhitter.printname"] = "Schlagkräftig"
-L["cod2019_perks_heavyhitter.compactname"] = "Kräftig"
-L["cod2019_perks_heavyhitter.description"] = "Nahkämpfe lähmen Feinde stärker."
+L["cod2019_perks_heavyhitter.printname"] = "Martellata"
+L["cod2019_perks_heavyhitter.compactname"] = "Martellata"
+L["cod2019_perks_heavyhitter.description"] = "Gli attacchi corpo a corpo hanno un maggiore effetto stordente sui bersagli."
 
 -- L["cod2019_perks_enforcer.printname"] = "Enforcer" -- UO
 -- L["cod2019_perks_enforcer.compactname"] = "Enforcer" -- UO
@@ -348,11 +354,11 @@ L["cod2019_perks_heavyhitter.description"] = "Nahkämpfe lähmen Feinde stärker
 -- L["cod2019_perks_slamfire.compactname"] = "Slamfire" -- UO
 -- L["cod2019_perks_slamfire.description"] = "Bruteforce the weapon to fire and cycle the weapon much quicker at the cost of reduced accuracy." -- UO
 
-L["cod2019_perks_burst.printname"] = "Salve"
-L["cod2019_perks_burst.compactname"] = "Salve"
-L["cod2019_perks_burst.description"] = "Verändert den Feuermodus zum <color=100,255,100>3-Schuss</color>-Feuerstoß."
+L["cod2019_perks_burst.printname"] = "Scoppio"
+L["cod2019_perks_burst.compactname"] = "Burst"
+L["cod2019_perks_burst.description"] = "Cambia la modalità di fuoco per sparare raffiche da <color=100,255,100>3 colpi</color>."
 
-L["cod2019_perks_burst_2.description"] = "Verändert den Feuermodus zum <color=100,255,100>2-Schuss</color>-Feuerstoß."
+L["cod2019_perks_burst_2.description"] = "Cambia la modalità di fuoco per sparare raffiche da <color=100,255,100>2 colpi</color>."
 
 -- L["cod2019_perks_super_sprint.printname"] = "Tactical Sprint" -- UO
 -- L["cod2019_perks_super_sprint.compactname"] = "Tac. Sprint" -- UO
@@ -465,7 +471,7 @@ L["cod2019_perks_burst_2.description"] = "Verändert den Feuermodus zum <color=1
 L["mw19_weapon_kilo141"] = "Kilo 141"
 L["mw19_weapon_fal"] = "FAL"
 L["mw19_weapon_m4a1"] = "M4A1"
-L["mw19_weapon_fr556"] = "FR 5,56"
+L["mw19_weapon_fr556"] = "FR 5.56"
 L["mw19_weapon_oden"] = "Oden"
 L["mw19_weapon_m13"] = "M13"
 L["mw19_weapon_scar"] = "FN Scar 17"
@@ -495,27 +501,27 @@ L["mw19_weapon_vlk"] = "VLK Rogue"
 L["mw19_weapon_aa12"] = "JAK-12"
 
 L["mw19_weapon_pkm"] = "PKM"
-L["mw19_weapon_sa87"] = "SAR-87"
+L["mw19_weapon_sa87"] = "SA87"
 L["mw19_weapon_m91"] = "M91"
 L["mw19_weapon_mg34"] = "MG34"
 L["mw19_weapon_holger"] = "Holger-26"
 L["mw19_weapon_bruen"] = "Bruen Mk9"
-L["mw19_weapon_finn"] = "FiNN LMG"
-L["mw19_weapon_raal"] = "LAHS MG"
+L["mw19_weapon_finn"] = "FiNN"
+L["mw19_weapon_raal"] = "RAAL MG"
 
 L["mw19_weapon_ebr"] = "EBR-14"
-L["mw19_weapon_mk2"] = "MK2 Karabiner"
-L["mw19_weapon_kar98"] = "Kar 98k"
-L["mw19_weapon_crossbow"] = "Armbrust"
+L["mw19_weapon_mk2"] = "Carabina MK2"
+L["mw19_weapon_kar98"] = "Kar98k"
+L["mw19_weapon_crossbow"] = "Balestra"
 L["mw19_weapon_sks"] = "SKS"
 L["mw19_weapon_spr"] = "SP-R 208"
 
-L["mw19_weapon_dragunov"] = "Dragunow"
+L["mw19_weapon_dragunov"] = "Dragunov"
 L["mw19_weapon_hdr"] = "HDR"
-L["mw19_weapon_ax50"] = "AX50"
+L["mw19_weapon_ax50"] = "AX-50"
 L["mw19_weapon_rytec"] = "Rytec AMR"
 
-L["mw19_weapon_shield"] = "Einsatzschild"
+L["mw19_weapon_shield"] = "Scudo antisommossa"
 
 L["mw19_weapon_glock"] = "X16"
 L["mw19_weapon_1911"] = "1911"
@@ -528,128 +534,128 @@ L["mw19_weapon_makarov"] = "Sykov"
 L["mw19_weapon_pila"] = "PILA"
 L["mw19_weapon_strela"] = "Strela-P"
 L["mw19_weapon_javelin"] = "JOKR"
-L["mw19_weapon_rpg"] = "Raketenwerfer"
+L["mw19_weapon_rpg"] = "RPG-7"
 L["mw19_weapon_mgl"] = "MGL-32"
 
-L["mw19_weapon_knife"] = "Messer"
-L["mw19_weapon_stick"] = "Kali-Stöcke"
-L["mw19_weapon_sword"] = "Doppel-Kodachis"
+L["mw19_weapon_knife"] = "Coltello"
+L["mw19_weapon_stick"] = "Bastoni Kali"
+L["mw19_weapon_sword"] = "Kodachi doppie"
 
-L["mw19_weapon_akimbo"] = "%s Akimbo"
+L["mw19_weapon_akimbo"] = "%s Doppia arma"
 
 L["mw19_weapon_nade_claymore"] = "Claymore"
-L["mw19_weapon_nade_frag"] = "Splittergranate"
-L["mw19_weapon_nade_molotov"] = "Molotow-Cocktail"
+L["mw19_weapon_nade_frag"] = "Granata a frammentazione"
+L["mw19_weapon_nade_molotov"] = "Bomba Molotov"
 L["mw19_weapon_nade_c4"] = "C4"
 L["mw19_weapon_nade_semtex"] = "Semtex"
-L["mw19_weapon_nade_knife"] = "Wurfmesser"
-L["mw19_weapon_nade_proximity"] = "Näherungsmine"
-L["mw19_weapon_nade_thermite"] = "Thermit"
+L["mw19_weapon_nade_knife"] = "Coltello da lancio"
+L["mw19_weapon_nade_proximity"] = "Mina di prossimità"
+L["mw19_weapon_nade_thermite"] = "Termite"
 
-L["mw19_weapon_nade_flash"] = "Blendgranate"
-L["mw19_weapon_nade_stun"] = "Betäubung"
-L["mw19_weapon_nade_smoke"] = "Rauchgranate"
-L["mw19_weapon_nade_snapshot"] = "Schnappschussgranate"
-L["mw19_weapon_nade_heartbeat"] = "Herzschlagsensor"
-L["mw19_weapon_nade_stim"] = "Stim"
-L["mw19_weapon_nade_decoy"] = "Täuschgranate"
-L["mw19_weapon_nade_gas"] = "Gasgranate"
+L["mw19_weapon_nade_flash"] = "Flashbang"
+L["mw19_weapon_nade_stun"] = "Granata stordente"
+L["mw19_weapon_nade_smoke"] = "Granata fumogena"
+L["mw19_weapon_nade_snapshot"] = "Granata localizzante"
+L["mw19_weapon_nade_heartbeat"] = "Sensore di battito cardiaco"
+L["mw19_weapon_nade_stim"] = "Stimolante"
+L["mw19_weapon_nade_decoy"] = "Granata esca"
+L["mw19_weapon_nade_gas"] = "Granata a gas"
 
 -- L["mw19_weapon_minigun"] = "Minigun"-- UO
 -- L["mw19_weapon_fists"] = "Fists" -- UO
 -- L["mw19_weapon_nade_rock"] = "Rock" -- UO
 
 //////////// Weapon Descriptions
-L["mw19_weapon_kilo141_desc"] = "Vollautomatisches Sturmgewehr mit ergonomischem Design zur verbesserten Handhabung und einer stabilen Feuerrate, um am Ziel zu bleiben."
-L["mw19_weapon_fal_desc"] = "Ein halbautomatisches Sturmgewehr mit hoher Feuerrate für schnelle Folgeschusse."
-L["mw19_weapon_m4a1_desc"] = "Ein vollautomatisches Allzweck-Sturmgewehr. Wenn Sie Ihre Schüsse kontrollieren, ist diese Waffe aus der Distanz sehr effektiv."
-L["mw19_weapon_fr556_desc"] = "Ein Hinterschaftlader-Sturmgewehr mit 3-Schuss-Salve. Eine gut platzierte Salve kann auf mittlere Distanz extrem tödlich sein."
-L["mw19_weapon_oden_desc"] = "Ein vollautomatisches Hinterschaftlader-Sturmgewehr mit geringer Feuerrate, um die starke Munition mit 12,7 x 55mm zu kontrollieren."
-L["mw19_weapon_m13_desc"] = "Automatisches Sturmgewehr mit kurzem Gaskolbenrücklauf, der die Feuerrate hoch und den Rückstoß gering hält."
-L["mw19_weapon_scar_desc"] = "Großkalibriges vollautomatisches Sturmgewehr mit hohem Schaden auf lange Distanzen."
-L["mw19_weapon_ak47_desc"] = "Sehr zuverlässiges automatisches Sturmgewehr mit russischer 7,62mm-Munition. Große Kaliber erfordern Geschick, um den Rückstoß handhaben zu konnen."
-L["mw19_weapon_ram7_desc"] = "Ein vollautomatisches Hinterschaftlader-Sturmgewehr, das sich dank des kompakten Designs für Nahkampfkonfrontationen eignet."
-L["mw19_weapon_grau_desc"] = "Diese modulare 5,56-Waffenplattform ist leicht und manövrierfähig bei herausragender Reichweite. Präzisionstechnik und Nachrüstläufe der Extraklasse geben dieser Waffe extremes Potenzial."
-L["mw19_weapon_cr56_desc"] = "Dieses leichte, vollautomatische 7,62 x 39mm-Sturmgewehr ist kompakt und stark. Dieses Standardgewehr wurde exklusiv für den Militärdienst entwickelt, ist tödlich auf mittlere Distanz und kann leicht für eine Vielzahl an Angriffstaktiken konfiguriert werden."
-L["mw19_weapon_an94_desc"] = "Innovatives russisches 5,45x39mm Sturmgewehr mit einzigartiger <color=255,255,100>Rückstoß-Verzögerung</color>. Jede erste Abzugbetatigung feuert 2 schnelle Schüsse, bevor der Rückstoß einsetzt. Die hohe Schussdichte erhöht das Schadenspotenzial. Der Mechanismus wird von einem geneigten Magazin gespeist, während ein Kolbengehäuse beim Kontrollieren des Rückstoßes hilft."
-L["mw19_weapon_asval_desc"] = "Mit seinem <color=255,255,100>Unterschall</color>-9x39mm und einem integrierten <color=255,255,100>Schalldämpfer</color> ist das AS VAL ein Kraftpaket für Tarnung, Präzision und Durchschlagskraft. Diese Waffe wird in den Händen eines talentierten Operators, der den schweren Rückstoß und die hohe Feuerrate zu kontrollieren weiß, glänzen."
+L["mw19_weapon_kilo141_desc"] = "Fucile d'assalto automatico con un design ergonomico che migliora la maneggevolezza e una cadenza stabile che rende piü preciso il puntamento."
+L["mw19_weapon_fal_desc"] = "Un fucile d'assalto semiautomatico con una cadenza elevata che permette di sparare colpi in rapida successione."
+L["mw19_weapon_m4a1_desc"] = "Un fucile d'assalto automatico e versatile che, controllando bene i colpi, si rivela molto efficace a distanza."
+L["mw19_weapon_fr556_desc"] = "Un fucile d'assalto in configurazione bullpup che spara raffiche da 3 colpi. Una raffica ben piazzata può essere micidiale a distanze variabili."
+L["mw19_weapon_oden_desc"] = "Un fucile d'assalto automatico in configurazione bullpup con una cadenza ciclica rallentata che aiuta a controllare i potenti colpi 12,7 x 55 mm."
+L["mw19_weapon_m13_desc"] = "Fucile d'assalto automatico con un sistema a pistoni a corsa breve che aumentano la cadenza e riducono il rinculo."
+L["mw19_weapon_scar_desc"] = "Fucile d'assalto automatico di grosso calibro che infligge danni elevati sulle lunghe distanze."
+L["mw19_weapon_ak47_desc"] = "Fucile d'assalto automatico molto affidabile che spara colpi 7,62 mm Soviet. Le munizioni di grosso calibro richiedono una certa abilitå per controllare il rinculo."
+L["mw19_weapon_ram7_desc"] = "Un fucile d'assalto automatico in configurazione bullpup dal design compatto. Ideale negli scontri rawicinati."
+L["mw19_weapon_grau_desc"] = "Questo modello modulare da 5,56 leggero, maneggevole è dalla portata eccezionale. Tecniche di produzione ad alta precisione e canne personalizzate di prima scelta conferiscono a quest'arma un incredibile potenziale."
+L["mw19_weapon_cr56_desc"] = "Questo fucile d'assalto automatico 7,62 x 39 mm è leggero, compatto e potente. Progettato esclusivamente per l'uso militare, il fucile d'ordinanza è micidiale a medio raggio e facilmente configurabile per tattiche d'assalto di vario tipo."
+L["mw19_weapon_an94_desc"] = "Fucile d'assalto russo 5,45 x 39 mm con una funzione unica di <color=255,255,100>super raffica</color>. Ogni pressione del grilletto produce una rapida raffica da 2 colpi prima ancora che si percepisca l'effetto del rinculo, creando un gruppo di proiettili dall'alto potenziale di danno. Il meccanismo alimentato da un caricatore curvo e il rinculo tenuto sotto controllo da un castello alternante."
+L["mw19_weapon_asval_desc"] = "Grazie alle munizioni 9x39 mm <color=255,255,100>subsoniche</color> e al <color=255,255,100>silenziatore</color> integrale, I'AS VAL è una potente arma che Offre furtività, precisione e penetrazione. Eccelle nelle mani degli operatori capaci di controllare il forte rinculo e l'elevata cadenza di fuoco."
 
-L["mw19_weapon_aug_desc"] = "Eine modulare, vollautomatische Waffe, die auf Milibität und Nahkämpfe ausgelegt ist."
-L["mw19_weapon_p90_desc"] = "Eine vollautomatische Hinterschaftlader-MP. Ein oben angebrachtes Magazin nimmt extrem schnelle Munition Kaliber 5,7 x 28mm auf."
-L["mw19_weapon_mp5_desc"] = "Eine vollautomatische 9mm-MP - die perfekte Balance zwischen Stabilität, Milibität und Tödlichkeit."
-L["mw19_weapon_uzi_desc"] = "Eine vollautomatische, zuschießende MP - einfach, stabil, effektiv."
-L["mw19_weapon_pp19_desc"] = "Ausgewogene, automatische MP mit hoher Kapazität im spiralförmigen Magazin."
-L["mw19_weapon_mp7_desc"] = "Diese kompakte vollautomatische Waffe hat eine hohe Feuerrate und einen geringen Rückstoß."
-L["mw19_weapon_striker_desc"] = "Extrem starke automatische MP mit Munition Kaliber .45, die auf größere Distanz wirkt als andere Waffen dieser Klasse. Die moderate Feuerrate sorgt für mehr Stabilität im vollautomatischen Modus."
-L["mw19_weapon_fennec_desc"] = "Eine aggressive vollautomatische MP mit butterweichem Rückstoß und einer blitzschnellen Feuerrate, die sich hervorragend eignet, um Räume zu sichern und die Linie zu halten."
-L["mw19_weapon_iso_desc"] = "Präzise gearbeitete 9mm MP mit schneller Schussrate. Diese leichte und zuverlässige Feuerwaffe soll das Kampfgeschehen auf kurze Distanz beherschen."
-L["mw19_weapon_cx9_desc"] = "Hervorragende Manövrierfähigkeit und hohe Schussrate machen diese rückstoßebetriebene MP zu eine ausgezeichneten Wahl für den Nahkampf."
+L["mw19_weapon_aug_desc"] = "Arma automatica modulare, configurata per la massima mobilità e l'efficacia a corto raggio."
+L["mw19_weapon_p90_desc"] = "Una mitraglietta automatica in configurazione bullpup. Il particolare caricatore superiore incamera molte munizioni 5,7 x 28 mm ad alta velocità."
+L["mw19_weapon_mp5_desc"] = "Una mitraglietta automatica che spara colpi da 9 mm. Connubio perfetto di stabilità, mobilità e letalità."
+L["mw19_weapon_uzi_desc"] = "Una mitraglietta automatica a otturatore aperto. Semplice, stabile ed efficace."
+L["mw19_weapon_pp19_desc"] = "Mitraglietta automatica ben bilanciata con un caricatore elicoidale ad alta capienza."
+L["mw19_weapon_mp7_desc"] = "Arma automatica compatta con cadenza elevata e scarso rinculo."
+L["mw19_weapon_striker_desc"] = "Questa potente mitraglietta caricata con colpi calibro .45 Auto ha una portata effettiva maggiore rispetto ad altre armi della stessa classe. La modalità di fuoco è automatica, ma la cadenza moderata aiuta a mantenere il controllo dell'arma."
+L["mw19_weapon_fennec_desc"] = "Un'aggressiva mitraglietta automatica con un'ottima compensazione del rinculo e una formidabile cadenza di fuoco, l'ideale per ripulire rapidamente le stanze occupate da nemici e presidiare le prime linee."
+L["mw19_weapon_iso_desc"] = "Mitraglietta da 9 mm fabbricata con grande precisione che offre un'elevata cadenza di fuoco. Quest'arma leggera e affidabile è progettata per dominare gli scontri a distanza ravvicinata."
+L["mw19_weapon_cx9_desc"] = "Eccellente manovrabilità e cadenza di fuoco elevata rendono questa mitraglietta un'arma formidabile negli scontri ravvicinati."
 
-L["mw19_weapon_m680_desc"] = "Eine zuverlässige, ausgewogene Pump-Action-Schrotflinte mit Kaliber 12."
-L["mw19_weapon_r90_desc"] = "Der Doppellauf bietet zwei schnelle Schüsse vor jedem Nachladen."
-L["mw19_weapon_725_desc"] = "Kipplauf-Schrotflinte mit 2 Schuss. Ein langer, aufgebohrter Lauf und eine zylindrische Würgebohrung sorgen für geringere Streuung und tödliche Wirkung auf längere Distanz."
-L["mw19_weapon_origin12_desc"] = "Eine halbautomatische Schrotflinte mit hoher Kapazität für durchgehendes Feuer. Effektiv auf kurze Distanz."
-L["mw19_weapon_vlk_desc"] = "Eine agile Schrotflinte mit Kaliber 12-Magazin von VLK mit zahlreichen Optionen, um Reichweite, Stabilität und Beweglichkeit zu modifizieren."
-L["mw19_weapon_aa12_desc"] = "Vollautomatische Schrotflinte mit offenem Bolzen und einem rückstoßreduzierenden Gassystem. Die Kampfschrotflinte verschießt große Mengen Blei bei gleichbleibender Schussrate."
+L["mw19_weapon_m680_desc"] = "Un fucile a canna liscia con azione a pompa calibro 12, affidabile e ben bilanciato."
+L["mw19_weapon_r90_desc"] = "La doppia canna permette di sparare due colpi in rapida successione, prima di dover ricaricare."
+L["mw19_weapon_725_desc"] = "Fucile a canna liscia con meccanismo basculante, caricabile con 2 colpi. La canna lunga ad anima allargata e lo strozzatore cilindrico riducono la dispersione e conservano la letalità dei colpi sulle lunghe distanze."
+L["mw19_weapon_origin12_desc"] = "Un fucile a canna liscia semiautomatico con un'elevata capienza di munizioni che garantisce un flusso di fuoco continuo. Efficace a corto raggio."
+L["mw19_weapon_vlk_desc"] = "Un agile fucile a canna liscia calibro 12 prodotto da VLK e con numerose opzioni per modificare portata, stabilità e maneggevolezza."
+L["mw19_weapon_aa12_desc"] = "Fucile a canna liscia automatico a otturatore aperto con sistema di sfiato del gas. Spara con alti volumi di fuoco a ritmo stabile."
 
-L["mw19_weapon_pkm_desc"] = "Ein vollautomatisches leichtes Maschinengewehr mit 7,62mm-Munition für hohen Schaden bei mittlerer Feuerrate."
-L["mw19_weapon_sa87_desc"] = "Ein vollautomatisches, leichtes Hinterschaftlader-Maschinengewehr. Die geringere Feuerrate und die 5,56mm-Geschosse machen dieses Gewehr stabil und effektiv auf große Distanz."
-L["mw19_weapon_m91_desc"] = "Robustes leichtes Maschinengewehr, das Mobilität für Stabilität opfert. Dauerfeuer mit hohem Kaliber neutralisiert Zielen auf große Distanz."
-L["mw19_weapon_mg34_desc"] = "Vollautomatische Waffe mit hoher Feuerrate und verheerender 7,62-Mauser-Munition. Maschinengewehre aus dem Zweiten Weltkrieg sind noch immer zuverlässig und tödlich auf dem Schlachtfeld."
-L["mw19_weapon_holger_desc"] = "Ein vielseitiges, vollautomatisches, leichtes 5,56mm-MG. Das modulare Design ermöglicht unterschiedlichste Einsätze."
-L["mw19_weapon_bruen_desc"] = "Dieses luftgekühlte, zuschießende leichte 5,56-Maschinengewehr bietet eine konkurrenzfähige Feuerrate und exzellente Stabilitat, mit denen man auf mittlere bis große Distanz dominiert."
-L["mw19_weapon_finn_desc"] = "Ein ultraleichtes, zuschießendes 5,56-Maschinengewehr mit geringer Schussrate und verbesserter Rückstoßkontrolle, die dem FiNN außergewöhnliche Präzision mit Vollautomatik verleiht."
-L["mw19_weapon_raal_desc"] = "Das leichte Aufklärungs-Helfer-Sturm-MG reduziert den Rückstoß der durchschlagskräftigen .338 Norma Magnum-Munition mithilfe einer geringen Feuerrate und eines zurückgleitenden Laufs. Die fortschrittliche Titankonstruktion hält das Gewicht im Rahmen,"
+L["mw19_weapon_pkm_desc"] = "Una mitragliatrice leggera automatica che spara munizioni da 7,62 mm con danni elevati e cadenza moderata."
+L["mw19_weapon_sa87_desc"] = "Una mitragliatrice leggera automatica in configurazione bullpup. Cadenza ridotta e colpi da 5,56 mm garantiscono stabilità ed efficacia anche sulle lunghe distanze."
+L["mw19_weapon_m91_desc"] = "Robusta mitragliatrice leggera che sacrifica la mobilità per aumentare la stabilità. Le raffiche di colpi di grosso calibro neutralizzano i bersagli a grande distanza."
+L["mw19_weapon_mg34_desc"] = "Arma automatica dalla cadenza elevata e con potenti munizioni 7,92 Mauser. Le mitragliatrici risalenti alla Seconda Guerra Mondiale si dimostrano ancora affidabili e micidiali sul campo di battaglia."
+L["mw19_weapon_holger_desc"] = "Una versatile mitragliatrice leggera automatica da 5,56 mm. II design modulare può essere configurato per un'ampia varietà di contesti operativi."
+L["mw19_weapon_bruen_desc"] = "Questa mitragliatrice leggera a otturatore aperto calibro 5,56 raffreddata ad aria è caratterizzata da una cadenza competitiva e da un'eccellente stabilità che le permettono di dominare negli ingaggi a medio e lungo raggio."
+L["mw19_weapon_finn_desc"] = "Una mitragliatrice 5,56 ultraleggera a otturatore aperto con una bassa cadenza ciclica e un sofisticato sistema di controllo del rinculo che garantisce un'eccezionale precisione in modalità di fuoco automatica."
+L["mw19_weapon_raal_desc"] = "La mitragliatrice leggera RAAL ha una bassa cadenza di fuoco e una canna alternante che mitigano il forte rinculo del caricatore .338 Norma. La sofisticata struttura in titanio rende il peso tutto sommato gestibile."
 
-L["mw19_weapon_ebr_desc"] = "Ein halbautomatisches DMR mit hoher Reichweite und einer guten Balance aus Feuerrate und tödlicher Wirkung."
-L["mw19_weapon_mk2_desc"] = "Extrem präzises Unterhebel-Gewehr - neutralisiert Feinde mit einem gut platzierten Schuss in Brust oder Kopf."
-L["mw19_weapon_kar98_desc"] = "Gewehr mit Geradezugverschluss und 7,92-Mauser-Munition. Ein Relikt aus dem Zweiten Weltkrieg, das in den Händen eines geübten Schützen immer noch extrem tödlich ist."
-L["mw19_weapon_crossbow_desc"] = "Diese leise und bewegliche Hochleistungs-Armbrust verschießt 20\"- Bolzen mit außergewöhnlich tödlicher Wirkung. Exklusive Personalisierung, Funktionalität und Munitionstypen machen aus dieser Waffe eine Klasse für sich. Die Standardbolzen mit 20\" können zurückgeholt werden und sind für Trophy-Systeme nicht erkennbar."
-L["mw19_weapon_sks_desc"] = "Leichter, halbautomatischer Karabiner mit 7,62x39mm-Munition. Dieses durchschlagskräftige und mobile russische Gewehr setzt eher auf Wirkung als auf Präzision. Es hat eine höhere Feuerrate als andere Waffen seiner Klasse, eine sorgfältig platzierte Kugel macht nachfolgende Schüsse müßig. Dieses klassische DMR hat schon viele Kämpfe erlebt, und die einzigartigen Waffenschmied-Konfigurationen zeugen von einer vielseitigen Einsatzhistorie."
-L["mw19_weapon_spr_desc"] = "Das zuverlässige und starke Gewehr mit Geradezugverschluss .300 von Sloan Precision. Der vielseitige zivile und militärische Nutzen dieser Waffe bietet jede Menge Anpassungsmoglichkeiten."
+L["mw19_weapon_ebr_desc"] = "Un fucile tattico semiautomatico a lungo raggio con un ottimo compromesso tra cadenza e letalità."
+L["mw19_weapon_mk2_desc"] = "Fucile con azione a leva estremamente preciso. Neutralizza un nemico con un solo colpo ben piazzato alla testa o al petto."
+L["mw19_weapon_kar98_desc"] = "Fucile a culatta mobile con munizioni 7,92 Mauser. Un cimelio della Seconda Guerra Mondiale che può essere ancora letale in mano a un tiratore scelto ribelle."
+L["mw19_weapon_crossbow_desc"] = "Silenziosa e maneggevole, questa balestra ad alte prestazioni spara dardi da 20,0\" con eccezionale letalità. Personalizzazione esclusiva, funzionalità speciale e tipologia di munizioni unica sono caratteristiche che mettono quest'arma in una categoria a parte. I dardi standard da 20,0\" possono essere recuperati e non sono rilevabili dai sistemi Trophy."
+L["mw19_weapon_sks_desc"] = "Carabina leggera semiautomatica caricata con munizioni 7,62 mm x 39 mm. Questo potente e agile fucile sovietico dà priorità alla versatilità sulla precisione. Garantisce una cadenza di fuoco più elevata rispetto ad altre armi della stessa classe, ma un colpo ben piazzato annulla la necessità di piazzare colpi successivi. Questo fucile tattico classico è ben collaudato e le sue configurazioni uniche ne riflettono il lungo ruolino di servizio."
+L["mw19_weapon_spr_desc"] = "Fucile a culatta mobile Win .300 potente e affidabile, fabbricato da Sloan Precision. L'ampio utilizzo di quest'arma in ambito civile e militare ha favorito la creazione di numerose opzioni di personalizzazione."
 
-L["mw19_weapon_dragunov_desc"] = "Ein russisches Arbeitstier mit 7,62mm x 54mmR-Munition. Das halbautomatische Scharfschützengewehr ist ein Gasdrucklader mit einer hohen Feuerrate bei Folgeschüssen."
-L["mw19_weapon_hdr_desc"] = "Ein \"Anti-Material\"-Gewehr mit Geradezugverschluss und 12,7x108mm-Munition. Die 745g-Munition hat eine geringere Mündungsgeschwindigkeit, ist aber bei großer Entfernung verheerend."
-L["mw19_weapon_ax50_desc"] = "Starkes Scharfschützengewehr mit Geradezugverschluss und BMG-Munition Kaliber 50. Seine Wolfram-Wuchtgeschosse sind schnell und schlagkräftig, erfordern jedoch präzise Schüsse auf große Distanz."
-L["mw19_weapon_rytec_desc"] = "Dieses halbautomatische Anti-Material-Gewehr setzt auf .50 BMG für kraftvolle Angriffe aus der Distanz. Eine Variante mit hochexplosiver 25x59mm-Ladung gilt offiziell als \"experimentell\", wurde aber bereits mehrfach effektiv in vielen Geheimoperationen eingesetzt."
+L["mw19_weapon_dragunov_desc"] = "Caricato con munizioni 7,62 mm x 54 mm R, questo fucile di precisione semiautomatico sovietico con meccanismo a gas permette di sparare colpi in rapida successione."
+L["mw19_weapon_hdr_desc"] = "Un fucile di precisione a culatta mobile anti-materiale che spara munizioni da 12,7 x 108 mm. I proiettili da 745 grammi hanno una minore velocità alla volata, ma sono devastanti a lunghissimo raggio."
+L["mw19_weapon_ax50_desc"] = "Potente fucile di precisione a culatta mobile che spara colpi calibro .50 BMG. I proiettili con involucro in tungsteno sono veloci e potenti, ma richiedono una mira precisa sulle lunghe distanze."
+L["mw19_weapon_rytec_desc"] = "Questo fucile antimateriale semiautomatico spara colpi .50 BMG per dominare negli assalti a lungo raggio. Una variante con munizioni altamente esplosive 25 x 59 mm è registrata ufficialmente come \"sperimentale\", sebbene sia già stata impiegata con ottimi risultati in diverse missioni segrete."
 
-L["mw19_weapon_shield_desc"] = "Schild mit erhöhtem Nahkampfschaden zur Abwehr von Kugel- und Explosionsschaden."
+L["mw19_weapon_shield_desc"] = "Scudo antiproiettile e resistente agli esplosivi che infligge danni corpo a corpo maggiori."
 
-L["mw19_weapon_glock_desc"] = "Eine halbautomatische Pistole mit .45-ACP-Munition - eine zuverlässige Notlösung für plötzliche Nahkämpfe."
-L["mw19_weapon_1911_desc"] = "Eine ausgewogene, halbautomatische Pistole mit moderater Feuerrate. Die Reichweite ist etwas höher als bei einer durchschnittlichen .45-ACP-Pistole."
-L["mw19_weapon_357_desc"] = "Revolver mit Spannabzug, der Kaliber .357-Magnummunition nutzt, um viel Schaden auf größere Distanz zu bewirken."
-L["mw19_weapon_m19_desc"] = "Halbautomatische 9mm-Pistole mit exzellenter Stabilität und schnellem Durchsatz."
-L["mw19_weapon_deagle_desc"] = "Die stärkste halbautomatische Handfeuerwaffe. Bewirkt großen Schaden bis auf mittlere Distanz."
-L["mw19_weapon_m9_desc"] = "Ausgewogene halbautomatische 9mm-Pistole. Diese bescheidene Handfeuerwaffe glänzt auf kurze Distanz und bietet Modifikationsmöglichkeiten, die in der Pistolenklasse einzigartig sind und verschiedene Strategien ermöglichen."
-L["mw19_weapon_makarov_desc"] = "Diese Spann-/Direktabzug-Pistole ist ein zuverlässiger Plan B im Nahkampf und bietet ein paar Waffenschmied-Modifikationen, die jedes Arsenal hervorragend ergänzen."
+L["mw19_weapon_glock_desc"] = "Una pistola semiautomatica che spara colpi calibro .45 ACP, efficace come ripiego in combattimenti a distanza ravvicinata."
+L["mw19_weapon_1911_desc"] = "Arma da fianco semiautomatica ben bilanciata e con una cadenza moderata. Portata leggermente più ampia rispetto alla pistola calibro .45 ACP standard."
+L["mw19_weapon_357_desc"] = "Revolver a doppia azione che spara colpi calibro .35? Magnum, infliggendo gravi danni a notevoli distanze."
+L["mw19_weapon_m19_desc"] = "Pistola semiautomatica che spara colpi da 9 mm. Eccellente stabilità unita a una cadenza ciclica elevata."
+L["mw19_weapon_deagle_desc"] = "La pistola semiautomatica più potente in assoluto. Infligge gravi danni fino a distanze intermedie."
+L["mw19_weapon_m9_desc"] = "Pistola semiautomatica ben bilanciata che spara colpi da 9 mm. Quest'arma secondaria senza troppi fronzoli eccelle nei combattimenti ravvicinati e offre ampie possibilità di configurazione uniche, che le permettono di adattarsi a diverse strategie d'ingaggio."
+L["mw19_weapon_makarov_desc"] = "Affidabile come ripiego negli scontri ravvicinati, quest'arma secondaria a doppia/singola azione dispone di alcune modifiche personalizzate che la rendono un'eccellente aggiunta per qualsiasi arsenale."
 
-L["mw19_weapon_pila_desc"] = "Tragbarer Infrarot-Boden-Luft-Raketen-Werfer mit Freifeueroption. Die Raketen mit eigenem Antripb haben eine höhere Geschwindigkeit und moderate Sprengkraft."
-L["mw19_weapon_strela_desc"] = "Dieser rückstoßfreie 84mm-Werfer feuert ein Explosivgeschoss mit hoher Geschwindigkeit ab. Das ungelenkte, panzerbrechende Geschoss hat nyr geringe Sprengkraft, wirkt bei einem direkten Treffer jedoch verheerend gegen Fahrzeuge."
-L["mw19_weapon_javelin_desc"] = "Tragbarer Lenkraketenwerfer mit Zielerfassung und hoher Sprengkraft. Die Infrarotlenkraketen treffén ihr Ziel von oben, um selbst schwer gepanzerte Fahrzeuge zu zerstören."
-L["mw19_weapon_rpg_desc"] = "Dieser Raketenwerfer für ungelenkte Raketen mit Eigenantrieb feuert langsame Projektile mit großer Sprengkraft ab."
+L["mw19_weapon_pila_desc"] = "Lanciamissili terra-aria a infrarossi portatile con opzione per fuoco libero. I missili a propulsione autonoma sono più veloci e hanno un potenziale esplosivo moderato."
+L["mw19_weapon_strela_desc"] = "Lanciatore da 84 mm senza rinculo che lancia proiettili esplosivi ad alta velocità. II colpo perforante non guidato ha un basso potenziale esplosivo, ma è devastante all'impatto con i veicoli."
+L["mw19_weapon_javelin_desc"] = "Missile con aggancio a guida autonoma e grande potenziale esplosivo. I missili con guida a infrarossi colpiscono dall'alto per assicurare la distruzione dei veicoli pesantemente corazzati."
+L["mw19_weapon_rpg_desc"] = "Lanciarazzi senza guida a propulsione autonoma. Spara proiettili più lenti dall'alto potenziale esplosivo."
 -- L["mw19_weapon_mgl_desc"] = "Rapid firing grenade launcher fed with a 6-round rotating cylinder. Can utilize a variety of 40mm rounds for various roles." -- UO
 
-L["mw19_weapon_knife_desc"] = "Ein taktisches Messer für den Nahkampf. Standard-Militärausrustung fur schnelles, leises und tödliches Ausschalten."
-L["mw19_weapon_stick_desc"] = "Schlagstöcke aus Stahl - je einer pro Hand - ermöglichen es Ihrem Operator, sich dem Ziel und flink zu nähern. Das robuste, leichte Design ermöglicht schnelle Angriffe."
-L["mw19_weapon_sword_desc"] = "Die handgeschmiedeten Klingen aus unlegiertem Stahl bieten die schärfsten Schneiden, die es gibt, um leise durch Ihre Feinde zu schlitzen."
+L["mw19_weapon_knife_desc"] = "Un coltello tattico corpo a corpo. Dotazione militare standard, utile per uccidere i bersagli in modo rapido e furtivo."
+L["mw19_weapon_stick_desc"] = "Sfollagente a doppia impugnatura. Permette agli operatori di avvicinarsi agilmente al bersaglio. La struttura robusta ma leggera consente di effettuare attacchi rapidi e di tenere a bada il nemico."
+L["mw19_weapon_sword_desc"] = "Lame in acciaio al carbonio forgiate a mano per essere il più affilate possibile e falciare silenziosamente il nemico."
 
-L["mw19_weapon_nade_claymore_desc"] = "Annäherungsmine."
-L["mw19_weapon_nade_frag_desc"] = "Splittergranate zum Scharfmachen."
-L["mw19_weapon_nade_molotov_desc"] = "Improvisierte Brandwaffe, die beim Aufprall explodiert."
-L["mw19_weapon_nade_c4_desc"] = "Großer Sprengsatz, der an Oberflächen haftet und mit {ATTACK} ferngezündet werden kann, wenn die Ausrüstung aufgebraucht ist.\n\nDoppeltes Drücken {USE} zündet die Ladung immer."
-L["mw19_weapon_nade_semtex_desc"] = "Haftgranate mit Timer."
-L["mw19_weapon_nade_knife_desc"] = "Wiederverwendbares Messer, das geworfen werden kann, um Feinde schnell und lautlos zu eliminieren."
-L["mw19_weapon_nade_proximity_desc"] = "Durch Annäherung ausgelöster Sprengsatz, der schwere Schäden an Fahrzeugen verursacht."
-L["mw19_weapon_nade_thermite_desc"] = "Sprengsatz, der nach dem Aufschlag eine Zeit lang lichterloh brennt. Bleibt an Oberflächen haften."
+L["mw19_weapon_nade_claymore_desc"] = "Mina esplosiva con sensore di prossimità."
+L["mw19_weapon_nade_frag_desc"] = "Granata a frammentazione ritardabile."
+L["mw19_weapon_nade_molotov_desc"] = "Ordigno incendiario improvvisato che esplode all'impatto."
+L["mw19_weapon_nade_c4_desc"] = "Esplosivo di grandi dimensioni che aderisce alle superfici, detonabile a distanza con {ATTACK} quando l'equipaggiamento è esaurito.\n\nPremere due volte {USE} fa sempre detonare gli esplosivi."
+L["mw19_weapon_nade_semtex_desc"] = "Granata adesiva a tempo."
+L["mw19_weapon_nade_knife_desc"] = "Coltello recuperabile che può essere lanciato per eliminare i nemici in modo rapido e silenzioso."
+L["mw19_weapon_nade_proximity_desc"] = "Esplosivo con innesco a prossimità che danneggia gravemente i veicoli."
+L["mw19_weapon_nade_thermite_desc"] = "Esplosivo che brucia violentemente per breve tempo dopo l'impatto. Aderisce alle superfici."
 
-L["mw19_weapon_nade_flash_desc"] = "Blendet und betäubt Ziele."
-L["mw19_weapon_nade_stun_desc"] = "Verlangsamt die Bewegungen und die Zielfähigkeit des Opfers."
-L["mw19_weapon_nade_smoke_desc"] = "Setzt eine Rauchwand frei, die die Sicht behindert."
-L["mw19_weapon_nade_snapshot_desc"] = "Bietet einen kurzen Blick auf die Gegner innerhalb des Sprengradius des eigenen Trupps."
-L["mw19_weapon_nade_heartbeat_desc"] = "Ein Tablet, das Grundinformation über Gegner in der Nähe anzeigt."
-L["mw19_weapon_nade_stim_desc"] = "Militärisches Stimulans, das Gefechtswunden kauterisiert und den Taktiksprint erneuert."
-L["mw19_weapon_nade_decoy_desc"] = "Spionageabwehr-Granate, die Schüsse und Radarsignaturen vortäuscht, um den Gegner zu verwirren."
-L["mw19_weapon_nade_gas_desc"] = "Explodiert beim Aufprall auf den Boden und setzt eine Tränengaswolke frei, die Bewegungen verlangsamt, die Sicht behindert und Hustenanfälle auslöst."
+L["mw19_weapon_nade_flash_desc"] = "Acceca e assorda i bersagli."
+L["mw19_weapon_nade_stun_desc"] = "Rallenta movimenti e puntamento della vittima."
+L["mw19_weapon_nade_smoke_desc"] = "Crea una cortina di fumo che ostruisce la visuale."
+L["mw19_weapon_nade_snapshot_desc"] = "Evidenzia brevemente a beneficio della tua squadra i nemici all'interno del raggio dell'esplosione."
+L["mw19_weapon_nade_heartbeat_desc"] = "Un tablet che visualizza informazioni di base sui nemici nei paraggi."
+L["mw19_weapon_nade_stim_desc"] = "Stimolante militare che cauterizza le ferite subite in battaglia e ripristina all'istante lo scatto tattico."
+L["mw19_weapon_nade_decoy_desc"] = "Granata che confonde il nemico simulando colpi d'arma da fuoco e segnali radar fasulli."
+L["mw19_weapon_nade_gas_desc"] = "Esplode all'impatto con il terreno, sprigionando una nube di gas lacrimogeno che per breve tempo rallenta i nemici, ne ostruisce la visuale e li fa tossire."
 
 -- L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
 -- L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO

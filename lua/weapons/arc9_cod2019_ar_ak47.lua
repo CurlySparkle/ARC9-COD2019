@@ -802,18 +802,6 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.HookP_NameChange = function(self, name)
-	local att = self:GetElements()
-
-	if att["cod2019_akilo47_mag_smg"] and att["cod2019_akilo47_barrel_smg"] then
-		name = "AKSU-74"
-	elseif att["cod2019_akilo47_mag_smg"] then
-		name = "AK-74"
-	end
-
-    return name
-end
-
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
 --- 30-Round (SMG) & Drum Mags ---

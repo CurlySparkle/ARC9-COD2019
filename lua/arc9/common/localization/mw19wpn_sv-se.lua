@@ -13,16 +13,12 @@ smg1_grenade = lineb .. "Byter patrontyp till <color=255,255,100>Gevärsgranater
 xbowbolt = lineb .. "Byter patrontyp till <color=255,255,100>Armborst Bultar</color>.",
 }
 
-local missingloc = "\n\nNotis: Icke-lokaliserad text; Prenumerera på <color=255,255,100>SHARED-tillägget</color> för översatta texter."
-
 //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////// Notes
 -- 1) If "-- UO" is listed after the string, it is unofficial and its translation is not taken from MW19.
 -- Therefore they will either remain untranslated (and remain in English) or require community contribution to fix.
 
 -- 2) If a string uses "ARC9:GetPhrase" in it, then do not touch it. It uses another localization as its quick access.
-
--- 3) If the string has the above text and an " or " after it, do not translate the text after it.
 
 ///////////////////////////// Various Universal Information
 //////////////////// Settings
@@ -315,7 +311,7 @@ L["cod2019_attach_laser_rail_2.description"] = "Tillåter installering av smål,
 ////////////////////  Grips
 L["cod2019_attach_grip_foregrip_side.printname"] = "ARC-Framgrepp" -- UO
 L["cod2019_attach_grip_foregrip_side.compactname"] = "ARC" -- UO
-L["cod2019_attach_grip_foregrip_side.description"] = ARC9:GetPhrase("cod2019_grips_merc.description") or "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics." .. missingloc
+L["cod2019_attach_grip_foregrip_side.description"] = "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics." -- cod2019_grips_merc.description
 
 L["cod2019_grips_none.printname"] = "Alternativ Hållande" -- UO
 L["cod2019_grips_none.compactname"] = "Alt. Håll." -- UO
@@ -356,14 +352,9 @@ L["cod2019_perks_burst.printname"] = "Salvoeld"
 L["cod2019_perks_burst.compactname"] = "Salvo"
 L["cod2019_perks_burst.description"] = "Ändrar skjutläget till <color=100,255,100>3-skott</color>salvo."
 
-L["cod2019_perks_burst_2.printname"] = "Salvoeld (x2)"
 L["cod2019_perks_burst_2.description"] = "Ändrar skjutläget till <color=100,255,100>2-skott</color>salvo."
 
 ////////////////////  Scopes
-L["cod2019_optic_scope_pila.printname"] = "PILA-Riktmedel" -- UO
-L["cod2019_optic_scope_pila.compactname"] = "PILA" -- UO
-L["cod2019_optic_scope_pila.description"] = ARC9:GetPhrase("cod2019_optic_scope_mike14.description") or "High power <color=100,255,100>4.4x</color> scope for long range encounters. <color=255,100,100>Optic glint visible to enemies.</color>" .. missingloc
-
 L["cod2019_model680_iron.printname"] = "Ta Bort Siktfäste" -- UO
 L["cod2019_model680_iron.compactname"] = "Ta Bort S." -- UO
 L["cod2019_model680_iron.description"] = "Tar bort siktfästet på Modell 680 vilket gör den mer slät." -- UO
@@ -371,23 +362,22 @@ L["cod2019_model680_iron.description"] = "Tar bort siktfästet på Modell 680 vi
 ////////////////////  Stocks
 L["cod2019_stock_vlk.printname"] = "VLK Rogue Kolv" -- UO
 L["cod2019_stock_vlk.compactname"] = "Rogue" -- UO
-L["cod2019_stock_vlk.description"] = ARC9:GetPhrase("cod2019_stock_light.description") or "Stock designed for agility while aiming down sights." .. missingloc
+L["cod2019_stock_vlk.description"] = "Kolv designad för rörlighet i siktet." -- mw19stockdesc.light
 
 L["cod2019_stock_amax.printname"] = "CR-56 AMAX Kolv" -- UO
 L["cod2019_stock_amax.compactname"] = "AMAX" -- UO
-L["cod2019_stock_amax.description"] = ARC9:GetPhrase("cod2019_stock_vlight.description") or "Ultralight stock speeds up weapon handling and movement at the expense of aiming stability." .. missingloc
+L["cod2019_stock_amax.description"] = "Ultralätt kolv ökar hastigheten på vapenhantering och rörelse med kostnad på stabilitet i siktet." -- mw19stockdesc.vlight
 
 L["cod2019_stock_slima.printname"] = "KP RAAL Kolv" -- UO
 L["cod2019_stock_slima.compactname"] = "KP RAAL" -- UO
-L["cod2019_stock_slima.description"] = ARC9:GetPhrase("cod2019_stock_medium.description") or "Tactical stock streamlined for close quarters combat. Gets you on target faster." .. missingloc
+L["cod2019_stock_slima.description"] = "Taktisk och effektiv kolv designad för närstrid. Får dig snabbare på målet." -- mw19stockdesc.medium
 
 L["cod2019_stock_m4.printname"] = "M4A1 Kolv" -- UO
 L["cod2019_stock_m4.compactname"] = "M4A1" -- UO
-L["cod2019_stock_m4.description"] = ARC9:GetPhrase("cod2019_stock_heavy.description") or "Heavy duty stock keeps your aim steady for precision shots." .. missingloc
+L["cod2019_stock_m4.description"] = "Tung kolv som låter dig hålla ditt sikte stadigt för träffsäkra skott." -- mw19stockdesc.heavy
 
 L["cod2019_stock_origin12.printname"] = "Hagelbössa Origin 12 Kolv" -- UO
 L["cod2019_stock_origin12.compactname"] = "Origin 12" -- UO
-L["cod2019_stock_origin12.description"] = ARC9:GetPhrase("cod2019_stock_light.description") or "Stock designed for agility while aiming down sights." .. missingloc
 
 L["cod2019_m32_stock_retract.printname"] = "Förkortad Kolv" -- UO
 L["cod2019_m32_stock_retract.compactname"] = "Förkortad" -- UO
@@ -551,11 +541,11 @@ L["mw19_weapon_nade_stun"] = "Chockgranat"
 L["mw19_weapon_nade_smoke"] = "Rökgranat"
 L["mw19_weapon_nade_snapshot"] = "Snapshot-Granat"
 L["mw19_weapon_nade_heartbeat"] = "Hjärtslagssensor"
-L["mw19_weapon_nade_stim"] = "Stim"
+L["mw19_weapon_nade_stim"] = "Stimulant"
 L["mw19_weapon_nade_decoy"] = "Lockbetsgranat"
 L["mw19_weapon_nade_gas"] = "Gasgranat"
 
-L["mw19_weapon_minigun"] = "Minigun"
+L["mw19_weapon_minigun"] = "Minigun"-- UO
 L["mw19_weapon_fists"] = "Knytnävar" -- UO
 L["mw19_weapon_nade_rock"] = "Sten" -- UO
 

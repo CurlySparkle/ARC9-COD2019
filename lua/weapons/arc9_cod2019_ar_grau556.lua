@@ -680,18 +680,6 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
-SWEP.HookP_NameChange = function(self, name)
-	local att = self:GetElements()
-	if att["cod2019_grau556_barrel_long"] then
-		name = "SG 550"
-	end	
-	
-	if att["cod2019_grau556_barrel_heavy"] then
-		name = "IMBEL IA2"
-	end
-    return name
-end
-
 --- 50 & 60 Round Mags ---
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
