@@ -431,6 +431,92 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mpapa5_reload_empty_fast_end.ogg", t = 1.733},
         },
     },
+    ["reload_xmag"] = {
+        Source = "reload_xmag",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mpapa5_reload_rotate.ogg", t = 0.033},
+			{s = path .. "wfoly_pi_mpapa5_reload_bolt_open.ogg", t = 0.12},
+			{s = path .. "wfoly_pi_mpapa5_reload_cloth01.ogg", t = 0.767},
+			{s = path .. "wfoly_pi_mpapa5_reload_magout_01.ogg", t = 1.0},
+            {s = path .. "wfoly_pi_mpapa5_reload_rattle_01.ogg", t = 1.167},
+			{s = path .. "wfoly_sm_mpapa5_reload_magin_v2_01.ogg", t = 1.567},
+            {s = path .. "wfoly_sm_mpapa5_reload_magin_v2_02.ogg", t = 1.767},
+            {s = path .. "wfoly_pi_mpapa5_reload_rattle_02.ogg", t = 1.933},
+			{s = path .. "wfoly_pi_mpapa5_reload_boltclose_01.ogg", t = 2.3},
+            {s = path .. "wfoly_pi_mpapa5_reload_cloth02.ogg", t = 2.333},
+			{s = path .. "wfoly_pi_mpapa5_reload_end.ogg", t = 2.567},
+        },
+    },
+    ["reload_xmag_empty"] = {
+        Source = "reload_xmag_empty",
+		MinProgress = 0.9,
+		DropMagAt = 1.1,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.95, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_rotate.ogg", t = 0.1},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_boltopen_01.ogg", t = 0.2},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_magout_01.ogg", t = 0.533},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_mvmnt.ogg", t = 0.7},
+			{s = path .. "wfoly_sm_mpapa5_reload_empty_magin_v2_01.ogg", t = 1.567},
+			{s = path .. "wfoly_sm_mpapa5_reload_empty_magin_v2_02.ogg", t = 1.767},
+            {s = path .. "wfoly_pi_mpapa5_reload_empty_cloth.ogg", t = 1.833},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_boltclose_01.ogg", t = 2.1},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_end.ogg", t = 2.467},
+        },
+    },
+    ["reload_xmag_fast"] = {
+        Source = "reload_xmag_fast",
+		MinProgress = 0.8,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.58,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_pi_mpapa5_reload_rotate.ogg", t = 0.0},
+            {s = path .. "wfoly_pi_mpapa5_reload_empty_fast_magout_01.ogg", t = 0.21},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_fast_mvmnt.ogg", t = 0.433},
+            {s = path .. "wfoly_sm_mpapa5_reload_fast_magin_01.ogg", t = 1.15},
+			{s = path .. "wfoly_sm_mpapa5_reload_fast_end.ogg", t = 1.233},
+        },
+    },
+    ["reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty",
+		MinProgress = 0.9,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.95, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_fast_rotate.ogg", t = 0.033},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_fast_boltopen_01.ogg", t = 0.067},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_fast_magout_01.ogg", t = 0.31},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_fast_mvmnt.ogg", t = 0.5},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_fast_cloth.ogg", t = 0.867},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_fast_magin_01.ogg", t = 1.167},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_fast_boltclose_01.ogg", t = 1.533},
+			{s = path .. "wfoly_pi_mpapa5_reload_empty_fast_end.ogg", t = 1.733},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -488,7 +574,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.6,
+		Mult = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 1, rhik = 1 },
@@ -497,7 +583,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.6,
+		Mult = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -762,7 +848,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-3, 0, 0),
+        Pos = Vector(-2.7, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"foregrip_tac2"},
@@ -861,8 +947,8 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 12
-SWEP.CodStubbyGripPoseParam = 22.2
+SWEP.CodAngledGripPoseParam = 42
+SWEP.CodStubbyGripPoseParam = 31
 SWEP.CodStubbyTallGripPoseParam = 12
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
