@@ -551,7 +551,7 @@ L["mw19_weapon_iso"] = "ISO"
 L["mw19_weapon_cx9"] = "CX-9"
 
 L["mw19_weapon_m680"] = "Model 680"
-L["mw19_weapon_r90"] = "R9-0"
+L["mw19_weapon_r90"] = "R9-0 Shotgun"
 L["mw19_weapon_725"] = "725"
 L["mw19_weapon_origin12"] = "Origin 12 Shotgun"
 L["mw19_weapon_vlk"] = "VLK Rogue"
