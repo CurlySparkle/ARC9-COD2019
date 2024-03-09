@@ -1,4 +1,4 @@
-L = {}
+L = {} -- Italian, UO by ??
 
 local lineb = "\n"
 

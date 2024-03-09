@@ -164,7 +164,7 @@ SWEP.HookP_NameChange = function(self, name)
 	
 	-- Assault Rifle, FN Scar-17
 	if att["cod2019_scar_mag_ar"] then
-		name = "SCAR-L"
+		name = string.Replace(name, "17", "16")
 	end	
 
 	if att["optic"] and att["optic_small"] then -- Hybrid Sight Name Change

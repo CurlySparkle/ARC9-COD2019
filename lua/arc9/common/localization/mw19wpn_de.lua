@@ -1,4 +1,4 @@
-L = {}
+L = {} -- German, UO by ??
 
 local lineb = "\n"
 

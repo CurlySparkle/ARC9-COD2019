@@ -1,4 +1,4 @@
-L = {}
+L = {} -- Spanish (EU), UO by ??
 
 local lineb = "\n"
 

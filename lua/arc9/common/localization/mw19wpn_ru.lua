@@ -1,4 +1,4 @@
-L = {}
+L = {} -- Russian, UO by ??
 
 local lineb = "\n"
 

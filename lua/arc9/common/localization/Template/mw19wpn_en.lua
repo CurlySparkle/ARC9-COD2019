@@ -1,4 +1,4 @@
-L = {}
+L = {} -- English, UO by Moka
 
 local lineb = "\n"
 

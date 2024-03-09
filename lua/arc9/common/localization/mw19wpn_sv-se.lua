@@ -1,4 +1,4 @@
-L = {}
+L = {} -- Swedish (Unofficial) by Moka
 
 local lineb = "\n"
 

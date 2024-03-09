@@ -1,4 +1,4 @@
-L = {} -- Traditional Chinese, UO by ??
+L = {} -- Polish, UO by ??
 
 local lineb = "\n"
 
@@ -31,50 +31,50 @@ xbowbolt = lineb .. "Changes ammo type to <color=255,255,100>Crossbow Bolts</col
 /////////// Caliber -- UO
 -- L["mw19_caliber"] = "Caliber3"
 
-L["mw19_caliber_556"] = "5.56 NATO" -- Kilo 141, M4A1, FR 5.56, M13, RAM-7, Grau 5.56, SA87, Holger-26, Bruen Mk9, FiNN LMG
-L["mw19_caliber_762"] = "7.62 NATO" -- FAL, FN Scar 17, M91, EBR-14
-L["mw19_caliber_762soviet"] = "7.62 Soviet" -- AK-47, CR-56 AMAX, SKS
-L["mw19_caliber_762mmr"] = "7.62x54mmR" -- PKM, Dragunov
-L["mw19_caliber_762mauser"] = "7.62 Mauser" -- MG34, Kar98k
-L["mw19_caliber_545"] = "5.45×39mm" -- AN-94
-L["mw19_caliber_127x55"] = "12.7×55mm" -- Oden
-L["mw19_caliber_127x108"] = "12.7×108mm" -- HDR
-L["mw19_caliber_939"] = "9×39mm" -- AS VAL
-L["mw19_caliber_919"] = "9mm Parabellum" -- AUG, MP5, Uzi, ISO, CX-9, M19, Renetti
-L["mw19_caliber_57x28"] = "5.7x28mm" -- P90
-L["mw19_caliber_918"] = "9mm Makarov" -- PP19 Bizon, Sykov
-L["mw19_caliber_46x30"] = "4.6x30mm" -- MP7
+L["mw19_caliber_556"] = "5,56 NATO" -- Kilo 141, M4A1, FR 5.56, M13, RAM-7, Grau 5.56, SA87, Holger-26, Bruen Mk9, FiNN LMG
+L["mw19_caliber_762"] = "7,62 NATO" -- FAL, FN Scar 17, M91, EBR-14
+L["mw19_caliber_762soviet"] = "7,62 x 39 mm wz. 43" -- AK-47, CR-56 AMAX, SKS
+L["mw19_caliber_762mmr"] = "7,62 × 54 mm R" -- PKM, Dragunov
+L["mw19_caliber_762mauser"] = "7,62 Mauser" -- MG34, Kar98k
+L["mw19_caliber_545"] = "5,45 × 39 mm" -- AN-94
+L["mw19_caliber_127x55"] = "12,7 × 55 mm" -- Oden
+L["mw19_caliber_127x108"] = "12,7 × 108 mm" -- HDR
+L["mw19_caliber_939"] = "9 × 39 mm" -- AS VAL
+L["mw19_caliber_919"] = "9 mm Parabellum" -- AUG, MP5, Uzi, ISO, CX-9, M19, Renetti
+L["mw19_caliber_57x28"] = "5,7 × 28 mm" -- P90
+L["mw19_caliber_918"] = "9 mm Makarov" -- PP19 Bizon, Sykov
+L["mw19_caliber_46x30"] = "4,6 × 30 mm" -- MP7
 L["mw19_caliber_45acp"] = ".45 ACP" -- Striker 45, Fennec, X16, 1911
-L["mw19_caliber_12gauge"] = "12 Gauge" -- All Shotguns
-L["mw19_caliber_338"] = ".338 Norma Mag" -- RAAL MG
+L["mw19_caliber_12gauge"] = "Amunicja kalibru 12" -- All Shotguns
+L["mw19_caliber_338"] = ".338 Norma Magnum" -- RAAL MG
 L["mw19_caliber_45-70"] = ".45-70 Government" -- MK2 Carbine
-L["mw19_caliber_bolt"] = "20.0\" Bolt" -- Crossbow
-L["mw19_caliber_300"] = ".300 Win Mag" -- SP-R 208
+L["mw19_caliber_bolt"] = "Bełt 20.0\"" -- Crossbow
+L["mw19_caliber_300"] = ".300 Winchester Magnum" -- SP-R 208
 L["mw19_caliber_50bmg"] = ".50 BMG" -- AX-50, Rytec AMR
 L["mw19_caliber_357"] = ".357 Magnum" -- .357
-L["mw19_caliber_50p"] = ".50 pistol" -- .50 GS
+L["mw19_caliber_50p"] = "Amunicja pistoletowa .50" -- .50 GS
 
 /////////// Country of Origin -- UO
 -- L["mw19_country"] = "Country of Origin1"
 
-L["mw19_country_austria"] = "奥地利"
-L["mw19_country_belgium"] = "比利时"
-L["mw19_country_czechrepublic"] = "捷克共和国"
-L["mw19_country_france"] = "法国"
-L["mw19_country_germany"] = "德国"
-L["mw19_country_israel"] = "以色列"
-L["mw19_country_italy"] = "意大利"
-L["mw19_country_russia"] = "俄罗斯"
-L["mw19_country_southafrica"] = "南非"
-L["mw19_country_sovietunion"] = "苏联"
-L["mw19_country_sweden"] = "瑞典"
-L["mw19_country_switzerland"] = "瑞士"
-L["mw19_country_uk"] = "英国"
-L["mw19_country_usa"] = "美国"
-L["mw19_country_japan"] = "日本"
+L["mw19_country_austria"] = "Austria"
+L["mw19_country_belgium"] = "Belgia"
+L["mw19_country_czechrepublic"] = "Czechy"
+L["mw19_country_france"] = "Francja"
+L["mw19_country_germany"] = "Niemcy"
+L["mw19_country_israel"] = "Izrael"
+L["mw19_country_italy"] = "Włochy"
+L["mw19_country_russia"] = "Rosja"
+L["mw19_country_southafrica"] = "Afryka Południowa"
+L["mw19_country_sovietunion"] = "Związek Radziecki"
+L["mw19_country_sweden"] = "Szwecja"
+L["mw19_country_switzerland"] = "Szwajcaria"
+L["mw19_country_uk"] = "Wielka Brytania"
+L["mw19_country_usa"] = "Stany Zjednoczone"
+L["mw19_country_japan"] = "Japonia"
 
 /////////// Manufacturer
-L["mw19_manufacturer"] = "Manufacturer2" -- UO
+-- L["mw19_manufacturer"] = "Manufacturer2" -- UO
 
 -- L["mw19_manufacturer_singuard"] = "Singuard Arms" -- Kilo 141
 
@@ -125,85 +125,90 @@ L["mw19_manufacturer"] = "Manufacturer2" -- UO
 -- L["mw19_author"] = "Author1"
 
 /////////// Weapon Categories
-L["mw19_category_weapon_ar"] = "突擊步"
-L["mw19_category_weapon_smg"] = "衝鋒槍"
-L["mw19_category_weapon_shotgun"] = "霰彈槍"
-L["mw19_category_weapon_lmg"] = "輕機槍"
-L["mw19_category_weapon_marksman"] = "射手步槍"
-L["mw19_category_weapon_sniper"] = "狙擊步槍"
-L["mw19_category_weapon_melee"] = "近戰"
-L["mw19_category_weapon_throwable"] = "致命道具和戰術道具"
+L["mw19_category_weapon_ar"] = "Karabiny szturmowe"
+L["mw19_category_weapon_smg"] = "Pistolety maszynowe"
+L["mw19_category_weapon_shotgun"] = "Strzelby"
+L["mw19_category_weapon_lmg"] = "RKM-Y"
+L["mw19_category_weapon_marksman"] = "Karabiny wyborowe"
+L["mw19_category_weapon_sniper"] = "Karabiny snajperskie"
+L["mw19_category_weapon_melee"] = "Broń do walki wręcz"
+L["mw19_category_weapon_throwable"] = "Ofensywne & Taktyczne"
 
-L["mw19_category_weapon_handgun"] = "手槍"
-L["mw19_category_weapon_handgun_akimbo"] = "手槍 (雙武器)"
-L["mw19_category_weapon_launcher"] = "發射器"
+L["mw19_category_weapon_handgun"] = "Pistolety"
+L["mw19_category_weapon_handgun_akimbo"] = "Pistolety (Akimbo)"
+L["mw19_category_weapon_launcher"] = "Wyrzutnie"
 
 /////////// Weapon Classes
-L["mw19_class_weapon_ar"] = "突擊步槍"
-L["mw19_class_weapon_smg"] = "衝鋒槍"
-L["mw19_class_weapon_shotgun"] = "霰彈槍"
-L["mw19_class_weapon_lmg"] = "輕機槍"
-L["mw19_class_weapon_marksman"] = "射手步槍"
-L["mw19_class_weapon_sniper"] = "狙擊步槍"
-L["mw19_class_weapon_melee"] = "近戰"
-L["mw19_class_weapon_lethal"] = "致命道具"
-L["mw19_class_weapon_tactical"] = "戰術道具"
-L["mw19_class_weapon_grenade"] = "手榴彈" -- UO
+L["mw19_class_weapon_ar"] = "Karabin szturmowy"
+L["mw19_class_weapon_smg"] = "Pistolet maszynowy"
+L["mw19_class_weapon_shotgun"] = "Strzelba"
+L["mw19_class_weapon_lmg"] = "RKM"
+L["mw19_class_weapon_marksman"] = "Karabin wyborowy"
+L["mw19_class_weapon_sniper"] = "Karabin snajperski"
+L["mw19_class_weapon_melee"] = "Broń do walki wręcz"
+L["mw19_class_weapon_lethal"] = "Ofensywne"
+L["mw19_class_weapon_tactical"] = "Taktyczne"
+L["mw19_class_weapon_grenade"] = "Granat" -- UO
 
-L["mw19_class_weapon_handgun"] = "手槍"
-L["mw19_class_weapon_launcher"] = "發射器"
+L["mw19_class_weapon_handgun"] = "Pistolet"
+L["mw19_class_weapon_launcher"] = "Wyrzutnia"
 
 //////////////////////////////////////////////////////////////////////
+////////////////////////////////////////// Notes
+-- 1) If "-- UO" is listed after the string, it is unofficial and its translation is not taken from MW19.
+-- Therefore they will either remain untranslated (and remain in English) or require community contribution to fix.
+
+-- 2) If a string uses "ARC9:GetPhrase" in it, then do not touch it. It uses another localization as its quick access.
+
 ///////////////////////////// Attachments
 //////////////////// Customize
-L["mw19_category_camouflage"] = "迷彩"
-L["mw19_category_reticle"] = "瞄準緑"
-L["mw19_category_charm"] = "飾物"
-L["mw19_category_sticker"] = "貼紙"
+L["mw19_category_camouflage"] = "Kamuflaż"
+L["mw19_category_reticle"] = "Celownik"
+L["mw19_category_charm"] = "Talizman"
+L["mw19_category_sticker"] = "Naklejka"
 
 //////////////////// Attachment Categories
-L["mw19_category_muzzle"] = "槍口"
-L["mw19_category_barrel"] = "槍管"
-L["mw19_category_laser"] = "雷射"
-L["mw19_category_optic"] = "瞄準鏡"
-L["mw19_category_stock"] = "槍托"
-L["mw19_category_underbarrel"] = "下褂"
-L["mw19_category_magazine"] = "彈匣Y"
-L["mw19_category_reargrip"] = "側握把"
-L["mw19_category_perk"] = "特長"
+L["mw19_category_muzzle"] = "Wylot lufy"
+L["mw19_category_barrel"] = "Lufa"
+L["mw19_category_laser"] = "Laser"
+L["mw19_category_optic"] = "Celownik"
+L["mw19_category_stock"] = "Kolba"
+L["mw19_category_underbarrel"] = "Pod lufą"
+L["mw19_category_magazine"] = "Magazynek"
+L["mw19_category_reargrip"] = "Rękojeść"
+L["mw19_category_perk"] = "Atut"
 
 -- Specific to Handguns
-L["mw19_category_triggeraction"] = "扳機"
+L["mw19_category_triggeraction"] = "Spust"
 
 -- Specific to the R9-0 Shotgun
-L["mw19_category_pumps"] = "滑膛"
+L["mw19_category_pumps"] = "Ruchome łoże"
 
 -- Specific to the 725 Shotgun
-L["mw19_category_guard"] = "護木"
+L["mw19_category_guard"] = "Łoże"
 
 -- Specific to the VLK Rogue Shotgun
-L["mw19_category_pumpgrip"] = "滑膛握把"
+L["mw19_category_pumpgrip"] = "Chwyt-pompka"
 
 -- Specific to the Crossbow Marksman Rifle
-L["mw19_category_cable"] = "弓弦"
-L["mw19_category_arms"] = "弓臂"
-L["mw19_category_bolt"] = "弩箭"
+L["mw19_category_cable"] = "Cięciwa"
+L["mw19_category_arms"] = "Ramiona"
+L["mw19_category_bolt"] = "Bełt"
 
 -- Specific to the SP-R 208 Marksman Rifle
-L["mw19_category_boltassembly"] = "槍栓零件"
+L["mw19_category_boltassembly"] = "Mechanizm ryglowy"
 
 -- Custom ones for the addon
-L["mw19_category_ammo"] = "Ammo" -- UO
-L["mw19_category_function"] = "Functionality" -- UO
-L["mw19_category_grip"] = "Foregrip" -- UO
-L["mw19_category_misc"] = "Misc." -- UO
-L["mw19_category_rails"] = "Rails" -- UO
-L["mw19_category_misc"] = "Misc." -- UO
-L["mw19_category_receiver"] = "Receiver" -- UO
-L["mw19_category_skins"] = "Skins" -- UO
-L["mw19_category_slide"] = "Slide" -- UO, "Pistol Slide"
-L["mw19_category_stats"] = "Stats" -- UO
-L["mw19_category_view"] = "View" -- UO
+-- L["mw19_category_ammo"] = "Ammo" -- UO
+-- L["mw19_category_function"] = "Functionality" -- UO
+-- L["mw19_category_grip"] = "Foregrip" -- UO
+-- L["mw19_category_misc"] = "Misc." -- UO
+-- L["mw19_category_rails"] = "Rails" -- UO
+-- L["mw19_category_receiver"] = "Receiver" -- UO
+-- L["mw19_category_skins"] = "Skins" -- UO
+-- L["mw19_category_slide"] = "Slide" -- UO, "Pistol Slide"
+-- L["mw19_category_stats"] = "Stats" -- UO
+-- L["mw19_category_view"] = "View" -- UO
 
 //////////////////// Folder Names
 -- Stocks
@@ -229,7 +234,7 @@ L["mw19_category_view"] = "View" -- UO
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Base Attachments
 -- Stats
--- L["mw19_optic_stat_zoom2"] = "Zoom Level" -- Most scopes
+L["mw19_optic_stat_zoom2"] = "Poziom powiększenia" -- Most scopes
 -- L["mw19_ammo_stat_ignite_chance"] = "On Hit: Chance to Ignite Target" -- UO
 
 ////////////////////  Ammo
@@ -325,17 +330,17 @@ L["mw19_category_view"] = "View" -- UO
 -- L["cod2019_grips_alt_nocclamp.compactname"] = "No C-C" -- UO
 
 ////////////////////  Perks
-L["cod2019_perks_soh.printname"] = "快手"
-L["cod2019_perks_soh.compactname"] = "快手"
-L["cod2019_perks_soh.description"] = "訓練讓亻尔在壓力下裝填更快。"
+L["cod2019_perks_soh.printname"] = "Sprawne dłonie"
+L["cod2019_perks_soh.compactname"] = "Sprawne d."
+L["cod2019_perks_soh.description"] = "wyszkolenie w szybszym przeładowywaniu pod dużą presją."
 
-L["cod2019_perks_speedmelee.printname"] = "荷槍實彈"
-L["cod2019_perks_speedmelee.compactname"] = "荷槍實彈"
-L["cod2019_perks_speedmelee.description"] = "以最大儲備彈桑開始。"
+L["cod2019_perks_speedmelee.printname"] = "Szybka walka wręcz"
+L["cod2019_perks_speedmelee.compactname"] = "S.w.w."
+L["cod2019_perks_speedmelee.description"] = "Wyszkolenie w błyskawicznym wykonywaniu ataków wręcz."
 
-L["cod2019_perks_heavyhitter.printname"] = "重型武器"
-L["cod2019_perks_heavyhitter.compactname"] = "重型武器"
-L["cod2019_perks_heavyhitter.description"] = "近戰曾對目標造成更强烈的暈眩效果。"
+L["cod2019_perks_heavyhitter.printname"] = "Mocny cios"
+L["cod2019_perks_heavyhitter.compactname"] = "Mocny c."
+L["cod2019_perks_heavyhitter.description"] = "Ataki wręcz ogłuszają cel na dłużej."
 
 -- L["cod2019_perks_enforcer.printname"] = "Enforcer" -- UO
 -- L["cod2019_perks_enforcer.compactname"] = "Enforcer" -- UO
@@ -349,11 +354,11 @@ L["cod2019_perks_heavyhitter.description"] = "近戰曾對目標造成更强烈�
 -- L["cod2019_perks_slamfire.compactname"] = "Slamfire" -- UO
 -- L["cod2019_perks_slamfire.description"] = "Bruteforce the weapon to fire and cycle the weapon much quicker at the cost of reduced accuracy." -- UO
 
-L["cod2019_perks_burst.printname"] = "爆發"
-L["cod2019_perks_burst.compactname"] = "爆發"
-L["cod2019_perks_burst.description"] = "將射模式轉換成<color=100,255,100>3發</color>點放。"
+L["cod2019_perks_burst.printname"] = "Seria"
+L["cod2019_perks_burst.compactname"] = "Seria"
+L["cod2019_perks_burst.description"] = "Przełącza na tryb serii <color=100,255,100>3 pocisków</color>."
 
-L["cod2019_perks_burst_2.description"] = "將射模式轉換成<color=100,255,100>2發</color>點放。"
+L["cod2019_perks_burst_2.description"] = "Przełącza na tryb serii <color=100,255,100>2 pocisków</color>."
 
 -- L["cod2019_perks_super_sprint.printname"] = "Tactical Sprint" -- UO
 -- L["cod2019_perks_super_sprint.compactname"] = "Tac. Sprint" -- UO
@@ -466,13 +471,13 @@ L["cod2019_perks_burst_2.description"] = "將射模式轉換成<color=100,255,10
 L["mw19_weapon_kilo141"] = "Kilo 141"
 L["mw19_weapon_fal"] = "FAL"
 L["mw19_weapon_m4a1"] = "M4A1"
-L["mw19_weapon_fr556"] = "FR 5.56"
+L["mw19_weapon_fr556"] = "FR 5,56"
 L["mw19_weapon_oden"] = "Oden"
 L["mw19_weapon_m13"] = "M13"
 L["mw19_weapon_scar"] = "FN Scar 17"
 L["mw19_weapon_ak47"] = "AK-47"
 L["mw19_weapon_ram7"] = "RAM-7"
-L["mw19_weapon_grau"] = "Grau 5.56"
+L["mw19_weapon_grau"] = "Grau 5,56"
 L["mw19_weapon_cr56"] = "CR-56 AMAX"
 L["mw19_weapon_an94"] = "AN-94"
 L["mw19_weapon_asval"] = "AS VAL"
@@ -491,7 +496,7 @@ L["mw19_weapon_cx9"] = "CX-9"
 L["mw19_weapon_m680"] = "Model 680"
 L["mw19_weapon_r90"] = "R9-0"
 L["mw19_weapon_725"] = "725"
-L["mw19_weapon_origin12"] = "Origin 12 Shotgun"
+L["mw19_weapon_origin12"] = "Origin 12"
 L["mw19_weapon_vlk"] = "VLK Rogue"
 L["mw19_weapon_aa12"] = "JAK-12"
 
@@ -501,22 +506,22 @@ L["mw19_weapon_m91"] = "M91"
 L["mw19_weapon_mg34"] = "MG34"
 L["mw19_weapon_holger"] = "Holger-26"
 L["mw19_weapon_bruen"] = "Bruen Mk9"
-L["mw19_weapon_finn"] = "FiNN LMG"
-L["mw19_weapon_raal"] = "RAAL MG"
+L["mw19_weapon_finn"] = "RKM RiNN"
+L["mw19_weapon_raal"] = "KM RAAL"
 
 L["mw19_weapon_ebr"] = "EBR-14"
 L["mw19_weapon_mk2"] = "MK2 Carbine"
 L["mw19_weapon_kar98"] = "Kar98k"
-L["mw19_weapon_crossbow"] = "Crossbow"
+L["mw19_weapon_crossbow"] = "Kusza"
 L["mw19_weapon_sks"] = "SKS"
 L["mw19_weapon_spr"] = "SP-R 208"
 
-L["mw19_weapon_dragunov"] = "Dragunov"
+L["mw19_weapon_dragunov"] = "Dragunow"
 L["mw19_weapon_hdr"] = "HDR"
 L["mw19_weapon_ax50"] = "AX-50"
 L["mw19_weapon_rytec"] = "Rytec AMR"
 
-L["mw19_weapon_shield"] = "鎮暴盾"
+L["mw19_weapon_shield"] = "Tarcza balistyczna"
 
 L["mw19_weapon_glock"] = "X16"
 L["mw19_weapon_1911"] = "1911"
@@ -532,125 +537,125 @@ L["mw19_weapon_javelin"] = "JOKR"
 L["mw19_weapon_rpg"] = "RPG-7"
 L["mw19_weapon_mgl"] = "MGL-32"
 
-L["mw19_weapon_knife"] = "小刀"
-L["mw19_weapon_stick"] = "藤棍"
-L["mw19_weapon_sword"] = "雙持小太刀"
+L["mw19_weapon_knife"] = "Nóż"
+L["mw19_weapon_stick"] = "Kije Kali"
+L["mw19_weapon_sword"] = "Podwójne kodachi"
 
-L["mw19_weapon_akimbo"] = "%s 雙武器"
+L["mw19_weapon_akimbo"] = "%s Akimbo"
 
-L["mw19_weapon_nade_claymore"] = "闊刀式地雷"
-L["mw19_weapon_nade_frag"] = "破片手榴彈"
-L["mw19_weapon_nade_molotov"] = "汽油彈"
-L["mw19_weapon_nade_c4"] = "C4炸藥"
-L["mw19_weapon_nade_semtex"] = "塞姆汀炸藥"
-L["mw19_weapon_nade_knife"] = "投躑小刀"
-L["mw19_weapon_nade_proximity"] = "感應地雷"
-L["mw19_weapon_nade_thermite"] = "鋁熱劑"
+L["mw19_weapon_nade_claymore"] = "Mina Claymore"
+L["mw19_weapon_nade_frag"] = "Granat odłamkowy"
+L["mw19_weapon_nade_molotov"] = "Koktajl Mołotowa"
+L["mw19_weapon_nade_c4"] = "C4"
+L["mw19_weapon_nade_semtex"] = "Semteks"
+L["mw19_weapon_nade_knife"] = "Nóż do rzucania"
+L["mw19_weapon_nade_proximity"] = "Mina przeciwpancerna"
+L["mw19_weapon_nade_thermite"] = "Termit"
 
-L["mw19_weapon_nade_flash"] = "閃光彈"
-L["mw19_weapon_nade_stun"] = "震撼彈"
-L["mw19_weapon_nade_smoke"] = "烴霧彈"
-L["mw19_weapon_nade_snapshot"] = "快照彈"
-L["mw19_weapon_nade_heartbeat"] = "心跳感應器"
-L["mw19_weapon_nade_stim"] = "興奪劑"
-L["mw19_weapon_nade_decoy"] = "誘餌彈"
-L["mw19_weapon_nade_gas"] = "催唳彈"
+L["mw19_weapon_nade_flash"] = "Granat błyskowy"
+L["mw19_weapon_nade_stun"] = "Granat ogłuszający"
+L["mw19_weapon_nade_smoke"] = "Granat dymny"
+L["mw19_weapon_nade_snapshot"] = "Granat wykrywający"
+L["mw19_weapon_nade_heartbeat"] = "Czujnik pulsu"
+L["mw19_weapon_nade_stim"] = "Stymulant"
+L["mw19_weapon_nade_decoy"] = "Granat-wabik"
+L["mw19_weapon_nade_gas"] = "Granat gazowy"
 
--- L["mw19_weapon_minigun"] = "Minigun"-- UO
+-- L["mw19_weapon_minigun"] = "Minigun" -- UO
 -- L["mw19_weapon_fists"] = "Fists" -- UO
 -- L["mw19_weapon_nade_rock"] = "Rock" -- UO
 
 //////////// Weapon Descriptions
-L["mw19_weapon_kilo141_desc"] = "全自動突擊步槍，睬人體工學設計，操控性更佳，射速穩定利於鎖定目標。"
-L["mw19_weapon_fal_desc"] = "半自動突擊步槍，可高速連發以利後續補槍。"
-L["mw19_weapon_m4a1_desc"] = "全自動、適合各腫場合的突擊步槍。只要在射擊時控制得宜，這把武器在射程内就可以發揮出很好的效果。"
-L["mw19_weapon_fr556_desc"] = "3發點放的犢牛式突擊步槍。精準擊發，在各種距離都極其致命。"
-L["mw19_weapon_oden_desc"] = "全自動犢牛突擊步槍，射速較慢以利於掌握12.7×55mm彈藥的强大威力。"
-L["mw19_weapon_m13_desc"] = "睬用短行程活塞系統的自動突擊步槍。射速快、後座力低。"
-L["mw19_weapon_scar_desc"] = "大口徑、全自動突擊步槍，可在遠程攻擊時提供强大殺傷力。"
-L["mw19_weapon_ak47_desc"] = "非常可靠的自動突擊步槍，睬用7.62mm Soviet彈藥。需要技巧控制大口徑彈藥造成的後座力。"
-L["mw19_weapon_ram7_desc"] = "全自動犢牛式突擊步槍，睬用密實設計，適合近距濉交戰。"
-L["mw19_weapon_grau_desc"] = "此模組化的5.56武器改裝平台不僅重量輕盈，更擁有糹色佳操控性與無與倫比的射程。精密打造且搭配頂級市售槍管，讓這把武器有無窮的潛力。"
-L["mw19_weapon_cr56_desc"] = "這把輕型7.62×39mm全自動突擊步槍是專為軍事用途打造，密實堅固，火力强大，這把標準配備的步槍在中程戰鬥時能發揮致命實力，並且能靈活適應不同戰鬥策略。"
-L["mw19_weapon_an94_desc"] = "尖端科技的5.45×39mm俄羅斯突擊步槍，搭載獨特的<color=255,255,100>高速點放</color>功能。玩家每一次扣下扳機都會連續迅速射出兩發子彈，而後才産生强大的後座力；這樣的設計能發射密實的彈幕，提高殺傷力與破壞力。這腫機制需要有傾斜的彈匣支摒，並依靠往復式的槍機來提高控制性並壓低後座力。"
-L["mw19_weapon_asval_desc"] = "ASVAL搭載<color=255,255,100>次音速</color>9×39mm膛室和内首<color=255,255,100>消曰</color>功能，火力强大，集隱蔽性、準確度和穿透力於一身，在擅於掌握强大後座力與高射速武器的特戰兵手中能發揮極致的攻擊效果。"
+L["mw19_weapon_kilo141_desc"] = "Karabinek samoczynno-samopowtarzalng o usprawniającej obsługę ergonomicznej budowie oraz zrównoważonej szy bkostrzelności ułatwiającej prowadzenie celnego ognia."
+L["mw19_weapon_fal_desc"] = "Samopowtarzalny karabin szturmowy umożliwiający szybkie oddawanie kolejnych strzałów."
+L["mw19_weapon_m4a1_desc"] = "Wszechstronny, samoczg nno-samopowtarzalng karabin. Kontroluj odrzut, a broń okaże się skuteczna nawet na dużym dystansie."
+L["mw19_weapon_fr556_desc"] = "Karabinek w układzie bullpup strzelający 3-pociskowgmi seriami. Celna seria może być zabójcza na średnim dystansie."
+L["mw19_weapon_oden_desc"] = "Karabin samoczgnno-samopowtarzalng w układzie bullpup o niskiej szybkostrzelności, co pomaga w kontrolowaniu odrzutu potężnej amunicji 12,7 x 55 mm."
+L["mw19_weapon_m13_desc"] = "Samoczynno-samopowtarzalng karabinek z systemem tłokowym o krótkim skoku zapewniającym dużą szybkostrzelność i małg od rzut."
+L["mw19_weapon_scar_desc"] = "Karabin samoczgnno-samopowtarzalng zadający duże obrażenia na dużym dystansie."
+L["mw19_weapon_ak47_desc"] = "Niezawodny karabinek samoczynno-samopowtarzalng kalibru 7,62 mm. Amunicja większego kalibru wymaga wprawy w kontroli od rzutu."
+L["mw19_weapon_ram7_desc"] = "Samoczynny karabin szturmowy w układzie bullpup o kompaktowej konstrukcji przystosowanej do walk na małym dystansie."
+L["mw19_weapon_grau_desc"] = "Ta modułowa broń kalibru 5,56 mm jest lekka, mobilna i ma wyjątkowo daleki zasięg. Precyzyjne wykonanie i światowej klasy lufa sprawiają, że w tej broni drzemie olbrzymi potencjał"
+L["mw19_weapon_cr56_desc"] = "Ten lekki karabin szturmowy kalibru 7,62 x 39 mm to potężna, choć kompaktowa broń. Stworzony dla wojska, świetnie radzi sobie w potyczkach na średnim dystansie i można go łatwo dostosować do różnych taktyk."
+L["mw19_weapon_an94_desc"] = "Nowoczesny rosyjski karabin szturmowy kalibru 5,45 x 39 mm z unikalnym trybem <color=255,255,100>hiperserii</color>. Po każdym pociągnięciu za cyngiel zostaje wystrzelona błyskawiczna seria 2 pocisków. Dopiero wtedy czuć większy odrzut. Wystrzelone w ten sposób ciasno skupione pociski mogą zadawać poważne obrażenia. Broń zasilana jest skośnymi magazynkami, a ruchoma komora zamkowa ułatwia kontrolowanie odrzutu."
+L["mw19_weapon_asval_desc"] = "Wyposażony w zintegrowany <color=255,255,100>tłumik</color> i zasilany <color=255,255,100>subsoniczną</color> amunicją 9x39 mm AS VAL stanowi niezwykle potężną broń, opracowaną z myślą o działaniach z ukrycia, prowadzeniu celnego ostrzału i przebijaniu osłon. Ta broń świetnie sprawdzi się w rękach operatora, który będzie w stanie okiełznać jej mocny odrzut i wysoką szybkostrzelność."
 
-L["mw19_weapon_aug_desc"] = "模組化的全自動武器，高機動性，適合近戰。"
-L["mw19_weapon_p90_desc"] = "自動犢牛式衝鋒槍。一腫獨特的首頂彈匣，裎面放了足量的高速5.7×28mm彈藥。"
-L["mw19_weapon_mp5_desc"] = "全自動9mm衝鋒槍。在穩定性、機動性和致命性上都達到完美平衡。"
-L["mw19_weapon_uzi_desc"] = "全自動開放栓動式衝鋒槍。簡單、穩定且殺傷力十足。"
-L["mw19_weapon_pp19_desc"] = "重量極為平均的自動衝鋒槍，睬用高容量螺旋彈匣。"
-L["mw19_weapon_mp7_desc"] = "設計輕巧，這把全自動武器射速高且後座力"
-L["mw19_weapon_striker_desc"] = "搭配.45 Auto彈藥的重火力衝鋒槍，擁有比同級武器更遠的射程。中等射速讓這把槍就算是自動連發也能維持一定的穩定與操控性。"
-L["mw19_weapon_fennec_desc"] = "火力强大的全自動衝鋒槍，後座力温和，其縴人射速在清仝建築或是前綿作戰時表現尤為傺出。"
-L["mw19_weapon_iso_desc"] = "精工打造的高射速9mm衝鋒槍，這把極輕型的可靠武器絶對能讓玩家稱霸近戰戰場。"
-L["mw19_weapon_cx9_desc"] = "這把氣體反衝式衝鋒槍擁有優巽的操控性以及高射速，在近距離作戰時是威力强大的武器。"
+L["mw19_weapon_aug_desc"] = "Samoczgnno-samopowtarzalna broń modułowa stworzona z myślą o mobilności i walce z bliska."
+L["mw19_weapon_p90_desc"] = "Samoczgnng pistolet maszgnowg w układzie bullpup. W tej wyjątkowej konstrukcji magazynek zamontowano u góry. Mieści on imponującg zapas amunicji kalibru 5,7 x 28 mm o dużej prędkości wg lotowej."
+L["mw19_weapon_mp5_desc"] = "Pistolet maszynowy kalibru 9 mm. Idealna równowaga między stabilnością, mobilnością i zabójczą skutecznością."
+L["mw19_weapon_uzi_desc"] = "Pistolet maszynowy z zamkiem otwartym. Prosty, celny, skuteczny."
+L["mw19_weapon_pp19_desc"] = "Dobrze wyważony samoczynny pistolet maszynowy z pojemnym magazynkiem ślimakowym."
+L["mw19_weapon_mp7_desc"] = "Ta samoczynno-samopowtarzalna broń o zwartej budowie cechuje się dużą szybkostrzelnością i małym odrzutem."
+L["mw19_weapon_striker_desc"] = "PM o dużej sile rażenia przystosowany do amunicji .45 Auto. Ma większy zasięg skuteczny niż pozostałe typy broni tej klasy. Umiarkowana szybkostrzelność pozwala zachować panowanie nad bronią przy prowadzeniu ognia ciągłego."
+L["mw19_weapon_fennec_desc"] = "Agresywny pistolet maszynowy z opcją ognia ciągłego oraz łagodnym odrzutem i dużą szybkostrzelnością. Idealnie nadaje się do oczyszczania pomieszczeń i walk na linii frontu."
+L["mw19_weapon_iso_desc"] = "Precyzyjnie wykonany pistolet maszynowy kalibru 9 mm o dużej szybkostrzelności. Ta lekka i niezawodna broń świetnie się sprawdza w walkach na bliski dystans."
+L["mw19_weapon_cx9_desc"] = "Doskonała mobilność i duża szybkostrzelność sprawiają, że ten PM z systemem redukującym odrzut jest świetną bronią podczas starć na bliskim dystansie."
 
-L["mw19_weapon_m680_desc"] = "可靠且功能全面的 1 2 鉛徑泵動式霰彈槍。"
-L["mw19_weapon_r90_desc"] = "雙槍管設計，可在每次裝填子彈前快速發射"
-L["mw19_weapon_725_desc"] = "折管式霰彈槍，彈匣内有 2 發子彈。睬用直徑較寬的長型槍管，配合圓柱阻氣門以縮小擴散範圍，即便遠距也相當致命。"
-L["mw19_weapon_origin12_desc"] = "可裝填大量彈藥的半自動霰彈槍，可持續射擊。適合近距離戰鬥。"
-L["mw19_weapon_vlk_desc"] = "VLK製作的這把霰彈槍配有12-gauge彈匣，靈活性極佳，並且有各腫選項讓玩家自由調整射程、穩定度以及操控性。"
-L["mw19_weapon_aa12_desc"] = "全自動開放栓動式霰彈槍，搭載可降低後座力的氣體式槍機系統，能以穩定的射速朝遠處的敵人開火。"
+L["mw19_weapon_m680_desc"] = "Solidna, wszechstronna strzelba kalibru 12 z ruchomym łożem."
+L["mw19_weapon_r90_desc"] = "Dwie lufy umożliwiają szybkie wystrzelenie dwóch nabojów przed każdym przeładowaniem."
+L["mw19_weapon_725_desc"] = "Łamana nadlufka. Długie lufy z systemem back-bored i cylindryczny czok zwiększają skupienie śrutu, przez co jest zabójczo skuteczna nawet na większych dystansach."
+L["mw19_weapon_origin12_desc"] = "Strzelba samopowtarzalna o pojemnym magazynku umożliwiająca prowadzenie długiego ostrzału. Skuteczna na małym dystansie."
+L["mw19_weapon_vlk_desc"] = "Lekka strzelba kalibru 12 z magazynkiem od VLK oferująca wiele możliwości konfiguracji zasięgu, stabilności oraz mobilności."
+L["mw19_weapon_aa12_desc"] = "W pełni automatyczna strzelba z otwartym zamkiem i gazowym systemem redukującym odrzut. Ta strzelba bojowa wypluwa z siebie duże ilości ołowiu w równym tempie."
 
-L["mw19_weapon_pkm_desc"] = "全自動輕機槍，睬用7.62mm彈藥，射速中等但具有强大殺傷力。"
-L["mw19_weapon_sa87_desc"] = "全自動犢牛式輕機槍。因低射速且睬用5.56mm彈藥，可穩定且有效攻擊遠程目標。"
-L["mw19_weapon_m91_desc"] = "堅固耐用的輕機槍，犧牲機動性換取穩定性。能持續發射大口徑彈藥消滅遠距離目標。"
-L["mw19_weapon_mg34_desc"] = "射速極快的全自動武器，睬用攻擊力强大的7.92 Mauser彈 藥。 即便是自二戰沿用至今的機槍，仍是可靠且致命的夥伴。"
-L["mw19_weapon_holger_desc"] = "多元全自動5.56mm輕機槍。模組化設計，適用各種不同交戰情境。"
-L["mw19_weapon_bruen_desc"] = "這把氣冷開放栓動式5.56輕機槍標榜亻桀出射速和絶佳穩定度，讓你在中程至遠程戰場都能得心應手。"
-L["mw19_weapon_finn_desc"] = "極致輕盈的開放栓動式5.56機槍，循環射擊速度低，後座力抑制性能强大，使得FiNN擁有卓越的全自動準確度。"
-L["mw19_weapon_raal_desc"] = "這把氣冷開放栓動式5.56輕機槍標榜亻桀出射速和絶佳穩定度，讓你在中程至遠程戰場都能得心應手。"
+L["mw19_weapon_pkm_desc"] = "Samoczynny ręczny karabin maszynowy kalibru 7,62 mm zapewniający duże obrażenia i średnią szybkostrzelność."
+L["mw19_weapon_sa87_desc"] = "Samoczgnng ręczny karabin maszynowy w układzie bullpup. Mniejsza szybkostrzelność i pociski kalibru 5,56 mm sprawiają, że jest stabilny i skuteczny na dużym dystansie."
+L["mw19_weapon_m91_desc"] = "Sporych rozmiarów ręczny karabin maszynowy, w którym stabilność góruje nad mobilnością. Prowadzenie ciągłego ognia amunicją większego kalibru zneutralizuje cele na dużym dystansie."
+L["mw19_weapon_mg34_desc"] = "Samoczynny, szybkostrzelny karabin na amunicję 7,92 mm Mauser. Karabiny maszynowe z czasów II wojny światowej wciąż są niezawodne i niezwykle skuteczne na polu walki."
+L["mw19_weapon_holger_desc"] = "Wszechstronny samoczynny RKM kalibru 5,56 mm. Modułowa budowa pozwala na dostosowanie konfiguracji do różnych typów starć."
+L["mw19_weapon_bruen_desc"] = "Chłodzony powietrzem RKM kalibru 5,56z otwartym zamkiem. Dość wysoka szybkostrzelność i wyjątkowa stabilność pomogą ci zdominować wrogów na średnim i dużym dystansie."
+L["mw19_weapon_finn_desc"] = "Lekki RKM kalibru 5,56 z otwartym zamkiem. Dzięki niskiej szybkostrzelności i zaawansowanej kontroli odrzutu FiNN jest niezwykle celny podczas ostrzału automatycznego."
+L["mw19_weapon_raal_desc"] = "Karabin maszynowy Reconnaissance Auxiliarg Assault Lightweight ma niską szybkostrzelność i osadzoną ruchomo lufę, co niweluje spory odrzut pocisków .338 Norma Magnum. Zaawansowana konstrukcja z tytanu sprawia, że broń nie jest zbyt ciężka."
 
-L["mw19_weapon_ebr_desc"] = "半自動遠程射手步槍，在射速與致命性間達到適當平衡。"
-L["mw19_weapon_mk2_desc"] = "精確無比的杆動式步槍。只要精確命中頭部或胸部，就可讓敵人一槍斃命。"
-L["mw19_weapon_kar98_desc"] = "栓動式步槍，睬用7.92 Mauser彈 藥。 一把二戰的古董，在反抗軍射手的手中依舊無比致叩。"
-L["mw19_weapon_crossbow_desc"] = "寂靜無且敏捷如豹，這把高效率的殺傷利器可發射極為致命的20.0\"弩箭。可装備獨家客製化配件，以及使用特殊弩箭，讓這把武器獨樹一格。20.0\"標準弩箭可回收重複使用，且無法被主動防禦系統偵測。"
-L["mw19_weapon_sks_desc"] = "配以7.62×39mm膛室的輕型半自動卡賓槍。這把靈活的蘇聯步槍火力强大，比起準確度更强調其操控性，其射速遥遥領先同腫類的槍枝，只要一輪彈藥就能殲滅所有的目標，省時又省事。這把經典 DMR 步槍擁有靈活的槍匠改造仝間，現在就打造一把永垂青史的名槍吧。"
-L["mw19_weapon_spr_desc"] = "Sloan Precision所打造的.300 Win栓動式步槍堅實可靠，火力威猛，廣泛用於軍事與一般用途，提供最大的客製化自由度。"
+L["mw19_weapon_ebr_desc"] = "Samopowtarzalny karabin, który idealnie łączy szybkostrzelność i skuteczność."
+L["mw19_weapon_mk2_desc"] = "Niezwykle celny karabin ładowany dźwigniowo. Wyeliminuje wroga jednym strzałem w głowę lub korpus."
+L["mw19_weapon_kar98_desc"] = "Karabin powtarzalny na amunicję 7,92 Mauser. Ten zabytek z czasów II wojny światowej wciąż stanowi śmiertelnie groźną broń w rękach rebelianckiego strzelca."
+L["mw19_weapon_crossbow_desc"] = "Ta zaawansowana kusza to lekka i cicha broń miotająca 20-calowgmi bełtami z zabójczą skutecznością. Ekskluzywne opcje personalizacji, charakterystyczna fu ncjonalność i unikalna amunicja sprawiają, że broń ta stanowi odmienną klasę sama w sobie. Standardowe 20-calowe bełty wielokrotnego użytku są niewykrywalne dla Systemu Trophg."
+L["mw19_weapon_sks_desc"] = "Lekka samopowtarzalna broń na naboje 7,62 x 39 mm. Ten potężny radziecki karabin stawia na skuteczność. Cechuje się większą szybkostrzelnością niż inne bronie w tej klasie, ale dobrze posłany pocisk wyeliminuje potrzebę oddawania kolejnych strzałów. Ten karabin wyborowy brał udział w licznych bitwach, a wiele zróżnicowanych konfiguracji rusznikarskich odzwierciedla jego długą służbę."
+L["mw19_weapon_spr_desc"] = "Niezawodny, potężny karabin powtarzalny .300 Winchester produkcji Sloan Precision. Popularność tej broni w zastosowaniach wojskowych i cywilnych zaowocowała bogatymi możliwościami personalizacji."
 
-L["mw19_weapon_dragunov_desc"] = "搭載7.62mmx54mmR彈藥的蘇聯製耐用武器。這把氣動式的半自動狙擊步槍讓使用者可以快速地連續開火。"
-L["mw19_weapon_hdr_desc"] = "睬用12.7x108mm彈藥的反器材栓動式狙擊槍。 745 gr子彈槍口初速較低，但具有極為强大的遠距破壞力。"
-L["mw19_weapon_ax50_desc"] = "威力强大、扌采用.50口徑BMG彈藥的栓動式狙擊槍。它的鎢殻尖型子彈的飛行速度很快而且火力强大，但在遠距離射擊時準確度的要求很高。"
-L["mw19_weapon_rytec_desc"] = "配以.50 BMG膛室的半自動反器材步槍，在遠距攻擊的表現尤其卓越。25x59mm高爆超能配備變體雖然目前作為實驗性武器，但已在各種機密任務中發揮過糹色佳的戰力。"
+L["mw19_weapon_dragunov_desc"] = "Popularny karabin radziecki kalibru 7,62 mm x 54 mm R. Ten gazodynamiczny, samopowtarzalny karabin snajperski może się poszczycić dużą szybkostrzelnością."
+L["mw19_weapon_hdr_desc"] = "Wielkokalibrowy powtarzalny karabin snajperski kalibru 12,7 x 108 mm. Ważący 48 g pocisk ma niższą prędkość wylotową, ale zadaje ogromne obrażenia nawet na bardzo dużych dystansach."
+L["mw19_weapon_ax50_desc"] = "Potężny powtarzalny karabin snajperski kalibru .50 BMG. Wolframowe pociski z sabotem są szybkie i skuteczne, ale wymagają precyzyjnego strzelania na dużych dystansach."
+L["mw19_weapon_rytec_desc"] = "Samopowtarzalny wielkokalibrowy karabin z amunicją .50 BMG, doskonały do walki na dużym dystansie. Specjalny wariant na amunicję wybuchową 25x59 mm oficjalnie stanowi sprzęt eksperymentalny. Użgtg w terenie w trakcie kilku ściśle tajnych misji, gdzie udowodnił swoją zabójczą skuteczność."
 
-L["mw19_weapon_shield_desc"] = "這面防彈又防爆的盾牌近戰傷害更高。"
+L["mw19_weapon_shield_desc"] = "Tarcza odporna na pociski i eksplozje. Zwiększa obrażenia zadawane w walce wręcz."
 
-L["mw19_weapon_glock_desc"] = "半自動手槍，扌采用． 45 ACP 彈 藥。 深陷近戰時，可做為有效的突圍武器。"
-L["mw19_weapon_1911_desc"] = "面面俱到的半自動手槍，中等射速。射程比標準的.45 ACP手槍遠一點。"
-L["mw19_weapon_357_desc"] = "雙動式左輪手槍，扌采用.357 Magnum彈 藥，即便遠程也能造成極大傷害。"
-L["mw19_weapon_m19_desc"] = "半自動9mm手槍，擊發循環速度快且穩定。"
-L["mw19_weapon_deagle_desc"] = "火力最强大的半自動手槍，可對中程目標造成嚴重傷害。"
-L["mw19_weapon_m9_desc"] = "這把半自動9mm手槍看似不起眼，實則在近距離戰鬥中極具優勢，更能利用槍匠系統進行多變的一系列改造，適應不同交戰策略。"
-L["mw19_weapon_makarov_desc"] = "當你遇到情况危急的近距離戰鬥時，這把雙動式/單動式手槍能多句幫助你全身而退；這把武器可以使用不少自訂槍匠模組，不論你的戰鬥風格如何都很值得收藏。"
+L["mw19_weapon_glock_desc"] = "Samopowtarzalny pistolet na amunicję .45 ACP. Niezawodny, kiedg przyjdzie ci walczyć na małym dystansie."
+L["mw19_weapon_1911_desc"] = "Wszechstronny pistolet samopowtarzalny o średniej szybkostrzelności. Nieco większy zasięg niż w typowych pistoletach kalibru .45 ACP."
+L["mw19_weapon_357_desc"] = "Rewolwer z samonapinaniem na amunicję .35? Magnum. Zapewnia dużą moc rażenia na większych dystansach."
+L["mw19_weapon_m19_desc"] = "Samopowtarzalny pistolet kalibru 9 mm cechujący się dużą stabilnością i szybkostrzelnością."
+L["mw19_weapon_deagle_desc"] = "Najpotężniejszy dostępny pistolet samopowtarzalny. Zadaje duże obrażenia nawet na średnim dystansie."
+L["mw19_weapon_m9_desc"] = "Uniwersalny samopowtarzalny pistolet 9 mm. Niepozorna broń, świetnie sprawdzająca się w bliskich starciach. Mozna w niej dokonać pistoletowych ulepszeń rusznikarskich, które zwiększą przydatność w różnorodnych strategiach bojowych."
+L["mw19_weapon_makarov_desc"] = "Solidna broń na bliskie starcia, z trybami podwójnego i pojedynczego działania. Wyposażono ją w kilka niestandardowych modyfikacji rusznikarskich, które czynią z niej doskonałe uzupełnienie każdego arsenału."
 
-L["mw19_weapon_pila_desc"] = "可两式紅外綜地對仝飛彈發射器，配有自由開火模式。自走飛彈速度較快，爆炸威力中等。"
-L["mw19_weapon_strela_desc"] = "84mm無後座力發射器可以發射出行進速度極快的爆炸物。無導引的穿甲彈爆炸威力低，但是正中載具時可以造成相當大的破壞力。"
-L["mw19_weapon_javelin_desc"] = "可式鎖定飛彈發射器，具有射後不理功能，爆炸威力高。經紅外導引的飛彈會垂直落下，確保擊毁重型裝甲載具。"
-L["mw19_weapon_rpg_desc"] = "無導引自走火箭發射器，可以發射出行進速度較慢，但爆炸威力强的火箭。"
+L["mw19_weapon_pila_desc"] = "Przenośna, działająca na podczerwień wyrzutnia rakiet ziemia-powietrze z trybem swobodnego ostrzału. Rakiety osiągają większą prędkość i cechują się średnią mocą wybuchu."
+L["mw19_weapon_strela_desc"] = "Wyrzutnia bezodrzutowa 84 mm o dużej pręd kości wg lotowej strzelająca wg buchowgmi pociskami. Choć te niekierowane pociski przeciwpancerne mają niewielką siłę wybuchu, są niezwykle skuteczne przeciwko pojazdom."
+L["mw19_weapon_javelin_desc"] = "Przenośna wyrzutnia rakiet samonaprowadzających cechujących się dużą siłą wybuchu. Rakiety na podczerwień atakują cele z góry, dzięki czemu mogą niszczyć nawet ciężko opancerzone pojazdy."
+L["mw19_weapon_rpg_desc"] = "Wyrzutnia strzelająca niekierowanymi granatami rakietowymi o mniejszej prędkości i dużej silą wybuchu."
 -- L["mw19_weapon_mgl_desc"] = "Rapid firing grenade launcher fed with a 6-round rotating cylinder. Can utilize a variety of 40mm rounds for various roles." -- UO
 
-L["mw19_weapon_knife_desc"] = "近戰 (CQC) 戰術小刀。標準軍用配發，快速、無而致命。"
-L["mw19_weapon_stick_desc"] = "雙持警棍可以讓特戰兵以敏捷的身手接近目標。堅固且輕盈的設計讓你可以迅速出擊，把敵人打到無法還手。"
-L["mw19_weapon_sword_desc"] = "使用純手工鍛造的碳鋼刀刃，讓你悄無息、乾氵爭俐落地把對手切成生魚片。/"
+L["mw19_weapon_knife_desc"] = "Nóż taktgczng do walki wręcz. Standardowy egzemplarz wojskowy do cichych, szybkich i brudnych zadań."
+L["mw19_weapon_stick_desc"] = "Dwie bojowe pałki umożliwiają operatorom szybkie rozprawienie się z przeciwnikiem. Le$ka i wytrzymała konstrukcja umożliwia wyprowadzanie szybkich ataków, dzięki czemu można błyskawicznie zneutralizować wrogów."
+L["mw19_weapon_sword_desc"] = "Ręcznie wykute ostrza ze stali węglowej idealnie nadają się do cięcia wrogów."
 
-L["mw19_weapon_nade_claymore_desc"] = "感應髑發的爆炸地雷。"
-L["mw19_weapon_nade_frag_desc"] = "可延遲擲出的破片手榴彈。"
-L["mw19_weapon_nade_molotov_desc"] = "撞擊後爆炸的即時燃燒裝首。"
-L["mw19_weapon_nade_c4_desc"] = "可黏住物體表面的大型炸藥，當道具用完後，可以 {ATTACK} 遠端引爆。雙擊 {USE} 可直接引爆炸藥。"
-L["mw19_weapon_nade_semtex_desc"] = "計時黏性榴彈。"
-L["mw19_weapon_nade_knife_desc"] = "可回收的小刀，丢出可又快又安靜地擊殺敵人。"
-L["mw19_weapon_nade_proximity_desc"] = "近距離觸發的炸藥，能對載具造成極大傷害。"
-L["mw19_weapon_nade_thermite_desc"] = "發生碰撞後會在短時間内發出熾熱光芒的炸藥。可黏在表面上。"
+L["mw19_weapon_nade_claymore_desc"] = "Mina zbliżeniowa."
+L["mw19_weapon_nade_frag_desc"] = "Granat odłamkowy, który można odbezpieczyć przed rzutem."
+L["mw19_weapon_nade_molotov_desc"] = "Prowizoryczny granat zapalający, eksplodujący przy uderzeniu."
+L["mw19_weapon_nade_c4_desc"] = "Silny materiał wybuchowy przgczeoiającg się do powierzchni i zdalnie detonowany {ATTACK} zużyjesz wszystkie posiadane ładunki. Dwu krotne wciśnięcie {USE} zawsze detonuje materiał wybuchowy."
+L["mw19_weapon_nade_semtex_desc"] = "Przyczepiający się granat z zapalnikiem czasowy m."
+L["mw19_weapon_nade_knife_desc"] = "Nóż wielokrotnego użytku do szybkiej i cichej likwidacji wrogów."
+L["mw19_weapon_nade_proximity_desc"] = "Ładunek aktywowany zbliżeniowo. Powoduje znaczne uszkodzenia pojazdów."
+L["mw19_weapon_nade_thermite_desc"] = "Materiał wybuchowy, który intensywnie płonie przez chwilę po uderzeniu. Przykleja się do powierzchni."
 
-L["mw19_weapon_nade_flash_desc"] = "使目標失明及失聰。"
-L["mw19_weapon_nade_stun_desc"] = "被擊中的人的移動和瞄準速度慢。"
-L["mw19_weapon_nade_smoke_desc"] = "釋放堙幕阻礙視綜。"
-L["mw19_weapon_nade_snapshot_desc"] = "可在極短時間内讓你為你的隊伍觀察到範圍内的敵人。"
-L["mw19_weapon_nade_heartbeat_desc"] = "顯示附近敵人基本杳訊的平板電腦。"
-L["mw19_weapon_nade_stim_desc"] = "軍用興奮劑，可以燒灼戰鬥所造成的傷口，並且重首戰術衝刺。"
-L["mw19_weapon_nade_decoy_desc"] = "反情報手榴彈，可模擬槍和雷達訊號來擾亂敵人。"
-L["mw19_weapon_nade_gas_desc"] = "在撞擊地面後引爆，並釋放出持續不散的催氵戾瓦斯，造成緩速、視綿模糊和咳嗽。"
+L["mw19_weapon_nade_flash_desc"] = "Oślepia i ogłusza cele."
+L["mw19_weapon_nade_stun_desc"] = "Spowalnia ruch i celowanie ofiary."
+L["mw19_weapon_nade_smoke_desc"] = "Rozpyla dym, który utrudnia widzenie."
+L["mw19_weapon_nade_snapshot_desc"] = "Na chwilę wykrywa wrogów w zasięgu rażenia."
+L["mw19_weapon_nade_heartbeat_desc"] = "Tablet wyświetlający przybliżone położenie pobliskich przeciwników."
+L["mw19_weapon_nade_stim_desc"] = "Wojskowy stymulant wypalający rang i odnawiający Sprint taktyczny."
+L["mw19_weapon_nade_decoy_desc"] = "Granat utrudniający rozpoznanie, Symuluje strzały i sygnatury na radarze, mgląc przeciwników."
+L["mw19_weapon_nade_gas_desc"] = "Wybucha po zetknięciu z ziemią. Wypuszcza chmurę gazu łzawiącego, który spowalnia ruch, wywołuje zaburzenia widzenia i kaszel."
 
 -- L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
 -- L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO

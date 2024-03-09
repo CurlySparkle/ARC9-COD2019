@@ -1,4 +1,4 @@
-L = {}
+L = {} -- French, UO by ??
 
 local lineb = "\n"
 
