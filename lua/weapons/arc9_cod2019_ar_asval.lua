@@ -851,6 +851,11 @@ SWEP.AttachmentElements = {
             {3,2},
         },
     },
+    ["pistgrip_none"] = {
+        Bodygroups = {
+            {5,1},
+        },
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -917,7 +922,7 @@ SWEP.Attachments = {
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(0, 0, 0),
+		Icon_Offset = Vector(3, 0, 0.5),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),

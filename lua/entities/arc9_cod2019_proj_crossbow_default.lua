@@ -33,7 +33,8 @@ if SERVER then
             phys:SetMass(1)
         end
 
-        util.SpriteTrail(self, 0, Color(100, 100, 100), false, 3, 1, 0.25, 2, "trails/tube.vmt")
+        --util.SpriteTrail(self, 0, Color(100, 100, 100, 55), false, 3, 1, 0.25, 2, "trails/tube.vmt")
+		ParticleEffectAttach("arrow_trail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
         SafeRemoveEntityDelayed(self, 60)
     end
 
@@ -54,15 +55,21 @@ if SERVER then
     end
 
     function ENT:StartTouch(ent)
-        if self.Stuck and self.CanPickup and ent:IsPlayer() then
-            ent:GiveAmmo(1, "xbowbolt")
-            self:Remove()
-        end
+	if (self.CanPickup) then
+		local dist = self:GetOwner():NearestPoint(self:GetPos()):DistToSqr(self:GetPos())
+
+		if (dist < 32 * 32) then
+			self:GetOwner():EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav")
+			self:GetOwner():SetAmmo(self:GetOwner():GetAmmoCount("XBowBolt") + 1, "XBowBolt")
+			self:Remove()
+		end
+	  end
     end
 
     function ENT:Use(ply)
         if self.Stuck and self.CanPickup then
             ply:GiveAmmo(1, "xbowbolt")
+			self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 120, 100, 1, CHAN_AUTO)
             self:Remove()
         end
     end
@@ -72,7 +79,7 @@ if SERVER then
         self.Stuck = true
         local tgt = data.HitEntity
         local dmginfo = DamageInfo()
-        dmginfo:SetDamageType(DMG_NEVERGIB)
+        dmginfo:SetDamageType(DMG_SNIPER + DMG_SLASH)
         dmginfo:SetDamage(self.ImpactDamage)
         dmginfo:SetAttacker(self:GetOwner())
         dmginfo:SetInflictor(self)
@@ -99,24 +106,22 @@ if SERVER then
                         filter = f,
                         mask = MASK_SHOT
                     })
-                    
-                    if IsValid(tr.Entity) then
-                        local bone = tr.Entity:TranslatePhysBoneToBone(tr.PhysicsBone) or tr.Entity:GetHitBoxBone(tr.HitBox, tr.Entity:GetHitboxSet())
-                        local matrix = tgt:GetBoneMatrix(bone or 0)
-                        if tr.Entity == tgt and bone and matrix then
-                            local pos = matrix:GetTranslation()
-                            local ang = matrix:GetAngles()
-                            self:FollowBone(tgt, bone)
-                            local n_pos, n_ang = WorldToLocal(tr.HitPos, tr.Normal:Angle(), pos, ang)
-                            self:SetLocalPos(n_pos)
-                            self:SetLocalAngles(n_ang)
-                            debugoverlay.Cross(pos, 8, 5, Color(255, 0, 255), true)
-                        elseif not tgt:IsWorld() then
-                            self:SetParent(tgt)
-                            self:GetParent():DontDeleteOnRemove(self)
-                        else
-                            self.AttachToWorld = true
-                        end
+
+                    local bone = tr.Entity:TranslatePhysBoneToBone(tr.PhysicsBone) or tr.Entity:GetHitBoxBone(tr.HitBox, tr.Entity:GetHitboxSet())
+                    local matrix = tgt:GetBoneMatrix(bone or 0)
+                    if tr.Entity == tgt and bone and matrix then
+                        local pos = matrix:GetTranslation()
+                        local ang = matrix:GetAngles()
+                        self:FollowBone(tgt, bone)
+                        local n_pos, n_ang = WorldToLocal(tr.HitPos, tr.Normal:Angle(), pos, ang)
+                        self:SetLocalPos(n_pos)
+                        self:SetLocalAngles(n_ang)
+                        debugoverlay.Cross(pos, 8, 5, Color(255, 0, 255), true)
+                    elseif not tgt:IsWorld() then
+                        self:SetParent(tgt)
+                        self:GetParent():DontDeleteOnRemove(self)
+                    else
+                        self.AttachToWorld = true
                     end
                 end
             end)
@@ -126,6 +131,9 @@ if SERVER then
         end
         self:EmitSound(("weapons/cod2019/crossbow/imp_Arrow_Concrete_2ch_V3_0" .. math.random(1,4) .. ".ogg"), 75, 100, 1, CHAN_AUTO)
         self.DetonateTime = CurTime() + 2
+		self:StopParticles()
+		
+		SafeRemoveEntityDelayed(self, 5)
 		
         -- if not self.Hit then
             -- self.Hit = true

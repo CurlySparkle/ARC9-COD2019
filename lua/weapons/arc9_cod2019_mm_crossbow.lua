@@ -45,8 +45,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 36 -- Damage done at point blank range
-SWEP.DamageMin = 6 -- Damage done at maximum range
+SWEP.DamageMax = 150 -- Damage done at point blank range
+SWEP.DamageMin = 90 -- Damage done at maximum range
 
 SWEP.Num = 1
 
@@ -60,7 +60,7 @@ SWEP.Penetration = 10 -- Units of wood that can be penetrated by this gun.
 SWEP.ImpactForce = 15
 
 SWEP.ShootEnt = "arc9_cod2019_proj_crossbow_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 6000
+SWEP.ShootEntForce = 7000
 SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets SENT.WeaponDataLink with this table.
 
 SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
