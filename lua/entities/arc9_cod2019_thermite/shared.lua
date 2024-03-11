@@ -14,7 +14,7 @@ game.AddParticles("particles/sdrk_molotov.pcf")
 PrecacheParticleSystem("arrow_thermite")
 PrecacheParticleSystem("arrow_thermite_smokeleft")
 
-ENT.Model = "models/Items/AR2_Grenade.mdl"
+ENT.Model = "models/weapons/cod2019/w_eq_thermite_thrown2.mdl"
 ENT.FireTime = 7
 ENT.Armed = false
 ENT.NextDamageTick = 0
@@ -24,9 +24,13 @@ ENT.FireRadius = 10
 
 AddCSLuaFile()
 
-function ENT:Initialize()
+function ENT:Initialize() 
     self.SpawnTime = CurTime()
-
+	
+    if not self:GetNWBool("Children",false) then
+        self:SetNWBool("Children",true)
+    end
+  
     if SERVER then
         self:SetModel( self.Model )
         self:SetMoveType( MOVETYPE_VPHYSICS )
@@ -35,11 +39,13 @@ function ENT:Initialize()
         local mins = -maxs
         self:PhysicsInitBox(mins, maxs)
         self:DrawShadow( false )
+		self:SetAngles(self:GetAngles())
 
         local phys = self:GetPhysicsObject()
         if phys:IsValid() then
             phys:Wake()
             phys:SetBuoyancyRatio(0)
+			phys:EnableMotion(true)
         end
 
         self:Detonate()
@@ -75,6 +81,26 @@ function ENT:Think()
 
         if !self:IsValid() or self:WaterLevel() > 2 then return end
         if !IsValid(emitter) then return end
+		
+        if self.Ticks % math.ceil(1 + d * 6)  == 0 then
+            local fire = emitter:Add("effects/spark", self:GetPos() + Vector(math.Rand(-32, 32), math.Rand(-32, 32), 0))
+            fire:SetVelocity( VectorRand() * 512 )
+            fire:SetGravity( Vector(math.Rand(-5, 5), math.Rand(-5, 5), -2000) )
+            fire:SetDieTime( math.Rand(0.5, 1) )
+            fire:SetStartAlpha( 55 )
+            fire:SetEndAlpha( 0 )
+            fire:SetStartSize( 2 )
+            fire:SetEndSize( 0 )
+            fire:SetRoll( math.Rand(-180, 180) )
+            fire:SetRollDelta( math.Rand(-0.2,0.2) )
+            fire:SetColor( 255, 75, 0 )
+            fire:SetAirResistance( 50 )
+            fire:SetPos( self:GetPos() )
+            fire:SetLighting( false )
+            fire:SetCollide(true)
+            fire:SetBounce(0.2)
+            fire.Ticks = 0
+        end
 
         self.NextFlareTime = self.NextFlareTime or CurTime()
 
@@ -223,10 +249,7 @@ function ENT:Detonate()
 end
 
 function ENT:Draw()
-    -- cam.Start3D() -- Start the 3D function so we can draw onto the screen.
-    --     render.SetMaterial( GetFireParticle() ) -- Tell render what material we want, in this case the flash from the gravgun
-    --     render.DrawSprite( self:GetPos(), math.random(200, 250), math.random(200, 250), Color(255, 255, 255) ) -- Draw the sprite in the middle of the map, at 16x16 in it's original colour with full alpha.
-    -- cam.End3D()
+    --self:DrawModel()
 end
 
 local directfiredamage = {

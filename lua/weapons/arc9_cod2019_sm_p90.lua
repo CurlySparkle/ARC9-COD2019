@@ -697,6 +697,16 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
+    ["barrel_none"] = {
+        Bodygroups = {
+            {4,1},
+        },
+    },
+    ["muzzle_none"] = {
+        Bodygroups = {
+            {5,1},
+        },
+    },
     ["ext_barrel"] = {
     AttPosMods = { 
 	[2] = { Pos = Vector(5.2, 0, -0.28), },
@@ -738,7 +748,7 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic",},
+        Category = {"cod2019_optic","cod2019_p90_optic"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sights"},
     },
@@ -747,7 +757,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(0.5, 0, 0.15),
+        Pos = Vector(0.5, 0, 0.1),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
     },

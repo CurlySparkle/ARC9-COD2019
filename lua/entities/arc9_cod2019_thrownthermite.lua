@@ -21,12 +21,20 @@ AddCSLuaFile()
 
 function ENT:Initialize()
     if SERVER then
+        if not self:GetNWBool("Children",false) then
+           self:SetNWBool( "Children", false )
+        end
+  
+        if not self:GetNWBool("CreatedNade",false) then
+           self:SetNWBool("CreatedNade", false)
+        end
+
         self:SetModel( self.Model )
         self:SetMoveType( MOVETYPE_VPHYSICS )
         self:SetSolid( SOLID_VPHYSICS )
         self:PhysicsInit( SOLID_VPHYSICS )
         self:DrawShadow( true )
-        self:SetAngles(Angle(-190, -190, -190))
+        self:SetAngles(self:GetAngles())
         
         --ParticleEffectAttach("smoke_thrown_trail",PATTACH_POINT_FOLLOW,self,1)
 
@@ -34,6 +42,7 @@ function ENT:Initialize()
         if phys:IsValid() then
             phys:Wake()
             phys:SetBuoyancyRatio(0)
+			phys:EnableMotion(true)
         end
 
         self.SpawnTime = CurTime()
@@ -53,6 +62,7 @@ function ENT:PhysicsCollide(data, physobj)
             local phys = self:GetPhysicsObject()
             if phys:IsValid() then
                 phys:SetVelocity(Vector(0, 0, 0))
+				phys:EnableMotion(false)
             end
         end
 
@@ -114,22 +124,28 @@ function ENT:DoDetonate()
     if self:WaterLevel() > 0 then self:Remove() return end
     local attacker = self.Attacker or self:GetOwner() or self
 
-    -- local dmg = 50
-    -- if self.ImpactFuse then dmg = dmg * 0.5 end
-    -- util.BlastDamage(self, attacker, self:GetPos(), 350, dmg)
-
-    local cloud = ents.Create( "arc9_cod2019_thermite" )
+    if self:GetNWBool("CreatedNade",false) == false then
+      local cloud = ents.Create("arc9_cod2019_thermite")
+      if IsValid(cloud) then
+         cloud:SetPos(self:GetPos())
+         cloud:SetAngles(self:GetAngles())
+         cloud:SetOwner(attacker)
+         cloud:SetNWBool("Children",true)
+         cloud:SetNWBool("CreatedNade",true)
+         cloud:Spawn()
+		 self:Remove()
+      end
+  end
+    
     self:EmitSound("weapons/cod2019/shared/weap_thermite_impact_01.ogg", 100)
     util.Decal("Dark", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
-
-    if !IsValid(cloud) then return end
-
-    cloud:SetPos(self:GetPos())
-    cloud:SetAngles(self:GetAngles())
-    cloud:SetOwner(attacker)
-    cloud:Spawn()
-
-    self:Remove()
+    
+    self:SetNWBool("CreatedNade",true)
+    timer.Simple(7, function()
+        if IsValid(self) then
+            self:Remove()
+        end
+    end)
 end
 
 function ENT:DrawTranslucent()
