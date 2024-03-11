@@ -69,8 +69,8 @@ SWEP.ThrowAnimSpeed = 1
 
 SWEP.FuseTimer = -1 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
 
-SWEP.ThrowForceMin = 1300 -- Minimum force that the grenade will be thrown with.
-SWEP.ThrowForceMax = 1300 -- Maximum force that the grenade will be thrown with.
+SWEP.ThrowForceMin = 3000 -- Minimum force that the grenade will be thrown with.
+SWEP.ThrowForceMax = 3000 -- Maximum force that the grenade will be thrown with.
 SWEP.TossForce = 1300 -- Force that the grenade will be thrown with when right clicked.
 
 SWEP.ThrowChargeTime = 1 -- How long it takes to charge the grenade to its maximum throw force.
@@ -108,13 +108,13 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, 0)
 
-SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(18, 20, 3)
+SWEP.CustomizeAng = Angle(45, 20, -5)
+SWEP.CustomizePos = Vector(4.5, 17.5, -3)
 
 SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
 SWEP.CustomizeRotateAnchor = Vector(18, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeNoRotate = false
+SWEP.CustomizeNoRotate = true
 
 SWEP.ShootPosOffset = Vector(0, 10, -5)
 

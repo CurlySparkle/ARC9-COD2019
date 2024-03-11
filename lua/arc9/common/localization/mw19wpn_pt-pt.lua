@@ -545,6 +545,7 @@ L["mw19_weapon_nade_semtex"] = "Semtex"
 L["mw19_weapon_nade_knife"] = "Faca de Arremesso"
 L["mw19_weapon_nade_proximity"] = "Mina de Proximidade"
 L["mw19_weapon_nade_thermite"] = "Termita"
+L["mw19_weapon_nade_thermite_alt"] = "Granada de Termita" -- UO
 
 L["mw19_weapon_nade_flash"] = "Granada de Luz"
 L["mw19_weapon_nade_stun"] = "Concussão"

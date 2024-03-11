@@ -546,6 +546,7 @@ L["mw19_weapon_nade_semtex"] = "塞姆汀炸藥"
 L["mw19_weapon_nade_knife"] = "投躑小刀"
 L["mw19_weapon_nade_proximity"] = "感應地雷"
 L["mw19_weapon_nade_thermite"] = "鋁熱劑"
+L["mw19_weapon_nade_thermite_alt"] = "鋁熱劑榴彈" -- UO
 
 L["mw19_weapon_nade_flash"] = "閃光彈"
 L["mw19_weapon_nade_stun"] = "震撼彈"

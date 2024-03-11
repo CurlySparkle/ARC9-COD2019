@@ -545,6 +545,7 @@ L["mw19_weapon_nade_semtex"] = "Semtex"
 L["mw19_weapon_nade_knife"] = "Cuchillo arrojadizo"
 L["mw19_weapon_nade_proximity"] = "Mina de proximidad"
 L["mw19_weapon_nade_thermite"] = "Termita"
+L["mw19_weapon_nade_thermite_alt"] = "Granada Termita" -- UO
 
 L["mw19_weapon_nade_flash"] = "Granada cegadora"
 L["mw19_weapon_nade_stun"] = "Granada aturdidora"

@@ -545,6 +545,7 @@ L["mw19_weapon_nade_semtex"] = "Semtex"
 L["mw19_weapon_nade_knife"] = "Wurfmesser"
 L["mw19_weapon_nade_proximity"] = "Näherungsmine"
 L["mw19_weapon_nade_thermite"] = "Thermit"
+L["mw19_weapon_nade_thermite_alt"] = "Thermit Granate" -- UO
 
 L["mw19_weapon_nade_flash"] = "Blendgranate"
 L["mw19_weapon_nade_stun"] = "Betäubung"

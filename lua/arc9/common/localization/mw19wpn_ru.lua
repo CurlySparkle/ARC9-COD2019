@@ -545,6 +545,7 @@ L["mw19_weapon_nade_semtex"] = "Семтекс"
 L["mw19_weapon_nade_knife"] = "Метательный нож"
 L["mw19_weapon_nade_proximity"] = "Контактная мина"
 L["mw19_weapon_nade_thermite"] = "Термит"
+L["mw19_weapon_nade_thermite_alt"] = "Термит граната" -- UO
 
 L["mw19_weapon_nade_flash"] = "Световая граната"
 L["mw19_weapon_nade_stun"] = "Оглушающая граната"

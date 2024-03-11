@@ -1,20 +1,20 @@
-SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_smoke")
+SWEP.CustomSelectIcon = Material("vgui/hud/arc9_cod2019_nade_thermite")
 
 SWEP.Base = "arc9_cod2019_base_nade"
 
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_throwable") or "Throwable"
 
-SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_nade_smoke.png"
+SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_nade_thermite.png"
 
 SWEP.Spawnable = true
 SWEP.AdminOnly = false
 SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
-SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_thermite") or "Thermite Nade"
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_thermite") or "Thermite Stick"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Grenade"
-SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_thermite_desc") or [[Obscures an area in white fog and burns those who come close.]]
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_thermite_desc") or [[Explosive which burns fiercely for a short time after impact. Sticks to surfaces.]]
 
 SWEP.Credits = {
     [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
@@ -33,9 +33,9 @@ SWEP.Firemodes = {
 
 SWEP.UseHands = true
 
-SWEP.ViewModel = "models/weapons/cod2019/c_eq_thermite.mdl"
+SWEP.ViewModel = "models/weapons/cod2019/c_eq_thermite2.mdl"
 SWEP.WorldModel = "models/weapons/cod2019/w_eq_thermite_world.mdl"
-SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_thermite.mdl"
+SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_thermite2.mdl"
 SWEP.MirrorVMWMHeldOnly = true
 SWEP.NoTPIK = false
 SWEP.MirrorVMWM = true
@@ -61,7 +61,7 @@ SWEP.Crosshair = true
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
-SWEP.ShootEnt = "arc9_cod2019_throwninc"
+SWEP.ShootEnt = "arc9_cod2019_thrownthermite"
 SWEP.Ammo = "grenade"
 
 SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
@@ -70,8 +70,8 @@ SWEP.ThrowAnimSpeed = 1
 
 SWEP.FuseTimer = -1 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
 
-SWEP.ThrowForceMin = 1000 -- Minimum force that the grenade will be thrown with.
-SWEP.ThrowForceMax = 1000 -- Maximum force that the grenade will be thrown with.
+SWEP.ThrowForceMin = 1500 -- Minimum force that the grenade will be thrown with.
+SWEP.ThrowForceMax = 1500 -- Maximum force that the grenade will be thrown with.
 SWEP.TossForce = 600 -- Force that the grenade will be thrown with when right clicked.
 
 SWEP.ThrowChargeTime = 1 -- How long it takes to charge the grenade to its maximum throw force.
@@ -115,9 +115,9 @@ SWEP.CustomizePos = Vector(-5.5, 30, 13)
 SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
 SWEP.CustomizeRotateAnchor = Vector(-5.5, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeNoRotate = false
+SWEP.CustomizeNoRotate = true
 
-SWEP.ShootPosOffset = Vector(0, 15, 0)
+SWEP.ShootPosOffset = Vector(0, 5, 0)
 
 -------------------------- AIM ASSIST
 
@@ -154,9 +154,17 @@ SWEP.Animations = {
     ["idle_primed"] = {
         Source = "idle_primed"
     },
+    ["ready"] = {
+        Source = "draw",
+        MinProgress = 0.15,
+        FireASAP = true,
+        EventTable = {
+            {s = path .. "grenade_pin_smoke_cloth.ogg", t = 0/30},
+        },
+    },
     ["draw"] = {
         Source = "draw",
-        MinProgress = 0.3,
+        MinProgress = 0.2,
         FireASAP = true,
         EventTable = {
             {s = path .. "grenade_pin_smoke_cloth.ogg", t = 0/30},
@@ -169,12 +177,11 @@ SWEP.Animations = {
         },
     },
     ["pullpin"] = {
-        Source = "pullout",
+        Source = "pullpin",
         MinProgress = 0.666,
-		Mult = 1.3,
+		Mult = 1.5,
         FireASAP = true,
         EventTable = {
-            {s = path .. "grenade_pin_smoke.ogg", t = 0/30},
             {s = path .. "grenade_pin_smoke_cloth.ogg", t = 0/30},
         },
     },
@@ -183,36 +190,29 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "grenade_smoke_fire_01.ogg", t = 0/30},
         },
-        MinProgress = 0.5
+        MinProgress = 0.52
     },
     ["toss"] = {
         Source = "throw",
         EventTable = {
             {s = path .. "grenade_smoke_fire_02.ogg", t = 0/30},
         },
-        MinProgress = 0.5
+        MinProgress = 0.52
     },
     ["idle_sprint"] = {
         Source = "sprint",
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+		Mult = 3,
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
 		Mult = 3,
     },
     ["bash"] = {
-        Source = {"melee_miss01", "melee_miss02","melee_miss03"},
+        Source = {"melee_hit01","melee_hit02","melee_hit03"},
     },
 }
 
 -------------------------- ATTACHMENTS
-
-SWEP.Attachments = {
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_function"),
-        Category = {"go_nade_type"},
-    },
-}

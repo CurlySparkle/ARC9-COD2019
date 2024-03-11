@@ -545,6 +545,7 @@ L["mw19_weapon_nade_semtex"] = "セムテックス"
 L["mw19_weapon_nade_knife"] = "投げナイフ"
 L["mw19_weapon_nade_proximity"] = "センサーマイン"
 L["mw19_weapon_nade_thermite"] = "テルミット"
+L["mw19_weapon_nade_thermite_alt"] = "テルミット手榴弾" -- UO
 
 L["mw19_weapon_nade_flash"] = "フラッシュ"
 L["mw19_weapon_nade_stun"] = "スタン"

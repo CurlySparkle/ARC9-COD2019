@@ -535,6 +535,7 @@ L["mw19_weapon_nade_semtex"] = "Semtex"
 L["mw19_weapon_nade_knife"] = "Kastbar Kniv"
 L["mw19_weapon_nade_proximity"] = "Närhetsmina"
 L["mw19_weapon_nade_thermite"] = "Thermit"
+L["mw19_weapon_nade_thermite_alt"] = "Thermitgranat"
 
 L["mw19_weapon_nade_flash"] = "Distraktionsgranat"
 L["mw19_weapon_nade_stun"] = "Chockgranat"
@@ -545,7 +546,7 @@ L["mw19_weapon_nade_stim"] = "Stimulant"
 L["mw19_weapon_nade_decoy"] = "Lockbetsgranat"
 L["mw19_weapon_nade_gas"] = "Gasgranat"
 
-L["mw19_weapon_minigun"] = "Minigun"-- UO
+L["mw19_weapon_minigun"] = "Gatlingkulspruta"-- UO
 L["mw19_weapon_fists"] = "Knytnävar" -- UO
 L["mw19_weapon_nade_rock"] = "Sten" -- UO
 

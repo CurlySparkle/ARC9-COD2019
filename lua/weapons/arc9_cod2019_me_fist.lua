@@ -59,7 +59,7 @@ SWEP.SecondarySupplyLimit = 0 -- Amount of reserve UBGL magazines you can take.
 SWEP.Firemodes = {
     {
         Mode = 1,
-        PrintName = ARC9:GetPhrase("mw19_category_weapon_melee"),
+        PrintName = ARC9:GetPhrase("mw19_firemode_melee"),
         -- add other attachment modifiers
     },
 }

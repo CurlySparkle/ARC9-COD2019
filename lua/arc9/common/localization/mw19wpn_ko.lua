@@ -546,6 +546,7 @@ L["mw19_weapon_nade_semtex"] = "셈텍스 수류탄"
 L["mw19_weapon_nade_knife"] = "투척 단검"
 L["mw19_weapon_nade_proximity"] = "근접 신관 지뢰"
 L["mw19_weapon_nade_thermite"] = "테르밋"
+L["mw19_weapon_nade_thermite_alt"] = "테르밋 수류탄" -- UO
 
 L["mw19_weapon_nade_flash"] = "섬광 수류탄"
 L["mw19_weapon_nade_stun"] = "기절 수류탄"
