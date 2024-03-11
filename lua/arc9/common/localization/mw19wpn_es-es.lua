@@ -154,12 +154,6 @@ L["mw19_class_weapon_handgun"] = "Arma corta"
 L["mw19_class_weapon_launcher"] = "Lanzador"
 
 //////////////////////////////////////////////////////////////////////
-////////////////////////////////////////// Notes
--- 1) If "-- UO" is listed after the string, it is unofficial and its translation is not taken from MW19.
--- Therefore they will either remain untranslated (and remain in English) or require community contribution to fix.
-
--- 2) If a string uses "ARC9:GetPhrase" in it, then do not touch it. It uses another localization as its quick access.
-
 ///////////////////////////// Attachments
 //////////////////// Customize
 L["mw19_category_camouflage"] = "Camuflaje"
