@@ -521,6 +521,7 @@ ATT.AutoStats = true
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_crossbow_he"
+ATT.ImpactDecal = "Dark"
 
 ATT.Category = {"cod2019_ammo_crossbow"}
 

@@ -9,6 +9,7 @@ ENT.Model = "models/weapons/cod2019/mags/w_eq_crossbow_bolt.mdl"
 
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.CanPickup = true
+ENT.AoeEntity = nil
 
 if CLIENT then
     killicon.Add( "arc9_cod2019_proj_crossbow_default", "hud/killicons/default", Color( 255, 255, 255, 255 ) )
@@ -35,7 +36,7 @@ if SERVER then
 
         --util.SpriteTrail(self, 0, Color(100, 100, 100, 55), false, 3, 1, 0.25, 2, "trails/tube.vmt")
 		ParticleEffectAttach("arrow_trail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
-        SafeRemoveEntityDelayed(self, 60)
+        SafeRemoveEntityDelayed(self, 10)
     end
 
     function ENT:Think()
@@ -85,6 +86,33 @@ if SERVER then
         dmginfo:SetInflictor(self)
         tgt:TakeDamageInfo(dmginfo)
         local angles = self:GetAngles()
+		
+		-- if (self.AoeEntity != nil) then
+		    -- local aoe = ents.Create(self.AoeEntity)
+			-- aoe:SetOwner(self:GetOwner())
+			-- parentEntity(tgt, aoe)
+			-- aoe:SetPos(tgt.HitPos + tr.HitNormal * 3)
+
+			-- local angle = tgt.HitNormal:Angle()
+			-- angle:RotateAroundAxis(angle:Right(), 270)
+
+			-- aoe:SetAngles(angle)
+			-- aoe:Spawn()
+			-- aoe.arrow = self
+			-- self.aoe = aoe
+			-- self:Remove()
+		-- end
+		
+		-- if (self.AoeEntity != nil) then
+		    -- local aoe = ents.Create(self.AoeEntity)
+		    -- aoe:SetPos(self:GetPos())
+		    -- aoe:SetOwner(self:GetOwner())
+			-- aoe:SetAngles(angles)
+		    -- aoe:Spawn()
+			-- aoe.arrow = self
+			-- self.aoe = aoe
+			-- self:Remove()
+		-- end
 
         if tgt:IsWorld() or (IsValid(tgt) and tgt:GetPhysicsObject():IsValid()) then
             timer.Simple(0, function()
@@ -132,8 +160,6 @@ if SERVER then
         self:EmitSound(("weapons/cod2019/crossbow/imp_Arrow_Concrete_2ch_V3_0" .. math.random(1,4) .. ".ogg"), 75, 100, 1, CHAN_AUTO)
         self.DetonateTime = CurTime() + 2
 		self:StopParticles()
-		
-		SafeRemoveEntityDelayed(self, 5)
 		
         -- if not self.Hit then
             -- self.Hit = true

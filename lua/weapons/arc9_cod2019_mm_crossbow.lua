@@ -59,14 +59,14 @@ SWEP.Penetration = 10 -- Units of wood that can be penetrated by this gun.
 
 SWEP.ImpactForce = 15
 
-SWEP.ShootEnt = "arc9_cod2019_proj_crossbow_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 7000
+SWEP.ShootEnt = "arc9_cod2019_arrow_base" -- Set to an entity to launch it out of this weapon.
+SWEP.ShootEntForce = 8500
 SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets SENT.WeaponDataLink with this table.
 
 SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
 
-SWEP.ShootPosOffset = Vector(3, 10, -5)
-SWEP.ShootPosOffsetSights = Vector(0, 10, -3)
+SWEP.ShootPosOffset = Vector(3, 5, -5)
+SWEP.ShootPosOffsetSights = Vector(0, 5, -3)
 
 -------------------------- MAGAZINE
 
@@ -75,6 +75,7 @@ SWEP.Ammo = "xbowbolt" -- what ammo type the gun uses
 SWEP.ChamberSize = 0 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize = 1 -- Self-explanatory.
 SWEP.SupplyLimit = 24 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.ForceDefaultClip = 24
 SWEP.SecondarySupplyLimit = 24 -- Amount of reserve UBGL magazines you can take.
 
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
