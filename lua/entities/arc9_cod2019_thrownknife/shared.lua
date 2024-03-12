@@ -8,7 +8,7 @@ ENT.Spawnable = false
 ENT.AdminSpawnable = false
 
 ENT.Model = "models/weapons/cod2019/w_eq_knife_thrown.mdl"
-ENT.Collectable = false
+ENT.Collectable = true
 
 if CLIENT then
     killicon.Add( "arc9_cod2019_thrownknife", "VGUI/killicons/cod2019_knife", Color(251, 85, 25, 255))
@@ -55,33 +55,52 @@ function ENT:PhysicsCollide(data, physobj)
             self:UseTriggerBounds(true, 24)
         else
             self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hit1.ogg" )
-            local damage = DamageInfo()
-            damage:SetAttacker( self.Owner )
-            damage:SetDamage( 50 )
-            damage:SetDamageType( DMG_SLASH )
-            damage:SetInflictor( self )
-            damage:SetReportedPosition( data.HitPos )
-            damage:SetDamagePosition( data.HitPos )
-            data.HitEntity:TakeDamageInfo( damage )
-            self:Remove()
         end
-    end
+	self:FireBullets({
+		Attacker = self:GetOwner(),
+		Num = 1,
+		Tracer = 0,
+		Damage = 75,
+		Force = 15,
+		Src = data.HitPos,
+		Dir = data.OurOldVelocity:GetNormalized(),
+		HullSize = bHull && self.Maxs:Length() * 2 || 1,
+	})
+   end
 end
 
--- function ENT:Touch(ply)
-    -- if !ply:IsPlayer() then return end
-
-    -- ply:Give("arccw_go_nade_knife", true)
-    -- ply:GiveAmmo(1, "arccw_go_nade_knife", false)
-    -- self:Remove()
+-- function ENT:Impact(data,bHull)
+	-- self:FireBullets({
+		-- Attacker = self:GetOwner(),
+		-- Num = 1,
+		-- Tracer = 0,
+		-- Damage = 75,
+		-- Force = 25,
+		-- Src = self.LastPos,
+		-- Dir = data.OurOldVelocity:GetNormalized(),
+		-- HullSize = bHull && self.Maxs:Length() * 2 || 1,
+	-- })
+	-- self:Remove()
 -- end
+
+function ENT:Touch(ply)
+    local dist = self:GetOwner():NearestPoint(self:GetPos()):DistToSqr(self:GetPos())
+    if !ply:IsPlayer() then return end
+
+    if (dist < 32 * 32) then
+    ply:GiveAmmo(1, "arc9_cod2019_knife", false)
+
+    self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 75)
+    self:Remove()
+    end
+end
 
 function ENT:Use(ply)
     if !ply:IsPlayer() then return end
     --ply:Give("grenade", true)
     ply:GiveAmmo(1, "arc9_cod2019_knife", false)
 
-    self:EmitSound("COD2019.Knife.Prepare", 75)
+    self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 75)
     self:Remove()
 end
 

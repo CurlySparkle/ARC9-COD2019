@@ -53,7 +53,8 @@ SWEP.WorldModelOffset = {
 SWEP.BottomlessClip = true
 SWEP.ChamberSize = 0 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize = 1 -- Self-explanatory.
-SWEP.SupplyLimit = 3 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.ForceDefaultClip = 6
 SWEP.SecondarySupplyLimit = 0 -- Amount of reserve UBGL magazines you can take.
 SWEP.Crosshair = true
 
@@ -187,6 +188,17 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "inspect2",
+    },
+    ["idle_sprint"] = {
+        Source = "sprint",
+    },
+    ["enter_sprint"] = {
+        Source = "sprint_in",
+		Mult = 3,
+    },
+    ["exit_sprint"] = {
+        Source = "sprint_out",
+		Mult = 3,
     },
 }
 
