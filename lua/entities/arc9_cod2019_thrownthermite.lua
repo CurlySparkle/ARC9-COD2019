@@ -43,6 +43,7 @@ function ENT:Initialize()
             phys:Wake()
             phys:SetBuoyancyRatio(0)
 			phys:EnableMotion(true)
+			phys:AddAngleVelocity(Vector(300,900,0))
         end
 
         self.SpawnTime = CurTime()

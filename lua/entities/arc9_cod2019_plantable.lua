@@ -17,6 +17,7 @@ ENT.AdjustOffset = false
 ENT.MinS = Vector(-2, -5, 0)
 ENT.MaxS = Vector(2, 5, 8)
 ENT.Bury = 0
+ENT.SpinAngles = Vector(0, 0, 0)
 
 ENT.BurySurfaces = {
     [MAT_DIRT] = true,
@@ -49,6 +50,7 @@ function ENT:Initialize()
             phys:Wake()
             phys:SetMass(5)
             phys:SetBuoyancyRatio(0)
+			phys:AddAngleVelocity(self.SpinAngles)
         end
 
         self:SetHealth(10)

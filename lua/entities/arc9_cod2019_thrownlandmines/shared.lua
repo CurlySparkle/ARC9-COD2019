@@ -9,6 +9,7 @@ ENT.Bury = 3
 ENT.DetectionRange = 96
 ENT.ArmDelay = 3
 ENT.Radius = 300
+ENT.SpinAngles = Vector(0, 0, 900)
 
 PrecacheParticleSystem("small_smoke_effect3")
 

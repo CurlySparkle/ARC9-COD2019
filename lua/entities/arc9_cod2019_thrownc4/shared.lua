@@ -10,6 +10,7 @@ ENT.MaxS = Vector(2, 2, 4)
 
 ENT.ArmDelay = 0.4
 ENT.Radius = 300
+ENT.SpinAngles = Vector(0, 0, 300)
 
 PrecacheParticleSystem("small_smoke_effect3")
 
