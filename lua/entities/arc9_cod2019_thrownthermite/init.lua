@@ -80,7 +80,6 @@ function ENT:PhysicsCollide(data, physobj)
             self:SetMoveType( MOVETYPE_NONE )
             self:SetAngles( data.OurOldVelocity:Angle() + Angle(-55, 0, 0) )
             self:SetPos( data.HitPos - (data.HitNormal * 2) )
-            self.dt = CurTime() + 15
         end
 
         if (CurTime() - self.SpawnTime >= self.ArmTime) and self.ImpactFuse then

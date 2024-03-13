@@ -333,6 +333,12 @@ SWEP.AttachmentTableOverrides = {
     Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_xmags_akimbo.mdl",
 	ClipSizeOverride = 20 * 2,
 	},
+    ["cod2019_renetti_grip_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_pstlgrplght_akimbo.mdl",
+	},
+    ["cod2019_renetti_grip_custom"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_pstlgrpcust_akimbo.mdl",
+	},
 }
 
 SWEP.AttachmentElements = {
@@ -435,15 +441,15 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
         Category = "cod2019_renetti_grip",
-        Bone = "tag_stock_attach_l",
+        Bone = "tag_pistolgrip_attach_l",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 180),
+        Ang = Angle(0, 0, 0),
 		Icon_Offset = Vector(0.5, 0, -3.5),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
         DuplicateModels = {
             {
-                Bone = "tag_stock_attach",
+                Bone = "tag_pistolgrip_attach",
             }
         },
     },

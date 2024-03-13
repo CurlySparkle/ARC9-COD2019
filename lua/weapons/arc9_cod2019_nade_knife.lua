@@ -145,6 +145,10 @@ SWEP.PreBashTime = 0.2
 SWEP.PostBashTime = 0.3
 SWEP.ImpactForce = 15
 
+function SWEP:SecondaryAttack()
+    return self:MeleeAttack()
+end
+
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",

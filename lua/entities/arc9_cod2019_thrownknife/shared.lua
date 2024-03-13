@@ -28,6 +28,7 @@ function ENT:Initialize()
         if phys:IsValid() then
             phys:Wake()
             phys:SetBuoyancyRatio(0)
+			phys:AddAngleVelocity(Vector(0,0,900))
         end
 
         self.dt = CurTime() + 15
@@ -44,9 +45,9 @@ end
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
         if data.HitEntity:GetClass() == "worldspawn" then
-            self:SetMoveType( MOVETYPE_NONE )
-            self:SetAngles( data.OurOldVelocity:Angle() + Angle(90, 0, 0) )
-            self:SetPos( data.HitPos - (data.HitNormal * 2) )
+            self:SetMoveType(MOVETYPE_NONE)
+            self:SetAngles(data.OurOldVelocity:Angle() + Angle(-90, 0, 180))
+            self:SetPos(data.HitPos - (data.HitNormal * 2))
             self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hitwall1.ogg" )
             self.dt = CurTime() + 15
             self.Collectable = true
@@ -62,26 +63,13 @@ function ENT:PhysicsCollide(data, physobj)
 		Tracer = 0,
 		Damage = 75,
 		Force = 15,
+		Distance = 20000,
 		Src = data.HitPos,
 		Dir = data.OurOldVelocity:GetNormalized(),
-		HullSize = bHull && self.Maxs:Length() * 2 || 1,
+		HullSize = bHull && self.Maxs:Length() * 3 || 2,
 	})
    end
 end
-
--- function ENT:Impact(data,bHull)
-	-- self:FireBullets({
-		-- Attacker = self:GetOwner(),
-		-- Num = 1,
-		-- Tracer = 0,
-		-- Damage = 75,
-		-- Force = 25,
-		-- Src = self.LastPos,
-		-- Dir = data.OurOldVelocity:GetNormalized(),
-		-- HullSize = bHull && self.Maxs:Length() * 2 || 1,
-	-- })
-	-- self:Remove()
--- end
 
 function ENT:Touch(ply)
     local dist = self:GetOwner():NearestPoint(self:GetPos()):DistToSqr(self:GetPos())

@@ -687,8 +687,13 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = {"melee","melee2"},
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
     },
-	
 -- Stock Anims
 	["stock_enter_sights"] = {
 		Source = "idle_stock",
@@ -1044,6 +1049,12 @@ SWEP.Animations = {
     },
     ["stock_bash"] = {
         Source = {"melee_stock","melee2_stock"},
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
     },
 }
 
@@ -1231,6 +1242,11 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
+    ["grip_none"] = {
+        Bodygroups = {
+            {4,1},
+        },
+    },
 	["muzzle_comp"] = {
     AttPosMods = { [2] = { Pos = Vector(-0.2, 0, 0), } }	
 	}
@@ -1270,7 +1286,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
-        Category = {"cod2019_tac_pistols","cod2019_grip_pistols"},
+        Category = {"cod2019_tac_pistols","cod2019_grip_pistols","cod2019_renetti_foregrip"},
         Bone = "tag_laser_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -1280,9 +1296,9 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
         Category = "cod2019_renetti_grip",
-        Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 2),
-        Ang = Angle(0, 0, 180),
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
 		Scale = 1,
 		--InstalledElements = {"rail_grip"},
     },
