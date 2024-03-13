@@ -194,11 +194,14 @@ SWEP.Animations = {
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 3,
+		Mult = 5,
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 3,
+		Mult = 5,
+    },
+    ["bash"] = {
+        Source = {"melee_hit01", "melee_hit02","melee_hit03"},
     },
 }
 

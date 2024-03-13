@@ -9,12 +9,13 @@ ENT.Author = ""
 ENT.Information = ""
 ENT.Spawnable = false
 ENT.AdminSpawnable = false
+ENT.DrawModelExt = false
 
 game.AddParticles("particles/sdrk_molotov.pcf")
 PrecacheParticleSystem("arrow_thermite")
 PrecacheParticleSystem("arrow_thermite_smokeleft")
 
-ENT.Model = "models/weapons/cod2019/w_eq_thermite_thrown2.mdl"
+ENT.ModelEnt = "models/weapons/cod2019/w_eq_thermite_thrown2.mdl"
 ENT.FireTime = 7
 ENT.Armed = false
 ENT.NextDamageTick = 0
@@ -32,7 +33,7 @@ function ENT:Initialize()
     end
   
     if SERVER then
-        self:SetModel( self.Model )
+        self:SetModel( self.ModelEnt )
         self:SetMoveType( MOVETYPE_VPHYSICS )
         self:SetSolid( SOLID_VPHYSICS )
         local maxs = Vector(1, 1, 1)
@@ -56,6 +57,17 @@ function ENT:Initialize()
         self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
         ParticleEffectAttach("arrow_thermite", PATTACH_ABSORIGIN_FOLLOW, self, 0)
     end
+end
+
+function ENT:PhysicsCollide(data, physobj)
+    if SERVER then
+        if data.HitEntity:GetClass() == "worldspawn" then
+            self:SetAngles( data.OurOldVelocity:Angle() + Angle(0, 0, 0) )
+            self:SetPos( data.HitPos - (data.HitNormal * 2) )
+            self.dt = CurTime() + 15
+            --self:UseTriggerBounds(true, 24)
+        end
+   end
 end
 
 function ENT:Think()
@@ -200,7 +212,7 @@ function ENT:Think()
         self.NextDamageTick = CurTime() + 0.05
 		
         for k, v in pairs(ents.FindInSphere(self:GetPos(), 84)) do 
-            if v.ClassName != self.ClassName && !v:IsWorld() then
+            if v.ClassName != self.ClassName && !v:IsWorld() && v != self.NoIgnite then
             v:Ignite(self.FireLength, self.FireRadius) 
             --v:TakeDamage(5, self.Owner, self)
             end
@@ -228,12 +240,26 @@ function ENT:Detonate()
 
     if self.Order and self.Order != 1 then return end
 
+    --util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
     -- self.FireSound = CreateSound(self, "tacrp_extras/grenades/fire_loop_1.wav")
     self.FireSound = CreateSound(self, "weapons/cod2019/shared/weap_thermite_loop.ogg")
     self.FireSound:Play()
     self.FireSound:ChangePitch(120)
 
     self.FireSound:ChangePitch(100, self.FireTime)
+	
+    -- self:FireBullets({
+        -- Attacker = attacker,
+        -- Damage = 200,
+        -- Force = 5,
+        -- Tracer = 0,
+        -- Distance = 20000,
+        -- Dir = self:GetVelocity(),
+        -- Src = self:GetPos(),
+        -- Callback = function(att, tr, dmg)
+            -- util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
+        -- end
+    -- })
 
     timer.Simple(self.FireTime - 1, function()
         if !IsValid(self) then return end
@@ -249,7 +275,9 @@ function ENT:Detonate()
 end
 
 function ENT:Draw()
-    --self:DrawModel()
+    if self.DrawModelExt then
+    self:DrawModel()
+	end
 end
 
 local directfiredamage = {

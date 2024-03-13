@@ -53,6 +53,9 @@ SWEP.PhysicalVisualRecoil = true
 
 -- Extras
 
+SWEP.VManipOffsetPos = Vector(0.5, 0.5, -0.2)
+SWEP.VManipOffsetAng = Angle(-4, -2, 5)
+
 SWEP.SprintVerticalOffset = false
 SWEP.CanBlindFire = false
 SWEP.LaserAlwaysOnTargetInPeek = true
@@ -62,7 +65,7 @@ SWEP.MalfunctionExitSights = true
 SWEP.EnterBipodSound = "Viewmodel.BipodDeploy"
 SWEP.ExitBipodSound = "Viewmodel.BipodExit"
 
-SWEP.RicochetChance = 0.02
+SWEP.RicochetChance = 0.01
 SWEP.SwayMultSights = 0
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.

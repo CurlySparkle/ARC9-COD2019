@@ -645,7 +645,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.5,
+		Mult = 4.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.35, lhik = 1, rhik = 1 },
@@ -654,7 +654,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.5,
+		Mult = 4.5,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },

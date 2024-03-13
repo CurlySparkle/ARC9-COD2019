@@ -1,23 +1,26 @@
+AddCSLuaFile("cl_init.lua")
+AddCSLuaFile("shared.lua")
+
+include("shared.lua")
+
 if CLIENT then
     killicon.Add( "arc9_cod2019_thrownthermite", "vgui/killicons/cod2019_thermite", Color(251, 85, 25, 255))
 end
 
-ENT.Type = "anim"
-ENT.Base = "base_entity"
-ENT.PrintName = "Thermite Nade"
+ENT.PrintName = "Thermite"
 ENT.Author = ""
 ENT.Information = ""
 ENT.Spawnable = false
 ENT.AdminSpawnable = false
+ENT.DrawModelExt = true
 
 ENT.Model = "models/weapons/cod2019/w_eq_thermite_thrown2.mdl"
+ENT.ModelEnt = "models/weapons/cod2019/w_eq_thermite_thrown2.mdl"
 ENT.FuseTime = 2
 ENT.ArmTime = 0
 ENT.Ticks = 0
 ENT.ImpactFuse = true
 ENT.NextDamageTick = 0
-
-AddCSLuaFile()
 
 function ENT:Initialize()
     if SERVER then
@@ -57,14 +60,27 @@ function ENT:Initialize()
 end
 
 function ENT:PhysicsCollide(data, physobj)
+    local hitPos = data.HitPos -- Get the position where the grenade hit
+    local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
+    local hitEntity = data.HitEntity -- Get the entity that was hit (can be nil if it hit the world)
+	
     if SERVER then
         if not self.HasCollided then
             self.HasCollided = true
             local phys = self:GetPhysicsObject()
             if phys:IsValid() then
                 phys:SetVelocity(Vector(0, 0, 0))
-				phys:EnableMotion(false)
+				phys:EnableMotion(true)
             end
+        end
+		
+		util.Decal("Dark", hitPos + hitNormal, hitPos - hitNormal)
+		
+        if data.HitEntity:GetClass() == "worldspawn" then
+            self:SetMoveType( MOVETYPE_NONE )
+            self:SetAngles( data.OurOldVelocity:Angle() + Angle(-55, 0, 0) )
+            self:SetPos( data.HitPos - (data.HitNormal * 2) )
+            self.dt = CurTime() + 15
         end
 
         if (CurTime() - self.SpawnTime >= self.ArmTime) and self.ImpactFuse then
@@ -128,18 +144,21 @@ function ENT:DoDetonate()
     if self:GetNWBool("CreatedNade",false) == false then
       local cloud = ents.Create("arc9_cod2019_thermite")
       if IsValid(cloud) then
+	     cloud:SetModel("models/weapons/cod2019/w_eq_thermite_thrown2.mdl")
          cloud:SetPos(self:GetPos())
          cloud:SetAngles(self:GetAngles())
          cloud:SetOwner(attacker)
          cloud:SetNWBool("Children",true)
          cloud:SetNWBool("CreatedNade",true)
          cloud:Spawn()
-		 self:Remove()
+		 cloud:EmitSound("weapons/cod2019/shared/weap_thermite_impact_01.ogg", 100)
+		 cloud:SetParent(self)
+		 cloud.NoIgnite = self
+		 --self:Remove()
       end
-  end
-    
-    self:EmitSound("weapons/cod2019/shared/weap_thermite_impact_01.ogg", 100)
-    util.Decal("Dark", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
+    end
+	
+    --util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
     
     self:SetNWBool("CreatedNade",true)
     timer.Simple(7, function()
@@ -147,12 +166,4 @@ function ENT:DoDetonate()
             self:Remove()
         end
     end)
-end
-
-function ENT:DrawTranslucent()
-    self:Draw()
-end
-
-function ENT:Draw()
-    self:DrawModel()
 end

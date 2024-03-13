@@ -35,6 +35,9 @@ SWEP.SpeedMultReload = 1
 
 -- Extras
 
+SWEP.VManipOffsetPos = Vector(0.5, 0.5, -0.2)
+SWEP.VManipOffsetAng = Angle(-4, -2, 5)
+
 SWEP.SprintVerticalOffset = false
 SWEP.CanBlindFire = false
 
