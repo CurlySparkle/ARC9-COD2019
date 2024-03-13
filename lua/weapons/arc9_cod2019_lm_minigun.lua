@@ -38,12 +38,12 @@ SWEP.DefaultBodygroups = "00000000"
 SWEP.Slot = 3
 
 SWEP.MirrorVMWM = true
-SWEP.NoTPIKVMPos = true
+SWEP.NoTPIKVMPos = false
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_minigun.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 6, -2.5),
     Ang = Angle(-17, 3, 180),
-    TPIKPos = Vector(-7, 5, -1),
+    TPIKPos = Vector(-11, 5, -1),
     TPIKAng = Angle(0, 0, 180),
     Scale = 1
 }
@@ -173,9 +173,6 @@ SWEP.HasSights = true
 
 SWEP.ViewModelFOVBase = 65
 
-SWEP.SprintPos = Vector(0, 0, -1.5)
-SWEP.SprintAng = Angle(0, 0, 0)
-
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, 0),
     Ang = Angle(-2.5, 0, 2.5)
@@ -194,6 +191,12 @@ SWEP.MovingAng = Angle(0, 0, -9)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
+
+SWEP.CrouchPos = Vector(-1, -0.5, -1)
+SWEP.CrouchAng = Angle(0, 0, -5)
+
+SWEP.SprintPos = Vector(1, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 15)
 
 SWEP.CustomizeAng = Angle(90, 0, -10)
 SWEP.CustomizePos = Vector(24, 35, 11)
@@ -222,7 +225,7 @@ SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
 
-SWEP.ExplosionEffect = "cod2019_muzzle_he"
+SWEP.ExplosionEffect = "cod2019_muzzle_he2"
 SWEP.ImpactDecal = "FadingScorch"
 
 SWEP.CamQCA = 4
@@ -286,15 +289,16 @@ SWEP.Animations = {
         },
     },
     ["trigger"] = {
-        Source = {"shoot1_charged"},
+        Source = {"windup"},
 		--MinProgress = 0.8,
         EventTable = {
             {s = path .. "weap_dblmg_spinup_plr_01.ogg", v = 0.5, t = 0/30},
         },
     },
     ["untrigger"] = {
-        Source = {"winddown"},
+        Source = {"windup"},
 		--MinProgress = 0.8,
+		Reverse = true,
         EventTable = {
             {s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 5/30},
 			{s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.4, t = 0/30},
@@ -359,6 +363,17 @@ SWEP.Animations = {
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
 		Mult = 3,
     },
+    ["super_sprint_idle"] = {
+        Source = "super_sprint",
+    },
+    ["super_sprint_in"] = {
+        Source = "super_sprint_in",
+		Mult = 2,
+    },
+    ["super_sprint_out"] = {
+        Source = "super_sprint_out",
+		Mult = 2,
+    },
     ["inspect"] = {
         Source = "lookat01",
         MinProgress = 0.1,
@@ -387,11 +402,21 @@ SWEP.Animations = {
 local Translate_Fast = {
     ["reload"] = "reload_fast",
 }
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+}
 
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
     local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
+    end
 
     if speedload then
         if Translate_Fast[anim] then
@@ -414,33 +439,18 @@ SWEP.AttachmentElements = {
 -- end
 
 SWEP.Attachments = {
-    -- {
-        -- PrintName = ARC9:GetPhrase("mw19_category_laser"),
-        -- DefaultAttName = "Default",
-        -- Category = "cod2019_tac_cylinde",
-        -- Bone = "tag_laser_attach",
-        -- Pos = Vector(0, 0, 0),
-        -- Ang = Angle(0, 0, 0),
-		-- LaserCorrectionAngle = Angle(-10, 0, 0),
-    -- },
-    -- {
-        -- PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
-        -- DefaultAttName = "Default",
-        -- Category = {"grip"},
-        -- Bone = "tag_attachments",
-        -- Pos = Vector(0, -4, 2),
-        -- Ang = Angle(35, 5, -110),
-		-- Scale = 1,
-		-- RejectAttachments = { 
-		-- ["go_ubgl_m203"] = true,
-		-- ["go_ubgl_mass26"] = true,
-		-- ["go_ubgl_xm1014"] = true,
-		-- ["go_grip_angled"] = true,
-		-- },
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
+        DefaultAttName = "Default",
+        Category = "cod2019_tac_rail_alt",
+        Bone = "tag_laser_show",
+        Pos = Vector(0.15, -0.16, 0),
+        Ang = Angle(0, 0, 18),
+		LaserCorrectionAngle = Angle(-2.5, 0, -9),
+    },
     {
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"}
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
