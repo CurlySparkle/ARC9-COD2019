@@ -20,7 +20,13 @@ ATT.Category = "cod2019_grips_side"
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Folder = ARC9:GetPhrase("mw19_folder_side2")
 
-if statcon then
+if !warzonestats then -- Regular Stats
+	ATT.AimDownSightsTimeAdd = 0.019
+	ATT.VisualRecoilMult = 0.8
+	ATT.RecoilMult = 0.8
+	ATT.SpeedMult = 0.96
+	ATT.SpeedMultSights = 0.84
+else
 	ATT.AimDownSightsTimeAdd = 0.011
 	ATT.VisualRecoilMult = 0.91
 	ATT.RecoilMult = 0.91
@@ -28,12 +34,6 @@ if statcon then
 	ATT.SpeedMult = 0.98
 	ATT.SpeedMultSights = 0.85
 	ATT.RecoilRandomSideMult = 0.95
-else
-	ATT.AimDownSightsTimeAdd = 0.019
-	ATT.VisualRecoilMult = 0.8
-	ATT.RecoilMult = 0.8
-	ATT.SpeedMult = 0.96
-	ATT.SpeedMultSights = 0.84
 end
 
 ATT.LHIK_Priority = 10

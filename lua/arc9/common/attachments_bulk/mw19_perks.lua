@@ -247,11 +247,17 @@ ATT.Free = true
 ATT.Category = "cod2019_perks_ss"
 ATT.ActivateElements = {"perk_super_sprint"}
 
-ATT.SpeedSprint = 1.2
 ATT.CamQCA_MultSprint = 0.25
-ATT.SprintToFireTimeMult = 1.1
 
 ATT.SprintPos = Vector(0, 0, 0)
 ATT.SprintAng = Angle(0, 0, 0)
+
+if !warzonestats then -- Regular Stats
+	ATT.SpeedAddSprint = 1.33
+	ATT.SprintToFireTimeMult = 1.1
+else
+	ATT.SpeedAddSprint = 1.33
+	ATT.SprintToFireTimeAdd = 0.125
+end
 
 ARC9.LoadAttachment(ATT, "cod2019_perks_super_sprint")
