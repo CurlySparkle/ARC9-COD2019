@@ -137,7 +137,7 @@ SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.85
 
 SWEP.RecoilPerShot = 1
-SWEP.RecoilMax = 3
+SWEP.RecoilMax = 2.5
 
 -------------------------- VISUAL RECOIL
 
@@ -170,7 +170,7 @@ end
 
 SWEP.Spread = 0.03
 
-SWEP.SpreadAddRecoil = 0
+SWEP.SpreadAddRecoil = 0.01
 
 SWEP.SpreadAddHipFire = 0
 SWEP.SpreadAddMove = 0.035

@@ -105,6 +105,8 @@ SWEP.Firemodes = {
 		RPM = 700,
 		DamageMaxMult = 0.65,
 		DamageMinMult = 0.65,
+		RecoilPerShot = 1,
+		RecoilMax = 3,
     },
 }
 -------------------------- RECOIL
@@ -136,8 +138,8 @@ SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilMultSights = 0.85
 
-SWEP.RecoilPerShot = 1
-SWEP.RecoilMax = 3.5
+SWEP.RecoilPerShot = 2
+SWEP.RecoilMax = 4
 
 -------------------------- VISUAL RECOIL
 
