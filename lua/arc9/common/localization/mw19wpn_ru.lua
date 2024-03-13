@@ -31,28 +31,28 @@ L["settings.mw19"] = "Аддон - MW19" -- UO
 /////////// Caliber -- UO
 L["mw19_caliber"] = "Калибр3"
 
-L["mw19_caliber_556"] = "5,56 мм НАТО" -- Kilo 141, M4A1, FR 5.56, M13, RAM-7, Grau 5.56, SA87, Holger-26, Bruen Mk9, FiNN LMG
-L["mw19_caliber_762"] = "7,62 мм НАТО" -- FAL, FN Scar 17, M91, EBR-14
-L["mw19_caliber_762soviet"] = "7,62 мм СССР" -- AK-47, CR-56 AMAX, SKS
-L["mw19_caliber_762mmr"] = "7,62×54 мм R" -- PKM, Dragunov
-L["mw19_caliber_762mauser"] = "7,62 мм \"Маузер\"" -- MG34, Kar98k
-L["mw19_caliber_545"] = "5,45×39 мм" -- AN-94
-L["mw19_caliber_127x55"] = "12,7×55 мм" -- Oden
-L["mw19_caliber_127x108"] = "12,7×108 мм" -- HDR
-L["mw19_caliber_939"] = "9×39 мм" -- AS VAL
-L["mw19_caliber_919"] = "9 мм \"Парабеллум\"" -- AUG, MP5, Uzi, ISO, CX-9, M19, Renetti
-L["mw19_caliber_57x28"] = "5.7×28 мм" -- P90
-L["mw19_caliber_918"] = "9 мм \"Макаров\"" -- PP19 Bizon, Sykov
-L["mw19_caliber_46x30"] = "4.6×30 мм" -- MP7
-L["mw19_caliber_45acp"] = ".45 ACP" -- Striker 45, Fennec, X16, 1911
-L["mw19_caliber_12gauge"] = "12-й калибр" -- All Shotguns
-L["mw19_caliber_338"] = ".338 Норма Магнум" -- RAAL MG
-L["mw19_caliber_45-70"] = ".45-70 Government" -- MK2 Carbine
-L["mw19_caliber_bolt"] = "20-дюймовый болт" -- Crossbow
-L["mw19_caliber_300"] = ".300 Винчестер Магнум" -- SP-R 208
-L["mw19_caliber_50bmg"] = ".50 BMG" -- AX-50, Rytec AMR
-L["mw19_caliber_357"] = ".357 \"Магнум\"" -- .357
-L["mw19_caliber_50p"] = "Пистолетный патрон калибра 50" -- .50 GS
+L["mw19_caliber_556"] = "5,56 мм НАТО"
+L["mw19_caliber_762"] = "7,62 мм НАТО"
+L["mw19_caliber_762soviet"] = "7,62 мм СССР"
+L["mw19_caliber_762mmr"] = "7,62×54 мм R"
+L["mw19_caliber_762mauser"] = "7,62 мм \"Маузер\""
+L["mw19_caliber_545"] = "5,45×39 мм"
+L["mw19_caliber_127x55"] = "12,7×55 мм"
+L["mw19_caliber_127x108"] = "12,7×108 мм"
+L["mw19_caliber_939"] = "9×39 мм"
+L["mw19_caliber_919"] = "9 мм \"Парабеллум\""
+L["mw19_caliber_57x28"] = "5.7×28 мм"
+L["mw19_caliber_918"] = "9 мм \"Макаров\""
+L["mw19_caliber_46x30"] = "4.6×30 мм"
+L["mw19_caliber_45acp"] = ".45 ACP"
+L["mw19_caliber_12gauge"] = "12-й калибр"
+L["mw19_caliber_338"] = ".338 Норма Магнум"
+L["mw19_caliber_45-70"] = ".45-70 Government"
+L["mw19_caliber_bolt"] = "20-дюймовый болт"
+L["mw19_caliber_300"] = ".300 Винчестер Магнум"
+L["mw19_caliber_50bmg"] = ".50 BMG"
+L["mw19_caliber_357"] = ".357 \"Магнум\""
+L["mw19_caliber_50p"] = "Пистолетный патрон калибра 50"
 
 /////////// Country of Origin -- UO
 L["mw19_country"] = "Реальное название1"
@@ -76,33 +76,33 @@ L["mw19_country_japan"] = "Япония"
 /////////// Manufacturer
 -- L["mw19_manufacturer"] = "Manufacturer2" -- UO
 
--- L["mw19_manufacturer_singuard"] = "Singuard Arms" -- Kilo 141
+-- L["mw19_manufacturer_singuard"] = "Singuard Arms"
 
--- L["mw19_manufacturer_forgetac"] = "FORGE TAC Manufacturing" -- M4A1, FR 5.56, FN Scar 17, RAM-7, P90, Striker 45, Fennec, CX-9, R9-0, Holger-26, EBR-14, .50 GS
+-- L["mw19_manufacturer_forgetac"] = "FORGE TAC Manufacturing"
 
--- L["mw19_manufacturer_tempus"] = "Tempus Armament Inc." -- M13, 725, Bruen Mk9, FiNN LMG
+-- L["mw19_manufacturer_tempus"] = "Tempus Armament Inc."
 
--- L["mw19_manufacturer_verdansk"] = "Verdansk Arms Plant" -- AN-94, AS VAL, SKS
+-- L["mw19_manufacturer_verdansk"] = "Verdansk Arms Plant"
 
--- L["mw19_manufacturer_fss"] = "FSS" -- MP5, MP7, M91, MK2 Carbine
+-- L["mw19_manufacturer_fss"] = "FSS"
 
--- L["mw19_manufacturer_cronen"] = "Cronen Industries" -- Uzi
+-- L["mw19_manufacturer_cronen"] = "Cronen Industries"
 
--- L["mw19_manufacturer_zlr"] = "ZLR Special Inc." -- ISO, RAAL MG
+-- L["mw19_manufacturer_zlr"] = "ZLR Special Inc."
 
--- L["mw19_manufacturer_xrk"] = "XRK" -- Model 680, JAK-12, M19
+-- L["mw19_manufacturer_xrk"] = "XRK"
 
--- L["mw19_manufacturer_vlk"] = "VLK Inc." -- VLK Rogue
+-- L["mw19_manufacturer_vlk"] = "VLK Inc."
 
--- L["mw19_manufacturer_sloan"] = "Sloan Precision" -- SP-R 208
+-- L["mw19_manufacturer_sloan"] = "Sloan Precision"
 
--- L["mw19_manufacturer_cronen"] = "Cronen" -- AX-50
+-- L["mw19_manufacturer_cronen"] = "Cronen"
 
--- L["mw19_manufacturer_silverfield"] = "Silverfield Ordnance" -- Rytec AMR, Renetti
+-- L["mw19_manufacturer_silverfield"] = "Silverfield Ordnance"
 
--- L["mw19_manufacturer_corvus"] = "Corvus Defence" -- M19
+-- L["mw19_manufacturer_corvus"] = "Corvus Defence"
 
-L["mw19_manufacturer_stvol"] = "Ствол Тактический" -- PILA
+L["mw19_manufacturer_stvol"] = "Ствол Тактический"
 
 /////////// Weight -- UO
 L["mw19_weight"] = "Вес (с полным магазином)4"
@@ -364,24 +364,24 @@ L["cod2019_perks_burst_2.description"] = "Смена режима огня на 
 -- L["cod2019_model680_iron.description"] = "Removes the sight mount on the Model 680, making it sleeker." -- UO
 
 ////////////////////  Stocks
--- L["cod2019_stock_vlk.printname"] = "VLK Rogue Stock" -- UO
--- L["cod2019_stock_vlk.compactname"] = "Rogue" -- UO
--- L["cod2019_stock_vlk.description"] = "Stock designed for agility while aiming down sights." -- mw19stockdesc.light
+L["cod2019_stock_vlk.printname"] = "Приклад VLK ”Ренегат”" -- UO
+L["cod2019_stock_vlk.compactname"] = "Ренегат" -- UO
+L["cod2019_stock_vlk.description"] = "Этот приклад повышает ловкость в режиме прицеливания." -- mw19stockdesc.light
 
--- L["cod2019_stock_amax.printname"] = "CR-56 AMAX Stock" -- UO
--- L["cod2019_stock_amax.compactname"] = "AMAX" -- UO
--- L["cod2019_stock_amax.description"] = "Ultralight stock speeds up weapon handling and movement at the expense of aiming stability." -- mw19stockdesc.vlight
+L["cod2019_stock_amax.printname"] = "Приклад CR-56 AMAX" -- UO
+L["cod2019_stock_amax.compactname"] = "AMAX" -- UO
+L["cod2019_stock_amax.description"] = "Пластиковый приклад с алюминиевым каркасом, улучшающий подвижность бойца при прицеливании." -- mw19stockdesc.vlight
 
--- L["cod2019_stock_slima.printname"] = "RAAL MG Stock" -- UO
--- L["cod2019_stock_slima.compactname"] = "RAAL MG" -- UO
--- L["cod2019_stock_slima.description"] = "Tactical stock streamlined for close quarters combat. Gets you on target faster." -- mw19stockdesc.medium
+L["cod2019_stock_slima.printname"] = "Приклад Пулемет RAAL" -- UO
+L["cod2019_stock_slima.compactname"] = "Пул. RAAL" -- UO
+L["cod2019_stock_slima.description"] = "Тактический приклад, разработанный специально для ближнего боя. Позволяет быстрее наводить оружие на цель." -- mw19stockdesc.medium
 
--- L["cod2019_stock_m4.printname"] = "M4A1 Stock" -- UO
--- L["cod2019_stock_m4.compactname"] = "M4A1" -- UO
--- L["cod2019_stock_m4.description"] = "Heavy duty stock keeps your aim steady for precision shots." -- mw19stockdesc.heavy
+L["cod2019_stock_m4.printname"] = "Приклад M4A1" -- UO
+L["cod2019_stock_m4.compactname"] = "M4A1" -- UO
+L["cod2019_stock_m4.description"] = "Усиленный приклад, помогающий стабилизировать оружие для точной стрельбы." -- mw19stockdesc.heavy
 
--- L["cod2019_stock_origin12.printname"] = "Origin 12 Shotgun Stock" -- UO
--- L["cod2019_stock_origin12.compactname"] = "Origin 12" -- UO
+L["cod2019_stock_origin12.printname"] = "Приклад ”Ориджин” 12" -- UO
+L["cod2019_stock_origin12.compactname"] = "Ориджин" -- UO
 
 -- L["cod2019_m32_stock_retract.printname"] = "Shortened Stock" -- UO
 -- L["cod2019_m32_stock_retract.compactname"] = "Shortened" -- UO

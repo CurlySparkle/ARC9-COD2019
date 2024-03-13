@@ -31,28 +31,28 @@ xbowbolt = lineb .. "Changes ammo type to <color=255,255,100>Crossbow Bolts</col
 /////////// Caliber -- UO
 -- L["mw19_caliber"] = "Caliber3"
 
-L["mw19_caliber_556"] = "5,56 NATO" -- Kilo 141, M4A1, FR 5.56, M13, RAM-7, Grau 5.56, SA87, Holger-26, Bruen Mk9, FiNN LMG
-L["mw19_caliber_762"] = "7,62 NATO" -- FAL, FN Scar 17, M91, EBR-14
-L["mw19_caliber_762soviet"] = "7,62 russisch" -- AK-47, CR-56 AMAX, SKS
-L["mw19_caliber_762mmr"] = "7,62×54mmR" -- PKM, Dragunov
-L["mw19_caliber_762mauser"] = "7,62 Mauser" -- MG34, Kar98k
-L["mw19_caliber_545"] = "5,45×39mm" -- AN-94
-L["mw19_caliber_127x55"] = "12,7×55mm" -- Oden
-L["mw19_caliber_127x108"] = "12,7×108mm" -- HDR
-L["mw19_caliber_939"] = "9×39mm" -- AS VAL
-L["mw19_caliber_919"] = "9mm Parabellum" -- AUG, MP5, Uzi, ISO, CX-9, M19, Renetti
-L["mw19_caliber_57x28"] = "5,7×28mm" -- P90
-L["mw19_caliber_918"] = "9mm Makarov" -- PP19 Bizon, Sykov
-L["mw19_caliber_46x30"] = "4.6×30mm" -- MP7
-L["mw19_caliber_45acp"] = ".45 ACP" -- Striker 45, Fennec, X16, 1911
-L["mw19_caliber_12gauge"] = "Kaliber 12" -- All Shotguns
-L["mw19_caliber_338"] = ".338 Norma Mag" -- RAAL MG
-L["mw19_caliber_45-70"] = ".45-70 Regierung" -- MK2 Carbine
-L["mw19_caliber_bolt"] = "20.0\" Bolzen" -- Crossbow
-L["mw19_caliber_300"] = ".300 Win Mag" -- SP-R 208
-L["mw19_caliber_50bmg"] = ".50 BMG" -- AX-50, Rytec AMR
-L["mw19_caliber_357"] = ".357 Magnum" -- .357
-L["mw19_caliber_50p"] = ".50 Pistole" -- .50 GS
+L["mw19_caliber_556"] = "5,56 NATO"
+L["mw19_caliber_762"] = "7,62 NATO"
+L["mw19_caliber_762soviet"] = "7,62 russisch"
+L["mw19_caliber_762mmr"] = "7,62×54mmR"
+L["mw19_caliber_762mauser"] = "7,62 Mauser"
+L["mw19_caliber_545"] = "5,45×39mm"
+L["mw19_caliber_127x55"] = "12,7×55mm"
+L["mw19_caliber_127x108"] = "12,7×108mm"
+L["mw19_caliber_939"] = "9×39mm"
+L["mw19_caliber_919"] = "9mm Parabellum"
+L["mw19_caliber_57x28"] = "5,7×28mm"
+L["mw19_caliber_918"] = "9mm Makarov"
+L["mw19_caliber_46x30"] = "4.6×30mm"
+L["mw19_caliber_45acp"] = ".45 ACP"
+L["mw19_caliber_12gauge"] = "Kaliber 12"
+L["mw19_caliber_338"] = ".338 Norma Mag"
+L["mw19_caliber_45-70"] = ".45-70 Regierung"
+L["mw19_caliber_bolt"] = "20.0\" Bolzen"
+L["mw19_caliber_300"] = ".300 Win Mag"
+L["mw19_caliber_50bmg"] = ".50 BMG"
+L["mw19_caliber_357"] = ".357 Magnum"
+L["mw19_caliber_50p"] = ".50 Pistole"
 
 /////////// Country of Origin -- UO
 -- L["mw19_country"] = "Country of Origin1"
@@ -76,33 +76,33 @@ L["mw19_country_japan"] = "Japan"
 /////////// Manufacturer
 -- L["mw19_manufacturer"] = "Manufacturer2" -- UO
 
--- L["mw19_manufacturer_singuard"] = "Singuard Arms" -- Kilo 141
+-- L["mw19_manufacturer_singuard"] = "Singuard Arms"
 
--- L["mw19_manufacturer_forgetac"] = "FORGE TAC Manufacturing" -- M4A1, FR 5.56, FN Scar 17, RAM-7, P90, Striker 45, Fennec, CX-9, R9-0, Holger-26, EBR-14, .50 GS
+-- L["mw19_manufacturer_forgetac"] = "FORGE TAC Manufacturing"
 
--- L["mw19_manufacturer_tempus"] = "Tempus Armament Inc." -- M13, 725, Bruen Mk9, FiNN LMG
+-- L["mw19_manufacturer_tempus"] = "Tempus Armament Inc."
 
--- L["mw19_manufacturer_verdansk"] = "Verdansk Arms Plant" -- AN-94, AS VAL, SKS
+-- L["mw19_manufacturer_verdansk"] = "Verdansk Arms Plant"
 
--- L["mw19_manufacturer_fss"] = "FSS" -- MP5, MP7, M91, MK2 Carbine
+-- L["mw19_manufacturer_fss"] = "FSS"
 
--- L["mw19_manufacturer_cronen"] = "Cronen Industries" -- Uzi
+-- L["mw19_manufacturer_cronen"] = "Cronen Industries"
 
--- L["mw19_manufacturer_zlr"] = "ZLR Special Inc." -- ISO, RAAL MG
+-- L["mw19_manufacturer_zlr"] = "ZLR Special Inc."
 
--- L["mw19_manufacturer_xrk"] = "XRK" -- Model 680, JAK-12, M19
+-- L["mw19_manufacturer_xrk"] = "XRK"
 
--- L["mw19_manufacturer_vlk"] = "VLK Inc." -- VLK Rogue
+-- L["mw19_manufacturer_vlk"] = "VLK Inc."
 
--- L["mw19_manufacturer_sloan"] = "Sloan Precision" -- SP-R 208
+-- L["mw19_manufacturer_sloan"] = "Sloan Precision"
 
--- L["mw19_manufacturer_cronen"] = "Cronen" -- AX-50
+-- L["mw19_manufacturer_cronen"] = "Cronen"
 
--- L["mw19_manufacturer_silverfield"] = "Silverfield Ordnance" -- Rytec AMR, Renetti
+-- L["mw19_manufacturer_silverfield"] = "Silverfield Ordnance"
 
--- L["mw19_manufacturer_corvus"] = "Corvus Defence" -- M19
+-- L["mw19_manufacturer_corvus"] = "Corvus Defence"
 
--- L["mw19_manufacturer_stvol"] = "Stvol Tactical" -- PILA
+-- L["mw19_manufacturer_stvol"] = "Stvol Tactical"
 
 /////////// Weight -- UO
 -- L["mw19_weight"] = "Weight (Loaded)4"
