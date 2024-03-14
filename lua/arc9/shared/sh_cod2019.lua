@@ -1,4 +1,8 @@
-list.Set("ContentCategoryIcons", "ARC9 - MW2019", "vgui/mw_icon2.png")
+if (math.random(1, 100) == 1) then
+   list.Set( "ContentCategoryIcons", "ARC9 - MW2019", "vgui/bentley.png" )
+   else
+   list.Set( "ContentCategoryIcons", "ARC9 - MW2019", "vgui/mw_icon2.png" )
+end
 
 -- ARC9.COD2019 = {}
 
