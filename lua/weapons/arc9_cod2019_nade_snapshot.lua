@@ -60,7 +60,7 @@ SWEP.Crosshair = true
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
 SWEP.Sway = 0 -- How much the gun sways.
 
-SWEP.ShootEnt = "arc9_cod2019_thrownfrag"
+SWEP.ShootEnt = "arc9_cod2019_thrownsnapshot"
 SWEP.Ammo = "grenade"
 
 SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
@@ -69,9 +69,9 @@ SWEP.ThrowAnimSpeed = 1
 
 SWEP.FuseTimer = -1 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
 
-SWEP.ThrowForceMin = 550 -- Minimum force that the grenade will be thrown with.
+SWEP.ThrowForceMin = 700 -- Minimum force that the grenade will be thrown with.
 SWEP.ThrowForceMax = 1000 -- Maximum force that the grenade will be thrown with.
-SWEP.TossForce = 500 -- Force that the grenade will be thrown with when right clicked.
+SWEP.TossForce = 700 -- Force that the grenade will be thrown with when right clicked.
 
 SWEP.ThrowChargeTime = 1 -- How long it takes to charge the grenade to its maximum throw force.
 

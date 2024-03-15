@@ -1,4 +1,16 @@
 sound.Add( {
+    name = "COD2019.Snapshot.Explode",
+    channel = CHAN_AUTO,
+    volume = 1.0,
+    level = 140,
+    sound = {
+        "^weapons/cod2019/throwables/snapshot/iw9_snapshot_exp_01.ogg",
+        "^weapons/cod2019/throwables/snapshot/iw9_snapshot_exp_02.ogg",
+        "^weapons/cod2019/throwables/snapshot/iw9_snapshot_exp_03.ogg"
+    }
+} )
+
+sound.Add( {
     name = "COD2019.Molotov.Explode",
     channel = CHAN_STATIC,
     volume = 1.0,

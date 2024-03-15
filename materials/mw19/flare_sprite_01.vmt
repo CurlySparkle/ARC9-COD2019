@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	$basetexture "mw19/flare_sprite_01"
+	$vertexcolor 1
+	$vertexalpha 1
+	$additive 1
+	$translucent 1
+}

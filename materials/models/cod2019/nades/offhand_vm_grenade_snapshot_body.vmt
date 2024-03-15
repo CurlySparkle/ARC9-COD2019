@@ -14,6 +14,7 @@
     "$phongalbedotint" "1"
     "$phongalbedoboost" "10"                                //toy around with this
     "$phongfresnelranges" "[1 0.1 0]"
+    "$nodecal" "1"
        
     /////////////////
     "$normalmapalphaenvmapmask" "1"                         //do not touch this
