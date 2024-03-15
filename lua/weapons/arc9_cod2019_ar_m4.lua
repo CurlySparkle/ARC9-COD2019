@@ -1131,6 +1131,7 @@ SWEP.Attachments = {
         Pos = Vector(-3, 0, -0.05),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
+		MergeSlots = {19},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
@@ -1171,6 +1172,15 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+        DefaultAttName = "Standard Barrel",
+        Category = "cod2019_pistolgrip",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(1.25, 0, -3),
+    },
+    {
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst","cod2019_perks_ss"}
     },
@@ -1207,19 +1217,24 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = "charm",
+        Category = {{"charm", "killcounter"},
+		RejectAttachments = { ["arc9_stat_proscreen"] = true },
+		CosmeticOnly = true, "killcounter"},
+		RejectAttachments = { ["arc9_stat_proscreen"] = true },
+		CosmeticOnly = true,
         Bone = "tag_cosmetic",
-        Pos = Vector(0.5, -0.75, -0.5),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		Scale = 1,
     },
+	
     {
-        PrintName = ARC9:GetPhrase("mw19_category_stats"),
-        Category = {"killcounter","killcounter2"},
-        Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, -1),
-        Ang = Angle(0, 0, 0),
-		CosmeticOnly = true,
+        PrintName = "GL",
+        Category = {"cod2019_m203"},
+        Bone = "tag_attachments",
+        Pos = Vector(12.5, 0, -2.45),
+        Ang = Angle(0, 180, 0),
+		Hidden = true,
     },
 }
 

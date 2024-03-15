@@ -939,19 +939,13 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = "charm",
+        Category = {"charm", "killcounter"},
+		RejectAttachments = { ["arc9_stat_proscreen"] = true },
+		CosmeticOnly = true,
         Bone = "tag_cosmetic",
         Pos = Vector(0.5, 0, 0),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_stats"),
-        Category = {"killcounter","killcounter2"},
-        Bone = "tag_attachments",
-        Pos = Vector(3.7, -0.75, -0.7),
-        Ang = Angle(0, 0, 0),
-		CosmeticOnly = true,
     },
 }
 

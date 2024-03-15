@@ -719,12 +719,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 1.5,
+		Mult = 3,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 1.5,
+		Mult = 3,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -734,7 +734,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.3,
+		Mult = 2.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 1, rhik = 1 },
@@ -743,7 +743,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.3,
+		Mult = 2.25,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -1058,6 +1058,7 @@ SWEP.Attachments = {
         Bone = "tag_laser_attach",
         Pos = Vector(1.6, 0, 0),
         Ang = Angle(0, 0, 180),
+		Icon_Offset = Vector(-1, 1.5, 1.3),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
@@ -1086,6 +1087,7 @@ SWEP.Attachments = {
 		Category = {"cod2019_ammo"},
 		Pos = Vector(-1.5, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-6.5, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
@@ -1094,6 +1096,7 @@ SWEP.Attachments = {
         Category = {"cod2019_an94_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-6.5, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
@@ -1132,19 +1135,13 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = "charm",
+        Category = {"charm", "killcounter"},
+		RejectAttachments = { ["arc9_stat_proscreen"] = true },
+		CosmeticOnly = true,
         Bone = "tag_cosmetic",
         Pos = Vector(0.5, 0, 0),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_stats"),
-        Category = {"killcounter","killcounter2"},
-        Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, -1),
-        Ang = Angle(0, 0, 0),
-		CosmeticOnly = true,
     },
 }
 
@@ -1156,5 +1153,34 @@ SWEP.CodStubbyTallGripPoseParam = 24
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+
+SWEP.DamageMax = 31 -- Damage done at point blank range
+SWEP.DamageMin = 25 -- Damage done at maximum range
+
+SWEP.RangeMin = 21 / ARC9.HUToM
+SWEP.RangeMax = 44 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.475,
+    [HITGROUP_CHEST] = 1.1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 0.95,
+    [HITGROUP_RIGHTARM] = 0.95,
+    [HITGROUP_LEFTLEG] = 0.95,
+    [HITGROUP_RIGHTLEG] = 0.95,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 850 / ARC9.HUToM
+
+-------------------------- FIREMODES
+
+SWEP.RPM = 560
+
+-------------------------- HANDLING
+
+SWEP.AimDownSightsTime = 0.26 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.
 
 end

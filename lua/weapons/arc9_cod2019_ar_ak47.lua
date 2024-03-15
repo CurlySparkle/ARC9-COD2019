@@ -240,8 +240,8 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(15, 30, 3)
-SWEP.CustomizeRotateAnchor = Vector(15, -2.25, -4)
+SWEP.CustomizePos = Vector(14, 35, 3)
+SWEP.CustomizeRotateAnchor = Vector(13.5, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
@@ -390,7 +390,7 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.1, lhik = 0, rhik = 0},
             { t = 0.75, lhik = 0, rhik = 0},
-            { t = 0.8, lhik = 1, rhik = 1},
+            { t = 0.825, lhik = 1, rhik = 1},
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_reload_grab.ogg", t = 0.033},
@@ -701,7 +701,7 @@ SWEP.Animations = {
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 5,
+		Mult = 4.5,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -711,7 +711,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 3.75,
+		Mult = 3.25,
         IKTimeLine = {
             {t = 0, lhik = 1, rhik = 1},
             {t = 0.35, lhik = 1,rhik = 1},
@@ -720,7 +720,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 4.25,
+		Mult = 3.5,
         IKTimeLine = {
             {t = 0, lhik = 0, rhik = 1},
             {t = 0.35, lhik = 0,rhik = 1},
@@ -1066,7 +1066,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		DefaultIcon = Material("arc9/def_att_icons/mag_ar.png", "mips smooth"),
 		Bone = "tag_mag_attach",
-        Category = {"cod2019_mag","cod2019_akilo47_mag"},
+        Category = {"cod2019_mag","cod2019_ak47_mag"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
@@ -1082,7 +1082,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Standard Barrel",
-        Category = "cod2019_ak47_pistlgrip",
+        Category = "cod2019_pistolgrip",
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -1125,19 +1125,13 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = "charm",
+        Category = {"charm", "killcounter"},
+		RejectAttachments = { ["arc9_stat_proscreen"] = true },
+		CosmeticOnly = true,
         Bone = "tag_cosmetic",
         Pos = Vector(0.5, 0, 0),
         Ang = Angle(0, 0, 0),
 		Scale = 1.2,
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_stats"),
-        Category = {"killcounter","killcounter2"},
-        Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, -1),
-        Ang = Angle(0, 0, 0),
-		CosmeticOnly = true,
     },
 }
 
@@ -1179,5 +1173,7 @@ SWEP.RPM = 545
 
 SWEP.AimDownSightsTime = 0.27 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.
+
+-- if GetConVar("arc9_mw19_stats_warzone"):GetBool() then\n\n-------------------------- DAMAGE PROFILE\nSWEP.DamageMax = 31 -- Damage done at point blank range\nSWEP.DamageMin = 25 -- Damage done at maximum range\n\nSWEP.RangeMin = 21 / ARC9.HUToM\nSWEP.RangeMax = 44 / ARC9.HUToM\n\nSWEP.BodyDamageMults = {\n	[HITGROUP_HEAD] = 1.475,\n	[HITGROUP_CHEST] = 1.1,\n	[HITGROUP_STOMACH] = 1,\n	[HITGROUP_LEFTARM] = 0.95,\n	[HITGROUP_RIGHTARM] = 0.95,\n	[HITGROUP_LEFTLEG] = 0.95,\n	[HITGROUP_RIGHTLEG] = 0.95,\n}\n\n-------------------------- PHYS BULLET BALLISTICS\n\nSWEP.PhysBulletMuzzleVelocity = 850 / ARC9.HUToM\n\n-------------------------- FIREMODES\n\nSWEP.RPM = 545\n\n-------------------------- HANDLING\n\nSWEP.AimDownSightsTime = 0.27 -- How long it takes to go from hip fire to aiming down sights.\nSWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.\n\nend
 
 end

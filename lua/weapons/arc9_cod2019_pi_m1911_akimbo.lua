@@ -499,7 +499,9 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = "charm",
+        Category = {"charm", "killcounter"},
+		RejectAttachments = { ["arc9_stat_proscreen"] = true },
+		CosmeticOnly = true,
         Bone = "tag_cosmetic_l",
         Pos = Vector(0.5, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -507,19 +509,6 @@ SWEP.Attachments = {
         DuplicateModels = {
             {
                 Bone = "tag_cosmetic",
-            }
-        },
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_stats"),
-        Category = "killcounter",
-        Bone = "tag_barrel_attach_l",
-        Pos = Vector(2.5, -0.55, -1),
-        Ang = Angle(0, 0, 0),
-		CosmeticOnly = true,
-        DuplicateModels = {
-            {
-                Bone = "tag_barrel_attach",
             }
         },
     },

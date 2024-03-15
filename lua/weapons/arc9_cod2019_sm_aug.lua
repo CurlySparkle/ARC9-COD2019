@@ -128,6 +128,9 @@ SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.75
 
+SWEP.RecoilPerShot = 1
+SWEP.RecoilMax = 2.5
+
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
@@ -156,20 +159,19 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.03
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 2
-SWEP.RecoilModifierCapMove = 0.5
-SWEP.RecoilModifierCapSights = 0
 
-SWEP.SpreadMultMove = 2
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.04
-SWEP.SpreadAddCrouch = -0.03
-SWEP.SpreadAddSights = -0.5
+SWEP.SpreadAddHipFire = SWEP.Spread * 0
+SWEP.SpreadAddMove = SWEP.Spread * 0.2
+SWEP.SpreadAddMidAir = SWEP.Spread * 0.5
+SWEP.SpreadAddCrouch = -SWEP.Spread * 0.1
+SWEP.SpreadAddSights = -SWEP.Spread * 2.75
 
+SWEP.SpreadMultRecoil = 1.1
+SWEP.RecoilModifierCap = SWEP.RecoilMax
+SWEP.RecoilModifierCapMove = 0
 
 -------------------------- HANDLING
 
@@ -1025,19 +1027,13 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = "charm",
+        Category = {"charm", "killcounter"},
+		RejectAttachments = { ["arc9_stat_proscreen"] = true },
+		CosmeticOnly = true,
         Bone = "tag_cosmetic",
         Pos = Vector(-2.5, 0, 0),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_stats"),
-        Category = {"killcounter","killcounter2"},
-        Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-		CosmeticOnly = true,
     },
 }
 
@@ -1049,5 +1045,29 @@ SWEP.CodStubbyTallGripPoseParam = 26
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 34
+SWEP.DamageMin = 26
+
+SWEP.RangeMin = 13 / ARC9.HUToM
+SWEP.RangeMax = 14 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.45,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 0.875,
+    [HITGROUP_RIGHTARM] = 0.875,
+    [HITGROUP_LEFTLEG] = 0.875,
+    [HITGROUP_RIGHTLEG] = 0.875,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 700 / ARC9.HUToM
+
+-------------------------- FIREMODES
+
+SWEP.RPM = 741
 
 end

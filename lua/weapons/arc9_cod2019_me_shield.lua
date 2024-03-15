@@ -242,12 +242,4 @@ SWEP.Attachments = {
         Category = {"universal_camo"},
         CosmeticOnly = true,
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_stats"),
-        Category = "killcounter",
-        Bone = "j_riotshield_offset",
-        Pos = Vector(4, -1.3, 4.2),
-        Ang = Angle(0, 90, 0),
-		CosmeticOnly = true,
-    },
 }

@@ -592,12 +592,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 3,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 2,
+		Mult = 3.5,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -607,7 +607,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.3,
+		Mult = 2.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 1, rhik = 1 },
@@ -616,7 +616,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.3,
+		Mult = 2,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -977,19 +977,13 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = "charm",
+        Category = {"charm", "killcounter"},
+		RejectAttachments = { ["arc9_stat_proscreen"] = true },
+		CosmeticOnly = true,
         Bone = "tag_cosmetic",
         Pos = Vector(0.5, 0, 0),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_stats"),
-        Category = {"killcounter","killcounter2"},
-        Bone = "tag_cosmetic",
-        Pos = Vector(-3.5, -0.1, 0.3),
-        Ang = Angle(0, 0, 0),
-		CosmeticOnly = true,
     },
 }
 
@@ -1001,5 +995,35 @@ SWEP.CodAngledGripPoseParam = 39
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 27 -- Damage done at point blank range
+SWEP.DamageMin = 23 -- Damage done at maximum range
+
+SWEP.RangeMin = 31 / ARC9.HUToM
+SWEP.RangeMax = 32 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.55,
+    [HITGROUP_CHEST] = 1.225,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 380 / ARC9.HUToM
+
+-------------------------- FIREMODES
+
+SWEP.RPM = 896
+
+-------------------------- HANDLING
+
+SWEP.AimDownSightsTime = 0.23 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.
 
 end
