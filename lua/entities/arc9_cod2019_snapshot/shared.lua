@@ -299,7 +299,7 @@ if CLIENT then
 			if istable(_ents) then
 				for k, v in pairs(_ents) do
 					if IsValid(v) then
-						ARC9_HaloManager:Add(v, 3)
+						ARC9_HaloManager:Add(v, 5)
 					end
 				end
 			end
