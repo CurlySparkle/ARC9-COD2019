@@ -81,13 +81,21 @@ function ENT:Think()
 			bul.Src = self:GetPos()
 			self.Owner:FireBullets(bul,true)
 			local fsound = Sound("COD2019.AK47.Fire")
+			local fdistance = Sound("")
+			local flayer = Sound("")
 			if self.Owner.GetActiveWeapon then
 				local wep = self.Owner:GetActiveWeapon()
 				if IsValid(wep) and wep.ShootSound then
 					fsound = wep.ShootSound
+				elseif wep.LayerSound then
+					fsound = wep.LayerSound
+				elseif wep.DistantShootSound then
+					fsound = wep.DistantShootSound
 				end
 			end
 			self:EmitSound(fsound)
+			self:EmitSound(fdistance)
+			self:EmitSound(flayer)
 			local shot = ents.Create( "info_particle_system" )
 			shot:SetKeyValue( "effect_name", "weapon_decoy_ground_effect_shot" )
 			shot:SetOwner( self )
@@ -118,7 +126,23 @@ function ENT:Explode()
 	ParticleEffect("explosion_grenade", self:GetPos(), Angle(0, 0, 0), nil)
 end
 
-function ENT:OnTakeDamage( dmginfo )
+-- function ENT:OnTakeDamage( dmginfo )
+-- end
+
+function ENT:OnTakeDamage(dmg)
+   self:SetHealth(self:Health() - dmg:GetDamage())
+   if self:Health() > 0 then
+   -- Hello
+   else
+      self:Remove()
+	  self:EmitSound("weapons/rpg/shotdown.wav", 80)
+	  local fx = EffectData()
+	  fx:SetOrigin(self:GetPos())
+	  fx:SetNormal(self:GetUp())
+	  util.Effect("ManhackSparks", fx)
+	  util.Decal("Dark", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
+   end
+   return dmg:GetDamage()
 end
 
 function ENT:Use( activator, caller, type, value )

@@ -23,7 +23,7 @@ function ENT:Draw(flags)
 end 
 
 function ENT:OnRemove()
-    ParticleEffect("explosion_m79", self:GetPos(), Angle(0, 0, 0), nil)
+    ParticleEffect("explosion_grenade", self:GetPos(), Angle(0, 0, 0), nil)
     self:EmitSound("Cod2019.Frag.Explode")
 
 	local dlight = DynamicLight(self:EntIndex())
@@ -34,7 +34,7 @@ function ENT:OnRemove()
 		dlight.b = 0
 		dlight.brightness = 5
 		dlight.Decay = 500
-		dlight.Size = 512
+		dlight.Size = 256
 		dlight.DieTime = CurTime() + 6
 	end
 

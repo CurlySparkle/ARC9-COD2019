@@ -747,7 +747,7 @@ end
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
-SWEP.DefaultBodygroups = "00000000000000"
+SWEP.DefaultBodygroups = "0000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -755,42 +755,6 @@ SWEP.AttachmentTableOverrides = {
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
     },
-    -- ["cod2019_laser_01_cylinde_alt"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-1, 17, -1),
-        -- Ang = Angle(0, 0, 45),
-        -- ViewModelFOV = 54,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["cod2019_laser_02_cylinde_alt"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-1, 17, -1),
-        -- Ang = Angle(0, 0, 45),
-        -- ViewModelFOV = 54,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["cod2019_laser_03_cylinde_alt"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-1, 17, -1),
-        -- Ang = Angle(0, 0, 45),
-        -- ViewModelFOV = 54,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
 }
 
 SWEP.AttachmentElements = {
@@ -807,6 +771,7 @@ SWEP.AttachmentElements = {
     ["stock_none"] = {
         Bodygroups = {
             {3,1},
+            {5,1},
         },
     },
     ["stock_adapter_none"] = {
@@ -822,6 +787,7 @@ SWEP.AttachmentElements = {
     ["barrel_none"] = {
         Bodygroups = {
             {2,1},
+            {6,1},
         },
     },
     ["mag_none"] = {

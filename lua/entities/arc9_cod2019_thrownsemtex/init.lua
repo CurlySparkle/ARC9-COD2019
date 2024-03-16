@@ -52,7 +52,6 @@ function ENT:Think()
     if self.isPinned then
         self:SetLifeTime(self:GetLifeTime() - FrameTime()) 
     elseif CurTime() >= self.nextBeep then 
-        print("yeah")
         BroadcastLua("Entity("..self:EntIndex().."):Beep()")
         self.nextBeep = CurTime() + 0.35
     end 

@@ -990,6 +990,15 @@ SWEP.AttachmentTableOverrides = {
     Icon = Material("entities/attachs/cod2019_stock_tube_padded.png", "mips smooth"),
     Model = "models/weapons/cod2019/attachs/stocks/attachment_vm_ar_mike4_stockno.mdl",
     },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_pistolgrip_tape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -1175,10 +1184,10 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Standard Barrel",
         Category = "cod2019_pistolgrip",
-        Bone = "tag_attachments",
+        Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(1.25, 0, -3),
+		Icon_Offset = Vector(0, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
