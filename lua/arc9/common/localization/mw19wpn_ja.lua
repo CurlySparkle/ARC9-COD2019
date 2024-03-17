@@ -48,7 +48,7 @@ L["mw19_caliber_45acp"] = ".45 ACP"
 L["mw19_caliber_12gauge"] = "12 Gauge"
 L["mw19_caliber_338"] = ".338ノルママグナム"
 L["mw19_caliber_45-70"] = ".45-70 Government"
-L["mw19_caliber_bolt"] = "20.0\" ホルト"
+L["mw19_caliber_bolt"] = "20.0\" ボルト"
 L["mw19_caliber_300"] = ".300 ウィンチェスター マグナム"
 L["mw19_caliber_50bmg"] = ".50 BMG"
 L["mw19_caliber_357"] = ".357 Magnum"
@@ -127,8 +127,8 @@ L["mw19_country_japan"] = "日本"
 /////////// Weapon Categories
 L["mw19_category_weapon_ar"] = "アサルトライフル"
 L["mw19_category_weapon_smg"] = "サブマシンガン"
-L["mw19_category_weapon_shotgun"] = "ショットカン"
-L["mw19_category_weapon_lmg"] = "ライトマシンカン"
+L["mw19_category_weapon_shotgun"] = "ショットガン"
+L["mw19_category_weapon_lmg"] = "ライトマシンガン"
 L["mw19_category_weapon_marksman"] = "マークスマンライフル"
 L["mw19_category_weapon_sniper"] = "スナイパーライフル"
 L["mw19_category_weapon_melee"] = "近接武器"
@@ -141,8 +141,8 @@ L["mw19_category_weapon_launcher"] = "ランチャー"
 /////////// Weapon Classes
 L["mw19_class_weapon_ar"] = "アサルトライフル"
 L["mw19_class_weapon_smg"] = "サブマシンガン"
-L["mw19_class_weapon_shotgun"] = "ショットカン"
-L["mw19_class_weapon_lmg"] = "ライトマシンカン"
+L["mw19_class_weapon_shotgun"] = "ショットガン"
+L["mw19_class_weapon_lmg"] = "ライトマシンガン"
 L["mw19_class_weapon_marksman"] = "マークスマンライフル"
 L["mw19_class_weapon_sniper"] = "スナイパーライフル"
 L["mw19_class_weapon_melee"] = "近接武器"
@@ -173,7 +173,7 @@ L["mw19_category_reargrip"] = "リアグリップ"
 L["mw19_category_perk"] = "PERK"
 
 -- Specific to Handguns
-L["mw19_category_triggeraction"] = "トリカーアクション"
+L["mw19_category_triggeraction"] = "トリガーアクション"
 
 -- Specific to the R9-0 Shotgun
 L["mw19_category_pumps"] = "ポンプ"
@@ -306,7 +306,17 @@ L["mw19_optic_stat_zoom2"] = "ズーム倍率" -- Most scopes
 -- L["cod2019_attach_laser_rail.compactname"] = "Laser Att." -- UO
 -- L["cod2019_attach_laser_rail.description"] = "Allows the installation of laser sights onto your weapon." -- UO
 
--- L["cod2019_attach_laser_rail_2.description"] = "Allows the installation of small, cylindrical laser sights onto your weapon." -- UO
+L["cod2019_attach_laser_rail_2.printname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.printname")
+L["cod2019_attach_laser_rail_2.compactname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.compactname")
+L["cod2019_attach_laser_rail_2.description"] = "Allows the installation of small, cylindrical laser sights onto your weapon." -- UO
+
+L["cod2019_attach_laser_cylinder.printname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.printname")
+L["cod2019_attach_laser_cylinder.compactname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.compactname")
+L["cod2019_attach_laser_cylinder.description"] = ARC9:GetPhrase("cod2019_attach_laser_rail.description")
+
+L["cod2019_attach_laser_cylinder_2.printname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.printname")
+L["cod2019_attach_laser_cylinder_2.compactname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.compactname")
+L["cod2019_attach_laser_cylinder_2.description"] = ARC9:GetPhrase("cod2019_attach_laser_rail_2.description")
 
 ////////////////////  Grips
 -- L["cod2019_attach_grip_foregrip_side.printname"] = "ARC Foregrip" -- UO
@@ -317,16 +327,26 @@ L["mw19_optic_stat_zoom2"] = "ズーム倍率" -- Most scopes
 -- L["cod2019_grips_none.compactname"] = "Alt. Hold" -- UO
 -- L["cod2019_grips_none.description"] = "Alternative holding style." -- UO
 
--- L["cod2019_grips_alt_cclamp.printname"] = "C-Clamp Holding" -- UO
--- L["cod2019_grips_alt_cclamp.compactname"] = "C-Clamp" -- UO
+L["cod2019_grips_alt_cclamp.printname"] = "C-Clamp Holding" -- UO
+L["cod2019_grips_alt_cclamp.compactname"] = "C-Clamp" -- UO
+L["cod2019_grips_alt_cclamp.description"] = ARC9:GetPhrase("cod2019_grips_none.description")
 
--- L["cod2019_grips_alt_nocclamp.printname"] = "No C-Clamp Holding" -- UO
--- L["cod2019_grips_alt_nocclamp.compactname"] = "No C-C" -- UO
+L["cod2019_grips_alt_nocclamp.printname"] = "No C-Clamp Holding" -- UO
+L["cod2019_grips_alt_nocclamp.compactname"] = "No C-C" -- UO
+L["cod2019_grips_alt_nocclamp.description"] = ARC9:GetPhrase("cod2019_grips_none.description")
+
+L["cod2019_striker45_noclamp.printname"] = ARC9:GetPhrase("cod2019_grips_alt_nocclamp.printname")
+L["cod2019_striker45_noclamp.compactname"] = ARC9:GetPhrase("cod2019_grips_alt_nocclamp.compactname")
+L["cod2019_striker45_noclamp.description"] = ARC9:GetPhrase("cod2019_grips_none.description")
 
 ////////////////////  Perks
 L["cod2019_perks_soh.printname"] = "スライハンド"
 L["cod2019_perks_soh.compactname"] = "スライハンド"
 L["cod2019_perks_soh.description"] = "切迫した状況でのリロード速度を上げる"
+
+L["cod2019_perks_soh_alt.printname"] = ARC9:GetPhrase("cod2019_perks_soh.printname")
+L["cod2019_perks_soh_alt.compactname"] = ARC9:GetPhrase("cod2019_perks_soh.compactname")
+L["cod2019_perks_soh_alt.description"] = ARC9:GetPhrase("cod2019_perks_soh.description")
 
 L["cod2019_perks_speedmelee.printname"] = "高速近接"
 L["cod2019_perks_speedmelee.compactname"] = "高速近接"
@@ -344,6 +364,10 @@ L["cod2019_perks_heavyhitter.description"] = "近接攻撃によって敵をス�
 -- L["cod2019_perks_bolt.compactname"] = "Deft" -- UO
 -- L["cod2019_perks_bolt.description"] = "Training with your weapon allows you to cycle the weapon faster." -- UO
 
+L["cod2019_perks_bolt_alt.printname"] = ARC9:GetPhrase("cod2019_perks_bolt.printname")
+L["cod2019_perks_bolt_alt.compactname"] = ARC9:GetPhrase("cod2019_perks_bolt.compactname")
+L["cod2019_perks_bolt_alt.description"] = ARC9:GetPhrase("cod2019_perks_bolt.description")
+
 -- L["cod2019_perks_slamfire.printname"] = "Slamfire" -- UO
 -- L["cod2019_perks_slamfire.compactname"] = "Slamfire" -- UO
 -- L["cod2019_perks_slamfire.description"] = "Bruteforce the weapon to fire and cycle the weapon much quicker at the cost of reduced accuracy." -- UO
@@ -352,6 +376,8 @@ L["cod2019_perks_burst.printname"] = "バースト"
 L["cod2019_perks_burst.compactname"] = "バースト"
 L["cod2019_perks_burst.description"] = "<color=100,255,100>3点</color>バーストに切替"
 
+L["cod2019_perks_burst_2.printname"] = ARC9:GetPhrase("cod2019_perks_burst.printname")
+L["cod2019_perks_burst_2.compactname"] = ARC9:GetPhrase("cod2019_perks_burst.compactname")
 L["cod2019_perks_burst_2.description"] = "<color=100,255,100>2点</color>バーストに切替"
 
 -- L["cod2019_perks_super_sprint.printname"] = "Tactical Sprint" -- UO
@@ -382,6 +408,7 @@ L["cod2019_perks_burst_2.description"] = "<color=100,255,100>2点</color>バー�
 
 -- L["cod2019_stock_origin12.printname"] = "Origin 12 Shotgun Stock" -- UO
 -- L["cod2019_stock_origin12.compactname"] = "Origin 12" -- UO
+L["cod2019_stock_origin12.description"] = ARC9:GetPhrase("cod2019_stock_vlk.description")
 
 -- L["cod2019_m32_stock_retract.printname"] = "Shortened Stock" -- UO
 -- L["cod2019_m32_stock_retract.compactname"] = "Shortened" -- UO
@@ -405,22 +432,50 @@ L["cod2019_perks_burst_2.description"] = "<color=100,255,100>2点</color>バー�
 -- L["cod2019_eft_grips.compactname"] = "EFT" -- UO
 -- L["cod2019_eft_grips.description"] = "Allows installation of foregrips from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
--- L["cod2019_eft_muzzle.description"] = "Allows installation of muzzle attachments from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
+L["cod2019_eft_muzzle.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
+L["cod2019_eft_muzzle.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
+L["cod2019_eft_muzzle.description"] = "Allows installation of muzzle attachments from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
--- L["cod2019_eft_scopes.description"] = "Allows installation of optics from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
+L["cod2019_eft_scopes.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
+L["cod2019_eft_scopes.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
+L["cod2019_eft_scopes.description"] = "Allows installation of optics from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
--- L["cod2019_eft_stocks.description"] = "Allows installation of stocks from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
+L["cod2019_eft_scopes_pistol.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
+L["cod2019_eft_scopes_pistol.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
+L["cod2019_eft_scopes_pistol.description"] = ARC9:GetPhrase("cod2019_eft_scopes.description")
+
+L["cod2019_eft_stocks.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
+L["cod2019_eft_stocks.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
+L["cod2019_eft_stocks.description"] = "Allows installation of stocks from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
 ////////////////////  GSR (Gunsmith Reloaded) Support
--- L["cod2019_attach_support_gsr_laser_pstl.printname"] = "Gunsmith Reloaded Support" -- UO
--- L["cod2019_attach_support_gsr_laser_pstl.compactname"] = "GSR" -- UO
--- L["cod2019_attach_support_gsr_laser_pstl.description"] = "Allows installation of laser attachments from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
+L["cod2019_attach_support_gsr_laser_pstl.printname"] = "Gunsmith Reloaded Support" -- UO
+L["cod2019_attach_support_gsr_laser_pstl.compactname"] = "GSR" -- UO
+L["cod2019_attach_support_gsr_laser_pstl.description"] = "Allows installation of laser attachments from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
 
--- L["cod2019_attach_support_gsr_optics.description"] = "Allows installation of optics from the <color=255,255,100>Gunsmith Reloaded</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
+L["cod2019_attach_support_gsr_optics.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
+L["cod2019_attach_support_gsr_optics.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
+L["cod2019_attach_support_gsr_optics.description"] = "Allows installation of optics from the <color=255,255,100>Gunsmith Reloaded</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
 
--- L["cod2019_attach_support_gsr_muzzles.description"] = "Allows installation of muzzle attachments from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
+L["cod2019_attach_support_gsr_optics_pistols.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
+L["cod2019_attach_support_gsr_optics_pistols.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
+L["cod2019_attach_support_gsr_optics_pistols.description"] = ARC9:GetPhrase("cod2019_attach_support_gsr_optics.description")
 
--- L["cod2019_attach_support_gsr_grips.description"] = "Allows installation of foregrips from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
+L["cod2019_attach_support_gsr_muzzles.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
+L["cod2019_attach_support_gsr_muzzles.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
+L["cod2019_attach_support_gsr_muzzles.description"] = "Allows installation of muzzle attachments from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
+
+L["cod2019_attach_support_gsr_muzzles_pistols.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
+L["cod2019_attach_support_gsr_muzzles_pistols.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
+L["cod2019_attach_support_gsr_muzzles_pistols.description"] = ARC9:GetPhrase("cod2019_attach_support_gsr_muzzles.description")
+
+L["cod2019_attach_support_gsr_muzzles_alt.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
+L["cod2019_attach_support_gsr_muzzles_alt.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
+L["cod2019_attach_support_gsr_muzzles_alt.description"] = ARC9:GetPhrase("cod2019_attach_support_gsr_muzzles.description")
+
+L["cod2019_attach_support_gsr_grips.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
+L["cod2019_attach_support_gsr_grips.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
+L["cod2019_attach_support_gsr_grips.description"] = "Allows installation of foregrips from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
 
 ////////////////////  Custom Crossbow Ammo
 -- L["cod2019_ammo_crossbow_rock.printname"] = "FTAC Boulder 30g Rock" -- UO
@@ -456,6 +511,8 @@ L["cod2019_perks_burst_2.description"] = "<color=100,255,100>2点</color>バー�
 -- L["cod2019_pila_ammo_guided.compactname"] = "Guided" -- UO
 -- L["cod2019_pila_ammo_guided.description"] = "Replaces the unguided rockets with <color=100,255,100>guided</color> high-explosive rockets." -- UO
 
+L["cod2019_jokr_ammo_guided.printname"] = ARC9:GetPhrase("cod2019_pila_ammo_guided.printname")
+L["cod2019_jokr_ammo_guided.compactname"] = ARC9:GetPhrase("cod2019_pila_ammo_guided.compactname")
 -- L["cod2019_jokr_ammo_guided.description"] = "Replaces the lock-on rockets with <color=100,255,100>guided</color> high-explosive rockets. <color=255,100,100>Removes the lock-on feature</color>." -- UO
 
 //////////////////////////////////////////////////////////////////////
@@ -562,96 +619,96 @@ L["mw19_weapon_nade_gas"] = "ガス"
 
 //////////// Weapon Descriptions
 L["mw19_weapon_kilo141_desc"] = "人間工学に基づいて設計された全自動アサルトライフル。優れたハンドリングと連射速度で安定して標的を狙える"
-L["mw19_weapon_fal_desc"] = "セミオートのアサルトライフル。連射速度が速く、狙いを外した後もすぐに追い撃ち可能"
-L["mw19_weapon_m4a1_desc"] = "フルオートの多目的アサルトライフル。射撃を制御し、長距離て絶大な力を発揮"
-L["mw19_weapon_fr556_desc"] = "ブルパップ方式の 3 点バーストライフル。中距離戦で非常に高い威力を発"
-L["mw19_weapon_oden_desc"] = "ブルパップ方式の全自動ライフル。連射速度は遅いが威力の強い 12.7X55mm 弾を使用"
+L["mw19_weapon_fal_desc"] = "セミオートの戦闘用ライフル。連射速度が速く、狙いを外した後もすぐに追い撃ち可能"
+L["mw19_weapon_m4a1_desc"] = "フルオートの多目的戦闘用ライフル。射撃を制御し、長距離で絶大な力を発揮する"
+L["mw19_weapon_fr556_desc"] = "ブルパップ方式の3点バーストライフル。中距離戦で非常に高い威力を発揮"
+L["mw19_weapon_oden_desc"] = "ブルパップ方式の全自動ライフル。連射速度は遅いが威力の高い12.7x55mm弾を使用"
 L["mw19_weapon_m13_desc"] = "ショートストロークピストン式の全自動アサルトライフル。高い連射速度と低い反動を両立"
 L["mw19_weapon_scar_desc"] = "大口径の全自動ライフル。長距離でも高威力を発揮"
-L["mw19_weapon_ak47_desc"] = "7.62mm 口径のソ連製自動アサルトライフル。大口径の弾薬は反動を制御するスキルが求められる"
-L["mw19_weapon_ram7_desc"] = "フルオートのブルパップ式。コンバクトなデサインにより近距離戦に適じ、"
-L["mw19_weapon_grau_desc"] = "射程距離が非常に長く、軽量て小回りの利くモジュール式 5.56mm 武器。精密工学とワ-ルドクラスのアフター マーケット製バレルがこの武器の威力を最大限に引き出す"
-L["mw19_weapon_cr56_desc"] = "コンバクトながら威力を備えた軽量の 7.62X39mm フルオート。軍用に製造された標準的なライフル。中距離戦で威力を発揮し、様 々 な戦術を展開可能"
-L["mw19_weapon_an94_desc"] = "ユニークな射撃機能を備えた最先端の 5.45X39mm ロシア製アサルトライフル。トリガーを引いて強い反動を感しる前に即座に 2 連バースト射撃を実行。弾を集束化させてダメージを増加させるこの仕組みは傾斜マカジンにより実現。またレシプロ式レシ ーバ-により反動を制御"
-L["mw19_weapon_asval_desc"] = "9x39mm<color=255,255,100>サブソニック弾</color>を装弾する完全<color=255,255,100>消日</color>のこの銃は、ステルス性、命中率、貫通力にフォーカスして設計された。強い反動と高い連射速度を制御できるオペレ-タ-が扱えは優れた武器となる"
+L["mw19_weapon_ak47_desc"] = "7.62mm口径のソ連製自動アサルトライフル。大口径の弾薬は反動を制御するスキルが求められる"
+L["mw19_weapon_ram7_desc"] = "フルオートのブルパップ式。コンパクトなデザインにより近距離戦に適応"
+L["mw19_weapon_grau_desc"] = "射程距離が非常に長く、軽量で小回りの利くモジュール式5.56mm武器。精密工学とワールドクラスのアフターマーケット製バレルがこの武器の威力を最大限に引き出す"
+L["mw19_weapon_cr56_desc"] = "コンパクトながら威力を備えた軽量の7.62 x 39mmフルオート。軍用に製造された標準的なライフル。中距離戦で威力を発揮し、様々な戦術を展開可能"
+L["mw19_weapon_an94_desc"] = "ユニークな射撃機能を備えた最先端の5.45x39mmmロシア製アサルトライフル。トリガーを引いて強い反動を感じる前に即座に2連バーストを実行。弾を集束化させてダメージを増加させるこの仕組みは傾斜マガジンにより実現。またレシプロ式レシーバーにより反動を制御"
+L["mw19_weapon_asval_desc"] = "9x39mm<color=255,255,100>サブソニック弾</color>を装弾する完全<color=255,255,100>消音</color>この銃は、ステルス性、命中率、貫通力にフォーカスして設計された。強い反動と高い連射速度を制御できるオペレーターが扱えば優れた武器となる"
 
-L["mw19_weapon_aug_desc"] = "A modular, fully automatic weapon configured for mobility and close range combat."
-L["mw19_weapon_p90_desc"] = "An automatic bullpup submachine gun. The unique top mounted magazine hold carries ample high velocity 5.7 x 28mm ammunition."
-L["mw19_weapon_mp5_desc"] = "A fully automatic 9mm submachine gun. A perfect balance of stability, mobility and lethality."
-L["mw19_weapon_uzi_desc"] = "A fully automatic open bolt submachine gun. Simple, steady, effective."
-L["mw19_weapon_pp19_desc"] = "Well-balanced automatic submachine gun with a high capacity helical magazine."
-L["mw19_weapon_mp7_desc"] = "Compact by design, this fully automatic weapon has a high rate of fire and low recoil."
-L["mw19_weapon_striker_desc"] = "A hard hitting submachine gun chambered in .45 Auto that will shred at longer distances than other weapons in its class. Moderate rate of fire keeps the gun in control while fully automatic."
-L["mw19_weapon_fennec_desc"] = "An aggressive full auto submachine gun with buttery smooth recoil and a blazing fast rate of fire that is exceptional for strategic room clearing and holding down the front line."
-L["mw19_weapon_iso_desc"] = "Precision crafted 9mm submachine gun with a fast rate of fire. This lightweight and reliable firearm is designed to control the close-range battlefield."
-L["mw19_weapon_cx9_desc"] = "Excellent maneuverability and a fast fire rate make this blowback-operated SMG a formidable weapon in close-quarters engagements."
+L["mw19_weapon_aug_desc"] = "接近戦用に機動性を高めた全自動SMG"
+L["mw19_weapon_p90_desc"] = "ブルパップ方式自動サブマシンガン。上部に搭載されたユニークなマガジンホールドにより高速の5.7x26mm弾を携行可能"
+L["mw19_weapon_mp5_desc"] = "全自動9mm口径サブマシンガン。安定性、機動力、威力の全てをバランス良く整える"
+L["mw19_weapon_uzi_desc"] = "全自動のオープンボルト方式SMG。シンプルで安定性が高く効果的"
+L["mw19_weapon_pp19_desc"] = "大容量のヘリカルマガジンを搭載するバランスの取れた自動SMG"
+L["mw19_weapon_mp7_desc"] = "コンパクトな設計の全自動SMG。連射速度が高く、反動は少ない"
+L["mw19_weapon_striker_desc"] = ".45 オートを使用する高威力のサブマシンガン。クラス最高の射程距離を誇る。中程度の連射速度でフルオート時の制御性に優れる"
+L["mw19_weapon_fennec_desc"] = "攻撃力の高いフルオートのサブマシンガン。反動を抑制し連射速度に優れる。屋内での敵掃討や前線を維持する際に活躍"
+L["mw19_weapon_iso_desc"] = "高い連射速度を誇る9mm使用のサブマシンガン。軽量デザインにより接近戦で有用"
+L["mw19_weapon_cx9_desc"] = "機動性と連射速度に優れるブローバック方式のSMG。接近戦で恐るべき性能を発揮"
 
-L["mw19_weapon_m680_desc"] = "A reliable, well-rounded 12 gauge pump-action shotgun."
-L["mw19_weapon_r90_desc"] = "Double barrels provide two rapid shots before each re-chamber."
-L["mw19_weapon_725_desc"] = "Break action shotgun with 2 round capacity. A long back-bored barrel and cylindrical choke keeps spread tight and lethal over extended ranges."
-L["mw19_weapon_origin12_desc"] = "A semi-automatic shotgun with a large ammo capacity allows for continuous firing. Effective at close range."
-L["mw19_weapon_vlk_desc"] = "An agile 12-gauge mag fed shotgun from VLK with extensive options to modify range, stability, and maneuverability."
-L["mw19_weapon_aa12_desc"] = "Fully automatic open bolt shotgun with a recoil reducing gas blowback system. This combat shotgun unloads high volumes of lead down range at a steady rate."
+L["mw19_weapon_m680_desc"] = "信頼性が高くバランスの取れた12ゲージのポンプアクションショットガン"
+L["mw19_weapon_r90_desc"] = "ダブルバレルにより、再装填する前に素早く2連射可能"
+L["mw19_weapon_725_desc"] = "中折式ショットガン。2発装填可能。長いバックボアの銃身とシリンダーチョークにより散弾がまとまり、比較的長距離でも威力を発揮"
+L["mw19_weapon_origin12_desc"] = "装弾数が多く連射可能な半自動のショットガン。近距離で効果を発揮"
+L["mw19_weapon_vlk_desc"] = "VLK社製の12ゲージショットガン。射程の調整が利き、安定性や小回りに優れる"
+L["mw19_weapon_aa12_desc"] = "全自動のオープンボルト方式ショットガン。反動を抑えるガスブローバック方式で安定した射撃が可能。長距離でも安定した射撃が可能なため幅広い戦況で有用"
 
-L["mw19_weapon_pkm_desc"] = "A fully automatic light machine gun firing 7.62mm ammunition for high damage at a moderate fire rate."
-L["mw19_weapon_sa87_desc"] = "A fully automatic bullpup light machine gun. Lower rate of fire and 5.56mm ammunition keeps this rifle stable and effective at long ranges."
-L["mw19_weapon_m91_desc"] = "Robust light machine gun sacrifices mobility for stability. High caliber sustained fire will neutralize targets at long ranges."
-L["mw19_weapon_mg34_desc"] = "Fully automatic weapon with a high rate of fire and punishing 7.62 Mauser ammunition. Salvaged WW2 machine guns are still reliable and deadly on the battlefield."
-L["mw19_weapon_holger_desc"] = "A versatile fully automatic 5.56mm light machine gun. Modular design can be configured for a broad range of engagements."
-L["mw19_weapon_bruen_desc"] = "This air-cooled open bolt 5.56 light machine gun features a competitive rate of fire and excellent stability that will dominate the mid to long range battlefield."
-L["mw19_weapon_finn_desc"] = "An ultra-light open bolt 5.56 machine gun with a low cyclic rate and advanced recoil controls, giving the FiNN exceptional full-auto accuracy."
-L["mw19_weapon_raal_desc"] = "The Reconnaissance Auxiliary Assault Lightweight Machine Gun uses a low fire rate and reciprocating barrel to mitigate the powerful .338 Norma Mag recoil. Advanced titanium construction keeps the weight manageable."
+L["mw19_weapon_pkm_desc"] = "7.62mm弾使用の全自動LMG。中程度の連射速度と高い威力"
+L["mw19_weapon_sa87_desc"] = "ブルパップ方式の全自動LMG。連射速度は遅いが、小口径の5.56mm弾を用いるため安定性が高く、遠距離で効果を発揮"
+L["mw19_weapon_m91_desc"] = "機動性に劣るが優れた安定性を誇る頑丈なLMG。大口径弾で長距離の敵も無力化"
+L["mw19_weapon_mg34_desc"] = "7.92口径モーゼル弾を素早く連射可能な高威力の全自動LMG。第二次世界大戦から蘇ったマシンガンは今もなお戦場で脅威となる"
+L["mw19_weapon_holger_desc"] = "5.56mm使用のフルオート。モジュール式なので幅広い射程に対応するよう組立可能"
+L["mw19_weapon_bruen_desc"] = "オープンボルト方式、5.56mm使用のライトマシンガン。優れた連射速度と安定性は中～長距離で本領を発揮"
+L["mw19_weapon_finn_desc"] = "発射速度が遅く、高度な反動制御を備えた超軽量オープンボルト方式5.56マシンガン。FiNNに並外れたフルオートの命中率を付与"
+L["mw19_weapon_raal_desc"] = "偵察にも使用される軽量タイプ。連射速度は低いが往復動バレルにより高威力の.338ノルママグナムを低反動で使用可能。最先端のチタン構造により扱いやすい重量を実現"
 
-L["mw19_weapon_ebr_desc"] = "A semi-automatic long range marksman rifle balances rate of fire with lethality."
-L["mw19_weapon_mk2_desc"] = "Highly accurate lever action rifle. Will neutralize an enemy with one well placed round to the head or chest."
-L["mw19_weapon_kar98_desc"] = "Bolt action rifle chambered in 7.62 Mauser. A WW2 relic that is still extremely lethal in the hands of a rebel marksman."
-L["mw19_weapon_crossbow_desc"] = "Silent and agile, this high-performance crossbow fires 20\" bolts with exceptional lethality. Exclusive customization, distinct functionality, and unique ammunition types put this weapon in a class of its own. Standard 20.0\" bolts are recoverable, and are undetectable by trophy systems."
-L["mw19_weapon_sks_desc"] = "Lightweight, semi-auto Carbine chambered in 7.62x39mm. This hard hitting and agile Soviet rifle focuses on utility over accuracy. It flaunts a faster fire rate than other weapons in its class, but a carefully placed round will eliminate the need for follow up shots entirely. This classic DMR has seen a lot of battles, and its unique gunsmith configurations reflect a diverse service history."
-L["mw19_weapon_spr_desc"] = "Reliable, hard-hitting .300 Win bolt action rifle from Sloan Precision. This weapon's extensive military and civilian use gives rise to an abundance of customization."
+L["mw19_weapon_ebr_desc"] = "半自動の長距離用ライフル。威力と連射速度のバランスに優れる"
+L["mw19_weapon_mk2_desc"] = "命中率の高いレバーアクション式ライフル。頭部から胸部に命中させれば1発で敵をキル可能"
+L["mw19_weapon_kar98_desc"] = "7.62モーゼル弾のボルトアクションライフル。第二次世界大戦の遺物だが反抗心のあるマークスマンが握れば今でも非常に強力"
+L["mw19_weapon_crossbow_desc"] = "素早く静かに高威力ボルトを撃ち出すクロスボウ。特別なカスタマイズに、他と一線を画す機能性、特殊なボルトの使用によってクラス内でも個性を放つ。標準の20インチボルトは回収可能、またトロフィーシステムに感知されない"
+L["mw19_weapon_sks_desc"] = "7.62x39mmを用いる軽量のセミオートカービン。この強力で小回りの利くソ連製ライフルは、命中率よりも実用性を重視。同クラスの他の武器を凌駕する連射速度を誇る上に、追い撃ちの必要性がない程の威力を発揮。歴戦をくぐり抜けてきたこのクラシックなDMRは独特の構造を持ち、様々なガンスミスによる歴史が刻み込まれている"
+L["mw19_weapon_spr_desc"] = "信頼性と高い威力を誇るSloan Precision社製の.300 ウィンチェスターボルトアクション。軍と民間で幅広く使用されており、豊富なカスタマイズが可能"
 
-L["mw19_weapon_dragunov_desc"] = "A soviet workhorse chambered in 7.62mm x 54mmR. This gas-operated, semi-automatic sniper rifle allows for rapid follow-up shots."
-L["mw19_weapon_hdr_desc"] = "An anti-material bolt action sniper rifle chambered in 12.7x108mm ammunition. 745 gr bullets have a lower muzzle velocity, but are devastating at very long ranges."
-L["mw19_weapon_ax50_desc"] = "Hard hitting, bolt action sniper rifle with .50 cal BMG ammunition. Its tungsten sabot tipped bullets are fast and powerful, but require precise shots over long distances."
-L["mw19_weapon_rytec_desc"] = "This semi-automatic Anti-Material Rifle is chambered in .50 BMG for dominant long range assaults. A 25x59mm high-explosive payload variant is officially listed as \"experimental\", but has been deployed on multiple classified missions with great effectiveness."
+L["mw19_weapon_dragunov_desc"] = "7.62mmx54mm弾使用のガス圧作動方式セミオートスナイパーライフル。素早い追い撃ちが可能"
+L["mw19_weapon_hdr_desc"] = "12.7x108mm弾を装填した対物ボルトアクション式スナイパーライフル。745グレイン弾は銃口初速度は遅いものの、超遠距離で絶大な威力を誇る"
+L["mw19_weapon_ax50_desc"] = "威力の高い50口径弾を用いるボルトアクション式スナイパーライフル。タングステン製の貫通弾で速度と威力が増したが、長距離から狙うには精密なショットが必要"
+L["mw19_weapon_rytec_desc"] = ".50 BMG弾を用いるセミオートの対物ライフル。長距離からの狙撃に最適。「試作品」として登録された25x59mm高性能爆弾薬のバリアントだが、これまで様々な機密任務でその威力を発揮"
 
-L["mw19_weapon_shield_desc"] = "Ballistic-proof and explosive-resistant shield with increased melee damage."
+L["mw19_weapon_shield_desc"] = "防弾耐性と爆発耐性を兼ね備える。近接攻撃ダメージも向上"
 
-L["mw19_weapon_glock_desc"] = "A semi-automatic pistol chambered in .45 ACP ammunition. A reliable fallback when you find yourself in close quarters."
-L["mw19_weapon_1911_desc"] = "A well-rounded, semi-automatic sidearm with a moderate rate of fire. Slightly more range than your average .45 ACP pistol."
-L["mw19_weapon_357_desc"] = "Double action revolver firing .357 Magnum ammunition for powerful damage over extended ranges."
-L["mw19_weapon_m19_desc"] = "Semi-automatic 9mm pistol, excellent stability with a rapid cycle rate."
-L["mw19_weapon_deagle_desc"] = "The most powerful semi-automatic handgun available, deals heavy damage up to intermediate ranges."
-L["mw19_weapon_m9_desc"] = "Well rounded semi-auto 9mm pistol. This unassuming sidearm excels in close range combat, and features gunsmithing capabilities unique to the pistol class that permit a variety of engagement strategies."
-L["mw19_weapon_makarov_desc"] = "A dependable fallback in close quarters, this double-action/single-action sidearm comes with a few custom gunsmith mods that make it an outstanding addition to any arsenal."
+L["mw19_weapon_glock_desc"] = "45口径ACP弾を用いる半自動ハンドガン。接近戦で頼りになる"
+L["mw19_weapon_1911_desc"] = "45口径ACP弾を用いる半自動ハンドガン。バランスがよく中程度の連射速度。平均よりわずかに射程距離が長い"
+L["mw19_weapon_357_desc"] = ".357マグナム弾を使用するダブルアクションのリボルバー。比較的長距離でも高い威力を発揮"
+L["mw19_weapon_m19_desc"] = "9mm口径弾を用いる半自動ハンドガン。安定性が非常に高く、優れた連射速度を誇る"
+L["mw19_weapon_deagle_desc"] = "最も強力な半自動ハンドガン。近～中距離にかけて高い威力を発揮"
+L["mw19_weapon_m9_desc"] = "セミオートの9mmハンドガン。近距離戦で確実な威力を発揮し、クラス内で最もバリエーション豊かなカスタマイズの選択肢により様々な使い方が出来る"
+L["mw19_weapon_makarov_desc"] = "接近戦で頼りになるダブルアクション/シングルアクションサイドアーム。一部カスタムMODも使用可能でどんな装備にも優位に働く"
 
-L["mw19_weapon_pila_desc"] = "Portable infrared surface-to-air missile launcher with a free-fire option. Self-propelled missiles have a higher speed, and moderate explosive yield."
-L["mw19_weapon_strela_desc"] = "84mm recoilless launcher lobs an explosive projectile at a very high velocity. The unguided armor piercing round has a low explosive yield, but is devastating against vehicles on contact."
-L["mw19_weapon_javelin_desc"] = "Fire and forget lock-on portable missile launcher with a large explosive yield. Infrared guided missiles take a top-attack trajectory, ensuring destruction of heavily armored vehicles."
-L["mw19_weapon_rpg_desc"] = "Unguided, self-propelled rocket launcher fires a slower projectile with a high-explosive yield."
--- L["mw19_weapon_mgl_desc"] = "Rapid firing grenade launcher fed with a 6-round rotating cylinder. Can utilize a variety of 40mm rounds for various roles." -- UO
+L["mw19_weapon_pila_desc"] = "無誘導オプションを備えた携帯式の赤外線地対空ミサイル。自走ミサイルは高速で中程度の爆発力を持つ"
+L["mw19_weapon_strela_desc"] = "84mm無反動砲は超高速で爆発物を発射する。非誘導の徹甲弾の爆発力は小さい物の、直撃すれば車両に絶大な威力を発揮"
+L["mw19_weapon_javelin_desc"] = "自動追尾型の携帯ミサイルランチャーで高い爆発力を誇る。弾道軌道を描く赤外線誘導ミサイルにより、重装甲車両を破壊可能"
+L["mw19_weapon_rpg_desc"] = "非誘導型の自走式ロケットランチャー。低速で高い爆発力の爆弾を発射"
+L["mw19_weapon_mgl_desc"] = "歩兵携行の回転式グレネードランチャー。着弾時に爆発する40mm弾を使用" -- UO --from mw3(2023)
 
-L["mw19_weapon_knife_desc"] = "A CQC tactical knife. Standard military issue, employed for fast, quiet, and deadly wetwork."
-L["mw19_weapon_stick_desc"] = "Dual wielding batons allow operators to approach their targets with great agility. Sturdy, lightweight design enables rapid attacks for zoning your enemies."
-L["mw19_weapon_sword_desc"] = "Hand forged carbon steel blades provide the sharpest edge possible for silently slicing through your enemies."
+L["mw19_weapon_knife_desc"] = "接近戦用のタクティカルナイフ。軍標準仕様で素早く静かに敵を仕留める"
+L["mw19_weapon_stick_desc"] = "対象と素早く距離を詰められる1対の警棒。頑丈かつ軽量なデザインは敵に連打の応酬を与える"
+L["mw19_weapon_sword_desc"] = "人の手により鍛え上げられた炭素鋼の刀。鋭利な刃が音を立てずに敵を切り裂く"
 
-L["mw19_weapon_nade_claymore_desc"] = "Proximity-activated explosive mine."
-L["mw19_weapon_nade_frag_desc"] = "Cookable fragmentation grenade."
-L["mw19_weapon_nade_molotov_desc"] = "Improvised incendiary device that explodes on impact."
-L["mw19_weapon_nade_c4_desc"] = "Large explosive that sticks to surfaces and can be detonated remotely with {ATTACK} when the equipment is depleted.\n\nDouble-tapping {USE} always detonates the explosives."
-L["mw19_weapon_nade_semtex_desc"] = "Timed sticky grenade."
-L["mw19_weapon_nade_knife_desc"] = "Retrievable knife that can be thrown to quickly and quietly eliminate enemies."
-L["mw19_weapon_nade_proximity_desc"] = "Proximity-triggered explosive that deals heavy damage to vehicles."
-L["mw19_weapon_nade_thermite_desc"] = "Explosive which burns fiercely for a short time after impact. Sticks to surfaces."
+L["mw19_weapon_nade_claymore_desc"] = "敵が近づくと爆発する地雷"
+L["mw19_weapon_nade_frag_desc"] = "爆破のタイミングが調整可能なグレネード"
+L["mw19_weapon_nade_molotov_desc"] = "着弾時に爆発する強化焼夷弾"
+L["mw19_weapon_nade_c4_desc"] = "対象の表面に張り付く大型爆薬。装備が枯渇した場合に{ATTACK}を使用して起爆させることができる。\n\n{USE}をダブルタップすると必ず起爆する"
+L["mw19_weapon_nade_semtex_desc"] = "時限式の粘着グレネード"
+L["mw19_weapon_nade_knife_desc"] = "殺傷能力が高く回収可能なナイフ"
+L["mw19_weapon_nade_proximity_desc"] = "車両に大ダメージを与える感圧センサー付の爆発物"
+L["mw19_weapon_nade_thermite_desc"] = "着弾後しばらくの間激しく燃焼。どんな表面にも付着"
 
-L["mw19_weapon_nade_flash_desc"] = "Blinds and deafens targets."
-L["mw19_weapon_nade_stun_desc"] = "Slows victim's movement and aiming."
-L["mw19_weapon_nade_smoke_desc"] = "Deploys a smoke screen that blocks vision."
-L["mw19_weapon_nade_snapshot_desc"] = "Provides a momentary glimpse of enemies within the blast radius for your squad."
-L["mw19_weapon_nade_heartbeat_desc"] = "A tablet that displays rough information about nearby enemies."
-L["mw19_weapon_nade_stim_desc"] = "Military stimulant that cauterizes combat wounds and refreshes Tactical Sprint."
-L["mw19_weapon_nade_decoy_desc"] = "Counter-intel grenade that simulates fake gunfire and radar signatures that confuse the enemy."
-L["mw19_weapon_nade_gas_desc"] = "Explodes on impact with the ground, releasing a lingering cloud of tear gas that causes slowed movement, blurred vision, and coughing."
+L["mw19_weapon_nade_flash_desc"] = "ターゲットの視覚と聴覚を奪う"
+L["mw19_weapon_nade_stun_desc"] = "敵の動きとエイム速度を減速"
+L["mw19_weapon_nade_smoke_desc"] = "視界を遮り自動照準システムを妨げる煙幕を展開"
+L["mw19_weapon_nade_snapshot_desc"] = "範囲内にいる敵の情報を一定時間取得"
+L["mw19_weapon_nade_heartbeat_desc"] = "付近の敵の大まかな情報を表示するタブレット端末"
+L["mw19_weapon_nade_stim_desc"] = "傷口を焼灼し、タクティカルダッシュを可能にする軍人用の興奮剤"
+L["mw19_weapon_nade_decoy_desc"] = "発砲やレーダー信号を偽装して敵をかく乱する防諜装置"
+L["mw19_weapon_nade_gas_desc"] = "着弾と同時に催涙ガスを放出。敵は咳込み、視界がぼやけ、移動速度が低下"
 
--- L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
+L["mw19_weapon_minigun_desc"] = "7.62 NATO弾を使用するガトリングガン" -- UO
 -- L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO
 -- L["mw19_weapon_nade_rock_desc"] = "For when you need to hit an enemy with a \"non-lethal\" item, or if you need to provide a distraction in order to sneak past guards." -- UO
