@@ -306,17 +306,7 @@ L["mw19_optic_stat_zoom2"] = "ズーム倍率" -- Most scopes
 -- L["cod2019_attach_laser_rail.compactname"] = "Laser Att." -- UO
 -- L["cod2019_attach_laser_rail.description"] = "Allows the installation of laser sights onto your weapon." -- UO
 
-L["cod2019_attach_laser_rail_2.printname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.printname")
-L["cod2019_attach_laser_rail_2.compactname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.compactname")
-L["cod2019_attach_laser_rail_2.description"] = "Allows the installation of small, cylindrical laser sights onto your weapon." -- UO
-
-L["cod2019_attach_laser_cylinder.printname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.printname")
-L["cod2019_attach_laser_cylinder.compactname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.compactname")
-L["cod2019_attach_laser_cylinder.description"] = ARC9:GetPhrase("cod2019_attach_laser_rail.description")
-
-L["cod2019_attach_laser_cylinder_2.printname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.printname")
-L["cod2019_attach_laser_cylinder_2.compactname"] = ARC9:GetPhrase("cod2019_attach_laser_rail.compactname")
-L["cod2019_attach_laser_cylinder_2.description"] = ARC9:GetPhrase("cod2019_attach_laser_rail_2.description")
+-- L["cod2019_attach_laser_rail_2.description"] = "Allows the installation of small, cylindrical laser sights onto your weapon." -- UO
 
 ////////////////////  Grips
 -- L["cod2019_attach_grip_foregrip_side.printname"] = "ARC Foregrip" -- UO
@@ -327,26 +317,16 @@ L["cod2019_attach_laser_cylinder_2.description"] = ARC9:GetPhrase("cod2019_attac
 -- L["cod2019_grips_none.compactname"] = "Alt. Hold" -- UO
 -- L["cod2019_grips_none.description"] = "Alternative holding style." -- UO
 
-L["cod2019_grips_alt_cclamp.printname"] = "C-Clamp Holding" -- UO
-L["cod2019_grips_alt_cclamp.compactname"] = "C-Clamp" -- UO
-L["cod2019_grips_alt_cclamp.description"] = ARC9:GetPhrase("cod2019_grips_none.description")
+-- L["cod2019_grips_alt_cclamp.printname"] = "C-Clamp Holding" -- UO
+-- L["cod2019_grips_alt_cclamp.compactname"] = "C-Clamp" -- UO
 
-L["cod2019_grips_alt_nocclamp.printname"] = "No C-Clamp Holding" -- UO
-L["cod2019_grips_alt_nocclamp.compactname"] = "No C-C" -- UO
-L["cod2019_grips_alt_nocclamp.description"] = ARC9:GetPhrase("cod2019_grips_none.description")
-
-L["cod2019_striker45_noclamp.printname"] = ARC9:GetPhrase("cod2019_grips_alt_nocclamp.printname")
-L["cod2019_striker45_noclamp.compactname"] = ARC9:GetPhrase("cod2019_grips_alt_nocclamp.compactname")
-L["cod2019_striker45_noclamp.description"] = ARC9:GetPhrase("cod2019_grips_none.description")
+-- L["cod2019_grips_alt_nocclamp.printname"] = "No C-Clamp Holding" -- UO
+-- L["cod2019_grips_alt_nocclamp.compactname"] = "No C-C" -- UO
 
 ////////////////////  Perks
 L["cod2019_perks_soh.printname"] = "スライハンド"
 L["cod2019_perks_soh.compactname"] = "スライハンド"
 L["cod2019_perks_soh.description"] = "切迫した状況でのリロード速度を上げる"
-
-L["cod2019_perks_soh_alt.printname"] = ARC9:GetPhrase("cod2019_perks_soh.printname")
-L["cod2019_perks_soh_alt.compactname"] = ARC9:GetPhrase("cod2019_perks_soh.compactname")
-L["cod2019_perks_soh_alt.description"] = ARC9:GetPhrase("cod2019_perks_soh.description")
 
 L["cod2019_perks_speedmelee.printname"] = "高速近接"
 L["cod2019_perks_speedmelee.compactname"] = "高速近接"
@@ -364,10 +344,6 @@ L["cod2019_perks_heavyhitter.description"] = "近接攻撃によって敵をス�
 -- L["cod2019_perks_bolt.compactname"] = "Deft" -- UO
 -- L["cod2019_perks_bolt.description"] = "Training with your weapon allows you to cycle the weapon faster." -- UO
 
-L["cod2019_perks_bolt_alt.printname"] = ARC9:GetPhrase("cod2019_perks_bolt.printname")
-L["cod2019_perks_bolt_alt.compactname"] = ARC9:GetPhrase("cod2019_perks_bolt.compactname")
-L["cod2019_perks_bolt_alt.description"] = ARC9:GetPhrase("cod2019_perks_bolt.description")
-
 -- L["cod2019_perks_slamfire.printname"] = "Slamfire" -- UO
 -- L["cod2019_perks_slamfire.compactname"] = "Slamfire" -- UO
 -- L["cod2019_perks_slamfire.description"] = "Bruteforce the weapon to fire and cycle the weapon much quicker at the cost of reduced accuracy." -- UO
@@ -376,8 +352,6 @@ L["cod2019_perks_burst.printname"] = "バースト"
 L["cod2019_perks_burst.compactname"] = "バースト"
 L["cod2019_perks_burst.description"] = "<color=100,255,100>3点</color>バーストに切替"
 
-L["cod2019_perks_burst_2.printname"] = ARC9:GetPhrase("cod2019_perks_burst.printname")
-L["cod2019_perks_burst_2.compactname"] = ARC9:GetPhrase("cod2019_perks_burst.compactname")
 L["cod2019_perks_burst_2.description"] = "<color=100,255,100>2点</color>バーストに切替"
 
 -- L["cod2019_perks_super_sprint.printname"] = "Tactical Sprint" -- UO
@@ -408,7 +382,6 @@ L["cod2019_perks_burst_2.description"] = "<color=100,255,100>2点</color>バー�
 
 -- L["cod2019_stock_origin12.printname"] = "Origin 12 Shotgun Stock" -- UO
 -- L["cod2019_stock_origin12.compactname"] = "Origin 12" -- UO
-L["cod2019_stock_origin12.description"] = ARC9:GetPhrase("cod2019_stock_vlk.description")
 
 -- L["cod2019_m32_stock_retract.printname"] = "Shortened Stock" -- UO
 -- L["cod2019_m32_stock_retract.compactname"] = "Shortened" -- UO
@@ -432,50 +405,22 @@ L["cod2019_stock_origin12.description"] = ARC9:GetPhrase("cod2019_stock_vlk.desc
 -- L["cod2019_eft_grips.compactname"] = "EFT" -- UO
 -- L["cod2019_eft_grips.description"] = "Allows installation of foregrips from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
-L["cod2019_eft_muzzle.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
-L["cod2019_eft_muzzle.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
-L["cod2019_eft_muzzle.description"] = "Allows installation of muzzle attachments from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
+-- L["cod2019_eft_muzzle.description"] = "Allows installation of muzzle attachments from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
-L["cod2019_eft_scopes.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
-L["cod2019_eft_scopes.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
-L["cod2019_eft_scopes.description"] = "Allows installation of optics from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
+-- L["cod2019_eft_scopes.description"] = "Allows installation of optics from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
-L["cod2019_eft_scopes_pistol.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
-L["cod2019_eft_scopes_pistol.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
-L["cod2019_eft_scopes_pistol.description"] = ARC9:GetPhrase("cod2019_eft_scopes.description")
-
-L["cod2019_eft_stocks.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname")
-L["cod2019_eft_stocks.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
-L["cod2019_eft_stocks.description"] = "Allows installation of stocks from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
+-- L["cod2019_eft_stocks.description"] = "Allows installation of stocks from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
 ////////////////////  GSR (Gunsmith Reloaded) Support
-L["cod2019_attach_support_gsr_laser_pstl.printname"] = "Gunsmith Reloaded Support" -- UO
-L["cod2019_attach_support_gsr_laser_pstl.compactname"] = "GSR" -- UO
-L["cod2019_attach_support_gsr_laser_pstl.description"] = "Allows installation of laser attachments from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
+-- L["cod2019_attach_support_gsr_laser_pstl.printname"] = "Gunsmith Reloaded Support" -- UO
+-- L["cod2019_attach_support_gsr_laser_pstl.compactname"] = "GSR" -- UO
+-- L["cod2019_attach_support_gsr_laser_pstl.description"] = "Allows installation of laser attachments from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
 
-L["cod2019_attach_support_gsr_optics.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
-L["cod2019_attach_support_gsr_optics.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
-L["cod2019_attach_support_gsr_optics.description"] = "Allows installation of optics from the <color=255,255,100>Gunsmith Reloaded</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
+-- L["cod2019_attach_support_gsr_optics.description"] = "Allows installation of optics from the <color=255,255,100>Gunsmith Reloaded</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
 
-L["cod2019_attach_support_gsr_optics_pistols.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
-L["cod2019_attach_support_gsr_optics_pistols.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
-L["cod2019_attach_support_gsr_optics_pistols.description"] = ARC9:GetPhrase("cod2019_attach_support_gsr_optics.description")
+-- L["cod2019_attach_support_gsr_muzzles.description"] = "Allows installation of muzzle attachments from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
 
-L["cod2019_attach_support_gsr_muzzles.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
-L["cod2019_attach_support_gsr_muzzles.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
-L["cod2019_attach_support_gsr_muzzles.description"] = "Allows installation of muzzle attachments from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
-
-L["cod2019_attach_support_gsr_muzzles_pistols.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
-L["cod2019_attach_support_gsr_muzzles_pistols.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
-L["cod2019_attach_support_gsr_muzzles_pistols.description"] = ARC9:GetPhrase("cod2019_attach_support_gsr_muzzles.description")
-
-L["cod2019_attach_support_gsr_muzzles_alt.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
-L["cod2019_attach_support_gsr_muzzles_alt.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
-L["cod2019_attach_support_gsr_muzzles_alt.description"] = ARC9:GetPhrase("cod2019_attach_support_gsr_muzzles.description")
-
-L["cod2019_attach_support_gsr_grips.printname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.printname")
-L["cod2019_attach_support_gsr_grips.compactname"] = ARC9:GetPhrase("cod2019_attach_support_gsr_laser_pstl.compactname")
-L["cod2019_attach_support_gsr_grips.description"] = "Allows installation of foregrips from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
+-- L["cod2019_attach_support_gsr_grips.description"] = "Allows installation of foregrips from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
 
 ////////////////////  Custom Crossbow Ammo
 -- L["cod2019_ammo_crossbow_rock.printname"] = "FTAC Boulder 30g Rock" -- UO
@@ -511,8 +456,6 @@ L["cod2019_attach_support_gsr_grips.description"] = "Allows installation of fore
 -- L["cod2019_pila_ammo_guided.compactname"] = "Guided" -- UO
 -- L["cod2019_pila_ammo_guided.description"] = "Replaces the unguided rockets with <color=100,255,100>guided</color> high-explosive rockets." -- UO
 
-L["cod2019_jokr_ammo_guided.printname"] = ARC9:GetPhrase("cod2019_pila_ammo_guided.printname")
-L["cod2019_jokr_ammo_guided.compactname"] = ARC9:GetPhrase("cod2019_pila_ammo_guided.compactname")
 -- L["cod2019_jokr_ammo_guided.description"] = "Replaces the lock-on rockets with <color=100,255,100>guided</color> high-explosive rockets. <color=255,100,100>Removes the lock-on feature</color>." -- UO
 
 //////////////////////////////////////////////////////////////////////

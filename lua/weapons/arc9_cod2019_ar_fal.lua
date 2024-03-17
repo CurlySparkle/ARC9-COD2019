@@ -241,7 +241,7 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(15, 30, 4)
+SWEP.CustomizePos = Vector(16, 35, 3)
 SWEP.CustomizeRotateAnchor = Vector(15, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(0, 13, 3)
@@ -828,7 +828,7 @@ SWEP.AttachmentElements = {
     },
     ["stock_none"] = {
         Bodygroups = {
-            {2,2},
+            {2,3},
         },
     },
     ["stock_adapter"] = {
@@ -873,140 +873,167 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
 	local attached = data.elements
-	if wep:HasElement("sight_adapter_none") then
-	model:SetBodygroup(3,0)
+	if wep:HasElement("laser_mount") and wep:HasElement("body_none") then
+		model:SetBodygroup(6,0)
 	end
 end
 
 SWEP.Attachments = {
-    {
+    { -- 1
+        PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
+        Category = "cod2019_muzzle",
+        Bone = "tag_silencer",
+        Pos = Vector(0, 0, 0),
+		InstalledElements = {"muzzle"},
+    },
+    { -- 2
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
 		DefaultIcon = Material("arc9/def_att_icons/barrel.png", "mips smooth"),
-        DefaultAttName = "Standard Barrel",
-        Category = {"cod2019_fal_barrel"},
+        Category = "cod2019_fal_barrel",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
     },
-    {
+    { -- 3
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
+        Category = "cod2019_tac",
+        Bone = "tag_laser_attach",
+        Pos = Vector(-2.5, -0.225, -1.05),
+        Ang = Angle(0, 0, -90),
+		InstalledElements = {"laser_mount"},
+    },
+    { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
-        Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic", "cod2019_optic_big"},
-        CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sights"},
-		Scale = 1,
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
-        DefaultAttName = "Standard Muzzle",
-        Category = "cod2019_muzzle",
-        Bone = "tag_silencer",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-		InstalledElements = {"muzzle"},
-		Scale = 1,
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_laser"),
-        DefaultAttName = "Default",
-        Category = "cod2019_tac_rail_alt",
-        Bone = "tag_laser_attach",
-        Pos = Vector(-0.7, -0.6, -0.5),
-        Ang = Angle(0, 0, -30),
-		--InstalledElements = {"laser_mount"},
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
-        DefaultAttName = "Default",
-        Category = "cod2019_grip",
-        Bone = "tag_grip_attach",
-        Pos = Vector(-1.55, 0, 0),
-        Ang = Angle(0, 0, 180),
-		Scale = 1,
-    },
-    {
+    { -- 5
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
 		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
-        DefaultAttName = "Standard Stock",
-        Category = {"cod2019_fal_stock","cod2019_tube"},
+        Category = {"cod2019_tube", "cod2019_fal_stock"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-		Scale = 1,
-		--InstalledElements = {"stock_adapter"},
+		InstalledElements = {"stock_adapter"},
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_receiver"),
-        Category = "cod2019_fal_reciever",
-        Bone = "tag_attachments",
+    { -- 6
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+        Category = "cod2019_grip",
+        Bone = "tag_grip_attach",
+        Pos = Vector(-3.5, 0, 0),
+        Ang = Angle(0, 0, 180),
+		MergeSlots = {20}, -- Grenade Launcher(s)
+    },
+    { -- 8
+        PrintName = ARC9:GetPhrase("mw19_category_magazine"),
+		DefaultIcon = Material("arc9/def_att_icons/mag_ar.png", "mips smooth"),
+		Bone = "tag_mag_attach",
+        Category = {"cod2019_fal_mag"},
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(0, 0, 0),
     },
-    {
+    { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",
 		Category = {"cod2019_ammo"},
 		Pos = Vector(-1.5, 0, 0),
-        Ang = Angle(0, 0, 0),
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_magazine"),
-		DefaultIcon = Material("arc9/def_att_icons/mag_ar.png", "mips smooth"),
-		Bone = "tag_mag_attach",
-        Category = {"cod2019_mag_fal"},
+    { -- 9
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+        DefaultAttName = "Standard Barrel",
+        Category = "cod2019_pistolgrip",
+        Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-		InstalledElements = {"mag_none"},
     },
-    {
+    { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst","cod2019_perks_ss"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
+        Bone = "tag_attachments",
+        Pos = Vector(3.5, 0, -4),
     },
-    {
+	
+	-- Unofficial
+    { -- 11
+        PrintName = ARC9:GetPhrase("mw19_category_receiver"),
+        DefaultAttName = "Standard Barrel",
+        Category = "cod2019_fal_reciever",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(3.5, 0, -1),
+    },
+	
+	-- Cosmetics
+    { -- 12
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
-        --Bone = "v_weapon.Clip",
-        Category = "go_skins_fal",
+        Bone = "tag_cosmetic",
+        Pos = Vector(7, 0, 3),
+        Category = "cod2019_skins_fal",
 		CosmeticOnly = true,
     },
-    {
+    { -- 13
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(5, 0, 3),
         CosmeticOnly = true,
     },
-    {
+    { -- 14
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/rif_fal_decal_a.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(3, 0, 3),
+		ExcludeElements = {"body_none"},
     },
-    {
+    { -- 15
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/rif_fal_decal_b.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(1, 0, 3),
+		ExcludeElements = {"body_none"},
     },
-    {
+    { -- 16
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/rif_fal_decal_c.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-1, 0, 3),
+		ExcludeElements = {"body_none"},
     },
-    {
+    { -- 17
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/rif_fal_decal_d.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-3, 0, 3),
+		ExcludeElements = {"body_none"},
     },
-    {
+    { -- 18
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = {"charm", "killcounter"},
-		RejectAttachments = { ["arc9_stat_proscreen"] = true },
-		CosmeticOnly = true,
+        CosmeticOnly = true,
+        Category = {"charm"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(0.5, 0, 0),
+		Icon_Offset = Vector(-5.5, 0, 3),
+    },
+    { -- 19
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
+        Category = {"killcounter","killcounter2"},
         Bone = "tag_attachments",
-        Pos = Vector(0.5, -0.75, -0.5),
-        Ang = Angle(0, 0, 0),
-		Scale = 1,
+        Pos = Vector(3.3, -0.75, -0.5),
+		Icon_Offset = Vector(-5.5, 0, 2.5),
+		CosmeticOnly = true,
+    },
+    { -- 20
+        PrintName = "GL",
+        Category = {"cod2019_m203"},
+        Bone = "tag_attachments",
+        Pos = Vector(14, 0, -2.8),
+        Ang = Angle(0, 180, 0),
+		-- InstalledElements = {"cod2019_m203_alt"},
+		Hidden = true,
     },
 }
 
