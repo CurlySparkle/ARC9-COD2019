@@ -1,32 +1,38 @@
 "VertexLitGeneric"
 {
-    "$basetexture"				"models/cod2019/mg34/mg34_body2"
-    "$bumpmap"					"models/cod2019/mg34/mg34_body2_n"
-    "$phongexponenttexture"		       "models/cod2019/mg34/mg34_body2_exp"
+    "$basetexture" "models\cod2019\mg34\mg34_body2_rgb"
+    "$bumpmap" "models\cod2019\mg34\mg34_body2_n"
+    "$phongexponenttexture" "models\cod2019\mg34\mg34_body2_e"
 
-    "$color2" "[0.8 0.8 0.8]"
-    "$blendtintbybasealpha" "1"
+    /////////////////
+    "$color2" "[1 1 1]"                                     //do not touch this
+    "$blendtintbybasealpha" "1"                             //do not touch this
+    /////////////////
 
     "$phong" "1"
     "$phongboost" "1"
-    "$phongfresnelranges" "[1 0.5 0]"
-    "$phongalbedotint" "0"
+    "$phongalbedotint" "1"
+    "$phongalbedoboost" "10"                                //toy around with this
+    "$phongfresnelranges" "[1 0.1 0]"
+       
+    /////////////////
+    "$normalmapalphaenvmapmask" "1"                         //do not touch this
+    /////////////////
 
-    "$normalmapalphaenvmapmask" "1"
-    "$envmapfresnel" "1"
     "$envmap" "env_cubemap"
-    "$envmaptint" "[0.2 0.2 0.2]"
+    "$envmaptint" "[0.145 0.145 0.145]"                 
 
     "$detailblendmode" "4"
     "$detailblendfactor" "0.7"
 
+    //remove this if not using MWB
     "Proxies"
-     {
+    {
         "Arc9EnvMapTint"
         {
-            "specularity" "0.5"
             "min" "0"
-            "max" "0.2"
+            "max" "1"
+            "color" "[0.145 0.145 0.145]"
         }
 	   "CustomCamo" 
         {
@@ -35,5 +41,5 @@
             "blend" $detailblendfactor
             "color2" "[0.8 0.8 0.8]"
 	   }
-     }
+    }
 }

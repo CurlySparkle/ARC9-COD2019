@@ -19,10 +19,9 @@ ENT.LifeTime = 1.5
 ENT.Radius = 300
 
 ENT.ExplodeOnImpact = false
-
 ENT.SmokeTrail = false
 
-ENT.BounceSound = "Cod2019.Frag.Bounce"
+ENT.BounceSound = ""
 
 function ENT:Initialize()
 	if SERVER then
@@ -50,6 +49,50 @@ function ENT:Initialize()
         end
 
 	self.SpawnTime = CurTime()
+end
+
+
+function ENT:PhysicsCollide(data)
+   if data.Speed > 100 then
+      local tgt = data.HitEntity
+
+      if IsValid(tgt) and (self.NextHit or 0) < CurTime() then
+         self.NextHit = CurTime() + 0.1
+         local dmginfo = DamageInfo()
+         dmginfo:SetDamageType(DMG_GENERIC)
+         dmginfo:SetDamage(10)
+         dmginfo:SetAttacker(self:GetOwner())
+         dmginfo:SetInflictor(self)
+         dmginfo:SetDamageForce(data.OurOldVelocity * 0.5)
+         tgt:TakeDamageInfo(dmginfo)
+
+         if (IsValid(tgt) and (tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and tgt:Health() <= 0) or (not tgt:IsWorld() and not IsValid(tgt)) or string.find(tgt:GetClass(), "breakable") then
+           local pos, ang, vel = self:GetPos(), self:GetAngles(), data.OurOldVelocity
+
+         timer.Simple(0, function()
+           if IsValid(self) then
+              self:SetAngles(ang)
+              self:SetPos(pos)
+              self:GetPhysicsObject():SetVelocityInstantaneous(vel)
+           end
+         end)
+      end
+   end
+end
+		
+if data.Speed > 100 then
+   self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.6, CHAN_AUTO)
+    elseif data.Speed > 75 then
+   self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_med_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.5, CHAN_AUTO)
+    elseif data.Speed > 50 then
+   self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_soft_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.4, CHAN_AUTO)
+end
+
+if self.ExplodeOnImpact then
+   self.HitPos = data.HitPos
+   self.HitVelocity = data.OurOldVelocity
+   self:Detonate()
+   end
 end
 
 function ENT:Detonate()

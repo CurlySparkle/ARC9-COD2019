@@ -641,7 +641,7 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+		IKTimeLine = {{t = 0,  lhik = 1, rhik = 1},{t = 0.5,  lhik = 0, rhik = 1},},
         EventTable = {
             {s = path .. "wfoly_lm_slima_drop.ogg", t = 0/30},
         },

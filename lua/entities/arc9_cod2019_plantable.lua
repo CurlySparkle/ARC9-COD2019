@@ -3,8 +3,6 @@ AddCSLuaFile()
 ENT.Type = "anim"
 ENT.Base = "base_entity"
 ENT.PrintName = "Claymore"
-ENT.Author = ""
-ENT.Information = ""
 ENT.Spawnable = false
 ENT.AdminSpawnable = false
 ENT.RenderGroup = RENDERGROUP_BOTH
@@ -14,6 +12,7 @@ ENT.Model = "models/weapons/w_eq_claymore_dropped.mdl"
 ENT.LockYaw = false
 ENT.AdjustPitch = false
 ENT.AdjustOffset = false
+ENT.GroundDecal = false
 ENT.MinS = Vector(-2, -5, 0)
 ENT.MaxS = Vector(2, 5, 8)
 ENT.Bury = 0
@@ -159,7 +158,14 @@ if SERVER then
     end
 
     function ENT:PhysicsCollide(data, physobj)
+      local hitPos = data.HitPos -- Get the position where the grenade hit
+      local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
+      local hitEntity = data.HitEntity -- Get the entity that was hit (can be nil if it hit the world)
+		
         self:Plant(data.HitEntity, data.HitPos, -data.HitNormal, data.OurOldVelocity:GetNormalized())
+	  if self.GroundDecal then
+		util.Decal("Dark", hitPos + hitNormal, hitPos - hitNormal)
+	  end
     end
 
     function ENT:Detonate()

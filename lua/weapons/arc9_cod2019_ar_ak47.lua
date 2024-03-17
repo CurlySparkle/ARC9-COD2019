@@ -891,42 +891,15 @@ SWEP.AttachmentTableOverrides = {
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
     },
-    -- ["cod2019_laser_02_cylinde_alt"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-1, 21, -2),
-        -- Ang = Angle(0, 0, 45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["cod2019_laser_01_cylinde_alt"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-1, 21, -2),
-        -- Ang = Angle(0, 0, 45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["cod2019_laser_03_cylinde_alt"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-1, 21, -2),
-        -- Ang = Angle(0, 0, 45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/ak47/attachment_vm_pistolgrip_tape_akilo47.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/ak47/attachment_vm_pistolgrip_tape_akilo47.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/ak47/attachment_vm_pistolgrip_tape_akilo47.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -1083,10 +1056,10 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Standard Barrel",
         Category = "cod2019_pistolgrip",
-        Bone = "tag_attachments",
+        Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(9, 0, 2),
+		Icon_Offset = Vector(0, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_perk"),

@@ -12,6 +12,8 @@ ENT.ArmDelay = 0.4
 ENT.Radius = 300
 ENT.SpinAngles = Vector(0, 0, 300)
 
+ENT.GroundDecal = true
+
 PrecacheParticleSystem("small_smoke_effect3")
 
 if SERVER then

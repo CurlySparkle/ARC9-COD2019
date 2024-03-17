@@ -106,7 +106,7 @@ SWEP.Recoil = 2
 
 SWEP.RecoilSeed = 1
 
-SWEP.RecoilPatternDrift = 0
+SWEP.RecoilPatternDrift = 10
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -124,11 +124,10 @@ SWEP.RecoilAutoControl = 0.5 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilKick = 2
 
-SWEP.RecoilMultCrouch = 0.8
-
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.85
+SWEP.RecoilMultCrouch = 0.85
 
 SWEP.RecoilPerShot = 1
 SWEP.RecoilMax = 3
@@ -138,13 +137,13 @@ SWEP.RecoilMax = 3
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.4
 SWEP.VisualRecoilPunchSights = 15
-SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilRollSights = 25
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.5
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilRoll = 15
 SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -222,7 +221,7 @@ SWEP.MovingMidPoint = {
     Ang = Angle(0, 0, 0)
 }
 
-SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
+SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
@@ -232,7 +231,7 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(19, 40, 5)
+SWEP.CustomizePos = Vector(19, 35, 5)
 SWEP.CustomizeRotateAnchor = Vector(19, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
@@ -365,10 +364,6 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-    },
-    ["fire_sights"] = {
-        Source = "shoot1_ads",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
@@ -543,12 +538,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+		Mult = 3.7,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 2,
+		Mult = 3.7,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -558,7 +553,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.5,
+		Mult = 3.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.35, lhik = 1, rhik = 1 },
@@ -567,7 +562,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.5,
+		Mult = 3.7,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -676,7 +671,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     end
 end
 
-SWEP.DefaultBodygroups = "00000000000000"
+SWEP.DefaultBodygroups = "000000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -687,42 +682,15 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.1),
     },
-    -- ["csgo_cod2019_laser_01"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(2, 23, -1),
-        -- Ang = Angle(0, 0, -45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_02"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(2, 23, -1),
-        -- Ang = Angle(0, 0, -45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_03"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(2, 23, -1),
-        -- Ang = Angle(0, 0, -45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/mg34/attachment_vm_lm_mgolf34_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/mg34/attachment_vm_lm_mgolf34_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/mg34/attachment_vm_lm_mgolf34_pistolgrip_tape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -773,10 +741,10 @@ SWEP.AttachmentElements = {
     },
 }
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,1) end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("barrel_none") then model:SetBodygroup(6,1) end
+end
 
 SWEP.Attachments = {
     {
@@ -811,10 +779,10 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
-        Category = "cod2019_tac",
+        Category = "cod2019_tac_rail_alt",
         Bone = "tag_laser_attach",
-        Pos = Vector(1, -0.5, 0),
-        Ang = Angle(0, 0, -90),
+        Pos = Vector(1.5, -0.75, 0.02),
+        Ang = Angle(0, 0, 0),
 		InstalledElements = {"laser_rail"},
     },
     {
@@ -841,6 +809,15 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
         Category = "cod2019_mg34_reciever",
         Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+        DefaultAttName = "Standard Barrel",
+        Category = "cod2019_pistolgrip",
+        Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		Icon_Offset = Vector(0, 0, 0),
@@ -915,6 +892,8 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 4
+SWEP.CodStubbyGripPoseParam = 26
+SWEP.CodStubbyTallGripPoseParam = 26
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
