@@ -83,6 +83,8 @@ SWEP.MovePoseParam = 0
 SWEP.WalkPoseParam = 0
 SWEP.HasSights = !SWEP.Akimbo
 
+SWEP.FiremodeAnimLock = true -- Firemode animation cannot be interrupted
+
 local parmbl = {"blend_move", "blend_walk"}
 
 SWEP.Hook_Think	= function(self)

@@ -73,7 +73,7 @@ SWEP.BodyDamageMults = {
 
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.PhysBulletMuzzleVelocity = 380 / ARC9.HUToM
+SWEP.PhysBulletMuzzleVelocity = 850 / ARC9.HUToM
 SWEP.PhysBulletGravity = 1.5
 SWEP.PhysBulletDrag = 1
 
@@ -617,12 +617,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-        Time = 1,
+        Time = 1.25,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-        Time = 1,
+        Time = 1.25,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -632,7 +632,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.3,
+		Time = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 1, rhik = 1 },
@@ -641,7 +641,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.3,
+		Time = 0.75,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -1045,5 +1045,35 @@ SWEP.CodStubbyTallGripPoseParam = 3
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 49 -- Damage done at point blank range
+SWEP.DamageMin = 45 -- Damage done at maximum range
+
+SWEP.RangeMin = 20 / ARC9.HUToM
+SWEP.RangeMax = 43 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.62,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 850 / ARC9.HUToM
+
+-------------------------- FIREMODES
+
+SWEP.RPM = 500
+
+-------------------------- HANDLING
+
+SWEP.AimDownSightsTime = 0.26 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.
 
 end

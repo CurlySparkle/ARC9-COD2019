@@ -596,12 +596,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2.7,
+		Time = 0.8,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 2.7,
+		Time = 0.8,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -611,7 +611,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.7,
+		Time = 0.85,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 1, rhik = 1 },
@@ -620,7 +620,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.8,
+		Time = 0.85,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -1063,8 +1063,8 @@ SWEP.Attachments = {
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
-        Bone = "j_gun",
-        Pos = Vector(-7.02, 0, 1.95),
+        Bone = "tag_attachments",
+        Pos = Vector(7.02, 0, 1.95 + 0.75),
         Category = {"cod2019_optic", "cod2019_optic_big"},
 		InstalledElements = {"sights_none"},
     },
@@ -1188,7 +1188,7 @@ SWEP.Attachments = {
         PrintName = "GL",
         Category = {"cod2019_m203"},
         Bone = "tag_attachments",
-        Pos = Vector(21.75, 0, 2),
+        Pos = Vector(13, 0, -4.5),
         Ang = Angle(0, 180, 0),
 		InstalledElements = {"rail_grip"},
 		Hidden = true,
@@ -1204,5 +1204,35 @@ SWEP.CodStubbyTallGripPoseParam = 26
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 40 -- Damage done at point blank range
+SWEP.DamageMin = 40 -- Damage done at maximum range
+
+SWEP.RangeMin = 30 / ARC9.HUToM
+SWEP.RangeMax = 31 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.6,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 850 / ARC9.HUToM
+
+-------------------------- FIREMODES
+
+SWEP.RPM = 1091
+
+-------------------------- HANDLING
+
+SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.
 
 end
