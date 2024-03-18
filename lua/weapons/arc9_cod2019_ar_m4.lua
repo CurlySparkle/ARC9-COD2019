@@ -1040,12 +1040,10 @@ SWEP.AttachmentElements = {
     ["stock_adapter"] = {
         Bodygroups = {
             {4,1},
-            {4,1},
         },
     },
     ["stock_none"] = {
         Bodygroups = {
-            {3,1},
             {3,1},
         },
     },
@@ -1069,6 +1067,8 @@ SWEP.AttachmentElements = {
             {6,1},
         },
     },
+	["carry_handle"] = {
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -1083,6 +1083,10 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	end
 	
     if wep:HasElement("barrel_custom") then model:SetBodygroup(7,2) end
+    if wep:HasElement("carry_handle") then 
+	model:SetBodygroup(1,3)
+	model:SetBodygroup(7,2)
+	end
 	
     -- if wep:HasElement("cod2019_stock_none") then model:SetBodygroup(4,0) end
 
@@ -1124,7 +1128,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
-        Category = {"cod2019_optic", "cod2019_optic_big"},
+        Category = {"cod2019_optic", "cod2019_optic_big","cod2019_m4_optic"},
 		InstalledElements = {"sight_back_folded","sight_front_folded"},
     },
     { -- 5

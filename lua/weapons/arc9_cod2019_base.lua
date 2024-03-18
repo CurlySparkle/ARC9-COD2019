@@ -81,11 +81,12 @@ SWEP.IndoorSoundHardCutoff = true
 
 SWEP.MovePoseParam = 0
 SWEP.WalkPoseParam = 0
+SWEP.IdlePoseParam = 0
 SWEP.HasSights = !SWEP.Akimbo
 
 SWEP.FiremodeAnimLock = true -- Firemode animation cannot be interrupted
 
-local parmbl = {"blend_move", "blend_walk"}
+local parmbl = {"blend_move","blend_walk","blend_idle"}
 
 SWEP.Hook_Think	= function(self)
     if CLIENT then
@@ -100,12 +101,15 @@ SWEP.Hook_Think	= function(self)
         local walkblend = math.Clamp(spd2-delta, 0, 1) or 0
         self.MovePoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.MovePoseParam, moveblend)
         self.WalkPoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.WalkPoseParam, walkblend)
+        self.IdlePoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.IdlePoseParam, walkblend)
+		--self:GetOwner():GetViewModel():SetPoseParameter("blend_idle", self:GetSightAmount()) -- broken ass shit
         if vm then
             vm:SetPoseParameter("bullets",self:GetMaxClip1() - clip)
             vm:SetPoseParameter("blend_move", self.MovePoseParam)
             vm:SetPoseParameter("blend_walk", self.WalkPoseParam)
             --vm:SetPoseParameter("empty", !self:GetReloading() and (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
             vm:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
+            --vm:SetPoseParameter("blend_idle", self:GetSightAmount()) -- broken ass shit
         end
         if self:Clip1() == 0 then
             vm:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
