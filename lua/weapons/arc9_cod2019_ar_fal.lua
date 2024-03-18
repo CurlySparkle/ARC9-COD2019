@@ -803,6 +803,15 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_optic_reflex_west05_hybrid"] = {
 		ModelOffset = Vector(-4, 0, 0.1),
     },
+    ["cod2019_griptape_01"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/fal/attachment_vm_ar_falima_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/fal/attachment_vm_ar_falima_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/fal/attachment_vm_ar_falima_pistolgrip_tape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {

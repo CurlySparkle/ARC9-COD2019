@@ -969,6 +969,15 @@ SWEP.AttachmentTableOverrides = {
 		-- ModelAngleOffset = Angle(0, 0, 0),
 		-- Scale = 0.9,
     -- },
+    ["cod2019_griptape_01"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/famas/attachment_vm_ar_falpha_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/famas/attachment_vm_ar_falpha_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/famas/attachment_vm_ar_falpha_pistolgrip_tape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {

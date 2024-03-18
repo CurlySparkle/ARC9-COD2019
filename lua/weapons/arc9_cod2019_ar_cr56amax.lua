@@ -755,6 +755,15 @@ SWEP.AttachmentTableOverrides = {
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
     },
+    ["cod2019_griptape_01"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/cr56amax/attachment_vm_ar_galima_griptape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/cr56amax/attachment_vm_ar_galima_griptape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/cr56amax/attachment_vm_ar_galima_griptape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {

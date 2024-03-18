@@ -914,47 +914,20 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_grips_alt_nocclamp"] = {
     ModelOffset = Vector(-6, -0.5, -0.8),
     },
-    -- ["csgo_cod2019_laser_01"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(2, 17, -1),
-        -- Ang = Angle(1.3, 0.9, -45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_02"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(2, 17, -1),
-        -- Ang = Angle(1.3, 0.9, -45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_03"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(2, 17, -1),
-        -- Ang = Angle(1.3, 0.9, -45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
     ["cod2019_attach_xmag_50"] = {
     Model = "models/weapons/cod2019/attachs/weapons/kilo141/attachment_vm_ar_kilo433_xmags.mdl",
     },
     ["cod2019_attach_xmag_60"] = {
     Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_ar_mcharlie_xmags2.mdl",
+    },
+    ["cod2019_griptape_01"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/kilo141/attachment_vm_ar_kilo433_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/kilo141/attachment_vm_ar_kilo433_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/kilo141/attachment_vm_ar_kilo433_pistolgrip_tape.mdl",
     },
 }
 

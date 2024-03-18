@@ -931,6 +931,15 @@ SWEP.AttachmentTableOverrides = {
 		DropMagazineModel = "models/weapons/cod2019/attachs/weapons/an94/attachment_vm_ar_anov94_xmagslrg.mdl",
 		ActivateElements = {"mag_none","mag_xmagslrg"}
     },
+    ["cod2019_griptape_01"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/an94/attachment_vm_ar_anov94_griptape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/an94/attachment_vm_ar_anov94_griptape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/an94/attachment_vm_ar_anov94_griptape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {

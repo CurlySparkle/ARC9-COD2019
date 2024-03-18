@@ -899,6 +899,15 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0.9, 0, 0.1),
     },
+    ["cod2019_griptape_01"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/scar/attachment_vm_ar_scharlie_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/scar/attachment_vm_ar_scharlie_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/scar/attachment_vm_ar_scharlie_pistolgrip_tape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {

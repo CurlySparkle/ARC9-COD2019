@@ -860,9 +860,10 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_grip"),
         Category = "cod2019_725_foregrip",
-        Bone = "tag_attachments",
-        Pos = Vector(3, 0, -1.25),
+        Bone = "tag_guard_attach",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(5, 0, 1),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
