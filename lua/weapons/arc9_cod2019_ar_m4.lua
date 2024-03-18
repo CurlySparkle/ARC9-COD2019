@@ -1115,6 +1115,7 @@ SWEP.Attachments = {
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
         Pos = Vector(2.7, 0, -0.1),
+        Ang = Angle(0, 0, 180),
 		InstalledElements = {"rail_laser"},
 		ExcludeElements = {"barrel_m16"},
     },
