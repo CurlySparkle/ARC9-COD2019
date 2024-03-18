@@ -891,19 +891,21 @@ SWEP.Attachments = {
     { -- 1
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
         Category = "cod2019_muzzle",
-        Bone = "tag_silencer",
+        DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
+		Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
 		InstalledElements = {"muzzle"},
     },
     { -- 2
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
-		DefaultIcon = Material("arc9/def_att_icons/barrel.png", "mips smooth"),
+		DefaultIcon = Material("entities/defattachs/barrel-ar.png", "mips smooth"),
         Category = "cod2019_fal_barrel",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
     },
     { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
+		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
         Pos = Vector(-2.5, -0.225, -1.05),
@@ -912,7 +914,7 @@ SWEP.Attachments = {
     },
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
-		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
+		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
         Category = {"cod2019_optic", "cod2019_optic_big"},
@@ -920,7 +922,7 @@ SWEP.Attachments = {
     },
     { -- 5
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
-		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
+		DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
         Category = {"cod2019_tube", "cod2019_fal_stock"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
@@ -928,6 +930,7 @@ SWEP.Attachments = {
     },
     { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
         Pos = Vector(-3.5, 0, 0),
@@ -936,7 +939,7 @@ SWEP.Attachments = {
     },
     { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
-		DefaultIcon = Material("arc9/def_att_icons/mag_ar.png", "mips smooth"),
+		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
 		Bone = "tag_mag_attach",
         Category = {"cod2019_fal_mag"},
         Pos = Vector(0, 0, 0),
@@ -950,7 +953,7 @@ SWEP.Attachments = {
     },
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
-        DefaultAttName = "Standard Barrel",
+		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
         Category = "cod2019_pistolgrip",
         Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
@@ -965,7 +968,6 @@ SWEP.Attachments = {
 	-- Unofficial
     { -- 11
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
-        DefaultAttName = "Standard Barrel",
         Category = "cod2019_fal_reciever",
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
