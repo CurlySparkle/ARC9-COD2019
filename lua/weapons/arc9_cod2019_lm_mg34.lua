@@ -135,9 +135,9 @@ SWEP.RecoilMax = 3
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.4
-SWEP.VisualRecoilPunchSights = 15
-SWEP.VisualRecoilRollSights = 25
+SWEP.VisualRecoilSights = 0.4
+SWEP.VisualRecoilPunchSights = 10
+SWEP.VisualRecoilRollSights = 15
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
@@ -726,9 +726,24 @@ SWEP.AttachmentElements = {
             {4,2},
         },
     },
-	["sight_none"] = {
+	["sight_back_folded"] = {
         Bodygroups = {
             {5,1},
+        },
+    },
+	["sight_back_none"] = {
+        Bodygroups = {
+            {5,2},
+        },
+    },
+	["sight_front_folded"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
+	["sight_front_none"] = {
+        Bodygroups = {
+            {8,2},
         },
     },
 	["grip_rail"] = {
@@ -741,11 +756,17 @@ SWEP.AttachmentElements = {
             {7,1},
         },
     },
+    ["barrel_custom"] = {
+		AttPosMods = { 
+			[6] = { Pos = Vector(0.4, 0, 0), },
+		},
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("barrel_none") then model:SetBodygroup(6,1) end
+    if wep:HasElement("barrel_none") then model:SetBodygroup(8,1) end
+    if wep:HasElement("barrel_custom") then model:SetBodygroup(8,1) end
 end
 
 SWEP.Attachments = {
@@ -776,7 +797,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic",},
         CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sight_none"},
+		InstalledElements = {"sight_back_folded","sight_front_folded"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
@@ -796,6 +817,17 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"grip_rail"},
+    },
+    {
+        PrintName = "Bipod",
+        DefaultAttName = "Default",
+        Category = {"cod2019_mg34_bipod"},
+        Bone = "tag_bipod_attach",
+        Pos = Vector(0,0, 0),
+        Ang = Angle(0, 0, 0),
+		Scale = 1,
+		Hidden = true,
+        MergeSlots = {5},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
