@@ -1,5 +1,9 @@
 AddCSLuaFile()
 
+if CLIENT then
+    killicon.Add( "arc9_cod2019_proj_40mm_hel", "VGUI/killicons/cod2019_nade_he", Color(251, 85, 25, 255))
+end
+
 ENT.Base                     = "arc9_cod2019_proj_base"
 ENT.PrintName                = "40mm HE"
 ENT.Spawnable                = false

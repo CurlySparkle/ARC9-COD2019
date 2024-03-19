@@ -1057,7 +1057,7 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
         Category = {"cod2019_optic", "cod2019_optic_big"},
-		InstalledElements = {"sight_back_folded","sight_front_folded"},
+		InstalledElements = {"sights_back_folded","sights_front_folded"},
     },
     { -- 5
         PrintName = ARC9:GetPhrase("mw19_category_stock"),

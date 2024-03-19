@@ -5,6 +5,8 @@ SWEP.AdminOnly = false
 
 SWEP.PrintName = "MW2019 Base"
 
+SWEP.SecondarySupplyLimit = 6
+
 -------------------------- MELEE
 
 SWEP.MeleeHitSound = "COD2019.Melee.HitBody"
