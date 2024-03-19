@@ -328,7 +328,7 @@ ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_flechette")
 ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.PrintName = "70mm \"FRAG-12\" High Explosive"
+ATT.PrintName = "\"FRAG-12\" High Explosive"
 ATT.CompactName = "FRAG"
 ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_he.png", "mips smooth")
 ATT.Description = "Load containing an explosive compound, dealing damage in a small radius.\nEffectiveness is limited by the small caliber size."
@@ -393,7 +393,7 @@ ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_rebounder")
 ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.PrintName = "70mm \"FRAG-12\" High Explosive X4"
+ATT.PrintName = "\"FRAG-12\" High Explosive X4"
 ATT.CompactName = "FRAG X4"
 ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_he_x4.png", "mips smooth")
 ATT.Description = "Load containing 4 explosive rounds, deals an mid amount of damage with small radius blast.\nEffectiveness is limited by the small caliber size."

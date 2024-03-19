@@ -265,7 +265,7 @@ L["cod2019_ammo_sg_magnum.printname"] = "8.5mm Magnum Buckshot" -- UO
 L["cod2019_ammo_sg_magnum.compactname"] = "MAG" -- UO
 L["cod2019_ammo_sg_magnum.description"] = "High-powered buckshot loaded with fewer but larger lead pellets.\nProvides better close range power, but worsened range and accuracy." -- UO
 
-L["cod2019_ammo_sg_slug.printname"] = "70mm Full-bore Slug" -- UO
+L["cod2019_ammo_sg_slug.printname"] = "12mm Full-bore Slug" -- UO
 L["cod2019_ammo_sg_slug.compactname"] = "SLUG" -- UO
 L["cod2019_ammo_sg_slug.description"] = "A single large projectile loaded into a shotgun shell.\nThe aerodynamic pellet has much higher effective range." -- UO
 
@@ -273,7 +273,7 @@ L["cod2019_ammo_sg_flechette.printname"] = "Flechette Shells" -- UO
 L["cod2019_ammo_sg_flechette.compactname"] = "FLE" -- UO
 L["cod2019_ammo_sg_flechette.description"] = "Load containing thin, dart-shaped projectiles.\nProvides tighter spread and increased range alongside increased penetration, but at the cost of reduced stopping power." -- UO
 
-L["cod2019_ammo_sg_frag.printname"] = "70mm \"FRAG-12\" High Explosive" -- UO
+L["cod2019_ammo_sg_frag.printname"] = "\"FRAG-12\" High Explosive" -- UO
 L["cod2019_ammo_sg_frag.compactname"] = "FRAG-12" -- UO
 L["cod2019_ammo_sg_frag.description"] = "Load containing a single projectile filled with an explosive compound.\nDeals damage around a small radius at the impact area." -- UO
 
@@ -281,11 +281,11 @@ L["cod2019_ammo_sg_rebounder.printname"] = "10mm Rebounder Rounds" -- UO
 L["cod2019_ammo_sg_rebounder.compactname"] = "RBD" -- UO
 L["cod2019_ammo_sg_rebounder.description"] = "Load containing specialized pellets that have a high chance to ricochet.\nThe pellets will bounce regardless of angle, dealing increased damage the more it ricochets.\nIt does, however, have reduced damage output on direct impact." -- UO
 
-L["cod2019_ammo_sg_frag_x4.printname"] = "70mm \"FRAG-12\" High Explosive x4" -- UO
+L["cod2019_ammo_sg_frag_x4.printname"] = "\"FRAG-12\" High Explosive x4" -- UO
 L["cod2019_ammo_sg_frag_x4.compactname"] = "FRAG-12 x4" -- UO
 L["cod2019_ammo_sg_frag_x4.description"] = "Load containing four projectiles filled with explosive compounds.\nDeals damage around a small radius at the impact area." -- UO
 
-L["cod2019_ammo_sg_db.printname"] = "70mm \"Dragon's Breach\"" -- UO
+L["cod2019_ammo_sg_db.printname"] = "\"Dragon's Breach\"" -- UO
 L["cod2019_ammo_sg_db.compactname"] = "DB" -- UO
 L["cod2019_ammo_sg_db.description"] = "Load containing magnesium pellets that lights a target on fire on hit." -- UO
 

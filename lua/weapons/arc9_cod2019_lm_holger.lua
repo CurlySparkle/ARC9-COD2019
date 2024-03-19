@@ -783,6 +783,16 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
+    ["pistgrip_none"] = {
+        Bodygroups = {
+            {6,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
@@ -852,7 +862,7 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
         Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic",},
+        Category = {"cod2019_optic","cod2019_holger_optic"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sights_none"},
     },

@@ -123,7 +123,7 @@ SWEP.RecoilDissipationRateSights = 0
 SWEP.RecoilResetTime = 1 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
-SWEP.RecoilAutoControlSights = 0 -- Multiplier for automatic recoil control.
+--SWEP.RecoilAutoControlSights = 0 -- Multiplier for automatic recoil control.
 
 SWEP.RecoilKick = 3
 
