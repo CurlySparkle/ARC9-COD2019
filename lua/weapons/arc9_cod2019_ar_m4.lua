@@ -242,12 +242,12 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1, 4, -4)
+SWEP.PeekPos = Vector(-1.5, 2, -3.5)
 SWEP.PeekAng = Angle(-0.3, 0, -45)
 
-SWEP.PeekMaxFOV = 55
+SWEP.PeekMaxFOV = 64
 
-SWEP.PeekPosReloading = Vector(0, 4, -2)
+SWEP.PeekPosReloading = Vector(0, 2, -2)
 SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
 
 -------------------------- HoldTypes
@@ -358,7 +358,7 @@ SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.
 
 SWEP.Malfunction = true 
 SWEP.MalfunctionNeverLastShoot = true 
-SWEP.MalfunctionMeanShotsToFail = 500*2
+SWEP.MalfunctionMeanShotsToFail = 300*2
 SWEP.MalfunctionMeanShotsToFailMultHot = -0.1*2
 
 SWEP.Animations = {
@@ -823,6 +823,12 @@ SWEP.Animations = {
     },
     ["jam"] = {
         Source = "jam",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1},
+            { t = 0.2, lhik = 0, rhik = 1},
+            { t = 0.5, lhik = 0, rhik = 1},
+            { t = 0.65, lhik = 1, rhik = 1},
+        },
         EventTable = {
             {s = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg", t = 0/30},
         },
@@ -830,10 +836,19 @@ SWEP.Animations = {
     ["fix"] = {
         Source = "unjam",
 		EjectAt = 0.4,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1},
+            { t = 0.2, lhik = 0, rhik = 1},
+            { t = 0.5, lhik = 0, rhik = 1},
+            { t = 0.65, lhik = 1, rhik = 1},
+        },
         EventTable = {
-            {s = path .. "wpfoly_mike4_raise_v2.ogg", t = 0/30},
-            {s = path .. "wpfoly_mike4_jam_bolt.ogg", t = 7/30},
-			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 23/30},
+            -- {s = path .. "wpfoly_mike4_raise_v2.ogg", t = 0/30},
+            -- {s = path .. "wpfoly_mike4_jam_bolt.ogg", t = 7/30},
+			-- {s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 23/30},
+			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0/30},
+			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 7/30},
+			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 20/30},
         },
     },
     ["enter_bipod"] = {

@@ -875,7 +875,7 @@ SWEP.AttachmentElements = {
         },
     },
 	["grip_angled"] = {
-    AttPosMods = { [5] = { Pos = Vector(-2.75, 0, 0), } }	
+    AttPosMods = { [6] = { Pos = Vector(-2.75, 0, 0), } }	
 	}
 }
 
@@ -933,7 +933,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-3.5, 0, 0),
+        Pos = Vector(-2.6, 0, 0),
         Ang = Angle(0, 0, 180),
 		MergeSlots = {20}, -- Grenade Launcher(s)
     },
@@ -1050,7 +1050,7 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 3
 SWEP.GripPoseParam2 = 0.3
-SWEP.CodAngledGripPoseParam = 3
+SWEP.CodAngledGripPoseParam = 43
 SWEP.CodStubbyGripPoseParam = 1
 SWEP.CodStubbyTallGripPoseParam = 3
 
