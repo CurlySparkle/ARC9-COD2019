@@ -187,6 +187,7 @@ ATT.Category = "cod2019_tac_rail_alt"
 ATT.ModelOffset = Vector(0, 0, 0)
 
 ATT.Model = "models/weapons/cod2019/attachs/attach_laser_cylinder_alt.mdl"
+ATT.ActivateElements = {"laser_rail"}
 
 ATT.Attachments = {
     {

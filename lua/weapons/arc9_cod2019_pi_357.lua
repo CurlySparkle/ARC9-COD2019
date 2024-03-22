@@ -529,6 +529,14 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
+    ["laser_rail"] = {
+		AttPosMods = { 
+			[4] = { 
+			Ang = Angle(0,0,90),
+			Pos = Vector(0.65,0,0.3),
+			}, -- Underbarrel
+		},
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -575,11 +583,12 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
         DefaultAttName = "Default",
-        Category = "cod2019_tac_pistols",
+        Category = {"cod2019_tac_pistols","cod2019_tac_rail_alt"},
         Bone = "tag_laser_attach",
-        Pos = Vector(0.5, 0, 0),
+        Pos = Vector(0.65, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"rail_laser"},
+		RejectAttachments = { ["cod2019_attach_laser_cylinder_alt"] = true },
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
