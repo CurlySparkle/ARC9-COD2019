@@ -87,7 +87,7 @@ SWEP.ClipSize = 6 -- Self-explanatory.
 SWEP.SupplyLimit = 12 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
@@ -185,6 +185,20 @@ SWEP.IronSights = {
     Magnification = 1.15,
 	CrosshairInSights = false
 }
+
+SWEP.IronSightsHook = function(self) -- If any attachments equipped should alter Irons
+    local attached = self:GetElements()
+
+    if attached["357_stock"] then
+        return {
+			Pos = Vector(-2.85, -3, 1.325),
+			Ang = Angle(0, 0, 4.5),
+			Magnification = 1.15,
+			CrosshairInSights = false
+        }
+    end
+
+end
 
 SWEP.ViewModelFOVBase = 65
 
@@ -456,11 +470,167 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1 },
         },
     },
+	
+-- Stock Anims
+	["enter_sights_stock"] = {
+		Source = "idle_stock",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+	},
+    ["fire_stock"] = {
+        Source = "shoot1_stock",
+    },
+    ["dryfire_stock"] = {
+        Source = "shoot1_cycle_stock",
+        EventTable = {
+			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", t = 0/30},
+        },
+    },
+    ["trigger_stock"] = {
+        Source = "shoot1_cycle_stock",
+        EventTable = {
+			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", t = 0/30},
+        },
+    },
+    ["reload_stock"] = {
+        Source = "reload_stock",
+		MinProgress = 0.85,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.95, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_cpapa_charge_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_cylinderopen_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_shake.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_shelleject_01.ogg", t = 17/30},
+            {s = path .. "wfoly_pi_cpapa_charge_reload_shelleject_02.ogg", t = 17/30},
+            {s = path .. "wfoly_pi_cpapa_charge_reload_shelleject_03.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_arm.ogg", t = 27/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_speedloader_01.ogg", t = 50/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 64/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 75/30},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 78/30},
+        },
+    },
+    ["reload_fast_stock"] = {
+        Source = "reload_fast_stock",
+		MinProgress = 0.8,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 1.1, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_start.ogg", t = 0},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderopen_01.ogg", t = 0.2},
+            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_grip.ogg", t = 0.35},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_01.ogg", t = 0.4},
+            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_02.ogg", t = 0.4},
+            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_shelleject_03.ogg", t = 0.4},
+            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_arm.ogg", t = 0.78},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_speedloader_01.ogg", t = 0.96},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_ejectorrod_01.ogg", t = 1.06},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 1.6},
+			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 1.84},
+        },
+    },
+    ["ready_stock"] = {
+        Source = "draw_stock",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_pi_cpapa_first_raise_start.ogg", t = 12/30},
+            {s = path .. "wfoly_pi_cpapa_first_raise_cylinderopen_01.ogg", t = 12/30},
+			{s = path .. "wfoly_pi_cpapa_first_raise_cylinderclose_01.ogg", t = 26/30},
+			{s = path .. "wfoly_pi_cpapa_first_raise_end.ogg", t = 29/30},
+        },
+    },
+    ["draw_stock"] = {
+        Source = "draw_short_stock",
+		MinProgress = 0.2,
+		FireASAP = true,
+        EventTable = {
+            {s = path .. "wfoly_pi_cpapa_charge_raise.ogg", t = 0/30},
+        },
+    },
+    ["holster_stock"] = {
+        Source = "holster_stock",
+        EventTable = {
+            {s = path .. "wfoly_pi_cpapa_charge_reload_fast_grip.ogg", t = 0/30},
+        },
+    },
+    ["idle_stock"] = {
+        Source = "idle_stock",
+    },
+    ["inspect_stock"] = {
+        Source = "lookat01_stock",
+		MinProgress = 0.1,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 1.1, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_pi_cpapa_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_cpapa_inspect_02.ogg", t = 34/30},
+			{s = path .. "wfoly_pi_cpapa_inspect_03.ogg", t = 58/30},
+			{s = path .. "wfoly_pi_cpapa_inspect_04.ogg", t = 111/30},
+        },
+    },
+    ["bash_stock"] = {
+        Source = {"melee_stock","melee2_stock"},
+	    IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
 
 --SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty2
+
+--- Stock ---
+local Translate_Stock = {
+	["enter_sights"] = "enter_sights_stock",
+	["fire"] = "fire_stock",
+	["dryfire"] = "dryfire_stock",
+	["trigger"] = "trigger_stock_stock",
+    ["reload"] = "reload_stock",
+	["ready"] = "ready_stock",
+	["draw"] = "draw_stock",
+	["holster"] = "holster_stock",
+	["idle"] = "idle_stock",
+	["inspect"] = "inspect_stock",
+    ["bash"] = "bash_stock",
+}
+
+local Translate_Stock_Fast = {
+	["enter_sights"] = "enter_sights_stock",
+	["fire"] = "fire_stock",
+	["dryfire"] = "dryfire_stock",
+	["trigger"] = "trigger_stock_stock",
+    ["reload"] = "reload_fast_stock",
+	["ready"] = "ready_stock",
+	["draw"] = "draw_stock",
+	["holster"] = "holster_stock",
+	["idle"] = "idle_stock",
+	["inspect"] = "inspect_stock",
+    ["bash"] = "bash_stock",
+}
 
 --- Fast & Tac. Sprint ---
 local Translate_Fast = {
@@ -477,17 +647,36 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
+	local stock = wep:HasElement("357_stock")
 
-    if super_sprint and Translate_TacSprint[anim] then
-        return Translate_TacSprint[anim]
-    end
+	local tanim = {
+		sprint = Translate_TacSprint[anim],
+		fast = Translate_Fast[anim],
 
-    if speedload then
-        if Translate_Fast[anim] then
-            return Translate_Fast[anim]
-            end
-        end
+		stock = {
+			base = Translate_Stock[anim],
+			fast = Translate_Stock_Fast[anim],
+			},
+		}
+
+    if super_sprint and tanim.sprint then
+        return tanim.sprint
     end
+	
+	if !stock then
+		if speedload then
+			if tanim.fast then return tanim.fast end
+		else
+			if tanim.base then return tanim.base end
+		end
+	elseif stock then
+		if speedload then
+			if tanim.stock.fast then return tanim.stock.fast end
+		else
+			if tanim.stock.base then return tanim.stock.base end
+		end
+	end
+end
 
 SWEP.DefaultBodygroups = "00000000000000"
 
