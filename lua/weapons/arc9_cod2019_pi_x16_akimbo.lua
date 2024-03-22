@@ -329,8 +329,14 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_x16_stock"] = {
     Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_stock_akimbo.mdl"
     },
-    ["cod2019_x16_griptape_01"] = {
-    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_pistolgrip_tape_akimbo.mdl"
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_pistolgrip_tape_akimbo.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_pistolgrip_tape_akimbo.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_pistolgrip_tape_akimbo.mdl",
     },
 }
 
@@ -428,7 +434,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
-        Category = "cod2019_x16_grip",
+        Category = {"cod2019_x16_grip","cod2019_pistolgrip"},
         Bone = "tag_pistolgrip_attach_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),

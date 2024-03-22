@@ -163,6 +163,12 @@ SWEP.Animations = {
     -- ["idle_primed"] = {
         -- Source = "idle_primed"
     -- },
+    ["quicknade"] = {
+        Source = "draw",
+        EventTable = {
+            {s = "weapons/cod2019/throwables/mine/proxy_pull_out.ogg", t = 0/30},
+        },
+    },
     ["draw"] = {
         Source = "draw",
         MinProgress = 0.3,

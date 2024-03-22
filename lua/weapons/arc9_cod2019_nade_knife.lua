@@ -156,6 +156,12 @@ SWEP.Animations = {
     ["idle_primed"] = {
         Source = "idle_primed"
     },
+    ["quicknade"] = {
+        Source = "draw",
+        EventTable = {
+            {s = "COD2019.Knife.Prepare", t = 0/30},
+        },
+    },
     ["draw"] = {
         Source = "draw",
         MinProgress = 0.3,

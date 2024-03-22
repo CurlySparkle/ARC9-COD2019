@@ -159,6 +159,12 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
+    ["quicknade"] = {
+        Source = "draw",
+        EventTable = {
+            {s = path .. "wfoly_me_fists_inspect_02.ogg", t = 0/30},
+        },
+    },
     ["idle_primed"] = {
         Source = "idle_primed"
     },
