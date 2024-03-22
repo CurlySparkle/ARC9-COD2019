@@ -87,13 +87,16 @@ SWEP.ClipSize = 6 -- Self-explanatory.
 SWEP.SupplyLimit = 12 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 10 -- Amount of reserve UBGL magazines you can take.
 
-SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
+SWEP.CustomCrosshairSize = 30
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+
 -------------------------- FIREMODES
 
-SWEP.RPM = 120
+SWEP.RPM = 120 * 1.4
 
 SWEP.Firemodes = {
     {
@@ -123,7 +126,7 @@ SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern s
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 
-SWEP.RecoilKick = 3
+SWEP.RecoilKick = 6
 
 SWEP.RecoilMultCrouch = 0.8
 
@@ -153,7 +156,7 @@ SWEP.SpreadAddCrouch = -0.03
 SWEP.SpreadAddSights = -(SWEP.Spread * 1.2)
 
 SWEP.SpreadMultRecoil = 1.1
-SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCap = 1
 SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
 
@@ -177,8 +180,8 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-1.935, -1.5, 2.15),
-    Ang = Angle(0, 0, 4),
+    Pos = Vector(-2.05, -3, 1.75),
+    Ang = Angle(0, 0, 0),
     Magnification = 1.15,
 	CrosshairInSights = false
 }
@@ -204,8 +207,8 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(1, 0, -1)
-SWEP.SprintAng = Angle(0, 0, 25)
+SWEP.SprintPos = Vector(-3.5, 1, 4.7)
+SWEP.SprintAng = Angle(0, -25, -5)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(13.5, 25, 4)
@@ -286,6 +289,7 @@ SWEP.HideBones = {
 
 SWEP.TriggerDelay = 0.075 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
+SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.075 -- Time until weapon fires.
 
 SWEP.Animations = {
@@ -367,8 +371,8 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_pi_cpapa_first_raise_start.ogg", t = 12/30},
             {s = path .. "wfoly_pi_cpapa_first_raise_cylinderopen_01.ogg", t = 12/30},
-			{s = path .. "wfoly_pi_cpapa_first_raise_cylinderclose_01.ogg", t = 23/30},
-			{s = path .. "wfoly_pi_cpapa_first_raise_end.ogg", t = 27/30},
+			{s = path .. "wfoly_pi_cpapa_first_raise_cylinderclose_01.ogg", t = 26/30},
+			{s = path .. "wfoly_pi_cpapa_first_raise_end.ogg", t = 29/30},
         },
     },
     ["draw"] = {
@@ -425,9 +429,11 @@ SWEP.Animations = {
         },
     },
     ["inspect"] = {
-        Source = "lookat01",
+        Source = "lookat02",
 		MinProgress = 0.1,
 		FireASAP = true,
+        RareSource = "lookat01_empty", -- Has a small chance to play instead of normal source
+        RareSourceChance = 0.1, -- chance that rare source will play
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -442,7 +448,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee","melee2"},
+        Source = {"melee","melee2","melee3"},
 	    IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -485,28 +491,27 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 
 SWEP.DefaultBodygroups = "00000000000000"
 
--- SWEP.AttachmentTableOverrides = {
-    -- ["arc9_stat_proscreen_main"] = {
-    -- ModelOffset = Vector(3, -1.15, -3.55),
-	-- ModelAngleOffset = Angle(0, 0, 0),
-	-- Scale = 0.9,
-    -- },
--- }
+SWEP.AttachmentTableOverrides = {
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_pistolgrip_tape.mdl",
+    },
+}
 
 SWEP.AttachmentElements = {
-    ["mag_none"] = {
+    ["barrel_none"] = {
         Bodygroups = {
             {1,1},
         },
     },
-    ["slide_none"] = {
-        Bodygroups = {
-            {2,1},
-        },
-    },
     ["grip_none"] = {
         Bodygroups = {
-            {3,1},
+            {2,1},
         },
     },
     ["rail_sight"] = {
@@ -517,6 +522,11 @@ SWEP.AttachmentElements = {
     ["rail_laser"] = {
         Bodygroups = {
             {4,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
+            {5,1},
         },
     },
 }
@@ -536,7 +546,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
 		DefaultIcon = Material("arc9/def_att_icons/barrel.png", "mips smooth"),
         DefaultAttName = "Standard slide",
-        Category = "cod2019_357_slide",
+        Category = "cod2019_357_barrel",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -567,20 +577,25 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac_pistols",
         Bone = "tag_laser_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(0.5, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"rail_laser"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
-        Category = "cod2019_357_grip",
-        Bone = "tag_stock_attach",
+        Category = {"cod2019_357_grip","cod2019_pistolgrip"},
+        Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 180),
-		Icon_Offset = Vector(0, 0, 2),
-		Scale = 1,
+        Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_grip"},
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_magazine"),
+		Bone = "tag_mag_attach",
+        Category = {"cod2019_357_mag"},
+        Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(-7, 0, 1.7),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
@@ -593,14 +608,6 @@ SWEP.Attachments = {
     {
 		PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"}
-    },
-    {
-		PrintName = ARC9:GetPhrase("mw19_category_stock"),
-		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
-        Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-        Category = {"cod2019_hold"}
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_skins"),

@@ -239,10 +239,10 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.PeekMaxFOV = SWEP.ViewModelFOVBase
 
-SWEP.PeekPos = Vector(-2.7, -4, -2)
+SWEP.PeekPos = Vector(-1, -4, -2)
 SWEP.PeekAng = Angle(0, 0, -45)
 
-SWEP.PeekPosReloading = Vector(1.5, 0, -2)
+SWEP.PeekPosReloading = Vector(0, 0, -2)
 SWEP.PeekAngReloading = Angle(0, 0, 0)
 
 -------------------------- HoldTypes
@@ -545,7 +545,7 @@ SWEP.Animations = {
 		PeekProgress = 0.775,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -1265,7 +1265,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
         DefaultAttName = "Standard Muzzle",
-        Category = "cod2019_muzzle_pistols",
+        Category = {"cod2019_muzzle_pistols","cod2019_renetti_muzzle"},
         Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),

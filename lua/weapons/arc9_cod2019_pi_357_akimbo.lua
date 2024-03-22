@@ -342,13 +342,23 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 
 SWEP.DefaultBodygroups = "00000000000000"
 
--- SWEP.AttachmentTableOverrides = {
-    -- ["arc9_stat_proscreen_main"] = {
-    -- ModelOffset = Vector(3, -1.15, -3.55),
-	-- ModelAngleOffset = Angle(0, 0, 0),
-	-- Scale = 0.9,
-    -- },
--- }
+SWEP.AttachmentTableOverrides = {
+    ["cod2019_357_barrel_long"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_barrel_long_akimbo.mdl",
+    },
+    ["cod2019_357_grip_stock"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_grip_stock_akimbo.mdl",
+    },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_pistolgrip_tape_akimbo.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_pistolgrip_tape_akimbo.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_pistolgrip_tape_akimbo.mdl",
+    },
+}
 
 SWEP.AttachmentElements = {
     ["body_none"] = {
@@ -398,7 +408,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
 		DefaultIcon = Material("arc9/def_att_icons/barrel.png", "mips smooth"),
         DefaultAttName = "Standard slide",
-        Category = "cod2019_357_slide",
+        Category = "cod2019_357_barrel",
         Bone = "tag_barrel_attach_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
@@ -456,15 +466,26 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
-        Category = "cod2019_357_grip",
-        Bone = "tag_stock_attach_l",
+        Category = {"cod2019_357_grip","cod2019_pistolgrip"},
+        Bone = "tag_pistolgrip_attach_l",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Icon_Offset = Vector(0, 0, -2),
-		Scale = 1,
         DuplicateModels = {
             {
-                Bone = "tag_stock_attach",
+                Bone = "tag_pistolgrip_attach",
+            }
+        },
+    },
+    {
+		PrintName = ARC9:GetPhrase("mw19_category_stock"),
+		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
+        Category = "cod2019_357_stock",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        DuplicateModels = {
+            {
+                Bone = "tag_stock_attach_l",
             }
         },
     },

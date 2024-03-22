@@ -339,6 +339,12 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_renetti_grip_custom"] = {
     Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_pstlgrpcust_akimbo.mdl",
 	},
+    ["cod2019_renetti_slide_long"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_barlong_akimbo.mdl",
+	},
+    ["cod2019_renetti_muzzle"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_compensator_akimbo.mdl",
+	},
 }
 
 SWEP.AttachmentElements = {
@@ -393,7 +399,7 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
         DefaultAttName = "Standard Muzzle",
-        Category = "cod2019_muzzle_pistols",
+        Category = {"cod2019_muzzle_pistols","cod2019_renetti_muzzle"},
         Bone = "tag_silencer_l",
         Pos = Vector(-0.2, 0, -0.03),
         Ang = Angle(0, 0, 0),

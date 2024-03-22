@@ -1,11 +1,11 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "models\cod2019\357\357_frame"
-    "$bumpmap" "models\cod2019\357\357_frame_n"
-    "$phongexponenttexture" "models\cod2019\357\357_frame_exp"
+    "$basetexture" "models\cod2019\357\357_barrelrail"
+    "$bumpmap" "models\cod2019\357\357_barrelrail_n"
+    "$phongexponenttexture" "models\cod2019\357\357_barrelrail_exp"
 
     /////////////////
-    "$color2" "[1 1 1]"                                     //do not touch this
+    "$color2" "[0 0 0]"                                     //do not touch this
     "$blendtintbybasealpha" "1"                             //do not touch this
     /////////////////
 
@@ -20,7 +20,7 @@
     /////////////////
 
     "$envmap" "env_cubemap"
-    "$envmaptint" "[0.396 0.396 0.388]"                 
+    "$envmaptint" "[0.447 0.435 0.471]"                 
 
     //remove this if not using MWB
     "Proxies"
@@ -28,8 +28,8 @@
         "Arc9EnvMapTint"
         {
             "min" "0"
-            "max" "2"
-            "color" "[0.396 0.396 0.388]"
+            "max" "0.3"
+            "color" "[0.447 0.435 0.471]"
         }
     }
 }
