@@ -149,18 +149,34 @@ SWEP.PostBashTime = 0.3
 
 SWEP.ImpactForce = 25
 
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_pin",
+    },    
+    [2] = {
+        "j_pin",
+    },
+}
+
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
     ["idle_primed"] = {
-        Source = "idle_primed"
+        Source = "idle_primed",
+        EventTable = {
+            {hide = 1, t = 0},
+        },
     },
     ["quicknade"] = {
         Source = "quick_pullout",
+        MinProgress = 0.666,
+        FireASAP = true,
         EventTable = {
             {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
 			{s = path .. "grenade_pin_frag_01.ogg", t = 8/30},
+            {hide = 0, t = 0},
+            {hide = 2, t = 1},
         },
     },
     ["draw"] = {
@@ -169,6 +185,7 @@ SWEP.Animations = {
         FireASAP = true,
         EventTable = {
             {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
+			{hide = 0, t = 0},
         },
     },
     ["holster"] = {
@@ -185,21 +202,23 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
             {s = path .. "grenade_pin_frag_01.ogg", t = 0/30},
+            {hide = 0, t = 0},
+            {hide = 2, t = 1},
         },
     },
     ["throw"] = {
         Source = "throw",
+		MinProgress = 0.5,
         EventTable = {
             {s = path .. "grenade_frag_throw.ogg", t = 0/30},
         },
-        MinProgress = 0.5
     },
     ["toss"] = {
         Source = "throw",
+		MinProgress = 0.5,
         EventTable = {
             {s = path .. "grenade_frag_throw.ogg", t = 0/30},
         },
-        MinProgress = 0.5
     },
     ["idle_sprint"] = {
         Source = "sprint",

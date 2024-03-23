@@ -599,6 +599,15 @@ SWEP.AttachmentTableOverrides = {
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.8,
     },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/rytec/attachment_vm_sn_xmike109_griptape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/rytec/attachment_vm_sn_xmike109_griptape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/rytec/attachment_vm_sn_xmike109_griptape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -718,6 +727,14 @@ SWEP.Attachments = {
 		-- ExcludeElements = {"grip_bottom"},
 		Hidden = true,
         MergeSlots = {5},
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+        DefaultAttName = "Default",
+        Category = {"cod2019_rytec_grip","cod2019_pistolgrip"},
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),

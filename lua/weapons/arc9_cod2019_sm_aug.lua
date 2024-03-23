@@ -763,6 +763,15 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.15),
     },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/aug/attachment_vm_sm_augolf_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/aug/attachment_vm_sm_augolf_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/aug/attachment_vm_sm_augolf_pistolgrip_tape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -975,6 +984,12 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		Icon_Offset = Vector(0, 0, 0),
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+        Category = {"cod2019_pistolgrip","cod2019_aug_grip"},
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(0, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
