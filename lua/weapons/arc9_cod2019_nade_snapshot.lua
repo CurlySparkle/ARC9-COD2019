@@ -15,6 +15,7 @@ SWEP.NotForNPCs = true
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_snapshot") or "Snapshot"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Grenade"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_snapshot_desc") or [[Provides a momentary glimpse of enemies within the blast radius..]]
+SWEP.ShortPrintName = "Snapshot"
 
 SWEP.Credits = {
     [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
