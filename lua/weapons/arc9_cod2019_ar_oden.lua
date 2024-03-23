@@ -206,8 +206,8 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-3, -3, -0.25),
-    Ang = Angle(0.1, 0, -2),
+    Pos = Vector(-3.01, -1, -0.275),
+    Ang = Angle(0, 0, -2),
     Magnification = 1.15,
     ViewModelFOV = 56,
 	CrosshairInSights = false
@@ -245,12 +245,12 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1.2, 4, -3)
+SWEP.PeekPos = Vector(-1.2, 1.5, -4)
 SWEP.PeekAng = Angle(-0.3, 0.3, -45)
 
 SWEP.PeekMaxFOV = 55
 
-SWEP.PeekPosReloading = Vector(0, 4, -2)
+SWEP.PeekPosReloading = Vector(0, 1, -2)
 SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
 
 -------------------------- HoldTypes
@@ -849,5 +849,35 @@ SWEP.CodStubbyGripPoseParam = 17
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 48 -- Damage done at point blank range
+SWEP.DamageMin = 36 -- Damage done at maximum range
+
+SWEP.RangeMin = 43 / ARC9.HUToM
+SWEP.RangeMax = 44 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.6,
+    [HITGROUP_CHEST] = 1.19,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 880 / ARC9.HUToM
+
+-------------------------- FIREMODES
+
+SWEP.RPM = 414
+
+-------------------------- HANDLING
+
+SWEP.AimDownSightsTime = 0.35 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.
 
 end

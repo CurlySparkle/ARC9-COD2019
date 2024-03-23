@@ -7,6 +7,15 @@ SWEP.PrintName = "MW2019 Base"
 
 SWEP.SecondarySupplyLimit = 6
 
+if CLIENT then
+    killicon.Add( "arc9_cod2019_proj_40mmgl_hel", "vgui/killicons/cod2019_m203.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_40mmgl_flash", "vgui/killicons/cod2019_m203.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_40mmgl_smoke", "vgui/killicons/cod2019_m203.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_40mmgl_inc", "vgui/killicons/cod2019_m203.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_40mmgl_stun", "vgui/killicons/cod2019_m203.png", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_40mmgl_snapshot", "vgui/killicons/cod2019_m203.png", Color(251, 85, 25, 255))
+end
+
 -------------------------- MELEE
 
 SWEP.MeleeHitSound = "COD2019.Melee.HitBody"
@@ -87,6 +96,8 @@ SWEP.IdlePoseParam = 0
 SWEP.HasSights = !SWEP.Akimbo
 
 SWEP.FiremodeAnimLock = true -- Firemode animation cannot be interrupted
+
+SWEP.UBGLCancelAnim = true
 
 local parmbl = {"blend_move","blend_walk","blend_idle"}
 

@@ -1284,6 +1284,7 @@ SWEP.CodStubbyTallGripPoseParam = 26
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+
 -------------------------- DAMAGE PROFILE
 SWEP.DamageMax = 27
 SWEP.DamageMin = 23
