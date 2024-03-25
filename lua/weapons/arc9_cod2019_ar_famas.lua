@@ -49,28 +49,15 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 40 -- Damage done at point blank range
-SWEP.DamageMin = 40 -- Damage done at maximum range
-
+SWEP.DamageMax = 24 -- Damage done at point blank range
+SWEP.DamageMin = 12 -- Damage done at maximum range
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 30 / ARC9.HUToM
-SWEP.RangeMax = 31 / ARC9.HUToM
+SWEP.RangeMin = 15 / ARC9.HUToM
+SWEP.RangeMax = 35 / ARC9.HUToM
 
 SWEP.Penetration = 8 -- Units of wood that can be penetrated by this gun.
-SWEP.RicochetChance = 0.15
-
 SWEP.ImpactForce = 8
-
-SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 1.6,
-    [HITGROUP_CHEST] = 1,
-    [HITGROUP_STOMACH] = 1,
-    [HITGROUP_LEFTARM] = 1,
-    [HITGROUP_RIGHTARM] = 1,
-    [HITGROUP_LEFTLEG] = 1,
-    [HITGROUP_RIGHTLEG] = 1,
-}
 
 -------------------------- PHYS BULLET BALLISTICS
 

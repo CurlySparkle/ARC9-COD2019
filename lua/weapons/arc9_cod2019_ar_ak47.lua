@@ -305,6 +305,8 @@ SWEP.DropMagazineQCAHook = function(swep, old)
   if curanim == "reload_smg_empty" then return 5 end
   if curanim == "reload_smg_fast" then return 5 end
   if curanim == "reload_smg_fast_empty" then return 5 end
+  if curanim == "reload_drum_fast" then return 5 end
+  if curanim == "reload_drum_fast_empty" then return 5 end
 end
 
 -------------------------- SOUNDS
@@ -518,12 +520,12 @@ SWEP.Animations = {
 		PeekProgress = 0.875,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		--DropMagAt = 0.85,
+		DropMagAt = 0.93,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.1, lhik = 0, rhik = 0},
             { t = 0.65, lhik = 0, rhik = 0},
-            { t = 0.75, lhik = 1, rhik = 1},
+            { t = 0.87, lhik = 1, rhik = 1},
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_raise.ogg", t = 0.033},
@@ -539,7 +541,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 1.15,
+		DropMagAt = 0.93,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -620,7 +622,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_reload_fast_twist.ogg", t = 0.033},
-            {s = path .. "wfoly_ar_akilo47_reload_fast_magout_01.ogg", t = 0.3},
+            {s = path .. "wfoly_ar_akilo47_reload_empty_fast_maghit_01.ogg", t = 0.3},
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_01.ogg", t = 0.9},
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_02.ogg", t = 1.3},
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_end.ogg", t = 1.1},
@@ -1016,6 +1018,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"barrel"},
+		ExcludeElements = {"barrel_rpk_grip"},
 		MergeSlots = {20}, -- Grenade Launcher(s)
     },
     { -- 8

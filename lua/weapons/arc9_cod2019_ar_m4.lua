@@ -418,7 +418,7 @@ SWEP.Animations = {
         },
     },
     ["reload_fast"] = {
-        Source = "reload_fast",
+        Source = "reload_fast2",
 		MinProgress = 0.85,
 		RefillProgress = 0.625,
 		FireASAP = true,
@@ -427,7 +427,7 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.6, lhik = 0, rhik = 0 },
-            { t = 0.8, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_fast_lift_v2.ogg", t = 0},
@@ -438,7 +438,7 @@ SWEP.Animations = {
         },
     },
     ["reload_fast_empty"] = {
-        Source = "reload_fast_empty",
+        Source = "reload_fast_empty2",
 		MinProgress = 0.85,
 		PeekProgress = 0.8,
 		RefillProgress = 0.7,
@@ -447,6 +447,7 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
             { t = 0.6, lhik = 0, rhik = 0 },
             { t = 0.8, lhik = 1, rhik = 1 },
         },
@@ -500,27 +501,28 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag_fast"] = {
-        Source = "reload_xmag_fast",
+        Source = "reload_xmag_fast2",
 		MinProgress = 0.85,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		DropMagAt = 0.45,
+		DropMagAt = 0.3,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.6, lhik = 0, rhik = 0 },
-            { t = 0.8, lhik = 1, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_fast_lift_v2.ogg", t = 0/30},
-			{s = path .. "wpfoly_mike4_reload_magout_v2.ogg", t = 3/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magout_v2.ogg", t = 5/30},
+			{s = path .. "wpfoly_mike4_reload_fast_lift_v2.ogg", t = 18/30},
 			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 25/30},
 			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 28/30},
 			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 35/30},
         },
     },
     ["reload_xmag_fast_empty"] = {
-        Source = "reload_xmag_fast_empty",
+        Source = "reload_xmag_fast_empty2",
 		MinProgress = 0.85,
 		PeekProgress = 0.8,
 		RefillProgress = 0.675,
@@ -530,14 +532,16 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.6, lhik = 0, rhik = 0 },
-            { t = 0.8, lhik = 1, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_empty_fast_lift_v2.ogg", t = 0/30},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_magout_v2.ogg", t = 5/30},
-			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 25/30},
-			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 34/30},
-			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 44/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_lift_v2.ogg", t = 18/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 35/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 44/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 54/30},
         },
     },
     ["reload_xmaglrg"] = {
@@ -581,45 +585,48 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 63/30},
         },
     },
-    ["reload_xmaglrg_fast"] = {
-        Source = "reload_xmaglrg_fast",
+    ["reload_xmagslrg_fast"] = {
+        Source = "reload_xmaglrg_fast2",
 		MinProgress = 0.85,
 		RefillProgress = 0.625,
 		FireASAP = true,
 		DropMagAt = 0.45,
+		Mult = 0.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.6, lhik = 0, rhik = 0 },
-            { t = 0.8, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_fast_lift_v2.ogg", t = 0/30},
 			{s = path .. "wpfoly_mike4_reload_magout_v2.ogg", t = 3/30},
-			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 25/30},
-			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 28/30},
-			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 35/30},
+			{s = path .. "wpfoly_mike4_reload_fast_lift_v2.ogg", t = 28/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 35/30},
+			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 38/30},
+			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 45/30},
         },
     },
-    ["reload_xmaglrg_fast_empty"] = {
-        Source = "reload_xmaglrg_fast_empty",
+    ["reload_xmagslrg_fast_empty"] = {
+        Source = "reload_xmaglrg_fast_empty2",
 		MinProgress = 0.85,
 		PeekProgress = 0.8,
 		RefillProgress = 0.675,
 		FireASAP = true,
 		DropMagAt = 0.4,
+		Mult = 0.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.6, lhik = 0, rhik = 0 },
-            { t = 0.8, lhik = 1, rhik = 1 },
+            { t = 0.95, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_empty_fast_lift_v2.ogg", t = 0/30},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_magout_v2.ogg", t = 5/30},
-			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 25/30},
-			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 34/30},
-			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 44/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 35/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 44/30},
+			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 54/30},
         },
     },
     ["reload_smg"] = {
@@ -927,7 +934,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
-    local xmagslrg = wep:HasElement("mag_xmagslrg")
+    local xmagslrg = wep:HasElement("mag_xmaglrg")
 	local smg = wep:HasElement("mag_calsmg")
 
     if super_sprint and Translate_TacSprint[anim] then
