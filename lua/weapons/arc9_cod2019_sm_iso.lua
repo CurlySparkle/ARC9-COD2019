@@ -427,10 +427,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sm_charlie9_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_charlie9_reload_grab.ogg", t = 11/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 19/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 48/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 52/30},
+			{s = path .. "wfoly_sm_charlie9_reload_grab.ogg", t = 10/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 50/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 58/30},
         },
     },
     ["reload_drum_empty"] = {
@@ -445,11 +445,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_shake.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 20/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 37/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 58/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 59/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 23/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 41/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 62/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 62/30},
         },
     },
     ["reload_drum_fast"] = {
@@ -468,7 +468,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 22/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 24/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 25/30},
         },
     },
     ["reload_drum_fast_empty"] = {
@@ -488,7 +488,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 22/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 35/30},
-			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 40/30},
+			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 33/30},
         },
     },
     ["reload_xmag"] = {
