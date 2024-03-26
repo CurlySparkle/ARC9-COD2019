@@ -254,7 +254,7 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1, 3, -3.2)
+SWEP.PeekPos = Vector(-1.5, 3, -3.2)
 SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 SWEP.PeekMaxFOV = 55
@@ -533,7 +533,7 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag_fast"] = {
-        Source = "reload_xmag_fast",
+        Source = "reload_xmag_fast2",
 		MinProgress = 0.9,
 		PeekProgress = 0.825,
 		RefillProgress = 0.65,
@@ -555,7 +555,7 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag_fast_empty"] = {
-        Source = "reload_xmag_fast_empty",
+        Source = "reload_xmag_fast_empty2",
 		MinProgress = 0.9,
 		PeekProgress = 0.85,
 		RefillProgress = 0.725,
@@ -620,53 +620,69 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_end.ogg", t = 59/30},
         },
     },
-    ["reload_xmaglrg_fast"] = {
-        Source = "reload_xmaglrg_fast",
+    ["reload_xmagslrg_fast"] = {
+        Source = "reload_xmaglrg_fast2",
 		MinProgress = 0.9,
 		PeekProgress = 0.825,
 		RefillProgress = 0.65,
 		FireASAP = true,
-		DropMagAt = 0.55,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.6, lhik = 0, rhik = 0 },
-            { t = 0.8, lhik = 1, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.87, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_mvmnt.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_rotate.ogg", t = 3/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_magout_01.ogg", t = 3/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_01.ogg", t = 25/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_magin_v2_02.ogg", t = 27/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_end.ogg", t = 27/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_mvmnt.ogg", t = 0},
+            {s = path .. "wfoly_ar_mcharlie_reload_empty_magout_01.ogg", t = 0.1},
+			{s = path .. "wfoly_ar_mcharlie_reload_fast_arm.ogg", t = 0.6},
+			{s = path .. "wfoly_ar_mcharlie_reload_fast_magin_v2_01.ogg", t = 0.95},
+			{s = path .. "wfoly_ar_mcharlie_reload_fast_magin_v2_02.ogg", t = 1.15},
+            {s = path .. "wfoly_ar_mcharlie_reload_fast_rattle.ogg", t = 1.1},
+			{s = path .. "wfoly_ar_mcharlie_reload_fast_end.ogg", t = 1.5},
         },
     },
-    ["reload_xmaglrg_fast_empty"] = {
-        Source = "reload_xmaglrg_fast_empty",
+    ["reload_xmagslrg_fast_empty"] = {
+        Source = "reload_xmaglrg_fast_empty2",
 		MinProgress = 0.9,
 		PeekProgress = 0.85,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 0.55,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.625, lhik = 0, rhik = 0 },
-            { t = 0.825, lhik = 1, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_mvmnt.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_fast_raise.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_rotate.ogg", t = 3/30},
 			{s = path .. "wfoly_ar_mcharlie_reload_empty_magout_01.ogg", t = 3/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_magin_v2_01.ogg", t = 25/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_magin_v2_02.ogg", t = 27/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_bolt_release.ogg", t = 37/30},
-			{s = path .. "wfoly_ar_mcharlie_reload_empty_end.ogg", t = 39/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_fast_magin_v2_01.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_fast_magin_v2_02.ogg", t = 37/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_fast_bolt_release_01.ogg", t = 47/30},
+			{s = path .. "wfoly_ar_mcharlie_reload_empty_fast_end.ogg", t = 49/30},
         },
     },
     ["ready"] = {
         Source = "draw",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_ar_mcharlie_raise_first_raise.ogg", t = 0},
+            {s = path .. "wfoly_ar_mcharlie_raise_first_magout_01.ogg", t = 0.03},
+			{s = path .. "wfoly_ar_mcharlie_raise_first_magin_01.ogg", t = 0.55},
+            {s = path .. "wfoly_ar_mcharlie_raise_first_end.ogg", t = 0.45},
+        },
+    },
+    ["1_ready"] = {
+        Source = "draw2",
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -710,12 +726,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Time = 1.25,
+		Time = 1,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Time = 1.25,
+		Time = 1,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -876,7 +892,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
-    local xmagslrg = wep:HasElement("mag_xmagslrg")
+    local xmagslrg = wep:HasElement("mag_xmaglrg")
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
