@@ -259,6 +259,12 @@ SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
 SWEP.NoShellEject = true
+
+SWEP.DropMagazineModel = "models/weapons/cod2019/shared/shell_357.mdl"
+SWEP.DropMagazineSounds = {"weapons/cod2019/shared/casings/blt_case_bounce_9_01.wav", "weapons/cod2019/shared/casings/blt_case_bounce_9_02.wav", "weapons/cod2019/shared/casings/blt_case_bounce_9_03.wav"}
+SWEP.DropMagazineAmount = 6
+SWEP.DropMagazineTime = 1
+SWEP.DropMagazineQCA = 5
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
 
@@ -330,6 +336,7 @@ SWEP.Animations = {
         Source = "reload",
 		MinProgress = 0.85,
 		MagSwapTime = 3.5,
+		DropMagAt = 0.6,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -354,6 +361,7 @@ SWEP.Animations = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
+		DropMagAt = 0.43,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
