@@ -604,10 +604,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_scharlie_reload_rotate.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0/30},
-			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_01.ogg", t = 30/30},
-			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_02.ogg", t = 42/30},
-			{s = path .. "wfoly_ar_scharlie_reload_end.ogg", t = 45/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_01.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_02.ogg", t = 41/30},
+			{s = path .. "wfoly_ar_scharlie_reload_end.ogg", t = 48/30},
         },
     },
     ["reload_ar_empty"] = {
@@ -627,9 +627,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0.066},
 			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0.36},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 1.46},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 1.76},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_bolt_release.ogg", t = 2.16},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 1.3},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 1.6},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_bolt_release.ogg", t = 2.1},
 			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 2.23},
         },
     },
@@ -651,8 +651,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_scharlie_reload_fast_shake.ogg", t = 0.066},
 			{s = path .. "wfoly_ar_scharlie_reload_fast_magout.ogg", t = 0.36},
 			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_01.ogg", t = 0.76},
-			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_02.ogg", t = 1.03},
-			{s = path .. "wfoly_ar_scharlie_reload_fast_end.ogg", t = 1.3},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_02.ogg", t = 1.06},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_end.ogg", t = 1.36},
         },
     },
     ["reload_ar_fast_empty"] = {
@@ -675,7 +675,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_magin_v2_01.ogg", t = 0.8},
 			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_magin_v2_02.ogg", t = 1.03},
 			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_bolt_release.ogg", t = 1.4},
-			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_end.ogg", t = 1.66},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_end.ogg", t = 1.8},
         },
     },
     ["reload_drum"] = {
@@ -693,10 +693,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "p05_ar_schotel_reload_drum_raise.ogg", t = 0/30},
-			{s = path .. "p05_ar_schotel_reload_drum_magout.ogg", t = 21/30},
-			{s = path .. "p05_ar_schotel_reload_drum_rattle.ogg", t = 35/30},
-			{s = path .. "p05_ar_schotel_reload_drum_magin.ogg", t = 60/30},
-			{s = path .. "p05_ar_schotel_reload_drum_end.ogg", t = 80/30},
+			{s = path .. "p05_ar_schotel_reload_drum_magout.ogg", t = 20/30},
+			{s = path .. "p05_ar_schotel_reload_drum_rattle.ogg", t = 36/30},
+			{s = path .. "p05_ar_schotel_reload_drum_magin.ogg", t = 58/30},
+			{s = path .. "p05_ar_schotel_reload_drum_end.ogg", t = 78/30},
         },
     },
     ["reload_drum_empty"] = {
@@ -715,12 +715,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "p05_ar_schotel_reload_drum_empty_raise.ogg", t = 0/30},
-			{s = path .. "p05_ar_schotel_reload_drum_empty_magrelease.ogg", t = 9/30},
-			{s = path .. "p05_ar_schotel_reload_drum_empty_magout.ogg", t = 33/30},
-			{s = path .. "p05_ar_schotel_reload_drum_empty_rattle.ogg", t = 42/30},
-			{s = path .. "p05_ar_schotel_reload_drum_empty_magin.ogg", t = 67/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_magrelease.ogg", t = 11/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_magout.ogg", t = 32/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_rattle.ogg", t = 40/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_magin.ogg", t = 65/30},
 			{s = path .. "p05_ar_schotel_reload_drum_empty_charge.ogg", t = 90/30},
-			{s = path .. "p05_ar_schotel_reload_drum_empty_end.ogg", t = 105/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_end.ogg", t = 89/30},
         },
     },
     ["reload_drum_fast"] = {
@@ -740,7 +740,7 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "p05_ar_schotel_reload_drum_fast_raise.ogg", t = 0/30},
 			{s = path .. "p05_ar_schotel_reload_drum_fast_magout.ogg", t = 20/30},
-			{s = path .. "p05_ar_schotel_reload_drum_fast_magin.ogg", t = 48/30},
+			{s = path .. "p05_ar_schotel_reload_drum_fast_magin.ogg", t = 47/30},
 			{s = path .. "p05_ar_schotel_reload_drum_fast_end.ogg", t = 59/30},
         },
     },
@@ -760,7 +760,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_raise.ogg", t = 0/30},
-			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_magout.ogg", t = 17/30},
+			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_magout.ogg", t = 18/30},
 			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_rattle.ogg", t = 35/30},
 			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_magin.ogg", t = 47/30},
 			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_charge.ogg", t = 68/30},
@@ -791,8 +791,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_ar_scharlie_raise_first_rotate.ogg", t = 0/30},
-            {s = path .. "wfoly_ar_scharlie_jam_charge.ogg", t = 11/30},
-			{s = path .. "wfoly_ar_scharlie_raise_first_end.ogg", t = 24/30},
+            {s = path .. "wfoly_ar_scharlie_jam_charge.ogg", t = 10/30},
+			{s = path .. "wfoly_ar_scharlie_raise_first_end.ogg", t = 21/30},
         },
     },
     ["draw"] = {
