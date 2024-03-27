@@ -83,7 +83,7 @@ SWEP.Disposable = true
 
 SWEP.ThrowTumble = false
 SWEP.ThrowOnGround = false
-SWEP.ThrowInstantly = true
+SWEP.ThrowInstantly = false
 SWEP.ShootEntInheritPlayerVelocity = true
 
 SWEP.ShootPosOffset = Vector(0, 15, -10)
@@ -160,9 +160,9 @@ SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
     },
-    -- ["idle_primed"] = {
-        -- Source = "idle_primed"
-    -- },
+    ["idle_primed"] = {
+        Source = "idle"
+    },
     ["quicknade"] = {
         Source = "draw",
         EventTable = {
@@ -197,5 +197,12 @@ SWEP.Animations = {
         Source = "lookat01",
         MinProgress = 0.1,
         FireASAP = true,
+    },
+}
+
+SWEP.Attachments = {
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_perk"),
+        Category = {"cod2019_perks"},
     },
 }

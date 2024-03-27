@@ -221,7 +221,7 @@ SWEP.Animations = {
 SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"go_perk_melee"},
+        Category = {"cod2019_perks"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),

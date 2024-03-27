@@ -610,6 +610,163 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_scharlie_reload_end.ogg", t = 45/30},
         },
     },
+    ["reload_ar_empty"] = {
+        Source = "reload_ar_empty",
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 0.65,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.15, lhik = 1, rhik = 0 },
+            { t = 0.3, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0.066},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0.36},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 1.46},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 1.76},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_bolt_release.ogg", t = 2.16},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 2.23},
+        },
+    },
+    ["reload_ar_fast"] = {
+        Source = "reload_ar_fast",
+		MinProgress = 0.85,
+		PeekProgress = 0.815,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 0.5,
+		DropMagAt = 0.55,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_fast_shake.ogg", t = 0.066},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magout.ogg", t = 0.36},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_01.ogg", t = 0.76},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_02.ogg", t = 1.03},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_end.ogg", t = 1.3},
+        },
+    },
+    ["reload_ar_fast_empty"] = {
+        Source = "reload_ar_fast_empty",
+		MinProgress = 0.9,
+		PeekProgress = 0.825,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		MagSwapTime = 0.5,
+		DropMagAt = 0.55,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_rotate.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_magout.ogg", t = 0.16},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_magin_v2_01.ogg", t = 0.8},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_magin_v2_02.ogg", t = 1.03},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_bolt_release.ogg", t = 1.4},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_end.ogg", t = 1.66},
+        },
+    },
+    ["reload_drum"] = {
+        Source = "reload_drum",
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "p05_ar_schotel_reload_drum_raise.ogg", t = 0/30},
+			{s = path .. "p05_ar_schotel_reload_drum_magout.ogg", t = 21/30},
+			{s = path .. "p05_ar_schotel_reload_drum_rattle.ogg", t = 35/30},
+			{s = path .. "p05_ar_schotel_reload_drum_magin.ogg", t = 60/30},
+			{s = path .. "p05_ar_schotel_reload_drum_end.ogg", t = 80/30},
+        },
+    },
+    ["reload_drum_empty"] = {
+        Source = "reload_drum_empty",
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 0.65,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.3, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.95, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "p05_ar_schotel_reload_drum_empty_raise.ogg", t = 0/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_magrelease.ogg", t = 9/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_magout.ogg", t = 33/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_rattle.ogg", t = 42/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_magin.ogg", t = 67/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_charge.ogg", t = 90/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_end.ogg", t = 105/30},
+        },
+    },
+    ["reload_drum_fast"] = {
+        Source = "reload_drum_fast",
+		MinProgress = 0.85,
+		PeekProgress = 0.815,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 0.5,
+		DropMagAt = 1,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.95, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "p05_ar_schotel_reload_drum_fast_raise.ogg", t = 0/30},
+			{s = path .. "p05_ar_schotel_reload_drum_fast_magout.ogg", t = 20/30},
+			{s = path .. "p05_ar_schotel_reload_drum_fast_magin.ogg", t = 48/30},
+			{s = path .. "p05_ar_schotel_reload_drum_fast_end.ogg", t = 59/30},
+        },
+    },
+    ["reload_drum_fast_empty"] = {
+        Source = "reload_drum_fast_empty",
+		MinProgress = 0.9,
+		PeekProgress = 0.825,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		MagSwapTime = 0.5,
+		DropMagAt = 1,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.95, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_raise.ogg", t = 0/30},
+			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_magout.ogg", t = 17/30},
+			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_rattle.ogg", t = 35/30},
+			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_magin.ogg", t = 47/30},
+			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_charge.ogg", t = 68/30},
+			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_end.ogg", t = 65/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -622,6 +779,20 @@ SWEP.Animations = {
             {s = path .. "wfoly_ar_scharlie_raise_first_rotate.ogg", t = 0.066},
             {s = path .. "wfoly_ar_scharlie_raise_first_charge.ogg", t = 0.13},
 			{s = path .. "wfoly_ar_scharlie_raise_first_end.ogg", t = 0.96},
+        },
+    },
+    ["1_ready"] = {
+        Source = "draw2",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_ar_scharlie_raise_first_rotate.ogg", t = 0/30},
+            {s = path .. "wfoly_ar_scharlie_jam_charge.ogg", t = 11/30},
+			{s = path .. "wfoly_ar_scharlie_raise_first_end.ogg", t = 24/30},
         },
     },
     ["draw"] = {
@@ -780,13 +951,21 @@ SWEP.Animations = {
 -------------------------- ATTACHMENTS
 
 --- 30 & 10 (DMR) Round Mags ---
+local Translate_Drum = {
+    ["reload"] = "reload_drum",
+    ["reload_empty"] = "reload_drum_empty",
+}
+local Translate_Drum_Fast = {
+    ["reload"] = "reload_drum_fast",
+    ["reload_empty"] = "reload_drum_fast_empty",
+}
 local Translate_AR = {
     ["reload"] = "reload_ar",
-    ["reload_empty"] = "reload_empty",
+    ["reload_empty"] = "reload_ar_empty",
 }
 local Translate_AR_Fast = {
-    ["reload"] = "reload_xmags_fast",
-    ["reload_empty"] = "reload_fast_empty",
+    ["reload"] = "reload_ar_fast",
+    ["reload_empty"] = "reload_ar_fast_empty",
 }
 local Translate_XMags = {
     ["reload"] = "reload_xmags",
@@ -823,6 +1002,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmags = wep:HasElement("mag_xmags")
     local armag = wep:HasElement("mag_armag")
+    local drummag = wep:HasElement("mag_drum")
     local dmr = wep:HasElement("mag_dmr")
 
     if super_sprint and Translate_TacSprint[anim] then
@@ -830,7 +1010,11 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     end
 
     if speedload then
-        if armag then
+        if drummag then
+            if Translate_Drum_Fast[anim] then
+                return Translate_Drum_Fast[anim]
+            end
+        elseif armag then
             if Translate_AR_Fast[anim] then
                 return Translate_AR_Fast[anim]
             end
@@ -848,6 +1032,11 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             end
         end
     else
+	    if drummag then
+            if Translate_Drum[anim] then
+                return Translate_Drum[anim]
+            end
+        end
 	    if armag then
             if Translate_AR[anim] then
                 return Translate_AR[anim]
@@ -1075,7 +1264,7 @@ SWEP.Attachments = {
         Category = "cod2019_scar_reciever",
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
-		Icon_Offset = Vector(12, 0, 4),
+		Icon_Offset = Vector(7, 0, 1),
     },
 	
 	-- Cosmetics
