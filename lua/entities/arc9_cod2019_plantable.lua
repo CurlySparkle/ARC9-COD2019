@@ -161,6 +161,11 @@ if SERVER then
       local hitPos = data.HitPos -- Get the position where the grenade hit
       local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
       local hitEntity = data.HitEntity -- Get the entity that was hit (can be nil if it hit the world)
+	  
+        local ent = data.HitEntity
+        if IsValid(ent) and ent:IsPlayer() and ent == self:GetOwner() then
+            return
+        end
 		
         self:Plant(data.HitEntity, data.HitPos, -data.HitNormal, data.OurOldVelocity:GetNormalized())
 	  if self.GroundDecal then
