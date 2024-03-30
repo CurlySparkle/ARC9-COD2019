@@ -239,7 +239,7 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.PeekMaxFOV = SWEP.ViewModelFOVBase
 
-SWEP.PeekPos = Vector(-1, -4, -2)
+SWEP.PeekPos = Vector(0, -5, -2)
 SWEP.PeekAng = Angle(0, 0, -45)
 
 SWEP.PeekPosReloading = Vector(0, 0, -2)
@@ -1215,13 +1215,20 @@ end
 --     vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 1, 0) )
 -- end
 
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("rail_sight") then 
+	model:SetBodygroup(5,0) 
+	end
+end
+
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["cod2019_renetti_stock"] = {
 	CustomizeAng = Angle(90, 0, 0),
 	CustomizePos = Vector(17, 25, 3),
-	PeekPos = Vector(-1, 0, -4),
+	PeekPos = Vector(0, -1.5, -4),
 	PeekAng = Angle(0, 0, -45),
     },
 }
@@ -1245,6 +1252,11 @@ SWEP.AttachmentElements = {
     ["grip_none"] = {
         Bodygroups = {
             {4,1},
+        },
+    },
+    ["sight_mount"] = {
+        Bodygroups = {
+            {5,1},
         },
     },
 	["muzzle_comp"] = {
@@ -1275,13 +1287,13 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
-        Bone = "tag_reflex",
-        Pos = Vector(1.5, 0, -0.1),
+        Bone = "j_slide",
+        Pos = Vector(-1.275, 0, 0.645),
         Ang = Angle(0, 0, 0),
-        Category = "cod2019_optic_pistol",
+        Category = {"cod2019_optics_pistols_alt","cod2019_renetti_optic"},
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 1,
-		InstalledElements = {"rail_sight"},
+		InstalledElements = {"sight_mount"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),

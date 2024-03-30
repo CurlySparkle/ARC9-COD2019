@@ -648,12 +648,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 1.3,
+		Time = 0.9,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 1.3,
+		Time = 0.9,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -663,7 +663,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.7,
+		Time = 1.2,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 1, rhik = 1 },
@@ -672,7 +672,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.7,
+		Time = 1.2,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -838,7 +838,7 @@ end
 --     vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 1, 0) )
 -- end
 
-SWEP.DefaultBodygroups = "0000"
+SWEP.DefaultBodygroups = "00000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -903,13 +903,7 @@ end
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-    if wep:HasElement("stock_ebr") then 
-     model:SetPoseParameter("pistolgrip_pose", 1)
-    else
-     model:SetPoseParameter("pistolgrip_pose", 0)
-    end
-	
-    if wep:HasElement("stock_adapter") then 
+    if wep:HasElement("stock_adapter") or wep:HasElement("stock_ebr") then 
      model:SetPoseParameter("pistolgrip_pose", 1)
     else
      model:SetPoseParameter("pistolgrip_pose", 0)
@@ -969,11 +963,11 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
 		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
         DefaultAttName = "Standard Stock",
-        Category = {"cod2019_m14_stocks","cod2019_tube"},
+        Category = {"cod2019_m14_stock","cod2019_tube"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_adapter"},
+		--InstalledElements = {""},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),

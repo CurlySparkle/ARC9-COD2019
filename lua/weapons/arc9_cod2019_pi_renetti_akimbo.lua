@@ -342,6 +342,9 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_renetti_slide_long"] = {
     Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_barlong_akimbo.mdl",
 	},
+    ["cod2019_renetti_slide_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_barlight_akimbo.mdl",
+	},
     ["cod2019_renetti_muzzle"] = {
     Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_compensator_akimbo.mdl",
 	},

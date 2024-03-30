@@ -27,8 +27,8 @@ function SWEP:DrawWorldModel() -- custom func to never draw custommodel when on 
 end
 
 SWEP.QuickSwapTo = true
-SWEP.NoHolsterOnPrimed = true
-SWEP.CanLean = false
+SWEP.NoHolsterOnPrimed = false
+SWEP.CanLean = true
 SWEP.CantSafety = true 
 SWEP.IsQuickGrenade = true
 
