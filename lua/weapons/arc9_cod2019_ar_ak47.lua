@@ -1124,6 +1124,7 @@ SWEP.Attachments = {
         Pos = Vector(21.75, 0, 2),
         Ang = Angle(0, 180, 0),
 		InstalledElements = {"barrel", "cod2019_m203_alt"},
+		ExcludeElements = {"barrel_rpk"},
 		Hidden = true,
     },
 }
