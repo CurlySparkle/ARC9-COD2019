@@ -1052,7 +1052,7 @@ SWEP.Attachments = {
 	-- Unofficial
     { -- 11
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
-        Category = "cod2019_ak47_reciever",
+        Category = "cod2019_ak47_receiver",
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(12, 0, 4),

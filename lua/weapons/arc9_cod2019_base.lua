@@ -95,7 +95,7 @@ SWEP.WalkPoseParam = 0
 SWEP.IdlePoseParam = 0
 SWEP.HasSights = !SWEP.Akimbo
 
-SWEP.FiremodeAnimLock = true -- Firemode animation cannot be interrupted
+SWEP.FiremodeAnimLock = false -- Firemode animation cannot be interrupted
 
 SWEP.UBGLCancelAnim = true
 
