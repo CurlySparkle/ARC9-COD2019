@@ -32,11 +32,25 @@ SWEP.ClipSizeOverride = SWEP.ClipSize * 2
 
 SWEP.RPM = SWEP.RPM * 1.75
 
+-------------------------- RECOIL
+
+SWEP.RecoilUp = 1
+SWEP.RecoilSide = 0.1 -- Multiplier for vertical recoil
+SWEP.RecoilRandomSide = 0.5
+
+-------------------------- VISUAL RECOIL
+
+SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilSide = 0.05
+SWEP.VisualRecoilRoll = 55
+SWEP.VisualRecoilUp = 0.1
+
+
 -------------------------- MELEE
 
 SWEP.SecondaryBash = true
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.2
+SWEP.PostBashTime = 0.25
 
 -------------------------- POSITIONS
 
@@ -328,6 +342,15 @@ SWEP.AttachmentTableOverrides = {
     Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_xmags_akimbo.mdl",
 	ClipSizeOverride = 15 * 2
     },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_pistolgrip_tape_akimbo.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_pistolgrip_tape_akimbo.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_pistolgrip_tape_akimbo.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -415,29 +438,27 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_tac_pistols",
         Bone = "tag_laser_attach_l",
-        Pos = Vector(-1, 0, 0),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_laser"},
-		--LaserCorrectionAngle = Angle(0, 0, 0),
+		LaserCorrectionAngle = Angle(-1.9, 0, 0),
         DuplicateModels = {
             {
                 Bone = "tag_laser_attach",
-				--LaserCorrectionAngle = Angle(0, 0, 0),
+				LaserCorrectionAngle = Angle(0, 0, -1.5),
             }
         },
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
-        Category = "cod2019_m1911_grip",
-        Bone = "tag_stock_attach_l",
-        Pos = Vector(-0.75, 0, 1),
-        Ang = Angle(0, 0, 180),
-		Scale = 1,
-		--InstalledElements = {"rail_grip"},
+        Category = {"cod2019_m1911_grip","cod2019_pistolgrip"},
+        Bone = "tag_pistolgrip_attach_l",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
         DuplicateModels = {
             {
-                Bone = "tag_stock_attach",
+                Bone = "tag_pistolgrip_attach",
             }
         },
     },

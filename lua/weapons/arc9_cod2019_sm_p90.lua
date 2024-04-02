@@ -646,42 +646,24 @@ SWEP.AttachmentTableOverrides = {
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.9,
     },
-    -- ["csgo_cod2019_laser_01"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(1, 15, -2),
-        -- Ang = Angle(0, 0, -45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_02"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(1, 15, -2),
-        -- Ang = Angle(0, 0, -45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["csgo_cod2019_laser_03"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(1, 15, -2),
-        -- Ang = Angle(0, 0, -45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/p90/attachment_vm_sm_papa90_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/p90/attachment_vm_sm_papa90_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/p90/attachment_vm_sm_papa90_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_front_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/p90/attachment_vm_sm_papa90_foregrip_tape.mdl",
+    },
+    ["cod2019_griptape_front_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/p90/attachment_vm_sm_papa90_foregrip_tape.mdl",
+    },
+    ["cod2019_griptape_front_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/p90/attachment_vm_sm_papa90_foregrip_tape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -785,6 +767,19 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		Icon_Offset = Vector(-17, 0, 1),
 		--InstalledElements = {"rail_laser"},
+    },
+    {
+        PrintName = "Front Grip",
+        Category = "cod2019_pistolgrip_front",
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(4.5, 0, 0.5),
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
+        Category = "cod2019_pistolgrip",
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(0, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_folder_other2"),

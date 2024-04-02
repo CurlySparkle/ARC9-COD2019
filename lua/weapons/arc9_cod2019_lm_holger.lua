@@ -780,6 +780,15 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_attach_xmag_60"] = {
     Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_ar_mcharlie_xmags2.mdl",
     },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_lm_mgolf36_griptape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_lm_mgolf36_griptape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_lm_mgolf36_griptape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {

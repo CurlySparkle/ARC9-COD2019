@@ -160,7 +160,7 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.0325
+SWEP.Spread = 0.03
 
 SWEP.SpreadAddRecoil = 0.01
 
@@ -794,6 +794,15 @@ SWEP.AttachmentTableOverrides = {
     ReloadPos = Vector(0,0,0),
     ReloadAng = Angle(0,0,0),
     },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_pistolgrip_tape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -872,11 +881,10 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
         DefaultAttName = "Default",
-        Category = "cod2019_m1911_grip",
-        Bone = "tag_stock_attach",
-        Pos = Vector(-0.75, 0, 1),
-        Ang = Angle(0, 0, 180),
-		Scale = 1,
+        Category = {"cod2019_m1911_grip","cod2019_pistolgrip"},
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_grip"},
     },
     {

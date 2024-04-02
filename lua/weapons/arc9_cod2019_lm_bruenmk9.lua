@@ -702,6 +702,31 @@ SWEP.Animations = {
             { t = 0.8, lhik = 1, rhik = 1 },
         },
     },
+    ["jam"] = {
+        Source = "jam",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
+        },
+    },
+    ["fix"] = {
+        Source = "jam_fix",
+		EjectAt = 0.6,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_down.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_charge_pull.ogg", t = 16/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_charge_push.ogg", t = 33/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_up.ogg", t = 39/30},
+        },
+    },
     ["enter_bipod"] = {
         Source = "bipod_in",
     },
@@ -834,6 +859,15 @@ SWEP.AttachmentTableOverrides = {
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.1),
+    },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/bruenmk9/attachment_wm_lm_mkilo3_griptape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/bruenmk9/attachment_wm_lm_mkilo3_griptape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/bruenmk9/attachment_wm_lm_mkilo3_griptape.mdl",
     },
 }
 

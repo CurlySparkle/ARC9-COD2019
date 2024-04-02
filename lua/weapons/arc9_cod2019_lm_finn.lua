@@ -263,6 +263,8 @@ SWEP.CustomizeNoRotate = false
 SWEP.PeekPos = Vector(2, 2, -1)
 SWEP.PeekAng = Angle(0, 0, 5)
 
+SWEP.PeekMaxFOV = 65
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "ar2"
@@ -608,6 +610,29 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1 },
         },
     },
+    ["jam"] = {
+        Source = "jam",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
+        },
+    },
+    ["fix"] = {
+        Source = "jam_fix",
+		EjectAt = 0.6,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_sierrax_reload_empty_lift.ogg", t = 1/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_charge.ogg", t = 29/30},
+        },
+    },
     ["enter_bipod"] = {
         Source = "bipod_in",
     },
@@ -863,6 +888,29 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1 },
         },
     },
+    ["jam_saw"] = {
+        Source = "jam_saw",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
+        },
+    },
+    ["fix_saw"] = {
+        Source = "jam_fix_saw",
+		EjectAt = 0.6,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_lm_sierrax_reload_empty_lift.ogg", t = 1/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_charge.ogg", t = 29/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -885,6 +933,8 @@ local Translate_SAW = {
     ["exit_sprint"] = "exit_sprint_saw",
 	["inspect"] = "inspect_saw",
     ["bash"] = "bash_saw",
+    ["fix"] = "fix_saw",
+    ["jam"] = "jam_saw",
 }
 local Translate_SAW_Fast = {
 	["enter_sights"] = "enter_sights_saw",
@@ -901,6 +951,8 @@ local Translate_SAW_Fast = {
     ["exit_sprint"] = "exit_sprint_saw",
 	["inspect"] = "inspect_saw",
     ["bash"] = "bash_saw",
+    ["fix"] = "fix_saw",
+    ["jam"] = "jam_saw",
 }
 
 --- Fast & Tac. Sprint ---
@@ -968,6 +1020,15 @@ SWEP.AttachmentTableOverrides = {
     },
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.1),
+    },
+    ["cod2019_griptape_01"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_pistolgrip_tape.mdl",
     },
 }
 
@@ -1098,6 +1159,7 @@ SWEP.Attachments = {
         Category = "cod2019_pistolgrip",
         Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
+		ExcludeElements = {"stock_saw"},
     },
     { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_perk"),

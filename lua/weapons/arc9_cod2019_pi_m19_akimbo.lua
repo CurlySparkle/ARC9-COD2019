@@ -32,10 +32,39 @@ SWEP.ClipSizeOverride = SWEP.ClipSize * 2
 
 SWEP.RPM = SWEP.RPM * 1.75
 
+-------------------------- RECOIL
+
+-- General recoil multiplier
+SWEP.Recoil = 2
+
+SWEP.RecoilSeed = nil
+SWEP.RecoilPatternDrift = 35
+
+-- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
+SWEP.RecoilUp = 0.1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.1 -- Multiplier for vertical recoil
+
+SWEP.RecoilRandomUp = 0.1
+SWEP.RecoilRandomSide = 0.5
+
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilSide = 0
+SWEP.VisualRecoilSide = 0.05
+SWEP.VisualRecoilRoll = 55
+SWEP.VisualRecoilUp = 0.1
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 5 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 3.5, 0, 1)
+        
+        local fakerandom = 1 + (((69+recamount%5*CurTime()%3)*2420)%4)/10 
+        
+        return up, side * fakerandom, roll, punch
+    end
+
+    return up, side, roll, punch
+end
 
 -------------------------- MELEE
 
@@ -68,8 +97,8 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(0, -1.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(-1, 0, -1)
-SWEP.SprintAng = Angle(0, 0, -5)
+SWEP.SprintPos = Vector(0, 0, 1.5)
+SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(19, 32.5, 4.25)
@@ -281,6 +310,17 @@ SWEP.Animations = {
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
 		Mult = 1,
     },
+    ["super_sprint_idle"] = {
+        Source = "super_sprint",
+    },
+    ["super_sprint_in"] = {
+        Source = "super_sprint_in",
+		Time = 1,
+    },
+    ["super_sprint_out"] = {
+        Source = "super_sprint_out",
+		Time = 1,
+    },
     ["inspect"] = {
         Source = "lookat01",
 		MinProgress = 0.1,
@@ -312,10 +352,21 @@ local Translate_Fast = {
     ["reload_empty"] = "reload_fast_empty",
 }
 
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+}
+
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
     local speedload = wep:HasElement("perk_speedreload")
+	local super_sprint = wep:HasElement("perk_super_sprint")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
+    end
 
     if speedload then
         if Translate_Fast[anim] then
@@ -348,6 +399,10 @@ SWEP.AttachmentTableOverrides = {
     },
     ["cod2019_griptape_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_pistolgrip_tape_akimbo.mdl",
+    },
+    ["cod2019_perks_super_sprint"] = {
+    SprintPos = Vector(-1, 0, -1),
+    SprintAng = Angle(0, 0, -5)
     },
 }
 
@@ -474,7 +529,7 @@ SWEP.Attachments = {
     },
     {
 		PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"}
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
