@@ -466,9 +466,9 @@ SWEP.Animations = {
 		PeekProgress = 0.9,
 		FireASAP = true,
         IKTimeLine = {
-            { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
             { t = 0.9, lhik = 1, rhik = 1 },
         },
 		MinProgress = 0.95,
@@ -492,10 +492,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		DropMagAt = 1.1,
         IKTimeLine = {
-            { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.125, lhik = 1, rhik = 0 },
-            { t = 0.175, lhik = 0, rhik = 0 },
-            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.125, lhik = 1, rhik = 1 },
+            { t = 0.175, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
             { t = 0.75, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -517,9 +517,9 @@ SWEP.Animations = {
 		FireASAP = true,
 		DropMagAt = 0.6,
         IKTimeLine = {
-            { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -538,10 +538,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
-            { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.125, lhik = 1, rhik = 0 },
-            { t = 0.175, lhik = 0, rhik = 0 },
-            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.125, lhik = 1, rhik = 1 },
+            { t = 0.175, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
             { t = 0.75, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -622,9 +622,9 @@ SWEP.Animations = {
         MinProgress = 0.1,
         FireASAP = true,
         IKTimeLine = {
-            { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.875, lhik = 0, rhik = 0 },
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.875, lhik = 0, rhik = 1 },
             { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -822,7 +822,7 @@ SWEP.AttachmentElements = {
     },
     ["stock_none"] = {
         Bodygroups = {
-            {5,1},
+            {5,2},
         },
     },
     ["tag_laser"] = {
@@ -840,10 +840,11 @@ SWEP.AttachmentElements = {
 	-- }
 }
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("pump_none") then model:SetBodygroup(2,2) end
+    if wep:HasElement("stock_none") then model:SetBodygroup(5,2) end
+end
 
 SWEP.Attachments = {
     {
@@ -891,6 +892,7 @@ SWEP.Attachments = {
         Bone = "tag_guard_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(6.3, 0, -0.7),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
@@ -906,12 +908,20 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
 		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
         DefaultAttName = "Standard Stock",
-        Category = "cod2019_tube",
+        Category = {"cod2019_tube","cod2019_model680_stock"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_adapter"},
+		--InstalledElements = {"stock_adapter"},
 		Scale = 1,
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
+        Category = "cod2019_pistolgrip",
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(0, 0, 0),
+		ExcludeElements = {"stock_wood"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
