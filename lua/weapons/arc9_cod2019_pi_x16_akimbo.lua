@@ -323,6 +323,12 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_x16_slide_light"] = {
     Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_slide_auto_akimbo.mdl"
     },
+    ["cod2019_x16_slide_long"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_slide_long_akimbo.mdl"
+    },
+    ["cod2019_x16_slide_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_slide_v3_akimbo.mdl"
+    },
     ["cod2019_x16_mag_xmag2"] = {
     Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_mag_xmags2_akimbo.mdl",
 	ClipSizeOverride = 26 * 2
