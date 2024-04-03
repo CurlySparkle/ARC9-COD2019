@@ -246,8 +246,13 @@ SWEP.CustomizeSnapshotPos = Vector(1.5, 7, 2.5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
+SWEP.PeekMaxFOV = 45
+
 SWEP.PeekPos = Vector(-1.5, 3, -3.2)
 SWEP.PeekAng = Angle(-0.5, 1, -45)
+
+SWEP.PeekPosReloading = Vector(0, 4, -1.5)
+SWEP.PeekAngReloading = Angle(-0.3, 0, -2.5)
 
 -------------------------- HoldTypes
 
@@ -357,6 +362,7 @@ SWEP.Animations = {
 		MinProgress = 0.925,
 		MagSwapTime = 3.5,
 		RefillProgress = 0.725,
+		PeekProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -379,6 +385,7 @@ SWEP.Animations = {
 		MinProgress = 0.9,
 		DropMagAt = 1.2,
 		RefillProgress = 0.8,
+		PeekProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -423,12 +430,13 @@ SWEP.Animations = {
 		MinProgress = 0.9,
 		DropMagAt = 0.8,
 		RefillProgress = 0.7,
+		PeekProgress = 0.85,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.9, lhik = 1, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_fast_lift.ogg", t = 3/30},
@@ -445,6 +453,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
 		RefillProgress = 0.6,
+		PeekProgress = 0.825,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -466,6 +475,7 @@ SWEP.Animations = {
 		MinProgress = 0.9,
 		DropMagAt = 0.95,
 		RefillProgress = 0.725,
+		PeekProgress = 0.825,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -510,6 +520,7 @@ SWEP.Animations = {
 		MinProgress = 0.9,
 		DropMagAt = 0.8,
 		RefillProgress = 0.6,
+		PeekProgress = 0.825,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -892,14 +903,14 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 180),
 		MergeSlots = {20}, -- Bipod
     },
-    { -- 8
+    { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
 		Bone = "tag_mag_attach",
         Category = {"cod2019_holger_mag","cod2019_mag_xmag"},
         Pos = Vector(0, 0, 0),
     },
-    { -- 9
+    { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",
@@ -986,7 +997,7 @@ SWEP.Attachments = {
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
         Pos = Vector(-6.5, 0, -0.5),
-		Icon_Offset = Vector(-1.25, 0, 1.9),
+		Icon_Offset = Vector(-0.5, 0, 3.5),
 		CosmeticOnly = true,
     },
     { -- 20

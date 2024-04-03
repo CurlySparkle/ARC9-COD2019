@@ -1091,14 +1091,14 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 180),
 		MergeSlots = {20}, -- Grenade Launcher(s)
     },
-    { -- 8
+    { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
 		Bone = "tag_mag_attach",
         Category = {"cod2019_mag","cod2019_m13_mag","cod2019_mag_xmag"},
         Pos = Vector(0, 0, 0),
     },
-    { -- 9
+    { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",

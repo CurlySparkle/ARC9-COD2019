@@ -971,14 +971,14 @@ SWEP.Attachments = {
 		InstalledElements = {"rail_grip"},
 		MergeSlots = {20}, -- Bipod
     },
-    { -- 8
+    { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
 		Bone = "tag_mag_attach",
         Category = {"cod2019_mag","cod2019_bruenmk9_mag"},
         Pos = Vector(0, 0, 0),
     },
-    { -- 9
+    { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",

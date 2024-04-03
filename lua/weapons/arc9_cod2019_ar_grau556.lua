@@ -918,7 +918,7 @@ SWEP.Attachments = {
 		InstalledElements = {"rail_grip"},
 		MergeSlots = {20}, -- Grenade Launcher(s)
     },
-    { -- 8
+    { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
 		Bone = "tag_mag_attach",
@@ -926,7 +926,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(-2.5, 0, 0),
     },
-    { -- 9
+    { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",

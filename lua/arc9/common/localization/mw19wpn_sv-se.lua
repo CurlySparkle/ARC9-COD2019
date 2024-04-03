@@ -354,6 +354,10 @@ L["cod2019_perks_burst.description"] = "Ändrar skjutläget till <color=100,255,
 
 L["cod2019_perks_burst_2.description"] = "Ändrar skjutläget till <color=100,255,100>2-skott</color>salvo."
 
+L["cod2019_perks_super_sprint.printname"] = "Taktisk Sprint" -- UO
+L["cod2019_perks_super_sprint.compactname"] = "Tak. Sprint" -- UO
+L["cod2019_perks_super_sprint.description"] = "Erbjuder en justerad hållning när du springer. Tar bort upp till <color=100,255,100>20%</color> rörelsehastighet sänkning i sprint med kostnad på spring-till-sikte hastighet." -- UO
+
 ////////////////////  Scopes
 L["cod2019_model680_iron.printname"] = "Ta Bort Siktfäste" -- UO
 L["cod2019_model680_iron.compactname"] = "Ta Bort S." -- UO

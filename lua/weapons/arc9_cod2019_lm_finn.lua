@@ -1139,14 +1139,14 @@ SWEP.Attachments = {
 		ExcludeElements = {"stock_saw"},
 		MergeSlots = {20}, -- Bipod
     },
-    { -- 8
+    { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
 		Bone = "tag_mag_attach",
         Category = {"cod2019_mag","cod2019_finn_mag"},
         Pos = Vector(0, 0, 0),
     },
-    { -- 9
+    { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",
@@ -1234,7 +1234,7 @@ SWEP.Attachments = {
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
         Pos = Vector(-2, 0.3, -0.5),
-		Icon_Offset = Vector(-1.25, 0, 1.9),
+		Icon_Offset = Vector(-5, -0.3, 3.5),
 		CosmeticOnly = true,
     },
     { -- 20

@@ -78,38 +78,38 @@ ATT.BashDamageMult = 1.2
 
 ARC9.LoadAttachment(ATT, "cod2019_perks_heavyhitter")
 
-/////////////////////////// -- cod2019_perks_enforcer
-ATT = {}
+/////////////////////////// -- cod2019_perks_enforcer -- [DOESN'T WORK]
+-- ATT = {}
 
-ATT.PrintName = "Enforcer"
-ATT.CompactName = "Enforcer"
-ATT.Icon = Material("entities/attachs/cod2019_perks_juggernaut.png", "mips smooth")
-ATT.Description = "Gain 30% resistance to damage."
-ATT.Pros = {
-    "+ 30% Resistance to all damage."
-}
-ATT.Cons = {}
-ATT.SortOrder = 0
-ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+-- ATT.PrintName = "Enforcer"
+-- ATT.CompactName = "Enforcer"
+-- ATT.Icon = Material("entities/attachs/cod2019_perks_juggernaut.png", "mips smooth")
+-- ATT.Description = "Gain 30% resistance to damage."
+-- ATT.Pros = {
+    -- "+ 30% Resistance to all damage."
+-- }
+-- ATT.Cons = {}
+-- ATT.SortOrder = 0
+-- ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 
-ATT.Free = true
+-- ATT.Free = true
 
-ATT.Category = "cod2019_perks"
-ATT.ActivateElements = {"perk_enforcer"}
+-- ATT.Category = "cod2019_perks"
+-- ATT.ActivateElements = {"perk_enforcer"}
 
-hook.Add("EntityTakeDamage", "ARC9_COD2019_PERK_ENFORCER", function(ent, dmg)
-    if !(ent:IsPlayer() or ent:IsNPC()) then return end
-    local wep = ent:GetActiveWeapon()
-    if !IsValid(wep) or !wep.ARC9 then return end
-    local attached = wep:GetElements()
-    if !attached["enforcer"] then return end
+-- hook.Add("EntityTakeDamage", "ARC9_COD2019_PERK_ENFORCER", function(ent, dmg)
+    -- if !(ent:IsPlayer() or ent:IsNPC()) then return end
+    -- local wep = ent:GetActiveWeapon()
+    -- if !IsValid(wep) or !wep.ARC9 then return end
+    -- local attached = wep:GetElements()
+    -- if !attached["enforcer"] then return end
 
-    if attached["enforcer"] then
-        dmg:ScaleDamage(0.7)
-    end
-end)
+    -- if attached["enforcer"] then
+        -- dmg:ScaleDamage(0.7)
+    -- end
+-- end)
 
-ARC9.LoadAttachment(ATT, "cod2019_perks_enforcer")
+-- ARC9.LoadAttachment(ATT, "cod2019_perks_enforcer")
 
 /////////////////////////// -- cod2019_perks_bolt
 ATT = {}
@@ -253,10 +253,10 @@ ATT.SprintPos = Vector(0, 0, 0)
 ATT.SprintAng = Angle(0, 0, 0)
 
 if !warzonestats then -- Regular Stats
-	ATT.SpeedAddSprint = 1.33
+	ATT.SpeedAddSprint = 1.2
 	ATT.SprintToFireTimeMult = 1.1
 else
-	ATT.SpeedAddSprint = 1.33
+	ATT.SpeedAddSprint = 1.2
 	ATT.SprintToFireTimeAdd = 0.125
 end
 

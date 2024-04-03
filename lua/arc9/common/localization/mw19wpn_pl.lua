@@ -356,7 +356,7 @@ L["cod2019_perks_burst_2.description"] = "Przełącza na tryb serii <color=100,2
 
 -- L["cod2019_perks_super_sprint.printname"] = "Tactical Sprint" -- UO
 -- L["cod2019_perks_super_sprint.compactname"] = "Tac. Sprint" -- UO
--- L["cod2019_perks_super_sprint.description"] = "Provides an altered stance when sprinting which significantly improves sprint speed at the cost of heavily reduced sprint-to-fire speed." -- UO
+-- L["cod2019_perks_super_sprint.description"] = "Provides an altered stance when sprinting. Cancels out up to <color=100,255,100>20%</color> sprint speed reduction at the cost of reduced sprint-to-fire speed." -- UO
 
 ////////////////////  Scopes
 -- L["cod2019_model680_iron.printname"] = "Remove Sight Mount" -- UO
