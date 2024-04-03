@@ -56,6 +56,7 @@ SWEP.WorldModelOffset = {
 
 SWEP.DamageMax = 103 / 6 -- Damage done at point blank range
 SWEP.DamageMin = 40 / 6 -- Damage done at maximum range
+SWEP.DistributeDamage = true
 
 SWEP.Num = 6
 
@@ -740,42 +741,15 @@ SWEP.AttachmentTableOverrides = {
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.8,
     },
-    -- ["cod2019_laser_02_cylinde_alt"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-0.5, 22, -2.5),
-        -- Ang = Angle(1.9, -0.2, 45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["cod2019_laser_01_cylinde_alt"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-0.5, 22, -2.5),
-        -- Ang = Angle(1.9, -0.2, 45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
-    -- ["cod2019_laser_03_cylinde_alt"] = {
-    -- Sights = {
-    -- {
-        -- Pos = Vector(-0.5, 22, -2.5),
-        -- Ang = Angle(1.9, -0.2, 45),
-        -- ViewModelFOV = 45,
-        -- Magnification = 1.25,
-        -- IgnoreExtra = false,
-		-- KeepBaseIrons = true,
-    -- },
-    -- },
-    -- },
+    ["cod2019_griptape_01"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/model680/attachment_vm_sh_romeo870_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/model680/attachment_vm_sh_romeo870_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/model680/attachment_vm_sh_romeo870_pistolgrip_tape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -921,7 +895,7 @@ SWEP.Attachments = {
         Category = "cod2019_pistolgrip",
         Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
-		ExcludeElements = {"stock_wood"},
+		ExcludeElements = {"stock_wood","stock_adapter"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),

@@ -267,6 +267,7 @@ SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_9mm_hr.mdl"
+SWEP.ShellSounds = ARC9.COD2019_9mm_Table
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellScale = 0.08
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
@@ -717,13 +718,13 @@ SWEP.AttachmentTableOverrides = {
 	Scale = 0.9,
     },
     ["cod2019_griptape_01"] = {
-		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_pistolgrip.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_griptape.mdl",
     },
     ["cod2019_griptape_02"] = {
-		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_pistolgrip.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_griptape.mdl",
     },
     ["cod2019_griptape_03"] = {
-		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_pistolgrip.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_griptape.mdl",
     },
 }
 
@@ -783,8 +784,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
-	if wep:HasElement("body_ump") then model:SetBodygroup(2,2)
-	end
+	if wep:HasElement("body_ump") then model:SetBodygroup(2,2) end
 end
 
 SWEP.Attachments = {
@@ -849,13 +849,14 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
 		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
-        Category = "cod2019_pistolgrip",
+        Category = {"cod2019_pistolgrip","cod2019_striker45_pistolgrip"},
         Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
+		ExcludeElements = {"stock_heavy"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
-        Category = "cod2019_striker45_reciever",
+        Category = "cod2019_striker45_receiver",
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
