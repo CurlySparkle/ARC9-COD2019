@@ -1173,6 +1173,7 @@ SWEP.Attachments = {
         Pos = Vector(-3, 0, 0),
         Ang = Angle(0, 0, 180),
 		InstalledElements = {"rail_grip"},
+		ExcludeElements = {"barrel_custom2"},
 		MergeSlots = {20}, -- Grenade Launcher(s)
     },
     { -- 7
