@@ -391,10 +391,10 @@ SWEP.Animations = {
             { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
-            {s = path .. "wfoly_pi_cpapa_first_raise_start.ogg", t = 12/30},
-            {s = path .. "wfoly_pi_cpapa_first_raise_cylinderopen_01.ogg", t = 12/30},
-			{s = path .. "wfoly_pi_cpapa_first_raise_cylinderclose_01.ogg", t = 26/30},
-			{s = path .. "wfoly_pi_cpapa_first_raise_end.ogg", t = 29/30},
+            {s = path .. "wfoly_pi_cpapa_first_raise_start.ogg", t = 11/30},
+            {s = path .. "wfoly_pi_cpapa_first_raise_cylinderopen_01.ogg", t = 11/30},
+			{s = path .. "wfoly_pi_cpapa_first_raise_cylinderclose_01.ogg", t = 24/30},
+			{s = path .. "wfoly_pi_cpapa_first_raise_end.ogg", t = 27/30},
         },
     },
     ["draw"] = {

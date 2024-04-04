@@ -491,7 +491,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 23/30},
+            {s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 23/30},
+            {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 29/30},
 			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 35/30},
         },
     },
@@ -511,8 +512,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 16/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 24/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 29/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 35/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 35/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 36/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 47/30},
         },
     },
     ["reload_xmaglrg_fast"] = {
@@ -527,9 +528,10 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 3/30},
-			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 15/30},
-			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_golf21_reload_fast_magout_01.ogg", t = 0/30},
+            {s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 15/30},
+            {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 27/30},
         },
     },
     ["reload_xmaglrg_fast_empty"] = {
@@ -543,12 +545,12 @@ SWEP.Animations = {
             { t = 0.95, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 7/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 15/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 22/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 25/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 23/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 32/30},
         },
     },
     ["ready"] = {

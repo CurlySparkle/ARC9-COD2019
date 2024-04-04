@@ -550,8 +550,8 @@ SWEP.Animations = {
             { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
-            {s = path .. "wfoly_ar_falpha_raise_first.ogg", t = 3/30},
-            {s = path .. "wfoly_ar_falpha_raise_boltrelease.ogg", t = 26/30},
+            {s = path .. "wfoly_ar_falpha_raise_first.ogg", t = 5/30},
+            {s = path .. "wfoly_ar_falpha_raise_boltrelease.ogg", t = 27/30},
         },
     },
     ["draw"] = {
