@@ -412,7 +412,7 @@ SWEP.Animations = {
 		RestoreAmmo = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 0 },
         },
         EventTable = {
             {s = path .. "wfoly_sh_romeo870_reload_start_fast_twist.ogg", t = 0},
@@ -422,8 +422,8 @@ SWEP.Animations = {
     ["reload_insert_fast"] = {
         Source = "reload_loop_fast",
         IKTimeLine = {
-            { t = 0, lhik = 0, rhik = 1 },
-            { t = 1, lhik = 0, rhik = 1 },
+            { t = 0, lhik = 0, rhik = 0 },
+            { t = 1, lhik = 0, rhik = 0 },
         },
         EventTable = {
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0},
@@ -435,7 +435,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		FireASAP = true,
         IKTimeLine = {
-            { t = 0, lhik = 0, rhik = 1 },
+            { t = 0, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 1, rhik = 1 },
             { t = 1, lhik = 1, rhik = 1 },
         },
@@ -450,7 +450,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		FireASAP = true,
         IKTimeLine = {
-            { t = 0, lhik = 0, rhik = 1 },
+            { t = 0, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 1, rhik = 1 },
             { t = 1, lhik = 1, rhik = 1 },
         },
@@ -749,6 +749,10 @@ SWEP.AttachmentTableOverrides = {
     },
     ["cod2019_griptape_03"] = {
 		Model = "models/weapons/cod2019/attachs/weapons/model680/attachment_vm_sh_romeo870_pistolgrip_tape.mdl",
+    },
+	
+    ["cod2019_perks_soh"] = {
+		ReloadInSights = false,
     },
 }
 
