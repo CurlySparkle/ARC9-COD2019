@@ -1276,7 +1276,7 @@ SWEP.Attachments = {
         PrintName = "GL",
         Category = {"cod2019_m203"},
         Bone = "tag_attachments",
-        Pos = Vector(12.5, 0, -2.45),
+        Pos = Vector(11.5, 0, -2.45),
         Ang = Angle(0, 180, 0),
 		Hidden = true,
     },
