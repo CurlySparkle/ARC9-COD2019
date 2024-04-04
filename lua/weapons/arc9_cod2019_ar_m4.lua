@@ -546,7 +546,7 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 62/30},
         },
     },
-    ["reload_xmaglrg"] = {
+    ["reload_xmagslrg"] = {
         Source = "reload_xmaglrg",
 		MinProgress = 0.9,
 		PeekProgress = 0.85,
@@ -566,7 +566,7 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 52/30},
         },
     },
-    ["reload_xmaglrg_empty"] = {
+    ["reload_xmagslrg_empty"] = {
         Source = "reload_xmaglrg_empty",
 		MinProgress = 0.85,
 		PeekProgress = 0.8,
@@ -964,12 +964,12 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_SMG[anim] then
                 return Translate_SMG[anim]
             end
-        elseif xmagslrg then
-            if Translate_XMagslrg[anim] then
-                return Translate_XMagslrg[anim]
-		elseif smg then
+        elseif xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
+		elseif xmagslrg then
+            if Translate_XMagslrg[anim] then
+                return Translate_XMagslrg[anim]
             end
         end
     end
@@ -1003,6 +1003,7 @@ SWEP.AttachmentTableOverrides = {
     },
     ["cod2019_attach_xmag_50"] = {
 		Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_xmags.mdl",
+		ActivateElements = {"mag_none","mag_xmag"}
     },
     ["cod2019_attach_xmag_60"] = {
 		Model = "models/weapons/cod2019/attachs/weapons/m4a1/attachment_vm_ar_mike4_xmags2.mdl",

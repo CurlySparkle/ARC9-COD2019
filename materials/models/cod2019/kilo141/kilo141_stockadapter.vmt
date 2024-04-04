@@ -25,7 +25,7 @@
     //remove this if not using MWB
     "Proxies"
     {
-        "MwEnvMapTint"
+        "Arc9EnvMapTint"
         {
             "min" "0"
             "max" "1"
