@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "viper\mw\weapons\akilo47\akilo47_fore_rgb"
-    "$bumpmap" "viper\mw\weapons\akilo47\akilo47_fore_n"
-    "$phongexponenttexture" "viper\mw\weapons\akilo47\akilo47_fore_e"
+    "$basetexture" "models\cod2019\akilo47\akilo47_fore_rgb"
+    "$bumpmap" "models\cod2019\akilo47\akilo47_fore_n"
+    "$phongexponenttexture" "models\cod2019\akilo47\akilo47_fore_e"
 
     /////////////////
     "$color2" "[1 1 1]"                                     //do not touch this
