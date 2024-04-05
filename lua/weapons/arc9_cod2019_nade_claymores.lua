@@ -90,7 +90,7 @@ SWEP.ShootPosOffset = Vector(0, 24, 0)
 
 SWEP.HasSights = false
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 64
 
 SWEP.SprintPos = Vector(2, 1, 0)
 SWEP.SprintAng = Angle(35, -5, 0)

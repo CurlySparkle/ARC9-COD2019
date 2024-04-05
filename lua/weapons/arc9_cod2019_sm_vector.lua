@@ -105,13 +105,13 @@ SWEP.Firemodes = {
 -- General recoil multiplier
 SWEP.Recoil = 1.2
 
-SWEP.RecoilSeed = 6213
+SWEP.RecoilSeed = nil
 
-SWEP.RecoilPatternDrift = 1
+SWEP.RecoilPatternDrift = 10
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 0.5 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 2 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -137,11 +137,11 @@ SWEP.VisualRecoilUp = 0.3
 
 SWEP.VisualRecoilMultSights = 0.4
 SWEP.VisualRecoilPunchSights = 15
-SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilRollSights = 15
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
-SWEP.VisualRecoilRoll = 15
+SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -199,7 +199,7 @@ SWEP.IronSights = {
 	CrosshairInSights = false
 }
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 64
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, -0.15),
@@ -233,6 +233,8 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.PeekPos = Vector(-1, 3, -3)
 SWEP.PeekAng = Angle(0, 0, -45)
+
+SWEP.PeekMaxFOV = 64
 
 -------------------------- HoldTypes
 

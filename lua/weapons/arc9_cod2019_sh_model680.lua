@@ -209,7 +209,7 @@ SWEP.IronSights = {
     CrosshairInSights = false
 }
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 64
 
 SWEP.SprintPos = Vector(0, 0, -0.5)
 SWEP.SprintAng = Angle(0, 0, 0)
@@ -749,10 +749,6 @@ SWEP.AttachmentTableOverrides = {
     },
     ["cod2019_griptape_03"] = {
 		Model = "models/weapons/cod2019/attachs/weapons/model680/attachment_vm_sh_romeo870_pistolgrip_tape.mdl",
-    },
-	
-    ["cod2019_perks_soh"] = {
-		ReloadInSights = false,
     },
 }
 

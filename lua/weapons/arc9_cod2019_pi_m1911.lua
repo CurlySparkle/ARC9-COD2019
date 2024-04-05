@@ -201,7 +201,7 @@ SWEP.IronSights = {
 	CrosshairInSights = false
 }
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 64
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, -0.15),

@@ -188,7 +188,7 @@ SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
     Ang = Angle(0, 0, -45),
 }
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 64
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, 0, 0),

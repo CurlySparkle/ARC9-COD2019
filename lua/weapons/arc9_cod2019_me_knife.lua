@@ -120,7 +120,7 @@ SWEP.FiremodeSound = ""
 SWEP.HasSights = false
 SWEP.InstantSprintIdle = true
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 64
 
 SWEP.MovingMidPoint = {
     Pos = Vector(0, -0.5, -0.5),

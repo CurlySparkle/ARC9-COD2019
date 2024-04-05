@@ -145,14 +145,14 @@ SWEP.RecoilMax = 2.5
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.4
-SWEP.VisualRecoilPunchSights = 15
-SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilPunchSights = 10
+SWEP.VisualRecoilRollSights = 10
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0
-SWEP.VisualRecoilRoll = 15
+SWEP.VisualRecoilRoll = 35
 SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -215,7 +215,7 @@ SWEP.IronSights = {
 	CrosshairInSights = false
 }
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 64
 
 SWEP.SprintMidPoint = {
     Pos = Vector(0, -1, -0.15),
@@ -963,6 +963,8 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	model:SetBodygroup(2,2) 
 	end
 	
+    if wep:HasElement("reciever_rail") then model:SetBodygroup(5,0) end
+	
     if wep:HasElement("reciever_custom") then 
 	model:SetBodygroup(5,0) 
 	end
@@ -996,7 +998,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Bone = "tag_holo",
         Pos = Vector(1, 0, -0.1),
-        Category = {"cod2019_optic"},
+        Category = {"cod2019_optic","cod2019_ak47_optics"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight_rail"},
 		ExcludeElements = {"forwardoptic"},
@@ -1133,7 +1135,7 @@ SWEP.GripPoseParam = 4.6
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodStubbyGripPoseParam = 22
 SWEP.CodStubbyTallGripPoseParam = 26
-SWEP.CodAngledGripPoseParam = 21
+SWEP.CodAngledGripPoseParam = 32
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then

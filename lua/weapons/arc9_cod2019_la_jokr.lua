@@ -262,7 +262,7 @@ DrawBloom( 0.65, 2, 9, 9, 1, 1, 1, 1, 1 )
 end
 ----------------------------------------------------
 
-SWEP.ViewModelFOVBase = 65
+SWEP.ViewModelFOVBase = 64
 
 SWEP.MovingMidPoint = {
     Pos = Vector(-0.5, -0.5, -0.5),
