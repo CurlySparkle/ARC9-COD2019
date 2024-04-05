@@ -561,7 +561,7 @@ SWEP.Animations = {
     ["reload_smg"] = {
         Source = "reload_mw22",
 		MinProgress = 0.95,
-		PeekProgress = 0.865,
+		PeekProgress = 0.925,
 		RefillProgress = 0.75,
 		FireASAP = true,
         IKTimeLine = {
@@ -572,7 +572,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_reload_grab.ogg", t = 0.033},
-            {s = path .. "wfoly_ar_akilo47_reload_fast_magout_02.ogg", t = 0.5},
+            {s = path .. "wfoly_ar_akilo47_reload_magout_01.ogg", t = 0.25},
             {s = path .. "wfoly_ar_akilo47_reload_magin_v2_01.ogg", t = 1.35},
 			{s = path .. "wfoly_ar_akilo47_reload_magin_v2_02.ogg", t = 1.75},
             {s = path .. "wfoly_ar_akilo47_reload_maghit.ogg", t = 1.85},
@@ -585,8 +585,9 @@ SWEP.Animations = {
     },
     ["reload_smg_empty"] = {
         Source = "reload_mw22_empty",
-		MinProgress = 0.95,
+		MinProgress = 0.975,
 		RefillProgress = 0.85,
+		PeekProgress = 0.97,
 		FireASAP = true,
 		DropMagAt = 1.6,
         IKTimeLine = {
@@ -601,7 +602,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_twist.ogg", t = 0/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_boltback_01.ogg", t = 7/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_maghit_01.ogg", t = 26/30},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_01.ogg", t = 46/30},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_01.ogg", t = 44/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 53/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_boltforward_01.ogg", t = 60/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_end.ogg", t = 64/30},

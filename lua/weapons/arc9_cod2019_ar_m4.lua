@@ -964,16 +964,16 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_SMG[anim] then
                 return Translate_SMG[anim]
             end
-        elseif xmag then
-            if Translate_XMag[anim] then
-                return Translate_XMag[anim]
-		elseif xmagslrg then
+        elseif xmagslrg then
             if Translate_XMagslrg[anim] then
                 return Translate_XMagslrg[anim]
             end
+		elseif xmag then
+            if Translate_XMag[anim] then
+                return Translate_XMag[anim]
+            end
         end
     end
-end
 	
     --wep.MWHybridSwitching = nil
     if anim == "switchsights" then

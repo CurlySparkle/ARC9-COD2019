@@ -200,11 +200,11 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(17, 35, 3)
-SWEP.CustomizeRotateAnchor = Vector(16, -2.25, -4)
+SWEP.CustomizePos = Vector(17, 35, 5.5)
+SWEP.CustomizeRotateAnchor = Vector(16, -3.5, -5.5)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(0, 7, 3)
+SWEP.CustomizeSnapshotPos = Vector(-2.5, 7, 3)
 
 -------------------------- HoldTypes
 
@@ -221,10 +221,11 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "pb_ins2_muzzleflash_tracer"
+SWEP.MuzzleParticle = "muzzleflash_suppressed"
 --SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 --SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
+SWEP.NoFlash = true
 
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
@@ -334,12 +335,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2.7,
+		Time = 1.25,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 2.7,
+		Time = 1.25,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -349,7 +350,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.5,
+		Time = 1,
         IKTimeLine = {
             {t = 0, lhik = 1, rhik = 1},
             {t = 0.3, lhik = 1,rhik = 1},
@@ -358,7 +359,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.7,
+		Time = 1,
         IKTimeLine = {
             {t = 0, lhik = 0, rhik = 1},
             {t = 0.3, lhik = 0,rhik = 1},
@@ -524,111 +525,139 @@ SWEP.AttachmentElements = {
 -- end
 
 SWEP.Attachments = {
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_arms"),
-        DefaultAttName = "Standard Arms",
-        Category = "cod2019_crossbow_limbs",
-        Bone = "tag_barrel_attach",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-    },
-    {
+    { -- 1
         PrintName = ARC9:GetPhrase("mw19_category_cable"),
-        DefaultAttName = "Standard Wires",
+        DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
         Category = "cod2019_crossbow_wires",
-        Bone = "tag_barrel_attach",
+		Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-4, 0, 0),
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_optic"),
-		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
-        Bone = "tag_holo",
-        Pos = Vector(1, 0, -0.1),
-        Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic",},
-        CorrectiveAng = Angle(0, 0, 0),
-		InstalledElements = {"sight_none"},
+    { -- 2
+        PrintName = ARC9:GetPhrase("mw19_category_arms"),
+		DefaultIcon = Material("entities/defattachs/barrel-ar.png", "mips smooth"),
+        Category = "cod2019_crossbow_limbs",
+        Bone = "tag_guard_attach",
+        Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 1.5),
     },
-    {
+    { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
-        DefaultAttName = "Default",
+		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(0, 0, -1),
     },
-    {
+    { -- 4
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
+		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
+        Category = {"cod2019_optic"},
+        Bone = "tag_holo",
+        Pos = Vector(1.5, 0, -0.1),
+		InstalledElements = {"sight_folded"},
+    },
+    { -- 5
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
+		DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
+        Category = "cod2019_crossbow_stock",
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+    },
+    { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
-        DefaultAttName = "Default",
+		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
         Category = "cod2019_grip",
+        -- Category = "cod2019_crossbow_grip",
         Bone = "tag_grip_attach",
         Pos = Vector(-2.2, 0, 0),
         Ang = Angle(0, 0, 180),
 		InstalledElements = {"grip_rail"},
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_stock"),
-		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
-        DefaultAttName = "Standard Stock",
-        Category = "cod2019_crossbow_stock",
-        Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-		--InstalledElements = {"stock"},
-    },
-    {
+    { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_bolt"),
-        Bone = "j_mag1",
-        Category = {"cod2019_ammo_crossbow"},
+		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
+		Bone = "j_mag1",
+        Category = "cod2019_ammo_crossbow",
         Pos = Vector(0, -1.5, -1.5),
-        Ang = Angle(0, 0, 0),
 		Icon_Offset = Vector(-3, 0, 1.5),
     },
-    {
+    { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
+        Bone = "tag_attachments",
+        Pos = Vector(7, 0, -2.5),
     },
-    {
+	
+	-- Unofficial
+    { -- 9
+        PrintName = ARC9:GetPhrase("mw19_category_receiver"),
+        Category = "cod2019_crossbow_receiver",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(5, 0, -0.75),
+    },
+	
+	-- Cosmetics
+    { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
-        --Bone = "v_weapon.Clip",
+        Bone = "tag_cosmetic",
+        Pos = Vector(7, 0, 3),
         Category = "cod2019_skins_crossbow",
 		CosmeticOnly = true,
     },
-    {
+    { -- 11
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(5, 0, 3),
         CosmeticOnly = true,
     },
-    {
+    { -- 12
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_crossbow_decal_a.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(3, 0, 3),
     },
-    {
+    { -- 13
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_crossbow_decal_b.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(1, 0, 3),
     },
-    {
+    { -- 14
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_crossbow_decal_c.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-1, 0, 3),
     },
-    {
+    { -- 15
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_crossbow_decal_d.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-3, 0, 3),
     },
-    {
+    { -- 16
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = {"charm", "killcounter"},
-		RejectAttachments = { ["arc9_stat_proscreen"] = true },
-		CosmeticOnly = true,
-        Bone = "tag_attachments",
-        Pos = Vector(6, -0.7, -1.5),
-        Ang = Angle(0, 0, 0),
+        CosmeticOnly = true,
+        Category = {"charm"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(-5, 0, 3),
 		Scale = 1.5,
+    },
+    { -- 17
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
+        Category = {"killcounter","killcounter2"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(4, -0.35, -1.25),
+		Ang = Angle(0, 0, 5),
+		Icon_Offset = Vector(-11, 0, 4.25),
+		CosmeticOnly = true,
     },
 }
 
@@ -639,5 +668,14 @@ SWEP.CodStubbyGripPoseParam = 26
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+
+-------------------------- FIREMODES
+
+SWEP.RPM = 375
+
+-------------------------- HANDLING
+
+SWEP.AimDownSightsTime = 0.35 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.
 
 end

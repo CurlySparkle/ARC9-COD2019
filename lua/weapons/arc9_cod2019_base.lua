@@ -170,14 +170,14 @@ SWEP.HookP_NameChange = function(self, name)
 
 	-- Assault Rifle, AK-47
 	if att["cod2019_akilo47_mag_smg"] and att["cod2019_akilo47_barrel_smg"] then
-		name = "AKSU-74"
+		name = string.Replace(name, "-47", "-74U")
 	elseif att["cod2019_akilo47_mag_smg"] then
-		name = "AK-74"
+		name = string.Replace(name, "47", "74")
 	end
 	
 	-- Assault Rifle, Grau 5.56
 	if att["cod2019_grau556_barrel_long"] then
-		name = "SG 550"
+		name = string.Replace(name, "56", "50")
 	end	
 	
 	if att["cod2019_grau556_barrel_heavy"] then
@@ -187,6 +187,11 @@ SWEP.HookP_NameChange = function(self, name)
 	-- Assault Rifle, FN Scar-17
 	if att["cod2019_scar_mag_ar"] then
 		name = string.Replace(name, "17", "16")
+	end	
+
+	-- Light Machine Gun, Holger-26
+	if att["cod2019_holger_receiver_v2"] then
+		name = string.Replace(name, "26", "556")
 	end	
 
 	if att["optic"] and att["optic_small"] then -- Hybrid Sight Name Change

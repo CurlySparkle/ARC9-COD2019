@@ -630,7 +630,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_sierrax_reload_empty_lift.ogg", t = 1/30},
-			{s = path .. "wfoly_lm_sierrax_reload_empty_charge.ogg", t = 29/30},
+			{s = path .. "wfoly_lm_sierrax_reload_empty_charge.ogg", t = 7.5/30},
         },
     },
     ["enter_bipod"] = {
@@ -1137,7 +1137,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 180),
 		InstalledElements = {"rail_grip"},
 		ExcludeElements = {"stock_saw"},
-		MergeSlots = {20}, -- Bipod
+		MergeSlots = {19}, -- Bipod
     },
     { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
@@ -1154,14 +1154,6 @@ SWEP.Attachments = {
 		Pos = Vector(-1.5, 0, 0),
     },
     { -- 9
-        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
-		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
-        Category = "cod2019_pistolgrip",
-        Bone = "tag_pistolgrip_attach",
-        Pos = Vector(0, 0, 0),
-		ExcludeElements = {"stock_saw"},
-    },
-    { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
         Bone = "tag_attachments",
@@ -1169,7 +1161,7 @@ SWEP.Attachments = {
     },
 	
 	-- Unofficial
-    { -- 11
+    { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
         Category = "cod2019_finn_receiver",
         Bone = "tag_attachments",
@@ -1178,49 +1170,49 @@ SWEP.Attachments = {
     },
 	
 	-- Cosmetics
-    { -- 12
+    { -- 11
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
         Bone = "tag_cosmetic",
         Pos = Vector(7, 0, 3),
         Category = "cod2019_skins_finn",
 		CosmeticOnly = true,
     },
-    { -- 13
+    { -- 12
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         Bone = "tag_cosmetic",
         Pos = Vector(5, 0, 3),
         CosmeticOnly = true,
     },
-    { -- 14
+    { -- 13
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/lmg_finn_decal_a.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(3, 0, 3),
     },
-    { -- 15
+    { -- 14
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/lmg_finn_decal_b.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(1, 0, 3),
     },
-    { -- 16
+    { -- 15
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/lmg_finn_decal_c.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(-1, 0, 3),
     },
-    { -- 17
+    { -- 16
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/lmg_finn_decal_d.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(-3, 0, 3),
     },
-    { -- 18
+    { -- 17
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
         CosmeticOnly = true,
         Category = {"charm"},
@@ -1229,7 +1221,7 @@ SWEP.Attachments = {
 		Icon_Offset = Vector(-4.5, 0, 4),
 		Scale = 1.5,
     },
-    { -- 19
+    { -- 18
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
@@ -1237,7 +1229,7 @@ SWEP.Attachments = {
 		Icon_Offset = Vector(-5, -0.3, 3.5),
 		CosmeticOnly = true,
     },
-    { -- 20
+    { -- 19
         PrintName = "Bipod",
         Category = {"cod2019_finn_bipod"},
         Bone = "tag_attachments",
