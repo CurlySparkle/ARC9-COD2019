@@ -225,10 +225,10 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(17, 35, 2)
-SWEP.CustomizeRotateAnchor = Vector(17, -2.25, -4)
+SWEP.CustomizePos = Vector(14, 35, 2)
+SWEP.CustomizeRotateAnchor = Vector(14, -3.5, -4)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
+SWEP.CustomizeSnapshotPos = Vector(-1, 14, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -236,6 +236,9 @@ SWEP.PeekPos = Vector(-0.5, 1.5, -4)
 SWEP.PeekAng = Angle(0, 0.4, -45)
 
 SWEP.PeekMaxFOV = 54
+
+SWEP.PeekPosReloading = Vector(0, 1.5, -1.25)
+SWEP.PeekAngReloading = Angle(-0.3, 0, -5)
 
 -------------------------- HoldTypes
 
@@ -346,6 +349,7 @@ SWEP.Animations = {
         Source = "reload_short",
 		MinProgress = 0.8,
 		RefillProgress = 0.6,
+		PeekProgress = 0.75,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
@@ -366,6 +370,7 @@ SWEP.Animations = {
         Source = "reload",
 		MinProgress = 0.9,
 		RefillProgress = 0.75,
+		PeekProgress = 0.775,
 		FireASAP = true,
 		DropMagAt = 0.75,
         IKTimeLine = {
@@ -392,6 +397,7 @@ SWEP.Animations = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		RefillProgress = 0.575,
+		PeekProgress = 0.75,
 		DropMagAt = 0.75,
 		FireASAP = true,
         IKTimeLine = {
@@ -412,6 +418,7 @@ SWEP.Animations = {
         Source = "reload_fast_empty",
 		MinProgress = 0.8,
 		RefillProgress = 0.625,
+		PeekProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 0.75,
         IKTimeLine = {
@@ -433,6 +440,7 @@ SWEP.Animations = {
         Source = "reload_xmag",
 		MinProgress = 0.8,
 		RefillProgress = 0.6,
+		PeekProgress = 0.75,
 		FireASAP = true,
 		--DropMagAt = 0.75,
         IKTimeLine = {
@@ -454,6 +462,7 @@ SWEP.Animations = {
         Source = "reload_xmag_empty",
 		MinProgress = 0.9,
 		RefillProgress = 0.7,
+		PeekProgress = 0.775,
 		FireASAP = true,
 		DropMagAt = 0.75,
         IKTimeLine = {
@@ -479,6 +488,7 @@ SWEP.Animations = {
         Source = "reload_xmag_fast",
 		MinProgress = 0.8,
 		RefillProgress = 0.525,
+		PeekProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 0.6,
         IKTimeLine = {
@@ -500,6 +510,7 @@ SWEP.Animations = {
         Source = "reload_xmag_fast_empty",
 		MinProgress = 0.8,
 		RefillProgress = 0.625,
+		PeekProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 0.75,
         IKTimeLine = {
@@ -522,6 +533,7 @@ SWEP.Animations = {
         Source = "reload_xmag2",
 		MinProgress = 0.8,
 		RefillProgress = 0.6,
+		PeekProgress = 0.75,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
@@ -542,6 +554,7 @@ SWEP.Animations = {
         Source = "reload_xmag2_empty",
 		MinProgress = 0.9,
 		RefillProgress = 0.75,
+		PeekProgress = 0.775,
 		FireASAP = true,
 		DropMagAt = 0.75,
         IKTimeLine = {
@@ -567,6 +580,7 @@ SWEP.Animations = {
         Source = "reload_xmag2_fast",
 		MinProgress = 0.8,
 		RefillProgress = 0.575,
+		PeekProgress = 0.75,
 		DropMagAt = 0.75,
 		FireASAP = true,
         IKTimeLine = {
@@ -589,6 +603,7 @@ SWEP.Animations = {
         Source = "reload_xmag2_fast_empty",
 		MinProgress = 0.8,
 		RefillProgress = 0.625,
+		PeekProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 0.75,
         IKTimeLine = {
@@ -648,12 +663,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Time = 0.9,
+		Time = 1.25,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Time = 0.9,
+		Time = 1.25,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -663,7 +678,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Time = 1.2,
+		Time = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 1, rhik = 1 },
@@ -672,7 +687,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Time = 1.2,
+		Time = 1,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -911,128 +926,141 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 end
 
 SWEP.Attachments = {
-    {
+    { -- 1
+        PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
+        Category = "cod2019_muzzle",
+        DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
+		Bone = "tag_silencer",
+        Pos = Vector(0, 0, 0),
+		InstalledElements = {"muzzle_none"},
+    },
+    { -- 2
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
-		DefaultIcon = Material("arc9/def_att_icons/barrel.png", "mips smooth"),
-        DefaultAttName = "Standard Barrel",
+		DefaultIcon = Material("entities/defattachs/barrel-ar.png", "mips smooth"),
         Category = "cod2019_m14_barrel",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-4, 0, 0),
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_optic"),
-		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
-        Bone = "tag_holo",
-        Pos = Vector(1.5, 0, -0.1),
-        Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic", "cod2019_optic_big"},
-        CorrectiveAng = Angle(0, 0, 0),
-		--InstalledElements = {"sight_rail"},
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
-        DefaultAttName = "Standard Muzzle",
-        Category = "cod2019_muzzle",
-        Bone = "tag_silencer",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-		InstalledElements = {"muzzle_none"},
-		Scale = 1,
-    },
-    {
+    { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
-        DefaultAttName = "Default",
+		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(-3, -0.48, 0),
-        Ang = Angle(0, 0, -90),
-		--InstalledElements = {"laser_rail"},
+        Pos = Vector(0, -0.48, 0),
+		Ang = Angle(0, 0, -90),
     },
-    {
+    { -- 4
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
+		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
+        Bone = "tag_holo",
+        Pos = Vector(1.5, 0, -0.1),
+        Category = {"cod2019_optic", "cod2019_optic_big"},
+    },
+    { -- 5
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
+		DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
+        Category = {"cod2019_tube", "cod2019_m14_stock"},
+        Bone = "tag_stock_attach",
+        Pos = Vector(0, 0, 0),
+    },
+    { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
-        DefaultAttName = "Default",
+		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
         Pos = Vector(-4.1, 0, 0.05),
         Ang = Angle(0, 0, 180),
-		Scale = 1,
-		--InstalledElements = {"grip_rail"},
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_stock"),
-		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
-        DefaultAttName = "Standard Stock",
-        Category = {"cod2019_m14_stock","cod2019_tube"},
-        Bone = "tag_stock_attach",
+    { -- 7
+        PrintName = ARC9:GetPhrase("mw19_category_magazine"),
+		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
+		Bone = "tag_mag_attach",
+        Category = {"cod2019_mag","cod2019_m14_mag"},
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-		--InstalledElements = {""},
     },
-    {
+    { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",
 		Category = {"cod2019_ammo"},
 		Pos = Vector(-1.5, 0, 0),
-        Ang = Angle(0, 0, 0),
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_magazine"),
-		DefaultIcon = Material("arc9/def_att_icons/mag_ar.png", "mips smooth"),
-		Bone = "tag_mag_attach",
-        Category = {"cod2019_mag","cod2019_mag_m14"},
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-    },
-    {
+    { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst_2","cod2019_perks_ss"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst_2","cod2019_perks_ss"},
+        Bone = "tag_attachments",
+        Pos = Vector(2.5, 0, -1),
     },
-    {
+	
+	-- Unofficial
+    { -- 10
+        PrintName = ARC9:GetPhrase("mw19_category_receiver"),
+        Category = "cod2019_m14_receiver",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(4.5, 0, 1),
+    },
+	
+	-- Cosmetics
+    { -- 11
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
-        --Bone = "v_weapon.Clip",
-        Category = "cod2019_skins_svd",
+        Bone = "tag_cosmetic",
+        Pos = Vector(7, 0, 3),
+        Category = "cod2019_skins_m14",
 		CosmeticOnly = true,
     },
-    {
+    { -- 12
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(5, 0, 3),
         CosmeticOnly = true,
     },
-    {
+    { -- 13
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/snip_m14_decal_a.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(3, 0, 3),
     },
-    {
+    { -- 14
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/snip_m14_decal_b.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(1, 0, 3),
     },
-    {
+    { -- 15
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/snip_m14_decal_c.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-1, 0, 3),
     },
-    {
+    { -- 16
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/snip_m14_decal_d.mdl",
         Category = "stickers",
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = {"charm", "killcounter"},
-		RejectAttachments = { ["arc9_stat_proscreen"] = true },
-		CosmeticOnly = true,
         Bone = "tag_cosmetic",
-        Pos = Vector(0.5, 0, 0),
-        Ang = Angle(0, 0, 0),
+        Pos = Vector(-3, 0, 3),
+    },
+    { -- 17
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
+        CosmeticOnly = true,
+        Category = {"charm"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(3, 0, -0.15),
+		Icon_Offset = Vector(-8, 0, 3.15),
 		Scale = 1.5,
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_misc"),
-        Category = "cod2019_m14_extra"
+    { -- 18
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
+        Category = {"killcounter","killcounter2"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(0, 0, -1),
+		Icon_Offset = Vector(-7, 0, 4),
+		CosmeticOnly = true,
     },
 }
 
@@ -1044,5 +1072,35 @@ SWEP.GripPoseParam2 = 0.5
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 60 -- Damage done at point blank range
+SWEP.DamageMin = 46 -- Damage done at maximum range
+
+SWEP.RangeMin = 63 / ARC9.HUToM
+SWEP.RangeMax = 81 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 2.75,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 0.91,
+    [HITGROUP_RIGHTARM] = 0.91,
+    [HITGROUP_LEFTLEG] = 0.91,
+    [HITGROUP_RIGHTLEG] = 0.91,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 700 / ARC9.HUToM
+
+-------------------------- FIREMODES
+
+SWEP.RPM = 273
+
+-------------------------- HANDLING
+
+SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.
 
 end

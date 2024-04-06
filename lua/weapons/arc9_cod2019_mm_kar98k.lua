@@ -353,9 +353,10 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.925,
+		MinProgress = 0.95,
 		FireASAP = true,
 		RefillProgress = 0.8,
+		PeekProgress = 0.925,
 		EjectAt = 0.5,
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
@@ -373,6 +374,7 @@ SWEP.Animations = {
 		MinProgress = 0.95,
 		FireASAP = true,
 		RefillProgress = 0.8,
+		PeekProgress = 0.925,
 		EjectAt = 0.5,
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
@@ -387,9 +389,10 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.925,
+		MinProgress = 0.95,
 		FireASAP = true,
 		RefillProgress = 0.8,
+		PeekProgress = 0.95,
 		EjectAt = 0.4,
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
@@ -404,9 +407,10 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.95,
+		MinProgress = 0.975,
 		FireASAP = true,
 		RefillProgress = 0.825,
+		PeekProgress = 0.95,
 		EjectAt = 0.5,
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
