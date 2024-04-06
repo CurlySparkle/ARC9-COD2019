@@ -303,8 +303,8 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 SWEP.DropMagazineQCAHook = function(swep, old) 
   local curanim = swep:GetIKAnimation() or ""
   if curanim == "reload_smg_empty" then return 5 end
-  if curanim == "reload_smg_fast" then return 5 end
-  if curanim == "reload_smg_fast_empty" then return 5 end
+  if curanim == "reload_smg_fast" then return 3 end
+  if curanim == "reload_smg_fast_empty" then return 3 end
   if curanim == "reload_drum_fast" then return 5 end
   if curanim == "reload_drum_fast_empty" then return 5 end
 end
@@ -609,7 +609,7 @@ SWEP.Animations = {
         },
     },
     ["reload_smg_fast"] = {
-        Source = "reload_mw22_fast",
+        Source = "reload_smgcal_fast",
 		MinProgress = 0.85,
 		PeekProgress = 0.865,
 		RefillProgress = 0.625,
@@ -630,7 +630,7 @@ SWEP.Animations = {
         },
     },
     ["reload_smg_fast_empty"] = {
-        Source = "reload_mw22_fast_empty",
+        Source = "reload_smgcal_fast_empty",
 		MinProgress = 0.85,
 		PeekProgress = 0.865,
 		RefillProgress = 0.725,

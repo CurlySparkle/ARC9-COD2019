@@ -32,7 +32,7 @@ SWEP.Description = ARC9:GetPhrase("mw19_weapon_kar98_desc") or [[Bolt action rif
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_kar98k.mdl"
 SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
-SWEP.DefaultBodygroups = "0000000000000"
+SWEP.DefaultBodygroups = "0000000000000000"
 
 SWEP.Slot = 3
 
@@ -206,7 +206,7 @@ SWEP.MovingMidPoint = {
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.8, -0.8, -0.8)
+SWEP.MovingPos = Vector(-1, -0.8, -1)
 SWEP.MovingAng = Angle(0, 0, -8)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
@@ -654,28 +654,42 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.15),
     },
-    ["cod2019_kar98k_scope"] = {
-    -- ModelOffset = Vector(-8.1, 0, -0.5),
-	ShotgunReload = true,
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/kar98k/attachment_vm_sn_kilo98_pistolgrip_tape.mdl",
     },
-    ["cod2019_optic_scope_vz"] = {
-	ShotgunReload = true,
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/kar98k/attachment_vm_sn_kilo98_pistolgrip_tape.mdl",
     },
-    ["cod2019_crossbow_scope"] = {
-	ShotgunReload = true,
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/kar98k/attachment_vm_sn_kilo98_pistolgrip_tape.mdl",
     },
-    ["cod2019_optic_hybrid_west02"] = {
-		ModelOffset = Vector(-2.75, 0, 0.1),
-    },
-    ["cod2019_optic_hybrid_west02_thermal"] = {
-		ModelOffset = Vector(-2.75, 0, 0.1),
-    },
-    ["cod2019_optic_reflex_west05_hybrid"] = {
-		ModelOffset = Vector(-2.75, 0, 0.1),
-    },
+    -- ["cod2019_kar98k_scope"] = {
+    -- -- ModelOffset = Vector(-8.1, 0, -0.5),
+	-- ShotgunReload = true,
+    -- },
+    -- ["cod2019_optic_scope_vz"] = {
+	-- ShotgunReload = true,
+    -- },
+    -- ["cod2019_crossbow_scope"] = {
+	-- ShotgunReload = true,
+    -- },
+    -- ["cod2019_optic_hybrid_west02"] = {
+		-- ModelOffset = Vector(-2.75, 0, 0.1),
+    -- },
+    -- ["cod2019_optic_hybrid_west02_thermal"] = {
+		-- ModelOffset = Vector(-2.75, 0, 0.1),
+    -- },
+    -- ["cod2019_optic_reflex_west05_hybrid"] = {
+		-- ModelOffset = Vector(-2.75, 0, 0.1),
+    -- },
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag"] = {
         Bodygroups = {
             {1,1},
@@ -722,6 +736,11 @@ SWEP.AttachmentElements = {
             {8,1},
         },
     },
+    ["barrel_none"] = {
+        Bodygroups = {
+            {10,1},
+        },
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -759,11 +778,10 @@ SWEP.Attachments = {
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
-        Category = {"cod2019_optic","cod2019_optic_kar98k", "cod2019_optic_big"},
+        Category = {"cod2019_optic","cod2019_kar98k_optic"},
         Bone = "tag_scope",
         Pos = Vector(2.5, 0, -0.07),
 		InstalledElements = {"rail_sight"},
-		RejectAttachments = { ["cod2019_optic_scope_mike14"] = true },
     },
     { -- 5
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
@@ -876,7 +894,7 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.3
 SWEP.GripPoseParam2 = 0.6
-SWEP.CodAngledGripPoseParam = 7
+SWEP.CodAngledGripPoseParam = 32
 SWEP.CodStubbyGripPoseParam = 22
 SWEP.CodStubbyTallGripPoseParam = 26
 SWEP.BipodSlide = 0.4

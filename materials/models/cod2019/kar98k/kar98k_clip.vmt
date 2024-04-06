@@ -1,8 +1,8 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-   "$basetexture" "models/cod2019/kar98k/kar98k_clip"
-   "$bumpmap" "models/cod2019/kar98k/kar98k_clip_n"
-   "$phongexponenttexture" "models/cod2019/kar98k/kar98k_clip_exp"
+    "$basetexture" "models\cod2019\kar98k\kar98k_clip_rgb"
+    "$bumpmap" "models\cod2019\kar98k\kar98k_clip_n"
+    "$phongexponenttexture" "models\cod2019\kar98k\kar98k_clip_e"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
@@ -25,7 +25,7 @@
     //remove this if not using MWB
     "Proxies"
     {
-        "MwEnvMapTint"
+        "Arc9EnvMapTint"
         {
             "min" "0"
             "max" "1"

@@ -218,10 +218,10 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
 
-SWEP.PeekPos = Vector(-0.5, 4.5, -4)
+SWEP.PeekPos = Vector(-1, -1, -2.5)
 SWEP.PeekAng = Angle(0, 0.4, -45)
 
-SWEP.PeekMaxFOV = 55
+SWEP.PeekMaxFOV = 64
 
 SWEP.PeekPosReloading = Vector(0, 3, -2)
 SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
@@ -555,23 +555,23 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2.7,
+		Time = 1.35,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 2.7,
+		Time = 1.35,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.5,
+		Time = 1.35,
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.5,
+		Time = 1.35,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -708,6 +708,15 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.1),
     },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/vlk/attachment_vm_sh_mike26_griptape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/vlk/attachment_vm_sh_mike26_griptape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/vlk/attachment_vm_sh_mike26_griptape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -756,11 +765,6 @@ SWEP.AttachmentElements = {
         Bodygroups = {
             {8,1},
         },
-    },
-    ["vlk_barrel_heavy"] = {
-    AttPosMods = { 
-	[2] = { Pos = Vector(2, 0, 0), },
-	},
     },
 }
 
@@ -819,16 +823,21 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_none"},
     },
-    -- {
-        -- PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
-        -- DefaultAttName = "Default",
-        -- Category = "cod2019_grip",
-        -- Bone = "tag_grip_attach",
-        -- Pos = Vector(-1.5, 0, 0),
-        -- Ang = Angle(0, 0, 180),
-		-- Scale = 1,
-		-- --InstalledElements = {"pump_rail"},
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
+        Category = "cod2019_pistolgrip",
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(0, 0, 0),
+    },
+    {
+        PrintName = "Pump Grip",
+        DefaultAttName = "Default",
+        Category = "cod2019_vlk_pump",
+        Bone = "tag_guard_attach",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+    },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),

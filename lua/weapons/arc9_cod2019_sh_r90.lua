@@ -407,23 +407,23 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 3,
+		Time = 1.25,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 3,
+		Time = 1.25,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.5,
+		Time = 1.25,
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.5,
+		Time = 1.25,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -553,6 +553,15 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_attach_muzzle_silencer_shotgun_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/r90/attachment_vm_sh_dpapa12_silencer01.mdl",
     },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/r90/attachment_vm_sh_dpapa12_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/r90/attachment_vm_sh_dpapa12_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/r90/attachment_vm_sh_dpapa12_pistolgrip_tape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -665,6 +674,13 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"grip"},
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
+        Category = "cod2019_pistolgrip",
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(0, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),

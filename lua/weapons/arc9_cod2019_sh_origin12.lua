@@ -871,6 +871,15 @@ SWEP.AttachmentTableOverrides = {
 	ModelOffset = Vector(-4.2, 0, 1.35),
 	ModelAngleOffset = Angle(0, 0, 180),
     },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/origin12/attachment_vm_sh_oscar12_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/origin12/attachment_vm_sh_oscar12_pistolgrip_tape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/origin12/attachment_vm_sh_oscar12_pistolgrip_tape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -1000,6 +1009,13 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"stock_none"},
 		Scale = 1,
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
+        Category = "cod2019_pistolgrip",
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(0, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),

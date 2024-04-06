@@ -156,7 +156,7 @@ SWEP.SpreadAddSights = -0.1
 
 SWEP.SpeedMultSights = 0.5
 
-SWEP.AimDownSightsTime = 0.5 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.7 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 SWEP.InstantSprintIdle = false

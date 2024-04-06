@@ -749,6 +749,15 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0, 0, 0.1),
     },
+    ["cod2019_griptape_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/jak12/attachment_vm_sh_aalpha12_griptape.mdl",
+    },
+    ["cod2019_griptape_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/jak12/attachment_vm_sh_aalpha12_griptape.mdl",
+    },
+    ["cod2019_griptape_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/jak12/attachment_vm_sh_aalpha12_griptape.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -865,6 +874,13 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		--InstalledElements = {"rail_grip"},
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
+        Category = "cod2019_pistolgrip",
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(0, 0, 0),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
