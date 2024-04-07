@@ -143,7 +143,7 @@ SWEP.VisualRecoilUpSights = 0
 
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.5
-SWEP.VisualRecoilRoll = 15
+SWEP.VisualRecoilRoll = 35
 SWEP.VisualRecoilSide = 0.5
 
 -- SWEP.VisualRecoilSpringPunchDamping = 11
@@ -726,6 +726,12 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
 		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_griptape.mdl",
     },
+    ["cod2019_striker45_hold1"] = {
+    ModelOffset = Vector(-1, 0, 1.5),
+    },
+    ["cod2019_striker45_hold2"] = {
+    ModelOffset = Vector(-1, 0, 1.2),
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -852,7 +858,7 @@ SWEP.Attachments = {
         Category = {"cod2019_pistolgrip","cod2019_striker45_pistolgrip"},
         Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
-		ExcludeElements = {"stock_heavy"},
+		ExcludeElements = {"stock_light"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
@@ -922,6 +928,10 @@ SWEP.Attachments = {
         Pos = Vector(7, -0.6, 0),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_view"),
+        Category = "cod2019_striker45_view",
     },
 }
 
