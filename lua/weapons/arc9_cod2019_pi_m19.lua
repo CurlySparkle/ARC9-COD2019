@@ -43,8 +43,8 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_pist_m19.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-11, 1.5, -5.25),
     Ang = Angle(-5, 0, 190),
-    TPIKPos = Vector(-14, 3, -4.5),
-    TPIKAng = Angle(0, 0, 175),
+    TPIKPos = Vector(-14, 0.5, -4.5),
+    TPIKAng = Angle(-5, 0, 195),
     Scale = 1
 }
 
@@ -229,10 +229,10 @@ SWEP.SprintPos = Vector(-1, -1, -1)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, -10, 0)
-SWEP.CustomizePos = Vector(15, 27.5, 5)
-SWEP.CustomizeRotateAnchor = Vector(15, -1.75, -5)
+SWEP.CustomizePos = Vector(15, 25, 5.25)
+SWEP.CustomizeRotateAnchor = Vector(15, -1.75, -5.25)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(0, -2.5, 0.25)
+SWEP.CustomizeSnapshotPos = Vector(1.5, -2.5, 0.25)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -997,8 +997,6 @@ SWEP.BodyDamageMults = {
     [HITGROUP_LEFTLEG] = 0.925,
     [HITGROUP_RIGHTLEG] = 0.925,
 }
-
-SWEP.RecoilModifierCap = 3
 
 -------------------------- PHYS BULLET BALLISTICS
 SWEP.PhysBulletMuzzleVelocity = 360 / ARC9.HUToM

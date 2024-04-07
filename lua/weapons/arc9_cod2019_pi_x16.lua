@@ -38,13 +38,13 @@ SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
 SWEP.Slot = 1
 
 SWEP.MirrorVMWM = true
-SWEP.NoTPIKVMPos = false
+SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_pist_x16.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-12, 4, -5),
-    TPIKAng = Angle(0, 0, 175),
+    TPIKPos = Vector(-15, 0.5, -5),
+    TPIKAng = Angle(-5, 0, 190),
     Scale = 1
 }
 
@@ -225,11 +225,11 @@ SWEP.CrouchAng = Angle(0, 0, -5)
 SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
-SWEP.CustomizeAng = Angle(90, -25, 0)
-SWEP.CustomizePos = Vector(16, 30, 3)
-SWEP.CustomizeRotateAnchor = Vector(16, -2.25, -4)
+SWEP.CustomizeAng = Angle(90, -15, 0)
+SWEP.CustomizePos = Vector(15, 25, 5.5)
+SWEP.CustomizeRotateAnchor = Vector(15, -1, -5.5)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(1, -10, 3)
+SWEP.CustomizeSnapshotPos = Vector(1.5, -2.5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -605,7 +605,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 10,
+		Time = 1.25,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.35, lhik = 1, rhik = 1 },
@@ -614,7 +614,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.5,
+		Time = 1.25,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -1264,5 +1264,32 @@ SWEP.GripPoseParam2 = 0.6
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 36
+SWEP.DamageMin = 30
+
+SWEP.RangeMin = 12 / ARC9.HUToM
+SWEP.RangeMax = 21 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 2,
+    [HITGROUP_CHEST] = 1.175,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 0.925,
+    [HITGROUP_RIGHTARM] = 0.925,
+    [HITGROUP_LEFTLEG] = 0.925,
+    [HITGROUP_RIGHTLEG] = 0.925,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+SWEP.PhysBulletMuzzleVelocity = 375 / ARC9.HUToM
+
+-------------------------- FIREMODES
+SWEP.RPM = 300
+
+-------------------------- HANDLING
+SWEP.AimDownSightsTime = 0.15
+SWEP.SprintToFireTime = 0.162
 
 end

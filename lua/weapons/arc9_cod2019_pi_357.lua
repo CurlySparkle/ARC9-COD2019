@@ -43,7 +43,7 @@ SWEP.WorldModelOffset = {
     Pos = Vector(-7, 3.25, -5),
     Ang = Angle(-5, 0, 180),
     TPIKPos = Vector(-13, 3, -4.5),
-    TPIKAng = Angle(0, 0, 175),
+    TPIKAng = Angle(-5, 0, 175),
     Scale = 1
 }
 
@@ -225,10 +225,10 @@ SWEP.SprintPos = Vector(-3.5, 1, 4.7)
 SWEP.SprintAng = Angle(0, -25, -5)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(14, 30, 4.5)
+SWEP.CustomizePos = Vector(14, 25, 4.5)
 SWEP.CustomizeRotateAnchor = Vector(14, -1.75, -4.5)
 SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(3, -5, 0)
+SWEP.CustomizeSnapshotPos = Vector(2, -5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -243,7 +243,7 @@ SWEP.HoldTypeSights = "revolver"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
-SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_PISTOL
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 
@@ -461,8 +461,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_pi_cpapa_inspect_01.ogg", t = 0/30},
@@ -588,8 +588,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_pi_cpapa_inspect_01.ogg", t = 0/30},
@@ -797,18 +797,18 @@ SWEP.Attachments = {
 		Bone = "tag_mag_attach",
         Category = "cod2019_357_mag",
         Pos = Vector(0, 0, 0),
-		Icon_Offset = Vector(-6.5, 0, 1.7),
+		Icon_Offset = Vector(-6.5, 0, 2),
     },
     { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",
 		Category = {"cod2019_ammo"},
-		Pos = Vector(-0.75, 0, 0),
-		Icon_Offset = Vector(-6.5, 0, 1.7),
+		Pos = Vector(-1, 0, 0),
+		Icon_Offset = Vector(-6.5, 0, 2),
     },
     { -- 8
-        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip") .. " / " .. ARC9:GetPhrase("mw19_category_stock"),
 		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
         Category = {"cod2019_pistolgrip", "cod2019_357_grip"},
         Bone = "tag_pistolgrip_attach",
