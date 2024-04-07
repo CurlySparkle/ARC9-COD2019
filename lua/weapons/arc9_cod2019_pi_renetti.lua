@@ -636,10 +636,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
+		Time = 0.25,
 		NoStatAffectors = true
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
+		Time = 0.25,
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
 		NoStatAffectors = true
     },
