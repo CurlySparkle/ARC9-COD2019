@@ -345,6 +345,15 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_pistolgrip_tape_akimbo.mdl",
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_trigcust_akimbo.mdl",
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_trigcust02_akimbo.mdl",
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_trigcust03_akimbo.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -372,6 +381,12 @@ SWEP.AttachmentElements = {
         Bodygroups = {
             {6,1},
             {7,1},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {8,1},
+            {9,1},
         },
     },
 }
