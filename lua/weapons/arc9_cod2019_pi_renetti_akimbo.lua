@@ -376,7 +376,7 @@ SWEP.AttachmentElements = {
             {7,1},
         },
     },
-    ["rail_mount_sight"] = {
+    ["rail_sight"] = {
         Bodygroups = {
             {8,1},
             {9,1},
@@ -387,10 +387,10 @@ SWEP.AttachmentElements = {
 SWEP.Attachments = {
     { -- 1
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
-        Category = "cod2019_muzzle_pistols",
+        Category = {"cod2019_muzzle_pistols", "cod2019_renetti_muzzle"},
         DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
 		Bone = "tag_silencer_l",
-        DuplicateModels = { { Bone = "tag_silencer" } },
+		DuplicateModels = { { Bone = "tag_silencer" } },
         Pos = Vector(-0.105, 0, 0),
     },
     { -- 2
@@ -412,7 +412,8 @@ SWEP.Attachments = {
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
-        Bone = "j_slide",
+        Bone = "j_slide_l",
+		DuplicateModels = { { Bone = "j_slide" } },
         Pos = Vector(-1.275, 0, 0.645),
         Category = "cod2019_optics_pistols_alt",
 		MergeSlots = {21},
@@ -421,7 +422,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
 		DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
         Category = "cod2019_renetti_stock",
-        Bone = "tag_stock_attach",
+        Bone = "tag_stock_attach_l",
         Pos = Vector(0, 0, 0),
     },
     { -- 6

@@ -1088,6 +1088,24 @@ end
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
+    ["cod2019_x16_stock"] = {
+		CustomizeAng = Angle(90, 0, 0),
+		CustomizePos = Vector(12, 30, 3),
+		CustomizeRotateAnchor = Vector(12, -2.5, -4.5),
+		
+		SprintPos = Vector(1, 2, -2),
+		-- SprintAng = Angle(0, 0, 25),
+
+		PeekPos = Vector(0, -3, -5),
+		PeekAng = Angle(0, 0, -45),
+
+		ActivePos = Vector(-0.15, -0.5, -0.5),
+		ActiveAng = Angle(0, 0, 0),
+
+		MovingPos = Vector(-1, -0.8, -1),
+		MovingAng = Angle(0, 0, -5),
+
+    },
     ["cod2019_view_alt_pistol"] = {
 		ActivePos = Vector(3, -1.5, 2),
 		ActiveAng = Angle(0, 0, 20),

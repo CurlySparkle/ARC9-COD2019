@@ -1227,12 +1227,11 @@ end
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
-    -- ["cod2019_renetti_stock"] = {
-		-- CustomizeAng = Angle(90, 0, 0),
-		-- CustomizePos = Vector(17, 25, 3),
-		-- PeekPos = Vector(0, -1.5, -4),
-		-- PeekAng = Angle(0, 0, -45),
-    -- },
+    ["cod2019_renetti_stock"] = {
+		CustomizeAng = Angle(90, 0, 0),
+		CustomizePos = Vector(12, 30, 3),
+		CustomizeRotateAnchor = Vector(12, -2.5, -4.5),
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -1269,7 +1268,7 @@ SWEP.AttachmentElements = {
 SWEP.Attachments = {
     { -- 1
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
-        Category = "cod2019_muzzle_pistols",
+        Category = {"cod2019_muzzle_pistols", "cod2019_renetti_muzzle"},
         DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
 		Bone = "tag_silencer",
         Pos = Vector(-0.105, 0, 0),
@@ -1294,6 +1293,7 @@ SWEP.Attachments = {
         Bone = "j_slide",
         Pos = Vector(-1.275, 0, 0.645),
         Category = "cod2019_optics_pistols_alt",
+		InstalledElements = {"sight_mount"},
 		MergeSlots = {21},
     },
     { -- 5
