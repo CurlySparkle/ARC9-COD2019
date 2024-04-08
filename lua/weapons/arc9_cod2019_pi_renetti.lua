@@ -1280,7 +1280,6 @@ SWEP.Attachments = {
         Category = "cod2019_renetti_slide",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
-		Icon_Offset = Vector(-3, 0, 0),
     },
     { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser") .. " / " .. ARC9:GetPhrase("mw19_category_underbarrel"),

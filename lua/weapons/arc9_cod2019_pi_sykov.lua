@@ -821,118 +821,156 @@ SWEP.AttachmentElements = {
 }
 
 SWEP.Attachments = {
-    {
+    { -- 1
+        PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
+        Category = "cod2019_muzzle_pistols",
+        DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
+		Bone = "tag_silencer",
+        Pos = Vector(-0.105, 0, 0),
+    },
+    { -- 2
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
-		DefaultIcon = Material("arc9/def_att_icons/barrel.png", "mips smooth"),
-        DefaultAttName = "Standard slide",
+		DefaultIcon = Material("entities/defattachs/barrel-ar.png", "mips smooth"),
         Category = "cod2019_sykov_slide",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-3, 0, 0),
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
-        DefaultAttName = "Standard Muzzle",
-        Category = "cod2019_muzzle_pistols",
-        Bone = "tag_silencer",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-		--InstalledElements = {"muzzle_none"},
-		Scale = 1,
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_optic"),
-		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
-        Bone = "tag_reflex",
-        Pos = Vector(1.075, 0, 0.025),
-        Ang = Angle(0, 0, 0),
-        Category = "cod2019_optics_pistols_alt",
-        CorrectiveAng = Angle(0, 0, 0),
-		Scale = 1,
-		InstalledElements = {"rail_sight"},
-    },
-    {
+    { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
-        DefaultAttName = "Default",
+		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
         Category = {"cod2019_tac_pistols","cod2019_grip_pistols"},
         Bone = "tag_laser_attach",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
 		InstalledElements = {"rail_laser"},
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
-        DefaultAttName = "Default",
-        Category = "cod2019_sykov_grip",
+    { -- 4
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
+		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
+        Bone = "tag_reflex",
+        Pos = Vector(1.075, 0, 0.025),
+        Category = {"cod2019_optic_pistol"},
+		InstalledElements = {"rail_sight"},
+    },
+    { -- 5
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
+		DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
+        Category = "cod2019_sykov_stock",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 180),
-		Scale = 1,
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_ammo"),
-		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
-        Bone = "j_mag1",
-        Category = "cod2019_ammo",
-        Pos = Vector(0, 0, -1.5),
-        Ang = Angle(0, 0, 0),
+    { -- 6
+        PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
+		-- DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
+        Category = {"cod2019_sykov_trigger"},
+        Bone = "j_trigger",
+        Pos = Vector(0, 0, 0),
     },
-    {
+    { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
-		DefaultIcon = Material("arc9/def_att_icons/mag_ar.png", "mips smooth"),
-		Bone = "j_mag1",
+		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
+		Bone = "tag_mag_attach",
         Category = {"cod2019_mag","cod2019_sykov_mag"},
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
     },
-    {
-		PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"}
+    { -- 8
+        PrintName = ARC9:GetPhrase("mw19_category_ammo"),
+		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
+        Bone = "tag_mag_attach",
+		Category = {"cod2019_ammo"},
+		Pos = Vector(-1, 0, 0),
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_view"),
-        Category = "cod2019_pistols_view"
+    { -- 9
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
+        Category = "cod2019_sykov_grip",
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(0, 0, 0),
     },
-    {
+    { -- 10
+        PrintName = ARC9:GetPhrase("mw19_category_perk"),
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
+        Bone = "tag_pistol_attachments",
+        Pos = Vector(3, 0, -1.5),
+    },
+	
+	-- Unofficial
+    { -- 11
+        PrintName = ARC9:GetPhrase("mw19_category_receiver"),
+        Category = "cod2019_sykov_receiver",
+        Bone = "tag_pistol_attachments",
+        Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 1),
+		Hidden = true,
+    },
+	
+	-- Cosmetics
+    { -- 12
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
-        --Bone = "v_weapon.Clip",
+        Bone = "tag_cosmetic",
+        Pos = Vector(3, 0, 1.5),
         Category = "cod2019_skins_sykov",
 		CosmeticOnly = true,
     },
-    {
+    { -- 13
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
-        Category = "universal_camo",
+        Category = {"universal_camo"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(2, 0, 1.5),
         CosmeticOnly = true,
     },
-    {
+    { -- 14
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/pist_sykov_decal_a.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(1, 0, 1.5),
     },
-    {
+    { -- 15
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/pist_sykov_decal_b.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(0, 0, 1.5),
     },
-    {
+    { -- 16
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/pist_sykov_decal_c.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-1, 0, 1.5),
     },
-    {
+    { -- 17
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/pist_sykov_decal_d.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-2, 0, 1.5),
     },
-    {
+    { -- 18
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = {"charm", "killcounter"},
-		RejectAttachments = { ["arc9_stat_proscreen"] = true },
-		CosmeticOnly = true,
+        CosmeticOnly = true,
+        Category = {"charm"},
         Bone = "tag_cosmetic",
         Pos = Vector(0.5, 0, 0),
-        Ang = Angle(0, 0, 0),
+		Icon_Offset = Vector(-3.5, 0, 1.5),
 		Scale = 1,
+    },
+    { -- 19
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
+        Category = "killcounter",
+        Bone = "tag_cosmetic",
+        Pos = Vector(0, 0, -1),
+		Icon_Offset = Vector(-2.5, 0.05, 1.5),
+		CosmeticOnly = true,
+    },
+    { -- 20
+        PrintName = ARC9:GetPhrase("mw19_category_view"),
+        Category = "cod2019_pistols_view",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-9, 0, 3),
+		CosmeticOnly = true,
+		ExcludeElements = {"stock"},
     },
 }
 
