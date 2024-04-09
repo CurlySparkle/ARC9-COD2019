@@ -1232,6 +1232,15 @@ SWEP.AttachmentTableOverrides = {
 		CustomizePos = Vector(12, 30, 3),
 		CustomizeRotateAnchor = Vector(12, -2.5, -4.5),
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_trigcust01.mdl",
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_trigcust02.mdl",
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_trigcust03.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -1258,6 +1267,11 @@ SWEP.AttachmentElements = {
     ["sight_mount"] = {
         Bodygroups = {
             {5,1},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {6,1},
         },
     },
 	["muzzle_comp"] = {

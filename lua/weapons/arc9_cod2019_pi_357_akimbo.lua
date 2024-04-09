@@ -365,6 +365,15 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_pistolgrip_tape_akimbo.mdl",
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_trigcust_akimbo.mdl",
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_trigcust02_akimbo.mdl",
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_trigcust03_akimbo.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -396,6 +405,12 @@ SWEP.AttachmentElements = {
         Bodygroups = {
             {8,1},
             {9,1},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {10,1},
+            {11,1},
         },
     },
 }

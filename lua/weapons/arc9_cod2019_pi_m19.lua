@@ -798,6 +798,15 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_pistolgrip_tape.mdl",
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust.mdl",
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust02.mdl",
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -824,6 +833,11 @@ SWEP.AttachmentElements = {
     ["sight_none"] = {
         Bodygroups = {
             {3,1},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {4,1},
         },
     },
 }

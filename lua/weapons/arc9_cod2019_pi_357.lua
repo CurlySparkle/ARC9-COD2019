@@ -706,9 +706,23 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_pistolgrip_tape.mdl",
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_trigcust.mdl",
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_trigcust02.mdl",
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_trigcust03.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["barrel_none"] = {
         Bodygroups = {
             {1,1},
@@ -732,6 +746,11 @@ SWEP.AttachmentElements = {
     ["mag_none"] = {
         Bodygroups = {
             {5,1},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {6,1},
         },
     },
     ["cod2019_attach_grip_support"] = {

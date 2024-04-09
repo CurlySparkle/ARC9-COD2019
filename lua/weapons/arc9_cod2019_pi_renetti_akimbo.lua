@@ -347,8 +347,17 @@ SWEP.AttachmentTableOverrides = {
     Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_barlight_akimbo.mdl",
 	},
     ["cod2019_renetti_muzzle"] = {
-    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_compensator_akimbo.mdl",
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_compensator.mdl",
 	},
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_trigcust01_akimbo.mdl",
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_trigcust02_akimbo.mdl",
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_trigcust03_akimbo.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -382,6 +391,12 @@ SWEP.AttachmentElements = {
             {9,1},
         },
     },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {10,1},
+            {11,1},
+        },
+    },
 }
 
 SWEP.Attachments = {
@@ -404,10 +419,10 @@ SWEP.Attachments = {
     { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser") .. " / " .. ARC9:GetPhrase("mw19_category_underbarrel"),
 		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
-        Category = {"cod2019_tac_pistols","cod2019_grip_pistols","cod2019_renetti_foregrip"},
+        Category = {"cod2019_tac_pistols","cod2019_grip_pistols"},
         Bone = "tag_laser_attach_l",
 		DuplicateModels = { { Bone = "tag_laser_attach" } },
-        Pos = Vector(-1, 0, 0),
+        Pos = Vector(0, 0, 0),
     },
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),

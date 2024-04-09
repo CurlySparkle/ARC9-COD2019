@@ -352,6 +352,15 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_pistolgrip_tape_akimbo.mdl",
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_trigcust_akimbo.mdl",
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_trigcust02_akimbo.mdl",
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_trigcust03_akimbo.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {

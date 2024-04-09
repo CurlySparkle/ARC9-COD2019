@@ -311,6 +311,17 @@ SWEP.Animations = {
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
 		Time = 0.25,
     },
+    ["super_sprint_idle"] = {
+        Source = "super_sprint",
+    },
+    ["super_sprint_in"] = {
+        Source = "super_sprint_in",
+		Time = 1,
+    },
+    ["super_sprint_out"] = {
+        Source = "super_sprint_out",
+		Time = 1,
+    },
     ["inspect"] = {
         Source = "lookat01",
 		MinProgress = 0.1,
@@ -390,6 +401,15 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_pistolgrip_tape_akimbo.mdl",
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust_akimbo.mdl",
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust02_akimbo.mdl",
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03_akimbo.mdl",
+    },
     ["cod2019_perks_super_sprint"] = {
     SprintPos = Vector(-1, 0, -1),
     SprintAng = Angle(0, 0, -5)
@@ -419,6 +439,12 @@ SWEP.AttachmentElements = {
         Bodygroups = {
             {2,2},
             {5,2},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {6,1},
+            {7,1},
         },
     },
 }
@@ -500,9 +526,7 @@ SWEP.Attachments = {
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
         Bone = "tag_cosmetic_l",
         Pos = Vector(-0.5, 0, -2.5),
-		RejectAttachments = { ["cod2019_perks_super_sprint"] = true },
     },
-	
 	-- Unofficial
     { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),

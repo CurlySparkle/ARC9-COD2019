@@ -781,9 +781,15 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 end
 
 SWEP.AttachmentTableOverrides = {
-    -- ["cod2019_trigger_light"] = {
-		-- RPMMult = 1.1,
-    -- },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_trigcust.mdl",
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_trigcust02.mdl",
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_trigcust03.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -800,6 +806,11 @@ SWEP.AttachmentElements = {
     ["grip_none"] = {
         Bodygroups = {
             {3,1},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {4,1},
         },
     },
 }

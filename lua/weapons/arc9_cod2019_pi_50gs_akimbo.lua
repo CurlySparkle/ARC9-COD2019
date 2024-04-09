@@ -306,6 +306,15 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_50gs_grip_custom"] = {
     Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_cust_grip_akimbo.mdl"
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_trigcust_akimbo.mdl",
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_trigcust02_akimbo.mdl",
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_trigcust03_akimbo.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -331,6 +340,12 @@ SWEP.AttachmentElements = {
         Bodygroups = {
             {3,1},
             {7,1},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {8,1},
+            {9,1},
         },
     },
 }
@@ -446,28 +461,28 @@ SWEP.Attachments = {
     },
     { -- 13
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/pist_50gs_decal_a.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_50gs_decal_a.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic_l",
         Pos = Vector(1, 0, 1.5),
     },
     { -- 14
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/pist_50gs_decal_b.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_50gs_decal_b.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic_l",
         Pos = Vector(0, 0, 1.5),
     },
     { -- 15
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/pist_50gs_decal_c.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_50gs_decal_c.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic_l",
         Pos = Vector(-1, 0, 1.5),
     },
     { -- 16
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/pist_50gs_decal_d.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_50gs_decal_d.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic_l",
         Pos = Vector(-2, 0, 1.5),
