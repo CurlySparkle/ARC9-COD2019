@@ -163,8 +163,8 @@ SWEP.SpreadAddSights = -0.5
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.1 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.1 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.2 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.2 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -235,6 +235,18 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.PeekPos = Vector(-3.2, -3, -3.5)
 SWEP.PeekAng = Angle(0, 0, -45)
+
+SWEP.SprintPosHook = function(wep)
+    if wep:HasElement("stock") and wep:HasElement("perk_super_sprint") then
+        return Vector(0,0,0)
+    end
+end
+
+SWEP.SprintAngHook = function(wep)
+    if wep:HasElement("stock") and wep:HasElement("perk_super_sprint") then
+        return Angle(0,0,0)
+    end
+end
 
 -------------------------- HoldTypes
 
@@ -605,7 +617,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Time = 1.25,
+		Time = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.35, lhik = 1, rhik = 1 },
@@ -614,7 +626,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Time = 1.25,
+		Time = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -1088,19 +1100,19 @@ end
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
-    ["cod2019_x16_stock"] = {
-		CustomizeAng = Angle(90, 0, 0),
-		CustomizePos = Vector(12, 30, 3),
-		CustomizeRotateAnchor = Vector(12, -2.5, -4.5),
-		SprintPos = Vector(1, 2, -2),
-		-- SprintAng = Angle(0, 0, 25),
-		PeekPos = Vector(0, -3, -5),
-		PeekAng = Angle(0, 0, -45),
-		ActivePos = Vector(-0.15, -0.5, -0.5),
-		ActiveAng = Angle(0, 0, 0),
-		MovingPos = Vector(-1, -0.8, -1),
-		MovingAng = Angle(0, 0, -5),
-    },
+    -- ["cod2019_x16_stock"] = {
+		-- CustomizeAng = Angle(90, 0, 0),
+		-- CustomizePos = Vector(12, 30, 3),
+		-- CustomizeRotateAnchor = Vector(12, -2.5, -4.5),
+		-- SprintPos = Vector(1, 2, -2),
+		-- -- SprintAng = Angle(0, 0, 25),
+		-- PeekPos = Vector(0, -3, -5),
+		-- PeekAng = Angle(0, 0, -45),
+		-- ActivePos = Vector(-0.15, -0.5, -0.5),
+		-- ActiveAng = Angle(0, 0, 0),
+		-- MovingPos = Vector(-1, -0.8, -1),
+		-- MovingAng = Angle(0, 0, -5),
+    -- },
     ["cod2019_view_alt_pistol"] = {
 		ActivePos = Vector(3, -1.5, 2),
 		ActiveAng = Angle(0, 0, 20),

@@ -93,7 +93,7 @@ SWEP.Crosshair = true
 
 -------------------------- FIREMODES
 
-SWEP.RPM = 667
+SWEP.RPM = 666
 
 SWEP.Firemodes = {
     {
@@ -111,12 +111,12 @@ SWEP.RecoilPatternDrift = 45
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.1
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.7
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -129,7 +129,7 @@ SWEP.RecoilMultCrouch = 0.8
 
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
-SWEP.RecoilMultSights = 0.9
+SWEP.RecoilMultSights = 0.85
 
 SWEP.RecoilPerShot = 1
 SWEP.RecoilMax = 3
@@ -138,15 +138,15 @@ SWEP.RecoilMax = 3
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.4
-SWEP.VisualRecoilPunchSights = 15
-SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilPunchSights = 10
+SWEP.VisualRecoilRollSights = 15
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
 SWEP.VisualRecoilPunch = 2.5
 SWEP.VisualRecoilUp = 0.3
-SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.1
+SWEP.VisualRecoilRoll = 35
+SWEP.VisualRecoilSide = 0.07
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -162,7 +162,7 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.0325
+SWEP.Spread = 0.065
 
 SWEP.SpreadAddRecoil = 0.01
 
@@ -176,6 +176,8 @@ SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = 3
 SWEP.RecoilModifierCapMove = 0
 SWEP.RecoilModifierCapSights = 0
+
+SWEP.SpreadAddShooting = -0.05
 
 SWEP.SpreadHook = function(self, orig)
     local rec = self:GetRecoilAmount()
