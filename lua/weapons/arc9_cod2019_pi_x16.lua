@@ -233,8 +233,13 @@ SWEP.CustomizeSnapshotPos = Vector(1.5, -2.5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-3.2, -3, -3.5)
+SWEP.PeekMaxFOV = SWEP.ViewModelFOVBase
+
+SWEP.PeekPos = Vector(-3.25, -3.5, -2)
 SWEP.PeekAng = Angle(0, 0, -45)
+
+SWEP.PeekPosReloading = Vector(1, 0, -0.5)
+SWEP.PeekAngReloading = Angle(0, 0, 0)
 
 SWEP.SprintPosHook = function(wep)
     if wep:HasElement("stock") and wep:HasElement("perk_super_sprint") then
@@ -347,13 +352,16 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.575,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 1/30},
@@ -365,12 +373,15 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 0/30},
@@ -385,13 +396,16 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
+		PeekProgress = 0.75,
+		RefillProgress = 0.525,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_fast_magout_01.ogg", t = 0/30},
@@ -403,12 +417,15 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magout_01.ogg", t = 0/30},
@@ -420,13 +437,16 @@ SWEP.Animations = {
     },
     ["reload_xmag"] = {
         Source = "reload_xmag",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.575,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 1/30},
@@ -438,12 +458,15 @@ SWEP.Animations = {
     ["reload_xmag_empty"] = {
         Source = "reload_xmag_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 0/30},
@@ -458,13 +481,16 @@ SWEP.Animations = {
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
 		MinProgress = 0.8,
+		PeekProgress = 0.75,
+		RefillProgress = 0.525,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.47,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_fast_magout_01.ogg", t = 0/30},
@@ -476,12 +502,15 @@ SWEP.Animations = {
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.575,
+		FireASAP = true,
 		DropMagAt = 0.47,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magout_01.ogg", t = 0/30},
@@ -493,13 +522,16 @@ SWEP.Animations = {
     },
     ["reload_xmaglrg"] = {
         Source = "reload_xmaglrg",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.575,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 0/30},
@@ -511,12 +543,15 @@ SWEP.Animations = {
     ["reload_xmaglrg_empty"] = {
         Source = "reload_xmaglrg_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 0/30},
@@ -531,38 +566,44 @@ SWEP.Animations = {
     ["reload_xmaglrg_fast"] = {
         Source = "reload_xmaglrg_fast",
 		MinProgress = 0.8,
+		PeekProgress = 0.75,
+		RefillProgress = 0.525,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_fast_magout_01.ogg", t = 0/30},
             {s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 15/30},
             {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 21/30},
-			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 27/30},
+			{s = path .. "wfoly_pi_golf21_reload_fast_end.ogg", t = 27/30},
         },
     },
     ["reload_xmaglrg_fast_empty"] = {
         Source = "reload_xmaglrg_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.575,
+		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 1/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 9/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 17/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 21/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 23/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 32/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 23/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_end.ogg", t = 32/30},
         },
     },
     ["ready"] = {
@@ -640,8 +681,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_pi_golf21_inspect_01.ogg", t = 0/30},
@@ -662,15 +703,18 @@ SWEP.Animations = {
     ["stock_fire"] = {
         Source = "stock_shoot1",
     },
-    ["stock_reload"] = {
+	["stock_reload"] = {
         Source = "stock_reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.575,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 1/30},
@@ -682,12 +726,15 @@ SWEP.Animations = {
     ["stock_reload_empty"] = {
         Source = "stock_reload",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 0/30},
@@ -702,13 +749,16 @@ SWEP.Animations = {
     ["stock_reload_fast"] = {
         Source = "stock_reload_fast",
 		MinProgress = 0.8,
+		PeekProgress = 0.75,
+		RefillProgress = 0.525,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_fast_magout_01.ogg", t = 0/30},
@@ -720,12 +770,15 @@ SWEP.Animations = {
     ["stock_reload_fast_empty"] = {
         Source = "stock_reload_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magout_01.ogg", t = 0/30},
@@ -737,13 +790,16 @@ SWEP.Animations = {
     },
     ["stock_reload_xmag"] = {
         Source = "stock_reload_xmag",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.575,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 1/30},
@@ -755,12 +811,15 @@ SWEP.Animations = {
     ["stock_reload_xmag_empty"] = {
         Source = "stock_reload_xmag_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 0/30},
@@ -775,13 +834,16 @@ SWEP.Animations = {
     ["stock_reload_xmag_fast"] = {
         Source = "stock_reload_xmag_fast",
 		MinProgress = 0.8,
+		PeekProgress = 0.75,
+		RefillProgress = 0.525,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.47,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_fast_magout_01.ogg", t = 0/30},
@@ -793,12 +855,15 @@ SWEP.Animations = {
     ["stock_reload_xmag_fast_empty"] = {
         Source = "stock_reload_xmag_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.575,
+		FireASAP = true,
 		DropMagAt = 0.47,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magout_01.ogg", t = 0/30},
@@ -810,29 +875,36 @@ SWEP.Animations = {
     },
     ["stock_reload_xmaglrg"] = {
         Source = "stock_reload_xmaglrg",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.575,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_golf21_reload_magin_01.ogg", t = 23/30},
+            {s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 23/30},
+            {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 29/30},
 			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 35/30},
         },
     },
     ["stock_reload_xmaglrg_empty"] = {
         Source = "stock_reload_xmaglrg_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.775,
+		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 0/30},
@@ -840,43 +912,50 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 16/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 24/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 29/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 35/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 35/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 36/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 47/30},
         },
     },
     ["stock_reload_xmaglrg_fast"] = {
         Source = "stock_reload_xmaglrg_fast",
 		MinProgress = 0.8,
+		PeekProgress = 0.75,
+		RefillProgress = 0.525,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_fast_magout_01.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 15/30},
-            {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_golf21_reload_fast_end.ogg", t = 28/30},
+            {s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 15/30},
+            {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_golf21_reload_fast_end.ogg", t = 27/30},
         },
     },
     ["stock_reload_xmaglrg_fast_empty"] = {
         Source = "stock_reload_xmaglrg_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.575,
+		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_golf21_reload_empty_fast_magout_01.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 18/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 22/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magout_01.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 23/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_end.ogg", t = 32/30},
         },
     },
@@ -928,8 +1007,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_pi_golf21_inspect_01.ogg", t = 0/30},
@@ -1100,19 +1179,19 @@ end
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
-    -- ["cod2019_x16_stock"] = {
-		-- CustomizeAng = Angle(90, 0, 0),
-		-- CustomizePos = Vector(12, 30, 3),
-		-- CustomizeRotateAnchor = Vector(12, -2.5, -4.5),
-		-- SprintPos = Vector(1, 2, -2),
-		-- -- SprintAng = Angle(0, 0, 25),
-		-- PeekPos = Vector(0, -3, -5),
-		-- PeekAng = Angle(0, 0, -45),
-		-- ActivePos = Vector(-0.15, -0.5, -0.5),
-		-- ActiveAng = Angle(0, 0, 0),
-		-- MovingPos = Vector(-1, -0.8, -1),
-		-- MovingAng = Angle(0, 0, -5),
-    -- },
+    ["cod2019_x16_stock"] = {
+		CustomizeAng = Angle(90, 0, 0),
+		CustomizePos = Vector(12, 25, 4.5),
+		CustomizeRotateAnchor = Vector(12, -3.5, -4.5),
+		SprintPos = Vector(1, 2, -2),
+		-- SprintAng = Angle(0, 0, 25),
+		PeekPos = Vector(0, -3, -5),
+		PeekAng = Angle(0, 0, -45),
+		ActivePos = Vector(-0.15, -0.5, -0.5),
+		ActiveAng = Angle(0, 0, 0),
+		MovingPos = Vector(-1, -0.8, -1),
+		MovingAng = Angle(0, 0, -5),
+    },
     ["cod2019_view_alt_pistol"] = {
 		ActivePos = Vector(3, -1.5, 2),
 		ActiveAng = Angle(0, 0, 20),

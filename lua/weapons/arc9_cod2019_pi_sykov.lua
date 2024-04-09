@@ -42,7 +42,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_pist_sykov.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-12, 6, -7.5),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-12, 0, -5),
+    TPIKPos = Vector(-15, 0, -5),
     TPIKAng = Angle(0, 0, 200),
     Scale = 1
 }
@@ -175,6 +175,20 @@ SWEP.IronSights = {
 	CrosshairInSights = false
 }
 
+SWEP.IronSightsHook = function(self) -- If any attachments equipped should alter Irons
+    local attached = self:GetElements()
+
+    if attached["stock"] then
+        return {
+			Pos = Vector(-1.475, -4, 1.95),
+			Ang = Angle(0, 0, 5),
+			Magnification = 1.15,
+			CrosshairInSights = false
+        }
+    end
+
+end
+
 SWEP.ViewModelFOVBase = 64
 
 SWEP.SprintMidPoint = {
@@ -207,8 +221,13 @@ SWEP.CustomizeSnapshotPos = Vector(0.5, -2.5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-2.5, 0, -1.5)
+SWEP.PeekMaxFOV = SWEP.ViewModelFOVBase
+
+SWEP.PeekPos = Vector(-3, -4, -2)
 SWEP.PeekAng = Angle(0, 0, -45)
+
+SWEP.PeekPosReloading = Vector(1, 0, -2)
+SWEP.PeekAngReloading = Angle(0, 0, 0)
 
 -------------------------- HoldTypes
 
@@ -319,13 +338,15 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload_short",
 		MinProgress = 0.8,
+		PeekProgress = 0.725,
+		RefillProgress = 0.575,
 		FireASAP = true,
 		MagSwapTime = 4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_mike_reload_up.ogg", t = 0/30},
@@ -338,14 +359,16 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
+		PeekProgress = 0.79,
+		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 2.5,
+		DropMagAt = 1.75,
 		MagSwapTime = 4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_mike_reload_empty_up.ogg", t = 0/30},
@@ -359,14 +382,16 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
+		PeekProgress = 0.725,
+		RefillProgress = 0.575,
 		FireASAP = true,
 		DropMagAt = 0.7,
 		MagSwapTime = 4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.55, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_mike_reload_fast_up.ogg", t = 2/30},
@@ -377,15 +402,17 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.75,
+		RefillProgress = 0.65,
 		FireASAP = true,
 		DropMagAt = 0.7,
 		MagSwapTime = 4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.45, lhik = 0, rhik = 0 },
+            { t = 0.625, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_up.ogg", t = 1/30},
@@ -398,13 +425,15 @@ SWEP.Animations = {
     ["reload_xmag"] = {
         Source = "reload_xmag",
 		MinProgress = 0.8,
+		PeekProgress = 0.725,
+		RefillProgress = 0.575,
 		FireASAP = true,
 		MagSwapTime = 4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_mike_reload_up.ogg", t = 0/30},
@@ -416,15 +445,17 @@ SWEP.Animations = {
     },
     ["reload_xmag_empty"] = {
         Source = "reload_xmag_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.79,
+		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 2.5,
+		DropMagAt = 1.75,
 		MagSwapTime = 4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_mike_reload_empty_up.ogg", t = 0/30},
@@ -438,128 +469,151 @@ SWEP.Animations = {
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
 		MinProgress = 0.8,
+		PeekProgress = 0.725,
+		RefillProgress = 0.575,
 		FireASAP = true,
 		MagSwapTime = 4,
 		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.55, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike_reload_magout.ogg", t = 14/30},
-			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 22/30},
-			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 24/30},
-			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_up.ogg", t = 2/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_magin.ogg", t = 22/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_end.ogg", t = 28/30},
         },
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.75,
+		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 4,
 		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.45, lhik = 0, rhik = 0 },
+            { t = 0.625, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_magout.ogg", t = 14/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_maghit.ogg", t = 24/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 26/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 35/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 40/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_up.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_magin.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_charge.ogg", t = 31/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_end.ogg", t = 43/30},
         },
     },
-    ["reload_xmaglrg"] = {
+    ["reload_drum"] = {
         Source = "reload_drum",
 		MinProgress = 0.8,
+		PeekProgress = 0.725,
+		RefillProgress = 0.625,
 		FireASAP = true,
 		MagSwapTime = 4,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_mike_reload_up.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_mike_reload_magout.ogg", t = 12/30},
-			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 24/30},
-			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 30/30},
-			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 42/30},
+			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 36/30},
+			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 43.5/30},
+			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 55/30},
         },
     },
-    ["reload_xmaglrg_empty"] = {
+    ["reload_drum_empty"] = {
         Source = "reload_xmaglrg_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.79,
+		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 0.8,
 		MagSwapTime = 4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_pi_mike_reload_empty_up.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_magout.ogg", t = 8/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_maghit.ogg", t = 24/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 26/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 45/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 58/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_maghit.ogg", t = 36/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 41/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 57.5/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 62.5/30},
         },
     },
-    ["reload_xmaglrg_fast"] = {
+    ["reload_drum_fast"] = {
         Source = "reload_xmaglrg_fast",
 		MinProgress = 0.8,
+		PeekProgress = 0.725,
+		RefillProgress = 0.575,
 		FireASAP = true,
 		MagSwapTime = 4,
 		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike_reload_up.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike_reload_magout.ogg", t = 14/30},
-			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 22/30},
-			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 24/30},
-			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_up.ogg", t = 2/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_magin.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_end.ogg", t = 35/30},
         },
     },
-    ["reload_xmaglrg_fast_empty"] = {
+    ["reload_drum_fast_empty"] = {
         Source = "reload_xmaglrg_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.75,
+		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 4,
 		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.675, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike_reload_empty_up.ogg", t = 0/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_magout.ogg", t = 14/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_maghit.ogg", t = 24/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 26/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 35/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 40/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_up.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_magin.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_charge.ogg", t = 40/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_end.ogg", t = 47.5/30},
         },
     },
     ["ready"] = {
         Source = "draw",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_pi_mike_first_raise_up.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike_first_raise_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_pi_mike_first_raise_magin.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike_first_raise_end.ogg", t = 19/30},
+        },
+    },
+    ["ready_drum"] = {
+        Source = "draw_drum",
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -635,8 +689,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.4, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_pi_mike_inspect_01.ogg", t = 1/30},
@@ -653,8 +707,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.4, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_pi_mike_inspect_01.ogg", t = 0/30},
@@ -671,8 +725,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.4, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_pi_mike_inspect_01.ogg", t = 0/30},
@@ -685,11 +739,437 @@ SWEP.Animations = {
     ["bash"] = {
         Source = {"melee","melee2","melee3"},
     },
+	--- Stock Anims ---
+
+	["stock_enter_sights"] = {
+		Source = "idle_stock",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+	},
+    ["stock_fire"] = {
+        Source = "shoot1_stock",
+    },
+    ["stock_dryfire"] = {
+        Source = "dryfire_stock",
+    },
+    ["stock_reload"] = {
+        Source = "reload_short_stock",
+		MinProgress = 0.8,
+		PeekProgress = 0.725,
+		RefillProgress = 0.575,
+		FireASAP = true,
+		MagSwapTime = 4,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike_reload_magout.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 31/30},
+			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 41/30},
+        },
+    },
+    ["stock_reload_empty"] = {
+        Source = "reload_stock",
+		MinProgress = 0.9,
+		PeekProgress = 0.79,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 1.75,
+		MagSwapTime = 4,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_maghit.ogg", t = 26/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 28/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 46/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 58/30},
+        },
+    },
+    ["stock_reload_fast"] = {
+        Source = "reload_fast_stock",
+		MinProgress = 0.8,
+		PeekProgress = 0.725,
+		RefillProgress = 0.575,
+		FireASAP = true,
+		DropMagAt = 0.7,
+		MagSwapTime = 4,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.55, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_reload_fast_up.ogg", t = 2/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_magout.ogg", t = 14/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_magin.ogg", t = 22/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_end.ogg", t = 28/30},
+        },
+    },
+    ["stock_reload_fast_empty"] = {
+        Source = "reload_fast_empty_stock",
+		MinProgress = 0.9,
+		PeekProgress = 0.75,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		DropMagAt = 0.7,
+		MagSwapTime = 4,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.45, lhik = 0, rhik = 0 },
+            { t = 0.625, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_up.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_magout.ogg", t = 14/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_magin.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_charge.ogg", t = 31/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_end.ogg", t = 43/30},
+        },
+    },
+    ["stock_reload_xmag"] = {
+        Source = "reload_xmag_stock",
+		MinProgress = 0.8,
+		PeekProgress = 0.725,
+		RefillProgress = 0.575,
+		FireASAP = true,
+		MagSwapTime = 4,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike_reload_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 24/30},
+			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 42/30},
+        },
+    },
+    ["stock_reload_xmag_empty"] = {
+        Source = "reload_xmag_empty_stock",
+		MinProgress = 0.9,
+		PeekProgress = 0.79,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		DropMagAt = 1.75,
+		MagSwapTime = 4,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_maghit.ogg", t = 24/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 26/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 45/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 58/30},
+        },
+    },
+    ["stock_reload_xmag_fast"] = {
+        Source = "reload_xmag_fast_stock",
+		MinProgress = 0.8,
+		PeekProgress = 0.725,
+		RefillProgress = 0.575,
+		FireASAP = true,
+		MagSwapTime = 4,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.55, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_reload_fast_up.ogg", t = 2/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_magin.ogg", t = 22/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_end.ogg", t = 28/30},
+        },
+    },
+    ["stock_reload_xmag_fast_empty"] = {
+        Source = "reload_xmag_fast_empty_stock",
+		MinProgress = 0.9,
+		PeekProgress = 0.75,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		MagSwapTime = 4,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.45, lhik = 0, rhik = 0 },
+            { t = 0.625, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_up.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_magin.ogg", t = 21/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_charge.ogg", t = 31/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_end.ogg", t = 43/30},
+        },
+    },
+    ["stock_reload_drum"] = {
+        Source = "reload_drum_stock",
+		MinProgress = 0.8,
+		PeekProgress = 0.725,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 4,
+		DropMagAt = 0.8,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike_reload_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 36/30},
+			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 43.5/30},
+			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 55/30},
+        },
+    },
+    ["stock_reload_drum_empty"] = {
+        Source = "reload_xmaglrg_empty_stock",
+		MinProgress = 0.9,
+		PeekProgress = 0.79,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 0.8,
+		MagSwapTime = 4,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_magout.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_maghit.ogg", t = 36/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 41/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 57.5/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 62.5/30},
+        },
+    },
+    ["stock_reload_drum_fast"] = {
+        Source = "reload_xmaglrg_fast_stock",
+		MinProgress = 0.8,
+		PeekProgress = 0.7,
+		RefillProgress = 0.575,
+		FireASAP = true,
+		MagSwapTime = 4,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_reload_fast_up.ogg", t = 2/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_magin.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_end.ogg", t = 35/30},
+        },
+    },
+    ["stock_reload_drum_fast_empty"] = {
+        Source = "reload_xmaglrg_fast_empty_stock",
+		MinProgress = 0.9,
+		PeekProgress = 0.75,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		MagSwapTime = 4,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.675, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_up.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_magin.ogg", t = 30/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_charge.ogg", t = 40/30},
+			{s = path .. "wfoly_pi_mike_reload_fast_empty_end.ogg", t = 47.5/30},
+        },
+    },
+    ["stock_ready"] = {
+        Source = "draw_stock",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_pi_mike_first_raise_up.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike_first_raise_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_pi_mike_first_raise_magin.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike_first_raise_end.ogg", t = 19/30},
+        },
+    },
+    ["stock_ready_drum"] = {
+        Source = "draw_drum_stock",
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_pi_mike_first_raise_up.ogg", t = 0/30},
+			{s = path .. "wfoly_pi_mike_first_raise_magout.ogg", t = 6/30},
+			{s = path .. "wfoly_pi_mike_first_raise_magin.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike_first_raise_end.ogg", t = 19/30},
+        },
+    },
+    ["stock_draw"] = {
+        Source = "draw_short_stock",
+		MinProgress = 0.2,
+        FireASAP = true,
+        EventTable = {
+            {s = path .. "wfoly_pi_mike_raise.ogg", t = 0/30},
+        },
+    },
+    ["stock_holster"] = {
+        Source = "holster_stock",
+        EventTable = {
+            {s = path .. "wfoly_pi_mike_drop.ogg", t = 0/30},
+        },
+    },
+    ["stock_idle"] = {
+        Source = "idle_stock",
+    },
+    ["stock_idle_sprint"] = {
+        Source = "sprint_stock",
+    },
+    ["stock_exit_sprint"] = {
+        Source = "sprint_out_stock",
+		Time = 0.25,
+		NoStatAffectors = true
+    },
+    ["stock_enter_sprint"] = {
+        Source = "sprint_in_stock",
+		Time = 0.25,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+		NoStatAffectors = true
+    },
+    ["stock_inspect"] = {
+        Source = "lookat01_stock",
+        MinProgress = 0.1,
+        FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.4, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_pi_mike_inspect_01.ogg", t = 1/30},
+            {s = path .. "wfoly_pi_mike_reload_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_mike_inspect_02.ogg", t = 35/30},
+			{s = path .. "wfoly_pi_mike_inspect_03.ogg", t = 49/30},
+			{s = path .. "wfoly_pi_mike_inspect_04.ogg", t = 93/30},
+        },
+    },
+    ["stock_inspect_xmag"] = {
+        Source = "lookat01_xmag_stock",
+        MinProgress = 0.1,
+        FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.4, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_pi_mike_inspect_01.ogg", t = 0/30},
+            {s = path .. "wfoly_pi_mike_reload_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_mike_inspect_02.ogg", t = 34/30},
+			{s = path .. "wfoly_pi_mike_inspect_03.ogg", t = 49/30},
+			{s = path .. "wfoly_pi_mike_inspect_04.ogg", t = 89/30},
+        },
+    },
+    ["stock_inspect_drum"] = {
+        Source = "lookat01_drum_stock",
+        MinProgress = 0.1,
+        FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.4, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_pi_mike_inspect_01.ogg", t = 0/30},
+            {s = path .. "wfoly_pi_mike_reload_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_pi_mike_inspect_02.ogg", t = 34/30},
+			{s = path .. "wfoly_pi_mike_inspect_03.ogg", t = 49/30},
+			{s = path .. "wfoly_pi_mike_inspect_04.ogg", t = 89/30},
+        },
+    },
+    ["stock_bash"] = {
+        Source = {"melee_stock","melee2_stock","melee3_stock"},
+    },
 }
 
 -------------------------- ATTACHMENTS
 
---- 20 Round & Drum Mags ---
+--- Stock ---
+local Translate_Stock = {
+	["fire"] = "stock_fire",
+	["enter_sights"] = "stock_enter_sights",
+	["dryfire"] = "stock_dryfire",
+    ["reload"] = "stock_reload",
+    ["reload_empty"] = "stock_reload_empty",
+	["ready"] = "stock_ready",
+	["draw"] = "stock_draw",
+	["holster"] = "stock_holster",
+	["idle"] = "stock_idle",
+	["idle_sprint"] = "stock_idle_sprint",
+    ["enter_sprint"] = "stock_enter_sprint",
+    ["exit_sprint"] = "stock_exit_sprint",
+	["inspect"] = "stock_inspect",
+    ["bash"] = "stock_bash",
+}
+local Translate_Stock_Fast = {
+	["fire"] = "stock_fire",
+	["enter_sights"] = "stock_enter_sights",
+	["dryfire"] = "stock_dryfire",
+    ["reload"] = "stock_reload_fast",
+    ["reload_empty"] = "stock_reload_fast_empty",
+	["ready"] = "stock_ready",
+	["draw"] = "stock_draw",
+	["holster"] = "stock_holster",
+	["idle"] = "stock_idle",
+	["idle_sprint"] = "stock_idle_sprint",
+    ["enter_sprint"] = "stock_enter_sprint",
+    ["exit_sprint"] = "stock_exit_sprint",
+	["inspect"] = "stock_inspect",
+    ["bash"] = "stock_bash",
+}
+
+--- 21 Round Mags ---
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
@@ -700,15 +1180,46 @@ local Translate_XMag_Fast = {
     ["reload_empty"] = "reload_xmag_fast_empty",
     ["inspect"] = "inspect_xmag",
 }
-local Translate_XMagslrg = {
-    ["reload"] = "reload_xmaglrg",
-    ["reload_empty"] = "reload_xmaglrg_empty",
+
+--- 80 Round Drums ---
+local Translate_Drum = {
+    ["reload"] = "reload_drum",
+    ["reload_empty"] = "reload_drum_empty",
+    ["ready"] = "ready_drum",
     ["inspect"] = "inspect_drum",
 }
-local Translate_XMagslrg_Fast = {
-    ["reload"] = "reload_xmaglrg_fast",
-    ["reload_empty"] = "reload_xmaglrg_fast_empty",
+local Translate_Drum_Fast = {
+    ["reload"] = "reload_drum_fast",
+    ["reload_empty"] = "reload_drum_fast_empty",
+    ["ready"] = "ready_drum",
     ["inspect"] = "inspect_drum",
+}
+
+--- Stock Ext. ---
+local Translate_Stock_XMag = {
+    ["reload"] = "stock_reload_xmag",
+    ["reload_empty"] = "stock_reload_xmag_empty",
+    ["inspect"] = "stock_inspect_xmag",
+}
+local Translate_Stock_XMag_Fast = {
+    ["reload"] = "stock_reload_xmag_fast",
+    ["reload_empty"] = "stock_reload_xmag_fast_empty",
+    ["inspect"] = "stock_inspect_xmag",
+}
+
+--- Stock Drum ---
+local Translate_Stock_Drum = {
+    ["reload"] = "stock_reload_drum",
+    ["reload_empty"] = "stock_reload_drum_empty",
+    ["ready"] = "stock_ready_drum",
+    ["inspect"] = "stock_inspect_drum",
+}
+
+local Translate_Stock_Drum_Fast = {
+    ["reload"] = "stock_reload_drum_fast",
+    ["reload_empty"] = "stock_reload_drum_fast_empty",
+    ["ready"] = "stock_ready_drum",
+    ["inspect"] = "stock_inspect_drum",
 }
 
 --- Fast & Tac. Sprint ---
@@ -720,6 +1231,9 @@ local Translate_TacSprint = {
     ["idle_sprint"] = "super_sprint_idle",
     ["enter_sprint"] = "super_sprint_in",
     ["exit_sprint"] = "super_sprint_out",
+	["stock_idle_sprint"] = "stock_super_sprint_idle",
+    ["stock_enter_sprint"] = "stock_super_sprint_in",
+    ["stock_exit_sprint"] = "stock_super_sprint_out",
 }
 
 SWEP.Hook_TranslateAnimation = function(wep, anim)
@@ -727,38 +1241,57 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
-    local xmag = wep:HasElement("mag_xmag")
+	local xmag = wep:HasElement("mag_xmaglrg")
     local drum = wep:HasElement("mag_drum")
+	local stock = wep:HasElement("stock")
 
-    if super_sprint and Translate_TacSprint[anim] then
-        return Translate_TacSprint[anim]
-    end
+	local tanim = {
+		sprint = Translate_TacSprint[anim],
+		fast = Translate_Fast[anim],
+		xmag = Translate_XMag[anim],
+		xmagf = Translate_XMag_Fast[anim],
+		drum = Translate_Drum[anim],
+		drumf = Translate_Drum_Fast[anim],
+		
+		stock = {
+			base = Translate_Stock[anim],
+			fast = Translate_Stock_Fast[anim],
+			xmag = Translate_Stock_XMag[anim],
+			xmagf = Translate_Stock_XMag_Fast[anim],
+			drum = Translate_Stock_Drum[anim],
+			drumf = Translate_Stock_Drum_Fast[anim],
+			},
+		}
 
-    if speedload then
-        if xmag then
-            if Translate_XMag_Fast[anim] then
-                return Translate_XMag_Fast[anim]
-            end
-        elseif drum then
-            if Translate_XMagslrg_Fast[anim] then
-                return Translate_XMagslrg_Fast[anim]
-            end 
-        else
-            if Translate_Fast[anim] then
-                return Translate_Fast[anim]
-            end
-        end
-    else 
-        if xmag then
-            if Translate_XMag[anim] then
-                return Translate_XMag[anim]
-            end
-        elseif drum then
-            if Translate_XMagslrg[anim] then
-                return Translate_XMagslrg[anim]
-            end
-        end
+    if super_sprint and tanim.sprint then
+        return tanim.sprint
     end
+	
+	if !stock then
+		if speedload then
+			if xmag and tanim.xmagf then return tanim.xmagf
+			elseif drum and tanim.drumf then return tanim.drumf
+			end
+			if tanim.fast then return tanim.fast end
+		else
+			if xmag and tanim.xmag then return tanim.xmag
+			elseif drum and tanim.drum then return tanim.drum
+			end
+			if tanim.base then return tanim.base end
+		end
+	elseif stock then
+		if speedload then
+			if xmag and tanim.stock.xmagf then return tanim.stock.xmagf
+			elseif drum and tanim.stock.drumf then return tanim.stock.drumf
+			end
+			if tanim.stock.fast then return tanim.stock.fast end
+		else
+			if xmag and tanim.stock.xmag then return tanim.stock.xmag
+			elseif drum and tanim.stock.drum then return tanim.stock.drum
+			end
+			if tanim.stock.base then return tanim.stock.base end
+		end
+	end
 end
 
 -- SWEP.Hook_Think	= function(wep)
@@ -792,39 +1325,29 @@ SWEP.AttachmentTableOverrides = {
     ReloadAng = Angle(0,0,0)
     },
     ["cod2019_sykov_stock_light"] = {
-    ActivePos = Vector(2.5, 0, 1.5),
-    ActiveAng = Angle(0, 0, 17),
-    MovingPos = Vector(-1,-2,-1),
-    MovingAng = Angle(0,0,-8),
-    CrouchPos = Vector(-1.2, 0, -1),
-    CrouchAng = Angle(0, 0, -10),
-    ReloadPos = Vector(0,0,0),
-    ReloadAng = Angle(0,0,0),
-	SprintPos = Vector(0, 0, -2.2)
+		CustomizeAng = Angle(90, 0, 0),
+		CustomizePos = Vector(10, 30, 4.5),
+		CustomizeRotateAnchor = Vector(8, -2.5, -4.5),
+		PeekPos = Vector(-1.5, 1, -3),
     },
     ["cod2019_sykov_stock_heavy"] = {
-    ActivePos = Vector(2.5, 0, 1.5),
-    ActiveAng = Angle(0, 0, 17),
-    MovingPos = Vector(-1,-2,-1),
-    MovingAng = Angle(0,0,-8),
-    CrouchPos = Vector(-1.2, 0, -1),
-    CrouchAng = Angle(0, 0, -10),
-    ReloadPos = Vector(0,0,0),
-    ReloadAng = Angle(0,0,0),
-	SprintPos = Vector(0, 0, -2.2)
+		CustomizeAng = Angle(90, 0, 0),
+		CustomizePos = Vector(10, 30, 4.5),
+		CustomizeRotateAnchor = Vector(8, -2.5, -4.5),
+		PeekPos = Vector(-1.5, 1, -3),
     },
-    ["cod2019_trigger_light"] = {
-    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust.mdl",
-	BoneMerge = false
-    },
-    ["cod2019_trigger_heavy"] = {
-    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust02.mdl",
-	BoneMerge = false
-    },
-    ["cod2019_trigger_match"] = {
-    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03.mdl",
-	BoneMerge = false
-    },
+    -- ["cod2019_trigger_light"] = {
+    -- Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust.mdl",
+	-- BoneMerge = false
+    -- },
+    -- ["cod2019_trigger_heavy"] = {
+    -- Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust02.mdl",
+	-- BoneMerge = false
+    -- },
+    -- ["cod2019_trigger_match"] = {
+    -- Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03.mdl",
+	-- BoneMerge = false
+    -- },
 }
 
 SWEP.AttachmentElements = {
@@ -880,7 +1403,6 @@ SWEP.Attachments = {
         Category = "cod2019_sykov_slide",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
-		Icon_Offset = Vector(-3, 0, 0),
     },
     { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
@@ -908,7 +1430,7 @@ SWEP.Attachments = {
     { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
 		-- DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
-        Category = {"cod2019_trigger"},
+        Category = {"cod2019_sykov_trigger"},
         Bone = "j_trigger",
         Pos = Vector(0, 0, 0),
     },
@@ -929,8 +1451,8 @@ SWEP.Attachments = {
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
 		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
-        Category = "cod2019_sykov_grip",
-        Bone = "tag_pistolgrip_attach",
+        Category = "cod2019_pistolgrip", -- Change to unique once they exist.
+        Bone = "tag_pistolgrip_hide",
         Pos = Vector(0, 0, 0),
     },
     { -- 10

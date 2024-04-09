@@ -1038,8 +1038,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_pi_mike9_inspect_01.ogg", t = 1/30},
@@ -1229,7 +1229,7 @@ SWEP.DefaultBodygroups = "00000000000000"
 SWEP.AttachmentTableOverrides = {
     ["cod2019_renetti_stock"] = {
 		CustomizeAng = Angle(90, 0, 0),
-		CustomizePos = Vector(12, 30, 3),
+		CustomizePos = Vector(12, 30, 4.5),
 		CustomizeRotateAnchor = Vector(12, -2.5, -4.5),
     },
     ["cod2019_trigger_light"] = {
