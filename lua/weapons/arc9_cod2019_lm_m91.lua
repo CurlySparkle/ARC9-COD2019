@@ -387,6 +387,14 @@ SWEP.TriggerDelayTime = 0.15 -- Time until weapon fires.
 SWEP.TriggerDownSound = "weapons/cod2019/pkm/weap_pkilo_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/sa87/weap_lima86_disconnector_plr_01.ogg"
 
+SWEP.Overheat = true
+SWEP.HeatCapacity = 45
+SWEP.HeatDissipation = 22.5
+SWEP.HeatDelayTime = 0.25
+SWEP.HeatPerShot = 1
+SWEP.HeatLockout = false
+SWEP.MalfunctionWait = 0.25
+
 SWEP.Animations = {
 	["enter_sights"] = {
 		Source = "idle",

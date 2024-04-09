@@ -381,6 +381,14 @@ SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
 SWEP.TriggerDownSound = "weapons/cod2019/holger/weap_mgolf36_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/holger/weap_mgolf36_disconnector_plr_01.ogg"
 
+SWEP.Overheat = true
+SWEP.HeatCapacity = 45
+SWEP.HeatDissipation = 22.5
+SWEP.HeatDelayTime = 0.25
+SWEP.HeatPerShot = 1
+SWEP.HeatLockout = false
+SWEP.MalfunctionWait = 0.25
+
 SWEP.Animations = {
 	["enter_sights"] = {
 		Source = "idle",
@@ -1071,7 +1079,7 @@ SWEP.Attachments = {
     { -- 20
         PrintName = "Bipod",
         Category = {"cod2019_bruenmk9_bipod"},
-        Bone = "tag_attachments",
+        Bone = "tag_bipod_attach",
         Pos = Vector(0, 0, 0),
 		Hidden = true,
     },

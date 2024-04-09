@@ -350,6 +350,14 @@ SWEP.TriggerDelayTime = 0.15 -- Time until weapon fires.
 SWEP.TriggerDownSound = path .. "weap_pkilo_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = path .. ""
 
+SWEP.Overheat = true
+SWEP.HeatCapacity = 45
+SWEP.HeatDissipation = 22.5
+SWEP.HeatDelayTime = 0.25
+SWEP.HeatPerShot = 1
+SWEP.HeatLockout = false
+SWEP.MalfunctionWait = 0.25
+
 SWEP.Animations = {
 	["enter_sights"] = {
 		Source = "idle",

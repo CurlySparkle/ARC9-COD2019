@@ -276,6 +276,14 @@ SWEP.BulletBones = {
 	[13] = "j_ammo_1",
 }
 
+SWEP.Overheat = true
+SWEP.HeatCapacity = 60
+SWEP.HeatDissipation = 22.5
+SWEP.HeatDelayTime = 0.25
+SWEP.HeatPerShot = 1
+SWEP.HeatLockout = false
+SWEP.MalfunctionWait = 0.25
+
 SWEP.Animations = {
 	["enter_sights"] = {
 		Source = "idle",
@@ -392,6 +400,12 @@ SWEP.Animations = {
     },
     ["bash"] = {
         Source = "melee",
+    },
+    ["jam"] = {
+        Source = "jam",
+    },
+    ["fix"] = {
+        Source = "jam_fix",
     },
 }
 

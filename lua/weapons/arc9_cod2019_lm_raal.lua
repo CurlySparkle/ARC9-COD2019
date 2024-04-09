@@ -381,6 +381,14 @@ SWEP.TriggerDelayTime = 0.15 -- Time until weapon fires.
 SWEP.TriggerDownSound = "weapons/cod2019/raal/weap_slima_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = ""
 
+SWEP.Overheat = true
+SWEP.HeatCapacity = 40
+SWEP.HeatDissipation = 22.5
+SWEP.HeatDelayTime = 0.25
+SWEP.HeatPerShot = 1
+SWEP.HeatLockout = false
+SWEP.MalfunctionWait = 0.25
+
 SWEP.Animations = {
 	["enter_sights"] = {
 		Source = "idle",

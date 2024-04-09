@@ -1451,7 +1451,7 @@ SWEP.Attachments = {
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
 		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
-        Category = "cod2019_pistolgrip", -- Change to unique once they exist.
+        Category = "cod2019_sykov_grip", -- Change to unique once they exist.
         Bone = "tag_pistolgrip_hide",
         Pos = Vector(0, 0, 0),
     },
