@@ -332,11 +332,41 @@ SWEP.DefaultBodygroups = "00000000000000"
 SWEP.AttachmentTableOverrides = {
     ["cod2019_sykov_slide_auto"] = {
     Model = "models/weapons/cod2019/attachs/weapons/sykov/attachment_vm_pi_mike_barauto_akimbo.mdl",
-	RPMMult = 2,
+	--RPMMult = 2,
+    },
+    ["cod2019_sykov_slide_silencer"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/sykov/attachment_vm_pi_mike_barsil_akimbo.mdl",
+    },
+    ["cod2019_sykov_slide_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/sykov/attachment_vm_pi_mike_barlight_akimbo.mdl",
     },
     ["cod2019_sykov_mag_xmag"] = {
     Model = "models/weapons/cod2019/attachs/weapons/sykov/attachment_vm_pi_mike_xmags_akimbo.mdl",
 	ClipSizeOverride = 40
+    },
+    ["cod2019_sykov_mag_drum"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/sykov/attachment_vm_pi_mike_drummag_akimbo.mdl",
+	ClipSizeOverride = 160
+    },
+    ["cod2019_sykov_stock_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/sykov/attachment_vm_pi_mike_stockl.mdl",
+	BoneMerge = false
+    },
+    ["cod2019_sykov_stock_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/sykov/attachment_vm_pi_mike_stockh.mdl",
+	BoneMerge = false
+    },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust.mdl",
+	BoneMerge = false
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust02.mdl",
+	BoneMerge = false
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03.mdl",
+	BoneMerge = false
     },
 }
 
@@ -365,7 +395,7 @@ SWEP.AttachmentElements = {
             {7,1},
         },
     },
-    ["rail_mount_laser"] = {
+    ["rail_laser"] = {
         Bodygroups = {
             {8,1},
             {9,1},
@@ -375,6 +405,12 @@ SWEP.AttachmentElements = {
         Bodygroups = {
             {10,1},
             {11,1},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {12,1},
+            {13,1},
         },
     },
 }
@@ -387,6 +423,7 @@ SWEP.Attachments = {
 		Bone = "tag_silencer_l",
         DuplicateModels = { { Bone = "tag_silencer" } },
         Pos = Vector(-0.105, 0, 0),
+		ExcludeElements = {"slide_silencer"},
     },
     { -- 2
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
@@ -411,9 +448,9 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Bone = "tag_reflex_l",
 		DuplicateModels = { { Bone = "tag_reflex" } },
-        Pos = Vector(1.075, 0, 0.025),
-        Category = {"cod2019_optic_pistol"},
-		InstalledElements = {"rail_sight"},
+        Pos = Vector(1.075, 0, -0.02),
+        Category = {"cod2019_optics_pistols_alt"},
+		InstalledElements = {"sight_mount"},
     },
     { -- 5
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
@@ -421,11 +458,12 @@ SWEP.Attachments = {
         Category = "cod2019_sykov_stock",
         Bone = "tag_stock_attach_l",
         Pos = Vector(0, 0, 0),
+		DuplicateModels = { { Bone = "tag_stock_attach" } },
     },
     { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
 		-- DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
-        Category = {"cod2019_sykov_trigger"},
+        Category = {"cod2019_trigger"},
         Bone = "j_trigger_l",
 		DuplicateModels = { { Bone = "j_trigger" } },
         Pos = Vector(0, 0, 0),

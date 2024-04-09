@@ -159,7 +159,7 @@ SWEP.SprintToFireTime = 0.1 -- How long it takes to go from sprinting to being a
 SWEP.Bash = true
 SWEP.PrimaryBash = false
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.25
+SWEP.PostBashTime = 0.2
 
 -------------------------- TRACERS
 
@@ -477,10 +477,11 @@ SWEP.Animations = {
         },
     },
     ["reload_xmaglrg"] = {
-        Source = "reload_xmaglrg",
+        Source = "reload_drum",
 		MinProgress = 0.8,
 		FireASAP = true,
 		MagSwapTime = 4,
+		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -499,7 +500,7 @@ SWEP.Animations = {
         Source = "reload_xmaglrg_empty",
 		MinProgress = 0.8,
 		FireASAP = true,
-		DropMagAt = 2.5,
+		DropMagAt = 0.8,
 		MagSwapTime = 4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -682,7 +683,7 @@ SWEP.Animations = {
         },
     },
     ["bash"] = {
-        Source = {"melee","melee2"},
+        Source = {"melee","melee2","melee3"},
     },
 }
 
@@ -700,13 +701,13 @@ local Translate_XMag_Fast = {
     ["inspect"] = "inspect_xmag",
 }
 local Translate_XMagslrg = {
-    ["reload"] = "reload_xmagslrg",
-    ["reload_empty"] = "reload_xmagslrg_empty",
+    ["reload"] = "reload_xmaglrg",
+    ["reload_empty"] = "reload_xmaglrg_empty",
     ["inspect"] = "inspect_drum",
 }
 local Translate_XMagslrg_Fast = {
-    ["reload"] = "reload_xmagslrg_fast",
-    ["reload_empty"] = "reload_xmagslrg_fast_empty",
+    ["reload"] = "reload_xmaglrg_fast",
+    ["reload_empty"] = "reload_xmaglrg_fast_empty",
     ["inspect"] = "inspect_drum",
 }
 
@@ -727,7 +728,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
-    local xmagslrg = wep:HasElement("mag_xmagslrg")
+    local drum = wep:HasElement("mag_drum")
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
@@ -738,7 +739,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_XMag_Fast[anim] then
                 return Translate_XMag_Fast[anim]
             end
-        elseif xmagslrg then
+        elseif drum then
             if Translate_XMagslrg_Fast[anim] then
                 return Translate_XMagslrg_Fast[anim]
             end 
@@ -752,7 +753,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
             end
-        elseif xmagslrg then
+        elseif drum then
             if Translate_XMagslrg[anim] then
                 return Translate_XMagslrg[anim]
             end
@@ -790,9 +791,48 @@ SWEP.AttachmentTableOverrides = {
     ReloadPos = Vector(0,0,0),
     ReloadAng = Angle(0,0,0)
     },
+    ["cod2019_sykov_stock_light"] = {
+    ActivePos = Vector(2.5, 0, 1.5),
+    ActiveAng = Angle(0, 0, 17),
+    MovingPos = Vector(-1,-2,-1),
+    MovingAng = Angle(0,0,-8),
+    CrouchPos = Vector(-1.2, 0, -1),
+    CrouchAng = Angle(0, 0, -10),
+    ReloadPos = Vector(0,0,0),
+    ReloadAng = Angle(0,0,0),
+	SprintPos = Vector(0, 0, -2.2)
+    },
+    ["cod2019_sykov_stock_heavy"] = {
+    ActivePos = Vector(2.5, 0, 1.5),
+    ActiveAng = Angle(0, 0, 17),
+    MovingPos = Vector(-1,-2,-1),
+    MovingAng = Angle(0,0,-8),
+    CrouchPos = Vector(-1.2, 0, -1),
+    CrouchAng = Angle(0, 0, -10),
+    ReloadPos = Vector(0,0,0),
+    ReloadAng = Angle(0,0,0),
+	SprintPos = Vector(0, 0, -2.2)
+    },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust.mdl",
+	BoneMerge = false
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust02.mdl",
+	BoneMerge = false
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03.mdl",
+	BoneMerge = false
+    },
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag_none"] = {
         Bodygroups = {
             {1,1},
@@ -818,6 +858,11 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {6,1},
+        },
+    },
 }
 
 SWEP.Attachments = {
@@ -827,6 +872,7 @@ SWEP.Attachments = {
         DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
 		Bone = "tag_silencer",
         Pos = Vector(-0.105, 0, 0),
+		ExcludeElements = {"slide_silencer"},
     },
     { -- 2
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
@@ -848,8 +894,8 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Bone = "tag_reflex",
-        Pos = Vector(1.075, 0, 0.025),
-        Category = {"cod2019_optic_pistol"},
+        Pos = Vector(1.075, 0, -0.02),
+        Category = {"cod2019_optics_pistols_alt"},
 		InstalledElements = {"rail_sight"},
     },
     { -- 5
@@ -862,7 +908,7 @@ SWEP.Attachments = {
     { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
 		-- DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
-        Category = {"cod2019_sykov_trigger"},
+        Category = {"cod2019_trigger"},
         Bone = "j_trigger",
         Pos = Vector(0, 0, 0),
     },
