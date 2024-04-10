@@ -907,13 +907,14 @@ SWEP.AttachmentElements = {
         },
     },
 	["grip_angled"] = {
-    AttPosMods = { [5] = { Pos = Vector(-2.5, 0, 0), } }
+    AttPosMods = { [6] = { Pos = Vector(-2.5, 0, 0), } }
 	}
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_custom") then model:SetBodygroup(3,3) end
+    if wep:HasElement("stock_ebr") then model:SetBodygroup(3,2) end
 end
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)

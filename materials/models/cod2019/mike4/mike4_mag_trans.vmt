@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "models/cod2019/mike4/mike4_mag"
+    "$basetexture" "models/cod2019/mike4/mike4_mag_rgb"
     "$bumpmap" "models/cod2019/mike4/mike4_mag_n"
-    "$phongexponenttexture" "models/cod2019/mike4/mike4_mag_exp"
+    "$phongexponenttexture" "models/cod2019/mike4/mike4_mag_e"
 
     /////////////////
     "$color2" "[1 0.7 0]"                                     //do not touch this

@@ -151,8 +151,8 @@ SWEP.SpreadAddSights = -0.5
 
 -------------------------- HANDLING
 
-SWEP.AimDownSightsTime = 0.1 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.1 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime = 0.2 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.2 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -214,7 +214,7 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, -15, 0)
-SWEP.CustomizePos = Vector(14.5, 25, 4.5)
+SWEP.CustomizePos = Vector(14.5, 5, 4.5)
 SWEP.CustomizeRotateAnchor = Vector(14.5, -1, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(0.5, -2.5, 0)
@@ -223,11 +223,27 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.PeekMaxFOV = SWEP.ViewModelFOVBase
 
-SWEP.PeekPos = Vector(-3, -4, -2)
+SWEP.PeekPos = Vector(-3, -10, -2)
 SWEP.PeekAng = Angle(0, 0, -45)
 
 SWEP.PeekPosReloading = Vector(1, 0, -2)
 SWEP.PeekAngReloading = Angle(0, 0, 0)
+
+SWEP.SprintPosHook = function(wep)
+    if wep:HasElement("stock") and wep:HasElement("perk_super_sprint")then
+       return Vector(0,-2,1)
+	elseif wep:HasElement("stock") then
+	   return Vector(-2.2,0,-1.2)
+    end
+end
+
+SWEP.SprintAngHook = function(wep)
+    if wep:HasElement("stock") and wep:HasElement("perk_super_sprint") then
+       return Angle(0,0,0)
+	elseif wep:HasElement("stock") then
+       return Angle(0,0,0)
+    end
+end
 
 -------------------------- HoldTypes
 

@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "models/cod2019/mike4/mike4_mag"
-    "$bumpmap" "models/cod2019/mike4/mike4_mag_n"
-    "$phongexponenttexture" "models/cod2019/mike4/mike4_mag_exp"
+    "$basetexture" "models\cod2019\mike4\mike4_mag_rgb"
+    "$bumpmap" "models\cod2019\mike4\mike4_mag_n"
+    "$phongexponenttexture" "models\cod2019\mike4\mike4_mag_e"
 
     /////////////////
     "$color2" "[1 1 1]"                                     //do not touch this
@@ -20,11 +20,10 @@
     /////////////////
 
     "$envmap" "env_cubemap"
-    "$envmaptint" "[0.118 0.118 0.11]"
+    "$envmaptint" "[0.118 0.118 0.11]"                 
 
-    //remove this if not using MWB
     "$detailblendmode" "4"
-    "$detailblendfactor" "1"        
+    "$detailblendfactor" "1"
 
     //remove this if not using MWB
     "Proxies"

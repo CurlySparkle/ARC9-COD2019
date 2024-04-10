@@ -1,11 +1,11 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-    "$basetexture"			"models/cod2019/mike4/mike4_railcover"
-    "$bumpmap"				"models/cod2019/mike4/mike4_railcover_n"
-    "$phongexponenttexture"		"models/cod2019/mike4/mike4_railcover_exp"
+    "$basetexture" "models\cod2019\mike4\mike4_railcover_rgb"
+    "$bumpmap" "models\cod2019\mike4\mike4_railcover_n"
+    "$phongexponenttexture" "models\cod2019\mike4\mike4_railcover_e"
 
     /////////////////
-    "$color2" "[0.8 0.8 0.8]"                                     //do not touch this
+    "$color2" "[1 1 1]"                                     //do not touch this
     "$blendtintbybasealpha" "1"                             //do not touch this
     /////////////////
 
@@ -22,9 +22,8 @@
     "$envmap" "env_cubemap"
     "$envmaptint" "[0.102 0.102 0.102]"                 
 
-    //remove this if not using MWB
     "$detailblendmode" "4"
-    "$detailblendfactor" "1"       
+    "$detailblendfactor" "1"
 
     //remove this if not using MWB
     "Proxies"

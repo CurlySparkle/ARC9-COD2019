@@ -1,11 +1,11 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "models/cod2019/mike4/mike4_stock"
-    "$bumpmap" "models/cod2019/mike4/mike4_stock_n"
-    "$phongexponenttexture" "models/cod2019/mike4/mike4_stock_exp"
+    "$basetexture" "models\cod2019\mike4\mike4_stock_rgb"
+    "$bumpmap" "models\cod2019\mike4\mike4_stock_n"
+    "$phongexponenttexture" "models\cod2019\mike4\mike4_stock_e"
 
     /////////////////
-    "$color2" "[0 0 0]"                                     //do not touch this
+    "$color2" "[1 1 1]"                                     //do not touch this
     "$blendtintbybasealpha" "1"                             //do not touch this
     /////////////////
 
