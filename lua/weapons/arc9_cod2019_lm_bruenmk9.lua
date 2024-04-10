@@ -730,9 +730,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mkilo3_reload_empty_down.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mkilo3_reload_empty_charge_pull.ogg", t = 16/30},
-			{s = path .. "wfoly_lm_mkilo3_reload_empty_charge_push.ogg", t = 33/30},
-			{s = path .. "wfoly_lm_mkilo3_reload_empty_up.ogg", t = 39/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_charge_pull.ogg", t = 9/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_charge_push.ogg", t = 19/30},
+			{s = path .. "wfoly_lm_mkilo3_reload_empty_fast_end.ogg", t = 34/30},
         },
     },
     ["enter_bipod"] = {

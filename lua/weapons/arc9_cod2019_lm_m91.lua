@@ -769,9 +769,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_lm_kilo121_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_kilo121_reload_empty_boltopen_01.ogg", t = 23/30},
-			{s = path .. "wfoly_lm_kilo121_reload_empty_boltclose_01.ogg", t = 37/30},
-			{s = path .. "wfoly_lm_kilo121_reload_empty_lower.ogg", t = 44/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_boltopen_01.ogg", t = 13/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_boltclose_01.ogg", t = 21/30},
+			{s = path .. "wfoly_lm_kilo121_reload_empty_fast_end.ogg", t = 31/30},
         },
     },
     ["enter_bipod"] = {

@@ -625,8 +625,9 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_boltopen_01.ogg", t = 28/30},
-			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_boltclose_01.ogg", t = 41/30},
+			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_boltopen_01.ogg", t = 12/30},
+			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_boltclose_01.ogg", t = 24/30},
+            {s = path .. "wfoly_plr_lm_mgolf34_reload_fast_end.ogg", t = 24/30},
         },
     },
     ["enter_bipod"] = {

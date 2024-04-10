@@ -744,6 +744,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_slima_reload_empty_fast_lower.ogg", t = 1/30},
 			{s = path .. "wfoly_lm_slima_reload_empty_fast_bolt_pull.ogg", t = 14/30},
 			{s = path .. "wfoly_lm_slima_reload_empty_fast_bolt_close.ogg", t = 19/30},
+            {s = path .. "wfoly_lm_slima_reload_empty_fast_end.ogg", t = 26/30},
         },
     },
     ["enter_bipod"] = {

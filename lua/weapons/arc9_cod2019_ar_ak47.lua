@@ -623,10 +623,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_reload_fast_twist.ogg", t = 0.033},
-            {s = path .. "wfoly_ar_akilo47_reload_empty_fast_maghit_01.ogg", t = 0.3},
-			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_01.ogg", t = 0.9},
-			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_02.ogg", t = 1.3},
-			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_end.ogg", t = 1.1},
+            {s = path .. "wfoly_ar_akilo47_reload_empty_fast_maghit_01.ogg", t = 0.2},
+			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_01.ogg", t = 0.7},
+			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_02.ogg", t = 1.1},
+			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_end.ogg", t = 1},
         },
     },
     ["reload_smg_fast_empty"] = {
@@ -644,11 +644,11 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_twist.ogg", t = 0.033},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_maghit_01.ogg", t = 0.35},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_01.ogg", t = 0.9},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 1.28},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_chamber_01.ogg", t = 1.65},
-			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_end.ogg", t = 1.85},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_maghit_01.ogg", t = 0.15},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_01.ogg", t = 0.57},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 0.97},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_chamber_01.ogg", t = 1.3},
+			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_end.ogg", t = 1.5},
         },
     },
     ["ready"] = {
@@ -1118,7 +1118,8 @@ SWEP.Attachments = {
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
         Pos = Vector(0, 0, -1),
-		Icon_Offset = Vector(-7, 0, 4),		CosmeticOnly = true,
+		Icon_Offset = Vector(-7, 0, 4),
+		CosmeticOnly = true,
     },
     { -- 20
         PrintName = "GL",

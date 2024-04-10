@@ -599,8 +599,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_charge.ogg", t = 21/30},
-			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_cover_open.ogg", t = 39/30},
+			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_charge.ogg", t = 8/30},
+			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_cover_open.ogg", t = 14/30},
         },
     },
     ["enter_bipod"] = {
