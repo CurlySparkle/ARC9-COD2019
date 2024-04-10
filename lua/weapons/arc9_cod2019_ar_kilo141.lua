@@ -145,12 +145,12 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 1.7
 SWEP.VisualRecoilUp = 0.4
 
-SWEP.VisualRecoilRoll = 15
+SWEP.VisualRecoilRoll = 35
 SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilMultSights = 0.5
 SWEP.VisualRecoilPunchSights = 5
-SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilRollSights = 15
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
@@ -1157,7 +1157,7 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 34
+SWEP.CodAngledGripPoseParam = 33.8
 SWEP.CodStubbyTallGripPoseParam = 14
 SWEP.CodStubbyGripPoseParam = 22
 

@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "models\cod2019\m91\m91_body2_skin_rgb"
-    "$bumpmap" "models\cod2019\m91\m91_body2_skin_n"
-    "$phongexponenttexture" "models\cod2019\m91\m91_body2_skin_e"
+    "$basetexture" "models\cod2019\m91\m91_body2_rgb"
+    "$bumpmap" "models\cod2019\m91\m91_body2_n"
+    "$phongexponenttexture" "models\cod2019\m91\m91_body2_e"
 
     /////////////////
     "$color2" "[1 1 1]"                                     //do not touch this

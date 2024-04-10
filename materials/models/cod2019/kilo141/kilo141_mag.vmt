@@ -1,8 +1,8 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-    "$basetexture"				"models/cod2019/kilo141/kilo141_mag"
-    "$bumpmap"					"models/cod2019/kilo141/kilo141_mag_n"
-    "$phongexponenttexture"		"models/cod2019/kilo141/kilo141_mag_exp"
+    "$basetexture" "models\cod2019\kilo141\kilo141_mag_rgb"
+    "$bumpmap" "models\cod2019\kilo141\kilo141_mag_n"
+    "$phongexponenttexture" "models\cod2019\kilo141\kilo141_mag_e"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
@@ -12,7 +12,7 @@
     "$phong" "1"
     "$phongboost" "1"
     "$phongalbedotint" "1"
-    "$phongalbedoboost" "30"                                //toy around with this
+    "$phongalbedoboost" "10"                                //toy around with this
     "$phongfresnelranges" "[1 0.1 0]"
        
     /////////////////
