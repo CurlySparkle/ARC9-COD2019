@@ -768,9 +768,14 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
-    ["stock_none"] = {
+    ["stock_adapter"] = {
         Bodygroups = {
             {4,1},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {4,2},
         },
     },
     ["rail_laser"] = {
@@ -842,11 +847,11 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
 		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
         DefaultAttName = "Standard Stock",
-        Category = {"cod2019_tube","stock_retract"},
+        Category = {"cod2019_tube","cod2019_vector_stock","stock_retract"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_none"},
+		--InstalledElements = {"stock_none"},
 		Scale = 1,
     },
     {
