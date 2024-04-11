@@ -138,11 +138,11 @@ SWEP.VisualRecoilUp = 1
 
 SWEP.VisualRecoilMultSights = 0.4
 SWEP.VisualRecoilPunchSights = 15
-SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilRollSights = 10
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilRoll = 30
 SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -808,6 +808,9 @@ SWEP.AttachmentElements = {
             {8,1},
         },
     },
+	["grip_angled"] = {
+    AttPosMods = { [5] = { Pos = Vector(-2.5, 0, 0), } }	
+	}
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
@@ -859,7 +862,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-2, 0, 0),
+        Pos = Vector(-1.5, 0, 0),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"rail_grip"},

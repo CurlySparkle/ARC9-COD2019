@@ -139,7 +139,7 @@ SWEP.VisualRecoilUp = 0.2
 
 SWEP.VisualRecoilMultSights = 0.4
 SWEP.VisualRecoilPunchSights = 15
-SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilRollSights = 10
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
@@ -803,13 +803,13 @@ SWEP.AttachmentTableOverrides = {
 	Scale = 0.9,
     },
     ["cod2019_griptape_01"] = {
-		Model = "models/weapons/cod2019/attachs/weapons/iso/attachment_vm_sm_charlie9_pistolgrip.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/iso/attachment_vm_sm_charlie9_pistolgrip01.mdl",
     },
     ["cod2019_griptape_02"] = {
-		Model = "models/weapons/cod2019/attachs/weapons/iso/attachment_vm_sm_charlie9_pistolgrip.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/iso/attachment_vm_sm_charlie9_pistolgrip02.mdl",
     },
     ["cod2019_griptape_03"] = {
-		Model = "models/weapons/cod2019/attachs/weapons/iso/attachment_vm_sm_charlie9_pistolgrip.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/iso/attachment_vm_sm_charlie9_pistolgrip03.mdl",
     },
 }
 
@@ -862,6 +862,11 @@ SWEP.AttachmentElements = {
     ["stock_none"] = {
         Bodygroups = {
             {5,3},
+        },
+    },
+    ["pgrip_none"] = {
+        Bodygroups = {
+            {7,1},
         },
     },
 	["grip_angled"] = {
@@ -1016,7 +1021,7 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 30
-SWEP.CodStubbyGripPoseParam = 21
+SWEP.CodStubbyGripPoseParam = 20
 SWEP.CodStubbyTallGripPoseParam = 22
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.

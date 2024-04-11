@@ -1,8 +1,8 @@
 "VertexlitGeneric"
 {
-    "$basetexture"			"models/cod2019/cr56amax/cr56amax_bullets"
+    "$basetexture"			"models/cod2019/cr56amax/cr56amax_bullets_rgb"
     "$bumpmap"				"models/cod2019/cr56amax/cr56amax_bullets_n"
-    "$phongexponenttexture"		"models/cod2019/cr56amax/cr56amax_bullets_exp"
+    "$phongexponenttexture"		"models/cod2019/cr56amax/cr56amax_bullets_e"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
