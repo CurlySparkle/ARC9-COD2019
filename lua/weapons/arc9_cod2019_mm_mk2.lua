@@ -615,16 +615,16 @@ SWEP.AttachmentElements = {
     -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
 -- end
 
-SWEP.Hook_ModifyBodygroups = function(wep, data)
-    local model = data.model
-	local attached = data.elements
+-- SWEP.Hook_ModifyBodygroups = function(wep, data)
+    -- local model = data.model
+	-- local attached = data.elements
 	
-    local camo = 0
-    if attached["universal_camo"] then
-        camo = 1
-    end
-    model:SetSkin(camo)
-end
+    -- local camo = 0
+    -- if attached["universal_camo"] then
+        -- camo = 1
+    -- end
+    -- model:SetSkin(camo)
+-- end
 
 SWEP.Attachments = {
     { -- 1

@@ -718,13 +718,13 @@ SWEP.AttachmentTableOverrides = {
 	Scale = 0.9,
     },
     ["cod2019_griptape_01"] = {
-		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_griptape.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_pistolgrip03.mdl",
     },
     ["cod2019_griptape_02"] = {
-		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_griptape.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_pistolgrip02.mdl",
     },
     ["cod2019_griptape_03"] = {
-		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_griptape.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/striker45/attachment_vm_sm_smgolf45_pistolgrip04.mdl",
     },
     ["cod2019_striker45_hold1"] = {
     ModelOffset = Vector(-1, 0, 1.5),
@@ -790,7 +790,10 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
-	if wep:HasElement("body_ump") then model:SetBodygroup(2,2) end
+	if wep:HasElement("body_ump") then 
+	model:SetBodygroup(2,2)
+	model:SetBodygroup(4,1)
+	end
 end
 
 SWEP.Attachments = {

@@ -1299,7 +1299,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
         Category = {"cod2019_tac_pistols","cod2019_grip_pistols","cod2019_renetti_foregrip"},
         Bone = "tag_laser_attach",
-        Pos = Vector(-1, 0, 0),
+        Pos = Vector(0, 0, 0),
     },
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),

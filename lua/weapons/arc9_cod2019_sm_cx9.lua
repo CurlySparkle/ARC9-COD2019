@@ -247,10 +247,10 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1.3, 2, -2.7)
+SWEP.PeekPos = Vector(-1.3, -1, -3.3)
 SWEP.PeekAng = Angle(-1, 1, -45)
 
-SWEP.PeekMaxFOV = 54
+SWEP.PeekMaxFOV = 64
 
 -------------------------- HoldTypes
 
@@ -748,13 +748,13 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(0.5, 0, 0.1),
     },
     ["cod2019_griptape_01"] = {
-		Model = "models/weapons/cod2019/attachs/weapons/cx9/attachment_vm_sm_secho_pistolgrip.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/cx9/attachment_vm_sm_secho_pistolgrip01.mdl",
     },
     ["cod2019_griptape_02"] = {
-		Model = "models/weapons/cod2019/attachs/weapons/cx9/attachment_vm_sm_secho_pistolgrip.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/cx9/attachment_vm_sm_secho_pistolgrip02.mdl",
     },
     ["cod2019_griptape_03"] = {
-		Model = "models/weapons/cod2019/attachs/weapons/cx9/attachment_vm_sm_secho_pistolgrip.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/cx9/attachment_vm_sm_secho_pistolgrip03.mdl",
     },
 }
 
@@ -803,6 +803,11 @@ SWEP.AttachmentElements = {
     ["barrel_none"] = {
         Bodygroups = {
             {4,1},
+        },
+    },
+    ["pgrip_none"] = {
+        Bodygroups = {
+            {6,1},
         },
     },
 	["grip_angled"] = {
@@ -945,7 +950,7 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 3.8
-SWEP.CodAngledGripPoseParam = 29
+SWEP.CodAngledGripPoseParam = 28.7
 SWEP.CodStubbyGripPoseParam = 19
 SWEP.CodStubbyTallGripPoseParam = 22
 SWEP.GripPoseParam2 = 0.3
