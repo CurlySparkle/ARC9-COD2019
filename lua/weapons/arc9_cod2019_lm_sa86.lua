@@ -110,9 +110,9 @@ SWEP.Firemodes = {
 -- General recoil multiplier
 SWEP.Recoil = 1.5
 
-SWEP.RecoilSeed = 2
+SWEP.RecoilSeed = nil
 
-SWEP.RecoilPatternDrift = 0
+SWEP.RecoilPatternDrift = 10
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -121,7 +121,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.1
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.2
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -143,15 +143,15 @@ SWEP.RecoilMax = 2.5
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.4
-SWEP.VisualRecoilPunchSights = 15
-SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilPunchSights = 10
+SWEP.VisualRecoilRollSights = 10
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
 SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.4
-SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.5
+SWEP.VisualRecoilRoll = 35
+SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -801,6 +801,18 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/sa86/attachment_vm_lm_lima86_pistolgrip_tape.mdl",
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust.mdl",
+	BoneMerge = false
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust02.mdl",
+	BoneMerge = false
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03.mdl",
+	BoneMerge = false
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -845,8 +857,13 @@ SWEP.AttachmentElements = {
             {6,1},
         },
     },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {7,1},
+        },
+    },
 	["grip_angled"] = {
-    AttPosMods = { [5] = { Pos = Vector(-2.5, 0, 0), } }	
+    AttPosMods = { [6] = { Pos = Vector(-2.5, 0, 0), } }	
 	}
 }
 
@@ -902,7 +919,7 @@ SWEP.Attachments = {
         Bone = "tag_grip_attach",
         Pos = Vector(-3, 0, 0),
         Ang = Angle(0, 0, 180),
-		MergeSlots = {20}, -- Bipod
+		MergeSlots = {21}, -- Bipod
     },
     { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
@@ -918,6 +935,13 @@ SWEP.Attachments = {
 		Category = {"cod2019_ammo"},
 		Pos = Vector(-1.5, 0, 0),
     },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
+		-- DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
+        Category = {"cod2019_trigger"},
+        Bone = "j_trigger_nomrkt",
+        Pos = Vector(0.1, 0, 0.3),
+    },
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
 		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
@@ -929,7 +953,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
         Bone = "tag_attachments",
-        Pos = Vector(9, 0, -2),
+        Pos = Vector(0, 0, -2),
     },
 
 	-- Unofficial
