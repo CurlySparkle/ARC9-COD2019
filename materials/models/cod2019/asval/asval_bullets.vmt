@@ -1,8 +1,8 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-    "$basetexture"			"models/cod2019/asval/asval_bullets"
-    "$bumpmap"				"models/cod2019/asval/asval_bullets_n"
-    "$phongexponenttexture"		"models/cod2019/asval/asval_bullets_exp"
+    "$basetexture" "models\cod2019\asval\asval_bullets_rgb"
+    "$bumpmap" "models\cod2019\asval\asval_bullets_n"
+    "$phongexponenttexture" "models\cod2019\asval\asval_bullets_e"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
@@ -14,12 +14,6 @@
     "$phongalbedotint" "1"
     "$phongalbedoboost" "10"                                //toy around with this
     "$phongfresnelranges" "[1 0.1 0]"
-
-    //rimlight doesn't properly show in hlmv, make sure you're changing these values in game
-    "$rimlight" "1"
-    "$rimlightexponent" "100"
-    "$rimmask" "1"
-    "$rimlightboost" "1"
        
     /////////////////
     "$normalmapalphaenvmapmask" "1"                         //do not touch this

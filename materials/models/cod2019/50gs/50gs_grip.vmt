@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "models/cod2019/50gs/50gs_grip"
-    "$bumpmap" "models/cod2019/50gs/50gs_grip_n"
-    "$phongexponenttexture" "models/cod2019/50gs/50gs_grip_exp"
+    "$basetexture" "models\cod2019\50gs\50gs_grip_rgb"
+    "$bumpmap" "models\cod2019\50gs\50gs_grip_n"
+    "$phongexponenttexture" "models\cod2019\50gs\50gs_grip_e"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
@@ -20,7 +20,7 @@
     /////////////////
 
     "$envmap" "env_cubemap"
-    "$envmaptint" "[0.09 0.09 0.09]"          
+    "$envmaptint" "[0.09 0.09 0.09]"                 
 
     //remove this if not using MWB
     "Proxies"
@@ -28,8 +28,8 @@
         "Arc9EnvMapTint"
         {
             "min" "0"
-            "max" "0.3"
-            "color" "[0.463 0.459 0.459]"
+            "max" "1"
+            "color" "[0.09 0.09 0.09]"
         }
     }
 }

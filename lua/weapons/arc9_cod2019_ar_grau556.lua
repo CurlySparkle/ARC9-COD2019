@@ -808,9 +808,12 @@ SWEP.AttachmentElements = {
     },
     ["stock_adapter"] = {
         Bodygroups = {
-            {4,3},
-            {10,0},
+            {4,2},
+            {10,1},
         },
+		AttPosMods = { 
+			[5] = { Pos = Vector(-0.25,0,0.45), }, -- Underbarrel
+		},
     },
     ["stock_none"] = {
         Bodygroups = {
@@ -905,7 +908,7 @@ SWEP.Attachments = {
         Category = {"cod2019_tube","cod2019_grau556_stock"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
-		InstalledElements = {"stock_adapter"},
+		--InstalledElements = {"stock_adapter"},
 		RejectAttachments = { ["cod2019_stock_none"] = true },
     },
     { -- 6

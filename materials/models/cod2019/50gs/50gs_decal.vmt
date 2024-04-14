@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "models/cod2019/50gs/50gs_decal"
+    "$basetexture" "models/cod2019/50gs/50gs_decal_rgb"
     "$bumpmap" "models/cod2019/50gs/50gs_decal_n"
-    "$phongexponenttexture" "models/cod2019/50gs/50gs_decal_exp"
+    "$phongexponenttexture" "models/cod2019/50gs/50gs_decal_e"
 
     "$phong" "1"
     "$phongboost" "1"

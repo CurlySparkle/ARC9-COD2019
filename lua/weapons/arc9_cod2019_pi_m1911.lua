@@ -825,6 +825,7 @@ SWEP.AttachmentElements = {
     ["slide_none"] = {
         Bodygroups = {
             {2,1},
+            {5,1},
         },
     },
     ["grip_none"] = {
@@ -839,12 +840,17 @@ SWEP.AttachmentElements = {
     },
     ["sight_none"] = {
         Bodygroups = {
-            {4,1},
+            {5,1},
         },
     },
     ["sight_mount"] = {
         Bodygroups = {
-            {5,1},
+            {4,1},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {6,1},
         },
     },
 }
@@ -990,11 +996,9 @@ SWEP.Attachments = {
     },
     { -- 19
         PrintName = ARC9:GetPhrase("mw19_category_view"),
-        Category = "cod2019_m1911_view",
+        Category = "cod2019_pistols_view",
         Bone = "tag_cosmetic",
         Pos = Vector(-5, 0, 1.5),
-		CosmeticOnly = true,
-		Hidden = true,
     },
 }
 

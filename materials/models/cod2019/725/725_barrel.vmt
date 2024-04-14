@@ -1,29 +1,35 @@
 "VertexLitGeneric"
 {
-    "$basetexture"				"models/cod2019/725/725_barrel"
-    "$bumpmap"					"models/cod2019/725/725_barrel_n"
-    "$phongexponenttexture"		       "models/cod2019/725/725_barrel_exp"
+    "$basetexture" "models\cod2019\725\725_barrel_rgb"
+    "$bumpmap" "models\cod2019\725\725_barrel_n"
+    "$phongexponenttexture" "models\cod2019\725\725_barrel_e"
 
-    "$color2" "[0 0 0]"
-    "$blendtintbybasealpha" "1"
+    /////////////////
+    "$color2" "[0 0 0]"                                     //do not touch this
+    "$blendtintbybasealpha" "1"                             //do not touch this
+    /////////////////
 
     "$phong" "1"
     "$phongboost" "1"
-    "$phongfresnelranges" "[1 0.5 0]"
-    "$phongalbedotint" "0"
+    "$phongalbedotint" "1"
+    "$phongalbedoboost" "10"                                //toy around with this
+    "$phongfresnelranges" "[1 0.1 0]"
+       
+    /////////////////
+    "$normalmapalphaenvmapmask" "1"                         //do not touch this
+    /////////////////
 
-    "$normalmapalphaenvmapmask" "1"
-    "$envmapfresnel" "1"
     "$envmap" "env_cubemap"
-    "$envmaptint" "[0.2 0.2 0.2]"
+    "$envmaptint" "[0.141 0.141 0.141]"                 
 
-     "Proxies"
-     {
+    //remove this if not using MWB
+    "Proxies"
+    {
         "Arc9EnvMapTint"
         {
-            "specularity" "0.5"
             "min" "0"
-            "max" "0.2"
+            "max" "1"
+            "color" "[0.141 0.141 0.141]"
         }
-     }
+    }
 }

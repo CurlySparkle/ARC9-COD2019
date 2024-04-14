@@ -249,10 +249,10 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-0.8, 4, -4)
+SWEP.PeekPos = Vector(-0.8, 1, -3)
 SWEP.PeekAng = Angle(-0.3, 0, -45)
 
-SWEP.PeekMaxFOV = 60
+SWEP.PeekMaxFOV = 64
 
 SWEP.PeekPosReloading = Vector(1, 2, -2)
 SWEP.PeekAngReloading = Angle(-0.3, 0, -5)
@@ -888,7 +888,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
         Category = "cod2019_grip",
         Bone = "tag_grip_attach",
-        Pos = Vector(-2, 0, 0),
+        Pos = Vector(-2.6, 0, 0),
         Ang = Angle(0, 0, 180),
     },
     { -- 7

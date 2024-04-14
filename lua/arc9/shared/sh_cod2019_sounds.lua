@@ -96,7 +96,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Model680.Rechamber_A",
-    channel = 143 + 5,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {100,100},
@@ -109,7 +109,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Model680.Rechamber_B",
-    channel = 143 + 5,
+    channel = CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {100,100},
@@ -123,7 +123,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Model680.ShellIn",
-    channel = 143 + 5,
+    channel = CHAN_AUTO,
 	volume = 1,
 	pitch = {100,100},
     sound = {
