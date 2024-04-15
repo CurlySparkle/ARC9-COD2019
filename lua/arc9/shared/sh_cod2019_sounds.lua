@@ -240,69 +240,69 @@ sound.Add( {
 -- })
 
 ARC9.COD2019_9mm_Table = {
-    "weapons/cod2019/shared/casings/blt_case_bounce_9_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_9_02.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_9_03.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_9_04.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_9_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_9_02.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_9_03.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_9_04.wav"
+    "weapons/cod2019/shared/casings/blt_case_bounce_9_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_9_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_9_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_9_04.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_9_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_9_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_9_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_9_04.ogg"
 }
 
 ARC9.COD2019_50bmg_Table = {
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.wav"
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_50bmg_02.ogg"
 }
 
 ARC9.COD2019_308_Table = {
-    "weapons/cod2019/shared/casings/blt_case_bounce_308_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_308_02.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_308_03.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_308_04.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_308_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_308_02.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_308_03.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_308_04.wav"
+    "weapons/cod2019/shared/casings/blt_case_bounce_308_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_308_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_308_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_308_04.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_308_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_308_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_308_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_308_04.ogg"
 }
 
 ARC9.COD2019_338_Table = {
-    "weapons/cod2019/shared/casings/blt_case_bounce_338_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_338_02.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_338_03.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_338_04.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_338_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_338_02.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_338_03.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_338_04.wav"
+    "weapons/cod2019/shared/casings/blt_case_bounce_338_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_338_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_338_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_338_04.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_338_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_338_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_338_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_338_04.ogg"
 }
 
 ARC9.COD2019_556_Table = {
-    "weapons/cod2019/shared/casings/blt_case_bounce_556_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_556_02.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_556_03.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_556_04.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_556_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_556_02.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_556_03.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_556_04.wav"
+    "weapons/cod2019/shared/casings/blt_case_bounce_556_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_556_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_556_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_556_04.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_556_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_556_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_556_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_556_04.ogg"
 }
 
 ARC9.COD2019_Shotgun_Table = {
-    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_02.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_03.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_04.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_01.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_02.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_03.wav",
-    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_04.wav"
+    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_04.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_01.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_02.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_03.ogg",
+    "weapons/cod2019/shared/casings/blt_case_bounce_shotgun_04.ogg"
 }
 
 ------------ Viewmodel ------------

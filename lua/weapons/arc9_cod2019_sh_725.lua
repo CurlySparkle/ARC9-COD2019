@@ -274,7 +274,7 @@ SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
 
 SWEP.DropMagazineModel = "models/weapons/cod2019/shared/shell_origin12.mdl"
-SWEP.DropMagazineSounds = {"arc9/casings/casing_12ga_1.wav", "arc9/casings/casing_12ga_2.wav", "arc9/casings/casing_12ga_3.wav"}
+SWEP.DropMagazineSounds = ARC9.COD2019_Shotgun_Table
 SWEP.DropMagazineAmount = 1
 SWEP.DropMagazineAmountEmpty = 2
 SWEP.DropMagazineTime = 1
