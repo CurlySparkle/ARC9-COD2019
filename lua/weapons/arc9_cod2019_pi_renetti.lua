@@ -1427,7 +1427,7 @@ SWEP.Attachments = {
         Category = "cod2019_pistols_view",
         Bone = "tag_cosmetic",
         Pos = Vector(-9, 0, 3),
-		CosmeticOnly = true,
+		CosmeticOnly = false,
 		ExcludeElements = {"stock"},
     },
     { -- 21

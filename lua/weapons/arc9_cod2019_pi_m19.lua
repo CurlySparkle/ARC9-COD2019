@@ -984,6 +984,14 @@ SWEP.Attachments = {
 		Icon_Offset = Vector(-4.85, 0.05, 2.3),
 		CosmeticOnly = true,
     },
+    { -- 19
+        PrintName = ARC9:GetPhrase("mw19_category_view"),
+        Category = "cod2019_pistols_view",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-5, 0, 1),
+		CosmeticOnly = false,
+		ExcludeElements = {"stock"},
+    },
 }
 
 SWEP.GripPoseParam = 4.6

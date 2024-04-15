@@ -850,7 +850,7 @@ SWEP.Attachments = {
     { -- 5
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
 		DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
-        Category = {"cod2019_model680_stock"},
+        Category = {"cod2019_model680_stock","cod2019_tube"},
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
     },
@@ -882,7 +882,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",
-		Category = {"cod2019_ammo"},
+		Category = {"cod2019_ammo_sg"},
 		Pos = Vector(-1.5, 0, 0),
     },
     { -- 10
