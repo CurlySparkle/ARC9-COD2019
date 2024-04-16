@@ -758,6 +758,21 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/jak12/attachment_vm_sh_aalpha12_griptape.mdl",
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust.mdl",
+	BoneMerge = false,
+	ModelOffset = Vector(0.8, 0, 0.2),
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust02.mdl",
+	BoneMerge = false,
+	ModelOffset = Vector(0.8, 0, 0.2),
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03.mdl",
+	BoneMerge = false,
+	ModelOffset = Vector(0.8, 0, 0.2),
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -794,6 +809,11 @@ SWEP.AttachmentElements = {
     ["rail_sidegrip"] = {
         Bodygroups = {
             {6,1},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {7,1},
         },
     },
 }
@@ -860,7 +880,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",
-		Category = {"cod2019_ammo"},
+		Category = {"cod2019_ammo_sg"},
 		Pos = Vector(-1.5, 0, 0),
     },
     { -- 9
@@ -871,6 +891,13 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
     },
     { -- 10
+        PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
+		-- DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
+        Category = {"cod2019_trigger"},
+        Bone = "j_trigger",
+        Pos = Vector(0, 0, 0),
+    },
+    { -- 11
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst","cod2019_perks_ss"},
         Bone = "tag_attachments",
@@ -878,7 +905,7 @@ SWEP.Attachments = {
     },
 	
 	-- Unofficial
-    { -- 11
+    { -- 12
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
         Category = "cod2019_jak12_receiver",
         Bone = "tag_attachments",
@@ -888,58 +915,58 @@ SWEP.Attachments = {
     },
 	
 	-- Cosmetics
-    { -- 12
+    { -- 13
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
         Bone = "tag_cosmetic",
         Pos = Vector(7, 0, 3),
         Category = "cod2019_skins_jak12",
 		CosmeticOnly = true,
     },
-    { -- 13
+    { -- 14
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         Bone = "tag_cosmetic",
         Pos = Vector(5, 0, 3),
         CosmeticOnly = true,
     },
-    { -- 14
+    { -- 15
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/shot_jak12_decal_a.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(3, 0, 3),
     },
-    { -- 15
+    { -- 16
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/shot_jak12_decal_b.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(1, 0, 3),
     },
-    { -- 16
+    { -- 17
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/shot_jak12_decal_c.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(-1, 0, 3),
     },
-    { -- 17
+    { -- 18
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/shot_jak12_decal_d.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(-3, 0, 3),
     },
-    { -- 18
+    { -- 19
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
         CosmeticOnly = true,
         Category = {"charm"},
         Bone = "tag_cosmetic",
         Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(-5, 0, 3),
-		Scale = 1.5,
+		Scale = 1.3,
     },
-    { -- 19
+    { -- 20
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",

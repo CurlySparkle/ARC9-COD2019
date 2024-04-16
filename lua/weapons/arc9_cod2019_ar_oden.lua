@@ -647,6 +647,18 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
 		Model = "models/weapons/cod2019/attachs/weapons/oden/attachment_vm_ar_asierra12_pistolgrip_tape.mdl",
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust.mdl",
+	BoneMerge = false
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust02.mdl",
+	BoneMerge = false
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03.mdl",
+	BoneMerge = false
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -673,6 +685,16 @@ SWEP.AttachmentElements = {
     ["sights"] = {
         Bodygroups = {
             {4,0},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {5,1},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {6,1},
         },
     },
     ["scope_sniper"] = {
@@ -733,7 +755,7 @@ SWEP.Attachments = {
         Bone = "tag_grip_attach",
         Pos = Vector(-2.5, 0, 0),
         Ang = Angle(0, 0, 180),
-		MergeSlots = {20}, -- Grenade Launcher(s)
+		MergeSlots = {21}, -- Grenade Launcher(s)
     },
     { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
@@ -757,6 +779,13 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
     },
     { -- 10
+        PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
+		-- DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
+        Category = {"cod2019_trigger"},
+        Bone = "j_trigger",
+        Pos = Vector(0.2, 0, 0.1),
+    },
+    { -- 11
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst","cod2019_perks_ss"},
         Bone = "tag_attachments",
@@ -764,7 +793,7 @@ SWEP.Attachments = {
     },
 	
 	-- Unofficial
-    { -- 11
+    { -- 12
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
         Category = "cod2019_oden_receiver",
         Bone = "tag_attachments",
@@ -774,49 +803,49 @@ SWEP.Attachments = {
     },
 	
 	-- Cosmetics
-    { -- 12
+    { -- 13
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
         Bone = "tag_cosmetic",
         Pos = Vector(7, 0, 3),
         Category = "cod2019_skins_oden",
 		CosmeticOnly = true,
     },
-    { -- 13
+    { -- 14
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         Bone = "tag_cosmetic",
         Pos = Vector(5, 0, 3),
         CosmeticOnly = true,
     },
-    { -- 14
+    { -- 15
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/rif_oden_decal_a.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(3, 0, 3),
     },
-    { -- 15
+    { -- 16
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/rif_oden_decal_b.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(1, 0, 3),
     },
-    { -- 16
+    { -- 17
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/rif_oden_decal_c.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(-1, 0, 3),
     },
-    { -- 17
+    { -- 18
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/rif_oden_decal_d.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(-3, 0, 3),
     },
-    { -- 18
+    { -- 19
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
         CosmeticOnly = true,
         Category = {"charm"},
@@ -824,7 +853,7 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(-5.5, 0, 3),
     },
-    { -- 19
+    { -- 20
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
@@ -832,7 +861,7 @@ SWEP.Attachments = {
 		Icon_Offset = Vector(-7, 0, 3),
 		CosmeticOnly = true,
     },
-    { -- 20
+    { -- 21
         PrintName = "GL",
         Category = {"cod2019_m203"},
         Bone = "tag_attachments",
@@ -845,7 +874,7 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 25
-SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.CodStubbyTallGripPoseParam = 26
 SWEP.CodStubbyGripPoseParam = 17
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.

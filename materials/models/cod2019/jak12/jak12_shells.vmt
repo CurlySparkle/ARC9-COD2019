@@ -1,32 +1,35 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-	"$basetexture"				"models/cod2019/jak12/jak12_shells"
-	"$bumpmap"					"models/cod2019/jak12/jak12_shells_n"
-	"$phongexponenttexture"		"models/cod2019/jak12/jak12_shells_exp"
-	"$color2"					"[0.8 0.8 0.8]"
-	"$blendTintByBaseAlpha"		"1"
+    "$basetexture" "models\cod2019\jak12\jak12_shells_rgb"
+    "$bumpmap" "models\cod2019\jak12\jak12_shells_n"
+    "$phongexponenttexture" "models\cod2019\jak12\jak12_shells_e"
 
-	"$envmap"					"env_cubemap"
-	"$envmaptint"				"[ .13 .13 .13 ]"
-	"$envmapfresnel"			".25"
-	"$envmapcoefficient"		"[0.39 0.39 0.39]"
+    /////////////////
+    "$color2" "[0 0 0]"                                     //do not touch this
+    "$blendtintbybasealpha" "1"                             //do not touch this
+    /////////////////
 
-	"$phong"					"1"
-	"$phongboost"				"15"
-     //"$phongexponent"				"55"
-	"$phongfresnelranges"		"[0.32 0.72 0.99]"
-	"$phongalbedotint" 			"1"
+    "$phong" "1"
+    "$phongboost" "1"
+    "$phongalbedotint" "1"
+    "$phongalbedoboost" "10"                                //toy around with this
+    "$phongfresnelranges" "[1 0.1 0]"
+       
+    /////////////////
+    "$normalmapalphaenvmapmask" "1"                         //do not touch this
+    /////////////////
 
-     "$normalmapalphaenvmapmask"              "1"
-	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[0.29 0.259 0.192]"                 
 
-     "Proxies"
-     {
+    //remove this if not using MWB
+    "Proxies"
+    {
         "Arc9EnvMapTint"
         {
-            "specularity" "0.5"
             "min" "0"
-            "max" "0.2"
+            "max" "1"
+            "color" "[0.29 0.259 0.192]"
         }
-     }
+    }
 }

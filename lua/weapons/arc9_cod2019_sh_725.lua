@@ -878,7 +878,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",
-		Category = {"cod2019_ammo"},
+		Category = {"cod2019_ammo_sg"},
 		Pos = Vector(-1.5, 0, 0),
 		Icon_Offset = Vector(0, 0, 1),
     },
