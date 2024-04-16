@@ -443,9 +443,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sh_aalpha12_reload_raise.ogg", t = 0.0},
 			{s = path .. "wfoly_sh_aalpha12_reload_magout.ogg", t = 0.4},
-			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 1.45},
-			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 1.75},
-            {s = path .. "wfoly_sh_aalpha12_reload_mvmnt.ogg", t = 1.95},
+			{s = path .. "wfoly_sh_aalpha12_reload_maghits.ogg", t = 1.43},
+			{s = path .. "wfoly_sh_aalpha12_reload_magin.ogg", t = 1.73},
+            {s = path .. "wfoly_sh_aalpha12_reload_mvmnt.ogg", t = 1.93},
 			{s = path .. "wfoly_sh_aalpha12_reload_end.ogg", t = 2.1},
         },
     },
@@ -622,10 +622,10 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sh_aalpha12_inspect_01.ogg", t = 0/30},
 			{s = path .. "wfoly_sh_aalpha12_inspect_02.ogg", t = 12/30},
-			{s = path .. "wfoly_sh_aalpha12_inspect_03.ogg", t = 55/30},
-			{s = path .. "wfoly_sh_aalpha12_inspect_04.ogg", t = 66/30},
-			{s = path .. "wfoly_sh_aalpha12_inspect_05.ogg", t = 103/30},
-			{s = path .. "wfoly_sh_aalpha12_inspect_06.ogg", t = 105/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_03.ogg", t = 59/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_04.ogg", t = 70/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_05.ogg", t = 108/30},
+			{s = path .. "wfoly_sh_aalpha12_inspect_06.ogg", t = 110/30},
         },
     },
     ["bash"] = {
