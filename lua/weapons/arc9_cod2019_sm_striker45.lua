@@ -732,6 +732,21 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_striker45_hold2"] = {
     ModelOffset = Vector(-1, 0, 1.2),
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust.mdl",
+	BoneMerge = false,
+	ModelOffset = Vector(0, 0, 0),
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust02.mdl",
+	BoneMerge = false,
+	ModelOffset = Vector(0, 0, 0),
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03.mdl",
+	BoneMerge = false,
+	ModelOffset = Vector(0, 0, 0),
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -783,6 +798,11 @@ SWEP.AttachmentElements = {
     ["muzzle_none"] = {
         Bodygroups = {
             {6,1},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {7,1},
         },
     },
 }
@@ -862,6 +882,14 @@ SWEP.Attachments = {
         Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
 		ExcludeElements = {"stock_light"},
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
+		-- DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
+        Category = {"cod2019_trigger"},
+        Bone = "j_trigger",
+        Pos = Vector(0, 0, 0.2),
+		Ang = Angle(0, 0, 180),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),

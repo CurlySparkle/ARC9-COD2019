@@ -880,6 +880,21 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/origin12/attachment_vm_sh_oscar12_pistolgrip_tape.mdl",
     },
+    ["cod2019_trigger_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust.mdl",
+	BoneMerge = false,
+	ModelOffset = Vector(0, 0, 0),
+    },
+    ["cod2019_trigger_heavy"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust02.mdl",
+	BoneMerge = false,
+	ModelOffset = Vector(0, 0, 0),
+    },
+    ["cod2019_trigger_match"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03.mdl",
+	BoneMerge = false,
+	ModelOffset = Vector(0, 0, 0),
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -924,6 +939,11 @@ SWEP.AttachmentElements = {
     ["barrel_none"] = {
         Bodygroups = {
             {6,3},
+        },
+    },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {7,1},
         },
     },
 }
@@ -1018,6 +1038,14 @@ SWEP.Attachments = {
         Pos = Vector(0, 0, 0),
     },
     {
+        PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
+		-- DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
+        Category = {"cod2019_trigger"},
+        Bone = "j_trigger",
+        Pos = Vector(0, -0.2, 0),
+		Ang = Angle(180, 0, -90),
+    },
+    {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "j_mag1",
@@ -1069,14 +1097,20 @@ SWEP.Attachments = {
         Category = "stickers",
     },
     {
-        PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = {"charm", "killcounter"},
-		RejectAttachments = { ["arc9_stat_proscreen"] = true },
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
+        Category = {"killcounter","killcounter2"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(0, 0, 0),
 		CosmeticOnly = true,
-        Bone = "tag_attachments",
-        Pos = Vector(0.5, -0.75, -0.5),
-        Ang = Angle(0, 0, 0),
-		Scale = 1,
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
+        CosmeticOnly = true,
+        Category = {"charm"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(0.5, 0, 0),
+		Icon_Offset = Vector(-5.5, 0, 3),
+		Scale = 1.2,
     },
 }
 
