@@ -899,9 +899,9 @@ SWEP.Attachments = {
     },
     { -- 11
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst","cod2019_perks_ss"},
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
         Bone = "tag_attachments",
-        Pos = Vector(3.5, 0, -3.5),
+        Pos = Vector(3.5, 0, -4.5),
     },
 	
 	-- Unofficial

@@ -941,6 +941,7 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(7, 0, 3),
+		ExcludeElements = {"foregrip_none"},
     },
     { -- 17
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
@@ -948,6 +949,7 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(5.5, 0, 3),
+		ExcludeElements = {"foregrip_none"},
     },
     { -- 18
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
@@ -955,6 +957,7 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(4, 0, 3),
+		ExcludeElements = {"foregrip_none"},
     },
     { -- 19
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
@@ -962,6 +965,7 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(2.5, 0, 3),
+		ExcludeElements = {"foregrip_none"},
     },
     { -- 20
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
