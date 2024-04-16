@@ -871,6 +871,11 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
     ["mag"] = {
         Bodygroups = {
             {1,1},
@@ -1001,7 +1006,7 @@ SWEP.Attachments = {
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(4.5, 0, 1),
-		Hidden = true,
+		Hidden = false,
     },
 	
 	-- Cosmetics

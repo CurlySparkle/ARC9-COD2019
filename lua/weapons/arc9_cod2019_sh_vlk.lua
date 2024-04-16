@@ -750,7 +750,7 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
-    ["sight_none"] = {
+    ["sights_none"] = {
         Bodygroups = {
             {6,1},
         },
@@ -802,7 +802,7 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
         Category = {"cod2019_optic"},
-		InstalledElements = {"sights"},
+		InstalledElements = {"sights_none"},
     },
     { -- 5
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
@@ -862,7 +862,7 @@ SWEP.Attachments = {
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(3.5, 0, -1),
-		Hidden = true,
+		Hidden = false,
     },
 	
 	-- Cosmetics

@@ -441,7 +441,7 @@ SWEP.Attachments = {
         Bone = "tag_pistol_attachments_l",
         Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(0, 0, 1),
-		Hidden = true,
+		Hidden = false,
     },
 	
 	-- Cosmetics

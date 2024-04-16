@@ -670,12 +670,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Time = 1.25,
+		Time = 0.8,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Time = 1.25,
+		Time = 0.8,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -685,7 +685,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Time = 1,
+		Time = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.35, lhik = 1, rhik = 1 },
@@ -694,7 +694,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Time = 1,
+		Time = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -918,6 +918,11 @@ SWEP.AttachmentElements = {
     },
     ["sights"] = {
         Bodygroups = {
+            {2,1},
+        },
+    },
+    ["sights_none"] = {
+        Bodygroups = {
             {2,2},
         },
     },
@@ -948,10 +953,10 @@ SWEP.AttachmentElements = {
     },
 }
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,0) end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("optic_scope") then model:SetBodygroup(2,2) end
+end
 
 SWEP.Attachments = {
     { -- 1
@@ -1045,7 +1050,7 @@ SWEP.Attachments = {
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(3.5, 0, -1),
-		Hidden = true,
+		Hidden = false,
     },
 	
 	-- Cosmetics

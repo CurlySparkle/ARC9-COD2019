@@ -1013,7 +1013,7 @@ SWEP.Attachments = {
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(5, 0, 0.5),
-		Hidden = true,
+		Hidden = false,
     },
 	
 	-- Cosmetics
