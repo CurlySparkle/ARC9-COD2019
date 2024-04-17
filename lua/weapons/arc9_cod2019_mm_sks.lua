@@ -222,15 +222,15 @@ SWEP.SprintMidPoint = {
 }
 
 SWEP.MovingMidPoint = {
-    Pos = Vector(0, -0.5, -0.5),
-    Ang = Angle(0, 0, 0)
+    Pos = Vector(-0.5, -0.5, -0.5),
+    Ang = Angle(0, 0, -5)
 }
 
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.MovingPos = Vector(-0.7, -0.7, -0.7)
-SWEP.MovingAng = Angle(0, 0, -8)
+SWEP.MovingPos = Vector(-1, -1, -1)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -245,7 +245,7 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 14, 3)
 
-SWEP.PeekPos = Vector(-1, 3, -4)
+SWEP.PeekPos = Vector(-0.9, 3, -3)
 SWEP.PeekAng = Angle(-1, 1, -45)
 
 SWEP.PeekMaxFOV = 54
@@ -531,6 +531,94 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 61/30},
         },
     },
+    ["reload_smag"] = {
+        Source = "reload_smag",
+		MinProgress = 0.85,
+		FireASAP = true,
+		RefillProgress = 0.55,
+		PeekProgress = 0.825,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_sksierra_reload_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_sksierra_reload_magout.ogg", t = 17/30},
+			{s = path .. "wfoly_sn_sksierra_reload_magin_01.ogg", t = 36/30},
+			{s = path .. "wfoly_sn_sksierra_reload_magin_02.ogg", t = 45/30},
+			{s = path .. "wfoly_sn_sksierra_reload_end.ogg", t = 46/30},
+        },
+    },
+    ["reload_smag_empty"] = {
+        Source = "reload_smag_empty",
+		MinProgress = 0.925,
+		FireASAP = true,
+		RefillProgress = 0.725,
+		PeekProgress = 0.85,
+		DropMagAt = 0.95,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.575, lhik = 1, rhik = 0 },
+            { t = 1, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 20/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 32/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 41/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_rotate.ogg", t = 50/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 63/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 78/30},
+        },
+    },
+    ["reload_smag_fast"] = {
+        Source = "reload_smag_fast",
+		MinProgress = 0.85,
+		FireASAP = true,
+		RefillProgress = 0.625,
+		PeekProgress = 0.825,
+		DropMagAt = 1,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
+            { t = 0.8, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 27/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 36/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 46/30},
+        },
+    },
+    ["reload_smag_fast_empty"] = {
+        Source = "reload_smag_fast_empty",
+		MinProgress = 0.925,
+		RefillProgress = 0.75,
+		PeekProgress = 0.875,
+		DropMagAt = 1,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.775, lhik = 0, rhik = 1 },
+            { t = 0.875, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_sksierra_reload_empty_raise.ogg", t = 0/30},
+            {s = path .. "wfoly_sn_sksierra_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 27/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 36/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 50/30},
+			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 61/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -678,6 +766,16 @@ local Translate_XMag_Fast = {
     ["reload_empty"] = "reload_xmag_fast_empty",
 }
 
+--- 10 Round Mags ---
+local Translate_SMag = {
+    ["reload"] = "reload_smag",
+    ["reload_empty"] = "reload_smag_empty",
+}
+local Translate_SMag_Fast = {
+    ["reload"] = "reload_smag_fast",
+    ["reload_empty"] = "reload_smag_fast_empty",
+}
+
 --- Fast & Tac. Sprint ---
 local Translate_Fast = {
     ["reload"] = "reload_fast",
@@ -695,6 +793,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
+    local smag = wep:HasElement("mag_smag")
     local ammoex = wep:HasElement("ammo_extend")
 
     if ammoex and speedload and Translate_XMag_Fast[anim] then
@@ -766,19 +865,14 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    -- ["mag"] = {
-        -- Bodygroups = {
-            -- {1,1},
-        -- },
-    -- },
-    -- ["mag_none"] = {
-        -- Bodygroups = {
-            -- {1,1},
-        -- },
-    -- },
-    ["mag_xmag"] = {
+    ["body_none"] = {
         Bodygroups = {
-            {1,1},
+            {0,1},
+        },
+    },
+    ["mag_none"] = {
+        Bodygroups = {
+            {1,2},
         },
     },
     ["muzzle_none"] = {
