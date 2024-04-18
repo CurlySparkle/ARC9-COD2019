@@ -868,6 +868,12 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(1, -0.2, 0.4),
 	ModelAngleOffset = Angle(0, 0, 170)
     },
+    ["cod2019_perks_auto"] = {
+    RPM = 700,
+    RecoilKickMult = 1.2,
+    RecoilSideMult = 1.2,
+    RecoilUpMult = 1.3
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -994,7 +1000,7 @@ SWEP.Attachments = {
     },
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst_2","cod2019_perks_ss"},
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst_2","cod2019_perks_ss","cod2019_perks_autod"},
         Bone = "tag_attachments",
         Pos = Vector(2.5, 0, -1),
     },

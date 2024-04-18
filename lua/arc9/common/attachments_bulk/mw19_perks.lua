@@ -233,6 +233,36 @@ ATT.Firemodes = {
 
 ARC9.LoadAttachment(ATT, "cod2019_perks_burst_2")
 
+/////////////////////////// -- cod2019_perks_auto
+ATT = {}
+
+ATT.PrintName = "Full Auto"
+ATT.Description = "Changes fire mode to full auto."
+ATT.Icon = Material("entities/attachs/cod2019_perks_hipaim.png", "mips smooth")
+ATT.AutoStats = true
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.Free = true
+
+ATT.Category = {"cod2019_perks_auto"}
+ATT.ActivateElements = {"perk_auto"}
+
+--ATT.TracerEffect = "ARC9_tracer"
+
+-- ATT.RPMMult = 1.5
+-- ATT.RecoilKickMult = 1.3
+-- ATT.RecoilSideMult = 1.4
+-- ATT.RecoilUpMult = 0.8
+
+ATT.Firemodes = {
+    {
+        Mode = -1,
+		PoseParam = 0,
+		--TracerEffect = "ARC9_tracer"
+    },
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_perks_auto")
+
 /////////////////////////// -- cod2019_perks_super_sprint
 ATT = {}
 

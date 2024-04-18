@@ -721,6 +721,12 @@ SWEP.AttachmentTableOverrides = {
     ["go_grip_angled"] = {
     ModelOffset = Vector(0.9, 0, 0.1),
     },
+    ["cod2019_perks_auto"] = {
+    RPM = 700,
+    RecoilKickMult = 1.3,
+    RecoilSideMult = 1.4,
+    RecoilUpMult = 0.7
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -870,7 +876,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"}
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss","cod2019_perks_auto"}
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
