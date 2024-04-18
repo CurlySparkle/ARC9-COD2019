@@ -642,6 +642,16 @@ local Translate_XMag_Fast = {
     ["reload_empty"] = "reload_xmag_fast_empty",
 }
 
+--- 20 Round Mags ---
+local Translate_XMagslrg = {
+    ["reload"] = "reload_xmag",
+    ["reload_empty"] = "reload_xmag_empty",
+}
+local Translate_XMagslrg_Fast = {
+    ["reload"] = "reload_xmag_fast",
+    ["reload_empty"] = "reload_xmag_fast_empty",
+}
+
 --- Fast & Tac. Sprint ---
 local Translate_Fast = {
     ["reload"] = "reload_fast",
@@ -659,6 +669,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
+    local xmagslrg = wep:HasElement("mag_xmaglrg")
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
@@ -669,6 +680,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_XMag_Fast[anim] then
                 return Translate_XMag_Fast[anim]
             end
+        elseif xmagslrg then
+            if Translate_XMagslrg_Fast[anim] then
+                return Translate_XMagslrg_Fast[anim]
+            end 
         else
             if Translate_Fast[anim] then
                 return Translate_Fast[anim]
@@ -678,6 +693,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         if xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
+            end
+        elseif xmagslrg then
+            if Translate_XMagslrg[anim] then
+                return Translate_XMagslrg[anim]
             end
         end
     end
@@ -810,7 +829,7 @@ SWEP.Attachments = {
         DefaultAttName = "Default",
         Category = "cod2019_grip",
         Bone = "tag_attachments",
-        Pos = Vector(13, 0, -1),
+        Pos = Vector(13.6, 0, -1),
         Ang = Angle(0, 0, 180),
 		Scale = 1,
 		InstalledElements = {"grip_rail"},
@@ -898,7 +917,8 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 32
+--SWEP.CodAngledGripPoseParam = 32
+SWEP.CodAngledGripPoseParam = 33
 SWEP.CodStubbyGripPoseParam = 22
 SWEP.CodStubbyTallGripPoseParam = 26
 

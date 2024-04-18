@@ -34,7 +34,7 @@ if SERVER then
             phys:SetMass(1)
         end
 
-        --util.SpriteTrail(self, 0, Color(100, 100, 100, 55), false, 3, 1, 0.25, 2, "trails/tube.vmt")
+        util.SpriteTrail(self, 0, Color(100, 100, 100, 55), false, 3, 1, 0.25, 2, "trails/tube.vmt")
 		ParticleEffectAttach("arrow_trail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
         SafeRemoveEntityDelayed(self, 10)
     end

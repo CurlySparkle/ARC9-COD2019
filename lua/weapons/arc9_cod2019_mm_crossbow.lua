@@ -477,7 +477,12 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["sight_none"] = {
+    ["body_none"] = {
+        Bodygroups = {
+            {0,1},
+        },
+    },
+    ["sights_none"] = {
         Bodygroups = {
             {5,1},
         },
@@ -555,7 +560,7 @@ SWEP.Attachments = {
         Category = {"cod2019_optic"},
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
-		InstalledElements = {"sight_folded"},
+		InstalledElements = {"sights_none"},
     },
     { -- 5
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
