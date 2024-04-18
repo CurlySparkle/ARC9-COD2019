@@ -1,7 +1,7 @@
 AddCSLuaFile()
 
 if (math.random(1, 100) == 1) then
-   list.Set( "ContentCategoryIcons", "ARC9 - MW2019", "vgui/bentley.png" )
+   list.Set( "ContentCategoryIcons", "ARC9 - MW2019", "vgui/ahmad.png" )
    else
    list.Set( "ContentCategoryIcons", "ARC9 - MW2019", "vgui/mw_icon2.png" )
 end
