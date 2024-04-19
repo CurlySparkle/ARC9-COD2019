@@ -358,6 +358,10 @@ L["cod2019_perks_burst_2.description"] = "Changes fire mode to <color=100,255,10
 -- L["cod2019_perks_super_sprint.compactname"] = "Tac. Sprint" -- UO
 -- L["cod2019_perks_super_sprint.description"] = "Provides an altered stance when sprinting which significantly improves sprint speed at the cost of heavily reduced sprint-to-fire speed." -- UO
 
+-- L["cod2019_perks_auto.printname"] = "Full Auto" -- UO
+-- L["cod2019_perks_auto.compactname"] = "Auto." -- UO
+-- L["cod2019_perks_auto.description"] = "Changes fire mode to <color=100,255,100>fully automatic</color>." -- UO
+
 ////////////////////  Scopes
 -- L["cod2019_model680_iron.printname"] = "Remove Sight Mount" -- UO
 -- L["cod2019_model680_iron.compactname"] = "R. Sight M." -- UO

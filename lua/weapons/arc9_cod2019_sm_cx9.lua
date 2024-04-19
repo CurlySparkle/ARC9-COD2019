@@ -131,7 +131,7 @@ SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 SWEP.RecoilRandomSideSights = 0.5
 
-SWEP.RecoilDissipationRate = 100 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
@@ -143,6 +143,9 @@ SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.85
+
+SWEP.RecoilPerShot = 0.5
+SWEP.RecoilMax = 3
 
 -------------------------- VISUAL RECOIL
 
@@ -172,20 +175,19 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.03
 
 SWEP.SpreadAddRecoil = 0.01
-SWEP.SpreadMultRecoil = 2
-SWEP.RecoilModifierCap = 4
+
+SWEP.SpreadAddHipFire = SWEP.Spread * 0
+SWEP.SpreadAddMove = SWEP.Spread * 0.2
+SWEP.SpreadAddMidAir = SWEP.Spread * 0.5
+SWEP.SpreadAddCrouch = -SWEP.Spread * 0.1
+SWEP.SpreadAddSights = -SWEP.Spread * 2.75
+
+SWEP.SpreadMultRecoil = 1.25
+SWEP.RecoilModifierCap = SWEP.RecoilMax
 SWEP.RecoilModifierCapMove = 0
-SWEP.RecoilModifierCapSights = 0
-
-SWEP.SpreadMultMove = 2
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.03
-SWEP.SpreadAddCrouch = -0.01
-SWEP.SpreadAddSights = -0.5
-
 
 -------------------------- HANDLING
 
@@ -240,17 +242,20 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(15, 30, 3)
-SWEP.CustomizeRotateAnchor = Vector(15, -2.25, -4)
+SWEP.CustomizePos = Vector(9.5, 30, 3)
+SWEP.CustomizeRotateAnchor = Vector(9.5, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeSnapshotPos = Vector(-1, 7, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1.3, -1, -3.3)
-SWEP.PeekAng = Angle(-1, 1, -45)
+SWEP.PeekPos = Vector(-1.5, 0, -2.5)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 SWEP.PeekMaxFOV = 64
+
+SWEP.PeekPosReloading = Vector(0, 1, -1)
+SWEP.PeekAngReloading = Angle(-0.3, 0, -5)
 
 -------------------------- HoldTypes
 
@@ -550,12 +555,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 1.9,
+		Time = 1.25,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 1.9,
+		Time = 1.25,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -565,7 +570,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.3,
+		Time = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 1, rhik = 1 },
@@ -574,7 +579,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.3,
+		Time = 1,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -957,5 +962,35 @@ SWEP.GripPoseParam2 = 0.3
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 24
+SWEP.DamageMin = 19
+
+SWEP.RangeMin = 13 / ARC9.HUToM
+SWEP.RangeMax = 22 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.475,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 0.875,
+    [HITGROUP_RIGHTLEG] = 0.875,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 500 / ARC9.HUToM
+
+-------------------------- FIREMODES
+
+SWEP.RPM = 1034
+
+-------------------------- HANDLING
+
+SWEP.AimDownSightsTime = 0.18 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.
 
 end

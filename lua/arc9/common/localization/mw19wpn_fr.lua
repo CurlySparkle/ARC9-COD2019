@@ -359,6 +359,10 @@ L["cod2019_perks_burst_2.description"] = "Change le mode de tir pour tirer en ra
 -- L["cod2019_perks_super_sprint.compactname"] = "Tac. Sprint" -- UO
 -- L["cod2019_perks_super_sprint.description"] = "Provides an altered stance when sprinting. Cancels out up to <color=100,255,100>20%</color> sprint speed reduction at the cost of reduced sprint-to-fire speed." -- UO
 
+L["cod2019_perks_auto.printname"] = "Automatiquement" -- UO
+L["cod2019_perks_auto.compactname"] = "Auto." -- UO
+L["cod2019_perks_auto.description"] = "Change le mode de tir pour tirer <color=100,255,100>automatiquement</color>." -- UO
+
 ////////////////////  Scopes
 -- L["cod2019_model680_iron.printname"] = "Remove Sight Mount" -- UO
 -- L["cod2019_model680_iron.compactname"] = "R. Sight M." -- UO

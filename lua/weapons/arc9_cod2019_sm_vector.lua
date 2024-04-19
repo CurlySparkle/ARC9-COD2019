@@ -129,6 +129,9 @@ SWEP.RecoilMultCrouch = 0.85
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilMultSights = 0.9
 
+SWEP.RecoilPerShot = 1
+SWEP.RecoilMax = 3.5
+
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
@@ -158,19 +161,19 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.03
 
 SWEP.SpreadAddRecoil = 0.005
+
+SWEP.SpreadAddHipFire = SWEP.Spread * 0
+SWEP.SpreadAddMove = SWEP.Spread * 0.2
+SWEP.SpreadAddMidAir = SWEP.Spread * 0.5
+SWEP.SpreadAddCrouch = -SWEP.Spread * 0.1
+SWEP.SpreadAddSights = -SWEP.Spread * 2.75
+
 SWEP.SpreadMultRecoil = 1.2
-SWEP.RecoilModifierCap = 1.3
-SWEP.RecoilModifierCapSights = 0
-
-SWEP.SpreadMultMove = 2
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.04
-SWEP.SpreadAddCrouch = -0.03
-SWEP.SpreadAddSights = -0.5
-
+SWEP.RecoilModifierCap = SWEP.RecoilMax
+SWEP.RecoilModifierCapMove = 0
 
 -------------------------- HANDLING
 
@@ -232,9 +235,12 @@ SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
 SWEP.PeekPos = Vector(-1, 3, -3)
-SWEP.PeekAng = Angle(0, 0, -45)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 SWEP.PeekMaxFOV = 64
+
+SWEP.PeekPosReloading = Vector(0, 2, -1)
+SWEP.PeekAngReloading = Angle(-0.3, 0, -5)
 
 -------------------------- HoldTypes
 
@@ -547,12 +553,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2.7,
+		Time = 1.25,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 2.7,
+		Time = 1.25,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -562,7 +568,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 3,
+		Time = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 1, rhik = 1 },
@@ -571,7 +577,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 3,
+		Time = 1,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -940,5 +946,35 @@ SWEP.CodAngledGripPoseParam = 36
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 24
+SWEP.DamageMin = 19
+
+SWEP.RangeMin = 12 / ARC9.HUToM
+SWEP.RangeMax = 13 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 1.6,
+    [HITGROUP_CHEST] = 1,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 1,
+    [HITGROUP_RIGHTARM] = 1,
+    [HITGROUP_LEFTLEG] = 1,
+    [HITGROUP_RIGHTLEG] = 1,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 300 / ARC9.HUToM
+
+-------------------------- FIREMODES
+
+SWEP.RPM = 1091
+
+-------------------------- HANDLING
+
+SWEP.AimDownSightsTime = 0.22 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.
 
 end

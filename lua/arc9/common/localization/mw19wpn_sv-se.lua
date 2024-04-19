@@ -358,6 +358,10 @@ L["cod2019_perks_super_sprint.printname"] = "Taktisk Sprint" -- UO
 L["cod2019_perks_super_sprint.compactname"] = "Tak. Sprint" -- UO
 L["cod2019_perks_super_sprint.description"] = "Erbjuder en justerad hållning när du springer. Tar bort upp till <color=100,255,100>20%</color> rörelsehastighet sänkning i sprint med kostnad på spring-till-sikte hastighet." -- UO
 
+L["cod2019_perks_auto.printname"] = "Helautomat" -- UO
+L["cod2019_perks_auto.compactname"] = "Auto." -- UO
+L["cod2019_perks_auto.description"] = "Ändrar skjutläget till <color=100,255,100>helautomat</color>." -- UO
+
 ////////////////////  Scopes
 L["cod2019_model680_iron.printname"] = "Ta Bort Siktfäste" -- UO
 L["cod2019_model680_iron.compactname"] = "Ta Bort S." -- UO
@@ -427,7 +431,7 @@ L["cod2019_ammo_crossbow_rock.printname"] = "FTAC Boulder 30g Sten" -- UO
 L["cod2019_ammo_crossbow_rock.compactname"] = "Boulder" -- UO
 L["cod2019_ammo_crossbow_rock.description"] = "Ersätter dem aerodynamiska pilarna med en <color=100,255,100>sten</color>.\n\nFör den <color=100,255,100>stonern</color> i oss alla." -- UO
 
-L["cod2019_ammo_crossbow_he.printname"] = "FTAC Kontakt 510mm Pilar" -- UO
+L["cod2019_ammo_crossbow_he.printname"] = "FTAC Kontakt 508 mm Pilar" -- UO
 L["cod2019_ammo_crossbow_he.compactname"] = "Kontakt" -- UO
 L["cod2019_ammo_crossbow_he.description"] = "Pilar med <color=255,255,100>lågtrycks sprängmedel</color> inbyggda i pilspetsen. <color=255,100,100>Pilar kan inte återhämtas</color> och är oupptäckbara av trofésystem." -- UO
 
