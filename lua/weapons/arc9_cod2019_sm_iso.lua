@@ -40,10 +40,10 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_smg_iso.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-12, 6, -7.5),
+    Pos = Vector(-7, 4, -6),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-8.5, 5, -1.5),
-    TPIKAng = Angle(-9, 0, 175),
+    TPIKPos = Vector(-11.5, 5, -4),
+    TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1
 }
 

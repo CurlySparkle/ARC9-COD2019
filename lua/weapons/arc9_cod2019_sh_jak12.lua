@@ -46,7 +46,7 @@ SWEP.WorldModelMirror = "models/weapons/cod2019/c_shot_jak12.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-3, 3, -7.25),
     Ang = Angle(-5, 0, 180),
-    TPIKPos = Vector(-5, 5, -5),
+    TPIKPos = Vector(-5, 5, -3),
     TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1
 }
