@@ -1030,9 +1030,9 @@ SWEP.Attachments = {
 		RejectAttachments = { ["arc9_stat_proscreen"] = true },
 		CosmeticOnly = true,
         Bone = "tag_cosmetic",
-        Pos = Vector(0.5, 0, 0),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Scale = 1.5,
+		Scale = 1,
     },
 }
 

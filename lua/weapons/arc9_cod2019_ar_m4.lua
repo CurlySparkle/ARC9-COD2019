@@ -269,6 +269,7 @@ SWEP.MuzzleParticle = "AC_muzzle_rifle_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
+SWEP.TracerColor = Color(0, 0, 255)
 
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
