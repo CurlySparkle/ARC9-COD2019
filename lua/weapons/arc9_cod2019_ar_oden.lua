@@ -245,10 +245,10 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1.2, 1.5, -4)
+SWEP.PeekPos = Vector(-1.2, 1.5, -3)
 SWEP.PeekAng = Angle(-0.3, 0.3, -45)
 
-SWEP.PeekMaxFOV = 55
+SWEP.PeekMaxFOV = 64
 
 SWEP.PeekPosReloading = Vector(0, 1, -2)
 SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
@@ -697,6 +697,11 @@ SWEP.AttachmentElements = {
             {6,1},
         },
     },
+    ["handle_none"] = {
+        Bodygroups = {
+            {4,1},
+        },
+    },
     ["scope_sniper"] = {
         Bodygroups = {
             {4,1},
@@ -873,7 +878,7 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 25
+SWEP.CodAngledGripPoseParam = 24.5
 SWEP.CodStubbyTallGripPoseParam = 26
 SWEP.CodStubbyGripPoseParam = 17
 
