@@ -108,7 +108,7 @@ ATT.Category = "cod2019_ammo"
 
 ATT.TracerNum = 1
 ATT.TracerEffect = "arc9_tracer"
-ATT.TracerSize = 5
+ATT.TracerSize = 7
 
 ATT.TracerColorHook = function(swep, col)
     if IsValid(swep:GetOwner()) and swep:GetOwner():IsPlayer() then

@@ -1,38 +1,26 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-	"$basetexture"				"models/cod2019/m13/m13_muzzle"
-	"$bumpmap"					"models/cod2019/m13/m13_muzzle_n"
-	"$phongexponenttexture"		"models/cod2019/m13/m13_muzzle_exp"
-	"$color2"					"[0.8 0.8 0.8]"
-	"$blendTintByBaseAlpha"		"1"
+    "$basetexture" "models\cod2019\m13\m13_muzzle_rgb"
+    "$bumpmap" "models\cod2019\m13\m13_muzzle_n"
+    "$phongexponenttexture" "models\cod2019\m13\m13_muzzle_e"
 
-	"$envmap"					"env_cubemap"
-	"$envmaptint"				"[ .13 .13 .13 ]"
-	"$envmapfresnel"			".25"
-	"$envmapcoefficient"		"[0.39 0.39 0.39]"
+    "$phong" "1"
+    "$phongboost" "1"
+    "$phongfresnelranges" "[1 0.5 0]"
 
-	"$phong"					"1"
-	"$phongboost"				"5"
-     "$phongexp"				"55"
-	"$phongfresnelranges"		"[0.32 0.72 0.99]"
-	"$phongalbedotint" 			"1"
+    "$basemapalphaenvmapmask" "1"
+    "$envmapfresnel" "1"
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[1 1 1]"
 
-     "$normalmapalphaenvmapmask"              "1"
-	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
-
-	"$rimlight"					"0"
-	"$rimlightexp"			"33"
-	"$rimlightboost"			"2"
-	"$rimmask"					"1"
-	"$nocull"					"1"
-
-     "Proxies"
-     {
+    //remove this if viewing outside of MWB
+    "Proxies"
+    {
         "Arc9EnvMapTint"
         {
-            "specularity" "0.5"
+            "specularity" "0.5"             //0.25, 0.5, 0.75, 1
             "min" "0"
-            "max" "0.2"
+            "max" "1"                       //change this if too bright in game
         }
-     }
+    }
 }

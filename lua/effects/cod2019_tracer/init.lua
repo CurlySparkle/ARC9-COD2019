@@ -32,6 +32,10 @@ function EFFECT:Init(data)
     if IsValid(pcf) then
         pcf:SetControlPoint(0,self.Position)
         pcf:SetControlPoint(1,self.EndPos)
+        -- if self.GetProcessedValue then
+		-- local color = self.WeaponEnt:GetProcessedValue("TracerColor")
+		-- pcf:SetControlPoint(2, Vector(color.r, color.g, color.b))
+        -- end
         pcf:StartEmission()
     end
     timer.Simple(1.5, function()

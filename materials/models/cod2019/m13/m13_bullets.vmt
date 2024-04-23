@@ -12,25 +12,24 @@
     "$phong" "1"
     "$phongboost" "1"
     "$phongalbedotint" "1"
-    "$phongalbedoboost" "10"                                //toy around with this
+    "$phongalbedoboost" "30"                                //toy around with this
     "$phongfresnelranges" "[1 0.1 0]"
        
     /////////////////
     "$normalmapalphaenvmapmask" "1"                         //do not touch this
     /////////////////
 
-    "$envmap"					"env_cubemap"
-    "$envmaptint"				"[ .13 .13 .13 ]"
-    "$envmapfresnel"			".25"
-    "$envmapcoefficient"		"[0.39 0.39 0.39]"                  
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[0.204 0.192 0.157]"                 
 
-     "Proxies"
-     {
+    //remove this if not using MWB
+    "Proxies"
+    {
         "Arc9EnvMapTint"
         {
-            "specularity" "0.5"
             "min" "0"
-            "max" "0.2"
+            "max" "1"
+            "color" "[0.204 0.192 0.157]"
         }
-     }
+    }
 }
