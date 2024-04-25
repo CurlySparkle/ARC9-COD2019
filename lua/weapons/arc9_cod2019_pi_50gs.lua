@@ -161,7 +161,7 @@ SWEP.RecoilModifierCapSights = 0
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.23 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.149 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.2 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -250,7 +250,7 @@ SWEP.CamQCA_Mult = 1
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_9mm_hr.mdl"
 SWEP.ShellSounds = ARC9.COD2019_9mm_Table
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.06
+SWEP.ShellScale = 0.075
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
@@ -631,13 +631,11 @@ SWEP.Animations = {
     ["exit_sprint"] = {
         Source = "sprint_out",
 		Time = 0.25,
-		NoStatAffectors = true
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
 		Time = 0.25,
-		NoStatAffectors = true
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -647,7 +645,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Time = 4,
+		Time = 1.25,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.35, lhik = 1, rhik = 1 },
@@ -656,7 +654,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Time = 4,
+		Time = 2.5,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -789,6 +787,12 @@ SWEP.AttachmentTableOverrides = {
     },
     ["cod2019_trigger_match"] = {
     Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_trigcust03.mdl",
+    },
+    ["cod2019_attach_compensator_pstl01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_comp.mdl",
+    },
+    ["cod2019_attach_muzzlebrake_pstl01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_muzzlebrake.mdl",
     },
 }
 

@@ -315,6 +315,12 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_trigger_match"] = {
     Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_trigcust03_akimbo.mdl",
     },
+    ["cod2019_attach_compensator_pstl01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_comp.mdl",
+    },
+    ["cod2019_attach_muzzlebrake_pstl01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_muzzlebrake.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {

@@ -180,7 +180,7 @@ SWEP.RecoilModifierCapMove = 0
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -810,13 +810,18 @@ SWEP.AttachmentElements = {
             {8,1},
         },
     },
-    ["trigger_none"] = {
+    ["rail_laser"] = {
         Bodygroups = {
             {9,1},
         },
     },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {10,1},
+        },
+    },
 	["grip_angled"] = {
-    AttPosMods = { [5] = { Pos = Vector(-2.5, 0, 0), } }	
+    AttPosMods = { [6] = { Pos = Vector(-2.5, 0, 0), } }	
 	}
 }
 
@@ -846,6 +851,7 @@ SWEP.Attachments = {
         Category = "cod2019_tac_rail",
         Bone = "tag_laser_attach",
         Pos = Vector(-0.7, -1.5, 0.5),
+		InstalledElements = {"rail_laser"},
     },
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
@@ -982,9 +988,9 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.7
-SWEP.CodAngledGripPoseParam = 4
---SWEP.CodStubbyGripPoseParam = 7
-SWEP.CodStubbyGripPoseParam = 21.8
+SWEP.CodAngledGripPoseParam = 41
+SWEP.CodStubbyGripPoseParam = 26
+--SWEP.CodStubbyGripPoseParam = 21.8
 SWEP.CodStubbyTallGripPoseParam = 22
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.

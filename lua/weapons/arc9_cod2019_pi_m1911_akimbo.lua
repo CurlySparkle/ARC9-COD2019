@@ -394,6 +394,12 @@ SWEP.AttachmentElements = {
             {9,1},
         },
     },
+    ["trigger_none"] = {
+        Bodygroups = {
+            {10,1},
+            {11,1},
+        },
+    },
 }
 
 SWEP.Attachments = {
@@ -419,8 +425,9 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
         Category = {"cod2019_tac_pistols"},
         Bone = "tag_laser_attach_l",
-		DuplicateModels = { { Bone = "tag_laser_attach" } },
-        Pos = Vector(-0.65, 0, 0),
+		Pos = Vector(0, 0, 0),
+		LaserCorrectionAngle = Angle(-1.9, 0, 0),
+        DuplicateModels = {{ Bone = "tag_laser_attach",LaserCorrectionAngle = Angle(0, 0, -1.5),}},
     },
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
@@ -530,8 +537,8 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
         CosmeticOnly = true,
         Category = {"charm"},
-        Bone = "tag_cosmetic_l",
-		DuplicateModels = { { Bone = "tag_cosmetic" } },
+        Bone = "tag_cosmetic",
+		--DuplicateModels = { { Bone = "tag_cosmetic--" } },
         Pos = Vector(0.5, 0, 0),
 		Icon_Offset = Vector(-3.5, 0, 1.5),
 		Scale = 1,
@@ -539,8 +546,8 @@ SWEP.Attachments = {
     { -- 18
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = "killcounter",
-        Bone = "tag_barrel_attach_l",
-		DuplicateModels = { { Bone = "tag_barrel_attach" } },
+        Bone = "tag_barrel_attach",
+		--DuplicateModels = { { Bone = "tag_barrel_attach" } },
         Pos = Vector(2.5, -0.55, -1),
 		Icon_Offset = Vector(-4, 0.05, 2.35),
 		CosmeticOnly = true,
