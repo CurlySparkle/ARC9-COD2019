@@ -313,9 +313,12 @@ L["cod2019_attach_grip_foregrip_side.printname"] = "ARC-Framgrepp" -- UO
 L["cod2019_attach_grip_foregrip_side.compactname"] = "ARC" -- UO
 L["cod2019_attach_grip_foregrip_side.description"] = "Extended foregrip reduces vertical recoil and provides stability from the hip for fast-paced guerrilla tactics." -- cod2019_grips_merc.description
 
-L["cod2019_grips_none.printname"] = "Alternativ Hållande" -- UO
+L["cod2019_grips_none.printname"] = "Alternativt Hållande" -- UO
 L["cod2019_grips_none.compactname"] = "Alt. Håll." -- UO
 L["cod2019_grips_none.description"] = "Alternativ hållningsstil." -- UO
+
+L["cod2019_grips_none2.printname"] = "Alternativt Hållande II" -- UO
+L["cod2019_grips_none2.compactname"] = "Alt. Håll. II" -- UO
 
 L["cod2019_grips_alt_cclamp.printname"] = "C-Clamp-Hållande" -- UO
 L["cod2019_grips_alt_cclamp.compactname"] = "C-Clamp" -- UO

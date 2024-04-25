@@ -318,6 +318,9 @@ L["mw19_category_view"] = "View" -- UO
 -- L["cod2019_grips_none.compactname"] = "Alt. Hold" -- UO
 -- L["cod2019_grips_none.description"] = "Alternative holding style." -- UO
 
+-- L["cod2019_grips_none2.printname"] = "Alternative Holding II" -- UO
+-- L["cod2019_grips_none2.compactname"] = "Alt. Hold II" -- UO
+
 -- L["cod2019_grips_alt_cclamp.printname"] = "C-Clamp Holding" -- UO
 -- L["cod2019_grips_alt_cclamp.compactname"] = "C-Clamp" -- UO
 

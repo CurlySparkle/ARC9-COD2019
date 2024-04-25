@@ -165,3 +165,26 @@ ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 180)
 
 ARC9.LoadAttachment(ATT, "cod2019_striker45_noclamp")
+
+/////////////////////////// -- cod2019_grips_none2
+ATT = {}
+
+ATT.PrintName = "Alt Hold II"
+ATT.CompactName = "Alt Hold II"
+ATT.Description = "Changes the holding style of the weapon."
+
+ATT.Icon = Material("entities/attachs/cod2019_grip_none.png", "mips smooth")
+
+ATT.Model = "models/weapons/cod2019/attachs/weapons/origin12/grip_none_origin12_alt.mdl"
+
+ATT.SortOrder = 0
+ATT.Category = "cod2019_origin12_grip"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
+
+ATT.LHIK_Priority = 5
+ATT.LHIK = true
+
+ATT.ModelOffset = Vector(-4, -0.1, 2)
+ATT.ModelAngleOffset = Angle(0, 0, 180)
+
+ARC9.LoadAttachment(ATT, "cod2019_grips_none2")

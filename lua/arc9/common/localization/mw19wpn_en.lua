@@ -327,6 +327,10 @@ L["cod2019_grips_none.printname"] = "Alternative Holding" -- UO
 L["cod2019_grips_none.compactname"] = "Alt. Hold" -- UO
 L["cod2019_grips_none.description"] = "Alternative holding style." -- UO
 
+L["cod2019_grips_none2.printname"] = "Alternative Holding II" -- UO
+L["cod2019_grips_none2.compactname"] = "Alt. Hold II" -- UO
+L["cod2019_grips_none2.description"] = ARC9:GetPhrase("cod2019_grips_none.description") or "Alternative holding style." -- UO
+
 L["cod2019_grips_alt_cclamp.printname"] = "C-Clamp Holding" -- UO
 L["cod2019_grips_alt_cclamp.compactname"] = "C-Clamp" -- UO
 L["cod2019_grips_alt_cclamp.description"] = ARC9:GetPhrase("cod2019_grips_none.description")
