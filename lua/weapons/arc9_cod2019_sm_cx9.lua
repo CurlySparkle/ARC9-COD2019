@@ -356,16 +356,19 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.85,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.55,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.8, lhik = 1, rhik = 1 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0.0},
@@ -377,7 +380,9 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.675,
 		FireASAP = true,
 		DropMagAt = 1,
         IKTimeLine = {
@@ -399,13 +404,15 @@ SWEP.Animations = {
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.85,
+		PeekProgress = 0.8,
+		RefillProgress = 0.6,
 		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.5, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.75, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sm_secho_reload_fast_up.ogg", t = 0.0},
@@ -418,6 +425,8 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.825,
+		RefillProgress = 0.625,
 		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
@@ -438,14 +447,15 @@ SWEP.Animations = {
     },
     ["reload_drum"] = {
         Source = "reload_drum",
-		MinProgress = 0.85,
+		MinProgress = 0.9,
+		PeekProgress = 0.825,
+		RefillProgress = 0.7,
 		FireASAP = true,
-		DropMagAt = 0.75,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.8, lhik = 1, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sm_secho_reload_fast_drum_up.ogg", t = 0/30},
@@ -459,6 +469,8 @@ SWEP.Animations = {
     ["reload_drum_empty"] = {
         Source = "reload_empty_drum",
 		MinProgress = 0.9,
+		PeekProgress = 0.825,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		DropMagAt = 0.65,
         IKTimeLine = {
@@ -479,7 +491,9 @@ SWEP.Animations = {
     },
     ["reload_drum_fast"] = {
         Source = "reload_fast_drum",
-		MinProgress = 0.85,
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.65,
 		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
@@ -499,6 +513,8 @@ SWEP.Animations = {
     ["reload_drum_fast_empty"] = {
         Source = "reload_empty_drum_fast",
 		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.675,
 		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
@@ -592,14 +608,14 @@ SWEP.Animations = {
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.15, lhik = 0, rhik = 0 },
-            { t = 0.3, lhik = 0, rhik = 0 },
-            { t = 0.75, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sm_secho_inspect_magout.ogg", t = 0.033},
 			{s = path .. "wfoly_sm_secho_inspect_magin.ogg", t = 1.967},
-			{s = path .. "wfoly_sm_secho_inspect_end.ogg", t = 3.5},
+			{s = path .. "wfoly_sm_secho_inspect_end.ogg", t = 3.4},
         },
     },
     ["inspect_drum"] = {
@@ -608,14 +624,14 @@ SWEP.Animations = {
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.15, lhik = 0, rhik = 0 },
-            { t = 0.4, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumout.ogg", t = 12/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumhit.ogg", t = 64/30},
-			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumin.ogg", t = 67/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumhit.ogg", t = 67/30},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumin.ogg", t = 72/30},
 			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_end.ogg", t = 137/30},
         },
     },

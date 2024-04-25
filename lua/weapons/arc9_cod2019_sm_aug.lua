@@ -341,17 +341,20 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.825,
+		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
+            { t = 0.825, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_raise.ogg", t = 0.067},
@@ -366,14 +369,16 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.825,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 1 },
+            { t = 0.875, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0.067},
@@ -389,7 +394,9 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.65,
 		FireASAP = true,
 		DropMagAt = 0.5,
 		MagSwapTime = 3.5,
@@ -409,7 +416,9 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.7,
 		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
@@ -429,16 +438,16 @@ SWEP.Animations = {
         },
     },
     ["reload_armag"] = {
-        Source = "reload_ar",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.825,
+		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.3,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
+            { t = 0.825, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_waffle_raise.ogg", t = 0/30},
@@ -453,14 +462,16 @@ SWEP.Animations = {
     },
     ["reload_armag_empty"] = {
         Source = "reload_ar_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.825,
+		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 0.3,
+		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 1 },
+            { t = 0.875, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0/30},
@@ -477,15 +488,17 @@ SWEP.Animations = {
     },
     ["reload_armag_fast"] = {
         Source = "reload_armag_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.65,
 		FireASAP = true,
-		MagSwapTime = 3.5,
 		DropMagAt = 0.5,
+		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.6, lhik = 0, rhik = 1 },
-            { t = 0.9, lhik = 1, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_raise.ogg", t = 0/30},
@@ -499,14 +512,16 @@ SWEP.Animations = {
     },
     ["reload_armag_fast_empty"] = {
         Source = "reload_armag_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.7,
 		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.6, lhik = 0, rhik = 1 },
-            { t = 1, lhik = 1, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.95, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_mvmnt.ogg", t = 0/30},
@@ -520,14 +535,16 @@ SWEP.Animations = {
     },
     ["reload_drummag"] = {
         Source = "reload_drummag",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.8,
+		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
+            { t = 0.825, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_waffle_raise.ogg", t = 0/30},
@@ -542,14 +559,16 @@ SWEP.Animations = {
     },
     ["reload_drummag_empty"] = {
         Source = "reload_drummag_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.8,
+		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 1.2,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 1, lhik = 1, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 1 },
+            { t = 0.875, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0/30},
@@ -566,14 +585,16 @@ SWEP.Animations = {
     },
     ["reload_drummag_fast"] = {
         Source = "reload_drummag_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.65,
 		FireASAP = true,
-		MagSwapTime = 3.5,
 		DropMagAt = 0.5,
+		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -588,7 +609,9 @@ SWEP.Animations = {
     },
     ["reload_drummag_fast_empty"] = {
         Source = "reload_drummag_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.675,
 		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
@@ -625,7 +648,7 @@ SWEP.Animations = {
         Source = "draw_short",
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
-            { t = 1, lhik = 1, rhik = 1 },
+            { t = 0.75, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sm_augolf_raise_01.ogg", t = 0/30},

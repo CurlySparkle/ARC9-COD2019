@@ -346,10 +346,13 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.85,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
@@ -369,7 +372,9 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.775,
 		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
@@ -390,7 +395,9 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.85,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.7,
@@ -411,7 +418,9 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.7,
@@ -433,7 +442,9 @@ SWEP.Animations = {
     },
     ["reload_xmag"] = {
         Source = "reload_xmag",
-		MinProgress = 0.85,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
@@ -453,7 +464,9 @@ SWEP.Animations = {
     },
     ["reload_xmag_empty"] = {
         Source = "reload_xmag_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.775,
 		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
@@ -474,7 +487,9 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
-		MinProgress = 0.85,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.7,
@@ -495,7 +510,9 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.7,
