@@ -141,8 +141,8 @@ SWEP.VisualRecoilPunch = 2.6
 SWEP.VisualRecoilUp = 0.2
 
 SWEP.VisualRecoilMultSights = 0.4
-SWEP.VisualRecoilPunchSights = 15
-SWEP.VisualRecoilRollSights = 10
+SWEP.VisualRecoilPunchSights = 4
+SWEP.VisualRecoilRollSights = 15
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
@@ -182,7 +182,7 @@ SWEP.RecoilModifierCapSights = 0
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+SWEP.SprintToFireTime = 0.3 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
 
@@ -913,7 +913,7 @@ SWEP.AttachmentElements = {
         },
     },
 	["grip_angled"] = {
-    AttPosMods = { [5] = { Pos = Vector(-2.2, 0, 0), } }	
+    AttPosMods = { [6] = { Pos = Vector(-2.2, 0, 0), } }	
 	}
 }
 
@@ -1074,7 +1074,7 @@ SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 30
 SWEP.CodStubbyGripPoseParam = 20
-SWEP.CodStubbyTallGripPoseParam = 22
+SWEP.CodStubbyTallGripPoseParam = 26
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then

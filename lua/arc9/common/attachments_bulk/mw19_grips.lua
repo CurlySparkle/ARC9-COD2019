@@ -184,7 +184,7 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.LHIK_Priority = 5
 ATT.LHIK = true
 
-ATT.ModelOffset = Vector(-4, -0.1, 2)
+ATT.ModelOffset = Vector(-4, -0.1, 1.5)
 ATT.ModelAngleOffset = Angle(0, 0, 180)
 
 ARC9.LoadAttachment(ATT, "cod2019_grips_none2")
