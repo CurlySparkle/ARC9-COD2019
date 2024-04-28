@@ -171,7 +171,7 @@ SWEP.SpreadAddHipFire = SWEP.Spread * 0
 SWEP.SpreadAddMove = SWEP.Spread * 1
 SWEP.SpreadAddMidAir = SWEP.Spread * 0.5
 SWEP.SpreadAddCrouch = -SWEP.Spread * 0.1
-SWEP.SpreadAddSights = -SWEP.Spread * 2.75
+SWEP.SpreadAddSights = -SWEP.Spread * 1.25
 
 SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = SWEP.RecoilMax
@@ -197,8 +197,8 @@ SWEP.TracerColor = Color(255, 255, 200) -- Color of tracers. Only works if trace
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-    Pos = Vector(-2.45, -3, 0.9),
-    Ang = Angle(0, 0, -3),
+    Pos = Vector(-2.45, -1, 0.9),
+    Ang = Angle(0, 0.2, -3),
     Magnification = 1.15,
     ViewModelFOV = 56,
 	CrosshairInSights = false
@@ -236,12 +236,12 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1, 2, -3)
+SWEP.PeekPos = Vector(-1, 0, -3)
 SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 SWEP.PeekMaxFOV = 54
 
-SWEP.PeekPosReloading = Vector(0, 2, -1)
+SWEP.PeekPosReloading = Vector(0, 1, -1)
 SWEP.PeekAngReloading = Angle(-0.3, 0, -5)
 
 -------------------------- HoldTypes
