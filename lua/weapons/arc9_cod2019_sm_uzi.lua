@@ -341,15 +341,19 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 1 },
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -364,12 +368,15 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.725,
+		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.15, lhik = 0, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 1 },
             { t = 0.95, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -385,14 +392,17 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		--DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
             { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 0.8, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_fast_start.ogg", t = 0.0},
@@ -405,7 +415,10 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.725,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.6,
         IKTimeLine = {
@@ -427,12 +440,15 @@ SWEP.Animations = {
     },
     ["reload_xmag"] = {
         Source = "reload_xmag",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 1 },
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -446,12 +462,15 @@ SWEP.Animations = {
     },
     ["reload_xmag_empty"] = {
         Source = "reload_xmag_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.725,
+		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.15, lhik = 0, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 1 },
             { t = 0.95, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -467,14 +486,17 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		--DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
             { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 0.8, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_start.ogg", t = 0/30},
@@ -486,7 +508,10 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.725,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.6,
         IKTimeLine = {
@@ -510,9 +535,6 @@ SWEP.Animations = {
         Source = "draw",
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.5, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_plr_sm_uzulu_raise_first_start.ogg", t = 0.0},
@@ -524,10 +546,10 @@ SWEP.Animations = {
     ["ready_nostock"] = {
         Source = "draw_nostock",
         IKTimeLine = {
-            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0, lhik = 0, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.5, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 1, rhik = 1 },
+            { t = 0.55, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_plr_sm_uzulu_raise_first_start.ogg", t = 0.033},
@@ -593,8 +615,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_plr_sm_uzulu_inspect_01.ogg", t = 0.1},

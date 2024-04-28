@@ -365,16 +365,19 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -385,20 +388,22 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_papa90_reload_magin_v2_01.ogg", t = 1.51},
 			{s = path .. "wfoly_sm_papa90_reload_magin_v2_02.ogg", t = 1.71},
             {s = path .. "wfoly_sm_papa90_reload_arm_maghit.ogg", t = 1.967},
-			{s = path .. "wfoly_sm_papa90_reload_hitmag_01.ogg", t = 2.1},
+			{s = path .. "wfoly_sm_papa90_reload_hitmag_01.ogg", t = 2.05},
 			{s = path .. "wfoly_sm_papa90_reload_end.ogg", t = 2.533},
         },
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		RefillProgress = 0.8,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sm_papa90_reload_empty_gunrattle.ogg", t = 0.133},
@@ -415,14 +420,16 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sm_papa90_reload_fast_cloth02.ogg", t = 0.067},
@@ -437,14 +444,16 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		RefillProgress = 0.75,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
             { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sm_papa90_reload_empty_fast_start.ogg", t = 0.067},
@@ -530,8 +539,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 1 },
+            { t = 0.95, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sm_papa90_inspect_01.ogg", t = 0.067},

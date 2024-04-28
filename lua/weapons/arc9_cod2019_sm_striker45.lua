@@ -344,6 +344,7 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["dryfire"] = {
         Source = "dryfire",
@@ -353,7 +354,10 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.625,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
@@ -370,13 +374,16 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
             { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_raise.ogg", t = 0.033},
@@ -390,13 +397,16 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.15, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
             { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -409,13 +419,16 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.725,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -429,7 +442,10 @@ SWEP.Animations = {
     },
     ["reload_xmag"] = {
         Source = "reload_xmag",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.625,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
@@ -447,13 +463,16 @@ SWEP.Animations = {
     },
     ["reload_xmag_empty"] = {
         Source = "reload_xmag_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
             { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_raise.ogg", t = 0/30},
@@ -465,13 +484,16 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
-            { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.15, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
             { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -484,13 +506,16 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.725,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -583,8 +608,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sm_smgolf45_inspect_01.ogg", t = 0.033},
@@ -885,7 +910,7 @@ SWEP.Attachments = {
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
 		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
-        Category = "cod2019_pistolgrip",
+        Category = "cod2019_striker45_pistolgrip",
         Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
 		ExcludeElements = {"stock_light"},

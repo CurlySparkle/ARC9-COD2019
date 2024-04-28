@@ -347,10 +347,14 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -370,7 +374,10 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		DropMagAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -390,7 +397,10 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.5,
         IKTimeLine = {
@@ -409,7 +419,10 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -428,7 +441,10 @@ SWEP.Animations = {
     },
     ["reload_mmag"] = {
         Source = "reload_xmag",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -448,7 +464,10 @@ SWEP.Animations = {
     },
     ["reload_mmag_empty"] = {
         Source = "reload_xmag_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		DropMagAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -469,7 +488,10 @@ SWEP.Animations = {
     },
     ["reload_mmag_fast"] = {
         Source = "reload_xmag_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.675,
+		FireASAP = true,
 		MagSwapTime = 1.5,
 		DropMagAt = 0.5,
         IKTimeLine = {
@@ -489,7 +511,10 @@ SWEP.Animations = {
     },
     ["reload_mmag_fast_empty"] = {
         Source = "reload_xmag_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -510,7 +535,10 @@ SWEP.Animations = {
     },
     ["reload_xmag"] = {
         Source = "reload_xmag2",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		MagSwapTime = 3.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -530,7 +558,10 @@ SWEP.Animations = {
     },
     ["reload_xmag_empty"] = {
         Source = "reload_xmag2_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		DropMagAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -551,9 +582,12 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast"] = {
         Source = "reload_xmag2_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.675,
+		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.5,
+		DropMagAt = 0.475,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -571,8 +605,11 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag2_fast_empty",
-		MinProgress = 0.9,
-		DropMagAt = 0.7,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.7,
+		FireASAP = true,
+		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -672,8 +709,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sm_mpapa7_inspect_01.ogg", t = 0.067},
