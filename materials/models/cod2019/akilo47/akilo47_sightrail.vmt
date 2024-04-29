@@ -22,9 +22,6 @@
     "$envmap" "env_cubemap"
     "$envmaptint" "[0.141 0.133 0.118]"                 
 
-    "$detailblendmode" "4"
-    "$detailblendfactor" "0.7"
-
     //remove this if not using MWB
     "Proxies"
     {
@@ -34,12 +31,5 @@
             "max" "1"
             "color" "[0.141 0.133 0.118]"
         }
-	   "CustomCamo" 
-        {
-		  "camoTexture" $detail
-	       "camoScale" $detailscale
-            "blend" $detailblendfactor
-            "color" "[0.8 0.8 0.8]"
-	   }
     }
 }

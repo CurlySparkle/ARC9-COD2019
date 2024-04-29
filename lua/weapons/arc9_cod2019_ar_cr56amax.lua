@@ -864,7 +864,7 @@ SWEP.Attachments = {
         Pos = Vector(-3.5, 0, 0),
         Ang = Angle(0, 0, 180),
 		InstalledElements = {"rail_grip"},
-		MergeSlots = {20}, -- Grenade Launcher(s)
+		MergeSlots = {19}, -- Grenade Launcher(s)
     },
     { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
@@ -941,22 +941,15 @@ SWEP.Attachments = {
         Pos = Vector(-1, 0, 3),
     },
     { -- 17
-        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/rif_cr56amax_decal_d.mdl",
-        Category = "stickers",
-        Bone = "tag_cosmetic",
-        Pos = Vector(-3, 0, 3),
-    },
-    { -- 18
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
         CosmeticOnly = true,
         Category = {"charm"},
         Bone = "tag_cosmetic",
-        Pos = Vector(0.5, 0, 0),
+        Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(-5.5, 0, 3),
-		Scale = 1.2,
+		Scale = 1,
     },
-    { -- 19
+    { -- 18
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
         Category = {"killcounter","killcounter2"},
         Bone = "tag_cosmetic",
@@ -964,7 +957,7 @@ SWEP.Attachments = {
 		Icon_Offset = Vector(-7, 0, 4),
 		CosmeticOnly = true,
     },
-    { -- 20
+    { -- 19
         PrintName = "GL",
         Category = {"cod2019_m203"},
         Bone = "tag_attachments",

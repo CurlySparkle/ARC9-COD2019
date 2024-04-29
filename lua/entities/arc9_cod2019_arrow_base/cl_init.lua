@@ -10,7 +10,7 @@ function ENT:DrawTranslucent(flags)
 		self:DrawModel()
 
 		if (!self.bTracerOn) then
-			ParticleEffectAttach("arrow_trail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
+			ParticleEffectAttach("mw2019_arrow_trail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
 			self.bTracerOn = true
 		end
 	end

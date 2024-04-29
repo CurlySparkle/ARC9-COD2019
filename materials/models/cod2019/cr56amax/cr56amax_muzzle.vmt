@@ -1,8 +1,8 @@
 "VertexLitGeneric"
 {
-    "$basetexture" "viper\mw\weapons\galima\cr56amax_muzzle_rgb"
-    "$bumpmap" "viper\mw\weapons\galima\cr56amax_muzzle_n"
-    "$phongexponenttexture" "viper\mw\weapons\galima\cr56amax_muzzle_e"
+    "$basetexture" "viper\mw\weapons\cr56amax\cr56amax_muzzle_rgb"
+    "$bumpmap" "viper\mw\weapons\cr56amax\cr56amax_muzzle_n"
+    "$phongexponenttexture" "viper\mw\weapons\cr56amax\cr56amax_muzzle_e"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
