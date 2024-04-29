@@ -151,7 +151,7 @@ SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being
 
 -------------------------- AIM ASSIST
 
-SWEP.NoAimAssist = true
+-- SWEP.NoAimAssist = true
 
 -------------------------- MELEE
 

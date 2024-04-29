@@ -155,7 +155,7 @@ SWEP.VisualRecoilSpringMagnitude = 1
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.1
+SWEP.Spread = 0.05
 
 SWEP.SpreadAddRecoil = 0.05
 
@@ -181,7 +181,7 @@ SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being
 
 -------------------------- AIM ASSIST
 
-SWEP.NoAimAssist = true
+-- SWEP.NoAimAssist = true
 
 -------------------------- MELEE
 

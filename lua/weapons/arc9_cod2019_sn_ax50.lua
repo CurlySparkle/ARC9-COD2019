@@ -118,9 +118,8 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 0 -- How much recoil dissipates per second.
-SWEP.RecoilDissipationRateSights = 0
-SWEP.RecoilResetTime = 1 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilDissipationRate = 7.5 -- How much recoil dissipates per second.
+SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 1 -- Multiplier for automatic recoil control.
 --SWEP.RecoilAutoControlSights = 0 -- Multiplier for automatic recoil control.
@@ -131,6 +130,9 @@ SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 1
 SWEP.RecoilMultSights = 1
+
+SWEP.RecoilPerShot = 1
+SWEP.RecoilMax = 1
 
 -------------------------- VISUAL RECOIL
 
@@ -157,20 +159,29 @@ end
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.002
+SWEP.Spread = 0.1
 
-SWEP.SpreadAddRecoil = 0.0002 -- Applied per unit of recoil.
+SWEP.SpreadAddRecoil = 0.05
 
-SWEP.SpreadMultMove = 2.5
---SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddHipFire = 0.05
-SWEP.SpreadAddCrouch = -0.01
-SWEP.SpreadAddSights = -0.5
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadAddMove = 0.03
+SWEP.SpreadAddMidAir = 0.045
+SWEP.SpreadAddCrouch = -0.03
+SWEP.SpreadAddSights = -(SWEP.Spread)
+
+SWEP.SpreadMultRecoil = 1.1
+SWEP.RecoilModifierCap = 3
+SWEP.RecoilModifierCapMove = 0
+SWEP.RecoilModifierCapSights = 0.05
 
 -------------------------- HANDLING
 
 SWEP.AimDownSightsTime = 0.3 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
+
+-------------------------- AIM ASSIST
+
+SWEP.NoAimAssist = true
 
 -------------------------- MELEE
 
@@ -224,6 +235,14 @@ SWEP.CustomizeRotateAnchor = Vector(20, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
+
+SWEP.PeekPos = Vector(2.5, 4, -1)
+SWEP.PeekAng = Angle(-0.3, 0, -10)
+
+SWEP.PeekMaxFOV = 54
+
+SWEP.PeekPosReloading = Vector(4, 3, 0)
+SWEP.PeekAngReloading = Angle(-0.3, 0, 10)
 
 -------------------------- HoldTypes
 
@@ -350,12 +369,15 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.725,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.725, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_alpha50_reload_raise.ogg", t = 0.167},
@@ -369,15 +391,18 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.975,
+		PeekProgress = 0.95,
+		RefillProgress = 0.9,
+		FireASAP = true,
 		EjectAt = 0.35,
 		DropMagAt = 1.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
-            { t = 0.23, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.9, lhik = 1, rhik = 1 },
+            { t = 0.275, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = "COD2019.AX50.Rechamber", t = 0.2},
@@ -393,13 +418,16 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.75, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.625, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_alpha50_reload_fast_mvmnt.ogg", t = 0.133},
@@ -411,18 +439,21 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.975,
+		PeekProgress = 0.925,
+		RefillProgress = 0.85,
+		FireASAP = true,
 		EjectAt = 0.35,
 		DropMagAt = 1.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
-            { t = 0.23, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.9, lhik = 1, rhik = 1 },
+            { t = 0.3, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.725, lhik = 1, rhik = 1 },
         },
         EventTable = {
-            {s = "COD2019.AX50.Rechamber", t = 0.167},
+            {s = "COD2019.AX50.Rechamber", t = 0.05},
             {s = path .. "wfoly_sn_alpha50_reload_empty_fast_raise.ogg", t = 0.233},
             {s = path .. "wfoly_sn_alpha50_reload_empty_fast_magout_01.ogg", v = 2.0, t = 0.75},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_fast_maggrab.ogg", t = 1.0},
@@ -434,12 +465,15 @@ SWEP.Animations = {
     },
     ["reload_xmag"] = {
         Source = "reload_xmag",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.725,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.725, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_alpha50_reload_raise.ogg", t = 0/30},
@@ -453,15 +487,18 @@ SWEP.Animations = {
     },
     ["reload_xmag_empty"] = {
         Source = "reload_empty_xmag",
-		MinProgress = 0.9,
+		MinProgress = 0.975,
+		PeekProgress = 0.95,
+		RefillProgress = 0.9,
+		FireASAP = true,
 		EjectAt = 0.35,
 		DropMagAt = 1.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
-            { t = 0.23, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.9, lhik = 1, rhik = 1 },
+            { t = 0.275, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_alpha50_reload_empty_boltopen_01.ogg", t = 0/30},
@@ -477,13 +514,16 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
+		RefillProgress = 0.65,
+		FireASAP = true,
 		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.75, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.625, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_alpha50_reload_raise.ogg", t = 0/30},
@@ -497,15 +537,18 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_empty_xmag_fast",
-		MinProgress = 0.9,
+		MinProgress = 0.975,
+		PeekProgress = 0.925,
+		RefillProgress = 0.85,
+		FireASAP = true,
 		EjectAt = 0.35,
 		DropMagAt = 1.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
-            { t = 0.23, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.9, lhik = 1, rhik = 1 },
+            { t = 0.3, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.725, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sn_alpha50_reload_empty_boltopen_01.ogg", t = 0/30},
@@ -560,23 +603,23 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2.5,
+		Time = 1.25,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 2.5,
+		Time = 1.25,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2.7,
+		Time = 1,
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.7,
+		Time = 1,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -585,8 +628,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.3, lhik = 0, rhik = 0 },
-            { t = 0.55, lhik = 1, rhik = 1 },
+            { t = 0.35, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_alpha50_inspect_01.ogg", t = 0.033},
@@ -928,5 +971,35 @@ SWEP.GripPoseParam2 = 0.5
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
+
+-------------------------- DAMAGE PROFILE
+SWEP.DamageMax = 107 -- Damage done at point blank range
+SWEP.DamageMin = 99 -- Damage done at maximum range
+
+SWEP.RangeMin = 87 / ARC9.HUToM
+SWEP.RangeMax = 107 / ARC9.HUToM
+
+SWEP.BodyDamageMults = {
+    [HITGROUP_HEAD] = 3,
+    [HITGROUP_CHEST] = 1.05,
+    [HITGROUP_STOMACH] = 1,
+    [HITGROUP_LEFTARM] = 0.85,
+    [HITGROUP_RIGHTARM] = 0.85,
+    [HITGROUP_LEFTLEG] = 0.85,
+    [HITGROUP_RIGHTLEG] = 0.85,
+}
+
+-------------------------- PHYS BULLET BALLISTICS
+
+SWEP.PhysBulletMuzzleVelocity = 760 / ARC9.HUToM
+
+-------------------------- FIREMODES
+
+-- SWEP.RPM = 600
+
+-------------------------- HANDLING
+
+SWEP.AimDownSightsTime = 0.6 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.
 
 end

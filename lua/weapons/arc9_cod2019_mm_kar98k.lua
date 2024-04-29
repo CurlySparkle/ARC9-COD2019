@@ -117,7 +117,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 SWEP.RecoilRandomUp = 0.3
 SWEP.RecoilRandomSide = 0.3
 
-SWEP.RecoilDissipationRate = 2.5 -- How much recoil dissipates per second.
+SWEP.RecoilDissipationRate = 5 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl = 5 -- Multiplier for automatic recoil control.
@@ -128,6 +128,9 @@ SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.8
+
+SWEP.RecoilPerShot = 2
+SWEP.RecoilMax = 2
 
 -------------------------- VISUAL RECOIL
 
@@ -141,7 +144,7 @@ SWEP.VisualRecoilPunchSights = 5
 
 -------------------------- SPREAD
 
-SWEP.Spread = 0.1
+SWEP.Spread = 0.05
 
 SWEP.SpreadAddRecoil = 0.05
 
@@ -154,7 +157,7 @@ SWEP.SpreadAddSights = -(SWEP.Spread)
 SWEP.SpreadMultRecoil = 1.1
 SWEP.RecoilModifierCap = 3
 SWEP.RecoilModifierCapMove = 0
-SWEP.RecoilModifierCapSights = 0.05
+SWEP.RecoilModifierCapSights = 0.75
 
 -------------------------- HANDLING
 
@@ -167,7 +170,7 @@ SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being
 
 -------------------------- AIM ASSIST
 
-SWEP.NoAimAssist = true
+-- SWEP.NoAimAssist = true
 
 -------------------------- MELEE
 
