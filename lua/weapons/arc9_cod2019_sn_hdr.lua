@@ -231,8 +231,13 @@ SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
 
-SWEP.PeekPos = Vector(-0.2, 1.5, -5)
-SWEP.PeekAng = Angle(0, 0.4, -45)
+SWEP.PeekPos = Vector(2.5, 4, -1)
+SWEP.PeekAng = Angle(-0.3, 0, -10)
+
+SWEP.PeekMaxFOV = 54
+
+SWEP.PeekPosReloading = Vector(4, 3, 0)
+SWEP.PeekAngReloading = Angle(-0.3, 0, 10)
 
 -------------------------- HoldTypes
 
@@ -360,14 +365,15 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.85,
+		MinProgress = 0.925,
+		PeekProgress = 0.88,
+		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 1.55,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_start.ogg", t = 0.0},
@@ -381,15 +387,18 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.95,
+		PeekProgress = 0.925,
+		RefillProgress = 0.875,
 		FireASAP = true,
 		EjectAt = 0.35,
 		DropMagAt = 2.2,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.4, lhik = 0, rhik = 0 },
-            { t = 0.5, lhik = 0, rhik = 0 },
-            { t = 1.2, lhik = 1, rhik = 1 },
+            { t = 0.175, lhik = 1, rhik = 0 },
+            { t = 0.3, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_plr_sn_hdromeo_reload_empty_start.ogg", t = 0.0},
@@ -407,14 +416,16 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.85,
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		DropMagAt = 1.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_start.ogg", t = 0.0},
@@ -429,15 +440,18 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.9,
+		MinProgress = 0.95,
+		PeekProgress = 0.925,
+		RefillProgress = 0.875,
 		FireASAP = true,
 		EjectAt = 0.35,
 		DropMagAt = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.4, lhik = 0, rhik = 0 },
-            { t = 0.5, lhik = 0, rhik = 0 },
-            { t = 1.2, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.35, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = "COD2019.HDR.Rechamber", v = 0.4, t = 0.1},
@@ -456,14 +470,15 @@ SWEP.Animations = {
     },
     ["reload_xmag"] = {
         Source = "reload_xmag",
-		MinProgress = 0.85,
+		MinProgress = 0.925,
+		PeekProgress = 0.88,
+		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 1.55,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_start.ogg", t = 0.0},
@@ -477,15 +492,18 @@ SWEP.Animations = {
     },
     ["reload_xmag_empty"] = {
         Source = "reload_empty_xmag",
-		MinProgress = 0.9,
+		MinProgress = 0.95,
+		PeekProgress = 0.925,
+		RefillProgress = 0.875,
 		FireASAP = true,
 		EjectAt = 0.35,
 		DropMagAt = 2.2,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.4, lhik = 0, rhik = 0 },
-            { t = 0.5, lhik = 0, rhik = 0 },
-            { t = 1.2, lhik = 1, rhik = 1 },
+            { t = 0.175, lhik = 1, rhik = 0 },
+            { t = 0.3, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_plr_sn_hdromeo_reload_empty_start.ogg", t = 0.0},
@@ -503,14 +521,16 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
-		MinProgress = 0.85,
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		DropMagAt = 1.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_start.ogg", t = 0.0},
@@ -525,15 +545,18 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_empty_xmag_fast",
-		MinProgress = 0.9,
+		MinProgress = 0.95,
+		PeekProgress = 0.925,
+		RefillProgress = 0.875,
 		FireASAP = true,
 		EjectAt = 0.35,
 		DropMagAt = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.4, lhik = 0, rhik = 0 },
-            { t = 0.5, lhik = 0, rhik = 0 },
-            { t = 1.2, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.35, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = "COD2019.HDR.Rechamber", v = 0.4, t = 0.1},

@@ -125,8 +125,8 @@ SWEP.RecoilMultMove = 1.25
 SWEP.RecoilAutoControlMultHipFire = 0.5
 SWEP.RecoilMultSights = 0.65
 
-SWEP.RecoilPerShot = 1
-SWEP.RecoilMax = 3
+SWEP.RecoilPerShot = 0.5
+SWEP.RecoilMax = 1.5
 
 -------------------------- VISUAL RECOIL
 
@@ -239,6 +239,9 @@ SWEP.PeekAng = Angle(0, 0.4, -45)
 
 SWEP.PeekMaxFOV = 64
 
+SWEP.PeekPosReloading = Vector(0, 2, -1.75)
+SWEP.PeekAngReloading = Angle(-0.3, 0, -5)
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "ar2"
@@ -341,12 +344,14 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.6,
-		DumpClip = true,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.675,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.675, lhik = 0, rhik = 0 },
             { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -361,12 +366,16 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.775,
+		FireASAP = true,
+		DropMagAt = 1.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.55, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_delta_reload_empty_raise.ogg", t = 0.3},
@@ -380,13 +389,16 @@ SWEP.Animations = {
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.6,
+		MinProgress = 0.975,
+		PeekProgress = 0.925,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		DropMagAt = 1.3,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.175, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.9, lhik = 1, rhik = 1 },
+            { t = 0.925, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_delta_reload_fast_raise.ogg", t = 0.15},
@@ -399,7 +411,10 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.6,
+		MinProgress = 0.975,
+		PeekProgress = 0.925,
+		RefillProgress = 0.8,
+		FireASAP = true,
 		DropMagAt = 1.3,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -413,18 +428,20 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_delta_reload_empty_fast_magout_01.ogg", t = 0.84},
 			{s = path .. "wfoly_sn_delta_reload_empty_fast_magin_v2_01.ogg", t = 1.2},
 			{s = path .. "wfoly_sn_delta_reload_empty_fast_magin_v2_02.ogg", t = 1.5},
-            {s = path .. "wfoly_sn_delta_reload_empty_fast_charge_01.ogg", t = 1.95},
+            {s = path .. "wfoly_sn_delta_reload_empty_fast_charge_01.ogg", t = 1.875},
             {s = path .. "wfoly_sn_delta_reload_empty_fast_end.ogg", t = 2.15},
         },
     },
     ["reload_xmag"] = {
         Source = "reload_xmag",
-		MinProgress = 0.6,
-		DumpClip = true,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.675,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.675, lhik = 0, rhik = 0 },
             { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -439,12 +456,16 @@ SWEP.Animations = {
     },
     ["reload_xmag_empty"] = {
         Source = "reload_xmag_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 1.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.525, lhik = 0, rhik = 0 },
+            { t = 0.575, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_delta_reload_empty_raise.ogg", t = 0/30},
@@ -458,13 +479,16 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
-		MinProgress = 0.6,
+		MinProgress = 0.975,
+		PeekProgress = 0.925,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		DropMagAt = 1.3,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.175, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.9, lhik = 1, rhik = 1 },
+            { t = 0.925, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_delta_reload_raise.ogg", t = 0/30},
@@ -479,7 +503,10 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
-		MinProgress = 0.6,
+		MinProgress = 0.975,
+		PeekProgress = 0.925,
+		RefillProgress = 0.8,
+		FireASAP = true,
 		DropMagAt = 1.3,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -495,7 +522,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_delta_reload_cloth_02.ogg", t = 35/30},
 			{s = path .. "wfoly_sn_delta_reload_magin_v2_01.ogg", t = 37/30},
 			{s = path .. "wfoly_sn_delta_reload_magin_v2_02.ogg", t = 45/30},
-            {s = path .. "wfoly_sn_delta_reload_empty_charge_01.ogg", t = 60/30},
+            {s = path .. "wfoly_sn_delta_reload_empty_charge_01.ogg", t = 54.5/30},
 			{s = path .. "wfoly_sn_delta_reload_end.ogg", t = 68/30},
         },
     },
@@ -583,8 +610,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.3, lhik = 0, rhik = 0 },
-            { t = 0.55, lhik = 1, rhik = 1 },
+            { t = 0.35, lhik = 0, rhik = 0 },
+            { t = 0.45, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_delta_inspect_01.ogg", t = 0.1},
@@ -729,10 +756,12 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(0.9, 0, 0.1),
     },
     ["cod2019_perks_auto"] = {
-    RPM = 700,
-    RecoilKickMult = 1.3,
-    RecoilSideMult = 1.4,
-    RecoilUpMult = 0.7
+		RPMMult = 2.5,
+		DamageMinMult = 0.5,
+		DamageMaxMult = 0.5,
+		-- RecoilKickMult = 1.3,
+		-- RecoilSideMult = 1.4,
+		-- RecoilUpMult = 0.7
     },
 }
 

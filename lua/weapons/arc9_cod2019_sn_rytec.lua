@@ -227,10 +227,13 @@ SWEP.CustomizeSnapshotPos = Vector(0, 25, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1.5, 4, -4)
-SWEP.PeekAng = Angle(-0.3, 0, -45)
+SWEP.PeekPos = Vector(2.5, 2, -1)
+SWEP.PeekAng = Angle(-0.3, 0, -10)
 
-SWEP.PeekMaxFOV = 46
+SWEP.PeekMaxFOV = 54
+
+SWEP.PeekPosReloading = Vector(4, 1, -1)
+SWEP.PeekAngReloading = Angle(-0.3, 10, 10)
 
 -------------------------- HoldTypes
 
@@ -355,13 +358,17 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload_short",
-		MinProgress = 0.8,
+		MinProgress = 0.975,
+		PeekProgress = 0.91,
+		RefillProgress = 0.7,
+		FireASAP = true,
 		DropMagAt = 2.2,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.15, lhik = 1, rhik = 0 },
+            { t = 0.25, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.825, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_xmike109_reload_up.ogg", t = 0.0},
@@ -373,35 +380,19 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_end.ogg", t = 3.567},
         },
     },
-    ["reload_fast"] = {
-        Source = "reload_fast",
-		MinProgress = 0.8,
-		DropMagAt = 1.13,
-        IKTimeLine = {
-            { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
-        },
-        EventTable = {
-            {s = path .. "wfoly_sn_xmike109_reload_fast_up.ogg", t = 0.167},
-			{s = path .. "wfoly_sn_xmike109_reload_fast_magout.ogg", t = 0.633},
-			{s = path .. "wfoly_sn_xmike109_reload_fast_arm.ogg", t = 1.4},
-			{s = path .. "wfoly_sn_xmike109_reload_fast_magin_01.ogg", t = 1.567},
-			{s = path .. "wfoly_sn_xmike109_reload_fast_magin_02.ogg", t = 1.967},
-            {s = path .. "wfoly_sn_xmike109_reload_fast_shake.ogg", t = 2.0},
-			{s = path .. "wfoly_sn_xmike109_reload_fast_end.ogg", t = 2.467},
-        },
-    },
     ["reload_empty"] = {
         Source = "reload",
-		MinProgress = 0.9,
+		MinProgress = 0.975,
+		PeekProgress = 0.925,
+		RefillProgress = 0.85,
+		FireASAP = true,
 		DropMagAt = 2,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 1, rhik = 0 },
+            { t = 0.225, lhik = 0, rhik = 0 },
+            { t = 0.575, lhik = 0, rhik = 0 },
+            { t = 0.675, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_xmike109_reload_empty_up.ogg", t = 0.033},
@@ -416,13 +407,41 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_empty_end.ogg", t = 5.1},
         },
     },
+    ["reload_fast"] = {
+        Source = "reload_fast",
+		MinProgress = 0.975,
+		PeekProgress = 0.91,
+		RefillProgress = 0.7,
+		FireASAP = true,
+		DropMagAt = 1.13,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 1, rhik = 0 },
+            { t = 0.25, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sn_xmike109_reload_fast_up.ogg", t = 0.167},
+			{s = path .. "wfoly_sn_xmike109_reload_fast_magout.ogg", t = 0.633},
+			{s = path .. "wfoly_sn_xmike109_reload_fast_arm.ogg", t = 1.4},
+			{s = path .. "wfoly_sn_xmike109_reload_fast_magin_01.ogg", t = 1.567},
+			{s = path .. "wfoly_sn_xmike109_reload_fast_magin_02.ogg", t = 1.967},
+            {s = path .. "wfoly_sn_xmike109_reload_fast_shake.ogg", t = 2.0},
+			{s = path .. "wfoly_sn_xmike109_reload_fast_end.ogg", t = 2.467},
+        },
+    },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		MinProgress = 0.8,
+		MinProgress = 0.975,
+		PeekProgress = 0.925,
+		RefillProgress = 0.85,
+		FireASAP = true,
 		DropMagAt = 1.15,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.075, lhik = 1, rhik = 0 },
+            { t = 0.175, lhik = 0, rhik = 0 },
             { t = 0.5, lhik = 0, rhik = 0 },
             { t = 0.6, lhik = 1, rhik = 1 },
         },
@@ -509,8 +528,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.3, lhik = 0, rhik = 0 },
-            { t = 0.57, lhik = 1, rhik = 1 },
+            { t = 0.325, lhik = 0, rhik = 0 },
+            { t = 0.475, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sn_xmike109_inspect_up.ogg", t = 0.1},
