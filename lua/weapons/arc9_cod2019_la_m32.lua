@@ -562,8 +562,8 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_optic_m32"},
         CorrectiveAng = Angle(0, 0, 0),
-		--Installed = "cod2019_optic_scope_m32",
-        --Integral = "cod2019_optic_scope_m32",
+		Installed = "cod2019_optic_default_m32",
+        -- Integral = "cod2019_optic_default_m32",
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),

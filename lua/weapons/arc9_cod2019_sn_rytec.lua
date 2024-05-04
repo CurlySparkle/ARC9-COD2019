@@ -220,10 +220,10 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 1.5)
-SWEP.CustomizePos = Vector(22, 35, 2)
-SWEP.CustomizeRotateAnchor = Vector(22, -2.25, -4)
-SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(0, 25, 5)
+SWEP.CustomizePos = Vector(18, 50, 3)
+SWEP.CustomizeRotateAnchor = Vector(18, -3, -4)
+SWEP.CustomizeSnapshotFOV = 65
+SWEP.CustomizeSnapshotPos = Vector(1, 40, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -707,8 +707,8 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_optic_rytec"},
         CorrectiveAng = Angle(1.5, 0.6, 0),
-		--Installed = "cod2019_optic_scope_rytec",
-        --Integral = "cod2019_optic_scope_rytec",
+		Installed = "cod2019_optic_default_rytec",
+        --Integral = "cod2019_optic_default_rytec",
 		InstalledElements = {"sights_none"},
     },
     {

@@ -231,6 +231,31 @@ L["mw19_firemode_unguided"] = "UNGUIDED" -- UO
 L["mw19_optic_stat_zoom2"] = "Zoom Level" -- Most scopes
 L["mw19_ammo_stat_ignite_chance"] = "On Hit: Chance to Ignite Target" -- UO
 
+////////////////////  Default Scopes
+L["cod2019_optic_default_svd.printname"] = "Default Scope" -- UO
+L["cod2019_optic_default_svd.compactname"] = "Default" -- UO
+L["cod2019_optic_default_svd.description"] = "Default <color=255,255,100>5.5x</color> scope for the <color=175,175,255>Dragunov</color>."
+
+L["cod2019_optic_default_hdr.printname"] = ARC9:GetPhrase("cod2019_optic_default_svd.printname") or "Default Scope" -- UO
+L["cod2019_optic_default_hdr.compactname"] = ARC9:GetPhrase("cod2019_optic_default_svd.compactname") or "Default" -- UO
+L["cod2019_optic_default_hdr.description"] = "Default <color=255,255,100>6.0x</color> scope for the <color=175,175,255>HDR</color>."
+
+L["cod2019_optic_default_ax50.printname"] = ARC9:GetPhrase("cod2019_optic_default_svd.printname") or "Default Scope" -- UO
+L["cod2019_optic_default_ax50.compactname"] = ARC9:GetPhrase("cod2019_optic_default_svd.compactname") or "Default" -- UO
+L["cod2019_optic_default_ax50.description"] = "Default <color=255,255,100>5.5x</color> scope for the <color=175,175,255>AX50</color>."
+
+L["cod2019_optic_default_rytec.printname"] = ARC9:GetPhrase("cod2019_optic_default_svd.printname") or "Default Scope" -- UO
+L["cod2019_optic_default_rytec.compactname"] = ARC9:GetPhrase("cod2019_optic_default_svd.compactname") or "Default" -- UO
+L["cod2019_optic_default_rytec.description"] = "Default <color=255,255,100>4.5x</color> scope for the <color=175,175,255>Rytec AMR</color>."
+
+L["cod2019_optic_default_strela.printname"] = ARC9:GetPhrase("cod2019_optic_default_svd.printname") or "Default Scope" -- UO
+L["cod2019_optic_default_strela.compactname"] = ARC9:GetPhrase("cod2019_optic_default_svd.compactname") or "Default" -- UO
+L["cod2019_optic_default_strela.description"] = "Default <color=255,255,100>3.0x</color> sight for the <color=175,175,255>Strela-P</color>."
+
+L["cod2019_optic_default_m32.printname"] = "MGL-32 Grenade Launcher Sight"
+L["cod2019_optic_default_m32.compactname"] = "MGL GLS"
+L["cod2019_optic_default_m32.description"] = "Default <color=255,255,100>3.5x</color> sight for the <color=175,175,255>MGL-32</color>."
+
 ////////////////////  Ammo
 L["cod2019_ammo_ap.printname"] = "Armor Piercing Rounds" -- UO
 L["cod2019_ammo_ap.compactname"] = "AP" -- UO

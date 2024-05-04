@@ -492,7 +492,7 @@ SWEP.Attachments = {
         -- Category = {"cod2019_optic","cod2019_optic_strela"},
         Category = {"cod2019_optic_strela"},
         InstalledElements = {"sights_scope"},
-		--Installed = "cod2019_optic_scope_strela",
+		Installed = "cod2019_optic_default_strela",
 		--Integral = "cod2019_optic_scope_strela",
         CorrectiveAng = Angle(7, 6.2, -90),
     },

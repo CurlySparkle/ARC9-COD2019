@@ -227,10 +227,10 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(24, 35, 2)
-SWEP.CustomizeRotateAnchor = Vector(24, -2.25, -4)
-SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
+SWEP.CustomizePos = Vector(18.5, 50, 3)
+SWEP.CustomizeRotateAnchor = Vector(18.5, -3, -4)
+SWEP.CustomizeSnapshotFOV = 65
+SWEP.CustomizeSnapshotPos = Vector(1, 40, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -841,8 +841,8 @@ SWEP.Attachments = {
         Pos = Vector(-4, 0, 3.55),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_optic_svd"},
-		--Installed = "cod2019_optic_scope_svd",
-        --Integral = "cod2019_optic_scope_svd",
+		Installed = "cod2019_optic_default_svd",
+        --Integral = "cod2019_optic_default_svd",
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight_rail"},
 		ExcludeElements = {"body_none"},

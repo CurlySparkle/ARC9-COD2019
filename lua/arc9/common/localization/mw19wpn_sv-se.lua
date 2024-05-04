@@ -231,6 +231,23 @@ L["mw19_firemode_unguided"] = "OSTYRD" -- UO
 L["mw19_optic_stat_zoom2"] = "Zoom-nivå" -- Most scopes
 L["mw19_ammo_stat_ignite_chance"] = "Vid träff: Chans att tända fyr på offret" -- UO
 
+////////////////////  Default Scopes
+L["cod2019_optic_default_svd.printname"] = "Standard Riktmedel" -- UO
+L["cod2019_optic_default_svd.compactname"] = "Standard" -- UO
+L["cod2019_optic_default_svd.description"] = "Standard <color=255,255,100>5,5x</color> riktmedel till <color=175,175,255>Dragunov</color>."
+
+L["cod2019_optic_default_hdr.description"] = "Riktmedel med <color=255,255,100>6,0x</color> zoom-nivå till <color=175,175,255>HDR</color>."
+
+L["cod2019_optic_default_ax50.description"] = "Riktmedel med <color=255,255,100>5,5x</color> zoom-nivå till <color=175,175,255>AX50</color>."
+
+L["cod2019_optic_default_rytec.description"] = "Riktmedel med <color=255,255,100>4,5x</color> zoom-nivå till <color=175,175,255>Rytec AMR</color>."
+
+L["cod2019_optic_default_strela.description"] = "Sikte med <color=255,255,100>3,0x</color> zoom-nivå till <color=175,175,255>Strela-P</color>."
+
+L["cod2019_optic_default_m32.printname"] = "MGL-32 Granattillsats Sikte"
+L["cod2019_optic_default_m32.compactname"] = "MGL GTS"
+L["cod2019_optic_default_m32.description"] = "Sikte med <color=255,255,100>3,5x</color> zoom-nivå till <color=175,175,255>MGL-32</color>."
+
 ////////////////////  Ammo
 L["cod2019_ammo_ap.printname"] = "Pansarbrytande Patroner" -- UO
 L["cod2019_ammo_ap.compactname"] = "PB" -- UO

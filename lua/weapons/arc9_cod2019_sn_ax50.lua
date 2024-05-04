@@ -230,11 +230,11 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(20, 40, 3)
-SWEP.CustomizeRotateAnchor = Vector(20, -2.25, -4)
-SWEP.CustomizeSnapshotFOV = 90
+SWEP.CustomizePos = Vector(20, 50, 3)
+SWEP.CustomizeRotateAnchor = Vector(20, -3, -4)
+SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(0, 15, 3)
+SWEP.CustomizeSnapshotPos = Vector(1, 40, 5)
 
 SWEP.PeekPos = Vector(2.5, 4, -1)
 SWEP.PeekAng = Angle(-0.3, 0, -10)
@@ -853,8 +853,8 @@ SWEP.Attachments = {
         Category = {"cod2019_optic","cod2019_optic_ax50"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight_none"},
-		--Installed = "cod2019_optic_scope_ax50",
-        --Integral = "cod2019_optic_scope_ax50",
+		Installed = "cod2019_optic_default_ax50",
+        --Integral = "cod2019_optic_default_ax50",
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
