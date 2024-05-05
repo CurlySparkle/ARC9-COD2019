@@ -820,6 +820,12 @@ SWEP.AttachmentElements = {
             {10,1},
         },
     },
+    ["stock_none2"] = {
+        Bodygroups = {
+            {10,0},
+            {4,3},
+        },
+    },
     ["rail_grip"] = {
         Bodygroups = {
             {5,1},

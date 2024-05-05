@@ -1173,6 +1173,4 @@ SWEP.RPM = 545
 SWEP.AimDownSightsTime = 0.27 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.
 
--- if GetConVar("arc9_mw19_stats_warzone"):GetBool() then\n\n-------------------------- DAMAGE PROFILE\nSWEP.DamageMax = 31 -- Damage done at point blank range\nSWEP.DamageMin = 25 -- Damage done at maximum range\n\nSWEP.RangeMin = 21 / ARC9.HUToM\nSWEP.RangeMax = 44 / ARC9.HUToM\n\nSWEP.BodyDamageMults = {\n	[HITGROUP_HEAD] = 1.475,\n	[HITGROUP_CHEST] = 1.1,\n	[HITGROUP_STOMACH] = 1,\n	[HITGROUP_LEFTARM] = 0.95,\n	[HITGROUP_RIGHTARM] = 0.95,\n	[HITGROUP_LEFTLEG] = 0.95,\n	[HITGROUP_RIGHTLEG] = 0.95,\n}\n\n-------------------------- PHYS BULLET BALLISTICS\n\nSWEP.PhysBulletMuzzleVelocity = 850 / ARC9.HUToM\n\n-------------------------- FIREMODES\n\nSWEP.RPM = 545\n\n-------------------------- HANDLING\n\nSWEP.AimDownSightsTime = 0.27 -- How long it takes to go from hip fire to aiming down sights.\nSWEP.SprintToFireTime = 0.25 -- How long it takes to go from sprinting to being able to fire.\n\nend
-
 end
