@@ -39,7 +39,7 @@ ATT.RTScopeFOV = 36 / 5.5
 ATT.RTScopeRes = 512
 ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/svd_crosshair.png", "mips smooth")
 ATT.RTScopeReticleScale = 1
-ATT.RTScopeShadowIntensity = 5
+ATT.RTScopeShadowIntensity = 7.5
 ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
 
@@ -67,7 +67,7 @@ ATT.Category = {"cod2019_optic_hdr"}
 ATT.ActivateElements = {"scope_hdr"}
 
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_hdr.mdl"
-ATT.ModelOffset = Vector(-0.3, 0, 0)
+ATT.ModelOffset = Vector(5, 0, 0)
 
 ATT.Sights = {
     {
@@ -93,7 +93,7 @@ ATT.RTScopeFOV = 15 / 6
 ATT.RTScopeRes = 1024
 ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/ax50_crosshair")
 ATT.RTScopeReticleScale = 1
-ATT.RTScopeShadowIntensity = 2
+ATT.RTScopeShadowIntensity = 7.5
 ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
 
@@ -149,7 +149,7 @@ ATT.RTScopeFOV = 35 / 5.5
 ATT.RTScopeRes = 512
 ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/ax50_crosshair")
 ATT.RTScopeReticleScale = 1.05
-ATT.RTScopeShadowIntensity = 1
+ATT.RTScopeShadowIntensity = 7.5
 ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
 
@@ -198,7 +198,7 @@ ATT.RTScopeFOV = 36 / 4.5
 ATT.RTScopeRes = 1024
 ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/rytec_crosshair.png", "mips")
 ATT.RTScopeReticleScale = 0.8
-ATT.RTScopeShadowIntensity = 1
+ATT.RTScopeShadowIntensity = 7.5
 ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
 

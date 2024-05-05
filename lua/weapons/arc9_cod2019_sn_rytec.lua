@@ -71,7 +71,7 @@ SWEP.PhysBulletDrag = 1.5
 SWEP.Ammo = "sniperPenetratedRound" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
-SWEP.ClipSize = 10 -- Self-explanatory.
+SWEP.ClipSize = 5 -- Self-explanatory.
 SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
@@ -220,7 +220,7 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 1.5)
-SWEP.CustomizePos = Vector(18, 50, 3)
+SWEP.CustomizePos = Vector(18, 50, 4)
 SWEP.CustomizeRotateAnchor = Vector(18, -3, -4)
 SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeSnapshotPos = Vector(1, 40, 5)
@@ -690,157 +690,191 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 end
 
 SWEP.Attachments = {
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_barrel"),
-		DefaultIcon = Material("arc9/def_att_icons/barrel.png", "mips smooth"),
-        DefaultAttName = "Standard Barrel",
-        Category = {"cod2019_rytec_barrel"},
-        Bone = "tag_barrel_attach",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_optic"),
-		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
-        Bone = "tag_scope",
-        Pos = Vector(3, 0, -0.1),
-        Ang = Angle(0, 0, 0),
-        Category = {"cod2019_optic","cod2019_optic_rytec"},
-        CorrectiveAng = Angle(1.5, 0.6, 0),
-		Installed = "cod2019_optic_default_rytec",
-        --Integral = "cod2019_optic_default_rytec",
-		InstalledElements = {"sights_none"},
-    },
-    {
+    { -- 1
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
-        DefaultAttName = "Standard Muzzle",
         Category = "cod2019_muzzle",
-        Bone = "tag_silencer",
+        DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
+		Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
 		InstalledElements = {"muzzle_none"},
 		Scale = 1.2,
     },
-    {
+    { -- 2
+        PrintName = ARC9:GetPhrase("mw19_category_barrel"),
+		DefaultIcon = Material("entities/defattachs/barrel-ar.png", "mips smooth"),
+        Category = "cod2019_rytec_barrel",
+        Bone = "tag_barrel_attach",
+        Pos = Vector(0, 0, 0),
+    },
+    { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
-        DefaultAttName = "Default",
+		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
         Category = "cod2019_tac_rail",
         Bone = "tag_laser_attach",
         Pos = Vector(-0.7, -1.5, 0.5),
-        Ang = Angle(0, 0, 0),
-		--InstalledElements = {"rail_laser",},
-		--LaserCorrectionAngle = Angle(0, 10, 0),
+		Ang = Angle(0, 0, 180),
     },
-    {
+    { -- 4
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
+		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
+        Bone = "tag_scope",
+        Pos = Vector(3, 0, -0.1),
+        Category = {"cod2019_optic","cod2019_optic_rytec"},
+		InstalledElements = {"sights_none"},
+		Installed = "cod2019_optic_default_rytec",
+		CorrectiveAng = Angle(-0.5, 1.15, 0),
+    },
+    { -- 5
+        PrintName = ARC9:GetPhrase("mw19_category_stock"),
+		DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
+        Category = {"cod2019_rytec_stock"},
+        Bone = "tag_stock_attach",
+        Pos = Vector(0.6, 0, 0.5),
+		InstalledElements = {"stock_none","stock_main_none"},
+    },
+    { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
-        DefaultAttName = "Default",
-        Category = {"cod2019_grip"},
+		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
+        Category = "cod2019_grip",
         Bone = "tag_attachments",
         Pos = Vector(18.7, 0.11, -1.2),
         Ang = Angle(0, 0, 180),
-		Scale = 1,
 		InstalledElements = {"rail_grip"},
+		MergeSlots = {22},
+		RejectAttachments = { ["cod2019_grips_bipod_alt"] = true },
     },
-    {
+    { -- 7
+        PrintName = ARC9:GetPhrase("mw19_category_magazine"),
+		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
+		Bone = "tag_mag_attach",
+        Category = {"cod2019_mag","cod2019_rytec_mag"},
+        Pos = Vector(0, 0, 0),
+    },
+    { -- 8
+        PrintName = ARC9:GetPhrase("mw19_category_ammo"),
+		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
+        Bone = "tag_mag_attach",
+		Category = {"cod2019_ammo", "cod2019_ammo_sniper"},
+		Pos = Vector(-1.5, 0, 0),
+		MergeSlots = {23},
+		RejectAttachments = { 
+			["cod2019_ammo_db"] = true,
+			["cod2019_ammo_he"] = true,
+		}
+    },
+    { -- 9
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
+        Category = "cod2019_pistolgrip",
+        Bone = "tag_pistolgrip_attach",
+        Pos = Vector(0, 0, 0),
+    },
+    { -- 10
+        PrintName = ARC9:GetPhrase("mw19_category_perk"),
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
+        Bone = "tag_attachments",
+        Pos = Vector(7, 0, -3.5),
+    },
+	
+	-- Unofficial
+    { -- 11
+        PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
+		-- DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
+        Category = {"cod2019_trigger"},
+        Bone = "j_trigger",
+        Pos = Vector(0, 0, 0),
+		Hidden = true,
+    },
+    { -- 12
+        PrintName = ARC9:GetPhrase("mw19_category_receiver"),
+        Category = "cod2019_rytec_receiver",
+        Bone = "tag_attachments",
+        Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(8.5, 0, 0),
+		Hidden = false,
+    },
+	
+	-- Cosmetics
+    { -- 13
+        PrintName = ARC9:GetPhrase("mw19_category_skins"),
+        Bone = "tag_cosmetic",
+        Pos = Vector(7, 0, 3),
+        Category = "cod2019_skins_rytec",
+		CosmeticOnly = true,
+    },
+    { -- 14
+        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
+        Category = {"universal_camo"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(5, 0, 3),
+        CosmeticOnly = true,
+    },
+    { -- 15
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
+        StickerModel = "models/weapons/cod2019/stickers/snip_rytec_decal_a.mdl",
+        Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(3, 0, 3),
+    },
+    { -- 16
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
+        StickerModel = "models/weapons/cod2019/stickers/snip_rytec_decal_b.mdl",
+        Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(1, 0, 3),
+    },
+    { -- 17
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
+        StickerModel = "models/weapons/cod2019/stickers/snip_rytec_decal_c.mdl",
+        Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-1, 0, 3),
+    },
+    { -- 18
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
+        StickerModel = "models/weapons/cod2019/stickers/snip_rytec_decal_d.mdl",
+        Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-3, 0, 3),
+    },
+    { -- 19
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
+        StickerModel = "models/weapons/cod2019/stickers/snip_rytec_decal_e.mdl",
+        Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-5, 0, 3),
+    },
+    { -- 20
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
+        CosmeticOnly = true,
+        Category = {"charm"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(-0.5, 0, 0),
+		Icon_Offset = Vector(-6.5, 0, 3),
+		Scale = 1.5,
+    },
+    { -- 21
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
+        Category = {"killcounter","killcounter2"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(2, 0, 0),
+		Icon_Offset = Vector(-11, 0, 3),
+		RejectAttachments = { ["arc9_stat_proscreen_main"] = true },
+		CosmeticOnly = true,
+    },
+    { -- 22
         PrintName = "Bipod",
         DefaultAttName = "Default",
         Category = {"cod2019_rytec_bipod"},
         Bone = "tag_bipod_attach",
-        Pos = Vector(0,0, 0),
-        Ang = Angle(0, 0, 0),
 		Scale = 1,
-		InstalledElements = {"rail_grip"},
-		-- ExcludeElements = {"grip_bottom"},
 		Hidden = true,
-        MergeSlots = {5},
+        MergeSlots = {6},
     },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
-        DefaultAttName = "Default",
-        Category = {"cod2019_rytec_grip","cod2019_pistolgrip"},
-        Bone = "tag_pistolgrip_attach",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_stock"),
-		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
-        DefaultAttName = "Standard Stock",
-        Category = {"cod2019_rytec_stock"},
-        Bone = "tag_stock_attach",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-    },
-    {
+    { -- 23
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
-		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
-        Bone = "j_mag1",
-        Category = {"cod2019_ammo","cod2019_ammo_sniper"},
-        Pos = Vector(0, -1.5, -1.5),
-        Ang = Angle(0, 0, 0),
-		ExcludeElements = {"mag_ftac"},
-		RejectAttachments = { 
-		["cod2019_ammo_db"] = true,
-		["cod2019_ammo_he"] = true 
-		}
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_magazine"),
-		DefaultIcon = Material("arc9/def_att_icons/mag_ar.png", "mips smooth"),
-		Bone = "tag_mag_attach",
-        Category = {"cod2019_rytec_mag","cod2019_mag"},
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"}
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_skins"),
-        --Bone = "v_weapon.Clip",
-        Category = "cod2019_skins_rytec",
-		CosmeticOnly = true,
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
-        Category = {"universal_camo"},
-        CosmeticOnly = true,
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/snip_rytec_decal_a.mdl",
-        Category = "stickers",
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/snip_rytec_decal_b.mdl",
-        Category = "stickers",
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/snip_rytec_decal_c.mdl",
-        Category = "stickers",
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/snip_rytec_decal_d.mdl",
-        Category = "stickers",
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/snip_rytec_decal_e.mdl",
-        Category = "stickers",
-    },
-    {
-        PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = {"charm", "killcounter"},
-		RejectAttachments = { ["arc9_stat_proscreen"] = true },
-		CosmeticOnly = true,
-        Bone = "tag_cosmetic",
-        Pos = Vector(0, 0, 0),
-        Ang = Angle(0, 0, 0),
-		Scale = 1.5,
+        Category = {"cod2019_ammo_special"},
+		RequireElements = {"mag_ftac"},
     },
 }
 
