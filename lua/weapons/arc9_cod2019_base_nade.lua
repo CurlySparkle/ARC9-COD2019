@@ -84,8 +84,10 @@ SWEP.Hook_Think	= function(wep)
         if !owner:IsPlayer() then return end
         local vm, wm, clip, delta = IsValid(wep:GetVM()) and wep:GetVM(), IsValid(wep:GetWM()) and wep:GetWM(), wep:Clip1(), wep:GetSightAmount()
         local coolilove = math.cos(delta * (math.pi / 2))
-        local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1-wep.CustomizeDelta) or 0
-        local spd = math.Clamp(math.Remap(vel, wspd, maxspd, 0, 1), 0, 1)
+        --local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1-wep.CustomizeDelta) or 0
+        local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1.1-self.CustomizeDelta) or 0
+        if owner.GetSliding then if owner:GetSliding() then vel = 50 end end
+		local spd = math.Clamp(math.Remap(vel, wspd, maxspd, 0, 1), 0, 1)
         local spd2 = math.Clamp(math.Remap(vel, 0, wspd, 0, 1), 0, 1) - spd
         local moveblend = math.Clamp(spd-delta, 0, 1) or 0
         local walkblend = math.Clamp(spd2-delta, 0, 1) or 0

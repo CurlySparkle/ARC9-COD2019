@@ -67,8 +67,8 @@ SWEP.PhysicalVisualRecoil = true
 SWEP.VManipOffsetPos = Vector(1, 1, -0.5)
 SWEP.VManipOffsetAng = Angle(-4, -2, 5)
 
-SWEP.BobWalkMult = 0
-SWEP.BobSprintMult = 0
+SWEP.BobWalkMult = 0.5
+SWEP.BobSprintMult = 0.1
 
 SWEP.SprintVerticalOffset = false
 SWEP.CanBlindFire = false
@@ -110,7 +110,9 @@ SWEP.Hook_Think	= function(self)
         if !owner:IsPlayer() then return end
         local vm, wm, clip, delta = IsValid(self:GetVM()) and self:GetVM(), IsValid(self:GetWM()) and self:GetWM(), self:Clip1(), self:GetSightAmount()
         local coolilove = math.cos(delta * (math.pi / 2))
-        local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1-self.CustomizeDelta) or 0
+        -- local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1-self.CustomizeDelta) or 0
+        local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1.1-self.CustomizeDelta) or 0
+        if owner.GetSliding then if owner:GetSliding() then vel = 50 end end
         local spd = math.Clamp(math.Remap(vel, wspd, maxspd, 0, 1), 0, 1)
         local spd2 = math.Clamp(math.Remap(vel, 0, wspd, 0, 1), 0, 1) - spd
         local moveblend = math.Clamp(spd-delta, 0, 1) or 0
