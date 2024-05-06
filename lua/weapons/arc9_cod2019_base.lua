@@ -67,6 +67,9 @@ SWEP.PhysicalVisualRecoil = true
 SWEP.VManipOffsetPos = Vector(1, 1, -0.5)
 SWEP.VManipOffsetAng = Angle(-4, -2, 5)
 
+SWEP.BobWalkMult = 0
+SWEP.BobSprintMult = 0
+
 SWEP.SprintVerticalOffset = false
 SWEP.CanBlindFire = false
 SWEP.LaserAlwaysOnTargetInPeek = true

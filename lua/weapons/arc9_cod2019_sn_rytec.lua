@@ -712,7 +712,7 @@ SWEP.Attachments = {
         Category = "cod2019_tac_rail",
         Bone = "tag_laser_attach",
         Pos = Vector(-0.7, -1.5, 0.5),
-		Ang = Angle(0, 0, 180),
+		Ang = Angle(0, 0, 0),
     },
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
@@ -722,7 +722,7 @@ SWEP.Attachments = {
         Category = {"cod2019_optic","cod2019_optic_rytec"},
 		InstalledElements = {"sights_none"},
 		Installed = "cod2019_optic_default_rytec",
-		CorrectiveAng = Angle(-0.5, 1.15, 0),
+		CorrectiveAng = Angle(1.5, 0.6, 0),
     },
     { -- 5
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
@@ -851,7 +851,7 @@ SWEP.Attachments = {
         Bone = "tag_cosmetic",
         Pos = Vector(-0.5, 0, 0),
 		Icon_Offset = Vector(-6.5, 0, 3),
-		Scale = 1.5,
+		Scale = 1.2,
     },
     { -- 21
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
