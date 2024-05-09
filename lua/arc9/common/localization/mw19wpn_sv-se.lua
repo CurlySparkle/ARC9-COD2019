@@ -278,11 +278,11 @@ L["cod2019_ammo_he.compactname"] = "HE" -- UO
 L["cod2019_ammo_he.description"] = "Explosiv ammunition som offrar direkt skada för att kunna göra skada i en radie runt träffpunkten.\nEffekten är spektakulär men väldigt lite sprängmedel kan sättas in i patronerna." -- UO
 
 ////////// Shotgun Ammo
-L["cod2019_ammo_sg_magnum.printname"] = "8.5mm Magnum Hagelskott" -- UO
+L["cod2019_ammo_sg_magnum.printname"] = "8.5 mm Magnum Hagelskott" -- UO
 L["cod2019_ammo_sg_magnum.compactname"] = "MAG" -- UO
 L["cod2019_ammo_sg_magnum.description"] = "Högt kraftfull hagelskott laddade med färre men större hagelskott.\nErbjuder bättre kraft i närstrid men värre räckvidd och träffsäkerhet." -- UO
 
-L["cod2019_ammo_sg_slug.printname"] = "70mm Helhål Sluggpatron" -- UO
+L["cod2019_ammo_sg_slug.printname"] = "70 mm Helhål Sluggpatron" -- UO
 L["cod2019_ammo_sg_slug.compactname"] = "SLUGG" -- UO
 L["cod2019_ammo_sg_slug.description"] = "En enkel projektil laddad i en hagelpatron.\nDet aerodynamiska skottet har mycket högre effektiv räckvidd." -- UO
 
@@ -290,19 +290,19 @@ L["cod2019_ammo_sg_flechette.printname"] = "Flechetteskott" -- UO
 L["cod2019_ammo_sg_flechette.compactname"] = "FLE" -- UO
 L["cod2019_ammo_sg_flechette.description"] = "Laddning innehåller tunna, pilformade projektiler.\nErbjuder tätare spridning och ökad räckvidd, inklusive ökad penetration, men med kostnad på sänkt stoppkraft." -- UO
 
-L["cod2019_ammo_sg_frag.printname"] = "70mm \"FRAG-12\" Explosiva Skott" -- UO
+L["cod2019_ammo_sg_frag.printname"] = "70 mm \"FRAG-12\" Granatskott" -- UO
 L["cod2019_ammo_sg_frag.compactname"] = "FRAG-12" -- UO
 L["cod2019_ammo_sg_frag.description"] = "Laddning innehåller en enkel projektil fylld med ett explosivt ämne.\nDelar ut skada runt en mindre radie vid träffpunkten." -- UO
 
-L["cod2019_ammo_sg_rebounder.printname"] = "10mm Rebounder-Skott" -- UO
+L["cod2019_ammo_sg_rebounder.printname"] = "10 mm Rebounder-Skott" -- UO
 L["cod2019_ammo_sg_rebounder.compactname"] = "RBD" -- UO
 L["cod2019_ammo_sg_rebounder.description"] = "Laddning innehåller specialskott som har en hög chans att studsa.\nSkotten studsar oavsett vinkeln. Skadan ökas ju mer den studsar.\nDen har dock sänkt skada vid direkta träffar." -- UO
 
-L["cod2019_ammo_sg_frag_x4.printname"] = "70mm \"FRAG-12\" Explosiva Skott x4" -- UO
+L["cod2019_ammo_sg_frag_x4.printname"] = "70mm \"FRAG-12\" Granatskott x4" -- UO
 L["cod2019_ammo_sg_frag_x4.compactname"] = "FRAG-12 x4" -- UO
 L["cod2019_ammo_sg_frag_x4.description"] = "Laddning innehåller fyra projektiler fyllda med sprängämnen.\nDelar ut skada runt en liten radie vid träffpunkten." -- UO
 
-L["cod2019_ammo_sg_db.printname"] = "70mm \"Dragon's Breach\"" -- UO
+L["cod2019_ammo_sg_db.printname"] = "70 mm \"Dragon's Breach\"" -- UO
 L["cod2019_ammo_sg_db.compactname"] = "DB" -- UO
 L["cod2019_ammo_sg_db.description"] = "Laddning innehåller magnesium skott som tänder fyr på en måtavla vid träff." -- UO
 
@@ -396,8 +396,8 @@ L["cod2019_stock_amax.printname"] = "CR-56 AMAX Kolv" -- UO
 L["cod2019_stock_amax.compactname"] = "AMAX" -- UO
 L["cod2019_stock_amax.description"] = "Ultralätt kolv ökar hastigheten på vapenhantering och rörelse med kostnad på stabilitet i siktet." -- mw19stockdesc.vlight
 
-L["cod2019_stock_slima.printname"] = "KP RAAL Kolv" -- UO
-L["cod2019_stock_slima.compactname"] = "KP RAAL" -- UO
+L["cod2019_stock_slima.printname"] = "KSP RAAL Kolv" -- UO
+L["cod2019_stock_slima.compactname"] = "KSP RAAL" -- UO
 L["cod2019_stock_slima.description"] = "Taktisk och effektiv kolv designad för närstrid. Får dig snabbare på målet." -- mw19stockdesc.medium
 
 L["cod2019_stock_m4.printname"] = "M4A1 Kolv" -- UO
@@ -456,25 +456,33 @@ L["cod2019_ammo_crossbow_he.compactname"] = "Kontakt" -- UO
 L["cod2019_ammo_crossbow_he.description"] = "Pilar med <color=255,255,100>lågtrycks sprängmedel</color> inbyggda i pilspetsen. <color=255,100,100>Pilar kan inte återhämtas</color> och är oupptäckbara av trofésystem." -- UO
 
 ////////////////////  Custom MGL-32 Ammo
-L["cod2019_ammo_gl_rock.printname"] = "40mm Boulder" -- UO
-L["cod2019_ammo_gl_rock.compactname"] = "Boulder" -- UO
+L["cod2019_ammo_gl_rock.printname"] = "40 mm Sten" -- UO
+L["cod2019_ammo_gl_rock.compactname"] = "Sten" -- UO
 L["cod2019_ammo_gl_rock.description"] = "Anpassade 40mm patroner fyllda med <color=100,255,100>stenar</color>." -- UO
 
-L["cod2019_ammo_gl_flash.printname"] = "40mm Chock" -- UO
+L["cod2019_ammo_gl_flash.printname"] = "40 mm Chock" -- UO
 L["cod2019_ammo_gl_flash.compactname"] = "Chock" -- UO
 L["cod2019_ammo_gl_flash.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Chock</color>granater designade att temporärligt blända din fiende." -- UO, partially taken from M203 40mm Flash
 
-L["cod2019_ammo_gl_inc.printname"] = "40mm Brand" -- UO
+L["cod2019_ammo_gl_inc.printname"] = "40 mm Brand" -- UO
 L["cod2019_ammo_gl_inc.compactname"] = "Brand" -- UO
 L["cod2019_ammo_gl_inc.description"] = "Anpassade 40mm patroner fyllda med dödliga <color=100,255,100>Brand</color>granater." -- UO, partially taken from M203 40mm Incendiary
 
-L["cod2019_ammo_gl_smoke.printname"] = "40mm Rökskärm" -- UO
+L["cod2019_ammo_gl_smoke.printname"] = "40 mm Rökskärm" -- UO
 L["cod2019_ammo_gl_smoke.compactname"] = "Rök" -- UO
 L["cod2019_ammo_gl_smoke.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Rök</color>granater designade att gömma din rörelse." -- UO, partially taken from M203 40mm Smokescreen
 
-L["cod2019_ammo_gl_gas.printname"] = "40mm Gas" -- UO
+L["cod2019_ammo_gl_gas.printname"] = "40 mm Gas" -- UO
 L["cod2019_ammo_gl_gas.compactname"] = "Gas" -- UO
 L["cod2019_ammo_gl_gas.description"] = "Anpassade 40mm patroner fyllda med delvist dödliga <color=100,255,100>Gas</color>granater som skapar ett gasmoln vid träffpunkten.\nFlertal skott i samma område <color=100,255,100>ökar dess dödlighet</color>." -- UO
+
+L["cod2019_pila_ammo_guided.printname"] = "Guidade Robotar" -- UO
+L["cod2019_pila_ammo_guided.compactname"] = "Guidade" -- UO
+L["cod2019_pila_ammo_guided.description"] = "Ersätter dem oguidade robotarna med <color=100,255,100>guidade</color> robotar." -- UO
+
+L["cod2019_jokr_ammo_guided.printname"] = ARC9:GetPhrase("cod2019_pila_ammo_guided.printname")
+L["cod2019_jokr_ammo_guided.compactname"] = ARC9:GetPhrase("cod2019_pila_ammo_guided.compactname")
+L["cod2019_jokr_ammo_guided.description"] = "Ersätter robotar som kräver lås med <color=100,255,100>guidade</color> robotar. <color=255,100,100>Tar bort spårningsfunktionen</color>." -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
@@ -519,7 +527,7 @@ L["mw19_weapon_mg34"] = "MG34"
 L["mw19_weapon_holger"] = "Holger-26"
 L["mw19_weapon_bruen"] = "Bruen Mk9"
 L["mw19_weapon_finn"] = "FiNN LMG"
-L["mw19_weapon_raal"] = "RAAL MG"
+L["mw19_weapon_raal"] = "KSP RAAL"
 
 L["mw19_weapon_ebr"] = "EBR-14"
 L["mw19_weapon_mk2"] = "MK2 Karbin"
@@ -583,25 +591,25 @@ L["mw19_weapon_kilo141_desc"] = "Helautomatisk automatkarbin med en ergonomisk d
 L["mw19_weapon_fal_desc"] = "Halvautomatisk automatkarbin med en hög eldhastighet för snabbare uppföljande skott."
 L["mw19_weapon_m4a1_desc"] = "Helautomatisk automatkarbin för alla ändamål. Kontrollera dina skott och detta vapnet kan vara väldigt effektivt vid räckvidd."
 L["mw19_weapon_fr556_desc"] = "3-skottsalva automatkarbin av typen bullpup. En välplacerad salvo kan vara extremt dödlig vid måttliga räckvidder."
-L["mw19_weapon_oden_desc"] = "Helautomatisk automatkarbin av typen bullpup behåller en låg eldhastighet för att hjälpa kontrollera den tungt träffande 12.7 x 55mm ammunitionen."
+L["mw19_weapon_oden_desc"] = "Helautomatisk automatkarbin av typen bullpup behåller en låg eldhastighet för att hjälpa kontrollera den tungt träffande 12,7 x 55 mm ammunitionen."
 L["mw19_weapon_m13_desc"] = "Automatisk automatkarbin innehåller ett kort gaslåssystem som håller eldhastigheten hög och rekylen låg."
 L["mw19_weapon_scar_desc"] = "Helautomatisk automatkarbin med hög kaliber som erbjuder hög skada vid längre räckvidder."
-L["mw19_weapon_ak47_desc"] = "Väldigt pålitlig automatkarbin matad med 7,62mm Sovjet. Stor kaliber ammunition kräver skicklighet att kontrollera rekylen."
+L["mw19_weapon_ak47_desc"] = "Väldigt pålitlig automatkarbin matad med 7,62 mm Sovjet. Stor kaliber ammunition kräver skicklighet att kontrollera rekylen."
 L["mw19_weapon_ram7_desc"] = "Helautomatisk automatkarbin av typen bullpup med en kompakt design som tillåter lättare strider på nära håll."
 L["mw19_weapon_grau_desc"] = "Detta modulära 5,56-vapen plattformen är lätt och manövrerbar med utmärkt räckvidd. Precisionstillverkning och världsklass eftermarknadspipor ger detta vapen extrem potential.."
-L["mw19_weapon_cr56_desc"] = "Denna lätta 7,62 x 39mm helautomatiska automatkarbinen är kompakt och kraftfull. Byggd exklusivt för militär användning, detta standardgeväret är dödligt vid måttliga räckvidder och är lätt konfiguerbar för diverse angreppstaktiker."
-L["mw19_weapon_an94_desc"] = "Toppmodern 5,45x39mm rysk automatkarbin ned en unik <color=255,255,100>hyper-salvo</color> funktion. Det första skottet vid varje avtryckning skjuter ett snabbt 2-skottsalvo innan den uppfattade rekylen känns, vilket skapar en tajt grupp kloster med ökad skadepotential. Denna mekanisk matas med ett kantat magasin, och en fram- och återgående låda hjälper hålla kontroll över rekylen."
-L["mw19_weapon_asval_desc"] = "Matad med <color=255,255,100>subsonisk</color> 9x39mm och internt <color=255,255,100>ljuddämpad</color>, AS VAL är ett kraftfullt vapen gjort för smygande, träffsäkerhet och penetrering. Detta vapen är bäst i händerna på en operatör som kan hantera den tunga rekylen och höga eldhastigheten."
+L["mw19_weapon_cr56_desc"] = "Denna lätta 7,62 x 39 mm helautomatiska automatkarbinen är kompakt och kraftfull. Byggd exklusivt för militär användning, detta standardgeväret är dödligt vid måttliga räckvidder och är lätt konfiguerbar för diverse angreppstaktiker."
+L["mw19_weapon_an94_desc"] = "Toppmodern 5,45 x 39 mm rysk automatkarbin ned en unik <color=255,255,100>hyper-salvo</color> funktion. Det första skottet vid varje avtryckning skjuter ett snabbt 2-skottsalvo innan den uppfattade rekylen känns, vilket skapar en tajt grupp kloster med ökad skadepotential. Denna mekanisk matas med ett kantat magasin, och en fram- och återgående låda hjälper hålla kontroll över rekylen."
+L["mw19_weapon_asval_desc"] = "Matad med <color=255,255,100>subsonisk</color> 9 x 39 mm och internt <color=255,255,100>ljuddämpad</color>, AS VAL är ett kraftfullt vapen gjort för smygande, träffsäkerhet och penetrering. Detta vapen är bäst i händerna på en operatör som kan hantera den tunga rekylen och höga eldhastigheten."
 
 L["mw19_weapon_aug_desc"] = "Modulär och helautomatiskt vapen konfiguerad för rörlighet och närstridsangrepp."
-L["mw19_weapon_p90_desc"] = "En helautomatisk bullpup-kulsprutepistol. Det unika toppmonterade magasinet håller högre antal, hög hastighet 5.7 x 28mm ammunition."
-L["mw19_weapon_mp5_desc"] = "Helautomatisk 9mm kulsprutepistol. En perfekt balans av stabilitet, förlighet och dödlighet."
+L["mw19_weapon_p90_desc"] = "En helautomatisk bullpup-kulsprutepistol. Det unika toppmonterade magasinet håller högre antal, hög hastighet 5.7 x 28 mm ammunition."
+L["mw19_weapon_mp5_desc"] = "Helautomatisk 9 mm kulsprutepistol. En perfekt balans av stabilitet, förlighet och dödlighet."
 L["mw19_weapon_uzi_desc"] = "En helautomatisk kulsprutepistol med öppen bult. Enkel, stadig, effektiv."
 L["mw19_weapon_pp19_desc"] = "Välbalanserad, helautomatisk kulsprutepistol med högkapacitets spiralmagasin."
 L["mw19_weapon_mp7_desc"] = "Designad att vara kompakt, detta helautomatiska vapnet har en hög eldhastighet och låg rekyl."
 L["mw19_weapon_striker_desc"] = "En hårdträffande kulsprutepsitol matad med .45 Auto som kommer strimlar vid längre räckvidder än andra vapen i dess klass. Måttlig eldhastighet håller vapnet under kontroll under automateld."
 L["mw19_weapon_fennec_desc"] = "En aggressiv helautomatisk kulsprutepistol med smörslät rekyl och en flammande eldhastighet som är utmärkt för strategisk rensning av rum och att hålla framlinjen ren."
-L["mw19_weapon_iso_desc"] = "Precisionstillverkad 9mm kulsprutepistol med en snabb eldhastighet. Detta lätta och pålitliga eldvapen designades att kontrollera slagfältets närstrider."
+L["mw19_weapon_iso_desc"] = "Precisionstillverkad 9 mm kulsprutepistol med en snabb eldhastighet. Detta lätta och pålitliga eldvapen designades att kontrollera slagfältets närstrider."
 L["mw19_weapon_cx9_desc"] = "Utmärkt manövrering och snabb eldhastighet gör denna blowback-hanterad KPist. ett formidabelt vapen i närstridsangrepp."
 
 L["mw19_weapon_m680_desc"] = "Pålitlig, välbalanserad kaliber 12 pumprepeter hagelbössa."
@@ -611,11 +619,11 @@ L["mw19_weapon_origin12_desc"] = "Halvautomatisk hagelbössa med stor ammunition
 L["mw19_weapon_vlk_desc"] = "En rörlig kaliber 12, magasinmatad hagelbössa från VLK med omfattande alternativ att anpassa räckvidd, stabilitet, och manövrering."
 L["mw19_weapon_aa12_desc"] = "Helautomatisk hagelbössa med öppen bult med ett rekylsänkande gaslåssystem. Denna stridshagelbössa skickar ut höga volym av hagel mot måltavlan i en stadig hastighet."
 
-L["mw19_weapon_pkm_desc"] = "Helautomatisk lätt kulspruta som skjuter 7,62mm ammunition med hög skada med en måttlig eldhastighet."
-L["mw19_weapon_sa87_desc"] = "Helautomatisk lätt kulspruta av typen bullpup. Lägre eldhastighet och 5,56mm ammunition håller detta geväret stabilt och effektivt vid långa räckvidder."
+L["mw19_weapon_pkm_desc"] = "Helautomatisk lätt kulspruta som skjuter 7,62 mm ammunition med hög skada med en måttlig eldhastighet."
+L["mw19_weapon_sa87_desc"] = "Helautomatisk lätt kulspruta av typen bullpup. Lägre eldhastighet och 5,56 mm ammunition håller detta geväret stabilt och effektivt vid långa räckvidder."
 L["mw19_weapon_m91_desc"] = "Kraftig lätt kulspruta offrar rörlighet för stabilitet. Hög kaliber kontinuerlig eld kommer neutralisera måltavlor vid längre räckvidder."
 L["mw19_weapon_mg34_desc"] = "Helautomatiskt vapen med en hög eldhastighet och bestraffanda 7,62 Mauser-ammunition. Räddade kulsprutor från andra världskriget är fortfarande pålitliga och dödliga på slagfältet."
-L["mw19_weapon_holger_desc"] = "Mångsidigt, helautomatisk 5,56mm lätt kulspruta. Modulär design kan konfigueras till en bred lista av strider."
+L["mw19_weapon_holger_desc"] = "Mångsidigt, helautomatisk 5,56 mm lätt kulspruta. Modulär design kan konfigueras till en bred lista av strider."
 L["mw19_weapon_bruen_desc"] = "Denna luftnedkylda, öppen bult, 5,56 lätta kulsprutan har en konkurrenskraftig eldhastighet och utmärkt stabilitet som kommer dominera mitten-till-lång distans slagfälten."
 L["mw19_weapon_finn_desc"] = "En väldigt lätt, öppen bult 5,56 kulspruta med en låg eldhastighet och avancerade rekylkontroller vilket ger FiNN utmärkt träffsäkerhet under automateld."
 L["mw19_weapon_raal_desc"] = "\"Reconnaissance Auxiliary Assault Lightweight Machine Gun\" använder en låg eldhastighet med en fram- och återgående pipa för att kontra den kraftfulla .338 Norma Mag-rekylen. Avancerad konstruering av titan håller vikten hanterlig."
@@ -623,30 +631,30 @@ L["mw19_weapon_raal_desc"] = "\"Reconnaissance Auxiliary Assault Lightweight Mac
 L["mw19_weapon_ebr_desc"] = "Halvautomatiskt marksman-gevär för långa distanser balanserar eldhastighet med dödlighet."
 L["mw19_weapon_mk2_desc"] = "Väldigt träffsäker bygelrepetergevär. Kommer neutralisera en fiende med ett välplacerat skott till huvudet eller bröstkorgen."
 L["mw19_weapon_kar98_desc"] = "Cylinderrepetergevär matad med 7,62 Mauser. En relik från andra världskriget som fortfarande är extremt dödlig i händerna på en rebell krypskytt."
-L["mw19_weapon_crossbow_desc"] = "Tyst och rörlig, denna hög prestanda armborst skjuter 510mm pilar med utmärkt dödlighet. Exklusiv anpassning, distinkt funktionalitet, och unika ammunitionstyper placerar detta vapnet i dess egna klass. Standard 510mm pilar kan återhämtas och är oupptäckbara av trofésystem."
-L["mw19_weapon_sks_desc"] = "Lätt, halvautomatisk Karbin matat med 7,62x39mm. Detta hårt träffande och rörliga Sovjetiska gevär fokuserar på nytta istället för träffsäkerhet. Den prunkar en snabbare eldhastighet än andra vapen i dess klass, men ett välplacerat skott kan eliminera behovet av efterföljande skott helt och hållet. Denna klassiska DMR har sett många strider, och dess unika vapensmide konfigueringar reflekterar en mångfaldig servicehistorik."
+L["mw19_weapon_crossbow_desc"] = "Tyst och rörlig, denna hög prestanda armborst skjuter 510 mm pilar med utmärkt dödlighet. Exklusiv anpassning, distinkt funktionalitet, och unika ammunitionstyper placerar detta vapnet i dess egna klass. Standard 510 mm pilar kan återhämtas och är oupptäckbara av trofésystem."
+L["mw19_weapon_sks_desc"] = "Lätt, halvautomatisk Karbin matat med 7,62 x 39 mm. Detta hårt träffande och rörliga Sovjetiska gevär fokuserar på nytta istället för träffsäkerhet. Den prunkar en snabbare eldhastighet än andra vapen i dess klass, men ett välplacerat skott kan eliminera behovet av efterföljande skott helt och hållet. Denna klassiska DMR har sett många strider, och dess unika vapensmide konfigueringar reflekterar en mångfaldig servicehistorik."
 L["mw19_weapon_spr_desc"] = "Pålitlig, hårt träffande .300 Win cylinderrepetergevär från Sloan Precision. Detta vapens omfattande militära och civila användning ger ett överflöd av anpassningsalternativ."
 
-L["mw19_weapon_dragunov_desc"] = "En Sovjetisk arbetshäst matad med 7,62x54mmR. Denna gaslåssystem, halvautomatiska prickskyttegeväret tillåter för snabba efterföljande skott."
-L["mw19_weapon_hdr_desc"] = "Cylinderrepeter antimaterialgevär matad med 12,7x108mm ammunition. 745 gr kulor har en lägre mynningshastighet men är katastrofal vid längre räckvidder."
+L["mw19_weapon_dragunov_desc"] = "En Sovjetisk arbetshäst matad med 7,62 x 54 mmR. Denna gaslåssystem, halvautomatiska prickskyttegeväret tillåter för snabba efterföljande skott."
+L["mw19_weapon_hdr_desc"] = "Cylinderrepeter antimaterialgevär matad med 12,7 x 108 mm ammunition. 745 gr kulor har en lägre mynningshastighet men är katastrofal vid längre räckvidder."
 L["mw19_weapon_ax50_desc"] = "Hårt träffande cylinderrepeter prickskyttegevär med kaliber .50 BMG ammunition. Dess volfram drivspegel-doppade kulor är snabba och kraftfulla, men kräver träffsäkra skott vid längre distanser."
-L["mw19_weapon_rytec_desc"] = "Detta halvautomatiska antimaterialgeväret är matad med .50 BMG för dominerande angrepp på långa räckvidder. En 25x59mm sprängmedel version är officiellt nämnd som \"experimental\", men har skickats ut på flertal hemliga uppdrag med hög effektivitet."
+L["mw19_weapon_rytec_desc"] = "Detta halvautomatiska antimaterialgeväret är matad med .50 BMG för dominerande angrepp på långa räckvidder. En 25 x 59 mm sprängmedel version är officiellt nämnd som \"experimental\", men har skickats ut på flertal hemliga uppdrag med hög effektivitet."
 
 L["mw19_weapon_shield_desc"] = "Skottsäker och explosivt skyddande sköld med ökad närstridsskada."
 
 L["mw19_weapon_glock_desc"] = "Halvautomatisk pistol matad med .45 ACP ammunition. Pålitlig reserv om du befinner dig i närstridsanfall."
 L["mw19_weapon_1911_desc"] = "Ett välbalanserat, halvautomatiskt sidovapen med en måttlig eldhastighet. Lite mer räckvidd än din normala .45 ACP pistol."
 L["mw19_weapon_357_desc"] = "\"Double Action\"-revolver skjuter .357 Magnum-ammunition för kraftfull skada vid förlängda räckvidder."
-L["mw19_weapon_m19_desc"] = "Halvautomatisk 9mm pistol, utmärkt stabilitet med en snabb eldhastighet."
+L["mw19_weapon_m19_desc"] = "Halvautomatisk 9 mm pistol, utmärkt stabilitet med en snabb eldhastighet."
 L["mw19_weapon_deagle_desc"] = "Det mest kraftfulla halvautomatiska handvapnet tillgängligt, gör hög skada upp till mellanliggande räckvidd."
-L["mw19_weapon_m9_desc"] = "Välbalanserad halvautomatisk 9mm pistol. Detta anspråkslösa sidovapnet utmärker sig i närstridsangrepp och har vapensmide förmågor unikt till pistolklassen vilket tillåter diverse strategier till strider."
+L["mw19_weapon_m9_desc"] = "Välbalanserad halvautomatisk 9 mm pistol. Detta anspråkslösa sidovapnet utmärker sig i närstridsangrepp och har vapensmide förmågor unikt till pistolklassen vilket tillåter diverse strategier till strider."
 L["mw19_weapon_makarov_desc"] = "Pålitlig reservvapen i närstrid, detta \"double-/single-action\"-sidovapen har ett antal anpassade vapensmide modifikationer vilket gör den till ett utestående tillägg till vilken arsenal som helst."
 
 L["mw19_weapon_pila_desc"] = "Portabel infraröd luftvärnsrobot med ett fritt skjutlägesalternativ. Självstyrda robotar har en högre hastighet och måttlig explosiv avkastning."
-L["mw19_weapon_strela_desc"] = "Rekylfri 84mm raketgevär skjuter en explosiv projektil i väldigt hög hastighet. Den oguidade pansarbrytande granaten har en låg explosiv avkastning, men är förödande mot fordon vid kontakt."
+L["mw19_weapon_strela_desc"] = "Rekylfri 84 mm raketgevär skjuter en explosiv projektil i väldigt hög hastighet. Den oguidade pansarbrytande granaten har en låg explosiv avkastning, men är förödande mot fordon vid kontakt."
 L["mw19_weapon_javelin_desc"] = "Portabel \"Fire-and-forget\" pansarvärnsrobot med hög explosiv avkastning. Infraröd guidade missiler använder en \"top-attack\"-teknik vilket garanterar förstörelse av tungt bepansrade fordon."
 L["mw19_weapon_rpg_desc"] = "Oguidad, raketdrivet raketgevär skjuter en söligare projektil med en hög explosiv avkastning."
-L["mw19_weapon_mgl_desc"] = "Snabbskjutande granatkastare matad med en roterande cylinder som håller 6 skott. Kan använda flertal olika 40mm-granater för diverse roller." -- UO
+L["mw19_weapon_mgl_desc"] = "Snabbskjutande granatkastare matad med en roterande cylinder som håller 6 skott. Kan använda flertal olika 40 mm-granater för diverse roller." -- UO
 
 L["mw19_weapon_knife_desc"] = "En taktisk kniv för närstrid. Standard militärutrustning, utdelad för snabba, tysta och dödliga våtarbeten."
 L["mw19_weapon_stick_desc"] = "Dubbla batonger tillåter operatörer att närma deras måltavlor med otrolig rörlighet. Stadig och lätt design tillåter snabba angrepp för zonering av dina fiender."

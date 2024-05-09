@@ -251,7 +251,7 @@ else -- Warzone Stats
 	
 end
 
-ARC9.LoadAttachment(ATT, "cod2019_optic_scope_strela")
+ARC9.LoadAttachment(ATT, "cod2019_optic_default_strela")
 
 //////////////////////////////////////////////// -- MGL-32
 /////////////////////////// -- MGL-32
@@ -298,4 +298,4 @@ else -- Warzone Stats
 	
 end
 
-ARC9.LoadAttachment(ATT, "cod2019_optic_scope_m32")
+ARC9.LoadAttachment(ATT, "cod2019_optic_default_m32")

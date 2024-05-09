@@ -237,11 +237,11 @@ SWEP.SprintPos = Vector(1, 0, -0)
 SWEP.SprintAng = Angle(-6, -6, 0)
 
 SWEP.CustomizeAng = Angle(90, -25, 6)
-SWEP.CustomizePos = Vector(4, 40, 6)
-SWEP.CustomizeRotateAnchor = Vector(9, -2.25, -4)
-SWEP.CustomizeSnapshotFOV = 90
+SWEP.CustomizePos = Vector(3, 55, 6)
+SWEP.CustomizeRotateAnchor = Vector(1, -4, -4)
+SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(-5, 25, 3)
+SWEP.CustomizeSnapshotPos = Vector(0, 55, 6)
 
 -------------------------- HoldTypes
 
@@ -459,7 +459,7 @@ SWEP.Animations = {
         Source = "reload_fast",
 		MinProgress = 0.95,
 		FireASAP = true,
-		RefillProgress = 0.7,
+		RefillProgress = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -663,43 +663,59 @@ SWEP.Attachments = {
     },
     {
 		PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh_2","cod2019_perks_ss"}
+        Category = {"cod2019_perks","cod2019_perks_soh"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(5, 5, -2),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
         --Bone = "v_weapon.Clip",
-        Category = "go_skins_pila",
+        Category = "cod2019_pila_skins",
+        Bone = "tag_cosmetic",
+        Pos = Vector(5, 5, 2),
 		CosmeticOnly = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
+        Bone = "tag_cosmetic",
+        Pos = Vector(3, 5, 2),
         CosmeticOnly = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_pila_decal_a.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(1, 5, 2),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_pila_decal_b.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-1, 5, 2),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_pila_decal_c.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-3, 5, 2),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_pila_decal_d.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-5, 5, 2),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_pila_decal_e.mdl",
         Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-7, 5, 2),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
@@ -710,6 +726,7 @@ SWEP.Attachments = {
         Pos = Vector(15.7, -2.2, -0.1),
         Ang = Angle(0, 0, 0),
 		Scale = 2,
+		Icon_Offset = Vector(-24.25, 2., 3.7),
     },
 }
 

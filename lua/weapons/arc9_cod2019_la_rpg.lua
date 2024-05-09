@@ -218,12 +218,11 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 16)
-SWEP.CustomizePos = Vector(13, 35, 3)
-SWEP.CustomizeRotateAnchor = Vector(13, -2.25, -4)
-SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeRotateAnchor = Vector(13, 0, 0)
+SWEP.CustomizePos = Vector(9.5, 55, 2)
+SWEP.CustomizeRotateAnchor = Vector(13, -3, -4)
+SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(0, 25, 3)
+SWEP.CustomizeSnapshotPos = Vector(1, 35, 3)
 
 SWEP.PeekPos = Vector(1.2, 1.5, -1.7)
 SWEP.PeekAng = Angle(0, 1, -25)
@@ -447,48 +446,66 @@ SWEP.Attachments = {
     },
     {
 		PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh"}
+        Category = {"cod2019_perks","cod2019_perks_soh"},
+        Bone = "tag_launcher_offset",
+        Pos = Vector(13, 0, -3),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
         --Bone = "v_weapon.Clip",
-        Category = "go_skins_rpg",
+        Category = "cod2019_rpg_skins",
+        Bone = "tag_launcher_offset",
+        Pos = Vector(15, 0, 5),
 		CosmeticOnly = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
+        Bone = "tag_launcher_offset",
+        Pos = Vector(13, 0, 5),
         CosmeticOnly = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_rpg_decal_a.mdl",
         Category = "stickers",
+        Bone = "tag_launcher_offset",
+        Pos = Vector(11, 0, 5),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_rpg_decal_b.mdl",
         Category = "stickers",
+        Bone = "tag_launcher_offset",
+        Pos = Vector(9, 0, 5),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_rpg_decal_c.mdl",
         Category = "stickers",
+        Bone = "tag_launcher_offset",
+        Pos = Vector(7, 0, 5),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_rpg_decal_d.mdl",
         Category = "stickers",
+        Bone = "tag_launcher_offset",
+        Pos = Vector(5, 0, 5),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_rpg_decal_e.mdl",
         Category = "stickers",
+        Bone = "tag_launcher_offset",
+        Pos = Vector(3, 0, 5),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/eq_rpg_decal_f.mdl",
         Category = "stickers",
+        Bone = "tag_launcher_offset",
+        Pos = Vector(1, 0, 5),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
@@ -499,6 +516,7 @@ SWEP.Attachments = {
         Pos = Vector(11, -0.9, 0.3),
         Ang = Angle(0, 0, 0),
 		Scale = 1.5,
+		Icon_Offset = Vector(-12.25, 0, 4.5),
     },
 }
 
