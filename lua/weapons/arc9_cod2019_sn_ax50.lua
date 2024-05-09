@@ -236,13 +236,13 @@ SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(1, 40, 5)
 
-SWEP.PeekPos = Vector(2.5, 4, -1)
-SWEP.PeekAng = Angle(-0.3, 0, -10)
+SWEP.PeekPos = Vector(-1.7, 2, -4)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
 
-SWEP.PeekMaxFOV = 54
+SWEP.PeekMaxFOV = 64
 
-SWEP.PeekPosReloading = Vector(4, 3, 0)
-SWEP.PeekAngReloading = Angle(-0.3, 0, 10)
+SWEP.PeekPosReloading = Vector(0, 2, -2)
+SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
 
 -------------------------- HoldTypes
 
