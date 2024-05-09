@@ -137,12 +137,15 @@ SWEP.RecoilMax = 1
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilPunchSights = 10
+SWEP.VisualRecoilRollSights = 15
+SWEP.VisualRecoilSideSights = 0
+SWEP.VisualRecoilUpSights = 0
+
 SWEP.VisualRecoilPunch = 3
 SWEP.VisualRecoilUp = 0.5
-
-SWEP.VisualRecoilMultSights = 1
-SWEP.VisualRecoilPunchSights = 25
-SWEP.VisualRecoilRoll = 5
+SWEP.VisualRecoilRoll = 15
 SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
@@ -422,7 +425,7 @@ SWEP.Animations = {
 		PeekProgress = 0.85,
 		RefillProgress = 0.65,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -444,7 +447,7 @@ SWEP.Animations = {
 		RefillProgress = 0.85,
 		FireASAP = true,
 		EjectAt = 0.35,
-		DropMagAt = 1.4,
+		DropMagAt = 1.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
@@ -518,7 +521,7 @@ SWEP.Animations = {
 		PeekProgress = 0.85,
 		RefillProgress = 0.65,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 0.6,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -542,7 +545,7 @@ SWEP.Animations = {
 		RefillProgress = 0.85,
 		FireASAP = true,
 		EjectAt = 0.35,
-		DropMagAt = 1.4,
+		DropMagAt = 1.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
@@ -603,12 +606,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Time = 1.25,
+		Time = 1,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Time = 1.25,
+		Time = 1,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -762,7 +765,7 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["base_none"] = {
+    ["body_none"] = {
         Bodygroups = {
             {0,1},
         },
@@ -795,6 +798,11 @@ SWEP.AttachmentElements = {
     ["sight_none"] = {
         Bodygroups = {
             {4,1},
+        },
+    },
+    ["sight_none2"] = {
+        Bodygroups = {
+            {4,2},
         },
     },
     ["stock_none"] = {
@@ -854,7 +862,7 @@ SWEP.Attachments = {
         Bone = "tag_scope",
         Pos = Vector(1.5, 0, -0.1),
         Category = {"cod2019_optic","cod2019_optic_ax50"},
-		InstalledElements = {"sight_none"},
+		InstalledElements = {"sight_none2"},
 		Installed = "cod2019_optic_default_ax50",
     },
     { -- 5

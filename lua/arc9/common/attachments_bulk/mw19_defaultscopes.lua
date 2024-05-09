@@ -67,6 +67,7 @@ ATT.Category = {"cod2019_optic_hdr"}
 ATT.ActivateElements = {"scope_hdr"}
 
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_hdr.mdl"
+ATT.BoneMerge = true
 ATT.ModelOffset = Vector(5, 0, 0)
 
 ATT.Sights = {
@@ -110,7 +111,7 @@ ATT = {}
 
 ATT.PrintName = "AX50 Scope"
 ATT.Description = ""
-ATT.Icon = Material("entities/attachs/sn/ax50/cod2019_optic_scope_ax50.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/sn/ax50/cod2019_sn_ax50_scope_v4.png", "mips smooth")
 
 ATT.SortOrder = 4
 ATT.Free = false
@@ -170,6 +171,7 @@ ATT.Category = {"cod2019_optic_rytec"}
 ATT.ActivateElements = {"scope_rytec"}
 
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_rytec.mdl"
+ATT.BoneMerge = true
 ATT.Scale = 1
 ATT.ModelOffset = Vector(-0.3, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
