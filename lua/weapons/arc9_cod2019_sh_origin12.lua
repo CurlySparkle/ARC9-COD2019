@@ -895,6 +895,12 @@ SWEP.AttachmentTableOverrides = {
 	BoneMerge = false,
 	ModelOffset = Vector(0, 0, 0),
     },
+    ["cod2019_attach_muzzle_silencer_shotgun_03"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/origin12/attachment_vm_sh_oscar12_suppressor.mdl",
+    },
+    ["cod2019_attach_muzzle_silencer_shotgun_01"] = {
+    Model = "models/weapons/cod2019/attachs/silencers/attachment_vm_sh_oscar12_silencer03.mdl",
+    },
 }
 
 SWEP.AttachmentElements = {
