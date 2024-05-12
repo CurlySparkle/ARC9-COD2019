@@ -56,7 +56,6 @@ SWEP.WorldModelOffset = {
 
 SWEP.DamageMax = 103 / 6 -- Damage done at point blank range
 SWEP.DamageMin = 40 / 6 -- Damage done at maximum range
-SWEP.DistributeDamage = true
 
 SWEP.Num = 6
 
