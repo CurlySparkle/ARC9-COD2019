@@ -226,10 +226,10 @@ SWEP.SprintPos = Vector(2, 0, -2)
 SWEP.SprintAng = Angle(-1, 5, 25)
 
 SWEP.CustomizeAng = Angle(90, -15, 0)
-SWEP.CustomizePos = Vector(15, 25, 5)
+SWEP.CustomizePos = Vector(15, 32.5, 5)
 SWEP.CustomizeRotateAnchor = Vector(15, -1, -4)
-SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(1.5, -2.5, 0)
+SWEP.CustomizeSnapshotFOV = 65
+SWEP.CustomizeSnapshotPos = Vector(0.5, 5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -929,7 +929,7 @@ SWEP.Attachments = {
         Category = "cod2019_m1911_receiver",
         Bone = "tag_pistol_attachments",
         Pos = Vector(0, 0, 0),
-		Icon_Offset = Vector(0, 0, 1),
+		Icon_Offset = Vector(0, 0, 0),
 		Hidden = false,
     },
 	
@@ -990,7 +990,7 @@ SWEP.Attachments = {
         Category = "killcounter",
         Bone = "tag_barrel_attach",
         Pos = Vector(2.5, -0.55, -1),
-		Icon_Offset = Vector(-4, 0.05, 2.35),
+		Icon_Offset = Vector(-4, 0.05, 2.325),
 		CosmeticOnly = true,
 		RejectAttachments = { ["arc9_stat_proscreen"] = true },
     },
@@ -998,7 +998,8 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_view"),
         Category = "cod2019_pistols_view",
         Bone = "tag_cosmetic",
-        Pos = Vector(-5, 0, 1.5),
+        Pos = Vector(-4.8, 0, 1.5),
+		CosmeticOnly = true,
     },
 }
 

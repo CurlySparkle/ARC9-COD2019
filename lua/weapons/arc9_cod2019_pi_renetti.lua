@@ -230,10 +230,10 @@ SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, -15, 0)
-SWEP.CustomizePos = Vector(15, 26.5, 5.5)
+SWEP.CustomizePos = Vector(15, 35, 5.5)
 SWEP.CustomizeRotateAnchor = Vector(15, -1, -5.5)
-SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(1.5, -2.5, 0)
+SWEP.CustomizeSnapshotFOV = 65
+SWEP.CustomizeSnapshotPos = Vector(1.5, 5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -1229,7 +1229,7 @@ SWEP.DefaultBodygroups = "00000000000000"
 SWEP.AttachmentTableOverrides = {
     ["cod2019_renetti_stock"] = {
 		CustomizeAng = Angle(90, 0, 0),
-		CustomizePos = Vector(12, 30, 4.5),
+		CustomizePos = Vector(12, 32.5, 4.5),
 		CustomizeRotateAnchor = Vector(12, -2.5, -4.5),
     },
     ["cod2019_trigger_light"] = {
@@ -1293,6 +1293,7 @@ SWEP.Attachments = {
         Category = "cod2019_renetti_slide",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(3, 0, 0.25),
     },
     { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser") .. " / " .. ARC9:GetPhrase("mw19_category_underbarrel"),
@@ -1419,15 +1420,15 @@ SWEP.Attachments = {
         Category = "killcounter",
         Bone = "tag_cosmetic",
         Pos = Vector(0, 0, -1),
-		Icon_Offset = Vector(-2.5, 0.05, 1.5),
+		Icon_Offset = Vector(-4, 0.05, 2.5),
 		CosmeticOnly = true,
     },
     { -- 20
         PrintName = ARC9:GetPhrase("mw19_category_view"),
         Category = "cod2019_pistols_view",
         Bone = "tag_cosmetic",
-        Pos = Vector(-9, 0, 3),
-		CosmeticOnly = false,
+        Pos = Vector(-5, 0, 1.5),
+		CosmeticOnly = true,
 		ExcludeElements = {"stock"},
     },
     { -- 21

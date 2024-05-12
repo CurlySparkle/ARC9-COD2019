@@ -225,10 +225,10 @@ SWEP.SprintPos = Vector(-3.5, 1, 4.7)
 SWEP.SprintAng = Angle(0, -25, -5)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(14, 25, 4.5)
-SWEP.CustomizeRotateAnchor = Vector(14, -1.75, -4.5)
-SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(2, -5, 0)
+SWEP.CustomizePos = Vector(14, 30, 4.5)
+SWEP.CustomizeRotateAnchor = Vector(14, -2, -4.5)
+SWEP.CustomizeSnapshotFOV = 65
+SWEP.CustomizeSnapshotPos = Vector(2, 12.5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -691,6 +691,10 @@ end
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
+    ["cod2019_357_grip_stock"] = {
+    CustomizePos = Vector(10, 30, 4.5),
+	CustomizeRotateAnchor = Vector(10, -3, -4.5)
+    },
     ["cod2019_trigger_light"] = {
 		RPMAdd = 20,
     },

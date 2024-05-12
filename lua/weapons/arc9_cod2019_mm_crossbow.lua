@@ -153,7 +153,7 @@ SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being
 
 -------------------------- AIM ASSIST
 
--- SWEP.NoAimAssist = true
+SWEP.NoAimAssist = true
 
 -------------------------- MELEE
 
@@ -202,11 +202,11 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(17, 35, 5.5)
+SWEP.CustomizePos = Vector(17, 50, 5.5)
 SWEP.CustomizeRotateAnchor = Vector(16, -3.5, -5.5)
-SWEP.CustomizeSnapshotFOV = 90
+SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(-2.5, 7, 3)
+SWEP.CustomizeSnapshotPos = Vector(-2.5, 25, 3)
 
 -------------------------- HoldTypes
 

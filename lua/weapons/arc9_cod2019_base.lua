@@ -127,6 +127,9 @@ SWEP.Hook_Think	= function(self)
             vm:SetPoseParameter("blend_walk", self.WalkPoseParam)
             --vm:SetPoseParameter("empty", !self:GetReloading() and (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
             vm:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
+			if self:GetCustomize() then -- When customizing, enable aim blend anyway.
+				vm:SetPoseParameter("aim_blend", 1)
+			end
             --vm:SetPoseParameter("blend_idle", self:GetSightAmount()) -- broken ass shit
         end
         if self:Clip1() == 0 then

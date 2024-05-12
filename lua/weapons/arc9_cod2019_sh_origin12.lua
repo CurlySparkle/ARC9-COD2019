@@ -216,11 +216,11 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(13.5, 30, 4)
+SWEP.CustomizePos = Vector(13.5, 42.5, 4)
 SWEP.CustomizeRotateAnchor = Vector(13.5, -2.25, -4)
-SWEP.CustomizeSnapshotFOV = 90
+SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(-2, 7, 3)
+SWEP.CustomizeSnapshotPos = Vector(-2, 22.5, 3)
 
 SWEP.PeekMaxFOV = 60
 
@@ -1055,7 +1055,7 @@ SWEP.Attachments = {
         Category = "cod2019_origin12_receiver",
         Bone = "tag_attachments",
         Pos = Vector(0, 0, 0),
-		Icon_Offset = Vector(3.5, 0, -1),
+		Icon_Offset = Vector(6.5, 0, 0.25),
 		Hidden = false,
     },
 	

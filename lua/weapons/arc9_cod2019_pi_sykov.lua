@@ -214,10 +214,10 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, -15, 0)
-SWEP.CustomizePos = Vector(14.5, 25, 4.5)
-SWEP.CustomizeRotateAnchor = Vector(14.5, -1, -4)
-SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(0.5, -2.5, 0)
+SWEP.CustomizePos = Vector(14, 32.5, 4.5)
+SWEP.CustomizeRotateAnchor = Vector(14, -1, -4)
+SWEP.CustomizeSnapshotFOV = 65
+SWEP.CustomizeSnapshotPos = Vector(0.5, 0, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -1342,14 +1342,14 @@ SWEP.AttachmentTableOverrides = {
     },
     ["cod2019_sykov_stock_light"] = {
 		CustomizeAng = Angle(90, 0, 0),
-		CustomizePos = Vector(10, 30, 4.5),
-		CustomizeRotateAnchor = Vector(8, -2.5, -4.5),
+		CustomizePos = Vector(13, 32.5, 4.5),
+		CustomizeRotateAnchor = Vector(13, -1.75, -4.5),
 		PeekPos = Vector(-1.5, 1, -3),
     },
     ["cod2019_sykov_stock_heavy"] = {
 		CustomizeAng = Angle(90, 0, 0),
-		CustomizePos = Vector(10, 30, 4.5),
-		CustomizeRotateAnchor = Vector(8, -2.5, -4.5),
+		CustomizePos = Vector(13, 32.5, 4.5),
+		CustomizeRotateAnchor = Vector(13, -1.75, -4.5),
 		PeekPos = Vector(-1.5, 1, -3),
     },
     -- ["cod2019_trigger_light"] = {
@@ -1419,6 +1419,7 @@ SWEP.Attachments = {
         Category = "cod2019_sykov_slide",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(2.5, 0, 0.1),
     },
     { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
@@ -1484,7 +1485,7 @@ SWEP.Attachments = {
         Category = "cod2019_sykov_receiver",
         Bone = "tag_pistol_attachments",
         Pos = Vector(0, 0, 0),
-		Icon_Offset = Vector(0, 0, 1),
+		Icon_Offset = Vector(0, 0, 0),
 		Hidden = false,
     },
 	
@@ -1545,15 +1546,16 @@ SWEP.Attachments = {
         Category = "killcounter",
         Bone = "tag_cosmetic",
         Pos = Vector(0, 0, -1),
-		Icon_Offset = Vector(-2.5, 0.05, 1.5),
+		Icon_Offset = Vector(-4, 0.05, 2.5),
 		CosmeticOnly = true,
+		InstalledElements = {"rail_laser"},
     },
     { -- 20
         PrintName = ARC9:GetPhrase("mw19_category_view"),
         Category = "cod2019_pistols_view",
         Bone = "tag_cosmetic",
-        Pos = Vector(-9, 0, 3),
-		CosmeticOnly = false,
+        Pos = Vector(-5, 0, 1.5),
+		CosmeticOnly = true,
 		ExcludeElements = {"stock"},
     },
 }

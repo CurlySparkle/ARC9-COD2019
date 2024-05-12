@@ -67,10 +67,10 @@ SWEP.SprintPos = Vector(-1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, -5)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(18, 32.5, 5)
+SWEP.CustomizePos = Vector(18, 42.5, 5)
 SWEP.CustomizeRotateAnchor = Vector(18, 0, -5)
-SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(2.5, 0, 0)
+SWEP.CustomizeSnapshotFOV = 65
+SWEP.CustomizeSnapshotPos = Vector(2.5, 5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 

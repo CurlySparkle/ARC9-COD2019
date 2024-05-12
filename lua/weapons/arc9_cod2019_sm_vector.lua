@@ -227,10 +227,10 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(9.5, 32.5, 4)
-SWEP.CustomizeRotateAnchor = Vector(9.5, -2.25, -4)
-SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
+SWEP.CustomizePos = Vector(9.5, 42.5, 4.5)
+SWEP.CustomizeRotateAnchor = Vector(9.5, -2.5, -4.5)
+SWEP.CustomizeSnapshotFOV = 65
+SWEP.CustomizeSnapshotPos = Vector(-1, 27.5, 2.5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -818,6 +818,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("optic_scope") then model:SetBodygroup(3,2) end
     if wep:HasElement("stock_retract") then model:SetBodygroup(5,1) end
+    if wep:HasElement("stock_adapter") then model:SetBodygroup(4,1) end
 end
 
 SWEP.Attachments = {
@@ -856,7 +857,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
         Category = {"cod2019_vector_stock","cod2019_tube","cod2019_retractstock"},
         Bone = "tag_stock_attach",
-        Pos = Vector(0.1, 0, -0.07),
+        Pos = Vector(0, 0, 0),
 		InstalledElements = {"stock_none"},
     },
     { -- 6

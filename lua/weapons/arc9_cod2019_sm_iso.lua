@@ -231,10 +231,10 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(11.5, 30, 4)
+SWEP.CustomizePos = Vector(11.5, 42.5, 4)
 SWEP.CustomizeRotateAnchor = Vector(11.5, -3, -4)
-SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(-1, 20, 5)
+SWEP.CustomizeSnapshotFOV = 65
+SWEP.CustomizeSnapshotPos = Vector(0, 20, 2.5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -939,6 +939,7 @@ SWEP.Attachments = {
         Category = "cod2019_iso_barrel",
         Bone = "tag_barrel_attach",
         Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(-3, 0, 0),
     },
     { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser"),

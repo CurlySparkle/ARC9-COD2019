@@ -226,10 +226,10 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, -15, 0)
-SWEP.CustomizePos = Vector(15, 25, 5.5)
+SWEP.CustomizePos = Vector(15, 32.5, 5.5)
 SWEP.CustomizeRotateAnchor = Vector(15, -1, -5.5)
-SWEP.CustomizeSnapshotFOV = 90
-SWEP.CustomizeSnapshotPos = Vector(1.5, -2.5, 0)
+SWEP.CustomizeSnapshotFOV = 65
+SWEP.CustomizeSnapshotPos = Vector(0, 5, 1)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -1181,7 +1181,7 @@ SWEP.DefaultBodygroups = "00000000000000"
 SWEP.AttachmentTableOverrides = {
     ["cod2019_x16_stock"] = {
 		CustomizeAng = Angle(90, 0, 0),
-		CustomizePos = Vector(12, 25, 4.5),
+		CustomizePos = Vector(12, 35, 4.5),
 		CustomizeRotateAnchor = Vector(12, -3.5, -4.5),
 		SprintPos = Vector(1, 2, -2),
 		-- SprintAng = Angle(0, 0, 25),
@@ -1324,7 +1324,7 @@ SWEP.Attachments = {
         Category = "cod2019_x16_receiver",
         Bone = "tag_pistol_attachments",
         Pos = Vector(0, 0, 0),
-		Icon_Offset = Vector(0, 0, 1),
+		Icon_Offset = Vector(0, 0, 0.5),
 		Hidden = false,
     },
 	
@@ -1385,7 +1385,7 @@ SWEP.Attachments = {
         Category = "killcounter",
         Bone = "tag_weapon",
         Pos = Vector(-4.5, -0.55, 1.4),
-		Icon_Offset = Vector(-4.25, 0.05, 2),
+		Icon_Offset = Vector(-4.25, 0.05, 1.975),
 		CosmeticOnly = true,
     },
     { -- 19
@@ -1401,7 +1401,7 @@ SWEP.Attachments = {
         Category = "cod2019_pistols_view",
         Bone = "tag_cosmetic",
         Pos = Vector(-5, 0, 1),
-		CosmeticOnly = false,
+		CosmeticOnly = true,
 		ExcludeElements = {"cod2019_x16_stock"},
     },
 }
