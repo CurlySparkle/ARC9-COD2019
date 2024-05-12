@@ -131,7 +131,11 @@ if SERVER then
         end
 
         self.DetonateTime = CurTime() + 2
+		self:Detonate()
     end
+end
+
+function ENT:Detonate()
 end
 
 function ENT:Draw()

@@ -507,25 +507,25 @@ ATT.Category = {"cod2019_ammo_crossbow"}
 ARC9.LoadAttachment(ATT, "cod2019_ammo_crossbow_rock")
 
 /////////////////////////// -- cod2019_ammo_crossbow_he
-ATT = {}
+-- ATT = {}
 
-ATT.PrintName = "Explosive Contact Bolt"
-ATT.CompactName = "EXPL"
-ATT.Description = "Crossbow bolts fitted with a custom electronic small-explosive device."
-ATT.SortOrder = 0.5
+-- ATT.PrintName = "Explosive Contact Bolt"
+-- ATT.CompactName = "EXPL"
+-- ATT.Description = "Crossbow bolts fitted with a custom electronic small-explosive device."
+-- ATT.SortOrder = 0.5
 
-ATT.Icon = Material("entities/attachs/mm/crossbow/cod2019_mm_crossbow_mag.png", "mips smooth")
-ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.AutoStats = true
+-- ATT.Icon = Material("entities/attachs/mm/crossbow/cod2019_mm_crossbow_mag.png", "mips smooth")
+-- ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+-- ATT.AutoStats = true
 
-ATT.Free = true
+-- ATT.Free = true
 
-ATT.ShootEnt = "arc9_cod2019_proj_crossbow_he"
-ATT.ImpactDecal = "Dark"
+-- ATT.ShootEnt = "arc9_cod2019_proj_crossbow_he"
+-- ATT.ImpactDecal = "Dark"
 
-ATT.Category = {"cod2019_ammo_crossbow"}
+-- ATT.Category = {"cod2019_ammo_crossbow"}
 
-ARC9.LoadAttachment(ATT, "cod2019_ammo_crossbow_he")
+-- ARC9.LoadAttachment(ATT, "cod2019_ammo_crossbow_he")
 
 //////////////////////////////////////////////// -- Launcher Ammo Types
 //////////////////////////////////// -- MGL-32
