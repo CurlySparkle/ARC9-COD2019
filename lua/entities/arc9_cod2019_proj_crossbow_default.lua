@@ -46,7 +46,7 @@ if SERVER then
             elseif not self.AttachToWorld and (not IsValid(self:GetParent())) or (IsValid(self:GetParent()) and self:GetParent():GetSolid() ~= SOLID_VPHYSICS and (self:GetParent():Health() <= 0)) then
                 self:SetParent()
                 self:PhysicsInit(SOLID_VPHYSICS)
-                self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
+                --self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
                 self:PhysWake()
             end
         end
@@ -92,8 +92,11 @@ if SERVER then
                 if tgt:IsWorld() or IsValid(tgt) then
                     self:SetSolid(SOLID_NONE)
                     self:SetMoveType(MOVETYPE_NONE)
-                    self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
+                    --self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
 					self:EmitSound(("weapons/cod2019/crossbow/imp_Arrow_Concrete_2ch_V3_0" .. math.random(1,4) .. ".ogg"), 75, 100, 1, CHAN_AUTO)
+					self:EmitSound("weapons/cod2019/throwables/throwing_knife/knife_hitwall1.ogg")
+					--self:EmitSound("weapons/crossbow/hit1.wav")
+					--sound.Play("weapons/cod2019/crossbow/imp_Arrow_Concrete_2ch_V3_01", data.HitPos + data.HitNormal * 5)
 					util.Decal("Impact.Concrete", hitPos + hitNormal, hitPos - hitNormal)
 
                     local f = {self}
@@ -117,6 +120,9 @@ if SERVER then
                         self:SetLocalAngles(n_ang)
                         debugoverlay.Cross(pos, 8, 5, Color(255, 0, 255), true)
 						self:EmitSound(("weapons/cod2019/crossbow/bullet_flesh_plr_head_0" .. math.random(1,3) .. ".ogg"), 75, 100, 1, CHAN_AUTO)
+						self:EmitSound("weapons/cod2019/throwables/throwing_knife/knife_hit1.ogg")
+						--self:EmitSound("weapons/crossbow/bolt_skewer1.wav")
+						--sound.Play("weapons/cod2019/crossbow/bullet_flesh_plr_head_01", data.HitPos + data.HitNormal * 5)
                     elseif not tgt:IsWorld() then
                         self:SetParent(tgt)
                         self:GetParent():DontDeleteOnRemove(self)

@@ -13,7 +13,7 @@ sound.Add({
     volume = 0.25, 
     level = 75,
     pitch = {95, 105},
-    sound = {"^weapons/cod2019/throwables/smoke/smoke_grenade_smoke_loop.ogg"}
+    sound = {"^weapons/cod2019/throwables/smoke/smoke_grenade_smoke_loop.wav"}
 }) 
 
 sound.Add({
