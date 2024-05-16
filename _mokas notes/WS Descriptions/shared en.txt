@@ -1,0 +1,50 @@
+Adds most (but not all) the "global" attachments from [url=https://store.steampowered.com/app/2000950/Call_of_Duty_Modern_Warfare/] MW2019 [/url] for the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3127584298] [ARC9] CoD MW2019 [/url] pack. This pack includes muzzles, grips, stocks, and much more.
+
+As it's said previously, this may not include literally all of the attachments/blueprints for some weapons, but will probably be added eventually (when I'm still have enough motivation to do it, ARC9 does bring quite a brain struggle). Either way, you can take a look at the files themselves to see how they work and you can implement your weapons using this shared pack.
+
+This pack also supports localizations, but it is currently work-in-progress. Support languages are, and will be:
+[table][tr]
+	[th]English*[/th]
+	[th]Deutsch - German* (NS)[/th]
+	[th]Español - Spanish* (NS)[/th]
+[/tr][tr]
+	[th]Français - French (NS)[/th]
+	[th]Italiano - Italian (NS)[/th]
+	[th]日本語 - Japanese (NS)[/th]
+[/tr][tr]
+	[th]한국인 - Korean (NS)[/th]
+	[th]Polski - Polish (NS)[/th]
+	[th]Português - Portuguese (NS)[/th]
+[/tr][tr]
+	[th]Русский - Russian* (W)[/th]
+	[th]中国人 - Chinese* (NS)[/th]
+	[th][u]Svenska - Swedish[/u][/th]
+[/tr][/table]
+*Has official ARC9 support.
+[u]Underlined: Unofficial / Community Contributed[/u]
+(W) Work-In-Progress / Incomplete.
+(NS) Not-Yet-Started.
+
+Join the official [url=https://discord.gg/gaHXusZ] Diamond Doves Discord server here![/url]
+You can also join the [url=https://discord.gg/enbzr46j] MWB server too![/url]
+
+[h1]Credits and appreciation for the greatest minds of the generation:[/h1]
+[list]
+[*][b] [url=https://steamcommunity.com/id/twil_spark] Twilight Sparkle [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/firmeteran/] Firmeteran [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/Moka_Akshiya85] Moka [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/laboratorymember001] chen [/url] [/b]
+[*][b] [url=https://steamcommunity.com/profiles/76561198170118605] Shadowdark [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/dirtysionmain] Viper [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/alexio614] Mushroom guy [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/theonly8z] 8Z [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/ma_rv] Ma_rv [/url] [/b]
+[*][b] [url=https://steamcommunity.com/profiles/76561198126043982] MysterAC [/url] [/b]
+[*][b] [url=https://www.callofduty.com/modernwarfare] Activision & Infinity Ward [/url] [/b]
+[*][b] [url=https://twitter.com/takeru0321neko] Bentley [/url] [/b]
+[*][b]GitHub Contributor[/b]
+[*][b]Bill from estonia[/b]
+And of course you, for supporting this addon!
+[/list]
+
+If you encounter any bugs or want to suggest something or even help improving this, then you can check on the [url=https://github.com/CurlySparkle/ARC9_Cod2019_Shared] GitHub page [/url].

@@ -1,0 +1,65 @@
+After many months of working into this, it's finally here on the workshop, weapons from [url=https://store.steampowered.com/app/2000950/Call_of_Duty_Modern_Warfare/] MW2019 [/url] to ARC9. Many efforts put into this to look decent as possible, while having to struggle with the limitations of this base was really annoying, so instead of throwing it away why not just release it so at least people can enjoy it, so here it is, anyways i hope you guys still like it or not and see you on the next year!
+
+For those who are wondering, this is not meant to be a better or superior version to MWB. The only difference with this one is the focus on more customization provided by ARC9.
+
+Join the official [url=https://discord.gg/gaHXusZ]Diamond Doves Discord server here![/url]
+You can also join the [url=https://discord.gg/enbzr46j]MWB server too![/url]
+
+[h1]Highlights/Features[/h1]
+[list]
+[*] Includes all of MW19's weapons
+[*] Official attachment support from other packs, such as GSR and EFT.
+[*] Support for stickers, camouflage and charms.
+[*] Akimbo handguns
+[*] Official localization from MW19 itself:
+[table][tr]
+	[th]English*[/th]
+	[th]Deutsch - German*[/th]
+	[th]Español - Spanish*[/th]
+[/tr][tr]
+	[th]Français - French[/th]
+	[th]Italiano - Italian[/th]
+	[th]日本語 - Japanese[/th]
+[/tr][tr]
+	[th]한국인 - Korean[/th]
+	[th]Polski - Polish[/th]
+	[th]Português - Portuguese[/th]
+[/tr][tr]
+	[th]Русский - Russian*[/th]
+	[th]中国人 - Chinese*[/th]
+	[th][u]Svenska - Swedish[/u][/th]
+[/tr][/table]
+*Has official ARC9 support.
+[u]Underlined: Unofficial / Community Contributed[/u]
+[/list]
+And much more that I forgor!
+
+[h1]FAQ[/h1]
+- [b]How do I customize?[/b] - Just like on ArcCW, you press your Context button (default 'C')
+- [b]How do I melee?[/b] - Hold your USE (default 'E') button and press your primary attack (default 'Left Mouse')
+- [b]Will it add more weapons later?[/b] - no.
+- [b]Why does this not have all of the attachments?[/b] - They will be separated into their own pack.
+- [b]Why is this pack so huge on size?[/b] - Because literally includes all of its weapons.
+- [b]There's this issue with this issue pls fix[/b] - Go report them on the GitHub page, not here.
+- [b]What do I need to use this?[/b] - All you need is the ARC9 base.
+
+[h1]Credits and appreciation for the greatest minds of the generation:[/h1]
+[list]
+[*][b] [url=https://steamcommunity.com/id/twil_spark] Twilight Sparkle [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/firmeteran/] Firmeteran [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/Moka_Akshiya85] Moka [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/laboratorymember001] chen [/url] [/b]
+[*][b] [url=https://steamcommunity.com/profiles/76561198170118605] Shadowdark [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/dirtysionmain] Viper [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/alexio614] Mushroom guy [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/theonly8z] 8Z [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/ma_rv] Ma_rv [/url] [/b]
+[*][b] [url=https://steamcommunity.com/profiles/76561198126043982] MysterAC [/url] [/b]
+[*][b] [url=https://www.callofduty.com/modernwarfare] Activision & Infinity Ward [/url] [/b]
+[*][b] [url=https://twitter.com/takeru0321neko] Bentley [/url] [/b]
+[*][b]GitHub Contributor[/b]
+[*][b]Bill from estonia[/b]
+And of course you, for supporting this addon!
+[/list]
+
+If you encounter any bugs or want to suggest something or even help improving this, then you can check on the [url=https://github.com/CurlySparkle/ARC9-COD2019]GitHub page[/url].

@@ -1,0 +1,65 @@
+Efter många månaders arbete så anländer den äntligen till Workshop, vapen från [url=https://store.steampowered.com/app/2000950/Call_of_Duty_Modern_Warfare/] MW2019 [/url] till ARC9. Mycket ansträngning har lagts in för att få detta att se så bra ut som möjligt, medans strulen med denna basens begränsningar har varit irriterande, men istället för att kasta bort den, varför inte släppa den så att folk kan njuta av den, så här är den. Nåja, jag hoppas ni tycker om den, eller inte, och vi ses nästa år!
+
+För dem som undrar, detta är inte meningen att vara en bättre eller överlägsen version till MWB. Enda skillnaden med denna är fokuset på mer anpassning som erbjuds av ARC9.
+
+Gå med den officiella [url=https://discord.gg/gaHXusZ] Diamond Doves Discord-servern här![/url]
+Du kan också gå med [url=https://discord.gg/enbzr46j] MWB-servern![/url]
+
+[h1]Höjdpunkter/Funktioner[/h1]
+[list]
+[*] Innehåller alla vapen från MW19
+[*] Officiellt stöd för tillbehör från andra tillägg, exempelvis GSR och EFT.
+[*] Stöd för klistermärken, kamouflage och smycken.
+[*] Akimbo sidovapen
+[*] Officiellt stöd för språk från MW19:
+[table][tr]
+	[th]Engelska*[/th]
+	[th]Deutsch - Tyska*[/th]
+	[th]Español - Spanska*[/th]
+[/tr][tr]
+	[th]Français - Franska[/th]
+	[th]Italiano - Italienska[/th]
+	[th]日本語 - Japanska[/th]
+[/tr][tr]
+	[th]한국인 - Koreanska[/th]
+	[th]Polski - Polska[/th]
+	[th]Português - Portugisiska[/th]
+[/tr][tr]
+	[th]Русский - Ryska*[/th]
+	[th]中国人 - Kinesiska*[/th]
+	[th][u]Svenska[/u][/th]
+[/tr][/table]
+*Har officiellt ARC9-stöd.
+[u]Understrykt: Ej officiell / Tillagd av gemenskapen[/u]
+[/list]
+Och mycket mer jag kanske glömt!
+
+[h1]FAQ[/h1]
+- [b]Hur anpassar jag vapnen?[/b] - Precis som på ArcCW så trycker du på din Context-knapp (standard 'C')
+- [b]Hur slår jag med vapnet?[/b] - Håll inne din USE-knapp (standard 'E') och tryck på primärattack (standard 'Vänster Mus')
+- [b]Kommer du lägga till fler vapen senare?[/b] - nä.
+- [b]Varför har inte detta alla tillbehören?[/b] - Dem kommer splittras in till deras egna tillägg.
+- [b]Varför är detta tillägg så massivt, storleksmässigt?[/b] - För att den faktiskt innehåller alla vapen.
+- [b]Det finns ett problem vänligen fixa[/b] - Gå och rapportera om dem på GitHub-sidan, inte här.
+- [b]Vad krävs för att använda detta?[/b] - Allt som krävs är ARC9-basen.
+
+[h1]Kredit och uppskattning till generationens stora hjärnor:[/h1]
+[list]
+[*][b] [url=https://steamcommunity.com/id/twil_spark] Twilight Sparkle [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/firmeteran/] Firmeteran [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/Moka_Akshiya85] Moka [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/laboratorymember001] chen [/url] [/b]
+[*][b] [url=https://steamcommunity.com/profiles/76561198170118605] Shadowdark [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/dirtysionmain] Viper [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/alexio614] Mushroom guy [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/theonly8z] 8Z [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/ma_rv] Ma_rv [/url] [/b]
+[*][b] [url=https://steamcommunity.com/profiles/76561198126043982] MysterAC [/url] [/b]
+[*][b] [url=https://www.callofduty.com/modernwarfare] Activision & Infinity Ward [/url] [/b]
+[*][b] [url=https://twitter.com/takeru0321neko] Bentley [/url] [/b]
+[*][b]GitHub-Bidragsgivare[/b]
+[*][b]Räkning från Estland[/b]
+Och såklart dig själv som stödjer detta tillägg!
+[/list]
+
+Om du inträffar en bugg eller vill föreslå något eller till och med hjälpa till att förbättra detta så kan du titta på [url=https://github.com/CurlySparkle/ARC9-COD2019] GitHub-sidan [/url].

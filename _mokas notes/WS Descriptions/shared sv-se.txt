@@ -1,0 +1,50 @@
+Lägger till dem flesta (men inte alla) "globala" tillbehören från [url=https://store.steampowered.com/app/2000950/Call_of_Duty_Modern_Warfare/] MW2019 [/url] till [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3127584298] [ARC9] CoD MW2019-tillägget[/url]. Detta tillägg innehåller mynningstillbehör, grepp, kolvar och mer därtill.
+
+Som sagt innan så kanske inte alla tillbehör/blåplaner till vissa vapen finnas, men dem kommer läggas till vid något tillfälle (när jag har tillräckligt med motivering till det, ARC9 har varit en kamp för hjärnan). Oavsett så kan du ta en titt på tilläggets filer och se själv hur dem fungerar och så kan du lägga till dina vapen via detta delade tillägget.
+
+Detta tillägg stödjer också översättningar, men dem är för tillfället pågående. Språk som stöds är, och kommer vara:
+[table][tr]
+	[th]Engelska*[/th]
+	[th]Deutsch - Tyska* (NS)[/th]
+	[th]Español - Spanska* (NS)[/th]
+[/tr][tr]
+	[th]Français - Franska (NS)[/th]
+	[th]Italiano - Italienska (NS)[/th]
+	[th]日本語 - Japanska (NS)[/th]
+[/tr][tr]
+	[th]한국인 - Koreanska (NS)[/th]
+	[th]Polski - Polska (NS)[/th]
+	[th]Português - Portugisiska (NS)[/th]
+[/tr][tr]
+	[th]Русский - Ryska* (W)[/th]
+	[th]中国人 - Kinesiska* (NS)[/th]
+	[th][u]Svenska[/u][/th]
+[/tr][/table]
+*Har officiellt ARC9-stöd.
+[u]Understrykt: Ej officiell / Tillagd av gemenskapen[/u]
+(W) Pågående / Ej Komplett
+(NS) Ej Påbörjad.
+
+Gå med den officiella [url=https://discord.gg/gaHXusZ] Diamond Doves Discord-servern här![/url]
+Du kan också gå med [url=https://discord.gg/enbzr46j] MWB-servern![/url]
+
+[h1]Kredit och uppskattning till generationens stora hjärnor:[/h1]
+[list]
+[*][b] [url=https://steamcommunity.com/id/twil_spark] Twilight Sparkle [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/firmeteran/] Firmeteran [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/Moka_Akshiya85] Moka [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/laboratorymember001] chen [/url] [/b]
+[*][b] [url=https://steamcommunity.com/profiles/76561198170118605] Shadowdark [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/dirtysionmain] Viper [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/alexio614] Mushroom guy [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/theonly8z] 8Z [/url] [/b]
+[*][b] [url=https://steamcommunity.com/id/ma_rv] Ma_rv [/url] [/b]
+[*][b] [url=https://steamcommunity.com/profiles/76561198126043982] MysterAC [/url] [/b]
+[*][b] [url=https://www.callofduty.com/modernwarfare] Activision & Infinity Ward [/url] [/b]
+[*][b] [url=https://twitter.com/takeru0321neko] Bentley [/url] [/b]
+[*][b]GitHub-Bidragsgivare[/b]
+[*][b]Räkning från Estland[/b]
+Och såklart dig själv som stödjer detta tillägg!
+[/list]
+
+Om du inträffar en bugg eller vill föreslå något eller till och med hjälpa till att förbättra detta så kan du titta på [url=https://github.com/CurlySparkle/ARC9_Cod2019_Shared] GitHub-sidan [/url].
