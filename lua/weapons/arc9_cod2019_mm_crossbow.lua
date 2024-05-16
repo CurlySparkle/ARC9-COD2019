@@ -83,7 +83,8 @@ SWEP.SecondarySupplyLimit = 24 -- Amount of reserve UBGL magazines you can take.
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
-SWEP.ForceStandardCrosshair = true
+SWEP.ForceStandardCrosshair = false
+SWEP.LauncherCrosshair = true
 
 SWEP.NoFlash = true -- Disable light flash
 
@@ -100,7 +101,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 3
+SWEP.Recoil = 4
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
@@ -121,6 +122,17 @@ SWEP.RecoilKick = 5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
+
+-------------------------- VISUAL RECOIL
+
+SWEP.UseVisualRecoil = true
+SWEP.VisualRecoilPunch = 5
+SWEP.VisualRecoilRoll = 25
+SWEP.VisualRecoilSide = 0.2
+
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilPunchSights = 5
+SWEP.VisualRecoilSideSights = 0
 
 -------------------------- SPREAD
 
