@@ -26,6 +26,7 @@ ENT.TimeFuse = false // projectile will arm after this amount of time
 ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
 ENT.ImpactFuse = false // projectile explodes on impact.
 ENT.StickyFuse = false // projectile becomes timed after sticking.
+ENT.NoBounce = false // projectile doesn't bounce.
 
 ENT.RemoveOnImpact = false
 ENT.ExplodeOnImpact = false
@@ -172,7 +173,7 @@ function ENT:PhysicsCollide(data, collider)
             Tracer = 0,
             Src = self:GetPos(),
             Dir = data.OurOldVelocity:GetNormalized(),
-        })
+	        })
         local pos, ang, vel = self:GetPos(), self:GetAngles(), data.OurOldVelocity
         self:SetAngles(ang)
         self:SetPos(pos)
@@ -374,6 +375,9 @@ function ENT:Draw()
         render.SetMaterial(mat)
         render.DrawSprite(self:GetPos() + (self:GetAngles():Forward() * -16), math.Rand(self.FlareSizeMin, self.FlareSizeMax), math.Rand(self.FlareSizeMin, self.FlareSizeMax), self.FlareColor)
     end
+	 if self:GetNWBool("HasDetonated") then
+     self.Flare = false
+     end
    end
 end
 

@@ -108,6 +108,22 @@ if SERVER then
                         filter = f,
                         mask = MASK_SHOT
                     })
+					
+                    self:FireBullets({
+                    Attacker = self:GetOwner(),
+                    Inflictor = self,
+                    Damage = 0,
+                    Distance = 32,
+                    Tracer = 0,
+                    Src = self:GetPos(),
+                    Dir = data.OurOldVelocity:GetNormalized(),
+                    Callback = function(attacker, tr, dmgInfo)
+                    if (tr.HitSky) then
+                    self:Remove()
+                    return
+                    end
+                    end
+                    })
 
                     local bone = tr.Entity:TranslatePhysBoneToBone(tr.PhysicsBone) or tr.Entity:GetHitBoxBone(tr.HitBox, tr.Entity:GetHitboxSet())
                     local matrix = tgt:GetBoneMatrix(bone or 0)

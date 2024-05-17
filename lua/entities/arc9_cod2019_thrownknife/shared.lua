@@ -43,6 +43,8 @@ function ENT:Initialize()
 end
 
 function ENT:PhysicsCollide(data, physobj)
+    local hitPos = data.HitPos -- Get the position where the grenade hit
+    local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
     if SERVER then
         if data.HitEntity:GetClass() == "worldspawn" then
             self:SetMoveType(MOVETYPE_NONE)
@@ -51,6 +53,7 @@ function ENT:PhysicsCollide(data, physobj)
             self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hitwall1.ogg" )
             self.dt = CurTime() + 15
             self.Collectable = true
+			util.Decal("Impact.Concrete", hitPos + hitNormal, hitPos - hitNormal)
 
             self:SetTrigger(true)
             self:UseTriggerBounds(true, 24)
@@ -76,7 +79,7 @@ function ENT:Touch(ply)
     if !ply:IsPlayer() then return end
 
     if (dist < 32 * 32) then
-    ply:GiveAmmo(1, "arc9_cod2019_knife", false)
+    ply:GiveAmmo(1, "arc9_cod2019_nade_knife", false)
 
     self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 75)
     self:Remove()
@@ -86,7 +89,7 @@ end
 function ENT:Use(ply)
     if !ply:IsPlayer() then return end
     --ply:Give("grenade", true)
-    ply:GiveAmmo(1, "arc9_cod2019_knife", false)
+    ply:GiveAmmo(1, "arc9_cod2019_nade_knife", false)
 
     self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 75)
     self:Remove()
