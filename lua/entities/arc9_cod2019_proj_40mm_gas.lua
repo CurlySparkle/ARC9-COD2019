@@ -13,11 +13,11 @@ ENT.RemoteFuse = false // allow this projectile to be triggered by remote detona
 ENT.ImpactFuse = true // projectile explodes on impact.
 
 ENT.ExplodeOnDamage = false // projectile explodes when it takes damage.
-ENT.ExplodeUnderwater = true
+ENT.ExplodeUnderwater = false
 ENT.SmokeTrail = true
 
 ENT.Delay = 0
-ENT.SafetyFuse = 0.05
+ENT.SafetyFuse = 0.01
 ENT.FlareColor = Color(0, 0, 0)
 ENT.AudioLoop = ""
 
@@ -55,16 +55,43 @@ function ENT:Impact(data, collider)
 
             SafeRemoveEntityDelayed(prop, 3)
         end
-
         self:Remove()
         return true
     end
 end
 
 function ENT:Detonate()
-	local gas = ents.Create("arc9_cod2019_gas")
-	gas:SetPos(self:GetPos())
-	gas:SetOwner(self:GetOwner())
-	gas:Spawn()
+   if (self:WaterLevel() >= 1 or self:WaterLevel() >= 2) then
+    SafeRemoveEntityDelayed(self, 0)
     self:Remove()
+    self:EmitSound("weapons/rpg/shotdown.wav", 80)
+    else
+    self:DoDetonate()
+	ParticleEffectAttach("AC_nade_gas_ejection", PATTACH_ABSORIGIN_FOLLOW, self, 0)
+   end
+end
+
+function ENT:DoDetonate()
+    if self:WaterLevel() > 0 then self:Remove() return end
+    local attacker = self.Attacker or self:GetOwner() or self
+
+      local cloud = ents.Create("arc9_cod2019_gas")
+      if IsValid(cloud) then
+	     cloud:SetModel("models/weapons/cod2019/m32_nade.mdl")
+         cloud:SetPos(self:GetPos())
+         cloud:SetAngles(self:GetAngles())
+         cloud:SetOwner(attacker)
+         cloud:Spawn()
+		 cloud:EmitSound("weapons/cod2019/shared/weap_thermite_impact_01.ogg", 100)
+		 cloud:SetParent(self)
+		 cloud.NoIgnite = self
+		 --self:Remove()
+      end
+    --util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
+	self:SetVelocity(Vector(0,0,0))
+    timer.Simple(18, function()
+        if IsValid(self) then
+            self:Remove()
+        end
+    end)
 end

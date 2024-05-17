@@ -271,6 +271,10 @@ function ENT:DoSmokeTrail()
         smoke:SetGravity(Vector(0, 0, 0))
 
         emitter:Finish()
+		
+       if self:GetNWBool("HasDetonated") then
+          self.SmokeTrail = false
+       end
     end
 end
 
@@ -327,6 +331,7 @@ function ENT:PreDetonate()
         if !IsValid(self.Attacker) and !IsValid(self:GetOwner()) then self.Attacker = game.GetWorld() end
 
         self:Detonate()
+		self:SetNWBool("HasDetonated",true)
     if self.Lightfuse then
      if CLIENT then
 		local dlight = DynamicLight(self:EntIndex())
