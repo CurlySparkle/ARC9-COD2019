@@ -11,6 +11,7 @@ ENT.IsRocket = false // projectile has a booster and will not drop.
 ENT.InstantFuse = false // projectile is armed immediately after firing.
 ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
 ENT.ImpactFuse = true // projectile explodes on impact.
+ENT.NoBounce = true // projectile doesn't bounce.
 
 ENT.ExplodeOnDamage = false // projectile explodes when it takes damage.
 ENT.ExplodeUnderwater = false

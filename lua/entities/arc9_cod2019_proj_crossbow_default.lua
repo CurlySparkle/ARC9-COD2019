@@ -83,6 +83,12 @@ if SERVER then
         local hitPos = data.HitPos -- Get the position where the grenade hit
         local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
         local hitEntity = data.HitEntity -- Get the entity that was hit (can be nil if it hit the world)
+		
+        local theirProps = util.GetSurfaceData(data.TheirSurfaceProps)
+        if (theirProps != nil && theirProps.material == MAT_DEFAULT) then
+        timer.Simple(0, function() self:Remove() end)
+        return
+        end
 
         if tgt:IsWorld() or (IsValid(tgt) and tgt:GetPhysicsObject():IsValid()) then
             timer.Simple(0, function()
@@ -108,22 +114,6 @@ if SERVER then
                         endpos = data.HitPos + data.OurOldVelocity,
                         filter = f,
                         mask = MASK_SHOT
-                    })
-					
-                    self:FireBullets({
-                    Attacker = self:GetOwner(),
-                    Inflictor = self,
-                    Damage = 0,
-                    Distance = 32,
-                    Tracer = 0,
-                    Src = self:GetPos(),
-                    Dir = data.OurOldVelocity:GetNormalized(),
-                    Callback = function(attacker, tr, dmgInfo)
-                    if (tr.HitSky) then
-                    self:Remove()
-                    return
-                    end
-                    end
                     })
 
                     local bone = tr.Entity:TranslatePhysBoneToBone(tr.PhysicsBone) or tr.Entity:GetHitBoxBone(tr.HitBox, tr.Entity:GetHitboxSet())

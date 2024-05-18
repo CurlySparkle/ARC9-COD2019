@@ -361,6 +361,17 @@ SWEP.Animations = {
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
 		Mult = 2,
     },
+    ["super_sprint_idle"] = {
+        Source = "super_sprint",
+    },
+    ["super_sprint_in"] = {
+        Source = "super_sprint_in",
+		Mult = 2,
+    },
+    ["super_sprint_out"] = {
+        Source = "super_sprint_out",
+		Mult = 2,
+    },
     ["inspect"] = {
         Source = "lookat01",
         MinProgress = 0.1,
@@ -389,18 +400,28 @@ SWEP.Animations = {
 local Translate_Fast = {
     ["reload"] = "reload_fast",
 }
+local Translate_TacSprint = {
+    ["idle_sprint"] = "super_sprint_idle",
+    ["enter_sprint"] = "super_sprint_in",
+    ["exit_sprint"] = "super_sprint_out",
+}
 
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
     local speedload = wep:HasElement("perk_speedreload")
+    local super_sprint = wep:HasElement("perk_super_sprint")
+
+    if super_sprint and Translate_TacSprint[anim] then
+        return Translate_TacSprint[anim]
+    end
 
     if speedload then
         if Translate_Fast[anim] then
             return Translate_Fast[anim]
             end
         end
-    end
+end
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -446,7 +467,7 @@ SWEP.Attachments = {
     },
     {
 		PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh"},
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
         Bone = "tag_launcher_offset",
         Pos = Vector(13, 0, -3),
     },

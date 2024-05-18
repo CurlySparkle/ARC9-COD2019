@@ -107,6 +107,8 @@ function ENT:Initialize()
         self.ArmTime = CurTime()
         self.Armed = true
     end
+	
+	self.HitSkybox = false
 
     self:OnInitialize()
 end
@@ -163,7 +165,7 @@ function ENT:OnTakeDamage(dmg)
     end
 end
 
-function ENT:PhysicsCollide(data, collider)
+function ENT:PhysicsCollide(data, collider, physobj)
     if IsValid(data.HitEntity) and data.HitEntity:GetClass() == "func_breakable_surf" then
         self:FireBullets({
             Attacker = self:GetOwner(),
@@ -180,7 +182,13 @@ function ENT:PhysicsCollide(data, collider)
         self:GetPhysicsObject():SetVelocityInstantaneous(vel * 0.5)
         return
     end
-
+	
+    local theirProps = util.GetSurfaceData(data.TheirSurfaceProps)
+    if (theirProps != nil && theirProps.material == MAT_DEFAULT) then
+    timer.Simple(0, function() self:Remove() end)
+    return
+    end
+	
     if self.ImpactFuse and !self.Armed then
         self.ArmTime = CurTime()
         self.Armed = true
@@ -230,6 +238,10 @@ function ENT:PhysicsCollide(data, collider)
         end
 
         self:Stuck()
+    end
+	
+    if self.NoBounce then
+       self:SetPos(self:GetPos())
     end
 
     if data.DeltaTime < 0.1 then return end
@@ -297,6 +309,10 @@ function ENT:Think()
 
     if self.ExplodeUnderwater and self:WaterLevel() > 0 then
         self:PreDetonate()
+    end
+	
+    if self.HitSkybox then
+        self:Remove()
     end
 
     self:DoSmokeTrail()
