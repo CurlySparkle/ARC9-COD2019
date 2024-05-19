@@ -28,6 +28,8 @@ ENT.Radius = 300
 ENT.AudioLoop = ""
 
 function ENT:Impact(data, collider)
+    local hitPos = data.HitPos -- Get the position where the grenade hit
+    local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
     if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
         local attacker = self.Attacker or self:GetOwner()
         local ang = data.OurOldVelocity:Angle()
@@ -65,6 +67,7 @@ function ENT:Impact(data, collider)
         self:Remove()
         return true
     end
+	util.Decal("Scorch", hitPos + hitNormal, hitPos - hitNormal)
 end
 
 function ENT:Detonate()
@@ -102,6 +105,5 @@ function ENT:Detonate()
     end
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-    util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
     self:Remove()
 end

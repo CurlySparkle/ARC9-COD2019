@@ -26,6 +26,8 @@ ENT.FlareColor = Color(155, 155, 155)
 ENT.Radius = 300
 
 function ENT:Impact(data, collider)
+    local hitPos = data.HitPos -- Get the position where the grenade hit
+    local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
     if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
         local attacker = self.Attacker or self:GetOwner()
         local ang = data.OurOldVelocity:Angle()
@@ -63,6 +65,7 @@ function ENT:Impact(data, collider)
         self:Remove()
         return true
     end
+	util.Decal("Scorch", hitPos + hitNormal, hitPos - hitNormal)
 end
 
 function ENT:Detonate()
@@ -97,20 +100,7 @@ function ENT:Detonate()
         --util.Effect("Explosion", fx)
 		ParticleEffect("explosion_m79", self:GetPos(), Angle(-90, 0, 0))
     end
-
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-    self:FireBullets({
-        Attacker = attacker,
-        Damage = 0,
-        Tracer = 0,
-        Distance = 20000,
-        Dir = self:GetVelocity(),
-        Src = self:GetPos(),
-        Callback = function(att, tr, dmg)
-            util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
-        end
-    })
-
     self:Remove()
 end

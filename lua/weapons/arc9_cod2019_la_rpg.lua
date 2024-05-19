@@ -429,6 +429,10 @@ SWEP.AttachmentTableOverrides = {
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 0.8,
     },
+    ["cod2019_perks_super_sprint"] = {
+    SprintPos = Vector(0, 0, -2),
+    SprintAng = Angle(0, 0, 1)
+    },
 }
 
 SWEP.AttachmentElements = {

@@ -15,25 +15,23 @@ local function GetSmokeImage()
     return smokeimages[math.random(#smokeimages)]
 end
 
-ENT.Material = false // custom material
+ENT.Material = false -- custom material
+ENT.IsRocket = false -- projectile has a booster and will not drop.
+ENT.Sticky = false -- projectile sticks on impact
 
-ENT.IsRocket = false // projectile has a booster and will not drop.
-
-ENT.Sticky = false // projectile sticks on impact
-
-ENT.InstantFuse = true // projectile is armed immediately after firing.
-ENT.TimeFuse = false // projectile will arm after this amount of time
-ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
-ENT.ImpactFuse = false // projectile explodes on impact.
-ENT.StickyFuse = false // projectile becomes timed after sticking.
-ENT.NoBounce = false // projectile doesn't bounce.
+ENT.InstantFuse = true -- projectile is armed immediately after firing.
+ENT.TimeFuse = false -- projectile will arm after this amount of time
+ENT.RemoteFuse = false -- allow this projectile to be triggered by remote detonator.
+ENT.ImpactFuse = false -- projectile explodes on impact.
+ENT.StickyFuse = false -- projectile becomes timed after sticking.
+ENT.NoBounce = false -- projectile doesn't bounce.
 
 ENT.RemoveOnImpact = false
 ENT.ExplodeOnImpact = false
-ENT.ExplodeOnDamage = false // projectile explodes when it takes damage.
-ENT.ExplodeUnderwater = false // projectile explodes when it enters water
+ENT.ExplodeOnDamage = false -- projectile explodes when it takes damage.
+ENT.ExplodeUnderwater = false -- projectile explodes when it enters water
 
-ENT.Defusable = false // press E on the projectile to defuse it
+ENT.Defusable = false -- press E on the projectile to defuse it
 ENT.DefuseOnDamage = false
 
 ENT.LightFuse = false
@@ -41,20 +39,18 @@ ENT.LightFuse = false
 ENT.ImpactDamage = 25
 ENT.ImpactDamageSpeed = 1000
 
-ENT.Delay = 5 // after being triggered and this amount of time has passed, the projectile will explode.
+ENT.Delay = 5 -- after being triggered and this amount of time has passed, the projectile will explode.
 
 ENT.Armed = false
 
-ENT.SmokeTrail = false // leaves trail of smoke
+ENT.SmokeTrail = false -- leaves trail of smoke
 ENT.Flare = true
 ENT.FlareColor = nil
 ENT.FlareSizeMin = 50
 ENT.FlareSizeMax = 100
 
 ENT.AudioLoop = nil
-
 ENT.BounceSounds = nil
-
 ENT.CollisionSphere = nil
 
 function ENT:SetupDataTables()
@@ -147,7 +143,7 @@ end
 function ENT:OnTakeDamage(dmg)
     if self.Detonated then return end
 
-    // self:TakePhysicsDamage(dmg)
+    -- self:TakePhysicsDamage(dmg)
 
     if self.ExplodeOnDamage then
         if IsValid(self:GetOwner()) and IsValid(dmg:GetAttacker()) then self:SetOwner(dmg:GetAttacker())
@@ -214,7 +210,7 @@ function ENT:PhysicsCollide(data, collider, physobj)
     end
 
     if self.Sticky then
-        self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
+        --self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
         self:SetPos(data.HitPos)
 
         self:SetAngles((-data.HitNormal):Angle())
@@ -242,6 +238,7 @@ function ENT:PhysicsCollide(data, collider, physobj)
 	
     if self.NoBounce then
        self:SetPos(self:GetPos())
+	   self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.1)
     end
 
     if data.DeltaTime < 0.1 then return end
@@ -310,10 +307,6 @@ function ENT:Think()
     if self.ExplodeUnderwater and self:WaterLevel() > 0 then
         self:PreDetonate()
     end
-	
-    if self.HitSkybox then
-        self:Remove()
-    end
 
     self:DoSmokeTrail()
 
@@ -368,7 +361,7 @@ function ENT:PreDetonate()
 end
 
 function ENT:Detonate()
-    // fill this in :)
+    -- fill this in :)
 end
 
 function ENT:Impact()
