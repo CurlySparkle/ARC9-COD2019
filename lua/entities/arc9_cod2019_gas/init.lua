@@ -3,6 +3,10 @@ AddCSLuaFile("shared.lua")
 
 include("shared.lua")
 
+if CLIENT then
+    killicon.Add( "arc9_cod2019_gas", "vgui/killicons/cod2019_gas2.png", Color(251, 85, 25, 255))
+end
+
 ENT.smokeSound = nil
 
 function ENT:Initialize()

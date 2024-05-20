@@ -7,7 +7,7 @@ ENT.Spawnable = false
 ENT.AdminSpawnable = false
 
 if CLIENT then
-    killicon.Add( "arc9_cod2019_throwngas", "vgui/killicons/cod2019_gas", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_throwngas", "vgui/killicons/cod2019_gas2.png", Color(251, 85, 25, 255))
 end
 
 ENT.Model = "models/weapons/cod2019/w_eq_gas_thrown.mdl"

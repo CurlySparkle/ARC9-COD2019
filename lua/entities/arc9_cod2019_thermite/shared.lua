@@ -1,5 +1,5 @@
 if CLIENT then
-    killicon.Add( "arc9_cod2019_thermite", "vgui/killicons/cod2019_thermite", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_thermite", "vgui/killicons/cod2019_fire.png", Color(251, 85, 25, 255))
 end
 
 ENT.Type = "anim"
