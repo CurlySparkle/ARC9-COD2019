@@ -917,7 +917,7 @@ SWEP.Attachments = {
     { -- 21
         PrintName = "Bipod",
         Category = {"cod2019_pkm_bipod"},
-        Bone = "tag_attachments",
+        Bone = "tag_bipod_attach",
         Pos = Vector(0, 0, 0),
 		Hidden = true,
     },

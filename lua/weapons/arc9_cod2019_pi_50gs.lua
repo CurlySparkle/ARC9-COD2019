@@ -181,7 +181,8 @@ SWEP.IronSights = {
     Pos = Vector(-1.85, 0, 1.675),
     Ang = Angle(0, 0, 0),
     Magnification = 1.15,
-	CrosshairInSights = false
+	CrosshairInSights = false,
+	ViewModelFOV = 54,
 }
 
 SWEP.ViewModelFOVBase = 64
@@ -216,7 +217,7 @@ SWEP.CustomizeSnapshotPos = Vector(0, 12.5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekMaxFOV = SWEP.ViewModelFOVBase
+SWEP.PeekMaxFOV = 54
 
 SWEP.PeekPos = Vector(-1.7, -3, -4)
 SWEP.PeekAng = Angle(0, 0, -45)
