@@ -438,6 +438,7 @@ SWEP.Animations = {
         },
     },
     ["reload_armag"] = {
+	    Source = "reload_ar",
 		MinProgress = 0.925,
 		PeekProgress = 0.825,
 		RefillProgress = 0.65,

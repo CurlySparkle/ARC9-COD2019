@@ -199,17 +199,17 @@ SWEP.IronSights = {
 }
 
 --- RT Reticle ---
-SWEP.RTScope = true
-SWEP.RTScopeSubmatIndex = 1
-SWEP.RTScopeFOV = 44 / 1.25 -- FOV multiplied by zoom level
-SWEP.RTScopeReticle = Material("hud/arc9_cod2019/overlays/mk4_crosshair.png")
-SWEP.RTScopeColorable = false
-SWEP.RTScopeShadowIntensity = 1
-SWEP.RTScopeNoShadow = false
-SWEP.RTScopeBlackBox = false
-SWEP.RTScopeBlackBoxShadow = false
-SWEP.ScopeScreenRatio = 1
-SWEP.RTScopeReticleScale = 1.1
+-- SWEP.RTScope = true
+-- SWEP.RTScopeSubmatIndex = 1
+-- SWEP.RTScopeFOV = 44 / 1.25 -- FOV multiplied by zoom level
+-- SWEP.RTScopeReticle = Material("hud/arc9_cod2019/overlays/mk4_crosshair.png")
+-- SWEP.RTScopeColorable = false
+-- SWEP.RTScopeShadowIntensity = 7.5
+-- SWEP.RTScopeNoShadow = false
+-- SWEP.RTScopeBlackBox = false
+-- SWEP.RTScopeBlackBoxShadow = false
+-- SWEP.ScopeScreenRatio = 1
+-- SWEP.RTScopeReticleScale = 1.1
 ----------------------------------------------------
 
 SWEP.ViewModelFOVBase = 64
@@ -630,20 +630,19 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 end
 
 SWEP.Attachments = {
-    -- {
-        -- PrintName = ARC9:GetPhrase("mw19_category_optic"),
-		-- DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
-        -- Bone = "tag_launcher_offset",
-        -- Pos = Vector(1, -3.1, 0.75),
-        -- Ang = Angle(0, 0, -70),
-        -- -- Category = {"cod2019_optic","cod2019_optic_pila"},
-        -- Category = {"cod2019_optic_pila"},
-        -- InstalledElements = {"sights"},
-		-- Installed = "cod2019_optic_scope_pila",
-		-- Integral = "cod2019_optic_scope_pila",
-        -- CorrectiveAng = Angle(-0.4, 0.4, 0),
-		-- Hidden = true,
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
+		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
+        Bone = "tag_scope",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Category = {"cod2019_pila_optic"},
+        InstalledElements = {"sights"},
+		Installed = "cod2019_pila_scope",
+		Integral = "cod2019_pila_scope",
+        CorrectiveAng = Angle(0, 0, 0),
+		Hidden = true,
+    },
     -- {
         -- PrintName = ARC9:GetPhrase("mw19_category_laser"),
         -- DefaultAttName = "Default",

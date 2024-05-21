@@ -429,7 +429,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.845,
 		MagSwapTime = 3.5,
-		DropMagAt = 3.7,
+		DropMagAt = 2.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
@@ -456,7 +456,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.8,
 		MagSwapTime = 3.5,
-		DropMagAt = 3.7,
+		DropMagAt = 2.85,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
@@ -787,7 +787,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Category = {"cod2019_optic"},
         Bone = "tag_holo",
-        Pos = Vector(1.5, 0, -0.1),
+        Pos = Vector(1.8, 0, -0.1),
 		InstalledElements = {"sight_back_none","sight_front_none"},
     },
     { -- 5
@@ -808,14 +808,14 @@ SWEP.Attachments = {
 		InstalledElements = {"grip_none"},
 		MergeSlots = {21, 22}, -- Bipod, Side Grips
     },
-    { -- 8
+    { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
 		Bone = "tag_mag_attach",
         Category = {"cod2019_pkm_mag","cod2019_mag"},
         Pos = Vector(0, 0, 0),
     },
-    { -- 9
+    { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
 		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",
@@ -901,9 +901,9 @@ SWEP.Attachments = {
         CosmeticOnly = true,
         Category = {"charm"},
         Bone = "tag_cosmetic",
-        Pos = Vector(0.5, 0, -0.25),
+        Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(0.5, 0, 3.25),
-		Scale = 1.5,
+		Scale = 1.3,
     },
     { -- 20
         PrintName = ARC9:GetPhrase("mw19_category_stats"),
