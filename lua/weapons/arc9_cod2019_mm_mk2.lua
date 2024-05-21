@@ -583,7 +583,12 @@ SWEP.AttachmentElements = {
             {1,1},
         },
     },
-    ["sight_none"] = {
+    ["sight_front_none"] = {
+        Bodygroups = {
+            {7,1},
+        },
+    },
+    ["sight_back_none"] = {
         Bodygroups = {
             {2,1},
         },
@@ -607,6 +612,11 @@ SWEP.AttachmentElements = {
         Bodygroups = {
             {6,1},
         },
+    },
+    ["scope_mk2"] = {
+		AttPosMods = { 
+			[4] = { Pos = Vector(4, 0, -0.1), }, -- Underbarrel
+		},
     },
 }
 
@@ -654,8 +664,8 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
-        Category = {"cod2019_optic", "cod2019_optic_big"},
-		InstalledElements = {"sight_none"},
+        Category = {"cod2019_optic","cod2019_optic_big","cod2019_optic_mk2"},
+		InstalledElements = {"sight_back_none"},
     },
     { -- 5
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
