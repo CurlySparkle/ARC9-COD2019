@@ -50,8 +50,8 @@ SWEP.NoAimAssist = true
 SWEP.ShootEnt = "arc9_cod2019_proj_strela_default" -- Set to an entity to launch it out of this weapon.
 SWEP.ShootEntForce = 5000
 
-SWEP.ShootPosOffset = Vector(5, 5, -5)
-SWEP.ShootPosOffsetSights = Vector(5, 5, -5)
+SWEP.ShootPosOffset = Vector(3, 0, 0)
+SWEP.ShootPosOffsetSights = Vector(3, 0, 0)
 
 SWEP.PushBackForce = 5
 

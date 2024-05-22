@@ -328,10 +328,18 @@ ATT.BoneMerge = true
 
 ATT.Sights = {
     {
-        Pos = Vector(-0.5875, 3, 0.985),
+        Pos = Vector(-0.515, 0.2, 1.035),
         Ang = Angle(2.5, -10, 0.675),
-        ViewModelFOV = 36,
+        ViewModelFOV = 54,
         Magnification = 1.25,
+        IgnoreExtra = true,
+		CrosshairInSights = false
+    },
+    {
+        Pos = Vector(-0.515, 1, 1.035),
+        Ang = Angle(2.5, -10, 0.675),
+        ViewModelFOV = 54,
+        Magnification = 1.1,
         IgnoreExtra = true,
 		CrosshairInSights = false
     },

@@ -65,8 +65,8 @@ SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets 
 
 --SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
 
-SWEP.ShootPosOffset = Vector(5, 0, -5)
-SWEP.ShootPosOffsetSights = Vector(0, 0, 0)
+SWEP.ShootPosOffset = Vector(3, 0, 0)
+SWEP.ShootPosOffsetSights = Vector(3, 0, 0)
 
 SWEP.PushBackForce = 5
 
@@ -173,7 +173,7 @@ SWEP.SpeedMult = 0.9 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.75 -- When aiming
 SWEP.SpeedMultShooting = 0.5
 
-SWEP.AimDownSightsTime = 0.8 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 1.1 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.5 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
@@ -316,19 +316,20 @@ SWEP.Hook_GetShootEntData = function(self, data)
 end
 
 SWEP.Hook_HUDPaintBackground = function(self)
+local TrackingIndicator = Material("VGUI/lockon.png")
     if self:GetSightAmount() >= 0.75 then
         if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
-             local toscreen = self.TargetEntity:GetPos():ToScreen()
+             local toscreen = self.TargetEntity:WorldSpaceCenter():ToScreen()
              local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
              
              if tracktime >= 1 then
-                surface.SetDrawColor(255, 0, 0)
+                surface.SetDrawColor(255,0,0,200)
                 surface.DrawLine(0, toscreen.y, ScrW(), toscreen.y)
                 surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH()) 
              else
-                surface.SetDrawColor(255, 0, 0)
-                --surface.DrawOutlinedRect( toscreen.x-ScrW()/50, toscreen.y-ScrW()/50, 50, 50,2 )
-				surface.DrawCircle(toscreen.x, toscreen.y, 30, Color( 255, 0, 0 ) )
+                surface.SetMaterial(TrackingIndicator)
+                surface.SetDrawColor(255,0,0,200)
+                surface.DrawTexturedRect(toscreen.x - 30, toscreen.y - 30, 60, 60) 
              end
         end
     end
@@ -641,7 +642,7 @@ SWEP.Attachments = {
 		Installed = "cod2019_optic_default_pila",
 		-- Integral = "cod2019_optic_default_pila",
         CorrectiveAng = Angle(0, 0, 0),
-		Hidden = false,
+		Hidden = true,
     },
     -- {
         -- PrintName = ARC9:GetPhrase("mw19_category_laser"),
