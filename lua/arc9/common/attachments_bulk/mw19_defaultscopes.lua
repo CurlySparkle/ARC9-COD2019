@@ -301,3 +301,50 @@ else -- Warzone Stats
 end
 
 ARC9.LoadAttachment(ATT, "cod2019_optic_default_m32")
+
+/////////////////////////// -- Pila Scope
+ATT = {}
+
+ATT.PrintName = "PILA Scope"
+ATT.CompactName = "PILA"
+ATT.Description = [[Default targetting sight for the Pila.]]
+
+ATT.CustomPros = {
+    [ ARC9:GetPhrase("mw19_optic_stat_zoom") ] = "3.0x"
+}
+
+ATT.SortOrder = 4
+ATT.Free = true
+ATT.Folder = ARC9:GetPhrase("mw19_folder_scope")
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.Category = {"cod2019_pila_optic"}
+ATT.ActivateElements = {"scope_pila"}
+
+ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_pila.mdl"
+ATT.BoneMerge = true
+--ATT.ModelOffset = Vector(0, 0, 0)
+--ATT.ModelAngleOffset = Angle(0, 0, 90)
+
+ATT.Sights = {
+    {
+        Pos = Vector(-0.5875, 3, 0.985),
+        Ang = Angle(2.5, -10, 0.675),
+        ViewModelFOV = 36,
+        Magnification = 1.25,
+        IgnoreExtra = true,
+		CrosshairInSights = false
+    },
+}
+
+ATT.RTScope = true
+ATT.RTScopeSubmatIndex = 1
+ATT.RTScopeFOV = 36 / 3
+ATT.RTScopeRes = 1024
+ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/mk4_crosshair.png", "mips")
+ATT.RTScopeReticleScale = 1.1
+ATT.RTScopeShadowIntensity = 1
+ATT.RTScopeNoPP = false
+ATT.RTScopeColorable = false
+
+ARC9.LoadAttachment(ATT, "cod2019_optic_default_pila")

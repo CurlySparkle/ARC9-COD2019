@@ -754,10 +754,12 @@ SWEP.AttachmentElements = {
     },
 }
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("barrel_short") then model:SetBodygroup(2,1) end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("cod2019_pkm_grip_bipod") then 
+		model:SetBodygroup(7, 0)
+	end
+end
 
 SWEP.Attachments = {
     { -- 1
@@ -801,7 +803,7 @@ SWEP.Attachments = {
     { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
 		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
-        Category = "cod2019_grip",
+        Category = {"cod2019_grip", "cod2019_pkm_bipod"},
         Bone = "tag_grip_attach",
         Pos = Vector(-2.5, 0, 0),
         Ang = Angle(0, 0, 180),

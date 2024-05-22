@@ -195,7 +195,7 @@ SWEP.IronSights = {
     Ang = Angle(0, 5, 20),
     Magnification = 1.25,
     ViewModelFOV = 56,
-    CrosshairInSights = false
+    CrosshairInSights = true
 }
 
 --- RT Reticle ---
@@ -638,10 +638,10 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_pila_optic"},
         InstalledElements = {"sights"},
-		Installed = "cod2019_pila_scope",
-		Integral = "cod2019_pila_scope",
+		Installed = "cod2019_optic_default_pila",
+		-- Integral = "cod2019_optic_default_pila",
         CorrectiveAng = Angle(0, 0, 0),
-		Hidden = true,
+		Hidden = false,
     },
     -- {
         -- PrintName = ARC9:GetPhrase("mw19_category_laser"),

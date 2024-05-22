@@ -252,6 +252,10 @@ L["cod2019_optic_default_strela.printname"] = ARC9:GetPhrase("cod2019_optic_defa
 L["cod2019_optic_default_strela.compactname"] = ARC9:GetPhrase("cod2019_optic_default_svd.compactname") or "Default" -- UO
 L["cod2019_optic_default_strela.description"] = "Default <color=100,255,100>3.0x</color> sight for the Strela-P."
 
+L["cod2019_optic_default_pila.printname"] = ARC9:GetPhrase("cod2019_optic_default_svd.printname") or "Default Scope" -- UO
+L["cod2019_optic_default_pila.compactname"] = ARC9:GetPhrase("cod2019_optic_default_svd.compactname") or "Default" -- UO
+L["cod2019_optic_default_pila.description"] = "Default <color=100,255,100>3.0x</color> sight for the PILA."
+
 L["cod2019_optic_default_m32.printname"] = "MGL-32 Grenade Launcher Sight"
 L["cod2019_optic_default_m32.compactname"] = "MGL GLS"
 L["cod2019_optic_default_m32.description"] = "Default <color=100,255,100>3.5x</color> sight for the MGL-32."

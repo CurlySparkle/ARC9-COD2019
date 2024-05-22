@@ -244,6 +244,8 @@ L["mw19_optic_stat_zoom2"] = "Zoom Level" -- Most scopes
 
 -- L["cod2019_optic_default_strela.description"] = "Default <color=255,255,100>3.0x</color> sight for the <color=175,175,255>Strela-P</color>."
 
+-- L["cod2019_optic_default_pila.description"] = "Default <color=100,255,100>3.0x</color> sight for the PILA."
+
 -- L["cod2019_optic_default_m32.printname"] = "MGL-32 Grenade Launcher Sight"
 -- L["cod2019_optic_default_m32.compactname"] = "MGL GLS"
 -- L["cod2019_optic_default_m32.description"] = "Default <color=255,255,100>3.5x</color> sight for the <color=175,175,255>MGL-32</color>."

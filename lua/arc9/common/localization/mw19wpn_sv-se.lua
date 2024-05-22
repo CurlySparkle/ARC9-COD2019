@@ -244,6 +244,8 @@ L["cod2019_optic_default_rytec.description"] = "Riktmedel med <color=100,255,100
 
 L["cod2019_optic_default_strela.description"] = "Sikte med <color=100,255,100>3,0x</color> zoom-nivå till Strela-P."
 
+L["cod2019_optic_default_pila.description"] = "Sikte med <color=100,255,100>3,0x</color> zoom-nivå till Strela-P."
+
 L["cod2019_optic_default_m32.printname"] = "MGL-32 Granattillsats Sikte"
 L["cod2019_optic_default_m32.compactname"] = "MGL GTS"
 L["cod2019_optic_default_m32.description"] = "Sikte med <color=100,255,100>3,5x</color> zoom-nivå till MGL-32."

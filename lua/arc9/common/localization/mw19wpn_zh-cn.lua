@@ -245,6 +245,8 @@ L["mw19_category_view"] = "View" -- UO
 
 -- L["cod2019_optic_default_strela.description"] = "Default <color=100,255,100>3.0x</color> sight for the Strela-P."
 
+-- L["cod2019_optic_default_pila.description"] = "Default <color=100,255,100>3.0x</color> sight for the PILA."
+
 -- L["cod2019_optic_default_m32.printname"] = "MGL-32 Grenade Launcher Sight"
 -- L["cod2019_optic_default_m32.compactname"] = "MGL GLS"
 -- L["cod2019_optic_default_m32.description"] = "Default <color=100,255,100>3.5x</color> sight for the MGL-32."
