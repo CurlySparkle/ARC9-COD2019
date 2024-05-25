@@ -21,6 +21,8 @@ ENT.SafetyFuse = 0
 ENT.AudioLoop = "weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
 
 ENT.SmokeTrail = true
+ENT.RocketTrail = false
+ENT.RocketTrailParticle = "rockettrail"
 
 ENT.FlareColor = Color(155, 155, 155)
 ENT.FlareSizeMin = 10
@@ -32,9 +34,8 @@ ENT.Radius = 300
 ENT.SeekerAngle = math.cos(math.rad(35))
 ENT.SteerSpeed = 10000
 ENT.FuseTime = 0
-ENT.Boost = 1500
-ENT.Lift = 80
-ENT.DragCoefficient = 0.1
+ENT.Boost = 2000
+ENT.Lift = 0
 ENT.LifeTime = 20
 
 ENT.FireAndForget = true
@@ -186,8 +187,8 @@ function ENT:Detonate()
             Distance = 32,
             IgnoreEntity = self,
             Callback = function(atk, btr, dmginfo)
-                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_BLAST) // airboat damage for helicopters and LVS vehicles
-                dmginfo:SetDamageForce(self:GetForward() * 20000) // LVS uses this to calculate penetration!
+                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_BLAST) -- airboat damage for helicopters and LVS vehicles
+                dmginfo:SetDamageForce(self:GetForward() * 20000) -- LVS uses this to calculate penetration!
             end,
         })
     end

@@ -65,8 +65,8 @@ SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets 
 
 --SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
 
-SWEP.ShootPosOffset = Vector(3, 0, 0)
-SWEP.ShootPosOffsetSights = Vector(3, 0, 0)
+SWEP.ShootPosOffset = Vector(4, 0, 0)
+SWEP.ShootPosOffsetSights = Vector(4, 0, 0)
 
 SWEP.PushBackForce = 5
 

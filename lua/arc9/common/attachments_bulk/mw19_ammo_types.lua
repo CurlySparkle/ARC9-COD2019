@@ -299,6 +299,8 @@ end
 
 ATT.MuzzleParticle = "muzzleflash_slug"
 ATT.MuzzleParticleSilenced = "AC_muzzle_shotgun_suppressed"
+--ATT.ShootEnt = "arc9_cod2019_proj_slug"
+--ATT.ShootEntForce = 3000
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_slug")
 

@@ -50,11 +50,8 @@ SWEP.NoAimAssist = true
 SWEP.ShootEnt = "arc9_cod2019_proj_jokr_default" -- Set to an entity to launch it out of this weapon.
 SWEP.ShootEntForce = 4000
 
-SWEP.ShootPosOffset = Vector(5, -1, -5)
-SWEP.ShootAngOffset = Angle(0, 0, 0)
-
-SWEP.ShootPosOffsetSights = Vector(5, -1, -5)
-SWEP.ShootAngOffsetSights = Angle(0, 0, 0)
+SWEP.ShootPosOffset = Vector(4, 0, 0)
+SWEP.ShootPosOffsetSights = Vector(4, 0, 0)
 
 SWEP.PushBackForce = 5
 

@@ -807,6 +807,16 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_trigger_match"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03.mdl",
     },
+    ["cod2019_view_alt_pistol"] = {
+    ActivePos = Vector(1, 0, 1.5),
+    ActiveAng = Angle(0, 0, 5),
+    MovingPos = Vector(-1,-2,-1),
+    MovingAng = Angle(0,0,-8),
+    CrouchPos = Vector(-1.2, -1, -1),
+    CrouchAng = Angle(0, 0, -10),
+    ReloadPos = Vector(0,0,0),
+    ReloadAng = Angle(0,0,0)
+    },
 }
 
 SWEP.AttachmentElements = {
