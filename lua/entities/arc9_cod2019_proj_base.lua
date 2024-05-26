@@ -323,8 +323,8 @@ function ENT:Think()
                 mask = MASK_SHOT
             })
         if IsValid(tr.Entity) and gunship[tr.Entity:GetClass()] then
-		self:Detonate()
-		--util.BlastDamage(self, attacker, self:GetPos(), 128, 25)
+           self:SetPos(tr.HitPos)
+           self:Detonate()
         end
     end
     end

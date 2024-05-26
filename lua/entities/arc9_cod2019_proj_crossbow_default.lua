@@ -7,6 +7,7 @@ ENT.Model = "models/weapons/cod2019/mags/w_eq_crossbow_bolt.mdl"
 
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.CanPickup = true
+ENT.GunshipWorkaround = true
 
 if CLIENT then
     killicon.Add( "arc9_cod2019_proj_crossbow_default", "hud/killicons/default", Color( 255, 255, 255, 255 ) )
@@ -51,6 +52,25 @@ if SERVER then
                 self:PhysWake()
             end
         end
+		
+    if SERVER then
+    local gunship = {["npc_combinegunship"] = true, ["npc_combinedropship"] = true}
+
+    if self.GunshipWorkaround and (self.GunshipCheck or 0 < CurTime()) then
+            self.GunshipCheck = CurTime() + 0.33
+            local tr = util.TraceLine({
+                start = self:GetPos(),
+                endpos = self:GetPos() + (self:GetVelocity() * 6 * engine.TickInterval()),
+                filter = self,
+                mask = MASK_SHOT
+            })
+        if IsValid(tr.Entity) and gunship[tr.Entity:GetClass()] then
+           self:SetPos(tr.HitPos)
+           self:Detonate()
+        end
+    end
+    end
+
     end
 
     function ENT:StartTouch(ent)
