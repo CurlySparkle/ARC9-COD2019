@@ -94,7 +94,7 @@ function ENT:Detonate()
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
     else
-        ParticleEffect("explosion_m79", self:GetPos(), Angle(-90, 0, 0))
+        ParticleEffect("grenade_final", self:GetPos(), Angle(-90, 0, 0))
     end
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)

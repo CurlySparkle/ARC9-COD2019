@@ -101,7 +101,7 @@ function ENT:Detonate()
         util.Effect("WaterSurfaceExplosion", fx)
     else
         --util.Effect("Explosion", fx)
-		ParticleEffect("explosion_m79", self:GetPos(), self:GetAngles())
+		ParticleEffect("grenade_final", self:GetPos(), self:GetAngles())
     end
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)

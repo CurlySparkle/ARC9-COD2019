@@ -55,6 +55,8 @@ ENT.AudioLoop = nil
 ENT.BounceSounds = nil
 ENT.CollisionSphere = nil
 
+ENT.GunshipWorkaround = true
+
 function ENT:SetupDataTables()
     self:NetworkVar("Entity", 0, "Weapon")
 end
@@ -307,6 +309,24 @@ function ENT:Think()
 
     if self.ExplodeUnderwater and self:WaterLevel() > 0 then
         self:PreDetonate()
+    end
+
+    if SERVER then
+    local gunship = {["npc_combinegunship"] = true, ["npc_combinedropship"] = true}
+
+    if self.GunshipWorkaround and (self.GunshipCheck or 0 < CurTime()) then
+            self.GunshipCheck = CurTime() + 0.33
+            local tr = util.TraceLine({
+                start = self:GetPos(),
+                endpos = self:GetPos() + (self:GetVelocity() * 6 * engine.TickInterval()),
+                filter = self,
+                mask = MASK_SHOT
+            })
+        if IsValid(tr.Entity) and gunship[tr.Entity:GetClass()] then
+		self:Detonate()
+		--util.BlastDamage(self, attacker, self:GetPos(), 128, 25)
+        end
+    end
     end
 
     self:DoSmokeTrail()
