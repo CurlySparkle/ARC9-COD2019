@@ -53,10 +53,9 @@ if SERVER then
             end
         end
 		
-    if SERVER then
     local gunship = {["npc_combinegunship"] = true, ["npc_combinedropship"] = true}
 
-    if self.GunshipWorkaround and (self.GunshipCheck or 0 < CurTime()) then
+    if SERVER and self.GunshipWorkaround and (self.GunshipCheck or 0 < CurTime()) then
             self.GunshipCheck = CurTime() + 0.33
             local tr = util.TraceLine({
                 start = self:GetPos(),
@@ -68,7 +67,6 @@ if SERVER then
            self:SetPos(tr.HitPos)
            self:Detonate()
         end
-    end
     end
 
     end

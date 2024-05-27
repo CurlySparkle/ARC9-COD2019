@@ -734,12 +734,6 @@ SWEP.Animations = {
     ["fix"] = {
         Source = "jam_fix",
 		EjectAt = 0.6,
-        IKTimeLine = {
-            { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.5, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 1, rhik = 1 },
-        },
         EventTable = {
 			{s = path .. "wfoly_lm_slima_reload_empty_fast_lower.ogg", t = 1/30},
 			{s = path .. "wfoly_lm_slima_reload_empty_fast_bolt_pull.ogg", t = 14/30},

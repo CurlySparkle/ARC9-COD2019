@@ -311,10 +311,9 @@ function ENT:Think()
         self:PreDetonate()
     end
 
-    if SERVER then
     local gunship = {["npc_combinegunship"] = true, ["npc_combinedropship"] = true}
 
-    if self.GunshipWorkaround and (self.GunshipCheck or 0 < CurTime()) then
+    if SERVER and self.GunshipWorkaround and (self.GunshipCheck or 0 < CurTime()) then
             self.GunshipCheck = CurTime() + 0.33
             local tr = util.TraceLine({
                 start = self:GetPos(),
@@ -326,7 +325,6 @@ function ENT:Think()
            self:SetPos(tr.HitPos)
            self:Detonate()
         end
-    end
     end
 
     self:DoSmokeTrail()
