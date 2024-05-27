@@ -224,7 +224,7 @@ ATT.ModelOffset = Vector(-0.3, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 90)
 
 ATT.CustomPros = {
-    [ ARC9:GetPhrase("mw19_optic_stat_zoom") ] = "3.0x"
+    [ ARC9:GetPhrase("mw19_optic_stat_zoom2") ] = "3.0x"
 }
 
 ATT.Sights = {
@@ -271,7 +271,7 @@ ATT.ActivateElements = {"scope_m32"}
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_m32.mdl"
 
 ATT.CustomPros = {
-    [ ARC9:GetPhrase("mw19_optic_stat_zoom") ] = "3.5x"
+    [ ARC9:GetPhrase("mw19_optic_stat_zoom2") ] = "3.5x"
 }
 
 ATT.Sights = {
@@ -310,7 +310,7 @@ ATT.CompactName = "PILA"
 ATT.Description = [[Default targetting sight for the Pila.]]
 
 ATT.CustomPros = {
-    [ ARC9:GetPhrase("mw19_optic_stat_zoom") ] = "3.0x"
+    [ ARC9:GetPhrase("mw19_optic_stat_zoom2") ] = "3.0x"
 }
 
 ATT.SortOrder = 4
