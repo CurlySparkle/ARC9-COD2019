@@ -112,12 +112,12 @@ SWEP.RecoilPatternDrift = 55
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 0.8 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.1
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.2
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -147,7 +147,7 @@ SWEP.VisualRecoilUpSights = 0
 SWEP.VisualRecoilPunch = 4
 SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 5
-SWEP.VisualRecoilSide = 0.3
+SWEP.VisualRecoilSide = 0.5
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -748,7 +748,7 @@ SWEP.Animations = {
         Source = "bipod_out",
     },
     ["hybrid_on"] = {
-        Source = "hybrid_on",
+        Source = "hybrid_off",
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
@@ -761,7 +761,7 @@ SWEP.Animations = {
         },
     },
     ["hybrid_off"] = {
-        Source = "hybrid_off",
+        Source = "hybrid_on",
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -829,15 +829,15 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         end
     end
 
-    --wep.MWHybridSwitching = nil
-    -- if anim == "switchsights" then
-        -- if wep:HasElement("hybrid_scope") then
-            -- wep.MWHybridSwitching = true
-            -- return wep:GetMultiSight() == 1 and "hybrid_on" or "hybrid_off"
-        -- else
-            -- return false
-        -- end
-    -- end
+    wep.MWHybridSwitching = nil
+    if anim == "switchsights" then
+        if wep:HasElement("hybrid_scope") then
+            wep.MWHybridSwitching = true
+            return wep:GetMultiSight() == 1 and "hybrid_on" or "hybrid_off"
+        else
+            return false
+        end
+    end
 end
 
 SWEP.DefaultBodygroups = "00000000000000"
@@ -911,10 +911,10 @@ SWEP.AttachmentElements = {
     },
 }
 
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("stock_retract") then model:SetBodygroup(4,1) end
--- end
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local model = data.model
+    if wep:HasElement("optic_scope") then model:SetBodygroup(5,2) end
+end
 
 SWEP.Attachments = {
     { -- 1
