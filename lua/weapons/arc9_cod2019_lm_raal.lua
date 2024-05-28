@@ -848,9 +848,14 @@ SWEP.AttachmentTableOverrides = {
 	-- ModelAngleOffset = Angle(0, 0, 0),
 	-- Scale = 1,
     -- },
-    ["cod2019_optic_raal_scope"] = {
-		ModelOffset = Vector(-3, 0, 0.1),
-    },
+    ["cod2019_optic_reflex_west05_hybrid"] = { ModelOffset = Vector(-4, 0, 0.1) },
+    ["cod2019_optic_hybrid_west02"] = { ModelOffset = Vector(-4, 0, 0.1) },
+    ["cod2019_optic_hybrid_west02_thermal"] = { ModelOffset = Vector(-4, 0, 0.1) },
+    ["cod2019_optic_raal_scope"] = { ModelOffset = Vector(-3, 0, 0.1) },
+    ["cod2019_optic_scope_mike14"] = { ModelOffset = Vector(-3.5, 0, 0.1) },
+    ["cod2019_crossbow_scope"] = { ModelOffset = Vector(-4, 0, 0.1) },
+    ["cod2019_crossbow_scope_vz"] = { ModelOffset = Vector(-4, 0, 0.1) },
+    ["cod2019_optic_scope_vz"] = { ModelOffset = Vector(-4, 0, 0.1) },
 }
 
 SWEP.AttachmentElements = {
@@ -943,7 +948,7 @@ SWEP.Attachments = {
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
-        Category = {"cod2019_optic", "cod2019_raal_optic"},
+        Category = {"cod2019_optic", "cod2019_optic_big", "cod2019_raal_optic"},
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
 		InstalledElements = {"sight_folded"},

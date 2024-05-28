@@ -699,6 +699,10 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/pkm/attachment_vm_lm_pkilo_pistolgrip_tape.mdl",
     },
+	["cod2019_optic_reflex_west05_hybrid"] = { ModelOffset = Vector(-3.5, 0, 0.1) },
+	["cod2019_optic_hybrid_west02"] = { ModelOffset = Vector(-2.5, 0, 0.1) },
+	["cod2019_optic_hybrid_west02_thermal"] = { ModelOffset = Vector(-2.5, 0, 0.1) },
+	["cod2019_optic_raal_scope"] = { ModelOffset = Vector(-2.5, 0, 0.1) },
 }
 
 SWEP.AttachmentElements = {
@@ -787,7 +791,7 @@ SWEP.Attachments = {
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
-        Category = {"cod2019_optic"},
+        Category = {"cod2019_optic", "cod2019_optic_big"},
         Bone = "tag_holo",
         Pos = Vector(1.8, 0, -0.1),
 		InstalledElements = {"sight_back_none","sight_front_none"},

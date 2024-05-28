@@ -743,7 +743,7 @@ SWEP.Animations = {
         Source = "bipod_out",
     },
     ["hybrid_on"] = {
-        Source = "hybrid_on",
+        Source = "hybrid_off",
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
@@ -756,7 +756,7 @@ SWEP.Animations = {
         },
     },
     ["hybrid_off"] = {
-        Source = "hybrid_off",
+        Source = "hybrid_on",
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -960,7 +960,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
-        Category = {"cod2019_optic"},
+        Category = {"cod2019_optic", "cod2019_optic_big"},
     },
     { -- 5
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
