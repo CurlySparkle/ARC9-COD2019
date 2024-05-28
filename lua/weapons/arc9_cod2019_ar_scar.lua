@@ -629,7 +629,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0.36},
 			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 1.3},
 			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 1.6},
-			{s = path .. "wfoly_ar_scharlie_reload_empty_bolt_release.ogg", t = 2.1},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_charge.ogg", t = 1.9},
 			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 2.23},
         },
     },
