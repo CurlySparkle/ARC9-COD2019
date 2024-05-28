@@ -882,7 +882,7 @@ SWEP.Attachments = {
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
-        Category = {"cod2019_optic","cod2019_holger_optic"},
+        Category = {"cod2019_optic", "cod2019_optic_big","cod2019_holger_optic"},
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
 		InstalledElements = {"sights_none"},
