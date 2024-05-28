@@ -28,7 +28,7 @@ if SERVER then
 
         if (phys:IsValid()) then
             phys:Wake()
-            phys:EnableGravity(false)
+            phys:EnableGravity(true)
             phys:SetBuoyancyRatio(0)
             phys:SetDragCoefficient(0)
             phys:SetMass(1)

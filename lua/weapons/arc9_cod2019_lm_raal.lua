@@ -198,7 +198,7 @@ SWEP.SpeedMult = 0.95 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.8 -- When aiming
 SWEP.SpeedMultShooting = 0.8
 
-SWEP.AimDownSightsTime = 0.46 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 0.55 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
