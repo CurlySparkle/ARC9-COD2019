@@ -46,6 +46,7 @@ ENT.Armed = false
 ENT.RocketParticleTrace = nil
 ENT.RocketTrail = false
 ENT.SmokeTrail = false -- leaves trail of smoke
+ENT.SmokeColor = Color(200, 200, 200)
 ENT.Flare = true
 ENT.FlareColor = nil
 ENT.FlareSizeMin = 50
@@ -276,7 +277,7 @@ function ENT:DoSmokeTrail()
         smoke:SetPos(self:GetPos())
         smoke:SetVelocity(-self:GetAngles():Forward() * 400 + (VectorRand() * 10))
 
-        smoke:SetColor(200, 200, 200)
+        smoke:SetColor(self.SmokeColor)
         smoke:SetLighting(true)
 
         smoke:SetDieTime(math.Rand(0.75, 1.25))

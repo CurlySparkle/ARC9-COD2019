@@ -5,7 +5,7 @@
     "$phongexponenttexture" "models\cod2019\scar\scar_stock_e"
 
     /////////////////
-    "$color2" "[0.8 0.8 0.8]"                                     //do not touch this
+    "$color2" "[1 1 1]"                                     //do not touch this
     "$blendtintbybasealpha" "1"                             //do not touch this
     /////////////////
 
@@ -23,7 +23,7 @@
     "$envmaptint" "[0.098 0.098 0.098]"                 
 
     "$detailblendmode" "4"
-    "$detailblendfactor" "0.8"
+    "$detailblendfactor" "1"
 
     //remove this if not using MWB
     "Proxies"

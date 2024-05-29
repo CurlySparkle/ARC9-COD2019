@@ -4,6 +4,7 @@ AddCSLuaFile("shared.lua")
 include("shared.lua")
 
 ENT.smokeSound = nil
+ENT.WithinSmoke = {}
 
 function ENT:Initialize()
     self:SetParent(NULL) --detaching from whatever we nailed on
@@ -11,6 +12,10 @@ function ENT:Initialize()
     self:SetModel("models/dav0r/hoverball.mdl")
     self:SetOwner(NULL)
     self:EnableCustomCollisions(true)
+	
+    if not self:GetNWBool("Children",false) then
+        self:SetNWBool("Children",true)
+    end
 
     local p = self:GetPos() --+ self:GetAngles():Up() * -self.SmokeRadius
     local b = Vector(0.66, 0.66, 0.66) * self.SmokeRadius
@@ -45,10 +50,46 @@ function ENT:Think()
         self:Remove()
         return
     end
+
+
+    for ent, _ in pairs(self.WithinSmoke or {}) do
+        if IsValid(ent) and ent:GetPos():DistToSqr(self:GetPos()) >= 256 * 256 then
+           self.WithinSmoke[ent] = nil
+           if ent:IsPlayer() then
+              ent:RemoveFlags(FL_NOTARGET)
+              else
+              ent:SetCurrentWeaponProficiency(ent.OldProfiecency or WEAPON_PROFICIENCY_POOR)
+           end
+        end
+    end
+
+    for k, v in pairs(ents.FindInSphere(self:GetPos(), 256)) do
+        if !self.WithinSmoke[v] then
+           if v:IsPlayer() then
+              self.WithinSmoke[v] = true
+              v:SetNoTarget(true)
+           elseif v:IsNPC() or v:IsNextBot() then
+              v:SetCurrentWeaponProficiency(WEAPON_PROFICIENCY_POOR)
+              v.OldProfiecency = v:GetCurrentWeaponProficiency()
+           end
+        end
+    end
+
+    self:NextThink(CurTime() + 0.5)
+    return true
 end
 
 function ENT:OnRemove()
     self:StopSmoke()
+    for ent, _ in pairs(self.WithinSmoke or {}) do
+        if IsValid(ent) then
+            if ent:IsPlayer() then
+                ent:RemoveFlags(FL_NOTARGET)
+            else
+                ent:SetCurrentWeaponProficiency(ent.OldProfiecency or WEAPON_PROFICIENCY_POOR)
+            end
+        end
+    end
 end
 
 ENT.bStoppedSmoke = false

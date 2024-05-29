@@ -6,16 +6,32 @@ ENT.Information = ""
 ENT.Spawnable = false
 ENT.AdminSpawnable = false
 
+local smokeimages = {"particle/particle_smokegrenade"}
+local function GetSmokeImage()
+    return smokeimages[math.random(#smokeimages)]
+end
+
 ENT.Model = "models/weapons/cod2019/w_eq_smoke_thrown.mdl"
 ENT.FuseTime = 2
 ENT.ArmTime = 0
 ENT.Ticks = 0
 ENT.ImpactFuse = false
+ENT.SmokeTrail = true -- leaves trail of smoke
+ENT.SmokeColor = Color(255, 255, 255)
 
 AddCSLuaFile()
 
+PrecacheParticleSystem("smoke_sphere_trail")
+
 function ENT:Initialize()
     if SERVER then
+        if not self:GetNWBool("Children",false) then
+           self:SetNWBool( "Children", false )
+        end
+  
+        if not self:GetNWBool("CreatedNade",false) then
+           self:SetNWBool("CreatedNade", false)
+        end
         self:SetModel( self.Model )
         self:SetMoveType( MOVETYPE_VPHYSICS )
         self:SetSolid( SOLID_VPHYSICS )
@@ -70,48 +86,88 @@ function ENT:Think()
         if self.SpawnTime + self.FuseTime <= CurTime() then
             self:Detonate()
         end
-    else
-        if self.Ticks % 5 == 0 then
-            local emitter = ParticleEmitter(self:GetPos())
+    end
+	self:DoSmokeTrail()
+end
 
-            if !self:IsValid() or self:WaterLevel() > 2 then return end
-            if !IsValid(emitter) then return end
+function ENT:DoSmokeTrail()
+    if CLIENT and self.SmokeTrail then
+        local emitter = ParticleEmitter(self:GetPos())
 
-            local smoke = emitter:Add("particle/particle_smokegrenade", self:GetPos())
-            smoke:SetVelocity( VectorRand() * 25 )
-            smoke:SetGravity( Vector(math.Rand(-5, 5), math.Rand(-5, 5), math.Rand(-20, -25)) )
-            smoke:SetDieTime( math.Rand(1.5, 2.0) )
-            smoke:SetStartAlpha( 55 )
-            smoke:SetEndAlpha( 0 )
-            smoke:SetStartSize( 0 )
-            smoke:SetEndSize( 100 )
-            smoke:SetRoll( math.Rand(-180, 180) )
-            smoke:SetRollDelta( math.Rand(-0.2,0.2) )
-            smoke:SetColor( 155, 155, 155 )
-            smoke:SetAirResistance( 5 )
-            smoke:SetPos( self:GetPos() )
-            smoke:SetLighting( false )
-            emitter:Finish()
-        end
-
-        self.Ticks = self.Ticks + 1
+        local smoke = emitter:Add(GetSmokeImage(), self:GetPos())
+        smoke:SetVelocity( VectorRand() * 25 )
+        smoke:SetGravity( Vector(math.Rand(-5, 5), math.Rand(-5, 5), math.Rand(-20, -25)) )
+        smoke:SetDieTime( math.Rand(1.5, 2.0) )
+        smoke:SetStartAlpha( 55 )
+        smoke:SetEndAlpha( 0 )
+        smoke:SetStartSize( 0 )
+        smoke:SetEndSize( 40 )
+        smoke:SetRoll( math.Rand(-180, 180) )
+        smoke:SetRollDelta( math.Rand(-0.2,0.2) )
+        smoke:SetColor( 155, 155, 155 )
+        smoke:SetAirResistance( 5 )
+        smoke:SetPos( self:GetPos() )
+        smoke:SetLighting( false )
+        emitter:Finish()
+		
+       if self:GetNWBool("HasDetonated") then
+          self.SmokeTrail = false
+       end
     end
 end
 
+-- function ENT:Detonate()
+    -- if !self:IsValid() or self:WaterLevel() > 2 then return end
+    -- --self:EmitSound("COD2019.Smoke.Pop")
+
+    -- local cloud = ents.Create( "arc9_cod2019_smoke" )
+
+    -- if !IsValid(cloud) then return end
+
+    -- cloud:SetPos(self:GetPos())
+    -- cloud:Spawn()
+
+    -- self:Remove()
+-- end
+
 function ENT:Detonate()
-    if !self:IsValid() or self:WaterLevel() > 2 then return end
-    --self:EmitSound("COD2019.Smoke.Pop")
-
-    local cloud = ents.Create( "arc9_cod2019_smoke" )
-
-    if !IsValid(cloud) then return end
-
-    cloud:SetPos(self:GetPos())
-    cloud:Spawn()
-
+   if (self:WaterLevel() >= 1 or self:WaterLevel() >= 2) then
+    SafeRemoveEntityDelayed(self, 0)
     self:Remove()
+    self:EmitSound("weapons/rpg/shotdown.wav", 80)
+    else
+    self:DoDetonate()
+	self:SetNWBool("HasDetonated",true)
+   end
 end
+  
+function ENT:DoDetonate()
+    if self:WaterLevel() > 0 then self:Remove() return end
+    local attacker = self.Attacker or self:GetOwner() or self
 
+    if self:GetNWBool("CreatedNade",false) == false then
+      local cloud = ents.Create("arc9_cod2019_smoke")
+      if IsValid(cloud) then
+         cloud:SetPos(self:GetPos())
+         cloud:SetAngles(self:GetAngles())
+         cloud:SetOwner(attacker)
+         cloud:Spawn()
+		 cloud:SetParent(self)
+		 cloud.NoIgnite = self
+		 cloud:SetNWBool("Children",true)
+         cloud:SetNWBool("CreatedNade",true)
+		 ParticleEffectAttach("smoke_sphere_trail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
+		 --self:Remove()
+      end
+    end
+	self:SetNWBool("CreatedNade",true)
+    
+    timer.Simple(18, function()
+        if IsValid(self) then
+            self:Remove()
+        end
+    end)
+end
 
 
 function ENT:DrawTranslucent()

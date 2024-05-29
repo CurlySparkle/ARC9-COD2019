@@ -38,7 +38,7 @@ function ENT:DrawSmokeVision()
     surface.SetDrawColor(150, 150, 150, 255 * delta)
     surface.DrawRect(0, 0, ScrW(), ScrH())
 end
-hook.Add("HUDPaintBackground", "HUDPaint_MW19_SmokeVision", function()
+hook.Add("HUDPaintBackground", "HUDPaint_COD2019_SmokeVision", function()
     for _, e in pairs(smokeEntities) do
         e:DrawSmokeVision()
     end
