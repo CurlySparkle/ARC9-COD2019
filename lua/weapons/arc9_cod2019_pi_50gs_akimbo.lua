@@ -301,7 +301,7 @@ SWEP.AttachmentTableOverrides = {
     },
     ["cod2019_50gs_mag_13"] = {
     Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_xmags2_akimbo.mdl",
-	ClipSizeOverride = 13 * 2
+	ClipSizeOverride = 20
     },
     ["cod2019_50gs_grip_custom"] = {
     Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_cust_grip_akimbo.mdl"

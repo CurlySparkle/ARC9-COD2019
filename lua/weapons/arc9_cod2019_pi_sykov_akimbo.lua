@@ -341,11 +341,11 @@ SWEP.AttachmentTableOverrides = {
     },
     ["cod2019_sykov_mag_xmag"] = {
     Model = "models/weapons/cod2019/attachs/weapons/sykov/attachment_vm_pi_mike_xmags_akimbo.mdl",
-	ClipSizeOverride = 20 * 2
+	ClipSizeOverride = 32
     },
     ["cod2019_sykov_mag_drum"] = {
     Model = "models/weapons/cod2019/attachs/weapons/sykov/attachment_vm_pi_mike_drummag_akimbo.mdl",
-	ClipSizeOverride = 80 * 2
+	ClipSizeOverride = 92
     },
     ["cod2019_sykov_stock_light"] = {
     Model = "models/weapons/cod2019/attachs/weapons/sykov/attachment_vm_pi_mike_stockl.mdl",

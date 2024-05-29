@@ -331,7 +331,7 @@ SWEP.AttachmentTableOverrides = {
     },
     ["cod2019_renetti_mag_xmag"] = {
     Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_xmags_akimbo.mdl",
-	ClipSizeOverride = 20 * 2
+	ClipSizeOverride = 36
 	},
     ["cod2019_renetti_grip_light"] = {
     Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_pstlgrplght_akimbo.mdl",

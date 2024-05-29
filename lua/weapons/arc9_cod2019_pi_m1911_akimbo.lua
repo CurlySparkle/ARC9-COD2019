@@ -340,7 +340,7 @@ SWEP.AttachmentTableOverrides = {
     },
     ["cod2019_m1911_mag_15"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_xmags_akimbo.mdl",
-	ClipSizeOverride = 15 * 2
+	ClipSizeOverride = 22
     },
     ["cod2019_griptape_01"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_pistolgrip_tape_akimbo.mdl",
