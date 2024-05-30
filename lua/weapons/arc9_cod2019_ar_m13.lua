@@ -1031,7 +1031,7 @@ SWEP.AttachmentElements = {
         },
     },
 	["grip_angled"] = {
-    AttPosMods = { [5] = { Pos = Vector(-2.6, 0, 0), } }	
+    AttPosMods = { [6] = { Pos = Vector(-2.6, 0, 0), } }	
 	}
 }
 
@@ -1200,7 +1200,8 @@ SWEP.Attachments = {
 }
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.6
-SWEP.CodStubbyGripPoseParam = 27
+--SWEP.CodStubbyGripPoseParam = 27
+SWEP.CodStubbyGripPoseParam = 30
 SWEP.CodAngledGripPoseParam = 38
 --SWEP.CodStubbyTallGripPoseParam = 15
 SWEP.CodStubbyTallGripPoseParam = 22

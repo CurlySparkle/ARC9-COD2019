@@ -68,9 +68,12 @@ function ENT:Think()
            if v:IsPlayer() then
               self.WithinSmoke[v] = true
               v:SetNoTarget(true)
-           elseif v:IsNPC() or v:IsNextBot() then
+			  v:AddFlags(FL_NOTARGET)
+           elseif v:IsNPC() then
               v:SetCurrentWeaponProficiency(WEAPON_PROFICIENCY_POOR)
               v.OldProfiecency = v:GetCurrentWeaponProficiency()
+			  v:AddEntityRelationship(ply, D_NU, 99)
+			  v:AddFlags(FL_NOTARGET)
            end
         end
     end
