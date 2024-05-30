@@ -373,7 +373,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 1.2,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -467,7 +467,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 1.2,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
