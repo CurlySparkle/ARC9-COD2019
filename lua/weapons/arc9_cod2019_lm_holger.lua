@@ -786,10 +786,12 @@ SWEP.AttachmentTableOverrides = {
     ModelOffset = Vector(1, 0, 0.1),
     },
     ["cod2019_attach_xmag_50"] = {
-    Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_ar_mcharlie_xmags.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_ar_mcharlie_xmags.mdl",
+		ClipSizeAdd = -50,
     },
     ["cod2019_attach_xmag_60"] = {
-    Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_ar_mcharlie_xmags2.mdl",
+		Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_ar_mcharlie_xmags2.mdl",
+		ClipSizeAdd = -40,
     },
     ["cod2019_griptape_01"] = {
     Model = "models/weapons/cod2019/attachs/weapons/holger36/attachment_vm_lm_mgolf36_griptape.mdl",
@@ -907,7 +909,8 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
 		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
 		Bone = "tag_mag_attach",
-        Category = {"cod2019_holger_mag","cod2019_mag_xmag"},
+        Category = {"cod2019_holger_mag","cod2019_mag_xmag"}, -- Should it really need the universal extended mags?
+        -- Category = {"cod2019_holger_mag"},
         Pos = Vector(0, 0, 0),
     },
     { -- 8
