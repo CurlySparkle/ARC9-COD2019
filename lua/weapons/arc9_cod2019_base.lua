@@ -175,6 +175,11 @@ end
 
 SWEP.HookP_NameChange = function(self, name)
     local att = self:GetElements()
+	
+	-- Assault Rifle, M$
+	if att["cod2019_m4a1_barrel_mid"] and att["m203"] and att["cod2019_m4_stock_m16"] and (att["cod2019_m4_carryhandle"] or  att["cod2019_m4_carryhandle_v2"]) then
+		name = "Little Friend"
+	end
 
 	-- Assault Rifle, AK-47
 	if att["cod2019_akilo47_mag_smg"] and att["cod2019_akilo47_barrel_smg"] then

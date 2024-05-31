@@ -1122,9 +1122,11 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	model:SetBodygroup(7,2)
 	end
 	
-    if wep:HasElement("barrel_custom") and (wep:HasElement("carry_handle") or wep:HasElement("sight_back_folded")) then 
+    if wep:HasElement("barrel_custom") and wep:HasElement("carry_handle") then 
 		model:SetBodygroup(7,2)
-    elseif wep:HasElement("carry_handle") then 
+	elseif wep:HasElement("barrel_custom") then
+	    model:SetBodygroup(7,2)
+    elseif wep:HasElement("carry_handle") then
 		model:SetBodygroup(1,3)
 		model:SetBodygroup(7,0)
 	end
