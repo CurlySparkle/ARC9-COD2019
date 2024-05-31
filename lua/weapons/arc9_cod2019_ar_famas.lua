@@ -1192,6 +1192,14 @@ SWEP.Attachments = {
 		InstalledElements = {"rail_grip"},
 		Hidden = true,
     },
+    { -- 21
+        PrintName = "Bipod",
+        Category = {"cod2019_famas_bipod"},
+        Bone = "tag_grip_attach",
+        Pos = Vector(0, 0, 0),
+		Hidden = true,
+		MergeSlots = {6}, -- Underbarrel
+    },
 }
 
 SWEP.GripPoseParam = 0
