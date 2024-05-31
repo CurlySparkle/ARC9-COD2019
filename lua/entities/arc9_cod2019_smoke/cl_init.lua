@@ -35,7 +35,7 @@ function ENT:DrawSmokeVision()
     delta = delta * fadein
     delta = delta * fadeout
 
-    surface.SetDrawColor(150, 150, 150, 255 * delta)
+    surface.SetDrawColor(150, 150, 150, 200 * delta)
     surface.DrawRect(0, 0, ScrW(), ScrH())
 end
 hook.Add("HUDPaintBackground", "HUDPaint_COD2019_SmokeVision", function()
