@@ -3,7 +3,7 @@ ENT.Type = "anim"
 
 ENT.SmokeRadius = 256
 ENT.LifeTime = 11
-ENT.CollisionGroup = COLLISION_GROUP_IN_VEHICLE
+ENT.CollisionGroup = COLLISION_GROUP_NONE
 
 function ENT:TestCollision(startpos, delta, isbox, extents, mask)
     --[[if (bit.band(mask, MASK_SHOT) == MASK_SHOT && SERVER) then

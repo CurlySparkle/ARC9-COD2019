@@ -13,6 +13,10 @@ function ENT:Initialize()
     self:SetOwner(NULL)
     self:EnableCustomCollisions(true)
 	
+    self:AddFlags(FL_GRENADE)
+    self:AddFlags(FL_ONFIRE)
+    self:AddFlags(FL_NOTARGET)
+	
     if not self:GetNWBool("Children",false) then
         self:SetNWBool("Children",true)
     end
@@ -72,7 +76,7 @@ function ENT:Think()
            elseif v:IsNPC() then
               v:SetCurrentWeaponProficiency(WEAPON_PROFICIENCY_POOR)
               v.OldProfiecency = v:GetCurrentWeaponProficiency()
-			  v:AddEntityRelationship(ply, D_NU, 99)
+			  --v:AddEntityRelationship(ply, D_NU, 99)
 			  v:AddFlags(FL_NOTARGET)
            end
         end
