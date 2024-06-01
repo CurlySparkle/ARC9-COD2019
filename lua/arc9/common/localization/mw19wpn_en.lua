@@ -728,23 +728,26 @@ L["mw19_weapon_knife_desc"] = "A CQC tactical knife. Standard military issue, em
 L["mw19_weapon_stick_desc"] = "Dual wielding batons allow operators to approach their targets with great agility. Sturdy, lightweight design enables rapid attacks for zoning your enemies."
 L["mw19_weapon_sword_desc"] = "Hand forged carbon steel blades provide the sharpest edge possible for silently slicing through your enemies."
 
-L["mw19_weapon_nade_claymore_desc"] = "Proximity-activated explosive mine."
-L["mw19_weapon_nade_frag_desc"] = "Cookable fragmentation grenade."
-L["mw19_weapon_nade_molotov_desc"] = "Improvised incendiary device that explodes on impact."
-L["mw19_weapon_nade_c4_desc"] = "Large explosive that sticks to surfaces and can be detonated remotely with {ATTACK} when the equipment is depleted.\n\nDouble-tapping {USE} always detonates the explosives."
-L["mw19_weapon_nade_semtex_desc"] = "Timed sticky grenade."
-L["mw19_weapon_nade_knife_desc"] = "Retrievable knife that can be thrown to quickly and quietly eliminate enemies."
-L["mw19_weapon_nade_proximity_desc"] = "Proximity-triggered explosive that deals heavy damage to vehicles."
-L["mw19_weapon_nade_thermite_desc"] = "Explosive which burns fiercely for a short time after impact. Sticks to surfaces."
+local quicknade = "\n\nCan be used with \"Quickthrow\". Requires \"<color=175,175,255>+grenade1</color>\" bind." -- UO
 
-L["mw19_weapon_nade_flash_desc"] = "Blinds and deafens targets."
-L["mw19_weapon_nade_stun_desc"] = "Slows victim's movement and aiming."
-L["mw19_weapon_nade_smoke_desc"] = "Deploys a smoke screen that blocks vision."
-L["mw19_weapon_nade_snapshot_desc"] = "Provides a momentary glimpse of enemies within the blast radius for your squad."
-L["mw19_weapon_nade_heartbeat_desc"] = "A tablet that displays rough information about nearby enemies."
-L["mw19_weapon_nade_stim_desc"] = "Military stimulant that cauterizes combat wounds and refreshes Tactical Sprint."
-L["mw19_weapon_nade_decoy_desc"] = "Counter-intel grenade that simulates fake gunfire and radar signatures that confuse the enemy."
-L["mw19_weapon_nade_gas_desc"] = "Explodes on impact with the ground, releasing a lingering cloud of tear gas that causes slowed movement, blurred vision, and coughing."
+L["mw19_weapon_nade_claymore_desc"] = "Proximity-activated explosive mine." .. quicknade
+L["mw19_weapon_nade_frag_desc"] = "Cookable fragmentation grenade." .. quicknade
+L["mw19_weapon_nade_molotov_desc"] = "Improvised incendiary device that explodes on impact." .. quicknade
+-- L["mw19_weapon_nade_c4_desc"] = "Large explosive that sticks to surfaces and can be detonated remotely with {ATTACK} when the equipment is depleted.\n\nDouble-tapping {USE} always detonates the explosives." .. quicknade
+L["mw19_weapon_nade_c4_desc"] = "Large explosive that sticks to surfaces and can be detonated remotely with {ATTACK} when the equipment is depleted." .. quicknade
+L["mw19_weapon_nade_semtex_desc"] = "Timed sticky grenade." .. quicknade
+L["mw19_weapon_nade_knife_desc"] = "Retrievable knife that can be thrown to quickly and quietly eliminate enemies." .. quicknade
+L["mw19_weapon_nade_proximity_desc"] = "Proximity-triggered explosive that deals heavy damage to vehicles." .. quicknade
+L["mw19_weapon_nade_thermite_desc"] = "Explosive which burns fiercely for a short time after impact. Sticks to surfaces." .. quicknade
+
+L["mw19_weapon_nade_flash_desc"] = "Blinds and deafens targets." .. quicknade
+L["mw19_weapon_nade_stun_desc"] = "Slows victim's movement and aiming." .. quicknade
+L["mw19_weapon_nade_smoke_desc"] = "Deploys a smoke screen that blocks vision." .. quicknade
+L["mw19_weapon_nade_snapshot_desc"] = "Provides a momentary glimpse of enemies within the blast radius for your squad." .. quicknade
+L["mw19_weapon_nade_heartbeat_desc"] = "A tablet that displays rough information about nearby enemies." .. quicknade
+L["mw19_weapon_nade_stim_desc"] = "Military stimulant that cauterizes combat wounds and refreshes Tactical Sprint." .. quicknade
+L["mw19_weapon_nade_decoy_desc"] = "Counter-intel grenade that simulates fake gunfire and radar signatures that confuse the enemy." .. quicknade
+L["mw19_weapon_nade_gas_desc"] = "Explodes on impact with the ground, releasing a lingering cloud of tear gas that causes slowed movement, blurred vision, and coughing." .. quicknade
 
 L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
 L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO

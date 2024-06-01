@@ -660,23 +660,26 @@ L["mw19_weapon_knife_desc"] = "Nóż taktgczng do walki wręcz. Standardowy egze
 L["mw19_weapon_stick_desc"] = "Dwie bojowe pałki umożliwiają operatorom szybkie rozprawienie się z przeciwnikiem. Le$ka i wytrzymała konstrukcja umożliwia wyprowadzanie szybkich ataków, dzięki czemu można błyskawicznie zneutralizować wrogów."
 L["mw19_weapon_sword_desc"] = "Ręcznie wykute ostrza ze stali węglowej idealnie nadają się do cięcia wrogów."
 
-L["mw19_weapon_nade_claymore_desc"] = "Mina zbliżeniowa."
-L["mw19_weapon_nade_frag_desc"] = "Granat odłamkowy, który można odbezpieczyć przed rzutem."
-L["mw19_weapon_nade_molotov_desc"] = "Prowizoryczny granat zapalający, eksplodujący przy uderzeniu."
-L["mw19_weapon_nade_c4_desc"] = "Silny materiał wybuchowy przgczeoiającg się do powierzchni i zdalnie detonowany {ATTACK} zużyjesz wszystkie posiadane ładunki. Dwu krotne wciśnięcie {USE} zawsze detonuje materiał wybuchowy."
-L["mw19_weapon_nade_semtex_desc"] = "Przyczepiający się granat z zapalnikiem czasowy m."
-L["mw19_weapon_nade_knife_desc"] = "Nóż wielokrotnego użytku do szybkiej i cichej likwidacji wrogów."
-L["mw19_weapon_nade_proximity_desc"] = "Ładunek aktywowany zbliżeniowo. Powoduje znaczne uszkodzenia pojazdów."
-L["mw19_weapon_nade_thermite_desc"] = "Materiał wybuchowy, który intensywnie płonie przez chwilę po uderzeniu. Przykleja się do powierzchni."
+local quicknade = "\n\nCan be used with \"Quickthrow\". Requires \"<color=175,175,255>+grenade1</color>\" bind." -- UO
 
-L["mw19_weapon_nade_flash_desc"] = "Oślepia i ogłusza cele."
-L["mw19_weapon_nade_stun_desc"] = "Spowalnia ruch i celowanie ofiary."
-L["mw19_weapon_nade_smoke_desc"] = "Rozpyla dym, który utrudnia widzenie."
-L["mw19_weapon_nade_snapshot_desc"] = "Na chwilę wykrywa wrogów w zasięgu rażenia."
-L["mw19_weapon_nade_heartbeat_desc"] = "Tablet wyświetlający przybliżone położenie pobliskich przeciwników."
-L["mw19_weapon_nade_stim_desc"] = "Wojskowy stymulant wypalający rang i odnawiający Sprint taktyczny."
-L["mw19_weapon_nade_decoy_desc"] = "Granat utrudniający rozpoznanie, Symuluje strzały i sygnatury na radarze, mgląc przeciwników."
-L["mw19_weapon_nade_gas_desc"] = "Wybucha po zetknięciu z ziemią. Wypuszcza chmurę gazu łzawiącego, który spowalnia ruch, wywołuje zaburzenia widzenia i kaszel."
+L["mw19_weapon_nade_claymore_desc"] = "Mina zbliżeniowa." .. quicknade
+L["mw19_weapon_nade_frag_desc"] = "Granat odłamkowy, który można odbezpieczyć przed rzutem." .. quicknade
+L["mw19_weapon_nade_molotov_desc"] = "Prowizoryczny granat zapalający, eksplodujący przy uderzeniu." .. quicknade
+-- L["mw19_weapon_nade_c4_desc"] = "Silny materiał wybuchowy przgczeoiającg się do powierzchni i zdalnie detonowany {ATTACK} zużyjesz wszystkie posiadane ładunki.\n\nDwu krotne wciśnięcie {USE} zawsze detonuje materiał wybuchowy."
+L["mw19_weapon_nade_c4_desc"] = "Silny materiał wybuchowy przgczeoiającg się do powierzchni i zdalnie detonowany {ATTACK} zużyjesz wszystkie posiadane ładunki." .. quicknade
+L["mw19_weapon_nade_semtex_desc"] = "Przyczepiający się granat z zapalnikiem czasowy." .. quicknade
+L["mw19_weapon_nade_knife_desc"] = "Nóż wielokrotnego użytku do szybkiej i cichej likwidacji wrogów." .. quicknade
+L["mw19_weapon_nade_proximity_desc"] = "Ładunek aktywowany zbliżeniowo. Powoduje znaczne uszkodzenia pojazdów." .. quicknade
+L["mw19_weapon_nade_thermite_desc"] = "Materiał wybuchowy, który intensywnie płonie przez chwilę po uderzeniu. Przykleja się do powierzchni." .. quicknade
+
+L["mw19_weapon_nade_flash_desc"] = "Oślepia i ogłusza cele." .. quicknade
+L["mw19_weapon_nade_stun_desc"] = "Spowalnia ruch i celowanie ofiary." .. quicknade
+L["mw19_weapon_nade_smoke_desc"] = "Rozpyla dym, który utrudnia widzenie." .. quicknade
+L["mw19_weapon_nade_snapshot_desc"] = "Na chwilę wykrywa wrogów w zasięgu rażenia." .. quicknade
+L["mw19_weapon_nade_heartbeat_desc"] = "Tablet wyświetlający przybliżone położenie pobliskich przeciwników." .. quicknade
+L["mw19_weapon_nade_stim_desc"] = "Wojskowy stymulant wypalający rang i odnawiający Sprint taktyczny." .. quicknade
+L["mw19_weapon_nade_decoy_desc"] = "Granat utrudniający rozpoznanie, Symuluje strzały i sygnatury na radarze, mgląc przeciwników." .. quicknade
+L["mw19_weapon_nade_gas_desc"] = "Wybucha po zetknięciu z ziemią. Wypuszcza chmurę gazu łzawiącego, który spowalnia ruch, wywołuje zaburzenia widzenia i kaszel." .. quicknade
 
 -- L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
 -- L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO

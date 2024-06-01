@@ -661,23 +661,26 @@ L["mw19_weapon_knife_desc"] = "近戰 (CQC) 戰術小刀。標準軍用配發，
 L["mw19_weapon_stick_desc"] = "雙持警棍可以讓特戰兵以敏捷的身手接近目標。堅固且輕盈的設計讓你可以迅速出擊，把敵人打到無法還手。"
 L["mw19_weapon_sword_desc"] = "使用純手工鍛造的碳鋼刀刃，讓你悄無息、乾氵爭俐落地把對手切成生魚片。/"
 
-L["mw19_weapon_nade_claymore_desc"] = "感應髑發的爆炸地雷。"
-L["mw19_weapon_nade_frag_desc"] = "可延遲擲出的破片手榴彈。"
-L["mw19_weapon_nade_molotov_desc"] = "撞擊後爆炸的即時燃燒裝首。"
-L["mw19_weapon_nade_c4_desc"] = "可黏住物體表面的大型炸藥，當道具用完後，可以 {ATTACK} 遠端引爆。雙擊 {USE} 可直接引爆炸藥。"
-L["mw19_weapon_nade_semtex_desc"] = "計時黏性榴彈。"
-L["mw19_weapon_nade_knife_desc"] = "可回收的小刀，丢出可又快又安靜地擊殺敵人。"
-L["mw19_weapon_nade_proximity_desc"] = "近距離觸發的炸藥，能對載具造成極大傷害。"
-L["mw19_weapon_nade_thermite_desc"] = "發生碰撞後會在短時間内發出熾熱光芒的炸藥。可黏在表面上。"
+local quicknade = "\n\nCan be used with \"Quickthrow\". Requires \"<color=175,175,255>+grenade1</color>\" bind." -- UO
 
-L["mw19_weapon_nade_flash_desc"] = "使目標失明及失聰。"
-L["mw19_weapon_nade_stun_desc"] = "被擊中的人的移動和瞄準速度慢。"
-L["mw19_weapon_nade_smoke_desc"] = "釋放堙幕阻礙視綜。"
-L["mw19_weapon_nade_snapshot_desc"] = "可在極短時間内讓你為你的隊伍觀察到範圍内的敵人。"
-L["mw19_weapon_nade_heartbeat_desc"] = "顯示附近敵人基本杳訊的平板電腦。"
-L["mw19_weapon_nade_stim_desc"] = "軍用興奮劑，可以燒灼戰鬥所造成的傷口，並且重首戰術衝刺。"
-L["mw19_weapon_nade_decoy_desc"] = "反情報手榴彈，可模擬槍和雷達訊號來擾亂敵人。"
-L["mw19_weapon_nade_gas_desc"] = "在撞擊地面後引爆，並釋放出持續不散的催氵戾瓦斯，造成緩速、視綿模糊和咳嗽。"
+L["mw19_weapon_nade_claymore_desc"] = "感應髑發的爆炸地雷。" .. quicknade
+L["mw19_weapon_nade_frag_desc"] = "可延遲擲出的破片手榴彈。" .. quicknade
+L["mw19_weapon_nade_molotov_desc"] = "撞擊後爆炸的即時燃燒裝首。" .. quicknade
+-- L["mw19_weapon_nade_c4_desc"] = "可黏住物體表面的大型炸藥，當道具用完後，可以 {ATTACK} 遠端引爆。"
+L["mw19_weapon_nade_c4_desc"] = "可黏住物體表面的大型炸藥，當道具用完後，可以 {ATTACK} 遠端引爆。" .. quicknade
+L["mw19_weapon_nade_semtex_desc"] = "計時黏性榴彈。" .. quicknade
+L["mw19_weapon_nade_knife_desc"] = "可回收的小刀，丢出可又快又安靜地擊殺敵人。" .. quicknade
+L["mw19_weapon_nade_proximity_desc"] = "近距離觸發的炸藥，能對載具造成極大傷害。" .. quicknade
+L["mw19_weapon_nade_thermite_desc"] = "發生碰撞後會在短時間内發出熾熱光芒的炸藥。可黏在表面上。" .. quicknade
+
+L["mw19_weapon_nade_flash_desc"] = "使目標失明及失聰。" .. quicknade
+L["mw19_weapon_nade_stun_desc"] = "被擊中的人的移動和瞄準速度慢。" .. quicknade
+L["mw19_weapon_nade_smoke_desc"] = "釋放堙幕阻礙視綜。" .. quicknade
+L["mw19_weapon_nade_snapshot_desc"] = "可在極短時間内讓你為你的隊伍觀察到範圍内的敵人。" .. quicknade
+L["mw19_weapon_nade_heartbeat_desc"] = "顯示附近敵人基本杳訊的平板電腦。" .. quicknade
+L["mw19_weapon_nade_stim_desc"] = "軍用興奮劑，可以燒灼戰鬥所造成的傷口，並且重首戰術衝刺。" .. quicknade
+L["mw19_weapon_nade_decoy_desc"] = "反情報手榴彈，可模擬槍和雷達訊號來擾亂敵人。" .. quicknade
+L["mw19_weapon_nade_gas_desc"] = "在撞擊地面後引爆，並釋放出持續不散的催氵戾瓦斯，造成緩速、視綿模糊和咳嗽。" .. quicknade
 
 -- L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
 -- L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO

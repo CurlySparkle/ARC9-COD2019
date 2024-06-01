@@ -661,24 +661,26 @@ L["mw19_weapon_knife_desc"] = "근접전을 위한 일반 군용 전술 단검�
 L["mw19_weapon_stick_desc"] = "기동력이 매우 뛰어나며 양손에 쥘 수 있는 배턴입니다. 가볍고 튼튼해서 적을 빠르게 제압할 수 있습니다."
 L["mw19_weapon_sword_desc"] = "면도날보다도 예리한 수제 탄소강 단검입 니다. 쥐도 새도 모르게 적을 처치하기에 안성맞줌입니다."
 
-L["mw19_weapon_nade_claymore_desc"] = "전방에 적이 접근하면 폭발하는 대인 지뢰입니다."
-L["mw19_weapon_nade_frag_desc"] = "지연 투척할 수 있는 세열 수류탄입 니다."
-L["mw19_weapon_nade_molotov_desc"] = "충돌하면 폭발하는 급조한 화염 병입 니다."
-L["mw19_weapon_nade_c4_desc"] = "Large explosive that sticks to surfaces and can be detonated remotely with {ATTACK} when the equipment is depleted.\n\nDouble-tapping {USE} always detonates the explosives."
-L["mw19_weapon_nade_c4_desc"] = "표면에 부착할 수 있느 대형 폭발물입니다. 장비가 떨어졌을 때 {ATTACK} 사용하면 원격으로 폭파할 수 있습니다.\n\n{USE} 더블탭으로 폭발물 격발"
-L["mw19_weapon_nade_semtex_desc"] = "점착성 시한 수류탄입 니다."
-L["mw19_weapon_nade_knife_desc"] = "빠르고 조용하게 적을 제거하기 위해 던질 수 있는 회수 가능한 칼입니다."
-L["mw19_weapon_nade_proximity_desc"] = "적이 접근하면 폭발하는 근접 지뢰로 차량에 큰 피해를 줍니다."
-L["mw19_weapon_nade_thermite_desc"] = "충돌 후 짧은 시간 동안 맹렬하게 타오릅니다. 표면에 달라붙습니다."
+local quicknade = "\n\nCan be used with \"Quickthrow\". Requires \"<color=175,175,255>+grenade1</color>\" bind." -- UO
 
-L["mw19_weapon_nade_flash_desc"] = "목표의 시각과 청각을 마비시킵니다."
-L["mw19_weapon_nade_stun_desc"] = "목표의 이동속도와 조준속도를 둔화시킵니다."
-L["mw19_weapon_nade_smoke_desc"] = "적의 시야를 차단하는 연막을 생성합니다."
-L["mw19_weapon_nade_snapshot_desc"] = "스쿠니드를 위해 폭발 반경 내의 적을 잠시 나타냅니다."
-L["mw19_weapon_nade_heartbeat_desc"] = "근처 적의 심박을 감지하여 대략적인 위치를 표시하는 탐지기입니다."
-L["mw19_weapon_nade_stim_desc"] = "부상을 지지고 전력 질주 대기시간을 초기 화하는 군용 자극제입 니 다."
-L["mw19_weapon_nade_decoy_desc"] = "거짓 신호나 사격음을 발산하여 적을 교란하는 수류탄입 니 다."
-L["mw19_weapon_nade_gas_desc"] = "폭발 시 최루성 기체를 내뿜어 적의 이동 속도를 늦추고 시야를 호리며 기침을 유 발하는 수류탄입니다."
+L["mw19_weapon_nade_claymore_desc"] = "전방에 적이 접근하면 폭발하는 대인 지뢰입니다." .. quicknade
+L["mw19_weapon_nade_frag_desc"] = "지연 투척할 수 있는 세열 수류탄입 니다." .. quicknade
+L["mw19_weapon_nade_molotov_desc"] = "충돌하면 폭발하는 급조한 화염 병입 니다." .. quicknade
+-- L["mw19_weapon_nade_c4_desc"] = "표면에 부착할 수 있느 대형 폭발물입니다. 장비가 떨어졌을 때 {ATTACK} 사용하면 원격으로 폭파할 수 있습니다.\n\n{USE} 더블탭으로 폭발물 격발"
+L["mw19_weapon_nade_c4_desc"] = "표면에 부착할 수 있느 대형 폭발물입니다. 장비가 떨어졌을 때 {ATTACK} 사용하면 원격으로 폭파할 수 있습니다." .. quicknade
+L["mw19_weapon_nade_semtex_desc"] = "점착성 시한 수류탄입 니다." .. quicknade
+L["mw19_weapon_nade_knife_desc"] = "빠르고 조용하게 적을 제거하기 위해 던질 수 있는 회수 가능한 칼입니다." .. quicknade
+L["mw19_weapon_nade_proximity_desc"] = "적이 접근하면 폭발하는 근접 지뢰로 차량에 큰 피해를 줍니다." .. quicknade
+L["mw19_weapon_nade_thermite_desc"] = "충돌 후 짧은 시간 동안 맹렬하게 타오릅니다. 표면에 달라붙습니다." .. quicknade
+
+L["mw19_weapon_nade_flash_desc"] = "목표의 시각과 청각을 마비시킵니다." .. quicknade
+L["mw19_weapon_nade_stun_desc"] = "목표의 이동속도와 조준속도를 둔화시킵니다." .. quicknade
+L["mw19_weapon_nade_smoke_desc"] = "적의 시야를 차단하는 연막을 생성합니다." .. quicknade
+L["mw19_weapon_nade_snapshot_desc"] = "스쿠니드를 위해 폭발 반경 내의 적을 잠시 나타냅니다." .. quicknade
+L["mw19_weapon_nade_heartbeat_desc"] = "근처 적의 심박을 감지하여 대략적인 위치를 표시하는 탐지기입니다." .. quicknade
+L["mw19_weapon_nade_stim_desc"] = "부상을 지지고 전력 질주 대기시간을 초기 화하는 군용 자극제입 니 다." .. quicknade
+L["mw19_weapon_nade_decoy_desc"] = "거짓 신호나 사격음을 발산하여 적을 교란하는 수류탄입 니 다." .. quicknade
+L["mw19_weapon_nade_gas_desc"] = "폭발 시 최루성 기체를 내뿜어 적의 이동 속도를 늦추고 시야를 호리며 기침을 유 발하는 수류탄입니다." .. quicknade
 
 -- L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
 -- L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO

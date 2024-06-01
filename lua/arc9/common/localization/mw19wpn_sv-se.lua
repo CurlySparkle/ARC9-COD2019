@@ -662,23 +662,26 @@ L["mw19_weapon_knife_desc"] = "En taktisk kniv för närstrid. Standard militär
 L["mw19_weapon_stick_desc"] = "Dubbla batonger tillåter operatörer att närma deras måltavlor med otrolig rörlighet. Stadig och lätt design tillåter snabba angrepp för zonering av dina fiender."
 L["mw19_weapon_sword_desc"] = "Handsmidda blad av kolstål erbjuder det vassaste möjliga alternativet för att ljudlöst slajsa din väg genom dina fiender."
 
-L["mw19_weapon_nade_claymore_desc"] = "Närhetsaktiverad explosiv mina."
-L["mw19_weapon_nade_frag_desc"] = "Handgrant med armerbar rivtändare."
-L["mw19_weapon_nade_molotov_desc"] = "Hemmagjord eldgranat som sprängs vid kontakt."
-L["mw19_weapon_nade_c4_desc"] = "Stort sprängmedel som fastnar på ytor som kan fjärrdetoneras med {ATTACK} när utrustningen är slut.\n\nDubbeltryckning av {USE} spränger alltid sprängmedlen."
-L["mw19_weapon_nade_semtex_desc"] = "Klistergranat med timer."
-L["mw19_weapon_nade_knife_desc"] = "Återhämtningsbar kniv som kan snabbt kastas för att ljudlöst eliminera fiender."
-L["mw19_weapon_nade_proximity_desc"] = "Närhetsaktiverad sprängmedel som orsakar tunga skador till fordon."
-L["mw19_weapon_nade_thermite_desc"] = "Sprängmedel som starkt brinner under en kort tid efter träff. Fastnar på ytor."
+local quicknade = "\n\nKan användas med \"Snabbkast\". Kräver \"<color=175,175,255>+grenade1</color>\"-kommando." -- UO
 
-L["mw19_weapon_nade_flash_desc"] = "Bländer och dövar offer."
-L["mw19_weapon_nade_stun_desc"] = "Saktar ned offrets rörelse och sikte."
-L["mw19_weapon_nade_smoke_desc"] = "Skickar ut en rökskärm som blockerar vyn."
-L["mw19_weapon_nade_snapshot_desc"] = "Erbjuder en tillfällig blick av fiender inne i sprängområdet till din trupp."
-L["mw19_weapon_nade_heartbeat_desc"] = "En platta som visar ungefärlig information om nära fiender."
-L["mw19_weapon_nade_stim_desc"] = "Militär stimulerande medel som bränner stridssår och förfriskar Taktisk Sprint."
-L["mw19_weapon_nade_decoy_desc"] = "Spiongranat som simulerar falsk vapeneld och radarsignaturer för att förvirra fienden."
-L["mw19_weapon_nade_gas_desc"] = "Exploderar vid kontakt med marken och släpper ut ett dröjande moln av tårgas som orsakar saktar ner rörelsen, orsakar suddig vy och hostande."
+L["mw19_weapon_nade_claymore_desc"] = "Närhetsaktiverad explosiv mina." .. quicknade
+L["mw19_weapon_nade_frag_desc"] = "Handgrant med armerbar rivtändare." .. quicknade
+L["mw19_weapon_nade_molotov_desc"] = "Hemmagjord eldgranat som sprängs vid kontakt." .. quicknade
+-- L["mw19_weapon_nade_c4_desc"] = "Stort sprängmedel som fastnar på ytor som kan fjärrdetoneras med {ATTACK} när utrustningen är slut.\n\nDubbeltryckning av {USE} spränger alltid sprängmedlen."
+L["mw19_weapon_nade_c4_desc"] = "Stort sprängmedel som fastnar på ytor som kan fjärrdetoneras med {ATTACK} när utrustningen är slut." .. quicknade
+L["mw19_weapon_nade_semtex_desc"] = "Klistergranat med timer." .. quicknade
+L["mw19_weapon_nade_knife_desc"] = "Återhämtningsbar kniv som kan snabbt kastas för att ljudlöst eliminera fiender." .. quicknade
+L["mw19_weapon_nade_proximity_desc"] = "Närhetsaktiverad sprängmedel som orsakar tunga skador till fordon." .. quicknade
+L["mw19_weapon_nade_thermite_desc"] = "Sprängmedel som starkt brinner under en kort tid efter träff. Fastnar på ytor." .. quicknade
+
+L["mw19_weapon_nade_flash_desc"] = "Bländer och dövar offer." .. quicknade
+L["mw19_weapon_nade_stun_desc"] = "Saktar ned offrets rörelse och sikte." .. quicknade
+L["mw19_weapon_nade_smoke_desc"] = "Skickar ut en rökskärm som blockerar vyn." .. quicknade
+L["mw19_weapon_nade_snapshot_desc"] = "Erbjuder en tillfällig blick av fiender inne i sprängområdet till din trupp." .. quicknade
+L["mw19_weapon_nade_heartbeat_desc"] = "En platta som visar ungefärlig information om nära fiender." .. quicknade
+L["mw19_weapon_nade_stim_desc"] = "Militär stimulerande medel som bränner stridssår och förfriskar Taktisk Sprint." .. quicknade
+L["mw19_weapon_nade_decoy_desc"] = "Spiongranat som simulerar falsk vapeneld och radarsignaturer för att förvirra fienden." .. quicknade
+L["mw19_weapon_nade_gas_desc"] = "Exploderar vid kontakt med marken och släpper ut ett dröjande moln av tårgas som orsakar saktar ner rörelsen, orsakar suddig vy och hostande." .. quicknade
 
 L["mw19_weapon_minigun_desc"] = "Portabel gatlingkulspruta med en väldigt hög eldhastighet." -- UO
 L["mw19_weapon_fists_desc"] = "När allt annat misslyckas så får du slå din väg ut. Kom ihåg att knytnävarna inte kräver omladdning, så dem är alltid snabba." -- UO
