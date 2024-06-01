@@ -629,7 +629,6 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(1, 0, 3),
-		Hidden = true, -- Where even is it?
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
@@ -654,13 +653,21 @@ SWEP.Attachments = {
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
-        Category = {"charm"},
-		RejectAttachments = { ["arc9_stat_proscreen"] = true },
+        Category = {"killcounter"},
 		CosmeticOnly = true,
         Bone = "j_forend",
         Pos = Vector(8.35, 2.04, -2.7),
         Ang = Angle(0, 0, -90),
-		Scale = 1.5,
+		Scale = 1,
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
+        Category = {"charm"},
+		CosmeticOnly = true,
+        Bone = "tag_cosmetic",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		Scale = 1.2,
     },
 }
 
