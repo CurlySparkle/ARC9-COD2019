@@ -445,7 +445,7 @@ SWEP.Animations = {
     },
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
-		DropMagAt = 1.5,
+		DropMagAt = 1.4,
 		MinProgress = 0.9,
 		PeekProgress = 0.875,
 		RefillProgress = 0.75,
