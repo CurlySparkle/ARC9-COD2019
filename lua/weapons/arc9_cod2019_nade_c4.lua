@@ -77,8 +77,9 @@ SWEP.ThrowChargeTime = 1 -- How long it takes to charge the grenade to its maxim
 SWEP.ThrowTumble = true -- Grenade tumbles when thrown.
 SWEP.Disposable = true 
 SWEP.Detonator = true
-
 SWEP.Akimbo = true
+SWEP.QuickSwapTo = false
+SWEP.IsQuickGrenade = false
 
 -------------------------- HANDLING
 SWEP.SprintToFireTime = 0.2 -- How long it takes to go from sprinting to being able to fire.

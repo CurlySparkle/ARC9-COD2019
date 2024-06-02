@@ -174,9 +174,9 @@ function ENT:Detonate()
     local attacker = self.Attacker or self:GetOwner()
 
     if self.NPCDamage then
-        util.BlastDamage(self, attacker, self:GetPos(), 350, 150)
+        util.BlastDamage(self, attacker, self:GetPos(), 350, 175)
     else
-        util.BlastDamage(self, attacker, self:GetPos(), 350, 250)
+        util.BlastDamage(self, attacker, self:GetPos(), 350, 275)
         self:FireBullets({
             Attacker = attacker,
             Damage = 1000,

@@ -168,9 +168,9 @@ function ENT:Detonate()
     local attacker = self.Attacker or self:GetOwner()
 
     if self.NPCDamage then
-        util.BlastDamage(self, attacker, self:GetPos(), 350, 125)
+        util.BlastDamage(self, attacker, self:GetPos(), 350, 145)
     else
-        util.BlastDamage(self, attacker, self:GetPos(), 350, 175)
+        util.BlastDamage(self, attacker, self:GetPos(), 350, 185)
         self:FireBullets({
             Attacker = attacker,
             Damage = 1000,
@@ -181,8 +181,8 @@ function ENT:Detonate()
             Distance = 32,
             IgnoreEntity = self,
             Callback = function(atk, btr, dmginfo)
-                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_BLAST) // airboat damage for helicopters and LVS vehicles
-                dmginfo:SetDamageForce(self:GetForward() * 20000) // LVS uses this to calculate penetration!
+                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_BLAST) -- airboat damage for helicopters and LVS vehicles
+                dmginfo:SetDamageForce(self:GetForward() * 20000) -- LVS uses this to calculate penetration!
             end,
         })
     end

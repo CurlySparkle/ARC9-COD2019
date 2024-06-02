@@ -67,6 +67,10 @@ if SERVER then
            self:SetPos(tr.HitPos)
            self:Detonate()
         end
+        if (tr.HitSky) then
+			self:Remove()
+			return
+		end
     end
 
     end
@@ -102,11 +106,11 @@ if SERVER then
         local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
         local hitEntity = data.HitEntity -- Get the entity that was hit (can be nil if it hit the world)
 		
-        local theirProps = util.GetSurfaceData(data.TheirSurfaceProps)
-        if (theirProps != nil && theirProps.material == MAT_DEFAULT) then
-        timer.Simple(0, function() self:Remove() end)
-        return
-        end
+        -- local theirProps = util.GetSurfaceData(data.TheirSurfaceProps)
+        -- if (theirProps != nil && theirProps.material == MAT_DEFAULT) then
+        -- timer.Simple(0, function() self:Remove() end)
+        -- return
+        -- end
 
         if tgt:IsWorld() or (IsValid(tgt) and tgt:GetPhysicsObject():IsValid()) then
             timer.Simple(0, function()

@@ -75,9 +75,9 @@ function ENT:Detonate()
     local mult = self.NPCDamage and 0.5 or 1
 
     if engine.ActiveGamemode() == "terrortown" then
-        util.BlastDamage(self, attacker, self:GetPos(), 256, 35)
+        util.BlastDamage(self, attacker, self:GetPos(), 256, 55)
     else
-        util.BlastDamage(self, attacker, self:GetPos(), 300, 150 * mult)
+        util.BlastDamage(self, attacker, self:GetPos(), 300, 165 * mult)
 
         self:FireBullets({
             Attacker = attacker,
@@ -89,8 +89,8 @@ function ENT:Detonate()
             Distance = 32,
             IgnoreEntity = self,
             Callback = function(atk, btr, dmginfo)
-                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_BLAST) // airboat damage for helicopters and LVS vehicles
-                dmginfo:SetDamageForce(self:GetForward() * 7000) // LVS uses this to calculate penetration!
+                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_BLAST) -- airboat damage for helicopters and LVS vehicles
+                dmginfo:SetDamageForce(self:GetForward() * 7000) -- LVS uses this to calculate penetration!
             end,
         })
     end
