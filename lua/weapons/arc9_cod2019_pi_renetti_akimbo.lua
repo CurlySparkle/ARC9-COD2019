@@ -320,7 +320,7 @@ SWEP.AttachmentTableOverrides = {
 				Mode = 6,
 				RPMMult = 1.25,
 				RunawayBurst = true,
-				TracerEffect = "ARC9_tracer",
+				--TracerEffect = "ARC9_tracer",
 			},
 		},
 	},

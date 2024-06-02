@@ -326,7 +326,15 @@ SWEP.AttachmentTableOverrides = {
     Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_slide_long_akimbo.mdl"
     },
     ["cod2019_x16_slide_heavy"] = {
-    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_slide_v3_akimbo.mdl"
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_slide_v3_akimbo.mdl",
+	FiremodesOverride = {
+			{
+				Mode = 6,
+				RPMMult = 1.25,
+				RunawayBurst = true,
+				--TracerEffect = "ARC9_tracer",
+			},
+		},
     },
     ["cod2019_x16_mag_xmag2"] = {
     Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_mag_xmags2_akimbo.mdl",

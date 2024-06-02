@@ -878,7 +878,7 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 40
-SWEP.CodStubbyGripPoseParam = 26
+SWEP.CodStubbyGripPoseParam = 1.5
 SWEP.CodStubbyTallGripPoseParam = 26
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.

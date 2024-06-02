@@ -102,12 +102,12 @@ SWEP.RecoilPatternDrift = 5
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomUp = 0.2
+SWEP.RecoilRandomSide = 0.3
 
 SWEP.RecoilDissipationRate = 35 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
