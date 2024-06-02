@@ -53,7 +53,11 @@ if SERVER then
             end
         end
 		
-    local gunship = {["npc_combinegunship"] = true, ["npc_combinedropship"] = true}
+    local gunship = {
+	["npc_combinegunship"] = true,
+	["npc_helicopter"] = true,
+	["npc_combinedropship"] = true
+	}
 
     if SERVER and self.GunshipWorkaround and (self.GunshipCheck or 0 < CurTime()) then
             self.GunshipCheck = CurTime() + 0.33
