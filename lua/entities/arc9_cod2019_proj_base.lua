@@ -319,8 +319,9 @@ function ENT:Think()
             local tr = util.TraceLine({
                 start = self:GetPos(),
                 endpos = self:GetPos() + (self:GetVelocity() * 6 * engine.TickInterval()),
-                filter = self,
-                mask = MASK_SHOT
+                filter = {self:GetOwner(), self},
+                mask = MASK_SHOT_PORTAL,
+                collisiongroup = COLLISION_GROUP_PROJECTILE,
             })
         if IsValid(tr.Entity) and gunship[tr.Entity:GetClass()] then
            self:SetPos(tr.HitPos)
