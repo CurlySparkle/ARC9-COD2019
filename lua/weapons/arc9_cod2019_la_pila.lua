@@ -640,7 +640,7 @@ SWEP.Attachments = {
         Category = {"cod2019_pila_optic"},
         InstalledElements = {"sights"},
 		Installed = "cod2019_optic_default_pila",
-		-- Integral = "cod2019_optic_default_pila",
+		Integral = "cod2019_optic_default_pila",
         CorrectiveAng = Angle(0, 0, 0),
 		Hidden = true,
     },
