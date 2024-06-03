@@ -128,6 +128,9 @@ if SERVER then
                 self:SetAngles(angles)
                 self:SetPos(data.HitPos)
                 self:GetPhysicsObject():Sleep()
+				
+                self:SetTrigger(true)
+                self:UseTriggerBounds(true, 16)
 
                 if tgt:IsWorld() or IsValid(tgt) then
 				if !self:IsValid() then return end
@@ -172,9 +175,6 @@ if SERVER then
                     end
                 end
             end)
-
-            self:SetTrigger(true)
-            self:UseTriggerBounds(true, 16)
         end
 
         self.DetonateTime = CurTime() + 2

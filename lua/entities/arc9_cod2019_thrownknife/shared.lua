@@ -43,33 +43,21 @@ function ENT:Initialize()
 end
 
 function ENT:PhysicsCollide(data, physobj)
-    local hitPos = data.HitPos -- Get the position where the grenade hit
-    local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
     if SERVER then
         if data.HitEntity:GetClass() == "worldspawn" then
-        timer.Simple(0, function()  -- to prevent "Changing collision rules within a callback is likely to cause crashes!" errors
-            if !self:IsValid() then return end
-            self:GetPhysicsObject():EnableMotion(false)
-            if self:IsValid() then
-                self:SetCollisionGroup(COLLISION_GROUP_WEAPON)
-            end
-        end)
-            self:SetAngles(data.OurOldVelocity:Angle() + Angle(-90, 0, 180))
-            self:SetPos(data.HitPos - (data.HitNormal * 2))
             self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hitwall1.ogg" )
             self.dt = CurTime() + 15
             self.Collectable = true
-			util.Decal("Impact.Concrete", hitPos + hitNormal, hitPos - hitNormal)
 			timer.Simple(0, function()
-			if !self:IsValid() then return end
-            if self:IsValid() then
-			  self:SetMoveType(MOVETYPE_NONE)
-			  self:SetTrigger(true)
-			  self:UseTriggerBounds(true, 24) 
-            end
+				self:SetAngles(data.OurOldVelocity:Angle() + Angle(-90, 0, -90))
+				self:SetPos(data.HitPos - (data.HitNormal * 2))
+				self:SetMoveType(MOVETYPE_NONE)
+				self:SetTrigger(true)
+				self:UseTriggerBounds(true, 24) 
 			end)
-			  self:FireBullets({
-			    Attacker = self:GetOwner(),
+        else
+			self:FireBullets({
+				Attacker = self:GetOwner(),
 			    Num = 1,
 			    Tracer = 0,
 			    Damage = 75,
@@ -78,8 +66,7 @@ function ENT:PhysicsCollide(data, physobj)
 			    Src = data.HitPos,
 			    Dir = data.OurOldVelocity:GetNormalized(),
 			    HullSize = bHull && self.Maxs:Length() * 3 || 2,
-			  })
-        else
+			 })
             self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hit1.ogg" )
         end
    end
