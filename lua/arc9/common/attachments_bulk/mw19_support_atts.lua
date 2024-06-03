@@ -121,9 +121,9 @@ ARC9.LoadAttachment(ATT, "cod2019_eft_stocks")
 ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.PrintName = "EFT Tacticals"
+ATT.PrintName = "Escape from Tarkov Tacticals"
 ATT.CompactName = "EFTT"
-ATT.Description = "Lets you use tactical attachments from EFT."
+ATT.Description = "Enables the ability to equip tacticals from the EFT packs.\n\nNote: Do remember that there are glitches/bugs/clipping."
 
 ATT.SortOrder = 1000
 ATT.AutoStats = true
@@ -147,9 +147,9 @@ ARC9.LoadAttachment(ATT, "cod2019_eft_tactical")
 ATT = {}
 
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.PrintName = "EFT Tacticals"
+ATT.PrintName = "Escape from Tarkov Tacticals"
 ATT.CompactName = "EFTT"
-ATT.Description = "Lets you use tactical attachments from EFT."
+ATT.Description = "Enables the ability to equip tacticals from the EFT packs.\n\nNote: Do remember that there are glitches/bugs/clipping."
 
 ATT.SortOrder = 1000
 ATT.AutoStats = true

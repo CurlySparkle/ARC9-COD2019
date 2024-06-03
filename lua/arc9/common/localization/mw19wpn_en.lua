@@ -485,6 +485,14 @@ L["cod2019_eft_stocks.printname"] = ARC9:GetPhrase("cod2019_eft_grips.printname"
 L["cod2019_eft_stocks.compactname"] = ARC9:GetPhrase("cod2019_eft_grips.compactname")
 L["cod2019_eft_stocks.description"] = "Allows installation of stocks from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
+L["cod2019_eft_tactical.printname"] = ARC9:GetPhrase("cod2019_eft_tactical.printname")
+L["cod2019_eft_tactical.compactname"] = "EFT" -- UO
+L["cod2019_eft_tactical.description"] = "Allows installation of tacticals from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
+
+L["cod2019_eft_tactical_pistl.printname"] = ARC9:GetPhrase("cod2019_eft_tactical_pistl.printname")
+L["cod2019_eft_tactical_pistl.compactname"] = "EFT" -- UO
+L["cod2019_eft_tactical_pistl.description"] = "Allows installation of tacticals from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
+
 ////////////////////  GSR (Gunsmith Reloaded) Support
 L["cod2019_attach_support_gsr_laser_pstl.printname"] = "Gunsmith Reloaded Support" -- UO
 L["cod2019_attach_support_gsr_laser_pstl.compactname"] = "GSR" -- UO
