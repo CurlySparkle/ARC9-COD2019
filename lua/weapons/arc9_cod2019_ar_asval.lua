@@ -121,7 +121,7 @@ SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.3
-SWEP.RecoilRandomSide = 0.3
+SWEP.RecoilRandomSide = 0.4
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -143,12 +143,12 @@ SWEP.RecoilMax = 3
 
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilMultSights = 0.5
-SWEP.VisualRecoilPunchSights = 6
-SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilPunchSights = 4
+SWEP.VisualRecoilRollSights = 10
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
-SWEP.VisualRecoilPunch = 1.7
+SWEP.VisualRecoilPunch = 2
 SWEP.VisualRecoilUp = 0.1
 SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = -0.2
@@ -871,7 +871,7 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
         CorrectiveAng = Angle(0.8, -0.8, 0),
-        Category = {"cod2019_optic", "cod2019_asval_optic"},
+        Category = {"cod2019_optic","cod2019_asval_optic"},
 		InstalledElements = {"sight_rail"},
     },
     { -- 5
@@ -994,7 +994,7 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodStubbyGripPoseParam = 26
+SWEP.CodStubbyGripPoseParam = 31.8
 SWEP.CodStubbyTallGripPoseParam = 22
 SWEP.CodAngledGripPoseParam = 39
 

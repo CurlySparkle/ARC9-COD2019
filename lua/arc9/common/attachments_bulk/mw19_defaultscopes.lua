@@ -17,6 +17,7 @@ ATT.Category = {"cod2019_optic_svd"}
 ATT.ActivateElements = {"scope_svd"}
 
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_svd.mdl"
+ATT.BoneMerge = true
 ATT.ModelOffset = Vector(0.5, 0, -0.8)
 
 ATT.Sights = {

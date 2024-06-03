@@ -133,8 +133,8 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser") .. " (EFT)",
-        Pos = Vector(-0.5, 0, -0.2),
-        Ang = Angle(0, 0, 0),
+        Pos = Vector(0, 0, 0.05),
+        Ang = Angle(0, 0, 180),
         Icon_Offset = Vector(-0.5, 0, -1.25),
         Category = "eft_tactical",
 		Scale = 1
@@ -159,8 +159,8 @@ ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
 ATT.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_laser") .. " (EFT)",
-        Pos = Vector(-0.5, 0, -0.2),
-        Ang = Angle(0, 0, 0),
+        Pos = Vector(-0.8, 0, 0),
+        Ang = Angle(0, 0, 180),
         Icon_Offset = Vector(-0.5, 0, -1.25),
         Category = "eft_tactical_pistol",
 		Scale = 1

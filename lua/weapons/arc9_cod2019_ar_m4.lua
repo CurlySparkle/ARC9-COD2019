@@ -1148,6 +1148,7 @@ SWEP.Attachments = {
 		Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
 		InstalledElements = {"muzzle_none","muzzle_none2"},
+		ExcludeElements = {"barrel_sil"},
     },
     { -- 2
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
