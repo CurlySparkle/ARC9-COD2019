@@ -757,6 +757,9 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_griptape_03"] = {
 		Model = "models/weapons/cod2019/attachs/weapons/model680/attachment_vm_sh_romeo870_pistolgrip_tape.mdl",
     },
+    ["cod2019_etc_ammo_extend"] = {
+		ClipSizeMult = 1.35,
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -884,7 +887,7 @@ SWEP.Attachments = {
         Category = {"cod2019_mag","cod2019_model680_mag"},
         Pos = Vector(0, 0, 0),
 		InstalledElements = {"nobarrel"},
-		ExcludeElements = {"cod2019_model680_barrel_mid"},
+		-- ExcludeElements = {"cod2019_model680_barrel_mid"},
     },
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
