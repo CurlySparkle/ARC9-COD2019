@@ -86,6 +86,9 @@ SWEP.ShootEntInheritPlayerVelocity = false
 
 SWEP.ShootPosOffset = Vector(0, 24, 0)
 
+SWEP.BobWalkMult = 0.5
+SWEP.BobSprintMult = 1.5
+
 -------------------------- POSITIONS
 
 SWEP.HasSights = false
@@ -179,7 +182,7 @@ SWEP.Animations = {
     },
     ["pullpin"] = {
         Source = "pullpin",
-        MinProgress = 0.666,
+        MinProgress = 0.25,
         FireASAP = true,
     },
     ["throw"] = {

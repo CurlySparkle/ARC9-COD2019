@@ -366,7 +366,7 @@ SWEP.Animations = {
 		PeekProgress = 0.875,
 		FireASAP = true,
 		EjectAt = 0.1,
-		DropMagAt = 0.9,
+		DropMagAt = 0.95,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -499,7 +499,7 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag_fast_empty"] = {
-        Source = "reload_xmag_fast_empty",
+        Source = "reload_fast_empty",
 		MinProgress = 0.95,
 		RefillProgress = 0.825,
 		PeekProgress = 0.925,

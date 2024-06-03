@@ -135,7 +135,7 @@ SWEP.RecoilMax = 3.5
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2
+SWEP.VisualRecoilPunch = 2.3
 SWEP.VisualRecoilUp = 0.3
 
 SWEP.VisualRecoilMultSights = 0.4
@@ -938,6 +938,7 @@ SWEP.Attachments = {
 		Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
 		InstalledElements = {"muzzle_none"},
+		ExcludeElements = {"barrel_sil"},
     },
     { -- 2
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
@@ -1089,7 +1090,7 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodStubbyGripPoseParam = 23
+SWEP.CodStubbyGripPoseParam = 22.7
 SWEP.CodStubbyTallGripPoseParam = 22
 SWEP.CodAngledGripPoseParam = 36
 
