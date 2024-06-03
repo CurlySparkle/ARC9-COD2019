@@ -545,11 +545,11 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sm_victor_reload_up.ogg", t = 0.0},
 			{s = path .. "wfoly_sm_victor_reload_mag_release.ogg", t = 0.433},
-			{s = path .. "wfoly_sm_victor_reload_magout.ogg", t = 0.767},
-			{s = path .. "wfoly_sm_victor_reload_arm.ogg", t = 1.433},
-			{s = path .. "wfoly_sm_victor_reload_maghit.ogg", t = 1.767},
-			{s = path .. "wfoly_sm_victor_reload_magin.ogg", t = 2.2},
-			{s = path .. "wfoly_sm_victor_reload_end.ogg", t = 2.467},
+			{s = path .. "wfoly_sm_victor_reload_magout.ogg", t = 0.76},
+			{s = path .. "wfoly_sm_victor_reload_arm.ogg", t = 1.18},
+			{s = path .. "wfoly_sm_victor_reload_maghit.ogg", t = 1.48},
+			{s = path .. "wfoly_sm_victor_reload_magin.ogg", t = 1.88},
+			{s = path .. "wfoly_sm_victor_reload_end.ogg", t = 2},
         },
     },
     ["reload_smag_empty"] = {
@@ -570,11 +570,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_victor_reload_empty_magout.ogg", t = 0.467},
 			{s = path .. "wfoly_sm_victor_reload_empty_arm.ogg", t = 0.667},
 			{s = path .. "wfoly_sm_victor_reload_empty_rotate.ogg", t = 0.967},
-			{s = path .. "wfoly_sm_victor_reload_empty_maghit.ogg", t = 1.433},
-			{s = path .. "wfoly_sm_victor_reload_empty_magin_01.ogg", t = 1.633},
-			{s = path .. "wfoly_sm_victor_reload_empty_magin_02.ogg", t = 1.867},
-			{s = path .. "wfoly_sm_victor_reload_empty_charge.ogg", t = 2.433},
-			{s = path .. "wfoly_sm_victor_reload_empty_end.ogg", t = 2.9},
+			{s = path .. "wfoly_sm_victor_reload_empty_maghit.ogg", t = 1.43},
+			{s = path .. "wfoly_sm_victor_reload_empty_magin_01.ogg", t = 1.53},
+			{s = path .. "wfoly_sm_victor_reload_empty_magin_02.ogg", t = 1.73},
+			{s = path .. "wfoly_sm_victor_reload_empty_charge.ogg", t = 2.2},
+			{s = path .. "wfoly_sm_victor_reload_empty_end.ogg", t = 2.75},
         },
     },
     ["reload_smag_fast"] = {
@@ -595,9 +595,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_victor_reload_fast_up.ogg", t = 0.0},
 			{s = path .. "wfoly_sm_victor_reload_fast_magout.ogg", t = 0.4},
 			{s = path .. "wfoly_sm_victor_reload_fast_arm.ogg", t = 0.967},
-			{s = path .. "wfoly_sm_victor_reload_fast_maghit.ogg", t = 1.267},
-			{s = path .. "wfoly_sm_victor_reload_fast_magin.ogg", t = 1.4},
-			{s = path .. "wfoly_sm_victor_reload_fast_end.ogg", t = 1.867},
+			{s = path .. "wfoly_sm_victor_reload_fast_maghit.ogg", t = 1.107},
+			{s = path .. "wfoly_sm_victor_reload_fast_magin.ogg", t = 1.177},
+			{s = path .. "wfoly_sm_victor_reload_fast_end.ogg", t = 1.6},
         },
     },
     ["reload_smag_fast_empty"] = {
@@ -617,11 +617,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_victor_reload_empty_fast_up.ogg", t = 0.0},
 			{s = path .. "wfoly_sm_victor_reload_empty_fast_magout.ogg", t = 0.367},
 			{s = path .. "wfoly_sm_victor_reload_empty_fast_arm.ogg", t = 0.933},
-			{s = path .. "wfoly_sm_victor_reload_empty_fast_maghit.ogg", t = 1.233},
-			{s = path .. "wfoly_sm_victor_reload_empty_fast_magin.ogg", t = 1.367},
-			{s = path .. "wfoly_sm_victor_reload_empty_fast_hit.ogg", t = 1.7},
-            {s = path .. "wfoly_sm_victor_reload_empty_fast_bolt.ogg", t = 1.75},
-			{s = path .. "wfoly_sm_victor_reload_empty_fast_end.ogg", t = 2.067},
+			{s = path .. "wfoly_sm_victor_reload_empty_fast_maghit.ogg", t = 1.18},
+			{s = path .. "wfoly_sm_victor_reload_empty_fast_magin.ogg", t = 1.24},
+			{s = path .. "wfoly_sm_victor_reload_empty_fast_hit.ogg", t = 1.56},
+            {s = path .. "wfoly_sm_victor_reload_empty_fast_bolt.ogg", t = 1.61},
+			{s = path .. "wfoly_sm_victor_reload_empty_fast_end.ogg", t = 2},
         },
     },
     ["ready"] = {
@@ -790,7 +790,7 @@ local Translate_Drum_Fast = {
     ["reload_empty"] = "reload_drum_fast_empty",
 }
 
---- 12 Round Drums ---
+--- 12 Round Mags ---
 local Translate_Smag = {
     ["reload"] = "reload_smag",
     ["reload_empty"] = "reload_smag_empty",
