@@ -428,25 +428,37 @@ L["cod2019_perks_burst_2.description"] = "사격 모드를 <color=100,255,100>2�
 -- L["cod2019_stock_tube_origin12.description"] = "Heavy-duty buffer tube that allows installation of aftermarket stocks." -- UO
 
 ////////////////////  EFT (Escape from Tarkov) Support
--- L["cod2019_eft_grips.printname"] = "Escape from Tarkov Support" -- UO
+-- L["cod2019_eft_grips.printname"] = "\"EFT\" Grips" -- UO
 -- L["cod2019_eft_grips.compactname"] = "EFT" -- UO
 -- L["cod2019_eft_grips.description"] = "Allows installation of foregrips from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
+-- L["cod2019_eft_muzzle.printname"] = "\"EFT\" Muzzles" -- UO
 -- L["cod2019_eft_muzzle.description"] = "Allows installation of muzzle attachments from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
+-- L["cod2019_eft_scopes.printname"] = "\"EFT\" Optics" -- UO
 -- L["cod2019_eft_scopes.description"] = "Allows installation of optics from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
+-- L["cod2019_eft_stocks.printname"] = "\"EFT\" Stocks" -- UO
 -- L["cod2019_eft_stocks.description"] = "Allows installation of stocks from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
 
+-- L["cod2019_eft_tactical.printname"] = "\"EFT\" Tacticals" -- UO
+-- L["cod2019_eft_tactical.description"] = "Allows installation of tacticals from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
+
+-- L["cod2019_eft_tactical_pistl.printname"] = "\"EFT\" Big Tacticals" -- UO
+-- L["cod2019_eft_tactical_pistl.description"] = "Allows installation of large tacticals from the <color=255,255,100>Escape from Tarkov</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>.\n\"Ergonomics\" have <color=255,100,100>no effect</color>." -- UO
+
 ////////////////////  GSR (Gunsmith Reloaded) Support
--- L["cod2019_attach_support_gsr_laser_pstl.printname"] = "Gunsmith Reloaded Support" -- UO
+-- L["cod2019_attach_support_gsr_laser_pstl.printname"] = "\"GSR\" Lasers" -- UO
 -- L["cod2019_attach_support_gsr_laser_pstl.compactname"] = "GSR" -- UO
 -- L["cod2019_attach_support_gsr_laser_pstl.description"] = "Allows installation of laser attachments from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
 
+-- L["cod2019_attach_support_gsr_optics.printname"] = "\"GSR\" Optics" -- UO
 -- L["cod2019_attach_support_gsr_optics.description"] = "Allows installation of optics from the <color=255,255,100>Gunsmith Reloaded</color> addons.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
 
+-- L["cod2019_attach_support_gsr_muzzles.printname"] = "\"GSR\" Muzzles" -- UO
 -- L["cod2019_attach_support_gsr_muzzles.description"] = "Allows installation of muzzle attachments from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
 
+-- L["cod2019_attach_support_gsr_grips.printname"] = "\"GSR\" Grips" -- UO
 -- L["cod2019_attach_support_gsr_grips.description"] = "Allows installation of foregrips from the <color=255,255,100>Gunsmith Reloaded</color> addon.\n\nNote: Not optimised - may cause <color=255,100,100>visual glitches</color>." -- UO
 
 ////////////////////  Custom Crossbow Ammo

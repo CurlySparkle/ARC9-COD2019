@@ -884,6 +884,7 @@ SWEP.Attachments = {
         Category = {"cod2019_mag","cod2019_model680_mag"},
         Pos = Vector(0, 0, 0),
 		InstalledElements = {"nobarrel"},
+		ExcludeElements = {"cod2019_model680_barrel_mid"},
     },
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),

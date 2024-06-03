@@ -427,25 +427,37 @@ L["cod2019_stock_tube_origin12.compactname"] = "FTAC" -- UO
 L["cod2019_stock_tube_origin12.description"] = "Tungt bufferrör som tillåter installering av kolvar från eftermarknaden" -- UO
 
 ////////////////////  EFT (Escape from Tarkov) Support
-L["cod2019_eft_grips.printname"] = "\"Escape from Tarkov\"-Stöd" -- UO
+L["cod2019_eft_grips.printname"] = "\"EFT\"-Grepp" -- UO
 L["cod2019_eft_grips.compactname"] = "EFT" -- UO
 L["cod2019_eft_grips.description"] = "Tillåter installering av framgrepp från \"<color=255,255,100>Escape from Tarkov</color>\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>.\n\"Ergonomics\" har <color=255,100,100>ingen effekt</color>." -- UO
 
+L["cod2019_eft_muzzle.printname"] = "\"EFT\"-Mynning" -- UO
 L["cod2019_eft_muzzle.description"] = "Tillåter installering av mynningstillbehör från \"<color=255,255,100>Escape from Tarkov</color>\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>.\n\"Ergonomics\" har <color=255,100,100>ingen effekt</color>." -- UO
 
+L["cod2019_eft_scopes.printname"] = "\"EFT\"-Riktmedel" -- UO
 L["cod2019_eft_scopes.description"] = "Tillåter installering av riktmedel från \"<color=255,255,100>Escape from Tarkov</color>\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>.\n\"Ergonomics\" har <color=255,100,100>ingen effekt</color>." -- UO
 
+L["cod2019_eft_stocks.printname"] = "\"EFT\"-Kolvar" -- UO
 L["cod2019_eft_stocks.description"] = "Tillåter installering av kolvar från \"<color=255,255,100>Escape from Tarkov</color>\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>.\n\"Ergonomics\" har <color=255,100,100>ingen effekt</color>." -- UO
 
+L["cod2019_eft_tactical.printname"] = "Taktiska \"EFT\"-Tillbehör" -- UO
+L["cod2019_eft_tactical.description"] = "Tillåter installering av taktiska tillbehör från \"<color=255,255,100>Escape from Tarkov</color>\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>.\n\"Ergonomics\" har <color=255,100,100>ingen effekt</color>." -- UO
+
+L["cod2019_eft_tactical_pistl.printname"] = "Stora Taktiska \"EFT\"-Tillbehör " -- UO
+L["cod2019_eft_tactical_pistl.description"] = "Tillåter installering av stora taktiska tillbehör från \"<color=255,255,100>Escape from Tarkov</color>\"-tilläggen.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>.\n\"Ergonomics\" har <color=255,100,100>ingen effekt</color>." -- UO
+
 ////////////////////  GSR (Gunsmith Reloaded) Support
-L["cod2019_attach_support_gsr_laser_pstl.printname"] = "\"Gunsmith Reloaded\"-Stöd" -- UO
+L["cod2019_attach_support_gsr_laser_pstl.printname"] = "\"GSR\"-Lasrar" -- UO
 L["cod2019_attach_support_gsr_laser_pstl.compactname"] = "GSR" -- UO
 L["cod2019_attach_support_gsr_laser_pstl.description"] = "Tillåter installering av lasertillbehör från \"<color=255,255,100>Gunsmith Reloaded</color>\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>." -- UO
 
+L["cod2019_attach_support_gsr_optics.printname"] = "\"GSR\"-Riktmedel" -- UO
 L["cod2019_attach_support_gsr_optics.description"] = "Tillåter installering av riktmedel från \"<color=255,255,100>Gunsmith Reloaded</color>\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>." -- UO
 
+L["cod2019_attach_support_gsr_muzzles.printname"] = "\"GSR\"-Mynning" -- UO
 L["cod2019_attach_support_gsr_muzzles.description"] = "Tillåter installering av mynningstillbehör från \"<color=255,255,100>Gunsmith Reloaded</color>\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>." -- UO
 
+L["cod2019_attach_support_gsr_grips.printname"] = "\"GSR\"-Grepp" -- UO
 L["cod2019_attach_support_gsr_grips.description"] = "Tillåter installering av framgrepp från \"<color=255,255,100>Gunsmith Reloaded</color>\"-tillägget.\n\nNotera: Inte optimerad - kan orsaka <color=255,100,100>visuella glitchar</color>." -- UO
 
 ////////////////////  Custom Crossbow Ammo
@@ -482,8 +494,6 @@ L["cod2019_pila_ammo_guided.printname"] = "Guidade Robotar" -- UO
 L["cod2019_pila_ammo_guided.compactname"] = "Guidade" -- UO
 L["cod2019_pila_ammo_guided.description"] = "Ersätter dem oguidade robotarna med <color=100,255,100>guidade</color> robotar." -- UO
 
-L["cod2019_jokr_ammo_guided.printname"] = ARC9:GetPhrase("cod2019_pila_ammo_guided.printname")
-L["cod2019_jokr_ammo_guided.compactname"] = ARC9:GetPhrase("cod2019_pila_ammo_guided.compactname")
 L["cod2019_jokr_ammo_guided.description"] = "Ersätter robotar som kräver lås med <color=100,255,100>guidade</color> robotar. <color=255,100,100>Tar bort spårningsfunktionen</color>." -- UO
 
 //////////////////////////////////////////////////////////////////////
