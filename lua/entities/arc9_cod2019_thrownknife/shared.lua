@@ -47,30 +47,41 @@ function ENT:PhysicsCollide(data, physobj)
     local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
     if SERVER then
         if data.HitEntity:GetClass() == "worldspawn" then
-            self:SetMoveType(MOVETYPE_NONE)
+        timer.Simple(0, function()  -- to prevent "Changing collision rules within a callback is likely to cause crashes!" errors
+            if !self:IsValid() then return end
+            self:GetPhysicsObject():EnableMotion(false)
+            if self:IsValid() then
+                self:SetCollisionGroup(COLLISION_GROUP_WEAPON)
+            end
+        end)
             self:SetAngles(data.OurOldVelocity:Angle() + Angle(-90, 0, 180))
             self:SetPos(data.HitPos - (data.HitNormal * 2))
             self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hitwall1.ogg" )
             self.dt = CurTime() + 15
             self.Collectable = true
 			util.Decal("Impact.Concrete", hitPos + hitNormal, hitPos - hitNormal)
-
-            self:SetTrigger(true)
-            self:UseTriggerBounds(true, 24)
+			timer.Simple(0, function()
+			if !self:IsValid() then return end
+            if self:IsValid() then
+			  self:SetMoveType(MOVETYPE_NONE)
+			  self:SetTrigger(true)
+			  self:UseTriggerBounds(true, 24) 
+            end
+			end)
+			  self:FireBullets({
+			    Attacker = self:GetOwner(),
+			    Num = 1,
+			    Tracer = 0,
+			    Damage = 75,
+			    Force = 15,
+			    Distance = 20000,
+			    Src = data.HitPos,
+			    Dir = data.OurOldVelocity:GetNormalized(),
+			    HullSize = bHull && self.Maxs:Length() * 3 || 2,
+			  })
         else
             self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hit1.ogg" )
         end
-	self:FireBullets({
-		Attacker = self:GetOwner(),
-		Num = 1,
-		Tracer = 0,
-		Damage = 75,
-		Force = 15,
-		Distance = 20000,
-		Src = data.HitPos,
-		Dir = data.OurOldVelocity:GetNormalized(),
-		HullSize = bHull && self.Maxs:Length() * 3 || 2,
-	})
    end
 end
 
@@ -82,7 +93,7 @@ function ENT:Touch(ply)
     ply:GiveAmmo(1, "arc9_cod2019_nade_knife", false)
 
     self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 75)
-    self:Remove()
+    timer.Simple(0, function() self:Remove() end) 
     end
 end
 
@@ -92,7 +103,7 @@ function ENT:Use(ply)
     ply:GiveAmmo(1, "arc9_cod2019_nade_knife", false)
 
     self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 75)
-    self:Remove()
+    timer.Simple(0, function() self:Remove() end) 
 end
 
 function ENT:Think()

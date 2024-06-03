@@ -8,6 +8,7 @@ ENT.Model = "models/weapons/cod2019/mags/w_eq_crossbow_bolt.mdl"
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.CanPickup = true
 ENT.GunshipWorkaround = true
+ENT.ImpactScorch = false
 
 if CLIENT then
     killicon.Add( "arc9_cod2019_proj_crossbow_default", "hud/killicons/default", Color( 255, 255, 255, 255 ) )
@@ -48,7 +49,12 @@ if SERVER then
             elseif not self.AttachToWorld and (not IsValid(self:GetParent())) or (IsValid(self:GetParent()) and self:GetParent():GetSolid() ~= SOLID_VPHYSICS and (self:GetParent():Health() <= 0)) then
                 self:SetParent()
                 self:PhysicsInit(SOLID_VPHYSICS)
-                --self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
+                timer.Simple(0, function()
+				  if !self:IsValid() then return end
+                    if self:IsValid() then
+                       self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
+                    end
+                end)
                 self:PhysWake()
             end
         end
@@ -84,7 +90,7 @@ if SERVER then
         if self.Stuck and self.CanPickup and ent:IsPlayer() then
             ent:GiveAmmo(1, "xbowbolt")
 			self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 120, 100, 1, CHAN_AUTO)
-            self:Remove()
+            timer.Simple(0, function() self:Remove() end) 
         end
     end
 
@@ -92,7 +98,7 @@ if SERVER then
         if self.Stuck and self.CanPickup then
             ply:GiveAmmo(1, "xbowbolt")
 			self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 120, 100, 1, CHAN_AUTO)
-            self:Remove()
+            timer.Simple(0, function() self:Remove() end) 
         end
     end
 
@@ -124,6 +130,7 @@ if SERVER then
                 self:GetPhysicsObject():Sleep()
 
                 if tgt:IsWorld() or IsValid(tgt) then
+				if !self:IsValid() then return end
                     self:SetSolid(SOLID_NONE)
                     self:SetMoveType(MOVETYPE_NONE)
                     --self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
@@ -172,6 +179,10 @@ if SERVER then
 
         self.DetonateTime = CurTime() + 2
 		self:Detonate()
+		
+		if self.ImpactScorch then
+		util.Decal("Scorch", hitPos + hitNormal, hitPos - hitNormal)
+		end
     end
 end
 
