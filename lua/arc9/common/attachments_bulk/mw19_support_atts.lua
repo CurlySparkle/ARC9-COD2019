@@ -117,6 +117,59 @@ ATT.Attachments = {
 
 ARC9.LoadAttachment(ATT, "cod2019_eft_stocks")
 
+/////////////////////////// -- cod2019_eft_tactical
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = "EFT Tacticals"
+ATT.CompactName = "EFTT"
+ATT.Description = "Lets you use tactical attachments from EFT."
+
+ATT.SortOrder = 1000
+ATT.AutoStats = true
+ATT.Category = "cod2019_tac"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
+
+ATT.Attachments = {
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_laser") .. " (EFT)",
+        Pos = Vector(-0.5, 0, -0.2),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(-0.5, 0, -1.25),
+        Category = "eft_tactical",
+		Scale = 1
+    }
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_eft_tactical")
+
+/////////////////////////// -- cod2019_eft_tactical_pistl
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = "EFT Tacticals"
+ATT.CompactName = "EFTT"
+ATT.Description = "Lets you use tactical attachments from EFT."
+
+ATT.SortOrder = 1000
+ATT.AutoStats = true
+ATT.Category = "cod2019_tac_pistols"
+ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
+
+ATT.Attachments = {
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_laser") .. " (EFT)",
+        Pos = Vector(-0.5, 0, -0.2),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(-0.5, 0, -1.25),
+        Category = "eft_tactical_pistol",
+		Scale = 1
+    }
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_eft_tactical_pistl")
+
+
 ///////////////////////////////////// -- Gunsmith Reloaded
 /////////////////////////// -- cod2019_attach_support_gsr_optics
 ATT = {}
