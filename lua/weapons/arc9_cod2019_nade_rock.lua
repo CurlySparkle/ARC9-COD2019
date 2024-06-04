@@ -161,6 +161,8 @@ SWEP.Animations = {
     },
     ["quicknade"] = {
         Source = "draw",
+        MinProgress = 0.3,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_me_fists_inspect_02.ogg", t = 0/30},
         },

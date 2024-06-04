@@ -158,7 +158,9 @@ SWEP.Animations = {
         Source = "idle_primed"
     },
     ["quicknade"] = {
-        Source = "quick_pullout",
+        Source = "draw",
+        MinProgress = 0.3,
+        FireASAP = true,
         EventTable = {
             {s = path .. "grenade_pin_flash.ogg", t = 0/30},
             {s = path .. "grenade_pin_flash_cloth.ogg", t = 8/30},

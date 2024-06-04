@@ -157,6 +157,8 @@ SWEP.Animations = {
     },
     ["quicknade"] = {
         Source = "draw",
+        MinProgress = 0.3,
+        FireASAP = true,
         EventTable = {
             {s = path .. "weap_molotov_pullout_01.ogg", t = 0/30},
         },

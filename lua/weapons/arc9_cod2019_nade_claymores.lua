@@ -162,6 +162,8 @@ SWEP.Animations = {
     },
     ["quicknade"] = {
         Source = "draw",
+        MinProgress = 0.3,
+        FireASAP = true,
         EventTable = {
             {s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_pullback.ogg", t = 0/30},
         },

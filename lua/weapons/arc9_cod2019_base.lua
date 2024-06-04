@@ -112,14 +112,16 @@ SWEP.Hook_Think	= function(self)
         local coolilove = math.cos(delta * (math.pi / 2))
         -- local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1-self.CustomizeDelta) or 0
         local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1.1-self.CustomizeDelta) or 0
-        if owner.GetSliding then if owner:GetSliding() then vel = 50 end end
+        if owner.GetSliding and owner:GetSliding() then vel = 50 end
         local spd = math.Clamp(math.Remap(vel, wspd, maxspd, 0, 1), 0, 1)
         local spd2 = math.Clamp(math.Remap(vel, 0, wspd, 0, 1), 0, 1) - spd
         local moveblend = math.Clamp(spd-delta, 0, 1) or 0
         local walkblend = math.Clamp(spd2-delta, 0, 1) or 0
-        self.MovePoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.MovePoseParam, moveblend)
-        self.WalkPoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.WalkPoseParam, walkblend)
-        self.IdlePoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.IdlePoseParam, walkblend)
+        local smoothing = 10 * math.Clamp(FrameTime(), 0, 0.3)
+        self.MovePoseParam = Lerp(smoothing, self.MovePoseParam, moveblend)
+        self.WalkPoseParam = Lerp(smoothing, self.WalkPoseParam, walkblend)
+        self.IdlePoseParam = Lerp(smoothing, self.IdlePoseParam, walkblend)
+        -- print(self.MovePoseParam, self.WalkPoseParam, self.IdlePoseParam)
 		--self:GetOwner():GetViewModel():SetPoseParameter("blend_idle", self:GetSightAmount()) -- broken ass shit
         if vm then
             vm:SetPoseParameter("bullets",self:GetMaxClip1() - clip)
@@ -131,10 +133,6 @@ SWEP.Hook_Think	= function(self)
 				vm:SetPoseParameter("aim_blend", 1)
 			end
             --vm:SetPoseParameter("blend_idle", self:GetSightAmount()) -- broken ass shit
-        end
-        if self:Clip1() == 0 then
-            vm:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
-        else
             vm:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
         end
         if wm and vm and wm:GetModel() == vm:GetModel() then
