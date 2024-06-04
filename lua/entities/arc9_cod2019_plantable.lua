@@ -167,7 +167,10 @@ if SERVER then
             return
         end
 		
+        timer.Simple(0, function()
         self:Plant(data.HitEntity, data.HitPos, -data.HitNormal, data.OurOldVelocity:GetNormalized())
+        end)
+		
 	  if self.GroundDecal then
 		util.Decal("Dark", hitPos + hitNormal, hitPos - hitNormal)
 	  end

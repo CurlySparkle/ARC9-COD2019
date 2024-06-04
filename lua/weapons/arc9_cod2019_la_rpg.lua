@@ -214,8 +214,8 @@ SWEP.MovingAng = Angle(8, 0, -8)
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(1, 0, -1)
-SWEP.SprintAng = Angle(0, 0, 25)
+SWEP.SprintPos = Vector(0, 0, -2)
+SWEP.SprintAng = Angle(5, 2, 5)
 
 SWEP.CustomizeAng = Angle(90, 0, 16)
 SWEP.CustomizePos = Vector(9.5, 55, 2)
@@ -277,6 +277,10 @@ SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = ""
 
+SWEP.BulletBones = {
+    [1] = "j_mag1",
+}
+
 SWEP.Animations = {
 	["enter_sights"] = {
 		Source = "idle",
@@ -291,6 +295,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.75,
 		FireASAP = true,
+		MagSwapTime = 0.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -309,6 +314,7 @@ SWEP.Animations = {
 		MinProgress = 0.95,
 		FireASAP = true,
 		RefillProgress = 0.75,
+		MagSwapTime = 0.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
