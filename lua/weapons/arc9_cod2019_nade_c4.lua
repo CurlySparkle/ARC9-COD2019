@@ -169,6 +169,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
+        MinProgress = 0.3,
+        FireASAP = true,
         EventTable = {
             {s = path .. "grenade_pin_c4_cloth.ogg", t = 0/30},
             {s = path .. "grenade_pin_c4.ogg", t = 8/30},
@@ -222,6 +224,8 @@ SWEP.Animations = {
     ["draw_detonator"] = {
       Source = "draw_empty",
 	  Mult = 0.8,
+      MinProgress = 0.3,
+      FireASAP = true,
       EventTable = {
             {s = path .. "weap_detpack_foley_down.ogg", t = 0/30},
         },
