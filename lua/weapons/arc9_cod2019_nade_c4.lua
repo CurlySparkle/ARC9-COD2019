@@ -82,7 +82,7 @@ SWEP.Disposable = true
 SWEP.Detonator = true
 SWEP.Akimbo = true
 SWEP.QuickSwapTo = false
-SWEP.IsQuickGrenade = false
+SWEP.IsQuickGrenade = true
 
 -------------------------- HANDLING
 SWEP.SprintToFireTime = 0.2 -- How long it takes to go from sprinting to being able to fire.
