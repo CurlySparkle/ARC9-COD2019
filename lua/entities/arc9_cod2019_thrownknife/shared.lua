@@ -21,14 +21,15 @@ function ENT:Initialize()
         self:SetModel( self.Model )
         self:SetMoveType( MOVETYPE_VPHYSICS )
         self:SetSolid( SOLID_VPHYSICS )
-        self:PhysicsInit( SOLID_VPHYSICS )
+        self:PhysicsInitSphere( 1 )
         self:DrawShadow( true )
+        self.Bounced = false
 
         local phys = self:GetPhysicsObject()
         if phys:IsValid() then
             phys:Wake()
             phys:SetBuoyancyRatio(0)
-			phys:AddAngleVelocity(Vector(0,0,900))
+			phys:AddAngleVelocity(Vector(0,1500,0))
         end
 
         self.dt = CurTime() + 15
@@ -46,15 +47,21 @@ function ENT:PhysicsCollide(data, physobj)
     if SERVER then
         if data.HitEntity:GetClass() == "worldspawn" then
             self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hitwall1.ogg" )
-            self.dt = CurTime() + 15
-            self.Collectable = true
-			timer.Simple(0, function()
-				self:SetAngles(data.OurOldVelocity:Angle() + Angle(-90, 0, -90))
-				self:SetPos(data.HitPos - (data.HitNormal * 2))
-				self:SetMoveType(MOVETYPE_NONE)
-				self:SetTrigger(true)
-				self:UseTriggerBounds(true, 24) 
-			end)
+            if data.HitNormal:Dot(data.OurOldVelocity:GetNormalized()) >= 0.25 then
+                self.dt = CurTime() + 15
+                self.Collectable = true
+                timer.Simple(0, function()
+                    self:SetAngles(data.OurOldVelocity:Angle() + Angle(90,0,0))
+                    self:SetPos(data.HitPos - (data.OurOldVelocity:GetNormalized() * 2))
+                    self:SetMoveType(MOVETYPE_NONE)
+                    self:SetTrigger(true)
+                    self:UseTriggerBounds(true, 24)
+                end)
+            else
+                -- self.Bounced = true 
+                physobj:SetVelocity((data.OurOldVelocity:GetNormalized() - data.HitNormal) * data.Speed * 0.5)
+                physobj:SetAngleVelocity(data.OurOldAngularVelocity * -(data.OurOldVelocity:GetNormalized() + data.HitNormal))
+            end
         else
 			self:FireBullets({
 				Attacker = self:GetOwner(),
