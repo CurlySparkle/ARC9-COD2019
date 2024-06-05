@@ -77,9 +77,11 @@ function ENT:PhysicsCollide(data, physobj)
 		util.Decal("Dark", hitPos + hitNormal, hitPos - hitNormal)
 		
         if data.HitEntity:GetClass() == "worldspawn" then
+		   timer.Simple(0, function()
             self:SetMoveType( MOVETYPE_NONE )
             self:SetAngles( data.OurOldVelocity:Angle() + Angle(-55, 0, 0) )
             self:SetPos( data.HitPos - (data.HitNormal * 2) )
+			end)
         end
 
         if (CurTime() - self.SpawnTime >= self.ArmTime) and self.ImpactFuse then

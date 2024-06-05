@@ -54,7 +54,10 @@ function ENT:Initialize()
         -- self.FireTime = self.FireTime * math.Rand(0.8, 1.2)
         -- self:SetNWFloat("FireTime", CurTime() + self.FireTime)
 
-        self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
+        timer.Simple(0, function()
+            if !IsValid(self) then return end
+            self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
+        end)
         ParticleEffectAttach("arrow_thermite", PATTACH_ABSORIGIN_FOLLOW, self, 0)
     end
 end
@@ -62,10 +65,12 @@ end
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
         if data.HitEntity:GetClass() == "worldspawn" then
+		   timer.Simple(0, function()
             self:SetAngles( data.OurOldVelocity:Angle() + Angle(0, 0, 0) )
             self:SetPos( data.HitPos - (data.HitNormal * 2) )
             self.dt = CurTime() + 15
             --self:UseTriggerBounds(true, 24)
+			end)
         end
    end
 end
@@ -195,7 +200,9 @@ function ENT:Think()
         if !self:GetOwner():IsValid() then self:Remove() return end
 
         if self:GetVelocity():LengthSqr() <= 32 then
+		   timer.Simple(0, function()
             self:SetMoveType( MOVETYPE_NONE )
+		   end)
         end
 
         if self.NextDamageTick > CurTime() then return end

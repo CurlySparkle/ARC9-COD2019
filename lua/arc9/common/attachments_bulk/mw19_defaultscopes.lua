@@ -67,13 +67,13 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Category = {"cod2019_optic_hdr"}
 ATT.ActivateElements = {"scope_hdr"}
 
-ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_hdr.mdl"
+ATT.Model = "models/weapons/cod2019/attachs/weapons/hdr/attachment_vm_sn_hdromeo_snprscope.mdl"
 ATT.BoneMerge = true
 ATT.ModelOffset = Vector(5, 0, 0)
 
 ATT.Sights = {
     {
-        Pos = Vector(0, 16, -1.95),
+        Pos = Vector(0, 17, -2.07),
         Ang = Angle(0, 0, 0),
         ViewModelFOV = 15,
         Magnification = 2,
@@ -113,7 +113,6 @@ ATT = {}
 ATT.PrintName = "AX50 Scope"
 ATT.Description = ""
 ATT.Icon = Material("entities/attachs/sn/ax50/cod2019_sn_ax50_scope_v4.png", "mips smooth")
-
 ATT.SortOrder = 4
 ATT.Free = false
 
@@ -123,7 +122,6 @@ ATT.ActivateElements = {"scope_ax50"}
 
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_ax50.mdl"
 ATT.BoneMerge = true
-ATT.Scale = 1
 ATT.ModelOffset = Vector(0, 0, 0)
 ATT.ModelAngleOffset = Angle(0, 0, 0)
 
@@ -163,7 +161,6 @@ ATT = {}
 ATT.PrintName = "Rytec Scope"
 ATT.Description = ""
 ATT.Icon = Material("entities/attachs/sn/rytec/cod2019_sn_rytec_scope.png", "mips smooth")
-
 ATT.SortOrder = 4
 ATT.Free = false
 
@@ -171,11 +168,9 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.Category = {"cod2019_optic_rytec"}
 ATT.ActivateElements = {"scope_rytec"}
 
-ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_rytec.mdl"
+ATT.Model = "models/weapons/cod2019/attachs/weapons/rytec/attachment_vm_sn_xmike109_scope.mdl"
 ATT.BoneMerge = true
-ATT.Scale = 1
 ATT.ModelOffset = Vector(-0.3, 0, 0)
-ATT.ModelAngleOffset = Angle(0, 0, 0)
 
 ATT.Sights = {
     {
@@ -324,8 +319,6 @@ ATT.ActivateElements = {"scope_pila"}
 
 ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_pila.mdl"
 ATT.BoneMerge = true
---ATT.ModelOffset = Vector(0, 0, 0)
---ATT.ModelAngleOffset = Angle(0, 0, 90)
 
 ATT.Sights = {
     {

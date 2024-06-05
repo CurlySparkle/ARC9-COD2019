@@ -75,6 +75,7 @@ function ENT:Impact(data, collider)
         self:EmitSound("weapons/rpg/shotdown.wav", 80)
 
         for i = 1, 1 do
+		   timer.Simple(0, function()
             local prop = ents.Create("prop_physics")
             prop:SetPos(self:GetPos())
             prop:SetAngles(self:GetAngles())
@@ -82,8 +83,8 @@ function ENT:Impact(data, collider)
             prop:Spawn()
             prop:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.5 + VectorRand() * 75)
             prop:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-
             SafeRemoveEntityDelayed(prop, 3)
+		   end)
         end
 
         self:Remove()

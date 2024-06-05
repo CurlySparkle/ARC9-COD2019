@@ -15,6 +15,9 @@ local function GetSmokeImage()
     return smokeimages[math.random(#smokeimages)]
 end
 
+game.AddParticles("particles/rocket_fx.pcf")
+PrecacheParticleSystem("Rocket_Smoke")
+
 ENT.Material = false -- custom material
 ENT.IsRocket = false -- projectile has a booster and will not drop.
 ENT.Sticky = false -- projectile sticks on impact
@@ -43,8 +46,8 @@ ENT.Delay = 5 -- after being triggered and this amount of time has passed, the p
 
 ENT.Armed = false
 
-ENT.RocketParticleTrace = nil
-ENT.RocketTrail = false
+ENT.RocketParticleTrace = "Rocket_Smoke"  -- name of the particle effect
+ENT.RocketTrail = false -- leaves trail of a particle effct
 ENT.SmokeTrail = false -- leaves trail of smoke
 ENT.SmokeColor = Color(200, 200, 200)
 ENT.Flare = true

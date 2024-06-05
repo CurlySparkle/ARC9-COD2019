@@ -51,6 +51,7 @@ function ENT:PhysicsCollide(data, physobj)
                 self.dt = CurTime() + 15
                 self.Collectable = true
                 timer.Simple(0, function()
+				    if (!IsValid(self)) then return end
                     self:SetAngles(data.OurOldVelocity:Angle() + Angle(90,0,0))
                     self:SetPos(data.HitPos - (data.OurOldVelocity:GetNormalized() * 2))
                     self:SetMoveType(MOVETYPE_NONE)
@@ -75,6 +76,7 @@ function ENT:PhysicsCollide(data, physobj)
 			    HullSize = bHull && self.Maxs:Length() * 3 || 2,
 			 })
             self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hit1.ogg" )
+			self.Collectable = true
         end
    end
 end
@@ -87,7 +89,9 @@ function ENT:Touch(ply)
     ply:GiveAmmo(1, "arc9_cod2019_nade_knife", false)
 
     self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 75)
-    timer.Simple(0, function() self:Remove() end) 
+    timer.Simple(0, function()
+	if (!IsValid(self)) then return end
+	self:Remove() end) 
     end
 end
 
@@ -97,7 +101,9 @@ function ENT:Use(ply)
     ply:GiveAmmo(1, "arc9_cod2019_nade_knife", false)
 
     self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 75)
-    timer.Simple(0, function() self:Remove() end) 
+    timer.Simple(0, function()
+	if (!IsValid(self)) then return end
+	self:Remove() end) 
 end
 
 function ENT:Think()

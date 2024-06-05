@@ -90,7 +90,9 @@ if SERVER then
         if self.Stuck and self.CanPickup and ent:IsPlayer() then
             ent:GiveAmmo(1, "xbowbolt")
 			self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 120, 100, 1, CHAN_AUTO)
-            timer.Simple(0, function() self:Remove() end) 
+            timer.Simple(0, function()
+			if (!IsValid(self)) then return end
+			self:Remove() end) 
         end
     end
 
@@ -98,7 +100,9 @@ if SERVER then
         if self.Stuck and self.CanPickup then
             ply:GiveAmmo(1, "xbowbolt")
 			self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 120, 100, 1, CHAN_AUTO)
-            timer.Simple(0, function() self:Remove() end) 
+            timer.Simple(0, function()
+			if (!IsValid(self)) then return end
+			self:Remove() end) 
         end
     end
 
