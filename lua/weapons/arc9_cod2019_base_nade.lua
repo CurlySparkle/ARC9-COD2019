@@ -12,20 +12,6 @@ SWEP.MeleeHitWallSound = "COD2019.Melee.HitWall"
 SWEP.MeleeSwingSound = "COD2019.Melee.Swing"
 SWEP.BackstabSound = "COD2019.Melee.HitBody"
 
-function SWEP:DrawWorldModel() -- custom func to never draw custommodel when on ground and use regular wm
-    local owner = self:GetOwner()
-
-    if IsValid(owner) and owner:GetActiveWeapon() == self then
-        self:DrawCustomModel(true)
-        self:DoBodygroups(true)
-        self:DrawLasers(true)
-        self:DoTPIK()
-        self:DrawFlashlightsWM()
-    else
-        self:DrawModel()
-    end
-end
-
 SWEP.QuickSwapTo = true
 SWEP.NoHolsterOnPrimed = false
 SWEP.CanLean = true
