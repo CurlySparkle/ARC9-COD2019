@@ -64,14 +64,34 @@ SWEP.CamQCA_Mult_ADS = 1
 
 local parmbl = {"blend_move","blend_walk"}
 
+SWEP.Hook_Think	= function(self)
+    -- all code moved to CustomPoseParamsHandler
+    -- I fucking hate this hack
+    if CLIENT then
+        local ent, wm = IsValid(self:GetVM()) and self:GetVM(), IsValid(self:GetWM()) and self:GetWM()
+        local clip, delta = self:Clip1(), self:GetSightAmount()
+        local coolilove = math.cos(delta * (math.pi / 2))
+        ent:SetPoseParameter("bullets",self:GetMaxClip1() - clip)
+        ent:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
+        ent:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
+    end
+	-- self:Hook_Think2()
+end
+
 SWEP.CustomPoseParamsHandler = function(self, ent, iswm)
     local owner = self:GetOwner()
     if !owner:IsPlayer() then return end
-    -- local vm, wm = IsValid(self:GetVM()) and self:GetVM(), IsValid(self:GetWM()) and self:GetWM()
 
+    local clip, delta = self:Clip1(), self:GetSightAmount()
+    local coolilove = math.cos(delta * (math.pi / 2))
+    ent:SetPoseParameter("bullets",self:GetMaxClip1() - clip)
+    ent:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
+    ent:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
     if !iswm then
-        local clip, delta = self:Clip1(), self:GetSightAmount()
-        local coolilove = math.cos(delta * (math.pi / 2))
+        if self:GetCustomize() then -- When customizing, enable aim blend anyway.
+            ent:SetPoseParameter("aim_blend", 1)
+            return
+        end
         -- local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1-self.CustomizeDelta) or 0
         local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1.1-self.CustomizeDelta) or 0
         if owner.GetSliding and owner:GetSliding() then vel = 50 end
@@ -83,27 +103,7 @@ SWEP.CustomPoseParamsHandler = function(self, ent, iswm)
         self.MovePoseParam = Lerp(smoothing, self.MovePoseParam, moveblend)
         self.WalkPoseParam = Lerp(smoothing, self.WalkPoseParam, walkblend)
 
-        ent:SetPoseParameter("bullets",math.max(self:GetMaxClip1() - clip, 0))
         ent:SetPoseParameter("blend_move", self.MovePoseParam)
         ent:SetPoseParameter("blend_walk", self.WalkPoseParam)
-        --ent:SetPoseParameter("empty", !self:GetReloading() and (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
-        ent:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
-        if self:GetCustomize() then -- When customizing, enable aim blend anyway.
-            ent:SetPoseParameter("aim_blend", 1)
-        end
-        --ent:SetPoseParameter("blend_idle", self:GetSightAmount()) -- broken ass shit
-        ent:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
-    else
-        local truevm = IsValid(self:GetVM()) and self:GetVM()
-
-        if truevm and ent:GetModel() == truevm:GetModel() then
-            for i = 0, truevm:GetNumPoseParameters() -1 do
-                local parm = truevm:GetPoseParameterName(i)
-                if table.HasValue(parmbl, parm) then continue end
-                local pmin, pmax = truevm:GetPoseParameterRange(i)
-                local pval = math.Remap(truevm:GetPoseParameter(parm), 0, 1, pmin, pmax)
-                ent:SetPoseParameter(parm, pval)
-            end
-        end
     end
 end
