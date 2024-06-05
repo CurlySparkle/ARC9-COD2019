@@ -52,6 +52,8 @@ SWEP.CanBlindFire = false
 
 SWEP.SwayMultSights = 0
 
+SWEP.MovePoseParam = 0
+SWEP.WalkPoseParam = 0
 SWEP.HasSights = !SWEP.Akimbo
 
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
