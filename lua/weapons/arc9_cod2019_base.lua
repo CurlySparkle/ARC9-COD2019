@@ -123,8 +123,9 @@ SWEP.CustomPoseParamsHandler = function(self, ent, iswm)
         local spd2 = math.Clamp(math.Remap(vel, 0, wspd, 0, 1), 0, 1) - spd
         local moveblend = math.Clamp(spd-delta, 0, 1) or 0
         local walkblend = math.Clamp(spd2-delta, 0, 1) or 0
-        self.MovePoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.MovePoseParam, moveblend)
-        self.WalkPoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.WalkPoseParam, walkblend)
+        local smoothing = 10 * math.Clamp(FrameTime(), 0, 0.3)
+        self.MovePoseParam = Lerp(smoothing, self.MovePoseParam, moveblend)
+        self.WalkPoseParam = Lerp(smoothing, self.WalkPoseParam, walkblend)
 
         ent:SetPoseParameter("bullets",self:GetMaxClip1() - clip)
         ent:SetPoseParameter("blend_move", self.MovePoseParam)
