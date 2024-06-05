@@ -95,20 +95,26 @@ SWEP.IndoorSoundHardCutoff = true
 
 SWEP.MovePoseParam = 0
 SWEP.WalkPoseParam = 0
-SWEP.IdlePoseParam = 0
 SWEP.HasSights = !SWEP.Akimbo
 
 SWEP.FiremodeAnimLock = false -- Firemode animation cannot be interrupted
 
 SWEP.UBGLCancelAnim = true
 
-local parmbl = {"blend_move","blend_walk","blend_idle"}
+local parmbl = {"blend_move","blend_walk"}
 
 SWEP.Hook_Think	= function(self)
-    if CLIENT then
-        local owner = self:GetOwner()
-        if !owner:IsPlayer() then return end
-        local vm, wm, clip, delta = IsValid(self:GetVM()) and self:GetVM(), IsValid(self:GetWM()) and self:GetWM(), self:Clip1(), self:GetSightAmount()
+    -- all code moved to CustomPoseParamsHandler
+	self:Hook_Think2()
+end
+
+SWEP.CustomPoseParamsHandler = function(self, ent, iswm)
+    local owner = self:GetOwner()
+    if !owner:IsPlayer() then return end
+    -- local vm, wm = IsValid(self:GetVM()) and self:GetVM(), IsValid(self:GetWM()) and self:GetWM()
+
+    if !iswm then
+        local clip, delta = self:Clip1(), self:GetSightAmount()
         local coolilove = math.cos(delta * (math.pi / 2))
         -- local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1-self.CustomizeDelta) or 0
         local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1.1-self.CustomizeDelta) or 0
@@ -117,36 +123,35 @@ SWEP.Hook_Think	= function(self)
         local spd2 = math.Clamp(math.Remap(vel, 0, wspd, 0, 1), 0, 1) - spd
         local moveblend = math.Clamp(spd-delta, 0, 1) or 0
         local walkblend = math.Clamp(spd2-delta, 0, 1) or 0
-        local smoothing = 10 * math.Clamp(FrameTime(), 0, 0.3)
-        self.MovePoseParam = Lerp(smoothing, self.MovePoseParam, moveblend)
-        self.WalkPoseParam = Lerp(smoothing, self.WalkPoseParam, walkblend)
-        self.IdlePoseParam = Lerp(smoothing, self.IdlePoseParam, walkblend)
-        -- print(self.MovePoseParam, self.WalkPoseParam, self.IdlePoseParam)
-		--self:GetOwner():GetViewModel():SetPoseParameter("blend_idle", self:GetSightAmount()) -- broken ass shit
-        if vm then
-            vm:SetPoseParameter("bullets",self:GetMaxClip1() - clip)
-            vm:SetPoseParameter("blend_move", self.MovePoseParam)
-            vm:SetPoseParameter("blend_walk", self.WalkPoseParam)
-            --vm:SetPoseParameter("empty", !self:GetReloading() and (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
-            vm:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
-			if self:GetCustomize() then -- When customizing, enable aim blend anyway.
-				vm:SetPoseParameter("aim_blend", 1)
-			end
-            --vm:SetPoseParameter("blend_idle", self:GetSightAmount()) -- broken ass shit
-            vm:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
+        self.MovePoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.MovePoseParam, moveblend)
+        self.WalkPoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.WalkPoseParam, walkblend)
+
+        ent:SetPoseParameter("bullets",self:GetMaxClip1() - clip)
+        ent:SetPoseParameter("blend_move", self.MovePoseParam)
+        ent:SetPoseParameter("blend_walk", self.WalkPoseParam)
+        --ent:SetPoseParameter("empty", !self:GetReloading() and (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
+        ent:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
+        if self:GetCustomize() then -- When customizing, enable aim blend anyway.
+            ent:SetPoseParameter("aim_blend", 1)
         end
-        if wm and vm and wm:GetModel() == vm:GetModel() then
-            for i = 0, wm:GetNumPoseParameters() -1 do
-                local parm = vm:GetPoseParameterName(i)
+        --ent:SetPoseParameter("blend_idle", self:GetSightAmount()) -- broken ass shit
+        ent:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
+    else
+        local truevm = IsValid(self:GetVM()) and self:GetVM()
+
+        if truevm and ent:GetModel() == truevm:GetModel() then
+            for i = 0, truevm:GetNumPoseParameters() -1 do
+                local parm = truevm:GetPoseParameterName(i)
                 if table.HasValue(parmbl, parm) then continue end
-                local pmin, pmax = vm:GetPoseParameterRange(i)
-                local pval = math.Remap(vm:GetPoseParameter(parm), 0, 1, pmin, pmax)
-                wm:SetPoseParameter(parm, pval)
+                local pmin, pmax = truevm:GetPoseParameterRange(i)
+                local pval = math.Remap(truevm:GetPoseParameter(parm), 0, 1, pmin, pmax)
+                ent:SetPoseParameter(parm, pval)
             end
         end
     end
-	self:Hook_Think2()
 end
+
+-- SWEP.CustomPoseParamsHandler = function(self)
 
 SWEP.Hook_Think2 = function(self)
 end

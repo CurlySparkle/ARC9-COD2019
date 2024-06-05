@@ -12,19 +12,19 @@ SWEP.MeleeHitWallSound = "COD2019.Melee.HitWall"
 SWEP.MeleeSwingSound = "COD2019.Melee.Swing"
 SWEP.BackstabSound = "COD2019.Melee.HitBody"
 
--- function SWEP:DrawWorldModel() -- custom func to never draw custommodel when on ground and use regular wm
-    -- local owner = self:GetOwner()
+function SWEP:DrawWorldModel() -- custom func to never draw custommodel when on ground and use regular wm
+    local owner = self:GetOwner()
 
-    -- if IsValid(owner) and owner:GetActiveWeapon() == self then
-        -- self:DrawCustomModel(true)
-        -- self:DoBodygroups(true)
-        -- self:DrawLasers(true)
-        -- self:DoTPIK()
-        -- self:DrawFlashlightsWM()
-    -- else
-        -- self:DrawModel()
-    -- end
--- end
+    if IsValid(owner) and owner:GetActiveWeapon() == self then
+        self:DrawCustomModel(true)
+        self:DoBodygroups(true)
+        self:DrawLasers(true)
+        self:DoTPIK()
+        self:DrawFlashlightsWM()
+    else
+        self:DrawModel()
+    end
+end
 
 SWEP.QuickSwapTo = true
 SWEP.NoHolsterOnPrimed = false
@@ -73,66 +73,48 @@ SWEP.Sway = 0 -- How much the gun sways.
 
 SWEP.CamQCA_Mult_ADS = 1
 
-SWEP.MovePoseParam = 0
-SWEP.WalkPoseParam = 0
 
-local parmbl = {"blend_move", "blend_walk"}
+local parmbl = {"blend_move","blend_walk"}
 
-SWEP.Hook_Think	= function(wep)
-    if CLIENT then
-        local owner = wep:GetOwner()
-        if !owner:IsPlayer() then return end
-        local vm, wm, clip, delta = IsValid(wep:GetVM()) and wep:GetVM(), IsValid(wep:GetWM()) and wep:GetWM(), wep:Clip1(), wep:GetSightAmount()
+SWEP.CustomPoseParamsHandler = function(self, ent, iswm)
+    local owner = self:GetOwner()
+    if !owner:IsPlayer() then return end
+    -- local vm, wm = IsValid(self:GetVM()) and self:GetVM(), IsValid(self:GetWM()) and self:GetWM()
+
+    if !iswm then
+        local clip, delta = self:Clip1(), self:GetSightAmount()
         local coolilove = math.cos(delta * (math.pi / 2))
-        --local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1-wep.CustomizeDelta) or 0
-        local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1.1-wep.CustomizeDelta) or 0
-        if owner.GetSliding then if owner:GetSliding() then vel = 50 end end
-		local spd = math.Clamp(math.Remap(vel, wspd, maxspd, 0, 1), 0, 1)
+        -- local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1-self.CustomizeDelta) or 0
+        local maxspd, wspd, vel = owner:GetWalkSpeed() or 250, owner:GetSlowWalkSpeed() or 100, owner:OnGround() and owner:GetAbsVelocity():Length() * (1.1-self.CustomizeDelta) or 0
+        if owner.GetSliding and owner:GetSliding() then vel = 50 end
+        local spd = math.Clamp(math.Remap(vel, wspd, maxspd, 0, 1), 0, 1)
         local spd2 = math.Clamp(math.Remap(vel, 0, wspd, 0, 1), 0, 1) - spd
         local moveblend = math.Clamp(spd-delta, 0, 1) or 0
         local walkblend = math.Clamp(spd2-delta, 0, 1) or 0
-        wep.MovePoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), wep.MovePoseParam, moveblend)
-        wep.WalkPoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), wep.WalkPoseParam, walkblend)
-        if vm then
-            vm:SetPoseParameter("bullets",wep:GetMaxClip1() - clip)
-            vm:SetPoseParameter("blend_move", wep.MovePoseParam)
-            vm:SetPoseParameter("blend_walk", wep.WalkPoseParam)
-            --vm:SetPoseParameter("empty", !wep:GetReloading() and (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
-            vm:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
+        self.MovePoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.MovePoseParam, moveblend)
+        self.WalkPoseParam = Lerp(10 * math.Clamp(FrameTime(), 0, 0.3), self.WalkPoseParam, walkblend)
+
+        ent:SetPoseParameter("bullets",self:GetMaxClip1() - clip)
+        ent:SetPoseParameter("blend_move", self.MovePoseParam)
+        ent:SetPoseParameter("blend_walk", self.WalkPoseParam)
+        --ent:SetPoseParameter("empty", !self:GetReloading() and (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
+        ent:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
+        if self:GetCustomize() then -- When customizing, enable aim blend anyway.
+            ent:SetPoseParameter("aim_blend", 1)
         end
-        if wep:Clip1() == 0 then
-            vm:SetPoseParameter("empty", (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
-        else
-            vm:SetPoseParameter("empty", (wep.Akimbo and clip == 1 and 1 or clip == 0 and (wep.Akimbo and 2 or 1)) or 0)
-        end
-        if wm and vm and wm:GetModel() == vm:GetModel() then
-            for i = 0, wm:GetNumPoseParameters() -1 do
-                local parm = vm:GetPoseParameterName(i)
+        --ent:SetPoseParameter("blend_idle", self:GetSightAmount()) -- broken ass shit
+        ent:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
+    else
+        local truevm = IsValid(self:GetVM()) and self:GetVM()
+
+        if truevm and ent:GetModel() == truevm:GetModel() then
+            for i = 0, truevm:GetNumPoseParameters() -1 do
+                local parm = truevm:GetPoseParameterName(i)
                 if table.HasValue(parmbl, parm) then continue end
-                local pmin, pmax = vm:GetPoseParameterRange(i)
-                local pval = math.Remap(vm:GetPoseParameter(parm), 0, 1, pmin, pmax)
-                wm:SetPoseParameter(parm, pval)
+                local pmin, pmax = truevm:GetPoseParameterRange(i)
+                local pval = math.Remap(truevm:GetPoseParameter(parm), 0, 1, pmin, pmax)
+                ent:SetPoseParameter(parm, pval)
             end
         end
-    end
-end
-
-function SWEP:MakeEnvironmentDust(radius)
-    --Makes a dust enviroment effect when shooting
-    radius = radius || 150
-    
-    if (!IsValid(self:GetOwner()) || !self:GetOwner():IsOnGround()) then
-        return
-    end
-    
-    local bInWater = self:GetOwner():WaterLevel() > 0
-    
-    if (IsFirstTimePredicted()) then
-        local data = EffectData()
-        data:SetEntity(self:GetOwner())
-        data:SetScale(bInWater && radius * 0.15 || radius)
-        data:SetOrigin(bInWater && self:GetOwner():EyePos() || self:GetOwner():GetPos())
-        
-        util.Effect(bInWater && "waterripple" || "ThumperDust", data)
     end
 end
