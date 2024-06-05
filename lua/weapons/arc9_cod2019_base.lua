@@ -127,7 +127,7 @@ SWEP.CustomPoseParamsHandler = function(self, ent, iswm)
         self.MovePoseParam = Lerp(smoothing, self.MovePoseParam, moveblend)
         self.WalkPoseParam = Lerp(smoothing, self.WalkPoseParam, walkblend)
 
-        ent:SetPoseParameter("bullets",self:GetMaxClip1() - clip)
+        ent:SetPoseParameter("bullets",math.max(self:GetMaxClip1() - clip, 0))
         ent:SetPoseParameter("blend_move", self.MovePoseParam)
         ent:SetPoseParameter("blend_walk", self.WalkPoseParam)
         --ent:SetPoseParameter("empty", !self:GetReloading() and (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
