@@ -281,12 +281,11 @@ ATT.CamQCA_MultSprint = 0.25
 
 ATT.SprintPos = Vector(0, 0, 0)
 ATT.SprintAng = Angle(0, 0, 0)
+ATT.SpeedAddSprint = .2
 
 if !warzonestats then -- Regular Stats
-	ATT.SpeedAddSprint = 1.2
 	ATT.SprintToFireTimeMult = 1.1
 else
-	ATT.SpeedAddSprint = 1.2
 	ATT.SprintToFireTimeAdd = 0.125
 end
 
