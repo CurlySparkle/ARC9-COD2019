@@ -208,7 +208,7 @@ ATT = {}
 ATT.PrintName = "Bipod (Functional)"
 ATT.CompactName = "Famas Bipod"
 ATT.Description = "Makes the famas bipod functional (Why is this a separate thing?, base limitations.)"
-ATT.Icon = Material("entities/attachs/cod2019_ar_famas_bipod.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/ar/famas/cod2019_ar_famas_bipod.png", "mips smooth")
 
 ATT.Description = ""
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
