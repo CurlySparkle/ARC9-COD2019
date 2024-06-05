@@ -277,8 +277,8 @@ SWEP.BulletBones = {
 }
 
 SWEP.Overheat = true
-SWEP.HeatCapacity = 60
-SWEP.HeatDissipation = 22.5
+SWEP.HeatCapacity = 100
+SWEP.HeatDissipation = 52.5
 SWEP.HeatDelayTime = 0.25
 SWEP.HeatPerShot = 1
 SWEP.HeatLockout = false

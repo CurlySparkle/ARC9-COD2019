@@ -530,6 +530,27 @@ ARC9.LoadAttachment(ATT, "cod2019_ammo_crossbow_rock")
 -- ARC9.LoadAttachment(ATT, "cod2019_ammo_crossbow_he")
 
 //////////////////////////////////////////////// -- Launcher Ammo Types
+//////////////////////////////////// -- RPG-7
+/////////////////////////// -- cod2019_ammo_rpg_rock
+ATT = {}
+
+ATT.PrintName = "Shovel"
+ATT.CompactName = "Shovel"
+ATT.Description = "Changes the rocket to a shovel."
+ATT.SortOrder = 0
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_rpg_shovel.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+
+ATT.ActivateElements = {"rocket_shovel"}
+ATT.Free = true
+ATT.ShootEnt = "arc9_cod2019_proj_rpg_shovel"
+
+ATT.Category = {"cod2019_rpg_ammo"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_rpg_rock")
+
 //////////////////////////////////// -- MGL-32
 /////////////////////////// -- cod2019_ammo_gl_rock
 ATT = {}
