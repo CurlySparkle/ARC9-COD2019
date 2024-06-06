@@ -155,7 +155,7 @@ SWEP.Animations = {
         Source = "idle_primed"
     },
     ["quicknade"] = {
-        Source = "draw",
+        Source = "quick_pullout",
         MinProgress = 0.3,
         FireASAP = true,
         EventTable = {
