@@ -163,6 +163,7 @@ SWEP.Animations = {
         FireASAP = true,
         EventTable = {
             {s = path .. "grenade_pin_frag_cloth.ogg", t = 0/30},
+			{s = path .. "grenade_pin_frag_01.ogg", t = 0/30},
         },
     },
     ["draw"] = {
