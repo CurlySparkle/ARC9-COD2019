@@ -12,6 +12,7 @@ ENT.InstantFuse = false // projectile is armed immediately after firing.
 ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
 ENT.ImpactFuse = false // projectile explodes on impact.
 ENT.BounceWall = true // projectile doesn't detonate until it hits the ground
+ENT.NoBounce = true // projectile doesn't bounce.
 
 ENT.ExplodeOnDamage = false // projectile explodes when it takes damage.
 ENT.ExplodeUnderwater = false

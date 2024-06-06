@@ -1200,6 +1200,16 @@ SWEP.Attachments = {
 		Hidden = true,
 		MergeSlots = {6}, -- Underbarrel
     },
+    { -- 22
+        PrintName = "SideGrips",
+        Category = {"cod2019_grips_side"},
+        Bone = "tag_grip_attach",
+        Pos = Vector(-2, -1.41, 1.12),
+		Ang = Angle(0, 0, 180),
+		Hidden = true,
+		MergeSlots = {6}, -- Underbarrel
+		InstalledElements = {"rail_grip"},
+    },
 }
 
 SWEP.GripPoseParam = 0

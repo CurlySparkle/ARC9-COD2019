@@ -974,6 +974,15 @@ SWEP.Attachments = {
 		Icon_Offset = Vector(-8.5, 0, 4),
 		CosmeticOnly = true,
     },
+    -- { -- 21
+        -- PrintName = "SideGrips",
+        -- Category = {"cod2019_grips_side"},
+        -- Bone = "tag_grip_attach",
+        -- Pos = Vector(-2, -1.41, 1.12),
+		-- Ang = Angle(0, 0, 180),
+		-- Hidden = true,
+		-- MergeSlots = {6}, -- Underbarrel
+    -- },
 }
 
 SWEP.GripPoseParam = 4.2

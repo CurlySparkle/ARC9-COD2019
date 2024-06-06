@@ -26,17 +26,16 @@ function ENT:Impact(data, collider)
         local ang = data.OurOldVelocity:Angle()
 
         if IsValid(data.HitEntity) then
+		    self:EmitSound("weapons/clang.ogg",75, 100, 1, CHAN_AUTO)
             local dmginfo = DamageInfo()
             dmginfo:SetAttacker(attacker)
             dmginfo:SetInflictor(self)
             dmginfo:SetDamageType(DMG_CRUSH + DMG_CLUB)
-            dmginfo:SetDamage(250 * (self.NPCDamage and 0.5 or 1))
+            dmginfo:SetDamage(250)
             dmginfo:SetDamageForce(data.OurOldVelocity * 25)
             dmginfo:SetDamagePosition(data.HitPos)
             data.HitEntity:TakeDamageInfo(dmginfo)
         end
-
-        self:EmitSound("weapons/rpg/shotdown.wav", 80)
 
         for i = 1, 1 do
 			timer.Simple(0, function()
