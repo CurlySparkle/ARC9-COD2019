@@ -28,6 +28,7 @@ ENT.RemoteFuse = false -- allow this projectile to be triggered by remote detona
 ENT.ImpactFuse = false -- projectile explodes on impact.
 ENT.StickyFuse = false -- projectile becomes timed after sticking.
 ENT.NoBounce = false -- projectile doesn't bounce.
+ENT.BounceWall = false -- projectile doesn't detonate until it hits the ground
 
 ENT.RemoveOnImpact = false
 ENT.ExplodeOnImpact = false
@@ -192,10 +193,27 @@ function ENT:PhysicsCollide(data, collider, physobj)
     -- return
     -- end
 	
+    if self.BounceWall then
+        local ang = data.HitNormal:Angle()
+        ang.p = math.abs( ang.p )
+        ang.y = math.abs( ang.y )
+        ang.r = math.abs( ang.r )
+	
+        if ang.p > 90 or ang.p < 60 then
+        --self:EmitSound(Sound("GlassBottle.ImpactHard"))
+		self:SetNWBool("HasDetonated",true)
+
+        local impulse = (data.OurOldVelocity - 2 * data.OurOldVelocity:Dot(data.HitNormal) * data.HitNormal)*0.25
+        collider:ApplyForceCenter(impulse)
+        else
+        self:Detonate()
+        end
+    end
+	
     if self.ImpactFuse and !self.Armed then
         self.ArmTime = CurTime()
         self.Armed = true
-
+		
         if self:Impact(data, collider) then
             return
         end
