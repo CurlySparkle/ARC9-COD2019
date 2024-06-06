@@ -3,15 +3,11 @@ AddCSLuaFile("shared.lua")
 
 include("shared.lua")
 
-local BURN_DAMAGE = 10 --edit the damage of the fire pool
-local IGNITE_LENGTH = 1 -- how long do enemies remain on fire after leaving the fire pool
+local BURN_DAMAGE = 17 --edit the damage of the fire pool
+local IGNITE_LENGTH = 3 -- how long do enemies remain on fire after leaving the fire pool
 
 local function TargetIsValid(ent) 
     return !ent:IsWorld()
-end
-
-if CLIENT then
-    killicon.Add( "arc9_cod2019_fire_pool2", "vgui/killicons/cod2019_fire.png", Color(251, 85, 25, 255))
 end
 
 function ENT:Initialize()
@@ -29,24 +25,24 @@ function ENT:Initialize()
     sound.EmitHint(SOUND_DANGER, self:GetPos(), 200, 8, nil) --make shit run away (nil owner so even rebels run)
 end
 
-function ENT:Think() 
-        local dmg = DamageInfo()
-        dmg:SetDamage(BURN_DAMAGE)
-        dmg:SetAttacker(self:GetOwner())
-        dmg:SetInflictor(self)
-        dmg:SetDamageType(DMG_BURN)
-        for k, v in pairs(ents.FindInSphere(self:GetPos(), 200)) do 
-            if TargetIsValid(v) && v != self && v != self.NoIgnite then
-                v:TakeDamageInfo(dmg)
-                v:Ignite(IGNITE_LENGTH,1)
-            end
+function ENT:Think()
+    for _, e in pairs(ents.FindInSphere(self:GetPos(), 210)) do
+        if (e:IsPlayer() || e:IsNPC() || e:IsNextBot() || (e:GetClass():find("prop_") && IsValid(e))) then
+            local dmgInfo = DamageInfo()
+            dmgInfo:SetAttacker(self:GetOwner())
+            dmgInfo:SetDamage(BURN_DAMAGE)
+            dmgInfo:SetDamageType(DMG_BURN)
+            dmgInfo:SetInflictor(self)
+            e:TakeDamageInfo(dmgInfo)
+			e:Ignite(IGNITE_LENGTH,14)
         end
+    end
 
     if CurTime() > self.DeathTime then 
         self:Remove()
     end
 
-    self:NextThink(CurTime() + 1)
+    self:NextThink(CurTime() + 0.5)
     return true
 end
 

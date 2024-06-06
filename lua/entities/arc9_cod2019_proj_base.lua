@@ -262,8 +262,10 @@ function ENT:PhysicsCollide(data, collider, physobj)
     end
 	
     if self.NoBounce then
+	  timer.Simple(0, function()
        self:SetPos(self:GetPos())
 	   self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.1)
+	  end)
     end
 
     if data.DeltaTime < 0.1 then return end

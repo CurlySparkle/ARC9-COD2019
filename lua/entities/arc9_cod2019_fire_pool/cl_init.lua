@@ -1,5 +1,9 @@
 include("shared.lua")
 
+if CLIENT then
+    killicon.Add( "arc9_cod2019_fire_pool", "vgui/killicons/cod2019_fire.png", Color(251, 85, 25, 255))
+end
+
 function ENT:Draw() 
     local dlight = DynamicLight( self:EntIndex() )
 	if ( dlight ) then
