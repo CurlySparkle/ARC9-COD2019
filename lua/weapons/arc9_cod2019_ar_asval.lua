@@ -148,8 +148,8 @@ SWEP.VisualRecoilRollSights = 10
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
-SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.1
+SWEP.VisualRecoilPunch = 2.5
+SWEP.VisualRecoilUp = 0.5
 SWEP.VisualRecoilRoll = 25
 SWEP.VisualRecoilSide = -0.2
 
@@ -548,6 +548,77 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 58/30},
         },
     },
+    ["reload_smag_empty"] = {
+        Source = "reload_smag_empty",
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.775,
+		FireASAP = true,
+		DropMagAt = 1,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.875, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_valpha_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_magout.ogg", t = 11/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_arm.ogg", t = 11/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_maghit.ogg", t = 35/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_magin.ogg", t = 46/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_grab_bolt.ogg", t = 44/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_charge.ogg", t = 58/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 74/30},
+        },
+    },
+    ["reload_smag_fast"] = {
+        Source = "reload_smag_fast",
+		MinProgress = 0.85,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.85,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_valpha_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_arm.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_maghit.ogg", t = 37/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_magin.ogg", t = 42/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 48/30},
+        },
+    },
+    ["reload_smag_fast_empty"] = {
+        Source = "reload_smag_fast_empty",
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.85,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_valpha_reload_empty_up.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_arm.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_maghit.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_magin.ogg", t = 39/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_grab_bolt.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_charge.ogg", t = 48/30},
+			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 58/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -711,6 +782,16 @@ local Translate_XMag_Fast = {
     ["reload_empty"] = "reload_xmag_fast_empty",
 }
 
+--- 10 Round Mags ---
+local Translate_SMag = {
+    ["reload"] = "reload_smag",
+    ["reload_empty"] = "reload_smag_empty",
+}
+local Translate_SMag_Fast = {
+    ["reload"] = "reload_smag_fast",
+    ["reload_empty"] = "reload_smag_fast_empty",
+}
+
 --- Fast & Tac. Sprint ---
 local Translate_Fast = {
     ["reload"] = "reload_fast",
@@ -728,6 +809,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
+    local smag = wep:HasElement("mag_smag")
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
@@ -738,6 +820,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_XMag_Fast[anim] then
                 return Translate_XMag_Fast[anim]
             end
+		elseif smag then
+            if Translate_SMag_Fast[anim] then
+                return Translate_SMag_Fast[anim]
+            end
         else
             if Translate_Fast[anim] then
                 return Translate_Fast[anim]
@@ -747,6 +833,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         if xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
+            end
+		elseif smag then
+            if Translate_SMag[anim] then
+                return Translate_SMag[anim]
             end
         end
     end

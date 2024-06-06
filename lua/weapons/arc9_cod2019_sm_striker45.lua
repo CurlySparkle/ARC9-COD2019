@@ -526,6 +526,91 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_end.ogg", t = 39/30},
         },
     },
+    ["reload_smag"] = {
+        Source = "reload_smag",
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_smgolf45_reload_smag_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_smag_magout.ogg", t = 28/30},
+            {s = path .. "wfoly_sm_smgolf45_reload_smag_maghit.ogg", t = 49/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_smag_magin.ogg", t = 51/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_smag_end.ogg", t = 64/30},
+        },
+    },
+    ["reload_smag_empty"] = {
+        Source = "reload_smag_empty",
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_smag_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_smag_magout.ogg", t = 13/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_smag_magin.ogg", t = 48/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_smag_charge.ogg", t = 63/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_smag_end.ogg", t = 65/30},
+        },
+    },
+    ["reload_smag_fast"] = {
+        Source = "reload_smag_fast",
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.15, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
+            { t = 0.8, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_smag_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_smag_magout.ogg", t = 11/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_smag_magin.ogg", t = 33/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_fast_smag_end.ogg", t = 37/30},
+        },
+    },
+    ["reload_smag_fast_empty"] = {
+        Source = "reload_smag_fast_empty",
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.7,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_smag_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_smag_magout.ogg", t = 11/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_smag_magin.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_smag_charge.ogg", t = 39/30},
+			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_smag_end.ogg", t = 39/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -686,6 +771,16 @@ local Translate_XMag_Fast = {
     ["reload_empty"] = "reload_xmag_fast_empty",
 }
 
+--- 12 Round Mags ---
+local Translate_SMag = {
+    ["reload"] = "reload_smag",
+    ["reload_empty"] = "reload_smag_empty",
+}
+local Translate_SMag_Fast = {
+    ["reload"] = "reload_smag_fast",
+    ["reload_empty"] = "reload_smag_fast_empty",
+}
+
 --- Fast & Tac. Sprint ---
 local Translate_Fast = {
     ["reload"] = "reload_fast",
@@ -703,6 +798,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
+    local smag = wep:HasElement("mag_smag")
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
@@ -713,6 +809,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_XMag_Fast[anim] then
                 return Translate_XMag_Fast[anim]
             end
+		elseif smag then
+            if Translate_SMag_Fast[anim] then
+                return Translate_SMag_Fast[anim]
+            end
         else
             if Translate_Fast[anim] then
                 return Translate_Fast[anim]
@@ -722,6 +822,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         if xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
+            end
+		elseif smag then
+            if Translate_SMag[anim] then
+                return Translate_SMag[anim]
             end
         end
     end
