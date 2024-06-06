@@ -83,6 +83,7 @@ function ENT:Detonate()
         util.BlastDamage(self, attacker, self:GetPos(), 350, 225)
         self:FireBullets({
             Attacker = attacker,
+			Damage = 500,
 		    Num = 1,
 		    Tracer = 0,
             Src = self:GetPos(),

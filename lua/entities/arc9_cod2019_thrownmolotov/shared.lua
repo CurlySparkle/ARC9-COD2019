@@ -53,12 +53,12 @@ function ENT:PhysicsCollide( data,phys )
 end
 
 function ENT:Detonate()
-    if self:WaterLevel() > 0 then self:Remove() return end
+    if self:WaterLevel() > 0 then self:Remove() self:StopParticles() return end
     local attacker = self.Attacker or self:GetOwner() or self
 	
 	self:EmitSound("COD2019.Molotov.Explode")
 
-    local firepool = ents.Create( "arc9_cod2019_fire_pool2" )
+    local firepool = ents.Create( "arc9_cod2019_fire_pool" )
     if !IsValid(firepool) then return end
 
     firepool:SetPos(self:GetPos())
