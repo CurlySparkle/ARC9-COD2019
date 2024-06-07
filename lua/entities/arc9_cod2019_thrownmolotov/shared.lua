@@ -41,6 +41,18 @@ function ENT:Think()
 end
 
 function ENT:PhysicsCollide( data,phys )
+    local attacker = self.Attacker or self:GetOwner()
+	if IsValid(data.HitEntity) then
+       local dmginfo = DamageInfo()
+       dmginfo:SetAttacker(attacker)
+       dmginfo:SetInflictor(self)
+       dmginfo:SetDamageType(DMG_CRUSH + DMG_CLUB)
+       dmginfo:SetDamage(25)
+       dmginfo:SetDamageForce(data.OurOldVelocity * 15)
+       dmginfo:SetDamagePosition(data.HitPos)
+       data.HitEntity:TakeDamageInfo(dmginfo)
+	end
+
 	local ang = data.HitNormal:Angle()
 	ang.p = math.abs( ang.p )
 	ang.y = math.abs( ang.y )

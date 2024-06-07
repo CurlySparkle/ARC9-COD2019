@@ -967,6 +967,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("optic_scope") then model:SetBodygroup(2,2) end
+    if wep:HasElement("grip_bipod") then model:SetBodygroup(5,0) end
 end
 
 SWEP.Attachments = {
