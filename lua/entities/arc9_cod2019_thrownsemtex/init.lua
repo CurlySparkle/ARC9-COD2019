@@ -82,11 +82,7 @@ function ENT:Explode()
     dmgInfo:SetInflictor(self)
     util.BlastDamageInfo(dmgInfo, self:GetPos(), self.ExplosionRadius)
     util.ScreenShake(self:GetPos(), 3500, 1111, 1, self.ExplosionRadius * 4)
-
     self:Remove()
-    if (IsValid(self.arrow)) then
-        self.arrow:Remove()
-    end
 end
 
 function ENT:OnRemove()
@@ -97,15 +93,19 @@ function ENT:PhysicsCollide(colData, collider)
     if !self.isPinned then
         local ent = colData.HitEntity
         if self:CanStickToEntity(ent) then
+		    timer.Simple(0, function()
             self.isPinned = true
             self:SetPos(colData.HitPos)
             self:SetSolid(SOLID_NONE)
             self:SetMoveType(MOVETYPE_NONE)
             self:SetParent(ent)
-        elseif ent:IsWorld() then 
+			end)
+        elseif ent:IsWorld() then
+		    timer.Simple(0, function()
             self.isPinned = true
             self:SetPos(colData.HitPos)
             self:SetMoveType(MOVETYPE_NONE)
+			end)
         end
     end
 end

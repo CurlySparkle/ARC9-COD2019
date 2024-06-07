@@ -1,3 +1,5 @@
+AddCSLuaFile()
+
 ENT.Category = "ShadowMoly"
 ENT.Type = "anim"
 ENT.Base = "base_gmodentity"
@@ -7,6 +9,8 @@ ENT.Spawnable = false
 
 game.AddParticles("particles/sdrk_molotov.pcf")
 PrecacheParticleSystem( "weapon_molotov_thrown" )
+
+if SERVER then
 
 local function TargetIsValid(ent) 
     return !ent:IsWorld()
@@ -74,4 +78,6 @@ end
 
 function ENT:Draw() 
     self:DrawModel()
+end
+
 end

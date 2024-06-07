@@ -14,7 +14,7 @@ function ENT:Beep()
 	dlight.DieTime = CurTime() + 0.1
 
     sound.Play("Cod2019.Semtex.Beep", self:GetPos())
-    ParticleEffectAttach("semtex_beep_flare", PATTACH_ABSORIGIN_FOLLOW, self, 0)
+    ParticleEffectAttach("semtex_beep_flare", PATTACH_POINT_FOLLOW, self, 0)
 end
 
 function ENT:Draw(flags)
@@ -23,7 +23,7 @@ function ENT:Draw(flags)
 end 
 
 function ENT:OnRemove()
-    ParticleEffect("explosion_grenade", self:GetPos(), Angle(0, 0, 0), nil)
+    ParticleEffect("grenade_final", self:GetPos(), Angle(0, 0, 0), nil)
     self:EmitSound("Cod2019.Frag.Explode")
 
 	local dlight = DynamicLight(self:EntIndex())
