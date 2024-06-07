@@ -29,6 +29,8 @@ end
 
 function ENT:Initialize()
     self:SetModel("models/weapons/cod2019/w_eq_semtex_thrown.mdl")
+    self:SetMoveType(MOVETYPE_VPHYSICS)
+    self:SetSolid(SOLID_VPHYSICS)
     self:PhysicsInit(SOLID_VPHYSICS)
     self:GetPhysicsObject():EnableMotion(true)
     self:SetLifeTime(1.5)
@@ -38,8 +40,8 @@ function ENT:Initialize()
     self.isPinned = false
 	self:SetAngles(Angle(0, 0, -70))
     local phys = self:GetPhysicsObject()
-    phys:SetMass(10)
-    phys:ApplyTorqueCenter( VectorRand(-10,10) )
+    phys:SetMass(15)
+    phys:ApplyTorqueCenter( VectorRand(-15,15) )
 end 
 
 function ENT:Think()

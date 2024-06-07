@@ -245,6 +245,9 @@ SWEP.SprintPosHook = function(wep)
     if wep:HasElement("stock") and wep:HasElement("perk_super_sprint") then
         return Vector(0,0,0)
     end
+    if wep:HasElement("stock") then
+        return Vector(0,0,-3)
+    end
 end
 
 SWEP.SprintAngHook = function(wep)

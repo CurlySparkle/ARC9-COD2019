@@ -19,7 +19,7 @@ ENT.ExplodeUnderwater = false
 ENT.SmokeTrail = true
 
 ENT.Delay = 0
-ENT.SafetyFuse = 0.02
+ENT.SafetyFuse = 0.01
 ENT.FlareColor = Color(0, 0, 0)
 ENT.FuseTime = 10
 ENT.AudioLoop = ""
@@ -76,6 +76,9 @@ function ENT:Detonate()
     firepool:SetPos(self:GetPos())
     firepool:SetOwner(attacker)
     firepool:Spawn()
+	firepool.NoIgnite = self
 
+    self:SetNWBool("CreatedNade",true)
+    self:SetNWBool("Children",true)
     self:Remove()
 end

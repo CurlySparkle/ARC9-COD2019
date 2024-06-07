@@ -11,8 +11,8 @@ function EFFECT:Init(data)
 	dlight.Size = 256
 	dlight.DieTime = CurTime() + 0.1
 
-    sound.Play("MW19_Crossbow.ExploBeep", data:GetOrigin())
-    ParticleEffectAttach("arrow_beep_flare", PATTACH_ABSORIGIN_FOLLOW, data:GetEntity(), 0)
+    sound.Play("Cod2019.Semtex.Beep", data:GetOrigin())
+    ParticleEffectAttach("semtex_beep_flare", PATTACH_ABSORIGIN_FOLLOW, data:GetEntity(), 0)
 
     self:SetNoDraw(true)
 end
