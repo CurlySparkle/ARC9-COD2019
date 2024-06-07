@@ -298,7 +298,7 @@ SWEP.DropMagazineSounds = {
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 3
-SWEP.DropMagazineAng = Angle(0, -90, 0)
+SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 SWEP.DropMagazineQCAHook = function(swep, old) 
   local curanim = swep:GetIKAnimation() or ""
@@ -456,7 +456,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 1.15,
+		DropMagAt = 0.85,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -614,7 +614,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		DropMagAt = 1.03,
+		DropMagAt = .9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -635,7 +635,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 1.15,
+		DropMagAt = 0.85,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
