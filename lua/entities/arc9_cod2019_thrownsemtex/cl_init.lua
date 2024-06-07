@@ -2,21 +2,6 @@ include("shared.lua")
 
 local BaseClass = baseclass.Get(ENT.Base)
 
-function ENT:Beep()
-    local dlight = DynamicLight(self:EntIndex())
-	dlight.pos = self:GetPos()
-	dlight.r = 255
-	dlight.g = 15
-	dlight.b = 15
-	dlight.brightness = -1
-	dlight.Decay = 1000
-	dlight.Size = 256
-	dlight.DieTime = CurTime() + 0.1
-
-    sound.Play("Cod2019.Semtex.Beep", self:GetPos())
-    ParticleEffectAttach("semtex_beep_flare", PATTACH_POINT_FOLLOW, self, 0)
-end
-
 function ENT:Draw(flags)
     self:DrawShadow(true)
 	self:DrawModel()

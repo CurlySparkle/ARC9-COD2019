@@ -52,17 +52,24 @@ function ENT:Think()
     if self.isPinned then
         self:SetLifeTime(self:GetLifeTime() - FrameTime()) 
     elseif CurTime() >= self.nextBeep then 
-        BroadcastLua("Entity("..self:EntIndex().."):Beep()")
+        local effectData = EffectData()
+        effectData:SetEntity(self)
+        effectData:SetOrigin(self:GetPos())
+        util.Effect("cod2019_effect_semtex", effectData)
         self.nextBeep = CurTime() + 0.35
-    end 
-
-
+    end
+	
+	
     if (self:GetLifeTime() > 0.1 && self:GetLifeTime() <= self.nextBeep) then
         sound.EmitHint(SOUND_DANGER, self:GetPos(), self.ExplosionRadius * 2, 1, nil) --make shit run away (nil owner so even rebels run)
-        if self.isPinned then
-            self.nextBeep = self:GetLifeTime() * 0.75 
-            BroadcastLua("Entity("..self:EntIndex().."):Beep()")
-        end
+		if self.isPinned then
+        self.nextBeep = self:GetLifeTime() * 0.75
+        
+        local effectData = EffectData()
+        effectData:SetEntity(self)
+        effectData:SetOrigin(self:GetPos())
+        util.Effect("cod2019_effect_semtex", effectData)
+		end
     end
 
     if (self:GetLifeTime() <= 0) then
