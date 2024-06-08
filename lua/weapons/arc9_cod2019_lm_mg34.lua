@@ -358,7 +358,7 @@ SWEP.TriggerDownSound = "weapons/cod2019/mg34/weap_mgolf34_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/mg34/weap_mgolf34_disconnector_plr_01.ogg"
 
 SWEP.Overheat = true
-SWEP.HeatCapacity = 45
+SWEP.HeatCapacity = 65
 SWEP.HeatDissipation = 22.5
 SWEP.HeatDelayTime = 0.25
 SWEP.HeatPerShot = 1

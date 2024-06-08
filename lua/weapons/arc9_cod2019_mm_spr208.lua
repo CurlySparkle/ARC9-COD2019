@@ -116,7 +116,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 5
+SWEP.Recoil = 4
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 3 -- Multiplier for vertical recoil
@@ -143,15 +143,19 @@ SWEP.RecoilMultSights = 0.75
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 2
-SWEP.VisualRecoilUp = 0.3
-SWEP.VisualRecoilMultSights = 1
-SWEP.VisualRecoilPunchSights = 15
+SWEP.VisualRecoilPunch = 2.5
+SWEP.VisualRecoilUp = 0.5
 
-SWEP.VisualRecoilSpringPunchDamping = 11
-SWEP.VisualRecoilDampingConst = 5
-SWEP.VisualRecoilDampingConstSights = 50
-SWEP.VisualRecoilSpringMagnitude = 1
+SWEP.VisualRecoilMultSights = 0.5
+SWEP.VisualRecoilPunchSights = 10
+SWEP.VisualRecoilRollSights = 15
+SWEP.VisualRecoilSideSights = 0
+SWEP.VisualRecoilUpSights = 0
+
+-- SWEP.VisualRecoilSpringPunchDamping = 11
+-- SWEP.VisualRecoilDampingConst = 5
+-- SWEP.VisualRecoilDampingConstSights = 50
+-- SWEP.VisualRecoilSpringMagnitude = 1
 
 -------------------------- SPREAD
 
@@ -1009,7 +1013,8 @@ SWEP.Attachments = {
 SWEP.GripPoseParam = 3.5
 SWEP.GripPoseParam2 = 0.6
 SWEP.CodStubbyGripPoseParam = 26
-SWEP.CodStubbyTallGripPoseParam = 12
+--SWEP.CodStubbyTallGripPoseParam = 12
+SWEP.CodStubbyTallGripPoseParam = 28
 SWEP.CodAngledGripPoseParam = 35
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.

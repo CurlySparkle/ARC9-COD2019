@@ -382,7 +382,7 @@ SWEP.TriggerDownSound = "weapons/cod2019/raal/weap_slima_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = ""
 
 SWEP.Overheat = true
-SWEP.HeatCapacity = 40
+SWEP.HeatCapacity = 60
 SWEP.HeatDissipation = 22.5
 SWEP.HeatDelayTime = 0.25
 SWEP.HeatPerShot = 1
