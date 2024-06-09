@@ -245,6 +245,24 @@ SWEP.PeekAng = Angle(0, 0, -45)
 SWEP.PeekPosReloading = Vector(1, 0, -2)
 SWEP.PeekAngReloading = Angle(0, 0, 0)
 
+SWEP.SprintPosHook = function(wep)
+    if wep:HasElement("stock") and wep:HasElement("perk_super_sprint") then
+        return Vector(0,0,0)
+    end
+    if wep:HasElement("stock") then
+        return Vector(3,0,-1.8)
+    end
+end
+
+SWEP.SprintAngHook = function(wep)
+    if wep:HasElement("stock") and wep:HasElement("perk_super_sprint") then
+        return Angle(0,0,0)
+    end
+    if wep:HasElement("stock") then
+        return Vector(5,-5,25)
+    end
+end
+
 -------------------------- HoldTypes
 
 SWEP.HoldType = "revolver"

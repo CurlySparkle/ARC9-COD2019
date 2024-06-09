@@ -306,6 +306,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_la_rpapa7_reload_raise.ogg", t = 0/30},
 			{s = path .. "wfoly_la_rpapa7_reload_load.ogg", t = 18/30},
 			{s = path .. "wfoly_la_rpapa7_reload_lower.ogg", t = 21/30},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 40/30},
 			{s = path .. "wfoly_la_rpapa7_reload_end.ogg", t = 50/30},
         },
     },
