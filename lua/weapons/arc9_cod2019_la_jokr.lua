@@ -83,18 +83,12 @@ SWEP.Firemodes = {
         PrintName = ARC9:GetPhrase("mw19_firemode_lockon_top"),
         TopAttack = true
     },
-    -- {
-        -- Mode = -1,
-        -- PrintName = ARC9:GetPhrase("mw19_firemode_lockon"),
-        -- TopAttack = false,
-        -- ShootEnt = "arc9_cod2019_proj_jokr_default2",
-		-- -- ToggleOnF = true,
-        -- -- LaserColorPlayer = true,
-        -- -- Laser = true,
-        -- -- LaserStrength = 4,
-        -- -- LaserColor = Color(0, 255, 0),
-        -- -- LaserAttachment = 4,
-    -- },
+    {
+        Mode = -1,
+        PrintName = ARC9:GetPhrase("mw19_firemode_lockon"),
+        TopAttack = false,
+        ShootEnt = "arc9_cod2019_proj_jokr_default2", -- This one doesn't work probably
+    },
     -- {
         -- Mode = -1,
         -- PrintName = "Guided-Fire",
