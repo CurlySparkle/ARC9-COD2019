@@ -42,13 +42,11 @@ ENT.SuperSteerBoostTime = 5
 ENT.NoReacquire = true
 
 ENT.ShootEntData = {}
-
 ENT.IsProjectile = true
 
---ENT.GunshipWorkaround = true
---ENT.HelicopterWorkaround = true
-
 function ENT:Impact(data, collider)
+    local hitPos = data.HitPos -- Get the position where the grenade hit
+    local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
     if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
         local attacker = self.Attacker or self:GetOwner()
         local ang = data.OurOldVelocity:Angle()
@@ -86,6 +84,7 @@ function ENT:Impact(data, collider)
         self:Remove()
         return true
     end
+	util.Decal("Scorch", hitPos + hitNormal, hitPos - hitNormal)
 end
 
 function ENT:OnThink()
@@ -164,21 +163,6 @@ function ENT:OnThink()
         if SERVER then
         self:GetPhysicsObject():AddVelocity(Vector(0, 0, self.Lift) + self:GetForward() * self.Boost)
 		end
-
-        -- Gunships have no physics collection, periodically trace to try and blow up in their face
-        -- if self.GunshipWorkaround and (self.GunshipCheck or 0 < CurTime()) then
-            -- self.GunshipCheck = CurTime() + 0.33
-            -- local tr = util.TraceLine({
-                -- start = self:GetPos(),
-                -- endpos = self:GetPos() + (self:GetVelocity() * 6 * engine.TickInterval()),
-                -- filter = self,
-                -- mask = MASK_SHOT
-            -- })
-            -- if IsValid(tr.Entity) and gunship[tr.Entity:GetClass()] then
-                -- self:SetPos(tr.HitPos)
-                -- self:PreDetonate()
-         -- end
-    -- end
 end
 
 function ENT:Detonate()
@@ -206,27 +190,13 @@ function ENT:Detonate()
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())
-
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
     else
-        --util.Effect("Explosion", fx)
 		ParticleEffect("grenade_final", self:GetPos(), Angle(-90, 0, 0))
     end
-
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-    self:FireBullets({
-        Attacker = attacker,
-        Damage = 0,
-        Tracer = 0,
-        Distance = 20000,
-        Dir = self:GetVelocity(),
-        Src = self:GetPos(),
-        Callback = function(att, tr, dmg)
-            util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
-        end
-    })
-
+	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
     self:Remove()
 end

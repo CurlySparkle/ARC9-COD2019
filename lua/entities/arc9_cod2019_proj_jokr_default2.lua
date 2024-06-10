@@ -19,38 +19,35 @@ ENT.Delay = 0
 ENT.SafetyFuse = 0.01
 
 ENT.AudioLoop = "weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
-
 ENT.SmokeTrail = true
 
 ENT.FlareColor = Color(155, 155, 155)
 ENT.Radius = 300
 
---- Stuff
-ENT.SeekerAngle = math.cos(math.rad(35)) -- The missile will lose tracking outside of this angle.
-ENT.SteerSpeed = 5000 -- The maximum amount of degrees per second the missile can steer.
-ENT.FuseTime = 0
-ENT.Boost = 1500
-ENT.Lift = 80
-ENT.DragCoefficient = 0.1
-ENT.LifeTime = 20
+DEFINE_BASECLASS(ENT.Base)
 
-ENT.FireAndForget = false -- This missile automatically tracks its target.
-ENT.TopAttack = true -- This missile flies up above its target before going down in a top-attack trajectory.
-ENT.TopAttackHeight = 5000
-ENT.SuperSeeker = false
-ENT.SuperSteerBoostTime = 5
-ENT.NoReacquire = true -- F&F target is permanently lost if it cannot reacquire
-ENT.SACLOS = false -- This missile is manually guided by its shooter.
-ENT.SemiActive = false -- This missile needs to be locked on to the target at all times.
-
-ENT.ShootEntData = {}
-
-ENT.IsProjectile = true
-
---ENT.GunshipWorkaround = true
---ENT.HelicopterWorkaround = true
+function ENT:Initialize()
+    self:SetModel(self.Model) -- Change this to your rocket model
+    self:PhysicsInit(SOLID_VPHYSICS)
+    self:SetMoveType(MOVETYPE_VPHYSICS)
+    self:SetSolid(SOLID_VPHYSICS)
+    self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
+    
+    local phys = self:GetPhysicsObject()
+    if phys:IsValid() then
+        phys:Wake()
+    end
+    
+    self.InitialVelocity = 2000 -- Adjust this value to change the initial upward speed
+    self.TargetVelocity = 6000 -- Adjust this value to change the downward speed
+    self.UpwardTime = 2 -- Time in seconds the rocket goes up
+    self.LaunchTime = CurTime()
+    BaseClass.Initialize(self)
+end
 
 function ENT:Impact(data, collider)
+    local hitPos = data.HitPos -- Get the position where the grenade hit
+    local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
     if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
         local attacker = self.Attacker or self:GetOwner()
         local ang = data.OurOldVelocity:Angle()
@@ -88,99 +85,29 @@ function ENT:Impact(data, collider)
         self:Remove()
         return true
     end
+	util.Decal("Scorch", hitPos + hitNormal, hitPos - hitNormal)
 end
 
 function ENT:OnThink()
-        local drunk = false
-
-        if self.FireAndForget or self.SemiActive then
-            if self.SemiActive then
-                if IsValid(self.Weapon) then
-                    self.ShootEntData = self.Weapon:RunHook("Hook_GetShootEntData", {})
-                end
-            end
-
-            if self.ShootEntData.Target and IsValid(self.ShootEntData.Target) then
-                local target = self.ShootEntData.Target
-                if target.UnTrackable then self.ShootEntData.Target = nil end
-				
-                local tpos = target:EyePos()
-                if self.TopAttack and !self.TopAttackReached then
-                    tpos = tpos + Vector(0, 0, self.TopAttackHeight)
-
-                    local dist = (tpos - self:GetPos()):Length()
-
-                    if dist <= 3000 then
-                        self.TopAttackReached = true
-                        self.SuperSteerTime = CurTime() + self.SuperSteerBoostTime
-                    end
-                end
-                local dir = (tpos - self:GetPos()):GetNormalized()
-                local dot = dir:Dot(self:GetAngles():Forward())
-                local ang = dir:Angle()
-
-                if self.SuperSeeker or dot >= self.SeekerAngle or !self.TopAttackReached or (self.SuperSteerTime and self.SuperSteerTime >= CurTime()) then
-                    local p = self:GetAngles().p
-                    local y = self:GetAngles().y
-
-                    p = math.ApproachAngle(p, ang.p, FrameTime() * self.SteerSpeed)
-                    y = math.ApproachAngle(y, ang.y, FrameTime() * self.SteerSpeed)
-
-                    self:SetAngles(Angle(p, y, 0))
-                    -- self:SetVelocity(dir * 15000)
-                elseif self.NoReacquire then
-                    self.ShootEntData.Target = nil
-                    drunk = true
-                end
-                -- end
-            else
-                drunk = true
-            end
-        elseif self.SACLOS then
-            if self:GetOwner():IsValid() then
-                local tpos = self:GetOwner():GetEyeTrace().HitPos
-                local dir = (tpos - self:GetPos()):GetNormalized()
-                local dot = dir:Dot(self:GetAngles():Forward())
-                local ang = dir:Angle()
-
-                if dot >= self.SeekerAngle then
-                    local p = self:GetAngles().p
-                    local y = self:GetAngles().y
-
-                    p = math.ApproachAngle(p, ang.p, FrameTime() * self.SteerSpeed)
-                    y = math.ApproachAngle(y, ang.y, FrameTime() * self.SteerSpeed)
-
-                    self:SetAngles(Angle(p, y, 0))
-                else
-                    drunk = true
-                end
-            else
-                drunk = true
-            end
+    local phys = self:GetPhysicsObject()
+    if phys:IsValid() then
+        local timeSinceLaunch = CurTime() - self.LaunchTime
+        
+        if timeSinceLaunch < self.UpwardTime then
+            -- Go up
+            phys:SetVelocity(Vector(0, 15, self.InitialVelocity))
+			phys:SetAngles(Angle(0, 0, 90)) -- Point straight up
+        else
+            -- Go down towards the target
+            local targetPos = self:GetPos() + Vector(-500, 0, -1000) -- Change this to your target position
+            local dirToTarget = (targetPos - self:GetPos()):GetNormalized()
+            phys:SetVelocity(dirToTarget * self.TargetVelocity)
+			phys:SetAngles(Angle(0, 0, -180)) -- Point straight up
         end
-
-        if drunk then
-            self:SetAngles(self:GetAngles() + (AngleRand() * FrameTime() * 1000 / 360))
-        end
-
-        if SERVER then
-        self:GetPhysicsObject():AddVelocity(Vector(0, 0, self.Lift) + self:GetForward() * self.Boost)
-		end
-
-        -- Gunships have no physics collection, periodically trace to try and blow up in their face
-        -- if self.GunshipWorkaround and (self.GunshipCheck or 0 < CurTime()) then
-            -- self.GunshipCheck = CurTime() + 0.33
-            -- local tr = util.TraceLine({
-                -- start = self:GetPos(),
-                -- endpos = self:GetPos() + (self:GetVelocity() * 6 * engine.TickInterval()),
-                -- filter = self,
-                -- mask = MASK_SHOT
-            -- })
-            -- if IsValid(tr.Entity) and gunship[tr.Entity:GetClass()] then
-                -- self:SetPos(tr.HitPos)
-                -- self:PreDetonate()
-         -- end
-    -- end
+    end
+    
+    self:NextThink(CurTime())
+    return true
 end
 
 function ENT:Detonate()
@@ -208,27 +135,14 @@ function ENT:Detonate()
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())
-
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
     else
         --util.Effect("Explosion", fx)
 		ParticleEffect("grenade_final", self:GetPos(), Angle(-90, 0, 0))
     end
-
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-    self:FireBullets({
-        Attacker = attacker,
-        Damage = 0,
-        Tracer = 0,
-        Distance = 20000,
-        Dir = self:GetVelocity(),
-        Src = self:GetPos(),
-        Callback = function(att, tr, dmg)
-            util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
-        end
-    })
-
+	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
     self:Remove()
 end

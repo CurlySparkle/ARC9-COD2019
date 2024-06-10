@@ -48,7 +48,7 @@ SWEP.NoAimAssist = true
 -------------------------- DAMAGE PROFILE
 
 SWEP.ShootEnt = "arc9_cod2019_proj_jokr_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 4000
+SWEP.ShootEntForce = 3000
 
 SWEP.ShootPosOffset = Vector(4, 0, 0)
 SWEP.ShootPosOffsetSights = Vector(4, 0, 0)
@@ -83,18 +83,18 @@ SWEP.Firemodes = {
         PrintName = ARC9:GetPhrase("mw19_firemode_lockon_top"),
         TopAttack = true
     },
-    {
-        Mode = -1,
-        PrintName = ARC9:GetPhrase("mw19_firemode_lockon"),
-        TopAttack = false,
-        ShootEnt = "arc9_cod2019_proj_jokr_default2",
-		-- ToggleOnF = true,
-        -- LaserColorPlayer = true,
-        -- Laser = true,
-        -- LaserStrength = 4,
-        -- LaserColor = Color(0, 255, 0),
-        -- LaserAttachment = 4,
-    },
+    -- {
+        -- Mode = -1,
+        -- PrintName = ARC9:GetPhrase("mw19_firemode_lockon"),
+        -- TopAttack = false,
+        -- ShootEnt = "arc9_cod2019_proj_jokr_default2",
+		-- -- ToggleOnF = true,
+        -- -- LaserColorPlayer = true,
+        -- -- Laser = true,
+        -- -- LaserStrength = 4,
+        -- -- LaserColor = Color(0, 255, 0),
+        -- -- LaserAttachment = 4,
+    -- },
     -- {
         -- Mode = -1,
         -- PrintName = "Guided-Fire",
