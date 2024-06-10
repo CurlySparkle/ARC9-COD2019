@@ -307,6 +307,10 @@ SWEP.DropMagazineQCAHook = function(swep, old)
   if curanim == "reload_smg_fast_empty" then return 3 end
   if curanim == "reload_drum_fast" then return 5 end
   if curanim == "reload_drum_fast_empty" then return 5 end
+  if curanim == "reload_drum2" then return 5 end
+  if curanim == "reload_drum2_empty" then return 5 end
+  if curanim == "reload_drum2_fast" then return 5 end
+  if curanim == "reload_drum2_fast_empty" then return 5 end
 end
 
 -------------------------- SOUNDS
@@ -753,7 +757,8 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.1, lhik = 0, rhik = 0},
             { t = 0.7, lhik = 0, rhik = 0},
-            { t = 0.85, lhik = 1, rhik = 1},
+            { t = 0.77, lhik = 0, rhik = 0},
+            { t = 0.98, lhik = 1, rhik = 1},
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_grabmag.ogg", t = 14/30},
@@ -770,12 +775,13 @@ SWEP.Animations = {
 		MinProgress = 0.9,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 1.15,
+		DropMagAt = 1.25,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
-            { t = 0.2, lhik = 0, rhik = 0},
+            { t = 0.15, lhik = 0, rhik = 0},
             { t = 0.5, lhik = 0, rhik = 0},
-            { t = 0.575, lhik = 1, rhik = 1},
+            { t = 0.76, lhik = 0, rhik = 0},
+            { t = 0.95, lhik = 1, rhik = 1},
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_mvmnt.ogg", t = 14/30},
@@ -783,7 +789,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_twist.ogg", t = 54/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_01.ogg", t = 87/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_02.ogg", t = 95/30},
-			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_02.ogg", t = 107/30},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_magout_01.ogg", t = 107/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_rise.ogg", t = 120/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_chamber_01.ogg", t = 139/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_end.ogg", t = 152/30},
@@ -795,19 +801,22 @@ SWEP.Animations = {
 		PeekProgress = 0.875,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		DropMagAt = 0.93,
+		DropMagAt = 1.25,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.1, lhik = 0, rhik = 0},
-            { t = 0.65, lhik = 0, rhik = 0},
-            { t = 0.87, lhik = 1, rhik = 1},
+            { t = 0.7, lhik = 0, rhik = 0},
+            { t = 0.95, lhik = 1, rhik = 1},
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_raise.ogg", t = 8/30},
-			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magout_01.ogg", t = 25/30},
-			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magin_v2_01.ogg", t = 73/30},
-			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magin_v2_02.ogg", t = 83/30},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_magout_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_mvmnt.ogg", t = 65/30},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magin_v2_01.ogg", t = 71/30},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_02.ogg", t = 80/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_end.ogg", t = 99/30},
+			{hide = 1, t = 0},
+			{hide = 1, t = 1},
         },
     },
     ["reload_drum2_fast_empty"] = {
@@ -816,12 +825,12 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 0.93,
+		DropMagAt = 1.25,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
-            { t = 0.5, lhik = 0, rhik = 0},
-            { t = 0.65, lhik = 1, rhik = 1},
+            { t = 0.7, lhik = 0, rhik = 0},
+            { t = 0.97, lhik = 1, rhik = 1},
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_raise.ogg", t = 5/30},
@@ -831,6 +840,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_02.ogg", t = 83/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_chamber_01.ogg", t = 107/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_end.ogg", t = 113/30},
+			{hide = 1, t = 0},
+			{hide = 1, t = 1},
         },
     },
     ["ready"] = {
@@ -868,7 +879,6 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 1},
             { t = 0.2, lhik = 0, rhik = 1},
         },
-		--Mult = 0.8,
         EventTable = {
             {s = path .. "wfoly_ar_akilo47_drop.ogg", t = 0/30},
         },

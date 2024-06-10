@@ -83,12 +83,12 @@ SWEP.Firemodes = {
         PrintName = ARC9:GetPhrase("mw19_firemode_lockon_top"),
         TopAttack = true
     },
-    {
-        Mode = -1,
-        PrintName = ARC9:GetPhrase("mw19_firemode_lockon"),
-        TopAttack = false,
-        ShootEnt = "arc9_cod2019_proj_jokr_default2", -- This one doesn't work probably
-    },
+    -- {
+        -- Mode = -1,
+        -- PrintName = ARC9:GetPhrase("mw19_firemode_lockon"),
+        -- TopAttack = false,
+        -- ShootEnt = "arc9_cod2019_proj_jokr_default2", -- This one doesn't work probably
+    -- },
     -- {
         -- Mode = -1,
         -- PrintName = "Guided-Fire",
@@ -346,7 +346,7 @@ SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
 SWEP.DistantShootSoundIndoor = "Distant_Strela.Inside"
 ---------------------------------------------------
 
-SWEP.DryFireSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
+SWEP.DryFireSound = ""
 SWEP.FiremodeSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
 
 SWEP.EnterSightsSound = "weapons/cod2019/jokr/weap_la_juliet_ads_up.ogg"
@@ -356,7 +356,7 @@ SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before sh
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = ""
+SWEP.TriggerDownSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
 SWEP.TriggerUpSound = ""
 
 SWEP.BulletBones = {
