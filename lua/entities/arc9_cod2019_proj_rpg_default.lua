@@ -25,6 +25,10 @@ ENT.SmokeTrail = true
 ENT.FlareColor = Color(155, 155, 155)
 ENT.Radius = 300
 
+function ENT:OnInitialize()
+	self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
+end
+
 function ENT:Impact(data, collider)
     local hitPos = data.HitPos -- Get the position where the grenade hit
     local hitNormal = data.HitNormal -- Get the normal vector of the surface hit

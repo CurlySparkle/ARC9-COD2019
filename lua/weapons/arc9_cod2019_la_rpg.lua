@@ -46,25 +46,20 @@ SWEP.NoAimAssist = true
 
 SWEP.DamageMax = 100 -- Damage done at point blank range
 SWEP.DamageMin = 100 -- Damage done at maximum range
-
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
 SWEP.RangeMin = 1000 -- How far bullets retain their maximum damage for.
 SWEP.RangeMax = 10000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
 
 SWEP.Penetration = 0 -- Units of wood that can be penetrated by this gun.
-
 SWEP.ImpactForce = 15
 
 SWEP.ShootEnt = "arc9_cod2019_proj_rpg_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 5000
+SWEP.ShootEntForce = 3000
 SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets SENT.WeaponDataLink with this table.
 
---SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
-
-SWEP.ShootPosOffset = Vector(3, 0, 0)
-SWEP.ShootPosOffsetSights = Vector(3, 0, 0)
-
+SWEP.ShootPosOffset = Vector(5, 0, 0)
+SWEP.ShootPosOffsetSights = Vector(5, 0, 0)
 SWEP.PushBackForce = 5
 
 -------------------------- MAGAZINE
@@ -262,11 +257,17 @@ end
 local path = "weapons/cod2019/rpg/"
 
 SWEP.ShootSound = "COD2019.RPG.Fire"
---SWEP.DistantShootSound = "CSGO.Nova.Fire.Distance"
+SWEP.ShootSoundIndoor = "COD2019.RPG.Fire"
+
+-- Outside
+SWEP.LayerSound = ""
+SWEP.DistantShootSound = "Distant_RPG.Outside"
+-- Inside
+SWEP.LayerSoundIndoor = ""
+SWEP.DistantShootSoundIndoor = "Distant_JOKR.Inside"
+---------------------------------------------------
+
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
-
-SWEP.FiremodeSound = "CSGO.Rifle.Switch_Mode"
-
 SWEP.EnterSightsSound = "weapons/cod2019/rpg/wfoly_la_rpapa7_ads_up.ogg"
 SWEP.ExitSightsSound = "weapons/cod2019/rpg/wfoly_la_rpapa7_ads_down.ogg"
 

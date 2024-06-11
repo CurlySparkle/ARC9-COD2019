@@ -47,7 +47,7 @@ ENT.Delay = 5 -- after being triggered and this amount of time has passed, the p
 
 ENT.Armed = false
 
-ENT.RocketParticleTrace = "Rocket_Smoke"  -- name of the particle effect
+ENT.RocketTrailParticle = "Rocket_Smoke"  -- name of the particle effect
 ENT.RocketTrail = false -- leaves trail of a particle effct
 ENT.SmokeTrail = false -- leaves trail of smoke
 ENT.SmokeColor = Color(200, 200, 200)
@@ -111,6 +111,13 @@ function ENT:Initialize()
     if self.InstantFuse then
         self.ArmTime = CurTime()
         self.Armed = true
+    end
+	
+    if self.RocketTrail then
+	   ParticleEffectAttach(self.RocketTrailParticle, PATTACH_ABSORIGIN_FOLLOW, self, 0)
+	   if self:GetNWBool("HasDetonated") then
+       StopParticles()
+       end
     end
 	
 	self.HitSkybox = false
@@ -431,12 +438,6 @@ local mat = Material("effects/ar2_altfire1b")
 
 function ENT:Draw()
     self:DrawModel()
-   if self.RocketTrail then
-	  ParticleEffectAttach(self.RocketTrailParticle, PATTACH_ABSORIGIN_FOLLOW, self, 0)
-	 if self:GetNWBool("HasDetonated") then
-     StopParticles()
-     end
-   end
    if self.Flare then
     if self.FlareColor then
         render.SetMaterial(mat)

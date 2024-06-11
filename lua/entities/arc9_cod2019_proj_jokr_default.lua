@@ -14,9 +14,11 @@ ENT.ExplodeUnderwater = true
 
 ENT.Delay = 0
 ENT.SafetyFuse = 0.02
-ENT.AudioLoop = "weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
-ENT.SmokeTrail = true
-ENT.FlareColor = Color(155, 155, 155)
+ENT.AudioLoop = "^weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
+ENT.SmokeTrail = false
+ENT.FlareColor = nil
+ENT.RocketTrailParticle = "Rocket_Smoke"  -- name of the particle effect
+ENT.RocketTrail = true -- leaves trail of a particle effect
 ENT.Radius = 300
 
 --- Stuff
@@ -48,6 +50,7 @@ function ENT:OnInitialize()
 
         self.LockOnPoint = tr.HitPos
     end
+	self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
 end
 
 function ENT:Impact(data, collider)
@@ -177,10 +180,9 @@ function ENT:Detonate()
     local attacker = self.Attacker or self:GetOwner()
 
     if self.NPCDamage then
-        util.BlastDamage(self, attacker, self:GetPos(), 375, 200)
+        util.BlastDamage(self, attacker, self:GetPos(), self.Radius, 200)
     else
-        util.BlastDamage(self, attacker, self:GetPos(), 375, 275)
-
+        util.BlastDamage(self, attacker, self:GetPos(), self.Radius, 275)
         self:FireBullets({
             Attacker = attacker,
             Damage = 450,
@@ -208,7 +210,6 @@ function ENT:Detonate()
 
     self:EmitSound("Cod2019.Frag.Explode")
     util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-
     util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
 
     self:Remove()

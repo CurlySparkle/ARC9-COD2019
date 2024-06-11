@@ -3,6 +3,7 @@ local particlefiles = {
 	"mw2019_effects_fp.pcf",
 	"mw2019_effects.pcf",
 	"mw2019_tracer.pcf",
+	"mw2019_rockettrail.pcf",
 }
 
 for k, v in pairs(particlefiles) do
@@ -38,7 +39,8 @@ local particlenames = {
 	"AC_muzzle_357_fp",
 	"AC_muzzle_sniper_heavy",
 	"thermite_thrown_trail",
-	"smoke_thrown_trail"
+	"smoke_thrown_trail",
+	"rockettrail"
 }
 
 for k, v in pairs(particlenames) do

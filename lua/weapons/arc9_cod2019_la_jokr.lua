@@ -50,8 +50,8 @@ SWEP.NoAimAssist = true
 SWEP.ShootEnt = "arc9_cod2019_proj_jokr_default" -- Set to an entity to launch it out of this weapon.
 SWEP.ShootEntForce = 3000
 
-SWEP.ShootPosOffset = Vector(4, 0, 0)
-SWEP.ShootPosOffsetSights = Vector(4, 0, 0)
+SWEP.ShootPosOffset = Vector(30, -10, 0)
+SWEP.ShootPosOffsetSights = Vector(30, -10, 0)
 
 SWEP.PushBackForce = 5
 
@@ -339,11 +339,11 @@ SWEP.ShootSound = "COD2019.JOKR.Fire"
 SWEP.ShootSoundIndoor = "COD2019.JOKR.Fire"
 
 -- Outside
-SWEP.LayerSound = "Layer_Sniper.Outside"
-SWEP.DistantShootSound = "Distant_Strela.Outside"
+SWEP.LayerSound = ""
+SWEP.DistantShootSound = "Distant_JOKR.Outside"
 -- Inside
-SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
-SWEP.DistantShootSoundIndoor = "Distant_Strela.Inside"
+SWEP.LayerSoundIndoor = ""
+SWEP.DistantShootSoundIndoor = "Distant_JOKR.Inside"
 ---------------------------------------------------
 
 SWEP.DryFireSound = ""

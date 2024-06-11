@@ -18,8 +18,7 @@ ENT.ExplodeUnderwater = true
 ENT.Delay = 0
 ENT.SafetyFuse = 0.01
 
-ENT.AudioLoop = "weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
-
+ENT.AudioLoop = "weapons/cod2019/pila/move_gromeo_proj_flame.wav"
 ENT.SmokeTrail = true
 ENT.RocketTrail = false
 ENT.RocketTrailParticle = "rockettrail"
@@ -27,7 +26,6 @@ ENT.RocketTrailParticle = "rockettrail"
 ENT.FlareColor = Color(155, 155, 155)
 ENT.FlareSizeMin = 10
 ENT.FlareSizeMax = 50
-
 ENT.Radius = 300
 
 --- Stuff
@@ -48,6 +46,10 @@ ENT.NoReacquire = true
 ENT.ShootEntData = {}
 
 ENT.IsProjectile = true
+
+function ENT:OnInitialize()
+	self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
+end
 
 function ENT:Impact(data, collider)
     local hitPos = data.HitPos -- Get the position where the grenade hit

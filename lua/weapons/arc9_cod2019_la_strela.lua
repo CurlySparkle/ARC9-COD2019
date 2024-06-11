@@ -50,9 +50,8 @@ SWEP.NoAimAssist = true
 SWEP.ShootEnt = "arc9_cod2019_proj_strela_default" -- Set to an entity to launch it out of this weapon.
 SWEP.ShootEntForce = 5000
 
-SWEP.ShootPosOffset = Vector(3, 0, 0)
-SWEP.ShootPosOffsetSights = Vector(3, 0, 0)
-
+SWEP.ShootPosOffset = Vector(5, 0, 0)
+SWEP.ShootPosOffsetSights = Vector(5, 0, 0)
 SWEP.PushBackForce = 5
 
 -------------------------- MAGAZINE
@@ -261,11 +260,11 @@ SWEP.ShootSound = "COD2019.Strela.Fire"
 SWEP.ShootSoundIndoor = "COD2019.Strela.Fire"
 
 -- Outside
-SWEP.LayerSound = "Layer_Sniper.Outside"
+SWEP.LayerSound = ""
 SWEP.DistantShootSound = "Distant_Strela.Outside"
 -- Inside
-SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
-SWEP.DistantShootSoundIndoor = "Distant_Strela.Inside"
+SWEP.LayerSoundIndoor = ""
+SWEP.DistantShootSoundIndoor = "Distant_JOKR.Inside"
 ---------------------------------------------------
 
 SWEP.DryFireSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
@@ -288,9 +287,6 @@ SWEP.Animations = {
 	},
     ["fire"] = {
         Source = "shoot1",
-        EventTable = {
-			{s = path .. "weap_kgolf_fire_plr_lfe_01.ogg", t = 0},
-        },
     },
     ["reload"] = {
         Source = "reload",

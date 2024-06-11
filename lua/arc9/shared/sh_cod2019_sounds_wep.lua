@@ -813,6 +813,19 @@ sound.Add( {
 	}
 } )
 
+--- Crossbow ---
+sound.Add( {
+    name = "COD2019.Crossbow.Fire",
+    channel = CHAN_WEAPON,
+    volume = 1.0,
+    level = 120,
+    pitch = {90,110},
+	soundlevel = SNDLVL_GUNFIRE,
+    sound = {
+        "weapons/cod2019/crossbow/weap_crossbow_fire_01.ogg",
+    }
+} )
+
 ------------ Shotguns ------------
 
 --- 725 ---
@@ -1331,4 +1344,50 @@ sound.Add( {
 	sound = {
 		"weapons/cod2019/uzi/weap_uzulu_sup_fire_plr_01.ogg",
 	}
+} )
+
+--- Launchers ---
+
+sound.Add( {
+    name = "COD2019.Strela.Fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {85,110},
+    sound = {
+        "^weapons/cod2019/strela/weap_kgolf_fire_plr_01.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.Pila.Fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {80,110},
+    sound = {
+        "weapons/cod2019/pila/weap_gromeo_fire_plr_01.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.RPG.Fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {80,110},
+    sound = {
+        "^weapons/cod2019/rpg/weap_rpapa7_fire_plr_01.ogg",
+    }
+} )
+
+sound.Add( {
+    name = "COD2019.JOKR.Fire",
+	channel = CHAN_WEAPON,
+	level = 140,
+	volume = 1,
+	pitch = {80,100},
+    sound = {
+        "^weapons/cod2019/jokr/weap_juliet_launch_01.ogg",
+    }
 } )

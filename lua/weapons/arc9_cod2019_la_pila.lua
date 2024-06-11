@@ -60,13 +60,13 @@ SWEP.Penetration = 0 -- Units of wood that can be penetrated by this gun.
 SWEP.ImpactForce = 15
 
 SWEP.ShootEnt = "arc9_cod2019_proj_pila_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 5000
+SWEP.ShootEntForce = 2000
 SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets SENT.WeaponDataLink with this table.
 
 --SWEP.PhysBulletMuzzleVelocity = 960 * 39.37
 
-SWEP.ShootPosOffset = Vector(4, 0, 0)
-SWEP.ShootPosOffsetSights = Vector(4, 0, 0)
+SWEP.ShootPosOffset = Vector(7, -5, 0)
+SWEP.ShootPosOffsetSights = Vector(7, -5, 0)
 
 SWEP.PushBackForce = 5
 
@@ -282,11 +282,11 @@ SWEP.ShootSound = "COD2019.Pila.Fire"
 SWEP.ShootSoundIndoor = "COD2019.Pila.Fire"
 
 -- Outside
-SWEP.LayerSound = "Layer_Sniper.Outside"
-SWEP.DistantShootSound = "Distant_Strela.Outside"
+SWEP.LayerSound = ""
+SWEP.DistantShootSound = "Distant_PILA.Outside"
 -- Inside
-SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
-SWEP.DistantShootSoundIndoor = "Distant_Strela.Inside"
+SWEP.LayerSoundIndoor = ""
+SWEP.DistantShootSoundIndoor = "Distant_JOKR.Inside"
 ---------------------------------------------------
 
 SWEP.DryFireSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"

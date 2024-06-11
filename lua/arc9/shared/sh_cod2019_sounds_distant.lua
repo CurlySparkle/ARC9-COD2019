@@ -282,17 +282,6 @@ sound.Add({
     sound = "^weapons/cod2019/shared/atmo/western/weap_western_fire_plr_atmo_ext1_01.ogg"
 })
 
---- ROCKET LAUNCHERS ---
-
-sound.Add({
-    name = "Distant_RPG.Outside",
-    channel = CHAN_DISTANT,
-    volume = 1,
-    level = 140,
-    pitch = {80,110},
-    sound = "^weapons/cod2019/shared/atmo/launchers/weap_rpapa7_fire_plr_atmo_01.ogg"
-})
-
 ----------- ATMO INSIDE ------------
 
 --- AR ---
@@ -413,7 +402,58 @@ sound.Add({
     sound = "weapons/cod2019/shared/atmo/smg/weap_smg_fire_plr_atmo_int1_01.ogg"
 })
 
+--- Launchers ---
+--- JOKR ---
+sound.Add({
+	name = "Distant_JOKR.Outside",
+	channel = CHAN_DISTANT,
+	level = 140,
+	volume = 1,
+	pitch = {80,100},
+	sound = {
+		"weapons/cod2019/jokr/weap_juliet_launch_atmo_01.ogg",
+		}
+})
+sound.Add({
+	name = "Distant_JOKR.Inside",
+	channel = CHAN_INDOORDISTANT,
+	level = 140,
+	volume = 1,
+	pitch = {80,100},
+	sound = {
+		"weapons/cod2019/jokr/weap_juliet_launch_atmo_int_01.ogg",
+		}
+})
+--- PILA ---
+sound.Add({
+	name = "Distant_PILA.Outside",
+	channel = CHAN_DISTANT,
+	level = 140,
+	volume = 1,
+	pitch = {80,110},
+	sound =  "^weapons/cod2019/pila/weap_gromeo_fire_plr_atmo_01.ogg",
+		
+})
 --- RPG ---
+sound.Add({
+    name = "Distant_RPG.Outside",
+    channel = CHAN_DISTANT,
+    volume = 1,
+    level = 140,
+    pitch = {80,110},
+    sound = "^weapons/cod2019/shared/atmo/launchers/weap_rpapa7_fire_plr_atmo_01.ogg"
+})
+--- STRELA ---
+sound.Add({
+	name = "Distant_Strela.Outside",
+	channel = CHAN_DISTANT,
+	level = 140,
+	volume = 1,
+	pitch = {85,110},
+	sound = 
+		"^weapons/cod2019/strela/weap_kgolf_fire_plr_atmo_01.ogg",
+})
+
 sound.Add({
     name = "Distant_Launcher.Inside",
     channel = CHAN_INDOORDISTANT,
