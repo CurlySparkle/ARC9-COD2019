@@ -49,3 +49,25 @@ end
 function ENT:OnRemove() 
     self:EmitSound("weapons/cod2019/throwables/molotov/weap_molotov_fire_lp_end.ogg",75, 100, 1, CHAN_AUTO)
 end
+
+hook.Add("EntityTakeDamage", "mw19_firepool", function(ent, dmginfo)
+    if IsValid(dmginfo:GetInflictor()) and dmginfo:GetInflictor():GetClass() == "arc9_cod2019_fire_pool" and dmginfo:GetDamageType() == DMG_BURN then
+        if ent:IsNPC() then
+            if directfiredamage[ent:GetClass()] then
+                dmginfo:SetDamageType(DMG_SLOWBURN) -- DMG_BURN does not hurt HL2 zombies and instead turns them black.
+            end
+        elseif !ent:IsNextBot() and !ent:IsPlayer() then
+            if ent:GetClass() == "prop_physics" then
+                dmginfo:SetDamageType(DMG_DIRECT) -- some props like to burn slowly against DMG_BURN or DMG_SLOWBURN. don't.
+            end
+            dmginfo:ScaleDamage(1.5) -- tremendous damage to props
+        end
+        dmginfo:SetDamageForce(Vector()) -- fire does not push things around. still applies to players, but that can't be helped.
+    end
+end)
+
+hook.Add("PostEntityTakeDamage", "mw19_firepool2", function(ent, dmginfo, took)
+    if took and IsValid(dmginfo:GetInflictor()) and dmginfo:GetInflictor():GetClass() == "arc9_cod2019_fire_pool" and !ent:IsPlayer() then
+        ent:Ignite(math.Rand(3, 5))
+    end
+end)

@@ -80,7 +80,7 @@ SWEP.RPM = 300
 SWEP.Firemodes = {
     {
         Mode = -1,
-        PrintName = ARC9:GetPhrase("mw19_firemode_lockon_top"),
+        PrintName = ARC9:GetPhrase("mw19_firemode_lockon"),
         TopAttack = true
     },
     -- {
@@ -170,7 +170,7 @@ SWEP.SpeedMult = 0.9 -- Walk speed multiplier
 SWEP.SpeedMultSights = 0.75 -- When aiming
 SWEP.SpeedMultShooting = 0.5
 
-SWEP.AimDownSightsTime = 0.8 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.AimDownSightsTime = 1 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.4 -- How long it takes to go from sprinting to being able to fire.
 
 -------------------------- MELEE
@@ -196,7 +196,7 @@ SWEP.IronSights = {
 }
 
 SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
-    Pos = Vector(1.4, -2, 0),
+    Pos = Vector(1.4, 30, 0),
     Ang = Angle(0.45, 0, 0.23),
 }
 
@@ -304,13 +304,13 @@ SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
 --- LASER FUNCTION
-SWEP.ToggleOnF = true
-SWEP.LaserColorPlayer = true
-SWEP.Laser = true
-SWEP.TacticalName = "Laser"
-SWEP.LaserStrength = 4
-SWEP.LaserColor = Color(255, 0, 0)
-SWEP.LaserAttachment = 4
+-- SWEP.ToggleOnF = true
+-- SWEP.LaserColorPlayer = true
+-- SWEP.Laser = true
+-- SWEP.TacticalName = "Laser"
+-- SWEP.LaserStrength = 4
+-- SWEP.LaserColor = Color(255, 0, 0)
+-- SWEP.LaserAttachment = 4
 ------------------------------------
 
 SWEP.CamQCA = 3
@@ -363,8 +363,14 @@ SWEP.BulletBones = {
     [1] = {"j_rocket","j_frontfin_1","j_frontfin_2","j_rearfin_1","j_rearfin_2","j_rearfin_3","j_rearfin_4"},
 }
 
-SWEP.HookP_BlockFire = function(self)
-    return self:GetSightAmount() < 1
+function SWEP:HookP_BlockFire()
+    -- local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 1)
+    -- if self:GetSightAmount() < 1 or !(tracktime >= 1 and self.TargetEntity and IsValid(self.TargetEntity)) then
+        -- return true 
+    -- end
+    if self:GetSightAmount() < 1 then
+        return true 
+    end
 end
 
 SWEP.Hook_GetShootEntData = function(self, data)
@@ -434,7 +440,7 @@ SWEP.Hook_Think2 = function(self)
         local targetscore = 0
 
         for _, ent in ipairs(targets) do
-            -- if ent:Health() <= 0 then continue end
+            if ent:Health() <= 0 then continue end
             -- if !(ent:IsPlayer() or ent:IsNPC() or ent:GetOwner():IsValid()) then continue end
             if ent:IsWorld() then continue end
             if ent == self:GetOwner() then continue end

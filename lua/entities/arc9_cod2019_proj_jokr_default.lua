@@ -1,7 +1,9 @@
 AddCSLuaFile()
+
 ENT.Base = "arc9_cod2019_proj_base"
 ENT.PrintName = "Jokr Rocket"
 ENT.Spawnable = false
+
 ENT.Model = "models/weapons/cod2019/mags/w_la_jokr_rocket.mdl"
 ENT.IsRocket = true -- projectile has a booster and will not drop.
 ENT.InstantFuse = false -- projectile is armed immediately after firing.
@@ -9,14 +11,16 @@ ENT.RemoteFuse = false -- allow this projectile to be triggered by remote detona
 ENT.ImpactFuse = true -- projectile explodes on impact.
 ENT.ExplodeOnDamage = true
 ENT.ExplodeUnderwater = true
+
 ENT.Delay = 0
-ENT.SafetyFuse = 0
+ENT.SafetyFuse = 0.02
 ENT.AudioLoop = "weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
 ENT.SmokeTrail = true
 ENT.FlareColor = Color(155, 155, 155)
 ENT.Radius = 300
+
 --- Stuff
-ENT.SeekerAngle = math.cos(math.rad(35))
+ENT.SeekerAngle = math.cos(math.rad(55))
 ENT.SteerSpeed = 5000
 ENT.FuseTime = 0
 ENT.Boost = 1500
@@ -179,7 +183,7 @@ function ENT:Detonate()
 
         self:FireBullets({
             Attacker = attacker,
-            Damage = 650,
+            Damage = 450,
             Tracer = 0,
             Src = self:GetPos(),
             Dir = self:GetForward(),

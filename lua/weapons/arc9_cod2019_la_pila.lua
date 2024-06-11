@@ -198,6 +198,11 @@ SWEP.IronSights = {
     CrosshairInSights = true
 }
 
+SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
+    Pos = Vector(1.4, 9, 0),
+    Ang = Angle(0.45, 0, 0.23),
+}
+
 --- RT Reticle ---
 -- SWEP.RTScope = true
 -- SWEP.RTScopeSubmatIndex = 1
@@ -374,7 +379,7 @@ SWEP.Hook_Think2 = function(self)
         local targetscore = 0
 
         for _, ent in ipairs(targets) do
-            -- if ent:Health() <= 0 then continue end
+            if ent:Health() <= 0 then continue end
             -- if !(ent:IsPlayer() or ent:IsNPC() or ent:GetOwner():IsValid()) then continue end
             if ent:IsWorld() then continue end
             if ent == self:GetOwner() then continue end

@@ -81,6 +81,7 @@ function ENT:Initialize()
             if !IsValid(self) then return end
             self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
         end)
+		sound.EmitHint(SOUND_DANGER, self:GetPos(), 200, 8, nil) --make shit run away (nil owner so even rebels run)
     end
 end
 

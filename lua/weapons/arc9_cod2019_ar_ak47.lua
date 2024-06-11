@@ -755,14 +755,14 @@ SWEP.Animations = {
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
-            { t = 0.1, lhik = 0, rhik = 0},
+            { t = 0.2, lhik = 0, rhik = 0},
             { t = 0.7, lhik = 0, rhik = 0},
             { t = 0.77, lhik = 0, rhik = 0},
             { t = 0.98, lhik = 1, rhik = 1},
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_grabmag.ogg", t = 14/30},
-            {s = path .. "wfoly_ar_akilo47_drum_reload_magout_01.ogg", t = 28/30},
+            {s = path .. "wfoly_ar_akilo47_drum_reload_magout_01.ogg", t = 26/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_twist.ogg", t = 54/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_magin_v2_01.ogg", t = 82/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_magin_v2_02.ogg", t = 97/30},
@@ -778,7 +778,7 @@ SWEP.Animations = {
 		DropMagAt = 1.25,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
-            { t = 0.15, lhik = 0, rhik = 0},
+            { t = 0.2, lhik = 0, rhik = 0},
             { t = 0.5, lhik = 0, rhik = 0},
             { t = 0.76, lhik = 0, rhik = 0},
             { t = 0.95, lhik = 1, rhik = 1},
@@ -804,7 +804,7 @@ SWEP.Animations = {
 		DropMagAt = 1.25,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
-            { t = 0.1, lhik = 0, rhik = 0},
+            { t = 0.25, lhik = 0, rhik = 0},
             { t = 0.7, lhik = 0, rhik = 0},
             { t = 0.95, lhik = 1, rhik = 1},
         },

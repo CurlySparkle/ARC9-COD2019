@@ -16,7 +16,7 @@ ENT.ExplodeOnDamage = true
 ENT.ExplodeUnderwater = true
 
 ENT.Delay = 0
-ENT.SafetyFuse = 0
+ENT.SafetyFuse = 0.01
 
 ENT.AudioLoop = "weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
 
@@ -31,8 +31,8 @@ ENT.FlareSizeMax = 50
 ENT.Radius = 300
 
 --- Stuff
-ENT.SeekerAngle = math.cos(math.rad(35))
-ENT.SteerSpeed = 10000
+ENT.SeekerAngle = math.cos(math.rad(55))
+ENT.SteerSpeed = 1000
 ENT.FuseTime = 0
 ENT.Boost = 2000
 ENT.Lift = 0
@@ -66,7 +66,7 @@ function ENT:Impact(data, collider)
             dmginfo:SetAttacker(attacker)
             dmginfo:SetInflictor(self)
             dmginfo:SetDamageType(DMG_CRUSH + DMG_CLUB)
-            dmginfo:SetDamage(250 * (self.NPCDamage and 0.5 or 1))
+            dmginfo:SetDamage(250)
             dmginfo:SetDamageForce(data.OurOldVelocity * 25)
             dmginfo:SetDamagePosition(data.HitPos)
             data.HitEntity:TakeDamageInfo(dmginfo)
@@ -180,7 +180,7 @@ function ENT:Detonate()
         util.BlastDamage(self, attacker, self:GetPos(), 350, 275)
         self:FireBullets({
             Attacker = attacker,
-            Damage = 500,
+            Damage = 356,
             Tracer = 0,
             Src = self:GetPos(),
             Dir = self:GetForward(),
