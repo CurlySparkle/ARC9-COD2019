@@ -305,6 +305,7 @@ SWEP.DropMagazineQCAHook = function(swep, old)
   if curanim == "reload_smg_empty" then return 5 end
   if curanim == "reload_smg_fast" then return 3 end
   if curanim == "reload_smg_fast_empty" then return 3 end
+  if curanim == "reload_drum_empty" then return 5 end
   if curanim == "reload_drum_fast" then return 5 end
   if curanim == "reload_drum_fast_empty" then return 5 end
   if curanim == "reload_drum2" then return 5 end
@@ -347,6 +348,8 @@ SWEP.BulletBones = {
     [3] = {"j_bullet3","j_ammo3"},
     [4] = {"j_bullet4","j_ammo4"}
 }
+
+SWEP.ReloadHideBonesFirstPerson = true
 
 SWEP.HideBones  = {
     [1] = "j_mag2",
@@ -494,6 +497,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_magin_v2_01.ogg", t = 1.42},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_magin_v2_02.ogg", t = 1.67},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_end.ogg", t = 1.96},
+			{hide = 1, t = 0},
         },
     },
     ["reload_drum_empty"] = {
@@ -516,6 +520,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_rise.ogg", t = 2.06},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_chamber_01.ogg", t = 2.86},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_end.ogg", t = 3.16},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.5},
+			{hide = 1, t = 1},
         },
     },
     ["reload_drum_fast"] = {
@@ -768,6 +775,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_magin_v2_02.ogg", t = 97/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_02.ogg", t = 108/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_end.ogg", t = 114/30},
+			{hide = 1, t = 0},
         },
     },
     ["reload_drum2_empty"] = {
@@ -793,6 +801,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_rise.ogg", t = 120/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_chamber_01.ogg", t = 139/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_end.ogg", t = 152/30},
+			{hide = 1, t = 0},
+			{hide = 1, t = 3},
         },
     },
     ["reload_drum2_fast"] = {
