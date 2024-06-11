@@ -349,7 +349,7 @@ SWEP.BulletBones = {
     [4] = {"j_bullet4","j_ammo4"}
 }
 
-SWEP.ReloadHideBonesFirstPerson = true
+SWEP.ReloadHideBonesFirstPerson = false
 
 SWEP.HideBones  = {
     [1] = "j_mag2",
@@ -760,6 +760,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		RefillProgress = 0.625,
 		FireASAP = true,
+		MagSwapTime = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -784,6 +785,7 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 1.25,
+		MagSwapTime = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -812,6 +814,7 @@ SWEP.Animations = {
 		RefillProgress = 0.625,
 		FireASAP = true,
 		DropMagAt = 1.25,
+		MagSwapTime = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.25, lhik = 0, rhik = 0},
@@ -836,6 +839,7 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 1.25,
+		MagSwapTime = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
