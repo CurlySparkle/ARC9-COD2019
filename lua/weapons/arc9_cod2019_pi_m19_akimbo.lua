@@ -553,21 +553,21 @@ SWEP.Attachments = {
     },
     { -- 13
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/pist_m19_decal_a.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_m19_decal_a.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic_l",
         Pos = Vector(1, 0, 1.5),
     },
     { -- 14
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/pist_m19_decal_b.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_m19_decal_b.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic_l",
         Pos = Vector(0, 0, 1.5),
     },
     { -- 15
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/pist_m19_decal_c.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_m19_decal_c.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic_l",
         Pos = Vector(-1, 0, 1.5),
@@ -575,7 +575,7 @@ SWEP.Attachments = {
     },
     { -- 16
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
-        StickerModel = "models/weapons/cod2019/stickers/pist_m19_decal_d.mdl",
+        StickerModel = "models/weapons/cod2019/stickers/akimbo_m19_decal_d.mdl",
         Category = "stickers",
         Bone = "tag_cosmetic_l",
         Pos = Vector(-2, 0, 1.5),
