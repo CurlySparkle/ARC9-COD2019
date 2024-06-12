@@ -117,7 +117,7 @@ SWEP.CustomizeRotateAnchor = Vector(18, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = true
 
-SWEP.ShootPosOffset = Vector(1, 5, 1)
+SWEP.ShootPosOffset = Vector(5, 0, 4)
 
 -------------------------- AIM ASSIST
 
@@ -208,14 +208,14 @@ SWEP.Animations = {
     },
     ["throw"] = {
         Source = "throw",
-		MinProgress = 0.5,
+		MinProgress = 0.43,
         EventTable = {
             {s = path .. "grenade_frag_throw.ogg", t = 0/30},
         },
     },
     ["toss"] = {
         Source = "throw",
-		MinProgress = 0.5,
+		MinProgress = 0.43,
         EventTable = {
             {s = path .. "grenade_frag_throw.ogg", t = 0/30},
         },

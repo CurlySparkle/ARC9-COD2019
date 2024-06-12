@@ -83,6 +83,7 @@ function ENT:Initialize()
         end)
 		sound.EmitHint(SOUND_DANGER, self:GetPos(), 200, 8, nil) --make shit run away (nil owner so even rebels run)
     end
+	ParticleEffectAttach("grenadetrail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
 end
 
 function ENT:Detonate()
@@ -104,14 +105,13 @@ function ENT:Detonate()
 
         self:EmitSound("weapons/underwater_explode3.wav", 100)
     else
-        ParticleEffect("smoke_plume", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("grenade_smoke", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("grenade_smoke_b", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("grenade_shockwave", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("grenade_shockwave_b", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("he_flares", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("explosion_lensflare", self:GetPos(), Angle(0, 0, 0), nil)
-
+        -- ParticleEffect("smoke_plume", self:GetPos(), Angle(0, 0, 0), nil)
+        -- ParticleEffect("grenade_smoke", self:GetPos(), Angle(0, 0, 0), nil)
+        -- ParticleEffect("grenade_smoke_b", self:GetPos(), Angle(0, 0, 0), nil)
+        -- ParticleEffect("grenade_shockwave", self:GetPos(), Angle(0, 0, 0), nil)
+        -- ParticleEffect("grenade_shockwave_b", self:GetPos(), Angle(0, 0, 0), nil)
+        -- ParticleEffect("he_flares", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("grenade_final", self:GetPos(), Angle(0, 0, 0), nil)
         self:EmitSound("COD2019.Flash.Explode")
     end
 	

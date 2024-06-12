@@ -40,6 +40,7 @@ local particlenames = {
 	"AC_muzzle_sniper_heavy",
 	"thermite_thrown_trail",
 	"smoke_thrown_trail",
+	"grenadetrail",
 	"rockettrail"
 }
 

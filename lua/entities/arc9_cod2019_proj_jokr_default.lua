@@ -16,7 +16,9 @@ ENT.Delay = 0
 ENT.SafetyFuse = 0.02
 ENT.AudioLoop = "^weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
 ENT.SmokeTrail = false
-ENT.FlareColor = nil
+ENT.FlareColor = Color(155, 155, 155)
+ENT.FlareSizeMin = 20
+ENT.FlareSizeMax = 70
 ENT.RocketTrailParticle = "Rocket_Smoke"  -- name of the particle effect
 ENT.RocketTrail = true -- leaves trail of a particle effect
 ENT.Radius = 300
@@ -33,7 +35,8 @@ ENT.FireAndForget = true
 ENT.TopAttack = true -- This missile flies up above its target before going down in a top-attack trajectory.
 ENT.TopAttackHeight = 5000
 ENT.SuperSeeker = false
-ENT.SuperSteerBoostTime = 5
+ENT.SuperSteerTime = 0
+ENT.SuperSteerBoostTime = 100
 ENT.NoReacquire = true
 ENT.ShootEntData = {}
 ENT.IsProjectile = true
@@ -99,8 +102,7 @@ function ENT:Impact(data, collider)
 end
 
 function ENT:OnThink()
-    local drunk = false
-
+if SERVER then
     if self.FireAndForget or self.SemiActive then
         if self.SemiActive then
             if IsValid(self.Weapon) then
@@ -143,7 +145,6 @@ function ENT:OnThink()
             -- self:SetVelocity(dir * 15000)
         elseif self.NoReacquire then
             self.ShootEntData.Target = nil
-            drunk = true
         end
         -- end
     elseif self.SACLOS then
@@ -159,45 +160,26 @@ function ENT:OnThink()
                 p = math.ApproachAngle(p, ang.p, FrameTime() * self.SteerSpeed)
                 y = math.ApproachAngle(y, ang.y, FrameTime() * self.SteerSpeed)
                 self:SetAngles(Angle(p, y, 0))
-            else
-                drunk = true
             end
-        else
-            drunk = true
         end
     end
-
-    if drunk then
-        self:SetAngles(self:GetAngles() + (AngleRand() * FrameTime() * 1000 / 360))
-    end
-
-    if SERVER then
-        self:GetPhysicsObject():AddVelocity(Vector(0, 0, self.Lift) + self:GetForward() * self.Boost)
-    end
+    self:GetPhysicsObject():AddVelocity(Vector(0, 0, self.Lift) + self:GetForward() * self.Boost)
+end
 end
 
 function ENT:Detonate()
     local attacker = self.Attacker or self:GetOwner()
+    local dir = self:GetForward()
+    local src = self:GetPos() - dir * 64
 
-    if self.NPCDamage then
-        util.BlastDamage(self, attacker, self:GetPos(), self.Radius, 200)
-    else
-        util.BlastDamage(self, attacker, self:GetPos(), self.Radius, 275)
-        self:FireBullets({
-            Attacker = attacker,
-            Damage = 450,
-            Tracer = 0,
-            Src = self:GetPos(),
-            Dir = self:GetForward(),
-            HullSize = 0,
-            Distance = 32,
-            IgnoreEntity = self,
-            Callback = function(atk, btr, dmginfo)
-                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_BLAST) -- airboat damage for helicopters and LVS vehicles
-                dmginfo:SetDamageForce(self:GetForward() * 20000) -- LVS uses this to calculate penetration!
-            end,
-        })
-    end
+    local dmg = DamageInfo()
+    dmg:SetAttacker(attacker)
+    dmg:SetDamageType(DMG_AIRBOAT + DMG_BLAST)
+    dmg:SetInflictor(self)
+    dmg:SetDamageForce(self:GetVelocity() * 100)
+    dmg:SetDamagePosition(src)
+    dmg:SetDamage(325)
+    util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())
@@ -209,8 +191,7 @@ function ENT:Detonate()
     end
 
     self:EmitSound("Cod2019.Frag.Explode")
-    util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-    util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
-
+	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
+	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
     self:Remove()
 end

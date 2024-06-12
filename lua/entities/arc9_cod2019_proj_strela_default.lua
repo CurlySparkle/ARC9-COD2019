@@ -28,7 +28,7 @@ ENT.SmokeTrail = true
 ENT.Flare = false
 
 ENT.FlareColor = Color(155, 155, 155)
-ENT.Radius = 300
+ENT.Radius = 275
 
 function ENT:Impact(data, collider)
     local hitPos = data.HitPos -- Get the position where the grenade hit
@@ -76,41 +76,29 @@ end
 
 function ENT:Detonate()
     local attacker = self.Attacker or self:GetOwner()
+    local dir = self:GetForward()
+    local src = self:GetPos() - dir * 64
 
-    if self.NPCDamage then
-        util.BlastDamage(self, attacker, self:GetPos(), 350, 125)
-    else
-        util.BlastDamage(self, attacker, self:GetPos(), 350, 225)
-        self:FireBullets({
-            Attacker = attacker,
-			Damage = 300,
-		    Num = 1,
-		    Tracer = 0,
-            Src = self:GetPos(),
-            Dir = self:GetForward(),
-            HullSize = bHull && self.Maxs:Length() * 2 || 1,
-            IgnoreEntity = self,
-            Callback = function(atk, btr, dmginfo)
-                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_BLAST) -- airboat damage for helicopters and LVS vehicles
-                dmginfo:SetDamageForce(self:GetForward() * 20000) -- LVS uses this to calculate penetration!
-            end,
-        })
-    end
+    local dmg = DamageInfo()
+    dmg:SetAttacker(attacker)
+    dmg:SetDamageType(DMG_AIRBOAT + DMG_BLAST)
+    dmg:SetInflictor(self)
+    dmg:SetDamageForce(self:GetVelocity() * 100)
+    dmg:SetDamagePosition(src)
+    dmg:SetDamage(275)
+    util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())
+
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
     else
-        --util.Effect("Explosion", fx)
-		ParticleEffect("grenade_final", self:GetPos(), self:GetAngles())
+        ParticleEffect("grenade_final", self:GetPos(), Angle(-90, 0, 0))
     end
+
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-	--util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
+	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
     self:Remove()
-end
-
-function ENT:GetDamageType()
-	return DMG_BLAST + DMG_DIRECT
 end

@@ -54,6 +54,7 @@ function ENT:Initialize()
             self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
         end)
     end
+	ParticleEffectAttach("grenadetrail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
 end
 
 function ENT:PhysicsCollide(data, physobj)
@@ -68,6 +69,7 @@ function ENT:PhysicsCollide(data, physobj)
             self:Detonate()
         end
     end
+	self:StopParticles()
 end
 
 function ENT:Think()

@@ -23,7 +23,7 @@ ENT.SmokeTrail = true
 ENT.Delay = 0
 ENT.SafetyFuse = 0.05
 ENT.FlareColor = Color(0, 0, 0)
-ENT.Radius = 300
+ENT.Radius = 200
 
 ENT.AudioLoop = ""
 
@@ -71,28 +71,18 @@ function ENT:Impact(data, collider)
 end
 
 function ENT:Detonate()
-    local attacker = self.Attacker or self:GetOwner() or self
-    local mult = self.NPCDamage and 0.5 or 1
+    local attacker = self.Attacker or self:GetOwner()
+    local dir = self:GetForward()
+    local src = self:GetPos() - dir * 64
 
-    if engine.ActiveGamemode() == "terrortown" then
-        util.BlastDamage(self, attacker, self:GetPos(), 256, 55)
-    else
-        util.BlastDamage(self, attacker, self:GetPos(), 300, 165 * mult)
-        self:FireBullets({
-            Attacker = attacker,
-            Damage = 200 * mult,
-            Tracer = 0,
-            Src = self:GetPos(),
-            Dir = self:GetForward(),
-            HullSize = 0,
-            Distance = 32,
-            IgnoreEntity = self,
-            Callback = function(atk, btr, dmginfo)
-                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_BLAST) -- airboat damage for helicopters and LVS vehicles
-                dmginfo:SetDamageForce(self:GetForward() * 7000) -- LVS uses this to calculate penetration!
-            end,
-        })
-    end
+    local dmg = DamageInfo()
+    dmg:SetAttacker(attacker)
+    dmg:SetDamageType(DMG_AIRBOAT + DMG_BLAST)
+    dmg:SetInflictor(self)
+    dmg:SetDamageForce(self:GetVelocity() * 100)
+    dmg:SetDamagePosition(src)
+    dmg:SetDamage(200)
+    util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())
@@ -102,7 +92,9 @@ function ENT:Detonate()
     else
         ParticleEffect("grenade_final", self:GetPos(), Angle(-90, 0, 0))
     end
+
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
+	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
     self:Remove()
 end

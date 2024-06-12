@@ -42,6 +42,7 @@ function ENT:Initialize()
     local phys = self:GetPhysicsObject()
     phys:SetMass(15)
     phys:ApplyTorqueCenter( VectorRand(-15,15) )
+	ParticleEffectAttach("grenadetrail",PATTACH_ABSORIGIN_FOLLOW,self,0)
 end 
 
 function ENT:Think()
@@ -117,6 +118,7 @@ function ENT:PhysicsCollide(colData, collider)
 			end)
         end
     end
+	self:StopParticles()
 end
 
 function ENT:CanStickToEntity(ent) 

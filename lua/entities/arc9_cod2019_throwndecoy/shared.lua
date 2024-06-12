@@ -45,6 +45,7 @@ function ENT:PhysicsCollide(data,phys)
 	
 		local impulse = (data.OurOldVelocity - 2 * data.OurOldVelocity:Dot(data.HitNormal) * data.HitNormal)*0.25
 		phys:ApplyForceCenter(impulse)
+		self:StopParticles()
 	end
 	
 end

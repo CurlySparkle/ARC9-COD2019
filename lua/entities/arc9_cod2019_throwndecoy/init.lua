@@ -36,6 +36,7 @@ function ENT:Initialize()
 		if IsValid(self) then self.active = false self:Explode() self:Remove() end
 	end)
 	self:Think()
+	ParticleEffectAttach("grenadetrail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
 end
 
 function ENT:OnThink()

@@ -32,22 +32,20 @@ function ENT:Initialize()
 		self:SetCollisionGroup( COLLISION_GROUP_NONE )
 		self:DrawShadow( false )
 		self:SetAngles(Angle(0, 0, -75))
+		sound.EmitHint(SOUND_DANGER, self:GetPos(), self.Radius * 2, 1, nil)
 	end
 
-        local phys = self:GetPhysicsObject()
-        if phys:IsValid() then
-            phys:Wake()
-            phys:EnableDrag(self.Drag)
-            phys:SetDragCoefficient(self.DragCoefficient)
-            phys:EnableGravity(self.Gravity)
-            phys:SetMass(self.Mass)
-            phys:SetBuoyancyRatio(0.4)
-        end
+	local phys = self:GetPhysicsObject()
+	if phys:IsValid() then
+		phys:Wake()
+		phys:EnableDrag(self.Drag)
+		phys:SetDragCoefficient(self.DragCoefficient)
+		phys:EnableGravity(self.Gravity)
+		phys:SetMass(self.Mass)
+		phys:SetBuoyancyRatio(0.4)
+	end
 
-        if self.SmokeTrail then
-            util.SpriteTrail(self, 0, Color( 255 , 255 , 255 ), false, self.SmokeTrailSize, 0, self.SmokeTrailTime, 1 / self.SmokeTrailSize * 0.5, self.SmokeTrailMat)
-        end
-
+	ParticleEffectAttach("grenadetrail",PATTACH_ABSORIGIN_FOLLOW,self,0)
 	self.SpawnTime = CurTime()
 end
 
@@ -60,7 +58,7 @@ function ENT:PhysicsCollide(data)
          self.NextHit = CurTime() + 0.1
          local dmginfo = DamageInfo()
          dmginfo:SetDamageType(DMG_GENERIC)
-         dmginfo:SetDamage(10)
+         dmginfo:SetDamage(15)
          dmginfo:SetAttacker(self:GetOwner())
          dmginfo:SetInflictor(self)
          dmginfo:SetDamageForce(data.OurOldVelocity * 0.5)
@@ -85,6 +83,7 @@ if data.Speed > 100 then
     elseif data.Speed > 75 then
    self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_med_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.5, CHAN_AUTO)
     elseif data.Speed > 50 then
+   self:StopParticles()
    self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_soft_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.4, CHAN_AUTO)
 end
 
@@ -129,7 +128,7 @@ function ENT:Detonate()
     local dlight = ents.Create("light_dynamic")
     dlight:SetPos(self:GetPos())
     dlight:SetKeyValue("brightness", "4")
-    dlight:SetKeyValue("distance", "200")
+    dlight:SetKeyValue("distance", "256")
     dlight:SetKeyValue("r", "255")
     dlight:SetKeyValue("g", "150")
     dlight:SetKeyValue("b", "0")
@@ -145,9 +144,7 @@ function ENT:Detonate()
     end)
 
 	util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
-	
     self.Defused = true
-
     SafeRemoveEntityDelayed(self, self.SmokeTrailTime)
     self:SetRenderMode(RENDERMODE_NONE)
     self:SetMoveType(MOVETYPE_NONE)
