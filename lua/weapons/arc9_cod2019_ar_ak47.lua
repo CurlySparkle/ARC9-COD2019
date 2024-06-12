@@ -312,6 +312,8 @@ SWEP.DropMagazineQCAHook = function(swep, old)
   if curanim == "reload_drum2_empty" then return 5 end
   if curanim == "reload_drum2_fast" then return 5 end
   if curanim == "reload_drum2_fast_empty" then return 5 end
+  if curanim == "reload_xmag_fast" then return 5 end
+  if curanim == "reload_xmag_fast_empty" then return 5 end
 end
 
 -------------------------- SOUNDS
@@ -718,7 +720,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		DropMagAt = .9,
+		DropMagAt = 1.05,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -739,7 +741,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 0.85,
+		DropMagAt = 1.05,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
