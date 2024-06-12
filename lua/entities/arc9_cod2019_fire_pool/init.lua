@@ -50,6 +50,19 @@ function ENT:OnRemove()
     self:EmitSound("weapons/cod2019/throwables/molotov/weap_molotov_fire_lp_end.ogg",75, 100, 1, CHAN_AUTO)
 end
 
+local directfiredamage = {
+    ["npc_zombie"] = true,
+    ["npc_zombie_torso"] = true,
+    ["npc_fastzombie"] = true,
+    ["npc_fastzombie_torso"] = true,
+    ["npc_poisonzombie"] = true,
+    ["npc_zombine"] = true,
+    ["npc_headcrab"] = true,
+    ["npc_headcrab_fast"] = true,
+    ["npc_headcrab_black"] = true,
+    ["npc_headcrab_poison"] = true,
+}
+
 hook.Add("EntityTakeDamage", "mw19_firepool", function(ent, dmginfo)
     if IsValid(dmginfo:GetInflictor()) and dmginfo:GetInflictor():GetClass() == "arc9_cod2019_fire_pool" and dmginfo:GetDamageType() == DMG_BURN then
         if ent:IsNPC() then
