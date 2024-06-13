@@ -42,7 +42,6 @@ function ENT:PhysicsCollide(data,phys)
             end
 
 		self.Entity:EmitSound(Sound("COD2019.Frag.Bounce"))
-	
 		local impulse = (data.OurOldVelocity - 2 * data.OurOldVelocity:Dot(data.HitNormal) * data.HitNormal)*0.25
 		phys:ApplyForceCenter(impulse)
 		self:StopParticles()
