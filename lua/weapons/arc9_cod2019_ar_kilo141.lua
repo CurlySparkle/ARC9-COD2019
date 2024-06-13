@@ -1160,7 +1160,8 @@ SWEP.GripPoseParam = 5
 SWEP.GripPoseParam2 = 0.5
 SWEP.CodAngledGripPoseParam = 33.8
 SWEP.CodStubbyTallGripPoseParam = 14
-SWEP.CodStubbyGripPoseParam = 22
+--SWEP.CodStubbyGripPoseParam = 22
+SWEP.CodStubbyGripPoseParam = 29.2
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then

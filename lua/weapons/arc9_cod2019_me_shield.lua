@@ -93,25 +93,24 @@ SWEP.MeleeSwingSound = "COD2019.Melee.Swing"
 
 local path = "weapons/cod2019/melee/shield/"
 
-SWEP.BashThirdArmAnimation = {
-        rig = "models/weapons/cod2019/c_eq_shield.mdl",
-        sequence = {"bash1", "bash2"},
-        -- sequence = "melee1",
-        gun_controller_attachment = 1,
-        -- offsetang = Angle(90, 180, 90),
-        mult = 1,
-        invisible = false,
-}
+-- SWEP.BashThirdArmAnimation = {
+        -- rig = "models/weapons/cod2019/c_eq_shield.mdl",
+        -- sequence = {"bash1", "bash2"},
+        -- -- sequence = "melee1",
+        -- gun_controller_attachment = 1,
+        -- -- offsetang = Angle(90, 180, 90),
+        -- mult = 1,
+        -- invisible = false,
+-- }
 
 SWEP.FiremodeSound = ""
 
 -------------------------- SHIELD
 
-SWEP.ShieldModel = "models/weapons/cod2019/c_eq_shield_hitbox.mdl"
-SWEP.ShieldOffset = Vector(5, 7, 8.5)
-SWEP.ShieldAngle = Angle(-10, 0, 165)
-SWEP.ShieldScale = 1
-
+-- SWEP.ShieldModel = "models/weapons/cod2019/c_eq_shield_hitbox.mdl"
+-- SWEP.ShieldOffset = Vector(5, 7, 8.5)
+-- SWEP.ShieldAngle = Angle(-10, 0, 165)
+-- SWEP.ShieldScale = 1
 
 -------------------------- TRACERS
 
@@ -157,12 +156,12 @@ SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 
 SWEP.Animations = {
-    ["blowback"] = {
-        Source = "blowback",
-        EventTable = {
-            {s = "COD2019.Shield.Hit", t = 0/30},
-        },
-    },
+    -- ["blowback"] = {
+        -- Source = "blowback",
+        -- EventTable = {
+            -- {s = "COD2019.Shield.Hit", t = 0/30},
+        -- },
+    -- },
     ["idle"] = {
         Source = "idle",
     },
@@ -244,3 +243,27 @@ SWEP.Attachments = {
         CosmeticOnly = true,
     },
 }
+
+hook.Add("EntityTakeDamage", "arc9shieldddddddddddddddddddddd", function(target, dmginfo)
+    if (target:IsPlayer() && target:GetAngles():Forward():Dot((dmginfo:GetDamagePosition() - target:EyePos()):GetNormalized()) > 0) then
+        local weapon = target:GetActiveWeapon()
+        if (IsValid(weapon) && weapon:GetClass() == "arc9_cod2019_me_shield") then
+            local oldBlood = target:GetBloodColor()
+            target:SetBloodColor(BLOOD_COLOR_MECH)
+            weapon:PlayAnimation("blowback")
+
+            -- Optional: Apply a force to simulate impact
+            local forceDir = (target:GetPos() - dmginfo:GetDamagePosition()):GetNormalized()
+            local force = forceDir * dmginfo:GetDamage() * 10
+            target:SetVelocity(force)
+
+            -- Optional: Create impact effect or sound
+            local effectData = EffectData()
+            effectData:SetOrigin(dmginfo:GetDamagePosition())
+            util.Effect("cball_bounce", effectData)
+            target:EmitSound("COD2019.Shield.Hit")
+            timer.Simple(0, function() target:SetBloodColor(oldBlood) end)
+            return true
+        end
+    end
+end)
