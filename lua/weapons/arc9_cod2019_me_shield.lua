@@ -156,12 +156,12 @@ SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 
 SWEP.Animations = {
-    -- ["blowback"] = {
-        -- Source = "blowback",
-        -- EventTable = {
-            -- {s = "COD2019.Shield.Hit", t = 0/30},
-        -- },
-    -- },
+    ["blowback"] = {
+        Source = "blowback",
+        EventTable = {
+            {s = "COD2019.Shield.Hit", t = 0/30},
+        },
+    },
     ["idle"] = {
         Source = "idle",
     },
@@ -244,7 +244,7 @@ SWEP.Attachments = {
     },
 }
 
-hook.Add("EntityTakeDamage", "arc9shieldddddddddddddddddddddd", function(target, dmginfo)
+hook.Add("EntityTakeDamage", "mw19_riotshield_protection", function(target, dmginfo)
     if (target:IsPlayer() && target:GetAngles():Forward():Dot((dmginfo:GetDamagePosition() - target:EyePos()):GetNormalized()) > 0) then
         local weapon = target:GetActiveWeapon()
         if (IsValid(weapon) && weapon:GetClass() == "arc9_cod2019_me_shield") then
