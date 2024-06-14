@@ -284,7 +284,7 @@ SWEP.DropMagazineSounds = {
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 3
-SWEP.DropMagazineAng = Angle(0, -90, 0)
+SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
 
@@ -374,7 +374,7 @@ SWEP.Animations = {
 		PeekProgress = 0.75,
 		RefillProgress = 0.7,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 0.55,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -459,7 +459,7 @@ SWEP.Animations = {
 		PeekProgress = 0.75,
 		RefillProgress = 0.7,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 0.55,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -514,8 +514,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_empty_lift.ogg", t = 1/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 7/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 15/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 18/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 17/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 19/30},
         },
     },
     ["reload_mmag"] = {
