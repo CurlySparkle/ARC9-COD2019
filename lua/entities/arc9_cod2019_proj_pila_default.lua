@@ -172,6 +172,7 @@ function ENT:Detonate()
     dmg:SetDamagePosition(src)
     dmg:SetDamage(300)
     util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
+	util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 300, 64)
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())

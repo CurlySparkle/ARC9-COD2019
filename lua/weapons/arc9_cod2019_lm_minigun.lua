@@ -226,7 +226,7 @@ SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
 
 SWEP.ExplosionEffect = "cod2019_muzzle_he2"
-SWEP.ImpactDecal = "FadingScorch"
+--SWEP.ImpactDecal = "FadingScorch"
 
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1

@@ -107,8 +107,9 @@ function ENT:Detonate()
     dmg:SetInflictor(self)
     dmg:SetDamageForce(self:GetVelocity() * 100)
     dmg:SetDamagePosition(src)
-    dmg:SetDamage(200)
+    dmg:SetDamage(self.Radius)
     util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
+    util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 300, 128)
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())
@@ -136,7 +137,6 @@ function ENT:Detonate()
             dlight:Remove()
         end
     end)
-
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
 	util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
