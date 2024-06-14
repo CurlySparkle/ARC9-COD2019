@@ -490,11 +490,10 @@ SWEP.Animations = {
             { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike1911_reload_empty_lift.ogg", t = 1/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 8/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 13/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 15/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 20/30},
+			{s = path .. "wfoly_pi_mike1911_fast_reload_lift.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike1911_fast_reload_magout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike1911_fast_reload_magin_01.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike1911_fast_reload_end.ogg", t = 22/30},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -511,11 +510,11 @@ SWEP.Animations = {
             { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_pi_mike1911_reload_empty_lift.ogg", t = 1/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magout_01.ogg", t = 7/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 15/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 19/30},
+			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_lift.ogg", t = 1/30},
+			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_magout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_magin_01.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_chamber_01.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_end.ogg", t = 13/30},
         },
     },
     ["reload_mmag"] = {
