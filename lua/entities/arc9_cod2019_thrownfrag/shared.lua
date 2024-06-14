@@ -97,38 +97,32 @@ end
 function ENT:Detonate()
     if not self:IsValid() then return end
     if self.Defused then return end
+    local attacker = self.Attacker or self:GetOwner()
+    local dir = self:GetForward()
+    local src = self:GetPos() - dir * 64
+
+    local dmg = DamageInfo()
+    dmg:SetAttacker(attacker)
+    dmg:SetDamageType(DMG_AIRBOAT + DMG_BLAST)
+    dmg:SetInflictor(self)
+    dmg:SetDamageForce(self:GetVelocity() * 100)
+    dmg:SetDamagePosition(src)
+    dmg:SetDamage(200)
+    util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
+
+    local fx = EffectData()
+    fx:SetOrigin(self:GetPos())
+
     if self:WaterLevel() > 0 then
-        local tr = util.TraceLine({
-            start = self:GetPos(),
-            endpos = self:GetPos() + Vector(0, 0, 1) * 1024,
-            filter = self,
-        })
-        local tr2 = util.TraceLine({
-            start = tr.HitPos,
-            endpos = self:GetPos(),
-            filter = self,
-            mask = MASK_WATER
-        })
-        ParticleEffect("water_explosion", tr2.HitPos + Vector(0, 0, 8), Angle(0, 0, 0), nil)
-
-        // Overpressure radius
-        util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 512, 300)
-
-        self:EmitSound("weapons/underwater_explode3.wav", 100)
+        util.Effect("WaterSurfaceExplosion", fx)
     else
-        ParticleEffect("explosion_grenade", self:GetPos(), Angle(0, 0, 0), nil)
-
-        util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 256, 200)
-        util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 328, 100)
-		util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-
-        self:EmitSound("Cod2019.Frag.Explode")
+        ParticleEffect("explosion_grenade", self:GetPos(), Angle(-90, 0, 0))
     end
-
+	
     local dlight = ents.Create("light_dynamic")
     dlight:SetPos(self:GetPos())
     dlight:SetKeyValue("brightness", "4")
-    dlight:SetKeyValue("distance", "256")
+    dlight:SetKeyValue("distance", "200")
     dlight:SetKeyValue("r", "255")
     dlight:SetKeyValue("g", "150")
     dlight:SetKeyValue("b", "0")
@@ -143,10 +137,8 @@ function ENT:Detonate()
         end
     end)
 
+    self:EmitSound("Cod2019.Frag.Explode")
+	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
 	util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
-    self.Defused = true
-    SafeRemoveEntityDelayed(self, self.SmokeTrailTime)
-    self:SetRenderMode(RENDERMODE_NONE)
-    self:SetMoveType(MOVETYPE_NONE)
-    self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
+    self:Remove()
 end
