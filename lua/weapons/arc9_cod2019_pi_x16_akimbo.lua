@@ -133,7 +133,7 @@ SWEP.Animations = {
         Source = "reload",
 		MinProgress = 0.7,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.35,
+		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -156,7 +156,7 @@ SWEP.Animations = {
     ["reload_empty"] = {
         Source = "reload_empty",
 		MinProgress = 0.825,
-		DropMagAt = 0.35,
+		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -183,7 +183,7 @@ SWEP.Animations = {
         Source = "reload_fast",
 		MinProgress = 0.7,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.35,
+		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -206,7 +206,7 @@ SWEP.Animations = {
     ["reload_fast_empty"] = {
         Source = "reload_fast_empty",
 		MinProgress = 0.8,
-		DropMagAt = 0.35,
+		DropMagAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
