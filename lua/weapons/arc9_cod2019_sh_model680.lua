@@ -760,7 +760,7 @@ SWEP.AttachmentTableOverrides = {
 		Model = "models/weapons/cod2019/attachs/weapons/model680/attachment_vm_sh_romeo870_pistolgrip_tape.mdl",
     },
     ["cod2019_etc_ammo_extend"] = {
-		ClipSizeMult = 1.35,
+		ClipSizeMult = 1.3,
     },
 }
 
