@@ -466,6 +466,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
+		MinProgress = 0.7,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -480,7 +482,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.5,
+		MinProgress = 0.45,
 		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_sm_papa90_raise.ogg", t = 0/30},

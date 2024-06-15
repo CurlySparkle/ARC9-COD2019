@@ -86,7 +86,7 @@ SWEP.Crosshair = true
 SWEP.ForceStandardCrosshair = true
 
 SWEP.CustomCrosshair = true
-SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
 SWEP.CustomCrosshairSize = 30
 
 SWEP.ManualAction = true
@@ -523,6 +523,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
+		MinProgress = 0.7,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 1, lhik = 1, rhik = 1 },

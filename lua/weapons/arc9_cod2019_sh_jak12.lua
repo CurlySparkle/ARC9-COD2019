@@ -8,7 +8,7 @@ SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_sh_jak12.png"
 SWEP.Base = "arc9_cod2019_base"
 
 SWEP.CustomCrosshair = true
-SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
 SWEP.CustomCrosshairSize = 30
 
 SWEP.Spawnable = true
@@ -92,7 +92,7 @@ SWEP.Crosshair = true
 SWEP.ForceStandardCrosshair = true
 
 SWEP.CustomCrosshair = true
-SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
 SWEP.CustomCrosshairSize = 30
 
 -------------------------- FIREMODES

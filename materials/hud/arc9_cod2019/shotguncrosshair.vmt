@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$basetexture" "hud/arc9_cod2019/shotguncrosshair"
+	"$nolod" 1
+	"$vertexalpha" 1
+	"$vertexcolor" 1
+	"$translucent" "1"
+}

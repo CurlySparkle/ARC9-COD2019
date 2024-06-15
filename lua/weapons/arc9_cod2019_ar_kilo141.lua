@@ -653,6 +653,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
+		MinProgress = 0.8,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -668,6 +670,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.4,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 0 },
             { t = 0.4, lhik = 1, rhik = 1 },

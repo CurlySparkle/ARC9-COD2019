@@ -42,7 +42,7 @@ SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
 SWEP.CustomCrosshair = true
-SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
 SWEP.CustomCrosshairSize = 22
 -------------------------- MAGAZINE
 
@@ -175,7 +175,7 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.7,
+		Mult = 0.8,
         EventTable = {
             {s = path .. "wfoly_me_riotshield_draw.ogg", t = 0/30},
         },

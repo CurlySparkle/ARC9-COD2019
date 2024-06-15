@@ -6,6 +6,6 @@
 	"$translucent" "1"
 //      "$additive" "1"
 	"$depthblend"  "1"
-	"$depthblendscale"  "45"
+	"$depthblendscale"  "50"
 	"$blendframes" "1"
 }

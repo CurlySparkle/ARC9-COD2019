@@ -346,6 +346,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
+		MinProgress = 0.7,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_lm_sierrax_raise.ogg", t = 5/30},
         },

@@ -8,7 +8,7 @@ SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_sh_model680.png"
 SWEP.Base = "arc9_cod2019_base"
 
 SWEP.CustomCrosshair = true
-SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
 SWEP.CustomCrosshairSize = 30
 
 SWEP.Spawnable = true
@@ -563,6 +563,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
+		MinProgress = 0.7,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.5, lhik = 1, rhik = 1 },
@@ -575,7 +577,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.8,
+		MinProgress = 0.5,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },

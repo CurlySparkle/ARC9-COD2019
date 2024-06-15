@@ -640,6 +640,8 @@ SWEP.Animations = {
     },
     ["ready"] = {
         Source = "draw",
+		MinProgress = 0.7,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -654,6 +656,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.5,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_ar_tango21_raise.ogg", t = 0/30},
         },

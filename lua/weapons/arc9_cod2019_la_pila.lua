@@ -85,7 +85,7 @@ SWEP.Crosshair = true
 SWEP.MissileCrosshair = false
 
 SWEP.CustomCrosshair = true
-SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair.png", "mips smooth")
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
 SWEP.CustomCrosshairSize = 22
 
 -------------------------- FIREMODES

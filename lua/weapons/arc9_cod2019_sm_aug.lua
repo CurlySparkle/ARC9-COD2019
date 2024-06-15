@@ -234,7 +234,7 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 25, 2.5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1.5, 3, -3.5)
+SWEP.PeekPos = Vector(-1, 0, -4)
 SWEP.PeekAng = Angle(-0.3, 0, -45)
 
 SWEP.PeekMaxFOV = 64
@@ -549,12 +549,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_waffle_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_augolf_reload_waffle_magout_01.ogg", t = 14/30},
+			{s = path .. "wfoly_sm_augolf_reload_drum_magout_01.ogg", t = 14/30},
 			{s = path .. "wfoly_sm_augolf_reload_magout_cloth.ogg", t = 14/30},
 			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 28/30},
-			{s = path .. "wfoly_sm_augolf_reload_waffle_magin_v2_01.ogg", t = 38/30},
-			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 44/30},
+			{s = path .. "wfoly_sm_augolf_reload_drum_magin_v2_01.ogg", t = 38/30},
+			{s = path .. "wfoly_sm_augolf_reload_drum_magin_v2_02.ogg", t = 44/30},
 			{s = path .. "wfoly_sm_augolf_reload_waffle_end.ogg", t = 51/30},
         },
     },
@@ -575,10 +575,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_boltopen.ogg", t = 8/30},
 			{s = path .. "wfoly_sm_augolf_reload_waffle_rotate.ogg", t = 9/30},
-			{s = path .. "wfoly_sm_augolf_reload_waffle_magout_01.ogg", t = 29/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_drum_magout_01.ogg", t = 29/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 36/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 41/30},
-			{s = path .. "wfoly_sm_augolf_reload_waffle_magin_v2_01.ogg", t = 55/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_drum_magin_v2_01.ogg", t = 55/30},
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 60/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 77/30},
 			{s = path .. "wfoly_sm_augolf_reload_waffle_end.ogg", t = 82/30},
@@ -600,11 +600,12 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magout_01.ogg", t = 9/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_drum_magout_01.ogg", t = 9/30},
             {s = path .. "wfoly_sm_augolf_reload_fast_waffle_mvmnt.ogg", t = 14/30},
 			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 24/30},
 			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 25/30},
-			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 27/30},
+			{s = path .. "wfoly_sm_augolf_reload_fast_drum_magin_01.ogg", t = 27/30},
+			{s = path .. "wfoly_sm_augolf_reload_drum_magin_v2_02.ogg", t = 29/30},
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_end.ogg", t = 37/30},
         },
     },
@@ -623,16 +624,18 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_mvmnt.ogg", t = 0/30},
-			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magout_01.ogg", t = 9/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_fast_drum_magout_01.ogg", t = 9/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 14/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 18/30},
-			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 28/30},
+			{s = path .. "wfoly_sm_augolf_reload_empty_fast_drum_magin_01.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 40/30},
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_end.ogg", t = 47/30},
         },
     },
     ["ready"] = {
         Source = "draw",
+		MinProgress = 0.75,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -647,6 +650,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
+		MinProgress = 0.5,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.75, lhik = 1, rhik = 1 },
