@@ -141,12 +141,7 @@ function ENT:Detonate()
                 endpos = spos + Vector(0, 0, -32),
                 filter = self
             })
-
-            util.Decal("Scorch", trs.HitPos + trs.HitNormal, trs.HitPos - trs.HitNormal)
-            self:EmitSound("COD2019.Claymore.Explode")
         end
-		
-        ParticleEffect("explosion_HE_claymore", self:GetPos(), Angle(0, 0, 0), nil)
 
         local oldowner = self.Attacker or self:GetOwner()
         if not IsValid(oldowner) then
@@ -185,18 +180,17 @@ function ENT:Detonate()
                     dmg:ScaleDamage(Lerp(tr.Fraction ^ 2, 1, 0.5))
                     dmg:ScaleDamage(Lerp(math.max(0, (tr.Entity.MW19_ClaymoreLastHit[2] - 100) / 400), 1, 0.25))
                     tr.Entity.MW19_ClaymoreLastHit[2] = tr.Entity.MW19_ClaymoreLastHit[2] + dmg:GetDamage()
-					ParticleEffect("explosion_claymore", self:GetPos(), Angle(0, 0, 0), nil)
-					util.Decal("Scorch", tr.HitPos + tr.HitNormal, tr.HitPos - tr.HitNormal)
                 end
             end
         }
         self:FireBullets(btabl)
-
         btabl.Distance = self.DetectionRange * 2
         btabl.Num = 50
         btabl.Spread = Vector(math.rad(60), math.rad(15), 0)
         self:FireBullets(btabl)
-
+        self:EmitSound("COD2019.Claymore.Explode")
+        ParticleEffect("explosion_grenade", self:GetPos(), Angle(0, 0, 0), nil)
+        util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
         self:Remove()
     end
 end

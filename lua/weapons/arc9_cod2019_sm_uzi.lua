@@ -104,7 +104,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.2
+SWEP.Recoil = 1.3
 
 SWEP.RecoilSeed = nil
 
@@ -112,12 +112,12 @@ SWEP.RecoilPatternDrift = 45
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 0.5 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
-SWEP.RecoilRandomUp = 0.4
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomUp = 0.1
+SWEP.RecoilRandomSide = 0.5
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -138,15 +138,14 @@ SWEP.RecoilMax = 3
 SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 2.5
 SWEP.VisualRecoilUp = 1
+SWEP.VisualRecoilRoll = 30
+SWEP.VisualRecoilSide = 0.3
 
-SWEP.VisualRecoilMultSights = 0.4
-SWEP.VisualRecoilPunchSights = 15
-SWEP.VisualRecoilRollSights = 10
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilPunchSights = 5
+SWEP.VisualRecoilRollSights = 5
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
-
-SWEP.VisualRecoilRoll = 30
-SWEP.VisualRecoilSide = 0.2
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 5 then
@@ -171,7 +170,7 @@ SWEP.SpreadAddHipFire = SWEP.Spread * 0
 SWEP.SpreadAddMove = SWEP.Spread * 1
 SWEP.SpreadAddMidAir = SWEP.Spread * 0.5
 SWEP.SpreadAddCrouch = -SWEP.Spread * 0.1
-SWEP.SpreadAddSights = -SWEP.Spread * 1.75
+SWEP.SpreadAddSights = -SWEP.Spread * 1.5
 
 SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = SWEP.RecoilMax

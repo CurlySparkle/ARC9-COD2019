@@ -30,7 +30,7 @@ if SERVER then
     function ENT:Detonate()
         if self.Det or self.SpawnTime + 0.75 > CurTime() then return end
         self.Det = true
-        -- self:EmitSound("CSGO.Breacher.BreachSoundWarningBeep")
+        self:EmitSound( "weapons/cod2019/throwables/claymore/claymore_sensors_on.ogg", 75, 100, 1, CHAN_AUTO )
         local mult = self:GetArmed() and 1 or 0.5
         local owner = self.Attacker or self
 
@@ -72,20 +72,16 @@ if SERVER then
         if self:WaterLevel() > 0 then
             util.Effect("WaterSurfaceExplosion", fx)
         else
-            ParticleEffect("explosion_grenade", self:GetPos(), Angle(0, 0, 0), nil)
-
             if self:GetArmed() then
-                ParticleEffect("explosion_grenade", self:GetPos(), Angle(0, 0, 0), nil)
-
                 local spos = pos
                 local trs = util.TraceLine({start = spos + Vector(0,0,64), endpos = spos + Vector(0,0,-32), filter = self})
-				util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
             end
         end
-
+        ParticleEffect("explosion_grenade", self:GetPos(), Angle(0, 0, 0), nil)
+        util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
         util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
         self:EmitSound("Cod2019.C4.Explode")
-
+		
         self:SetMoveType(MOVETYPE_NONE)
         self:SetNoDraw(true)
         self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
