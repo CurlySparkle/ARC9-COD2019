@@ -856,6 +856,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
+    if wep:HasElement("stock_heavy") then model:SetBodygroup(3,3) end
 end
 
 SWEP.Attachments = {
@@ -865,6 +866,7 @@ SWEP.Attachments = {
         DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
 		Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
+		ExcludeElements = {"barrel_cust"},
     },
     { -- 2
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),

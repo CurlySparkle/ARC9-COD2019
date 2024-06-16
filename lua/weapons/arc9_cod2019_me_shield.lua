@@ -84,14 +84,13 @@ SWEP.BashLungeRange = 0
 SWEP.BashRange = 64
 SWEP.PreBashTime = 0.2
 SWEP.PostBashTime = 0.35
-
 SWEP.ImpactForce = 15
+
+local path = "weapons/cod2019/melee/shield/"
 
 SWEP.MeleeHitSound = "COD2019.Shield.HitBody"
 SWEP.MeleeHitWallSound = "COD2019.Shield.HitWall"
-SWEP.MeleeSwingSound = "COD2019.Melee.Swing"
-
-local path = "weapons/cod2019/melee/shield/"
+SWEP.MeleeSwingSound = { path .. "wfoly_me_riotshield_swing_01.ogg", path .. "wfoly_me_riotshield_swing_02.ogg", path .. "wfoly_me_riotshield_swing_03.ogg", path .. "wfoly_me_riotshield_swing_04.ogg" }
 
 -- SWEP.BashThirdArmAnimation = {
         -- rig = "models/weapons/cod2019/c_eq_shield.mdl",
@@ -175,14 +174,12 @@ SWEP.Animations = {
     },
     ["holster"] = {
         Source = "holster",
-		Mult = 0.8,
         EventTable = {
-            {s = path .. "wfoly_me_riotshield_draw.ogg", t = 0/30},
+            {s = path .. "wfoly_me_riotshield_drop.ogg", t = 0/30},
         },
     },
     ["bash"] = {
         Source = {"melee_01","melee_02","melee_03","melee_04"},
-		--MinProgress = 0.7,
     },
     ["idle_sprint"] = {
         Source = "sprint",
