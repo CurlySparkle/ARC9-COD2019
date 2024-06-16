@@ -104,7 +104,7 @@ SWEP.Firemodes = {
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil = 1.3
+SWEP.Recoil = 1.1
 
 SWEP.RecoilSeed = nil
 
@@ -112,12 +112,12 @@ SWEP.RecoilPatternDrift = 45
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.1 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
 SWEP.RecoilRandomUp = 0.1
-SWEP.RecoilRandomSide = 0.5
+SWEP.RecoilRandomSide = 0.2
 
 SWEP.RecoilDissipationRate = 10 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime = 0 -- How long the gun must go before the recoil pattern starts to reset.
@@ -128,7 +128,7 @@ SWEP.RecoilKick = 1.5
 
 SWEP.RecoilMultCrouch = 0.8
 SWEP.RecoilMultMove = 1.25
-SWEP.RecoilMultSights = 0.5
+SWEP.RecoilMultSights = 0.8
 
 SWEP.RecoilPerShot = 1.5
 SWEP.RecoilMax = 3
@@ -142,8 +142,8 @@ SWEP.VisualRecoilRoll = 30
 SWEP.VisualRecoilSide = 0.3
 
 SWEP.VisualRecoilMultSights = 1
-SWEP.VisualRecoilPunchSights = 5
-SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilPunchSights = 7
+SWEP.VisualRecoilRollSights = 7
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
@@ -170,7 +170,7 @@ SWEP.SpreadAddHipFire = SWEP.Spread * 0
 SWEP.SpreadAddMove = SWEP.Spread * 1
 SWEP.SpreadAddMidAir = SWEP.Spread * 0.5
 SWEP.SpreadAddCrouch = -SWEP.Spread * 0.1
-SWEP.SpreadAddSights = -SWEP.Spread * 1.5
+SWEP.SpreadAddSights = -SWEP.Spread * 1.2
 
 SWEP.SpreadMultRecoil = 1.2
 SWEP.RecoilModifierCap = SWEP.RecoilMax
@@ -530,6 +530,99 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_end.ogg", t = 66/30},
         },
     },
+    ["reload_xmag2"] = {
+        Source = "reload_xmag2",
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_uzulu_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_arm.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 21/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 42/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_shake.ogg", t = 45/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 58/30},
+        },
+    },
+    ["reload_xmag2_empty"] = {
+        Source = "reload_xmag2_empty",
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.15, lhik = 0, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 1 },
+            { t = 0.95, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_magout_01.ogg", t = 12/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 12/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_magin_01.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_charge_01.ogg", t = 69/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_arm.ogg", t = 60/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_rattle.ogg", t = 82/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_end.ogg", t = 82/30},
+        },
+    },
+    ["reload_xmag2_fast"] = {
+        Source = "reload_xmag2_fast",
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		--DropMagAt = 0.7,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_uzulu_reload_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_magout_01.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 5/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 27/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 37/30},
+        },
+    },
+    ["reload_xmag2_fast_empty"] = {
+        Source = "reload_xmag2_fast_empty",
+		MinProgress = 0.925,
+		PeekProgress = 0.9,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_start.ogg", t = 0/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_magout_01.ogg", t = 12/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 12/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_magin_01.ogg", t = 35/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_charge_01.ogg", t = 50/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_arm.ogg", t = 40/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_rattle.ogg", t = 61/30},
+			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_end.ogg", t = 66/30},
+        },
+    },
     ["ready"] = {
         Source = "draw",
 		MinProgress = 0.7,
@@ -688,7 +781,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
---- 32 Round Mags ---
+--- 40 Round Mags ---
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
@@ -696,6 +789,16 @@ local Translate_XMag = {
 local Translate_XMag_Fast = {
     ["reload"] = "reload_xmag_fast",
     ["reload_empty"] = "reload_xmag_fast_empty",
+}
+
+--- 50 Round Mags ---
+local Translate_XMag2 = {
+    ["reload"] = "reload_xmag2",
+    ["reload_empty"] = "reload_xmag2_empty",
+}
+local Translate_XMag2_Fast = {
+    ["reload"] = "reload_xmag2_fast",
+    ["reload_empty"] = "reload_xmag2_fast_empty",
 }
 
 --- No Stock, Fast, & Tac. Sprint ---
@@ -718,6 +821,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
+    local xmag2 = wep:HasElement("mag_xmag2")
 	local nos = wep:HasElement("stock_none")
 
     if super_sprint and Translate_TacSprint[anim] then
@@ -731,6 +835,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_XMag_Fast[anim] then
                 return Translate_XMag_Fast[anim]
             end
+		elseif xmag2 then
+            if Translate_XMag2_Fast[anim] then
+                return Translate_XMag2_Fast[anim]
+            end
         else
             if Translate_Fast[anim] then
                 return Translate_Fast[anim]
@@ -740,6 +848,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         if xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
+            end
+		elseif xmag2 then
+            if Translate_XMag2[anim] then
+                return Translate_XMag2[anim]
             end
         end
     end

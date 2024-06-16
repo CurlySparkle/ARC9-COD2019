@@ -62,7 +62,7 @@ SWEP.RangeMax = 15 / ARC9.HUToM
 
 SWEP.Penetration = 10 -- Units of wood that can be penetrated by this gun.
 
-SWEP.ImpactForce = 2.5
+SWEP.ImpactForce = 7.5
 
 -------------------------- PHYS BULLET BALLISTICS
 
