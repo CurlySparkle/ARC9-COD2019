@@ -5,13 +5,13 @@ function EFFECT:Init(data, weapon, dmgInfo, tr)
     --sound.Play("COD2019.HE_ExplosiveHit", data:GetOrigin(), SNDLVL_75dB, 100, 1)
     local dynlight = DynamicLight(0)
     dynlight.Pos = data:GetOrigin()
-    dynlight.Size = 64
+    dynlight.Size = 32
     dynlight.Decay = 20
     dynlight.R = 255
     dynlight.G = 150
     dynlight.B = 0
-    dynlight.Brightness = 5
-    dynlight.DieTime = CurTime() + 0.1
+    dynlight.Brightness = 3
+    dynlight.DieTime = CurTime() + 0.05
 end
 
 function EFFECT:Think()

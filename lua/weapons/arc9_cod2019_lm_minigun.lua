@@ -122,7 +122,7 @@ SWEP.RecoilMultMove = 1.25
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilPunch = 1
+SWEP.VisualRecoilPunch = 2
 
 -------------------------- SPREAD
 
@@ -221,11 +221,11 @@ SWEP.AnimDraw = false
 
 SWEP.MuzzleParticle = "AC_muzzle_rifle_fp"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
-SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
+SWEP.ProceduralViewQCA = 1
 
 SWEP.ExplosionEffect = "cod2019_muzzle_he2"
---SWEP.ImpactDecal = "FadingScorch"
+SWEP.ImpactDecal = "ExplosiveGunshot"
 
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1

@@ -17,8 +17,8 @@ function ENT:Initialize()
 
     self:AddFlags(FL_GRENADE)
     self:AddFlags(FL_ONFIRE)
+    ParticleEffectAttach("explosion_molotov_air", PATTACH_ABSORIGIN_FOLLOW, self, 0)
     ParticleEffectAttach("incen_fire_pool", PATTACH_ABSORIGIN_FOLLOW, self, 0)
-    ParticleEffectAttach("grenade_thick_smoke", PATTACH_ABSORIGIN_FOLLOW, self, 0)
     self:EmitSound("^weapons/cod2019/throwables/molotov/weap_molotov_burn_lp.ogg",75, 100, 1, CHAN_AUTO) --this is the sound of the pool burning "your/filepath/filename.ogg"
     self:EmitSound("^weapons/cod2019/throwables/molotov/fire_loop.ogg",75, 100, 1, CHAN_AUTO) --this is the sound of the pool burning "your/filepath/filename.ogg"
     self.DeathTime = CurTime() + 8
@@ -26,7 +26,7 @@ function ENT:Initialize()
 end
 
 function ENT:Think()
-    for _, e in pairs(ents.FindInSphere(self:GetPos(), 210)) do
+    for _, e in pairs(ents.FindInSphere(self:GetPos(), 185)) do
         if (e:IsPlayer() || e:IsNPC() || e:IsNextBot() || (e:GetClass():find("prop_") && IsValid(e))) then
             local dmgInfo = DamageInfo()
             dmgInfo:SetAttacker(self:GetOwner())

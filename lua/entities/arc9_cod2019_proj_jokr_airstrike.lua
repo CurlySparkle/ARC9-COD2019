@@ -56,8 +56,6 @@ function ENT:OnInitialize()
         self.LockOnPoint = tr.HitPos
     end
 	self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
-    self.DetonationDistance = 2024  -- Set your detonation distance here
-    self.InitialPosition = self:GetPos()
 end
 
 function ENT:Impact(data, collider)
@@ -102,20 +100,6 @@ function ENT:Impact(data, collider)
     util.Decal("Scorch", hitPos + hitNormal, hitPos - hitNormal)
 end
 
-function ENT:Think()
-    self:CheckDistance()
-    BaseClass.Think(self)
-end
-
-function ENT:CheckDistance()
-    local currentPos = self:GetPos()
-    local distance = currentPos:Distance(self.InitialPosition)
-    if distance >= self.DetonationDistance then
-        self:Detonate()
-    end
-end
-
-
 function ENT:OnThink()
 if SERVER then
     if self.FireAndForget or self.SemiActive then
@@ -144,6 +128,9 @@ if SERVER then
             if dist <= 3000 then
                 self.TopAttackReached = true
                 self.SuperSteerTime = CurTime() + self.SuperSteerBoostTime
+            end
+            if dist <= 3000 then
+				self:PreDetonate()
             end
         end
 
@@ -183,18 +170,17 @@ end
 end
 
 function ENT:Detonate()
-    local explosion = ents.Create("env_explosion")
-    explosion:SetPos(self:GetPos())
-    explosion:Spawn()
-    explosion:SetKeyValue("iMagnitude", "100")
-    explosion:Fire("Explode", 0, 0)
-
+    if self:WaterLevel() > 0 then self:Remove() self:StopParticles() return end
+    local attacker = self.Attacker or self:GetOwner() or self
+	
     for i = 1, 4 do
-        local newEnt = ents.Create("arc9_cod2019_proj_40mm_hel")
-        if IsValid(newEnt) then
-            newEnt:SetPos(self:GetPos() + Vector(math.random(-50, 50), math.random(-50, 50), 10))
-            newEnt:Spawn()
+        local child = ents.Create("arc9_cod2019_proj_jokr_airstrike_alt")
+        if IsValid(child) then
+            child:SetPos(self:GetPos() + Vector(math.random(-50, 50), math.random(-50, 50), math.random(50, 100)))
+            child:Spawn()
         end
     end
+
+    -- Remove the initial entity
     self:Remove()
 end

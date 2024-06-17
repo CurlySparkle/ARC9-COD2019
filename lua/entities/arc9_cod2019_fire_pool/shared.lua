@@ -5,4 +5,4 @@ ENT.Spawnable = false
 ENT.AdminOnly = false
 
 PrecacheParticleSystem("incen_fire_pool")
-PrecacheParticleSystem("grenade_thick_smoke")
+PrecacheParticleSystem("explosion_molotov_air")
