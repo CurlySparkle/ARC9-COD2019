@@ -84,6 +84,10 @@ SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 
+SWEP.CustomCrosshair = false
+SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
+SWEP.CustomCrosshairSize = 22
+
 -------------------------- FIREMODES
 
 SWEP.RPM = 125
@@ -240,6 +244,7 @@ SWEP.AnimDraw = false
 
 SWEP.MuzzleParticle = "muzzleflash_m79"
 SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
+SWEP.TracerEffect = "cod2019_tracer_slow"
 SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1

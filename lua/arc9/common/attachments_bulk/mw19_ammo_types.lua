@@ -649,6 +649,63 @@ ATT.Category = {"cod2019_ammo_gl"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_gas")
 
+/////////////////////////// -- cod2019_ammo_gl_slug
+ATT = {}
+
+ATT.PrintName = "Slug Nade"
+ATT.CompactName = "Slug"
+ATT.Description = "Changes the nade type to fire a slug."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_slug.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootSound = "COD2019.Model680.Fire"
+ATT.ShootSoundIndoor = "COD2019.Model680.Fire"
+
+ATT.ShootEnt = false
+ATT.Category = {"cod2019_ammo_gl"}
+
+ATT.DamageMax = 47
+ATT.DamageMin = 16
+ATT.Num = 1
+ATT.RangeMin = 15 / ARC9.HUToM
+ATT.RangeMax = 20 / ARC9.HUToM
+ATT.Penetration = 5 -- Units of wood that can be penetrated by this gun.
+ATT.ImpactForce = 8.5
+ATT.SpreadMult = 0.85
+ATT.SpreadMultSights = 0.25
+ATT.NoAimAssist = true
+
+ATT.CustomCrosshair = true
+
+if !warzonestats then -- Regular Stats
+	ATT.BodyDamageMults = {
+		[HITGROUP_HEAD] = 2,
+		[HITGROUP_CHEST] = 1.75,
+		[HITGROUP_STOMACH] = 1.5,
+		[HITGROUP_LEFTARM] = 1,
+		[HITGROUP_RIGHTARM] = 1,
+		[HITGROUP_LEFTLEG] = 1,
+		[HITGROUP_RIGHTLEG] = 1,
+	}
+else -- Warzone Stats
+	ATT.BodyDamageMults = {
+		[HITGROUP_HEAD] = 1.2,
+		[HITGROUP_CHEST] = 0.9,
+		[HITGROUP_STOMACH] = 0.75,
+		[HITGROUP_LEFTARM] = 0.5,
+		[HITGROUP_RIGHTARM] = 0.5,
+		[HITGROUP_LEFTLEG] = 0.5,
+		[HITGROUP_RIGHTLEG] = 0.5,
+	}
+end
+
+ATT.MuzzleParticle = "muzzleflash_slug"
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_slug")
 
 //////////////////////////////////// -- PILA Ammo
 /////////////////////////// -- cod2019_pila_ammo_guided

@@ -88,7 +88,7 @@ function ENT:Detonate()
 	end
 
 	local dmgInfo = DamageInfo()
-	dmgInfo:SetDamage(32)
+	dmgInfo:SetDamage(128)
 	dmgInfo:SetAttacker(IsValid(self:GetOwner()) && self:GetOwner() || self)
 	dmgInfo:SetInflictor(self)
 	dmgInfo:SetDamageType(self:GetDamageType())

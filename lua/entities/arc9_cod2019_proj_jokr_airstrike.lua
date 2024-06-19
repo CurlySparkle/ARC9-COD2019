@@ -41,6 +41,7 @@ function ENT:Detonate()
             child.ShootEntData = self.ShootEntData
             child.Attacker = attacker
             child:Spawn()
+			child:EmitSound("weapons/cod2019/shared/jokr_split.ogg", 100)
             child:GetPhysicsObject():SetVelocityInstantaneous(self:GetVelocity():Length() * dir)
         end
     end
