@@ -7,13 +7,13 @@ ENT.Spawnable = false
 DEFINE_BASECLASS(ENT.Base)
 
 ENT.SafetyFuse = 1
-ENT.ClusterDistance = 1000
+ENT.ClusterDistance = 1500
 
 local offsets = {
-    Vector(-16, -16, 0),
-    Vector(-16, 16, 0),
-    Vector(16, -16, 0),
-    Vector(16, 16, 0)
+    Vector(-75, -75, 0),
+    Vector(-75, 75, 0),
+    Vector(75, -75, 0),
+    Vector(75, 75, 0)
 }
 
 function ENT:OnThink()
@@ -36,7 +36,7 @@ function ENT:Detonate()
         if IsValid(child) then
             child:SetPos(self:GetPos() + self:GetRight() * offsets[i].x + self:GetUp() * offsets[i].y)
             local dir = (child:GetPos() - self:GetPos() + self:GetForward() * 128):GetNormalized()
-            child:SetAngles(dir:Angle())
+            child:SetAngles(self:GetAngles())
             child:SetOwner(self:GetOwner())
             child.ShootEntData = self.ShootEntData
             child.Attacker = attacker

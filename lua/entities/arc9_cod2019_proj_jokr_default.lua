@@ -194,5 +194,31 @@ function ENT:Detonate()
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
 	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
+	
+	for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
+		if (e:GetClass() == "npc_strider") then
+			e:Fire("Explode")
+		end 
+	end
+	
     self:Remove()
+end
+
+function ENT:OnRemove()
+	if (self:WaterLevel() <= 0) then
+     if CLIENT then
+		local dlight = DynamicLight(self:EntIndex())
+		if (dlight) then
+			dlight.pos = self:GetPos()
+			dlight.r = 255
+			dlight.g = 75
+			dlight.b = 0
+			dlight.brightness = 5
+			dlight.Decay = 2000
+			dlight.Size = 1024
+			dlight.DieTime = CurTime() + 5
+		end
+	 end
+	end
+	self:StopParticles()
 end

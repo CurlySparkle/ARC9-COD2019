@@ -545,8 +545,8 @@ ATT.AutoStats = true
 
 ATT.ActivateElements = {"rocket_shovel"}
 ATT.Free = true
-ATT.ShootEnt = "arc9_cod2019_proj_rpg_shovel"
 
+ATT.ShootEnt = "arc9_cod2019_proj_rpg_shovel"
 ATT.Category = {"cod2019_rpg_ammo"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_rpg_rock")
@@ -569,7 +569,6 @@ ATT.ActivateElements = {"nades_rock"}
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_thrownrock"
-
 ATT.Category = {"cod2019_ammo_gl"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_rock")
@@ -589,7 +588,6 @@ ATT.AutoStats = true
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_flash"
-
 ATT.Category = {"cod2019_ammo_gl"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_flash")
@@ -609,7 +607,6 @@ ATT.AutoStats = true
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_inc"
-
 ATT.Category = {"cod2019_ammo_gl"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_inc")
@@ -629,7 +626,6 @@ ATT.AutoStats = true
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_smoke"
-
 ATT.Category = {"cod2019_ammo_gl"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_smoke")
@@ -649,7 +645,6 @@ ATT.AutoStats = true
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_gas"
-
 ATT.Category = {"cod2019_ammo_gl"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_gas")
@@ -670,7 +665,6 @@ ATT.AutoStats = true
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_jokr_saclos"
-
 ATT.Category = {"cod2019_pila_ammo"}
 
 ATT.Firemodes = {
@@ -698,7 +692,6 @@ ATT.AutoStats = true
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_jokr_saclos"
-
 ATT.Category = {"cod2019_jokr_ammo"}
 
 ATT.Firemodes = {
@@ -719,13 +712,12 @@ ATT.CompactName = "Cluster"
 ATT.Description = "Rocket splits into 4 seeking mini-rockets when near the target."
 ATT.SortOrder = 1
 
-ATT.Icon = Material("entities/attachs/cod2019_ammo_launcher_guide.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/cod2019_ammo_launcher_cluster.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_jokr_airstrike"
-
 ATT.Category = {"cod2019_jokr_ammo"}
 
 ARC9.LoadAttachment(ATT, "cod2019_jokr_ammo_airstrike")

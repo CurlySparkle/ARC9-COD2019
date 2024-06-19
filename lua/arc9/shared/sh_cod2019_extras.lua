@@ -100,7 +100,7 @@ sound.Add({
     name = "COD2019.HE_ExplosiveHit",
     channel = CHAN_AUTO,
     volume = 1.0,
-    level = 75,
+    level = 120,
     sound = {
     "^shared/frag_expl_01.ogg",
 	"^shared/frag_expl_02.ogg",

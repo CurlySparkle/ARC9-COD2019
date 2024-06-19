@@ -186,5 +186,12 @@ function ENT:Detonate()
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
 	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
+	
+	for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
+		if (e:GetClass() == "npc_strider") then
+			e:Fire("Explode")
+		end 
+	end
+	
     self:Remove()
 end

@@ -120,25 +120,27 @@ function ENT:Detonate()
         ParticleEffect("explosion_grenade", self:GetPos(), Angle(-90, 0, 0))
     end
 	
-    local dlight = ents.Create("light_dynamic")
-    dlight:SetPos(self:GetPos())
-    dlight:SetKeyValue("brightness", "4")
-    dlight:SetKeyValue("distance", "200")
-    dlight:SetKeyValue("r", "255")
-    dlight:SetKeyValue("g", "150")
-    dlight:SetKeyValue("b", "0")
-    dlight:SetKeyValue("_light", "255 150 0")
-    dlight:Spawn()
-    dlight:Activate()
-    dlight:Fire("TurnOn", "", 0)
-
-    timer.Simple(0.2, function()
-        if IsValid(dlight) then
-            dlight:Remove()
-        end
-    end)
     self:EmitSound("Cod2019.Frag.Explode")
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
 	util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
     self:Remove()
+end
+
+function ENT:OnRemove()
+	if (self:WaterLevel() <= 0) then
+     if CLIENT then
+		local dlight = DynamicLight(self:EntIndex())
+		if (dlight) then
+			dlight.pos = self:GetPos()
+			dlight.r = 255
+			dlight.g = 75
+			dlight.b = 0
+			dlight.brightness = 5
+			dlight.Decay = 2000
+			dlight.Size = 1024
+			dlight.DieTime = CurTime() + 5
+		end
+	 end
+	end
+	self:StopParticles()
 end
