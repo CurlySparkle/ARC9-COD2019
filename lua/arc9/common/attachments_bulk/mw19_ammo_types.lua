@@ -710,3 +710,22 @@ ATT.Firemodes = {
 }
 
 ARC9.LoadAttachment(ATT, "cod2019_jokr_ammo_guided")
+
+/////////////////////////// -- cod2019_jokr_ammo_airstrike
+ATT = {}
+
+ATT.PrintName = "Cluster Rocket"
+ATT.CompactName = "Cluster"
+ATT.Description = "Rocket splits into 4 seeking mini-rockets when near the target."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_launcher_guide.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEnt = "arc9_cod2019_proj_jokr_airstrike"
+
+ATT.Category = {"cod2019_jokr_ammo"}
+
+ARC9.LoadAttachment(ATT, "cod2019_jokr_ammo_airstrike")
