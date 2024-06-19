@@ -6,6 +6,7 @@ ENT.Spawnable = false
 
 DEFINE_BASECLASS(ENT.Base)
 
+ENT.SafetyFuse = 1
 ENT.ClusterDistance = 1000
 
 local offsets = {
@@ -17,7 +18,7 @@ local offsets = {
 
 function ENT:OnThink()
     BaseClass.OnThink(self)
-    if SERVER then
+    if SERVER and CurTime() > self.SpawnTime + self.SafetyFuse then
         if self.ShootEntData and IsValid(self.ShootEntData.Target) and self.ShootEntData.Target:GetPos():DistToSqr(self:GetPos()) <= self.ClusterDistance ^ 2 then
             self:Detonate()
         elseif self.LockOnPoint and self.LockOnPoint:DistToSqr(self:GetPos()) <= self.ClusterDistance ^ 2 then
