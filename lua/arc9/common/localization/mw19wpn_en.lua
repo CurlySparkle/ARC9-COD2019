@@ -560,6 +560,10 @@ L["cod2019_jokr_ammo_guided.printname"] = ARC9:GetPhrase("cod2019_pila_ammo_guid
 L["cod2019_jokr_ammo_guided.compactname"] = ARC9:GetPhrase("cod2019_pila_ammo_guided.compactname")
 L["cod2019_jokr_ammo_guided.description"] = "Replaces the lock-on rockets with <color=100,255,100>guided</color> high-explosive rockets. <color=255,100,100>Removes the lock-on feature</color>." -- UO
 
+L["cod2019_jokr_ammo_airstrike.printname"] = "Cluster Rockets"
+L["cod2019_jokr_ammo_airstrike.compactname"] = "Cluster"
+L["cod2019_jokr_ammo_airstrike.description"] = "Rockets that split into 4 <color=100,255,100>heat-seeking</color> mini-rockets when near their target." -- UO
+
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
 //////////////////// Assault Rifles

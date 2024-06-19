@@ -1071,6 +1071,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local drum2 = wep:HasElement("mag_drum_mw22")
     local smg = wep:HasElement("mag_545")
     local xmag = wep:HasElement("mag_xmag")
+    local nostock = wep:HasElement("stock_none") or wep:HasElement("stock_none2")
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
@@ -1085,7 +1086,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_Drum2_Fast[anim] then
                 return Translate_Drum2_Fast[anim]
             end
-        elseif smg then
+        elseif smg and !nostock then
             if Translate_SMG_Fast[anim] then
                 return Translate_SMG_Fast[anim]
             end
@@ -1109,7 +1110,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
                 return Translate_Drum2[anim]
             end
         end
-        if smg then
+        if smg and !nostock then
             if Translate_SMG[anim] then
                 return Translate_SMG[anim]
             end

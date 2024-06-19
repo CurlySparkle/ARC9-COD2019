@@ -496,6 +496,10 @@ L["cod2019_perks_auto.description"] = "Muda o modo de disparo para <color=100,25
 
 -- L["cod2019_jokr_ammo_guided.description"] = "Replaces the lock-on rockets with <color=100,255,100>guided</color> high-explosive rockets. <color=255,100,100>Removes the lock-on feature</color>." -- UO
 
+-- L["cod2019_jokr_ammo_airstrike.printname"] = "Cluster Rockets"
+-- L["cod2019_jokr_ammo_airstrike.compactname"] = "Cluster"
+-- L["cod2019_jokr_ammo_airstrike.description"] = "Rockets that split into 4 <color=100,255,100>heat-seeking</color> mini-rockets when near their target." -- UO
+
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
 //////////////////// Assault Rifles
