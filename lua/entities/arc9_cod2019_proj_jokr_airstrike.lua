@@ -6,6 +6,8 @@ ENT.Spawnable = false
 
 DEFINE_BASECLASS(ENT.Base)
 
+ENT.ClusterDistance = 1000
+
 local offsets = {
     Vector(-16, -16, 0),
     Vector(-16, 16, 0),
@@ -16,13 +18,10 @@ local offsets = {
 function ENT:OnThink()
     BaseClass.OnThink(self)
     if SERVER then
-        if self.FireAndForget or self.SemiActive then
-            if self.ShootEntData.Target and IsValid(self.ShootEntData.Target) then
-                local target = self.ShootEntData.Target
-                if target:GetPos():DistToSqr(self:GetPos()) <= 1500 * 1500 then
-                    self:Detonate()
-                end
-            end
+        if self.ShootEntData and IsValid(self.ShootEntData.Target) and self.ShootEntData.Target:GetPos():DistToSqr(self:GetPos()) <= self.ClusterDistance ^ 2 then
+            self:Detonate()
+        elseif self.LockOnPoint and self.LockOnPoint:DistToSqr(self:GetPos()) <= self.ClusterDistance ^ 2 then
+            self:Detonate()
         end
     end
 end
@@ -35,7 +34,7 @@ function ENT:Detonate()
         local child = ents.Create("arc9_cod2019_proj_jokr_airstrike_alt")
         if IsValid(child) then
             child:SetPos(self:GetPos() + self:GetRight() * offsets[i].x + self:GetUp() * offsets[i].y)
-            local dir = (child:GetPos() - self:GetPos() + self:GetForward() * 64):GetNormalized()
+            local dir = (child:GetPos() - self:GetPos() + self:GetForward() * 128):GetNormalized()
             child:SetAngles(dir:Angle())
             child:SetOwner(self:GetOwner())
             child.ShootEntData = self.ShootEntData
