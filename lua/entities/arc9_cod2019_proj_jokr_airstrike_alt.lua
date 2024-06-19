@@ -29,10 +29,10 @@ ENT.AudioLoop = ""
 
 --- Stuff
 ENT.SeekerAngle = math.cos(math.rad(75))
-ENT.SteerSpeed = 2000
+ENT.SteerSpeed = 6000
 ENT.FuseTime = 0
-ENT.Boost = 1500
-ENT.Lift = 80
+ENT.Boost = 2000
+ENT.Lift = 0
 ENT.DragCoefficient = 0.1
 ENT.LifeTime = 20
 ENT.FireAndForget = true
