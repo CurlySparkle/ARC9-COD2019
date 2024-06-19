@@ -73,7 +73,7 @@ function ENT:Detonate()
     local attacker = self.Attacker or self:GetOwner() or self
 	
 	self:EmitSound("COD2019.Molotov.Explode")
-	--util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
+	--util.Decal("scorch_big", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
 
     local firepool = ents.Create( "arc9_cod2019_fire_pool" )
     if !IsValid(firepool) then return end

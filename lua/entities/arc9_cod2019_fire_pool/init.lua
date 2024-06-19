@@ -14,7 +14,7 @@ function ENT:Initialize()
     if not self:GetNWBool("Children",false) then
         self:SetNWBool("Children",true)
     end
-
+	
     self:AddFlags(FL_GRENADE)
     self:AddFlags(FL_ONFIRE)
     ParticleEffectAttach("explosion_molotov_air", PATTACH_ABSORIGIN_FOLLOW, self, 0)
@@ -23,10 +23,11 @@ function ENT:Initialize()
     self:EmitSound("^weapons/cod2019/throwables/molotov/fire_loop.ogg",75, 100, 1, CHAN_AUTO) --this is the sound of the pool burning "your/filepath/filename.ogg"
     self.DeathTime = CurTime() + 8
     sound.EmitHint(SOUND_DANGER, self:GetPos(), 200, 8, nil) --make shit run away (nil owner so even rebels run)
+	util.Decal("scorch_big", self:WorldSpaceCenter(), self:WorldSpaceCenter() - Vector(0, 0, 50), self)
 end
 
 function ENT:Think()
-    for _, e in pairs(ents.FindInSphere(self:GetPos(), 185)) do
+    for _, e in pairs(ents.FindInSphere(self:GetPos(), 150)) do
         if (e:IsPlayer() || e:IsNPC() || e:IsNextBot() || (e:GetClass():find("prop_") && IsValid(e))) then
             local dmgInfo = DamageInfo()
             dmgInfo:SetAttacker(self:GetOwner())

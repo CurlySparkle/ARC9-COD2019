@@ -1,0 +1,7 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "decals/scorched_earth"
+	"$decal" 1
+	"$decalscale" 0.20
+	"$translucent" 1
+}
