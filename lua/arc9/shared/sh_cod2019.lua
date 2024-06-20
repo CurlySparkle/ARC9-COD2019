@@ -51,3 +51,19 @@ game.AddDecal( "scorch_big",					"decals/scorch_big" );
 
 game.AddAmmoType({name = "arc9_cod2019_c4"})
 game.AddAmmoType({name = "arc9_cod2019_knife"})
+
+
+-- Make launchers ADS when holding LMB
+local launchers = {
+    arc9_cod2019_la_jokr = true,
+    arc9_cod2019_la_pila = true,
+    arc9_cod2019_la_rpg = true,
+    arc9_cod2019_la_strela = true,
+}
+hook.Add("StartCommand", "ARC9_MW19_LauncherAim", function(ply, ucmd)
+    local wep = ply:GetActiveWeapon()
+    if !ply:Alive() or !IsValid(wep) or !launchers[wep:GetClass()] then return end
+    if ucmd:KeyDown(IN_ATTACK) and !ucmd:KeyDown(IN_ATTACK2) and (!wep:ToggleADS() or !wep:GetInSights()) then
+        ucmd:AddKey(IN_ATTACK2)
+    end
+end)

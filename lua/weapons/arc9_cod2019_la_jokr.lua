@@ -94,7 +94,7 @@ SWEP.Firemodes = {
         -- PrintName = "Guided-Fire",
         -- TopAttack = false,
         -- ShootEnt = "arc9_cod2019_proj_jokr_saclos",
-		-- -- ToggleOnF = true,
+        -- -- ToggleOnF = true,
         -- -- LaserColorPlayer = true,
         -- -- Laser = true,
         -- -- LaserStrength = 4,
@@ -369,7 +369,7 @@ function SWEP:HookP_BlockFire()
         -- return true 
     -- end
     if self:GetSightAmount() < 1 then
-        return true 
+        return true
     end
 end
 
@@ -493,19 +493,19 @@ SWEP.Hook_Think2 = function(self)
 end
 
 SWEP.Animations = {
-	["enter_sights"] = {
-		Source = "idle",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-	},
+    ["enter_sights"] = {
+        Source = "idle",
+        IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+    },
     ["fire"] = {
         Source = "shoot1",
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.95,
-		FireASAP = true,
-		RefillProgress = 0.8,
-		--DropMagAt = 2.65,
+        MinProgress = 0.95,
+        FireASAP = true,
+        RefillProgress = 0.8,
+        --DropMagAt = 2.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -513,17 +513,17 @@ SWEP.Animations = {
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_la_juliet_reload_start.ogg", t = 9/30},
-			{s = path .. "wfoly_la_juliet_reload_rocketin_01.ogg", t = 25/30},
-			{s = path .. "wfoly_la_juliet_reload_end.ogg", t = 51/30},
+            {s = path .. "wfoly_la_juliet_reload_start.ogg", t = 9/30},
+            {s = path .. "wfoly_la_juliet_reload_rocketin_01.ogg", t = 25/30},
+            {s = path .. "wfoly_la_juliet_reload_end.ogg", t = 51/30},
         },
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.95,
-		FireASAP = true,
-		RefillProgress = 0.75,
-		--DropMagAt = 1.5,
+        MinProgress = 0.95,
+        FireASAP = true,
+        RefillProgress = 0.75,
+        --DropMagAt = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -531,9 +531,9 @@ SWEP.Animations = {
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_la_juliet_reload_start.ogg", t = 1/30},
-			{s = path .. "wfoly_la_juliet_reload_rocketin_01.ogg", t = 10/30},
-			{s = path .. "wfoly_la_juliet_reload_end.ogg", t = 34/30},
+            {s = path .. "wfoly_la_juliet_reload_start.ogg", t = 1/30},
+            {s = path .. "wfoly_la_juliet_reload_rocketin_01.ogg", t = 10/30},
+            {s = path .. "wfoly_la_juliet_reload_end.ogg", t = 34/30},
         },
     },
     ["ready"] = {
@@ -544,16 +544,16 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_la_juliet_raise_first_up.ogg", t = 3/30},
-			{s = path .. "wfoly_la_juliet_raise_first_settle.ogg", t = 20/30},
+            {s = path .. "wfoly_la_juliet_raise_first_settle.ogg", t = 20/30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.4,
+        MinProgress = 0.4,
         FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_la_juliet_raise_up.ogg", t = 2/30},
-			{s = path .. "wfoly_la_juliet_raise_settle.ogg", t = 22/30},
+            {s = path .. "wfoly_la_juliet_raise_settle.ogg", t = 22/30},
         },
     },
     ["holster"] = {
@@ -575,23 +575,23 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 3,
+        Mult = 3,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 3,
+        IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+        Mult = 3,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 3,
+        Mult = 3,
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 3,
+        Mult = 3,
     },
     ["inspect"] = {
         Source = "lookat01",
@@ -605,8 +605,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_la_juliet_inspect_01.ogg", t = 1/30},
-			{s = path .. "wfoly_la_juliet_inspect_02.ogg", t = 47/30},
-			{s = path .. "wfoly_la_juliet_inspect_03.ogg", t = 78/30},
+            {s = path .. "wfoly_la_juliet_inspect_02.ogg", t = 47/30},
+            {s = path .. "wfoly_la_juliet_inspect_03.ogg", t = 78/30},
         },
     },
     ["bash"] = {
@@ -617,7 +617,7 @@ SWEP.Animations = {
     },
     ["firemode_2"] = {
         Source = "firemode",
-	},
+    },
 }
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendEmpty
@@ -654,8 +654,8 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
     ModelOffset = Vector(0, 0, 0),
-	ModelAngleOffset = Angle(0, 0, 0),
-	Scale = 0.8,
+    ModelAngleOffset = Angle(0, 0, 0),
+    Scale = 0.8,
     },
     ["cod2019_perks_super_sprint"] = {
     SprintPos = Vector(0, 0, -2.5),
@@ -684,20 +684,20 @@ SWEP.AttachmentTableOverrides = {
 SWEP.Attachments = {
     -- {
         -- PrintName = ARC9:GetPhrase("mw19_category_optic"),
-		-- DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
+        -- DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
         -- Bone = "tag_launcher_offset",
         -- Pos = Vector(5, -3.1, 1.9),
         -- Ang = Angle(0, 0, -90),
         -- -- Category = {"cod2019_optic","cod2019_optic_strela"},
         -- Category = {"cod2019_optic_strela"},
         -- InstalledElements = {"sights_scope"},
-		-- --Installed = "cod2019_optic_scope_strela",
-		-- --Integral = "cod2019_optic_scope_strela",
+        -- --Installed = "cod2019_optic_scope_strela",
+        -- --Integral = "cod2019_optic_scope_strela",
         -- CorrectiveAng = Angle(7, 6.2, -90),
     -- },
     -- {
         -- PrintName = ARC9:GetPhrase("mw19_category_ammo"),
-		-- DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
+        -- DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         -- Bone = "tag_launcher_offset",
         -- Category = {"cod2019_strela_ammo"},
         -- Pos = Vector(5, 0, 0),
@@ -705,14 +705,14 @@ SWEP.Attachments = {
     -- },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
-		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
+        DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "j_tube",
         Category = {"cod2019_jokr_ammo"},
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
-		PrintName = ARC9:GetPhrase("mw19_category_perk"),
+        PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
         Bone = "j_tube",
         Pos = Vector(10, 0, 0),
@@ -723,7 +723,7 @@ SWEP.Attachments = {
         Category = "cod2019_jokr_skins",
         Bone = "tag_cosmetic",
         Pos = Vector(7, 0, 6),
-		CosmeticOnly = true,
+        CosmeticOnly = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
@@ -738,7 +738,7 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(3, 0, 5),
-		Hidden = true,
+        Hidden = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
@@ -746,7 +746,7 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(1, 0, 4.5),
-		Hidden = true,
+        Hidden = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
@@ -754,7 +754,7 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(-1, 0, 4),
-		Hidden = true,
+        Hidden = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
@@ -762,17 +762,17 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(-3, 0, 3.5),
-		Hidden = true,
+        Hidden = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = {"charm", "killcounter"},
-		RejectAttachments = { ["arc9_stat_proscreen"] = true },
-		CosmeticOnly = true,
+        RejectAttachments = { ["arc9_stat_proscreen"] = true },
+        CosmeticOnly = true,
         Bone = "j_tube",
         Pos = Vector(4, -2.3, 1.1),
         Ang = Angle(0, 0, 22.5),
-		Scale = 1.5,
-		Icon_Offset = Vector(5.75, 0, 3.25),
+        Scale = 1.5,
+        Icon_Offset = Vector(5.75, 0, 3.25),
     },
 }
