@@ -379,7 +379,7 @@ SWEP.Hook_Think2 = function(self)
         local targetscore = 0
 
         for _, ent in ipairs(targets) do
-            if ent:Health() <= 0 then continue end
+            if ent:Health() <= 0 and !ent.LVS then continue end
             -- if !(ent:IsPlayer() or ent:IsNPC() or ent:GetOwner():IsValid()) then continue end
             if ent:IsWorld() then continue end
             if ent == self:GetOwner() then continue end
@@ -398,7 +398,7 @@ SWEP.Hook_Think2 = function(self)
             if ent:IsPlayer() then entscore = entscore + 5 end
             if ent:IsNextBot() then entscore = entscore + 6 end
             if ent:IsNPC() then entscore = entscore + 2 end
-            if ent:IsVehicle() then entscore = entscore + 10 end
+            if ent:IsVehicle() or ent.LVS then entscore = entscore + 10 end
 
             entscore = entscore + dot * 5
 

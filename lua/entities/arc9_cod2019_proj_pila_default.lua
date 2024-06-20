@@ -48,7 +48,7 @@ ENT.ShootEntData = {}
 ENT.IsProjectile = true
 
 function ENT:OnInitialize()
-	self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
+    self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
 end
 
 function ENT:Impact(data, collider)
@@ -77,7 +77,7 @@ function ENT:Impact(data, collider)
         self:EmitSound("weapons/rpg/shotdown.wav", 80)
 
         for i = 1, 1 do
-		   timer.Simple(0, function()
+           timer.Simple(0, function()
             local prop = ents.Create("prop_physics")
             prop:SetPos(self:GetPos())
             prop:SetAngles(self:GetAngles())
@@ -86,13 +86,13 @@ function ENT:Impact(data, collider)
             prop:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.5 + VectorRand() * 75)
             prop:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
             SafeRemoveEntityDelayed(prop, 3)
-		   end)
+           end)
         end
 
         self:Remove()
         return true
     end
-	util.Decal("Scorch", hitPos + hitNormal, hitPos - hitNormal)
+    util.Decal("Scorch", hitPos + hitNormal, hitPos - hitNormal)
 end
 
 function ENT:OnThink()
@@ -107,7 +107,7 @@ if SERVER then
             if self.ShootEntData.Target and IsValid(self.ShootEntData.Target) then
                 local target = self.ShootEntData.Target
                 if target.UnTrackable then self.ShootEntData.Target = nil end
-				
+
                 local tpos = target:EyePos()
                 if self.TopAttack and !self.TopAttackReached then
                     tpos = tpos + Vector(0, 0, self.TopAttackHeight)
@@ -161,7 +161,7 @@ end
 
 function ENT:Detonate()
     local attacker = self.Attacker or self:GetOwner()
-    local dir = self:GetForward()
+    local dir = self:GetVelocity():GetNormalized()
     local src = self:GetPos() - dir * 64
 
     local dmg = DamageInfo()
@@ -172,7 +172,25 @@ function ENT:Detonate()
     dmg:SetDamagePosition(src)
     dmg:SetDamage(300)
     util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
-	util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 300, 64)
+    util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 300, 64)
+
+    self:FireBullets({
+        Attacker = attacker,
+        Damage = 200,
+        Tracer = 0,
+        Src = src,
+        Dir = dir,
+        HullSize = 0,
+        Distance = 256,
+        IgnoreEntity = self,
+        Callback = function(atk, btr, dmginfo)
+            if IsValid(btr.Entity) and btr.Entity.LVS then
+                dmginfo:ScaleDamage(5)
+                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
+                dmginfo:SetDamageForce(self:GetForward() * 10000)
+            end
+        end,
+    })
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())
@@ -184,14 +202,14 @@ function ENT:Detonate()
     end
 
     self:EmitSound("Cod2019.Frag.Explode")
-	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
-	
-	for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
-		if (e:GetClass() == "npc_strider") then
-			e:Fire("Explode")
-		end 
-	end
-	
+    util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
+    util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
+
+    for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
+        if (e:GetClass() == "npc_strider") then
+            e:Fire("Explode")
+        end
+    end
+
     self:Remove()
 end

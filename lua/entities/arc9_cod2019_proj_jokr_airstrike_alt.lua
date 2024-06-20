@@ -59,7 +59,7 @@ ENT.LockOnPoint = nil
     -- dmg:SetDamagePosition(src)
     -- dmg:SetDamage(32)
     -- util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
-	-- util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 128, 24)
+    -- util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 128, 24)
 
     -- local fx = EffectData()
     -- fx:SetOrigin(self:GetPos())
@@ -78,54 +78,75 @@ ENT.LockOnPoint = nil
 
 function ENT:Detonate()
 
-	local phys = self:GetPhysicsObject()
-	if (self:WaterLevel() <= 0) then
-		ParticleEffect("Generic_explo_mid", self:GetPos(), Angle(-90, 0, 0))
-	else
-		local effectdata = EffectData()
-		effectdata:SetOrigin(phys:GetPos())
-		util.Effect("WaterSurfaceExplosion", effectdata)
-	end
+    local phys = self:GetPhysicsObject()
+    if (self:WaterLevel() <= 0) then
+        ParticleEffect("Generic_explo_mid", self:GetPos(), Angle(-90, 0, 0))
+    else
+        local effectdata = EffectData()
+        effectdata:SetOrigin(phys:GetPos())
+        util.Effect("WaterSurfaceExplosion", effectdata)
+    end
 
-	local dmgInfo = DamageInfo()
-	dmgInfo:SetDamage(128)
-	dmgInfo:SetAttacker(IsValid(self:GetOwner()) && self:GetOwner() || self)
-	dmgInfo:SetInflictor(self)
-	dmgInfo:SetDamageType(self:GetDamageType())
-	util.BlastDamageInfo(dmgInfo, phys:GetPos(), 190)
+    local dmgInfo = DamageInfo()
+    dmgInfo:SetDamage(128)
+    dmgInfo:SetAttacker(IsValid(self:GetOwner()) && self:GetOwner() || self)
+    dmgInfo:SetInflictor(self)
+    dmgInfo:SetDamageType(self:GetDamageType())
+    util.BlastDamageInfo(dmgInfo, phys:GetPos(), 190)
 
-	util.ScreenShake(phys:GetPos(), 3500, 1111, 1, 300)
-	util.Decal("Scorch", self:WorldSpaceCenter(), self:WorldSpaceCenter() + self:GetUp() * -100, {self})
+    local dir = self:GetVelocity():GetNormalized()
+    local src = self:GetPos() - dir * 64
+    self:FireBullets({
+        Attacker = attacker,
+        Damage = 100,
+        Tracer = 0,
+        Src = src,
+        Dir = dir,
+        HullSize = 0,
+        Distance = 256,
+        IgnoreEntity = self,
+        Callback = function(atk, btr, dmginfo)
+            if IsValid(btr.Entity) and btr.Entity.LVS then
+                dmginfo:ScaleDamage(5)
+                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
+                dmginfo:SetDamageForce(self:GetForward() * 8000)
+            end
+        end,
+    })
 
-	for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
-		if (e:GetClass() == "npc_strider") then
-			e:Fire("Explode")
-		end 
-	end
 
-	self:Remove()
+    util.ScreenShake(phys:GetPos(), 3500, 1111, 1, 300)
+    util.Decal("Scorch", self:WorldSpaceCenter(), self:WorldSpaceCenter() + self:GetUp() * -100, {self})
+
+    for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
+        if (e:GetClass() == "npc_strider") then
+            e:Fire("Explode")
+        end
+    end
+
+    self:Remove()
 end
 
 function ENT:GetDamageType() 
-	return DMG_BLAST + DMG_AIRBOAT
+    return DMG_BLAST + DMG_AIRBOAT
 end
 
 function ENT:OnRemove()
-	if (self:WaterLevel() <= 0) then
-		self:EmitSound("^weapons/cod2019/shared/rocket_expl_body_02.ogg", 100, 100, 1, CHAN_WEAPON) --snd scripts dont work lol!
+    if (self:WaterLevel() <= 0) then
+        self:EmitSound("^weapons/cod2019/shared/rocket_expl_body_02.ogg", 100, 100, 1, CHAN_WEAPON) --snd scripts dont work lol!
      if CLIENT then
-		local dlight = DynamicLight(self:EntIndex())
-		if (dlight) then
-			dlight.pos = self:GetPos()
-			dlight.r = 255
-			dlight.g = 75
-			dlight.b = 0
-			dlight.brightness = 5
-			dlight.Decay = 2000
-			dlight.Size = 1024
-			dlight.DieTime = CurTime() + 5
-		end
-	 end
-	end
-	self:StopParticles()
+        local dlight = DynamicLight(self:EntIndex())
+        if (dlight) then
+            dlight.pos = self:GetPos()
+            dlight.r = 255
+            dlight.g = 75
+            dlight.b = 0
+            dlight.brightness = 5
+            dlight.Decay = 2000
+            dlight.Size = 1024
+            dlight.DieTime = CurTime() + 5
+        end
+     end
+    end
+    self:StopParticles()
 end

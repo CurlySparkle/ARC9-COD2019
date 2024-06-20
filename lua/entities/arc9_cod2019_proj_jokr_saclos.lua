@@ -171,18 +171,23 @@ function ENT:Detonate()
         util.BlastDamage(self, attacker, self:GetPos(), 350, 145)
     else
         util.BlastDamage(self, attacker, self:GetPos(), 350, 185)
+        local dir = self:GetVelocity():GetNormalized()
+        local src = self:GetPos() - dir * 64
         self:FireBullets({
             Attacker = attacker,
-            Damage = 1000,
+            Damage = 600,
             Tracer = 0,
-            Src = self:GetPos(),
-            Dir = self:GetForward(),
+            Src = src,
+            Dir = dir,
             HullSize = 0,
-            Distance = 32,
+            Distance = 256,
             IgnoreEntity = self,
             Callback = function(atk, btr, dmginfo)
-                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_BLAST) -- airboat damage for helicopters and LVS vehicles
-                dmginfo:SetDamageForce(self:GetForward() * 20000) -- LVS uses this to calculate penetration!
+                if IsValid(btr.Entity) and btr.Entity.LVS then
+                    dmginfo:ScaleDamage(5)
+                    dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
+                    dmginfo:SetDamageForce(self:GetForward() * 100000)
+                end
             end,
         })
     end

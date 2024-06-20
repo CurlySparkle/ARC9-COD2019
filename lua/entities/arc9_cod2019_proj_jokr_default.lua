@@ -53,7 +53,7 @@ function ENT:OnInitialize()
 
         self.LockOnPoint = tr.HitPos
     end
-	self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
+    self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
 end
 
 function ENT:Impact(data, collider)
@@ -169,7 +169,7 @@ end
 
 function ENT:Detonate()
     local attacker = self.Attacker or self:GetOwner()
-    local dir = self:GetForward()
+    local dir = self:GetVelocity():GetNormalized()
     local src = self:GetPos() - dir * 64
 
     local dmg = DamageInfo()
@@ -180,7 +180,24 @@ function ENT:Detonate()
     dmg:SetDamagePosition(src)
     dmg:SetDamage(325)
     util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
-	util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 300, 64)
+    util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 300, 64)
+    self:FireBullets({
+        Attacker = attacker,
+        Damage = 600,
+        Tracer = 0,
+        Src = src,
+        Dir = dir,
+        HullSize = 0,
+        Distance = 256,
+        IgnoreEntity = self,
+        Callback = function(atk, btr, dmginfo)
+            if IsValid(btr.Entity) and btr.Entity.LVS then
+                dmginfo:ScaleDamage(5)
+                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
+                dmginfo:SetDamageForce(self:GetForward() * 100000)
+            end
+        end,
+    })
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())
@@ -192,33 +209,33 @@ function ENT:Detonate()
     end
 
     self:EmitSound("Cod2019.Frag.Explode")
-	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
-	
-	for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
-		if (e:GetClass() == "npc_strider") then
-			e:Fire("Explode")
-		end 
-	end
-	
+    util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
+    util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
+
+    for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
+        if (e:GetClass() == "npc_strider") then
+            e:Fire("Explode")
+        end
+    end
+
     self:Remove()
 end
 
 function ENT:OnRemove()
-	if (self:WaterLevel() <= 0) then
+    if (self:WaterLevel() <= 0) then
      if CLIENT then
-		local dlight = DynamicLight(self:EntIndex())
-		if (dlight) then
-			dlight.pos = self:GetPos()
-			dlight.r = 255
-			dlight.g = 75
-			dlight.b = 0
-			dlight.brightness = 5
-			dlight.Decay = 2000
-			dlight.Size = 1024
-			dlight.DieTime = CurTime() + 5
-		end
-	 end
-	end
-	self:StopParticles()
+        local dlight = DynamicLight(self:EntIndex())
+        if (dlight) then
+            dlight.pos = self:GetPos()
+            dlight.r = 255
+            dlight.g = 75
+            dlight.b = 0
+            dlight.brightness = 5
+            dlight.Decay = 2000
+            dlight.Size = 1024
+            dlight.DieTime = CurTime() + 5
+        end
+     end
+    end
+    self:StopParticles()
 end
