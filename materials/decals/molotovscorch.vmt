@@ -1,0 +1,10 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "decals/molotovscorch"
+	"$decal" 1
+     "$vertexcolor" "1"
+	"$decalscale" 2.8
+	"$translucent" 1
+     "$decalFadeDuration" "60"
+     //"$decalfadetime" "10"
+}

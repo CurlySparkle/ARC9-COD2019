@@ -20,9 +20,9 @@ function ENT:OnThink()
     BaseClass.OnThink(self)
     if SERVER and CurTime() > self.SpawnTime + self.SafetyFuse then
         if self.ShootEntData and IsValid(self.ShootEntData.Target) and self.ShootEntData.Target:GetPos():DistToSqr(self:GetPos()) <= self.ClusterDistance ^ 2 then
-            self:Detonate()
+            self:PreDetonate()
         elseif self.LockOnPoint and self.LockOnPoint:DistToSqr(self:GetPos()) <= self.ClusterDistance ^ 2 then
-            self:Detonate()
+            self:PreDetonate()
         end
     end
 end
@@ -41,7 +41,7 @@ function ENT:Detonate()
             child.ShootEntData = self.ShootEntData
             child.Attacker = attacker
             child:Spawn()
-			child:EmitSound("weapons/cod2019/shared/jokr_split.ogg", 100)
+			child:EmitSound("^weapons/cod2019/shared/jokr_split.ogg",75, 100, 1, CHAN_AUTO)
             child:GetPhysicsObject():SetVelocityInstantaneous(self:GetVelocity():Length() * dir)
         end
     end

@@ -46,9 +46,7 @@ AddCSLuaFile()
     -- vm:SetPoseParameter( "aim_blend", Lerp(coolilove, 1, 0) )
 -- end
 
-game.AddDecal( "scorch_medium",					"decals/scorch_medium" );
-game.AddDecal( "scorch_big",					"decals/scorch_big" );
-
+game.AddDecal( "molotovscorch",					"decals/molotovscorch" );
 game.AddAmmoType({name = "arc9_cod2019_c4"})
 game.AddAmmoType({name = "arc9_cod2019_knife"})
 

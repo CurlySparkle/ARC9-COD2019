@@ -106,6 +106,9 @@ function ENT:Initialize()
     if self.AudioLoop then
         self.LoopSound = CreateSound(self, self.AudioLoop)
         self.LoopSound:Play()
+	   if self:GetNWBool("HasDetonated") then
+       self.LoopSound:Stop()
+       end
     end
 
     if self.InstantFuse then

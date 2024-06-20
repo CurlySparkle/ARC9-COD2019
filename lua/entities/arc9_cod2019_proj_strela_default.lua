@@ -81,7 +81,7 @@ function ENT:Detonate()
 
     local dmg = DamageInfo()
     dmg:SetAttacker(attacker)
-    dmg:SetDamageType(DMG_AIRBOAT + DMG_BLAST)
+    dmg:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
     dmg:SetInflictor(self)
     dmg:SetDamageForce(self:GetVelocity() * 100)
     dmg:SetDamagePosition(src)

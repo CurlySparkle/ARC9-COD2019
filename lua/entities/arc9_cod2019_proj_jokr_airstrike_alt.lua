@@ -25,7 +25,7 @@ ENT.RocketTrail = true -- leaves trail of a particle effect
 ENT.Delay = 0
 ENT.FlareColor = Color(235, 188, 37)
 ENT.Radius = 128
-ENT.AudioLoop = ""
+ENT.AudioLoop = "^weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg"
 
 --- Stuff
 ENT.SeekerAngle = math.cos(math.rad(75))
@@ -77,7 +77,6 @@ ENT.LockOnPoint = nil
 -- end
 
 function ENT:Detonate()
-
     local phys = self:GetPhysicsObject()
     if (self:WaterLevel() <= 0) then
         ParticleEffect("Generic_explo_mid", self:GetPos(), Angle(-90, 0, 0))
@@ -128,7 +127,7 @@ function ENT:Detonate()
 end
 
 function ENT:GetDamageType() 
-    return DMG_BLAST + DMG_AIRBOAT
+	return DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST
 end
 
 function ENT:OnRemove()

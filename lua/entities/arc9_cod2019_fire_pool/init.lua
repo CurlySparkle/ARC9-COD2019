@@ -23,7 +23,7 @@ function ENT:Initialize()
     self:EmitSound("^weapons/cod2019/throwables/molotov/fire_loop.ogg",75, 100, 1, CHAN_AUTO) --this is the sound of the pool burning "your/filepath/filename.ogg"
     self.DeathTime = CurTime() + 8
     sound.EmitHint(SOUND_DANGER, self:GetPos(), 200, 8, nil) --make shit run away (nil owner so even rebels run)
-	util.Decal("scorch_big", self:WorldSpaceCenter(), self:WorldSpaceCenter() - Vector(0, 0, 50), self)
+	util.Decal("molotovscorch", self:WorldSpaceCenter(), self:WorldSpaceCenter() - Vector(0, 0, 50), self)
 end
 
 function ENT:Think()
@@ -36,6 +36,9 @@ function ENT:Think()
             dmgInfo:SetInflictor(self)
             e:TakeDamageInfo(dmgInfo)
 			e:Ignite(IGNITE_LENGTH,14)
+        end
+        if e:Health() == 0 then
+           e:SetColor(Color(55, 55, 55))
         end
     end
 
