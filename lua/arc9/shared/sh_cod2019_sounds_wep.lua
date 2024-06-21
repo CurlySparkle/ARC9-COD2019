@@ -694,7 +694,7 @@ sound.Add( {
 	volume = 1,
 	pitch = {100,107},
 	sound = {
-		"weapons/cod2019/crossbow/shot_00.ogg",
+		"weapons/cod2019/crossbow/weap_crossbow_fire_01.ogg",
 	}
 } )
 

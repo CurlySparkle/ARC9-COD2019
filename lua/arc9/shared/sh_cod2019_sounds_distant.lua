@@ -464,3 +464,14 @@ sound.Add({
             "weapons/cod2019/shared/atmo/launchers/weap_juliet_launch_atmo_int_02.ogg",
             "weapons/cod2019/shared/atmo/launchers/weap_juliet_launch_atmo_int_03.ogg"}
 })
+
+sound.Add({
+    name = "Distant_Launcher.Outside",
+    channel = CHAN_INDOORDISTANT,
+    level = 140,
+    pitch = {80,110},
+    volume = 1,
+    sound = {"weapons/cod2019/shared/atmo/launchers/weap_mike203_fire_plr_atmos_01.ogg",
+            "weapons/cod2019/shared/atmo/launchers/weap_mike203_fire_plr_atmos_02.ogg",
+            "weapons/cod2019/shared/atmo/launchers/weap_mike203_fire_plr_atmos_03.ogg"}
+})

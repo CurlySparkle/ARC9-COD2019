@@ -6,8 +6,8 @@ ENT.Spawnable = false
 
 DEFINE_BASECLASS(ENT.Base)
 
-ENT.SafetyFuse = 1
-ENT.ClusterDistance = 1500
+ENT.SafetyFuse = 2
+ENT.ClusterDistance = 2000
 
 local offsets = {
     Vector(-75, -75, 0),

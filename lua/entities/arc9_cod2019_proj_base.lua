@@ -134,27 +134,9 @@ end
 -- end
 
 function ENT:OnRemove()
-	if (self:WaterLevel() <= 0) then
-
-    -- if CLIENT then
-		-- local dlight = DynamicLight(self:EntIndex())
-		-- if (dlight) then
-			-- dlight.pos = self:GetPos()
-			-- dlight.r = 255
-			-- dlight.g = 75
-			-- dlight.b = 0
-			-- dlight.brightness = 5
-			-- dlight.Decay = 2000
-			-- dlight.Size = 1024
-			-- dlight.DieTime = CurTime() + 5
-		-- end
-	  -- end
-	end
-	
     if self.LoopSound then
         self.LoopSound:Stop()
     end
-	
 	self:StopParticles()
 end
 
@@ -197,11 +179,11 @@ function ENT:PhysicsCollide(data, collider, physobj)
         return
     end
 	
-    -- local theirProps = util.GetSurfaceData(data.TheirSurfaceProps)
-    -- if (theirProps != nil && theirProps.material == MAT_DEFAULT) then
-    -- timer.Simple(0, function() self:Remove() end)
-    -- return
-    -- end
+    local theirProps = util.GetSurfaceData(data.TheirSurfaceProps)
+    if (theirProps != nil && theirProps.material == MAT_DEFAULT) then
+    timer.Simple(0, function() self:Remove() end)
+    return
+    end
 	
     if self.BounceWall then
         local ang = data.HitNormal:Angle()
@@ -245,10 +227,11 @@ function ENT:PhysicsCollide(data, collider, physobj)
     end
 
     if self.Sticky then
-        --self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
+        self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
         self:SetPos(data.HitPos)
-
-        self:SetAngles((-data.HitNormal):Angle())
+        self:SetAngles(self:GetAngles())
+        self.Attacker = self:GetOwner()
+        self:SetOwner(NULL)
 
         if data.HitEntity:IsWorld() or data.HitEntity:GetSolid() == SOLID_BSP then
             self:SetMoveType(MOVETYPE_NONE)
@@ -258,10 +241,7 @@ function ENT:PhysicsCollide(data, collider, physobj)
             self:SetParent(data.HitEntity)
         end
 
-        self:EmitSound("TacRP/weapons/plant_bomb.wav", 65)
-
-        self.Attacker = self:GetOwner()
-        self:SetOwner(NULL)
+        self:EmitSound("weapons/cod2019/shared/blt_imp_flesh_plr_04.ogg",75, 100, 1, CHAN_AUTO)
 
         if self.StickyFuse and !self.Armed then
             self.ArmTime = CurTime()
@@ -269,6 +249,7 @@ function ENT:PhysicsCollide(data, collider, physobj)
         end
 
         self:Stuck()
+		self:SetNWBool("HasDetonated",true)
     end
 	
     if self.NoBounce then
@@ -364,14 +345,13 @@ function ENT:Think()
            self:SetPos(tr.HitPos)
            self:Detonate()
         end
-		if (tr.HitSky) then
-		self:Remove()
-		return
-		end
+		-- if (tr.HitSky) then
+		-- timer.Simple(0, function() self:Remove() end)
+		-- return
+		-- end
     end
 
     self:DoSmokeTrail()
-
     self:OnThink()
 end
 

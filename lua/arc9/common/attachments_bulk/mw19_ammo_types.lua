@@ -649,6 +649,25 @@ ATT.Category = {"cod2019_ammo_gl"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_gas")
 
+/////////////////////////// -- cod2019_ammo_gl_sticky
+ATT = {}
+
+ATT.PrintName = "Stick Nade"
+ATT.CompactName = "Sticky"
+ATT.Description = "Changes the nade type to a stocky type nade that sticks to surfaces before exploding."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_slug.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+
+ATT.Free = true
+
+ATT.ShootEnt = "arc9_cod2019_proj_40mm_sticky"
+ATT.Category = {"cod2019_ammo_gl"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_sticky")
+
 /////////////////////////// -- cod2019_ammo_gl_slug
 ATT = {}
 
