@@ -469,6 +469,11 @@ L["cod2019_stock_origin12.compactname"] = "Ориджин" -- UO
 -- L["cod2019_ammo_crossbow_he.compactname"] = "Contact" -- UO
 -- L["cod2019_ammo_crossbow_he.description"] = "Bolts with a <color=255,255,100>low pressure explosive compound</color> imbedded within the arrowhead. <color=255,100,100>Bolts can not be recovered</color>, and are undetectable by trophy systems." -- UO
 
+////////////////////  Custom RPG-7 Ammo
+-- L["cod2019_ammo_rpg_rock.printname"] = "37\" \"Spade\"" -- UO
+-- L["cod2019_ammo_rpg_rock.compactname"] = "\"Spade\"" -- UO
+-- L["cod2019_ammo_rpg_rock.description"] = "Replace the high-explosive warheads with less lethal <color=100,255,100>spades</color>.\nLet them dig their own graves." -- UO
+
 ////////////////////  Custom MGL-32 Ammo
 -- L["cod2019_ammo_gl_rock.printname"] = "40mm Boulder" -- UO
 -- L["cod2019_ammo_gl_rock.compactname"] = "Boulder" -- UO
@@ -490,10 +495,20 @@ L["cod2019_stock_origin12.compactname"] = "Ориджин" -- UO
 -- L["cod2019_ammo_gl_gas.compactname"] = "Gas" -- UO
 -- L["cod2019_ammo_gl_gas.description"] = "Custom 40mm shells filled with semi-lethal <color=100,255,100>Gas</color> rounds that create a gas cloud at the impact area.\nMultiple shots within the same area will <color=100,255,100>increase its lethality</color>." -- UO
 
+-- L["cod2019_ammo_gl_slug.printname"] = "40mm Slug" -- UO
+-- L["cod2019_ammo_gl_slug.compactname"] = "Slug" -- UO
+-- L["cod2019_ammo_gl_slug.description"] = "Custom 40mm shells filled with large <color=100,255,100>slug</color> projectiles." -- UO
+
+-- L["cod2019_ammo_gl_sticky.printname"] = "40mm Semtex" -- UO
+-- L["cod2019_ammo_gl_sticky.compactname"] = "Semtex" -- UO
+-- L["cod2019_ammo_gl_sticky.description"] = "Custom 40mm shells filled with lethal <color=100,255,100>Semtex</color> grenades that stick onto surfaces and detonates after a short moment." -- UO
+
+////////////////////  Custom PILA Ammo
 -- L["cod2019_pila_ammo_guided.printname"] = "Guided Rockets" -- UO
 -- L["cod2019_pila_ammo_guided.compactname"] = "Guided" -- UO
 -- L["cod2019_pila_ammo_guided.description"] = "Replaces the unguided rockets with <color=100,255,100>guided</color> high-explosive rockets." -- UO
 
+////////////////////  Custom JOKR Ammo
 -- L["cod2019_jokr_ammo_guided.description"] = "Replaces the lock-on rockets with <color=100,255,100>guided</color> high-explosive rockets. <color=255,100,100>Removes the lock-on feature</color>." -- UO
 
 -- L["cod2019_jokr_ammo_airstrike.printname"] = "Cluster Rockets"

@@ -469,31 +469,46 @@ L["cod2019_ammo_crossbow_he.printname"] = "FTAC Kontakt 508 mm Pilar" -- UO
 L["cod2019_ammo_crossbow_he.compactname"] = "Kontakt" -- UO
 L["cod2019_ammo_crossbow_he.description"] = "Pilar med <color=255,255,100>lågtrycks sprängmedel</color> inbyggda i pilspetsen. <color=255,100,100>Pilar kan inte återhämtas</color> och är oupptäckbara av trofésystem." -- UO
 
+////////////////////  Custom RPG-7 Ammo
+L["cod2019_ammo_rpg_rock.printname"] = "950 mm \"Spade\"" -- UO
+L["cod2019_ammo_rpg_rock.compactname"] = "\"Spade\"" -- UO
+L["cod2019_ammo_rpg_rock.description"] = "Ersätt sprängmedlen med mindre dödliga <color=100,255,100>spadar</color>.\nLåt dem gräva deras egna gravar." -- UO
+
 ////////////////////  Custom MGL-32 Ammo
 L["cod2019_ammo_gl_rock.printname"] = "40 mm Sten" -- UO
 L["cod2019_ammo_gl_rock.compactname"] = "Sten" -- UO
-L["cod2019_ammo_gl_rock.description"] = "Anpassade 40mm patroner fyllda med <color=100,255,100>stenar</color>." -- UO
+L["cod2019_ammo_gl_rock.description"] = "Anpassade 40 mm patroner fyllda med <color=100,255,100>stenar</color>." -- UO
 
 L["cod2019_ammo_gl_flash.printname"] = "40 mm Chock" -- UO
 L["cod2019_ammo_gl_flash.compactname"] = "Chock" -- UO
-L["cod2019_ammo_gl_flash.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Chock</color>granater designade att temporärligt blända din fiende." -- UO, partially taken from M203 40mm Flash
+L["cod2019_ammo_gl_flash.description"] = "Anpassade 40 mm patroner fyllda med icke-dödliga <color=100,255,100>Chockgranater</color> designade att temporärligt blända din fiende." -- UO, partially taken from M203 40mm Flash
 
 L["cod2019_ammo_gl_inc.printname"] = "40 mm Brand" -- UO
 L["cod2019_ammo_gl_inc.compactname"] = "Brand" -- UO
-L["cod2019_ammo_gl_inc.description"] = "Anpassade 40mm patroner fyllda med dödliga <color=100,255,100>Brand</color>granater." -- UO, partially taken from M203 40mm Incendiary
+L["cod2019_ammo_gl_inc.description"] = "Anpassade 40 mm patroner fyllda med dödliga <color=100,255,100>Brandgranater</color>." -- UO, partially taken from M203 40mm Incendiary
 
 L["cod2019_ammo_gl_smoke.printname"] = "40 mm Rökskärm" -- UO
 L["cod2019_ammo_gl_smoke.compactname"] = "Rök" -- UO
-L["cod2019_ammo_gl_smoke.description"] = "Anpassade 40mm patroner fyllda med icke-dödliga <color=100,255,100>Rök</color>granater designade att gömma din rörelse." -- UO, partially taken from M203 40mm Smokescreen
+L["cod2019_ammo_gl_smoke.description"] = "Anpassade 40 mm patroner fyllda med icke-dödliga <color=100,255,100>Rökgranater</color> designade att gömma din rörelse." -- UO, partially taken from M203 40mm Smokescreen
 
 L["cod2019_ammo_gl_gas.printname"] = "40 mm Gas" -- UO
 L["cod2019_ammo_gl_gas.compactname"] = "Gas" -- UO
-L["cod2019_ammo_gl_gas.description"] = "Anpassade 40mm patroner fyllda med delvist dödliga <color=100,255,100>Gas</color>granater som skapar ett gasmoln vid träffpunkten.\nFlertal skott i samma område <color=100,255,100>ökar dess dödlighet</color>." -- UO
+L["cod2019_ammo_gl_gas.description"] = "Anpassade 40 mm patroner fyllda med delvist dödliga <color=100,255,100>Gasgranater</color> som skapar ett gasmoln vid träffpunkten.\nFlertal skott i samma område <color=100,255,100>ökar dess dödlighet</color>." -- UO
 
+L["cod2019_ammo_gl_slug.printname"] = "40 mm Sluggpatron" -- UO
+L["cod2019_ammo_gl_slug.compactname"] = "Slugg" -- UO
+L["cod2019_ammo_gl_slug.description"] = "Anpassade 40 mm patroner fyllda med stora <color=100,255,100>sluggprojektiler</color>." -- UO
+
+L["cod2019_ammo_gl_sticky.printname"] = "40 mm Semtex" -- UO
+L["cod2019_ammo_gl_sticky.compactname"] = "Semtex" -- UO
+L["cod2019_ammo_gl_sticky.description"] = "Anpassade 40 mm patroner fyllda med dödliga <color=100,255,100>Semtex</color>-granater som fastnar på ytor och sprängs efter ett ögonblick." -- UO
+
+////////////////////  Custom PILA Ammo
 L["cod2019_pila_ammo_guided.printname"] = "Guidade Robotar" -- UO
 L["cod2019_pila_ammo_guided.compactname"] = "Guidade" -- UO
 L["cod2019_pila_ammo_guided.description"] = "Ersätter dem oguidade robotarna med <color=100,255,100>guidade</color> robotar." -- UO
 
+////////////////////  Custom JOKR Ammo
 L["cod2019_jokr_ammo_guided.description"] = "Ersätter robotar som kräver lås med <color=100,255,100>guidade</color> robotar. <color=255,100,100>Tar bort spårningsfunktionen</color>." -- UO
 
 L["cod2019_jokr_ammo_airstrike.printname"] = "Klusterammunition"
