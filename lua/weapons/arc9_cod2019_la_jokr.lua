@@ -440,25 +440,16 @@ SWEP.Hook_Think2 = function(self)
         local targetscore = 0
 
         for _, ent in ipairs(targets) do
-            --if ent:Health() <= 0 then continue end
-            -- if !(ent:IsPlayer() or ent:IsNPC() or ent:GetOwner():IsValid()) then continue end
             if ent:IsWorld() then continue end
             if ent == self:GetOwner() then continue end
             if ent.IsProjectile then continue end
             if ent.UnTrackable then continue end
             if ent:GetClass():find("prop_") then continue end
 
-            local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
-            local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
-
-            if vol <= 100000 and !ent:IsPlayer() then continue end
-
             local dot = (ent:GetPos() - self:GetShootPos()):GetNormalized():Dot(self:GetShootDir():Forward())
-
             local entscore = 1
-			
             if ent:IsPlayer() then entscore = entscore + 5 end
-            if ent:IsNPC() or ent:IsNextBot()then entscore = entscore + 2 end
+            if ent:IsNPC() or ent:IsNextBot() then entscore = entscore + 2 end
             if ent:IsVehicle() or ent.LVS then entscore = entscore + 10 end
             if ent:Health() > 0 then entscore = entscore + 5 end
 
