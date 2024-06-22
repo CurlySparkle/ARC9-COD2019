@@ -472,7 +472,11 @@ L["cod2019_perks_auto.description"] = "Przełącza na tryb <color=100,255,100>au
 ////////////////////  Custom RPG-7 Ammo
 -- L["cod2019_ammo_rpg_rock.printname"] = "37\" \"Spade\"" -- UO
 -- L["cod2019_ammo_rpg_rock.compactname"] = "\"Spade\"" -- UO
--- L["cod2019_ammo_rpg_rock.description"] = "Replace the high-explosive warheads with less lethal <color=100,255,100>spades</color>.\nLet them dig their own graves." -- UO
+-- L["cod2019_ammo_rpg_rock.description"] = "Replace the high-explosive warheads with rather sharp <color=100,255,100>spades</color>.\nLet them dig their own graves." -- UO
+
+-- L["cod2019_ammo_rpg_harpoon.printname"] = "37\" Harpoon" -- UO
+-- L["cod2019_ammo_rpg_harpoon.compactname"] = "Harpoon" -- UO
+-- L["cod2019_ammo_rpg_harpoon.description"] = "Replace the high-explosive warheads with very sharp <color=100,255,100>harpoons</color>.\nThey will not escape our grasp." -- UO
 
 ////////////////////  Custom MGL-32 Ammo
 -- L["cod2019_ammo_gl_rock.printname"] = "40mm Boulder" -- UO
@@ -502,6 +506,10 @@ L["cod2019_perks_auto.description"] = "Przełącza na tryb <color=100,255,100>au
 -- L["cod2019_ammo_gl_sticky.printname"] = "40mm Semtex" -- UO
 -- L["cod2019_ammo_gl_sticky.compactname"] = "Semtex" -- UO
 -- L["cod2019_ammo_gl_sticky.description"] = "Custom 40mm shells filled with lethal <color=100,255,100>Semtex</color> grenades that stick onto surfaces and detonates after a short moment." -- UO
+
+-- L["cod2019_ammo_gl_mine.printname"] = "40mm Proximity" -- UO
+-- L["cod2019_ammo_gl_mine.compactname"] = "Prox." -- UO
+-- L["cod2019_ammo_gl_mine.description"] = "Custom 40mm shells filled with <color=100,255,100>Proximity</color>-activated grenades that stick onto surfaces." -- UO
 
 ////////////////////  Custom PILA Ammo
 -- L["cod2019_pila_ammo_guided.printname"] = "Guided Rockets" -- UO

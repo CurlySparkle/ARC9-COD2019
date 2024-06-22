@@ -472,7 +472,11 @@ L["cod2019_ammo_crossbow_he.description"] = "Pilar med <color=255,255,100>lågtr
 ////////////////////  Custom RPG-7 Ammo
 L["cod2019_ammo_rpg_rock.printname"] = "950 mm \"Spade\"" -- UO
 L["cod2019_ammo_rpg_rock.compactname"] = "\"Spade\"" -- UO
-L["cod2019_ammo_rpg_rock.description"] = "Ersätt sprängmedlen med mindre dödliga <color=100,255,100>spadar</color>.\nLåt dem gräva deras egna gravar." -- UO
+L["cod2019_ammo_rpg_rock.description"] = "Ersätt sprängmedlen med ganska vassa <color=100,255,100>spadar</color>.\nLåt dem gräva deras egna gravar." -- UO
+
+L["cod2019_ammo_rpg_harpoon.printname"] = "950 mm Harpun" -- UO
+L["cod2019_ammo_rpg_harpoon.compactname"] = "Harpun" -- UO
+L["cod2019_ammo_rpg_harpoon.description"] = "Ersätt sprängmedlen med väldigt vassa <color=100,255,100>harpuner</color>.\nDem kommer ej fly från vårt grepp." -- UO
 
 ////////////////////  Custom MGL-32 Ammo
 L["cod2019_ammo_gl_rock.printname"] = "40 mm Sten" -- UO
@@ -502,6 +506,10 @@ L["cod2019_ammo_gl_slug.description"] = "Anpassade 40 mm patroner fyllda med sto
 L["cod2019_ammo_gl_sticky.printname"] = "40 mm Semtex" -- UO
 L["cod2019_ammo_gl_sticky.compactname"] = "Semtex" -- UO
 L["cod2019_ammo_gl_sticky.description"] = "Anpassade 40 mm patroner fyllda med dödliga <color=100,255,100>Semtex</color>-granater som fastnar på ytor och sprängs efter ett ögonblick." -- UO
+
+L["cod2019_ammo_gl_mine.printname"] = "40 mm Närhet" -- UO
+L["cod2019_ammo_gl_mine.compactname"] = "Närh." -- UO
+L["cod2019_ammo_gl_mine.description"] = "Anpassade 40 mm patroner fyllda med <color=100,255,100>Närhetsaktiverade</color> granater som fastnar på ytor." -- UO
 
 ////////////////////  Custom PILA Ammo
 L["cod2019_pila_ammo_guided.printname"] = "Guidade Robotar" -- UO
