@@ -61,7 +61,6 @@ function ENT:Initialize()
         self.Attacker = self:GetOwner()
     end
     self.SpawnTime = CurTime()
-
     self:OnInitialize()
 end
 

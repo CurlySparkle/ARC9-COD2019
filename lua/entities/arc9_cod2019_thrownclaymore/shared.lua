@@ -81,13 +81,13 @@ function ENT:Think()
                 local d = math.tan(math.rad(self.DetectionAngle)) * self.DetectionRange
                 self:SetRenderBounds(Vector(-8, -d * 0.5, -4), Vector(self.DetectionRange, d * 0.5, 32))
             elseif self.NextBeepTime <= CurTime() then
-                self:EmitSound( "weapons/cod2019/throwables/claymore/claymore_sensors_on.ogg", 75, 100, 1, CHAN_AUTO )
+                self:EmitSound( "weapons/cod2019/throwables/claymore/wpfoly_claymore_sensors_on.ogg", 75, 100, 1, CHAN_AUTO )
                 self.NextBeepTime = CurTime() + 3
             end
         elseif SERVER then
             local p = self:GetLaserPos()
             for _, i in ipairs(ents.FindInCone(p, (self:GetAngles() + self:GetAdjustment()):Forward(), self.DetectionRange, math.cos(math.rad(self.DetectionAngle / 2)))) do
-                if IsValid(i) and (i:IsPlayer() or i:IsNPC() or i:IsNextBot()) and i:GetPos():DistToSqr(p) <= self.DetectionRangeSqr and self:CheckLaserIntersect(i) then
+                if IsValid(i) and (i:IsPlayer() or i:IsNPC() or i:IsNextBot() or i:IsVehicle()) and i:GetPos():DistToSqr(p) <= self.DetectionRangeSqr and self:CheckLaserIntersect(i) then
                     local mins, maxs = i:WorldSpaceAABB()
                     local c = i:WorldSpaceCenter()
                     local tr = util.TraceLine({

@@ -16,6 +16,7 @@ ENT.BlastRadius = 125
 ENT.SpinAngles = Vector(9000, 0, 0)
 ENT.GroundDecal = false
 ENT.IsPickable = false
+ENT.RemoveForTooLong = true
 ENT.MinS = Vector(0, 0, 0)
 ENT.MaxS = Vector(0, 0, 0)
 ENT.NextBeepTime = 0
@@ -34,6 +35,17 @@ end
 function ENT:Impact(tr1, data, bHull)
     local ang = data.OurOldVelocity:Angle()
 	local dmginfo = DamageInfo()
+	
+	if self.RemoveForTooLong then
+    timer.Simple(300, function()
+        if IsValid(self) then
+            self:SetRenderMode(RENDERMODE_TRANSALPHA)
+            self:SetRenderFX(kRenderFxFadeFast)
+        end
+    end)
+    SafeRemoveEntityDelayed(self, 303)
+	end
+	
 	self:FireBullets({
 		Attacker = self:GetOwner(),
 		Num = 1,
@@ -79,7 +91,7 @@ function ENT:Think()
             end
     elseif SERVER then
         for _, i in ipairs(ents.FindInSphere(self:GetPos(), self.Radius)) do
-            if IsValid(i) and ((i:IsPlayer() and i:GetVelocity():Length2DSqr() >= 22500) or i:IsNPC() or i:IsNextBot()) then
+            if IsValid(i) and ((i:IsPlayer() and i:GetVelocity():Length2DSqr() >= 22500) or i:IsNPC() or i:IsNextBot() or i:IsVehicle()) then
                 self:Detonate()
                 break
             end

@@ -25,7 +25,7 @@ end
 function ENT:Think()
     if SERVER and self:GetArmed() then
         for _, i in ipairs(ents.FindInSphere(self:GetPos(), self.DetectionRange)) do
-            if IsValid(i) and ((i:IsPlayer() and i:GetVelocity():Length2DSqr() >= 22500) or i:IsNPC() or i:IsNextBot()) then
+            if IsValid(i) and ((i:IsPlayer() and i:GetVelocity():Length2DSqr() >= 22500) or i:IsNPC() or i:IsNextBot() or i:IsVehicle()) then
                 self:Detonate()
                 break
             end
