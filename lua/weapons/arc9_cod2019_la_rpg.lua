@@ -449,6 +449,16 @@ SWEP.AttachmentElements = {
             {1,1},
         },
     },
+    ["rocket_harpoon"] = {
+        Bodygroups = {
+            {1,2},
+        },
+    },
+    ["rocket_none"] = {
+        Bodygroups = {
+            {1,3},
+        },
+    },
 }
 
 SWEP.Attachments = {

@@ -43,6 +43,7 @@ local particlenames = {
 	"smoke_thrown_trail",
 	"grenadetrail",
 	"rockettrail",
+	"smoketrail",
 	"Generic_explo_emp",
 	"Generic_explo_vhigh",
 	"Generic_explo_high",

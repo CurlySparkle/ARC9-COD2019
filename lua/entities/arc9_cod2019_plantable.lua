@@ -13,10 +13,12 @@ ENT.LockYaw = false
 ENT.AdjustPitch = false
 ENT.AdjustOffset = false
 ENT.GroundDecal = false
+ENT.IsPickable = true
 ENT.MinS = Vector(-2, -5, 0)
 ENT.MaxS = Vector(2, 5, 8)
 ENT.Bury = 0
 ENT.SpinAngles = Vector(0, 0, 0)
+ENT.Angles = Angle(0, 0, 0)
 
 ENT.BurySurfaces = {
     [MAT_DIRT] = true,
@@ -56,7 +58,6 @@ function ENT:Initialize()
         self:SetMaxHealth(10)
 
         self.SpawnAngle = self:GetAngles().y
-
         self.Attacker = self:GetOwner()
     end
     self.SpawnTime = CurTime()
@@ -162,6 +163,10 @@ if SERVER then
       local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
       local hitEntity = data.HitEntity -- Get the entity that was hit (can be nil if it hit the world)
 	  
+	    if self:Impact(tr1, data, bHull) then
+            return
+        end
+	  
         local ent = data.HitEntity
         if IsValid(ent) and ent:IsPlayer() and ent == self:GetOwner() then
             return
@@ -174,6 +179,9 @@ if SERVER then
 	  if self.GroundDecal then
 		util.Decal("Dark", hitPos + hitNormal, hitPos - hitNormal)
 	  end
+    end
+	
+	function ENT:Impact()
     end
 
     function ENT:Detonate()
@@ -191,12 +199,14 @@ if SERVER then
 
     function ENT:Use(act, call, calltype, integer)
         if not self.BOOM and self.WeaponClass and IsValid(act) and act:IsPlayer() then
+		  if self.IsPickable then
             act:GiveAmmo(1, weapons.GetStored(self.WeaponClass).Ammo, true)
             act:Give(self.WeaponClass, true)
 
             --self:EmitSound("CSGO.Breacher.BreachUse", 75)
 			self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 120, 100, 1, CHAN_AUTO)
             self:Remove()
+		   end
         end
     end
 else

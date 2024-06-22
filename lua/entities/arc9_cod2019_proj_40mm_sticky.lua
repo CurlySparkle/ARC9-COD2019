@@ -42,9 +42,32 @@ function ENT:OnInitialize()
 end 
 
 function ENT:Impact(data, collider)
+    local attacker = self.Attacker or self:GetOwner() or self
+	local ang = data.OurOldVelocity:Angle()
 	self.isPinned = true
 	ParticleEffectAttach("grenadetrail",PATTACH_ABSORIGIN_FOLLOW,self,0)
 	--self:StopParticles()
+    self:EmitSound("weapons/cod2019/shared/bullet_small_crossbow_bolt_swt_01.ogg",75, 100, 1, CHAN_AUTO)
+	self:FireBullets({ -- leave a bullet hole. Also may be able to hit things it can't collide with (like stuck C4)
+      Attacker = attacker,
+      Damage = self.Damage,
+      Force = 1,
+      Distance = 4,
+      HullSize = 4,
+      Tracer = 0,
+      Dir = ang:Forward(),
+      Src = data.HitPos - ang:Forward(),
+      IgnoreEntity = self,
+      Callback = function(atk, tr, dmginfo)
+         dmginfo:SetDamageType(DMG_SLASH)
+         dmginfo:SetInflictor(attacker)
+		 
+         if (tr.HitSky) then
+			self:Remove()
+			return
+         end
+      end
+	})
 end
 
 function ENT:Think()

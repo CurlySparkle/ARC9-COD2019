@@ -78,12 +78,12 @@ if SERVER then
            self:SetPos(tr.HitPos)
            self:Detonate()
         end
-        if (tr.HitSky) then
-			self:Remove()
-			return
-		end
+        -- if (tr.HitSky) then
+			-- self:Remove()
+			-- return
+		-- end
     end
-
+	
     end
 
     function ENT:StartTouch(ent)
@@ -141,11 +141,11 @@ if SERVER then
                     self:SetSolid(SOLID_NONE)
                     self:SetMoveType(MOVETYPE_NONE)
                     --self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-					self:EmitSound(("weapons/cod2019/crossbow/imp_Arrow_Concrete_2ch_V3_0" .. math.random(1,4) .. ".ogg"), 75, 100, 1, CHAN_AUTO)
-					self:EmitSound("weapons/cod2019/throwables/throwing_knife/knife_hitwall1.ogg")
+					--self:EmitSound(("weapons/cod2019/crossbow/imp_Arrow_Concrete_2ch_V3_0" .. math.random(1,4) .. ".ogg"), 75, 100, 1, CHAN_AUTO)
+					--self:EmitSound("weapons/cod2019/throwables/throwing_knife/knife_hitwall1.ogg")
 					--self:EmitSound("weapons/crossbow/hit1.wav")
 					--sound.Play("weapons/cod2019/crossbow/imp_Arrow_Concrete_2ch_V3_01", data.HitPos + data.HitNormal * 5)
-					util.Decal("Impact.Concrete", hitPos + hitNormal, hitPos - hitNormal)
+					--util.Decal("Impact.Concrete", hitPos + hitNormal, hitPos - hitNormal)
 
                     local f = {self}
                     table.Add(f, tgt:GetChildren())
@@ -167,8 +167,8 @@ if SERVER then
                         self:SetLocalPos(n_pos)
                         self:SetLocalAngles(n_ang)
                         debugoverlay.Cross(pos, 8, 5, Color(255, 0, 255), true)
-						self:EmitSound(("weapons/cod2019/crossbow/bullet_flesh_plr_head_0" .. math.random(1,3) .. ".ogg"), 75, 100, 1, CHAN_AUTO)
-						self:EmitSound("weapons/cod2019/throwables/throwing_knife/knife_hit1.ogg")
+						--self:EmitSound(("weapons/cod2019/crossbow/bullet_flesh_plr_head_0" .. math.random(1,3) .. ".ogg"), 75, 100, 1, CHAN_AUTO)
+						--self:EmitSound("weapons/cod2019/throwables/throwing_knife/knife_hit1.ogg")
 						--self:EmitSound("weapons/crossbow/bolt_skewer1.wav")
 						--sound.Play("weapons/cod2019/crossbow/bullet_flesh_plr_head_01", data.HitPos + data.HitNormal * 5)
                     elseif not tgt:IsWorld() then
@@ -182,12 +182,49 @@ if SERVER then
         end
 
         self.DetonateTime = CurTime() + 2
-		self:Detonate()
+		--self:Detonate()
 		
 		if self.ImpactScorch then
 		util.Decal("Scorch", hitPos + hitNormal, hitPos - hitNormal)
 		end
+		
+        if self:Impact(tr1, data, bHull) then
+            return
+        end
+		
     end
+end
+
+function ENT:Impact(tr1, data, bHull)
+    local ang = data.OurOldVelocity:Angle()
+	local dmginfo = DamageInfo()
+	self:FireBullets({
+		Attacker = self:GetOwner(),
+		Num = 1,
+		Tracer = 0,
+        Dir = ang:Forward(),
+        Src = data.HitPos - ang:Forward(),
+		HullSize = bHull && self.Maxs:Length() * 2 || 1,
+		IgnoreEntity = self,
+		Callback = function(attacker, tr, dmgInfo)
+			dmgInfo:SetInflictor(IsValid(self.Weapon) && self.Weapon || self)
+			dmginfo:SetDamageType(DMG_SLASH)
+
+			if (tr.HitSky) then
+				self:Remove()
+			else
+			    self:Detonate()
+			end
+			
+			if (tr.Entity:IsPlayer() || tr.Entity:IsNPC() || tr.Entity:IsNextBot() || tr.Entity:IsRagdoll()) then
+				sound.Play("weapons/cod2019/shared/blt_imp_flesh_plr_04.ogg", tr.HitPos + tr.HitNormal * 5)
+				return
+			end
+
+			sound.Play("weapons/cod2019/shared/bullet_small_crossbow_bolt_swt_01.ogg", tr.HitPos)
+			
+		end
+	})
 end
 
 function ENT:Detonate()

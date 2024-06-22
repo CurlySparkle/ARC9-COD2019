@@ -530,27 +530,6 @@ ARC9.LoadAttachment(ATT, "cod2019_ammo_crossbow_rock")
 -- ARC9.LoadAttachment(ATT, "cod2019_ammo_crossbow_he")
 
 //////////////////////////////////////////////// -- Launcher Ammo Types
-//////////////////////////////////// -- RPG-7
-/////////////////////////// -- cod2019_ammo_rpg_rock
-ATT = {}
-
-ATT.PrintName = "Shovel"
-ATT.CompactName = "Shovel"
-ATT.Description = "Changes the rocket to a shovel."
-ATT.SortOrder = 0
-
-ATT.Icon = Material("entities/attachs/cod2019_ammo_rpg_shovel.png", "mips smooth")
-ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.AutoStats = true
-
-ATT.ActivateElements = {"rocket_shovel"}
-ATT.Free = true
-
-ATT.ShootEnt = "arc9_cod2019_proj_rpg_shovel"
-ATT.Category = {"cod2019_rpg_ammo"}
-
-ARC9.LoadAttachment(ATT, "cod2019_ammo_rpg_rock")
-
 //////////////////////////////////// -- MGL-32
 /////////////////////////// -- cod2019_ammo_gl_rock
 ATT = {}
@@ -668,6 +647,25 @@ ATT.Category = {"cod2019_ammo_gl"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_sticky")
 
+/////////////////////////// -- cod2019_ammo_gl_mine
+ATT = {}
+
+ATT.PrintName = "Mine Nade"
+ATT.CompactName = "Mine"
+ATT.Description = "Changes the nade type to a mine charge type that sticks to surfaces and explode if a living entity is near it."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_mine.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+
+ATT.Free = true
+
+ATT.ShootEnt = "arc9_cod2019_proj_40mm_mine"
+ATT.Category = {"cod2019_ammo_gl"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_mine")
+
 /////////////////////////// -- cod2019_ammo_gl_slug
 ATT = {}
 
@@ -725,6 +723,46 @@ end
 ATT.MuzzleParticle = "muzzleflash_slug"
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_slug")
+
+//////////////////////////////////// -- RPG-7 Ammo
+/////////////////////////// -- cod2019_ammo_rpg_shovel
+ATT = {}
+
+ATT.PrintName = "Shovel"
+ATT.CompactName = "Shovel"
+ATT.Description = "Changes the rocket to a shovel."
+ATT.SortOrder = 0
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_rpg_shovel.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+
+ATT.ActivateElements = {"rocket_shovel"}
+ATT.Free = true
+
+ATT.ShootEnt = "arc9_cod2019_proj_rpg_shovel"
+ATT.Category = {"cod2019_rpg_ammo"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_rpg_rock")
+/////////////////////////// -- cod2019_ammo_rpg_harpoon
+ATT = {}
+
+ATT.PrintName = "Harpoon"
+ATT.CompactName = "Harpoon"
+ATT.Description = "Changes the rocket to a harpoon type."
+ATT.SortOrder = 0
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_rpg_harpoon.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+
+ATT.ActivateElements = {"rocket_harpoon"}
+ATT.Free = true
+
+ATT.ShootEnt = "arc9_cod2019_proj_rpg_harpoon"
+ATT.Category = {"cod2019_rpg_ammo"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_rpg_harpoon")
 
 //////////////////////////////////// -- PILA Ammo
 /////////////////////////// -- cod2019_pila_ammo_guided
