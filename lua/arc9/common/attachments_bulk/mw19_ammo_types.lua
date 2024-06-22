@@ -652,7 +652,7 @@ ATT = {}
 
 ATT.PrintName = "Mine Nade"
 ATT.CompactName = "Mine"
-ATT.Description = "Changes the nade type to a mine charge type that sticks to surfaces and explode if a living entity is near it."
+ATT.Description = "Changes the nade type to a mine charge type that sticks to surfaces and explode by a proximity."
 ATT.SortOrder = 1
 
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_mine.png", "mips smooth")

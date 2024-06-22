@@ -11,7 +11,8 @@ ENT.Model = "models/weapons/cod2019/m32_40mm_bunker_buster.mdl"
 ENT.WeaponClass = "arc9_cod2019_la_m32"
 ENT.Bury = 0
 ENT.ArmDelay = 3
-ENT.Radius = 64
+ENT.Radius = 90
+ENT.BlastRadius = 125
 ENT.SpinAngles = Vector(9000, 0, 0)
 ENT.GroundDecal = false
 ENT.IsPickable = false
@@ -101,8 +102,8 @@ function ENT:Detonate()
     dmg:SetInflictor(self)
     dmg:SetDamageForce(self:GetVelocity() * 100)
     dmg:SetDamagePosition(src)
-    dmg:SetDamage(100)
-    util.BlastDamageInfo(dmg, self:GetPos(), 100)
+    dmg:SetDamage(125)
+    util.BlastDamageInfo(dmg, self:GetPos(), self.BlastRadius)
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())
@@ -114,7 +115,7 @@ function ENT:Detonate()
     end
 
     self:EmitSound("^weapons/cod2019/shared/rocket_expl_body_02.ogg", 100, 100, 1, CHAN_WEAPON)
-	util.ScreenShake(self:GetPos(), 25, 4, 0.75, 100 * 4)
+	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.BlastRadius * 4)
 	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
     self:Remove()
 end
