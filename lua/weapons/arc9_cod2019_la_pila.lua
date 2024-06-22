@@ -385,6 +385,7 @@ SWEP.Hook_Think2 = function(self)
             if ent == self:GetOwner() then continue end
             if ent.IsProjectile then continue end
             if ent.UnTrackable then continue end
+            if ent:GetClass():find("prop_") then continue end
 
             local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
             local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)

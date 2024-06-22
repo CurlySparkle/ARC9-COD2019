@@ -440,12 +440,13 @@ SWEP.Hook_Think2 = function(self)
         local targetscore = 0
 
         for _, ent in ipairs(targets) do
-            --if ent:Health() <= 0 and !ent.LVS then continue end
+            --if ent:Health() <= 0 then continue end
             -- if !(ent:IsPlayer() or ent:IsNPC() or ent:GetOwner():IsValid()) then continue end
             if ent:IsWorld() then continue end
             if ent == self:GetOwner() then continue end
             if ent.IsProjectile then continue end
             if ent.UnTrackable then continue end
+            if ent:GetClass():find("prop_") then continue end
 
             local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
             local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)

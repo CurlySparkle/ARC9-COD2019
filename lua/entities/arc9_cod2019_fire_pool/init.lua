@@ -38,7 +38,7 @@ function ENT:Think()
 			e:Ignite(IGNITE_LENGTH,14)
         end
         if e:Health() == 0 then
-           e:SetColor(Color(55, 55, 55))
+           e:SetColor(Color(25, 25, 25))
         end
     end
 
