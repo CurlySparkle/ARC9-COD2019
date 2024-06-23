@@ -511,6 +511,14 @@ L["cod2019_ammo_gl_mine.printname"] = "40 mm Närhet" -- UO
 L["cod2019_ammo_gl_mine.compactname"] = "Närh." -- UO
 L["cod2019_ammo_gl_mine.description"] = "Anpassade 40 mm patroner fyllda med <color=100,255,100>Närhetsaktiverade</color> granater som fastnar på ytor." -- UO
 
+L["cod2019_ammo_gl_energy.printname"] = "40 mm EMP" -- UO
+L["cod2019_ammo_gl_energy.compactname"] = "EMP" -- UO
+L["cod2019_ammo_gl_energy.description"] = "Anpassade 40 mm patroner med en <color=100,255,100>EMP-granat</color> som desorienterar måltavlor." -- UO
+
+L["cod2019_ammo_gl_seeker.printname"] = "40 mm Underrättelse" -- UO
+L["cod2019_ammo_gl_seeker.compactname"] = "Under." -- UO
+L["cod2019_ammo_gl_seeker.description"] = "Anpassade 40 mm patroner laddade med <color=100,255,100>Snapshot-granater</color>. Denna underrättelseenhet erbjuder en momuntär glimt av fiender inne i sprängradien till din trupp.\n\nInspirerad av \"<color=175,175,255>Seeker Six</color>\" från Killing Floor." -- UO, partially taken from M203 40mm Recon
+
 ////////////////////  Custom PILA Ammo
 L["cod2019_pila_ammo_guided.printname"] = "Guidade Robotar" -- UO
 L["cod2019_pila_ammo_guided.compactname"] = "Guidade" -- UO

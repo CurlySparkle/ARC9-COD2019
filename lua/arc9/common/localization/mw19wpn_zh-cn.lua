@@ -512,6 +512,14 @@ L["cod2019_perks_auto.description"] = "將射模式轉換成<color=100,255,100>�
 -- L["cod2019_ammo_gl_mine.compactname"] = "Prox." -- UO
 -- L["cod2019_ammo_gl_mine.description"] = "Custom 40mm shells filled with <color=100,255,100>Proximity</color>-activated grenades that stick onto surfaces." -- UO
 
+-- L["cod2019_ammo_gl_energy.printname"] = "40mm EMP" -- UO
+-- L["cod2019_ammo_gl_energy.compactname"] = "EMP" -- UO
+-- L["cod2019_ammo_gl_energy.description"] = "Custom 40mm shells with an <color=100,255,100>EMP</color> grenade that explodes on disorients targets." -- UO
+
+-- L["cod2019_ammo_gl_seeker.printname"] = "40mm Recon" -- UO
+-- L["cod2019_ammo_gl_seeker.compactname"] = "Recon" -- UO
+-- L["cod2019_ammo_gl_seeker.description"] = "Custom 40mm shells loaded with <color=100,255,100>Snapshot</color> rounds. This recon device provides a momentary glimpse of enemies within the blast radius for your squad.\n\nInspired by the <color=175,175,255>Seeker Six</color> from Killing Floor." -- UO, partially taken from M203 40mm Recon
+
 ////////////////////  Custom PILA Ammo
 -- L["cod2019_pila_ammo_guided.printname"] = "Guided Rockets" -- UO
 -- L["cod2019_pila_ammo_guided.compactname"] = "Guided" -- UO
