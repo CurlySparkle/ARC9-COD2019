@@ -9,29 +9,17 @@ ENT.Base = "arc9_nade_base"
 ENT.PrintName = "Flash Bang"
 ENT.Spawnable = false
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
-ENT.Model = "models/weapons/cod2019/w_eq_flash_thrown.mdl"
+ENT.Model = "models/weapons/cod2019/w_eq_stun_thrown.mdl"
 ENT.PhysBoxSize = false
 ENT.SphereSize = false
 ENT.PhysMat = "grenade"
 ENT.LifeTime = 1.5
-ENT.Radius = 100
+ENT.Radius = 200
 ENT.ExplodeOnImpact = false
 ENT.SmokeTrail = false
 ENT.BounceSound = "COD2019.Flash.Bounce"
 
-function ENT:EntityFacingFactor(theirent)
-    local dir = theirent:EyeAngles():Forward()
-    local facingdir = (self:GetPos() - (theirent.GetShootPos and theirent:GetShootPos() or theirent:GetPos())):GetNormalized()
-
-    return (facingdir:Dot(dir) + 1) / 2
-end
-
-function ENT:EntityFacingUs(theirent)
-    local dir = theirent:EyeAngles():Forward()
-    local facingdir = (self:GetPos() - (theirent.GetShootPos and theirent:GetShootPos() or theirent:GetPos())):GetNormalized()
-    if facingdir:Dot(dir) > -0.25 then return true end
-end
-
+local BLUR_DURATION = 5
 local BaseClass = baseclass.Get(ENT.Base)
 
 local function isCowerSupportedForNPC(npc)
@@ -106,35 +94,17 @@ function ENT:Detonate()
         self:EmitSound("weapons/underwater_explode3.wav", 100)
     else
         ParticleEffect("grenade_final", self:GetPos(), Angle(0, 0, 0), nil)
-        self:EmitSound("COD2019.Flash.Explode")
+        self:EmitSound("^weapons/cod2019/shared/concussion_expl_body_01.ogg", 120, 100, 1, CHAN_AUTO)
     end
 	
-    util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 256, 32)
+    util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), self.Radius, 32)
     util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-
-    local radius = 1200
     local owner = self:GetOwner()
 
-    for _, e in pairs(ents.FindInSphere(self:GetPos(), radius)) do
+    for _, e in pairs(ents.FindInSphere(self:GetPos(), self.Radius)) do
         if ((e:IsPlayer() || e:IsNPC()) && !e:IsLineOfSightClear(self:GetPos())) then
             continue
         end
-        
-        if (e:IsPlayer()) then
-            local dist = e:GetPos():DistToSqr(self:GetPos())
-            local distDelta = 1 - math.Clamp(dist / (radius * radius), 0, 1)
-            local strength = Lerp(distDelta, 0, 2)
-
-            e:SendLua("LocalPlayer():EmitSound('COD2019.Flash.Explode')")
-            local dot = e:EyeAngles():Forward():Dot((e:GetPos() - self:GetPos()):GetNormalized())
-            strength = strength * math.max(-dot, 0.1)
-
-            e:ScreenFade(SCREENFADE.IN, color_white, strength, strength * 0.5)
-            e:SetDSP(35)
-
-            continue
-        end
-
         if (e:IsNPC()) then
             e:StartEngineTask(89, 0) --task_sound_pain
 
@@ -145,8 +115,13 @@ function ENT:Detonate()
                     e:TakeDamage(e:Health(), self:GetOwner(), self || nil)
                 end
             end
-
             continue
+        end
+    end
+	
+    for _, ply in pairs(ents.FindInSphere(self:GetPos(), self.Radius)) do
+        if (ply:IsPlayer()) then
+            self:ApplyBlurEffect(ply)
         end
     end
 	
@@ -172,6 +147,54 @@ function ENT:Detonate()
         })
     end
 
-    sound.EmitHint(SOUND_DANGER, self:GetPos(), radius, 6, nil) --needed for task (make them blinded for a little longer)
+    sound.EmitHint(SOUND_DANGER, self:GetPos(), self.Radius, 6, nil) --needed for task (make them blinded for a little longer)
     self:Remove()
+end
+
+function ENT:ApplyBlurEffect(ply)
+    if SERVER then
+        net.Start("BlurEffect")
+        net.WriteFloat(BLUR_DURATION)
+        net.Send(ply)
+    end
+end
+
+if CLIENT then
+
+    local colorModify = {
+        ["$pp_colour_addr"] = 0,
+        ["$pp_colour_addg"] = 0,
+        ["$pp_colour_addb"] = 0,
+        ["$pp_colour_brightness"] = 0,
+        ["$pp_colour_contrast"] = 1,
+        ["$pp_colour_colour"] = 1,
+        ["$pp_colour_mulr"] = 0,
+        ["$pp_colour_mulg"] = 0,
+        ["$pp_colour_mulb"] = 0
+    }
+
+    net.Receive("BlurEffect", function()
+        local duration = net.ReadFloat()
+        local endTime = CurTime() + duration
+        
+        hook.Add("RenderScreenspaceEffects", "BlurEffect", function()
+            local timeLeft = endTime - CurTime()
+            if timeLeft <= 0 then
+                hook.Remove("RenderScreenspaceEffects", "BlurEffect")
+                return
+            end
+            
+            local fraction = timeLeft / duration
+            DrawMotionBlur(0.4, fraction, 0.05)
+            -- Apply color modify
+            local colorFraction = fraction * 0.5 -- Adjust this multiplier to control color intensity
+            colorModify["$pp_colour_brightness"] = -colorFraction * 0.5 -- Darken the screen
+            colorModify["$pp_colour_colour"] = 1 - colorFraction * 0.1 -- Reduce color saturation
+            DrawColorModify(colorModify)
+        end)
+    end)
+end
+
+if SERVER then
+    util.AddNetworkString("BlurEffect")
 end
