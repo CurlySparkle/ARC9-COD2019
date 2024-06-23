@@ -95,6 +95,7 @@ SWEP.RPM = 125
 SWEP.Firemodes = {
     {
         Mode = 1,
+		LockAttack = false
     },
 }
 
@@ -298,6 +299,122 @@ SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "COD2019.M32.Trigger"
 SWEP.TriggerUpSound = "COD2019.M32.UnTrigger"
+
+-------------------------- EXTRA
+SWEP.Hook_GetShootEntData = function(self, data)
+    local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 1)
+
+    if tracktime >= 1 and self.TargetEntity and IsValid(self.TargetEntity) then
+        data.Target = self.TargetEntity
+    end
+end
+
+SWEP.Hook_HUDPaintBackground = function(self)
+local TrackingIndicator = Material("VGUI/lockon.png")
+    if self:GetSightAmount() >= 0.75 then
+        if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
+             local toscreen = self.TargetEntity:WorldSpaceCenter():ToScreen()
+             local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
+             
+             if tracktime >= 1 then
+                surface.SetDrawColor(255,0,0,200)
+                surface.DrawLine(0, toscreen.y, ScrW(), toscreen.y)
+                surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH()) 
+             else
+                surface.SetMaterial(TrackingIndicator)
+                surface.SetDrawColor(255,0,0,200)
+                surface.DrawTexturedRect(toscreen.x - 30, toscreen.y - 30, 60, 60) 
+             end
+        end
+    end
+end
+
+---- LOCK-IN FUNCTIONS
+
+SWEP.NextBeepTime = 0
+SWEP.TargetEntity = nil
+SWEP.StartTrackTime = 0
+SWEP.LockTime = 1.1
+
+SWEP.Hook_Think2 = function(self)
+    if self:GetSightAmount() >= 0.75 and self:Clip1() > 0 and self:GetCurrentFiremodeTable().LockAttack then
+
+        if self.NextBeepTime > CurTime() then return end
+
+        local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
+
+        -- if CLIENT then
+        if tracktime >= 1 and self.TargetEntity then
+            if CLIENT then
+                self:EmitSound("weapons/cod2019/shared/Seeker_LockOn.ogg", 75, 100)
+            end
+            self.NextBeepTime = CurTime() + 0.3
+        elseif tracktime >= 0 and self.TargetEntity then
+            if CLIENT then
+                self:EmitSound("", 75, 100)
+            end
+            self.NextBeepTime = CurTime() + 0.3
+        else
+            if CLIENT then
+                self:EmitSound("", 75, 100)
+            end
+            self.NextBeepTime = CurTime() + 0.4
+        end
+        -- end
+
+        local targets = ents.FindInCone(self:GetShootPos() + (self:GetShootDir():Forward() * 32), self:GetShootDir():Forward(), 30000, math.cos(math.rad(5)))
+
+        local best = nil
+        local targetscore = 0
+
+        for _, ent in ipairs(targets) do
+            if ent:IsWorld() then continue end
+            if ent == self:GetOwner() then continue end
+            if ent.IsProjectile then continue end
+            if ent.UnTrackable then continue end
+            if ent:GetClass():find("prop_") then continue end
+
+            local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
+            local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
+			if vol <= 20000 then continue end
+
+            local dot = (ent:GetPos() - self:GetShootPos()):GetNormalized():Dot(self:GetShootDir():Forward())
+            local entscore = 1
+            if ent:IsPlayer() then entscore = entscore + 5 end
+            if ent:IsNPC() or ent:IsNextBot() then entscore = entscore + 2 end
+            if ent:IsVehicle() or ent.LVS then entscore = entscore + 10 end
+            if ent:Health() > 0 then entscore = entscore + 5 end
+
+            entscore = entscore + dot * 5
+
+            entscore = entscore + (ent.ARC9TrackingScore or 0)
+
+            if entscore > targetscore then
+                local tr = util.TraceLine({
+                    start = self:GetShootPos(),
+                    endpos = ent:WorldSpaceCenter(),
+                    filter = self:GetOwner(),
+                    mask = MASK_SHOT
+                })
+                if tr.Entity == ent then
+                best = ent
+                bestang = dot
+                targetscore = entscore
+                end
+            end
+        end
+
+        if !best then self.TargetEntity = nil return end
+
+        if !self.TargetEntity then
+            self.StartTrackTime = CurTime()
+        end
+
+        self.TargetEntity = best
+    else
+        self.TargetEntity = nil
+    end
+end
 
 SWEP.Animations = {
 	["enter_sights"] = {

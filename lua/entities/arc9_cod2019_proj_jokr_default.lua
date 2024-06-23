@@ -42,6 +42,8 @@ ENT.ShootEntData = {}
 ENT.IsProjectile = true
 ENT.LockOnPoint = nil
 
+DEFINE_BASECLASS(ENT.Base)
+
 function ENT:OnInitialize()
     if not IsValid(self.ShootEntData.Target) then
         local tr = util.TraceLine({
@@ -238,4 +240,5 @@ function ENT:OnRemove()
      end
     end
     self:StopParticles()
+	BaseClass.OnRemove()
 end

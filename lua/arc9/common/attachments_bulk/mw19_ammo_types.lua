@@ -498,36 +498,13 @@ ATT.SortOrder = 0
 ATT.Icon = Material("entities/arc9_cod2019_nade_rock.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_thrownrock"
 ATT.ActivateElements = {"bolt_rock"}
-
 ATT.Category = {"cod2019_ammo_crossbow"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_crossbow_rock")
-
-/////////////////////////// -- cod2019_ammo_crossbow_he
--- ATT = {}
-
--- ATT.PrintName = "Explosive Contact Bolt"
--- ATT.CompactName = "EXPL"
--- ATT.Description = "Crossbow bolts fitted with a custom electronic small-explosive device."
--- ATT.SortOrder = 0.5
-
--- ATT.Icon = Material("entities/attachs/mm/crossbow/cod2019_mm_crossbow_mag.png", "mips smooth")
--- ATT.MenuCategory = "ARC9 - MW2019 Attachments"
--- ATT.AutoStats = true
-
--- ATT.Free = true
-
--- ATT.ShootEnt = "arc9_cod2019_proj_crossbow_he"
--- ATT.ImpactDecal = "Dark"
-
--- ATT.Category = {"cod2019_ammo_crossbow"}
-
--- ARC9.LoadAttachment(ATT, "cod2019_ammo_crossbow_he")
 
 //////////////////////////////////////////////// -- Launcher Ammo Types
 //////////////////////////////////// -- MGL-32
@@ -544,7 +521,6 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
 ATT.ActivateElements = {"nades_rock"}
-
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_thrownrock"
@@ -563,7 +539,6 @@ ATT.SortOrder = 0.5
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_flash.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_flash"
@@ -582,7 +557,6 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_fire.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_inc"
@@ -601,7 +575,6 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_smoke.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_smoke"
@@ -620,7 +593,6 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_gas.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_gas"
@@ -639,7 +611,6 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_slug.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_sticky"
@@ -658,13 +629,59 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_mine.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-
 ATT.Free = true
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_mine"
 ATT.Category = {"cod2019_ammo_gl"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_mine")
+
+/////////////////////////// -- cod2019_ammo_gl_energy
+ATT = {}
+
+ATT.PrintName = "Energy Nade"
+ATT.CompactName = "Energy"
+ATT.Description = "Changes the nade type to an energy type nade that explodes with disintegration effects."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_energy.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEnt = "arc9_cod2019_proj_40mm_energy"
+ATT.Category = {"cod2019_ammo_gl"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_energy")
+
+/////////////////////////// -- cod2019_ammo_gl_seeker
+ATT = {}
+
+ATT.PrintName = "Seeker Nade"
+ATT.CompactName = "Seeker"
+ATT.Description = [[Changes the nade type to a Seeker type mini rocket that can lock into enemies while aiming.
+The rocket must travel a certain distance to arm itself, or else it won't explode. The unexploded rocket can still deal damage.
+
+(Based and Inspired by the Seeker Six from Killing Floor.)]]
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_seeker.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEnt = "arc9_cod2019_proj_40mm_seeker"
+ATT.Category = {"cod2019_ammo_gl"}
+
+ATT.Firemodes = {
+    {
+        Mode = 1,
+        PrintName = ARC9:GetPhrase("mw19_firemode_lockon") .. " / " .. ARC9:GetPhrase("mw19_firemode_unguided"),
+        LockAttack = true
+    },
+}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_seeker")
 
 /////////////////////////// -- cod2019_ammo_gl_slug
 ATT = {}

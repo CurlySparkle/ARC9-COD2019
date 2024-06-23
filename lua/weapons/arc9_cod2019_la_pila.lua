@@ -373,7 +373,7 @@ SWEP.Hook_Think2 = function(self)
         end
         -- end
 
-        local targets = ents.FindInCone(self:GetShootPos() + (self:GetShootDir():Forward() * 32), self:GetShootDir():Forward(), 30000, math.cos(math.rad(10)))
+        local targets = ents.FindInCone(self:GetShootPos() + (self:GetShootDir():Forward() * 32), self:GetShootDir():Forward(), 30000, math.cos(math.rad(5)))
 
         local best = nil
         local targetscore = 0
@@ -384,6 +384,10 @@ SWEP.Hook_Think2 = function(self)
             if ent.IsProjectile then continue end
             if ent.UnTrackable then continue end
             if ent:GetClass():find("prop_") then continue end
+
+            local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
+            local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
+			if vol <= 20000 then continue end
 
             local dot = (ent:GetPos() - self:GetShootPos()):GetNormalized():Dot(self:GetShootDir():Forward())
             local entscore = 1
