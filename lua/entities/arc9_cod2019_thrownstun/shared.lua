@@ -187,7 +187,7 @@ if CLIENT then
             local fraction = timeLeft / duration
             DrawMotionBlur(0.4, fraction, 0.05)
             -- Apply color modify
-            local colorFraction = fraction * 0.5 -- Adjust this multiplier to control color intensity
+            local colorFraction = fraction * 1 -- Adjust this multiplier to control color intensity
             colorModify["$pp_colour_brightness"] = -colorFraction * 0.5 -- Darken the screen
             colorModify["$pp_colour_colour"] = 1 - colorFraction * 0.1 -- Reduce color saturation
             DrawColorModify(colorModify)
