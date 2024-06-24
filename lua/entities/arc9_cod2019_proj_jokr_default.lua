@@ -240,5 +240,5 @@ function ENT:OnRemove()
      end
     end
     self:StopParticles()
-	BaseClass.OnRemove()
+	BaseClass.OnRemove(self)
 end

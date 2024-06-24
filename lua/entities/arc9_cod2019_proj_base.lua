@@ -125,12 +125,6 @@ function ENT:Initialize()
     self:OnInitialize()
 end
 
--- function ENT:OnRemove()
-    -- if self.LoopSound then
-        -- self.LoopSound:Stop()
-    -- end
--- end
-
 function ENT:OnRemove()
     if self.LoopSound then
         self.LoopSound:Stop()
