@@ -6,7 +6,7 @@ end
 
 ENT.Type = "anim"
 ENT.Base = "arc9_nade_base"
-ENT.PrintName = "Flash Bang"
+ENT.PrintName = "Stun Grenade"
 ENT.Spawnable = false
 ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.Model = "models/weapons/cod2019/w_eq_stun_thrown.mdl"
@@ -15,11 +15,9 @@ ENT.SphereSize = false
 ENT.PhysMat = "grenade"
 ENT.LifeTime = 1.5
 ENT.Radius = 200
-ENT.ExplodeOnImpact = false
 ENT.SmokeTrail = false
-ENT.BounceSound = "COD2019.Flash.Bounce"
 
-local BLUR_DURATION = 5
+local BLUR_DURATION = 8
 local BaseClass = baseclass.Get(ENT.Base)
 
 local function isCowerSupportedForNPC(npc)
@@ -33,20 +31,7 @@ local function isCowerSupportedForNPC(npc)
 end
 
 local lethalToNpcs = {
-"npc_barnacle",
-"npc_crow",
-"npc_pigeon",
-"npc_seagull",
-"npc_zombie",
-"npc_fastzombie",
-"npc_zombie_torso",
-"npc_zombine",
-"npc_headcrab",
-"npc_headcrab_black",
-"npc_headcrab_fast",
-"npc_headcrab_fast",
-"npc_lambdaplayer",
-}
+"npc_barnacle","npc_crow","npc_pigeon","npc_seagull","npc_zombie","npc_fastzombie","npc_zombie_torso","npc_zombine","npc_headcrab","npc_headcrab_black","npc_headcrab_fast","npc_headcrab_fast","npc_lambdaplayer",}
 
 function ENT:Initialize()
     if SERVER then
@@ -74,6 +59,44 @@ function ENT:Initialize()
 	ParticleEffectAttach("grenadetrail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
 end
 
+function ENT:PhysicsCollide(data)
+   if data.Speed > 100 then
+      local tgt = data.HitEntity
+
+      if IsValid(tgt) and (self.NextHit or 0) < CurTime() then
+         self.NextHit = CurTime() + 0.1
+         local dmginfo = DamageInfo()
+         dmginfo:SetDamageType(DMG_CLUB)
+         dmginfo:SetDamage(5)
+         dmginfo:SetAttacker(self:GetOwner())
+         dmginfo:SetInflictor(self)
+         dmginfo:SetDamageForce(data.OurOldVelocity * 0.5)
+         tgt:TakeDamageInfo(dmginfo)
+
+         if (IsValid(tgt) and (tgt:IsNPC() or tgt:IsPlayer() or tgt:IsNextBot()) and tgt:Health() <= 0) or (not tgt:IsWorld() and not IsValid(tgt)) or string.find(tgt:GetClass(), "breakable") then
+           local pos, ang, vel = self:GetPos(), self:GetAngles(), data.OurOldVelocity
+
+         timer.Simple(0, function()
+           if IsValid(self) then
+              self:SetAngles(ang)
+              self:SetPos(pos)
+              self:GetPhysicsObject():SetVelocityInstantaneous(vel)
+           end
+         end)
+      end
+   end
+end
+		
+if data.Speed > 100 then
+   self:EmitSound(Sound("weapons/cod2019/throwables/stun/phy_flash_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.8, CHAN_AUTO)
+    elseif data.Speed > 75 then
+   self:EmitSound(Sound("weapons/cod2019/throwables/stun/phy_flash_bounce_concrete_med_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.6, CHAN_AUTO)
+    elseif data.Speed > 50 then
+   self:EmitSound(Sound("weapons/cod2019/throwables/stun/phy_flash_bounce_concrete_soft_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.4, CHAN_AUTO)
+end
+
+end
+
 function ENT:Detonate()
     if not self:IsValid() then return end
     if self.Defused then return end
@@ -93,7 +116,7 @@ function ENT:Detonate()
 
         self:EmitSound("weapons/underwater_explode3.wav", 100)
     else
-        ParticleEffect("grenade_final", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("Generic_explo_flash", self:GetPos(), Angle(0, 0, 0), nil)
         self:EmitSound("^weapons/cod2019/shared/concussion_expl_body_01.ogg", 120, 100, 1, CHAN_AUTO)
     end
 	
@@ -191,6 +214,17 @@ if CLIENT then
             colorModify["$pp_colour_brightness"] = -colorFraction * 0.5 -- Darken the screen
             colorModify["$pp_colour_colour"] = 1 - colorFraction * 0.1 -- Reduce color saturation
             DrawColorModify(colorModify)
+			
+            -- Apply bloom effect
+            local bloomParams = {
+                darken = 0.5 * fraction,
+                multiply = 0.5 * fraction,
+                sizex = 4,
+                sizey = 4,
+                passes = 2,
+                colour = 2 * fraction,
+            }
+            DrawBloom(bloomParams.darken, bloomParams.multiply, bloomParams.sizex, bloomParams.sizey, bloomParams.passes, bloomParams.colour, 1, 1, 1)
         end)
     end)
 end
