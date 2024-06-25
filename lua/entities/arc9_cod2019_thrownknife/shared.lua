@@ -78,6 +78,11 @@ function ENT:PhysicsCollide(data, physobj)
             self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hit1.ogg" )
 			self.Collectable = true
         end
+      local theirProps = util.GetSurfaceData(data.TheirSurfaceProps)
+      if (theirProps != nil && theirProps.material == MAT_DEFAULT) then
+        timer.Simple(0, function() self:Remove() end)
+        return
+      end
    end
 end
 

@@ -46,36 +46,6 @@ ENT.ShootEntData = {}
 ENT.IsProjectile = true
 ENT.LockOnPoint = nil
 
--- function ENT:Detonate()
-    -- local attacker = self.Attacker or self:GetOwner()
-    -- local dir = self:GetForward()
-    -- local src = self:GetPos() - dir * 64
-
-    -- local dmg = DamageInfo()
-    -- dmg:SetAttacker(attacker)
-    -- dmg:SetDamageType(DMG_AIRBOAT + DMG_BLAST)
-    -- dmg:SetInflictor(self)
-    -- dmg:SetDamageForce(self:GetVelocity() * 100)
-    -- dmg:SetDamagePosition(src)
-    -- dmg:SetDamage(32)
-    -- util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
-    -- util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 128, 24)
-
-    -- local fx = EffectData()
-    -- fx:SetOrigin(self:GetPos())
-
-    -- if self:WaterLevel() > 0 then
-        -- util.Effect("WaterSurfaceExplosion", fx)
-    -- else
-        -- ParticleEffect("Generic_explo_high", self:GetPos(), Angle(-90, 0, 0))
-    -- end
-
-    -- self:EmitSound("COD2019.HE_ExplosiveHit")
-    -- util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-    -- util.Decal("Scorch", self:WorldSpaceCenter(), self:WorldSpaceCenter() + self:GetUp() * -100, {self})
-    -- self:Remove()
--- end
-
 function ENT:Detonate()
     local phys = self:GetPhysicsObject()
     if (self:WaterLevel() <= 0) then
@@ -115,7 +85,7 @@ function ENT:Detonate()
 
     self:EmitSound("^weapons/cod2019/shared/rocket_expl_body_02.ogg", 100, 100, 1, CHAN_WEAPON)
     util.ScreenShake(phys:GetPos(), 3500, 1111, 1, 300)
-    util.Decal("Scorch", self:WorldSpaceCenter(), self:WorldSpaceCenter() + self:GetUp() * -100, {self})
+    util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
 
     for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
         if (e:GetClass() == "npc_strider") then

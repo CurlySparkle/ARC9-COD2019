@@ -24,6 +24,10 @@ if SERVER then
         --self:PhysicsInitBox(Vector(-4, -1, -1), Vector(4, 1, 1))
         self:PhysicsInit(SOLID_VPHYSICS)
         self:SetMoveType(MOVETYPE_VPHYSICS)
+        self:AddEFlags(EFL_NO_DAMAGE_FORCES)
+        self:AddEFlags(EFL_DONTWALKON)
+        self:AddEFlags(EFL_DONTBLOCKLOS)
+        self:AddEFlags(EFL_NO_PHYSCANNON_INTERACTION)
         self:DrawShadow(false)
         local phys = self:GetPhysicsObject()
 
@@ -37,6 +41,7 @@ if SERVER then
 
         util.SpriteTrail(self, 0, Color(155, 155, 155), false, 3, 1, 0.1, 2, "trails/smoke.vmt")
         SafeRemoveEntityDelayed(self, 60)
+		self:OnInitialize()
     end
 
     function ENT:Think()
@@ -191,7 +196,6 @@ if SERVER then
         if self:Impact(tr1, data, bHull) then
             return
         end
-		
     end
 end
 
@@ -208,23 +212,24 @@ function ENT:Impact(tr1, data, bHull)
 		IgnoreEntity = self,
 		Callback = function(attacker, tr, dmgInfo)
 			dmgInfo:SetInflictor(IsValid(self.Weapon) && self.Weapon || self)
-			dmginfo:SetDamageType(DMG_SLASH)
+			dmginfo:SetDamageType(DMG_SNIPER + DMG_SLASH)
 
 			if (tr.HitSky) then
 				self:Remove()
 			else
 			    self:Detonate()
+				sound.Play("weapons/cod2019/shared/bullet_small_crossbow_bolt_swt_01.ogg", tr.HitPos)
 			end
 			
 			if (tr.Entity:IsPlayer() || tr.Entity:IsNPC() || tr.Entity:IsNextBot() || tr.Entity:IsRagdoll()) then
 				sound.Play("weapons/cod2019/shared/blt_imp_flesh_plr_04.ogg", tr.HitPos + tr.HitNormal * 5)
 				return
 			end
-
-			sound.Play("weapons/cod2019/shared/bullet_small_crossbow_bolt_swt_01.ogg", tr.HitPos)
-			
 		end
 	})
+end
+
+function ENT:OnInitialize()
 end
 
 function ENT:Detonate()

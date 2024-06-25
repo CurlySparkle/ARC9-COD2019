@@ -66,6 +66,7 @@ SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire
 SWEP.Sway = 0 -- How much the gun sways.
 
 SWEP.ShootEnt = "arc9_cod2019_thrownrock"
+SWEP.ShootPosOffset = Vector(5, 0, 4)
 SWEP.Ammo = "grenade"
 
 SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
@@ -117,8 +118,6 @@ SWEP.CustomizePos = Vector(7.5, 22.5, 12.5)
 SWEP.CustomizeRotateAnchor = Vector(16, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = true
-
-SWEP.ShootPosOffset = Vector(0, 15, -5)
 
 -------------------------- AIM ASSIST
 
