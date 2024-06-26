@@ -193,6 +193,9 @@ if SERVER then
         if self:Impact(tr1, data, bHull) then
             return
         end
+        if self:OnHit(data, collider) then
+            return
+        end
     end
 end
 
@@ -226,6 +229,9 @@ function ENT:Impact(tr1, data, bHull)
 			end
 		end
 	})
+end
+
+function ENT:OnHit()
 end
 
 function ENT:OnInitialize()

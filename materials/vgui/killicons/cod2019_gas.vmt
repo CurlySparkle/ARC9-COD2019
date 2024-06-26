@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture" "vgui/killicons/cod2019_gas"
+	"$basetexture" "vgui/killicons/cod2019_gas2"
 	"$vertexcolor"	"1"
 	"$vertexalpha"	"1"
 	"$translucent"	"1"

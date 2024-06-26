@@ -17,7 +17,7 @@ ENT.ExplodeUnderwater = true
 ENT.SmokeTrail = true
 
 ENT.Delay = 0
-ENT.SafetyFuse = 0.05
+ENT.SafetyFuse = 0.03
 ENT.FlareColor = Color(0, 0, 0)
 ENT.AudioLoop = ""
 

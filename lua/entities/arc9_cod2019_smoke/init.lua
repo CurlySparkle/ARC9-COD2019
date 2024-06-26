@@ -21,11 +21,11 @@ function ENT:Initialize()
         self:SetNWBool("Children",true)
     end
 
-    local p = self:GetPos() --+ self:GetAngles():Up() * -self.SmokeRadius
-    local b = Vector(0.66, 0.66, 0.66) * self.SmokeRadius
-    self:PhysicsInitBox(-b, b)
-    self:SetCollisionBoundsWS(p - b, p + b)
-    self:GetPhysicsObject():EnableMotion(false)
+    -- local p = self:GetPos() --+ self:GetAngles():Up() * -self.SmokeRadius
+    -- local b = Vector(0.66, 0.66, 0.66) * self.SmokeRadius
+    -- self:PhysicsInitBox(-b, b)
+    -- self:SetCollisionBoundsWS(p - b, p + b)
+    -- self:GetPhysicsObject():EnableMotion(false)
     self:SetCollisionGroup(self.CollisionGroup)
 
     local repFil = RecipientFilter()
