@@ -9,6 +9,7 @@ ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.CanPickup = true
 ENT.GunshipWorkaround = true
 ENT.ImpactScorch = false
+ENT.ExplodeOnImpact = false
 
 if CLIENT then
     killicon.Add( "arc9_cod2019_proj_crossbow_default", "hud/killicons/default", Color( 255, 255, 255, 255 ) )
@@ -82,11 +83,8 @@ if SERVER then
         if IsValid(tr.Entity) and gunship[tr.Entity:GetClass()] then
            self:SetPos(tr.HitPos)
            self:Detonate()
+           self:Explode()
         end
-        -- if (tr.HitSky) then
-			-- self:Remove()
-			-- return
-		-- end
     end
 	
     end
@@ -187,7 +185,6 @@ if SERVER then
         end
 
         self.DetonateTime = CurTime() + 2
-		--self:Detonate()
 		
 		if self.ImpactScorch then
 		util.Decal("Scorch", hitPos + hitNormal, hitPos - hitNormal)
@@ -217,7 +214,9 @@ function ENT:Impact(tr1, data, bHull)
 			if (tr.HitSky) then
 				self:Remove()
 			else
-			    self:Detonate()
+            if self.ExplodeOnImpact then
+                self:Detonate()
+            end
 				sound.Play("weapons/cod2019/shared/bullet_small_crossbow_bolt_swt_01.ogg", tr.HitPos)
 			end
 			
@@ -233,6 +232,9 @@ function ENT:OnInitialize()
 end
 
 function ENT:Detonate()
+end
+
+function ENT:Explode()
 end
 
 function ENT:Draw()
