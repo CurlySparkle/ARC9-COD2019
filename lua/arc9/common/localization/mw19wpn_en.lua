@@ -577,9 +577,9 @@ L["cod2019_ammo_gl_energy.printname"] = "40mm EMP" -- UO
 L["cod2019_ammo_gl_energy.compactname"] = "EMP" -- UO
 L["cod2019_ammo_gl_energy.description"] = "Custom 40mm shells with an <color=100,255,100>EMP</color> grenade that explodes on disorients targets." -- UO
 
-L["cod2019_ammo_gl_seeker.printname"] = "40mm Recon" -- UO
-L["cod2019_ammo_gl_seeker.compactname"] = "Recon" -- UO
-L["cod2019_ammo_gl_seeker.description"] = "Custom 40mm shells loaded with <color=100,255,100>Propelled</color> based rounds. The rocket must travel a certain distance to arm itself, or else it won't explode. The unexploded rocket can still deal damage.\n\nInspired by the <color=175,175,255>Seeker Six</color> from<color=255,25,25>Killing Floor</color>." -- UO, partially taken from M203 40mm Recon
+L["cod2019_ammo_gl_seeker.printname"] = "40mm Seeker" -- UO
+L["cod2019_ammo_gl_seeker.compactname"] = "Seeker" -- UO
+L["cod2019_ammo_gl_seeker.description"] = "Custom 40mm shells loaded with <color=100,255,100>Seeker</color> grenades that are not affected by drop-off, and can lock onto targets when aiming.\nInspired by the <color=175,175,255>Seeker Six</color> from <color=255,25,25>Killing Floor</color>." -- UO
 
 ////////////////////  Custom PILA Ammo
 L["cod2019_pila_ammo_guided.printname"] = "Guided Rockets" -- UO
@@ -594,6 +594,47 @@ L["cod2019_jokr_ammo_guided.description"] = "Replaces the lock-on rockets with <
 L["cod2019_jokr_ammo_airstrike.printname"] = "Cluster Rockets"
 L["cod2019_jokr_ammo_airstrike.compactname"] = "Cluster"
 L["cod2019_jokr_ammo_airstrike.description"] = "Rockets that split into 4 <color=100,255,100>heat-seeking</color> mini-rockets when near their target." -- UO
+
+////////////////////  Custom MGL-32 Ammo
+L["cod2019_ammo_ubgl_rock.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_rock.printname")
+L["cod2019_ammo_ubgl_rock.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_rock.compactname")
+L["cod2019_ammo_ubgl_rock.description"] = ARC9:GetPhrase("cod2019_ammo_gl_rock.description")
+
+L["cod2019_ammo_ubgl_flash.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_flash.printname")
+L["cod2019_ammo_ubgl_flash.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_flash.compactname")
+L["cod2019_ammo_ubgl_flash.description"] = ARC9:GetPhrase("cod2019_ammo_gl_flash.description")
+
+L["cod2019_ammo_ubgl_inc.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_inc.printname")
+L["cod2019_ammo_ubgl_inc.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_inc.compactname")
+L["cod2019_ammo_ubgl_inc.description"] = ARC9:GetPhrase("cod2019_ammo_gl_inc.description")
+
+L["cod2019_ammo_ubgl_smoke.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_smoke.printname")
+L["cod2019_ammo_ubgl_smoke.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_smoke.compactname")
+L["cod2019_ammo_ubgl_smoke.description"] = ARC9:GetPhrase("cod2019_ammo_gl_smoke.description")
+
+L["cod2019_ammo_ubgl_gas.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_gas.printname")
+L["cod2019_ammo_ubgl_gas.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_gas.compactname")
+L["cod2019_ammo_ubgl_gas.description"] = ARC9:GetPhrase("cod2019_ammo_gl_gas.description")
+
+L["cod2019_ammo_ubgl_slug.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_slug.printname")
+L["cod2019_ammo_ubgl_slug.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_slug.compactname")
+L["cod2019_ammo_ubgl_slug.description"] = ARC9:GetPhrase("cod2019_ammo_gl_slug.description")
+
+L["cod2019_ammo_ubgl_sticky.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_sticky.printname")
+L["cod2019_ammo_ubgl_sticky.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_sticky.compactname")
+L["cod2019_ammo_ubgl_sticky.description"] = ARC9:GetPhrase("cod2019_ammo_gl_sticky.description")
+
+L["cod2019_ammo_ubgl_mine.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_mine.printname")
+L["cod2019_ammo_ubgl_mine.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_mine.compactname")
+L["cod2019_ammo_ubgl_mine.description"] = ARC9:GetPhrase("cod2019_ammo_gl_mine.description")
+
+L["cod2019_ammo_ubgl_energy.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_energy.printname")
+L["cod2019_ammo_ubgl_energy.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_energy.compactname")
+L["cod2019_ammo_ubgl_energy.description"] = ARC9:GetPhrase("cod2019_ammo_gl_energy.description")
+
+L["cod2019_ammo_ubgl_seeker.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_seeker.printname")
+L["cod2019_ammo_ubgl_seeker.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_seeker.compactname")
+L["cod2019_ammo_ubgl_seeker.description"] = ARC9:GetPhrase("cod2019_ammo_gl_seeker.description")
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments

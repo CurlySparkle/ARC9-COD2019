@@ -852,3 +852,241 @@ ATT.ShootEnt = "arc9_cod2019_proj_jokr_airstrike"
 ATT.Category = {"cod2019_jokr_ammo"}
 
 ARC9.LoadAttachment(ATT, "cod2019_jokr_ammo_airstrike")
+
+//////////////////////////////////// -- M203 UBGL (Duplicate from MGL-32)
+/////////////////////////// -- cod2019_ammo_ubgl_rock
+ATT = {}
+
+ATT.PrintName = "Rock Nade"
+ATT.CompactName = "Rock"
+ATT.Description = "Changes the nade type to fire a singular but yet \"powerful\" rock\n(Quite a stoner, if you ask me)."
+ATT.SortOrder = 0
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_rock.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+
+ATT.ActivateElements = {"nades_rock"}
+ATT.Free = true
+
+ATT.ShootEntUBGL = "arc9_cod2019_thrownrock"
+ATT.Category = {"cod2019_ammo_ubgl"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_rock")
+
+/////////////////////////// -- cod2019_ammo_ubgl_flash
+ATT = {}
+
+ATT.PrintName = "Flash Nade"
+ATT.CompactName = "Flash"
+ATT.Description = "Changes the nade type to fire a flashing type nade.\n(Better watch your eyes with this one)"
+ATT.SortOrder = 0.5
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_flash.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_flash"
+ATT.Category = {"cod2019_ammo_ubgl"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_flash")
+
+/////////////////////////// -- cod2019_ammo_ubgl_inc
+ATT = {}
+
+ATT.PrintName = "Napalm Nade"
+ATT.CompactName = "Napalm"
+ATT.Description = "Changes the nade type to a fire type napalm nade that creates an AoE on impact."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_fire.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_inc"
+ATT.Category = {"cod2019_ammo_ubgl"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_inc")
+
+/////////////////////////// -- cod2019_ammo_ubgl_smoke
+ATT = {}
+
+ATT.PrintName = "Smoke Nade"
+ATT.CompactName = "Smoke"
+ATT.Description = "Changes the nade type to fire a smoking type nade."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_smoke.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_smoke"
+ATT.Category = {"cod2019_ammo_ubgl"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_smoke")
+
+/////////////////////////// -- cod2019_ammo_ubgl_gas
+ATT = {}
+
+ATT.PrintName = "Gas Nade"
+ATT.CompactName = "Gas"
+ATT.Description = "Changes the nade type to fire a gas type nade that can cover a section of an area."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_gas.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_gas"
+ATT.Category = {"cod2019_ammo_ubgl"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_gas")
+
+/////////////////////////// -- cod2019_ammo_ubgl_sticky
+ATT = {}
+
+ATT.PrintName = "Stick Nade"
+ATT.CompactName = "Sticky"
+ATT.Description = "Changes the nade type to a stocky type nade that sticks to surfaces before exploding."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_slug.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_sticky"
+ATT.Category = {"cod2019_ammo_ubgl"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_sticky")
+
+/////////////////////////// -- cod2019_ammo_ubgl_mine
+ATT = {}
+
+ATT.PrintName = "Mine Nade"
+ATT.CompactName = "Mine"
+ATT.Description = "Changes the nade type to a mine charge type that sticks to surfaces and explode by a proximity."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_mine.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_mine"
+ATT.Category = {"cod2019_ammo_ubgl"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_mine")
+
+/////////////////////////// -- cod2019_ammo_ubgl_energy
+ATT = {}
+
+ATT.PrintName = "Energy Nade"
+ATT.CompactName = "Energy"
+ATT.Description = "Changes the nade type to an energy type nade that explodes with disintegration effects."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_energy.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_energy"
+ATT.Category = {"cod2019_ammo_ubgl"}
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_energy")
+
+/////////////////////////// -- cod2019_ammo_ubgl_seeker
+ATT = {}
+
+ATT.PrintName = "Seeker Nade"
+ATT.CompactName = "Seeker"
+ATT.Description = [[Changes the nade type to a Seeker type mini rocket that can lock into enemies while aiming.
+The rocket must travel a certain distance to arm itself, or else it won't explode. The unexploded rocket can still deal damage.
+
+(Based and Inspired by the Seeker Six from Killing Floor.)]]
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_seeker.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_seeker"
+ATT.Category = {"cod2019_ammo_ubgl"}
+
+-- ATT.Firemodes = {
+    -- {
+        -- Mode = 1,
+        -- PrintName = ARC9:GetPhrase("mw19_firemode_lockon") .. " / " .. ARC9:GetPhrase("mw19_firemode_unguided"),
+        -- LockAttack = true
+    -- },
+-- }
+
+ATT.LockAttack = true
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_seeker")
+
+/////////////////////////// -- cod2019_ammo_ubgl_slug
+ATT = {}
+
+ATT.PrintName = "Slug Nade"
+ATT.CompactName = "Slug"
+ATT.Description = "Changes the nade type to fire a slug."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_slug.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootSound = "COD2019.Model680.Fire"
+ATT.ShootSoundIndoor = "COD2019.Model680.Fire"
+
+ATT.ShootEntUBGL = false
+ATT.Category = {"cod2019_ammo_ubgl"}
+
+ATT.DamageMax = 47
+ATT.DamageMin = 16
+ATT.Num = 1
+ATT.RangeMin = 15 / ARC9.HUToM
+ATT.RangeMax = 20 / ARC9.HUToM
+ATT.Penetration = 5 -- Units of wood that can be penetrated by this gun.
+ATT.ImpactForce = 8.5
+ATT.SpreadMult = 0.85
+ATT.SpreadMultSights = 0.25
+ATT.NoAimAssist = true
+
+ATT.CustomCrosshair = false
+ATT.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
+ATT.CustomCrosshairSize = 30
+
+if !warzonestats then -- Regular Stats
+	ATT.BodyDamageMults = {
+		[HITGROUP_HEAD] = 2,
+		[HITGROUP_CHEST] = 1.75,
+		[HITGROUP_STOMACH] = 1.5,
+		[HITGROUP_LEFTARM] = 1,
+		[HITGROUP_RIGHTARM] = 1,
+		[HITGROUP_LEFTLEG] = 1,
+		[HITGROUP_RIGHTLEG] = 1,
+	}
+else -- Warzone Stats
+	ATT.BodyDamageMults = {
+		[HITGROUP_HEAD] = 1.2,
+		[HITGROUP_CHEST] = 0.9,
+		[HITGROUP_STOMACH] = 0.75,
+		[HITGROUP_LEFTARM] = 0.5,
+		[HITGROUP_RIGHTARM] = 0.5,
+		[HITGROUP_LEFTLEG] = 0.5,
+		[HITGROUP_RIGHTLEG] = 0.5,
+	}
+end
+
+ATT.MuzzleParticle = "muzzleflash_slug"
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_slug")

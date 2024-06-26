@@ -515,9 +515,9 @@ L["cod2019_ammo_gl_energy.printname"] = "40 mm EMP" -- UO
 L["cod2019_ammo_gl_energy.compactname"] = "EMP" -- UO
 L["cod2019_ammo_gl_energy.description"] = "Anpassade 40 mm patroner med en <color=100,255,100>EMP-granat</color> som desorienterar måltavlor." -- UO
 
-L["cod2019_ammo_gl_seeker.printname"] = "40 mm Underrättelse" -- UO
-L["cod2019_ammo_gl_seeker.compactname"] = "Under." -- UO
-L["cod2019_ammo_gl_seeker.description"] = "Anpassade 40 mm patroner laddade med <color=100,255,100>Snapshot-granater</color>. Denna underrättelseenhet erbjuder en momuntär glimt av fiender inne i sprängradien till din trupp.\n\nInspirerad av \"<color=175,175,255>Seeker Six</color>\" från Killing Floor." -- UO, partially taken from M203 40mm Recon
+L["cod2019_ammo_gl_seeker.printname"] = "40 mm Sökare" -- UO
+L["cod2019_ammo_gl_seeker.compactname"] = "Sökare" -- UO
+L["cod2019_ammo_gl_seeker.description"] = "Anpassade 40 mm patroner fyllda med <color=100,255,100>Sökande</color> granater som inte påverkas av avsläpp, och kan låsa in sig på mål i siktet.\nInspirerad av  <color=175,175,255>\"Seeker Six\"</color> från <color=255,25,25>Killing Floor</color>." -- UO
 
 ////////////////////  Custom PILA Ammo
 L["cod2019_pila_ammo_guided.printname"] = "Guidade Robotar" -- UO
