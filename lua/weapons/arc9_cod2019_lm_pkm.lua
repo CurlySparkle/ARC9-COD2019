@@ -456,7 +456,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.8,
 		MagSwapTime = 3.5,
-		DropMagAt = 2.85,
+		DropMagAt = 2.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
