@@ -1,0 +1,9 @@
+"DecalModulate"
+{
+	"$basetexture" "decals/knife_cut2"
+	"$decal" 1
+     "$vertexcolor" "1"
+	"$decalscale" 0.05
+	"$translucent" 1
+     "$decalFadeDuration" "15"
+}

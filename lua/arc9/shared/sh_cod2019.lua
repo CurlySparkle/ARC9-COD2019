@@ -47,6 +47,7 @@ AddCSLuaFile()
 -- end
 
 game.AddDecal( "molotovscorch",					"decals/molotovscorch" );
+game.AddDecal( "mw19_knifecut",					"decals/mw19_knifecut" );
 game.AddAmmoType({name = "arc9_cod2019_c4"})
 game.AddAmmoType({name = "arc9_cod2019_knife"})
 

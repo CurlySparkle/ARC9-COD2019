@@ -9,6 +9,7 @@ ENT.AdminSpawnable = false
 
 ENT.Model = "models/weapons/cod2019/w_eq_knife_thrown.mdl"
 ENT.Collectable = true
+ENT.Damage = 45
 
 if CLIENT then
     killicon.Add( "arc9_cod2019_thrownknife", "VGUI/killicons/cod2019_knife", Color(251, 85, 25, 255))
@@ -50,6 +51,7 @@ function ENT:PhysicsCollide(data, physobj)
             if data.HitNormal:Dot(data.OurOldVelocity:GetNormalized()) >= 0.25 then
                 self.dt = CurTime() + 15
                 self.Collectable = true
+				util.Decal("mw19_knifecut", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
                 timer.Simple(0, function()
 				    if (!IsValid(self)) then return end
                     self:SetAngles(data.OurOldVelocity:Angle() + Angle(90,0,0))
@@ -64,19 +66,35 @@ function ENT:PhysicsCollide(data, physobj)
                 physobj:SetAngleVelocity(data.OurOldAngularVelocity * -(data.OurOldVelocity:GetNormalized() + data.HitNormal))
             end
         else
-			self:FireBullets({
-				Attacker = self:GetOwner(),
-			    Num = 1,
-			    Tracer = 0,
-			    Damage = 75,
-			    Force = 15,
-			    Distance = 20000,
-			    Src = data.HitPos,
-			    Dir = data.OurOldVelocity:GetNormalized(),
-			    HullSize = bHull && self.Maxs:Length() * 3 || 2,
-			 })
-            self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hit1.ogg" )
-			self.Collectable = true
+        local ang = data.OurOldVelocity:Angle()
+        self:FireBullets({
+            Attacker = self:GetOwner(),
+            Damage = self.Damage,
+            Force = 15,
+            Distance = 4,
+            HullSize = 5,
+            Tracer = 0,
+            Dir = ang:Forward(),
+            Src = data.HitPos - ang:Forward(),
+            IgnoreEntity = self,
+            Callback = function(atk, tr, dmginfo)
+                dmginfo:SetInflictor(IsValid(self.Inflictor) and self.Inflictor or self)
+				dmginfo:SetDamageType(DMG_SNIPER + DMG_SLASH)
+                if tr.HitSky then
+                    SafeRemoveEntity(self)
+                else
+                    local fx = EffectData()
+                    fx:SetOrigin(data.HitPos)
+                    fx:SetNormal(-ang:Forward())
+                    fx:SetAngles(-ang)
+                    util.Effect("ManhackSparks", fx)
+                    if SERVER then
+                        self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hit1.ogg", 80, 110, 1)
+                    end
+                end
+            end
+        })
+	    self.Collectable = true
         end
       local theirProps = util.GetSurfaceData(data.TheirSurfaceProps)
       if (theirProps != nil && theirProps.material == MAT_DEFAULT) then
