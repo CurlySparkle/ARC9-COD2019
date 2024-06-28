@@ -965,6 +965,15 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1},
         },
     },
+    ["bash_bayonet"] = {
+        Source = {"melee_bayonet","melee2_bayonet","melee3_bayonet"},
+	    IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0},
+            { t = 0.1, lhik = 0, rhik = 0},
+            { t = 0.6, lhik = 0, rhik = 0},
+            { t = 0.85, lhik = 1, rhik = 1},
+        },
+    },
     ["firemode_1"] = {
         Source = "semi_on",
         EventTable = {
@@ -1061,12 +1070,16 @@ local Translate_TacSprint = {
     ["enter_sprint"] = "super_sprint_in",
     ["exit_sprint"] = "super_sprint_out",
 }
+local Translate_Bayonet = {
+    ["bash"] = "bash_bayonet",
+}
 
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
+    local bayonet = wep:HasElement("bayonet")
     local drum = wep:HasElement("mag_drum")
     local drum2 = wep:HasElement("mag_drum_mw22")
     local smg = wep:HasElement("mag_545")
@@ -1075,6 +1088,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
+    end
+	
+    if bayonet and Translate_Bayonet[anim] then
+        return Translate_Bayonet[anim]
     end
 
     if speedload then
@@ -1221,7 +1238,7 @@ end
 SWEP.Attachments = {
     { -- 1
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
-        Category = "cod2019_muzzle",
+        Category = {"cod2019_muzzle","cod2019_ak47_muzzle"},
         DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
 		Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
@@ -1379,6 +1396,14 @@ SWEP.Attachments = {
 		ExcludeElements = {"barrel_rpk"},
 		Hidden = true,
     },
+    -- { -- 21
+        -- PrintName = "Extras",
+        -- Category = {"cod2019_ak47_extra"},
+        -- Bone = "tag_attachments",
+        -- Pos = Vector(0, 0, 0),
+        -- Ang = Angle(0, 0, 0),
+		-- ExcludeElements = {"barrel_rpk"},
+    -- },
 }
 
 SWEP.GripPoseParam = 4.6

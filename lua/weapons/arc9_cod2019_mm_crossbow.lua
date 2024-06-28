@@ -61,7 +61,7 @@ SWEP.ImpactForce = 15
 
 -------------------------- PHYS BULLET BALLISTICS
 
-SWEP.ShootEnt = "arc9_cod2019_proj_crossbow_default" -- Set to an entity to launch it out of this weapon.
+SWEP.ShootEnt = "arc9_cod2019_proj_arrow_base" -- Set to an entity to launch it out of this weapon.
 SWEP.ShootEntForce = 250 / ARC9.HUToM
 SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets SENT.WeaponDataLink with this table.
 

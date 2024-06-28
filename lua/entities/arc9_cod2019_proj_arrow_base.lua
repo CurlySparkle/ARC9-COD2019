@@ -35,9 +35,9 @@ if SERVER then
         if (phys:IsValid()) then
             phys:Wake()
             phys:EnableGravity(true)
-            phys:SetBuoyancyRatio(0)
-            phys:SetDragCoefficient(0)
-            phys:SetMass(1)
+            phys:SetBuoyancyRatio(1)
+            phys:SetDragCoefficient(2)
+            phys:SetMass(2)
         end
 
         util.SpriteTrail(self, 0, Color(155, 155, 155), false, 3, 1, 0.1, 2, "trails/smoke.vmt")
