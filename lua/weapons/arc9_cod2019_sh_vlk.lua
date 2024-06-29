@@ -272,7 +272,7 @@ SWEP.DropMagazineSounds = {
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.85
 SWEP.DropMagazineQCA = 3
-SWEP.DropMagazineAng = Angle(0, -90, 0)
+SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
 
@@ -365,7 +365,7 @@ SWEP.Animations = {
 		RefillProgress = 0.825,
 		PeekProgress = 0.875,
 		FireASAP = true,
-		EjectAt = 0.1,
+		EjectAt = 0.15,
 		DropMagAt = 0.95,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -413,6 +413,7 @@ SWEP.Animations = {
 		RefillProgress = 0.825,
 		PeekProgress = 0.925,
 		FireASAP = true,
+		EjectAt = 0.15,
 		DropMagAt = 0.75,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -451,13 +452,13 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag_empty"] = {
-        Source = "reload_xmag_empty",
+        Source = "reload",
 		MinProgress = 0.95,
 		RefillProgress = 0.825,
 		PeekProgress = 0.875,
 		FireASAP = true,
-		EjectAt = 0.1,
-		DropMagAt = 0.9,
+		EjectAt = 0.15,
+		DropMagAt = 0.95,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -504,6 +505,7 @@ SWEP.Animations = {
 		RefillProgress = 0.825,
 		PeekProgress = 0.925,
 		FireASAP = true,
+		EjectAt = 0.15,
 		DropMagAt = 0.75,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
