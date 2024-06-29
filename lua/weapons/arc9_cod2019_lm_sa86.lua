@@ -97,9 +97,11 @@ SWEP.RPM = 600
 SWEP.Firemodes = {
     {
         Mode = -1,
+		PoseParam = 1,
     },
     {
         Mode = 1,
+		PoseParam = 0,
 		RPM = 500,
 		TriggerDelay = 0.02,
 		TriggerDelayTime = 0.02
@@ -246,8 +248,13 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 25, 5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(-1.8, 3, -4)
-SWEP.PeekAng = Angle(-1, 1, -45)
+SWEP.PeekPos = Vector(-1.5, 0, -3.5)
+SWEP.PeekAng = Angle(-0.3, 0, -45)
+
+SWEP.PeekMaxFOV = 54
+
+SWEP.PeekPosReloading = Vector(0, 0, -2)
+SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
 
 -------------------------- HoldTypes
 
@@ -632,7 +639,7 @@ SWEP.Animations = {
         },
     },
     ["firemode_1"] = {
-        Source = "semi_on",
+        Source = "semi_off",
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -644,7 +651,7 @@ SWEP.Animations = {
         },
     },
     ["firemode_2"] = {
-        Source = "semi_off",
+        Source = "semi_on",
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
