@@ -509,7 +509,7 @@ SWEP.Animations = {
         },
     },
     ["reload_xmag_fast_empty"] = {
-        Source = "reload_xmag_fast_empty",
+        Source = "reload_fast_empty",
 		MinProgress = 0.925,
 		PeekProgress = 0.85,
 		RefillProgress = 0.725,
