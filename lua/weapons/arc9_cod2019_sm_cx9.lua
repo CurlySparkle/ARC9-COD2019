@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_cx9_desc") or [[Comes with excellent maneuverability and a fast fire rate make this a formidable weapon in close-quarters engagements.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_smg_evo.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_smg_cx9.mdl"
 
 SWEP.Slot = 2
 

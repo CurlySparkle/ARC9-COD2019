@@ -31,7 +31,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_pp19_desc") or [[Well-balanced automatic submachine gun with a high capacity helical magazine.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_smg_bizon.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_smg_bizon.mdl"
 
 SWEP.Slot = 2
 

@@ -31,7 +31,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_aug_desc") or [[A modular fully automatic weapon configured for mobility and close range combat.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_smg_aug.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_smg_aug.mdl"
 
 SWEP.Slot = 2
 

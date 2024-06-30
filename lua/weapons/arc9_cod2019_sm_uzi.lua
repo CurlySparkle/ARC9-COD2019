@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_uzi_desc") or [[Fully automatic open bolt submachine gun. Simple, steady, effective.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_smg_uzi.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_smg_uzi.mdl"
 
 SWEP.Slot = 2
 

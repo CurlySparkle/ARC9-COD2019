@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_mp7_desc") or [[Compact by design, this fully automatic weapon has a high rate of fire and low recoil.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_smg_mp7.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_smg_mp7.mdl"
 
 SWEP.Slot = 2
 

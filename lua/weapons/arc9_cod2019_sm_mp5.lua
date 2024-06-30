@@ -31,7 +31,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_mp5_desc") or [[Fully automatic 9mm submachine gun. A perfect balance of stability, mobility, and lethality.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_smg_mp5.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_smg_mp5.mdl"
 
 SWEP.Slot = 2
 
