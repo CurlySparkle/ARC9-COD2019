@@ -33,7 +33,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_an94_desc") or [[Cutting edge 5.45x39mm Russian assault rifle with a unique hyperburst feature. The initial shot from each trigger pull fires a rapid 2-round burst before perceived recoil is felt, creating a tightly grouped cluster with increased damage potential. This mechanism is fed by a canted magazine, and a reciprocating receiver helps keep control of the recoil.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_an94.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_an94.mdl"
 
 SWEP.Slot = 2
 

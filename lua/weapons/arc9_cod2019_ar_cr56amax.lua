@@ -31,7 +31,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_cr56_desc") or [[This lightweight 7.62x39mm full auto assault rifle is compact and powerful. Built exclusively for military use, the standard issue rifle is deadly at mid range combat and easily configured for a variety of assault tactics.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_cr56amax.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_cr56amax.mdl"
 
 SWEP.Slot = 2
 

@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_ak47_desc") or [[Very reliable automatic assault rifle chambered in 7.62mm Soviet. Large caliber ammunition requires skill to control recoil.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_ak47.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_ak47.mdl"
 
 SWEP.Slot = 2
 

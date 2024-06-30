@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_grau_desc") or [[This modular 5.56 weapon platform is lightweight and maneuverable, with exceptional range. Precision engineering and world class aftermarket barrels give this weapon extreme potential.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_grau556.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_grau556.mdl"
 
 SWEP.Slot = 2
 

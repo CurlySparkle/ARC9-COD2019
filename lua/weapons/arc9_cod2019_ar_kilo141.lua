@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_kilo141_desc") or [[Fully automatic assault rifle with an ergonomic design that improves handling, and a steady fire rate helps stay on target.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_kilo141.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_kilo141.mdl"
 
 SWEP.Slot = 2
 

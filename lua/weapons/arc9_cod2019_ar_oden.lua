@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_oden_desc") or [[Fully automatic bullpup battle rifle maintains a slow cycle rate to help control hard hitting 12.7x55mm ammunition.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_oden.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_oden.mdl"
 
 SWEP.Slot = 2
 

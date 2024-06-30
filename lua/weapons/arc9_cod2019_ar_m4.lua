@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_m4a1_desc") or [[A fully automatic, all-purpose assault rifle. Control your shots and this weapon can be very effective at range.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_m4.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_m4a1.mdl"
 
 SWEP.Slot = 2
 

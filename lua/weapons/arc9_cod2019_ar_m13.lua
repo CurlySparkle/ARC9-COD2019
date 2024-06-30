@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_m13_desc") or [[Automatic assault rifle featuring a short stroke piston system that keeps the fire rate high and the recoil low.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_m13.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_m13.mdl"
 
 SWEP.Slot = 2
 

@@ -31,7 +31,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_fal_desc") or [[Semi-automatic battle rifle with a high rate of fire for faster follow up shots.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_fal.mdl"
-SWEP.WorldModel = "models/weapons/w_rif_m4a1.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_fal.mdl"
 
 SWEP.Slot = 2
 

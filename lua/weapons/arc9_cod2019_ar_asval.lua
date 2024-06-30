@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_asval_desc") or [[Chambered in subsonic 9x39mm and integrally suppressed, the AS VAL is a powerhouse built for stealth, accuracy, and penetration. This weapon will excel in the hands of an operator able to control heavy recoil and a high rate of fire.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_asval.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_asval.mdl"
 
 SWEP.Slot = 2
 

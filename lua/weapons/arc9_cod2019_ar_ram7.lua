@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_ram7_desc") or [[A fully automatic bullpup assault rifle with a compact design that lends itself to close-quarter engagements.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_ram7.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_ram7.mdl"
 
 SWEP.Slot = 2
 

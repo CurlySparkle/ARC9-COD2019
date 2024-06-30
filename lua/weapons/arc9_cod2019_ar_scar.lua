@@ -33,7 +33,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_scar_desc") or [[Large caliber, fully automatic assault rifle that provides high damage over long ranges.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_scar.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_scar.mdl"
 
 SWEP.Slot = 2
 
