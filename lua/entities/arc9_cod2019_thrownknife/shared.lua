@@ -23,6 +23,7 @@ function ENT:Initialize()
         self:SetMoveType( MOVETYPE_VPHYSICS )
         self:SetSolid( SOLID_VPHYSICS )
         self:PhysicsInitSphere( 1 )
+		self:SetCollisionGroup( COLLISION_GROUP_PROJECTILE )
         self:DrawShadow( true )
         self.Bounced = false
 
@@ -30,17 +31,13 @@ function ENT:Initialize()
         if phys:IsValid() then
             phys:Wake()
             phys:SetBuoyancyRatio(0)
+            phys:SetMass(3)
+            phys:SetDragCoefficient(3)
 			phys:AddAngleVelocity(Vector(0,1500,0))
         end
 
         self.dt = CurTime() + 15
-		
 		util.SpriteTrail(self, 0, Color(15, 15, 15), false, 3, 1, 0.25, 2, "trails/tube.vmt")
-
-        timer.Simple(0, function()
-            if !IsValid(self) then return end
-            self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
-        end)
     end
 end
 
@@ -59,13 +56,16 @@ function ENT:PhysicsCollide(data, physobj)
                     self:SetMoveType(MOVETYPE_NONE)
                     self:SetTrigger(true)
                     self:UseTriggerBounds(true, 24)
+                    if (self.Collectable) then
+                    self:AddEffects(EF_ITEM_BLINK)
+                    end
                 end)
             else
                 -- self.Bounced = true 
                 physobj:SetVelocity((data.OurOldVelocity:GetNormalized() - data.HitNormal) * data.Speed * 0.5)
                 physobj:SetAngleVelocity(data.OurOldAngularVelocity * -(data.OurOldVelocity:GetNormalized() + data.HitNormal))
             end
-        else
+        elseif IsValid(data.HitEntity) then
         local ang = data.OurOldVelocity:Angle()
         self:FireBullets({
             Attacker = self:GetOwner(),
@@ -92,6 +92,11 @@ function ENT:PhysicsCollide(data, physobj)
                         self:EmitSound( "weapons/cod2019/throwables/throwing_knife/knife_hit1.ogg", 80, 110, 1)
                     end
                 end
+				
+                if (tr.Entity:IsPlayer() || tr.Entity:IsNPC() || tr.Entity:IsNextBot() || tr.Entity:IsRagdoll()) then
+				    sound.Play("weapons/cod2019/shared/blt_imp_flesh_plr_04.ogg", tr.HitPos + tr.HitNormal * 5)
+				    return
+                end
             end
         })
 	    self.Collectable = true
@@ -104,37 +109,41 @@ function ENT:PhysicsCollide(data, physobj)
    end
 end
 
-function ENT:Touch(ply)
-    local dist = self:GetOwner():NearestPoint(self:GetPos()):DistToSqr(self:GetPos())
-    if !ply:IsPlayer() then return end
-
-    if (dist < 32 * 32) then
-    ply:GiveAmmo(1, "arc9_cod2019_nade_knife", false)
-
-    self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 75)
-    timer.Simple(0, function()
-	if (!IsValid(self)) then return end
-	self:Remove() end) 
-    end
-end
+-- function ENT:StartTouch(ent)
+    -- if ent:IsPlayer() then
+	   -- ent:GiveAmmo(1, "arc9_cod2019_knife")
+	   -- self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 120, 100, 1, CHAN_AUTO)
+	   -- timer.Simple(0, function()
+	   -- if (!IsValid(self)) then return end
+	   -- self:Remove() end) 
+	   -- else
+	   -- ent:Give("arc9_cod2019_nade_knife")
+    -- end
+-- end
 
 function ENT:Use(ply)
-    if !ply:IsPlayer() then return end
-    --ply:Give("grenade", true)
-    ply:GiveAmmo(1, "arc9_cod2019_nade_knife", false)
-
-    self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 75)
+    ply:GiveAmmo(1, "arc9_cod2019_knife")
+    self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 120, 100, 1, CHAN_AUTO)
     timer.Simple(0, function()
-	if (!IsValid(self)) then return end
-	self:Remove() end) 
+    if (!IsValid(self)) then return end
+    self:Remove() end) 
 end
 
 function ENT:Think()
-    if SERVER then
+if SERVER then
         if CurTime() >= self.dt then
             self:Remove()
         end
-    end
+	if (self.Collectable) then
+		local dist = self:GetOwner():NearestPoint(self:GetPos()):DistToSqr(self:GetPos())
+
+		if (dist < 32 * 32) then
+			self:GetOwner():EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav")
+			self:GetOwner():SetAmmo(self:GetOwner():GetAmmoCount("arc9_cod2019_knife") + 1, "arc9_cod2019_knife")
+			self:Remove()
+		end
+	end
+end
 end
 
 function ENT:Draw()

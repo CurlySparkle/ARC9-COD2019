@@ -62,6 +62,7 @@ SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire
 SWEP.Sway = 0 -- How much the gun sways.
 
 SWEP.ShootEnt = "arc9_cod2019_thrownknife"
+SWEP.ShootPosOffset = Vector(2, 0, 1)
 SWEP.Ammo = "arc9_cod2019_knife"
 
 SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
@@ -70,8 +71,8 @@ SWEP.ThrowAnimSpeed = 1
 
 SWEP.FuseTimer = -1 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
 
-SWEP.ThrowForceMin = 3000 -- Minimum force that the grenade will be thrown with.
-SWEP.ThrowForceMax = 3000 -- Maximum force that the grenade will be thrown with.
+SWEP.ThrowForceMin = 2000 -- Minimum force that the grenade will be thrown with.
+SWEP.ThrowForceMax = 2000 -- Maximum force that the grenade will be thrown with.
 SWEP.TossForce = 1300 -- Force that the grenade will be thrown with when right clicked.
 
 SWEP.ThrowChargeTime = 1 -- How long it takes to charge the grenade to its maximum throw force.
@@ -116,8 +117,6 @@ SWEP.CustomizeSnapshotPos = Vector(0, 20, 0)
 SWEP.CustomizeRotateAnchor = Vector(18, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 90
 SWEP.CustomizeNoRotate = true
-
-SWEP.ShootPosOffset = Vector(0, 10, -5)
 
 -------------------------- AIM ASSIST
 
@@ -185,18 +184,18 @@ SWEP.Animations = {
     },
     ["throw"] = {
         Source = "throw",
-		Mult = 0.7,
+		Mult = 0.8,
         EventTable = {
             {s = "COD2019.Knife.Throw", t = 0/30},
         },
-        MinProgress = 0.4
+        MinProgress = 0.35
     },
     ["toss"] = {
         Source = "throw",
         EventTable = {
             {s = "COD2019.Knife.Throw", t = 0/30},
         },
-        MinProgress = 0.4
+        MinProgress = 0.35
     },
     ["inspect"] = {
         Source = "inspect2",

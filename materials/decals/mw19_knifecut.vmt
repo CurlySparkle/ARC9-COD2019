@@ -1,6 +1,6 @@
 "DecalModulate"
 {
-	"$basetexture" "decals/knife_cut2"
+	"$basetexture" "decals/mw19_knifecut"
 	"$decal" 1
      "$vertexcolor" "1"
 	"$decalscale" 0.05
