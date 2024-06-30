@@ -564,7 +564,7 @@ SWEP.Animations = {
 		RefillProgress = 0.55,
 		PeekProgress = 0.85,
 		FireASAP = true,
-		DropMagAt = 0.5,
+		DropMagAt = 0.55,
 		MagSwapTime = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -778,7 +778,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
---- 15 & 25-Round (Drum) Mags ---
+--- 12 & 25-Round (Drum) Mags ---
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
