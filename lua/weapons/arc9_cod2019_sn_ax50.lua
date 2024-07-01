@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_ax50_desc") or [[Hard hitting, bolt action sniper rifle with .50 cal BMG ammunition. Its tungsten sabot tipped bullets are fast and powerful, but require precise shots over long distances.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_ax50.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_snip_ax50.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3

@@ -31,7 +31,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_sa87_desc") or [[Fully automatic bullpup light machine gun. Lower rate of fire and 5.56mm ammunition keeps this rifle stable and effective at long ranges.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_lmg_sa86.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_lmg_sa86.mdl"
 
 SWEP.Slot = 2
 

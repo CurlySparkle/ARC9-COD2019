@@ -31,7 +31,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_dragunov_desc") or [[A Soviet workhorse chambered in 7.62mm x 54mmR. This gas-operated semi-automatic sniper rifle allows for rapid followup shots.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_svd.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_g3sg1.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_snip_svd.mdl"
 
 SWEP.Slot = 3
 

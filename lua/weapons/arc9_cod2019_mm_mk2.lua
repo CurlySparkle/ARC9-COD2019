@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_mk2_desc") or [[Highly accurate lever action rifle. Will neutralize an enemy with one well placed round to the head or chest.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_mk2.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_snip_mk2.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3

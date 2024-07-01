@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_ebr_desc") or [[Semi-automatic long range battle rifle balances rate of fire with lethality.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_m14.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_g3sg1.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_snip_m14.mdl"
 
 SWEP.Slot = 3
 

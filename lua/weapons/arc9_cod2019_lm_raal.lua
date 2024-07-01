@@ -33,7 +33,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_raal_desc") or [[The Reconnaissance Auxiliary Assault Lightweight Machine Gun uses a low fire rate and a reciprocating barrel to mitigate the powerful .338 Norma Mag recoil. Advanced titanium construction keeps the weight manageable.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_lmg_raal.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_lmg_raal.mdl"
 
 SWEP.Slot = 2
 

@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_hdr_desc") or [[Anti-material bolt action sniper rifle chambered in 12.7x108mm ammunition. 745 gr bullets have a lower muzzle velocity, but are devastating at very long ranges.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_hdr.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_snip_hdr.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3

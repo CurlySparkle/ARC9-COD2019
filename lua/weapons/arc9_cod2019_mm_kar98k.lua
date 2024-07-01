@@ -31,7 +31,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_kar98_desc") or [[Bolt action rifle chambered in 7.92 Mauser. A WW2 relic that is still extremely lethal in the hands of a rebel marksman.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_kar98k.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_snip_kar98k.mdl"
 SWEP.DefaultBodygroups = "0000000000000000"
 
 SWEP.Slot = 3

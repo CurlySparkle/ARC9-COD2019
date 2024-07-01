@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_m91_desc") or [[Robust light machine gun sacrifices mobility for stability. High caliber sustained fire will neutralize targets at long ranges.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_lmg_m91.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_lmg_m91.mdl"
 
 SWEP.Slot = 2
 

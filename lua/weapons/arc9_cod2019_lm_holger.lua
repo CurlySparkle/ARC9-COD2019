@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_holger_desc") or [[A versatile fully automatic 5.56mm light machine gun. Modular design can be configured for a broad range of engagements.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_lmg_holger.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_lmg_holger.mdl"
 
 SWEP.Slot = 2
 

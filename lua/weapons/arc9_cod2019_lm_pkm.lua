@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_pkm_desc") or [[Fully automatic light machine gun firing 7.62mm ammunition for high damage at a moderate fire rate.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_lmg_pkm.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_lmg_pkm.mdl"
 
 SWEP.Slot = 2
 

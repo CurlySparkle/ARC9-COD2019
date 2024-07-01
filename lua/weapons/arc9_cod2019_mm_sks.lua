@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_sks_desc") or [[Lightweight, semi-auto Carbine chambered in 7.62x39mm. This hard hitting and agile Soviet rifle focuses on utility over accuracy. It flaunts a faster fire rate than other weapons in its class, but a carefully placed round will eliminate the need for follow up shots entirely. This classic DMR has seen a lot of battles, and its unique gunsmith configurations reflect a diverse service history.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_sks.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_g3sg1.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_snip_sks.mdl"
 
 SWEP.Slot = 3
 

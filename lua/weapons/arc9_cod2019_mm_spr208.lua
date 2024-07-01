@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_spr_desc") or [[Reliable, hard-hitting .300 Win bolt action rifle from Sloan Precision. This weapon's extensive military and civilian use gives rise to an abundance of customization.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_snip_spr208.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_snip_spr208.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3
