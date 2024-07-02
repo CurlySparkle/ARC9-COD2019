@@ -33,7 +33,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_m19_desc") or [[Semi-automatic 9mm pistol, excellent stability with a rapid cycle rate.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_pist_m19.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_pist_m19.mdl"
 
 SWEP.Slot = 1
 

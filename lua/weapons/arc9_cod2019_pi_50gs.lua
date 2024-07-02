@@ -33,7 +33,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_deagle_desc") or [[The most powerful semi-automatic handgun available, deals heavy damage up to intermediate ranges.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_pist_50gs.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_pist_50gs.mdl"
 
 SWEP.Slot = 1
 

@@ -36,7 +36,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_m680_desc") or [[Reliable, well-rounded 12 gauge pump-action shotgun.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_shot_model680.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_shot_model680.mdl"
 SWEP.DefaultBodygroups = "000000000000"
 
 SWEP.Slot = 3

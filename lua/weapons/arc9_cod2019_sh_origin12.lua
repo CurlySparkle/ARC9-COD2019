@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_origin12_desc") or [[Semi-automatic shotgun with large ammo capacity allows for continuous firing. Effective at close range.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_shot_origin12.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_shot_origin12.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3

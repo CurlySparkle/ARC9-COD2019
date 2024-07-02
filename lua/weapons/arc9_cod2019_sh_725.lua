@@ -36,7 +36,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_725_desc") or [[Break action shotgun with 2 round capacity. A long back-bored barrel and cylindrical choke keeps spread tight and lethal over extended ranges.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_shot_725.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_shot_725.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3

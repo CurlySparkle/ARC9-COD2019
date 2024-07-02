@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_vlk_desc") or [[An agile 12-gauge mag fed shotgun from VLK with extensive options to modify range, stability, and maneuverability.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_shot_vlk.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_shot_vlk.mdl"
 SWEP.DefaultBodygroups = "00000000000"
 
 SWEP.Slot = 3

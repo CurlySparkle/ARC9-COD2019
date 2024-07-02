@@ -36,7 +36,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_aa12_desc") or [[Fully automatic open bolt shotgun with a recoil reducing gas blowback system. This combat shotgun unloads high volumes of lead down range at a steady rate.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_shot_jak12.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_shot_jak12.mdl"
 
 SWEP.Slot = 3
 

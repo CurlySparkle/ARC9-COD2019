@@ -33,7 +33,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_glock_desc") or [[Semi-automatic pistol chambered in .45 ACP ammunition. A reliable fall back when you find yourself in close quarters.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_pist_x16.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_pist_x16.mdl"
 
 SWEP.Slot = 1
 

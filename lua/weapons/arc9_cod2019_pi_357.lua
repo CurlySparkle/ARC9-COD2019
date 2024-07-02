@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_357_desc") or [[Double action revolver firing .357 Magnum ammunition for powerful damage over extended ranges.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_pist_357.mdl"
-SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_pist_357.mdl"
 
 SWEP.Slot = 1
 

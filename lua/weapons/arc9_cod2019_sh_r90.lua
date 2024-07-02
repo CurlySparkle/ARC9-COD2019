@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_r90_desc") or [[Double barrels provide two rapid shots before each re-chamber.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_shot_r90.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_shot_r90.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3
