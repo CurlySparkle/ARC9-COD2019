@@ -62,6 +62,10 @@ local launchers = {
 hook.Add("StartCommand", "ARC9_MW19_LauncherAim", function(ply, ucmd)
     local wep = ply:GetActiveWeapon()
     if !ply:Alive() or !IsValid(wep) or !launchers[wep:GetClass()] then return end
+    
+    local clip = wep:Clip1()
+    if clip <= 0 then return end  -- Exit the function if the clip is empty
+    
     if ucmd:KeyDown(IN_ATTACK) and !ucmd:KeyDown(IN_ATTACK2) and (!wep:ToggleADS() or !wep:GetInSights()) then
         ucmd:AddKey(IN_ATTACK2)
     end

@@ -28,7 +28,7 @@ ENT.SmokeTrail = true
 ENT.Flare = false
 
 ENT.FlareColor = Color(155, 155, 155)
-ENT.Radius = 275
+ENT.Radius = 200
 
 function ENT:Impact(data, collider)
     local hitPos = data.HitPos -- Get the position where the grenade hit
@@ -99,7 +99,7 @@ function ENT:Detonate()
     end
 
     self:EmitSound("Cod2019.Frag.Explode")
-	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
+	util.ScreenShake(self:GetPos(), 3500, 1111, 1, self.Radius * 4)
 	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
     self:Remove()
 end

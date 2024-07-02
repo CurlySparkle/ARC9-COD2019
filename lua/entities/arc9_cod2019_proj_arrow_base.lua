@@ -122,6 +122,18 @@ if SERVER then
         local hitPos = data.HitPos -- Get the position where the grenade hit
         local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
         local hitEntity = data.HitEntity -- Get the entity that was hit (can be nil if it hit the world)
+		
+        if data.HitEntity:GetClass() == "func_breakable_surf" then
+            self:FireBullets({
+            Attacker = self:GetOwner(),
+            Inflictor = self,
+            Damage = 0,
+            Distance = 32,
+            Tracer = 0,
+            Src = self:GetPos(),
+            Dir = data.OurOldVelocity:GetNormalized(),
+	        })
+        end
 
         if tgt:IsWorld() or (IsValid(tgt) and tgt:GetPhysicsObject():IsValid()) then
             timer.Simple(0, function()

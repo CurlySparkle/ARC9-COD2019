@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_minigun_desc") or [[A machine gun that appears in a portable form with high rate of fire around 3,000 RPM.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_minigun.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/c_lmg_minigun.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3

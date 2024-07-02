@@ -26,7 +26,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_strela_desc") or [[84mm recoilless rifle lobs an explosive projectile at a very high velocity. The unguided armor piercing round has a low explosive yield, but is devastating against vehicles on contact.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_strela.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_eq_strela.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3
@@ -35,8 +35,8 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_strela.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-9, 8, -4),
-    Ang = Angle(-17, 3, 190),
+    Pos = Vector(-6, 8, -5),
+    Ang = Angle(-17, 5, 190),
     TPIKPos = Vector(-4, 7.5, -5),
     TPIKAng = Angle(-9, 0, 175),
     Scale = 1
@@ -279,6 +279,14 @@ SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
 SWEP.TriggerUpSound = ""
+
+function SWEP:PrimaryAttack()
+    local clip = self:Clip1()
+    weapons.Get(self.Base).PrimaryAttack(self)
+    if (clip != self:Clip1()) then
+        self:MakeEnvironmentDust(150)
+    end
+end
 
 SWEP.Animations = {
 	["enter_sights"] = {

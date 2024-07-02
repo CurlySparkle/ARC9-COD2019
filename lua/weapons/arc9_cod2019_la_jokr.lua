@@ -201,56 +201,56 @@ SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
 }
 
 --- RT Reticle ---
-SWEP.RTScope = true
-SWEP.RTScopeSubmatIndex = 7
-SWEP.RTScopeFOV = 56 / 2 -- FOV multiplied by zoom level
-SWEP.RTScopeReticle = Material("hud/arc9_cod2019/overlays/jokr_crosshair.png")
-SWEP.RTScopeColorable = false
-SWEP.RTScopeShadowIntensity = 0
-SWEP.RTScopeNoShadow = true
-SWEP.RTScopeBlackBox = false
-SWEP.RTScopeBlackBoxShadow = false
-SWEP.ScopeScreenRatio = 1
-SWEP.RTScopeReticleScale = 1
+-- SWEP.RTScope = true
+-- SWEP.RTScopeSubmatIndex = 7
+-- SWEP.RTScopeFOV = 56 / 2 -- FOV multiplied by zoom level
+-- SWEP.RTScopeReticle = Material("hud/arc9_cod2019/overlays/jokr_crosshair.png")
+-- SWEP.RTScopeColorable = false
+-- SWEP.RTScopeShadowIntensity = 0
+-- SWEP.RTScopeNoShadow = true
+-- SWEP.RTScopeBlackBox = false
+-- SWEP.RTScopeBlackBoxShadow = false
+-- SWEP.ScopeScreenRatio = 1
+-- SWEP.RTScopeReticleScale = 1
 
-SWEP.RTScopeFLIR = true
-SWEP.RTScopeFLIRSolid = false -- Solid color FLIR instead of like a shaded look
-SWEP.RTScopeFLIRCCCold = { -- Color correction drawn only on FLIR targets
-    [ "$pp_colour_addr" ] = 0,
-    [ "$pp_colour_addg" ] = 0,
-    [ "$pp_colour_addb" ] = 0,
-    [ "$pp_colour_brightness" ] = 0,
-    [ "$pp_colour_contrast" ] = 0.5,
-    [ "$pp_colour_colour" ] = 0.5,
-    [ "$pp_colour_mulr" ] = 0,
-    [ "$pp_colour_mulg" ] = 0,
-    [ "$pp_colour_mulb" ] = 0
-}
-SWEP.RTScopeFLIRCCHot = { -- Color correction drawn only on FLIR targets
-    ["$pp_colour_addr"] = 1,
-    ["$pp_colour_addg"] = 1,
-    ["$pp_colour_addb"] = 1,
-    ["$pp_colour_brightness"] = -0.59,
-    ["$pp_colour_contrast"] = 1,
-    ["$pp_colour_colour"] = 0,
-    ["$pp_colour_mulr"] = 0,
-    ["$pp_colour_mulg"] = 0,
-    ["$pp_colour_mulb"] = 0
-}
+-- SWEP.RTScopeFLIR = true
+-- SWEP.RTScopeFLIRSolid = false -- Solid color FLIR instead of like a shaded look
+-- SWEP.RTScopeFLIRCCCold = { -- Color correction drawn only on FLIR targets
+    -- [ "$pp_colour_addr" ] = 0,
+    -- [ "$pp_colour_addg" ] = 0,
+    -- [ "$pp_colour_addb" ] = 0,
+    -- [ "$pp_colour_brightness" ] = 0,
+    -- [ "$pp_colour_contrast" ] = 0.5,
+    -- [ "$pp_colour_colour" ] = 0.5,
+    -- [ "$pp_colour_mulr" ] = 0,
+    -- [ "$pp_colour_mulg" ] = 0,
+    -- [ "$pp_colour_mulb" ] = 0
+-- }
+-- SWEP.RTScopeFLIRCCHot = { -- Color correction drawn only on FLIR targets
+    -- ["$pp_colour_addr"] = 1,
+    -- ["$pp_colour_addg"] = 1,
+    -- ["$pp_colour_addb"] = 1,
+    -- ["$pp_colour_brightness"] = -0.59,
+    -- ["$pp_colour_contrast"] = 1,
+    -- ["$pp_colour_colour"] = 0,
+    -- ["$pp_colour_mulr"] = 0,
+    -- ["$pp_colour_mulg"] = 0,
+    -- ["$pp_colour_mulb"] = 0
+-- }
 
-local noise = Material("models/cod2019/shared/mw19_thermalnoise")
-local shadow = Material("arc9/shadow_square")
+-- local noise = Material("models/cod2019/shared/mw19_thermalnoise")
+-- local shadow = Material("arc9/shadow_square")
 
-SWEP.RTScopeDrawFunc = function(swep, rtsize)
-cam.Start2D()
-surface.SetMaterial(noise)
-surface.SetDrawColor(255,255,255)
-surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), (rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), rtsize, rtsize, math.Rand(0, 360))
-surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), (rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), rtsize * 2, rtsize * 2, math.Rand(0, 360))
-cam.End2D()
+-- SWEP.RTScopeDrawFunc = function(swep, rtsize)
+-- cam.Start2D()
+-- surface.SetMaterial(noise)
+-- surface.SetDrawColor(255,255,255)
+-- surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), (rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), rtsize, rtsize, math.Rand(0, 360))
+-- surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), (rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), rtsize * 2, rtsize * 2, math.Rand(0, 360))
+-- cam.End2D()
 
-DrawBloom( 0.65, 2, 9, 9, 1, 1, 1, 1, 1 )
-end
+-- DrawBloom( 0.65, 2, 9, 9, 1, 1, 1, 1, 1 )
+-- end
 ----------------------------------------------------
 
 SWEP.ViewModelFOVBase = 64
@@ -488,6 +488,14 @@ SWEP.Hook_Think2 = function(self)
     end
 end
 
+function SWEP:PrimaryAttack()
+    local clip = self:Clip1()
+    weapons.Get(self.Base).PrimaryAttack(self)
+    if (clip != self:Clip1()) then
+        self:MakeEnvironmentDust(200)
+    end
+end
+
 SWEP.Animations = {
     ["enter_sights"] = {
         Source = "idle",
@@ -678,27 +686,17 @@ SWEP.AttachmentTableOverrides = {
 -- end
 
 SWEP.Attachments = {
-    -- {
-        -- PrintName = ARC9:GetPhrase("mw19_category_optic"),
-        -- DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
-        -- Bone = "tag_launcher_offset",
-        -- Pos = Vector(5, -3.1, 1.9),
-        -- Ang = Angle(0, 0, -90),
-        -- -- Category = {"cod2019_optic","cod2019_optic_strela"},
-        -- Category = {"cod2019_optic_strela"},
-        -- InstalledElements = {"sights_scope"},
-        -- --Installed = "cod2019_optic_scope_strela",
-        -- --Integral = "cod2019_optic_scope_strela",
-        -- CorrectiveAng = Angle(7, 6.2, -90),
-    -- },
-    -- {
-        -- PrintName = ARC9:GetPhrase("mw19_category_ammo"),
-        -- DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
-        -- Bone = "tag_launcher_offset",
-        -- Category = {"cod2019_strela_ammo"},
-        -- Pos = Vector(5, 0, 0),
-        -- Ang = Angle(0, 0, 0),
-    -- },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
+        DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
+        Bone = "tag_launcher_offset",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Category = {"cod2019_jokr_optic"},
+        Installed = "cod2019_optic_default_jokr",
+        Integral = "cod2019_optic_default_jokr",
+		Hidden = false,
+    },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
         DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),

@@ -350,3 +350,89 @@ ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
 
 ARC9.LoadAttachment(ATT, "cod2019_optic_default_pila")
+
+/////////////////////////// -- Jokr Scope
+ATT = {}
+
+ATT.PrintName = "Jokr Sight"
+ATT.CompactName = "Jokr"
+ATT.Description = [[Default targetting sight for the JOKR.]]
+
+ATT.CustomPros = {
+    [ ARC9:GetPhrase("mw19_optic_stat_zoom2") ] = "3.0x"
+}
+
+ATT.SortOrder = 4
+ATT.Free = true
+ATT.Folder = ARC9:GetPhrase("mw19_folder_scope")
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.Category = {"cod2019_jokr_optic"}
+ATT.ActivateElements = {"scope_jokr"}
+
+ATT.Model = "models/weapons/cod2019/attachs/scopes/scope_jokr.mdl"
+ATT.BoneMerge = true
+
+ATT.Sights = {
+    {
+        Pos = Vector(1.375, 1, -3.3),
+        Ang = Angle(15, -21, 0.675),
+        ViewModelFOV = 64,
+        Magnification = 1.25,
+        IgnoreExtra = true,
+		CrosshairInSights = false
+    },
+}
+
+ATT.RTScope = true
+ATT.RTScopeSubmatIndex = 2
+ATT.RTScopeFOV = 56 / 2
+ATT.RTScopeRes = 1024
+ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/jokr_crosshair.png")
+ATT.RTScopeColorable = false
+ATT.RTScopeShadowIntensity = 0
+ATT.RTScopeNoShadow = true
+ATT.RTScopeBlackBox = false
+ATT.RTScopeBlackBoxShadow = false
+ATT.ScopeScreenRatio = 1
+ATT.RTScopeReticleScale = 1
+
+ATT.RTScopeFLIR = true
+ATT.RTScopeFLIRSolid = false -- Solid color FLIR instead of like a shaded look
+ATT.RTScopeFLIRCCCold = { -- Color correction drawn only on FLIR targets
+    [ "$pp_colour_addr" ] = 0,
+    [ "$pp_colour_addg" ] = 0,
+    [ "$pp_colour_addb" ] = 0,
+    [ "$pp_colour_brightness" ] = 0,
+    [ "$pp_colour_contrast" ] = 0.5,
+    [ "$pp_colour_colour" ] = 0.5,
+    [ "$pp_colour_mulr" ] = 0,
+    [ "$pp_colour_mulg" ] = 0,
+    [ "$pp_colour_mulb" ] = 0
+}
+ATT.RTScopeFLIRCCHot = { -- Color correction drawn only on FLIR targets
+    ["$pp_colour_addr"] = 1,
+    ["$pp_colour_addg"] = 1,
+    ["$pp_colour_addb"] = 1,
+    ["$pp_colour_brightness"] = -0.59,
+    ["$pp_colour_contrast"] = 1,
+    ["$pp_colour_colour"] = 0,
+    ["$pp_colour_mulr"] = 0,
+    ["$pp_colour_mulg"] = 0,
+    ["$pp_colour_mulb"] = 0
+}
+
+-- ATT.RTScopeDrawFunc = function(swep, rtsize)
+-- local noise = Material("models/cod2019/shared/mw19_thermalnoise")
+
+-- cam.Start2D()
+-- surface.SetMaterial(noise)
+-- surface.SetDrawColor(255,255,255)
+-- surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), (rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), rtsize, rtsize, math.Rand(0, 360))
+-- surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), (rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), rtsize * 2, rtsize * 2, math.Rand(0, 360))
+-- cam.End2D()
+
+-- DrawBloom( 0.65, 2, 9, 9, 1, 1, 1, 1, 1 )
+-- end
+
+ARC9.LoadAttachment(ATT, "cod2019_optic_default_jokr")

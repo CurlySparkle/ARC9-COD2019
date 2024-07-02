@@ -26,7 +26,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_pila_desc") or [[Portable infrared surface-to-air missile with a free-fire option. Self propelled missiles have a higher speed, and moderate explosive yield.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_pila.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_eq_pila.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3
@@ -35,8 +35,8 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_pila.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-11, 6, -2.5),
-    Ang = Angle(-17, 3, 180),
+    Pos = Vector(-13, 7, -7.5),
+    Ang = Angle(-17, 1, 190),
     TPIKPos = Vector(-11, 6, -4),
     TPIKAng = Angle(-11, 0, 180),
     Scale = 1
@@ -424,6 +424,14 @@ SWEP.Hook_Think2 = function(self)
         self.TargetEntity = best
     else
         self.TargetEntity = nil
+    end
+end
+
+function SWEP:PrimaryAttack()
+    local clip = self:Clip1()
+    weapons.Get(self.Base).PrimaryAttack(self)
+    if (clip != self:Clip1()) then
+        self:MakeEnvironmentDust(200)
     end
 end
 

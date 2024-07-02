@@ -222,10 +222,10 @@ SWEP.PeekAng = Angle(0, 0.4, -45)
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "ar2"
+SWEP.HoldType = "smg"
 SWEP.HoldTypeSprint = "rpg"
 SWEP.HoldTypeHolstered = "passive"
-SWEP.HoldTypeSights = "ar2"
+SWEP.HoldTypeSights = "smg"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 

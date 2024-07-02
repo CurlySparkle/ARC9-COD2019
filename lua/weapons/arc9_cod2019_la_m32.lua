@@ -27,7 +27,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_mgl_desc") or [[6 round semi-automatic high-explosive grenade launcher.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_m32.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_eq_m32.mdl"
 SWEP.DefaultBodygroups = "00000000000"
 
 SWEP.Slot = 3

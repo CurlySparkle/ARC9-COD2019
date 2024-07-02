@@ -21,7 +21,7 @@ ENT.FlareSizeMin = 20
 ENT.FlareSizeMax = 70
 ENT.RocketTrailParticle = "Rocket_Smoke"  -- name of the particle effect
 ENT.RocketTrail = true -- leaves trail of a particle effect
-ENT.Radius = 300
+ENT.Radius = 470
 
 --- Stuff
 ENT.SeekerAngle = math.cos(math.rad(55))
@@ -211,7 +211,7 @@ function ENT:Detonate()
     end
 
     self:EmitSound("Cod2019.Frag.Explode")
-    util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
+	util.ScreenShake(self:GetPos(), 3500, 1111, 1, self.Radius * 4)
     util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
 
     for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do

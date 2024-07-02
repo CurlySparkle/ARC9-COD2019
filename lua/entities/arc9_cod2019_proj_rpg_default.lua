@@ -23,7 +23,7 @@ ENT.AudioLoop = "weapons/cod2019/rpg/move_rpapa7_proj_flame_cls.ogg"
 ENT.SmokeTrail = true
 
 ENT.FlareColor = Color(155, 155, 155)
-ENT.Radius = 256
+ENT.Radius = 390
 
 function ENT:OnInitialize()
 	self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
@@ -116,7 +116,7 @@ function ENT:Detonate()
     end
 
     self:EmitSound("Cod2019.Frag.Explode")
-	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
+	util.ScreenShake(self:GetPos(), 3500, 1111, 1, self.Radius * 4)
 	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
 	
 	for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do

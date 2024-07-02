@@ -95,7 +95,7 @@ function ENT:Detonate()
     end
 
     self:EmitSound("Cod2019.Frag.Explode")
-	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
+	util.ScreenShake(self:GetPos(), 3500, 1111, 1, self.Radius * 4)
 	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
     self:Remove()
 end

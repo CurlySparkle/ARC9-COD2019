@@ -23,7 +23,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_rpg_desc") or [[Unguided, self-propelled rocket launcher fires a slower projectile with a high-explosive yield.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_rpg.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_eq_rpg.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3
@@ -32,8 +32,8 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_rpg.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-11, 6, -2.5),
-    Ang = Angle(-17, 3, 180),
+    Pos = Vector(-11, 4.5, -4),
+    Ang = Angle(-18, 0, 180),
     TPIKPos = Vector(-5, 5, -1),
     TPIKAng = Angle(-9, 0, 165),
     Scale = 1
@@ -250,6 +250,14 @@ SWEP.NoShellEject = true
 
 SWEP.HookP_BlockFire = function(self)
     return self:GetSightAmount() < 1
+end
+
+function SWEP:PrimaryAttack()
+    local clip = self:Clip1()
+    weapons.Get(self.Base).PrimaryAttack(self)
+    if (clip != self:Clip1()) then
+        self:MakeEnvironmentDust(200)
+    end
 end
 
 -------------------------- SOUNDS
