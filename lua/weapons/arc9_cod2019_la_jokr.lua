@@ -695,7 +695,7 @@ SWEP.Attachments = {
         Category = {"cod2019_jokr_optic"},
         Installed = "cod2019_optic_default_jokr",
         Integral = "cod2019_optic_default_jokr",
-		Hidden = false,
+		Hidden = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
