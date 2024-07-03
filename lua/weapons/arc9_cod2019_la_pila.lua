@@ -443,6 +443,11 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
+    ["dryfire"] = {
+        Source = "firemode",
+		MinProgress = 0.01,
+		FireASAP = true,
+    },
     ["reload"] = {
         Source = "reload",
 		MinProgress = 0.95,

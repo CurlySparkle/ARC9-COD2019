@@ -404,8 +404,8 @@ ATT.RTScopeFLIRCCCold = { -- Color correction drawn only on FLIR targets
     [ "$pp_colour_addg" ] = 0,
     [ "$pp_colour_addb" ] = 0,
     [ "$pp_colour_brightness" ] = 0,
-    [ "$pp_colour_contrast" ] = 0.5,
-    [ "$pp_colour_colour" ] = 0.5,
+    [ "$pp_colour_contrast" ] = 0.7,
+    [ "$pp_colour_colour" ] = 0.1,
     [ "$pp_colour_mulr" ] = 0,
     [ "$pp_colour_mulg" ] = 0,
     [ "$pp_colour_mulb" ] = 0
@@ -422,17 +422,17 @@ ATT.RTScopeFLIRCCHot = { -- Color correction drawn only on FLIR targets
     ["$pp_colour_mulb"] = 0
 }
 
--- ATT.RTScopeDrawFunc = function(swep, rtsize)
--- local noise = Material("models/cod2019/shared/mw19_thermalnoise")
+local noise = Material("models/cod2019/shared/mw19_thermalnoise")
 
--- cam.Start2D()
--- surface.SetMaterial(noise)
--- surface.SetDrawColor(255,255,255)
--- surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), (rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), rtsize, rtsize, math.Rand(0, 360))
--- surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), (rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), rtsize * 2, rtsize * 2, math.Rand(0, 360))
--- cam.End2D()
+ATT.RTScopeDrawFunc = function(swep, rtsize)
+cam.Start2D()
+surface.SetMaterial(noise)
+surface.SetDrawColor(255,255,255)
+surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), (rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), rtsize, rtsize, math.Rand(0, 360))
+surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), (rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), rtsize * 2, rtsize * 2, math.Rand(0, 360))
+cam.End2D()
 
--- DrawBloom( 0.65, 2, 9, 9, 1, 1, 1, 1, 1 )
--- end
+--DrawBloom( 0.65, 2, 9, 9, 1, 1, 1, 1, 1 )
+end
 
 ARC9.LoadAttachment(ATT, "cod2019_optic_default_jokr")

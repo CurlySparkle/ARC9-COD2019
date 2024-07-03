@@ -83,24 +83,6 @@ SWEP.Firemodes = {
         PrintName = ARC9:GetPhrase("mw19_firemode_lockon"),
         TopAttack = true
     },
-    -- {
-        -- Mode = -1,
-        -- PrintName = ARC9:GetPhrase("mw19_firemode_lockon"),
-        -- TopAttack = false,
-        -- ShootEnt = "arc9_cod2019_proj_jokr_default2", -- This one doesn't work probably
-    -- },
-    -- {
-        -- Mode = -1,
-        -- PrintName = "Guided-Fire",
-        -- TopAttack = false,
-        -- ShootEnt = "arc9_cod2019_proj_jokr_saclos",
-        -- -- ToggleOnF = true,
-        -- -- LaserColorPlayer = true,
-        -- -- Laser = true,
-        -- -- LaserStrength = 4,
-        -- -- LaserColor = Color(0, 255, 0),
-        -- -- LaserAttachment = 4,
-    -- },
 }
 
 -------------------------- RECOIL
@@ -200,57 +182,6 @@ SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
     Ang = Angle(0.45, 0, 0.23),
 }
 
---- RT Reticle ---
--- SWEP.RTScope = true
--- SWEP.RTScopeSubmatIndex = 7
--- SWEP.RTScopeFOV = 56 / 2 -- FOV multiplied by zoom level
--- SWEP.RTScopeReticle = Material("hud/arc9_cod2019/overlays/jokr_crosshair.png")
--- SWEP.RTScopeColorable = false
--- SWEP.RTScopeShadowIntensity = 0
--- SWEP.RTScopeNoShadow = true
--- SWEP.RTScopeBlackBox = false
--- SWEP.RTScopeBlackBoxShadow = false
--- SWEP.ScopeScreenRatio = 1
--- SWEP.RTScopeReticleScale = 1
-
--- SWEP.RTScopeFLIR = true
--- SWEP.RTScopeFLIRSolid = false -- Solid color FLIR instead of like a shaded look
--- SWEP.RTScopeFLIRCCCold = { -- Color correction drawn only on FLIR targets
-    -- [ "$pp_colour_addr" ] = 0,
-    -- [ "$pp_colour_addg" ] = 0,
-    -- [ "$pp_colour_addb" ] = 0,
-    -- [ "$pp_colour_brightness" ] = 0,
-    -- [ "$pp_colour_contrast" ] = 0.5,
-    -- [ "$pp_colour_colour" ] = 0.5,
-    -- [ "$pp_colour_mulr" ] = 0,
-    -- [ "$pp_colour_mulg" ] = 0,
-    -- [ "$pp_colour_mulb" ] = 0
--- }
--- SWEP.RTScopeFLIRCCHot = { -- Color correction drawn only on FLIR targets
-    -- ["$pp_colour_addr"] = 1,
-    -- ["$pp_colour_addg"] = 1,
-    -- ["$pp_colour_addb"] = 1,
-    -- ["$pp_colour_brightness"] = -0.59,
-    -- ["$pp_colour_contrast"] = 1,
-    -- ["$pp_colour_colour"] = 0,
-    -- ["$pp_colour_mulr"] = 0,
-    -- ["$pp_colour_mulg"] = 0,
-    -- ["$pp_colour_mulb"] = 0
--- }
-
--- local noise = Material("models/cod2019/shared/mw19_thermalnoise")
--- local shadow = Material("arc9/shadow_square")
-
--- SWEP.RTScopeDrawFunc = function(swep, rtsize)
--- cam.Start2D()
--- surface.SetMaterial(noise)
--- surface.SetDrawColor(255,255,255)
--- surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), (rtsize / 2) + (rtsize * math.Rand(-0.25, 0.25)), rtsize, rtsize, math.Rand(0, 360))
--- surface.DrawTexturedRectRotated((rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), (rtsize / 2) + (rtsize * math.Rand(-0.5, 0.5)), rtsize * 2, rtsize * 2, math.Rand(0, 360))
--- cam.End2D()
-
--- DrawBloom( 0.65, 2, 9, 9, 1, 1, 1, 1, 1 )
--- end
 ----------------------------------------------------
 
 SWEP.ViewModelFOVBase = 64
@@ -303,18 +234,10 @@ SWEP.AfterShotParticleDelay = -1
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
---- LASER FUNCTION
--- SWEP.ToggleOnF = true
--- SWEP.LaserColorPlayer = true
--- SWEP.Laser = true
--- SWEP.TacticalName = "Laser"
--- SWEP.LaserStrength = 4
--- SWEP.LaserColor = Color(255, 0, 0)
--- SWEP.LaserAttachment = 4
-------------------------------------
-
 SWEP.CamQCA = 3
 SWEP.CamQCA_Mult = 1
+
+------------------------------------
 
 SWEP.NoShellEject = true
 
@@ -504,6 +427,11 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
+    ["dryfire"] = {
+        Source = "firemode",
+		MinProgress = 0.01,
+		FireASAP = true,
+    },
     ["reload"] = {
         Source = "reload",
         MinProgress = 0.95,
@@ -667,24 +595,6 @@ SWEP.AttachmentTableOverrides = {
     },
 }
 
--- SWEP.AttachmentElements = {
-    -- ["grip"] = {
-        -- Bodygroups = {
-            -- {1,1},
-        -- },
-    -- },
-    -- ["sights_scope"] = {
-        -- Bodygroups = {
-            -- {2,1},
-        -- },
-    -- },
--- }
-
--- SWEP.Hook_ModifyBodygroups = function(wep, data)
-    -- local model = data.model
-    -- if wep:HasElement("sights_scope") then model:SetBodygroup(2,0) end
--- end
-
 SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
@@ -732,7 +642,6 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(3, 0, 5),
-        Hidden = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
@@ -740,7 +649,6 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(1, 0, 4.5),
-        Hidden = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
@@ -748,7 +656,6 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(-1, 0, 4),
-        Hidden = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_sticker"),
@@ -756,7 +663,13 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(-3, 0, 3.5),
-        Hidden = true,
+    },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
+        StickerModel = "models/weapons/cod2019/stickers/eq_jokr_decal_e.mdl",
+        Category = "stickers",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-4, 0, 4.5),
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),

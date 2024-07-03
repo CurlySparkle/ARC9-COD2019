@@ -298,6 +298,11 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
+    ["dryfire"] = {
+        Source = "firemode",
+		MinProgress = 0.01,
+		FireASAP = true,
+    },
     ["reload"] = {
         Source = "reload",
 		MinProgress = 0.95,
@@ -312,11 +317,11 @@ SWEP.Animations = {
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_la_rpapa7_reload_raise.ogg", t = 0/30},
-			{s = path .. "wfoly_la_rpapa7_reload_load.ogg", t = 18/30},
-			{s = path .. "wfoly_la_rpapa7_reload_lower.ogg", t = 21/30},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 40/30},
-			{s = path .. "wfoly_la_rpapa7_reload_end.ogg", t = 50/30},
+			{s = path .. "wfoly_la_rpapa7_reload_raise.ogg", t = 0.1},
+			{s = path .. "wfoly_la_rpapa7_reload_load.ogg", t = 0.333},
+			{s = path .. "wfoly_la_rpapa7_reload_lower.ogg", t = 1.033},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 1.7},
+			{s = path .. "wfoly_la_rpapa7_reload_end.ogg", t = 1.9},
         },
     },
     ["reload_fast"] = {
@@ -332,10 +337,10 @@ SWEP.Animations = {
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_start.ogg", t = 0/30},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_magin.ogg", t = 17/30},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 20/30},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_end.ogg", t = 30/30},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_start.ogg", t = 0.033},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_magin.ogg", t = 0.4},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 1},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_end.ogg", t = 1},
         },
     },
     ["ready"] = {

@@ -46,6 +46,21 @@ ENT.ShootEntData = {}
 ENT.IsProjectile = true
 ENT.LockOnPoint = nil
 
+function ENT:OnInitialize()
+    if not IsValid(self.ShootEntData.Target) then
+        local tr = util.TraceLine({
+            start = self:GetPos(),
+            endpos = self:GetPos() + self:GetForward() * 100000,
+            filter = {self, self:GetOwner()},
+            mask = MASK_SHOT
+        })
+
+        self.LockOnPoint = tr.HitPos
+    end
+    self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
+	self:SetModelScale(Vector(0.5, 0.5, 0.5))
+end
+
 function ENT:Detonate()
     local phys = self:GetPhysicsObject()
     if (self:WaterLevel() <= 0) then
