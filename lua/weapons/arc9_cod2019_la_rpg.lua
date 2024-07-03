@@ -283,7 +283,7 @@ SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before sh
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.02 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg"
+SWEP.TriggerDownSound = ""
 SWEP.TriggerUpSound = ""
 
 SWEP.BulletBones = {

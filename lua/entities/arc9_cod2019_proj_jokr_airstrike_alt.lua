@@ -1,7 +1,7 @@
 AddCSLuaFile()
 
 if CLIENT then
-    killicon.Add( "arc9_cod2019_proj_40mm_hel", "VGUI/killicons/cod2019_nade_he", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_jokr_airstrike_alt", "VGUI/killicons/cod2019_la_jokr.png", Color(251, 85, 25, 255))
 end
 
 ENT.Base                     = "arc9_cod2019_proj_jokr_default"
@@ -46,19 +46,11 @@ ENT.ShootEntData = {}
 ENT.IsProjectile = true
 ENT.LockOnPoint = nil
 
-function ENT:OnInitialize()
-    if not IsValid(self.ShootEntData.Target) then
-        local tr = util.TraceLine({
-            start = self:GetPos(),
-            endpos = self:GetPos() + self:GetForward() * 100000,
-            filter = {self, self:GetOwner()},
-            mask = MASK_SHOT
-        })
+DEFINE_BASECLASS(ENT.Base)
 
-        self.LockOnPoint = tr.HitPos
-    end
-    self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
-	self:SetModelScale(Vector(0.5, 0.5, 0.5))
+function ENT:OnInitialize()
+	self:SetModelScale(0.8)
+	BaseClass.OnInitialize(self)
 end
 
 function ENT:Detonate()

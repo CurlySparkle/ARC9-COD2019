@@ -317,10 +317,10 @@ SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
 SWEP.DistantShootSoundIndoor = "Distant_Shotgun.Inside"
 ---------------------------------------------------
 -- Silenced Outside
-SWEP.LayerSoundSilenced = "Layer_Sniper.Outside"
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
 SWEP.DistantShootSoundSilenced = "Distant_DMR_Sup.Outside"
 -- Inside
-SWEP.LayerSoundSilencedIndoor = "Layer_Sniper.Inside"
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
 SWEP.DistantShootSoundSilencedIndoor = "Distant_DMR_Sup.Inside"
 ---------------------------------------------------
 

@@ -304,10 +304,10 @@ SWEP.LayerSoundIndoor = "Layer_Shotgun.Inside"
 SWEP.DistantShootSoundIndoor = "Distant_Shotgun.Inside"
 ---------------------------------------------------
 -- Silenced Outside
-SWEP.LayerSoundSilenced = "Layer_Sniper.Outside"
+SWEP.LayerSoundSilenced = "Layer_ARSUP.Outside"
 SWEP.DistantShootSoundSilenced = "Distant_DMR_Sup.Outside"
 -- Inside
-SWEP.LayerSoundSilencedIndoor = "Layer_Sniper.Inside"
+SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
 SWEP.DistantShootSoundSilencedIndoor = "Distant_DMR_Sup.Inside"
 ---------------------------------------------------
 
@@ -1078,8 +1078,8 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 4
-SWEP.CodAngledGripPoseParam = 14
-SWEP.CodStubbyGripPoseParam = 26
+SWEP.CodAngledGripPoseParam = 32
+SWEP.CodStubbyGripPoseParam = 30
 SWEP.CodStubbyTallGripPoseParam = 18
 SWEP.GripPoseParam2 = 0.5
 
