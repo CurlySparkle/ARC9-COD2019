@@ -48,7 +48,7 @@ SWEP.NoAimAssist = true
 -------------------------- DAMAGE PROFILE
 
 SWEP.ShootEnt = "arc9_cod2019_proj_jokr_default" -- Set to an entity to launch it out of this weapon.
-SWEP.ShootEntForce = 3000
+SWEP.ShootEntForce = 1700
 
 SWEP.ShootPosOffset = Vector(30, -10, 0)
 SWEP.ShootPosOffsetSights = Vector(30, -10, 0)
@@ -82,6 +82,11 @@ SWEP.Firemodes = {
         Mode = -1,
         PrintName = ARC9:GetPhrase("mw19_firemode_lockon"),
         TopAttack = true
+    },
+    {
+        Mode = -1,
+        PrintName = ARC9:GetPhrase("mw19_firemode_lockon_top"),
+        TopAttack = false
     },
 }
 

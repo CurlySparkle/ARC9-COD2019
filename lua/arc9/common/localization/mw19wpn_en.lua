@@ -221,7 +221,7 @@ L["mw19_firemode_throwable"] = "THROWABLE" -- UO
 L["mw19_firemode_plant"] = "PLANT" -- UO, "Plant" the bomb
 L["mw19_firemode_melee"] = "MELEE" -- UO
 L["mw19_firemode_lockon"] = "LOCK-ON" -- UO
-L["mw19_firemode_lockon_top"] = "LOCK-ON (TOP-DOWN)" -- UO
+L["mw19_firemode_lockon_top"] = "LOCK-OFF (GROUND)" -- UO
 L["mw19_firemode_guided"] = "GUIDED" -- UO
 L["mw19_firemode_unguided"] = "UNGUIDED" -- UO
 

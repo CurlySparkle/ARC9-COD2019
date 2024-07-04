@@ -94,6 +94,7 @@ function ENT:Initialize()
 
         if self.IsRocket then
             phys:EnableGravity(false)
+			phys:SetMass(5)
         end
     end
 

@@ -31,7 +31,7 @@ ENT.Radius = 300
 ENT.SeekerAngle = math.cos(math.rad(100))
 ENT.SteerSpeed = 50000
 ENT.FuseTime = 0
-ENT.Boost = 1500
+ENT.Boost = 1700
 ENT.Lift = 80
 
 ENT.FireAndForget = false 

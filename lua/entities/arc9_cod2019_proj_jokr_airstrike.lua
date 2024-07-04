@@ -10,10 +10,12 @@ ENT.SafetyFuse = 2
 ENT.ClusterDistance = 2000
 
 local offsets = {
-    Vector(-75, -75, 0),
-    Vector(-75, 75, 0),
-    Vector(75, -75, 0),
-    Vector(75, 75, 0)
+    Vector(-65, -65, -80),
+    Vector(-65, 65, -35),
+    Vector(65, -65, 55),
+    Vector(65, 65, 90),
+	Vector(0, -100, 0),
+	Vector(0, 100, 0)
 }
 
 function ENT:OnThink()
@@ -30,11 +32,29 @@ end
 function ENT:Detonate()
     if self:WaterLevel() > 0 then self:Remove() self:StopParticles() return end
     local attacker = self.Attacker or self:GetOwner() or self
+	
+	if (self:WaterLevel() <= 0) then
+		ParticleEffect("Generic_explo_high", self:GetPos(),Angle(0,0,0))
+	else
+		local effectdata = EffectData()
+		effectdata:SetOrigin(self:GetPos())
+		util.Effect("WaterSurfaceExplosion", effectdata)
+	end
 
-    for i = 1, 4 do
+	local dmgInfo = DamageInfo()
+	dmgInfo:SetDamage(50)
+	dmgInfo:SetAttacker(IsValid(self:GetOwner()) && self:GetOwner() || self)
+	dmgInfo:SetInflictor(self)
+	dmgInfo:SetDamageType(self:GetDamageType())
+	util.BlastDamageInfo(dmgInfo, self:GetPos(), self.Radius)
+
+	util.ScreenShake(self:GetPos(), 3500, 1111, 1, self.Radius * 4)
+
+    for i = 1, 6 do
         local child = ents.Create("arc9_cod2019_proj_jokr_airstrike_alt")
         if IsValid(child) then
-            child:SetPos(self:GetPos() + self:GetRight() * offsets[i].x + self:GetUp() * offsets[i].y)
+            child:SetPos(self:GetPos() + self:GetRight() * offsets[i].x + self:GetUp() * offsets[i].y + self:GetForward() * offsets[i].z)
+			child.LastPos = self:GetPos()
             local dir = (child:GetPos() - self:GetPos() + self:GetForward() * 128):GetNormalized()
             child:SetAngles(self:GetAngles())
             child:SetOwner(self:GetOwner())
@@ -45,7 +65,10 @@ function ENT:Detonate()
             child:GetPhysicsObject():SetVelocityInstantaneous(self:GetVelocity():Length() * dir)
         end
     end
-
     -- Remove the initial entity
     self:Remove()
+end
+
+function ENT:GetDamageType() 
+	return DMG_BLAST + DMG_AIRBOAT + DMG_SNIPER
 end

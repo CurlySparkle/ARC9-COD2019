@@ -58,8 +58,8 @@ SWEP.ShootEnt = "arc9_cod2019_proj_rpg_default" -- Set to an entity to launch it
 SWEP.ShootEntForce = 3000
 SWEP.ShootEntityData = {} -- Extra data that can be given to a projectile. Sets SENT.WeaponDataLink with this table.
 
-SWEP.ShootPosOffset = Vector(5, 0, 0)
-SWEP.ShootPosOffsetSights = Vector(5, 0, 0)
+SWEP.ShootPosOffset = Vector(7, 0, 0)
+SWEP.ShootPosOffsetSights = Vector(7, 0, 0)
 SWEP.PushBackForce = 5
 
 -------------------------- MAGAZINE

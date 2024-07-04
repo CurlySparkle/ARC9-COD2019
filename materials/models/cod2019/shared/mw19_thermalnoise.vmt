@@ -1,7 +1,7 @@
 "unlitgeneric"
 {
-	"$basetexture"	"models/cod2019/shared/mw19_thermalnoise"
-	"$alphatest" 	"1"
+	"$basetexture"	"models/cod2019/shared/mw19_thermalnoise_old"
+	"$translucent" 	"1"
 	//"$vertexalpha" "1"
 	//"$vertexcolor" "1"
 	
