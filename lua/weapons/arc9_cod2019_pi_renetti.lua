@@ -1169,7 +1169,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
 	local xmag = wep:HasElement("mag_xmag")
-    local xmagslrg = wep:HasElement("mag_xmagslrg")
+    local xmagslrg = wep:HasElement("mag_xmaglrg")
 	local stock = wep:HasElement("cod2019_renetti_stock")
 
 	local tanim = {

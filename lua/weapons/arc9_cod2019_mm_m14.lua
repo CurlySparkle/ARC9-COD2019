@@ -83,7 +83,7 @@ SWEP.Ammo = "sniperPenetratedRound" -- What ammo type this gun uses.
 
 SWEP.ChamberSize = 1 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize = 10 -- Self-explanatory.
-SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.SupplyLimit = 7 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
@@ -112,7 +112,7 @@ SWEP.RecoilSeed = 3584
 
 -- These multipliers affect the predictible recoil by making the pattern taller, shorter, wider, or thinner.
 SWEP.RecoilUp = 1 -- Multiplier for vertical recoil
-SWEP.RecoilSide = 1 -- Multiplier for vertical recoil
+SWEP.RecoilSide = 0.3 -- Multiplier for vertical recoil
 
 -- These values determine how much extra movement is applied to the recoil entirely randomly, like in a circle.
 -- This type of recoil CANNOT be predicted.
@@ -137,15 +137,15 @@ SWEP.RecoilMax = 2
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.5
-SWEP.VisualRecoilPunchSights = 5
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilPunchSights = 10
 SWEP.VisualRecoilSideSights = 0
-SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilRollSights = 10
 SWEP.VisualRecoilUpSights = 0
 
-SWEP.VisualRecoilPunch = 5
+SWEP.VisualRecoilPunch = 7
 SWEP.VisualRecoilUp = 0
-SWEP.VisualRecoilRoll = 7
+SWEP.VisualRecoilRoll = 15
 SWEP.VisualRecoilSide = 0.3
 
 -------------------------- SPREAD
