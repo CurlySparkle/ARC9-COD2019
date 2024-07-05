@@ -1124,12 +1124,12 @@ local Translate_XMag_Fast = {
     ["reload_empty"] = "reload_xmag_fast_empty",
 }
 local Translate_XMagslrg = {
-    ["reload"] = "reload_xmagslrg",
-    ["reload_empty"] = "reload_xmagslrg_empty",
+    ["reload"] = "reload_xmaglrg",
+    ["reload_empty"] = "reload_xmaglrg_empty",
 }
 local Translate_XMagslrg_Fast = {
-    ["reload"] = "reload_xmagslrg_fast",
-    ["reload_empty"] = "reload_xmagslrg_fast_empty",
+    ["reload"] = "reload_xmaglrg_fast",
+    ["reload_empty"] = "reload_xmaglrg_fast_empty",
 }
 
 local Translate_Stock_XMag = {
@@ -1141,12 +1141,12 @@ local Translate_Stock_XMag_Fast = {
     ["reload_empty"] = "stock_reload_xmag_fast_empty",
 }
 local Translate_Stock_XMagslrg = {
-    ["reload"] = "stock_reload_xmagslrg",
-    ["reload_empty"] = "stock_reload_xmagslrg_empty",
+    ["reload"] = "stock_reload_xmaglrg",
+    ["reload_empty"] = "stock_reload_xmaglrg_empty",
 }
 local Translate_Stock_XMagslrg_Fast = {
-    ["reload"] = "stock_reload_xmagslrg_fast",
-    ["reload_empty"] = "stock_reload_xmagslrg_fast_empty",
+    ["reload"] = "stock_reload_xmaglrg_fast",
+    ["reload_empty"] = "stock_reload_xmaglrg_fast_empty",
 }
 
 --- Fast & Tac. Sprint ---
