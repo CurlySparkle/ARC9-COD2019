@@ -105,7 +105,7 @@ function ENT:Detonate()
 
         self:EmitSound("weapons/underwater_explode3.wav", 100)
     else
-        ParticleEffect("grenade_final", self:GetPos(), Angle(0, 0, 0), nil)
+        ParticleEffect("Generic_explo_flash", self:GetPos(), Angle(0, 0, 0), nil)
         self:EmitSound("COD2019.Flash.Explode")
     end
 	

@@ -119,8 +119,6 @@ if SERVER then
         dmginfo:SetInflictor(self)
         tgt:TakeDamageInfo(dmginfo)
         local angles = self:GetAngles()
-        local hitPos = data.HitPos -- Get the position where the grenade hit
-        local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
         local hitEntity = data.HitEntity -- Get the entity that was hit (can be nil if it hit the world)
 
         if tgt:IsWorld() or (IsValid(tgt) and tgt:GetPhysicsObject():IsValid()) then
@@ -169,7 +167,7 @@ if SERVER then
         end
 		
 		if self.ImpactScorch then
-		util.Decal("Scorch", hitPos + hitNormal, hitPos - hitNormal)
+		util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
 		end
 		
         if self:Impact(tr1, data, bHull) then

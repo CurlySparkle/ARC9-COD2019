@@ -39,7 +39,7 @@ SWEP.WorldModelOffset = {
     Scale = 1
 }
 
-SWEP.CantPeek = true
+SWEP.CantPeek = false
 SWEP.NoAimAssist = true
 
 -------------------------- DAMAGE PROFILE
@@ -125,9 +125,9 @@ SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilPunch = 10
 SWEP.VisualRecoilUp = 15
 
-SWEP.VisualRecoilMultSights = 0.7
+SWEP.VisualRecoilMultSights = 0.8
 SWEP.VisualRecoilPunchSights = 13
-SWEP.VisualRecoilRollSights = 5
+SWEP.VisualRecoilRollSights = 10
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0.1
 
@@ -181,7 +181,7 @@ SWEP.IronSights = {
     Pos = Vector(-2.94, -3, -3.25),
     Ang = Angle(-0.5, 16, -5),
     Magnification = 1.25,
-    ViewModelFOV = 46,
+    ViewModelFOV = 54,
     CrosshairInSights = false
 }
 
@@ -219,7 +219,7 @@ SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(1, 35, 3)
 
-SWEP.PeekPos = Vector(1.2, 1.5, -1.7)
+SWEP.PeekPos = Vector(1.8, 1.5, -1.3)
 SWEP.PeekAng = Angle(0, 1, -25)
 
 -------------------------- HoldTypes

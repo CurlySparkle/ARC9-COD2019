@@ -69,11 +69,11 @@ ATT.ActivateElements = {"scope_hdr"}
 
 ATT.Model = "models/weapons/cod2019/attachs/weapons/hdr/attachment_vm_sn_hdromeo_snprscope.mdl"
 ATT.BoneMerge = true
-ATT.ModelOffset = Vector(5, 0, 0)
+ATT.ModelOffset = Vector(0, 0, 0)
 
 ATT.Sights = {
     {
-        Pos = Vector(0, 17, -2.07),
+        Pos = Vector(0, 11, -1.85),
         Ang = Angle(0, 0, 0),
         ViewModelFOV = 15,
         Magnification = 2,

@@ -91,7 +91,7 @@ SWEP.ManualActionNoLastCycle = true
 --SWEP.ShotgunReload = true
 --SWEP.ManualActionChamber = 1
 
-SWEP.BarrelLength = 20
+SWEP.BarrelLength = 0
 
 -------------------------- FIREMODES
 
@@ -1013,7 +1013,7 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 4
-SWEP.CodAngledGripPoseParam = 4.5
+SWEP.CodAngledGripPoseParam = 32
 SWEP.CodStubbyGripPoseParam = 6
 SWEP.CodStubbyTallGripPoseParam = 22
 SWEP.GripPoseParam2 = 0.5

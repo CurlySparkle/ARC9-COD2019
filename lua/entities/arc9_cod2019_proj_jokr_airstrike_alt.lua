@@ -29,7 +29,7 @@ ENT.AudioLoop = "^weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg"
 
 --- Stuff
 ENT.SeekerAngle = math.cos(math.rad(75))
-ENT.SteerSpeed = 6000
+ENT.SteerSpeed = 250
 ENT.FuseTime = 0
 ENT.Boost = 2000
 ENT.Lift = 0

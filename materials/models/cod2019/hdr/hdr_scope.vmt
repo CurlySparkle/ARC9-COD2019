@@ -1,8 +1,8 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-    "$basetexture"			"models/cod2019/hdr/hdr_scope"
-    "$bumpmap"				"models/cod2019/hdr/hdr_scope_n"
-    "$phongexponenttexture"		"models/cod2019/hdr/hdr_scope_exp"
+    "$basetexture" "models\cod2019\hdr\hdr_scope_rgb"
+    "$bumpmap" "models\cod2019\hdr\hdr_scope_n"
+    "$phongexponenttexture" "models\cod2019\hdr\hdr_scope_e"
 
     /////////////////
     "$color2" "[0 0 0]"                                     //do not touch this
@@ -12,7 +12,7 @@
     "$phong" "1"
     "$phongboost" "1"
     "$phongalbedotint" "1"
-    "$phongalbedoboost" "10"                                //change this if not bright enough
+    "$phongalbedoboost" "10"                                //toy around with this
     "$phongfresnelranges" "[1 0.1 0]"
        
     /////////////////
@@ -20,7 +20,7 @@
     /////////////////
 
     "$envmap" "env_cubemap"
-    "$envmaptint" "[0,106 0,106 0,106]"                           //change this to match albedo's color if metallic
+    "$envmaptint" "[0.106 0.106 0.106]"                 
 
     //remove this if not using MWB
     "Proxies"
@@ -28,8 +28,8 @@
         "Arc9EnvMapTint"
         {
             "min" "0"
-            "max" "1"                                     //change this if too bright in game
-            "color" "[0.106 0.106 0.106]"                         //change this to match albedo's color if metallic
+            "max" "1"
+            "color" "[0.106 0.106 0.106]"
         }
     }
 }

@@ -231,13 +231,13 @@ SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(1, 40, 5)
 
-SWEP.PeekPos = Vector(2.5, 4, -1)
-SWEP.PeekAng = Angle(-0.3, 0, -10)
-
 SWEP.PeekMaxFOV = 54
 
-SWEP.PeekPosReloading = Vector(4, 3, 0)
-SWEP.PeekAngReloading = Angle(-0.3, 0, 10)
+SWEP.PeekPos = Vector(-0.3, 8, -6)
+SWEP.PeekAng = Angle(-0.3, 0, -50)
+
+SWEP.PeekPosReloading = Vector(0, 4, -2)
+SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
 
 -------------------------- HoldTypes
 
@@ -872,7 +872,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Bone = "tag_scope",
-        Pos = Vector(1.5, 0, -0.1),
+        Pos = Vector(0, 0, 0.1),
         Category = {"cod2019_optic","cod2019_optic_hdr"},
 		InstalledElements = {"sight_none"},
 		Installed = "cod2019_optic_default_hdr",
@@ -1027,7 +1027,7 @@ SWEP.Attachments = {
 }
 
 SWEP.GripPoseParam = 3
-SWEP.CodAngledGripPoseParam = 4
+SWEP.CodAngledGripPoseParam = 32
 SWEP.CodStubbyGripPoseParam = 21
 SWEP.CodStubbyTallGripPoseParam = 26
 SWEP.GripPoseParam2 = 0.5

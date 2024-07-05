@@ -2,8 +2,8 @@
 {
 	"$basetexture"	"models/cod2019/shared/mw19_thermalnoise_old"
 	"$translucent" 	"1"
-	//"$vertexalpha" "1"
-	//"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$vertexcolor" "1"
 	
 	"$time" "0"
 	

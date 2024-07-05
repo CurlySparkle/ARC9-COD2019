@@ -136,9 +136,9 @@ SWEP.RecoilMax = 2.25
 -------------------------- VISUAL RECOIL
 
 SWEP.UseVisualRecoil = true
-SWEP.VisualRecoilMultSights = 0.4
-SWEP.VisualRecoilPunchSights = 5
-SWEP.VisualRecoilRollSights = 15
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilPunchSights = 1
+SWEP.VisualRecoilRollSights = 10
 SWEP.VisualRecoilSideSights = 0
 SWEP.VisualRecoilUpSights = 0
 
@@ -999,9 +999,11 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4
 SWEP.GripPoseParam2 = 0.5
-SWEP.CodAngledGripPoseParam = 42
+--SWEP.CodAngledGripPoseParam = 42
+SWEP.CodAngledGripPoseParam = 32
 SWEP.CodStubbyGripPoseParam = 31
-SWEP.CodStubbyTallGripPoseParam = 12
+--SWEP.CodStubbyTallGripPoseParam = 12
+SWEP.CodStubbyTallGripPoseParam = 26
 
 -- Warzone-esque Stats; Add here to change only when using Warzone Stats variable.
 if GetConVar("arc9_mw19_stats_warzone"):GetBool() then

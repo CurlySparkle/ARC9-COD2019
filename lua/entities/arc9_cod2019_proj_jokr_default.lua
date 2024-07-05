@@ -59,48 +59,7 @@ function ENT:OnInitialize()
 end
 
 function ENT:Impact(data, collider)
-    local hitPos = data.HitPos -- Get the position where the grenade hit
-    local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
-
-    if self.SpawnTime + self.SafetyFuse > CurTime() and not self.NPCDamage then
-        local attacker = self.Attacker or self:GetOwner()
-        local ang = data.OurOldVelocity:Angle()
-        local fx = EffectData()
-        fx:SetOrigin(data.HitPos)
-        fx:SetNormal(-ang:Forward())
-        fx:SetAngles(-ang)
-        util.Effect("ManhackSparks", fx)
-
-        if IsValid(data.HitEntity) then
-            local dmginfo = DamageInfo()
-            dmginfo:SetAttacker(attacker)
-            dmginfo:SetInflictor(self)
-            dmginfo:SetDamageType(DMG_CRUSH + DMG_CLUB)
-            dmginfo:SetDamage(250 * (self.NPCDamage and 0.5 or 1))
-            dmginfo:SetDamageForce(data.OurOldVelocity * 25)
-            dmginfo:SetDamagePosition(data.HitPos)
-            data.HitEntity:TakeDamageInfo(dmginfo)
-        end
-
-        self:EmitSound("weapons/rpg/shotdown.wav", 80)
-
-        for i = 1, 1 do
-            local prop = ents.Create("prop_physics")
-            prop:SetPos(self:GetPos())
-            prop:SetAngles(self:GetAngles())
-            prop:SetModel("models/weapons/cod2019/mags/w_la_jokr_rocket.mdl")
-            prop:Spawn()
-            prop:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.5 + VectorRand() * 75)
-            prop:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-            SafeRemoveEntityDelayed(prop, 3)
-        end
-
-        self:Remove()
-
-        return true
-    end
-
-    util.Decal("Scorch", hitPos + hitNormal, hitPos - hitNormal)
+   util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
 end
 
 function ENT:OnThink()
