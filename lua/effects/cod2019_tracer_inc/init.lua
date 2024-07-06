@@ -28,7 +28,7 @@ function EFFECT:Init(data)
 
     self.EndPos = data:GetOrigin()
     -- util.ParticleTracerEx(self.ParticleName, self.StartPos, self.EndPos, false, self:EntIndex(), self.Attachment)
-    local pcf = CreateParticleSystem(self.WeaponEnt, self.TracerName, PATTACH_POINT, self.Attachment)
+    local pcf = CreateParticleSystem(self.WeaponEnt, self.TracerName, PATTACH_ABSORIGIN, self.Attachment)
     if IsValid(pcf) then
         pcf:SetControlPoint(0,self.Position)
         pcf:SetControlPoint(1,self.EndPos)

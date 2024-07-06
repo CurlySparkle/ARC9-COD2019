@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_minigun_desc") or [[A machine gun that appears in a portable form with high rate of fire around 3,000 RPM.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_minigun.mdl"
-SWEP.WorldModel = "models/weapons/cod2019/c_lmg_minigun.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_lmg_minigun.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3
@@ -41,12 +41,26 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = false
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_minigun.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-11, 6, -2.5),
+    Pos = Vector(-6, 8, -9),
     Ang = Angle(-17, 3, 180),
     TPIKPos = Vector(-11, 5, -1),
     TPIKAng = Angle(0, 0, 180),
     Scale = 1
 }
+
+function SWEP:DrawWorldModel() -- custom func to never draw custommodel when on ground and use regular wm
+    local owner = self:GetOwner()
+
+    if IsValid(owner) and owner:GetActiveWeapon() == self then
+        self:DrawCustomModel(true)
+        self:DoBodygroups(true)
+        self:DrawLasers(true)
+        self:DoTPIK()
+        self:DrawFlashlightsWM()
+    else
+        self:DrawModel()
+    end
+end
 
 -------------------------- DAMAGE PROFILE
 
@@ -57,8 +71,8 @@ SWEP.Num = 1
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 2000 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 8000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 30 / ARC9.HUToM -- How far bullets retain their maximum damage for.
+SWEP.RangeMax = 100 / ARC9.HUToM -- In Hammer units, how far bullets can travel before dealing DamageMin.
 
 SWEP.Penetration = 15
 SWEP.ImpactForce = 15
@@ -225,7 +239,10 @@ SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
 SWEP.ExplosionEffect = "cod2019_muzzle_he2"
-SWEP.ImpactDecal = "ExplosiveGunshot"
+
+-- SWEP.TracerEffect = "ARC9_tracer" -- The effect to use for hitscan tracers
+-- SWEP.TracerColor = Color(255, 215, 0) -- Color of tracers. Only works if tracer effect supports it. For physical bullets, this is compressed down to 9-bit color.
+-- SWEP.TracerSize = 10
 
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
@@ -284,10 +301,6 @@ SWEP.HeatLockout = false
 SWEP.MalfunctionWait = 0.25
 
 SWEP.Animations = {
-	["enter_sights"] = {
-		Source = "idle",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-	},
     ["fire"] = {
         Source = "shoot1",
         EventTable = {

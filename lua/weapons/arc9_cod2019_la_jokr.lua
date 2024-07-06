@@ -26,7 +26,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_javelin_desc") or [[Fire and forget lock-on portable missile launcher with a large explosive yield. Infrared guided missiles take a top-attack trajectory, ensuring destruction of heavily armored vehicles.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_jokr.mdl"
-SWEP.WorldModel = "models/weapons/w_shot_m3super90.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_eq_jokr.mdl"
 SWEP.DefaultBodygroups = "00000000"
 
 SWEP.Slot = 3
@@ -35,8 +35,8 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_jokr.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-9, 8, -4),
-    Ang = Angle(-17, 3, 190),
+    Pos = Vector(-15, 1, -9),
+    Ang = Angle(-17, -7, 199),
     TPIKPos = Vector(-10, 7.5, -5),
     TPIKAng = Angle(-9, 0, 175),
     Scale = 1
@@ -44,6 +44,20 @@ SWEP.WorldModelOffset = {
 
 SWEP.CantPeek = true
 SWEP.NoAimAssist = true
+
+function SWEP:DrawWorldModel() -- custom func to never draw custommodel when on ground and use regular wm
+    local owner = self:GetOwner()
+
+    if IsValid(owner) and owner:GetActiveWeapon() == self then
+        self:DrawCustomModel(true)
+        self:DoBodygroups(true)
+        self:DrawLasers(true)
+        self:DoTPIK()
+        self:DrawFlashlightsWM()
+    else
+        self:DrawModel()
+    end
+end
 
 -------------------------- DAMAGE PROFILE
 
@@ -220,11 +234,11 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 25, -0)
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "rpg"
-SWEP.HoldTypeSprint = "rpg"
-SWEP.HoldTypeHolstered = "rpg"
-SWEP.HoldTypeSights = "rpg"
-SWEP.HoldTypeCustomize = "slam"
+SWEP.HoldType = "camera"
+SWEP.HoldTypeSprint = "camera"
+SWEP.HoldTypeHolstered = "camera"
+SWEP.HoldTypeSights = "camera"
+SWEP.HoldTypeCustomize = "camera"
 SWEP.HoldTypeBlindfire = "pistol"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN

@@ -83,9 +83,15 @@ SWEP.ExitBipodSound = "Viewmodel.BipodExit"
 SWEP.RicochetChance = 0.01
 SWEP.SwayMultSights = 0
 SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire.
-SWEP.Sway = 0 -- How much the gun sways.
 
+-------------------------- SWAY
+SWEP.Sway = 0
+SWEP.SwayMultSights = 1
+SWEP.SwayAddSights = 1
+-------------------------- EXTRAS / ADDED LATER FOR ALL WEAPONS
 SWEP.CamQCA_Mult_ADS = 1
+SWEP.AimDownSightsTimeMultShooting = 1.5
+SWEP.MagnificationZoomSpeed = 2.5
 
 SWEP.ShootVolume = 1000
 SWEP.FiremodeSound = ""
@@ -99,8 +105,12 @@ SWEP.WalkPoseParam = 0
 SWEP.HasSights = !SWEP.Akimbo
 
 SWEP.FiremodeAnimLock = false -- Firemode animation cannot be interrupted
-
 SWEP.UBGLCancelAnim = true
+
+SWEP.AfterShotParticleHook = function(swep, old) 
+    if swep:GetHeatAmount() > 2 then return "barrel_smoke" end
+    return old
+end
 
 local parmbl = {"blend_move","blend_walk"}
 
