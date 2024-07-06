@@ -5,7 +5,7 @@ if CLIENT then
 end
 
 ENT.Base                     = "arc9_cod2019_proj_jokr_default"
-ENT.PrintName                = "40mm HE"
+ENT.PrintName                = "Jokr Mini-Missiles"
 ENT.Spawnable                = false
 
 ENT.Model                    = "models/weapons/cod2019/mags/w_la_jokr_rocket.mdl"
@@ -64,7 +64,7 @@ function ENT:Detonate()
     end
 
     local dmgInfo = DamageInfo()
-    dmgInfo:SetDamage(128)
+    dmgInfo:SetDamage(64)
     dmgInfo:SetAttacker(IsValid(self:GetOwner()) && self:GetOwner() || self)
     dmgInfo:SetInflictor(self)
     dmgInfo:SetDamageType(self:GetDamageType())
