@@ -38,9 +38,10 @@ function EFFECT:Init(data)
         -- end
         pcf:StartEmission()
     end
-    timer.Simple(1.5, function()
+    timer.Simple(1, function()
         if IsValid(pcf) then
             pcf:StopEmissionAndDestroyImmediately()
+            pcf:StopEmission(true)
         end
     end)
 end

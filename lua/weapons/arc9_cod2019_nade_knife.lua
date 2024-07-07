@@ -50,11 +50,13 @@ SWEP.WorldModelOffset = {
     Scale = 1,
 }
 
+SWEP.Ammo = "ar2" -- What ammo type this gun uses.
+
 SWEP.BottomlessClip = true
 SWEP.ChamberSize = 0 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize = 1 -- Self-explanatory.
-SWEP.SupplyLimit = 6 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
-SWEP.ForceDefaultClip = 6
+SWEP.SupplyLimit = 10 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
+SWEP.ForceDefaultClip = 10
 SWEP.SecondarySupplyLimit = 0 -- Amount of reserve UBGL magazines you can take.
 SWEP.Crosshair = true
 
@@ -63,7 +65,6 @@ SWEP.Sway = 0 -- How much the gun sways.
 
 SWEP.ShootEnt = "arc9_cod2019_thrownknife"
 SWEP.ShootPosOffset = Vector(2, 0, 1)
-SWEP.Ammo = "arc9_cod2019_knife"
 
 SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
 SWEP.Tossable = false -- When grenade is enabled, right click will toss. Set to false to disable, allowing you to aim down sights.

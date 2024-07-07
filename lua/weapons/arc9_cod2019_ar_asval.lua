@@ -273,7 +273,7 @@ SWEP.AnimDraw = false
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "muzzleflash_suppressed"
-SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
+SWEP.AfterShotParticle = "barrel_smoke"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 SWEP.NoFlash = true

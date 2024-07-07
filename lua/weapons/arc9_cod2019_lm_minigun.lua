@@ -180,10 +180,9 @@ SWEP.IronSights = {
     Ang = Angle(0, 0, 0),
     Magnification = 1.4,
     ViewModelFOV = 44,
-    CrosshairInSights = true,
+    CrosshairInSights = false,
 }
 SWEP.HasSights = true
-
 SWEP.ViewModelFOVBase = 64
 
 SWEP.SprintMidPoint = {
@@ -200,7 +199,7 @@ SWEP.MovingMidPoint = {
 }
 
 SWEP.MovingPos = Vector(-1, -1, -1)
-SWEP.MovingAng = Angle(0, 0, -9)
+SWEP.MovingAng = Angle(0, 0, -10)
 
 SWEP.CrouchPos = Vector(-0.5, -0, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
@@ -234,14 +233,14 @@ SWEP.AnimDraw = false
 -------------------------- EFFECTS
 
 SWEP.MuzzleParticle = "AC_muzzle_rifle_fp"
-SWEP.AfterShotParticle = "AC_muzzle_smoke_barrel"
+SWEP.AfterShotParticle = "barrel_smoke_plume"
 SWEP.MuzzleEffectQCA = 1
 SWEP.ProceduralViewQCA = 1
 
 SWEP.ExplosionEffect = "cod2019_muzzle_he2"
 
 -- SWEP.TracerEffect = "ARC9_tracer" -- The effect to use for hitscan tracers
--- SWEP.TracerColor = Color(255, 215, 0) -- Color of tracers. Only works if tracer effect supports it. For physical bullets, this is compressed down to 9-bit color.
+-- SWEP.TracerColor = Color(255, 185, 0) -- Color of tracers. Only works if tracer effect supports it. For physical bullets, this is compressed down to 9-bit color.
 -- SWEP.TracerSize = 10
 
 SWEP.CamQCA = 4
@@ -254,7 +253,6 @@ SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.ShellSounds = ARC9.COD2019_556_Table
 
 SWEP.TriggerDelay = 0.45 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
-
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.45 -- Time until weapon fires.
 

@@ -107,11 +107,6 @@ SWEP.HasSights = !SWEP.Akimbo
 SWEP.FiremodeAnimLock = false -- Firemode animation cannot be interrupted
 SWEP.UBGLCancelAnim = true
 
-SWEP.AfterShotParticleHook = function(swep, old) 
-    if swep:GetHeatAmount() > 2 then return "barrel_smoke" end
-    return old
-end
-
 local parmbl = {"blend_move","blend_walk"}
 
 SWEP.Hook_Think	= function(self)
