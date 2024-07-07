@@ -50,7 +50,8 @@ SWEP.WorldModelOffset = {
     Scale = 1,
 }
 
-SWEP.Ammo = "ar2" -- What ammo type this gun uses.
+SWEP.Ammo = "arc9_cod2019_knife" -- What ammo type this gun uses.
+SWEP.DoNotEquipmentAmmo = true
 
 SWEP.BottomlessClip = true
 SWEP.ChamberSize = 0 -- The amount of rounds this gun can chamber.

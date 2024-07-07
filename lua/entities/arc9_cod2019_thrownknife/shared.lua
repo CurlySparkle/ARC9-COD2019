@@ -122,7 +122,7 @@ end
 -- end
 
 function ENT:Use(ply)
-    ply:GiveAmmo(1, "ar2")
+    ply:GiveAmmo(1, "arc9_cod2019_knife")
     self:EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav", 120, 100, 1, CHAN_AUTO)
     timer.Simple(0, function()
     if (!IsValid(self)) then return end
@@ -139,7 +139,7 @@ if SERVER then
 
 		if (dist < 32 * 32) then
 			self:GetOwner():EmitSound("shared/iw8_mp_scavenger_pack_pickup.wav")
-			self:GetOwner():SetAmmo(self:GetOwner():GetAmmoCount("ar2") + 1, "ar2")
+			self:GetOwner():SetAmmo(self:GetOwner():GetAmmoCount("arc9_cod2019_knife") + 1, "arc9_cod2019_knife")
 			self:Remove()
 		end
 	end
