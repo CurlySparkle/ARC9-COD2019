@@ -32,7 +32,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_fr556_desc") or [[3 round burst bullpup battle rifle. A well placed burst can be extremely deadly at intermittent ranges.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_rif_famas.mdl"
-SWEP.WorldModel = "models/weapons/cod2019/c_rif_famas.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_rif_famas.mdl"
 
 SWEP.Slot = 2
 
