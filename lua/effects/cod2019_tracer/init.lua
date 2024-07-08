@@ -6,7 +6,8 @@ function EFFECT:Init(data)
     --print(self.ParticleName)
     if not IsValid(self.WeaponEnt) then return end
     self.Attachment = data:GetAttachment() or 1
-    self.Position = self:GetTracerShootPos(data:GetStart(), self.WeaponEnt, self.Attachment)
+    --self.Position = self:GetTracerShootPos(data:GetStart(), self.WeaponEnt, self.Attachment)
+	self.Position = self:GetTracerShootPos(data:GetStart(), data:GetEntity(), self.Attachment)
 
     if IsValid(self.WeaponEnt.Owner) then
         if self.WeaponEnt.Owner == LocalPlayer() then
@@ -41,7 +42,6 @@ function EFFECT:Init(data)
     timer.Simple(1, function()
         if IsValid(pcf) then
             pcf:StopEmissionAndDestroyImmediately()
-            pcf:StopEmission(true)
         end
     end)
 end

@@ -1,5 +1,6 @@
-PrecacheParticleSystem("mw2019_tracer_inc")
-EFFECT.TracerName = "mw2019_tracer_inc"
+PrecacheParticleSystem("mw2019_tracer_2")
+EFFECT.TracerName = "mw2019_tracer_2"
+EFFECT.Color = Color(255, 255, 255)
 
 function EFFECT:Init(data)
     self.WeaponEnt = data:GetEntity()
@@ -33,9 +34,13 @@ function EFFECT:Init(data)
     if IsValid(pcf) then
         pcf:SetControlPoint(0,self.Position)
         pcf:SetControlPoint(1,self.EndPos)
+        -- if self.GetProcessedValue then
+		-- local color = self.WeaponEnt:GetProcessedValue("TracerColor")
+		-- pcf:SetControlPoint(2, Vector(color.r, color.g, color.b))
+        -- end
         pcf:StartEmission()
     end
-    timer.Simple(1.5, function()
+    timer.Simple(1, function()
         if IsValid(pcf) then
             pcf:StopEmissionAndDestroyImmediately()
         end

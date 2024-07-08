@@ -1,12 +1,10 @@
-PrecacheParticleSystem("mw2019_tracer_inc")
-EFFECT.TracerName = "mw2019_tracer_inc"
+PrecacheParticleSystem("mw2019_tracer_rainbow")
+EFFECT.TracerName = "mw2019_tracer_rainbow"
 
 function EFFECT:Init(data)
     self.WeaponEnt = data:GetEntity()
-    --print(self.ParticleName)
     if not IsValid(self.WeaponEnt) then return end
     self.Attachment = data:GetAttachment() or 1
-    --self.Position = self:GetTracerShootPos(data:GetStart(), self.WeaponEnt, self.Attachment)
 	self.Position = self:GetTracerShootPos(data:GetStart(), data:GetEntity(), self.Attachment)
 
     if IsValid(self.WeaponEnt.Owner) then
@@ -14,12 +12,10 @@ function EFFECT:Init(data)
             if not self.WeaponEnt.Owner:GetViewEntity() then
                 ang = self.WeaponEnt.Owner:EyeAngles()
                 ang:Normalize()
-                --ang.p = math.max(math.min(ang.p,55),-55)
                 self.Forward = ang:Forward()
             else
                 self.WeaponEnt = self.WeaponEnt.Owner:GetViewModel()
             end
-            --ang.p = math.max(math.min(ang.p,55),-55)
         else
             ang = self.WeaponEnt.Owner:EyeAngles()
             ang:Normalize()
@@ -35,7 +31,7 @@ function EFFECT:Init(data)
         pcf:SetControlPoint(1,self.EndPos)
         pcf:StartEmission()
     end
-    timer.Simple(1.5, function()
+    timer.Simple(1, function()
         if IsValid(pcf) then
             pcf:StopEmissionAndDestroyImmediately()
         end

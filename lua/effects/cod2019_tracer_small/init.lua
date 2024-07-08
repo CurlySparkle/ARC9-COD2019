@@ -5,7 +5,8 @@ function EFFECT:Init(data)
     --print(self.ParticleName)
     if not IsValid(self.WeaponEnt) then return end
     self.Attachment = data:GetAttachment() or 1
-    self.Position = self:GetTracerShootPos(data:GetStart(), self.WeaponEnt, self.Attachment)
+    --self.Position = self:GetTracerShootPos(data:GetStart(), self.WeaponEnt, self.Attachment)
+	self.Position = self:GetTracerShootPos(data:GetStart(), data:GetEntity(), self.Attachment)
 
     if IsValid(self.WeaponEnt.Owner) then
         if self.WeaponEnt.Owner == LocalPlayer() then

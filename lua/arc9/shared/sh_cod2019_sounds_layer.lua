@@ -10,7 +10,7 @@ sound.Add({
 })
 sound.Add({
     name =           "Layer_AR.Inside",
-    channel =        CHAN_LAYER,
+    channel =        CHAN_INDOORLAYER,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -27,7 +27,7 @@ sound.Add({
 })
 sound.Add({
     name =           "Layer_ARSUP.Inside",
-    channel =        CHAN_LAYER,
+    channel =        CHAN_INDOORLAYER,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -44,7 +44,7 @@ sound.Add({
 })
 sound.Add({
     name =           "Layer_Pistol.Inside",
-    channel =        CHAN_LAYER,
+    channel =        CHAN_INDOORLAYER,
     volume =         0.75,
     level =          140,
     pitch =          {90,110},
@@ -61,7 +61,7 @@ sound.Add({
 })
 sound.Add({
     name =           "Layer_Shotgun.Inside",
-    channel =        CHAN_LAYER,
+    channel =        CHAN_INDOORLAYER,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -69,7 +69,7 @@ sound.Add({
 })
 sound.Add({
     name =           "Layer_ShotgunSUP.Inside",
-    channel =        CHAN_LAYER,
+    channel =        CHAN_INDOORLAYER,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -86,7 +86,7 @@ sound.Add({
 })
 sound.Add({
     name =           "Layer_Sniper.Inside",
-    channel =        CHAN_LAYER,
+    channel =        CHAN_INDOORLAYER,
     volume =         1,
     level =          140,
     pitch =          {90,110},

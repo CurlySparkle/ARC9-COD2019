@@ -107,7 +107,7 @@ ATT.SortOrder = 0.4
 ATT.Category = "cod2019_ammo"
 
 ATT.TracerNum = 1
-ATT.TracerEffect = "arc9_tracer"
+ATT.TracerEffect = "cod2019_tracer_custom"
 ATT.TracerSize = 7
 
 ATT.TracerColorHook = function(swep, col)
@@ -126,6 +126,21 @@ end
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_tracer_col")
 
+/////////////////////////// -- cod2019_ammo_tracer_random
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = "Rainbow Color Tracer"
+ATT.CompactName = "TR-R"
+ATT.Icon = Material("entities/attachs/cod2019_ammo_color.png", "mips smooth")
+ATT.Description = "Ammunition loaded with colors that will go randomly depending of how much you fire."
+ATT.SortOrder = 0.4
+
+ATT.Category = "cod2019_ammo"
+ATT.TracerEffect = "cod2019_tracer_rainbow"
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_tracer_random")
+
 /////////////////////////// -- cod2019_ammo_db
 ATT = {}
 
@@ -139,7 +154,7 @@ ATT.SortOrder = 0.5
 ATT.Category = {"cod2019_ammo", "cod2019_ammo_special"}
 
 ATT.ExplosionEffect = "cod2019_muzzle_inc"
-ATT.ImpactDecal = "Dark"
+--ATT.ImpactDecal = "Dark"
 ATT.ImpactEffect = "cod2019_muzzle_inc"
 
 ATT.DamageType = DMG_BURN + DMG_SLOWBURN
@@ -325,6 +340,39 @@ ATT.RangeMinMult = 1.15
 ATT.RangeMaxMult = 1.15
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_flechette")
+
+/////////////////////////// -- cod2019_ammo_sg_col
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = "Weapon Color Tracer"
+ATT.CompactName = "TR-WCLR"
+ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_tracer.png", "mips smooth")
+ATT.Description = "Ammunition loaded with colors matching the user's weapon (physgun) color (Pretty cool, right?)."
+ATT.SortOrder = 0.4
+
+ATT.Category = "cod2019_ammo_sg"
+
+--ATT.TracerNum = 1
+ATT.TracerEffect = "cod2019_tracer_custom"
+ATT.TracerSize = 10
+ATT.TracerSpeed = 15000
+
+ATT.TracerColorHook = function(swep, col)
+    if IsValid(swep:GetOwner()) and swep:GetOwner():IsPlayer() then
+        local c = swep:GetOwner():GetWeaponColor():ToColor()
+        local l = math.max(0.001, (0.33 * c.r + 0.5 * c.g * 0.16 * c.b) / 80)
+        if l < 1 then
+            c.r = (c.r + 1) / l
+            c.g = (c.g + 1) / l
+            c.b = (c.b + 1) / l
+        end
+        return c
+    end
+    return color_white
+end
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_sg_col")
 
 /////////////////////////// -- cod2019_ammo_sg_frag
 ATT = {}

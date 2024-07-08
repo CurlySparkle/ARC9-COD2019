@@ -65,13 +65,13 @@ end
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 50 -- Damage done at point blank range
-SWEP.DamageMin = 25 -- Damage done at maximum range
+SWEP.DamageMin = 18 -- Damage done at maximum range
 
 SWEP.Num = 1
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 30 / ARC9.HUToM -- How far bullets retain their maximum damage for.
+SWEP.RangeMin = 5 / ARC9.HUToM -- How far bullets retain their maximum damage for.
 SWEP.RangeMax = 100 / ARC9.HUToM -- In Hammer units, how far bullets can travel before dealing DamageMin.
 
 SWEP.Penetration = 15
@@ -149,8 +149,8 @@ SWEP.RecoilModifierCap = 0.3
 SWEP.SpreadAddMove = 0.05
 SWEP.SpreadAddMidAir = 0.1
 SWEP.SpreadAddHipFire = 0
-SWEP.SpreadAddCrouch = -0.03
-SWEP.SpreadAddSights = -0.06
+SWEP.SpreadAddCrouch = -0.01
+SWEP.SpreadAddSights = -0.05
 
 -------------------------- HANDLING
 
