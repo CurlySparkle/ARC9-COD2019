@@ -38,6 +38,20 @@ SWEP.WorldModelOffset = {
     Scale = 1
 }
 
+function SWEP:DrawWorldModel() -- custom func to never draw custommodel when on ground and use regular wm
+    local owner = self:GetOwner()
+
+    if IsValid(owner) and owner:GetActiveWeapon() == self then
+        self:DrawCustomModel(true)
+        self:DoBodygroups(true)
+        self:DrawLasers(true)
+        self:DoTPIK()
+        self:DrawFlashlightsWM()
+    else
+        self:DrawModel()
+    end
+end
+
 SWEP.DefaultBodygroups = "00"
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true

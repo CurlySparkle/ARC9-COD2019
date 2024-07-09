@@ -353,7 +353,6 @@ ATT.SortOrder = 0.4
 
 ATT.Category = "cod2019_ammo_sg"
 
---ATT.TracerNum = 1
 ATT.TracerEffect = "cod2019_tracer_custom"
 ATT.TracerSize = 10
 ATT.TracerSpeed = 15000

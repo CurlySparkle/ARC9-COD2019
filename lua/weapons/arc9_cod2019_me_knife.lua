@@ -23,7 +23,7 @@ SWEP.Credits = {
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_knife_desc") or [[A CQC tactical knife. Standard military issue, employed for fast, quiet, and deadly wetwork.]]
 
 SWEP.ViewModel = "models/weapons/cod2019/c_melee_knife_oscar.mdl"
-SWEP.WorldModel = "models/weapons/cod2019/c_melee_knife_oscar.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_melee_knife_oscar.mdl"
 
 SWEP.Slot = 0
 
@@ -37,6 +37,20 @@ SWEP.WorldModelOffset = {
     Ang = Angle(-15, 0, -55),
     Scale = 1
 }
+
+function SWEP:DrawWorldModel() -- custom func to never draw custommodel when on ground and use regular wm
+    local owner = self:GetOwner()
+
+    if IsValid(owner) and owner:GetActiveWeapon() == self then
+        self:DrawCustomModel(true)
+        self:DoBodygroups(true)
+        self:DrawLasers(true)
+        self:DoTPIK()
+        self:DrawFlashlightsWM()
+    else
+        self:DrawModel()
+    end
+end
 
 SWEP.DefaultBodygroups = "00"
 SWEP.DrawCrosshair = true

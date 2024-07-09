@@ -330,6 +330,10 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
     },
+    ["fire_alt"] = {
+        Source = "shoot1_alt",
+		EjectAt = 0.05,
+    },
     ["cycle"] = {
         Source = "pump",
 		--EjectAt = 0.2,
@@ -441,7 +445,7 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.75, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
@@ -461,9 +465,9 @@ SWEP.Animations = {
 		DropMagAt = 0.95,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.5, lhik = 0, rhik = 0 },
-            { t = 0.8, lhik = 1, rhik = 1 },
+            { t = 0.05, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 1.1, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_raise.ogg", t = 0/30},
@@ -489,7 +493,7 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_reload_fast_rotate.ogg", t = 0},
@@ -511,7 +515,99 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.85, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_bolt_pull.ogg", t = 0},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_magout.ogg", t = 0.467},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_arm_up.ogg", t = 1.033},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_magin.ogg", t = 1.4},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_rotate.ogg", t = 1.7},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_bolt_forward.ogg", t = 2.067},
+			{s = path .. "wfoly_sh_mark26_reload_empty_fast_end.ogg", t = 2.4},
+        },
+    },
+    ["reload_smag"] = {
+        Source = "reload_smag",
+		MinProgress = 0.95,
+		RefillProgress = 0.725,
+		PeekProgress = 0.825,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_magout.ogg", t = 11/30},
+			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 35/30},
+			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 51/30},
+			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55/30},
+        },
+    },
+    ["reload_smag_empty"] = {
+        Source = "reload_smag_empty",
+		MinProgress = 0.95,
+		RefillProgress = 0.825,
+		PeekProgress = 0.875,
+		FireASAP = true,
+		EjectAt = 0.15,
+		DropMagAt = 0.95,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.05, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 1.1, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_mark26_raise.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_pull.ogg", t = 0/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_mag_release.ogg", t = 15/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_magout.ogg", t = 18/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_arm_up.ogg", t = 34/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_maghit.ogg", t = 49/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_magin.ogg", t = 60/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_rotate.ogg", t = 68/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_forward.ogg", t = 80/30},
+			{s = path .. "wfoly_sh_mark26_reload_empty_end.ogg", t = 95/30},
+        },
+    },
+    ["reload_smag_fast"] = {
+        Source = "reload_smag_fast",
+		MinProgress = 0.95,
+		RefillProgress = 0.725,
+		PeekProgress = 0.875,
+		FireASAP = true,
+		DropMagAt = 0.6,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sh_mark26_reload_fast_rotate.ogg", t = 0},
+			{s = path .. "wfoly_sh_mark26_reload_fast_magout.ogg", t = 0.167},
+			{s = path .. "wfoly_sh_mark26_reload_fast_maghit.ogg", t = 1.067},
+			{s = path .. "wfoly_sh_mark26_reload_fast_magin.ogg", t = 1.333},
+			{s = path .. "wfoly_sh_mark26_reload_fast_end.ogg", t = 1.667},
+        },
+    },
+    ["reload_smag_fast_empty"] = {
+        Source = "reload_smag_fast_empty",
+		MinProgress = 0.95,
+		RefillProgress = 0.825,
+		PeekProgress = 0.925,
+		FireASAP = true,
+		EjectAt = 0.15,
+		DropMagAt = 0.75,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_reload_empty_fast_bolt_pull.ogg", t = 0},
@@ -583,9 +679,10 @@ SWEP.Animations = {
         FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.95, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sh_mike26_inspect_01.ogg", t = 0/30},
@@ -652,6 +749,16 @@ local Translate_XMag_Fast = {
     ["reload_empty"] = "reload_xmag_fast_empty",
 }
 
+--- 4 Round Mags ---
+local Translate_SMag = {
+    ["reload"] = "reload_smag",
+    ["reload_empty"] = "reload_smag_empty",
+}
+local Translate_SMag_Fast = {
+    ["reload"] = "reload_smag_fast",
+    ["reload_empty"] = "reload_smag_fast_empty",
+}
+
 --- Fast & Tac. Sprint ---
 local Translate_Fast = {
     ["reload"] = "reload_fast",
@@ -662,6 +769,9 @@ local Translate_TacSprint = {
     ["enter_sprint"] = "super_sprint_in",
     ["exit_sprint"] = "super_sprint_out",
 }
+local Translate_Semi = {
+    ["fire"] = "fire_alt",
+}
 
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
@@ -669,15 +779,25 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
+    local smag = wep:HasElement("mag_smag")
+    local semi = wep:HasElement("bolt_spring")
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
+    end
+	
+    if semi and Translate_Semi[anim] then
+        return Translate_Semi[anim]
     end
 
     if speedload then
         if xmag then
             if Translate_XMag_Fast[anim] then
                 return Translate_XMag_Fast[anim]
+            end
+		elseif smag then
+            if Translate_SMag_Fast[anim] then
+                return Translate_SMag_Fast[anim]
             end
         else
             if Translate_Fast[anim] then
@@ -688,6 +808,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         if xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
+            end
+		elseif smag then
+            if Translate_SMag[anim] then
+                return Translate_SMag[anim]
             end
         end
     end
@@ -720,6 +844,10 @@ SWEP.AttachmentTableOverrides = {
     },
     ["cod2019_griptape_03"] = {
     Model = "models/weapons/cod2019/attachs/weapons/vlk/attachment_vm_sh_mike26_griptape.mdl",
+    },
+    ["cod2019_vlk_semiauto"] = {
+    ModelOffset = Vector(3.5, 0, 1.7),
+	ModelAngleOffset = Angle(0, 0, 0),
     },
 }
 
@@ -768,6 +896,11 @@ SWEP.AttachmentElements = {
     ["stock_tube_none"] = {
         Bodygroups = {
             {8,1},
+        },
+    },
+    ["bolt_spring"] = {
+        Bodygroups = {
+            {9,1},
         },
     },
 }
@@ -854,7 +987,7 @@ SWEP.Attachments = {
     },
     { -- 11
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst","cod2019_perks_ss"},
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst","cod2019_perks_ss","cod2019_vlk_perks"},
         Bone = "tag_attachments",
         Pos = Vector(3.5, 0, -3.5),
     },
