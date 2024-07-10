@@ -591,7 +591,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_reload_fast_rotate.ogg", t = 0},
-			{s = path .. "wfoly_sh_mark26_reload_fast_magout.ogg", t = 0.167},
+			{s = path .. "wfoly_sh_mark26_reload_fast_magout.ogg", t = 0.2},
 			{s = path .. "wfoly_sh_mark26_reload_fast_maghit.ogg", t = 1.067},
 			{s = path .. "wfoly_sh_mark26_reload_fast_magin.ogg", t = 1.333},
 			{s = path .. "wfoly_sh_mark26_reload_fast_end.ogg", t = 1.667},
