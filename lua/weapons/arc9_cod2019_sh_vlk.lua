@@ -52,6 +52,7 @@ SWEP.WorldModelOffset = {
 
 SWEP.DamageMax = 110 / 4 -- Damage done at point blank range
 SWEP.DamageMin = 30 / 4 -- Damage done at maximum range
+SWEP.DistributeDamage = true
 
 SWEP.Num = 4
 
@@ -62,8 +63,9 @@ SWEP.RangeMax = 12 / ARC9.HUToM
 
 SWEP.Penetration = 2 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0
-
 SWEP.ImpactForce = 6.5
+SWEP.DamageType = DMG_BULLET + DMG_BUCKSHOT
+SWEP.CurvedDamageScaling = true
 
 -------------------------- PHYS BULLET BALLISTICS
 

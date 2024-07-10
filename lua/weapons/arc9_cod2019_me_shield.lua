@@ -159,6 +159,10 @@ SWEP.CustomizeSnapshotPos = Vector(0, 90, 5)
 
 SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
+
+SWEP.VManipOffsetPos = Vector(1, -2, -0.5)
+SWEP.VManipOffsetAng = Angle(-55, -2, 5)
+
 -------------------------- HoldTypes
 
 SWEP.HoldTypeHolstered = "none"
