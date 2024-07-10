@@ -250,7 +250,7 @@ SWEP.AnimDraw = false
 
 -------------------------- EFFECTS
 
-SWEP.MuzzleParticle = "AC_muzzle_sniper_heavy"
+SWEP.MuzzleParticle = "muzzleflash_smg"
 SWEP.AfterShotParticle = "barrel_smoke"
 SWEP.TracerEffect = "cod2019_tracer_fast"
 SWEP.MuzzleEffectQCA = 1

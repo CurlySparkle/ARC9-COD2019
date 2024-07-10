@@ -1,8 +1,8 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-   "$basetexture"			"models/cod2019/fal/fal_stock"
-   "$bumpmap"				"models/cod2019/fal/fal_stock_n"
-   "$phongexponenttexture"		"models/cod2019/fal/fal_stock_exp"
+    "$basetexture" "models\cod2019\fal\fal_stock_rgb"
+    "$bumpmap" "models\cod2019\fal\fal_stock_n"
+    "$phongexponenttexture" "models\cod2019\fal\fal_stock_e"
 
     /////////////////
     "$color2" "[1 1 1]"                                     //do not touch this
@@ -12,7 +12,7 @@
     "$phong" "1"
     "$phongboost" "1"
     "$phongalbedotint" "1"
-    "$phongalbedoboost" "30"                                //toy around with this
+    "$phongalbedoboost" "10"                                //toy around with this
     "$phongfresnelranges" "[1 0.1 0]"
        
     /////////////////
@@ -21,6 +21,9 @@
 
     "$envmap" "env_cubemap"
     "$envmaptint" "[0.188 0.196 0.192]"                 
+
+    "$detailblendmode" "4"
+    "$detailblendfactor" "0.7"
 
     //remove this if not using MWB
     "Proxies"
@@ -31,5 +34,12 @@
             "max" "1"
             "color" "[0.188 0.196 0.192]"
         }
+	   "CustomCamo" 
+        {
+		  "camoTexture" $detail
+	       "camoScale" $detailscale
+            "blend" $detailblendfactor
+            "color" "[0.8 0.8 0.8]"
+	   }
     }
 }

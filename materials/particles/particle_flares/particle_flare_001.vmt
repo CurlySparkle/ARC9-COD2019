@@ -1,6 +1,0 @@
-"spritecard"
-{
-	"$basetexture" "particle\particle_flares\particle_flare_001"
-	$translucent 1
-	$additive 1
-}

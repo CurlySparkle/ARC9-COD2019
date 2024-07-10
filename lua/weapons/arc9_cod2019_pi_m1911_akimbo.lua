@@ -98,8 +98,8 @@ SWEP.HoldTypeSights = "duel"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
 
---SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_DUEL
--- SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_RPG
+SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_DUEL
+SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
 SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
 SWEP.AnimDraw = false
 
