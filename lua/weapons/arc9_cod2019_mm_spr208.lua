@@ -856,6 +856,7 @@ SWEP.Attachments = {
         DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
 		Bone = "tag_silencer",
         Pos = Vector(0, 0, 0),
+		ExcludeElements = {"barrel_sil"},
     },
     { -- 2
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),

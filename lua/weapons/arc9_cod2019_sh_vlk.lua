@@ -310,9 +310,9 @@ SWEP.HideBones  = {
 }
 
 SWEP.BulletBones = {
-    [1] = "j_shell01",
-    [2] = "j_shell02",
-    [3] = "j_shell03",
+    [1] = "j_shell_01",
+    [2] = "j_shell_02",
+    [3] = "j_shell_03",
 }
 
 
@@ -344,6 +344,12 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sh_mark26_rechamber.ogg", v = 0.5, t = 0/30},
         },
+    },
+    ["dryfire"] = {
+        Source = "dryfire",
+		MinProgress = 0.4,
+		FireASAP = true,
+		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["reload"] = {
         Source = "reload_short",
