@@ -270,10 +270,10 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
-SWEP.ShellModel = "models/weapons/cod2019/shared/shell_9mm_hr.mdl"
-SWEP.ShellSounds = ARC9.COD2019_9mm_Table
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_762_hr.mdl"
+SWEP.ShellSounds = ARC9.COD2019_308_Table
 SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 0.08
+SWEP.ShellScale = 0.04
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
@@ -378,7 +378,7 @@ SWEP.Animations = {
 		PeekProgress = 0.875,
 		RefillProgress = 0.7,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.625,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
