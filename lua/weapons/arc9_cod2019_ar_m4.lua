@@ -1092,14 +1092,9 @@ SWEP.AttachmentElements = {
             {4,1},
         },
     },
-    ["mag"] = {
-        Bodygroups = {
-            {5,1},
-        },
-    },
     ["mag_none"] = {
         Bodygroups = {
-            {5,2},
+            {5,1},
         },
     },
 	["barrel_none"] = {
