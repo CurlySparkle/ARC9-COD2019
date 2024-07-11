@@ -34,7 +34,7 @@ SWEP.Firemodes = {
 SWEP.UseHands = true
 
 SWEP.ViewModel = "models/weapons/cod2019/c_eq_knife.mdl"
-SWEP.WorldModel = "models/weapons/cod2019/c_eq_knife.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_melee_knife_oscar.mdl"
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_knife.mdl"
 SWEP.MirrorVMWMHeldOnly = true
 SWEP.MirrorVMWM = true
