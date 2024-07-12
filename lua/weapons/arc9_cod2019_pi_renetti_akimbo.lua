@@ -400,6 +400,12 @@ SWEP.AttachmentElements = {
             {11,1},
         },
     },
+    ["sight_mount"] = {
+        Bodygroups = {
+            {12,1},
+            {13,1},
+        },
+    },
 }
 
 SWEP.Attachments = {
@@ -432,8 +438,9 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Bone = "j_slide_l",
 		DuplicateModels = { { Bone = "j_slide" } },
-        Pos = Vector(-1.275, 0, 0.645),
+        Pos = Vector(-1.44, 0, 0.645),
         Category = "cod2019_optics_pistols_alt",
+		InstalledElements = {"sight_mount"},
 		MergeSlots = {21},
     },
     { -- 5

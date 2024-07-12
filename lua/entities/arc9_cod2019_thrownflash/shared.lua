@@ -175,3 +175,22 @@ function ENT:Detonate()
     sound.EmitHint(SOUND_DANGER, self:GetPos(), radius, 6, nil) --needed for task (make them blinded for a little longer)
     self:Remove()
 end
+
+function ENT:OnRemove()
+	if (self:WaterLevel() <= 0) then
+     if CLIENT then
+		local dlight = DynamicLight(self:EntIndex())
+		if (dlight) then
+			dlight.pos = self:GetPos()
+			dlight.r = 255
+			dlight.g = 255
+			dlight.b = 255
+			dlight.brightness = 5
+			dlight.Decay = 2000
+			dlight.Size = 1024
+			dlight.DieTime = CurTime() + 5
+		end
+	 end
+	end
+	self:StopParticles()
+end

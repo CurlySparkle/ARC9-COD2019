@@ -345,6 +345,7 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
+		    {e = "cod2019_725_smoke", t = 0.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_start.ogg", t = 0.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 0.2},
             {s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 0.567},
@@ -367,6 +368,7 @@ SWEP.Animations = {
             { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
+            {e = "cod2019_725_smoke", t = 0.1},
             {s = path .. "wfoly_plr_sh_charlie725_reload_fast_open_01.ogg", t = 0.1},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_fast_start.ogg", t = 0.133},
             {s = path .. "wfoly_plr_sh_charlie725_reload_fast_swing.ogg", t = 0.533},
@@ -389,6 +391,7 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
+		    {e = "cod2019_725_smoke", t = 0.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_start.ogg", t = 0.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_open_01.ogg", t = 0.2},
             {s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 0.7},
@@ -412,6 +415,7 @@ SWEP.Animations = {
             { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
+			{e = "cod2019_725_smoke", t = 0.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_fast_start.ogg", t = 0.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_fast_open_01.ogg", t = 0.1},
             {s = path .. "wfoly_plr_sh_charlie725_reload_empty_fast_swing.ogg", t = 0.533},
@@ -435,6 +439,7 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
+		    {e = "cod2019_725_smoke", t = 0.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_start.ogg", t = 0.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_open_01.ogg", t = 0.2},
             {s = path .. "wfoly_plr_sh_charlie725_reload_swing.ogg", t = 0.567},
@@ -457,6 +462,7 @@ SWEP.Animations = {
             { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
+		    {e = "cod2019_725_smoke", t = 0.0},
             {s = path .. "wfoly_plr_sh_charlie725_reload_fast_open_01.ogg", t = 0.1},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_fast_start.ogg", t = 0.133},
             {s = path .. "wfoly_plr_sh_charlie725_reload_fast_swing.ogg", t = 0.533},
@@ -479,6 +485,7 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
+		    {e = "cod2019_725_smoke", t = 0.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_start.ogg", t = 0.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_open_01.ogg", t = 0.2},
             {s = path .. "wfoly_plr_sh_charlie725_reload_empty_swing.ogg", t = 0.7},
@@ -502,6 +509,7 @@ SWEP.Animations = {
             { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
+		    {e = "cod2019_725_smoke", t = 0.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_fast_start.ogg", t = 0.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_fast_open_01.ogg", t = 0.1},
             {s = path .. "wfoly_plr_sh_charlie725_reload_empty_fast_swing.ogg", t = 0.533},
