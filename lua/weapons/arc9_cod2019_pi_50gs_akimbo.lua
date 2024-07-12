@@ -76,6 +76,7 @@ SWEP.CustomizeNoRotate = false
 
 -------------------------- HoldTypes
 
+SWEP.TracerEffect = "cod2019_tracer"
 SWEP.HoldType = "duel"
 SWEP.HoldTypeSprint = "duel"
 SWEP.HoldTypeHolstered = "duel"

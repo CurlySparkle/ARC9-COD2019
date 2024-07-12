@@ -127,6 +127,11 @@ SWEP.Akimbo = true
 
 -------------------------- EFFECTS
 
+SWEP.TracerEffect = "cod2019_tracer"
+-- SWEP.TracerSize = 7
+-- SWEP.TracerNum = 1
+-- SWEP.TracerColor = Color(255, 200, 55)
+
 SWEP.MuzzleEffectQCA = 1
 SWEP.MuzzleEffectQCAEvenShot = 2
 SWEP.CaseEffectQCA = 4
