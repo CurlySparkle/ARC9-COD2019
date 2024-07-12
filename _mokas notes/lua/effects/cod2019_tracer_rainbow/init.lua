@@ -1,14 +1,11 @@
-PrecacheParticleSystem("mw2019_tracer_inc")
-EFFECT.TracerName = "mw2019_tracer_inc"
+PrecacheParticleSystem("mw2019_tracer_rainbow")
+EFFECT.TracerName = "mw2019_tracer_rainbow"
 
 function EFFECT:Init(data)
     self.WeaponEnt = data:GetEntity()
     if not IsValid(self.WeaponEnt) then return end
-    local hit = data:GetOrigin()
-    local wep = data:GetEntity()
-    if !IsValid(wep) then return end
-	local start = (wep.GetTracerOrigin and wep:GetTracerOrigin()) or data:GetStart()
     self.Attachment = data:GetAttachment() or 1
+	self.Position = self:GetTracerShootPos(data:GetStart(), data:GetEntity(), self.Attachment)
 
     if IsValid(self.WeaponEnt.Owner) then
         if self.WeaponEnt.Owner == LocalPlayer() then
@@ -26,11 +23,11 @@ function EFFECT:Init(data)
         end
     end
 
-    self.StartPos = start
-    self.EndPos = hit
+    self.EndPos = data:GetOrigin()
+    -- util.ParticleTracerEx(self.ParticleName, self.StartPos, self.EndPos, false, self:EntIndex(), self.Attachment)
     local pcf = CreateParticleSystem(self.WeaponEnt, self.TracerName, PATTACH_ABSORIGIN, self.Attachment)
     if IsValid(pcf) then
-        pcf:SetControlPoint(0,self.StartPos)
+        pcf:SetControlPoint(0,self.Position)
         pcf:SetControlPoint(1,self.EndPos)
         pcf:StartEmission()
     end
