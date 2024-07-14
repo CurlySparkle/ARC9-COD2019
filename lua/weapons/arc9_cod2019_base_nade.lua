@@ -4,6 +4,8 @@ SWEP.Category = "ARC9 - MW2019"
 SWEP.AdminOnly = false
 
 SWEP.PrintName = "MW2019 Base Nade"
+SWEP.ARC9WeaponCategory = 0
+SWEP.NotForNPCs = true
 
 -------------------------- MELEE
 

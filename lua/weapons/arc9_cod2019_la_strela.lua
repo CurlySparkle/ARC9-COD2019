@@ -8,8 +8,10 @@ SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_la_strela.png"
 SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
+SWEP.NotForNPCs = false
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_launcher") or "Launchers"
+SWEP.ARC9WeaponCategory = 6
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_strela") or "Strela-P"
 
@@ -217,6 +219,7 @@ SWEP.HoldTypeHolstered = "rpg"
 SWEP.HoldTypeSights = "rpg"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
+SWEP.HoldTypeNPC = "rpg"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC

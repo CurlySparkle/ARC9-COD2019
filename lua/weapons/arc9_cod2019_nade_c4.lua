@@ -13,6 +13,7 @@ SWEP.NotForNPCs = true
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_c4") or "C4"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Special Explosives"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_c4_desc") or [[Large explosive that sticks to surfaces and can be detonated remotely with Right Click.]]
+SWEP.ARC9WeaponCategory = 8
 
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_usa"),
@@ -142,6 +143,7 @@ SWEP.NoAimAssist = true
 -------------------------- HoldTypes
 
 SWEP.HoldType = "slam"
+SWEP.HoldTypeNPC = "slam"
 SWEP.HoldTypeSprint = "slam"
 SWEP.HoldTypeHolstered = "slam"
 SWEP.HoldTypeSights = "slam"

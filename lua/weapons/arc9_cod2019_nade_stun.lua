@@ -16,6 +16,7 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_stun") or "Stun"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_tactical") or "Grenade"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_stun_desc") or [[Disorients enemies and slows movement. Detonates shortly after impact.]]
 SWEP.ShortPrintName = "Flash"
+SWEP.ARC9WeaponCategory = 8
 
 SWEP.Credits = {
     [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
@@ -126,6 +127,7 @@ SWEP.NoAimAssist = true
 -------------------------- HoldTypes
 
 SWEP.HoldType = "slam"
+SWEP.HoldTypeNPC = "grenade"
 SWEP.HoldTypeSprint = "slam"
 SWEP.HoldTypeHolstered = "slam"
 SWEP.HoldTypeSights = "slam"

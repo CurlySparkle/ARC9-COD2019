@@ -15,6 +15,7 @@ SWEP.NotForNPCs = true
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_molotov") or "Molotov"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Grenade"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_molotov_desc") or [[Improvised incendiary device that explodes on impact.]]
+SWEP.ARC9WeaponCategory = 8
 
 SWEP.Credits = {
     [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
@@ -126,6 +127,7 @@ SWEP.NoAimAssist = true
 -------------------------- HoldTypes
 
 SWEP.HoldType = "slam"
+SWEP.HoldTypeNPC = "grenade"
 SWEP.HoldTypeSprint = "slam"
 SWEP.HoldTypeHolstered = "slam"
 SWEP.HoldTypeSights = "slam"

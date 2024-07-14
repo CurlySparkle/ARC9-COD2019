@@ -15,6 +15,7 @@ SWEP.NotForNPCs = true
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_knife") or "Throwing Knife"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Throwable"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_knife_desc") or [[Retrievable knife that is lethal on impact.]]
+SWEP.ARC9WeaponCategory = 8
 
 SWEP.Credits = {
     [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
@@ -127,6 +128,7 @@ SWEP.NoAimAssist = true
 -------------------------- HoldTypes
 
 SWEP.HoldType = "slam"
+SWEP.HoldTypeNPC = "grenade"
 SWEP.HoldTypeSprint = "slam"
 SWEP.HoldTypeHolstered = "slam"
 SWEP.HoldTypeSights = "slam"

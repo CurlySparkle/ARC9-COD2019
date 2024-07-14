@@ -10,6 +10,7 @@ SWEP.Base = "arc9_cod2019_base"
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_melee") or "Specials"
+SWEP.ARC9WeaponCategory = 7
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_knife") or "Knife"
 
@@ -166,11 +167,13 @@ SWEP.CustomizeNoRotate = true
 SWEP.HoldTypeHolstered = "none"
 SWEP.HoldTypeSprint = "knife"
 SWEP.HoldType = "knife"
+SWEP.HoldTypeNPC = "crowbar"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE 
+SWEP.NonTPIKAnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 
 SWEP.Animations = {
     ["idle"] = {

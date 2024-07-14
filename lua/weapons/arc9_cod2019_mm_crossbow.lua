@@ -10,6 +10,7 @@ SWEP.Base = "arc9_cod2019_base"
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_marksman") or "Marksman Rifles"
+SWEP.ARC9WeaponCategory = 5
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_crossbow") or "Crossbow"
 
@@ -34,6 +35,7 @@ SWEP.Slot = 3
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
+SWEP.NotForNPCs = true -- Won't be given to NPCs.
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_eq_crossbow.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-5, 3.25, -6.75),
@@ -222,12 +224,13 @@ SWEP.CustomizeSnapshotPos = Vector(-2.5, 25, 3)
 
 -------------------------- HoldTypes
 
-SWEP.HoldType = "ar2"
-SWEP.HoldTypeSprint = "rpg"
+SWEP.HoldType = "crossbow"
+SWEP.HoldTypeSprint = "crossbow"
 SWEP.HoldTypeHolstered = "passive"
-SWEP.HoldTypeSights = "ar2"
+SWEP.HoldTypeSights = "crossbow"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
+SWEP.HoldTypeNPC = "crossbow"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC

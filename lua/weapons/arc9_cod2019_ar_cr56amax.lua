@@ -8,8 +8,10 @@ SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_ar_cr56amax.png"
 SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
+SWEP.NotForNPCs = false
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_ar") or "Assault Rifles"
+SWEP.ARC9WeaponCategory = 4
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_cr56") or "CR-56 AMAX"
 
@@ -264,6 +266,7 @@ SWEP.HoldTypeHolstered = "passive"
 SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
+SWEP.HoldTypeNPC = "ar2"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC

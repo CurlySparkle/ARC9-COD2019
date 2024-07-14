@@ -8,8 +8,10 @@ SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_lm_minigun.png"
 SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
+SWEP.NotForNPCs = true
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_lmg") or "Specials"
+SWEP.ARC9WeaponCategory = 2
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_minigun") or "Minigun"
 
@@ -225,6 +227,7 @@ SWEP.HoldTypeHolstered = "passive"
 SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
+SWEP.HoldTypeNPC = "ar2"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC

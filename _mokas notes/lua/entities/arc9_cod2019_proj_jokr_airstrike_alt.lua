@@ -24,13 +24,12 @@ ENT.RocketTrail = true -- leaves trail of a particle effect
 
 ENT.Delay = 0
 ENT.FlareColor = Color(235, 188, 37)
-ENT.Radius = 430
-ENT.RadiusDamage = 700
+ENT.Radius = 128
 ENT.AudioLoop = "^weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg"
 
 --- Stuff
 ENT.SeekerAngle = math.cos(math.rad(75))
-ENT.SteerSpeed = 200
+ENT.SteerSpeed = 250
 ENT.FuseTime = 0
 ENT.Boost = 2000
 ENT.Lift = 0
@@ -65,11 +64,11 @@ function ENT:Detonate()
     end
 
     local dmgInfo = DamageInfo()
-    dmgInfo:SetDamage(self.RadiusDamage)
+    dmgInfo:SetDamage(64)
     dmgInfo:SetAttacker(IsValid(self:GetOwner()) && self:GetOwner() || self)
     dmgInfo:SetInflictor(self)
     dmgInfo:SetDamageType(self:GetDamageType())
-    util.BlastDamageInfo(dmgInfo, phys:GetPos(), self.Radius)
+    util.BlastDamageInfo(dmgInfo, phys:GetPos(), 190)
 
     local dir = self:GetVelocity():GetNormalized()
     local src = self:GetPos() - dir * 64
@@ -92,7 +91,7 @@ function ENT:Detonate()
     })
 
     self:EmitSound("^weapons/cod2019/shared/rocket_expl_body_02.ogg", 100, 100, 1, CHAN_WEAPON)
-    util.ScreenShake(phys:GetPos(), 3500, 1111, 1, self.Radius)
+    util.ScreenShake(phys:GetPos(), 3500, 1111, 1, 300)
     util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
 
     for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do

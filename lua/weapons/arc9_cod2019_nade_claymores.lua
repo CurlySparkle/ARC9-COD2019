@@ -15,6 +15,7 @@ SWEP.NotForNPCs = true
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_claymore") or "Claymore"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Proximity Explosive"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_claymore_desc") or [[Proximity-activated explosive mine.]]
+SWEP.ARC9WeaponCategory = 8
 
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_usa"),
@@ -133,6 +134,7 @@ SWEP.NoAimAssist = true
 -------------------------- HoldTypes
 
 SWEP.HoldType = "slam"
+SWEP.HoldTypeNPC = "slam"
 SWEP.HoldTypeSprint = "slam"
 SWEP.HoldTypeHolstered = "slam"
 SWEP.HoldTypeSights = "slam"

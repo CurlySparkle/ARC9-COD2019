@@ -16,6 +16,7 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_decoy") or "Decoy"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Grenade"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_decoy_desc") or [[Counter-intel grenade that simulates fake gunfire and radar signatures that confuse the enemy.]]
 SWEP.ShortPrintName = "Decoy"
+SWEP.ARC9WeaponCategory = 8
 
 SWEP.Credits = {
     [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
@@ -125,6 +126,7 @@ SWEP.NoAimAssist = true
 -------------------------- HoldTypes
 
 SWEP.HoldType = "slam"
+SWEP.HoldTypeNPC = "grenade"
 SWEP.HoldTypeSprint = "slam"
 SWEP.HoldTypeHolstered = "slam"
 SWEP.HoldTypeSights = "slam"

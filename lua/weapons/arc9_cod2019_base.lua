@@ -6,6 +6,8 @@ SWEP.AdminOnly = false
 SWEP.PrintName = "MW2019 Base"
 
 SWEP.SecondarySupplyLimit = 6
+SWEP.ARC9WeaponCategory = 0
+SWEP.NotForNPCs = true
 
 if CLIENT then
     killicon.Add( "arc9_cod2019_proj_40mmgl_hel", "vgui/killicons/cod2019_m203.png", Color(251, 85, 25, 255))

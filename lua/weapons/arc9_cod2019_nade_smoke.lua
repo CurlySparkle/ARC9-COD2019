@@ -16,6 +16,7 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_smoke") or "Smoke Nade"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_tactical") or "Grenade"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_smoke_desc") or [[Deploys a smoke screen that blocks vision and automated targeting systems.]]
 SWEP.ShortPrintName = "Smoke"
+SWEP.ARC9WeaponCategory = 8
 
 SWEP.Credits = {
     [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
@@ -125,6 +126,7 @@ SWEP.NoAimAssist = true
 -------------------------- HoldTypes
 
 SWEP.HoldType = "slam"
+SWEP.HoldTypeNPC = "grenade"
 SWEP.HoldTypeSprint = "slam"
 SWEP.HoldTypeHolstered = "slam"
 SWEP.HoldTypeSights = "slam"

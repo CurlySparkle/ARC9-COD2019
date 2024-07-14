@@ -15,6 +15,8 @@ SWEP.NotForNPCs = true
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_rock") or "Rock"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_tactical") or "Throwable"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_rock_desc") or [[The experimental rock, very deadly and quite a "Stoner" upon hitting enemies.]]
+SWEP.ARC9WeaponCategory = 8
+
 SWEP.Trivia = {
     ["Country"] = "Nova Pangea",
     ["Year"] = "-3300000",
@@ -126,6 +128,7 @@ SWEP.NoAimAssist = true
 -------------------------- HoldTypes
 
 SWEP.HoldType = "slam"
+SWEP.HoldTypeNPC = "grenade"
 SWEP.HoldTypeSprint = "slam"
 SWEP.HoldTypeHolstered = "slam"
 SWEP.HoldTypeSights = "slam"

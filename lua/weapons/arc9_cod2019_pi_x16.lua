@@ -9,8 +9,10 @@ SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_pi_x16.png"
 SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
+SWEP.NotForNPCs = false
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_handgun") or "Handguns"
+SWEP.ARC9WeaponCategory = 1
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_glock") or "X16"
 
@@ -259,6 +261,7 @@ end
 -------------------------- HoldTypes
 
 SWEP.HoldType = "revolver"
+SWEP.HoldTypeNPC = "pistol"
 SWEP.HoldTypeSprint = "rpg"
 SWEP.HoldTypeSights = "revolver"
 SWEP.HoldTypeCustomize = "slam"

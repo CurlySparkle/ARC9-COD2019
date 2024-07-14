@@ -8,8 +8,10 @@ SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_mm_kar98k.png"
 SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
+SWEP.NotForNPCs = false
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_marksman") or "Marksman Rifles"
+SWEP.ARC9WeaponCategory = 5
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_kar98") or "Kar98k"
 
@@ -233,6 +235,7 @@ SWEP.PeekMaxFOV = 54
 -------------------------- HoldTypes
 
 SWEP.HoldType = "ar2"
+SWEP.HoldTypeNPC = "shotgun"
 SWEP.HoldTypeSprint = "rpg"
 SWEP.HoldTypeHolstered = "passive"
 SWEP.HoldTypeSights = "ar2"

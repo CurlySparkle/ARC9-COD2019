@@ -10,6 +10,7 @@ SWEP.Base = "arc9_cod2019_base"
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_melee") or "Specials"
+SWEP.ARC9WeaponCategory = 7
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_fists") or "Fist"
 
@@ -31,6 +32,7 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.NoTPIK = true
 SWEP.TPIKNoSprintAnim = true 
+SWEP.NotForNPCs = true -- Won't be given to NPCs.
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_melee_fist.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-10, 2, 0),
@@ -169,8 +171,10 @@ SWEP.HoldTypeHolstered = "passive"
 SWEP.HoldTypeSights = "passive"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "passive"
+SWEP.HoldTypeNPC = "crowbar"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_FIST
+SWEP.NonTPIKAnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_FIST
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_FIST

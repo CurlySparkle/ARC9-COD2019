@@ -8,8 +8,10 @@ SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_sm_bizon.png"
 SWEP.Base = "arc9_cod2019_base"
 
 SWEP.Spawnable = true
+SWEP.NotForNPCs = false
 SWEP.Category = "ARC9 - MW2019"
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_smg") or "Submachine Guns"
+SWEP.ARC9WeaponCategory = 3
 
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_pp19") or "PP19 Bizon"
 
@@ -250,6 +252,7 @@ SWEP.PeekAngReloading = Angle(-0.3, 0, -5)
 -------------------------- HoldTypes
 
 SWEP.HoldType = "ar2"
+SWEP.HoldTypeNPC = "ar2"
 SWEP.HoldTypeSprint = "rpg"
 SWEP.HoldTypeHolstered = "passive"
 SWEP.HoldTypeSights = "ar2"

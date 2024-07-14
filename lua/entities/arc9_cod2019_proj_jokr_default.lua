@@ -56,6 +56,7 @@ function ENT:OnInitialize()
         self.LockOnPoint = tr.HitPos
     end
     self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
+	self.LastAimPos = self:GetOwner():GetEyeTrace().HitPos
 end
 
 function ENT:Impact(data, collider)

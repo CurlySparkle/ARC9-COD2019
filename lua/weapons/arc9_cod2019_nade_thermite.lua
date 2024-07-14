@@ -16,6 +16,7 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_thermite") or "Thermite Stick"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Grenade"
 SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_thermite_desc") or [[Explosive which burns fiercely for a short time after impact. Sticks to surfaces.]]
 SWEP.ShortPrintName = "Thermite"
+SWEP.ARC9WeaponCategory = 8
 
 SWEP.Credits = {
     [ ARC9:GetPhrase("mw19_author") ] = "Twilight Sparkle/Firmeteran",
@@ -127,6 +128,7 @@ SWEP.NoAimAssist = true
 -------------------------- HoldTypes
 
 SWEP.HoldType = "slam"
+SWEP.HoldTypeNPC = "grenade"
 SWEP.HoldTypeSprint = "slam"
 SWEP.HoldTypeHolstered = "slam"
 SWEP.HoldTypeSights = "slam"
