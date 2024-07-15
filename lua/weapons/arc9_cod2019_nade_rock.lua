@@ -141,6 +141,8 @@ SWEP.AnimDraw = false
 
 -------------------------- MELEE
 
+local path = "weapons/cod2019/throwables/rock/"
+
 SWEP.PreBashTime = 0.2
 SWEP.PostBashTime = 0.3
 
@@ -148,8 +150,6 @@ SWEP.ImpactForce = 25
 
 SWEP.MeleeHitSound = path .. "rock_hit.ogg"
 SWEP.MeleeHitWallSound = path .. "rock_hit_world.ogg"
-
-local path = "weapons/cod2019/throwables/rock/"
 
 function SWEP:SecondaryAttack()
     return self:MeleeAttack()
