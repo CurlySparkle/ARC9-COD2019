@@ -14,7 +14,7 @@ function EFFECT:Init(data)
 	dlight.DieTime = CurTime() + 0.1
 
     sound.Play("Cod2019.Semtex.Beep", data:GetOrigin())
-    ParticleEffectAttach("semtex_beep_flare", PATTACH_ABSORIGIN_FOLLOW, data:GetEntity(), self.Attachment)
+    ParticleEffectAttach("semtex_beep_flare", PATTACH_POINT_FOLLOW, data:GetEntity(), self.Attachment)
 
     self:SetNoDraw(true)
 end

@@ -146,8 +146,8 @@ SWEP.PostBashTime = 0.3
 
 SWEP.ImpactForce = 25
 
-SWEP.MeleeHitSound = "rock_hit.wav"
-SWEP.MeleeHitWallSound = "rock_hit_world.wav"
+SWEP.MeleeHitSound = path .. "rock_hit.ogg"
+SWEP.MeleeHitWallSound = path .. "rock_hit_world.ogg"
 
 local path = "weapons/cod2019/throwables/rock/"
 
