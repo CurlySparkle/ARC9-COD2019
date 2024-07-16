@@ -225,4 +225,8 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks"},
     },
+    {
+        PrintName = ARC9:GetPhrase("mw19_category_function"),
+        Category = {"cod2019_gasnade_ammo"},
+    },
 }

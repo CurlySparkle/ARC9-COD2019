@@ -179,20 +179,12 @@ if SERVER then
         util.Effect("ManhackSparks", fx)
 		
 		ParticleEffect("small_smoke_effect3", self:GetPos(), Angle(0, 0, 0))
+		ParticleEffect("weapon_sensorgren_detonate", self:GetPos(), Angle(0, 0, 0))
 		self:EmitSound("COD2019.Snapshot.Explode")
 		self:EmitSound("weapons/cod2019/throwables/snapshot/snapshot_expl_debris.ogg", 75, 100, 1, CHAN_AUTO)
 		util.Decal("Dark", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
 
-		local explode = ents.Create("info_particle_system")
-		explode:SetKeyValue("effect_name", "weapon_sensorgren_detonate")
-		explode:SetOwner(self.Owner)
-		explode:SetPos(self:GetPos())
-		explode:Spawn()
-		explode:Activate()
-		explode:Fire("start", "", 0)
-		explode:Fire("kill", "", 30)
-
-		SafeRemoveEntity(self)
+		self:Remove()
 	end
 
 	function ENT:Fuse(ent, data, collider)

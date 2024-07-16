@@ -575,12 +575,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Time = 1.25,
+		Time = 1,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Time = 1.25,
+		Time = 1,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -1009,8 +1009,8 @@ SWEP.Attachments = {
 
 SWEP.GripPoseParam = 4.5
 SWEP.GripPoseParam2 = 0.5
---SWEP.CodAngledGripPoseParam = 32
-SWEP.CodAngledGripPoseParam = 33
+SWEP.CodAngledGripPoseParam = 32
+--SWEP.CodAngledGripPoseParam = 33
 SWEP.CodStubbyGripPoseParam = 22
 SWEP.CodStubbyTallGripPoseParam = 26
 
