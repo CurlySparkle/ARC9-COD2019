@@ -620,6 +620,7 @@ L["mw19_weapon_nade_knife"] = "Couteau de lancer"
 L["mw19_weapon_nade_proximity"] = "Mine de proximité"
 L["mw19_weapon_nade_thermite"] = "Thermite"
 L["mw19_weapon_nade_thermite_alt"] = "Grenade thermite" -- UO
+L["mw19_weapon_nade_drillcharge"] = "Drill Charge" -- UO
 
 L["mw19_weapon_nade_flash"] = "Grenade flash"
 L["mw19_weapon_nade_stun"] = "Grenade paralysante"
@@ -719,6 +720,7 @@ L["mw19_weapon_nade_semtex_desc"] = "Grenade adhésive avec minuteur." .. quickn
 L["mw19_weapon_nade_knife_desc"] = "Couteau récupérable qui peut être lancé pour éliminer rapidement et silencieusement les ennemis." .. quicknade
 L["mw19_weapon_nade_proximity_desc"] = "Explosif doté d'un système de déclenchement à proximité. Inflige de lourds dégâts aux véhicules." .. quicknade
 L["mw19_weapon_nade_thermite_desc"] = "Explosif qui brûle intensément pendant un court instant après l'impact. Se colle aux surfaces." .. quicknade
+L["mw19_weapon_nade_drillcharge_desc"] = "Charge with a thermal lance that can burrow into surfaces before exploding." .. quicknade -- UO from MWII desc.
 
 L["mw19_weapon_nade_flash_desc"] = "Aveugle et assourdit les cibles." .. quicknade
 L["mw19_weapon_nade_stun_desc"] = "Ralentit les déplacements et la visée." .. quicknade

@@ -619,6 +619,7 @@ L["mw19_weapon_nade_knife"] = "Faca de Arremesso"
 L["mw19_weapon_nade_proximity"] = "Mina de Proximidade"
 L["mw19_weapon_nade_thermite"] = "Termita"
 L["mw19_weapon_nade_thermite_alt"] = "Granada de Termita" -- UO
+L["mw19_weapon_nade_drillcharge"] = "Drill Charge" -- UO
 
 L["mw19_weapon_nade_flash"] = "Granada de Luz"
 L["mw19_weapon_nade_stun"] = "Concussão"
@@ -718,6 +719,7 @@ L["mw19_weapon_nade_semtex_desc"] = "Granada adesiva cronometrada." .. quicknade
 L["mw19_weapon_nade_knife_desc"] = "Faca recuperável que pode ser arremessada para eliminar inimigos de maneira rápida e silenciosa." .. quicknade
 L["mw19_weapon_nade_proximity_desc"] = "Explosivo ativado por proximidade que causa alto dano a veículos." .. quicknade
 L["mw19_weapon_nade_thermite_desc"] = "Explosivo que queima intensamente por um curto período após o impacto. Adere às superfícies." .. quicknade
+L["mw19_weapon_nade_drillcharge_desc"] = "Charge with a thermal lance that can burrow into surfaces before exploding." .. quicknade -- UO from MWII desc.
 
 L["mw19_weapon_nade_flash_desc"] = "Cega e ensurdece inimigos." .. quicknade
 L["mw19_weapon_nade_stun_desc"] = "Desacelera o movimento e a mira da vítima." .. quicknade

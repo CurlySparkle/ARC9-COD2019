@@ -620,6 +620,7 @@ L["mw19_weapon_nade_knife"] = "投躑小刀"
 L["mw19_weapon_nade_proximity"] = "感應地雷"
 L["mw19_weapon_nade_thermite"] = "鋁熱劑"
 L["mw19_weapon_nade_thermite_alt"] = "鋁熱劑榴彈" -- UO
+L["mw19_weapon_nade_drillcharge"] = "Drill Charge" -- UO
 
 L["mw19_weapon_nade_flash"] = "閃光彈"
 L["mw19_weapon_nade_stun"] = "震撼彈"
@@ -719,6 +720,7 @@ L["mw19_weapon_nade_semtex_desc"] = "計時黏性榴彈。" .. quicknade
 L["mw19_weapon_nade_knife_desc"] = "可回收的小刀，丢出可又快又安靜地擊殺敵人。" .. quicknade
 L["mw19_weapon_nade_proximity_desc"] = "近距離觸發的炸藥，能對載具造成極大傷害。" .. quicknade
 L["mw19_weapon_nade_thermite_desc"] = "發生碰撞後會在短時間内發出熾熱光芒的炸藥。可黏在表面上。" .. quicknade
+L["mw19_weapon_nade_drillcharge_desc"] = "Charge with a thermal lance that can burrow into surfaces before exploding." .. quicknade -- UO from MWII desc.
 
 L["mw19_weapon_nade_flash_desc"] = "使目標失明及失聰。" .. quicknade
 L["mw19_weapon_nade_stun_desc"] = "被擊中的人的移動和瞄準速度慢。" .. quicknade

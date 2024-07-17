@@ -619,6 +619,7 @@ L["mw19_weapon_nade_knife"] = "Nóż do rzucania"
 L["mw19_weapon_nade_proximity"] = "Mina przeciwpancerna"
 L["mw19_weapon_nade_thermite"] = "Termit"
 L["mw19_weapon_nade_thermite_alt"] = "Granat termit" -- UO
+L["mw19_weapon_nade_drillcharge"] = "Drill Charge" -- UO
 
 L["mw19_weapon_nade_flash"] = "Granat błyskowy"
 L["mw19_weapon_nade_stun"] = "Granat ogłuszający"
@@ -718,6 +719,7 @@ L["mw19_weapon_nade_semtex_desc"] = "Przyczepiający się granat z zapalnikiem c
 L["mw19_weapon_nade_knife_desc"] = "Nóż wielokrotnego użytku do szybkiej i cichej likwidacji wrogów." .. quicknade
 L["mw19_weapon_nade_proximity_desc"] = "Ładunek aktywowany zbliżeniowo. Powoduje znaczne uszkodzenia pojazdów." .. quicknade
 L["mw19_weapon_nade_thermite_desc"] = "Materiał wybuchowy, który intensywnie płonie przez chwilę po uderzeniu. Przykleja się do powierzchni." .. quicknade
+L["mw19_weapon_nade_drillcharge_desc"] = "Charge with a thermal lance that can burrow into surfaces before exploding." .. quicknade -- UO from MWII desc.
 
 L["mw19_weapon_nade_flash_desc"] = "Oślepia i ogłusza cele." .. quicknade
 L["mw19_weapon_nade_stun_desc"] = "Spowalnia ruch i celowanie ofiary." .. quicknade

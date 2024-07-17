@@ -12,10 +12,10 @@ SWEP.AdminOnly = false
 SWEP.NoDynamicKillIcon = true
 SWEP.NotForNPCs = true
 
-SWEP.PrintName = "Drill Charge"
+SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_nade_drillcharge") or "Drill Charge"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_lethal") or "Drilling Explosive"
 
-SWEP.Description = [[Charge with a thermal lance that can burrow into surfaces before exploding.]]
+SWEP.Description = ARC9:GetPhrase("mw19_weapon_nade_drillcharge_desc") or [[Charge with a thermal lance that can burrow into surfaces before exploding.]]
 SWEP.ARC9WeaponCategory = 8
 
 SWEP.Trivia = {

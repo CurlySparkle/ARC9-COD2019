@@ -620,6 +620,7 @@ L["mw19_weapon_nade_knife"] = "투척 단검"
 L["mw19_weapon_nade_proximity"] = "근접 신관 지뢰"
 L["mw19_weapon_nade_thermite"] = "테르밋"
 L["mw19_weapon_nade_thermite_alt"] = "테르밋 수류탄" -- UO
+L["mw19_weapon_nade_drillcharge"] = "Drill Charge" -- UO
 
 L["mw19_weapon_nade_flash"] = "섬광 수류탄"
 L["mw19_weapon_nade_stun"] = "기절 수류탄"
@@ -719,6 +720,7 @@ L["mw19_weapon_nade_semtex_desc"] = "점착성 시한 수류탄입 니다." .. q
 L["mw19_weapon_nade_knife_desc"] = "빠르고 조용하게 적을 제거하기 위해 던질 수 있는 회수 가능한 칼입니다." .. quicknade
 L["mw19_weapon_nade_proximity_desc"] = "적이 접근하면 폭발하는 근접 지뢰로 차량에 큰 피해를 줍니다." .. quicknade
 L["mw19_weapon_nade_thermite_desc"] = "충돌 후 짧은 시간 동안 맹렬하게 타오릅니다. 표면에 달라붙습니다." .. quicknade
+L["mw19_weapon_nade_drillcharge_desc"] = "Charge with a thermal lance that can burrow into surfaces before exploding." .. quicknade -- UO from MWII desc.
 
 L["mw19_weapon_nade_flash_desc"] = "목표의 시각과 청각을 마비시킵니다." .. quicknade
 L["mw19_weapon_nade_stun_desc"] = "목표의 이동속도와 조준속도를 둔화시킵니다." .. quicknade

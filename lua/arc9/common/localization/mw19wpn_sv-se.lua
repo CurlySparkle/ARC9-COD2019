@@ -619,6 +619,7 @@ L["mw19_weapon_nade_knife"] = "Kastbar Kniv"
 L["mw19_weapon_nade_proximity"] = "Närhetsmina"
 L["mw19_weapon_nade_thermite"] = "Thermit"
 L["mw19_weapon_nade_thermite_alt"] = "Thermitgranat"
+L["mw19_weapon_nade_drillcharge"] = "Borrladdning" -- UO
 
 L["mw19_weapon_nade_flash"] = "Distraktionsgranat"
 L["mw19_weapon_nade_stun"] = "Chockgranat"
@@ -718,6 +719,7 @@ L["mw19_weapon_nade_semtex_desc"] = "Klistergranat med timer." .. quicknade
 L["mw19_weapon_nade_knife_desc"] = "Återhämtningsbar kniv som kan snabbt kastas för att ljudlöst eliminera fiender." .. quicknade
 L["mw19_weapon_nade_proximity_desc"] = "Närhetsaktiverad sprängmedel som orsakar tunga skador till fordon." .. quicknade
 L["mw19_weapon_nade_thermite_desc"] = "Sprängmedel som starkt brinner under en kort tid efter träff. Fastnar på ytor." .. quicknade
+L["mw19_weapon_nade_drillcharge_desc"] = "Laddning med termisk lans som kan borra in sig i ytor innan den sprängs." .. quicknade -- UO from MWII desc.
 
 L["mw19_weapon_nade_flash_desc"] = "Bländer och dövar offer." .. quicknade
 L["mw19_weapon_nade_stun_desc"] = "Saktar ned offrets rörelse och sikte." .. quicknade

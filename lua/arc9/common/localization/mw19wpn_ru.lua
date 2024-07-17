@@ -619,6 +619,7 @@ L["mw19_weapon_nade_knife"] = "Метательный нож"
 L["mw19_weapon_nade_proximity"] = "Контактная мина"
 L["mw19_weapon_nade_thermite"] = "Термит"
 L["mw19_weapon_nade_thermite_alt"] = "Граната Термит" -- UO
+L["mw19_weapon_nade_drillcharge"] = "Drill Charge" -- UO
 
 L["mw19_weapon_nade_flash"] = "Световая граната"
 L["mw19_weapon_nade_stun"] = "Оглушающая граната"
@@ -718,6 +719,7 @@ L["mw19_weapon_nade_semtex_desc"] = "Граната-липдчка с тайме
 L["mw19_weapon_nade_knife_desc"] = "Многоразовый метательный нож, позволяющий быстро и бесшумно ликвидировать врагов." .. quicknade
 L["mw19_weapon_nade_proximity_desc"] = "Взрывается при контакте и наносит значительный урон транспорту." .. quicknade
 L["mw19_weapon_nade_thermite_desc"] = "Взрывное устройство, интенсивно горящее некоторое время после столкновения с преградой. Прилипает к различным поверхностям." .. quicknade
+L["mw19_weapon_nade_drillcharge_desc"] = "Charge with a thermal lance that can burrow into surfaces before exploding." .. quicknade -- UO from MWII desc.
 
 L["mw19_weapon_nade_flash_desc"] = "Ослепляет и оглушает цели." .. quicknade
 L["mw19_weapon_nade_stun_desc"] = "Уменьшает скорость, с которой движется и целится жертва." .. quicknade

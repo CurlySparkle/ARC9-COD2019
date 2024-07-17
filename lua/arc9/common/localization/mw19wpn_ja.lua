@@ -619,6 +619,7 @@ L["mw19_weapon_nade_knife"] = "投げナイフ"
 L["mw19_weapon_nade_proximity"] = "センサーマイン"
 L["mw19_weapon_nade_thermite"] = "テルミット"
 L["mw19_weapon_nade_thermite_alt"] = "テルミット手榴弾" -- UO
+L["mw19_weapon_nade_drillcharge"] = "Drill Charge" -- UO
 
 L["mw19_weapon_nade_flash"] = "フラッシュ"
 L["mw19_weapon_nade_stun"] = "スタン"
@@ -718,6 +719,7 @@ L["mw19_weapon_nade_semtex_desc"] = "時限式の粘着グレネード" .. quick
 L["mw19_weapon_nade_knife_desc"] = "殺傷能力が高く回収可能なナイフ" .. quicknade
 L["mw19_weapon_nade_proximity_desc"] = "車両に大ダメージを与える感圧センサー付の爆発物" .. quicknade
 L["mw19_weapon_nade_thermite_desc"] = "着弾後しばらくの間激しく燃焼。どんな表面にも付着" .. quicknade
+L["mw19_weapon_nade_drillcharge_desc"] = "Charge with a thermal lance that can burrow into surfaces before exploding." .. quicknade -- UO from MWII desc.
 
 L["mw19_weapon_nade_flash_desc"] = "ターゲットの視覚と聴覚を奪う" .. quicknade
 L["mw19_weapon_nade_stun_desc"] = "敵の動きとエイム速度を減速" .. quicknade

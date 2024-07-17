@@ -619,6 +619,7 @@ L["mw19_weapon_nade_knife"] = "Wurfmesser"
 L["mw19_weapon_nade_proximity"] = "Näherungsmine"
 L["mw19_weapon_nade_thermite"] = "Thermit"
 L["mw19_weapon_nade_thermite_alt"] = "Thermit Granate" -- UO
+L["mw19_weapon_nade_drillcharge"] = "Drill Charge" -- UO
 
 L["mw19_weapon_nade_flash"] = "Blendgranate"
 L["mw19_weapon_nade_stun"] = "Betäubung"
@@ -718,6 +719,7 @@ L["mw19_weapon_nade_semtex_desc"] = "Haftgranate mit Timer." .. quicknade
 L["mw19_weapon_nade_knife_desc"] = "Wiederverwendbares Messer, das geworfen werden kann, um Feinde schnell und lautlos zu eliminieren." .. quicknade
 L["mw19_weapon_nade_proximity_desc"] = "Durch Annäherung ausgelöster Sprengsatz, der schwere Schäden an Fahrzeugen verursacht." .. quicknade
 L["mw19_weapon_nade_thermite_desc"] = "Sprengsatz, der nach dem Aufschlag eine Zeit lang lichterloh brennt. Bleibt an Oberflächen haften." .. quicknade
+L["mw19_weapon_nade_drillcharge_desc"] = "Charge with a thermal lance that can burrow into surfaces before exploding." .. quicknade -- UO from MWII desc.
 
 L["mw19_weapon_nade_flash_desc"] = "Blendet und betäubt Ziele." .. quicknade
 L["mw19_weapon_nade_stun_desc"] = "Verlangsamt die Bewegungen und die Zielfähigkeit des Opfers." .. quicknade

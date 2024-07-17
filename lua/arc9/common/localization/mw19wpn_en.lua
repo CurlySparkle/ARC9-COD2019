@@ -724,6 +724,7 @@ L["mw19_weapon_nade_knife"] = "Throwing Knife"
 L["mw19_weapon_nade_proximity"] = "Proximity Mine"
 L["mw19_weapon_nade_thermite"] = "Thermite"
 L["mw19_weapon_nade_thermite_alt"] = "Thermite Grenade" -- UO
+L["mw19_weapon_nade_drillcharge"] = "Drill Charge" -- UO
 
 L["mw19_weapon_nade_flash"] = "Flash Grenade"
 L["mw19_weapon_nade_stun"] = "Stun Grenade"
@@ -823,6 +824,7 @@ L["mw19_weapon_nade_semtex_desc"] = "Timed sticky grenade." .. quicknade
 L["mw19_weapon_nade_knife_desc"] = "Retrievable knife that can be thrown to quickly and quietly eliminate enemies." .. quicknade
 L["mw19_weapon_nade_proximity_desc"] = "Proximity-triggered explosive that deals heavy damage to vehicles." .. quicknade
 L["mw19_weapon_nade_thermite_desc"] = "Explosive which burns fiercely for a short time after impact. Sticks to surfaces." .. quicknade
+L["mw19_weapon_nade_drillcharge_desc"] = "Charge with a thermal lance that can burrow into surfaces before exploding." .. quicknade -- UO from MWII desc.
 
 L["mw19_weapon_nade_flash_desc"] = "Blinds and deafens targets." .. quicknade
 L["mw19_weapon_nade_stun_desc"] = "Slows victim's movement and aiming." .. quicknade
