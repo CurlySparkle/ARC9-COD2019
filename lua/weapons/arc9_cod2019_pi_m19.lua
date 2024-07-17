@@ -166,6 +166,7 @@ end
 -------------------------- SPREAD
 
 SWEP.Spread = 0.02
+SWEP.SpreadNPC = 0.002
 
 SWEP.SpreadAddRecoil = 0.01
 
@@ -249,7 +250,7 @@ SWEP.PeekMaxFOV = 64
 -------------------------- HoldTypes
 
 SWEP.HoldType = "revolver"
-SWEP.HoldType = "pistol"
+SWEP.HoldTypeNPC = "pistol"
 SWEP.HoldTypeSprint = "rpg"
 SWEP.HoldTypeSights = "revolver"
 SWEP.HoldTypeCustomize = "slam"

@@ -255,12 +255,12 @@ SWEP.PeekAngReloading = Angle(-0.3, 0, -10)
 -------------------------- HoldTypes
 
 SWEP.HoldType = "ar2"
+SWEP.HoldTypeNPC = "ar2"
 SWEP.HoldTypeSprint = "rpg"
 SWEP.HoldTypeHolstered = "passive"
 SWEP.HoldTypeSights = "ar2"
 SWEP.HoldTypeCustomize = "slam"
 SWEP.HoldTypeBlindfire = "pistol"
-SWEP.HoldTypeNPC = "ar2"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
