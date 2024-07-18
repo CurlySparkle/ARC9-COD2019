@@ -705,7 +705,7 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wpfoly_mike4_reload_empty_fast_lift_v2.ogg", t = 0/30},
@@ -908,27 +908,80 @@ SWEP.Animations = {
 -- UBGL Animations
     ["fire_ubgl"] = {
         Source = "ubgl_fire",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
     },
     ["reload_ubgl"] = {
         Source = "ubgl_reload",
-    },
-    ["reload_ubgl_fast"] = {
+		MinProgress = 0.95,
+		FireASAP = true,
+		RefillProgress = 0.75,
+		EventTable = {
+			{ s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_start.ogg", t = 0/30 },
+			{ s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_armup.ogg", t = 2/30 },
+			{ s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_open_01.ogg", t = 5/30 },
+			{ s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_shellsout_01.ogg", t = 9/30 },
+			{ s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_shellsin_01.ogg", t = 30/30 },
+			{ s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_close_01.ogg", t = 50/30 },
+			{s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_grab2.ogg", t = 57.5/30},
+			{s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_end.ogg", t = 60/30},
+		}
+	},
+    ["reload_fast_ubgl"] = {
         Source = "ubgl_reload_fast",
-    },
+		MinProgress = 0.95,
+		FireASAP = true,
+		RefillProgress = 0.75,
+		EventTable = {
+			{ s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_start.ogg", t = 0/30 },
+			{ s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_armup.ogg", t = 1/30 },
+			{ s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_open_01.ogg", t = 3/30 },
+			{ s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_shellsout_01.ogg", t = 6/30 },
+			{ s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_shellsin_01.ogg", t = 20/30 },
+			{ s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_close_01.ogg", t = 30/30 },
+			{s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_grab2.ogg", t = 35/30},
+			{s = "weapons/cod2019/m32/wfoly_plr_la_mike32_reload_end.ogg", t = 37.5/30},
+		}
+	},
     ["enter_ubgl"] = {
         Source = "ubgl_up",
+		Mult = 1.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+        },
+        EventTable = {
+            -- {s = "Viewmodel.SwitchSight", t = 0/30},
+			-- {s = "switchsights/wpfoly_hybrid_toggle_off.ogg", t = 5/30},
+        },
     },
     ["exit_ubgl"] = {
         Source = "ubgl_down",
+		Mult = 1.5,
+        IKTimeLine = {
+            { t = 0, lhik = 0, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 0 },
+        },
+        EventTable = {
+            -- {s = "Viewmodel.SwitchSight", t = 0/30},
+			-- {s = "switchsights/wpfoly_hybrid_toggle_off.ogg", t = 5/30},
+        },
     },
     ["draw_ubgl"] = {
         Source = "ubgl_raise",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
     },
     ["holster_ubgl"] = {
         Source = "ubgl_drop",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+        EventTable = {
+            {s = path .. "wpfoly_mike4_drop_v2.ogg", t = 0/30},
+        },
     },
     ["idle_ubgl"] = {
         Source = "ubgl_idle",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
     },
 }
 
@@ -940,32 +993,39 @@ SWEP.Animations = {
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
+    ["reload_ubgl"] = "reload_ubgl",
 }
 local Translate_XMag_Fast = {
     ["reload"] = "reload_xmag_fast",
     ["reload_empty"] = "reload_xmag_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 local Translate_XMagslrg = {
     ["reload"] = "reload_xmagslrg",
     ["reload_empty"] = "reload_xmagslrg_empty",
+    ["reload_ubgl"] = "reload_ubgl",
 }
 local Translate_XMagslrg_Fast = {
     ["reload"] = "reload_xmagslrg_fast",
     ["reload_empty"] = "reload_xmagslrg_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 local Translate_SMG = {
     ["reload"] = "reload_smg",
     ["reload_empty"] = "reload_smg_empty",
+    ["reload_ubgl"] = "reload_ubgl",
 }
 local Translate_SMG_Fast = {
     ["reload"] = "reload_fast_smg",
     ["reload_empty"] = "reload_fast_smg_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 
 --- Fast & Tac. Sprint ---
 local Translate_Fast = {
     ["reload"] = "reload_fast",
     ["reload_empty"] = "reload_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 local Translate_TacSprint = {
     ["idle_sprint"] = "super_sprint_idle",
@@ -1245,17 +1305,17 @@ SWEP.Attachments = {
     { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst","cod2019_perks_ss"},
-        Bone = "tag_attachments",
-        Pos = Vector(3.5, 0, -3.5),
+        Bone = "tag_cosmetic",
+        Pos = Vector(-3, 0, -4.5),
     },
 	
 	-- Unofficial
     { -- 11
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
         Category = "cod2019_m4_receiver",
-        Bone = "tag_attachments",
+        Bone = "tag_cosmetic",
         Pos = Vector(0, 0, 0),
-		Icon_Offset = Vector(3.5, 0, -1),
+		Icon_Offset = Vector(-3.5, 0, -1),
 		Hidden = false,
     },
 	
@@ -1336,6 +1396,7 @@ SWEP.Attachments = {
 		InstalledElements = {"rail_grip"},
 		ExcludeElements = {"barrel_custom2"},
 		MergeSlots = {6}, -- Grips
+		Hidden = true,
     },
 }
 
