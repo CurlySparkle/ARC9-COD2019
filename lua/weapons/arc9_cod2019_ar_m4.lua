@@ -876,9 +876,6 @@ SWEP.Animations = {
             { t = 0.65, lhik = 1, rhik = 1},
         },
         EventTable = {
-            -- {s = path .. "wpfoly_mike4_raise_v2.ogg", t = 0/30},
-            -- {s = path .. "wpfoly_mike4_jam_bolt.ogg", t = 7/30},
-			-- {s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 23/30},
 			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0/30},
 			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 7/30},
 			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 20/30},
@@ -922,12 +919,12 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.75,
 		EventTable = {
-			{ s = pathub .. "ubgl_reload_lift.ogg", t = 0/30 },
-			{ s = pathub .. "ubgl_reload_arm.ogg", t = 2/30 },
-			{ s = pathub .. "ubgl_reload_glopen.ogg", t = 9/30 },
-			{ s = pathub .. "ubgl_reload_shellin.ogg", t = 36.25/30 },
+			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
+			{s = pathub .. "ubgl_reload_glopen.ogg", t = 9/30},
+			{s = pathub .. "ubgl_reload_shellin.ogg", t = 36.25/30},
 			{s = pathub .. "ubgl_reload_end.ogg", t = 42.5/30},
-			{ s = pathub .. "ubgl_reload_glclose.ogg", t = 50/30 },
+			{s = pathub .. "ubgl_reload_glclose.ogg", t = 50/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 60/30},
 		}
 	},
@@ -937,21 +934,12 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.75,
 		EventTable = {
-			-- { s = pathub .. "wfoly_plr_la_mike32_reload_start.ogg", t = 0/30 },
-			-- { s = pathub .. "wfoly_plr_la_mike32_reload_armup.ogg", t = 1/30 },
-			-- { s = pathub .. "wfoly_plr_la_mike32_reload_open_01.ogg", t = 3/30 },
-			-- { s = pathub .. "wfoly_plr_la_mike32_reload_shellsout_01.ogg", t = 6/30 },
-			-- { s = pathub .. "wfoly_plr_la_mike32_reload_shellsin_01.ogg", t = 20/30 },
-			-- { s = pathub .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 30/30 },
-			-- {s = pathub .. "wfoly_plr_la_mike32_reload_grab2.ogg", t = 35/30},
-			-- {s = pathub .. "wfoly_plr_la_mike32_reload_end.ogg", t = 37.5/30},
-			
-			{ s = pathub .. "ubgl_reload_lift.ogg", t = 0/30 },
-			{ s = pathub .. "ubgl_reload_arm.ogg", t = 2/30 },
-			{ s = pathub .. "ubgl_reload_glopen.ogg", t = 5/30 },
-			{ s = pathub .. "ubgl_reload_shellin.ogg", t = 22/30 },
+			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
+			{s = pathub .. "ubgl_reload_glopen.ogg", t = 5/30},
+			{s = pathub .. "ubgl_reload_shellin.ogg", t = 22/30},
 			{s = pathub .. "ubgl_reload_end.ogg", t = 25/30},
-			{ s = pathub .. "ubgl_reload_glclose.ogg", t = 30/30 },
+			{s = pathub .. "ubgl_reload_glclose.ogg", t = 31/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 35/30},
 		}
 	},
@@ -964,7 +952,7 @@ SWEP.Animations = {
             { t = 0.5, lhik = 0, rhik = 0 },
         },
 		EventTable = {
-			{ s = pathub .. "ubgl_to_grenade.ogg", t = 0/30 },
+			{s = pathub .. "ubgl_to_grenade.ogg", t = 0/30},
 		}
 	},
     ["exit_ubgl"] = {
@@ -976,7 +964,7 @@ SWEP.Animations = {
             { t = 0.9, lhik = 1, rhik = 0 },
         },
         EventTable = {
-			{ s = pathub .. "ubgl_from_grenade.ogg", t = 0/30 },
+			{s = pathub .. "ubgl_from_grenade.ogg", t = 0/30},
         },
     },
     ["draw_ubgl"] = {
