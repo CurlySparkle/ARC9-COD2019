@@ -905,6 +905,31 @@ SWEP.Animations = {
 			{s = "switchsights/wpfoly_hybrid_toggle_off.ogg", t = 5/30},
         },
     },
+-- UBGL Animations
+    ["fire_ubgl"] = {
+        Source = "ubgl_fire",
+    },
+    ["reload_ubgl"] = {
+        Source = "ubgl_reload",
+    },
+    ["reload_ubgl_fast"] = {
+        Source = "ubgl_reload_fast",
+    },
+    ["enter_ubgl"] = {
+        Source = "ubgl_up",
+    },
+    ["exit_ubgl"] = {
+        Source = "ubgl_down",
+    },
+    ["draw_ubgl"] = {
+        Source = "ubgl_raise",
+    },
+    ["holster_ubgl"] = {
+        Source = "ubgl_drop",
+    },
+    ["idle_ubgl"] = {
+        Source = "ubgl_idle",
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -1188,7 +1213,7 @@ SWEP.Attachments = {
     { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
 		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
-        Category = "cod2019_grip",
+        Category = {"cod2019_grip"},
         Bone = "tag_grip_attach",
         Pos = Vector(-3, 0, 0),
         Ang = Angle(0, 0, 180),
@@ -1300,6 +1325,17 @@ SWEP.Attachments = {
         Pos = Vector(11.5, 0, -2.45),
         Ang = Angle(0, 180, 0),
 		Hidden = true,
+    },
+    { -- 21
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
+        Category = {"cod2019_m4_grip"},
+        Bone = "tag_grenade_launcher",
+        Pos = Vector(-15, -3.4, 4),
+        Ang = Angle(0, 0, 0),
+		InstalledElements = {"rail_grip"},
+		ExcludeElements = {"barrel_custom2"},
+		MergeSlots = {6}, -- Grips
     },
 }
 

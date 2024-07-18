@@ -18,65 +18,71 @@ function ENT:Initialize()
         self:SetSolid(SOLID_VPHYSICS)
 		self:SetAngles(Angle(90, 0, 0))
 		ParticleEffectAttach("grenadetrail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
+		sound.EmitHint(SOUND_DANGER, self:GetPos(), 128 * 2, 1, nil)
         
         local phys = self:GetPhysicsObject()
         if IsValid(phys) then
             phys:Wake()
-			phys:SetAngles(Angle(90, 0, 0))
         end
         self.Armed = false
     end
 end
 
 -- function ENT:Think()
-    -- if self.Armed then
-        -- local fx = EffectData()
-		-- fx:SetOrigin(self:GetPos())
-		-- fx:SetNormal(self:GetUp())
-		-- util.Effect("ManhackSparks", fx)
-	-- else
-	-- return
+-- if SERVER then
+    -- if (IsValid(self:GetParent()) && self:GetParent():Health() <= 0 && self:GetParent():GetMaxHealth() > 1) then
+        -- self:MiniDetonate()
+        -- return
     -- end
+-- end
 -- end
 
 function ENT:PhysicsCollide(data, phys)
     self.GrenadeDir = data.OurOldVelocity:GetNormalized()
     self.GrenadePos = data.HitPos
-	
-    local theirProps = util.GetSurfaceData(data.TheirSurfaceProps)
-    if (theirProps != nil && theirProps.material == MAT_DEFAULT) then
-    timer.Simple(0, function() self:Remove() end)
-    return
-    end
-	
+    local hitEntity = data.HitEntity
+    local attacker = self.Attacker or self:GetOwner()
+    local ang = data.OurOldVelocity:Angle()
+
     if not self.Armed then
-	timer.Simple(0, function()
-        self.Armed = true
-        self:SetMoveType(MOVETYPE_NONE)
-        self:SetPos(data.HitPos)
-        
-        -- Orient the entity to face into the wall
-        local newAngle = data.HitNormal:Angle()
-        newAngle:RotateAroundAxis(newAngle:Right(), 90)
-        self:SetAngles(newAngle)
-		
-		self:EmitSound("^weapons/cod2019/throwables/drill_charge/eqp_bunkerbuster_drill_succeed.ogg")
-		self:EmitSound("weapons/cod2019/throwables/drill_charge/eqp_bunkerbuster_thermal_lance_start_01.ogg")
-		--self:EmitSound("physics/concrete/concrete_break2.wav", 100, 110)
-		self:EmitSound("weapons/cod2019/shared/bullet_small_crossbow_bolt_swt_01.ogg", 100, 110)
-        local fx = EffectData()
-		fx:SetOrigin(self:GetPos())
-		fx:SetNormal(self:GetUp())
-		util.Effect("ManhackSparks", fx)
-	end)
-		
-        timer.Simple(2, function()
+        timer.Simple(0, function()
+            self.Armed = true
+            self:SetMoveType(MOVETYPE_NONE)
+            self:SetPos(data.HitPos)
+
+            -- Check if the hit entity is a player, NPC, or nextbot
+            if IsValid(data.HitEntity) then
+                self:SetParent(hitEntity)
+                local dmginfo = DamageInfo()
+                dmginfo:SetAttacker(attacker)
+                dmginfo:SetInflictor(self)
+                dmginfo:SetDamageType(DMG_CRUSH + DMG_CLUB)
+                dmginfo:SetDamage(15)
+                dmginfo:SetDamageForce(data.OurOldVelocity * 25)
+                dmginfo:SetDamagePosition(data.HitPos)
+                data.HitEntity:TakeDamageInfo(dmginfo)
+            else
+                -- Orient the entity to face into the wall
+                local newAngle = data.HitNormal:Angle()
+                newAngle:RotateAroundAxis(newAngle:Right(), 90)
+                self:SetAngles(newAngle)
+            end
+
+            -- Rest of your existing code for sound effects and particle effects
+            self:EmitSound("^weapons/cod2019/throwables/drill_charge/eqp_bunkerbuster_drill_succeed.ogg")
+            self:EmitSound("weapons/cod2019/throwables/drill_charge/eqp_bunkerbuster_thermal_lance_start_01.ogg")
+            self:EmitSound("weapons/cod2019/shared/bullet_small_crossbow_bolt_swt_01.ogg", 100, 110)
+            ParticleEffect("small_smoke_effect3", self:GetPos(), self:GetAngles(), nil)
+        end)
+
+        -- Rest of your existing timer code
+        timer.Simple(1.8, function()
             if IsValid(self) then
-			    self:EmitSound("^weapons/cod2019/throwables/drill_charge/eqp_bunkerbuster_round_inject.ogg")
+                self:EmitSound("^weapons/cod2019/throwables/drill_charge/eqp_bunkerbuster_round_inject.ogg")
             end
         end)
         
-        timer.Simple(2.3, function()
+        timer.Simple(2.1, function()
             if IsValid(self) then
                 self:Detonate()
             end
@@ -106,7 +112,7 @@ function ENT:Detonate()
     end
     -- attempt to penetrate entity/world and place explosion behind
     local tr2 = util.TraceLine({
-        start = tr.HitPos + dir * 69,
+        start = tr.HitPos + dir * 80,
         endpos = tr.HitPos,
         filter = self,
     })
@@ -114,8 +120,7 @@ function ENT:Detonate()
     if tr2.Hit and !tr2.StartSolid then
         -- Produce a weaker blast on the pre-penetration side
         util.BlastDamage(self, attacker, blastpos, 64, 64)
-
-        blastpos = tr2.HitPos + dir * 69
+        blastpos = tr2.HitPos + dir * 80
         self:EmitSound("physics/concrete/concrete_break2.wav", 100, 110)
         local effectdata = EffectData()
         effectdata:SetOrigin(self:GetPos())
@@ -127,6 +132,7 @@ function ENT:Detonate()
         effectdata:SetOrigin(blastpos)
         effectdata:SetNormal(dir)
         util.Effect("Sparks", effectdata)
+		ParticleEffect("Generic_explo_tiny", self:GetPos(), self:GetAngles(), nil)
     end
 
     local effectdata = EffectData()
@@ -136,8 +142,6 @@ function ENT:Detonate()
         util.Effect("WaterSurfaceExplosion", effectdata)
         self:EmitSound("weapons/underwater_explode3.wav", 125, 100, 1, CHAN_AUTO)
     else
-        --self:EmitSound("Cod2019.Frag.Explode")
-        ParticleEffect("Generic_explo_tiny", self:GetPos(), tr.HitNormal:Angle())
         if tr2.Hit and !tr2.StartSolid then
             ParticleEffect("Generic_explo_mid", tr2.StartPos, Angle(-90, 0, 0))
         end
