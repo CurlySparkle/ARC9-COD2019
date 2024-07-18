@@ -28,6 +28,10 @@ function ENT:Initialize()
     end
 end
 
+-- function ENT:PhysicsUpdate()
+   -- self:SetAngles(Angle(90, 0, 0))
+-- end
+
 -- function ENT:Think()
 -- if SERVER then
     -- if (IsValid(self:GetParent()) && self:GetParent():Health() <= 0 && self:GetParent():GetMaxHealth() > 1) then

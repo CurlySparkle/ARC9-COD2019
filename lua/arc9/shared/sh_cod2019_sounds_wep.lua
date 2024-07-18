@@ -1,5 +1,4 @@
 ------------ Akimbos/Handguns ------------
-
 ------------ Pistols ------------
 --- .50 GS ---
 sound.Add( {
@@ -1391,3 +1390,12 @@ sound.Add( {
         "^weapons/cod2019/jokr/weap_juliet_launch_01.ogg",
     }
 } )
+------------ UBGL ------------
+sound.Add({
+    name =          "COD2019.M203.Fire",
+    channel =       CHAN_WEAPON,
+    volume =        1.0,
+    level = 140,
+    sound =             {
+    "^weapons/cod2019/shared/ubgl/weap_mike203_fire_plr_01.ogg"} 
+})
