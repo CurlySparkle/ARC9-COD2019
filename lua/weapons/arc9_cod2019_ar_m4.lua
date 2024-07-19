@@ -368,10 +368,10 @@ SWEP.MalfunctionMeanShotsToFail = 300*2
 SWEP.MalfunctionMeanShotsToFailMultHot = -0.1*2
 
 -- UBGL
-SWEP.UBGLIntegralReload = true -- The UBGL uses reload animations that are baked into the gun.
-SWEP.DoFireAnimationUBGL = true
-SWEP.NoShellEjectUBGL = true
-SWEP.MuzzleEffectQCAUBGL = 5
+-- SWEP.UBGLIntegralReload = true -- The UBGL uses reload animations that are baked into the gun.
+-- SWEP.DoFireAnimationUBGL = true
+-- SWEP.NoShellEjectUBGL = true
+-- SWEP.MuzzleEffectQCAUBGL = 5
 
 SWEP.ShootSoundUBGL = "COD2019.M203.Fire"
 SWEP.ShootSoundIndoorUBGL =  "COD2019.M203.Fire"
