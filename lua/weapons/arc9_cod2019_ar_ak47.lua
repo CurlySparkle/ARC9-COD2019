@@ -322,6 +322,7 @@ end
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/ak47/"
+local pathub = "weapons/cod2019/shared/ubgl/"
 
 SWEP.ShootSound = "COD2019.AK47.Fire"
 SWEP.ShootSoundIndoor = "COD2019.AK47.Fire"
