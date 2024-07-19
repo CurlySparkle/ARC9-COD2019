@@ -667,6 +667,8 @@ SWEP.Animations = {
     },
     ["jam"] = {
         Source = "jammed",
+        MinProgress = 0.5,
+        FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },

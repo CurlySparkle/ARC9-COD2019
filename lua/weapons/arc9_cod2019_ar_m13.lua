@@ -806,6 +806,8 @@ SWEP.Animations = {
     ["jam"] = {
         Source = "jam",
 		Mult = 0.8,
+        MinProgress = 0.5,
+        FireASAP = true,
         EventTable = {
             {s = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg", t = 0/30},
         },

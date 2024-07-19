@@ -28,19 +28,6 @@ function ENT:Initialize()
     end
 end
 
--- function ENT:PhysicsUpdate()
-   -- self:SetAngles(Angle(90, 0, 0))
--- end
-
--- function ENT:Think()
--- if SERVER then
-    -- if (IsValid(self:GetParent()) && self:GetParent():Health() <= 0 && self:GetParent():GetMaxHealth() > 1) then
-        -- self:MiniDetonate()
-        -- return
-    -- end
--- end
--- end
-
 function ENT:PhysicsCollide(data, phys)
     self.GrenadeDir = data.OurOldVelocity:GetNormalized()
     self.GrenadePos = data.HitPos

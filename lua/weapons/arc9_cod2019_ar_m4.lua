@@ -349,6 +349,8 @@ SWEP.BulletBones = {
 
 SWEP.HideBones  = {
     [1] = "j_mag2",
+    [2] = "j_grenade",
+    [3] = "j_grenade_empty",
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -370,6 +372,14 @@ SWEP.UBGLIntegralReload = true -- The UBGL uses reload animations that are baked
 SWEP.DoFireAnimationUBGL = true
 SWEP.NoShellEjectUBGL = true
 SWEP.MuzzleEffectQCAUBGL = 5
+
+SWEP.ShootSoundUBGL = "COD2019.M203.Fire"
+SWEP.ShootSoundIndoorUBGL =  "COD2019.M203.Fire"
+SWEP.DistantShootSoundUBGL = "Distant_Launcher.Outside"
+SWEP.DistantShootSoundIndoorUBGL = "Distant_Launcher.Inside"
+
+SWEP.SprintPosUBGL = Vector(0, 0, 0)
+SWEP.SprintAngUBGL = Angle(0, 0, 0)
 
 SWEP.Animations = {
 	["enter_sights"] = {
@@ -856,6 +866,8 @@ SWEP.Animations = {
     },
     ["jam"] = {
         Source = "jam",
+        MinProgress = 0.5,
+        FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1},
             { t = 0.2, lhik = 0, rhik = 1},

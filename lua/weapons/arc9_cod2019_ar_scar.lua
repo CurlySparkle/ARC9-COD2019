@@ -900,6 +900,8 @@ SWEP.Animations = {
     },
     ["jam"] = {
         Source = "jam",
+        MinProgress = 0.4,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_ar_scharlie_jam_stuck.ogg", t = 0/30},
         },
