@@ -310,7 +310,6 @@ SWEP.DropMagazineAng = Angle(0, -90, -90)
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/scar/"
-local pathub = "weapons/cod2019/shared/ubgl/"
 
 SWEP.ShootSound = "COD2019.Scar.Fire"
 SWEP.ShootSoundIndoor = "COD2019.Scar.Fire"
@@ -965,13 +964,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.75,
 		EventTable = {
-			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
-			{s = pathub .. "ubgl_reload_glopen.ogg", t = 9/30},
-			{s = pathub .. "ubgl_reload_shellin.ogg", t = 40/30},
-			{s = pathub .. "ubgl_reload_end.ogg", t = 52.5/30},
-			{s = pathub .. "ubgl_reload_glclose.ogg", t = 57.5/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 60/30},
+			{s = path .. "wpn_iw8_scar17s_gl_open.ogg", t = 4/30},
+			{s = path .. "wpn_iw8_scar17s_gl_shell_in.ogg", t = 27/30},
+			{s = path .. "wpn_iw8_scar17s_gl_close.ogg", t = 58.5/30},
+            {s = path .. "wpn_iw8_scar17s_gl_end.ogg", t = 60.5/30},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -980,13 +976,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.75,
 		EventTable = {
-			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
-			{s = pathub .. "ubgl_reload_glopen.ogg", t = 5/30},
-			{s = pathub .. "ubgl_reload_shellin.ogg", t = 30/30},
-			{s = pathub .. "ubgl_reload_end.ogg", t = 30/30},
-			{s = pathub .. "ubgl_reload_glclose.ogg", t = 42.5/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 47.5/30},
+			{s = path .. "wpn_iw8_scar17s_gl_open.ogg", t = 0/30},
+			{s = path .. "wpn_iw8_scar17s_gl_shell_in.ogg", t = 15/30},
+            {s = path .. "wpn_iw8_scar17s_gl_end.ogg", t = 42/30},
+			{s = path .. "wpn_iw8_scar17s_gl_close.ogg", t = 45/30},
 		}
 	},
     ["enter_ubgl"] = {
@@ -1000,7 +993,7 @@ SWEP.Animations = {
             { t = 0.5, lhik = 0, rhik = 0 },
         },
 		EventTable = {
-			{s = pathub .. "ubgl_to_grenade.ogg", t = 0/30},
+			{s = path .. "wpn_iw8_scar17s_to_gl.ogg", t = 0/30},
 		}
 	},
     ["exit_ubgl"] = {
@@ -1014,7 +1007,7 @@ SWEP.Animations = {
             { t = 0.9, lhik = 1, rhik = 0 },
         },
         EventTable = {
-			{s = pathub .. "ubgl_from_grenade.ogg", t = 0/30},
+			{s = path .. "wpn_iw8_scar17s_out_gl.ogg", t = 0/30},
         },
     },
     ["draw_ubgl"] = {

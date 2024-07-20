@@ -1033,13 +1033,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.75,
 		EventTable = {
-			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
-			-- {s = pathub .. "ubgl_reload_glopen.ogg", t = 9/30},
-			{s = pathub .. "ubgl_reload_shellin.ogg", t = 27.5/30},
-			{s = pathub .. "ubgl_reload_end.ogg", t = 42.5/30},
-			-- {s = pathub .. "ubgl_reload_glclose.ogg", t = 50/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 60/30},
+			{s = path .. "wpn_iw8_ak47_gl_start.ogg", t = 0/30},
+			{s = path .. "wpn_iw8_ak47_gl_mvmnt.ogg", t = 2/30},
+			{s = path .. "wpn_iw8_ak47_gl_shell_in.ogg", t = 26.5/30},
+			{s = path .. "wpn_iw8_ak47_gl_end.ogg", t = 56.5/30},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -1048,13 +1045,10 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.75,
 		EventTable = {
-			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
-			-- {s = pathub .. "ubgl_reload_glopen.ogg", t = 5/30},
-			{s = pathub .. "ubgl_reload_shellin.ogg", t = 17.5/30},
-			{s = pathub .. "ubgl_reload_end.ogg", t = 25/30},
-			-- {s = pathub .. "ubgl_reload_glclose.ogg", t = 31/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 35/30},
+			{s = path .. "wpn_iw8_ak47_gl_start.ogg", t = 0/30},
+			{s = path .. "wpn_iw8_ak47_gl_mvmnt.ogg", t = 2/30},
+			{s = path .. "wpn_iw8_ak47_gl_shell_in.ogg", t = 17.5/30},
+			{s = path .. "wpn_iw8_ak47_gl_end.ogg", t = 40/30},
 		}
 	},
     ["enter_ubgl"] = {
