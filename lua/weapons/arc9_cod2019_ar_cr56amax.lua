@@ -697,12 +697,12 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		EventTable = {
 			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
-			{s = pathub .. "ubgl_reload_glopen.ogg", t = 9/30},
-			{s = pathub .. "ubgl_reload_shellin.ogg", t = 36.25/30},
-			{s = pathub .. "ubgl_reload_end.ogg", t = 42.5/30},
-			{s = pathub .. "ubgl_reload_glclose.ogg", t = 50/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 60/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 4/30},
+			{s = pathub .. "ubgl_reload_glopen.ogg", t = 11/30},
+			{s = pathub .. "ubgl_reload_shellin.ogg", t = 44.25/30},
+			{s = pathub .. "ubgl_reload_end.ogg", t = 54.5/30},
+			{s = pathub .. "ubgl_reload_glclose.ogg", t = 60/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 70/30},
 		}
 	},
     ["reload_fast_ubgl"] = {
