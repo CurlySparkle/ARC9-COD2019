@@ -968,9 +968,9 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
 			{s = pathub .. "ubgl_reload_glopen.ogg", t = 9/30},
-			{s = pathub .. "ubgl_reload_shellin.ogg", t = 36.25/30},
-			{s = pathub .. "ubgl_reload_end.ogg", t = 42.5/30},
-			{s = pathub .. "ubgl_reload_glclose.ogg", t = 50/30},
+			{s = pathub .. "ubgl_reload_shellin.ogg", t = 40/30},
+			{s = pathub .. "ubgl_reload_end.ogg", t = 52.5/30},
+			{s = pathub .. "ubgl_reload_glclose.ogg", t = 57.5/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 60/30},
 		}
 	},
@@ -983,10 +983,10 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
 			{s = pathub .. "ubgl_reload_glopen.ogg", t = 5/30},
-			{s = pathub .. "ubgl_reload_shellin.ogg", t = 22/30},
-			{s = pathub .. "ubgl_reload_end.ogg", t = 25/30},
-			{s = pathub .. "ubgl_reload_glclose.ogg", t = 31/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 35/30},
+			{s = pathub .. "ubgl_reload_shellin.ogg", t = 30/30},
+			{s = pathub .. "ubgl_reload_end.ogg", t = 30/30},
+			{s = pathub .. "ubgl_reload_glclose.ogg", t = 42.5/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 47.5/30},
 		}
 	},
     ["enter_ubgl"] = {
@@ -1077,6 +1077,7 @@ local Translate_Drum = {
 local Translate_Drum_Fast = {
     ["reload"] = "reload_drum_fast",
     ["reload_empty"] = "reload_drum_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 local Translate_AR = {
     ["reload"] = "reload_ar",
@@ -1085,6 +1086,7 @@ local Translate_AR = {
 local Translate_AR_Fast = {
     ["reload"] = "reload_ar_fast",
     ["reload_empty"] = "reload_ar_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 local Translate_XMags = {
     ["reload"] = "reload_xmags",
@@ -1093,6 +1095,7 @@ local Translate_XMags = {
 local Translate_XMags_Fast = {
     ["reload"] = "reload_xmags_fast",
     ["reload_empty"] = "reload_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 local Translate_DMR = {
     ["reload"] = "reload_dmr",
@@ -1101,17 +1104,22 @@ local Translate_DMR = {
 local Translate_DMR_Fast = {
     ["reload"] = "reload_dmr_fast",
     ["reload_empty"] = "reload_dmr_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 
 --- Fast & Tac. Sprint ---
 local Translate_Fast = {
     ["reload"] = "reload_fast",
     ["reload_empty"] = "reload_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 local Translate_TacSprint = {
     ["idle_sprint"] = "super_sprint_idle",
     ["enter_sprint"] = "super_sprint_in",
     ["exit_sprint"] = "super_sprint_out",
+    ["idle_ubgl_sprint"] = "super_sprint_idle_ubgl",
+    ["enter_sprint_ubgl"] = "super_sprint_in_ubgl",
+    ["exit_sprint_ubgl"] = "super_sprint_out_ubgl",
 }
 
 SWEP.Hook_TranslateAnimation = function(wep, anim)

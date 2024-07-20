@@ -1035,10 +1035,10 @@ SWEP.Animations = {
 		EventTable = {
 			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
-			{s = pathub .. "ubgl_reload_glopen.ogg", t = 9/30},
-			{s = pathub .. "ubgl_reload_shellin.ogg", t = 36.25/30},
+			-- {s = pathub .. "ubgl_reload_glopen.ogg", t = 9/30},
+			{s = pathub .. "ubgl_reload_shellin.ogg", t = 27.5/30},
 			{s = pathub .. "ubgl_reload_end.ogg", t = 42.5/30},
-			{s = pathub .. "ubgl_reload_glclose.ogg", t = 50/30},
+			-- {s = pathub .. "ubgl_reload_glclose.ogg", t = 50/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 60/30},
 		}
 	},
@@ -1050,10 +1050,10 @@ SWEP.Animations = {
 		EventTable = {
 			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
-			{s = pathub .. "ubgl_reload_glopen.ogg", t = 5/30},
-			{s = pathub .. "ubgl_reload_shellin.ogg", t = 22/30},
+			-- {s = pathub .. "ubgl_reload_glopen.ogg", t = 5/30},
+			{s = pathub .. "ubgl_reload_shellin.ogg", t = 17.5/30},
 			{s = pathub .. "ubgl_reload_end.ogg", t = 25/30},
-			{s = pathub .. "ubgl_reload_glclose.ogg", t = 31/30},
+			-- {s = pathub .. "ubgl_reload_glclose.ogg", t = 31/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 35/30},
 		}
 	},
@@ -1147,6 +1147,7 @@ local Translate_Drum = {
 local Translate_Drum_Fast = {
     ["reload"] = "reload_drum_fast",
     ["reload_empty"] = "reload_drum_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 local Translate_SMG = {
     ["reload"] = "reload_smg",
@@ -1155,6 +1156,7 @@ local Translate_SMG = {
 local Translate_SMG_Fast = {
     ["reload"] = "reload_smg_fast",
     ["reload_empty"] = "reload_smg_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 --- 50-Round (SMG) ---
 local Translate_XMAG = {
@@ -1164,6 +1166,7 @@ local Translate_XMAG = {
 local Translate_XMAG_Fast = {
     ["reload"] = "reload_xmag_fast",
     ["reload_empty"] = "reload_xmag_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 --- 80 Drum Mags ---
 local Translate_Drum2 = {
@@ -1173,17 +1176,22 @@ local Translate_Drum2 = {
 local Translate_Drum2_Fast = {
     ["reload"] = "reload_drum2_fast",
     ["reload_empty"] = "reload_drum2_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 
 --- Fast & Tac. Sprint ---
 local Translate_Fast = {
     ["reload"] = "reload_fast",
     ["reload_empty"] = "reload_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 local Translate_TacSprint = {
     ["idle_sprint"] = "super_sprint_idle",
     ["enter_sprint"] = "super_sprint_in",
     ["exit_sprint"] = "super_sprint_out",
+    ["idle_ubgl_sprint"] = "super_sprint_idle_ubgl",
+    ["enter_sprint_ubgl"] = "super_sprint_in_ubgl",
+    ["exit_sprint_ubgl"] = "super_sprint_out_ubgl",
 }
 local Translate_Bayonet = {
     ["bash"] = "bash_bayonet",

@@ -596,11 +596,15 @@ SWEP.Animations = {
 local Translate_Fast = {
     ["reload"] = "reload_fast",
     ["reload_empty"] = "reload_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 }
 local Translate_TacSprint = {
     ["idle_sprint"] = "super_sprint_idle",
     ["enter_sprint"] = "super_sprint_in",
     ["exit_sprint"] = "super_sprint_out",
+    ["idle_ubgl_sprint"] = "super_sprint_idle_ubgl",
+    ["enter_sprint_ubgl"] = "super_sprint_in_ubgl",
+    ["exit_sprint_ubgl"] = "super_sprint_out_ubgl",
 }
 
 SWEP.Hook_TranslateAnimation = function(wep, anim)

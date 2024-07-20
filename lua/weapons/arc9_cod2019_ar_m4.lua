@@ -1041,7 +1041,6 @@ SWEP.Animations = {
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
-    ["reload_ubgl"] = "reload_ubgl",
 }
 local Translate_XMag_Fast = {
     ["reload"] = "reload_xmag_fast",
@@ -1051,7 +1050,6 @@ local Translate_XMag_Fast = {
 local Translate_XMagslrg = {
     ["reload"] = "reload_xmagslrg",
     ["reload_empty"] = "reload_xmagslrg_empty",
-    ["reload_ubgl"] = "reload_ubgl",
 }
 local Translate_XMagslrg_Fast = {
     ["reload"] = "reload_xmagslrg_fast",
@@ -1061,7 +1059,6 @@ local Translate_XMagslrg_Fast = {
 local Translate_SMG = {
     ["reload"] = "reload_smg",
     ["reload_empty"] = "reload_smg_empty",
-    ["reload_ubgl"] = "reload_ubgl",
 }
 local Translate_SMG_Fast = {
     ["reload"] = "reload_fast_smg",
