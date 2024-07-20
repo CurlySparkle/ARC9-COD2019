@@ -790,7 +790,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     end
 end
 
-SWEP.DefaultBodygroups = "000000000"
+SWEP.DefaultBodygroups = "00000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {

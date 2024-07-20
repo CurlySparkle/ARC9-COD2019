@@ -1059,7 +1059,9 @@ SWEP.Animations = {
 	},
     ["enter_ubgl"] = {
         Source = "ubgl_up",
-		Mult = 1.5,
+		Mult = 1.3,
+		MinProgress = 0.5,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
@@ -1071,7 +1073,9 @@ SWEP.Animations = {
 	},
     ["exit_ubgl"] = {
         Source = "ubgl_down",
-		Mult = 1.5,
+		Mult = 1.3,
+		MinProgress = 0.5,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },

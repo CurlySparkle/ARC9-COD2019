@@ -957,7 +957,9 @@ SWEP.Animations = {
 	},
     ["enter_ubgl"] = {
         Source = "ubgl_up",
-		Mult = 1,
+		Mult = 1.3,
+		MinProgress = 0.5,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
@@ -969,7 +971,9 @@ SWEP.Animations = {
 	},
     ["exit_ubgl"] = {
         Source = "ubgl_down",
-		Mult = 1,
+		Mult = 1.3,
+		MinProgress = 0.5,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -1438,7 +1442,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
         Category = {"cod2019_m4_grip"},
         Bone = "tag_grenade_launcher",
-        Pos = Vector(-15, -3.4, 4),
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
 		InstalledElements = {"rail_grip"},
 		ExcludeElements = {"barrel_custom2"},
