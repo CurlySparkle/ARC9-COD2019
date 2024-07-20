@@ -1069,6 +1069,7 @@ SWEP.Attachments = {
         Category = "stickers",
         Bone = "tag_cosmetic",
         Pos = Vector(-3, 0, 3),
+		ExcludeElements = {"mag_smag"},
     },
     { -- 18
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
