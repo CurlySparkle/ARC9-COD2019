@@ -1085,7 +1085,7 @@ SWEP.Animations = {
         Source = "ubgl_drop",
         IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
         EventTable = {
-            {s = path .. "wfoly_ar_akilo47_drop.ogg", t = 0/30},
+            {s = pathub .. "ubgl_drop.ogg", t = 0/30},
         },
     },
     ["idle_ubgl"] = {

@@ -735,7 +735,7 @@ SWEP.Animations = {
 		EventTable = {
 			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
-			{s = pathub .. "ubgl_reload_glopen.ogg", t = 9/30},
+			{s = pathub .. "ubgl_reload_glopen.ogg", t = 6/30},
 			{s = pathub .. "ubgl_reload_shellin.ogg", t = 36.25/30},
 			{s = pathub .. "ubgl_reload_end.ogg", t = 42.5/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 50/30},
@@ -750,7 +750,7 @@ SWEP.Animations = {
 		EventTable = {
 			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
-			{s = pathub .. "ubgl_reload_glopen.ogg", t = 5/30},
+			{s = pathub .. "ubgl_reload_glopen.ogg", t = 3/30},
 			{s = pathub .. "ubgl_reload_shellin.ogg", t = 22/30},
 			{s = pathub .. "ubgl_reload_end.ogg", t = 25/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 31/30},
@@ -793,7 +793,7 @@ SWEP.Animations = {
         Source = "ubgl_drop",
         IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
         EventTable = {
-            {s = path .. "wpfoly_mike4_drop_v2.ogg", t = 0/30},
+            {s = pathub .. "ubgl_drop.ogg", t = 0/30},
         },
     },
     ["idle_ubgl"] = {
