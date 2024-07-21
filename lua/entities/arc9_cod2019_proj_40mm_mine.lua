@@ -21,10 +21,11 @@ ENT.MinS = Vector(0, 0, 0)
 ENT.MaxS = Vector(0, 0, 0)
 ENT.NextBeepTime = 0
 
+PrecacheParticleSystem("40mm_trail")
+
 function ENT:OnInitialize()
    self:SetAngles(Angle(0, 0, -90))
-   ParticleEffectAttach("grenadetrail",PATTACH_ABSORIGIN_FOLLOW,self,0)
-   ParticleEffectAttach("smoketrail",PATTACH_ABSORIGIN_FOLLOW,self,0)
+   ParticleEffectAttach("40mm_trail",PATTACH_ABSORIGIN_FOLLOW,self,0)
    
     if SERVER then
         self:GetPhysicsObject():SetMass(50)

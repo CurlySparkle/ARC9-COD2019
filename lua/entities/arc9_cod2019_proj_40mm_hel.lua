@@ -7,28 +7,53 @@ end
 ENT.Base                     = "arc9_cod2019_proj_base"
 ENT.PrintName                = "40mm HE"
 ENT.Spawnable                = false
-
 ENT.Model                    = "models/weapons/cod2019/m32_nade.mdl"
 
 ENT.IsRocket = false // projectile has a booster and will not drop.
-
 ENT.InstantFuse = false // projectile is armed immediately after firing.
 ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
 ENT.ImpactFuse = true // projectile explodes on impact.
 
 ENT.ExplodeOnDamage = false // projectile explodes when it takes damage.
 ENT.ExplodeUnderwater = true
-ENT.SmokeTrail = true
+ENT.SmokeTrail = false
+ENT.RocketTrailParticle = "40mm_trail"  -- name of the particle effect
+ENT.RocketTrail = true -- leaves trail of a particle effct
 
 ENT.Delay = 0
 ENT.SafetyFuse = 0.05
-ENT.FlareColor = Color(0, 0, 0)
-ENT.Radius = 200
+ENT.FlareColor = Color(255, 200, 55)
+ENT.FlareSizeMin = 5
+ENT.FlareSizeMax = 10
+ENT.Radius = 256
 
-ENT.AudioLoop = ""
+DEFINE_BASECLASS(ENT.Base)
+
+PrecacheParticleSystem("40mm_trail")
+
+function ENT:Initialize()
+	self:SetModel(self.Model)
+	self:PhysicsInit(SOLID_VPHYSICS)
+	self:GetPhysicsObject():Wake()
+	self:GetPhysicsObject():AddGameFlag(FVPHYSICS_NO_PLAYER_PICKUP)
+	self:GetPhysicsObject():AddGameFlag(FVPHYSICS_NO_IMPACT_DMG)
+	self:GetPhysicsObject():AddGameFlag(FVPHYSICS_HEAVY_OBJECT)
+	self:GetPhysicsObject():EnableMotion(true)
+	self:GetPhysicsObject():EnableDrag(false)
+	self:GetPhysicsObject():SetMass(1000)
+	self:SetSolid(SOLID_VPHYSICS)
+	self:AddEFlags(EFL_NO_DAMAGE_FORCES)
+	self:AddEFlags(EFL_DONTWALKON)
+	self:AddEFlags(EFL_DONTBLOCKLOS)
+	self:AddEFlags(EFL_NO_PHYSCANNON_INTERACTION)
+	self:GetPhysicsObject():SetVelocityInstantaneous(self:GetAngles():Forward() + Vector(0, 0, 0.1))
+	self:GetPhysicsObject():SetBuoyancyRatio(0)
+
+	BaseClass.Initialize(self)
+end
 
 function ENT:Impact(data, collider)
-    if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
+    if self.SpawnTime + self.SafetyFuse > CurTime() then
         local attacker = self.Attacker or self:GetOwner()
         local ang = data.OurOldVelocity:Angle()
         local fx = EffectData()
@@ -41,9 +66,9 @@ function ENT:Impact(data, collider)
             local dmginfo = DamageInfo()
             dmginfo:SetAttacker(attacker)
             dmginfo:SetInflictor(self)
-            dmginfo:SetDamageType(DMG_CRUSH + DMG_CLUB)
-            dmginfo:SetDamage(50 * (self.NPCDamage and 0.5 or 1))
-            dmginfo:SetDamageForce(data.OurOldVelocity * 25)
+            dmginfo:SetDamageType(DMG_CLUB + DMG_DIRECT)
+            dmginfo:SetDamage(25)
+			dmgInfo:SetDamageForce(self:GetAngles():Forward() * (dmgInfo:GetDamage() * 100))
             dmginfo:SetDamagePosition(data.HitPos)
             data.HitEntity:TakeDamageInfo(dmginfo)
         end
@@ -65,7 +90,7 @@ function ENT:Impact(data, collider)
         self:Remove()
         return true
     end
-	util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
+	--util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
 end
 
 function ENT:Detonate()
@@ -79,7 +104,7 @@ function ENT:Detonate()
     dmg:SetInflictor(self)
     dmg:SetDamageForce(self:GetVelocity() * 100)
     dmg:SetDamagePosition(src)
-    dmg:SetDamage(200)
+    dmg:SetDamage(150)
     util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
 	util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 300, 32)
 
@@ -114,5 +139,8 @@ function ENT:OnRemove()
 		end
 	 end
 	end
+    if self.LoopSound then
+        self.LoopSound:Stop()
+    end
 	self:StopParticles()
 end

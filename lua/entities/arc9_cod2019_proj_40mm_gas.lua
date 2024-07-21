@@ -1,29 +1,23 @@
 AddCSLuaFile()
 
-ENT.Base                     = "arc9_cod2019_proj_base"
+if CLIENT then
+    killicon.Add( "arc9_cod2019_proj_40mm_gas", "VGUI/killicons/cod2019_nade_he", Color(251, 85, 25, 255))
+end
+
+ENT.Base                     = "arc9_cod2019_proj_40mm_hel"
 ENT.PrintName                = "40mm Gas"
 ENT.Spawnable                = false
-
 ENT.Model                    = "models/weapons/cod2019/m32_nade.mdl"
 
-ENT.IsRocket = false // projectile has a booster and will not drop.
+ENT.NoBounce = true -- projectile doesn't bounce.
 
-ENT.InstantFuse = false // projectile is armed immediately after firing.
-ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
-ENT.ImpactFuse = true // projectile explodes on impact.
-ENT.NoBounce = true // projectile doesn't bounce.
-
-ENT.ExplodeOnDamage = false // projectile explodes when it takes damage.
-ENT.ExplodeUnderwater = false
-ENT.SmokeTrail = true
-
-ENT.Delay = 0
 ENT.SafetyFuse = 0.01
-ENT.FlareColor = Color(0, 0, 0)
-ENT.AudioLoop = ""
+ENT.FlareColor = Color(0, 155, 0)
+
+DEFINE_BASECLASS(ENT.Base)
 
 function ENT:Impact(data, collider)
-    if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
+    if self.SpawnTime + self.SafetyFuse > CurTime() then
         local attacker = self.Attacker or self:GetOwner()
         local ang = data.OurOldVelocity:Angle()
         local fx = EffectData()
@@ -36,9 +30,9 @@ function ENT:Impact(data, collider)
             local dmginfo = DamageInfo()
             dmginfo:SetAttacker(attacker)
             dmginfo:SetInflictor(self)
-            dmginfo:SetDamageType(DMG_CRUSH + DMG_CLUB)
-            dmginfo:SetDamage(50 * (self.NPCDamage and 0.5 or 1))
-            dmginfo:SetDamageForce(data.OurOldVelocity * 25)
+            dmginfo:SetDamageType(DMG_CLUB + DMG_DIRECT)
+            dmginfo:SetDamage(25)
+			dmgInfo:SetDamageForce(self:GetAngles():Forward() * (dmgInfo:GetDamage() * 100))
             dmginfo:SetDamagePosition(data.HitPos)
             data.HitEntity:TakeDamageInfo(dmginfo)
         end
@@ -56,9 +50,11 @@ function ENT:Impact(data, collider)
 
             SafeRemoveEntityDelayed(prop, 3)
         end
+
         self:Remove()
         return true
     end
+	self:StopParticles()
 end
 
 function ENT:Detonate()
@@ -88,11 +84,14 @@ function ENT:DoDetonate()
 		 cloud.NoIgnite = self
 		 --self:Remove()
       end
-    --util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
 	self:SetVelocity(Vector(0,0,0))
     timer.Simple(18, function()
         if IsValid(self) then
             self:Remove()
         end
     end)
+end
+
+function ENT:OnRemove()
+	self:StopParticles()
 end

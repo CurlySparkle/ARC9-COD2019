@@ -8,27 +8,16 @@ function ENT:SetupDataTables()
     self:NetworkVar("Float", 0, "LifeTime")
 end
 
-ENT.Base                     = "arc9_cod2019_proj_base"
+ENT.Base                     = "arc9_cod2019_proj_40mm_hel"
 ENT.PrintName                = "40mm HE"
 ENT.Spawnable                = false
 ENT.Model                    = "models/weapons/cod2019/m32_nade.mdl"
 
 ENT.ExplosionRadius = 256
-
-ENT.IsRocket = false // projectile has a booster and will not drop.
-ENT.InstantFuse = false // projectile is armed immediately after firing.
-ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
-ENT.ImpactFuse = false // projectile explodes on impact.
+ENT.ImpactFuse = false -- projectile explodes on impact.
 ENT.Sticky = true -- projectile sticks on impact
 ENT.StickyFuse = false -- projectile becomes timed after sticking.
 
-ENT.ExplodeOnDamage = false // projectile explodes when it takes damage.
-ENT.ExplodeUnderwater = true
-ENT.SmokeTrail = true
-ENT.RocketTrailParticle = "Rocket_Smoke"  -- name of the particle effect
-ENT.RocketTrail = false -- leaves trail of a particle effct
-
-ENT.Delay = 0
 ENT.FlareColor = Color(0, 0, 0)
 
 DEFINE_BASECLASS(ENT.Base)

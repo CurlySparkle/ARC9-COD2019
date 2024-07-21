@@ -1,29 +1,17 @@
 AddCSLuaFile()
 
 if CLIENT then
-    killicon.Add( "arc9_cod2019_proj_40mm_hel", "VGUI/killicons/cod2019_nade_he", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_40mm_energy", "VGUI/killicons/cod2019_nade_he", Color(251, 85, 25, 255))
 end
 
-ENT.Base                     = "arc9_cod2019_proj_base"
+ENT.Base                     = "arc9_cod2019_proj_40mm_hel"
 ENT.PrintName                = "40mm Energy"
 ENT.Spawnable                = false
-
 ENT.Model                    = "models/weapons/cod2019/m32_nade.mdl"
 
-ENT.IsRocket = false // projectile has a booster and will not drop.
-ENT.InstantFuse = false // projectile is armed immediately after firing.
-ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
-ENT.ImpactFuse = true // projectile explodes on impact.
-
-ENT.ExplodeOnDamage = false // projectile explodes when it takes damage.
-ENT.ExplodeUnderwater = true
-ENT.SmokeTrail = true
-
-ENT.Delay = 0
-ENT.SafetyFuse = 0.02
-ENT.FlareColor = Color(230, 113, 30)
+ENT.SafetyFuse = 0.01
+ENT.FlareColor = Color(55, 100, 255)
 ENT.Radius = 200
-ENT.AudioLoop = ""
 
 local BLUR_DURATION = 3 -- Duration of the blur effect in seconds
 

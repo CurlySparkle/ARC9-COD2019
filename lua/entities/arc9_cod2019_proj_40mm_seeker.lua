@@ -1,13 +1,12 @@
 AddCSLuaFile()
 
 if CLIENT then
-    killicon.Add( "arc9_cod2019_proj_40mm_hel", "VGUI/killicons/cod2019_nade_he", Color(251, 85, 25, 255))
+    killicon.Add( "arc9_cod2019_proj_40mm_seeker", "VGUI/killicons/cod2019_nade_he", Color(251, 85, 25, 255))
 end
 
-ENT.Base                     = "arc9_cod2019_proj_base"
+ENT.Base                     = "arc9_cod2019_proj_40mm_hel"
 ENT.PrintName                = "40mm Seeker Six"
 ENT.Spawnable                = false
-
 ENT.Model                    = "models/weapons/cod2019/m32_nade.mdl"
 
 ENT.IsRocket = true // projectile has a booster and will not drop.
@@ -15,17 +14,10 @@ ENT.InstantFuse = false // projectile is armed immediately after firing.
 ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
 ENT.ImpactFuse = true // projectile explodes on impact.
 
-ENT.ExplodeOnDamage = false // projectile explodes when it takes damage.
-ENT.ExplodeUnderwater = true
-ENT.SmokeTrail = false
-
-ENT.Delay = 0
 ENT.SafetyFuse = 0.05
 ENT.FlareColor = Color(230, 113, 30)
 ENT.Radius = 128
 ENT.AudioLoop = "weapons/cod2019/pila/move_gromeo_proj_flame.wav"
-ENT.FlareSizeMin = 10
-ENT.FlareSizeMax = 50
 
 --- Stuff
 ENT.SeekerAngle = math.cos(math.rad(55))
@@ -55,53 +47,7 @@ function ENT:OnInitialize()
 
         self.LockOnPoint = tr.HitPos
     end
-	ParticleEffectAttach("grenadetrail",PATTACH_ABSORIGIN_FOLLOW,self,0)
-    ParticleEffectAttach("smoketrail",PATTACH_ABSORIGIN_FOLLOW,self,0)
     self:EmitSound("^weapons/cod2019/shared/jokr_split.ogg",75, 100, 1, CHAN_AUTO)
-end
-
-function ENT:Impact(data, collider)
-    local hitPos = data.HitPos -- Get the position where the grenade hit
-    local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
-    if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
-        local attacker = self.Attacker or self:GetOwner()
-        local ang = data.OurOldVelocity:Angle()
-        local fx = EffectData()
-        fx:SetOrigin(data.HitPos)
-        fx:SetNormal(-ang:Forward())
-        fx:SetAngles(-ang)
-        util.Effect("ManhackSparks", fx)
-
-        if IsValid(data.HitEntity) then
-            local dmginfo = DamageInfo()
-            dmginfo:SetAttacker(attacker)
-            dmginfo:SetInflictor(self)
-            dmginfo:SetDamageType(DMG_CRUSH + DMG_CLUB)
-            dmginfo:SetDamage(24)
-            dmginfo:SetDamageForce(data.OurOldVelocity * 25)
-            dmginfo:SetDamagePosition(data.HitPos)
-            data.HitEntity:TakeDamageInfo(dmginfo)
-        end
-
-        self:EmitSound("weapons/rpg/shotdown.wav", 80)
-
-        for i = 1, 1 do
-            local prop = ents.Create("prop_physics")
-            prop:SetPos(self:GetPos())
-            prop:SetAngles(self:GetAngles())
-            prop:SetModel("models/weapons/cod2019/m32_nade.mdl")
-            prop:Spawn()
-            prop:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.5 + VectorRand() * 75)
-            prop:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-
-            SafeRemoveEntityDelayed(prop, 3)
-        end
-
-        self:Remove()
-        return true
-    end
-	util.Decal("FadingScorch", hitPos + hitNormal, hitPos - hitNormal)
-	util.Decal("Dark", hitPos + hitNormal, hitPos - hitNormal)
 end
 
 function ENT:OnThink()
@@ -185,6 +131,8 @@ function ENT:Detonate()
             e:Fire("Explode")
         end
     end
+	
+	self:SetNWBool("HasDetonated",true)
 
     self:EmitSound("^weapons/cod2019/shared/rocket_expl_body_02.ogg", 100, 100, 1, CHAN_WEAPON)
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)

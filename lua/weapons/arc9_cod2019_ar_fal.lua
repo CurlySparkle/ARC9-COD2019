@@ -1004,6 +1004,9 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	if wep:HasElement("laser_mount") and wep:HasElement("body_none") then
 		model:SetBodygroup(6,0)
 	end
+	if wep:HasElement("body_custom") then
+		model:SetBodygroup(3,0)
+	end
 end
 
 SWEP.Attachments = {

@@ -118,7 +118,7 @@ function ENT:Initialize()
     if self.RocketTrail then
 	   ParticleEffectAttach(self.RocketTrailParticle, PATTACH_ABSORIGIN_FOLLOW, self, 0)
 	   if self:GetNWBool("HasDetonated") then
-       StopParticles()
+       self:StopParticles()
        end
     end
 	
@@ -318,6 +318,10 @@ function ENT:Think()
     if self.ExplodeUnderwater and self:WaterLevel() > 0 then
         self:PreDetonate()
     end
+	
+	if (self:WaterLevel() > 0) then
+		self:StopParticles()
+	end
 
     local gunship = {
 	["npc_combinegunship"] = true,
