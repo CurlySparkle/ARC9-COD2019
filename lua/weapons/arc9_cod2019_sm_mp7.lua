@@ -22,8 +22,6 @@ SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_46x30"),
     [ ARC9:GetPhrase("mw19_weight") ] = string.format(ARC9:GetPhrase("mw19_weight_val"), 2.1, 2.1 * 2.20),
     [ ARC9:GetPhrase("mw19_weight_projectile") ] = string.format(ARC9:GetPhrase("mw19_weight_projectile_val"), 31),
-    -- [ ARC9:GetPhrase("mw19_muzzle_energy") ] = "2,411 ft/s",
-    -- [ ARC9:GetPhrase("mw19_muzzle_velocity") ] = "543 joules"
 }
 
 SWEP.Credits = {

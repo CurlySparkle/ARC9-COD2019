@@ -112,14 +112,6 @@ L["mw19_country_japan"] = "Japão"
 -- L["mw19_weight_projectile"] = "Projectile Weight5"
 -- L["mw19_weight_projectile_val"] = "%s g"
 
-/////////// Muzzle Energy -- UO
--- L["mw19_muzzle_energy"] = "Muzzle Energy6"
--- L["mw19_muzzle_energy_val"] = "%s joules"
-
-/////////// Muzzle Velocity -- UO
--- L["mw19_muzzle_velocity"] = "Muzzle Velocity7"
--- L["mw19_muzzle_velocity_val"] = "%s m/s | %s ft/s"
-
 /////////// Authors -- UO
 -- L["mw19_assets"] = "Assets2"
 -- L["mw19_author"] = "Author1"

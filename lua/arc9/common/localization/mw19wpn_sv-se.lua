@@ -112,14 +112,6 @@ L["mw19_weight_val"] = "%s kg / ~%s lb"
 L["mw19_weight_projectile"] = "Projektilvikt5"
 L["mw19_weight_projectile_val"] = "%s g"
 
-/////////// Muzzle Energy -- UO
-L["mw19_muzzle_energy"] = "Mynningsenergi6"
-L["mw19_muzzle_energy_val"] = "%s joules"
-
-/////////// Muzzle Velocity -- UO
-L["mw19_muzzle_velocity"] = "Mynningshastighet7"
-L["mw19_muzzle_velocity_val"] = "%s m/s | %s ft/s"
-
 /////////// Authors -- UO
 L["mw19_assets"] = "Tillgångar2"
 L["mw19_author"] = "Skapare1"
