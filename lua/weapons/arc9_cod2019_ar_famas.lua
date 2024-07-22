@@ -987,6 +987,7 @@ local Translate_Valorise_Fast = {
     ["fire"] = "fire_valorise",
     ["reload"] = "reload_fast_valorise",
     ["reload_empty"] = "reload_fast_empty_valorise",
+    ["reload_ubgl"] = "reload_fast_ubgl",
 	["ready"] = "ready_valorise",
 	["holster"] = "holster_valorise",
 }
@@ -1230,7 +1231,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
         Category = "cod2019_pistolgrip",
         Bone = "tag_pistolgrip_attach",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-3.5, 0, -5),
     },
     { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
