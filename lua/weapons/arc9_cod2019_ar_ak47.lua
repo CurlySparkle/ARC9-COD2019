@@ -382,11 +382,7 @@ SWEP.TriggerUpSound = "weapons/cod2019/ak47/weap_akilo47_disconnector_plr_01.ogg
 
 SWEP.Animations = {
     ["enter_sights"] = {
-        Source = "ads_in",
-        IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-    },
-    ["exit_sights"] = {
-        Source = "ads_out",
+        Source = "idle",
         IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["fire"] = {
@@ -485,7 +481,8 @@ SWEP.Animations = {
     },
     ["reload_drum"] = {
         Source = "reload_drum",
-		MinProgress = 0.8,
+		MinProgress = 0.9,
+		PeekProgress = 0.875,
 		RefillProgress = 0.625,
 		FireASAP = true,
         IKTimeLine = {
@@ -507,6 +504,7 @@ SWEP.Animations = {
     ["reload_drum_empty"] = {
         Source = "reload_drum_empty",
 		MinProgress = 0.9,
+		PeekProgress = 0.875,
 		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 1.15,
@@ -531,8 +529,8 @@ SWEP.Animations = {
     },
     ["reload_drum_fast"] = {
         Source = "reload_drum_fast",
-		MinProgress = 0.9,
-		PeekProgress = 0.875,
+		MinProgress = 0.95,
+		PeekProgress = 0.9,
 		RefillProgress = 0.625,
 		FireASAP = true,
 		DropMagAt = 0.93,
@@ -544,7 +542,7 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_raise.ogg", t = 0.033},
-			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magout_01.ogg", t = 0.27},
+			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magout_01.ogg", t = 0.4},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magin_v2_01.ogg", t = 0.82},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magin_v2_02.ogg", t = 1.05},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_end.ogg", t = 1.25},
@@ -552,8 +550,8 @@ SWEP.Animations = {
     },
     ["reload_drum_fast_empty"] = {
         Source = "reload_drum_fast_empty",
-		MinProgress = 0.9,
-		PeekProgress = 0.865,
+		MinProgress = 0.975,
+		PeekProgress = 0.925,
 		RefillProgress = 0.75,
 		FireASAP = true,
 		DropMagAt = 0.93,
@@ -761,16 +759,18 @@ SWEP.Animations = {
     },
     ["reload_drum2"] = {
         Source = "reload_mw22_drum",
-		MinProgress = 0.8,
-		RefillProgress = 0.625,
+		MinProgress = 0.9,
+		PeekProgress = 0.875,
+		RefillProgress = 0.775,
 		FireASAP = true,
 		MagSwapTime = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
+            { t = 0.025, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
             { t = 0.7, lhik = 0, rhik = 0},
-            { t = 0.77, lhik = 0, rhik = 0},
-            { t = 0.98, lhik = 1, rhik = 1},
+            { t = 0.8, lhik = 0, rhik = 0},
+            { t = 0.9, lhik = 1, rhik = 1},
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_grabmag.ogg", t = 14/30},
@@ -785,16 +785,18 @@ SWEP.Animations = {
     },
     ["reload_drum2_empty"] = {
         Source = "reload_mw22_drum_empty",
-		MinProgress = 0.9,
-		RefillProgress = 0.75,
+		MinProgress = 0.95,
+		PeekProgress = 0.9,
+		RefillProgress = 0.825,
 		FireASAP = true,
 		DropMagAt = 1.25,
 		MagSwapTime = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
-            { t = 0.2, lhik = 0, rhik = 0},
-            { t = 0.5, lhik = 0, rhik = 0},
-            { t = 0.76, lhik = 0, rhik = 0},
+            { t = 0.025, lhik = 1, rhik = 0},
+            { t = 0.15, lhik = 0, rhik = 0},
+            { t = 0.6, lhik = 0, rhik = 0},
+            { t = 0.7, lhik = 1, rhik = 0},
             { t = 0.95, lhik = 1, rhik = 1},
         },
         EventTable = {
@@ -813,17 +815,17 @@ SWEP.Animations = {
     },
     ["reload_drum2_fast"] = {
         Source = "reload_mw22_drum_fast",
-		MinProgress = 0.9,
+		MinProgress = 0.925,
 		PeekProgress = 0.875,
-		RefillProgress = 0.625,
+		RefillProgress = 0.725,
 		FireASAP = true,
 		DropMagAt = 1.25,
 		MagSwapTime = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
-            { t = 0.25, lhik = 0, rhik = 0},
-            { t = 0.7, lhik = 0, rhik = 0},
-            { t = 0.95, lhik = 1, rhik = 1},
+            { t = 0.2, lhik = 0, rhik = 0},
+            { t = 0.725, lhik = 0, rhik = 0},
+            { t = 0.87, lhik = 1, rhik = 1},
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_raise.ogg", t = 8/30},
@@ -838,17 +840,18 @@ SWEP.Animations = {
     },
     ["reload_drum2_fast_empty"] = {
         Source = "reload_mw22_drum_fast_empty",
-		MinProgress = 0.9,
-		PeekProgress = 0.865,
-		RefillProgress = 0.75,
+		MinProgress = 0.95,
+		PeekProgress = 0.9,
+		RefillProgress = 0.875,
 		FireASAP = true,
 		DropMagAt = 1.25,
 		MagSwapTime = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
-            { t = 0.2, lhik = 0, rhik = 0},
-            { t = 0.7, lhik = 0, rhik = 0},
-            { t = 0.97, lhik = 1, rhik = 1},
+            { t = 0.025, lhik = 1, rhik = 0},
+            { t = 0.15, lhik = 0, rhik = 0},
+            { t = 0.675, lhik = 0, rhik = 0},
+            { t = 0.775, lhik = 1, rhik = 1},
         },
         EventTable = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_raise.ogg", t = 5/30},
@@ -1021,6 +1024,10 @@ SWEP.Animations = {
         },
     },
 -- UBGL Animations
+	["enter_sights_ubgl"] = {
+		Source = "ubgl_idle",
+		IKTimeLine = { { t = 0,  lhik = 0, rhik = 0} },
+	},
     ["fire_ubgl"] = {
         Source = "ubgl_fire",
         IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },

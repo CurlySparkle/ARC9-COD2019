@@ -768,6 +768,139 @@ SWEP.Animations = {
 			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_end.ogg", t = 65/30},
         },
     },
+    ["reload_glaunch"] = {
+        Source = "reload_gl",
+		MinProgress = 0.9,
+		PeekProgress = 0.815,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_rotate.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_scharlie_reload_magout.ogg", t = 0.63},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_01.ogg", t = 1.13},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_02.ogg", t = 1.43},
+			{s = path .. "wfoly_ar_scharlie_reload_end.ogg", t = 1.66},
+        },
+    },
+    ["reload_empty_glaunch"] = {
+        Source = "reload_empty_gl",
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 0.95,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.15, lhik = 1, rhik = 0 },
+            { t = 0.3, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0.066},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0.36},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 1.46},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 1.76},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_bolt_release.ogg", t = 2.16},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 2.23},
+        },
+    },
+    ["reload_fast_glaunch"] = {
+        Source = "reload_fast_gl",
+		MinProgress = 0.85,
+		PeekProgress = 0.815,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 0.5,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_fast_shake.ogg", t = 0.066},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magout.ogg", t = 0.36},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_01.ogg", t = 0.76},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_02.ogg", t = 1.03},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_end.ogg", t = 1.3},
+        },
+    },
+    ["reload_fast_empty_glaunch"] = {
+        Source = "reload_fast_empty_gl",
+		MinProgress = 0.9,
+		PeekProgress = 0.825,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		MagSwapTime = 0.5,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_rotate.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_magout.ogg", t = 0.16},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_magin_v2_01.ogg", t = 0.8},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_magin_v2_02.ogg", t = 1.03},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_bolt_release.ogg", t = 1.4},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_end.ogg", t = 1.66},
+        },
+    },
+    ["reload_xmags_glaunch"] = {
+        Source = "reload_xmags_gl",
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magout.ogg", t = 19/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_01.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_02.ogg", t = 44/30},
+			{s = path .. "wfoly_ar_scharlie_reload_end.ogg", t = 49/30},
+        },
+    },
+    ["reload_xmags_empty_glaunch"] = {
+        Source = "reload_xmags_empty_gl",
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 0.95,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.15, lhik = 1, rhik = 0 },
+            { t = 0.3, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0.066},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0.36},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 1.46},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 1.76},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_bolt_release.ogg", t = 2.16},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 2.23},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -952,6 +1085,10 @@ SWEP.Animations = {
         },
     },
 -- UBGL Animations
+	["enter_sights_ubgl"] = {
+		Source = "ubgl_idle",
+		IKTimeLine = { { t = 0,  lhik = 0, rhik = 0} },
+	},
     ["fire_ubgl"] = {
         Source = "ubgl_fire",
         IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
@@ -1113,6 +1250,30 @@ local Translate_TacSprint = {
     ["exit_sprint_ubgl"] = "super_sprint_out_ubgl",
 }
 
+--- GL Reloads ---
+local Translate_GL = {
+    ["reload"] = "reload_glaunch",
+    ["reload_empty"] = "reload_empty_glaunch",
+}
+local Translate_GL_Fast = {
+    ["reload"] = "reload_fast_glaunch",
+    ["reload_empty"] = "reload_fast_empty_glaunch",
+    ["reload_ubgl"] = "reload_fast_ubgl",
+}
+local Translate_XMags_GL = {
+    ["reload"] = "reload_xmags_glaunch",
+    ["reload_empty"] = "reload_empty_glaunch",
+}
+local Translate_XMags_GL_Fast = {
+    ["reload"] = "reload_fast_glaunch",
+    ["reload_empty"] = "reload_fast_empty_glaunch",
+    ["reload_ubgl"] = "reload_fast_ubgl",
+}
+local Translate_AR_GL = {
+    ["reload"] = "reload_ar",
+    ["reload_empty"] = "reload_empty_glaunch",
+}
+
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
@@ -1122,6 +1283,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local armag = wep:HasElement("mag_armag")
     local drummag = wep:HasElement("mag_drum")
     local dmr = wep:HasElement("mag_dmr")
+    local gl = wep:HasElement("m203")
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
@@ -1129,25 +1291,39 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 
     if speedload then
         if drummag then
-            if Translate_Drum_Fast[anim] then
-                return Translate_Drum_Fast[anim]
-            end
-        elseif armag then
-            if Translate_AR_Fast[anim] then
-                return Translate_AR_Fast[anim]
-            end
+			if gl then
+				if Translate_Xmags_GL_Fast[anim] then
+					return Translate_Xmags_GL_Fast[anim]
+				end
+			else
+				if Translate_Drum_Fast[anim] then
+					return Translate_Drum_Fast[anim]
+				end
+			end
         elseif dmr then
             if Translate_DMR_Fast[anim] then
                 return Translate_DMR_Fast[anim]
             end
         elseif xmags then
-			if Translate_XMags_Fast[anim] then
-				return Translate_XMags_Fast[anim]
-            end
+			if gl then
+				if Translate_Xmags_GL_Fast[anim] then
+					return Translate_Xmags_GL_Fast[anim]
+				end
+			else
+				if Translate_XMags_Fast[anim] then
+					return Translate_XMags_Fast[anim]
+				end
+			end
         else
-            if Translate_Fast[anim] then
-                return Translate_Fast[anim]
-            end
+			if gl then
+				if Translate_GL_Fast[anim] then
+					return Translate_GL_Fast[anim]
+				end
+			else
+				if Translate_Fast[anim] then
+					return Translate_Fast[anim]
+				end
+			end
         end
     else
 	    if drummag then
@@ -1156,20 +1332,32 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             end
         end
 	    if armag then
-            if Translate_AR[anim] then
-                return Translate_AR[anim]
-            end
+			if gl then
+				if Translate_AR_GL[anim] then
+					return Translate_AR_GL[anim]
+				end
+			else
+				if Translate_AR[anim] then
+					return Translate_AR[anim]
+				end
+			end
         end
 	    if dmr then
             if Translate_DMR[anim] then
                 return Translate_DMR[anim]
-        elseif xmags then
+			end
+		end
+        if xmags then
             if Translate_XMags[anim] then
                 return Translate_XMags[anim]
             end
-        end
-    end
-end
+		end
+        if gl then
+            if Translate_GL[anim] then
+                return Translate_GL[anim]
+            end
+		end
+	end
 	
     --wep.MWHybridSwitching = nil
     if anim == "switchsights" then

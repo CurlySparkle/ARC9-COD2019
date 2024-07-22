@@ -919,6 +919,10 @@ SWEP.Animations = {
         },
     },
 -- UBGL Animations
+	["enter_sights_ubgl"] = {
+		Source = "ubgl_idle",
+		IKTimeLine = { { t = 0,  lhik = 0, rhik = 0} },
+	},
     ["fire_ubgl"] = {
         Source = "ubgl_fire",
         IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
