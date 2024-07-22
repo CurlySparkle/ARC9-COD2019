@@ -644,7 +644,7 @@ SWEP.Animations = {
 		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.35, lhik = 0, rhik = 0 },
             { t = 0.65, lhik = 0, rhik = 0 },
             { t = 0.85, lhik = 1, rhik = 1 },
         },
@@ -666,7 +666,7 @@ SWEP.Animations = {
 		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.35, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
             { t = 0.8, lhik = 1, rhik = 1 },
         },
@@ -982,13 +982,13 @@ SWEP.Animations = {
 	},
     ["enter_ubgl"] = {
         Source = "ubgl_up",
-		Mult = 1.3,
-		MinProgress = 0.5,
+		Mult = 1.4,
+		MinProgress = 0.3,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
-            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
         },
 		EventTable = {
 			{s = path .. "wpn_iw8_scar17s_to_gl.ogg", t = 0/30},
@@ -996,8 +996,8 @@ SWEP.Animations = {
 	},
     ["exit_ubgl"] = {
         Source = "ubgl_down",
-		Mult = 1.3,
-		MinProgress = 0.5,
+		Mult = 1.4,
+		MinProgress = 0.3,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 0 },

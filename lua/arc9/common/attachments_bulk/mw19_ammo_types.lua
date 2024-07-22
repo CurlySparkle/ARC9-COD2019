@@ -785,6 +785,9 @@ else -- Warzone Stats
 end
 
 ATT.MuzzleParticle = "muzzleflash_slug"
+ATT.TracerEffect = "arc9_tracer"
+ATT.TracerSize = 15
+ATT.TracerNum = 1
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_slug")
 
