@@ -873,6 +873,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 4/30},
 			{s = pathub .. "ubgl_reload_glopen.ogg", t = 11/30},
+            {s = pathub .. "ubgl_reload_shellin_01.ogg", t = 38/30},
 			{s = pathub .. "ubgl_reload_shellin.ogg", t = 45.25/30},
 			{s = pathub .. "ubgl_reload_end.ogg", t = 55.5/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 60/30},
@@ -889,9 +890,9 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
 			{s = pathub .. "ubgl_reload_glopen.ogg", t = 9/30},
 			{s = pathub .. "ubgl_reload_shellin.ogg", t = 30/30},
-			{s = pathub .. "ubgl_reload_end.ogg", t = 34/30},
-			{s = pathub .. "ubgl_reload_glclose.ogg", t = 41/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 44/30},
+			{s = pathub .. "ubgl_reload_end.ogg", t = 36/30},
+			{s = pathub .. "ubgl_reload_glclose.ogg", t = 43/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 46/30},
 		}
 	},
     ["enter_ubgl"] = {

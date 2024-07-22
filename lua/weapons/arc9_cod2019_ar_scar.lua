@@ -963,8 +963,8 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		EventTable = {
 			{s = path .. "wpn_iw8_scar17s_gl_open.ogg", t = 4/30},
-			{s = path .. "wpn_iw8_scar17s_gl_shell_in.ogg", t = 27/30},
-			{s = path .. "wpn_iw8_scar17s_gl_close.ogg", t = 58.5/30},
+			{s = path .. "wpn_iw8_scar17s_gl_shell_in.ogg", t = 26/30},
+			{s = path .. "wpn_iw8_scar17s_gl_close.ogg", t = 59.5/30},
             {s = path .. "wpn_iw8_scar17s_gl_end.ogg", t = 60.5/30},
 		}
 	},
@@ -975,9 +975,9 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		EventTable = {
 			{s = path .. "wpn_iw8_scar17s_gl_open.ogg", t = 0/30},
-			{s = path .. "wpn_iw8_scar17s_gl_shell_in.ogg", t = 15/30},
+			{s = path .. "wpn_iw8_scar17s_gl_shell_in.ogg", t = 14/30},
             {s = path .. "wpn_iw8_scar17s_gl_end.ogg", t = 42/30},
-			{s = path .. "wpn_iw8_scar17s_gl_close.ogg", t = 45/30},
+			{s = path .. "wpn_iw8_scar17s_gl_close.ogg", t = 46/30},
 		}
 	},
     ["enter_ubgl"] = {
