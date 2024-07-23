@@ -30,7 +30,7 @@ function ENT:OnInitialize()
 end
 
 function ENT:Impact(data, collider)
-    if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
+    if self.SpawnTime + self.SafetyFuse > CurTime() then
         local attacker = self.Attacker or self:GetOwner()
         local ang = data.OurOldVelocity:Angle()
         local fx = EffectData()
@@ -44,7 +44,7 @@ function ENT:Impact(data, collider)
             dmginfo:SetAttacker(attacker)
             dmginfo:SetInflictor(self)
             dmginfo:SetDamageType(DMG_CRUSH + DMG_CLUB)
-            dmginfo:SetDamage(250 * (self.NPCDamage and 0.5 or 1))
+            dmginfo:SetDamage(100)
             dmginfo:SetDamageForce(data.OurOldVelocity * 25)
             dmginfo:SetDamagePosition(data.HitPos)
             data.HitEntity:TakeDamageInfo(dmginfo)
@@ -64,14 +64,12 @@ function ENT:Impact(data, collider)
             SafeRemoveEntityDelayed(prop, 3)
 			end)
         end
-
         self:Remove()
         return true
     end
-	util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
 end
 
-function ENT:Detonate()
+function ENT:Detonate(data)
     local attacker = self.Attacker or self:GetOwner()
     local dir = self:GetVelocity():GetNormalized()
     local src = self:GetPos() - dir * 64
@@ -88,7 +86,7 @@ function ENT:Detonate()
 
     self:FireBullets({
         Attacker = attacker,
-        Damage = 500,
+        Damage = 256,
         Tracer = 0,
         Src = src,
         Dir = dir,
@@ -105,23 +103,21 @@ function ENT:Detonate()
     })
 
     local fx = EffectData()
-    fx:SetOrigin(self:GetPos())
-
+	fx:SetOrigin(data.HitPos)
+	fx:SetStart(data.HitPos - data.HitNormal)
+	fx:SetRadius(256)
+    fx:SetEntity(self)
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
     else
-        ParticleEffect("grenade_final", self:GetPos(), Angle(-90, 0, 0))
+        util.Effect("cod2019_grenade_explosion", fx)
+		self:EmitSound("Cod2019.Frag.Explode")
     end
-
-    self:EmitSound("Cod2019.Frag.Explode")
-	util.ScreenShake(self:GetPos(), 3500, 1111, 1, self.Radius * 4)
-	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
 	
 	for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
 		if (e:GetClass() == "npc_strider") then
 			e:Fire("Explode")
 		end 
 	end
-	
     self:Remove()
 end

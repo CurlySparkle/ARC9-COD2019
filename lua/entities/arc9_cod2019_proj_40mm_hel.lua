@@ -93,7 +93,7 @@ function ENT:Impact(data, collider)
 	--util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
 end
 
-function ENT:Detonate()
+function ENT:Detonate(data)
     local attacker = self.Attacker or self:GetOwner()
     local dir = self:GetForward()
     local src = self:GetPos() - dir * 64
@@ -109,8 +109,8 @@ function ENT:Detonate()
 	util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 300, 32)
 	
     local fx = EffectData()
-    fx:SetOrigin(self:GetPos())
-	fx:SetStart(self:GetPos())
+	fx:SetOrigin(data.HitPos)
+	fx:SetStart(data.HitPos - data.HitNormal)
 	fx:SetRadius(256)
     fx:SetEntity(self)
     if self:WaterLevel() > 0 then

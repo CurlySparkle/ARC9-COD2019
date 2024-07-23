@@ -1183,7 +1183,7 @@ SWEP.Attachments = {
     { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
 		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
-        Category = "cod2019_tac_rail_alt",
+        Category = "cod2019_tac_rail_cylinder",
         Bone = "tag_laser_attach",
         Pos = Vector(-0.34, -1.34, 0),
     },

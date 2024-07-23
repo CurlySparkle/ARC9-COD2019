@@ -303,6 +303,7 @@ SWEP.DropMagazineAng = Angle(0, -90, -90)
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/ram7/"
+local pathub = "weapons/cod2019/shared/ubgl/"
 
 SWEP.ShootSound = "COD2019.RAM7.Fire"
 SWEP.ShootSoundIndoor = "COD2019.RAM7.Fire"
@@ -779,6 +780,122 @@ SWEP.Animations = {
 			{s = "switchsights/wpfoly_hybrid_toggle_off.ogg", t = 5/30},
         },
     },
+	-- UBGL Animations
+	["enter_sights_ubgl"] = {
+		Source = "ubgl_idle",
+		IKTimeLine = { { t = 0,  lhik = 0, rhik = 0} },
+	},
+    ["fire_ubgl"] = {
+        Source = "ubgl_fire",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+    },
+    ["reload_ubgl"] = {
+        Source = "ubgl_reload",
+		MinProgress = 0.95,
+		FireASAP = true,
+		RefillProgress = 0.75,
+		EventTable = {
+			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
+			{s = pathub .. "ubgl_reload_glopen.ogg", t = 6/30},
+            {s = pathub .. "ubgl_reload_shellin_01.ogg", t = 30/30},
+			{s = pathub .. "ubgl_reload_shellin.ogg", t = 37.25/30},
+			{s = pathub .. "ubgl_reload_end.ogg", t = 44.5/30},
+			{s = pathub .. "ubgl_reload_glclose.ogg", t = 51/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 61/30},
+		}
+	},
+    ["reload_fast_ubgl"] = {
+        Source = "ubgl_reload_fast",
+		MinProgress = 0.95,
+		FireASAP = true,
+		RefillProgress = 0.75,
+		EventTable = {
+			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
+			{s = pathub .. "ubgl_reload_glopen.ogg", t = 3/30},
+			{s = pathub .. "ubgl_reload_shellin.ogg", t = 20/30},
+			{s = pathub .. "ubgl_reload_end.ogg", t = 25/30},
+			{s = pathub .. "ubgl_reload_glclose.ogg", t = 32/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 36/30},
+		}
+	},
+    ["enter_ubgl"] = {
+        Source = "ubgl_up",
+		Mult = 1.3,
+		MinProgress = 0.3,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+        },
+		EventTable = {
+			{s = pathub .. "ubgl_to_grenade.ogg", t = 0/30},
+		}
+	},
+    ["exit_ubgl"] = {
+        Source = "ubgl_down",
+		Mult = 1.3,
+		MinProgress = 0.3,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 0, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 0 },
+        },
+        EventTable = {
+			{s = pathub .. "ubgl_from_grenade.ogg", t = 0/30},
+        },
+    },
+    ["draw_ubgl"] = {
+        Source = "ubgl_raise",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+    },
+    ["holster_ubgl"] = {
+        Source = "ubgl_drop",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+        EventTable = {
+            {s = pathub .. "ubgl_drop.ogg", t = 0/30},
+        },
+    },
+    ["idle_ubgl"] = {
+        Source = "ubgl_idle",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+    },
+    ["idle_ubgl_sprint"] = {
+        Source = "ubgl_sprint",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+    },
+    ["exit_sprint_ubgl"] = {
+        Source = "ubgl_sprint_out",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		Time = 1,
+    },
+    ["enter_sprint_ubgl"] = {
+        Source = "ubgl_sprint_in",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		Time = 1,
+    },
+    ["super_sprint_idle_ubgl"] = {
+        Source = "ubgl_super_sprint",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+    },
+    ["super_sprint_in_ubgl"] = {
+        Source = "ubgl_super_sprint_in",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		Time = 1,
+    },
+    ["super_sprint_out_ubgl"] = {
+        Source = "ubgl_super_sprint_in",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		Reverse = true,
+		Time = 1,
+    },
+    ["bash_ubgl"] = {
+        Source = {"ubgl_melee", "ubgl_melee2", "ubgl_melee3"},
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -1093,6 +1210,17 @@ SWEP.Attachments = {
         Pos = Vector(16.5, 0, -3.1),
         Ang = Angle(0, 180, 0),
 		InstalledElements = {"cod2019_m203_alt"},
+		Hidden = true,
+    },
+    { -- 21
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
+        Category = {"cod2019_ram7_grip"},
+        Bone = "tag_grenade_launcher",
+        Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+		InstalledElements = {"rail_grip"},
+		MergeSlots = {6}, -- Grips
 		Hidden = true,
     },
 }

@@ -141,7 +141,7 @@ function ENT:OnTakeDamage(dmg)
     if self.ExplodeOnDamage then
         if IsValid(self:GetOwner()) and IsValid(dmg:GetAttacker()) then self:SetOwner(dmg:GetAttacker())
         else self.Attacker = dmg:GetAttacker() or self.Attacker end
-        self:PreDetonate()
+        self:PreDetonate(data)
     elseif self.DefuseOnDamage and dmg:GetDamageType() != DMG_BLAST then
         self:EmitSound("physics/plastic/plastic_box_break" .. math.random(1, 2) .. ".wav", 70, math.Rand(95, 105))
         local fx = EffectData()
@@ -191,7 +191,7 @@ function ENT:PhysicsCollide(data, collider, physobj)
         local impulse = (data.OurOldVelocity - 2 * data.OurOldVelocity:Dot(data.HitNormal) * data.HitNormal)*0.25
         collider:ApplyForceCenter(impulse)
         else
-        self:Detonate()
+        self:PreDetonate(data)
         end
     end
 	
@@ -204,7 +204,7 @@ function ENT:PhysicsCollide(data, collider, physobj)
         end
 
         if self.Delay == 0 or self.ExplodeOnImpact then
-            self:PreDetonate()
+            self:PreDetonate(data)
         end
     elseif self.ImpactDamage > 0 and IsValid(data.HitEntity) and (engine.ActiveGamemode() != "terrortown" or !data.HitEntity:IsPlayer()) then
         local dmg = DamageInfo()
@@ -256,7 +256,6 @@ function ENT:PhysicsCollide(data, collider, physobj)
     if !self.BounceSounds then return end
 
     local s = table.Random(self.BounceSounds)
-
     self:EmitSound(s)
 end
 
@@ -299,7 +298,7 @@ function ENT:DoSmokeTrail()
     end
 end
 
-function ENT:Think()
+function ENT:Think(data)
     if !IsValid(self) or self:GetNoDraw() then return end
 
     if !self.SpawnTime then
@@ -312,17 +311,17 @@ function ENT:Think()
     end
 
     if self.Armed and self.ArmTime + self.Delay < CurTime() then
-        self:PreDetonate()
+        self:PreDetonate(data)
     end
-
+	
     if self.ExplodeUnderwater and self:WaterLevel() > 0 then
-        self:PreDetonate()
+        self:PreDetonate(data)
     end
 	
 	if (self:WaterLevel() > 0) then
 		self:StopParticles()
 	end
-
+	
     local gunship = {
 	["npc_combinegunship"] = true,
 	["npc_helicopter"] = true,
@@ -340,12 +339,8 @@ function ENT:Think()
             })
         if IsValid(tr.Entity) and gunship[tr.Entity:GetClass()] then
            self:SetPos(tr.HitPos)
-           self:Detonate()
+           self:PreDetonate(data)
         end
-		-- if (tr.HitSky) then
-		-- timer.Simple(0, function() self:Remove() end)
-		-- return
-		-- end
     end
 
     self:DoSmokeTrail()
@@ -371,7 +366,7 @@ function ENT:RemoteDetonate()
     self.Armed = true
 end
 
-function ENT:PreDetonate()
+function ENT:PreDetonate(data)
     if CLIENT then return end
 
     if !self.Detonated then
@@ -379,12 +374,12 @@ function ENT:PreDetonate()
 
         if !IsValid(self.Attacker) and !IsValid(self:GetOwner()) then self.Attacker = game.GetWorld() end
 
-        self:Detonate()
+        self:Detonate(data)
 		self:SetNWBool("HasDetonated",true)
   end
 end
 
-function ENT:Detonate()
+function ENT:Detonate(data)
     -- fill this in :)
 end
 
