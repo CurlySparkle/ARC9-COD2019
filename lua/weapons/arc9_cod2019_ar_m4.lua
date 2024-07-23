@@ -365,20 +365,6 @@ SWEP.MalfunctionNeverLastShoot = true
 SWEP.MalfunctionMeanShotsToFail = 300*2
 SWEP.MalfunctionMeanShotsToFailMultHot = -0.1*2
 
--- UBGL
--- SWEP.UBGLIntegralReload = true -- The UBGL uses reload animations that are baked into the gun.
--- SWEP.DoFireAnimationUBGL = true
--- SWEP.NoShellEjectUBGL = true
--- SWEP.MuzzleEffectQCAUBGL = 5
-
-SWEP.ShootSoundUBGL = "COD2019.M203.Fire"
-SWEP.ShootSoundIndoorUBGL =  "COD2019.M203.Fire"
-SWEP.DistantShootSoundUBGL = "Distant_Launcher.Outside"
-SWEP.DistantShootSoundIndoorUBGL = "Distant_Launcher.Inside"
-
-SWEP.SprintPosUBGL = Vector(0, 0, 0)
-SWEP.SprintAngUBGL = Angle(0, 0, 0)
-
 SWEP.Animations = {
 	["enter_sights"] = {
 		Source = "idle",
@@ -864,7 +850,7 @@ SWEP.Animations = {
     },
     ["jam"] = {
         Source = "jam",
-        MinProgress = 0.5,
+        MinProgress = 0.4,
         FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1},
@@ -878,7 +864,7 @@ SWEP.Animations = {
     },
     ["fix"] = {
         Source = "unjam",
-		EjectAt = 0.4,
+		EjectAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1},
             { t = 0.2, lhik = 0, rhik = 1},
@@ -886,9 +872,10 @@ SWEP.Animations = {
             { t = 0.65, lhik = 1, rhik = 1},
         },
         EventTable = {
-			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 0/30},
-			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 7/30},
-			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 20/30},
+			{s = path .. "wpfoly_mike4_reload_empty_lift_v2.ogg", t = 5/30},
+            {s = path .. "wpfoly_mike4_jam_bolt.ogg", t = 10/30},
+			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 25/30},
+			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 34/30},
         },
     },
     ["enter_bipod"] = {
@@ -1203,7 +1190,7 @@ SWEP.AttachmentElements = {
     },
     ["sight_back_none"] = {
         Bodygroups = {
-            {1,3},
+            {1,2},
         },
     },
     ["sight_front_none"] = {
@@ -1252,16 +1239,17 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	model:SetBodygroup(1,2)
 	model:SetBodygroup(7,2)
 	elseif wep:HasElement("optic_scope") then
-	model:SetBodygroup(1,3)
+	model:SetBodygroup(1,2)
 	model:SetBodygroup(7,2)
 	end
 	
     if wep:HasElement("barrel_custom") and wep:HasElement("carry_handle") then 
 		model:SetBodygroup(7,2)
+		model:SetBodygroup(1,2)
 	elseif wep:HasElement("barrel_custom") then
 	    model:SetBodygroup(7,2)
     elseif wep:HasElement("carry_handle") then
-		model:SetBodygroup(1,3)
+		model:SetBodygroup(1,2)
 		model:SetBodygroup(7,0)
 	end
 	

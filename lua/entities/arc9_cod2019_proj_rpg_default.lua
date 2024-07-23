@@ -103,8 +103,8 @@ function ENT:Detonate(data)
     })
 
     local fx = EffectData()
-	fx:SetOrigin(data.HitPos)
-	fx:SetStart(data.HitPos - data.HitNormal)
+	fx:SetOrigin(self:GetPos())
+	fx:SetStart(self:GetPos() + self:GetUp())
 	fx:SetRadius(256)
     fx:SetEntity(self)
     if self:WaterLevel() > 0 then
@@ -119,5 +119,5 @@ function ENT:Detonate(data)
 			e:Fire("Explode")
 		end 
 	end
-    self:Remove()
+    timer.Simple(0, function() self:Remove() end)
 end

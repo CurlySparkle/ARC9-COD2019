@@ -9,19 +9,20 @@ ENT.PrintName                = "40mm HE"
 ENT.Spawnable                = false
 ENT.Model                    = "models/weapons/cod2019/m32_nade.mdl"
 
-ENT.IsRocket = false // projectile has a booster and will not drop.
-ENT.InstantFuse = false // projectile is armed immediately after firing.
-ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
-ENT.ImpactFuse = true // projectile explodes on impact.
+ENT.IsRocket = false -- projectile has a booster and will not drop.
+ENT.InstantFuse = false -- projectile is armed immediately after firing.
+ENT.RemoteFuse = false -- allow this projectile to be triggered by remote detonator.
+ENT.ImpactFuse = true -- projectile explodes on impact.
 
-ENT.ExplodeOnDamage = false // projectile explodes when it takes damage.
+ENT.ExplodeOnDamage = false -- projectile explodes when it takes damage.
 ENT.ExplodeUnderwater = true
 ENT.SmokeTrail = false
 ENT.RocketTrailParticle = "40mm_trail"  -- name of the particle effect
 ENT.RocketTrail = true -- leaves trail of a particle effct
+ENT.ImpactScorch = true -- leaves a scorch on hit
 
 ENT.Delay = 0
-ENT.SafetyFuse = 0.05
+ENT.SafetyFuse = 0.07
 ENT.FlareColor = Color(255, 200, 55)
 ENT.FlareSizeMin = 5
 ENT.FlareSizeMax = 10
@@ -76,6 +77,7 @@ function ENT:Impact(data, collider)
         self:EmitSound("weapons/rpg/shotdown.wav", 80)
 
         for i = 1, 1 do
+		    timer.Simple(0, function()
             local prop = ents.Create("prop_physics")
             prop:SetPos(self:GetPos())
             prop:SetAngles(self:GetAngles())
@@ -83,14 +85,16 @@ function ENT:Impact(data, collider)
             prop:Spawn()
             prop:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.5 + VectorRand() * 75)
             prop:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-
             SafeRemoveEntityDelayed(prop, 3)
+			end)
         end
 
         self:Remove()
         return true
     end
-	--util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
+	if self.ImpactScorch then
+	util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
+	end
 end
 
 function ENT:Detonate(data)

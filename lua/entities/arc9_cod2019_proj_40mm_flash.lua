@@ -73,14 +73,7 @@ function ENT:Detonate()
 
         self:EmitSound("weapons/underwater_explode3.wav", 100)
     else
-        ParticleEffect("smoke_plume", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("grenade_smoke", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("grenade_smoke_b", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("grenade_shockwave", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("grenade_shockwave_b", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("he_flares", self:GetPos(), Angle(0, 0, 0), nil)
-        ParticleEffect("explosion_lensflare", self:GetPos(), Angle(0, 0, 0), nil)
-
+        ParticleEffect("Generic_explo_flash", self:GetPos(), Angle(0, 0, 0), nil)
         self:EmitSound("COD2019.Flash.Explode")
     end
 	

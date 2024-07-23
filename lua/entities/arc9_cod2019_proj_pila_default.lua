@@ -90,7 +90,7 @@ function ENT:Impact(data, collider)
         self:Remove()
         return true
     end
-    util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
+    --util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
 end
 
 function ENT:OnThink()
@@ -191,17 +191,18 @@ function ENT:Detonate()
     })
 
     local fx = EffectData()
-    fx:SetOrigin(self:GetPos())
-
+	fx:SetOrigin(self:GetPos())
+	fx:SetStart(self:GetPos() + self:GetUp())
+	fx:SetRadius(275)
+    fx:SetEntity(self)
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
     else
-        ParticleEffect("grenade_final", self:GetPos(), Angle(-90, 0, 0))
+        util.Effect("cod2019_grenade_explosion", fx)
+		self:EmitSound("Cod2019.Frag.Explode")
     end
 
-    self:EmitSound("Cod2019.Frag.Explode")
-	util.ScreenShake(self:GetPos(), 3500, 1111, 1, self.Radius * 4)
-    util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
+	--util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
 
     for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
         if (e:GetClass() == "npc_strider") then
@@ -209,5 +210,5 @@ function ENT:Detonate()
         end
     end
 
-    self:Remove()
+    timer.Simple(0, function() self:Remove() end)
 end
