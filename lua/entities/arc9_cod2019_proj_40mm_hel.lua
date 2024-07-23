@@ -109,8 +109,8 @@ function ENT:Detonate(data)
 	util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 300, 32)
 	
     local fx = EffectData()
-	fx:SetOrigin(data.HitPos)
-	fx:SetStart(data.HitPos - data.HitNormal)
+	fx:SetOrigin(self:GetPos())
+	fx:SetStart(self:GetPos())
 	fx:SetRadius(256)
     fx:SetEntity(self)
     if self:WaterLevel() > 0 then
