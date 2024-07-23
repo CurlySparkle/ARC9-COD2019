@@ -420,7 +420,7 @@ SWEP.Animations = {
 		PeekProgress = 0.9,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -833,6 +833,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_Smag_Fast[anim] then
                 return Translate_Smag_Fast[anim]
             end
+		else
             if Translate_Fast[anim] then
                 return Translate_Fast[anim]
             end
