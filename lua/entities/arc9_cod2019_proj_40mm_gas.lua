@@ -10,12 +10,11 @@ ENT.Spawnable                = false
 ENT.Model                    = "models/weapons/cod2019/m32_nade.mdl"
 
 ENT.NoBounce = true -- projectile doesn't bounce.
-ENT.RocketTrail = false -- leaves trail of a particle effct
-ENT.SmokeTrail = true -- leaves trail of smoke
+ENT.RocketTrail = true -- leaves trail of a particle effct
+ENT.SmokeTrail = false -- leaves trail of smoke
 
 ENT.SafetyFuse = 0.01
 ENT.FlareColor = Color(0, 155, 0)
-ENT.SmokeColor = Color(255, 255, 255)
 
 DEFINE_BASECLASS(ENT.Base)
 
@@ -42,7 +41,6 @@ function ENT:Detonate()
     self:EmitSound("weapons/rpg/shotdown.wav", 80)
     else
     self:DoDetonate()
-	ParticleEffectAttach("AC_nade_gas_ejection", PATTACH_ABSORIGIN_FOLLOW, self, 0)
    end
 end
 
@@ -62,48 +60,14 @@ function ENT:DoDetonate()
 		 cloud.NoIgnite = self
 		 --self:Remove()
       end
+	self:StopParticles()
+	timer.Simple(0.1, function()
+	ParticleEffectAttach("AC_nade_gas_ejection", PATTACH_ABSORIGIN_FOLLOW, self, 0)
+	end)
 	self:SetVelocity(Vector(0,0,0))
-    timer.Simple(18, function() self:Remove() end)
+    SafeRemoveEntityDelayed(self, 18)
 end
 
 function ENT:OnRemove()
 	self:StopParticles()
-end
-
-local smokeimages = {"particle/particle_smokegrenade"}
-local function GetSmokeImage()
-    return smokeimages[math.random(#smokeimages)]
-end
-
-function ENT:DoSmokeTrail()
-    if CLIENT and self.SmokeTrail then
-        local emitter = ParticleEmitter(self:GetPos())
-
-        local smoke = emitter:Add(GetSmokeImage(), self:GetPos())
-
-        smoke:SetStartAlpha(50)
-        smoke:SetEndAlpha(0)
-
-        smoke:SetStartSize(5)
-        smoke:SetEndSize(math.Rand(25, 50))
-
-        smoke:SetRoll(math.Rand(-180, 180))
-        smoke:SetRollDelta(math.Rand(-1, 1))
-
-        smoke:SetPos(self:GetPos())
-        smoke:SetVelocity(-self:GetAngles():Forward() * 400 + (VectorRand() * 10))
-
-        smoke:SetColor(self.SmokeColor)
-        smoke:SetLighting(true)
-
-        smoke:SetDieTime(math.Rand(0.75, 1.25))
-
-        smoke:SetGravity(Vector(0, 0, 0))
-
-        emitter:Finish()
-		
-       if self:GetNWBool("HasDetonated") then
-          self.SmokeTrail = false
-       end
-    end
 end

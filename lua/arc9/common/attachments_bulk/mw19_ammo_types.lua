@@ -1119,3 +1119,73 @@ ATT.ShootPosOffsetUBGL = Vector(0, 0, 0)
 ATT.ShootPosOffsetSightsUBGL = Vector(0, 0, 0)
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_slug")
+
+/////////////////////////// -- cod2019_ammo_ubgl_buck
+ATT = {}
+
+ATT.PrintName = "Buck Nade"
+ATT.CompactName = "Buck"
+ATT.Description = "Changes the nade type to a flat-top grenade firing pellets like shotgun spread."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_buck.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootSoundUBGL = "COD2019.Model680.Fire"
+ATT.ShootSoundIndoorUBGL = "COD2019.Model680.Fire"
+
+ATT.ShootEntUBGL = false
+ATT.Category = {"cod2019_ammo_ubgl"}
+
+ATT.DamageMaxUBGL = 47
+ATT.DamageMinUBGL = 16
+ATT.NumUBGL = 8
+ATT.RangeMinUBGL = 15 / ARC9.HUToM
+ATT.RangeMaxUBGL = 20 / ARC9.HUToM
+ATT.PenetrationUBGL = 0 -- Units of wood that can be penetrated by this gun.
+ATT.ImpactForceUBGL = 8.5
+ATT.SpreadMultUBGL = 2.85
+ATT.SpreadMultSightsUBGL = 1.85
+ATT.RecoilMultUBGL = 3
+ATT.RecoilKickMultUBGL = 3
+ATT.NoAimAssistUBGL = true
+
+ATT.CustomCrosshairUBGL = true
+ATT.CustomCrosshairMaterialUBGL = Material("hud/arc9_cod2019/shotguncrosshair")
+ATT.CustomCrosshairSizeUBGL = 30
+ATT.CustomCrosshairSingleUBGL = false
+ATT.CrosshairHideDotUBGL = false
+
+if !warzonestats then -- Regular Stats
+	ATT.BodyDamageMultsUBGL = {
+		[HITGROUP_HEAD] = 2,
+		[HITGROUP_CHEST] = 1.75,
+		[HITGROUP_STOMACH] = 1.5,
+		[HITGROUP_LEFTARM] = 1,
+		[HITGROUP_RIGHTARM] = 1,
+		[HITGROUP_LEFTLEG] = 1,
+		[HITGROUP_RIGHTLEG] = 1,
+	}
+else -- Warzone Stats
+	ATT.BodyDamageMultsUBGL = {
+		[HITGROUP_HEAD] = 1.2,
+		[HITGROUP_CHEST] = 0.9,
+		[HITGROUP_STOMACH] = 0.75,
+		[HITGROUP_LEFTARM] = 0.5,
+		[HITGROUP_RIGHTARM] = 0.5,
+		[HITGROUP_LEFTLEG] = 0.5,
+		[HITGROUP_RIGHTLEG] = 0.5,
+	}
+end
+
+ATT.MuzzleParticleUBGL  = "muzzleflash_slug"
+ATT.TracerEffectUBGL = "arc9_tracer"
+ATT.TracerSizeUBGL = 15
+ATT.TracerNumUBGL = 1
+
+ATT.ShootPosOffsetUBGL = Vector(0, 0, 0)
+ATT.ShootPosOffsetSightsUBGL = Vector(0, 0, 0)
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_buck")
