@@ -42,14 +42,12 @@ function EFFECT:Init(data)
     else
         ParticleEffect("grenade_final", tr.HitPos, (tr.HitNormal * -1):Angle() + Angle(270, 0, 0))
     end
-
-    util.Decal("Scorch", tr.HitPos + tr.HitNormal, tr.HitPos - tr.HitNormal, data:GetEntity())
+    --util.Decal("Scorch", tr.HitPos + tr.HitNormal, tr.HitPos - tr.HitNormal, data:GetEntity())
     
     local shakeRadius = data:GetRadius() * data:GetRadius()
     local startDist = EyePos():DistToSqr(tr.HitPos)
     startDist = startDist - shakeRadius
     local shakeDelta = 1 - math.min(startDist / shakeRadius, 1)
-
     util.ScreenShake(tr.HitPos, 10 * shakeDelta, 40, 1, data:GetRadius())
 
 	local ed = EffectData()

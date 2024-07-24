@@ -16,7 +16,7 @@ ENT.ExplodeOnDamage = true
 ENT.ExplodeUnderwater = true
 
 ENT.Delay = 0
-ENT.SafetyFuse = 0.02
+ENT.SafetyFuse = 0.05
 
 ENT.AudioLoop = "weapons/cod2019/rpg/move_rpapa7_proj_flame_cls.ogg"
 

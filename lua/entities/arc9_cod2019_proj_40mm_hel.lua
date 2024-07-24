@@ -115,7 +115,7 @@ function ENT:Detonate(data)
     local fx = EffectData()
 	fx:SetOrigin(self:GetPos())
 	fx:SetStart(self:GetPos())
-	fx:SetRadius(256)
+	fx:SetRadius(self.Radius)
     fx:SetEntity(self)
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)

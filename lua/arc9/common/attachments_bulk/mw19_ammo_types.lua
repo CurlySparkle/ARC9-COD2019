@@ -1095,29 +1095,31 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 ATT.Free = true
 
-ATT.ShootSound = "COD2019.Model680.Fire"
-ATT.ShootSoundIndoor = "COD2019.Model680.Fire"
+ATT.ShootSoundUBGL = "COD2019.Model680.Fire"
+ATT.ShootSoundIndoorUBGL = "COD2019.Model680.Fire"
 
 ATT.ShootEntUBGL = false
 ATT.Category = {"cod2019_ammo_ubgl"}
 
-ATT.DamageMax = 47
-ATT.DamageMin = 16
-ATT.Num = 1
-ATT.RangeMin = 15 / ARC9.HUToM
-ATT.RangeMax = 20 / ARC9.HUToM
-ATT.Penetration = 5 -- Units of wood that can be penetrated by this gun.
-ATT.ImpactForce = 8.5
-ATT.SpreadMult = 0.85
-ATT.SpreadMultSights = 0.25
-ATT.NoAimAssist = true
+ATT.DamageMaxUBGL = 47
+ATT.DamageMinUBGL = 16
+ATT.NumUBGL = 1
+ATT.RangeMinUBGL = 15 / ARC9.HUToM
+ATT.RangeMaxUBGL = 20 / ARC9.HUToM
+ATT.PenetrationUBGL = 5 -- Units of wood that can be penetrated by this gun.
+ATT.ImpactForceUBGL = 8.5
+ATT.SpreadMultUBGL = 0.85
+ATT.SpreadMultSightsUBGL = 0.25
+ATT.NoAimAssistUBGL = true
 
-ATT.CustomCrosshair = false
-ATT.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
-ATT.CustomCrosshairSize = 30
+ATT.CustomCrosshairUBGL = true
+ATT.CustomCrosshairMaterialUBGL = Material("hud/arc9_cod2019/shotguncrosshair")
+ATT.CustomCrosshairSizeUBGL = 20
+ATT.CustomCrosshairSingleUBGL = false
+ATT.CrosshairHideDotUBGL = false
 
 if !warzonestats then -- Regular Stats
-	ATT.BodyDamageMults = {
+	ATT.BodyDamageMultsUBGL = {
 		[HITGROUP_HEAD] = 2,
 		[HITGROUP_CHEST] = 1.75,
 		[HITGROUP_STOMACH] = 1.5,
@@ -1127,7 +1129,7 @@ if !warzonestats then -- Regular Stats
 		[HITGROUP_RIGHTLEG] = 1,
 	}
 else -- Warzone Stats
-	ATT.BodyDamageMults = {
+	ATT.BodyDamageMultsUBGL = {
 		[HITGROUP_HEAD] = 1.2,
 		[HITGROUP_CHEST] = 0.9,
 		[HITGROUP_STOMACH] = 0.75,
@@ -1138,6 +1140,13 @@ else -- Warzone Stats
 	}
 end
 
-ATT.MuzzleParticle = "muzzleflash_slug"
+ATT.MuzzleParticleUBGL  = "muzzleflash_slug"
+--ATT.TracerEffectUBGL = "cod2019_tracer_slow"
+ATT.TracerEffectUBGL = "arc9_tracer"
+ATT.TracerSizeUBGL = 15
+ATT.TracerNumUBGL = 1
+
+ATT.ShootPosOffsetUBGL = Vector(0, 0, 0)
+ATT.ShootPosOffsetSightsUBGL = Vector(0, 0, 0)
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_slug")
