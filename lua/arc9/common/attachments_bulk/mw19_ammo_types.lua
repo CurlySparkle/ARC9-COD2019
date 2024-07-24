@@ -1051,37 +1051,6 @@ ATT.Category = {"cod2019_ammo_ubgl"}
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_energy")
 
-/////////////////////////// -- cod2019_ammo_ubgl_seeker
-ATT = {}
-
-ATT.PrintName = "Seeker Nade"
-ATT.CompactName = "Seeker"
-ATT.Description = [[Changes the nade type to a Seeker type mini rocket that can lock into enemies while aiming.
-The rocket must travel a certain distance to arm itself, or else it won't explode. The unexploded rocket can still deal damage.
-
-(Based and Inspired by the Seeker Six from Killing Floor.)]]
-ATT.SortOrder = 1
-
-ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_seeker.png", "mips smooth")
-ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.AutoStats = true
-ATT.Free = true
-
-ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_seeker"
-ATT.Category = {"cod2019_ammo_ubgl"}
-
--- ATT.Firemodes = {
-    -- {
-        -- Mode = 1,
-        -- PrintName = ARC9:GetPhrase("mw19_firemode_lockon") .. " / " .. ARC9:GetPhrase("mw19_firemode_unguided"),
-        -- LockAttack = true
-    -- },
--- }
-
-ATT.LockAttack = true
-
-ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_seeker")
-
 /////////////////////////// -- cod2019_ammo_ubgl_slug
 ATT = {}
 

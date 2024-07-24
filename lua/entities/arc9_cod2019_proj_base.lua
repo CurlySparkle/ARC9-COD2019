@@ -118,7 +118,7 @@ function ENT:Initialize()
     if self.RocketTrail then
 	   ParticleEffectAttach(self.RocketTrailParticle, PATTACH_ABSORIGIN_FOLLOW, self, 0)
 	   if self:GetNWBool("HasDetonated") then
-       self:StopParticles()
+       self.RocketTrail = false
        end
     end
 	
@@ -195,10 +195,12 @@ function ENT:PhysicsCollide(data, collider, physobj)
         end
     end
 	
-    if self.ImpactFuse and !self.Armed then
-        self.ArmTime = CurTime()
-        self.Armed = true
-		
+    if self.ImpactFuse then
+        if !self.Armed then
+            self.ArmTime = CurTime()
+            self.Armed = true
+        end
+
         if self:Impact(data, collider) then
             return
         end
@@ -250,6 +252,7 @@ function ENT:PhysicsCollide(data, collider, physobj)
        self:SetPos(self:GetPos())
 	   self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.1)
 	  end)
+	  self:SetNWBool("HasDetonated",true)
     end
 
     if data.DeltaTime < 0.1 then return end
@@ -322,11 +325,7 @@ function ENT:Think(data)
 		self:StopParticles()
 	end
 	
-    local gunship = {
-	["npc_combinegunship"] = true,
-	["npc_helicopter"] = true,
-	["npc_combinedropship"] = true
-	}
+    local gunship = {["npc_combinegunship"] = true,["npc_combinedropship"] = true}
 
     if SERVER and self.GunshipWorkaround and (self.GunshipCheck or 0 < CurTime()) then
             self.GunshipCheck = CurTime() + 0.33
@@ -401,7 +400,7 @@ function ENT:Draw()
    if self.Flare then
     if self.FlareColor then
         render.SetMaterial(mat)
-        render.DrawSprite(self:GetPos() + (self:GetAngles():Forward() * -27), math.Rand(self.FlareSizeMin, self.FlareSizeMax), math.Rand(self.FlareSizeMin, self.FlareSizeMax), self.FlareColor)
+        render.DrawSprite(self:GetPos() + (self:GetAngles():Forward() * -20), math.Rand(self.FlareSizeMin, self.FlareSizeMax), math.Rand(self.FlareSizeMin, self.FlareSizeMax), self.FlareColor)
     end
 	 if self:GetNWBool("HasDetonated") then
      self.Flare = false

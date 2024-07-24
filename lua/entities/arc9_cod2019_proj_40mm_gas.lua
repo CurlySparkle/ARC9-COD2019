@@ -10,51 +10,29 @@ ENT.Spawnable                = false
 ENT.Model                    = "models/weapons/cod2019/m32_nade.mdl"
 
 ENT.NoBounce = true -- projectile doesn't bounce.
+ENT.RocketTrail = false -- leaves trail of a particle effct
+ENT.SmokeTrail = true -- leaves trail of smoke
 
 ENT.SafetyFuse = 0.01
 ENT.FlareColor = Color(0, 155, 0)
+ENT.SmokeColor = Color(255, 255, 255)
 
 DEFINE_BASECLASS(ENT.Base)
 
 function ENT:Impact(data, collider)
-    if self.SpawnTime + self.SafetyFuse > CurTime() then
-        local attacker = self.Attacker or self:GetOwner()
-        local ang = data.OurOldVelocity:Angle()
-        local fx = EffectData()
-        fx:SetOrigin(data.HitPos)
-        fx:SetNormal(-ang:Forward())
-        fx:SetAngles(-ang)
-        util.Effect("ManhackSparks", fx)
+   local attacker = self.Attacker or self:GetOwner()
+   local ang = data.OurOldVelocity:Angle()
 
-        if IsValid(data.HitEntity) then
-            local dmginfo = DamageInfo()
-            dmginfo:SetAttacker(attacker)
-            dmginfo:SetInflictor(self)
-            dmginfo:SetDamageType(DMG_CLUB + DMG_DIRECT)
-            dmginfo:SetDamage(25)
-			dmgInfo:SetDamageForce(self:GetAngles():Forward() * (dmgInfo:GetDamage() * 100))
-            dmginfo:SetDamagePosition(data.HitPos)
-            data.HitEntity:TakeDamageInfo(dmginfo)
-        end
-
-        self:EmitSound("weapons/rpg/shotdown.wav", 80)
-
-        for i = 1, 1 do
-            local prop = ents.Create("prop_physics")
-            prop:SetPos(self:GetPos())
-            prop:SetAngles(self:GetAngles())
-            prop:SetModel("models/weapons/cod2019/m32_nade.mdl")
-            prop:Spawn()
-            prop:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.5 + VectorRand() * 75)
-            prop:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-
-            SafeRemoveEntityDelayed(prop, 3)
-        end
-
-        self:Remove()
-        return true
-    end
-	self:StopParticles()
+    if IsValid(data.HitEntity) then
+      local dmginfo = DamageInfo()
+      dmginfo:SetAttacker(attacker)
+      dmginfo:SetInflictor(self)
+      dmginfo:SetDamageType(DMG_CLUB + DMG_DIRECT)
+      dmginfo:SetDamage(100)
+      dmginfo:SetDamageForce(data.OurOldVelocity * 55)
+      dmginfo:SetDamagePosition(data.HitPos)
+      data.HitEntity:TakeDamageInfo(dmginfo)
+   end
 end
 
 function ENT:Detonate()
@@ -85,13 +63,47 @@ function ENT:DoDetonate()
 		 --self:Remove()
       end
 	self:SetVelocity(Vector(0,0,0))
-    timer.Simple(18, function()
-        if IsValid(self) then
-            self:Remove()
-        end
-    end)
+    timer.Simple(18, function() self:Remove() end)
 end
 
 function ENT:OnRemove()
 	self:StopParticles()
+end
+
+local smokeimages = {"particle/particle_smokegrenade"}
+local function GetSmokeImage()
+    return smokeimages[math.random(#smokeimages)]
+end
+
+function ENT:DoSmokeTrail()
+    if CLIENT and self.SmokeTrail then
+        local emitter = ParticleEmitter(self:GetPos())
+
+        local smoke = emitter:Add(GetSmokeImage(), self:GetPos())
+
+        smoke:SetStartAlpha(50)
+        smoke:SetEndAlpha(0)
+
+        smoke:SetStartSize(5)
+        smoke:SetEndSize(math.Rand(25, 50))
+
+        smoke:SetRoll(math.Rand(-180, 180))
+        smoke:SetRollDelta(math.Rand(-1, 1))
+
+        smoke:SetPos(self:GetPos())
+        smoke:SetVelocity(-self:GetAngles():Forward() * 400 + (VectorRand() * 10))
+
+        smoke:SetColor(self.SmokeColor)
+        smoke:SetLighting(true)
+
+        smoke:SetDieTime(math.Rand(0.75, 1.25))
+
+        smoke:SetGravity(Vector(0, 0, 0))
+
+        emitter:Finish()
+		
+       if self:GetNWBool("HasDetonated") then
+          self.SmokeTrail = false
+       end
+    end
 end

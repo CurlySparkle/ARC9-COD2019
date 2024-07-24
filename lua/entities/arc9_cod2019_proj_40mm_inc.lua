@@ -9,6 +9,16 @@ ENT.PrintName                = "40mm Fire"
 ENT.Spawnable                = false
 ENT.Model                    = "models/weapons/cod2019/m32_nade.mdl"
 
+ENT.InstantFuse = false -- projectile is armed immediately after firing.
+ENT.RemoteFuse = false -- allow this projectile to be triggered by remote detonator.
+ENT.ImpactFuse = false -- projectile explodes on impact.
+ENT.BounceWall = true -- projectile doesn't detonate until it hits the ground
+ENT.NoBounce = true -- projectile doesn't bounce.
+
+ENT.ExplodeOnDamage = false -- projectile explodes when it takes damage.
+ENT.ExplodeUnderwater = false
+ENT.ImpactScorch = false -- leaves a scorch on hit
+
 ENT.SafetyFuse = 0.01
 ENT.FuseTime = 10
 

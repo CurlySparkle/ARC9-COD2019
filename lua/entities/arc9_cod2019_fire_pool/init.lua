@@ -37,8 +37,10 @@ function ENT:Think()
             e:TakeDamageInfo(dmgInfo)
 			e:Ignite(IGNITE_LENGTH,14)
         end
-        if e:Health() == 0 then
+        if (e:IsPlayer() || e:IsNPC() || e:IsNextBot()) then
+		   if e:Health() == 0 then
            e:SetColor(Color(25, 25, 25))
+		   end
         end
     end
 
