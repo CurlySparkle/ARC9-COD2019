@@ -280,7 +280,7 @@ hook.Add("EntityTakeDamage", "mw19_riotshield_protection", function(target, dmgi
             -- Optional: Create impact effect or sound
             local effectData = EffectData()
             effectData:SetOrigin(dmginfo:GetDamagePosition())
-            util.Effect("cball_bounce", effectData)
+            util.Effect("GlassImpact", effectData)
             target:EmitSound("COD2019.Shield.Hit")
             timer.Simple(0, function() target:SetBloodColor(oldBlood) end)
             return true

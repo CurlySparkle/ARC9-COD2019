@@ -7,7 +7,7 @@ ENT.ExplosionRadius = 256
 
 local function parentEntity(data, ent, boneId)
 	local HitAng = data.HitNormal:Angle()
-	local HitPos = data.HitPos + HitAng:Forward() * -3 + HitAng:Up() * -1.5
+	local HitPos = data.HitPos + HitAng:Forward() * 0 + HitAng:Up() * 0
 
 
 	if (boneId != nil) then
@@ -40,8 +40,7 @@ function ENT:Initialize()
     self.isPinned = false
 	self:SetAngles(Angle(0, 0, -70))
     local phys = self:GetPhysicsObject()
-    phys:SetMass(15)
-    phys:ApplyTorqueCenter( VectorRand(-15,15) )
+    phys:SetMass(1)
 	ParticleEffectAttach("grenadetrail",PATTACH_ABSORIGIN_FOLLOW,self,0)
 end 
 
@@ -83,6 +82,7 @@ function ENT:Think()
 end
 
 function ENT:Explode()
+    local pos = self:GetPos() + self:GetUp() * 5
     local dmgInfo = DamageInfo()
     dmgInfo:SetAttacker(self:GetOwner())
     dmgInfo:SetDamage(150)
@@ -101,7 +101,14 @@ function ENT:Explode()
         util.Effect("cod2019_grenade_explosion", fx)
 		self:EmitSound("Cod2019.Frag.Explode")
     end
-	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
+	
+    local spos = pos
+    local trs = util.TraceLine({
+          start = spos + Vector(0, 0, 64),
+          endpos = spos + Vector(0, 0, -32),
+          filter = self
+          })
+    util.Decal("Scorch", trs.HitPos + trs.HitNormal, trs.HitPos - trs.HitNormal)
     self:Remove()
 end
 
@@ -109,22 +116,34 @@ function ENT:OnRemove()
     self:StopParticles()
 end
 
-function ENT:PhysicsCollide(colData, collider) 
+function ENT:PhysicsCollide(data, collider) 
     if !self.isPinned then
-        local ent = colData.HitEntity
+        local ent = data.HitEntity
         if self:CanStickToEntity(ent) then
 		    timer.Simple(0, function()
             self.isPinned = true
-            self:SetPos(colData.HitPos)
+            self:SetPos(data.HitPos)
             self:SetSolid(SOLID_NONE)
             self:SetMoveType(MOVETYPE_NONE)
             self:SetParent(ent)
+		   	
+            local dmginfo = DamageInfo()
+            dmginfo:SetDamageType(DMG_GENERIC)
+            dmginfo:SetDamage(1)
+            dmginfo:SetAttacker(self:GetOwner())
+            dmginfo:SetInflictor(self)
+            dmginfo:SetDamageForce(data.OurOldVelocity * 0.5)
+            ent:TakeDamageInfo(dmginfo)
+			sound.Play("weapons/cod2019/throwables/semtex/stick_success.ogg", data.HitPos + data.HitNormal * 5)
 			end)
         elseif ent:IsWorld() then
 		    timer.Simple(0, function()
             self.isPinned = true
-            self:SetPos(colData.HitPos)
+            self:SetPos(data.HitPos)
+			self:SetAngles(self:GetAngles())
             self:SetMoveType(MOVETYPE_NONE)
+			self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
+			sound.Play("weapons/cod2019/throwables/semtex/stick.ogg", data.HitPos)
 			end)
         end
     end

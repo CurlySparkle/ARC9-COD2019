@@ -135,7 +135,6 @@ function ENT:Detonate()
             self:EmitSound("weapons/underwater_explode3.wav", 120, 100, 1, CHAN_AUTO)
         else
             local spos = pos
-
             local trs = util.TraceLine({
                 start = spos + Vector(0, 0, 64),
                 endpos = spos + Vector(0, 0, -32),
@@ -154,7 +153,6 @@ function ENT:Detonate()
         dir:RotateAroundAxis(self:GetAngles():Forward(), -5 + self:GetAdjustment().p)
 
         util.BlastDamage(oldowner, oldowner, pos, 200, 150)
-		util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
         local btabl = {
             Attacker = oldowner,
             Damage = 30,
@@ -188,9 +186,15 @@ function ENT:Detonate()
         btabl.Num = 50
         btabl.Spread = Vector(math.rad(60), math.rad(15), 0)
         self:FireBullets(btabl)
+		
+	    effectdata:SetOrigin(self:GetPos())
+	    effectdata:SetStart(self:GetPos())
+	    effectdata:SetRadius(512)
+        effectdata:SetEntity(self)
+        util.Effect("cod2019_grenade_explosion", effectdata)
         self:EmitSound("COD2019.Claymore.Explode")
-        ParticleEffect("explosion_grenade", self:GetPos(), Angle(0, 0, 0), nil)
         util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
+		
         self:Remove()
     end
 end

@@ -765,7 +765,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     end
 end
 
-SWEP.DefaultBodygroups = "0000000000000000"
+SWEP.DefaultBodygroups = "00000000000000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -798,9 +798,16 @@ SWEP.AttachmentElements = {
     ["barrel_none"] = {
         Bodygroups = {
             {4,2},
+            {8,1},
         },
     },
-    ["sights"] = {
+    ["sights_none"] = {
+        Bodygroups = {
+            {5,1},
+            {7,1},
+        },
+    },
+    ["sights_mount"] = {
         Bodygroups = {
             {2,1},
         },
@@ -830,11 +837,6 @@ SWEP.AttachmentElements = {
             {3,3},
         },
     },
-    ["sight_none"] = {
-        Bodygroups = {
-            {5,1},
-        },
-    },
     ["stock_main_hide"] = {
         Bodygroups = {
             {6,1},
@@ -844,8 +846,9 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
+    if wep:HasElement("sight_default") then model:SetBodygroup(5,0) model:SetBodygroup(7,0) end
+    if wep:HasElement("barrel_custom") then model:SetBodygroup(5,1) end
     if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
-    if wep:HasElement("sight_default") then model:SetBodygroup(5,0) end
     if wep:HasElement("foregrip_none") then model:SetBodygroup(4,2) end
 end
 
@@ -855,7 +858,7 @@ SWEP.Attachments = {
         Category = "cod2019_muzzle",
         DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
 		Bone = "tag_silencer",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(0.4, 0, 0),
 		InstalledElements = {"muzzle_none"},
 		ExcludeElements = {"barrel_supp"},
     },
@@ -872,7 +875,7 @@ SWEP.Attachments = {
         Category = "cod2019_tac_rail",
         Bone = "tag_laser_attach",
         Pos = Vector(-0.7, -1.5, 0.5),
-		InstalledElements = {"sights"},
+		InstalledElements = {"sights_mount"},
     },
     { -- 4
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
@@ -880,7 +883,7 @@ SWEP.Attachments = {
         Bone = "tag_holo",
         Pos = Vector(2, 0, -0.1),
         Category = {"cod2019_optic"},
-		InstalledElements = {"sights","sight_none"},
+		InstalledElements = {"sights_none","sights_mount"},
     },
     { -- 5
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
