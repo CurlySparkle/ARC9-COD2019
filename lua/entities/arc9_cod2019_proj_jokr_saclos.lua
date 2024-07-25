@@ -1,26 +1,27 @@
 AddCSLuaFile()
 
-ENT.Base                     = "arc9_cod2019_proj_base"
-ENT.PrintName                = "Jokr Rocket"
-ENT.Spawnable                = false
+if CLIENT then
+    killicon.Add( "arc9_cod2019_proj_jokr_saclos", "VGUI/killicons/cod2019_la_jokr.png", Color(251, 85, 25, 255))
+end
 
+ENT.Base                     = "arc9_cod2019_proj_base"
+ENT.PrintName                = "Jokr Guided Rocket"
+ENT.Spawnable                = false
 ENT.Model                    = "models/weapons/cod2019/mags/w_la_jokr_rocket.mdl"
 
 ENT.IsRocket = true // projectile has a booster and will not drop.
-
 ENT.InstantFuse = false // projectile is armed immediately after firing.
 ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
 ENT.ImpactFuse = true // projectile explodes on impact.
 
 ENT.ExplodeOnDamage = true
 ENT.ExplodeUnderwater = true
+ENT.SmokeTrail = false
+ENT.RocketTrail = true -- leaves trail of a particle effect
 
 ENT.Delay = 0
 ENT.SafetyFuse = 0.01
-
 ENT.AudioLoop = "weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
-
-ENT.SmokeTrail = true
 
 ENT.FlareColor = Color(200, 255, 255)
 ENT.FlareSizeMin = 20
@@ -42,7 +43,6 @@ ENT.SuperSteerBoostTime = 5
 ENT.NoReacquire = false 
 
 ENT.ShootEntData = {}
-
 ENT.IsProjectile = true
 ENT.SACLOS = true
 
@@ -193,28 +193,22 @@ function ENT:Detonate()
     end
 
     local fx = EffectData()
-    fx:SetOrigin(self:GetPos())
-
+	fx:SetOrigin(self:GetPos())
+	fx:SetStart(self:GetPos() + self:GetUp())
+	fx:SetRadius(350)
+    fx:SetEntity(self)
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
     else
-        --util.Effect("Explosion", fx)
-		ParticleEffect("grenade_final", self:GetPos(), Angle(-90, 0, 0))
+        util.Effect("cod2019_grenade_explosion", fx)
+		self:EmitSound("Cod2019.Frag.Explode")
     end
 
-    self:EmitSound("Cod2019.Frag.Explode")
-	util.ScreenShake(self:GetPos(), 3500, 1111, 1, self.Radius * 4)
-    self:FireBullets({
-        Attacker = attacker,
-        Damage = 0,
-        Tracer = 0,
-        Distance = 20000,
-        Dir = self:GetVelocity(),
-        Src = self:GetPos(),
-        Callback = function(att, tr, dmg)
-            util.Decal("Scorch", tr.StartPos, tr.HitPos - (tr.HitNormal * 16), self)
+    for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
+        if (e:GetClass() == "npc_strider") then
+            e:Fire("Explode")
         end
-    })
+    end
 
     self:Remove()
 end

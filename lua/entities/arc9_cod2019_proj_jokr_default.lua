@@ -1,10 +1,14 @@
 AddCSLuaFile()
 
-ENT.Base = "arc9_cod2019_proj_base"
-ENT.PrintName = "Jokr Rocket"
-ENT.Spawnable = false
+if CLIENT then
+    killicon.Add( "arc9_cod2019_proj_jokr_default", "VGUI/killicons/cod2019_la_jokr.png", Color(251, 85, 25, 255))
+end
 
-ENT.Model = "models/weapons/cod2019/mags/w_la_jokr_rocket.mdl"
+ENT.Base                     = "arc9_cod2019_proj_base"
+ENT.PrintName                = "Jokr Guided Rocket"
+ENT.Spawnable                = false
+ENT.Model                    = "models/weapons/cod2019/mags/w_la_jokr_rocket.mdl"
+
 ENT.IsRocket = true -- projectile has a booster and will not drop.
 ENT.InstantFuse = false -- projectile is armed immediately after firing.
 ENT.RemoteFuse = false -- allow this projectile to be triggered by remote detonator.
@@ -16,10 +20,10 @@ ENT.Delay = 0
 ENT.SafetyFuse = 0.02
 ENT.AudioLoop = "^weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
 ENT.SmokeTrail = false
+ENT.RocketTrail = true -- leaves trail of a particle effect
 ENT.FlareColor = Color(155, 155, 155)
 ENT.FlareSizeMin = 20
 ENT.FlareSizeMax = 70
-ENT.RocketTrail = true -- leaves trail of a particle effect
 ENT.Radius = 470
 
 --- Stuff
@@ -163,7 +167,7 @@ function ENT:Detonate()
     local fx = EffectData()
 	fx:SetOrigin(self:GetPos())
 	fx:SetStart(self:GetPos() + self:GetUp())
-	fx:SetRadius(470)
+	fx:SetRadius(512)
     fx:SetEntity(self)
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)

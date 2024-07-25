@@ -585,7 +585,7 @@ L["cod2019_jokr_ammo_guided.description"] = "Replaces the lock-on rockets with <
 
 L["cod2019_jokr_ammo_airstrike.printname"] = "Cluster Rockets"
 L["cod2019_jokr_ammo_airstrike.compactname"] = "Cluster"
-L["cod2019_jokr_ammo_airstrike.description"] = "Rockets that split into 4 <color=100,255,100>heat-seeking</color> mini-rockets when near their target." -- UO
+L["cod2019_jokr_ammo_airstrike.description"] = "Rockets that split into 12 <color=100,255,100>heat-seeking</color> mini-rockets when near their target." -- UO
 
 ////////////////////  Custom MGL-32 Ammo
 L["cod2019_ammo_ubgl_rock.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_rock.printname")

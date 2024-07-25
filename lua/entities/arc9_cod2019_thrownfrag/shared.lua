@@ -112,35 +112,21 @@ function ENT:Detonate()
     util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 300, 128)
 
     local fx = EffectData()
-    fx:SetOrigin(self:GetPos())
-
+	fx:SetOrigin(self:GetPos())
+	fx:SetStart(self:GetPos())
+	fx:SetRadius(512)
+    fx:SetEntity(self)
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
     else
-        ParticleEffect("explosion_grenade", self:GetPos(), Angle(-90, 0, 0))
+        util.Effect("cod2019_grenade_explosion", fx)
+		self:EmitSound("Cod2019.Frag.Explode")
     end
 	
-    self:EmitSound("Cod2019.Frag.Explode")
-	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
 	util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
     self:Remove()
 end
 
 function ENT:OnRemove()
-	if (self:WaterLevel() <= 0) then
-     if CLIENT then
-		local dlight = DynamicLight(self:EntIndex())
-		if (dlight) then
-			dlight.pos = self:GetPos()
-			dlight.r = 255
-			dlight.g = 75
-			dlight.b = 0
-			dlight.brightness = 5
-			dlight.Decay = 2000
-			dlight.Size = 1024
-			dlight.DieTime = CurTime() + 5
-		end
-	 end
-	end
 	self:StopParticles()
 end

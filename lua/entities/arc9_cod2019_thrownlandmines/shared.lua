@@ -42,12 +42,16 @@ function ENT:Detonate()
         local pos = self:GetPos() + self:GetUp() * 6
         local effectdata = EffectData()
         effectdata:SetOrigin(pos)
+		effectdata:SetStart(pos)
+        effectdata:SetRadius(512)
+        effectdata:SetEntity(self)
 
         if self:WaterLevel() >= 1 then
             util.Effect("WaterSurfaceExplosion", effectdata)
-            self:EmitSound("weapons/underwater_explode3.wav", 120, 100, 1, CHAN_AUTO)
         else
-            ParticleEffect("explosion_grenade", pos, self:GetAngles(), nil)
+            --ParticleEffect("explosion_grenade", pos, self:GetAngles(), nil)
+			util.Effect("cod2019_grenade_explosion", effectdata)
+			self:EmitSound("COD2019.Mine.Explode")
             local spos = pos
 
             local trs = util.TraceLine({
@@ -55,9 +59,7 @@ function ENT:Detonate()
                 endpos = spos + Vector(0, 0, -32),
                 filter = self
             })
-
             util.Decal("Scorch", trs.HitPos + trs.HitNormal, trs.HitPos - trs.HitNormal)
-            self:EmitSound("COD2019.Mine.Explode")
         end
 
         local oldowner = self.Attacker or self:GetOwner()
@@ -66,12 +68,9 @@ function ENT:Detonate()
         end
 
         local d = Lerp(self:GetUp():Dot(Vector(0, 0, 1)), 0.25, 1)
-
-        self:SetOwner(NULL)
+        --self:SetOwner(NULL)
         util.BlastDamage(oldowner, oldowner, pos, 128, 300 * d)
         util.BlastDamage(oldowner, oldowner, pos, 256, 150 * d)
-		util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
-
         self:Remove()
     end
 end
