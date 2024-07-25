@@ -48,7 +48,6 @@ end
 function ENT:Think()
     if (IsValid(self:GetParent()) && self:GetParent():Health() <= 0 && self:GetParent():GetMaxHealth() > 1) then
         self:Explode()
-        self:Remove()
         return
     end
 
@@ -77,7 +76,6 @@ function ENT:Think()
 
     if (self:GetLifeTime() <= 0) then
         self:Explode()
-        self:Remove()
     end
 
     self:NextThink(CurTime())
@@ -91,12 +89,24 @@ function ENT:Explode()
     dmgInfo:SetDamageType(DMG_BLAST + DMG_AIRBOAT)
     dmgInfo:SetInflictor(self)
     util.BlastDamageInfo(dmgInfo, self:GetPos(), self.ExplosionRadius)
-    util.ScreenShake(self:GetPos(), 3500, 1111, 1, self.ExplosionRadius * 4)
+	
+    local fx = EffectData()
+	fx:SetOrigin(self:GetPos())
+	fx:SetStart(self:GetPos())
+	fx:SetRadius(512)
+    fx:SetEntity(self)
+    if self:WaterLevel() > 0 then
+        util.Effect("WaterSurfaceExplosion", fx)
+    else
+        util.Effect("cod2019_grenade_explosion", fx)
+		self:EmitSound("Cod2019.Frag.Explode")
+    end
+	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
     self:Remove()
 end
 
 function ENT:OnRemove()
-    self:Explode()
+    self:StopParticles()
 end
 
 function ENT:PhysicsCollide(colData, collider) 
