@@ -19,7 +19,6 @@ ENT.SmokeTrail = false
 ENT.FlareColor = Color(155, 155, 155)
 ENT.FlareSizeMin = 20
 ENT.FlareSizeMax = 70
-ENT.RocketTrailParticle = "Rocket_Smoke"  -- name of the particle effect
 ENT.RocketTrail = true -- leaves trail of a particle effect
 ENT.Radius = 470
 

@@ -15,8 +15,8 @@ local function GetSmokeImage()
     return smokeimages[math.random(#smokeimages)]
 end
 
-game.AddParticles("particles/rocket_fx.pcf")
-PrecacheParticleSystem("Rocket_Smoke")
+game.AddParticles("particles/mw2019_rockettrail.pcf")
+PrecacheParticleSystem("rockettrail")
 
 ENT.Material = false -- custom material
 ENT.IsRocket = false -- projectile has a booster and will not drop.
@@ -42,13 +42,12 @@ ENT.ImpactDamage = 25
 ENT.ImpactDamageSpeed = 1000
 
 ENT.Delay = 5 -- after being triggered and this amount of time has passed, the projectile will explode.
-
 ENT.Armed = false
 
-ENT.RocketTrailParticle = "Rocket_Smoke"  -- name of the particle effect
+ENT.RocketTrailParticle = "rockettrail"  -- name of the particle effect
 ENT.RocketTrail = false -- leaves trail of a particle effct
 ENT.SmokeTrail = false -- leaves trail of smoke
-ENT.SmokeColor = Color(200, 200, 200)
+ENT.SmokeColor = Color(255, 165, 0)
 ENT.Flare = true
 ENT.FlareColor = nil
 ENT.FlareSizeMin = 50
@@ -393,14 +392,15 @@ function ENT:DrawTranslucent()
     self:Draw()
 end
 
-local mat = Material("effects/ar2_altfire1b")
+local mat = Material("mw19/flair_sprite_01")
 
 function ENT:Draw()
     self:DrawModel()
    if self.Flare then
     if self.FlareColor then
+        local mult = self.SafetyFuse and math.Clamp((CurTime() - (self.SpawnTime + self.SafetyFuse)) / self.SafetyFuse, 0.1, 1) or 1
         render.SetMaterial(mat)
-        render.DrawSprite(self:GetPos() + (self:GetAngles():Forward() * -20), math.Rand(self.FlareSizeMin, self.FlareSizeMax), math.Rand(self.FlareSizeMin, self.FlareSizeMax), self.FlareColor)
+        render.DrawSprite(self:GetPos() + (self:GetAngles():Forward() * -20), mult * math.Rand(self.FlareSizeMin, self.FlareSizeMax), mult * math.Rand(self.FlareSizeMin, self.FlareSizeMax), self.FlareColor)
     end
 	 if self:GetNWBool("HasDetonated") then
      self.Flare = false

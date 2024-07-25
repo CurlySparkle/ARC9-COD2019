@@ -1,7 +1,7 @@
 AddCSLuaFile()
 
 game.AddParticles("particles/fas_explosions.pcf")
-PrecacheParticleSystem("grenade_final")
+PrecacheParticleSystem("explosion_grenade")
 
 function EFFECT:GetImpactPoint(data)
     return data:GetOrigin()
@@ -40,7 +40,7 @@ function EFFECT:Init(data)
         ed:SetOrigin(self:GetPos())
         util.Effect("WaterSurfaceExplosion", ed)
     else
-        ParticleEffect("grenade_final", tr.HitPos, (tr.HitNormal * -1):Angle() + Angle(270, 0, 0))
+        ParticleEffect("explosion_grenade", tr.HitPos, (tr.HitNormal * -1):Angle() + Angle(270, 0, 0))
     end
     --util.Decal("Scorch", tr.HitPos + tr.HitNormal, tr.HitPos - tr.HitNormal, data:GetEntity())
     

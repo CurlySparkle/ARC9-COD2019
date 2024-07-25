@@ -1,0 +1,14 @@
+"UnlitGeneric"
+
+{
+	"$basetexture"	"mw19\flair_sprite_01"
+	"$translucent" 	"1"
+	"$additive"	"1"
+	"$ignorez" "1"
+
+	"$vertexcolor" "1"
+
+    	"360?$basetexture" "sprites/light_glow02_360"
+    	"360?$gammaColorRead" "1"
+    	"360?$color2" "[ 0.9 0.9 0.9 ]"
+}

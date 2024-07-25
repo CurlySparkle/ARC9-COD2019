@@ -833,7 +833,7 @@ SWEP.AttachmentElements = {
         },
     },
 	["grip_angled"] = {
-    AttPosMods = { [5] = { Pos = Vector(-2.5, 0, 0), } }	
+    AttPosMods = { [6] = { Pos = Vector(-2.5, 0, 0), } }	
 	}
 }
 

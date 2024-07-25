@@ -19,9 +19,8 @@ ENT.Delay = 0
 ENT.SafetyFuse = 0.01
 
 ENT.AudioLoop = "weapons/cod2019/pila/move_gromeo_proj_flame.wav"
-ENT.SmokeTrail = true
-ENT.RocketTrail = false
-ENT.RocketTrailParticle = "rockettrail"
+ENT.SmokeTrail = false
+ENT.RocketTrail = true -- leaves trail of a particle effct
 
 ENT.FlareColor = Color(155, 155, 155)
 ENT.FlareSizeMin = 10

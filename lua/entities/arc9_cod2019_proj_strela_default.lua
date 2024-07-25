@@ -4,14 +4,15 @@ if CLIENT then
     killicon.Add( "arc9_cod2019_proj_strela_default", "vgui/killicons/cod2019_la_strela.png", Color(251, 85, 25, 255))
 end
 
+game.AddParticles("particles/mw2019_rockettrail.pcf")
+PrecacheParticleSystem("rockettrail2")
+
 ENT.Base                     = "arc9_cod2019_proj_base"
 ENT.PrintName                = "Strela Rocket"
 ENT.Spawnable                = false
-
 ENT.Model                    = "models/weapons/cod2019/mags/w_eq_strela_rocket.mdl"
 
 ENT.IsRocket = false // projectile has a booster and will not drop.
-
 ENT.InstantFuse = false // projectile is armed immediately after firing.
 ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
 ENT.ImpactFuse = true // projectile explodes on impact.
@@ -23,11 +24,12 @@ ENT.Delay = 0
 ENT.SafetyFuse = 0.05
 
 ENT.AudioLoop = "models/weapons/cod2019/mags/w_eq_strela_rocket.mdl"
-
-ENT.SmokeTrail = true
+ENT.SmokeTrail = false
+ENT.RocketTrail = true -- leaves trail of a particle effct
+ENT.RocketTrailParticle = "rockettrail2"  -- name of the particle effect
 ENT.Flare = false
 
-ENT.FlareColor = Color(155, 155, 155)
+ENT.FlareColor = Color(255, 155, 0)
 ENT.Radius = 200
 
 function ENT:Impact(data, collider)

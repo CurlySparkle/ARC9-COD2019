@@ -11,7 +11,7 @@ ENT.SmokeTrail = false -- leaves trail of smoke
 ENT.ImpactScorch = false -- leaves a scorch on hit
 
 ENT.SmokeColor = Color(255, 255, 255)
-ENT.FlareColor = Color(55, 55, 55)
+ENT.FlareColor = Color(0, 0, 0)
 ENT.SafetyFuse = 0
 
 function ENT:Detonate()

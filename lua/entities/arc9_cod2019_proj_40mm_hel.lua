@@ -23,9 +23,9 @@ ENT.ImpactScorch = true -- leaves a scorch on hit
 
 ENT.Delay = 0
 ENT.SafetyFuse = 0.07
-ENT.FlareColor = Color(255, 200, 55)
-ENT.FlareSizeMin = 5
-ENT.FlareSizeMax = 10
+ENT.FlareColor = Color(255, 165, 0)
+ENT.FlareSizeMin = 20
+ENT.FlareSizeMax = 50
 ENT.Radius = 256
 
 DEFINE_BASECLASS(ENT.Base)

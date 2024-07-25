@@ -20,9 +20,10 @@ ENT.SafetyFuse = 0.05
 
 ENT.AudioLoop = "weapons/cod2019/rpg/move_rpapa7_proj_flame_cls.ogg"
 
-ENT.SmokeTrail = true
+ENT.SmokeTrail = false
+ENT.RocketTrail = true -- leaves trail of a particle effct
 
-ENT.FlareColor = Color(155, 155, 155)
+ENT.FlareColor = Color(255, 155, 0)
 ENT.Radius = 390
 
 function ENT:OnInitialize()

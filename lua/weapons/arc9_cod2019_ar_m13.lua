@@ -870,7 +870,7 @@ SWEP.Animations = {
     },
     ["reload_ubgl"] = {
         Source = "ubgl_reload",
-		MinProgress = 0.95,
+		MinProgress = 0.8,
 		FireASAP = true,
 		RefillProgress = 0.75,
 		EventTable = {
@@ -886,7 +886,7 @@ SWEP.Animations = {
 	},
     ["reload_fast_ubgl"] = {
         Source = "ubgl_reload_fast",
-		MinProgress = 0.95,
+		MinProgress = 0.8,
 		FireASAP = true,
 		RefillProgress = 0.75,
 		EventTable = {
