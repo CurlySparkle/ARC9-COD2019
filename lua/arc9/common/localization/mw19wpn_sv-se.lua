@@ -511,6 +511,10 @@ L["cod2019_ammo_gl_seeker.printname"] = "40 mm Sökare" -- UO
 L["cod2019_ammo_gl_seeker.compactname"] = "Sökare" -- UO
 L["cod2019_ammo_gl_seeker.description"] = "Anpassade 40 mm patroner fyllda med <color=100,255,100>Sökande</color> granater som inte påverkas av avsläpp, och kan låsa in sig på mål i siktet.\nInspirerad av  <color=175,175,255>\"Seeker Six\"</color> från <color=255,25,25>Killing Floor</color>." -- UO
 
+L["cod2019_ammo_gl_buck.printname"] = "40 mm Hagelskott" -- UO
+L["cod2019_ammo_gl_buck.compactname"] = "Hagelskott" -- UO
+L["cod2019_ammo_gl_buck.description"] = "Anpassade 40 mm patroner fyllda med <color=100,255,100>hagelskott</color>." -- UO
+
 ////////////////////  Custom PILA Ammo
 L["cod2019_pila_ammo_guided.printname"] = "Guidade Robotar" -- UO
 L["cod2019_pila_ammo_guided.compactname"] = "Guidade" -- UO
@@ -521,7 +525,7 @@ L["cod2019_jokr_ammo_guided.description"] = "Ersätter robotar som kräver lås 
 
 L["cod2019_jokr_ammo_airstrike.printname"] = "Klusterammunition"
 L["cod2019_jokr_ammo_airstrike.compactname"] = "Kluster"
-L["cod2019_jokr_ammo_airstrike.description"] = "Robotar som splittras in till 4 <color=100,255,100>värmesökande</color> minirobotar nära målet." -- UO
+L["cod2019_jokr_ammo_airstrike.description"] = "Robotar som splittras in till <color=100,255,100>värmesökande</color> minirobotar nära målet." -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments

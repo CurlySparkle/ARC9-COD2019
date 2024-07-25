@@ -512,6 +512,10 @@ L["cod2019_perks_burst_2.description"] = "사격 모드를 <color=100,255,100>2�
 -- L["cod2019_ammo_gl_seeker.compactname"] = "Seeker" -- UO
 -- L["cod2019_ammo_gl_seeker.description"] = "Custom 40mm shells loaded with <color=100,255,100>Seeker</color> grenades that are not affected by drop-off, and can lock onto targets when aiming.\nInspired by the <color=175,175,255>Seeker Six</color> from <color=255,25,25>Killing Floor</color>." -- UO
 
+-- L["cod2019_ammo_gl_buck.printname"] = "40mm Buckshot" -- UO
+-- L["cod2019_ammo_gl_buck.compactname"] = "Buckshot" -- UO
+-- L["cod2019_ammo_gl_buck.description"] = "Custom 40mm shells filled with <color=100,255,100>buckshot</color>." -- UO
+
 ////////////////////  Custom PILA Ammo
 -- L["cod2019_pila_ammo_guided.printname"] = "Guided Rockets" -- UO
 -- L["cod2019_pila_ammo_guided.compactname"] = "Guided" -- UO
@@ -522,7 +526,7 @@ L["cod2019_perks_burst_2.description"] = "사격 모드를 <color=100,255,100>2�
 
 -- L["cod2019_jokr_ammo_airstrike.printname"] = "Cluster Rockets"
 -- L["cod2019_jokr_ammo_airstrike.compactname"] = "Cluster"
--- L["cod2019_jokr_ammo_airstrike.description"] = "Rockets that split into 4 <color=100,255,100>heat-seeking</color> mini-rockets when near their target." -- UO
+-- L["cod2019_jokr_ammo_airstrike.description"] = "Rockets that split into <color=100,255,100>heat-seeking</color> mini-rockets when near their target." -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments

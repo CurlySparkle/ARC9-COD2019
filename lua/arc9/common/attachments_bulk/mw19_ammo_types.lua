@@ -792,6 +792,76 @@ ATT.TracerNumUBGL = 1
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_slug")
 
+/////////////////////////// -- cod2019_ammo_gl_buck
+ATT = {}
+
+ATT.PrintName = "Buck Nade"
+ATT.CompactName = "Buck"
+ATT.Description = "Changes the nade type to a flat-top grenade firing pellets like shotgun spread."
+ATT.SortOrder = 1
+
+ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_buck.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.Free = true
+
+ATT.ShootSound = "COD2019.Model680.Fire"
+ATT.ShootSoundIndoor = "COD2019.Model680.Fire"
+
+ATT.ShootEnt = false
+ATT.Category = {"cod2019_ammo_gl"}
+
+ATT.DamageMax = 47
+ATT.DamageMin = 16
+ATT.Num = 8
+ATT.RangeMin = 15 / ARC9.HUToM
+ATT.RangeMax = 20 / ARC9.HUToM
+ATT.Penetration = 0 -- Units of wood that can be penetrated by this gun.
+ATT.ImpactForce = 8.5
+ATT.SpreadMult = 2.85
+ATT.SpreadAddSights = 0.05
+ATT.RecoilMult = 3
+ATT.RecoilKickMult = 3
+ATT.NoAimAssist = true
+
+ATT.CustomCrosshair = true
+ATT.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair", "mips smooth")
+ATT.CustomCrosshairSize = 30
+ATT.CustomCrosshairSingle = false
+ATT.CrosshairHideDot = false
+
+if !warzonestats then -- Regular Stats
+	ATT.BodyDamageMults = {
+		[HITGROUP_HEAD] = 2,
+		[HITGROUP_CHEST] = 1.75,
+		[HITGROUP_STOMACH] = 1.5,
+		[HITGROUP_LEFTARM] = 1,
+		[HITGROUP_RIGHTARM] = 1,
+		[HITGROUP_LEFTLEG] = 1,
+		[HITGROUP_RIGHTLEG] = 1,
+	}
+else -- Warzone Stats
+	ATT.BodyDamageMults = {
+		[HITGROUP_HEAD] = 1.2,
+		[HITGROUP_CHEST] = 0.9,
+		[HITGROUP_STOMACH] = 0.75,
+		[HITGROUP_LEFTARM] = 0.5,
+		[HITGROUP_RIGHTARM] = 0.5,
+		[HITGROUP_LEFTLEG] = 0.5,
+		[HITGROUP_RIGHTLEG] = 0.5,
+	}
+end
+
+ATT.MuzzleParticle  = "muzzleflash_slug"
+ATT.TracerEffect = "arc9_tracer"
+ATT.TracerSize = 15
+ATT.TracerNum = 1
+
+ATT.ShootPosOffset = Vector(0, 0, 0)
+ATT.ShootPosOffsetSights = Vector(0, 0, 0)
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_gl_buck")
+
 //////////////////////////////////// -- RPG-7 Ammo
 /////////////////////////// -- cod2019_ammo_rpg_shovel
 ATT = {}
@@ -1147,7 +1217,7 @@ ATT.RangeMaxUBGL = 20 / ARC9.HUToM
 ATT.PenetrationUBGL = 0 -- Units of wood that can be penetrated by this gun.
 ATT.ImpactForceUBGL = 8.5
 ATT.SpreadMultUBGL = 2.85
-ATT.SpreadMultSightsUBGL = 1.85
+ATT.SpreadMultSightsUBGL = 10
 ATT.RecoilMultUBGL = 3
 ATT.RecoilKickMultUBGL = 3
 ATT.NoAimAssistUBGL = true
@@ -1187,5 +1257,7 @@ ATT.TracerNumUBGL = 1
 
 ATT.ShootPosOffsetUBGL = Vector(0, 0, 0)
 ATT.ShootPosOffsetSightsUBGL = Vector(0, 0, 0)
+
+ATT.HasSightsUBGL = false
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_buck")

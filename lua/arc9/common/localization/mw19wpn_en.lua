@@ -573,6 +573,10 @@ L["cod2019_ammo_gl_seeker.printname"] = "40mm Seeker" -- UO
 L["cod2019_ammo_gl_seeker.compactname"] = "Seeker" -- UO
 L["cod2019_ammo_gl_seeker.description"] = "Custom 40mm shells loaded with <color=100,255,100>Seeker</color> grenades that are not affected by drop-off, and can lock onto targets when aiming.\nInspired by the <color=175,175,255>Seeker Six</color> from <color=255,25,25>Killing Floor</color>." -- UO
 
+L["cod2019_ammo_gl_buck.printname"] = "40mm Buckshot" -- UO
+L["cod2019_ammo_gl_buck.compactname"] = "Buckshot" -- UO
+L["cod2019_ammo_gl_buck.description"] = "Custom 40mm shells filled with <color=100,255,100>buckshot</color>." -- UO
+
 ////////////////////  Custom PILA Ammo
 L["cod2019_pila_ammo_guided.printname"] = "Guided Rockets" -- UO
 L["cod2019_pila_ammo_guided.compactname"] = "Guided" -- UO
@@ -585,7 +589,7 @@ L["cod2019_jokr_ammo_guided.description"] = "Replaces the lock-on rockets with <
 
 L["cod2019_jokr_ammo_airstrike.printname"] = "Cluster Rockets"
 L["cod2019_jokr_ammo_airstrike.compactname"] = "Cluster"
-L["cod2019_jokr_ammo_airstrike.description"] = "Rockets that split into 12 <color=100,255,100>heat-seeking</color> mini-rockets when near their target." -- UO
+L["cod2019_jokr_ammo_airstrike.description"] = "Rockets that split into <color=100,255,100>heat-seeking</color> mini-rockets when near their target." -- UO
 
 ////////////////////  Custom MGL-32 Ammo
 L["cod2019_ammo_ubgl_rock.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_rock.printname")
@@ -627,6 +631,10 @@ L["cod2019_ammo_ubgl_energy.description"] = ARC9:GetPhrase("cod2019_ammo_gl_ener
 L["cod2019_ammo_ubgl_seeker.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_seeker.printname")
 L["cod2019_ammo_ubgl_seeker.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_seeker.compactname")
 L["cod2019_ammo_ubgl_seeker.description"] = ARC9:GetPhrase("cod2019_ammo_gl_seeker.description")
+
+L["cod2019_ammo_ubgl_buck.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_buck.printname")
+L["cod2019_ammo_ubgl_buck.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_buck.compactname")
+L["cod2019_ammo_ubgl_buck.description"] = ARC9:GetPhrase("cod2019_ammo_gl_buck.description")
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
