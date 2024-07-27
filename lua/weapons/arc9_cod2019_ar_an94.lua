@@ -1077,6 +1077,16 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
+    ["foregrip_gl"] = {
+        Bodygroups = {
+            {6,1},
+        },
+    },
+    ["foregrip_none"] = {
+        Bodygroups = {
+            {6,2},
+        },
+    },
     ["sight_rail"] = {
         Bodygroups = {
             {5,1},
