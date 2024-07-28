@@ -316,6 +316,16 @@ function ENT:Think(data)
 	
     if self.ExplodeUnderwater and self:WaterLevel() > 0 then
         self:PreDetonate(data)
+		elseif self:WaterLevel() > 0 then
+		local phys = self:GetPhysicsObject()
+	    if phys:IsValid() then
+		   phys:EnableGravity(true)
+		   phys:EnableMotion(true)
+		   phys:EnableDrag(false)
+		   phys:SetMass(10)
+	    end
+		self:SetNWBool("HasDetonated",true)
+		self:StopParticles()
     end
 	
 	if (self:WaterLevel() > 0) then

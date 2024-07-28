@@ -13,7 +13,7 @@ ENT.RemoteFuse = false // allow this projectile to be triggered by remote detona
 ENT.ImpactFuse = true // projectile explodes on impact.
 
 ENT.ExplodeOnDamage = true
-ENT.ExplodeUnderwater = true
+ENT.ExplodeUnderwater = false
 
 ENT.Delay = 0
 ENT.SafetyFuse = 0.05
