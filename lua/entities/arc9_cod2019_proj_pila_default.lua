@@ -89,7 +89,7 @@ function ENT:Impact(data, collider)
         self:Remove()
         return true
     end
-    --util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
+    util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
 end
 
 function ENT:OnThink()

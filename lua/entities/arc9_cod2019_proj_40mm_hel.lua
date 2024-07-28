@@ -15,10 +15,10 @@ ENT.RemoteFuse = false -- allow this projectile to be triggered by remote detona
 ENT.ImpactFuse = true -- projectile explodes on impact.
 
 ENT.ExplodeOnDamage = false -- projectile explodes when it takes damage.
-ENT.ExplodeUnderwater = true
-ENT.SmokeTrail = false
+ENT.ExplodeUnderwater = false
 ENT.RocketTrailParticle = "40mm_trail"  -- name of the particle effect
 ENT.RocketTrail = true -- leaves trail of a particle effct
+ENT.SmokeTrail = false
 ENT.ImpactScorch = true -- leaves a scorch on hit
 
 ENT.Delay = 0
@@ -29,28 +29,24 @@ ENT.FlareSizeMax = 50
 ENT.Radius = 256
 
 DEFINE_BASECLASS(ENT.Base)
-
 PrecacheParticleSystem("40mm_trail")
 
-function ENT:Initialize()
-	self:SetModel(self.Model)
-	self:PhysicsInit(SOLID_VPHYSICS)
-	self:GetPhysicsObject():Wake()
-	self:GetPhysicsObject():AddGameFlag(FVPHYSICS_NO_PLAYER_PICKUP)
-	self:GetPhysicsObject():AddGameFlag(FVPHYSICS_NO_IMPACT_DMG)
-	self:GetPhysicsObject():AddGameFlag(FVPHYSICS_HEAVY_OBJECT)
-	self:GetPhysicsObject():EnableMotion(true)
-	self:GetPhysicsObject():EnableDrag(false)
-	self:GetPhysicsObject():SetMass(1000)
-	self:SetSolid(SOLID_VPHYSICS)
+function ENT:OnInitialize()
+	local phys = self:GetPhysicsObject()
+	if phys:IsValid() then
+		phys:AddGameFlag(FVPHYSICS_NO_PLAYER_PICKUP)
+		phys:AddGameFlag(FVPHYSICS_NO_IMPACT_DMG)
+		phys:AddGameFlag(FVPHYSICS_HEAVY_OBJECT)
+		phys:EnableMotion(true)
+		phys:EnableDrag(false)
+		phys:SetMass(1000)
+		phys:SetVelocityInstantaneous(self:GetAngles():Forward() + Vector(0, 0, 0.1))
+	end
+	
 	self:AddEFlags(EFL_NO_DAMAGE_FORCES)
 	self:AddEFlags(EFL_DONTWALKON)
 	self:AddEFlags(EFL_DONTBLOCKLOS)
 	self:AddEFlags(EFL_NO_PHYSCANNON_INTERACTION)
-	self:GetPhysicsObject():SetVelocityInstantaneous(self:GetAngles():Forward() + Vector(0, 0, 0.1))
-	self:GetPhysicsObject():SetBuoyancyRatio(0)
-
-	BaseClass.Initialize(self)
 end
 
 function ENT:Impact(data, collider)
@@ -125,11 +121,4 @@ function ENT:Detonate(data)
     end
 	
     timer.Simple(0, function() self:Remove() end)
-end
-
-function ENT:OnRemove()
-    if self.LoopSound then
-        self.LoopSound:Stop()
-    end
-	self:StopParticles()
 end

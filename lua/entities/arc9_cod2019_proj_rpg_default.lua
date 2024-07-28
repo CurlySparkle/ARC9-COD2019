@@ -68,6 +68,7 @@ function ENT:Impact(data, collider)
         self:Remove()
         return true
     end
+	util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
 end
 
 function ENT:Detonate(data)
@@ -89,10 +90,10 @@ function ENT:Detonate(data)
         Attacker = attacker,
         Damage = 256,
         Tracer = 0,
-        Src = src,
-        Dir = dir,
-        HullSize = 0,
-        Distance = 256,
+        Src = self:GetPos(),
+        Dir = self:GetForward(),
+        HullSize = 16,
+        Distance = 128,
         IgnoreEntity = self,
         Callback = function(atk, btr, dmginfo)
             if IsValid(btr.Entity) and btr.Entity.LVS then

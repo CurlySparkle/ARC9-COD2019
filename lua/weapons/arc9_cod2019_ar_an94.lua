@@ -939,6 +939,19 @@ SWEP.Animations = {
         Source = {"ubgl_melee", "ubgl_melee2", "ubgl_melee3"},
         IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
     },
+    ["inspect_ubgl"] = {
+        Source = "ubgl_lookat01",
+		MinProgress = 0.1,
+		FireASAP = true,
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+        EventTable = {
+            {s = path .. "wfoly_ar_anovember94_inspect_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_anovember94_inspect_mvmnt.ogg", t = 42/30},
+			{s = path .. "wfoly_ar_anovember94_inspect_roll.ogg", t = 65/30},
+			{s = path .. "wfoly_ar_anovember94_inspect_fingers.ogg", t = 98/30},
+			{s = path .. "wfoly_ar_anovember94_inspect_end.ogg", t = 123/30},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
