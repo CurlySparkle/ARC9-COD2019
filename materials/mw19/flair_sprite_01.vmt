@@ -4,7 +4,7 @@
 	"$basetexture"	"mw19\flair_sprite_01"
 	"$translucent" 	"1"
 	"$additive"	"1"
-	"$ignorez" "1"
+	//"$ignorez" "1"
 
 	"$vertexcolor" "1"
 

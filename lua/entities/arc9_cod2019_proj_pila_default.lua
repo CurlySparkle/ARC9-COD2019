@@ -173,11 +173,11 @@ function ENT:Detonate()
 
     self:FireBullets({
         Attacker = attacker,
-        Damage = 200,
+        Damage = 256,
         Tracer = 0,
         Src = src,
         Dir = dir,
-        HullSize = 0,
+        HullSize = 16,
         Distance = 256,
         IgnoreEntity = self,
         Callback = function(atk, btr, dmginfo)

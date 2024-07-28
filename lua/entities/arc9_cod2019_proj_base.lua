@@ -194,11 +194,9 @@ function ENT:PhysicsCollide(data, collider, physobj)
         end
     end
 	
-    if self.ImpactFuse then
-        if !self.Armed then
-            self.ArmTime = CurTime()
-            self.Armed = true
-        end
+    if self.ImpactFuse and !self.Armed then
+        self.ArmTime = CurTime()
+        self.Armed = true
 
         if self:Impact(data, collider) then
             return

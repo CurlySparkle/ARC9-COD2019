@@ -30,7 +30,7 @@ ENT.AudioLoop = "^weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg"
 
 --- Stuff
 ENT.SeekerAngle = math.cos(math.rad(75))
-ENT.SteerSpeed = 200
+ENT.SteerSpeed = 265
 ENT.FuseTime = 0
 ENT.Boost = 2000
 ENT.Lift = 0
@@ -52,6 +52,10 @@ DEFINE_BASECLASS(ENT.Base)
 function ENT:OnInitialize()
 	self:SetModelScale(0.8)
 	BaseClass.OnInitialize(self)
+end
+
+function ENT:Impact(data, collider)
+   util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
 end
 
 function ENT:Detonate()
@@ -93,7 +97,7 @@ function ENT:Detonate()
 
     self:EmitSound("^weapons/cod2019/shared/rocket_expl_body_02.ogg", 100, 100, 1, CHAN_WEAPON)
     util.ScreenShake(phys:GetPos(), 3500, 1111, 1, self.Radius)
-    util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
+    --util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
 
     for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
         if (e:GetClass() == "npc_strider") then
