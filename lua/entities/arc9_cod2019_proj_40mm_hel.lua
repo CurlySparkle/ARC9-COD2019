@@ -22,14 +22,21 @@ ENT.SmokeTrail = false
 ENT.ImpactScorch = true -- leaves a scorch on hit
 
 ENT.Delay = 0
-ENT.SafetyFuse = 0.07
-ENT.FlareColor = Color(255, 165, 0)
+ENT.SafetyFuse = 0.08
+ENT.FlareColor = nil
 ENT.FlareSizeMin = 20
 ENT.FlareSizeMax = 50
 ENT.Radius = 256
 
+ENT.OuterFlairColor = Color(236,153,17,255)
+ENT.InnerFlairColor = Color(255,255,255,255)
+ENT.OuterFlairScale = 0.3
+ENT.InnerFlairScale = 0.1
+
 DEFINE_BASECLASS(ENT.Base)
 PrecacheParticleSystem("40mm_trail")
+
+local flair = Material("mw19/flair_sprite_01")
 
 function ENT:OnInitialize()
 	local phys = self:GetPhysicsObject()
@@ -118,4 +125,32 @@ function ENT:Detonate(data)
     end
 	
     timer.Simple(0, function() self:Remove() end)
+end
+
+function ENT:DrawTranslucent(flags)
+    self:DrawModel()
+    -- Check if the entity has hit a surface
+    if not self:GetNWBool("HasDetonated", false) then
+        local ang = LocalPlayer():EyeAngles()
+        local angle = Angle(0, LocalPlayer():EyeAngles()[2], 0)
+
+        angle = Angle(LocalPlayer():EyeAngles()[1], angle.y, 0)
+       
+        angle:RotateAroundAxis(angle:Up(), -90)
+        angle:RotateAroundAxis(angle:Forward(), 90)
+        
+        cam.Start3D2D(self:GetPos() - self:GetForward() * 2, angle, 0.2)
+
+            local OuterScale = 512 * self.OuterFlairScale
+            local InnerScale = 512 * self.InnerFlairScale
+
+            surface.SetMaterial(flair)
+            surface.SetDrawColor(self.OuterFlairColor)
+            surface.DrawTexturedRect(-OuterScale/2, -OuterScale/2, OuterScale, OuterScale)
+
+            surface.SetDrawColor(self.InnerFlairColor)
+            surface.DrawTexturedRect(-InnerScale/2, -InnerScale/2, InnerScale, InnerScale)
+
+        cam.End3D2D()
+    end
 end

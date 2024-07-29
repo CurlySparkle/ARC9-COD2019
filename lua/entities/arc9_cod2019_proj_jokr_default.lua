@@ -21,9 +21,9 @@ ENT.SafetyFuse = 0.02
 ENT.AudioLoop = "^weapons/cod2019/jokr/weap_juliet_proj_lp_01.wav"
 ENT.SmokeTrail = false
 ENT.RocketTrail = true -- leaves trail of a particle effect
-ENT.FlareColor = Color(155, 155, 155)
-ENT.FlareSizeMin = 20
-ENT.FlareSizeMax = 70
+ENT.FlareColor = Color(255, 155, 0)
+ENT.FlareSizeMin = 50
+ENT.FlareSizeMax = 100
 ENT.Radius = 470
 
 --- Stuff

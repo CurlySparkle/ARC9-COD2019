@@ -3,11 +3,9 @@ AddCSLuaFile()
 ENT.Base                     = "arc9_cod2019_proj_base"
 ENT.PrintName                = "Pila Rocket"
 ENT.Spawnable                = false
-
 ENT.Model                    = "models/weapons/cod2019/mags/w_eq_pila_rocket.mdl"
 
 ENT.IsRocket = true // projectile has a booster and will not drop.
-
 ENT.InstantFuse = false // projectile is armed immediately after firing.
 ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
 ENT.ImpactFuse = true // projectile explodes on impact.
@@ -22,9 +20,7 @@ ENT.AudioLoop = "weapons/cod2019/pila/move_gromeo_proj_flame.wav"
 ENT.SmokeTrail = false
 ENT.RocketTrail = true -- leaves trail of a particle effct
 
-ENT.FlareColor = Color(155, 155, 155)
-ENT.FlareSizeMin = 10
-ENT.FlareSizeMax = 50
+ENT.FlareColor = Color(255, 155, 0)
 ENT.Radius = 275
 
 --- Stuff
