@@ -60,6 +60,8 @@ SWEP.Penetration = 25 -- Units of wood that can be penetrated by this gun.
 
 SWEP.ImpactForce = 15
 
+SWEP.DamageType = DMG_BULLET + DMG_SNIPER
+
 -------------------------- PHYS BULLET BALLISTICS
 
 SWEP.PhysBulletMuzzleVelocity = 2999 * 12
@@ -756,7 +758,8 @@ SWEP.Attachments = {
         Bone = "tag_mag_attach",
 		Category = {"cod2019_ammo", "cod2019_ammo_sniper"},
 		Pos = Vector(-1.5, 0, 0),
-		MergeSlots = {23},
+		--MergeSlots = {23},
+		ExcludeElements = {"mag_ftac"},
 		RejectAttachments = { 
 			["cod2019_ammo_db"] = true,
 			["cod2019_ammo_he"] = true,
