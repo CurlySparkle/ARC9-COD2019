@@ -636,6 +636,34 @@ L["cod2019_ammo_ubgl_buck.printname"] = ARC9:GetPhrase("cod2019_ammo_gl_buck.pri
 L["cod2019_ammo_ubgl_buck.compactname"] = ARC9:GetPhrase("cod2019_ammo_gl_buck.compactname")
 L["cod2019_ammo_ubgl_buck.description"] = ARC9:GetPhrase("cod2019_ammo_gl_buck.description")
 
+L["cod2019_ammo_ubgl_sg_magnum.printname"] = ARC9:GetPhrase("cod2019_ammo_sg_magnum.printname") or "8.5mm Magnum Buckshot"
+L["cod2019_ammo_ubgl_sg_magnum.compactname"] = ARC9:GetPhrase("cod2019_ammo_sg_magnum.compactname") or "MAG"
+L["cod2019_ammo_ubgl_sg_magnum.description"] = ARC9:GetPhrase("cod2019_ammo_sg_magnum.description") or "High-powered buckshot loaded with fewer but larger lead pellets.\nProvides better close range power, but worsened range and accuracy."
+
+L["cod2019_ammo_ubgl_sg_slug.printname"] = ARC9:GetPhrase("cod2019_ammo_sg_slug.printname") or "12mm Full-bore Slug"
+L["cod2019_ammo_ubgl_sg_slug.compactname"] = ARC9:GetPhrase("cod2019_ammo_sg_slug.compactname") or "SLUG"
+L["cod2019_ammo_ubgl_sg_slug.description"] = ARC9:GetPhrase("cod2019_ammo_sg_slug.description") or "A single large projectile loaded into a shotgun shell.\nThe aerodynamic pellet has much higher effective range."
+
+L["cod2019_ammo_ubgl_sg_flechette.printname"] = ARC9:GetPhrase("cod2019_ammo_sg_flechette.printname") or "Flechette Shells"
+L["cod2019_ammo_ubgl_sg_flechette.compactname"] = ARC9:GetPhrase("cod2019_ammo_sg_flechette.compactname") or "FLE"
+L["cod2019_ammo_ubgl_sg_flechette.description"] = ARC9:GetPhrase("cod2019_ammo_sg_flechette.description") or "Load containing thin, dart-shaped projectiles.\nProvides tighter spread and increased range alongside increased penetration, but at the cost of reduced stopping power."
+
+L["cod2019_ammo_ubgl_sg_frag.printname"] = ARC9:GetPhrase("cod2019_ammo_sg_frag.printname") or "\"FRAG-12\" High Explosive"
+L["cod2019_ammo_ubgl_sg_frag.compactname"] = ARC9:GetPhrase("cod2019_ammo_sg_frag.compactname") or "FRAG-12"
+L["cod2019_ammo_ubgl_sg_frag.description"] = ARC9:GetPhrase("cod2019_ammo_sg_frag.description") or "Load containing a single projectile filled with an explosive compound.\nDeals damage around a small radius at the impact area."
+
+L["cod2019_ammo_ubgl_sg_rebounder.printname"] = ARC9:GetPhrase("cod2019_ammo_sg_rebounder.printname") or "10mm Rebounder Rounds"
+L["cod2019_ammo_ubgl_sg_rebounder.compactname"] = ARC9:GetPhrase("cod2019_ammo_sg_rebounder.compactname") or "RBD"
+L["cod2019_ammo_ubgl_sg_rebounder.description"] = ARC9:GetPhrase("cod2019_ammo_sg_rebounder.description") or "Load containing specialized pellets that have a high chance to ricochet.\nThe pellets will bounce regardless of angle, dealing increased damage the more it ricochets.\nIt does, however, have reduced damage output on direct impact."
+
+L["cod2019_ammo_ubgl_sg_frag_x4.printname"] = ARC9:GetPhrase("cod2019_ammo_sg_frag_x4.printname") or "\"FRAG-12\" High Explosive x4"
+L["cod2019_ammo_ubgl_sg_frag_x4.compactname"] = ARC9:GetPhrase("cod2019_ammo_sg_frag_x4.compactname") or "FRAG-12 x4"
+L["cod2019_ammo_ubgl_sg_frag_x4.description"] = ARC9:GetPhrase("cod2019_ammo_sg_frag_x4.description") or "Load containing four projectiles filled with explosive compounds.\nDeals damage around a small radius at the impact area."
+
+L["cod2019_ammo_ubgl_sg_db.printname"] = ARC9:GetPhrase("cod2019_ammo_sg_db.printname") or "\"Dragon's Breach\""
+L["cod2019_ammo_ubgl_sg_db.compactname"] = ARC9:GetPhrase("cod2019_ammo_sg_db.compactname") or "DB"
+L["cod2019_ammo_ubgl_sg_db.description"] = ARC9:GetPhrase("cod2019_ammo_sg_db.description") or "Load containing magnesium pellets that lights a target on fire on hit."
+
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
 //////////////////// Assault Rifles

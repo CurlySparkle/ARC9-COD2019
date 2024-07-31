@@ -1261,3 +1261,296 @@ ATT.ShootPosOffsetSightsUBGL = Vector(0, 0, 0)
 ATT.HasSightsUBGL = false
 
 ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_buck")
+
+//////////////////////////////////////////////// -- 12-Gauge Deputy (UB Shotgun) Ammo
+/////////////////////////// -- cod2019_ammo_sg_magnum
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = "8.5mm Magnum Buckshot"
+ATT.CompactName = "MAG"
+ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_magnum.png", "mips smooth")
+ATT.Description = "High-power buckshot load with fewer larger lead pellets.\nProvides better close range power, but range and precision is worse."
+ATT.SortOrder = 1
+
+ATT.Category = {"cod2019_ammo_ubgl_sg"}
+
+ATT.PhysBulletMuzzleVelocityMultUBGL = 1.1
+ATT.PhysBulletDragMultUBGL = 2
+
+ATT.NumMultUBGL = 0.75
+
+ATT.RecoilKickMultUBGL = 1.25
+ATT.RecoilAutoControlMultUBGL = 0.75
+
+ATT.SpreadMultUBGL = 1.25
+
+ATT.DamageMaxMultUBGL = 1 / 0.75 * 1.2
+ATT.DamageMinMultUBGL = 1 / 0.75
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_sg_magnum")
+
+/////////////////////////// -- cod2019_ammo_sg_slug
+
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = "70mm Full-bore Slug"
+ATT.CompactName = "SLUG"
+ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_slug.png", "mips smooth")
+ATT.Description = "Single large projectile loaded in the shotshell.\nThe aerodynamic pellet has much higher effective range."
+ATT.SortOrder = 3
+
+ATT.Category = {"cod2019_ammo_ubgl_sg"}
+
+ATT.SpreadMultUBGL = 0.66
+
+ATT.RangeMaxMultUBGL = 1.5
+
+ATT.NumOverrideUBGL = 1
+ATT.RicochetChanceAddUBGL = 1
+ATT.ImpactForceMultUBGL = 5
+
+ATT.DamageMinMultUBGL = 2.5
+ATT.DamageMaxMultUBGL = 2.5
+
+ATT.NoAimAssistUBGL = true
+
+ATT.CustomCrosshairUBGL = false
+
+if !warzonestats then -- Regular Stats
+	ATT.BodyDamageMultsUBGL = {
+		[HITGROUP_HEAD] = 2,
+		[HITGROUP_CHEST] = 1.75,
+		[HITGROUP_STOMACH] = 1.5,
+		[HITGROUP_LEFTARM] = 1,
+		[HITGROUP_RIGHTARM] = 1,
+		[HITGROUP_LEFTLEG] = 1,
+		[HITGROUP_RIGHTLEG] = 1,
+	}
+else -- Warzone Stats
+	ATT.BodyDamageMultsUBGL = {
+		[HITGROUP_HEAD] = 1.2,
+		[HITGROUP_CHEST] = 0.9,
+		[HITGROUP_STOMACH] = 0.75,
+		[HITGROUP_LEFTARM] = 0.5,
+		[HITGROUP_RIGHTARM] = 0.5,
+		[HITGROUP_LEFTLEG] = 0.5,
+		[HITGROUP_RIGHTLEG] = 0.5,
+	}
+end
+
+ATT.MuzzleParticleUBGL = "muzzleflash_slug"
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_sg_slug")
+
+/////////////////////////// -- cod2019_ammo_sg_flechette
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = "Flechette"
+ATT.CompactName = "FLE"
+ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_flechette.png", "mips smooth")
+ATT.Description = "Load containing thin, dart-shaped projectiles.\nProvides a tighter spread and better range as well as much higher penetration, but much lower stopping power."
+ATT.SortOrder = 5
+
+ATT.Category = {"cod2019_ammo_ubgl_sg"}
+
+ATT.NumAddUBGL = 8
+
+ATT.DamageMaxMultUBGL = 0.85
+ATT.DamageMinMultUBGL = 0.85
+
+ATT.RangeMinMultUBGL = 1.15
+ATT.RangeMaxMultUBGL = 1.15
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_sg_flechette")
+
+/////////////////////////// -- cod2019_ammo_sg_col
+-- ATT = {}
+
+-- ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+-- ATT.PrintName = "Weapon Color Tracer"
+-- ATT.CompactName = "TR-WCLR"
+-- ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_tracer.png", "mips smooth")
+-- ATT.Description = "Ammunition loaded with colors matching the user's weapon (physgun) color (Pretty cool, right?)."
+-- ATT.SortOrder = 0.4
+
+-- ATT.Category = "cod2019_ammo_ubgl_sg"
+
+-- ATT.TracerEffectUBGL = "cod2019_tracer_custom"
+-- ATT.TracerSizeUBGL = 10
+-- ATT.TracerSpeedUBGL = 15000
+
+-- ATT.TracerColorHook = function(swep, col)
+    -- if IsValid(swep:GetOwner()) and swep:GetOwner():IsPlayer() then
+		-- if !self:GetOwner():GetUBGL() then return color_white end
+        -- local c = swep:GetOwner():GetWeaponColor():ToColor()
+        -- local l = math.max(0.001, (0.33 * c.r + 0.5 * c.g * 0.16 * c.b) / 80)
+        -- if l < 1 then
+            -- c.r = (c.r + 1) / l
+            -- c.g = (c.g + 1) / l
+            -- c.b = (c.b + 1) / l
+        -- end
+        -- return c
+    -- end
+    -- return color_white
+-- end
+
+-- ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_sg_col")
+
+/////////////////////////// -- cod2019_ammo_sg_frag
+-- ATT = {}
+
+-- ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+-- ATT.PrintName = "\"FRAG-12\" High Explosive"
+-- ATT.CompactName = "FRAG"
+-- ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_he.png", "mips smooth")
+-- ATT.Description = "Load containing an explosive compound, dealing damage in a small radius.\nEffectiveness is limited by the small caliber size."
+-- ATT.SortOrder = 6
+
+-- ATT.Category = {"cod2019_ammo_ubgl_sg"}
+
+-- ATT.NumOverrideUBGL = 1
+
+-- ATT.SpreadMultUBGL = 0.66
+
+-- ATT.PhysBulletGravityMultUBGL = 3
+-- ATT.PhysBulletMuzzleVelocityMultUBGL = 0.75
+
+-- ATT.DamageMaxOverrideUBGL = 35
+-- ATT.DamageMinOverrideUBGL = 10
+
+-- ATT.ExplosionRadiusOverrideUBGL = 75
+-- ATT.ExplosionDamageOverrideUBGL = 80
+-- ATT.ExplosionEffectUBGL = "cod2019_muzzle_he" -- placeholder
+-- ATT.ImpactDecalUBGL = "Dark"
+
+-- ATT.Override_DamageTypeUBGL = DMG_BLAST + DMG_AIRBOAT
+-- ATT.DamageTypeUBGL = DMG_BLAST + DMG_AIRBOAT
+
+-- ATT.MuzzleParticleUBGL = "muzzleflash_M3"
+
+-- ATT.NoAimAssistUBGL = true
+
+-- ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_sg_frag")
+
+/////////////////////////// -- cod2019_ammo_sg_rebounder
+ATT = {}
+
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.PrintName = "10mm Rebounder Rounds"
+ATT.CompactName = "RBD"
+ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_magnum.png", "mips smooth")
+ATT.Description = "Load containing specialized pellets with a high chance to ricochet.\nThe pellet will bounce at any angle, and increases damage dramatically as it ricochets.\nHowever, it does minimal damage on direct impact."
+ATT.SortOrder = 7
+
+ATT.Category = {"cod2019_ammo_ubgl_sg"}
+
+ATT.DamageMinOverrideUBGL = 12
+ATT.DamageMaxOverrideUBGL = 12
+ATT.NumOverrideUBGL = 6
+
+ATT.RicochetChanceOverrideUBGL = 2
+ATT.RicochetAngleMaxOverrideUBGL = 180
+ATT.PenetrationDeltaUBGL = 4
+ATT.RicochetSeekingUBGL = true
+ATT.RicochetSeekingRangeUBGL = 1024
+ATT.RicochetSeekingAngleUBGL = 45
+
+ATT.TracerColorUBGL = Color(255, 255, 255, 150)
+ATT.TracerSizeAddUBGL = -0.5
+
+ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_sg_rebounder")
+
+/////////////////////////// -- cod2019_ammo_sg_frag_x4
+-- ATT = {}
+
+-- ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+-- ATT.PrintName = "\"FRAG-12\" High Explosive X4"
+-- ATT.CompactName = "FRAG X4"
+-- ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_he_x4.png", "mips smooth")
+-- ATT.Description = "Load containing 4 explosive rounds, deals an mid amount of damage with small radius blast.\nEffectiveness is limited by the small caliber size."
+-- ATT.SortOrder = 8
+
+-- ATT.Category = {"cod2019_ammo_ubgl_sg"}
+
+-- ATT.NumOverrideUBGL = 4
+
+-- ATT.SpreadMultUBGL = 0.8
+
+-- ATT.PhysBulletGravityMultUBGL = 3
+-- ATT.PhysBulletMuzzleVelocityMultUBGL = 0.75
+
+-- ATT.DamageMaxOverrideUBGL = 15
+-- ATT.DamageMinOverrideUBGL = 10
+
+-- ATT.ExplosionRadiusOverrideUBGL = 65
+-- ATT.ExplosionDamageOverrideUBGL = 25
+-- ATT.ExplosionEffectUBGL = "cod2019_muzzle_he" -- placeholder
+-- ATT.ImpactDecalUBGL = "FadingScorch"
+
+-- ATT.MuzzleParticleUBGL = "muzzleflash_M3"
+
+-- ATT.DamageTypeUBGL = DMG_BLAST + DMG_AIRBOAT
+-- ATT.DamageTypeOverrideUBGL = DMG_BLAST + DMG_AIRBOAT
+
+-- ATT.NoAimAssistUBGL = true
+
+-- ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_sg_frag_x4")
+
+/////////////////////////// -- cod2019_ammo_hr
+-- ATT = {}
+
+-- ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+-- ATT.PrintName = "Dragon's Breath"
+-- ATT.CompactName = "DB"
+-- ATT.Icon = Material("entities/attachs/cod2019_ammo_sg_db.png", "mips smooth")
+-- ATT.Description = "12 gauge incendiary ammunition engulfs targets in a wall of fire and sparks. 3000 °F magnesium shards torch enemies, dealing heavy damage over time while ignited."
+-- ATT.SortOrder = 9
+
+-- ATT.Category = {"cod2019_ammo_ubgl_sg"}
+
+-- ATT.ExplosionEffectUBGL = "cod2019_muzzle_db"
+-- ATT.ImpactDecalUBGL = "Dark"
+-- ATT.ImpactEffectUBGL = "cod2019_muzzle_he"
+
+-- ATT.MuzzleParticleUBGL = "muzzleflash_shotgun"
+-- ATT.TracerEffectUBGL = "cod2019_tracer_inc"
+
+-- ATT.DamageTypeUBGL = DMG_BURN + DMG_SLOWBURN
+-- ATT.DamageTypeOverrideUBGL = DMG_BURN + DMG_SLOWBURN
+
+-- ATT.DamageMaxMultUBGL = 0.9
+-- ATT.DamageMinMultUBGL = 0.9
+
+-- local cov = 1 -- ??
+
+-- local badblood = { -- it's actually the good type
+    -- [-1] = true,
+    -- [3] = true,
+-- }
+
+-- ATT.Hook_BulletImpact = function(wep,data)
+    -- local ent = data.tr.Entity
+
+    -- local test1 = !(ent:IsNPC() or ent:IsPlayer() or ent:IsNextBot()) and true or false
+    -- local test2 = (!ent:GetBloodColor() or badblood[ent:GetBloodColor()]) and true or false
+
+    -- if IsValid(ent) and !test1 then
+        -- if vFireInstalled then
+            -- CreateVFire(ent, data.tr.HitPos, data.tr.HitNormal, data.dmg:GetDamage() * 0.02)
+        -- else
+            -- ent:Ignite(1.5, 0)
+        -- end
+    -- end
+
+    -- if IsValid(ent) and (test1 or test2) then
+        -- data.dmg:SetDamage(data.dmg:GetDamage() * cov)
+        -- local eff = EffectData()
+        -- eff:SetOrigin(data.tr.HitPos)
+        -- util.Effect("cball_bounce", eff)
+    -- end
+-- end
+
+-- ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_sg_db")
