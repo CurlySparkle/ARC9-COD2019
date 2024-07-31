@@ -903,6 +903,95 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 2.23},
         },
     },
+    ["reload_argl"] = {
+        Source = "reload_armag_gl",
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_rotate.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 12/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_01.ogg", t = 33/30},
+			{s = path .. "wfoly_ar_scharlie_reload_magin_v2_02.ogg", t = 41/30},
+			{s = path .. "wfoly_ar_scharlie_reload_end.ogg", t = 48/30},
+        },
+    },
+    ["reload_argl_empty"] = {
+        Source = "reload_armag_empty_gl",
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 0.95,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.15, lhik = 1, rhik = 0 },
+            { t = 0.3, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_empty_rotate.ogg", t = 0.066},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magout.ogg", t = 0.36},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_01.ogg", t = 1.45},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_magin_v2_02.ogg", t = 1.675},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_bolt_release.ogg", t = 2.1},
+			{s = path .. "wfoly_ar_scharlie_reload_empty_end.ogg", t = 2.23},
+        },
+    },
+    ["reload_argl_fast"] = {
+        Source = "reload_armag_fast_gl",
+		MinProgress = 0.85,
+		PeekProgress = 0.815,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 0.5,
+		DropMagAt = 0.45,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.35, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_fast_shake.ogg", t = 0.066},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magout.ogg", t = 0.36},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_01.ogg", t = 0.76},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_magin_v2_02.ogg", t = 1.06},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_end.ogg", t = 1.36},
+        },
+    },
+    ["reload_argl_fast_empty"] = {
+        Source = "reload_armag_fast_empty_gl",
+		MinProgress = 0.9,
+		PeekProgress = 0.825,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		MagSwapTime = 0.5,
+		DropMagAt = 0.45,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.35, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_rotate.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_magout.ogg", t = 0.16},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_magin_v2_01.ogg", t = 0.8},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_magin_v2_02.ogg", t = 1.03},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_bolt_release.ogg", t = 1.4},
+			{s = path .. "wfoly_ar_scharlie_reload_fast_empty_end.ogg", t = 1.8},
+        },
+    },
     ["ready"] = {
         Source = "draw",
         IKTimeLine = {
@@ -1439,8 +1528,13 @@ local Translate_XMags_GL_Fast = {
     ["reload_ubgl"] = "reload_fast_ubgl",
 }
 local Translate_AR_GL = {
-    ["reload"] = "reload_ar",
-    ["reload_empty"] = "reload_empty_glaunch",
+    ["reload"] = "reload_argl",
+    ["reload_empty"] = "reload_argl_empty",
+}
+
+local Translate_AR_GL_Fast = {
+    ["reload"] = "reload_argl_fast",
+    ["reload_empty"] = "reload_argl_fast_empty",
 }
 
 --- UB Shotgun ---
@@ -1530,11 +1624,6 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 				end
 			end
         else
-		if masterkey then
-			if Translate_UBGLS[anim] then
-				return Translate_UBGLS[anim]
-			end
-		end
 			if gl then
 				if Translate_GL_Fast[anim] then
 					return Translate_GL_Fast[anim]
@@ -1546,6 +1635,11 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 			end
         end
     else
+		if masterkey then
+			if Translate_UBGLS[anim] then
+				return Translate_UBGLS[anim]
+			end
+		end
 	    if drummag then
             if Translate_Drum[anim] then
                 return Translate_Drum[anim]
