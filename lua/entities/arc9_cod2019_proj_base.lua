@@ -99,7 +99,7 @@ function ENT:Initialize()
 
     self.SpawnTime = CurTime()
 
-    self.NPCDamage = IsValid(self:GetOwner()) and self:GetOwner():IsNPC() and !TacRP.ConVars["npc_equality"]:GetBool()
+    self.NPCDamage = IsValid(self:GetOwner()) and self:GetOwner():IsNPC() and self:GetOwner():IsNextBot()
 
     if self.AudioLoop then
         self.LoopSound = CreateSound(self, self.AudioLoop)

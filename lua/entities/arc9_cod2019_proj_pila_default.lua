@@ -47,7 +47,7 @@ function ENT:OnInitialize()
 end
 
 function ENT:Impact(data, collider)
-    if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
+    if self.SpawnTime + self.SafetyFuse > CurTime() then
         local attacker = self.Attacker or self:GetOwner()
         local ang = data.OurOldVelocity:Angle()
         local fx = EffectData()

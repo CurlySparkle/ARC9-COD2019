@@ -33,7 +33,7 @@ ENT.FlareColor = Color(255, 155, 0)
 ENT.Radius = 200
 
 function ENT:Impact(data, collider)
-    if self.SpawnTime + self.SafetyFuse > CurTime() and !self.NPCDamage then
+    if self.SpawnTime + self.SafetyFuse > CurTime() then
         local attacker = self.Attacker or self:GetOwner()
         local ang = data.OurOldVelocity:Angle()
         local fx = EffectData()
@@ -47,7 +47,7 @@ function ENT:Impact(data, collider)
             dmginfo:SetAttacker(attacker)
             dmginfo:SetInflictor(self)
             dmginfo:SetDamageType(DMG_CRUSH + DMG_CLUB)
-            dmginfo:SetDamage(250 * (self.NPCDamage and 0.5 or 1))
+            dmginfo:SetDamage(250)
             dmginfo:SetDamageForce(data.OurOldVelocity * 25)
             dmginfo:SetDamagePosition(data.HitPos)
             data.HitEntity:TakeDamageInfo(dmginfo)
