@@ -321,6 +321,7 @@ end
 
 local path = "weapons/cod2019/ak47/"
 local pathub = "weapons/cod2019/shared/ubgl/"
+local pathubs = "weapons/cod2019/model680/"
 
 SWEP.ShootSound = "COD2019.AK47.Fire"
 SWEP.ShootSoundIndoor = "COD2019.AK47.Fire"
@@ -1145,6 +1146,162 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_ak47_inspect_05.ogg", t = 4.1},
         },
     },
+-- UBGL Shotgun Animations
+	["enter_sights_ubgl_shotgun"] = {
+		Source = "ubgl_sh_idle",
+		IKTimeLine = { { t = 0,  lhik = 0, rhik = 0} },
+	},
+    ["fire_ubgl_shotgun"] = {
+        Source = "ubgl_sh_fire",
+		Mult = 0.66,
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+    },
+    ["reload_ubgl_start"] = {
+        Source = "ubgl_sh_reload_start",
+		RestoreAmmo = 1,
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		EventTable = {
+            {s = pathubs .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0.0},
+			{s = pathubs .. "wfoly_sh_romeo870_reload_start_shellin_01.ogg", t = 0.533},
+		}
+	},
+    ["reload_ubgl_insert"] = {
+        Source = "ubgl_sh_reload_loop",
+		MinProgress = 0.875,
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		EventTable = {
+            {s = pathubs .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0.0},
+			{s = pathubs .. "wfoly_sh_romeo870_reload_start_shellin_01.ogg", t = 0.533},
+		}
+	},
+    ["reload_ubgl_finish"] = {
+        Source = "ubgl_sh_reload_end",
+		MinProgress = 0.85,
+		FireASAP = true,
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		EventTable = {
+			{s = pathubs .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 0.0},
+		}
+	},
+    ["reload_ubgl_fast_start"] = {
+        Source = "ubgl_sh_reload_start",
+		Mult = 0.8,
+		RestoreAmmo = 1,
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		EventTable = {
+            {s = pathubs .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0.0},
+			{s = pathubs .. "wfoly_sh_romeo870_reload_start_shellin_01.ogg", t = 0.533},
+		}
+	},
+    ["reload_ubgl_fast_insert"] = {
+        Source = "ubgl_sh_reload_loop",
+		Mult = 0.66,
+		MinProgress = 0.875,
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		EventTable = {
+            {s = pathubs .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0.0},
+			{s = pathubs .. "wfoly_sh_romeo870_reload_start_shellin_01.ogg", t = 0.533},
+		}
+	},
+    ["reload_ubgl_fast_finish"] = {
+        Source = "ubgl_sh_reload_end",
+		Mult = 0.8,
+		MinProgress = 0.85,
+		FireASAP = true,
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		EventTable = {
+			{s = pathubs .. "wfoly_sh_romeo870_reload_end_turnover.ogg", t = 0.0},
+		}
+	},
+    ["enter_ubgl_shotgun"] = {
+        Source = "ubgl_sh_up",
+		Mult = 1.3,
+		MinProgress = 0.3,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+        },
+		EventTable = {
+			{s = pathub .. "ubgl_to_grenade.ogg", t = 0/30},
+		}
+	},
+    ["exit_ubgl_shotgun"] = {
+        Source = "ubgl_sh_down",
+		Mult = 1.3,
+		MinProgress = 0.3,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 0, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 0 },
+        },
+        EventTable = {
+			{s = pathub .. "ubgl_from_grenade.ogg", t = 0/30},
+        },
+    },
+    ["draw_ubgl_shotgun"] = {
+        Source = "ubgl_sh_raise",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+    },
+    ["holster_ubgl_shotgun"] = {
+        Source = "ubgl_sh_drop",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+        EventTable = {
+            {s = pathub .. "ubgl_drop.ogg", t = 0/30},
+        },
+    },
+    ["idle_ubgl_shotgun"] = {
+        Source = "ubgl_sh_idle",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+    },
+    ["idle_ubgl_shotgun_sprint"] = {
+        Source = "ubgl_sh_sprint",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+    },
+    ["exit_sprint_ubgl_shotgun"] = {
+        Source = "ubgl_sh_sprint_out",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		Time = 1,
+    },
+    ["enter_sprint_ubgl_shotgun"] = {
+        Source = "ubgl_sh_sprint_in",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		Time = 1,
+    },
+    ["super_sprint_idle_ubgl_shotgun"] = {
+        Source = "ubgl_sh_super_sprint",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+    },
+    ["super_sprint_in_ubgl_shotgun"] = {
+        Source = "ubgl_sh_super_sprint_in",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		Time = 1,
+    },
+    ["super_sprint_out_ubgl_shotgun"] = {
+        Source = "ubgl_sh_super_sprint_in",
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+		Reverse = true,
+		Time = 1,
+    },
+    ["bash_ubgl_shotgun"] = {
+        Source = {"ubgl_sh_melee", "ubgl_sh_melee2", "ubgl_sh_melee3"},
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+    },
+    ["inspect_ubgl_shotgun"] = {
+        Source = "ubgl_sh_lookat01",
+		MinProgress = 0.1,
+		FireASAP = true,
+        IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
+        EventTable = {
+            {s = path .. "wfoly_ar_ak47_inspect_01.ogg", t = 0},
+			{s = path .. "wfoly_ar_ak47_inspect_02.ogg", t = 1.3},
+			{s = path .. "wfoly_ar_ak47_inspect_03.ogg", t = 2.36},
+			{s = path .. "wfoly_ar_ak47_inspect_04.ogg", t = 3.6},
+			{s = path .. "wfoly_ar_ak47_inspect_05.ogg", t = 4.1},
+        },
+    },
 }
 
 -------------------------- ATTACHMENTS
@@ -1209,6 +1366,46 @@ local Translate_Bayonet = {
     ["bash"] = "bash_bayonet",
 }
 
+--- UB Shotgun ---
+local Translate_UBGLS = {
+    ["enter_sights_ubgl"] = "enter_sights_ubgl_shotgun",
+    ["fire_ubgl"] = "fire_ubgl_shotgun",
+    ["enter_ubgl"] = "enter_ubgl_shotgun",
+    ["exit_ubgl"] = "exit_ubgl_shotgun",
+    ["draw_ubgl"] = "draw_ubgl_shotgun",
+    ["holster_ubgl"] = "holster_ubgl_shotgun",
+    ["idle_ubgl"] = "idle_ubgl_shotgun",
+    ["idle_ubgl_sprint"] = "idle_ubgl_sprint",
+    ["exit_sprint_ubgl"] = "exit_sprint_ubgl_shotgun",
+    ["enter_sprint_ubgl"] = "enter_sprint_ubgl_shotgun",
+    ["super_sprint_idle_ubgl"] = "super_sprint_idle_ubgl_shotgun",
+    ["super_sprint_in_ubgl"] = "super_sprint_in_ubgl_shotgun",
+    ["super_sprint_out_ubgl"] = "super_sprint_out_ubgl_shotgun",
+    ["bash_ubgl"] = "bash_ubgl_shotgun",
+    ["inspect_ubgl"] = "inspect_ubgl_shotgun",
+}
+
+local Translate_UBGLS_Fast = {
+    ["enter_sights_ubgl"] = "enter_sights_ubgl_shotgun",
+    ["fire_ubgl"] = "fire_ubgl_shotgun",
+    ["enter_ubgl"] = "enter_ubgl_shotgun",
+    ["exit_ubgl"] = "exit_ubgl_shotgun",
+    ["draw_ubgl"] = "draw_ubgl_shotgun",
+    ["holster_ubgl"] = "holster_ubgl_shotgun",
+    ["idle_ubgl"] = "idle_ubgl_shotgun",
+    ["idle_ubgl_sprint"] = "idle_ubgl_sprint",
+    ["exit_sprint_ubgl"] = "exit_sprint_ubgl_shotgun",
+    ["enter_sprint_ubgl"] = "enter_sprint_ubgl_shotgun",
+    ["super_sprint_idle_ubgl"] = "super_sprint_idle_ubgl_shotgun",
+    ["super_sprint_in_ubgl"] = "super_sprint_in_ubgl_shotgun",
+    ["super_sprint_out_ubgl"] = "super_sprint_out_ubgl_shotgun",
+    ["bash_ubgl"] = "bash_ubgl_shotgun",
+    ["inspect_ubgl"] = "inspect_ubgl_shotgun",
+    ["reload_ubgl_start"] = "reload_ubgl_fast_start",
+    ["reload_ubgl_insert"] = "reload_ubgl_fast_insert",
+    ["reload_ubgl_finish"] = "reload_ubgl_fast_finish",
+}
+
 SWEP.Hook_TranslateAnimation = function(wep, anim)
     --local attached = self:GetElements()
 
@@ -1220,6 +1417,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local smg = wep:HasElement("mag_545")
     local xmag = wep:HasElement("mag_xmag")
     local nostock = wep:HasElement("stock_none") or wep:HasElement("stock_none2")
+	local masterkey = wep:HasElement("shotgun")
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
@@ -1230,6 +1428,11 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     end
 
     if speedload then
+		if masterkey then
+			if Translate_UBGLS_Fast[anim] then
+				return Translate_UBGLS_Fast[anim]
+			end
+		end
         if drum then
             if Translate_Drum_Fast[anim] then
                 return Translate_Drum_Fast[anim]
@@ -1252,6 +1455,11 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             end
         end
     else 
+		if masterkey then
+			if Translate_UBGLS[anim] then
+				return Translate_UBGLS[anim]
+			end
+		end
         if drum then
             if Translate_Drum[anim] then
                 return Translate_Drum[anim]

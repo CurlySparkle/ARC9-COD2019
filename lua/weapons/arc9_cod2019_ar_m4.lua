@@ -1241,7 +1241,7 @@ local Translate_TacSprint = {
     ["exit_sprint_ubgl"] = "super_sprint_out_ubgl",
 }
 
---- Fast & Tac. Sprint ---
+--- UB Shotgun ---
 local Translate_UBGLS = {
     ["enter_sights_ubgl"] = "enter_sights_ubgl_shotgun",
     ["fire_ubgl"] = "fire_ubgl_shotgun",
