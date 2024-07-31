@@ -1043,7 +1043,6 @@ SWEP.Animations = {
     ["fire_ubgl_shotgun"] = {
         Source = "ubgl_sh_fire",
 		Mult = 0.66,
-		EjectAtUBGL = 0.05,
         IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
     },
     ["reload_ubgl_start"] = {
