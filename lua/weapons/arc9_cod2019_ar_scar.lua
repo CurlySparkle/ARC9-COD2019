@@ -1546,7 +1546,7 @@ local Translate_UBGLS = {
     ["draw_ubgl"] = "draw_ubgl_shotgun",
     ["holster_ubgl"] = "holster_ubgl_shotgun",
     ["idle_ubgl"] = "idle_ubgl_shotgun",
-    ["idle_ubgl_sprint"] = "idle_ubgl_sprint",
+    ["idle_ubgl_sprint"] = "idle_ubgl_shotgun_sprint",
     ["exit_sprint_ubgl"] = "exit_sprint_ubgl_shotgun",
     ["enter_sprint_ubgl"] = "enter_sprint_ubgl_shotgun",
     ["super_sprint_idle_ubgl"] = "super_sprint_idle_ubgl_shotgun",
@@ -1564,7 +1564,7 @@ local Translate_UBGLS_Fast = {
     ["draw_ubgl"] = "draw_ubgl_shotgun",
     ["holster_ubgl"] = "holster_ubgl_shotgun",
     ["idle_ubgl"] = "idle_ubgl_shotgun",
-    ["idle_ubgl_sprint"] = "idle_ubgl_sprint",
+    ["idle_ubgl_sprint"] = "idle_ubgl_shotgun_sprint",
     ["exit_sprint_ubgl"] = "exit_sprint_ubgl_shotgun",
     ["enter_sprint_ubgl"] = "enter_sprint_ubgl_shotgun",
     ["super_sprint_idle_ubgl"] = "super_sprint_idle_ubgl_shotgun",
@@ -1607,6 +1607,16 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 			else
 				if Translate_Drum_Fast[anim] then
 					return Translate_Drum_Fast[anim]
+				end
+			end
+        elseif armag then
+			if gl then
+				if Translate_AR_GL_Fast[anim] then
+					return Translate_AR_GL_Fast[anim]
+				end
+			else
+				if Translate_AR_Fast[anim] then
+					return Translate_AR_Fast[anim]
 				end
 			end
         elseif dmr then
