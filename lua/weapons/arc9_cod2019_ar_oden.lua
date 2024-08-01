@@ -624,8 +624,8 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_glopen.ogg", t = 3/30},
 			{s = pathub .. "ubgl_reload_shellin.ogg", t = 20/30},
 			{s = pathub .. "ubgl_reload_end.ogg", t = 25/30},
-			{s = pathub .. "ubgl_reload_glclose.ogg", t = 32/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 36/30},
+			{s = pathub .. "ubgl_reload_glclose.ogg", t = 33/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 37/30},
 		}
 	},
     ["enter_ubgl"] = {

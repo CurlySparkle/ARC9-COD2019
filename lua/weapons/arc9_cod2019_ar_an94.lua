@@ -840,12 +840,12 @@ SWEP.Animations = {
 		EventTable = {
 			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
-			{s = pathub .. "ubgl_reload_glopen.ogg", t = 12/30},
+			{s = pathub .. "ubgl_reload_glopen.ogg", t = 11/30},
             {s = pathub .. "ubgl_reload_shellin_01.ogg", t = 37/30},
 			{s = pathub .. "ubgl_reload_shellin.ogg", t = 44.25/30},
-			{s = pathub .. "ubgl_reload_end.ogg", t = 54.5/30},
-			{s = pathub .. "ubgl_reload_glclose.ogg", t = 59/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 69/30},
+			{s = pathub .. "ubgl_reload_end.ogg", t = 55.5/30},
+			{s = pathub .. "ubgl_reload_glclose.ogg", t = 60/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 70/30},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -857,11 +857,10 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_lift.ogg", t = 0/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 2/30},
 			{s = pathub .. "ubgl_reload_glopen.ogg", t = 9/30},
-            {s = pathub .. "ubgl_reload_shellin_01.ogg", t = 23/30},
 			{s = pathub .. "ubgl_reload_shellin.ogg", t = 30/30},
 			{s = pathub .. "ubgl_reload_end.ogg", t = 35/30},
-			{s = pathub .. "ubgl_reload_glclose.ogg", t = 41/30},
-			{s = pathub .. "ubgl_reload_arm.ogg", t = 45/30},
+			{s = pathub .. "ubgl_reload_glclose.ogg", t = 42/30},
+			{s = pathub .. "ubgl_reload_arm.ogg", t = 46/30},
 		}
 	},
     ["enter_ubgl"] = {
