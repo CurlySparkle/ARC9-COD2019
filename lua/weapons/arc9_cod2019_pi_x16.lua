@@ -222,8 +222,8 @@ SWEP.MovingAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-1, -0.5, -1)
 SWEP.CrouchAng = Angle(0, 0, -5)
 
-SWEP.SprintPos = Vector(1, 0, -1)
-SWEP.SprintAng = Angle(0, 0, 25)
+SWEP.SprintPos = Vector(-1.5, 0, -1)
+SWEP.SprintAng = Angle(0, 0, 5)
 
 SWEP.CustomizeAng = Angle(90, -15, 0)
 SWEP.CustomizePos = Vector(15, 32.5, 5.5)
@@ -1317,7 +1317,7 @@ SWEP.Attachments = {
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
-        Bone = "tag_pistol_attachments",
+        Bone = "tag_pistol_offset",
         Pos = Vector(3, 0, -1.5),
     },
 	
@@ -1325,7 +1325,7 @@ SWEP.Attachments = {
     { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
         Category = "cod2019_x16_receiver",
-        Bone = "tag_pistol_attachments",
+        Bone = "tag_pistol_offset",
         Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(0, 0, 0.5),
 		Hidden = false,
