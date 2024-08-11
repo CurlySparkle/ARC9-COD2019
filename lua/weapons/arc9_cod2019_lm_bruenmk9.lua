@@ -676,8 +676,6 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
-		MinProgress = 0.1,
-		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.05, lhik = 1, rhik = 0 },
@@ -694,8 +692,6 @@ SWEP.Animations = {
     },
     ["inspect_smag"] = {
         Source = "lookat01_smag",
-		MinProgress = 0.1,
-		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.05, lhik = 1, rhik = 0 },

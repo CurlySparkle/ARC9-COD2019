@@ -585,8 +585,6 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
-        MinProgress = 0.1,
-        FireASAP = true,
         IKTimeLine = { -- little shakey shakey
 		{ t = 0, lhik = 1,  rhik = 1 },
 		{ t = 0.05, lhik = 1,  rhik = 1 },

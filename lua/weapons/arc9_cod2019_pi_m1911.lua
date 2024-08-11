@@ -676,8 +676,6 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
-        MinProgress = 0.1,
-        FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -784,8 +782,10 @@ SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["cod2019_view_alt_pistol"] = {
-    ActivePos = Vector(3, 0, 2),
-    ActiveAng = Angle(0, 0, 20),
+    -- ActivePos = Vector(3, 0, 2),
+    -- ActiveAng = Angle(0, 0, 20),
+    ActivePos = Vector(2, 0, 1.5),
+    ActiveAng = Angle(0, 0, 10),
 
     MovingPos = Vector(-1, -1, -1),
     MovingAng = Angle(0, 0, -5),

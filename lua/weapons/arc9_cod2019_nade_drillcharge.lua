@@ -65,7 +65,7 @@ SWEP.Sway = 0 -- How much the gun sways.
 
 SWEP.ShootEnt = "arc9_cod2019_throwndrill"
 SWEP.Ammo = "grenade" -- What ammo type this gun uses.
-SWEP.ShootPosOffset = Vector(5, 0, 3)
+SWEP.ShootPosOffset = Vector(3, 6, 2)
 
 SWEP.Throwable = true -- Set to true to give this weapon throwing capabilities.
 SWEP.Tossable = false -- When grenade is enabled, right click will toss. Set to false to disable, allowing you to aim down sights.
@@ -195,7 +195,7 @@ SWEP.Animations = {
     },
     ["throw"] = {
         Source = "throw",
-		MinProgress = 0.57,
+		MinProgress = 0.53,
 		Mult = 0.6,
         EventTable = {
             {s = path2 .. "eqp_bunkerbuster_prime_cloth.ogg", t = 10/30},
@@ -203,7 +203,7 @@ SWEP.Animations = {
     },
     ["toss"] = {
         Source = "throw",
-		MinProgress = 0.57,
+		MinProgress = 0.53,
 		Mult = 0.6,
         EventTable = {
             {s = path2 .. "eqp_bunkerbuster_prime_cloth.ogg", t = 10/30},

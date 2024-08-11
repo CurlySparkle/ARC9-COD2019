@@ -63,7 +63,6 @@ SWEP.SpeedMultReload = 0.85
 SWEP.ViewRecoil = false -- true
 SWEP.ViewRecoilUpMult = -5 -- 40-100
 SWEP.ViewRecoilUpMultSights = 10
-
 SWEP.PhysicalVisualRecoil = true
 
 -- Extras
@@ -80,6 +79,7 @@ SWEP.CanBlindFire = false
 SWEP.LaserAlwaysOnTargetInPeek = true
 
 SWEP.MalfunctionExitSights = true
+SWEP.FireInterruptInspect = true
 
 SWEP.EnterBipodSound = "Viewmodel.BipodDeploy"
 SWEP.ExitBipodSound = "Viewmodel.BipodExit"

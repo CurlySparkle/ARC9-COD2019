@@ -12,11 +12,11 @@ ENT.Spawnable = false
 
 function ENT:Initialize()
     if SERVER then
-        self:SetModel("models/weapons/cod2019/w_eq_drill_charge.mdl") -- Replace with appropriate model
+        self:SetModel("models/weapons/cod2019/w_eq_drill_charge.mdl")
         self:PhysicsInit(SOLID_VPHYSICS)
         self:SetMoveType(MOVETYPE_VPHYSICS)
         self:SetSolid(SOLID_VPHYSICS)
-		self:SetAngles(Angle(90, 0, 0))
+		self:SetAngles(self:GetAngles() - Angle(90, 0, 0))
 		ParticleEffectAttach("grenadetrail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
 		sound.EmitHint(SOUND_DANGER, self:GetPos(), 128 * 2, 1, nil)
         

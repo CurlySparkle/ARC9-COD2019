@@ -53,9 +53,9 @@ SWEP.BobSprintMult = 0
 
 SWEP.SprintVerticalOffset = false
 SWEP.CanBlindFire = false
+SWEP.FireInterruptInspect = true
 
 SWEP.SwayMultSights = 0
-
 SWEP.MovePoseParam = 0
 SWEP.WalkPoseParam = 0
 SWEP.HasSights = !SWEP.Akimbo

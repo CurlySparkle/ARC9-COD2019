@@ -455,8 +455,6 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat02",
-		MinProgress = 0.1,
-		FireASAP = true,
         RareSource = "lookat01_empty", -- Has a small chance to play instead of normal source
         RareSourceChance = 0.1, -- chance that rare source will play
         IKTimeLine = {
