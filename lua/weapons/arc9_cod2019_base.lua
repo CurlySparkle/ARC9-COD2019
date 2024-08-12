@@ -80,6 +80,7 @@ SWEP.LaserAlwaysOnTargetInPeek = true
 
 SWEP.MalfunctionExitSights = true
 SWEP.FireInterruptInspect = true
+SWEP.SightsInterruptInspect = true
 
 SWEP.EnterBipodSound = "Viewmodel.BipodDeploy"
 SWEP.ExitBipodSound = "Viewmodel.BipodExit"
