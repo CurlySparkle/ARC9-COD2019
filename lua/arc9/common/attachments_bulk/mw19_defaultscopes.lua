@@ -257,7 +257,7 @@ ATT = {}
 
 ATT.PrintName = "MGL-32 Grenade Launcher Sight"
 ATT.Description = ""
-ATT.Icon = Material("entities/attachs/cod2019_attach_generic.png", "mips smooth")
+ATT.Icon = Material("entities/attachs/la/m32/cod2019_la_mike32_scope.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 
 ATT.SortOrder = 0
