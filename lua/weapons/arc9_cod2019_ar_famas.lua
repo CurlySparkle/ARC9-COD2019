@@ -347,9 +347,10 @@ SWEP.EnterSightsSound = path .. "weap_ar_falpha_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "weap_ar_falpha_ads_down.ogg"
 
 SWEP.BulletBones = {
-    [1] = "j_bullet01",
-    [2] = "j_bullet02",
-	[3] = "j_bullet03",
+    [1] = {"j_bullet01","j_ammo1"},
+    [2] = {"j_bullet02","j_ammo2"},
+	[3] = {"j_bullet03","j_ammo3"},
+	[4] = {"j_bullet04","j_ammo4"}
 }
 
 SWEP.HideBones  = {
@@ -524,6 +525,90 @@ SWEP.Animations = {
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
+		MinProgress = 0.9,
+		PeekProgress = 0.8,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 8/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 22/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_chamber_01.ogg", t = 42/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 55/30},
+        },
+    },
+    ["reload_xmaglrg"] = {
+        Source = "reload_xmaglrg",
+		MinProgress = 0.85,
+		PeekProgress = 0.8,
+		RefillProgress = 0.6,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.675, lhik = 0, rhik = 0 },
+            { t = 0.875, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_twist.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_falpha_magout_01.ogg", t = 19/30},
+			{s = path .. "wfoly_ar_falpha_reload_maghit_01.ogg", t = 37/30},
+			{s = path .. "wfoly_ar_falpha_reload_magin_01.ogg", t = 44/30},
+			{s = path .. "wfoly_ar_falpha_reload_end.ogg", t = 55/30},
+        },
+    },
+    ["reload_xmaglrg_empty"] = {
+        Source = "reload_xmaglrg_empty",
+		MinProgress = 0.825,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.875, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 7/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 22/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_chamber_01.ogg", t = 43/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 58/30},
+        },
+    },
+    ["reload_xmaglrg_fast"] = {
+        Source = "reload_xmaglrg_fast",
+		MinProgress = 0.85,
+		PeekProgress = 0.825,
+		RefillProgress = 0.6,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		--DropMagAt = 0.6,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_falpha_reload_empty_twist.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magout_01.ogg", t = 14/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_magin_01.ogg", t = 25/30},
+			{s = path .. "wfoly_ar_falpha_reload_empty_end.ogg", t = 45/30},
+        },
+    },
+    ["reload_xmaglrg_fast_empty"] = {
+        Source = "reload_xmaglrg_fast_empty",
 		MinProgress = 0.9,
 		PeekProgress = 0.8,
 		RefillProgress = 0.725,
@@ -1159,7 +1244,7 @@ local Translate_Valorise_Fast = {
 	["holster"] = "holster_valorise",
 }
 
---- 50 & 60 Round Mags ---
+--- 50 Round Mags ---
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
@@ -1167,6 +1252,17 @@ local Translate_XMag = {
 local Translate_XMag_Fast = {
     ["reload"] = "reload_xmag_fast",
     ["reload_empty"] = "reload_xmag_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
+}
+
+--- 60 Round Mags ---
+local Translate_XMaglrg = {
+    ["reload"] = "reload_xmaglrg",
+    ["reload_empty"] = "reload_xmaglrg_empty",
+}
+local Translate_XMaglrg_Fast = {
+    ["reload"] = "reload_xmaglrg_fast",
+    ["reload_empty"] = "reload_xmaglrg_fast_empty",
     ["reload_ubgl"] = "reload_fast_ubgl",
 }
 
@@ -1232,6 +1328,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local super_sprint = wep:HasElement("perk_super_sprint")
 	local railcust = wep:HasElement("railcust")
     local xmag = wep:HasElement("mag_xmag")
+    local xmaglrg = wep:HasElement("mag_xmaglrg")
 	local masterkey = wep:HasElement("shotgun")
 
     if super_sprint and Translate_TacSprint[anim] then
@@ -1248,7 +1345,11 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_Valorise_Fast[anim] then
                 return Translate_Valorise_Fast[anim]
             end 
-        elseif xmag then
+        elseif xmaglrg then
+            if Translate_XMaglrg_Fast[anim] then
+                return Translate_XMaglrg_Fast[anim]
+            end 
+		elseif xmag then
             if Translate_XMag_Fast[anim] then
                 return Translate_XMag_Fast[anim]
             end 
@@ -1266,6 +1367,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 		if railcust then
             if Translate_Valorise[anim] then
                 return Translate_Valorise[anim]
+        elseif xmaglrg then
+            if Translate_XMaglrg[anim] then
+                return Translate_XMaglrg[anim]
+            end
         elseif xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
@@ -1299,6 +1404,18 @@ SWEP.AttachmentTableOverrides = {
 		-- ModelAngleOffset = Angle(0, 0, 0),
 		-- Scale = 0.9,
     -- },
+    ["cod2019_m4_mag_alt"] = {
+	    Model = "models/weapons/cod2019/attachs/weapons/famas/attachment_vm_ar_falpha_kilo433_mag.mdl",
+		ActivateElements = {"mag_none","mag_xmag"}
+    },
+    ["cod2019_attach_xmag_50"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/famas/attachment_vm_ar_falpha_xmags.mdl",
+		ActivateElements = {"mag_none","mag_xmag"}
+    },
+    ["cod2019_attach_xmag_60"] = {
+		Model = "models/weapons/cod2019/attachs/weapons/famas/attachment_vm_ar_falpha_xmags2.mdl",
+		ActivateElements = {"mag_none","mag_xmaglrg"}
+    },
     ["cod2019_griptape_01"] = {
 		Model = "models/weapons/cod2019/attachs/weapons/famas/attachment_vm_ar_falpha_pistolgrip_tape.mdl",
     },
@@ -1540,8 +1657,8 @@ SWEP.Attachments = {
         Category = {"cod2019_famas_bipod"},
         Bone = "tag_grip_attach",
         Pos = Vector(0, 0, 0),
-		Hidden = true,
-		MergeSlots = {6}, -- Underbarrel
+		--Hidden = true,
+		--MergeSlots = {6}, -- Underbarrel
     },
     { -- 22
         PrintName = "SideGrips",
@@ -1564,11 +1681,18 @@ SWEP.Attachments = {
 		MergeSlots = {6}, -- Grips
 		Hidden = true,
     },
+    { -- 24
+        PrintName = ARC9:GetPhrase("mw19_category_view"),
+        Category = "cod2019_mk2_view",
+        Bone = "tag_cosmetic",
+        Pos = Vector(-5, 0, 1.5),
+		CosmeticOnly = true,
+    },
 }
 
 SWEP.GripPoseParam = 0
 SWEP.GripPoseParam2 = 0
-SWEP.CodAngledGripPoseParam = 22
+SWEP.CodAngledGripPoseParam = 44
 SWEP.CodStubbyGripPoseParam = 10
 --SWEP.CodStubbyTallGripPoseParam = 19
 SWEP.CodStubbyTallGripPoseParam = 26
