@@ -529,8 +529,7 @@ L["cod2019_perks_auto.description"] = "Changes fire mode to <color=100,255,100>f
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
-//////////////////// Assault Rifles
-//////////// Weapon Names
+//////////////////// Weapon Names
 L["mw19_weapon_kilo141"] = "Kilo 141"
 L["mw19_weapon_fal"] = "FAL"
 L["mw19_weapon_m4a1"] = "M4A1"
@@ -630,7 +629,7 @@ L["mw19_weapon_nade_gas"] = "ガス"
 -- L["mw19_weapon_fists"] = "Fists" -- UO
 -- L["mw19_weapon_nade_rock"] = "Rock" -- UO
 
-//////////// Weapon Descriptions
+//////////////////// Weapon Descriptions
 L["mw19_weapon_kilo141_desc"] = "人間工学に基づいて設計された全自動アサルトライフル。優れたハンドリングと連射速度で安定して標的を狙える"
 L["mw19_weapon_fal_desc"] = "セミオートの戦闘用ライフル。連射速度が速く、狙いを外した後もすぐに追い撃ち可能"
 L["mw19_weapon_m4a1_desc"] = "フルオートの多目的戦闘用ライフル。射撃を制御し、長距離で絶大な力を発揮する"
@@ -729,3 +728,8 @@ L["mw19_weapon_nade_gas_desc"] = "着弾と同時に催涙ガスを放出。敵�
 L["mw19_weapon_minigun_desc"] = "7.62 NATO弾を使用するガトリングガン" -- UO
 -- L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO
 -- L["mw19_weapon_nade_rock_desc"] = "For when you need to hit an enemy with a \"non-lethal\" item, or if you need to provide a distraction in order to sneak past guards." -- UO
+
+//////////////////// Custom Weapon Names -- all UO
+L["mw19_weapon_m4a1_friend"] = "Lil' Friend"
+L["mw19_weapon_fr556_avancer"] = "FR Avancer"
+L["mw19_weapon_grau_imbel"] = "Grau Intruso"

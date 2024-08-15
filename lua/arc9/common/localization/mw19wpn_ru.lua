@@ -529,8 +529,7 @@ L["cod2019_stock_origin12.compactname"] = "Ориджин" -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
-//////////////////// Assault Rifles
-//////////// Weapon Names
+//////////////////// Weapon Names
 L["mw19_weapon_kilo141"] = "Kilo 141"
 L["mw19_weapon_fal"] = "FAL"
 L["mw19_weapon_m4a1"] = "M4A1"
@@ -630,7 +629,7 @@ L["mw19_weapon_nade_gas"] = "Газовая гранат"
 -- L["mw19_weapon_fists"] = "Fists" -- UO
 -- L["mw19_weapon_nade_rock"] = "Rock" -- UO
 
-//////////// Weapon Descriptions
+//////////////////// Weapon Descriptions
 L["mw19_weapon_kilo141_desc"] = "Автоматическая штурмовая винтовка с эргономичным дизайном и умеренной скорострельностью, облегчающей поражение целей длинными очередями."
 L["mw19_weapon_fal_desc"] = "Полуавтоматическая штурмовая винтовка, демонстрирующая высокий темп стрельбы, требующийся при повторных выстрелах."
 L["mw19_weapon_m4a1_desc"] = "Автоматическая штурмовая винтовка со сбалансированными характеристиками. В руках опытного стрелка очень эффективна на дальних дистанциях."
@@ -729,3 +728,8 @@ L["mw19_weapon_nade_gas_desc"] = "Взрывается при столкнове
 -- L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
 -- L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO
 -- L["mw19_weapon_nade_rock_desc"] = "For when you need to hit an enemy with a \"non-lethal\" item, or if you need to provide a distraction in order to sneak past guards." -- UO
+
+//////////////////// Custom Weapon Names -- all UO
+L["mw19_weapon_m4a1_friend"] = "Lil' Friend"
+L["mw19_weapon_fr556_avancer"] = "FR Avancer"
+L["mw19_weapon_grau_imbel"] = "Grau Intruso"

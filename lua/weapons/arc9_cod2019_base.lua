@@ -188,7 +188,7 @@ SWEP.HookP_NameChange = function(self, name)
 	
 	-- Assault Rifle, M$
 	if att["cod2019_m4a1_barrel_mid"] and att["m203"] and att["cod2019_m4_stock_m16"] and (att["cod2019_m4_carryhandle"] or  att["cod2019_m4_carryhandle_v2"]) then
-		name = "Little Friend"
+		name = ARC9:GetPhrase("mw19_weapon_m4a1_friend") or "Lil' Friend"
 	end
 
 	-- Assault Rifle, AK-47
@@ -211,6 +211,11 @@ SWEP.HookP_NameChange = function(self, name)
 	if att["cod2019_scar_mag_ar"] then
 		name = string.Replace(name, "17", "16")
 	end	
+
+	-- Assault Rifle, FR 5.56
+	if att["cod2019_famas_upper_railcust"] then
+		name = ARC9:GetPhrase("mw19_weapon_fr556_avancer") or "FR Avancer"
+	end
 
 	-- Light Machine Gun, Holger-26
 	if att["cod2019_holger_receiver_v2"] then

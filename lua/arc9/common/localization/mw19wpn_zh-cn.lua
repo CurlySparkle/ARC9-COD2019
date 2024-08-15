@@ -530,8 +530,7 @@ L["cod2019_perks_auto.description"] = "將射模式轉換成<color=100,255,100>�
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
-//////////////////// Assault Rifles
-//////////// Weapon Names
+//////////////////// Weapon Names
 L["mw19_weapon_kilo141"] = "Kilo 141"
 L["mw19_weapon_fal"] = "FAL"
 L["mw19_weapon_m4a1"] = "M4A1"
@@ -631,7 +630,7 @@ L["mw19_weapon_nade_gas"] = "催唳彈"
 -- L["mw19_weapon_fists"] = "Fists" -- UO
 -- L["mw19_weapon_nade_rock"] = "Rock" -- UO
 
-//////////// Weapon Descriptions
+//////////////////// Weapon Descriptions
 L["mw19_weapon_kilo141_desc"] = "全自動突擊步槍，睬人體工學設計，操控性更佳，射速穩定利於鎖定目標。"
 L["mw19_weapon_fal_desc"] = "半自動突擊步槍，可高速連發以利後續補槍。"
 L["mw19_weapon_m4a1_desc"] = "全自動、適合各腫場合的突擊步槍。只要在射擊時控制得宜，這把武器在射程内就可以發揮出很好的效果。"
@@ -730,3 +729,8 @@ L["mw19_weapon_nade_gas_desc"] = "在撞擊地面後引爆，並釋放出持續�
 -- L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
 -- L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO
 -- L["mw19_weapon_nade_rock_desc"] = "For when you need to hit an enemy with a \"non-lethal\" item, or if you need to provide a distraction in order to sneak past guards." -- UO
+
+//////////////////// Custom Weapon Names -- all UO
+L["mw19_weapon_m4a1_friend"] = "Lil' Friend"
+L["mw19_weapon_fr556_avancer"] = "FR Avancer"
+L["mw19_weapon_grau_imbel"] = "Grau Intruso"

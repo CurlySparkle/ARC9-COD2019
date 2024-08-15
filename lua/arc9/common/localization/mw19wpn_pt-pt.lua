@@ -529,8 +529,7 @@ L["cod2019_perks_auto.description"] = "Muda o modo de disparo para <color=100,25
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
-//////////////////// Assault Rifles
-//////////// Weapon Names
+//////////////////// Weapon Names
 L["mw19_weapon_kilo141"] = "Kilo 141"
 L["mw19_weapon_fal"] = "FAL"
 L["mw19_weapon_m4a1"] = "M4A1"
@@ -630,7 +629,7 @@ L["mw19_weapon_nade_gas"] = "Granada de Gás"
 -- L["mw19_weapon_fists"] = "Fists" -- UO
 -- L["mw19_weapon_nade_rock"] = "Rock" -- UO
 
-//////////// Weapon Descriptions
+//////////////////// Weapon Descriptions
 L["mw19_weapon_kilo141_desc"] = "Fuzil de assalto totalmente automático com design ergonômico que melhora o manuseio. Possui cadência de tiros estável que ajuda a manter o foco no alvo."
 L["mw19_weapon_fal_desc"] = "Fuzil de assalto semiautomático com alta cadência de tiros que permite disparos subsequentes mais rápidos."
 L["mw19_weapon_m4a1_desc"] = "Fuzil de assalto totalmente automático, para todo tipo de combate. Controle seus tiros e essa arma será eficiente a qualquer distância."
@@ -729,3 +728,8 @@ L["mw19_weapon_nade_gas_desc"] = "Explode no impacto com o chão, soltando uma n
 -- L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
 -- L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO
 -- L["mw19_weapon_nade_rock_desc"] = "For when you need to hit an enemy with a \"non-lethal\" item, or if you need to provide a distraction in order to sneak past guards." -- UO
+
+//////////////////// Custom Weapon Names -- all UO
+L["mw19_weapon_m4a1_friend"] = "Lil' Friend"
+L["mw19_weapon_fr556_avancer"] = "FR Avancer"
+L["mw19_weapon_grau_imbel"] = "Grau Intruso"

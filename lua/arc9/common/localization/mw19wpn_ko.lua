@@ -530,8 +530,7 @@ L["cod2019_perks_burst_2.description"] = "사격 모드를 <color=100,255,100>2�
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
-//////////////////// Assault Rifles
-//////////// Weapon Names
+//////////////////// Weapon Names
 L["mw19_weapon_kilo141"] = "Kilo 141"
 L["mw19_weapon_fal"] = "FAL"
 L["mw19_weapon_m4a1"] = "M4A1"
@@ -631,7 +630,7 @@ L["mw19_weapon_nade_gas"] = "가스 수류탄"
 -- L["mw19_weapon_fists"] = "Fists" -- UO
 -- L["mw19_weapon_nade_rock"] = "Rock" -- UO
 
-//////////// Weapon Descriptions
+//////////////////// Weapon Descriptions
 L["mw19_weapon_kilo141_desc"] = "인체공학적으로 설계된 전자동 소총입니다. 조작성이 뛰어나 안정적으로 사격할 수 있습니다."
 L["mw19_weapon_fal_desc"] = "연사 속도가 빨라 신속히 후속 사격을 할 수 있는 반자동 AR입 니다."
 L["mw19_weapon_m4a1_desc"] = "전자동 다목적 AR입니다. 원거리에서도 조준 사격 효율이 매우 좋습니다."
@@ -730,3 +729,8 @@ L["mw19_weapon_nade_gas_desc"] = "폭발 시 최루성 기체를 내뿜어 적�
 -- L["mw19_weapon_minigun_desc"] = "Portable gatling gun with a very high cyclic rate." -- UO
 -- L["mw19_weapon_fists_desc"] = "When all else fails, punch your way out. Remember, fists do not require reloading, so they are always quick." -- UO
 -- L["mw19_weapon_nade_rock_desc"] = "For when you need to hit an enemy with a \"non-lethal\" item, or if you need to provide a distraction in order to sneak past guards." -- UO
+
+//////////////////// Custom Weapon Names -- all UO
+L["mw19_weapon_m4a1_friend"] = "Lil' Friend"
+L["mw19_weapon_fr556_avancer"] = "FR Avancer"
+L["mw19_weapon_grau_imbel"] = "Grau Intruso"

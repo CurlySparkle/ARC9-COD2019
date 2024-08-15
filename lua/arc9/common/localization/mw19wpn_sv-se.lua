@@ -529,8 +529,7 @@ L["cod2019_jokr_ammo_airstrike.description"] = "Robotar som splittras in till <c
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Weapon Names, Descriptions and unique attachments
-//////////////////// Assault Rifles
-//////////// Weapon Names
+//////////////////// Weapon Names
 L["mw19_weapon_kilo141"] = "Kilo 141"
 L["mw19_weapon_fal"] = "FAL"
 L["mw19_weapon_m4a1"] = "M4A1"
@@ -729,3 +728,8 @@ L["mw19_weapon_nade_gas_desc"] = "Exploderar vid kontakt med marken och släpper
 L["mw19_weapon_minigun_desc"] = "Portabel gatlingkulspruta med en väldigt hög eldhastighet." -- UO
 L["mw19_weapon_fists_desc"] = "När allt annat misslyckas så får du slå din väg ut. Kom ihåg att knytnävarna inte kräver omladdning, så dem är alltid snabba." -- UO
 L["mw19_weapon_nade_rock_desc"] = "När du behöver träffa en fiende med ett \"inte lika dödligt\" föremål, eller när du behöver orsaka en distraktion för att smyga dig förbi vakter." -- UO
+
+//////////////////// Custom Weapon Names -- all UO
+L["mw19_weapon_m4a1_friend"] = "Liten Vänn"
+L["mw19_weapon_fr556_avancer"] = "FR Avancer"
+L["mw19_weapon_grau_imbel"] = "Grau Intruso"
