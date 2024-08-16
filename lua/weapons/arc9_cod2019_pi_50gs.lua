@@ -794,6 +794,10 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_attach_muzzlebrake_pstl01"] = {
     Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_muzzlebrake.mdl",
     },
+    ["cod2019_renetti_foregrip"] = {
+    BoneMerge = false,
+	ModelOffset = Vector(0.4, 0, 0.04)
+    },
 }
 
 SWEP.AttachmentElements = {
@@ -838,7 +842,7 @@ SWEP.Attachments = {
     { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
 		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
-        Category = {"cod2019_tac_pistols","cod2019_grip_pistols"},
+        Category = {"cod2019_tac_pistols","cod2019_grip_pistols","cod2019_renetti_foregrip"},
         Bone = "tag_laser_attach",
         Pos = Vector(0, 0, 0),
 		ExcludeElements = {"barrel_smg"},

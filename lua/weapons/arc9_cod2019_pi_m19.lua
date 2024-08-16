@@ -807,6 +807,10 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_trigger_match"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03.mdl",
     },
+    ["cod2019_renetti_foregrip"] = {
+    BoneMerge = false,
+	ModelOffset = Vector(0.3, 0, 0.04)
+    },
     ["cod2019_view_alt_pistol"] = {
     ActivePos = Vector(1, 0, 1.5),
     ActiveAng = Angle(0, 0, 5),
@@ -871,7 +875,7 @@ SWEP.Attachments = {
     { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
 		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
-        Category = {"cod2019_tac_pistols","cod2019_grip_pistols"},
+        Category = {"cod2019_tac_pistols","cod2019_grip_pistols","cod2019_renetti_foregrip"},
         Bone = "tag_laser_attach",
         Pos = Vector(0, 0, 0),
 		InstalledElements = {"rail_laser"},
