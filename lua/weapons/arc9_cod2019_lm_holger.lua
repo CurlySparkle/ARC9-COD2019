@@ -246,7 +246,7 @@ SWEP.CustomizeSnapshotPos = Vector(1.5, 25, 2.5)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekMaxFOV = 45
+SWEP.PeekMaxFOV = 64
 
 SWEP.PeekPos = Vector(-1.5, 3, -3.2)
 SWEP.PeekAng = Angle(-0.5, 1, -45)
@@ -495,29 +495,29 @@ SWEP.Animations = {
         },
     },
     ["reload_ar_fast"] = {
-        Source = "reload_armag_fast",
+        Source = "reload_armag2_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.6,
+		DropMagAt = 0.85,
 		RefillProgress = 0.55,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.575, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 1, rhik = 1 },
+            { t = 0.87, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 9/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 14/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 31/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 36/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 53/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 38/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 44/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 63/30},
         },
     },
     ["reload_ar_fast_empty"] = {
-        Source = "reload_armag_fast_empty",
+        Source = "reload_armag2_fast_empty",
 		MinProgress = 0.9,
 		DropMagAt = 0.8,
 		RefillProgress = 0.6,
@@ -527,7 +527,7 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.15, lhik = 0, rhik = 0 },
             { t = 0.6, lhik = 0, rhik = 0 },
-            { t = 0.75, lhik = 1, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
@@ -535,8 +535,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 14/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 33/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 38/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 48/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 67/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 51/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 70/30},
         },
     },
     ["ready"] = {

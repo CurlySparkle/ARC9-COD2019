@@ -147,6 +147,10 @@ local path = "weapons/cod2019/throwables/flashbang/"
 SWEP.PreBashTime = 0.2
 SWEP.PostBashTime = 0.3
 SWEP.ImpactForce = 15
+SWEP.BackstabRange = 64
+SWEP.MeleeHitSound = "COD2019.Knife.Hit_Flesh"
+SWEP.MeleeHitWallSound = "COD2019.Knife.Hit_World"
+SWEP.MeleeSwingSound = "COD2019.Knife.Swing"
 
 function SWEP:SecondaryAttack()
     return self:MeleeAttack()
@@ -216,7 +220,7 @@ SWEP.Animations = {
 		Mult = 5,
     },
     ["bash"] = {
-        Source = {"melee_hit01", "melee_hit02","melee_hit03"},
+        Source = {"melee_hit01", "melee_hit02"},
     },
 }
 
