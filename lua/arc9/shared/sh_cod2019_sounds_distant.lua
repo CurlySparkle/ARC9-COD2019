@@ -2,7 +2,7 @@ AddCSLuaFile()
 ----------- OUTSIDE ------------
 sound.Add({
     name = "Distant_AR.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -11,7 +11,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_AR_Sup.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     volume = 1,
     sound = "weapons/cod2019/shared/atmo/ar/weap_ar_sup_fire_plr_atmo_ext1_01.ogg"
@@ -19,7 +19,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_AR2.Outside", 
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -28,7 +28,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_AR2_Sup.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -37,7 +37,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_AR3.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -46,7 +46,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_AR4.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -55,7 +55,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_AR5.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -64,7 +64,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_AR6.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -74,7 +74,7 @@ sound.Add({
 --- BR ---
 sound.Add({
     name = "Distant_BR1.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -83,7 +83,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_BR2.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -93,7 +93,7 @@ sound.Add({
 --- DMR ---
 sound.Add({
     name = "Distant_DMR.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -102,7 +102,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_DMR_Sup.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     --level = 140,
     volume = 1,
     sound = "weapons/cod2019/shared/atmo/dmr/weap_dmr_sup_fire_plr_atmo_ext1_01.ogg"
@@ -111,7 +111,7 @@ sound.Add({
 --- LMG ---
 sound.Add({
     name = "Distant_LMG.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -121,7 +121,7 @@ sound.Add({
 --- M203 ---
 sound.Add({
     name = "Distant_M203.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -131,7 +131,7 @@ sound.Add({
 --- PISTOLS ---
 sound.Add({
     name = "Distant_Pistol.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     level = 140,
     pitch = {80,110},
     volume =     1,
@@ -140,7 +140,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Pistol_Sup.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -149,7 +149,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Pistol_Mag.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -158,7 +158,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Pistol_Mag_Sup.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     pitch = {80,110},
     sound = {"weapons/cod2019/shared/atmo/pistol/weap_pistol_mag_sup_fire_plr_atmo_ext1_01.ogg",
@@ -171,7 +171,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Pistol_Mag2.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -183,7 +183,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Shotgun.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -192,7 +192,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Shotgun2.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -204,7 +204,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_SMG.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -213,7 +213,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_SMG_Sup.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -227,7 +227,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_SMG2.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -238,7 +238,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Sniper.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -247,7 +247,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Sniper2.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -256,7 +256,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Sniper3.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -265,7 +265,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Sniper_Sup.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -275,7 +275,7 @@ sound.Add({
 ---  Western ---
 sound.Add({
     name = "Distant_Western.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -287,7 +287,7 @@ sound.Add({
 --- AR ---
 sound.Add({
     name = "Distant_AR.Inside",
-    channel = CHAN_INDOORDISTANT,
+    channel = ARC9.CHAN_INDOORDISTANT or 144,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -297,7 +297,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_AR_Sup.Inside",
-    channel = CHAN_INDOORDISTANT,
+    channel = ARC9.CHAN_INDOORDISTANT or 144,
     pitch = {80,110},
     volume = 1,
     sound = {"weapons/cod2019/shared/atmo/AR/weap_ar_sup_fire_plr_atmo_int1_01.ogg",
@@ -311,7 +311,7 @@ sound.Add({
 --- DMR ---
 sound.Add({
     name = "Distant_DMR_Sup.Inside",
-    channel = CHAN_INDOORDISTANT,
+    channel = ARC9.CHAN_INDOORDISTANT or 144,
     pitch = {80,110},
     volume = 1,
     sound = {"weapons/cod2019/shared/atmo/DMR/weap_dmr_sup_fire_plr_atmo_int1_01.ogg",
@@ -325,7 +325,7 @@ sound.Add({
 --- LMG ---
 sound.Add({
     name = "Distant_LMG.Inside",
-    channel = CHAN_INDOORDISTANT,
+    channel = ARC9.CHAN_INDOORDISTANT or 144,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -336,7 +336,7 @@ sound.Add({
 --- M203 ---
 sound.Add({
     name = "Distant_Mike203.Inside",
-    channel = CHAN_INDOORDISTANT,
+    channel = ARC9.CHAN_INDOORDISTANT or 144,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -347,7 +347,7 @@ sound.Add({
 --- Pistol ---
 sound.Add({
     name = "Distant_Pistol.Inside",
-    channel = CHAN_INDOORDISTANT,
+    channel = ARC9.CHAN_INDOORDISTANT or 144,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -357,7 +357,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Pistol_Sup.Inside",
-    channel = CHAN_INDOORDISTANT,
+    channel = ARC9.CHAN_INDOORDISTANT or 144,
     pitch = {80,110},
     volume = 1,
     sound = {"weapons/cod2019/shared/atmo/pistol/weap_pistol_sup_fire_plr_atmo_int1_01.ogg",
@@ -371,7 +371,7 @@ sound.Add({
 --- Shotguns ---
 sound.Add({
     name = "Distant_Shotgun.Inside",
-    channel = CHAN_INDOORDISTANT,
+    channel = ARC9.CHAN_INDOORDISTANT or 144,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -380,7 +380,7 @@ sound.Add({
 })
 sound.Add({
     name = "Distant_ShotgunSUP.Inside",
-    channel = CHAN_INDOORDISTANT,
+    channel = ARC9.CHAN_INDOORDISTANT or 144,
     pitch = {80,110},
     volume = 1,
     sound = {"weapons/cod2019/shared/atmo/shotgun/weap_shotgunsup_fire_plr_atmo_int1_01.ogg",
@@ -394,7 +394,7 @@ sound.Add({
 --- SMG ---
 sound.Add({
     name = "Distant_SMG.Inside",
-    channel = CHAN_INDOORDISTANT,
+    channel = ARC9.CHAN_INDOORDISTANT or 144,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -406,7 +406,7 @@ sound.Add({
 --- JOKR ---
 sound.Add({
 	name = "Distant_JOKR.Outside",
-	channel = CHAN_DISTANT,
+	channel = ARC9.CHAN_DISTANT or 136,
 	level = 140,
 	volume = 1,
 	pitch = {80,100},
@@ -416,7 +416,7 @@ sound.Add({
 })
 sound.Add({
 	name = "Distant_JOKR.Inside",
-	channel = CHAN_INDOORDISTANT,
+	channel = ARC9.CHAN_INDOORDISTANT or 144,
 	level = 140,
 	volume = 1,
 	pitch = {80,100},
@@ -427,7 +427,7 @@ sound.Add({
 --- PILA ---
 sound.Add({
 	name = "Distant_PILA.Outside",
-	channel = CHAN_DISTANT,
+	channel = ARC9.CHAN_DISTANT or 136,
 	level = 140,
 	volume = 1,
 	pitch = {80,110},
@@ -437,7 +437,7 @@ sound.Add({
 --- RPG ---
 sound.Add({
     name = "Distant_RPG.Outside",
-    channel = CHAN_DISTANT,
+    channel = ARC9.CHAN_DISTANT or 136,
     volume = 1,
     level = 140,
     pitch = {80,110},
@@ -446,7 +446,7 @@ sound.Add({
 --- STRELA ---
 sound.Add({
 	name = "Distant_Strela.Outside",
-	channel = CHAN_DISTANT,
+	channel = ARC9.CHAN_DISTANT or 136,
 	level = 140,
 	volume = 1,
 	pitch = {85,110},
@@ -456,7 +456,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Launcher.Inside",
-    channel = CHAN_INDOORDISTANT,
+    channel = ARC9.CHAN_INDOORDISTANT or 144,
     level = 140,
     pitch = {80,110},
     volume = 1,
@@ -467,7 +467,7 @@ sound.Add({
 
 sound.Add({
     name = "Distant_Launcher.Outside",
-    channel = CHAN_INDOORDISTANT,
+    channel = ARC9.CHAN_INDOORDISTANT or 144,
     level = 140,
     pitch = {80,110},
     volume = 1,
