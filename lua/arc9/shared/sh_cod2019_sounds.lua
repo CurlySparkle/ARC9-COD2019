@@ -1,7 +1,7 @@
 ------------ Reload & Extra Sounds ------------
 sound.Add( {
     name = "COD2019.HDR.Rechamber",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -19,7 +19,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.AX50.Rechamber",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -37,7 +37,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.R90.Rechamber_A",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -51,7 +51,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.R90.Rechamber_B",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -65,7 +65,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.R90.ShellIn",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -81,7 +81,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.R90.Rechamber_Empty",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -96,7 +96,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Model680.Rechamber_A",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {100,100},
@@ -109,7 +109,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Model680.Rechamber_B",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {100,100},
@@ -123,7 +123,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Model680.ShellIn",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
 	volume = 1,
 	pitch = {100,100},
     sound = {
@@ -136,7 +136,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.MK2.Load",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -151,7 +151,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.MK2.Shellin",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -166,7 +166,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.Uzi.Trigger",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     level = 120,
     pitch = {90,105},
@@ -182,7 +182,7 @@ sound.Add( {
 ------------ Casings --------------
 -- sound.Add({
     -- name = "Cod2019_Shell.9mm",
-    -- channel = CHAN_AUTO,
+    -- channel = ARC9.CHAN_AUTO,
     -- volume = 0.5,
     -- soundlevel = SNDLVL_75db,
     -- sound =             {
@@ -194,7 +194,7 @@ sound.Add( {
 
 -- sound.Add({
     -- name = "Cod2019_Shell.50bmg",
-    -- channel = CHAN_AUTO,
+    -- channel = ARC9.CHAN_AUTO,
     -- volume = 0.5,
     -- soundlevel = SNDLVL_75db,
     -- sound =             {
@@ -205,7 +205,7 @@ sound.Add( {
 
 -- sound.Add({
     -- name = "Cod2019_Shell.308",
-    -- channel = CHAN_AUTO,
+    -- channel = ARC9.CHAN_AUTO,
     -- volume = 0.5,
     -- soundlevel = SNDLVL_75db,
     -- sound =             {
@@ -217,7 +217,7 @@ sound.Add( {
 
 -- sound.Add({
     -- name = "Cod2019_Shell.338",
-    -- channel = CHAN_AUTO,
+    -- channel = ARC9.CHAN_AUTO,
     -- volume = 0.5,
     -- soundlevel = SNDLVL_75db,
     -- sound =             {
@@ -229,7 +229,7 @@ sound.Add( {
 
 -- sound.Add({
     -- name = "Cod2019_Shell.556",
-    -- channel = CHAN_AUTO,
+    -- channel = ARC9.CHAN_AUTO,
     -- volume = 0.5,
     -- soundlevel = SNDLVL_75db,
     -- sound =             {
@@ -308,7 +308,7 @@ ARC9.COD2019_Shotgun_Table = {
 ------------ Viewmodel ------------
 sound.Add( {
     name = "Viewmodel.Small",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     sound = {
         "weapons/cod2019/shared/weapmvmt/small/gear_rattle_weap_small_01.ogg",
@@ -325,7 +325,7 @@ sound.Add( {
 
 sound.Add( {
     name = "Viewmodel.Medium",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     sound = {
         "weapons/cod2019/shared/weapmvmt/medium/gear_rattle_weap_medium_01.ogg",
@@ -343,7 +343,7 @@ sound.Add( {
 
 sound.Add( {
     name = "Viewmodel.Large",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     sound = {
         "weapons/cod2019/shared/weapmvmt/large/gear_rattle_weap_large_01.ogg",
@@ -363,7 +363,7 @@ sound.Add( {
 
 sound.Add( {
     name = "Viewmodel.Launcher",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     sound = {
         "weapons/cod2019/shared/weapmvmt/launcher/gear_rattle_weap_launcher_01.ogg",
@@ -379,7 +379,7 @@ sound.Add( {
 
 sound.Add({
     name = "Viewmodel.BipodDeploy",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     sound = {
         "weapons/cod2019/shared/mount/enter1.ogg",
@@ -392,7 +392,7 @@ sound.Add({
 
 sound.Add({
     name = "Viewmodel.BipodExit",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     sound = {
         "weapons/cod2019/shared/mount/exit1.ogg",
@@ -404,7 +404,7 @@ sound.Add({
 
 sound.Add({
     name = "Viewmodel.SwitchSight",
-    channel = CHAN_AUTO,
+    channel = ARC9.CHAN_AUTO,
     volume = 1.0,
     sound = {
         "switchsights/switch1.ogg",
