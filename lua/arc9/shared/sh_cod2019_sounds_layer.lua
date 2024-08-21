@@ -2,7 +2,7 @@ AddCSLuaFile()
 --- Reflections ---
 sound.Add({
     name =           "Layer_AR.Outside",
-    channel =        CHAN_LAYER,
+    channel =        ARC9.CHAN_LAYER or 137,
     volume =         0.5,
     level =          140,
     pitch =          {90,110},
@@ -10,7 +10,7 @@ sound.Add({
 })
 sound.Add({
     name =           "Layer_AR.Inside",
-    channel =        CHAN_INDOORLAYER,
+    channel =        ARC9.CHAN_INDOORLAYER or 6,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -19,7 +19,7 @@ sound.Add({
 
 sound.Add({
     name =           "Layer_ARSUP.Outside",
-    channel =        CHAN_LAYER,
+    channel =        ARC9.CHAN_LAYER or 137,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -27,7 +27,7 @@ sound.Add({
 })
 sound.Add({
     name =           "Layer_ARSUP.Inside",
-    channel =        CHAN_INDOORLAYER,
+    channel =        ARC9.CHAN_INDOORLAYER or 6,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -36,7 +36,7 @@ sound.Add({
 
 sound.Add({
     name =           "Layer_Pistol.Outside",
-    channel =        CHAN_LAYER,
+    channel =        ARC9.CHAN_LAYER or 137,
     volume =         0.75,
     level =          140,
     pitch =          {90,110},
@@ -44,7 +44,7 @@ sound.Add({
 })
 sound.Add({
     name =           "Layer_Pistol.Inside",
-    channel =        CHAN_INDOORLAYER,
+    channel =        ARC9.CHAN_INDOORLAYER or 6,
     volume =         0.75,
     level =          140,
     pitch =          {90,110},
@@ -53,7 +53,7 @@ sound.Add({
 
 sound.Add({
     name =           "Layer_Shotgun.Outside",
-    channel =        CHAN_LAYER,
+    channel =        ARC9.CHAN_LAYER or 137,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -61,7 +61,7 @@ sound.Add({
 })
 sound.Add({
     name =           "Layer_Shotgun.Inside",
-    channel =        CHAN_INDOORLAYER,
+    channel =        ARC9.CHAN_INDOORLAYER or 6,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -69,7 +69,7 @@ sound.Add({
 })
 sound.Add({
     name =           "Layer_ShotgunSUP.Inside",
-    channel =        CHAN_INDOORLAYER,
+    channel =        ARC9.CHAN_INDOORLAYER or 6,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -78,7 +78,7 @@ sound.Add({
 
 sound.Add({
     name =           "Layer_Sniper.Outside",
-    channel =        CHAN_LAYER,
+    channel =        ARC9.CHAN_LAYER or 137,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -86,7 +86,7 @@ sound.Add({
 })
 sound.Add({
     name =           "Layer_Sniper.Inside",
-    channel =        CHAN_INDOORLAYER,
+    channel =        ARC9.CHAN_INDOORLAYER or 6,
     volume =         1,
     level =          140,
     pitch =          {90,110},
