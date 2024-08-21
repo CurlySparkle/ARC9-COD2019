@@ -1392,10 +1392,10 @@ sound.Add( {
 } )
 ------------ UBGL ------------
 sound.Add({
-    name =          "COD2019.M203.Fire",
-    channel =       CHAN_WEAPON or 1,
-    volume =        1.0,
+    name = "COD2019.M203.Fire",
+    channel = CHAN_WEAPON or 1,
+    volume = 1.0,
     level = 140,
-    sound =             {
+    sound = {
     "^weapons/cod2019/shared/ubgl/weap_mike203_fire_plr_01.ogg"} 
 })

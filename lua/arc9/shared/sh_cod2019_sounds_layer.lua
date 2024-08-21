@@ -2,7 +2,7 @@ AddCSLuaFile()
 --- Reflections ---
 sound.Add({
     name =           "Layer_AR.Outside",
-    channel =        ARC9.CHAN_LAYER or 137,
+    channel =        ARC9.CHAN_LAYER + 4 or 137,
     volume =         0.5,
     level =          140,
     pitch =          {90,110},
@@ -19,7 +19,7 @@ sound.Add({
 
 sound.Add({
     name =           "Layer_ARSUP.Outside",
-    channel =        ARC9.CHAN_LAYER or 137,
+    channel =        ARC9.CHAN_LAYER + 4 or 137,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -36,7 +36,7 @@ sound.Add({
 
 sound.Add({
     name =           "Layer_Pistol.Outside",
-    channel =        ARC9.CHAN_LAYER or 137,
+    channel =        ARC9.CHAN_LAYER + 4 or 137,
     volume =         0.75,
     level =          140,
     pitch =          {90,110},
@@ -53,7 +53,7 @@ sound.Add({
 
 sound.Add({
     name =           "Layer_Shotgun.Outside",
-    channel =        ARC9.CHAN_LAYER or 137,
+    channel =        ARC9.CHAN_LAYER + 4 or 137,
     volume =         1,
     level =          140,
     pitch =          {90,110},
@@ -78,7 +78,7 @@ sound.Add({
 
 sound.Add({
     name =           "Layer_Sniper.Outside",
-    channel =        ARC9.CHAN_LAYER or 137,
+    channel =        ARC9.CHAN_LAYER + 4 or 137,
     volume =         1,
     level =          140,
     pitch =          {90,110},
