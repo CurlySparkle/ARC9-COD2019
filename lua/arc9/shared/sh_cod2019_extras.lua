@@ -250,7 +250,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M32.Fire",
-    channel = CHAN_WEAPON,
+    channel = ARC9.CHAN_WEAPON,
     level = 90,
     volume = 1,
     pitch = {100,100},
@@ -264,7 +264,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M32.Trigger",
-    channel = CHAN_TRIGGER,
+    channel = ARC9.CHAN_TRIGGER,
     level = 90,
     volume =         0.5,
     pitch = {-2,2},
@@ -278,7 +278,7 @@ sound.Add( {
 
 sound.Add( {
     name = "COD2019.M32.UnTrigger",
-    channel = CHAN_TRIGGER,
+    channel = ARC9.CHAN_TRIGGER,
 	volume = 0.8,
 	pitch = {100,100},
     sound = {
