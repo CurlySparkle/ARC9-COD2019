@@ -1566,6 +1566,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	end
 	
     if wep:HasElement("reciever_rail") then model:SetBodygroup(5,0) end
+    if wep:HasElement("scope_svd") then model:SetBodygroup(5,0) end
 	
     if wep:HasElement("reciever_custom") then 
 	model:SetBodygroup(5,0) 
@@ -1600,7 +1601,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Bone = "tag_holo",
         Pos = Vector(1, 0, -0.1),
-        Category = {"cod2019_optic","cod2019_ak47_optics"},
+        Category = {"cod2019_optic","cod2019_ak47_optics","cod2019_optic_svd"},
         CorrectiveAng = Angle(0, 0, 0),
 		InstalledElements = {"sight_rail"},
 		ExcludeElements = {"forwardoptic"},

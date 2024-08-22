@@ -331,10 +331,9 @@ SWEP.EnterSightsSound = "weapons/cod2019/ak47/wfoly_ar_akilo47_ads_up.ogg"
 SWEP.ExitSightsSound = "weapons/cod2019/ak47/wfoly_ar_akilo47_ads_down.ogg"
 
 SWEP.BulletBones = {
-    [1] = "j_bullet01",
-    [2] = "j_bullet02",
-	[3] = "j_bullet03",
-	[4] = "j_bullet04",
+    [1] = "j_bullet1",
+    [2] = "j_bullet2",
+	[3] = "j_bullet3",
 }
 
 SWEP.HideBones  = {
@@ -472,11 +471,12 @@ SWEP.Animations = {
         },
     },
     ["reload_empty_ar"] = {
-        Source = "reload_armag_empty",
+        Source = "reload_armag2_empty",
 		MinProgress = 0.9,
-		DropMagAt = 1.05,
+		--DropMagAt = 1.05,
 		RefillProgress = 0.725,
 		PeekProgress = 0.825,
+		MagSwapTime = 1.7,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -485,13 +485,13 @@ SWEP.Animations = {
             { t = 0.825, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 15/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 19/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 52/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 57/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 79/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 96/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_magout.ogg", t = 21/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 25/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_mag_hit_well.ogg", t = 42/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_magin.ogg", t = 47/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_charge.ogg", t = 73/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_end.ogg", t = 85/30},
         },
     },
     ["reload_ar_fast"] = {
@@ -508,12 +508,12 @@ SWEP.Animations = {
             { t = 0.87, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 10/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_fast_armag_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_fast_armag_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 15/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 41/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 47/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 65/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_fast_armag_mag_well_hit.ogg", t = 41/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_fast_armag_magin.ogg", t = 47/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_fast_armag_end.ogg", t = 65/30},
         },
     },
     ["reload_ar_fast_empty"] = {
@@ -530,13 +530,13 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_lm_mgolf36_reload_lift.ogg", t = 0/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magout.ogg", t = 9/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_fast_armag_lift.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_fast_armag_magoui.ogg", t = 9/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_arm_up.ogg", t = 14/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 33/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 38/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 56/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 70/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_fast_armag_mag_hit_well.ogg", t = 33/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_fast_armag_magin.ogg", t = 38/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_charge.ogg", t = 56/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_fast_armag_end.ogg", t = 70/30},
         },
     },
     ["ready"] = {

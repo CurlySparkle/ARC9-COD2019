@@ -171,11 +171,11 @@ function ENT:PhysicsCollide(data, collider, physobj)
         return
     end
 	
-    local theirProps = util.GetSurfaceData(data.TheirSurfaceProps)
-    if (theirProps != nil && theirProps.material == MAT_DEFAULT) then
-    timer.Simple(0, function() self:Remove() end)
-    return
-    end
+    -- local theirProps = util.GetSurfaceData(data.TheirSurfaceProps)
+    -- if (theirProps != nil && theirProps.material == MAT_DEFAULT) then
+    -- timer.Simple(0, function() self:Remove() end)
+    -- return
+    -- end
 	
     if self.BounceWall then
         local ang = data.HitNormal:Angle()
