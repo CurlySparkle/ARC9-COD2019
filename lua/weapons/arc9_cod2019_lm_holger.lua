@@ -486,10 +486,10 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_lift.ogg", t = 0/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_magout.ogg", t = 25/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_mag_hit_well.ogg", t = 41/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_magin.ogg", t = 51/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_mag_hit_well.ogg", t = 39/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_magin.ogg", t = 49/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_charge.ogg", t = 74/30},
-			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_end.ogg", t = 101/30},
+			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_end.ogg", t = 99/30},
         },
     },
     ["reload_ar_fast"] = {
