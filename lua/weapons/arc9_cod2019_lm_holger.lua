@@ -850,6 +850,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
     if wep:HasElement("stock_retract") then model:SetBodygroup(4,1) end
+	if wep:HasElement("sight_default") then model:SetBodygroup(5,0) end
 end
 
 SWEP.Attachments = {
@@ -1001,9 +1002,14 @@ SWEP.Attachments = {
     { -- 20
         PrintName = "Bipod",
         Category = {"cod2019_holger_bipod"},
-        Bone = "tag_attachments",
+        Bone = "tag_sling",
         Pos = Vector(0, 0, 0),
 		Hidden = true,
+    },
+    { -- 21
+        PrintName = "ETC",
+        Category = {"cod2019_holger_etc"},
+        Pos = Vector(0, 0, 0),
     },
 }
 
