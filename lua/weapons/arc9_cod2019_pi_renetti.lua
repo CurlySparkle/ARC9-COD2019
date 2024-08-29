@@ -354,10 +354,6 @@ SWEP.TriggerDownSound = "weapons/cod2019/renetti/weap_mike9a3_hammer_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/renetti/weap_mike9a3_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
-	["enter_sights"] = {
-		Source = "idle",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-	},
     ["dryfire"] = {
         Source = "dryfire",
     },
@@ -690,6 +686,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -1050,7 +1048,7 @@ SWEP.Animations = {
     },
     ["stock_inspect"] = {
         Source = "lookat01_stock",
-        MinProgress = 0.1,
+        MinProgress = 0.9,
         FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },

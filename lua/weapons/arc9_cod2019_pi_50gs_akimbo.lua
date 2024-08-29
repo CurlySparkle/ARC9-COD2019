@@ -258,6 +258,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
+		MinProgress = 0.9,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_pi_decho_inspect_01.ogg", t = 0/30},
 			{s = path .. "wfoly_pi_decho_inspect_02.ogg", t = 61/30},

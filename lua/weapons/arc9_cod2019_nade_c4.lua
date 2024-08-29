@@ -216,7 +216,9 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
-        MinProgress = 0.1,
+		MinProgress = 0.9,
+		FireASAP = true,
+        MinProgress = 0.9,
         FireASAP = true,
     },
 --  Empty Sequences
@@ -270,7 +272,7 @@ SWEP.Animations = {
     },
     ["inspect_detonator"] = {
         Source = "lookat01_empty",
-        MinProgress = 0.1,
+        MinProgress = 0.9,
         FireASAP = true,
     },
 }

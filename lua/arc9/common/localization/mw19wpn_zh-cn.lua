@@ -264,6 +264,10 @@ L["mw19_category_view"] = "View" -- UO
 -- L["cod2019_ammo_tracer_col.compactname"] = "WCTR" -- UO
 -- L["cod2019_ammo_tracer_col.description"] = "Ammunition with tracer points with the color matching the user's physics gun color.\n\nPretty dope, right?" -- UO
 
+-- L["cod2019_ammo_tracer_random.printname"] = "Rainbow Tracer Rounds" -- UO
+-- L["cod2019_ammo_tracer_random.compactname"] = "RB" -- UO
+-- L["cod2019_ammo_tracer_random.description"] = "Ammunition with tracers painted in the various colors of the rainbow." -- UO
+
 -- L["cod2019_ammo_db.printname"] = "Incendiary Rounds" -- UO
 -- L["cod2019_ammo_db.compactname"] = "Inc." -- UO
 -- L["cod2019_ammo_db.description"] = "Incendiary ammunition that has a change to light targets on fire on hit." -- UO

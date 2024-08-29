@@ -397,10 +397,6 @@ SWEP.HeatLockout = false
 SWEP.MalfunctionWait = 0.25
 
 SWEP.Animations = {
-	["enter_sights"] = {
-		Source = "idle",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-	},
     ["fire"] = {
         Source = "shoot1",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
@@ -730,6 +726,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.025, lhik = 1, rhik = 0 },

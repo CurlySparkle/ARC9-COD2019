@@ -350,10 +350,6 @@ SWEP.TriggerDownSound = "weapons/cod2019/ram7/weap_tango21_fire_first_plr_01.ogg
 SWEP.TriggerUpSound = "weapons/cod2019/ram7/weap_tango21_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
-	["enter_sights"] = {
-		Source = "idle",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-	},
     ["fire"] = {
         Source = "shoot1",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
@@ -712,6 +708,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -897,6 +895,8 @@ SWEP.Animations = {
     },
     ["inspect_ubgl"] = {
         Source = "ubgl_lookat01",
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
         EventTable = {
             {s = path .. "wfoly_ar_tango21_inspect_01.ogg", t = 0.033},
@@ -1051,6 +1051,8 @@ SWEP.Animations = {
     },
     ["inspect_ubgl_shotgun"] = {
         Source = "ubgl_sh_lookat01",
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = { { t = 0, lhik = 0, rhik = 0 } },
         EventTable = {
             {s = path .. "wfoly_ar_tango21_inspect_01.ogg", t = 0.033},

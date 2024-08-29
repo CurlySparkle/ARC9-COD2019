@@ -351,10 +351,6 @@ SWEP.TriggerDownSound = "weapons/cod2019/m13/weap_mcharlie_fire_first_plr_01.ogg
 SWEP.TriggerUpSound = "weapons/cod2019/m4a1/weap_mike4_fire_plr_disconnector_01.ogg"
 
 SWEP.Animations = {
-	["enter_sights"] = {
-		Source = "idle",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-	},
     ["fire"] = {
         Source = "shoot1",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
@@ -605,6 +601,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -619,7 +617,7 @@ SWEP.Animations = {
     },
     ["inspect_drum"] = {
         Source = "lookat01_drum",
-		MinProgress = 0.1,
+		MinProgress = 0.9,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },

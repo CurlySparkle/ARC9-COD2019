@@ -392,10 +392,6 @@ SWEP.TriggerDownSound = "weapons/cod2019/finn/weap_sierrax_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/finn/weap_sierrax_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
-	["enter_sights"] = {
-		Source = "idle",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-	},
     ["fire"] = {
         Source = "shoot1",
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
@@ -585,6 +581,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = { -- little shakey shakey
 		{ t = 0, lhik = 1,  rhik = 1 },
 		{ t = 0.05, lhik = 1,  rhik = 1 },
@@ -863,7 +861,7 @@ SWEP.Animations = {
     },
     ["inspect_saw"] = {
         Source = "lookat01_saw",
-        MinProgress = 0.1,
+        MinProgress = 0.9,
         FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },

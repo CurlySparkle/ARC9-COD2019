@@ -345,10 +345,6 @@ SWEP.TriggerDownSound = "weapons/cod2019/sykov/weap_mike_hammer_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/sykov/weap_mike_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
-	["enter_sights"] = {
-		Source = "idle",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-	},
     ["fire"] = {
         Source = "shoot1",
     },
@@ -700,6 +696,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
+		MinProgress = 0.9,
+		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -716,7 +714,7 @@ SWEP.Animations = {
     },
     ["inspect_xmag"] = {
         Source = "lookat01_xmag",
-        MinProgress = 0.1,
+        MinProgress = 0.9,
         FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -734,7 +732,9 @@ SWEP.Animations = {
     },
     ["inspect_drum"] = {
         Source = "lookat01_drum",
-        MinProgress = 0.1,
+		MinProgress = 0.9,
+		FireASAP = true,
+        MinProgress = 0.9,
         FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -1089,7 +1089,7 @@ SWEP.Animations = {
     },
     ["stock_inspect"] = {
         Source = "lookat01_stock",
-        MinProgress = 0.1,
+        MinProgress = 0.9,
         FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -1107,7 +1107,7 @@ SWEP.Animations = {
     },
     ["stock_inspect_xmag"] = {
         Source = "lookat01_xmag_stock",
-        MinProgress = 0.1,
+        MinProgress = 0.9,
         FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -1125,7 +1125,7 @@ SWEP.Animations = {
     },
     ["stock_inspect_drum"] = {
         Source = "lookat01_drum_stock",
-        MinProgress = 0.1,
+        MinProgress = 0.9,
         FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },

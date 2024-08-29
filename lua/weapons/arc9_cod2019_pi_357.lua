@@ -314,10 +314,6 @@ SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.075 -- Time until weapon fires.
 
 SWEP.Animations = {
-	["enter_sights"] = {
-		Source = "idle",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-	},
     ["fire"] = {
         Source = "shoot1",
     },
@@ -584,7 +580,7 @@ SWEP.Animations = {
     },
     ["inspect_stock"] = {
         Source = "lookat01_stock",
-		MinProgress = 0.1,
+		MinProgress = 0.9,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },

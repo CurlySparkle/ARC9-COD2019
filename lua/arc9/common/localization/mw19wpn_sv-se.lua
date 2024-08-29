@@ -263,6 +263,10 @@ L["cod2019_ammo_tracer_col.printname"] = "Vapenfärgade Spårljus Patroner" -- U
 L["cod2019_ammo_tracer_col.compactname"] = "VFSL" -- UO
 L["cod2019_ammo_tracer_col.description"] = "Ammunition med spårljus färgade för att matcha spelarens physics gun-färg.\n\nGanska fräckt, eller hur?"
 
+L["cod2019_ammo_tracer_random.printname"] = "Regnbåge Spårljus Patroner" -- UO
+L["cod2019_ammo_tracer_random.compactname"] = "RB" -- UO
+L["cod2019_ammo_tracer_random.description"] = "Ammunition med spårljus färgade i regnbågens olika färger." -- UO
+
 L["cod2019_ammo_db.printname"] = "Brandpatroner" -- UO
 L["cod2019_ammo_db.compactname"] = "BRAND" -- UO
 L["cod2019_ammo_db.description"] = "Brandpatroner som har en chans att tända fyr på måltavlor vid träff." -- UO

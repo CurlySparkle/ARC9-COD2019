@@ -187,7 +187,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.1,
+		MinProgress = 0.9,
 		FireASAP = true,
         EventTable = {
             {s = path .. "melee_knife_charge_01.ogg", t = 0/30},
@@ -216,6 +216,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
+		MinProgress = 0.9,
+		FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_me_knife_inspect_01.ogg", t = 0/30},
             {s = path .. "wfoly_me_knife_inspect_01.ogg", t = 72/30},
