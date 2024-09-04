@@ -317,10 +317,10 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_la_rpapa7_reload_raise.ogg", t = 0.1},
-			{s = path .. "wfoly_la_rpapa7_reload_load.ogg", t = 0.333},
-			{s = path .. "wfoly_la_rpapa7_reload_lower.ogg", t = 1.033},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 1.7},
-			{s = path .. "wfoly_la_rpapa7_reload_end.ogg", t = 1.9},
+			{s = path .. "wfoly_la_rpapa7_reload_load.ogg", t = 0.55},
+			{s = path .. "wfoly_la_rpapa7_reload_lower.ogg", t = 1},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 1.95},
+			{s = path .. "wfoly_la_rpapa7_reload_end.ogg", t = 1.85},
         },
     },
     ["reload_fast"] = {
@@ -337,8 +337,8 @@ SWEP.Animations = {
         },
         EventTable = {
 			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_start.ogg", t = 0.033},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_magin.ogg", t = 0.4},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 1},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_magin.ogg", t = 0.44},
+			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 1.3},
 			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_end.ogg", t = 1},
         },
     },

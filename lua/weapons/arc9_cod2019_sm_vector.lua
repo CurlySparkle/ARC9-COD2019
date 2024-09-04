@@ -454,7 +454,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_victor_reload_drum_arm.ogg", t = 1.533},
 			{s = path .. "wfoly_sm_victor_reload_drum_drumhit.ogg", t = 1.9},
 			{s = path .. "wfoly_sm_victor_reload_drum_drumin.ogg", t = 2.2},
-			{s = path .. "wfoly_sm_victor_reload_drum_end.ogg", t = 2.767},
+			{s = path .. "wfoly_sm_victor_reload_drum_end.ogg", t = 2.75},
         },
     },
     ["reload_drum_empty"] = {
