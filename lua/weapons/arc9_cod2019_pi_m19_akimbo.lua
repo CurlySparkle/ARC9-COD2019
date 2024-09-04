@@ -415,8 +415,8 @@ SWEP.AttachmentTableOverrides = {
     Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_trigcust03_akimbo.mdl",
     },
     ["cod2019_perks_super_sprint"] = {
-    SprintPos = Vector(-1, 0, -1),
-    SprintAng = Angle(0, 0, -5)
+    SprintPos = Vector(0, 0, 0),
+    SprintAng = Angle(0, 0, 0)
     },
 }
 

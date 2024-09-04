@@ -568,6 +568,28 @@ sound.Add( {
 	}
 } )
 
+sound.Add( {
+	name = "COD2019.Holger_Sniper.Fire",
+	channel = CHAN_WEAPON or 1,
+	level = 140,
+	volume = 1,
+	pitch = {98,101},
+	sound = {
+		"^weapons/cod2019/holger/weap_mgolf36_fire_plr_01_sniper.ogg",
+	}
+} )
+
+sound.Add( {
+	name = "COD2019.Holger_Sniper.Fire.S",
+	channel = CHAN_WEAPON or 1,
+	level = 140,
+	volume = 1,
+	pitch = {98,101},
+	sound = {
+		"^weapons/cod2019/holger/weap_mgolf36_sup_plr_01_sniper.ogg",
+	}
+} )
+
 --- M91 ---
 sound.Add( {
 	name = "COD2019.M91.Fire",
