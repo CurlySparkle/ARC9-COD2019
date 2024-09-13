@@ -466,7 +466,7 @@ SWEP.Attachments = {
     { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_receiver"),
         Category = "cod2019_50gs_receiver",
-        Bone = "tag_pistol_attachments_l",
+        Bone = "tag_pistol_offset_l",
         Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(0, 0, 1),
 		Hidden = false,
