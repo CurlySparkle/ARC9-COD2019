@@ -724,6 +724,23 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_inspect_05.ogg", t = 4.133},
         },
     },
+    ["1_inspect"] = {
+        Source = "lookat02",
+		MinProgress = 0.9,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.4, lhik = 0, rhik = 1 },
+            { t = 0.62, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0.067},
+			{s = path .. "wfoly_sm_augolf_reload_empty_boltopen.ogg", t = 0.3},
+            {s = path .. "wfoly_sm_augolf_raise_first_chamber_01.ogg", t = 22/30},
+			{s = path .. "wfoly_sm_augolf_raise_first_end_01.ogg", t = 36/30},
+        },
+    },
     ["bash"] = {
         Source = {"melee","melee2","melee3"},
         IKTimeLine = {
