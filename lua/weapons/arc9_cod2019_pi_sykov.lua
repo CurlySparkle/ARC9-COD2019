@@ -563,7 +563,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_empty_maghit.ogg", t = 36/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 41/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 59/30},
-			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 69/30},
+			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 68/30},
         },
     },
     ["reload_drum_fast"] = {
