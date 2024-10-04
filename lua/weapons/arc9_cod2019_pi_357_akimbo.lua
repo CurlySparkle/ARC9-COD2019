@@ -123,10 +123,10 @@ local path2 = "weapons/cod2019/50gs/"
 	-- [8] = "j_b_loader",
 -- }
 
-SWEP.TriggerDelay = 0.01 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
+SWEP.TriggerDelay = 0.3 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
-SWEP.TriggerDelayTime = 0.01 -- Time until weapon fires.
-SWEP.TriggerStartFireAnim = false
+SWEP.TriggerDelayCancellable = false
+SWEP.TriggerDelayTime = 0.3 -- Time until weapon fires.
 
 SWEP.HideBones  = {
     [1] = "j_mag1",
@@ -163,7 +163,7 @@ SWEP.Animations = {
         },
     },
     ["dryfire_right"] = {
-        Source = "fire_right_charged",
+        Source = "fire_right_charge",
         EventTable = {
 			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", v = 0.5,  t = 0/30},
         },
@@ -175,7 +175,7 @@ SWEP.Animations = {
         },
     },
     ["trigger_right"] = {
-        Source = "fire_right_charged",
+        Source = "fire_right_charge",
         EventTable = {
 			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", t = 0/30},
         },
@@ -188,7 +188,7 @@ SWEP.Animations = {
         },
     },
     ["untrigger_right"] = {
-        Source = "fire_right_charged",
+        Source = "fire_right_charge",
 		Reverse = true,
         EventTable = {
 			{s = path .. "wfoly_pi_cpapa_charge_in_trigger_pull.ogg", t = 0/30},
