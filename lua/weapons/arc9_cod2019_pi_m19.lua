@@ -810,8 +810,8 @@ SWEP.AttachmentTableOverrides = {
 	ModelOffset = Vector(0.3, 0, 0.04)
     },
     ["cod2019_view_alt_pistol"] = {
-    ActivePos = Vector(1, 0, 1.5),
-    ActiveAng = Angle(0, 0, 5),
+    ActivePos = Vector(0.3, 0, 1),
+    ActiveAng = Angle(0, 0, 0),
     MovingPos = Vector(-1,-2,-1),
     MovingAng = Angle(0,0,-8),
     CrouchPos = Vector(-1.2, -1, -1),

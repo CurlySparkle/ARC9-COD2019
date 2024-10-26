@@ -738,7 +738,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     end
 end
 
-SWEP.DefaultBodygroups = "000000000000"
+SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
@@ -813,7 +813,7 @@ SWEP.AttachmentElements = {
     },
     ["trigger_none"] = {
         Bodygroups = {
-            {7,1},
+            {6,1},
         },
     },
 }
@@ -896,6 +896,7 @@ SWEP.Attachments = {
         Category = {"cod2019_trigger"},
         Bone = "j_trigger",
         Pos = Vector(0, 0, 0),
+		InstalledElements = {"trigger_none"},
     },
     { -- 11
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
