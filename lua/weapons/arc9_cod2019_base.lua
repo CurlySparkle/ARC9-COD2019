@@ -112,6 +112,8 @@ SWEP.HasSights = !SWEP.Akimbo
 SWEP.FiremodeAnimLock = false -- Firemode animation cannot be interrupted
 SWEP.UBGLCancelAnim = true
 
+SWEP.CamQCA_MultCustomize = 0
+
 local parmbl = {"blend_move","blend_walk"}
 
 SWEP.Hook_Think	= function(self)
@@ -138,7 +140,7 @@ SWEP.CustomPoseParamsHandler = function(self, ent, iswm)
     ent:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
     ent:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
     if !iswm then
-        if self:GetCustomize() then -- When customizing, enable aim blend anyway.
+        if self:GetCustomize() or self:GetBipod() then -- When customizing, enable aim blend anyway.
             ent:SetPoseParameter("aim_blend", 1)
             return
         end

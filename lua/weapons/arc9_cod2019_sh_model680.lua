@@ -7,10 +7,6 @@ SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_sh_model680.png"
 
 SWEP.Base = "arc9_cod2019_base"
 
-SWEP.CustomCrosshair = true
-SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
-SWEP.CustomCrosshairSize = 30
-
 SWEP.Spawnable = true
 SWEP.NotForNPCs = false
 SWEP.Category = "ARC9 - MW2019"
@@ -238,7 +234,7 @@ SWEP.CustomizePos = Vector(11, 42.5, 3)
 SWEP.CustomizeRotateAnchor = Vector(11, -3.5, -4)
 SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(0, 30, 3)
+SWEP.CustomizeSnapshotPos = Vector(0, 30, 0)
 
 SWEP.PeekPos = Vector(-1, 1.5, -4)
 SWEP.PeekAng = Angle(0, 0.4, -45)

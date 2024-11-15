@@ -239,10 +239,10 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 1)
-SWEP.CustomizePos = Vector(11, 50, 3.5)
-SWEP.CustomizeRotateAnchor = Vector(10.5, -2.5, -4)
+SWEP.CustomizePos = Vector(11, 35, 3.5)
+SWEP.CustomizeRotateAnchor = Vector(11, -2.5, -4)
 SWEP.CustomizeSnapshotFOV = 65
-SWEP.CustomizeSnapshotPos = Vector(-1, 25, 5)
+SWEP.CustomizeSnapshotPos = Vector(-1, 35, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -1255,7 +1255,7 @@ SWEP.AttachmentElements = {
         },
     },
 	["grip_angled"] = {
-    AttPosMods = { [5] = { Pos = Vector(-2.6, 0, 0), } }	
+    AttPosMods = { [6] = { Pos = Vector(-2.6, 0, 0), } }	
 	}
 }
 

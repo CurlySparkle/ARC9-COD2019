@@ -760,8 +760,6 @@ ATT.SpreadMult = 0.85
 ATT.SpreadMultSights = 0.25
 ATT.NoAimAssist = true
 
-ATT.CustomCrosshair = true
-
 if !warzonestats then -- Regular Stats
 	ATT.BodyDamageMults = {
 		[HITGROUP_HEAD] = 2,
@@ -823,12 +821,6 @@ ATT.SpreadAddSights = 0.05
 ATT.RecoilMult = 3
 ATT.RecoilKickMult = 3
 ATT.NoAimAssist = true
-
-ATT.CustomCrosshair = true
-ATT.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair", "mips smooth")
-ATT.CustomCrosshairSize = 30
-ATT.CustomCrosshairSingle = false
-ATT.CrosshairHideDot = false
 
 if !warzonestats then -- Regular Stats
 	ATT.BodyDamageMults = {
@@ -1151,10 +1143,7 @@ ATT.SpreadMultUBGL = 0.85
 ATT.SpreadMultSightsUBGL = 0.25
 ATT.NoAimAssistUBGL = true
 
-ATT.CustomCrosshairUBGL = true
-ATT.CustomCrosshairMaterialUBGL = Material("hud/arc9_cod2019/shotguncrosshair")
-ATT.CustomCrosshairSizeUBGL = 20
-ATT.CustomCrosshairSingleUBGL = false
+ATT.CustomCrosshairUBGL = false
 ATT.CrosshairHideDotUBGL = false
 
 if !warzonestats then -- Regular Stats
@@ -1222,10 +1211,7 @@ ATT.RecoilMultUBGL = 3
 ATT.RecoilKickMultUBGL = 3
 ATT.NoAimAssistUBGL = true
 
-ATT.CustomCrosshairUBGL = true
-ATT.CustomCrosshairMaterialUBGL = Material("hud/arc9_cod2019/shotguncrosshair")
-ATT.CustomCrosshairSizeUBGL = 30
-ATT.CustomCrosshairSingleUBGL = false
+ATT.CustomCrosshairUBGL = false
 ATT.CrosshairHideDotUBGL = false
 
 if !warzonestats then -- Regular Stats

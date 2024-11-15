@@ -7,10 +7,6 @@ SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_sh_725.png"
 
 SWEP.Base = "arc9_cod2019_base"
 
-SWEP.CustomCrosshair = true
-SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
-SWEP.CustomCrosshairSize = 30
-
 SWEP.Spawnable = true
 SWEP.NotForNPCs = false
 SWEP.Category = "ARC9 - MW2019"
@@ -92,10 +88,6 @@ SWEP.ReloadInSights = false -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 SWEP.ForceStandardCrosshair = true
-
-SWEP.CustomCrosshair = true
-SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
-SWEP.CustomCrosshairSize = 30
 
 -------------------------- FIREMODES
 
@@ -230,7 +222,7 @@ SWEP.CustomizePos = Vector(15, 50, 3)
 SWEP.CustomizeRotateAnchor = Vector(15, -2.5, -4)
 SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(-1, 40, 2.5)
+SWEP.CustomizeSnapshotPos = Vector(-1, 40, 0)
 
 SWEP.PeekPos = Vector(-1, 0, -4.3)
 SWEP.PeekAng = Angle(-0.3, 0, -45)

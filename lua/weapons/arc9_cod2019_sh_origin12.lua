@@ -87,10 +87,6 @@ SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
 SWEP.ForceStandardCrosshair = true
 
-SWEP.CustomCrosshair = true
-SWEP.CustomCrosshairMaterial = Material("hud/arc9_cod2019/shotguncrosshair")
-SWEP.CustomCrosshairSize = 30
-
 -------------------------- FIREMODES
 
 SWEP.RPM = 300
@@ -221,7 +217,7 @@ SWEP.CustomizePos = Vector(13.5, 42.5, 4)
 SWEP.CustomizeRotateAnchor = Vector(13.5, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(-2, 22.5, 3)
+SWEP.CustomizeSnapshotPos = Vector(-2, 22.5, 0)
 
 SWEP.PeekMaxFOV = 60
 
