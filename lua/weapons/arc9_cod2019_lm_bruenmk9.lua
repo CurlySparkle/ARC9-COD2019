@@ -248,10 +248,10 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(16, 50, 4.5)
-SWEP.CustomizeRotateAnchor = Vector(15.5, -3.5, -2)
+SWEP.CustomizePos = Vector(16, 42.5, 4.5)
+SWEP.CustomizeRotateAnchor = Vector(16, -3, -2)
 SWEP.CustomizeSnapshotFOV = 65
-SWEP.CustomizeSnapshotPos = Vector(-1, 30, 0)
+SWEP.CustomizeSnapshotPos = Vector(0, 45, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -514,9 +514,10 @@ SWEP.Animations = {
     },
     ["reload_smag"] = {
         Source = "reload_smag",
-		MinProgress = 0.9,
-		FireASAP = true,
+		MinProgress = 0.95,
+		PeekProgress = 0.925,
 		RefillProgress = 0.625,
+		FireASAP = true,
 		DropMagAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -535,9 +536,10 @@ SWEP.Animations = {
     },
     ["reload_smag_empty"] = {
         Source = "reload_smag_empty",
-		MinProgress = 0.9,
-		FireASAP = true,
+		MinProgress = 0.95,
+		PeekProgress = 0.925,
 		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 0.75,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -559,9 +561,10 @@ SWEP.Animations = {
     },
     ["reload_smag_fast"] = {
         Source = "reload_smag_fast",
-		MinProgress = 0.85,
-		FireASAP = true,
+		MinProgress = 0.9,
+		PeekProgress = 0.925,
 		RefillProgress = 0.65,
+		FireASAP = true,
 		DropMagAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -581,8 +584,9 @@ SWEP.Animations = {
     ["reload_smag_fast_empty"] = {
         Source = "reload_smag_fast_empty",
 		MinProgress = 0.9,
-		FireASAP = true,
+		PeekProgress = 0.925,
 		RefillProgress = 0.75,
+		FireASAP = true,
 		DropMagAt = 0.75,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
