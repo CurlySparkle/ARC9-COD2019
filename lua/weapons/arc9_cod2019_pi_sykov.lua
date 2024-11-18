@@ -214,10 +214,10 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, -15, 0)
-SWEP.CustomizePos = Vector(14, 32.5, 4.5)
-SWEP.CustomizeRotateAnchor = Vector(14, -1, -4)
+SWEP.CustomizePos = Vector(14.75, 30, 3.75)
+SWEP.CustomizeRotateAnchor = Vector(14.75, -1, -4)
 SWEP.CustomizeSnapshotFOV = 65
-SWEP.CustomizeSnapshotPos = Vector(0.5, 0, 0)
+SWEP.CustomizeSnapshotPos = Vector(0, 2.5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -1338,15 +1338,15 @@ SWEP.AttachmentTableOverrides = {
     ReloadAng = Angle(0,0,0)
     },
     ["cod2019_sykov_stock_light"] = {
-		CustomizeAng = Angle(90, 0, 0),
-		CustomizePos = Vector(13, 32.5, 4.5),
-		CustomizeRotateAnchor = Vector(13, -1.75, -4.5),
+		-- CustomizeAng = Angle(90, 0, 0),
+		-- CustomizePos = Vector(13, 32.5, 4.5),
+		-- CustomizeRotateAnchor = Vector(13, -1.75, -4.5),
 		PeekPos = Vector(-1.5, 1, -3),
     },
     ["cod2019_sykov_stock_heavy"] = {
-		CustomizeAng = Angle(90, 0, 0),
-		CustomizePos = Vector(13, 32.5, 4.5),
-		CustomizeRotateAnchor = Vector(13, -1.75, -4.5),
+		-- CustomizeAng = Angle(90, 0, 0),
+		-- CustomizePos = Vector(13, 32.5, 4.5),
+		-- CustomizeRotateAnchor = Vector(13, -1.75, -4.5),
 		PeekPos = Vector(-1.5, 1, -3),
     },
     -- ["cod2019_trigger_light"] = {
@@ -1444,6 +1444,7 @@ SWEP.Attachments = {
         Category = "cod2019_sykov_stock",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 1),
     },
     { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
@@ -1458,6 +1459,7 @@ SWEP.Attachments = {
 		Bone = "tag_mag_attach",
         Category = {"cod2019_mag","cod2019_sykov_mag"},
         Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(-0.5, 0, 1),
     },
     { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
@@ -1465,6 +1467,7 @@ SWEP.Attachments = {
         Bone = "tag_mag_attach",
 		Category = {"cod2019_ammo"},
 		Pos = Vector(-1, 0, 0),
+		Icon_Offset = Vector(-0.5, 0, 1),
     },
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
@@ -1472,6 +1475,7 @@ SWEP.Attachments = {
         Category = "cod2019_sykov_grip", -- Change to unique once they exist.
         Bone = "tag_pistolgrip_hide",
         Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(0.25, 0, 1),
     },
     { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_perk"),

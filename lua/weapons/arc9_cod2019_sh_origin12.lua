@@ -214,7 +214,7 @@ SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
 SWEP.CustomizePos = Vector(11, 35, 4)
-SWEP.CustomizeRotateAnchor = Vector(13.5, -2.25, -4)
+SWEP.CustomizeRotateAnchor = Vector(11, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
 SWEP.CustomizeSnapshotPos = Vector(0, 40, 0)
@@ -963,6 +963,32 @@ SWEP.AttachmentElements = {
         },
     },
 }
+
+SWEP.CustomizePosHook = function(wep, vec)
+	local s1, s2 = wep:HasElement("cod2019_attach_muzzle_silencer_shotgun_01"), wep:HasElement("cod2019_attach_muzzle_silencer_shotgun_03")
+	
+	if s1 then
+		return vec + Vector(3, 4, 0)
+	elseif s2 then
+		return vec + Vector(1, 3, 0)
+	else 
+		return vec
+	end
+
+end
+
+SWEP.CustomizeRotateAnchorHook = function(wep, vec)
+	local s1, s2 = wep:HasElement("cod2019_attach_muzzle_silencer_shotgun_01"), wep:HasElement("cod2019_attach_muzzle_silencer_shotgun_03")
+	
+	if s1 then
+		return vec + Vector(3, 0, 0)
+	elseif s2 then
+		return vec + Vector(1, 0, 0)
+	else 
+		return vec
+	end
+
+end
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model

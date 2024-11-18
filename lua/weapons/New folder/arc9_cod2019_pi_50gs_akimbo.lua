@@ -1,16 +1,14 @@
 AddCSLuaFile()
-SWEP.Base = "arc9_cod2019_pi_50gs"
+include( "arc9_cod2019_pi_50gs.lua" )
 
-SWEP.Spawnable = true
-SWEP.Category = "ARC9 - MW2019"
-
-SWEP.PrintName = string.format( ARC9:GetPhrase("mw19_weapon_akimbo"), ARC9:GetPhrase("mw19_weapon_deagle") )
+SWEP.PrintName = string.format( ARC9:GetPhrase("mw19_weapon_akimbo"), SWEP.PrintName )
 
 SWEP.SubCategory = ARC9:GetPhrase("mw19_category_weapon_handgun_akimbo") or "Akimbos"
 
 SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_pi_50gs_akimbo.png"
 
 SWEP.ViewModel = "models/weapons/cod2019/c_akimbo_50gs.mdl"
+SWEP.WorldModel = "models/weapons/cod2019/w_pist_50gs.mdl"
 
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
@@ -29,17 +27,17 @@ SWEP.WorldModelOffset = {
 -------------------------- MAGAZINE
 
 SWEP.ChamberSize = 2
-SWEP.ClipSize = 14
+SWEP.ClipSizeOverride = SWEP.ClipSize * 2
 
 -------------------------- FIREMODES
 
-SWEP.RPMMult = 1.75
+SWEP.RPM = SWEP.RPM * 1.75
 
 -------------------------- MELEE
 
 SWEP.SecondaryBash = true
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.3
+SWEP.PostBashTime = 0.2
 
 -------------------------- POSITIONS
 
@@ -47,16 +45,35 @@ SWEP.HasSights = false
 
 SWEP.ViewModelFOVBase = 60
 
+SWEP.SprintMidPoint = {
+    Pos = Vector(0, -1, -0.15),
+    Ang = Angle(0, 0, 0)
+}
+
+SWEP.MovingMidPoint = {
+    Pos = Vector(0, -0.5, -0.5),
+    Ang = Angle(0, 0, 0)
+}
+
+SWEP.ActivePos = Vector(0, 0, 0)
+SWEP.ActiveAng = Angle(0, 0, 0)
+
 SWEP.MovingPos = Vector(0, -1.5, -0.8)
+SWEP.MovingAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(0, -1.5, -1)
-SWEP.CrouchAng = Angle(0, 0, 0)
+SWEP.CrouchAng = Angle(0, 0, -5)
 
+SWEP.SprintPos = Vector(-1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, -5)
 
-SWEP.CustomizePos = Vector(19, 35, 4.5)
-SWEP.CustomizeRotateAnchor = Vector(19, 0, -5)
-SWEP.CustomizeSnapshotPos = Vector(0, 10, 0)
+SWEP.CustomizeAng = Angle(90, 0, 0)
+SWEP.CustomizePos = Vector(18, 42.5, 5)
+SWEP.CustomizeRotateAnchor = Vector(18, 0, -5)
+SWEP.CustomizeSnapshotFOV = 65
+SWEP.CustomizeSnapshotPos = Vector(2.5, 5, 0)
+SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
+SWEP.CustomizeNoRotate = false
 
 -------------------------- HoldTypes
 
@@ -65,6 +82,8 @@ SWEP.HoldType = "duel"
 SWEP.HoldTypeSprint = "duel"
 SWEP.HoldTypeHolstered = "duel"
 SWEP.HoldTypeSights = "duel"
+SWEP.HoldTypeCustomize = "slam"
+SWEP.HoldTypeBlindfire = "pistol"
 
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_DUEL
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_DUEL
@@ -295,6 +314,8 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         end
     end
 
+SWEP.DefaultBodygroups = "000000000000000000"
+
 SWEP.AttachmentTableOverrides = {
     ["cod2019_50gs_slide_ext"] = {
     Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_slide_ext_akimbo.mdl"
@@ -370,78 +391,147 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 end
 
 SWEP.Attachments = {
-    { -- 1 Muzzle
+    { -- 1
+        PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
+        Category = "cod2019_muzzle_pistols",
+        DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
 		Bone = "tag_silencer_l",
         DuplicateModels = { { Bone = "tag_silencer" } },
+        Pos = Vector(0, 0, 0),
     },
-    { -- 2 Barrel
+    { -- 2
+        PrintName = ARC9:GetPhrase("mw19_category_barrel"),
+		DefaultIcon = Material("entities/defattachs/barrel-ar.png", "mips smooth"),
+        Category = "cod2019_50gs_slide",
         Bone = "tag_barrel_attach_l",
         DuplicateModels = { { Bone = "tag_barrel_attach" } },
+        Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(-2, 0, 1),
     },
-    { -- 3 Laser
+    { -- 3
+        PrintName = ARC9:GetPhrase("mw19_category_laser"),
+		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
         Category = {"cod2019_tac_pistols"},
         Bone = "tag_laser_attach_l",
         DuplicateModels = { { Bone = "tag_laser_attach" } },
+        Pos = Vector(0, 0, 0),
+		ExcludeElements = {"barrel_smg"},
     },
-    { -- 4 Optic
+    { -- 4
+        PrintName = ARC9:GetPhrase("mw19_category_optic"),
+		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Bone = "tag_reflex_l",
         DuplicateModels = { { Bone = "tag_reflex" } },
+        Pos = Vector(1, 0, -0.1),
+        Category = {"cod2019_optic_pistol"},
     },
-    { -- 5 Trigger Action
+    { -- 5
+        PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
+		-- DefaultIcon = Material("entities/defattachs/stock-ar.png", "mips smooth"),
+        Category = {"cod2019_trigger"},
         Bone = "j_trigger_l",
+        Pos = Vector(0, 0, 0),
     },
-    { -- 6 Magazine
+    { -- 6
+        PrintName = ARC9:GetPhrase("mw19_category_magazine"),
+		DefaultIcon = Material("entities/defattachs/magazine-ar.png", "mips smooth"),
 		Bone = "tag_mag_attach_l",
         DuplicateModels = { { Bone = "tag_mag_attach" } },
+        Category = {"cod2019_mag","cod2019_50gs_mag"},
+        Pos = Vector(0, 0, 0),
     },
-    { -- 7 Ammo
+    { -- 7
+        PrintName = ARC9:GetPhrase("mw19_category_ammo"),
+		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach_l",
         DuplicateModels = { { Bone = "tag_mag_attach" } },
+		Category = {"cod2019_ammo"},
+		Pos = Vector(-1.5, 0, 0),
     },
-    { -- 8 Rear Grip
+    { -- 8
+        PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
+		DefaultIcon = Material("entities/defattachs/reargrip-ar.png", "mips smooth"),
+        Category = "cod2019_50gs_grip",
         Bone = "tag_stock_attach_l",
         DuplicateModels = { { Bone = "tag_stock_attach" } },
+        Pos = Vector(0, 0, 0),
     },
-    { -- 9 Perk
+    { -- 9
+        PrintName = ARC9:GetPhrase("mw19_category_perk"),
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
         Bone = "tag_cosmetic_l",
+        Pos = Vector(-3, 0, -2),
     },
-
 	-- Unofficial
-    { -- 10 Receiver
-        Category = "cod2019_50gs_akimbo_receiver",
+    { -- 10
+        PrintName = ARC9:GetPhrase("mw19_category_receiver"),
+        Category = "cod2019_50gs_receiver",
         Bone = "tag_pistol_offset_l",
+        Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 1),
+		Hidden = false,
     },
 	
 	-- Cosmetics
-    { -- 11 Skins
+    { -- 11
+        PrintName = ARC9:GetPhrase("mw19_category_skins"),
         Bone = "tag_cosmetic_l",
+        Pos = Vector(3, 0, 1.5),
+        Category = "cod2019_skins_50gs",
+		CosmeticOnly = true,
     },
-    { -- 12 Camo
+    { -- 12
+        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         Bone = "tag_cosmetic_l",
+        Pos = Vector(2, 0, 1.5),
+        CosmeticOnly = true,
     },
-    { -- 13 Sticker
+    { -- 13
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/akimbo_50gs_decal_a.mdl",
+        Category = "stickers",
         Bone = "tag_cosmetic_l",
+        Pos = Vector(1, 0, 1.5),
     },
-    { -- 14 Sticker
+    { -- 14
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/akimbo_50gs_decal_b.mdl",
+        Category = "stickers",
         Bone = "tag_cosmetic_l",
+        Pos = Vector(0, 0, 1.5),
     },
-    { -- 15 Sticker
+    { -- 15
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/akimbo_50gs_decal_c.mdl",
+        Category = "stickers",
         Bone = "tag_cosmetic_l",
+        Pos = Vector(-1, 0, 1.5),
     },
-    { -- 16 Sticker
+    { -- 16
+        PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         StickerModel = "models/weapons/cod2019/stickers/akimbo_50gs_decal_d.mdl",
+        Category = "stickers",
         Bone = "tag_cosmetic_l",
+        Pos = Vector(-2, 0, 1.5),
     },
-    { -- 17 Charm
+    { -- 17
+        PrintName = ARC9:GetPhrase("mw19_category_charm"),
+        CosmeticOnly = true,
+        Category = {"charm"},
         Bone = "tag_cosmetic_l",
         DuplicateModels = { { Bone = "tag_cosmetic" } },
+        Pos = Vector(0.5, 0, 0),
+		Icon_Offset = Vector(-3.5, 0, 1.5),
+		Scale = 1.5,
     },
-    { -- 18 Stats
+    { -- 18
+        PrintName = ARC9:GetPhrase("mw19_category_stats"),
+        Category = "killcounter",
         Bone = "tag_cosmetic_l",
         DuplicateModels = { { Bone = "tag_cosmetic" } },
+        Pos = Vector(-1.5, -0.05, -0),
+		Icon_Offset = Vector(-2.5, 0.05, 1.5),
+		CosmeticOnly = true,
     },
 }

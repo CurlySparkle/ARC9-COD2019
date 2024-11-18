@@ -230,10 +230,10 @@ SWEP.SprintPos = Vector(0, 0, 0)
 SWEP.SprintAng = Angle(0, 0, 0)
 
 SWEP.CustomizeAng = Angle(90, -15, 0)
-SWEP.CustomizePos = Vector(15, 35, 5.5)
-SWEP.CustomizeRotateAnchor = Vector(15, -1, -5.5)
+SWEP.CustomizePos = Vector(15.5, 30, 4.5)
+SWEP.CustomizeRotateAnchor = Vector(15.5, -1, -5.5)
 SWEP.CustomizeSnapshotFOV = 65
-SWEP.CustomizeSnapshotPos = Vector(1.5, 5, 0)
+SWEP.CustomizeSnapshotPos = Vector(0, 7.5, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -1243,9 +1243,9 @@ SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["cod2019_renetti_stock"] = {
-		CustomizeAng = Angle(90, 0, 0),
-		CustomizePos = Vector(12, 32.5, 4.5),
-		CustomizeRotateAnchor = Vector(12, -2.5, -4.5),
+		-- CustomizeAng = Angle(90, 0, 0),
+		-- CustomizePos = Vector(12, 32.5, 4.5),
+		-- CustomizeRotateAnchor = Vector(12, -2.5, -4.5),
     },
     ["cod2019_trigger_light"] = {
     Model = "models/weapons/cod2019/attachs/weapons/renetti/attachment_vm_pi_mike9_trigcust01.mdl",
@@ -1332,6 +1332,7 @@ SWEP.Attachments = {
         Category = "cod2019_renetti_stock",
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 1),
     },
     { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_triggeraction"),
@@ -1346,6 +1347,7 @@ SWEP.Attachments = {
 		Bone = "tag_mag_attach",
         Category = {"cod2019_mag","cod2019_renetti_mag"},
         Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 1),
     },
     { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
@@ -1353,6 +1355,7 @@ SWEP.Attachments = {
         Bone = "tag_mag_attach",
 		Category = {"cod2019_ammo"},
 		Pos = Vector(-1, 0, 0),
+		Icon_Offset = Vector(0, 0, 1),
     },
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
@@ -1360,6 +1363,7 @@ SWEP.Attachments = {
         Category = "cod2019_renetti_grip",
         Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 0.5),
     },
     { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
