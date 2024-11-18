@@ -995,6 +995,16 @@ SWEP.Attachments = {
 		-- RejectAttachments = { ["arc9_stat_proscreen"] = true },
 		CosmeticOnly = true,
     },
+    { -- 20 UBGL
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
+        Category = {"cod2019_m203"},
+        Bone = "tag_sling",
+        Pos = Vector(12, 0, -1.25),
+        Ang = Angle(0, 180, 0),
+		InstalledElements = {"foregrip_tac2"},
+		Hidden = false,
+    },
 }
 
 SWEP.GripPoseParam = 4
