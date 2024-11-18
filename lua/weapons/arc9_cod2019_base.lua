@@ -37,7 +37,7 @@ SWEP.TracerEffect = "cod2019_tracer"
 SWEP.TracerSize = 0
 SWEP.TracerNum = 0
 
-SWEP.NoDynamicKillIcon = true
+SWEP.NoDynamicKillIcon = false
 
 SWEP.DamageRand = 0
 
@@ -92,7 +92,7 @@ SWEP.FreeAimRadius = 0 -- In degrees, how much this gun can free aim in hip fire
 -------------------------- SWAY
 SWEP.Sway = 0
 SWEP.SwayMultSights = 1
-SWEP.SwayAddSights = 1
+SWEP.SwayAddSights = 0.25
 -------------------------- EXTRAS / ADDED LATER FOR ALL WEAPONS
 SWEP.CamQCA_Mult_ADS = 1
 SWEP.AimDownSightsTimeMultShooting = 1.5

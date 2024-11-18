@@ -228,10 +228,10 @@ SWEP.SprintPos = Vector(3, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 15)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(12, 42.5, 4)
+SWEP.CustomizePos = Vector(11, 32.5, 3.5)
 SWEP.CustomizeRotateAnchor = Vector(12, -2.25, -4)
 SWEP.CustomizeSnapshotFOV = 65
-SWEP.CustomizeSnapshotPos = Vector(-1, 20, 0)
+SWEP.CustomizeSnapshotPos = Vector(-1, 30, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
@@ -1024,6 +1024,7 @@ SWEP.Attachments = {
 		Bone = "tag_mag_attach",
         Category = {"cod2019_mag","cod2019_uzi_mag"},
         Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 1.5),
     },
     { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
@@ -1031,6 +1032,7 @@ SWEP.Attachments = {
         Bone = "tag_mag_attach",
 		Category = {"cod2019_ammo"},
 		Pos = Vector(-1.5, 0, 0),
+		Icon_Offset = Vector(0, 0, 1.5),
     },
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
@@ -1038,6 +1040,7 @@ SWEP.Attachments = {
         Category = "cod2019_pistolgrip",
         Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 0.75),
     },
     { -- 10
         PrintName = ARC9:GetPhrase("mw19_category_perk"),

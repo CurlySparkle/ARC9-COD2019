@@ -85,7 +85,7 @@ SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
-SWEP.ForceStandardCrosshair = true
+SWEP.ForceStandardCrosshair = false
 
 SWEP.ManualAction = true
 SWEP.NoLastCycle = true
@@ -207,11 +207,11 @@ SWEP.SprintPos = Vector(1, 0, -1)
 SWEP.SprintAng = Angle(0, 0, 25)
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
-SWEP.CustomizePos = Vector(7.5, 40, 5)
+SWEP.CustomizePos = Vector(7.5, 35, 4.5)
 SWEP.CustomizeRotateAnchor = Vector(7.5, -3, -4)
 SWEP.CustomizeSnapshotFOV = 65
 SWEP.CustomizeNoRotate = false
-SWEP.CustomizeSnapshotPos = Vector(0, 22.5, 0)
+SWEP.CustomizeSnapshotPos = Vector(0, 35, 0)
 
 SWEP.PeekPos = Vector(-1.2, 1.5, -3.5)
 SWEP.PeekAng = Angle(0, 0.4, -45)
@@ -765,6 +765,8 @@ if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
 -------------------------- DAMAGE PROFILE
 SWEP.DamageMax = 24
 SWEP.DamageMin = 10
+
+SWEP.DistributeDamage = false
 
 SWEP.Num = 8
 
