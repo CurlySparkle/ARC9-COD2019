@@ -689,8 +689,8 @@ SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
     ["cod2019_357_grip_stock"] = {
-    CustomizePos = Vector(10, 30, 4.5),
-	CustomizeRotateAnchor = Vector(10, -3, -4.5)
+    -- CustomizePos = Vector(10, 30, 4.5),
+	-- CustomizeRotateAnchor = Vector(10, -3, -4.5)
     },
     ["cod2019_trigger_light"] = {
 		RPMAdd = 20,

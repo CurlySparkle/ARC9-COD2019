@@ -901,7 +901,7 @@ SWEP.Attachments = {
 		Bone = "tag_mag_attach",
         Category = {"cod2019_mag","cod2019_m1911_mag"},
         Pos = Vector(0, 0, 0),
-		Icon_Offset = Vector(-2, 0, -3),
+		Icon_Offset = Vector(-2, 0, -2),
     },
     { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
@@ -909,7 +909,7 @@ SWEP.Attachments = {
         Bone = "tag_mag_attach",
 		Category = {"cod2019_ammo"},
 		Pos = Vector(-1, 0, 0),
-		Icon_Offset = Vector(-2, 0, -3),
+		Icon_Offset = Vector(-2, 0, -2),
     },
     { -- 8
         PrintName = ARC9:GetPhrase("mw19_category_reargrip"),
@@ -917,6 +917,7 @@ SWEP.Attachments = {
         Category = "cod2019_pistolgrip",
         Bone = "tag_pistolgrip_attach",
         Pos = Vector(0, 0, 0),
+		Icon_Offset = Vector(0, 0, 0.25),
     },
     { -- 9
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
