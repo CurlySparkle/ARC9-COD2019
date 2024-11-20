@@ -1106,6 +1106,16 @@ SWEP.Attachments = {
 		Icon_Offset = Vector(0, -1.25, 2),
 		CosmeticOnly = true,
     },
+    { -- 20 UBGL
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
+        Category = {"cod2019_m203"},
+        Bone = "tag_sling",
+        Pos = Vector(23, 1.2, -1.4),
+        Ang = Angle(0, 180, 0),
+		InstalledElements = {"ubgl_small","grip"},
+		Hidden = true,
+    },
 }
 
 SWEP.GripPoseParam = 5
