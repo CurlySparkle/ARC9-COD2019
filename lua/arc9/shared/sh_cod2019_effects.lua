@@ -12,9 +12,12 @@ end
 
 local particlenames = {
     "mw2019_tracer",
+    "mw2019_tracer_3",
     "mw2019_tracer_fast",
 	"mw2019_tracer_slow",
+	"mw2019_tracer_slow_new",
 	"mw2019_tracer_small",
+	"mw2019_tracer_small_new",
 	"mw2019_tracer_inc",
 	"weapon_tracers_incendiary",
 	"thermite_thrown_trail",

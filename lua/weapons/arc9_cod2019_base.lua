@@ -37,7 +37,7 @@ SWEP.TracerEffect = "cod2019_tracer"
 SWEP.TracerSize = 0
 SWEP.TracerNum = 0
 
-SWEP.NoDynamicKillIcon = false
+SWEP.NoDynamicKillIcon = true
 
 SWEP.DamageRand = 0
 

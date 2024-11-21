@@ -1,4 +1,4 @@
-EFFECT.TracerName = "mw2019_tracer_slow"
+EFFECT.TracerName = "mw2019_tracer_slow_new"
 
 function EFFECT:Init(data)
     self.WeaponEnt = data:GetEntity()

@@ -1003,6 +1003,7 @@ SWEP.Attachments = {
         Pos = Vector(12, 0, -1.25),
         Ang = Angle(0, 180, 0),
 		InstalledElements = {"foregrip_tac2"},
+		MergeSlots = {6}, -- Underbarrels
 		Hidden = true,
     },
 }
