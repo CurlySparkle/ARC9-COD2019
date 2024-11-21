@@ -354,7 +354,7 @@ SWEP.Animations = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
             { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.75, lhik = 1, rhik = 1 },
+            { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_reload_up.ogg", t = 0/30},
@@ -374,9 +374,9 @@ SWEP.Animations = {
 		DropMagAt = 0.95,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
-            { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.5, lhik = 0, rhik = 0 },
-            { t = 0.8, lhik = 1, rhik = 1 },
+            { t = 0.05, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.95, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_raise.ogg", t = 0/30},
@@ -467,8 +467,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.05, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.95, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_raise.ogg", t = 0/30},
@@ -537,7 +537,7 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.675, lhik = 0, rhik = 0 },
             { t = 0.9, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -559,8 +559,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.05, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 1.1, lhik = 1, rhik = 1 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.95, lhik = 1, rhik = 1 },
         },
         EventTable = {
 			{s = path .. "wfoly_sh_mark26_raise.ogg", t = 0/30},
@@ -681,9 +681,8 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
-            { t = 0.7, lhik = 0, rhik = 0 },
-            { t = 0.8, lhik = 0, rhik = 0 },
-            { t = 0.95, lhik = 1, rhik = 1 },
+            { t = 0.45, lhik = 0, rhik = 0 },
+            { t = 0.55, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_sh_mike26_inspect_01.ogg", t = 0/30},
@@ -988,7 +987,7 @@ SWEP.Attachments = {
     },
     { -- 11
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_burst","cod2019_perks_ss","cod2019_vlk_perks"},
+        Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss","cod2019_vlk_perks"},
         Bone = "tag_attachments",
         Pos = Vector(3.5, 0, -3.5),
     },

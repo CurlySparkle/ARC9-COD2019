@@ -44,15 +44,13 @@ ATT.RTScopeShadowIntensity = 7.5
 ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
 
--- if !warzonestats then -- Regular Stats
-	-- ATT.AimDownSightsTimeAdd = 0.08
-	-- ATT.VisualRecoilMult = 0.99
-	-- ATT.RecoilMult = 0.99
--- else -- Warzone Stats
-	-- ATT.AimDownSightsTimeAdd = 0.077
-	-- ATT.VisualRecoilMult = 0.99
-	-- ATT.RecoilMult = 0.99
--- end
+if !warzonestats then -- Regular Stats
+	ATT.AimDownSightsTimeAdd = 0.08
+	ATT.RecoilMult = 0.99
+else -- Warzone Stats
+	ATT.AimDownSightsTimeAdd = 0.08
+	ATT.RecoilMult = 0.99
+end
 
 ARC9.LoadAttachment(ATT, "cod2019_optic_default_svd")
 
@@ -96,9 +94,11 @@ ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
 
 if !warzonestats then -- Regular Stats
-	ATT.AimDownSightsTimeMult = 1.25
+	ATT.AimDownSightsTimeAdd = 0.08
+	ATT.RecoilMult = 0.99
 else -- Warzone Stats
-	-- ATT.AimDownSightsTimeAdd = 0.1
+	ATT.AimDownSightsTimeAdd = 0.08
+	ATT.RecoilMult = 0.99
 end
 
 ARC9.LoadAttachment(ATT, "cod2019_optic_default_hdr")
@@ -145,6 +145,14 @@ ATT.RTScopeShadowIntensity = 7.5
 ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
 
+if !warzonestats then -- Regular Stats
+	ATT.AimDownSightsTimeAdd = 0.08
+	ATT.RecoilMult = 0.99
+else -- Warzone Stats
+	ATT.AimDownSightsTimeAdd = 0.08
+	ATT.RecoilMult = 0.99
+end
+
 ARC9.LoadAttachment(ATT, "cod2019_optic_default_ax50")
 
 /////////////////////////// -- Rytec AMR
@@ -187,6 +195,14 @@ ATT.RTScopeReticleScale = 0.8
 ATT.RTScopeShadowIntensity = 7.5
 ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
+
+if !warzonestats then -- Regular Stats
+	ATT.AimDownSightsTimeAdd = 0.08
+	ATT.RecoilMult = 0.99
+else -- Warzone Stats
+	ATT.AimDownSightsTimeAdd = 0.08
+	ATT.RecoilMult = 0.99
+end
 
 ARC9.LoadAttachment(ATT, "cod2019_optic_default_rytec")
 
