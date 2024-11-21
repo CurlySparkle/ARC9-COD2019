@@ -114,6 +114,8 @@ SWEP.UBGLCancelAnim = true
 
 SWEP.CamQCA_MultCustomize = 0
 
+SWEP.AimAssistRange = 100 / ARC9.HUToM
+
 local parmbl = {"blend_move","blend_walk"}
 
 SWEP.Hook_Think	= function(self)

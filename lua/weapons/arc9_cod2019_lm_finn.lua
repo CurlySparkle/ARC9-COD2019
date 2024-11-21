@@ -260,7 +260,7 @@ SWEP.CustomizeSnapshotPos = Vector(-1, 40, 0)
 SWEP.CustomizeSnapshotAng = Angle(0, 0, 0)
 SWEP.CustomizeNoRotate = false
 
-SWEP.PeekPos = Vector(2, 2, -1)
+SWEP.PeekPos = Vector(2, -2, -0.5)
 SWEP.PeekAng = Angle(0, 0, 5)
 
 SWEP.PeekMaxFOV = 65
@@ -1070,7 +1070,7 @@ SWEP.AttachmentElements = {
             {6,1},
         },
     },
-    ["ziptie"] = {
+    ["cod2019_finn_barrel_default_adv"] = {
         Bodygroups = {
             {7,1},
         },
