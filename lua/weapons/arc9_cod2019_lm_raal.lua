@@ -3,7 +3,6 @@ if CLIENT then
     killicon.Add( "arc9_cod2019_lm_raal", "vgui/killicons/cod2019_lm_raal.png", Color(251, 85, 25, 255))
 end
 
-
 SWEP.LoadoutImage = "entities/loadout/arc9_cod2019_lm_raal.png"
 
 SWEP.Base = "arc9_cod2019_base"
@@ -200,6 +199,8 @@ SWEP.SpeedMultShooting = 0.8
 
 SWEP.AimDownSightsTime = 0.55 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.375 -- How long it takes to go from sprinting to being able to fire.
+
+SWEP.Bipod = true
 
 -------------------------- MELEE
 
@@ -919,7 +920,16 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
+	local nobipodatts = !wep:HasElement("cod2019_grips_bipod") and !wep:HasElement("cod2019_grips_bipod_alt")
+
     if wep:HasElement("optic_scope") then model:SetBodygroup(5,2) end
+
+    if wep:GetBipod() and nobipodatts then
+        if wep:GetEnterBipodTime() + 0.2 < CurTime() then
+            -- mdl:SetBodygroup(2, 10) -- Change to Bipod BG
+        end
+    end
+
 end
 
 SWEP.Attachments = {

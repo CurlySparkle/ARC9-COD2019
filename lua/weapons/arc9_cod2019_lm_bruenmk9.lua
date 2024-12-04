@@ -201,6 +201,8 @@ SWEP.SpeedMultShooting = 0.8
 SWEP.AimDownSightsTime = 0.45 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime = 0.45 -- How long it takes to go from sprinting to being able to fire.
 
+SWEP.Bipod = true
+
 -------------------------- MELEE
 
 SWEP.Bash = true
@@ -792,11 +794,20 @@ end
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
+	local nobipodatts = !wep:HasElement("cod2019_grips_bipod") and !wep:HasElement("cod2019_grips_bipod_alt")
+	
     if wep:HasElement("mag_smag") then 
-     model:SetPoseParameter("smag_offset", 1)
-    else
-     model:SetPoseParameter("smag_offset", 0)
+		 model:SetPoseParameter("smag_offset", 1)
+	else
+		 model:SetPoseParameter("smag_offset", 0)
     end
+
+    if wep:GetBipod() and nobipodatts then
+        if wep:GetEnterBipodTime() + 0.2 < CurTime() then
+            -- mdl:SetBodygroup(2, 10) -- Change to Bipod BG
+        end
+    end
+
 end
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2

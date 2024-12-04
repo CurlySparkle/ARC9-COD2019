@@ -572,7 +572,7 @@ L["mw19_weapon_m91"] = "M91"
 L["mw19_weapon_mg34"] = "MG34"
 L["mw19_weapon_holger"] = "Holger-26"
 L["mw19_weapon_bruen"] = "Bruen Mk9"
-L["mw19_weapon_finn"] = "FiNN LMG"
+L["mw19_weapon_finn"] = "KSP FiNN"
 L["mw19_weapon_raal"] = "KSP RAAL"
 
 L["mw19_weapon_ebr"] = "EBR-14"

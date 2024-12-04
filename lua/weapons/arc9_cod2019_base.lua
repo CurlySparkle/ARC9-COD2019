@@ -208,7 +208,7 @@ SWEP.HookP_NameChange = function(self, name)
 	end	
 	
 	if att["cod2019_grau556_barrel_heavy"] then
-		name = "IMBEL IA2"
+		name = ARC9:GetPhrase("mw19_weapon_grau_imbel") or "Grau Intruso"
 	end
 	
 	-- Assault Rifle, FN Scar-17
