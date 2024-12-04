@@ -24,6 +24,14 @@ function EFFECT:Init(data)
             self.Forward = ang:Forward()
         end
     end
+	
+    local diff = hit - start
+    self.Dir = diff:GetNormalized()
+    local hitt = util.QuickTrace(hit, self.Dir)
+    if hitt.HitSky then
+        self.Dir = wep:GetOwner():GetAimVector()
+        hit = start + self.Dir * 32768
+    end
 
     self.StartPos = start
     self.EndPos = hit

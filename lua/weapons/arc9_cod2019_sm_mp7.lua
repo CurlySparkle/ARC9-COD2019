@@ -1093,6 +1093,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 180, 0),
 		InstalledElements = {"ubgl_small"},
 		Hidden = true,
+		MergeSlots = {6}, -- Underbarrels
     },
 }
 

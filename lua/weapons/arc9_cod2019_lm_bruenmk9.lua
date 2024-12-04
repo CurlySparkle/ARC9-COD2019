@@ -804,7 +804,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 
     if wep:GetBipod() and nobipodatts then
         if wep:GetEnterBipodTime() + 0.2 < CurTime() then
-            -- mdl:SetBodygroup(2, 10) -- Change to Bipod BG
+            mdl:SetBodygroup(6, 1) -- Change to Bipod BG
         end
     end
 
@@ -932,23 +932,10 @@ SWEP.AttachmentElements = {
     },
     ["bipod_none"] = {
         Bodygroups = {
-            {6,1},
+            {6,2},
         },
     },
 }
-
-SWEP.Hook_ModifyBodygroups = function(wep, data)
-    local model = data.model
-    if wep:HasElement("bipod") then 
-		model:SetBodygroup(6,1)
-	end
-	
-    if wep:HasElement("mag_smag") then 
-     model:SetPoseParameter("smag_offset", 1)
-    else
-     model:SetPoseParameter("smag_offset", 0)
-    end
-end
 
 SWEP.Attachments = {
     { -- 1

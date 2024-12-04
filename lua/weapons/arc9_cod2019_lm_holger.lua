@@ -821,6 +821,7 @@ SWEP.AttachmentElements = {
     ["barrel_none"] = {
         Bodygroups = {
             {2,1},
+            {7,2},
         },
     },
     ["muzzle_none"] = {
@@ -859,7 +860,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 
     if wep:GetBipod() and !wep:HasElement("barrel_none") and nobipodatts then
         if wep:GetEnterBipodTime() + 0.2 < CurTime() then
-            -- mdl:SetBodygroup(10, 1) -- Change to Bipod BG
+            mdl:SetBodygroup(7, 1) -- Change to Bipod BG
         end
     end
 
@@ -1031,6 +1032,7 @@ SWEP.Attachments = {
         Pos = Vector(13, 0, -2.8),
         Ang = Angle(0, 180, 0),
 		Hidden = true,
+		MergeSlots = {6}, -- Underbarrels
     },
 }
 

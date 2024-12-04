@@ -960,6 +960,17 @@ SWEP.Attachments = {
 		Icon_Offset = Vector(-2.5, 0.05, 1.5),
 		CosmeticOnly = true,
     },
+    { -- 19 UBGL
+        PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
+		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
+        Category = {"cod2019_m203"},
+        Bone = "tag_pistol_offset",
+        Pos = Vector(6, 0, -1),
+        Ang = Angle(0, 180, 0),
+		InstalledElements = {"ubgl_small"},
+		MergeSlots = {3}, -- Lasers
+		Hidden = true,
+    },
 }
 
 SWEP.GripPoseParam = 4.6
