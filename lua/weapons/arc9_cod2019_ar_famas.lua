@@ -1492,7 +1492,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 
     if wep:GetBipod() and nobipodatts then
         if wep:GetEnterBipodTime() + 0.2 < CurTime() then
-            -- mdl:SetBodygroup(2, 10) -- Change to Bipod BG
+            -- model:SetBodygroup(2, 10) -- Change to Bipod BG
         end
     end
 
@@ -1670,7 +1670,7 @@ SWEP.Attachments = {
         Category = {"cod2019_famas_bipod"},
         Bone = "tag_grip_attach",
         Pos = Vector(0, 0, 0),
-		--Hidden = true,
+		Hidden = true,
 		--MergeSlots = {6}, -- Underbarrel
     },
     { -- 22

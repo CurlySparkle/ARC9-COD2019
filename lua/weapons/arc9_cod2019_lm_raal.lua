@@ -926,7 +926,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 
     if wep:GetBipod() and nobipodatts then
         if wep:GetEnterBipodTime() + 0.2 < CurTime() then
-            mdl:SetBodygroup(7, 1) -- Change to Bipod BG
+            model:SetBodygroup(7, 1) -- Change to Bipod BG
         end
     end
 
