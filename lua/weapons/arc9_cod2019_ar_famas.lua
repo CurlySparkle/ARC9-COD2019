@@ -1487,25 +1487,20 @@ SWEP.AttachmentElements = {
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
 	local nobipodatts = !wep:HasElement("cod2019_grips_bipod") and !wep:HasElement("cod2019_grips_bipod_alt")
-
-    if wep:HasElement("stock_retract") then model:SetBodygroup(3,1) end
-
-    if wep:GetBipod() and nobipodatts then
+	
+    if wep:HasElement("railcust") then 
+		model:SetBodygroup(4,2)
+		model:SetPoseParameter("railcust", 1)
+    else
+		model:SetPoseParameter("railcust", 0)
+    end
+	
+    if wep:GetBipod() and !wep:HasElement("bipod_none") and nobipodatts then
         if wep:GetEnterBipodTime() + 0.2 < CurTime() then
             model:SetBodygroup(6, 1) -- Change to Bipod BG
         end
     end
 
-end
-
-SWEP.Hook_ModifyBodygroups = function(wep, data)
-    local model = data.model
-	if wep:HasElement("railcust") then model:SetBodygroup(4,2) end
-    if wep:HasElement("railcust") then 
-     model:SetPoseParameter("railcust", 1)
-    else
-     model:SetPoseParameter("railcust", 0)
-    end
 end
 
 SWEP.Attachments = {
