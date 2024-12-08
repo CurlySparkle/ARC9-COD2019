@@ -1469,7 +1469,7 @@ SWEP.AttachmentElements = {
     },
     ["bipod_none"] = {
         Bodygroups = {
-            {6,1},
+            {6,2},
         },
     },
     ["grip_none"] = {
@@ -1492,7 +1492,7 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 
     if wep:GetBipod() and nobipodatts then
         if wep:GetEnterBipodTime() + 0.2 < CurTime() then
-            -- model:SetBodygroup(2, 10) -- Change to Bipod BG
+            model:SetBodygroup(6, 1) -- Change to Bipod BG
         end
     end
 
