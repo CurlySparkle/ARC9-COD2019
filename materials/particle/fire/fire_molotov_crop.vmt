@@ -1,6 +1,6 @@
 SpriteCard
 {
-$basetexture "particle\fire_burning_character"
+$basetexture "particle\fire\fire_burning_character"
 $ADDSELF 1
 $BLENDFRAMES 1
 $CROPFACTOR "[0.5 1]"
