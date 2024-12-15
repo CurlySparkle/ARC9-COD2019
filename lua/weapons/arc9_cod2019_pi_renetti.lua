@@ -486,7 +486,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 6/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 37/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["reload_xmag_fast"] = {
@@ -508,7 +508,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 17/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 27/30},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -529,7 +529,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 17/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 25/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 27/30},
         },
     },
     ["reload_xmaglrg"] = {
@@ -572,7 +572,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 6/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 37/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["reload_xmaglrg_fast"] = {
@@ -594,7 +594,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 17/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 27/30},
         },
     },
     ["reload_xmaglrg_fast_empty"] = {
@@ -615,7 +615,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 17/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 25/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 27/30},
         },
     },
     ["ready"] = {
@@ -847,7 +847,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 6/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 37/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["stock_reload_xmag_fast"] = {
@@ -869,7 +869,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 17/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 27/30},
         },
     },
     ["stock_reload_xmag_fast_empty"] = {
@@ -890,7 +890,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 17/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 25/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 27/30},
         },
     },
     ["stock_reload_xmaglrg"] = {
@@ -933,7 +933,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 6/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 37/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 37/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 40/30},
         },
     },
     ["stock_reload_xmaglrg_fast"] = {
@@ -955,7 +955,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_fast_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_maghit.ogg", t = 17/30},
 			{s = path .. "wfoly_pi_mike9_reload_fast_magin.ogg", t = 20/30},
-			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 15/30},
+			{s = path .. "wfoly_pi_mike9_reload_fast_end.ogg", t = 27/30},
         },
     },
     ["stock_reload_xmaglrg_fast_empty"] = {
@@ -976,7 +976,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike9_reload_empty_magout.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_magin.ogg", t = 17/30},
 			{s = path .. "wfoly_pi_mike9_reload_empty_charge.ogg", t = 25/30},
-			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 25/30},
+			{s = path .. "wfoly_pi_mike9_reload_empty_end.ogg", t = 27/30},
         },
     },
     ["stock_ready"] = {

@@ -694,8 +694,8 @@ SWEP.Animations = {
 			{s = path .. "p05_ar_schotel_reload_drum_raise.ogg", t = 0/30},
 			{s = path .. "p05_ar_schotel_reload_drum_magout.ogg", t = 20/30},
 			{s = path .. "p05_ar_schotel_reload_drum_rattle.ogg", t = 36/30},
-			{s = path .. "p05_ar_schotel_reload_drum_magin.ogg", t = 58/30},
-			{s = path .. "p05_ar_schotel_reload_drum_end.ogg", t = 78/30},
+			{s = path .. "p05_ar_schotel_reload_drum_magin.ogg", t = 55/30},
+			{s = path .. "p05_ar_schotel_reload_drum_end.ogg", t = 76.5/30},
         },
     },
     ["reload_drum_empty"] = {
@@ -717,9 +717,9 @@ SWEP.Animations = {
 			{s = path .. "p05_ar_schotel_reload_drum_empty_magrelease.ogg", t = 11/30},
 			{s = path .. "p05_ar_schotel_reload_drum_empty_magout.ogg", t = 32/30},
 			{s = path .. "p05_ar_schotel_reload_drum_empty_rattle.ogg", t = 40/30},
-			{s = path .. "p05_ar_schotel_reload_drum_empty_magin.ogg", t = 65/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_magin.ogg", t = 63/30},
 			{s = path .. "p05_ar_schotel_reload_drum_empty_charge.ogg", t = 90/30},
-			{s = path .. "p05_ar_schotel_reload_drum_empty_end.ogg", t = 89/30},
+			{s = path .. "p05_ar_schotel_reload_drum_empty_end.ogg", t = 86/30},
         },
     },
     ["reload_drum_fast"] = {
@@ -763,7 +763,7 @@ SWEP.Animations = {
 			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_rattle.ogg", t = 35/30},
 			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_magin.ogg", t = 47/30},
 			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_charge.ogg", t = 68/30},
-			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_end.ogg", t = 65/30},
+			{s = path .. "p05_ar_schotel_reload_drum_fast_empty_end.ogg", t = 63/30},
         },
     },
     ["reload_glaunch"] = {
