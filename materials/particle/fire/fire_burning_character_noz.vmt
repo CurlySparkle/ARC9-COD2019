@@ -1,0 +1,14 @@
+SpriteCard
+{
+$basetexture "particle\fire_burning_character"
+$ADDSELF 1.0
+$BLENDFRAMES 1
+$OVERBRIGHTFACTOR 1.75
+
+
+
+
+$DEPTHBLEND 0
+
+$ignorez 1
+}

@@ -25,6 +25,7 @@ local particlenames = {
 	"grenadetrail",
 	"rockettrail",
 	"smoketrail",
+	"weapon_molotov_fp",
 	"Generic_explo_emp",
 	"Generic_explo_flash",
 	"Generic_explo_vhigh",

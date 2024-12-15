@@ -43,7 +43,7 @@ SWEP.NoTPIKVMPos = true
 SWEP.TPIKforcelefthand = true
 SWEP.TPIKParentToSpine4 = true
 SWEP.WorldModelOffset = {
-    Pos = Vector(-6.5, 3, -11),
+    Pos = Vector(-8, 6, -13),
     Ang = Angle(20, -10, 195),
 
     TPIKPos = Vector(11, 2, 0),
@@ -158,10 +158,11 @@ SWEP.Animations = {
         Source = "idle_primed"
     },
     ["quicknade"] = {
-        Source = "draw",
+        Source = "quick_pullout",
         MinProgress = 0.3,
         FireASAP = true,
         EventTable = {
+		    {e = "cod2019_molotov_rag_fire", t = 0.0},
             {s = path .. "weap_molotov_pullout_01.ogg", t = 0/30},
         },
     },
@@ -178,6 +179,7 @@ SWEP.Animations = {
         MinProgress = 0.3,
         FireASAP = true,
         EventTable = {
+		    {e = "cod2019_molotov_rag_fire", t = 0.0},
             {s = path .. "weap_molotov_pullout_01.ogg", t = 0/30},
         },
     },

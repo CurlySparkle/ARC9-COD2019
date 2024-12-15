@@ -1135,6 +1135,7 @@ SWEP.Attachments = {
 		InstalledElements = {"ubgl_small","rail_grip"},
         Pos = Vector(3.69, 0.95, -3.08),
         Ang = Angle(0, 180, 0),
+		MergeSlots = {6}, -- Underbarrels
 		Hidden = true,
     },
 }
