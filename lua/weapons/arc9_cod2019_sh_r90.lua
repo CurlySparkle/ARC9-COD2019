@@ -314,8 +314,22 @@ SWEP.Animations = {
 			{s = "COD2019.R90.Rechamber_B", t = 0.24},
         },
     },
+    ["reload_start_twobullet"] = {
+        Source = "reload_start_twobullet",
+		RestoreAmmo = 1,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 1, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sh_dpapa12_reload_start_rotate.ogg", t = 0/30},
+			{s = "COD2019.R90.ShellIn", t = 20/30},
+			{s = path .. "wfoly_sh_dpapa12_reload_loop_cloth.ogg", t = 20/30},
+			{s = "COD2019.R90.ShellIn", t = 33/30},
+        },
+    },
     ["reload_start"] = {
-        Source = "reload_start",
+        Source = "reload_start_onebullet",
 		RestoreAmmo = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
