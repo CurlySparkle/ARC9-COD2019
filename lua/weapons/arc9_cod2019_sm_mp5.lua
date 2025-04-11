@@ -560,7 +560,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_pi_mpapa5_raise_first_mvmnt.ogg", t = 0.233},
-            {s = path .. "wfoly_pi_mpapa5_raise_first_closebolt_01.ogg", t = 0.6},
+            {s = path .. "wfoly_pi_mpapa5_raise_first_closebolt_01.ogg", t = 0.5},
 			{s = path .. "wfoly_pi_mpapa5_raise_first_end.ogg", t = 0.867},
         },
     },

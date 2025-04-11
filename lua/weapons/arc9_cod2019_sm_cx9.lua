@@ -544,7 +544,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sm_secho_raise_first_up.ogg", t = 0.0},
-            {s = path .. "wfoly_sm_secho_raise_first_charge.ogg", t = 0.5},
+            {s = path .. "wfoly_sm_secho_raise_first_charge.ogg", t = 0.4},
             {s = path .. "wfoly_sm_secho_raise_first_end.ogg", t = 0.667},
         },
     },

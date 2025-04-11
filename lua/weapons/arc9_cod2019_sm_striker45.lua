@@ -625,7 +625,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_sm_smgolf45_raise_first_up.ogg", t = 0.067},
 			{s = path .. "wfoly_sm_smgolf45_raise_first_bolt_pull.ogg", t = 0.267},
             {s = path .. "wfoly_sm_smgolf45_raise_first_mvmnt.ogg", t = 0.533},
-			{s = path .. "wfoly_sm_smgolf45_raise_first_bolt_release.ogg", t = 0.633},
+			{s = path .. "wfoly_sm_smgolf45_raise_first_bolt_release.ogg", t = 0.59},
 			{s = path .. "wfoly_sm_smgolf45_raise_first_end.ogg", t = 0.967},
         },
     },
