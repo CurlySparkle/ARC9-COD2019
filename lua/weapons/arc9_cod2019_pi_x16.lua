@@ -375,7 +375,7 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 1/30},
 			{s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 25/30},
-            {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 31/30},
+            {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 37/30},
 			{hide = 0, t = 0},
 			{hide = 1, t = 1.325},
@@ -498,7 +498,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 18/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 25/30},
             {s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 30/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 35/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 36/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 46/30},
 			{hide = 0, t = 0},
 			{hide = 1, t = 0.45},
@@ -595,7 +595,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_01.ogg", t = 18/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 25/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 30/30},
-			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 35/30},
+			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 36/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 46/30},
 			{hide = 0, t = 0},
 			{hide = 1, t = 0.45},
@@ -763,7 +763,7 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_pi_golf21_reload_magout_01.ogg", t = 1/30},
 			{s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 25/30},
-            {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 31/30},
+            {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 37/30},
 			{hide = 0, t = 0},
 			{hide = 1, t = 1.325},
@@ -1138,7 +1138,7 @@ local Translate_Stock_Fast = {
     ["bash"] = "stock_bash",
 }
 
---- 26 Round Mags ---
+--- 17 & 26 Round Mags ---
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
