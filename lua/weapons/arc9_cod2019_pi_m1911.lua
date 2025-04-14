@@ -328,9 +328,20 @@ SWEP.BulletBones = {
 	[8] = "j_bullet_grp7",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
     [2] = "j_bullet2",
+}
+
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2",
+	"j_bullet2"
+	},
+	[2] = {
+	"j_mag1",
+	"j_bullet"
+	}
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -365,6 +376,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_magin_v2_01.ogg", t = 24/30},
             {s = path .. "wfoly_pi_mike1911_reload_magin_v2_02.ogg", t = 31/30},
 			{s = path .. "wfoly_pi_mike1911_reload_end.ogg", t = 34/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.275},
+			{hide = 2, t = 1.325}
         },
     },
     ["reload_empty"] = {
@@ -373,7 +387,7 @@ SWEP.Animations = {
 		PeekProgress = 0.75,
 		RefillProgress = 0.7,
 		FireASAP = true,
-		DropMagAt = 0.55,
+		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -387,6 +401,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 27/30},
             {s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 33/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 36/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.45}
         },
     },
     ["reload_fast"] = {
@@ -408,6 +425,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_fast_reload_magout_01.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike1911_fast_reload_magin_01.ogg", t = 14/30},
 			{s = path .. "wfoly_pi_mike1911_fast_reload_end.ogg", t = 20/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.4},
         },
     },
     ["reload_fast_empty"] = {
@@ -429,6 +449,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_magin_01.ogg", t = 14/30},
             {s = path .. "wfoly_pi_mike1911_fast_reload_empty_end.ogg", t = 16/30},
 			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_chamber_01.ogg", t = 25/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.4}
         },
     },
     ["reload_xmag"] = {
@@ -450,6 +473,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_magin_v2_01.ogg", t = 24/30},
             {s = path .. "wfoly_pi_mike1911_reload_magin_v2_02.ogg", t = 31/30},
 			{s = path .. "wfoly_pi_mike1911_reload_end.ogg", t = 32/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.275},
+			{hide = 2, t = 1.325}
         },
     },
     ["reload_xmag_empty"] = {
@@ -458,7 +484,7 @@ SWEP.Animations = {
 		PeekProgress = 0.75,
 		RefillProgress = 0.7,
 		FireASAP = true,
-		DropMagAt = 0.55,
+		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -472,6 +498,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 25/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 36/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 39/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.45}
         },
     },
     ["reload_xmag_fast"] = {
@@ -493,6 +522,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_fast_reload_magout_01.ogg", t = 8/30},
 			{s = path .. "wfoly_pi_mike1911_fast_reload_magin_01.ogg", t = 15/30},
 			{s = path .. "wfoly_pi_mike1911_fast_reload_end.ogg", t = 22/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.4},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -514,6 +546,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_magin_01.ogg", t = 15/30},
 			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_chamber_01.ogg", t = 25/30},
 			{s = path .. "wfoly_pi_mike1911_fast_reload_empty_end.ogg", t = 13/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.4}
         },
     },
     ["reload_mmag"] = {
@@ -534,6 +569,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_magout_01.ogg", t = 12/30},
 			{s = path .. "wfoly_pi_mike1911_reload_magin_01.ogg", t = 23/30},
 			{s = path .. "wfoly_pi_mike1911_reload_end.ogg", t = 32/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.275},
+			{hide = 2, t = 1.325}
+			
         },
     },
     ["reload_mmag_empty"] = {
@@ -542,7 +581,7 @@ SWEP.Animations = {
 		PeekProgress = 0.75,
 		RefillProgress = 0.7,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -556,6 +595,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 25/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 36/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 39/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.45}
         },
     },
     ["reload_mmag_fast"] = {
@@ -578,6 +620,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_01.ogg", t = 17/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 20/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 15/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.4}
         },
     },
     ["reload_mmag_fast_empty"] = {
@@ -600,6 +645,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike1911_reload_empty_magin_v2_02.ogg", t = 20/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_chamber_01.ogg", t = 25/30},
 			{s = path .. "wfoly_pi_mike1911_reload_empty_end.ogg", t = 25/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.4}
         },
     },
     ["ready"] = {
@@ -696,7 +744,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
---- 15 Round Mags ---
+--- 10 & 15 Round Mags ---
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
@@ -743,8 +791,8 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
                 return Translate_XMag_Fast[anim]
             end
         elseif mmag then
-            if Translate_Translate_MMag_Fast[anim] then
-                return Translate_Translate_MMag_Fast[anim]
+            if Translate_MMag_Fast[anim] then
+                return Translate_MMag_Fast[anim]
             end 
         else
             if Translate_Fast[anim] then
