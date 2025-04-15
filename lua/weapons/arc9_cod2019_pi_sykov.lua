@@ -338,6 +338,42 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2",
+	"j_bullet2"
+	},
+	[2] = {
+	"j_mag1",
+	"j_bullet1",
+	"j_bullet2",
+	"j_bullet3",
+	"j_bullet4",
+	"j_bullet5",
+	"j_bullet6",
+	"j_bullet7",
+	"j_bullet8",
+	"j_bullet9",
+	"j_bullet10",
+	"j_follower"
+	},
+	[3] = {
+	"j_mag2",
+	"j_mag1",
+	"j_bullet1",
+	"j_bullet2",
+	"j_bullet3",
+	"j_bullet4",
+	"j_bullet5",
+	"j_bullet6",
+	"j_bullet7",
+	"j_bullet8",
+	"j_bullet9",
+	"j_bullet10",
+	"j_follower"
+	}
+}
+
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
@@ -369,6 +405,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 25/30},
 			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 31/30},
 			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 41/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 1.375},
+			{hide = 1, t = 1.6},
         },
     },
     ["reload_empty"] = {
@@ -392,6 +432,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 28/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 46/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 58/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 1.75},
+			{hide = 1, t = 2.2},
         },
     },
     ["reload_fast"] = {
@@ -400,7 +444,7 @@ SWEP.Animations = {
 		PeekProgress = 0.725,
 		RefillProgress = 0.575,
 		FireASAP = true,
-		DropMagAt = 0.75,
+		DropMagAt = 0.65,
 		MagSwapTime = 4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -413,6 +457,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_fast_magout.ogg", t = 14/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_magin.ogg", t = 22/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_end.ogg", t = 28/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 1.175},
         },
     },
     ["reload_fast_empty"] = {
@@ -421,7 +469,7 @@ SWEP.Animations = {
 		PeekProgress = 0.75,
 		RefillProgress = 0.65,
 		FireASAP = true,
-		DropMagAt = 0.75,
+		DropMagAt = 0.65,
 		MagSwapTime = 4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -435,6 +483,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_magin.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_charge.ogg", t = 31/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_end.ogg", t = 43/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 1.175},
         },
     },
     ["reload_xmag"] = {
@@ -456,6 +508,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 24/30},
 			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 42/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 1.375},
+			{hide = 1, t = 1.6},
         },
     },
     ["reload_xmag_empty"] = {
@@ -479,6 +535,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 26/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 45/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 58/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 1.75},
+			{hide = 1, t = 2.2},
         },
     },
     ["reload_xmag_fast"] = {
@@ -488,7 +548,7 @@ SWEP.Animations = {
 		RefillProgress = 0.575,
 		FireASAP = true,
 		MagSwapTime = 4,
-		DropMagAt = 0.75,
+		DropMagAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -500,6 +560,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_fast_magout.ogg", t = 12/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_magin.ogg", t = 22/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_end.ogg", t = 28/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 1.175},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -509,7 +573,7 @@ SWEP.Animations = {
 		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 4,
-		DropMagAt = 0.75,
+		DropMagAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -522,6 +586,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_magin.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_charge.ogg", t = 31/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_end.ogg", t = 43/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 1.175},
         },
     },
     ["reload_drum"] = {
@@ -543,6 +611,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 36/30},
 			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 43.5/30},
 			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 55/30},
+			{hide = 1, t = 0},
         },
     },
     ["reload_drum_empty"] = {
@@ -566,6 +635,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 41/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 59/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 68/30},
+			{hide = 1, t = 0},
         },
     },
     ["reload_drum_fast"] = {
@@ -587,6 +657,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_fast_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_magin.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_end.ogg", t = 40/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.7},
+			{hide = 1, t = 0.75},
         },
     },
     ["reload_drum_fast_empty"] = {
@@ -609,6 +682,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_magin.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_charge.ogg", t = 40/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_end.ogg", t = 47.5/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.7},
+			{hide = 1, t = 0.75},
         },
     },
     ["ready"] = {
@@ -786,6 +862,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 25/30},
 			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 31/30},
 			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 41/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 1.375},
+			{hide = 1, t = 1.6},
         },
     },
     ["stock_reload_empty"] = {
@@ -809,6 +889,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 28/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 46/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 58/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 1.75},
+			{hide = 1, t = 2.2},
         },
     },
     ["stock_reload_fast"] = {
@@ -817,7 +901,7 @@ SWEP.Animations = {
 		PeekProgress = 0.725,
 		RefillProgress = 0.575,
 		FireASAP = true,
-		DropMagAt = 0.75,
+		DropMagAt = 0.65,
 		MagSwapTime = 4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -830,6 +914,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_fast_magout.ogg", t = 14/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_magin.ogg", t = 22/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_end.ogg", t = 28/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 1.175},
         },
     },
     ["stock_reload_fast_empty"] = {
@@ -838,7 +926,7 @@ SWEP.Animations = {
 		PeekProgress = 0.75,
 		RefillProgress = 0.65,
 		FireASAP = true,
-		DropMagAt = 0.75,
+		DropMagAt = 0.65,
 		MagSwapTime = 4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -852,6 +940,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_magin.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_charge.ogg", t = 31/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_end.ogg", t = 43/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 1.175},
         },
     },
     ["stock_reload_xmag"] = {
@@ -873,6 +965,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 24/30},
 			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 42/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 1.375},
+			{hide = 1, t = 1.6},
         },
     },
     ["stock_reload_xmag_empty"] = {
@@ -896,6 +992,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 26/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 45/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 58/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 1.75},
+			{hide = 1, t = 2.2},
         },
     },
     ["stock_reload_xmag_fast"] = {
@@ -905,7 +1005,7 @@ SWEP.Animations = {
 		RefillProgress = 0.575,
 		FireASAP = true,
 		MagSwapTime = 4,
-		DropMagAt = 0.75,
+		DropMagAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -917,6 +1017,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_fast_magout.ogg", t = 12/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_magin.ogg", t = 22/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_end.ogg", t = 28/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 1.175},
         },
     },
     ["stock_reload_xmag_fast_empty"] = {
@@ -926,7 +1030,7 @@ SWEP.Animations = {
 		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 4,
-		DropMagAt = 0.75,
+		DropMagAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -939,6 +1043,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_magin.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_charge.ogg", t = 31/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_end.ogg", t = 43/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.175},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 1.175},
         },
     },
     ["stock_reload_drum"] = {
@@ -960,6 +1068,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_mvmnt.ogg", t = 36/30},
 			{s = path .. "wfoly_pi_mike_reload_magin.ogg", t = 43.5/30},
 			{s = path .. "wfoly_pi_mike_reload_end.ogg", t = 55/30},
+			{hide = 1, t = 0},
         },
     },
     ["stock_reload_drum_empty"] = {
@@ -983,6 +1092,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_empty_magin.ogg", t = 41/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_charge.ogg", t = 57.5/30},
 			{s = path .. "wfoly_pi_mike_reload_empty_end.ogg", t = 62.5/30},
+			{hide = 1, t = 0},
         },
     },
     ["stock_reload_drum_fast"] = {
@@ -1004,6 +1114,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_fast_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_magin.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_end.ogg", t = 35/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.7},
+			{hide = 1, t = 0.75},
         },
     },
     ["stock_reload_drum_fast_empty"] = {
@@ -1026,6 +1139,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_magin.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_charge.ogg", t = 40/30},
 			{s = path .. "wfoly_pi_mike_reload_fast_empty_end.ogg", t = 47.5/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.7},
+			{hide = 1, t = 0.75},
         },
     },
     ["stock_ready"] = {

@@ -310,6 +310,60 @@ SWEP.HideBones = {
 	[8] = "j_b_loader",
 }
 
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+    "j_b_loader_01",
+    "j_b_loader_02",
+	"j_b_loader_03",
+	"j_b_loader_04",
+	"j_b_loader_05",
+	"j_b_loader_06",
+	"j_mag1",
+	"j_b_loader",
+	},
+	[2] = {
+	"j_b_top",
+	"j_b_01",
+	"j_b_02",
+	"j_b_03",
+	"j_b_04",
+	"j_b_05",
+	"j_b_06",
+	"j_b_loader_01",
+    "j_b_loader_02",
+	"j_b_loader_03",
+	"j_b_loader_04",
+	"j_b_loader_05",
+	"j_b_loader_06",
+	"j_mag1",
+	"j_b_loader",
+	},
+	[3] = {
+	"j_b_top",
+	"j_b_01",
+	"j_b_02",
+	"j_b_03",
+	"j_b_04",
+	"j_b_05",
+	"j_b_06",
+	},
+	[4] = {
+	"j_b_top",
+	"j_b_01",
+	"j_b_02",
+	"j_b_03",
+	"j_b_04",
+	"j_b_05",
+	"j_b_06",
+	"j_b_loader_01",
+    "j_b_loader_02",
+	"j_b_loader_03",
+	"j_b_loader_04",
+	"j_b_loader_05",
+	"j_b_loader_06",
+	}
+}
+
 SWEP.TriggerDelay = 0.075 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
@@ -354,13 +408,18 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 64/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 75/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 78/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.75},
+			{hide = 3, t = 1.375},
+			{hide = 4, t = 2.05},
+			{hide = 1, t = 2.6},			
         },
     },
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.44,
+		DropMagAt = 0.43,
         IKTimeLine = {
            { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -379,6 +438,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_ejectorrod_01.ogg", t = 1.06},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 1.6},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 1.84},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.43},
+			{hide = 3, t = 0.75},
+			{hide = 4, t = 1.3},
+			{hide = 1, t = 1.8},
         },
     },
     ["ready"] = {
@@ -521,6 +585,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 64/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 75/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 78/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.75},
+			{hide = 3, t = 1.45},
+			{hide = 4, t = 2.05},
+			{hide = 1, t = 2.6},	
         },
     },
     ["reload_fast_stock"] = {
@@ -546,6 +615,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_ejectorrod_01.ogg", t = 1.06},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 1.6},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 1.84},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.43},
+			{hide = 3, t = 0.925},
+			{hide = 4, t = 1.4},
+			{hide = 1, t = 1.8},
         },
     },
     ["ready_stock"] = {
