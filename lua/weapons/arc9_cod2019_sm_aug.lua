@@ -325,8 +325,22 @@ SWEP.BulletBones = {
 	[4] = "j_bullet04",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2"
+	},
+	[2] = {
+	"j_mag2",
+	"j_mag1",
+	"j_follower",
+	"j_ammo_01",
+	"j_ammo_02",
+	"j_ammo_03"
+	}
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -364,6 +378,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_magin_v2_02.ogg", t = 1.55},
             {s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 1.533},
 			{s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 1.933},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 1},
         },
     },
     ["reload_empty"] = {
@@ -372,7 +389,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 1.225,
+		DropMagAt = 1.25,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -389,6 +406,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_02.ogg", t = 2.1},
 			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 2.55},
             {s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 2.633},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.25},
+			{hide = 1, t = 1.6},
         },
     },
     ["reload_fast"] = {
@@ -411,6 +431,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_fast_cloth.ogg", t = 0.633},
             {s = path .. "wfoly_sm_augolf_reload_fast_magin_01.ogg", t = 0.84},
 			{s = path .. "wfoly_sm_augolf_reload_fast_end.ogg", t = 1.2},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 0.6},
         },
     },
     ["reload_fast_empty"] = {
@@ -434,6 +457,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_empty_fast_waffle_magin_01.ogg", t = 0.86},
 			{s = path .. "wfoly_sm_augolf_reload_empty_fast_waffle_chamber_01.ogg", t = 1.36},
 			{s = path .. "wfoly_sm_augolf_reload_empty_fast_waffle_end.ogg", t = 1.633},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 0.6},
         },
     },
     ["reload_armag"] = {
@@ -458,6 +484,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_waffle_magin_v2_01.ogg", t = 37/30},
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 45/30},
 			{s = path .. "wfoly_sm_augolf_reload_waffle_end.ogg", t = 50/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 1},
         },
     },
     ["reload_armag_empty"] = {
@@ -466,7 +495,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 1.225,
+		DropMagAt = 1.25,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -484,6 +513,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_waffle_magin_v2_02.ogg", t = 63/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 78/30},
 			{s = path .. "wfoly_sm_augolf_reload_waffle_end.ogg", t = 82/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.25},
+			{hide = 1, t = 1.6},
         },
     },
     ["reload_armag_fast"] = {
@@ -508,6 +540,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 25/30},
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 27/30},
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_end.ogg", t = 35/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 0.65},
         },
     },
     ["reload_armag_fast_empty"] = {
@@ -531,6 +566,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 40/30},
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_end.ogg", t = 47/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 0.65},
         },
     },
     ["reload_drummag"] = {
@@ -555,6 +593,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_drum_magin_v2_01.ogg", t = 38/30},
 			{s = path .. "wfoly_sm_augolf_reload_drum_magin_v2_02.ogg", t = 44/30},
 			{s = path .. "wfoly_sm_augolf_reload_waffle_end.ogg", t = 51/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 1},
         },
     },
     ["reload_drummag_empty"] = {
@@ -563,7 +604,7 @@ SWEP.Animations = {
 		PeekProgress = 0.8,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 1.225,
+		DropMagAt = 1.25,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -581,6 +622,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_magin.ogg", t = 60/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 77/30},
 			{s = path .. "wfoly_sm_augolf_reload_waffle_end.ogg", t = 82/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.25},
+			{hide = 1, t = 1.6},
         },
     },
     ["reload_drummag_fast"] = {
@@ -606,6 +650,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_fast_drum_magin_01.ogg", t = 27/30},
 			{s = path .. "wfoly_sm_augolf_reload_drum_magin_v2_02.ogg", t = 29/30},
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_end.ogg", t = 37/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 0.65},
         },
     },
     ["reload_drummag_fast_empty"] = {
@@ -629,6 +676,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_augolf_reload_empty_fast_drum_magin_01.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 40/30},
 			{s = path .. "wfoly_sm_augolf_reload_fast_waffle_end.ogg", t = 47/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 0.65},
         },
     },
     ["ready"] = {

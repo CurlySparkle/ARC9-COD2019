@@ -340,8 +340,29 @@ SWEP.BulletBones = {
     [3] = "j_bullet3",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2"
+	},
+	[2] = {
+	"j_mag1",
+	"j_bullet1",
+	"j_bullet2",
+	"j_bullet3",
+	"j_magfollower"
+	},
+	[3] = {
+	"j_mag2",
+	"j_mag1",
+	"j_bullet1",
+	"j_bullet2",
+	"j_bullet3",
+	"j_magfollower"
+	}
 }
 
 SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -375,6 +396,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 0.867},
 			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 1.233},
 			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 1.567},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.5},
+			{hide = 2, t = 1.75},
+			{hide = 1, t = 2.09},
         },
     },
     ["reload_empty"] = {
@@ -398,6 +423,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_reload_empty_magin.ogg", t = 1.35},
 			{s = path .. "wfoly_sm_secho_reload_empty_charge.ogg", t = 1.64},
 			{s = path .. "wfoly_sm_secho_reload_empty_end.ogg", t = 1.867},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.5},
+			{hide = 2, t = 1.05},
+			{hide = 1, t = 2.175},
         },
     },
     ["reload_fast"] = {
@@ -419,6 +448,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_reload_fast_maghit.ogg", t = 0.667},
             {s = path .. "wfoly_sm_secho_reload_fast_magin.ogg", t = 0.8},
             {s = path .. "wfoly_sm_secho_reload_fast_end.ogg", t = 0.867},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 1.225},
         },
     },
     ["reload_fast_empty"] = {
@@ -442,6 +474,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_reload_empty_fast_magin.ogg", t = 0.82},
 			{s = path .. "wfoly_sm_secho_reload_empty_fast_charge.ogg", t = 1.1},
 			{s = path .. "wfoly_sm_secho_reload_empty_fast_end.ogg", t = 1.2},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 1.575},
         },
     },
     ["reload_drum"] = {
@@ -463,6 +498,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_reload_fast_drum_drumhit.ogg", t = 47/30},
 			{s = path .. "wfoly_sm_secho_reload_fast_drum_drumin.ogg", t = 54/30},
 			{s = path .. "wfoly_sm_secho_reload_fast_drum_end.ogg", t = 61/30},
+			{hide = 1, t = 0},
         },
     },
     ["reload_drum_empty"] = {
@@ -471,7 +507,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 0.65,
+		DropMagAt = 0.6,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -486,6 +522,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumin.ogg", t = 43/30},
 			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_charge.ogg", t = 51/30},
 			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_end.ogg", t = 64/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.6},
+			{hide = 1, t = 0.7},
         },
     },
     ["reload_drum_fast"] = {
@@ -507,6 +546,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_reload_fast_drum_drumhit.ogg", t = 20/30},
             {s = path .. "wfoly_sm_secho_reload_fast_drum_drumin.ogg", t = 28/30},
             {s = path .. "wfoly_sm_secho_reload_fast_drum_end.ogg", t = 30/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.4},
+			{hide = 1, t = 0.5},
+			
         },
     },
     ["reload_drum_fast_empty"] = {
@@ -530,6 +573,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_drumin.ogg", t = 30/30},
 			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_charge.ogg", t = 32/30},
 			{s = path .. "wfoly_sm_secho_reload_empty_fast_drum_end.ogg", t = 43/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.4},
+			{hide = 1, t = 0.5},
         },
     },
     ["ready"] = {

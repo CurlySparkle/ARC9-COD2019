@@ -333,6 +333,25 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2"
+	},
+	[2] = {
+	"j_mag1",
+	"j_bullet1",
+	"j_bullet2",
+	"j_bullet3",
+	},
+	[3] = {
+	"j_mag2",
+	"j_mag1",
+	"j_bullet1",
+	"j_bullet2",
+	"j_bullet3",
+	}
+}
+
 SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
@@ -365,6 +384,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_magout.ogg", t = 0.8},
 			{s = path .. "wfoly_sm_charlie9_reload_magin.ogg", t = 1.11},
 			{s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 1.667},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1.75},
+			{hide = 1, t = 2.2},
         },
     },
     ["reload_empty"] = {
@@ -373,7 +396,7 @@ SWEP.Animations = {
 		PeekProgress = 0.85,
 		RefillProgress = 0.675,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.55,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -387,6 +410,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 1.15},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 1.633},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 1.7},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.55},
+			{hide = 2, t = 0.8},
+			{hide = 1, t = 2.2},
         },
     },
     ["reload_fast"] = {
@@ -396,7 +423,7 @@ SWEP.Animations = {
 		RefillProgress = 0.625,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.55,
+		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -409,6 +436,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_fast_arm.ogg", t = 0.5},
 			{s = path .. "wfoly_sm_charlie9_reload_fast_magin.ogg", t = 0.667},
 			{s = path .. "wfoly_sm_charlie9_reload_fast_end.ogg", t = 1.1},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.45},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 1.3},
         },
     },
     ["reload_fast_empty"] = {
@@ -418,7 +449,7 @@ SWEP.Animations = {
 		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.55,
+		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -431,6 +462,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_sm_charlie9_reload_empty_fast_magin.ogg", t = 0.667},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_fast_bolt_release.ogg", t = 1.067},
             {s = path .. "wfoly_sm_charlie9_reload_empty_fast_end.ogg", t = 1.2},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.45},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 1.5},
         },
     },
     ["reload_drum"] = {
@@ -452,6 +487,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magout.ogg", t = 18/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 50/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 58/30},
+			{hide = 1, t = 0},
         },
     },
     ["reload_drum_empty"] = {
@@ -460,7 +496,7 @@ SWEP.Animations = {
 		PeekProgress = 0.8,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 0.75,
+		DropMagAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -474,6 +510,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 41/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 62/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 62/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.65},
+			{hide = 1, t = 0.95},
         },
     },
     ["reload_drum_fast"] = {
@@ -483,7 +522,7 @@ SWEP.Animations = {
 		RefillProgress = 0.6,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.55,
+		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -496,6 +535,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 22/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 25/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.45},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 1.385},
         },
     },
     ["reload_drum_fast_empty"] = {
@@ -505,7 +548,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.55,
+		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -519,6 +562,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 22/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 35/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 33/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.45},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 1.585},
         },
     },
     ["reload_xmag"] = {
@@ -540,6 +587,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_magout.ogg", t = 26/30},
 			{s = path .. "wfoly_sm_charlie9_reload_magin.ogg", t = 40/30},
 			{s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 58/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1.75},
+			{hide = 1, t = 2.2},
         },
     },
     ["reload_xmag_empty"] = {
@@ -548,7 +599,7 @@ SWEP.Animations = {
 		PeekProgress = 0.85,
 		RefillProgress = 0.675,
 		FireASAP = true,
-		DropMagAt = 0.65,
+		DropMagAt = 0.55,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -562,6 +613,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 40/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 54/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_end.ogg", t = 58/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.55},
+			{hide = 2, t = 0.8},
+			{hide = 1, t = 2.2},
         },
     },
     ["reload_xmag_fast"] = {
@@ -584,6 +639,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_arm.ogg", t = 18/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 21/30},
 			{s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 25/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.43},
+			{hide = 1, t = 0.475},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -607,6 +665,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_charlie9_reload_empty_magin.ogg", t = 21/30},
 			{s = path .. "wfoly_sm_charlie9_reload_empty_bolt_release.ogg", t = 32/30},
             {s = path .. "wfoly_sm_charlie9_reload_end.ogg", t = 32/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.43},
+			{hide = 1, t = 0.475},
         },
     },
     ["ready"] = {

@@ -332,6 +332,21 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2"
+	},
+	[2] = {
+	"j_mag1",
+	"j_bullet1"
+	},
+	[3] = {
+	"j_mag2",
+	"j_mag1",
+	"j_bullet1"
+	}
+}
+
 SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
@@ -369,6 +384,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_magout.ogg", t = 0.767},
 			{s = path .. "wfoly_sm_smgolf45_reload_magin.ogg", t = 1.533},
 			{s = path .. "wfoly_sm_smgolf45_reload_end.ogg", t = 1.9},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.375},
+			{hide = 2, t = 2},
+			{hide = 1, t = 2.5},
         },
     },
     ["reload_empty"] = {
@@ -377,7 +396,7 @@ SWEP.Animations = {
 		PeekProgress = 0.875,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 0.7,
+		DropMagAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -392,6 +411,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_magin_02.ogg", t = 53/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_bolt_release.ogg", t = 2.133},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_end.ogg", t = 2.4},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.65},
+			{hide = 1, t = 1.15},
         },
     },
     ["reload_fast"] = {
@@ -401,7 +423,7 @@ SWEP.Animations = {
 		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
+		DropMagAt = 0.55,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.15, lhik = 0, rhik = 1 },
@@ -414,6 +436,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_fast_maghit.ogg", t = 0.967},
 			{s = path .. "wfoly_sm_smgolf45_reload_fast_magin.ogg", t = 1.067},
 			{s = path .. "wfoly_sm_smgolf45_reload_fast_end.ogg", t = 1.433},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.55},
+			{hide = 1, t = 0.75},
         },
     },
     ["reload_fast_empty"] = {
@@ -423,7 +448,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -437,6 +462,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_magin.ogg", t = 1.1},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_charge.ogg", t = 1.367},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_end.ogg", t = 1.667},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.5},
+			{hide = 1, t = 0.75},
         },
     },
     ["reload_xmag"] = {
@@ -458,6 +486,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_maghit.ogg", t = 49/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_magin.ogg", t = 51/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_end.ogg", t = 64/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.425},
+			{hide = 2, t = 2},
+			{hide = 1, t = 2.575},
         },
     },
     ["reload_xmag_empty"] = {
@@ -466,7 +498,7 @@ SWEP.Animations = {
 		PeekProgress = 0.875,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 0.7,
+		DropMagAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -479,6 +511,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_magin.ogg", t = 48/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_charge.ogg", t = 63/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_end.ogg", t = 65/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.65},
+			{hide = 1, t = 1.15},
         },
     },
     ["reload_xmag_fast"] = {
@@ -488,7 +523,7 @@ SWEP.Animations = {
 		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
+		DropMagAt = 0.55,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.15, lhik = 0, rhik = 1 },
@@ -501,6 +536,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_maghit.ogg", t = 29/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_magin.ogg", t = 33/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_fast_xmaglrg_end.ogg", t = 37/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.55},
+			{hide = 1, t = 0.75},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -510,7 +548,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
+		DropMagAt = 0.55,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -523,6 +561,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_magin.ogg", t = 28/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_charge.ogg", t = 39/30},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_xmaglrg_end.ogg", t = 39/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.55},
+			{hide = 1, t = 0.75},
         },
     },
     ["reload_smag"] = {
@@ -544,6 +585,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_sm_smgolf45_reload_smag_maghit.ogg", t = 1.233},
 			{s = path .. "wfoly_sm_smgolf45_reload_smag_magin.ogg", t = 1.4},
 			{s = path .. "wfoly_sm_smgolf45_reload_smag_end.ogg", t = 1.867},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.375},
+			{hide = 2, t = 1.975},
+			{hide = 1, t = 2.35},
         },
     },
     ["reload_smag_empty"] = {
@@ -566,6 +611,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_smag_magin.ogg", t = 1.53},
             {s = path .. "wfoly_sm_smgolf45_reload_empty_smag_end.ogg", t = 1.867},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_smag_charge.ogg", t = 2.013},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.7},
+			{hide = 1, t = 1},
         },
     },
     ["reload_smag_fast"] = {
@@ -575,7 +623,7 @@ SWEP.Animations = {
 		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.15, lhik = 0, rhik = 1 },
@@ -587,6 +635,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_fast_smag_magout.ogg", t = 0.333},
 			{s = path .. "wfoly_sm_smgolf45_reload_fast_smag_magin.ogg", t = 1.011},
 			{s = path .. "wfoly_sm_smgolf45_reload_fast_smag_end.ogg", t = 1.15},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.5},
+			{hide = 1, t = 0.75},
         },
     },
     ["reload_smag_fast_empty"] = {
@@ -596,7 +647,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.525,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -609,6 +660,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_smag_magin.ogg", t = 1.011},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_smag_charge.ogg", t = 1.31},
 			{s = path .. "wfoly_sm_smgolf45_reload_empty_fast_smag_end.ogg", t = 1.4},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.5},
+			{hide = 1, t = 0.75},
         },
     },
     ["ready"] = {

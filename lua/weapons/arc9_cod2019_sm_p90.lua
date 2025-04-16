@@ -348,8 +348,14 @@ SWEP.BulletBones = {
 	[28] = "j_bullets_022",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2"
+	}
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -388,6 +394,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_sm_papa90_reload_arm_maghit.ogg", t = 1.967},
 			{s = path .. "wfoly_sm_papa90_reload_hitmag_01.ogg", t = 2.05},
 			{s = path .. "wfoly_sm_papa90_reload_end.ogg", t = 2.533},
+			{hide = 1, t = 0},
         },
     },
     ["reload_empty"] = {
@@ -414,6 +421,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_papa90_reload_empty_hitmag_02.ogg", t = 2.1},
 			{s = path .. "wfoly_sm_papa90_reload_empty_chamber_01.ogg", t = 2.633},
 			{s = path .. "wfoly_sm_papa90_reload_empty_end.ogg", t = 3.033},
+			{hide = 1, t = 0},
         },
     },
     ["reload_fast"] = {
@@ -438,6 +446,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_papa90_reload_fast_magin_v2_02.ogg", t = 1.4},
             {s = path .. "wfoly_sm_papa90_reload_fast_maghit.ogg", t = 1.5},
 			{s = path .. "wfoly_sm_papa90_reload_fast_end.ogg", t = 1.933},
+			{hide = 1, t = 0},
         },
     },
     ["reload_fast_empty"] = {
@@ -461,6 +470,7 @@ SWEP.Animations = {
             {s = path .. "wfoly_sm_papa90_reload_empty_fast_magin_v2_02.ogg", t = 1.367},
 			{s = path .. "wfoly_sm_papa90_reload_empty_fast_chamber_01.ogg", t = 1.867},
 			{s = path .. "wfoly_sm_papa90_reload_empty_fast_end.ogg", t = 2.233},
+			{hide = 1, t = 0},
         },
     },
     ["ready"] = {

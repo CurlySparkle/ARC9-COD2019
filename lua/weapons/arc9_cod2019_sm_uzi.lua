@@ -336,6 +336,19 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2"
+	},
+	[2] = {
+	"j_mag2",
+	"j_mag1",
+	"j_bullet1",
+	"j_bullet2",
+	"j_bullet3",
+	}
+}
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
@@ -362,6 +375,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 1.433},
             {s = path .. "wfoly_plr_sm_uzulu_reload_rattle.ogg", t = 1.7},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 2.033},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.6},
+			{hide = 1, t = 2.125},
         },
     },
     ["reload_empty"] = {
@@ -386,6 +402,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_sm_uzulu_reload_empty_tilt.ogg", t = 1.7},
             {s = path .. "wfoly_plr_sm_uzulu_reload_empty_charge_01.ogg", t = 2.333},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_end.ogg", t = 2.8},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.75},
+			{hide = 1, t = 1},
         },
     },
     ["reload_fast"] = {
@@ -409,6 +428,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_sm_uzulu_reload_fast_rattle.ogg", t = 0.9},
             {s = path .. "wfoly_plr_sm_uzulu_reload_fast_magin_01.ogg", t = 1.167},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_fast_end.ogg", t = 1.567},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.55},
+			{hide = 1, t = 1.625},
         },
     },
     ["reload_fast_empty"] = {
@@ -418,7 +440,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.6,
+		DropMagAt = 0.625,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -434,6 +456,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_fast_tilt.ogg", t = 1.433},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_fast_charge_01.ogg", t = 1.6},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_fast_end.ogg", t = 1.9},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.625},
+			{hide = 1, t = 0.85},
         },
     },
     ["reload_xmag"] = {
@@ -456,6 +481,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 42/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_shake.ogg", t = 45/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 58/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.6},
+			{hide = 1, t = 2.125},
         },
     },
     ["reload_xmag_empty"] = {
@@ -480,6 +508,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_arm.ogg", t = 60/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_rattle.ogg", t = 82/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_end.ogg", t = 82/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.75},
+			{hide = 1, t = 1},
         },
     },
     ["reload_xmag_fast"] = {
@@ -503,6 +534,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_sm_uzulu_reload_fast_rattle.ogg", t = 0.9},
             {s = path .. "wfoly_plr_sm_uzulu_reload_fast_magin_01.ogg", t = 1.167},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_fast_end.ogg", t = 1.567},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.475},
+			{hide = 1, t = 1.68},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -528,6 +562,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_fast_tilt.ogg", t = 1.433},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_fast_charge_01.ogg", t = 1.6},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_fast_end.ogg", t = 1.9},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 0.85},
         },
     },
     ["reload_xmag2"] = {
@@ -550,6 +587,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_magin_01.ogg", t = 43/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_shake.ogg", t = 46/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_end.ogg", t = 59/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.6},
+			{hide = 1, t = 2.16},
         },
     },
     ["reload_xmag2_empty"] = {
@@ -574,6 +614,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_arm.ogg", t = 60/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_rattle.ogg", t = 82/30},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_end.ogg", t = 82/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.75},
+			{hide = 1, t = 1},
         },
     },
     ["reload_xmag2_fast"] = {
@@ -597,6 +640,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_sm_uzulu_reload_fast_rattle.ogg", t = 0.9},
             {s = path .. "wfoly_plr_sm_uzulu_reload_fast_magin_01.ogg", t = 1.167},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_fast_end.ogg", t = 1.567},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.475},
+			{hide = 1, t = 1.685},
         },
     },
     ["reload_xmag2_fast_empty"] = {
@@ -622,6 +668,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_fast_tilt.ogg", t = 1.433},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_fast_charge_01.ogg", t = 1.6},
 			{s = path .. "wfoly_plr_sm_uzulu_reload_empty_fast_end.ogg", t = 1.9},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 0.85},
         },
     },
     ["ready"] = {

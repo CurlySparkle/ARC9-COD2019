@@ -330,8 +330,20 @@ SWEP.BulletBones = {
 	[4] = "j_bullet04",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2"
+	},
+	[2] = {
+	"j_mag2",
+	"j_mag1",
+	"j_ammo1",
+	"j_ammo2",
+	}
 }
 
 SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -367,6 +379,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_01.ogg", t = 1.2},
 			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_02.ogg", t = 1.633},
 			{s = path .. "wfoly_plr_sm_beta_reload_end.ogg", t = 1.667},
+			{hide = 1, t = 0},
         },
     },
     ["reload_empty"] = {
@@ -375,7 +388,7 @@ SWEP.Animations = {
 		PeekProgress = 0.85,
 		RefillProgress = 0.775,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -390,6 +403,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_02.ogg", t = 1.633},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_charge_01.ogg", t = 2.0},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_end.ogg", t = 2.1},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.7},
+			{hide = 1, t = 1},
         },
     },
     ["reload_fast"] = {
@@ -399,7 +415,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
+		DropMagAt = 0.6,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -413,6 +429,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_fast_magin_v2_01.ogg", t = 0.833},
 			{s = path .. "wfoly_plr_sm_beta_reload_fast_magin_v2_02.ogg", t = 1.133},
 			{s = path .. "wfoly_plr_sm_beta_reload_fast_end.ogg", t = 1.233},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.6},
+			{hide = 1, t = 0.725},
         },
     },
     ["reload_fast_empty"] = {
@@ -422,7 +441,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
+		DropMagAt = 0.6,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -437,6 +456,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_fast_magin_v2_02.ogg", t = 1.167},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_fast_charge_01.ogg", t = 1.45},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_fast_end.ogg", t = 1.55},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.6},
+			{hide = 1, t = 0.725},
         },
     },
     ["reload_xmag"] = {
@@ -459,6 +481,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_01.ogg", t = 35/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_magin_v2_02.ogg", t = 49.5/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_end.ogg", t = 49/30},
+			{hide = 1, t = 0},
         },
     },
     ["reload_xmag_empty"] = {
@@ -467,7 +490,7 @@ SWEP.Animations = {
 		PeekProgress = 0.85,
 		RefillProgress = 0.775,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -482,6 +505,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_magin_v2_02.ogg", t = 50/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_charge_01.ogg", t = 61/30},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_end.ogg", t = 66.5/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.7},
+			{hide = 1, t = 1},
         },
     },
     ["reload_xmag_fast"] = {
@@ -491,7 +517,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
+		DropMagAt = 0.6,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -505,6 +531,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_fast_magin_v2_01.ogg", t = 0.833},
 			{s = path .. "wfoly_plr_sm_beta_reload_fast_magin_v2_02.ogg", t = 1.133},
 			{s = path .. "wfoly_plr_sm_beta_reload_fast_end.ogg", t = 1.233},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.6},
+			{hide = 1, t = 0.725},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -514,7 +543,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.7,
+		DropMagAt = 0.6,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -529,6 +558,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_fast_magin_v2_02.ogg", t = 1.14},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_fast_charge_01.ogg", t = 1.45},
 			{s = path .. "wfoly_plr_sm_beta_reload_empty_fast_end.ogg", t = 1.55},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.6},
+			{hide = 1, t = 0.725},
         },
     },
     ["ready"] = {
