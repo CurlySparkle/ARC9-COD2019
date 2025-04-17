@@ -347,8 +347,27 @@ SWEP.BulletBones = {
     [2] = "j_bullet02",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2",
+	},
+	[2] = {
+	"j_mag1",
+	"j_follower",
+	"j_bullet01",
+	"j_bullet02",
+	},
+	[3] = {
+	"j_mag2",
+	"j_mag1",
+	"j_follower",
+	"j_bullet01",
+	"j_bullet02",
+	}
 }
 
 SWEP.Animations = {
@@ -383,6 +402,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_magin.ogg", t = 1.433},
 			{s = path .. "wfoly_ar_valpha_reload_magdown.ogg", t = 1.7},
 			{s = path .. "wfoly_ar_valpha_reload_end.ogg", t = 1.933},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.425},
+			{hide = 2, t = 1.9},
+			{hide = 1, t = 2.33},
         },
     },
     ["reload_empty"] = {
@@ -391,7 +414,7 @@ SWEP.Animations = {
 		PeekProgress = 0.825,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 1,
+		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -407,6 +430,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_empty_grab_bolt.ogg", t = 1.6},
 			{s = path .. "wfoly_ar_valpha_reload_empty_charge.ogg", t = 1.967},
 			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 2.467},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 1.05},
         },
     },
     ["reload_fast"] = {
@@ -415,7 +441,7 @@ SWEP.Animations = {
 		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.95,
+		DropMagAt = 0.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -428,6 +454,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_fast_maghit.ogg", t = 1.0},
 			{s = path .. "wfoly_ar_valpha_reload_fast_magin.ogg", t = 1.2},
 			{s = path .. "wfoly_ar_valpha_reload_fast_end.ogg", t = 1.333},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.275},
+			{hide = 2, t = 0.9},
+			{hide = 1, t = 1.566},
         },
     },
     ["reload_fast_empty"] = {
@@ -437,7 +467,7 @@ SWEP.Animations = {
 		RefillProgress = 0.7,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.95,
+		DropMagAt = 0.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -451,6 +481,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_fast_empty_magin.ogg", t = 1.267},
 			{s = path .. "wfoly_ar_valpha_reload_fast_empty_charge.ogg", t = 1.6},
 			{s = path .. "wfoly_ar_valpha_reload_fast_empty_end.ogg", t = 2.0},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.275},
+			{hide = 2, t = 0.9},
+			{hide = 1, t = 2.03},
         },
     },
     ["reload_xmag"] = {
@@ -474,6 +508,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_magin.ogg", t = 44/30},
 			{s = path .. "wfoly_ar_valpha_reload_magdown.ogg", t = 49/30},
 			{s = path .. "wfoly_ar_valpha_reload_end.ogg", t = 61/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.425},
+			{hide = 2, t = 1.9},
+			{hide = 1, t = 2.335},
         },
     },
     ["reload_xmag_empty"] = {
@@ -482,7 +520,7 @@ SWEP.Animations = {
 		PeekProgress = 0.8,
 		RefillProgress = 0.775,
 		FireASAP = true,
-		DropMagAt = 1,
+		DropMagAt = 0.95,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -498,6 +536,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_empty_grab_bolt.ogg", t = 44/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_charge.ogg", t = 58/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 74/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.95},
+			{hide = 1, t = 1.05},
         },
     },
     ["reload_xmag_fast"] = {
@@ -520,6 +561,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_empty_maghit.ogg", t = 37/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_magin.ogg", t = 42/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 48/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.375},
+			{hide = 2, t = 0.95},
+			{hide = 1, t = 1.8},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -545,6 +590,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_empty_grab_bolt.ogg", t = 43/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_charge.ogg", t = 48/30},
 			{s = path .. "wfoly_ar_valpha_reload_empty_end.ogg", t = 58/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.375},
+			{hide = 2, t = 0.95},
+			{hide = 1, t = 2.266},
         },
     },
     ["reload_smag"] = {
@@ -567,6 +616,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_smag_maghit.ogg", t = 1.067},
 			{s = path .. "wfoly_ar_valpha_reload_smag_magin.ogg", t = 1.2},
 			{s = path .. "wfoly_ar_valpha_reload_smag_end.ogg", t = 1.767},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.425},
+			{hide = 2, t = 1.6},
+			{hide = 1, t = 2.03},
         },
     },
     ["reload_smag_empty"] = {
@@ -575,7 +628,7 @@ SWEP.Animations = {
 		PeekProgress = 0.85,
 		RefillProgress = 0.775,
 		FireASAP = true,
-		DropMagAt = 0.85,
+		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -591,6 +644,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_smag_empty_magin.ogg", t = 1.467},
 			{s = path .. "wfoly_ar_valpha_reload_smag_empty_charge.ogg", t = 1.787},
 			{s = path .. "wfoly_ar_valpha_reload_smag_empty_end.ogg", t = 2.367},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 1.05},
         },
     },
     ["reload_smag_fast"] = {
@@ -612,6 +668,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_smag_fast_maghit.ogg", t = 0.933},
 			{s = path .. "wfoly_ar_valpha_reload_smag_fast_in.ogg", t = 1.2},
 			{s = path .. "wfoly_ar_valpha_reload_smag_fast_end.ogg", t = 1.433},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.275},
+			{hide = 2, t = 0.85},
+			{hide = 1, t = 1.466},
         },
     },
     ["reload_smag_fast_empty"] = {
@@ -635,6 +695,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_reload_smag_fast_empty_magin.ogg", t = 1.133},
 			{s = path .. "wfoly_ar_valpha_reload_smag_fast_empty_charge.ogg", t = 1.35},
 			{s = path .. "wfoly_ar_valpha_reload_smag_fast_empty_end.ogg", t = 1.767},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.275},
+			{hide = 2, t = 0.85},
+			{hide = 1, t = 2},
         },
     },
     ["ready"] = {

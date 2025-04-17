@@ -348,10 +348,61 @@ SWEP.BulletBones = {
     [16] = {"j_b_01"},
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
     [2] = "j_grenade",
     [3] = "j_grenade_empty",
+}
+
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2",
+	"j_grenade",
+    "j_grenade_empty"
+	},
+	[2] = {
+	"j_mag1",
+	"j_mag_follower",
+	"j_b_01",
+	"j_b_02",
+	"j_b_03",
+	"j_b_04",
+	"j_b_05",
+	"j_b_06",
+	"j_b_07",
+	"j_b_08",
+	"j_b_09",
+	"j_b_010",
+	"j_b_011",
+	"j_b_012",
+	"j_b_013",
+	"j_b_014",
+	"j_b_015",
+	"j_b_016"
+	},
+	[3] = {
+	"j_mag2",
+	"j_grenade",
+    "j_grenade_empty",
+	"j_mag1",
+	"j_mag_follower",
+	"j_b_01",
+	"j_b_02",
+	"j_b_03",
+	"j_b_04",
+	"j_b_05",
+	"j_b_06",
+	"j_b_07",
+	"j_b_08",
+	"j_b_09",
+	"j_b_010",
+	"j_b_011",
+	"j_b_012",
+	"j_b_013",
+	"j_b_014",
+	"j_b_015",
+	"j_b_016"
+	}
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -397,6 +448,10 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_magin_01.ogg", t = 28/30},
 			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 31/30},
 			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 52/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.475},
+			{hide = 2, t = 1.8},
+			{hide = 1, t = 2.235},
         },
     },
     ["reload_empty"] = {
@@ -418,6 +473,9 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 31/30},
 			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 53/30},
 			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 63/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.425},
+			{hide = 1, t = 0.8},
         },
     },
     ["reload_fast"] = {
@@ -425,7 +483,7 @@ SWEP.Animations = {
 		MinProgress = 0.85,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		DropMagAt = 0.575,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -438,6 +496,9 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 0.73},
 			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 0.93},
 			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 1.2},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.5},
+			{hide = 1, t = 0.7},
         },
     },
     ["reload_fast_empty"] = {
@@ -446,7 +507,7 @@ SWEP.Animations = {
 		PeekProgress = 0.8,
 		RefillProgress = 0.7,
 		FireASAP = true,
-		DropMagAt = 0.575,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -460,6 +521,9 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 0.85},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 1.1},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 1.4},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.5},
+			{hide = 1, t = 0.7},
         },
     },
     ["reload_xmag"] = {
@@ -480,6 +544,10 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_magin_01.ogg", t = 29/30},
 			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 31/30},
 			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 52/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.475},
+			{hide = 2, t = 1.8},
+			{hide = 1, t = 2.1},
         },
     },
     ["reload_xmag_empty"] = {
@@ -501,6 +569,9 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 31/30},
 			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 53/30},
 			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 63/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.425},
+			{hide = 1, t = 0.8},
         },
     },
     ["reload_xmag_fast"] = {
@@ -508,7 +579,7 @@ SWEP.Animations = {
 		MinProgress = 0.85,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		DropMagAt = 0.5,
+		DropMagAt = 0.45,
 		Mult = 0.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -523,6 +594,9 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 37/30},
 			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 40/30},
 			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 53/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.45},
+			{hide = 1, t = 0.85},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -531,7 +605,7 @@ SWEP.Animations = {
 		PeekProgress = 0.8,
 		RefillProgress = 0.675,
 		FireASAP = true,
-		DropMagAt = 0.5,
+		DropMagAt = 0.45,
 		Mult = 0.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -547,6 +621,9 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 37/30},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 49/30},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 62/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.45},
+			{hide = 1, t = 0.85},
         },
     },
     ["reload_xmagslrg"] = {
@@ -567,6 +644,10 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_magin_01.ogg", t = 29/30},
 			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 31/30},
 			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 52/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.475},
+			{hide = 2, t = 1.8},
+			{hide = 1, t = 2.1},
         },
     },
     ["reload_xmagslrg_empty"] = {
@@ -588,6 +669,9 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 31/30},
 			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 53/30},
 			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 63/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.425},
+			{hide = 1, t = 0.8},
         },
     },
     ["reload_xmagslrg_fast"] = {
@@ -609,6 +693,9 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 31/30},
 			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 34/30},
 			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 44/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.5},
+			{hide = 1, t = 0.7},
         },
     },
     ["reload_xmagslrg_fast_empty"] = {
@@ -617,7 +704,7 @@ SWEP.Animations = {
 		PeekProgress = 0.8,
 		RefillProgress = 0.675,
 		FireASAP = true,
-		DropMagAt = 0.55,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -630,6 +717,9 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 32/30},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 43/30},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 54/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.5},
+			{hide = 1, t = 0.7},
         },
     },
     ["reload_smg"] = {
@@ -650,6 +740,10 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_magin_01.ogg", t = 29/30},
 			{s = path .. "wpfoly_mike4_reload_magin_v2.ogg", t = 31/30},
 			{s = path .. "wpfoly_mike4_reload_end_v2.ogg", t = 52/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.475},
+			{hide = 2, t = 1.8},
+			{hide = 1, t = 2.1},
         },
     },
     ["reload_smg_empty"] = {
@@ -671,6 +765,9 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_empty_magin_v2.ogg", t = 31/30},
 			{s = path .. "wpfoly_mike4_reload_empty_chamber_v2.ogg", t = 53/30},
 			{s = path .. "wpfoly_mike4_reload_empty_end_v2.ogg", t = 63/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.425},
+			{hide = 1, t = 0.8},
         },
     },
     ["reload_fast_smg"] = {
@@ -678,7 +775,7 @@ SWEP.Animations = {
 		MinProgress = 0.85,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		DropMagAt = 0.575,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -691,6 +788,9 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_01.ogg", t = 22/30},
 			{s = path .. "wpfoly_mike4_reload_fast_magin_v2_02.ogg", t = 25/30},
 			{s = path .. "wpfoly_mike4_reload_fast_end_v2.ogg", t = 35/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.5},
+			{hide = 1, t = 0.7},
         },
     },
     ["reload_fast_smg_empty"] = {
@@ -699,7 +799,7 @@ SWEP.Animations = {
 		PeekProgress = 0.8,
 		RefillProgress = 0.7,
 		FireASAP = true,
-		DropMagAt = 0.575,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -712,6 +812,9 @@ SWEP.Animations = {
 			{s = path .. "wpfoly_mike4_reload_empty_fast_magin_v2.ogg", t = 25/30},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_chamber_v2.ogg", t = 34/30},
 			{s = path .. "wpfoly_mike4_reload_empty_fast_end_v2.ogg", t = 44/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.5},
+			{hide = 1, t = 0.7},
         },
     },
     ["ready"] = {
@@ -927,6 +1030,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 42.5/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 50/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 60/30},
+			--{hide = 1, t = 0},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -942,6 +1046,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 25/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 31/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 35/30},
+			--{hide = 1, t = 0},
 		}
 	},
     ["enter_ubgl"] = {

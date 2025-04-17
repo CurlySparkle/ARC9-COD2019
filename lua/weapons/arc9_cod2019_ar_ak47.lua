@@ -358,7 +358,7 @@ SWEP.BulletBones = {
 
 SWEP.ReloadHideBonesFirstPerson = false
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
     [2] = "j_bullet_secondary",
     [3] = "j_bullet2_secondary",
@@ -367,12 +367,22 @@ SWEP.HideBones  = {
 SWEP.ReloadHideBoneTables = {
     [1] = {
         "j_mag2",
+		"j_bullet_secondary",
+        "j_bullet2_secondary",
     },
     [2] = {
         "j_mag1",
+		"j_bullet",
+		"j_bullet2",
+    },
+	[3] = {
+		"j_mag2",
+        "j_mag1",
+		"j_bullet",
+		"j_bullet2",
         "j_bullet_secondary",
         "j_bullet2_secondary",
-    },
+    }
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -408,9 +418,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_ar_akilo47_reload_maghit.ogg", t = 1.66},
 			{s = path .. "wfoly_ar_akilo47_reload_click.ogg", t = 1.83},
 			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 2.13},
-            {hide = 1, t = 0/30},
-            {hide = 0, t = 5/30},
-            {hide = 1, t = 60/30},
+			{hide = 2, t = 0},
+            {hide = 0, t = 0.4},
+            {hide = 1, t = 2},
         },
     },
     ["reload_empty"] = {
@@ -418,7 +428,7 @@ SWEP.Animations = {
 		MinProgress = 0.85,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 1.15,
+		DropMagAt = 1.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -433,6 +443,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_magin_v2_02.ogg", t = 1.53},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_chamber_01.ogg", t = 1.86},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_end.ogg", t = 2.26},
+			{hide = 2, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 1, t = 1.1},
         },
     },
     ["reload_fast"] = {
@@ -441,7 +454,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		DropMagAt = 0.85,
+		DropMagAt = 0.825,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -454,6 +467,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_01.ogg", t = 0.73},
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_02.ogg", t = 1.1},
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_end.ogg", t = 1.06},
+			{hide = 2, t = 0},
+			{hide = 0, t = 0.2},
+			{hide = 1, t = 0.825},
         },
     },
     ["reload_fast_empty"] = {
@@ -462,7 +478,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 0.85,
+		DropMagAt = 0.825,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -476,6 +492,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 1.01},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_chamber_01.ogg", t = 1.36},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_end.ogg", t = 1.6},
+			{hide = 2, t = 0},
+			{hide = 0, t = 0.2},
+			{hide = 1, t = 0.825},
         },
     },
     ["reload_drum"] = {
@@ -506,7 +525,7 @@ SWEP.Animations = {
 		PeekProgress = 0.875,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 1.15,
+		DropMagAt = 1.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -522,8 +541,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_chamber_01.ogg", t = 2.86},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_end.ogg", t = 3.16},
 			{hide = 1, t = 0},
-			{hide = 0, t = 0.5},
-			{hide = 1, t = 1},
+			{hide = 0, t = 0.266},
+			{hide = 2, t = 1.1},
+			{hide = 1, t = 3.566},
         },
     },
     ["reload_drum_fast"] = {
@@ -532,7 +552,7 @@ SWEP.Animations = {
 		PeekProgress = 0.9,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		DropMagAt = 0.93,
+		DropMagAt = 0.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.1, lhik = 0, rhik = 0},
@@ -545,6 +565,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magin_v2_01.ogg", t = 0.82},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_magin_v2_02.ogg", t = 1.05},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_end.ogg", t = 1.25},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.9},
+			{hide = 1, t = 1.73},
         },
     },
     ["reload_drum_fast_empty"] = {
@@ -553,7 +577,7 @@ SWEP.Animations = {
 		PeekProgress = 0.925,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 0.93,
+		DropMagAt = 0.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -568,6 +592,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_02.ogg", t = 1.22},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_chamber_01.ogg", t = 1.93},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_end.ogg", t = 2.04},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.9},
+			{hide = 1, t = 2.46},
         },
     },
     ["reload_smg"] = {
@@ -590,9 +618,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_ar_akilo47_reload_maghit.ogg", t = 1.85},
 			{s = path .. "wfoly_ar_akilo47_reload_click.ogg", t = 1.83},
 			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 1.85},
-            {hide = 1, t = 0/30},
-            {hide = 0, t = 5/30},
-            {hide = 1, t = 60/30},
+            {hide = 1, t = 0},
+            {hide = 3, t = 0.9},
+            {hide = 1, t = 1.2},
         },
     },
     ["reload_smg_empty"] = {
@@ -601,7 +629,7 @@ SWEP.Animations = {
 		RefillProgress = 0.85,
 		PeekProgress = 0.97,
 		FireASAP = true,
-		DropMagAt = 1.6,
+		DropMagAt = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 1, rhik = 0},
@@ -618,6 +646,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 53/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_boltforward_01.ogg", t = 60/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_end.ogg", t = 64/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.733},
+			{hide = 2, t = 1.5},
+			{hide = 1, t = 2.366},
         },
     },
     ["reload_smg_fast"] = {
@@ -626,7 +658,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		DropMagAt = .9,
+		DropMagAt = 0.85,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -639,6 +671,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_01.ogg", t = 0.7},
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_02.ogg", t = 1.1},
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_end.ogg", t = 1},
+			{hide = 2, t = 0},
+			{hide = 0, t = 0.2},
+			{hide = 1, t = 0.85},
         },
     },
     ["reload_smg_fast_empty"] = {
@@ -647,7 +682,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 0.85,
+		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -661,6 +696,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 0.97},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_chamber_01.ogg", t = 1.3},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_end.ogg", t = 1.5},
+			{hide = 2, t = 0},
+			{hide = 0, t = 0.2},
+			{hide = 1, t = 0.8},
         },
     },
     ["reload_xmag"] = {
@@ -683,9 +721,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_ar_akilo47_reload_maghit.ogg", t = 1.85},
 			{s = path .. "wfoly_ar_akilo47_reload_click.ogg", t = 1.83},
 			{s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 1.85},
-            {hide = 1, t = 0/30},
-            {hide = 0, t = 5/30},
-            {hide = 1, t = 60/30},
+            {hide = 1, t = 0},
+            {hide = 3, t = 0.9},
+            {hide = 1, t = 1.2},
         },
     },
     ["reload_xmag_empty"] = {
@@ -694,7 +732,7 @@ SWEP.Animations = {
 		RefillProgress = 0.85,
 		PeekProgress = 0.97,
 		FireASAP = true,
-		DropMagAt = 1.6,
+		DropMagAt = 1.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 1, rhik = 0},
@@ -711,6 +749,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 53/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_boltforward_01.ogg", t = 60/30},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_end.ogg", t = 64/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.733},
+			{hide = 2, t = 1.5},
+			{hide = 1, t = 2.366},
         },
     },
     ["reload_xmag_fast"] = {
@@ -719,7 +761,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.625,
 		FireASAP = true,
-		DropMagAt = 1.05,
+		DropMagAt = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -732,6 +774,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_01.ogg", t = 0.92},
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magin_v2_02.ogg", t = 1.32},
 			{s = path .. "wfoly_ar_akilo47_reload_fast_magout_end.ogg", t = 1.1},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.333},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.7},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -740,7 +786,7 @@ SWEP.Animations = {
 		PeekProgress = 0.865,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 1.05,
+		DropMagAt = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0},
             { t = 0.2, lhik = 0, rhik = 0},
@@ -754,6 +800,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_magin_v2_02.ogg", t = 1.265},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_chamber_01.ogg", t = 1.6},
 			{s = path .. "wfoly_ar_akilo47_reload_empty_fast_end.ogg", t = 1.8},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.333},
+			{hide = 2, t = 1},
+			{hide = 1, t = 2.066},
         },
     },
     ["reload_drum2"] = {
@@ -809,7 +859,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_chamber_01.ogg", t = 139/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_end.ogg", t = 152/30},
 			{hide = 1, t = 0},
-			{hide = 1, t = 3},
+			{hide = 3, t = 1.25},
+			{hide = 1, t = 1.8},
         },
     },
     ["reload_drum2_fast"] = {
@@ -834,7 +885,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_magin_v2_02.ogg", t = 80/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_fast_end.ogg", t = 99/30},
 			{hide = 1, t = 0},
-			{hide = 1, t = 1},
+			{hide = 3, t = 1.25},
+			{hide = 1, t = 1.8},
         },
     },
     ["reload_drum2_fast_empty"] = {
@@ -861,7 +913,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_chamber_01.ogg", t = 107/30},
 			{s = path .. "wfoly_ar_akilo47_drum_reload_empty_fast_end.ogg", t = 113/30},
 			{hide = 1, t = 0},
-			{hide = 1, t = 1},
+			{hide = 3, t = 1.25},
+			{hide = 1, t = 1.8},
         },
     },
     ["ready"] = {
@@ -1041,6 +1094,7 @@ SWEP.Animations = {
 			{s = path .. "wpn_iw8_ak47_gl_mvmnt.ogg", t = 2/30},
 			{s = path .. "wpn_iw8_ak47_gl_shell_in.ogg", t = 26.5/30},
 			{s = path .. "wpn_iw8_ak47_gl_end.ogg", t = 56.5/30},
+			{hide = 1, t = 0},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -1053,6 +1107,7 @@ SWEP.Animations = {
 			{s = path .. "wpn_iw8_ak47_gl_mvmnt.ogg", t = 2/30},
 			{s = path .. "wpn_iw8_ak47_gl_shell_in.ogg", t = 17.5/30},
 			{s = path .. "wpn_iw8_ak47_gl_end.ogg", t = 40/30},
+			{hide = 1, t = 0},
 		}
 	},
     ["enter_ubgl"] = {

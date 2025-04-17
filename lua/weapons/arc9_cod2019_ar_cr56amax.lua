@@ -343,6 +343,27 @@ SWEP.HideBones  = {
     [1] = "j_mag2",
 }
 
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2",
+	},
+	[2] = {
+	"j_mag1",
+	"j_follower",
+	"j_bullet01",
+	"j_bullet02",
+	"j_bullet03"
+	},
+	[3] = {
+	"j_mag2",
+	"j_mag1",
+	"j_follower",
+	"j_bullet01",
+	"j_bullet02",
+	"j_bullet03"
+	}
+}
+
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
@@ -379,6 +400,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_maghit.ogg", t = 1.567},
 			{s = path .. "wfoly_ar_galima_reload_magin.ogg", t = 1.9},
 			{s = path .. "wfoly_ar_galima_reload_end.ogg", t = 2.0},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.9},
+			{hide = 1, t = 1.25},
         },
     },
     ["reload_empty"] = {
@@ -402,6 +426,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 1.8},
 			{s = path .. "wfoly_ar_galima_reload_empty_charge.ogg", t = 2.367},
 			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 2.733},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 1.25},
         },
     },
     ["reload_fast"] = {
@@ -410,7 +437,7 @@ SWEP.Animations = {
 		RefillProgress = 0.65,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 1,
+		DropMagAt = 0.85,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -422,6 +449,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_fast_magout.ogg", t = 0.4},
 			{s = path .. "wfoly_ar_galima_reload_fast_magin.ogg", t = 0.933},
 			{s = path .. "wfoly_ar_galima_reload_fast_end.ogg", t = 1.3},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 0.85},
         },
     },
     ["reload_fast_empty"] = {
@@ -431,7 +461,7 @@ SWEP.Animations = {
 		RefillProgress = 0.7,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 1,
+		DropMagAt = 0.85,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -444,6 +474,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_empty_fast_magin.ogg", t = 0.95},
 			{s = path .. "wfoly_ar_galima_reload_empty_fast_charge.ogg", t = 1.4},
 			{s = path .. "wfoly_ar_galima_reload_empty_fast_end.ogg", t = 1.833},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 0.85},
         },
     },
     ["reload_xmag"] = {
@@ -466,6 +499,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_maghit.ogg", t = 50/30},
 			{s = path .. "wfoly_ar_galima_reload_magin.ogg", t = 63.5/30},
 			{s = path .. "wfoly_ar_galima_reload_end.ogg", t = 67.5/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.9},
+			{hide = 1, t = 1.3},
         },
     },
     ["reload_xmag_empty"] = {
@@ -474,7 +510,7 @@ SWEP.Animations = {
 		PeekProgress = 0.8375,
 		RefillProgress = 0.8,
 		FireASAP = true,
-		DropMagAt = 0.95,
+		DropMagAt = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -489,6 +525,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 62/30},
 			{s = path .. "wfoly_ar_galima_reload_empty_charge.ogg", t = 78/30},
 			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 90/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1},
+			{hide = 1, t = 1.35},
         },
     },
     ["reload_xmag_fast"] = {
@@ -510,6 +549,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_fast_magout.ogg", t = 10/30},
 			{s = path .. "wfoly_ar_galima_reload_fast_magin.ogg", t = 28/30},
 			{s = path .. "wfoly_ar_galima_reload_fast_end.ogg", t = 37/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -532,6 +574,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_galima_reload_empty_fast_magin.ogg", t = 28/30},
 			{s = path .. "wfoly_ar_galima_reload_empty_fast_charge.ogg", t = 40/30},
 			{s = path .. "wfoly_ar_galima_reload_empty_fast_end.ogg", t = 53/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1},
         },
     },
     ["ready"] = {
@@ -705,6 +750,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 54.5/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 60/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 70/30},
+			{hide = 1, t = 0},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -720,6 +766,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 35/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 42/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 46/30},
+			{hide = 1, t = 0},
 		}
 	},
     ["enter_ubgl"] = {

@@ -339,8 +339,27 @@ SWEP.BulletBones = {
 }
 
 --SWEP.ReloadHideBonesFirstPerson = true
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2",
+	},
+	[2] = {
+	"j_mag1",
+	"j_follower",
+	"j_bullet1",
+	"j_bullet2"
+	},
+	[3] = {
+	"j_mag2",
+	"j_mag1",
+	"j_follower",
+	"j_bullet1",
+	"j_bullet2"
+	}
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -380,6 +399,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_maghit.ogg", t = 1.133},
 			{s = path .. "wfoly_ar_sierra552_reload_magin.ogg", t = 1.467},
 			{s = path .. "wfoly_ar_sierra552_reload_end.ogg", t = 1.933},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1.825},
+			{hide = 1, t = 2.4},
         },
     },
     ["reload_empty"] = {
@@ -403,6 +426,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_empty_roll.ogg", t = 1.6},
 			{s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 2.2},
 			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 2.4},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1.13},
+			{hide = 1, t = 2.8},
         },
     },
     ["reload_fast"] = {
@@ -425,6 +452,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_fast_maghit.ogg", t = 0.9},
 			{s = path .. "wfoly_ar_sierra552_reload_fast_magin.ogg", t = 1.133},
 			{s = path .. "wfoly_ar_sierra552_reload_fast_end.ogg", t = 1.333},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.675},
         },
     },
     ["reload_fast_empty"] = {
@@ -447,6 +478,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_empty_fast_magin.ogg", t = 1.167},
 			{s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 1.57},
 			{s = path .. "wfoly_ar_sierra552_reload_empty_fast_end.ogg", t = 1.867},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.675},
         },
     },
     ["reload_xmag"] = {
@@ -468,6 +503,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_maghit.ogg", t = 35/30},
 			{s = path .. "wfoly_ar_sierra552_reload_magin.ogg", t = 41/30},
 			{s = path .. "wfoly_ar_sierra552_reload_end.ogg", t = 56/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1.825},
+			{hide = 1, t = 2.4},
         },
     },
     ["reload_xmag_empty"] = {
@@ -491,6 +530,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_empty_roll.ogg", t = 58/30},
 			{s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 66/30},
 			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 69/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1.13},
+			{hide = 1, t = 2.8},
         },
     },
     ["reload_xmag_fast"] = {
@@ -513,6 +556,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_empty_maghit.ogg", t = 30/30},
 			{s = path .. "wfoly_ar_sierra552_reload_empty_magin.ogg", t = 35/30},
 			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 36/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.675},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -535,6 +582,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_empty_magin.ogg", t = 1.167},
 			{s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 1.5},
 			{s = path .. "wfoly_ar_sierra552_reload_empty_end.ogg", t = 1.6},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.675},
         },
     },
     ["ready"] = {
@@ -700,6 +751,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 55.5/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 60/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 70/30},
+			{hide = 1, t = 0},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -715,6 +767,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 35/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 42/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 45/30},
+			{hide = 1, t = 0},
 		}
 	},
     ["enter_ubgl"] = {

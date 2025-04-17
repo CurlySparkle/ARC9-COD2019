@@ -338,8 +338,20 @@ SWEP.BulletBones = {
 	[4] = "j_bullet04",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2"
+	},
+	[2] = {
+	"j_mag2",
+	"j_mag1",
+	"j_bullet_01",
+	"j_bullet_02",
+	}
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -372,6 +384,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_asierra12_reload_magin_v2_01.ogg", t = 1.46},
             {s = path .. "wfoly_ar_asierra12_reload_magin_v2_02.ogg", t = 1.96},
 			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 2.2},
+			{hide = 1, t = 0},
         },
     },
     ["reload_empty"] = {
@@ -394,6 +407,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_asierra12_reload_empty_armup.ogg", t = 2.25},
 			{s = path .. "wfoly_ar_asierra12_reload_empty_charge_01.ogg", t = 2.45},
 			{s = path .. "wfoly_ar_asierra12_reload_empty_end.ogg", t = 2.9},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.9},
+			{hide = 1, t = 1.375},
         },
     },
     ["reload_fast"] = {
@@ -414,6 +430,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_asierra12_reload_fast_magin_v2_01.ogg", t = 0.93},
             {s = path .. "wfoly_ar_asierra12_reload_fast_magin_v2_02.ogg", t = 1.16},
 			{s = path .. "wfoly_ar_asierra12_reload_end.ogg", t = 1.23},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.45},
+			{hide = 1, t = 0.775},
         },
     },
     ["reload_fast_empty"] = {
@@ -423,7 +442,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.65,
+		DropMagAt = 0.55,
         IKTimeLine = {
             { t = 0, lhik = 1,  rhik = 0 },
 		},
@@ -436,6 +455,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_ar_asierra12_reload_empty_fast_arm.ogg", t = 1.7},
 			{s = path .. "wfoly_ar_asierra12_reload_empty_fast_charge_01.ogg", t = 1.75},
 			{s = path .. "wfoly_ar_asierra12_reload_empty_fast_end.ogg", t = 2.2},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.55},
+			{hide = 1, t = 0.775},
         },
     },
     ["ready"] = {
@@ -609,6 +631,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 44.5/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 51/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 61/30},
+			{hide = 1, t = 0},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -624,6 +647,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 25/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 33/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 37/30},
+			{hide = 1, t = 0},
 		}
 	},
     ["enter_ubgl"] = {

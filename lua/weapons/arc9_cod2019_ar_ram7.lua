@@ -339,8 +339,27 @@ SWEP.BulletBones = {
 	[4] = "j_bullet04",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2",
+	},
+	[2] = {
+	"j_mag1",
+	"j_mag_follower",
+	"j_bullet1",
+	"j_bullet2",
+	},
+	[3] = {
+	"j_mag2",
+	"j_mag1",
+	"j_mag_follower",
+	"j_bullet1",
+	"j_bullet2",
+	}
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -375,6 +394,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_mag_hit.ogg", t = 1.167},
 			{s = path .. "wfoly_ar_tango21_reload_magin.ogg", t = 1.433},
 			{s = path .. "wfoly_ar_tango21_reload_end.ogg", t = 1.967},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.425},
+			{hide = 2, t = 1.9},
+			{hide = 1, t = 2.4},
         },
     },
     ["reload_empty"] = {
@@ -383,7 +406,7 @@ SWEP.Animations = {
 		PeekProgress = 0.9,
 		RefillProgress = 0.775,
 		FireASAP = true,
-		DropMagAt = 0.85,
+		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -400,6 +423,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_rotate.ogg", t = 2.0},
 			{s = path .. "wfoly_ar_tango21_reload_empty_charge.ogg", t = 2.38},
 			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 2.6},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.7},
+			{hide = 1, t = 1.15},
         },
     },
     ["reload_fast"] = {
@@ -422,6 +448,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_fast_magwellhit.ogg", t = 0.95},
 			{s = path .. "wfoly_ar_tango21_reload_fast_magin.ogg", t = 1.15},
 			{s = path .. "wfoly_ar_tango21_reload_fast_end.ogg", t = 1.567},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.54},
+			{hide = 1, t = 0.6},
         },
     },
     ["reload_fast_empty"] = {
@@ -445,6 +474,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_fast_magin.ogg", t = 1.12},
 			{s = path .. "wfoly_ar_tango21_reload_empty_fast_bolt_forward.ogg", t = 1.42},
 			{s = path .. "wfoly_ar_tango21_reload_empty_fast_end.ogg", t = 1.9},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.54},
+			{hide = 1, t = 0.6},
         },
     },
     ["reload_xmag"] = {
@@ -466,6 +498,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_mag_hit.ogg", t = 35/30},
 			{s = path .. "wfoly_ar_tango21_reload_magin.ogg", t = 42/30},
 			{s = path .. "wfoly_ar_tango21_reload_end.ogg", t = 59/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.425},
+			{hide = 2, t = 1.9},
+			{hide = 1, t = 2.4},
         },
     },
     ["reload_xmag_empty"] = {
@@ -491,6 +527,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_rotate.ogg", t = 56/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_charge.ogg", t = 68/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 77/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.7},
+			{hide = 1, t = 1.15},
         },
     },
     ["reload_xmag_fast"] = {
@@ -515,6 +554,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_maghitwell.ogg", t = 31/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 37/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 42/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.54},
+			{hide = 1, t = 0.6},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -541,6 +583,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_empty_magin.ogg", t = 37/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_charge.ogg", t = 43/30},
 			{s = path .. "wfoly_ar_tango21_reload_empty_end.ogg", t = 51/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.54},
+			{hide = 1, t = 0.6},
         },
     },
     ["reload_drum"] = {
@@ -563,6 +608,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_drum_magin.ogg", t = 49/30},
 			{s = path .. "wfoly_ar_tango21_reload_drum_maghandhit.ogg", t = 57/30},
             {s = path .. "wfoly_ar_tango21_reload_drum_end.ogg", t = 68/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.75},
+			{hide = 1, t = 1.1},
         },
     },
     ["reload_drum_empty"] = {
@@ -571,7 +619,7 @@ SWEP.Animations = {
 		PeekProgress = 0.9,
 		RefillProgress = 0.775,
 		FireASAP = true,
-		DropMagAt = 0.85,
+		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -586,6 +634,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_drum_empty_rotategrab.ogg", t = 57/30},
 			{s = path .. "wfoly_ar_tango21_reload_drum_empty_charge.ogg", t = 72/30},
 			{s = path .. "wfoly_ar_tango21_reload_drum_empty_end.ogg", t = 79/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.7},
+			{hide = 1, t = 1.125},
         },
     },
     ["reload_drum_fast"] = {
@@ -608,6 +659,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_drum_fast_maghitwell.ogg", t = 28/30},
 			{s = path .. "wfoly_ar_tango21_reload_drum_fast_magin.ogg", t = 38/30},
 			{s = path .. "wfoly_ar_tango21_reload_drum_fast_end.ogg", t = 46/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.54},
+			{hide = 1, t = 0.6},
         },
     },
     ["reload_drum_fast_empty"] = {
@@ -631,6 +685,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_drum_empty_fast_maghit.ogg", t = 29/30},
 			{s = path .. "wfoly_ar_tango21_reload_drum_empty_fast_magin.ogg", t = 39/30},
 			{s = path .. "wfoly_ar_tango21_reload_drum_empty_fast_end.ogg", t = 59/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.54},
+			{hide = 1, t = 0.6},
         },
     },
     ["ready"] = {
@@ -796,6 +853,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 55.5/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 61/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 71/30},
+			{hide = 1, t = 0},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -811,6 +869,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 36/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 43/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 46/30},
+			{hide = 1, t = 0},
 		}
 	},
     ["enter_ubgl"] = {

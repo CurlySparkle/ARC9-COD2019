@@ -307,6 +307,7 @@ SWEP.DropMagazineAng = Angle(0, -90, -90)
 SWEP.DropMagazineQCAHook = function(swep, old) 
   local curanim = swep:GetIKAnimation() or ""
   if curanim == "reload_fast" then return 5 end
+  --if curanim == "reload_fast_empty" then return 3 end --seems to break randomly
   if curanim == "reload_xmag_fast" then return 5 end
 end
 
@@ -347,8 +348,27 @@ SWEP.BulletBones = {
     [4] = "j_bullet_01",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables  = {
+    [1] = {
+	"j_mag2",
+	},
+	[2] = {
+	"j_mag1",
+	"j_bullet_01",
+	"j_bullet_02",
+	"j_bullet_03"
+	},
+	[3] = {
+	"j_mag2",
+	"j_mag1",
+	"j_bullet_01",
+	"j_bullet_02",
+	"j_bullet_03"
+	}
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -392,11 +412,14 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 1.5},
 			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 1.75},
 			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 2.06},
+			{hide = 2, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 1, t = 2.2},
         },
     },
     ["reload_empty"] = {
         Source = "reload",
-		DropMagAt = 1.5,
+		DropMagAt = 1.45,
 		MinProgress = 0.9,
 		PeekProgress = 0.825,
 		RefillProgress = 0.775,
@@ -420,6 +443,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltopen_01.ogg", t = 2.66},
             {s = path .. "wfoly_plr_ar_falima_reload_empty_boltclose_01.ogg", t = 2.96},
             {s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 3},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.45},
+			{hide = 1, t = 1.6},
         },
     },
     ["reload_fast"] = {
@@ -427,7 +453,7 @@ SWEP.Animations = {
 		MinProgress = 0.875,
 		PeekProgress = 0.85,
 		RefillProgress = 0.65,
-		DropMagAt = 0.9,
+		DropMagAt = 0.8,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -442,6 +468,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_fast_magin_v2_01.ogg", t = 0.76},
 			{s = path .. "wfoly_plr_ar_falima_reload_fast_magin_v2_02.ogg", t = 1.25},
 			{s = path .. "wfoly_plr_ar_falima_reload_fast_end.ogg", t = 1.56},
+			{hide = 2, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 1, t = 0.8},--jmag 2 jank going on or something
         },
     },
     ["reload_fast_empty"] = {
@@ -469,6 +498,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_magin_v2_02.ogg", t = 1.77},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_charge_01.ogg", t = 2.15},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_end.ogg", t = 2.36},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.4},
+			{hide = 1, t = 1.5},
         },
     },
     ["reload_xmag"] = {
@@ -491,11 +523,14 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 52/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 64/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 64/30},
+			{hide = 2, t = 0},
+			{hide = 0, t = 0.25},
+			{hide = 1, t = 2.3},
         },
     },
     ["reload_xmag_empty"] = {
         Source = "reload_xmag_empty",
-		DropMagAt = 1.5,
+		DropMagAt = 1.45,
 		MinProgress = 0.9,
 		PeekProgress = 0.775,
 		RefillProgress = 0.775,
@@ -519,13 +554,16 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltopen_01.ogg", t = 77/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_boltclose_01.ogg", t = 87/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_end.ogg", t = 93/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.45},
+			{hide = 1, t = 1.6},
         },
     },
     ["reload_xmag_fast"] = {
         Source = "reload_xmag_fast",
 		MinProgress = 0.85,
 		RefillProgress = 0.65,
-		DropMagAt = 0.81,
+		DropMagAt = 0.8,
 		FireASAP = true,
 		DropMagazineQCA = 5,
         IKTimeLine = {
@@ -542,11 +580,14 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_fast_magin_v2_02.ogg", t = 38/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_elbow", t = 47/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_fast_end.ogg", t = 47/30},
+			{hide = 2, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 1, t = 0.8},--jmag 2 jank going on or something
         },
     },
     ["reload_xmag_fast_empty"] = {
         Source = "reload_xmag_fast_empty",
-		DropMagAt = 1.4,
+		DropMagAt = 1.375,
 		MinProgress = 0.925,
 		PeekProgress = 0.825,
 		RefillProgress = 0.75,
@@ -568,6 +609,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_magin_v2_02.ogg", t = 57/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_charge_01.ogg", t = 66/30},
 			{s = path .. "wfoly_plr_ar_falima_reload_empty_fast_end.ogg", t = 70/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.375},
+			{hide = 1, t = 1.5},
         },
     },
     ["ready"] = {
@@ -744,6 +788,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 43.5/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 51/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 61/30},
+			{hide = 1, t = 0},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -760,6 +805,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 24/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 32/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 36/30},
+			{hide = 1, t = 0},
 		}
 	},
     ["enter_ubgl"] = {
