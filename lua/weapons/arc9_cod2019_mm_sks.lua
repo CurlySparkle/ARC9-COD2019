@@ -330,8 +330,29 @@ SWEP.DistantShootSoundSilencedIndoor = "Distant_DMR_Sup.Inside"
 SWEP.EnterSightsSound = path .. "wfoly_sn_sksierra_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_sn_sksierra_ads_down.ogg"
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag2",
+    },
+    [2] = {
+        "j_mag1",
+		"j_follower",
+		"j_bullet01",
+		"j_bullet02",
+		"j_bullet03"
+    },
+	[3] = {
+		"j_mag2",
+        "j_mag1",
+		"j_follower",
+		"j_bullet01",
+		"j_bullet02",
+		"j_bullet03"
+    }
 }
 
 SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -371,6 +392,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_magin_01.ogg", t = 1.3},
 			{s = path .. "wfoly_sn_sksierra_reload_magin_02.ogg", t = 1.52},
 			{s = path .. "wfoly_sn_sksierra_reload_end.ogg", t = 1.6},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.366},
+			{hide = 2, t = 2.02},
+			{hide = 1, t = 2.466},
         },
     },
     ["reload_empty"] = {
@@ -379,7 +404,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		PeekProgress = 0.85,
 		FireASAP = true,
-		DropMagAt = 1.1,
+		DropMagAt = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -395,6 +420,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_empty_rotate.ogg", t = 1.6},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 2.12},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 2.633},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.366},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.833},
         },
     },
     ["reload_fast"] = {
@@ -417,6 +446,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_fast_magin_01.ogg", t = 1.0},
 			{s = path .. "wfoly_sn_sksierra_reload_fast_magin_02.ogg", t = 1.2},
 			{s = path .. "wfoly_sn_sksierra_reload_fast_end.ogg", t = 1.433},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.2},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.7},
         },
     },
     ["reload_fast_empty"] = {
@@ -440,6 +473,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_sn_sksierra_reload_empty_fast_arm.ogg", t = 1.367},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_fast_charge.ogg", t = 1.5},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_fast_end.ogg", t = 2.0},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.2},
+			{hide = 2, t = 1},
+			{hide = 1, t = 2.133},
         },
     },
     ["reload_xmag"] = {
@@ -460,6 +497,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_magin_01.ogg", t = 36/30},
 			{s = path .. "wfoly_sn_sksierra_reload_magin_02.ogg", t = 45/30},
 			{s = path .. "wfoly_sn_sksierra_reload_end.ogg", t = 46/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.366},
+			{hide = 2, t = 2.133},
+			{hide = 1, t = 2.566},
         },
     },
     ["reload_xmag_empty"] = {
@@ -484,6 +525,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_empty_rotate.ogg", t = 50/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 63/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 78/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.366},
+			{hide = 2, t = 1.1},
+			{hide = 1, t = 1.833},
         },
     },
     ["reload_xmag_fast"] = {
@@ -506,6 +551,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 27/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 36/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 46/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.2},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.7},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -528,13 +577,17 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 36/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 50/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 61/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.233},
+			{hide = 2, t = 1},
+			{hide = 1, t = 2.2},
         },
     },
     ["reload_smag"] = {
         Source = "reload_smag",
 		MinProgress = 0.85,
 		FireASAP = true,
-		RefillProgress = 0.55,
+		RefillProgress = 0.65,
 		PeekProgress = 0.825,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
@@ -548,6 +601,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_magin_01.ogg", t = 36/30},
 			{s = path .. "wfoly_sn_sksierra_reload_magin_02.ogg", t = 45/30},
 			{s = path .. "wfoly_sn_sksierra_reload_end.ogg", t = 46/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.45},
+			{hide = 1, t = 0.75},
         },
     },
     ["reload_smag_empty"] = {
@@ -556,7 +612,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.725,
 		PeekProgress = 0.85,
-		DropMagAt = 1,
+		DropMagAt = 1.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -572,6 +628,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_empty_rotate.ogg", t = 50/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 63/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 78/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.366},
+			{hide = 2, t = 1.1},
+			{hide = 1, t = 1.833},
         },
     },
     ["reload_smag_fast"] = {
@@ -594,6 +654,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_01.ogg", t = 27/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 36/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 46/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.166},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.466},
         },
     },
     ["reload_smag_fast_empty"] = {
@@ -601,7 +665,7 @@ SWEP.Animations = {
 		MinProgress = 0.925,
 		RefillProgress = 0.75,
 		PeekProgress = 0.875,
-		DropMagAt = 1,
+		DropMagAt = 0.9,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
@@ -616,6 +680,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_sksierra_reload_empty_magin_02.ogg", t = 36/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_charge.ogg", t = 50/30},
 			{s = path .. "wfoly_sn_sksierra_reload_empty_end.ogg", t = 61/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.2},
+			{hide = 2, t = 0.9},
+			{hide = 1, t = 2.133},
         },
     },
     ["ready"] = {
@@ -818,7 +886,11 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
             end
-        end
+        elseif smag then
+            if Translate_SMag[anim] then
+                return Translate_SMag[anim]
+            end
+		end
     end
 	
     --wep.MWHybridSwitching = nil

@@ -319,11 +319,19 @@ SWEP.HideBones  = {
 	[4] = "j_round_04",
 }
 
-SWEP.ReloadHideBoneTables  = {
-    [1] = "j_round_01",
-	[2] = "j_round_02",
-	[3] = "j_round_03",
-	[4] = "j_round_04",
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_round_01",
+    },
+    [2] = {
+        "j_round_04",
+    },
+	[3] = {
+		"j_round_01",
+		"j_round_02",
+		"j_round_03",
+		"j_round_04"
+    }
 }
 
 SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -365,6 +373,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_sbeta_sn_reload_start_beginning.ogg", t = 0/30},
             {s = "COD2019.MK2.Load", t = 5/37},
 			{s = "COD2019.MK2.Shellin", t = 16/37},
+			{hide = 3, t = 0},
+			{hide = 0, t = 0.233},
+			{hide = 2, t = 0.766},
+			
         },
     },
     ["reload_insert"] = {
@@ -376,6 +388,8 @@ SWEP.Animations = {
         EventTable = {
             {s = "COD2019.MK2.Load", t = 0/37},
 			{s = "COD2019.MK2.Shellin", t = 16/37},
+			{hide = 2, t = 0.433},
+			{hide = 1, t = 0.533},
         },
     },
     ["reload_finish"] = {

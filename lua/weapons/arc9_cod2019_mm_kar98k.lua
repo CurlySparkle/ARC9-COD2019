@@ -314,14 +314,49 @@ SWEP.HideBones  = {
 	[8] = "j_bullet_loose",
 }
 
-SWEP.ReloadHideBoneTables  = {
-    [1] = "j_clip",
-	[2] = "j_b_01",
-	[3] = "j_b_02",
-	[4] = "j_b_03",
-	[5] = "j_b_04",
-	[6] = "j_b_05",
-	[7] = "j_bullet_loose",
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_clip",
+		"j_b_01",
+		"j_b_02",
+		"j_b_03",
+		"j_b_04",
+		"j_b_05",
+    },
+    [2] = {
+        "j_b_04",
+		"j_b_05",
+    },
+	[3] = {
+		"j_clip",
+        "j_b_01",
+		"j_b_02",
+		"j_b_04",
+		"j_b_05",
+    },
+	[4] = {
+		"j_b_05"
+    },
+	[5] = {
+		"j_clip",
+		"j_b_01"
+    },
+	[6] = {
+		"j_clip",
+		"j_b_01",
+		"j_b_02"
+    },
+	[7] = {
+		"j_clip",
+		"j_b_01",
+		"j_b_03"
+    },
+	[8] = {
+		"j_clip",
+		"j_b_01",
+		"j_b_02",
+		"j_b_03"
+    }
 }
 
 -- SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -369,6 +404,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_kilo98_reload_cloth02.ogg", t = 62/30},
 			{s = path .. "wfoly_sn_kilo98_reload_boltclose_01.ogg", t = 82/30},
 			{s = path .. "wfoly_sn_kilo98_reload_end.ogg", t = 88/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.9},
+			{hide = 2, t = 2.2},
+			{hide = 3, t = 2.466},
+			{hide = 1, t = 2.933},
         },
     },
     ["reload_empty"] = {
@@ -378,6 +418,7 @@ SWEP.Animations = {
 		RefillProgress = 0.8,
 		PeekProgress = 0.925,
 		EjectAt = 0.5,
+		--DropMagAt = 3.3,
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_boltopen_01.ogg", t = 0/30},
@@ -387,6 +428,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth02.ogg", t = 80/30},
 			{s = path .. "wfoly_sn_kilo98_reload_empty_boltclose_01.ogg", t = 84/30},
 			{s = path .. "wfoly_sn_kilo98_reload_empty_end.ogg", t = 99/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 1.033},
+			{hide = 4, t = 1.933},
+			{hide = 1, t = 3.3},
         },
     },
     ["reload_fast"] = {
@@ -405,6 +450,11 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_kilo98_reload_fast_cloth.ogg", t = 58/30},
 			{s = path .. "wfoly_sn_kilo98_reload_fast_boltclose_01.ogg", t = 62/30},
 			{s = path .. "wfoly_sn_kilo98_reload_fast_end.ogg", t = 73/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.633},
+			{hide = 2, t = 1.6},
+			{hide = 3, t = 2},
+			{hide = 1, t = 2.166},
         },
     },
     ["reload_fast_empty"] = {
@@ -414,6 +464,7 @@ SWEP.Animations = {
 		RefillProgress = 0.825,
 		PeekProgress = 0.95,
 		EjectAt = 0.5,
+		--DropMagAt = 2.4,
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_fast_boltopen_01.ogg", t = 0/30},
@@ -422,6 +473,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_fast_load_v2_02.ogg", t = 43/30},
 			{s = path .. "wfoly_sn_kilo98_reload_empty_fast_boltclose_01.ogg", t = 60/30},
 			{s = path .. "wfoly_sn_kilo98_reload_empty_fast_end.ogg", t = 59/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.8},
+			{hide = 1, t = 2.4},
         },
     },
     ["reload_start"] = {
@@ -434,6 +488,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_boltopen_01.ogg", t = 0/30},
 			{s = path .. "wfoly_sn_kilo98_reload_empty_load_v2_01.ogg", t = 34/30},
 			{s = path .. "wfoly_sn_kilo98_reload_empty_cloth02.ogg", t = 51/30},
+			{hide = 1, t = 0},
+			{hide = 5, t = 1},
+			{hide = 6, t = 1.533},
         },
     },
     ["reload_insert"] = {
@@ -442,6 +499,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = "COD2019.Kar98k.ShellIn", t = 0/30},
             {s = path .. "wfoly_sn_kilo98_reload_empty_load_v2_01.ogg", t = 4/30},
+			{hide = 5, t = 0},
+			{hide = 6, t = 0.333},
+			{hide = 5, t = 0.6},
         },
     },
     ["reload_finish"] = {
@@ -464,6 +524,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_kilo98_reload_scope_start_cloth.ogg", t = 0.133},
 			{s = path .. "wfoly_sn_kilo98_reload_scope_start_load_01.ogg", t = 0.767},
 			{s = path .. "wfoly_sn_kilo98_reload_scope_start_load_02.ogg", t = 0.8},
+			{hide = 1, t = 0},
+			{hide = 5, t = 0.733},
+			{hide = 6, t = 1.1},
         },
     },
     ["reload_insert_fast"] = {
@@ -472,6 +535,9 @@ SWEP.Animations = {
         EventTable = {
 			{s = "COD2019.Kar98k.ShellIn", t = 2/30},
             {s = path .. "wfoly_sn_kilo98_reload_scope_load_01.ogg", t = 6/30},
+			{hide = 7, t = 0},
+			{hide = 8, t = 0.233},
+			{hide = 7, t = 0.4},
         },
     },
     ["reload_finish_fast"] = {

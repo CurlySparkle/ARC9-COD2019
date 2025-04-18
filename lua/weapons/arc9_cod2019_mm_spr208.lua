@@ -326,8 +326,29 @@ SWEP.ExitSightsSound = path .. "wfoly_sn_remeo700_ads_down.ogg"
 
 
 --SWEP.ReloadHideBonesFirstPerson = true
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag2",
+    },
+    [2] = {
+        "j_mag1",
+		"j_follower",
+		"j_bullet01",
+		"j_bullet02",
+		"j_bullet03"
+    },
+	[3] = {
+		"j_mag2",
+        "j_mag1",
+		"j_follower",
+		"j_bullet01",
+		"j_bullet02",
+		"j_bullet03"
+    }
 }
 
 SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -399,6 +420,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_reload_maghit.ogg", t = 1.5},
 			{s = path .. "wfoly_sn_remeo700_reload_magin.ogg", t = 2.0},
 			{s = path .. "wfoly_sn_remeo700_reload_end.ogg", t = 2.067},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1},
+			{hide = 1, t = 1.35},
         },
     },
     ["reload_empty"] = {
@@ -408,7 +432,7 @@ SWEP.Animations = {
 		PeekProgress = 0.95,
 		FireASAP = true,
 		EjectAt = 0.6,
-		DropMagAt = 1.5,
+		DropMagAt = 1.475,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 1, rhik = 0 },
@@ -422,6 +446,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_reload_empty_magin.ogg", t = 2.467},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_rotate.ogg", t = 2.633},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_boltclose.ogg", t = 3.133},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.475},
+			{hide = 1, t = 1.6},
         },
     },
     ["reload_fast"] = {
@@ -430,7 +457,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		PeekProgress = 0.875,
 		FireASAP = true,
-		DropMagAt = 0.95,
+		DropMagAt = 0.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
@@ -443,6 +470,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_reload_fast_maghit.ogg", t = 0.833},
 			{s = path .. "wfoly_sn_remeo700_reload_fast_magin.ogg", t = 1.333},
             {s = path .. "wfoly_sn_remeo700_reload_fast_end.ogg", t = 1.567},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.366},
+			{hide = 2, t = 0.9},
+			{hide = 1, t = 1.8},
         },
     },
     ["reload_fast_empty"] = {
@@ -468,6 +499,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_reload_empty_fast_grab.ogg", t = 1.66},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_fast_boltopen.ogg", t = 1.7},
             {s = path .. "wfoly_sn_remeo700_reload_empty_fast_boltclose.ogg", t = 2.19},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.366},
+			{hide = 2, t = 0.9},
+			{hide = 1, t = 1.8},
         },
     },
     ["reload_xmag"] = {
@@ -488,6 +523,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_reload_xmags_maghit.ogg", t = 1.5},
 			{s = path .. "wfoly_sn_remeo700_reload_xmags_magin.ogg", t = 2.1},
 			{s = path .. "wfoly_sn_remeo700_reload_xmags_end.ogg", t = 2.367},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1},
+			{hide = 1, t = 1.35},
         },
     },
     ["reload_xmag_empty"] = {
@@ -497,7 +535,7 @@ SWEP.Animations = {
 		PeekProgress = 0.95,
 		FireASAP = true,
 		EjectAt = 0.6,
-		DropMagAt = 1.5,
+		DropMagAt = 1.475,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 1, rhik = 0 },
@@ -512,6 +550,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_reload_empty_xmags_magin.ogg", t = 2.567},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_xmags_boltclose.ogg", t = 2.8},
             {s = path .. "wfoly_sn_remeo700_reload_empty_xmags_grab.ogg", t = 3.9},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.475},
+			{hide = 1, t = 1.6},
         },
     },
     ["reload_xmag_fast"] = {
@@ -533,6 +574,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_reload_fast_xmags_maghit.ogg", t = 1.133},
 			{s = path .. "wfoly_sn_remeo700_reload_fast_xmags_magin.ogg", t = 1.433},
             {s = path .. "wfoly_sn_remeo700_reload_fast_xmags_end.ogg", t = 1.6},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.366},
+			{hide = 2, t = 0.95},
+			{hide = 1, t = 1.96},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -542,7 +587,7 @@ SWEP.Animations = {
 		PeekProgress = 0.925,
 		FireASAP = true,
 		EjectAt = 2.25,
-		DropMagAt = 1,
+		DropMagAt = 0.95,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -558,6 +603,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_sn_remeo700_reload_empty_fast_xmags_boltopen.ogg", t = 1.87},
             {s = path .. "wfoly_sn_remeo700_reload_empty_fast_xmags_boltclose.ogg", t = 2.07},
 			{s = path .. "wfoly_sn_remeo700_reload_empty_fast_xmags_grab.ogg", t = 2.933},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.366},
+			{hide = 2, t = 0.95},
+			{hide = 1, t = 2},
         },
     },
     ["ready"] = {

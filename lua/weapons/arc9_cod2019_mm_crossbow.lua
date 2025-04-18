@@ -258,6 +258,12 @@ SWEP.ShootSound = "COD2019.Crossbow.Fire"
 SWEP.EnterSightsSound = path .. "wfoly_sn_crossbow_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_sn_crossbow_ads_down.ogg"
 
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag1",
+    }
+}
+
 SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
@@ -288,6 +294,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_01.ogg", t = 2.167},
 			{s = path .. "wfoly_sn_crossbow_reload_lock_arrow_02.ogg", t = 2.367},
 			{s = path .. "wfoly_sn_crossbow_reload_end.ogg", t = 2.5},
+			{hide = 1, t = 0},
+			{hide = 0, t = 1.65},
         },
     },
     ["reload_fast"] = {
@@ -308,6 +316,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_crossbow_reload_fast_load_arrow_01.ogg", t = 1.4},
 			{s = path .. "wfoly_sn_crossbow_reload_fast_load_arrow_02.ogg", t = 1.6},
 			{s = path .. "wfoly_sn_crossbow_reload_fast_end.ogg", t = 1.7},
+			{hide = 1, t = 0},
+			{hide = 0, t = 1.15},
         },
     },
     ["ready"] = {
