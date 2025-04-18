@@ -600,7 +600,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_ar_sierra552_raise_first_up.ogg", t = 0.033},
-            {s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 0.43},
+            {s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 0.40},
 			{s = path .. "wfoly_ar_sierra552_raise_first_end.ogg", t = 0.633},
         },
     },

@@ -467,7 +467,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_ar_asierra12_raise_first_up.ogg", t = 0.033},
-            {s = path .. "wfoly_ar_asierra12_raise_first_charge_01.ogg", t = 0.8},
+            {s = path .. "wfoly_ar_asierra12_raise_first_charge_01.ogg", t = 0.71},
 			{s = path .. "wfoly_ar_asierra12_raise_first_end.ogg", t = 1.1},
         },
     },

@@ -632,7 +632,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_mark26_raise_first_up.ogg", t = 0.0},
-			{s = path .. "wfoly_sh_mark26_raise_first_bolt_forward.ogg", t = 0.6},
+			{s = path .. "wfoly_sh_mark26_raise_first_bolt_forward.ogg", t = 0.55},
 			{s = path .. "wfoly_sh_mark26_raise_first_end.ogg", t = 0.733},
         },
     },

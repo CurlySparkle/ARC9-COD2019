@@ -568,7 +568,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_sh_romeo870_raise_first_lift.ogg", t = 0.0},
-			{s = path .. "wfoly_sh_romeo870_raise_first_chamber_e.ogg", t = 0.2},
+			{s = path .. "wfoly_sh_romeo870_raise_first_chamber_e.ogg", t = 0.25},
 			{s = path .. "wfoly_sh_romeo870_raise_first_shoulder.ogg", t = 0.633},
         },
     },

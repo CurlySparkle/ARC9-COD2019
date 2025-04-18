@@ -828,7 +828,7 @@ SWEP.Animations = {
             { t = 0.8, lhik = 1, rhik = 1 },
         },
         EventTable = {
-            {s = path .. "wpfoly_mike4_raise_first_01.ogg", t = 0.2},
+            {s = path .. "wpfoly_mike4_raise_first_01.ogg", t = 0},
             {s = path .. "wpfoly_mike4_raise_first_02.ogg", t = 0.85},
             {s = path .. "wpfoly_mike4_raise_first_03.ogg", t = 1.3},
         },

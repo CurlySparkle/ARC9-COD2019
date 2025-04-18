@@ -550,7 +550,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_lm_lima86_raise_first_start.ogg", t = 0/30},
-            {s = path .. "wfoly_lm_lima86_raise_first_charge_01.ogg", t = 19/30},
+            {s = path .. "wfoly_lm_lima86_raise_first_charge_01.ogg", t = 18/30},
 			{s = path .. "wfoly_lm_lima86_raise_first_end.ogg", t = 28/30},
         },
     },

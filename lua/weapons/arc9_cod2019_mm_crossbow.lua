@@ -330,7 +330,7 @@ SWEP.Animations = {
             { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
-            {s = path .. "wfoly_sn_crossbow_raise_first_safety_off.ogg", t = 0.333},
+            {s = path .. "wfoly_sn_crossbow_raise_first_safety_off.ogg", t = 0.275},
 			{s = path .. "wfoly_sn_crossbow_raise_first_end.ogg", t = 0.567},
         },
     },

@@ -1114,7 +1114,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_ar_scharlie_raise_first_rotate.ogg", t = 0/30},
-            {s = path .. "wfoly_ar_scharlie_jam_charge.ogg", t = 10/30},
+            {s = path .. "wfoly_ar_scharlie_jam_charge.ogg", t = 11/30},
 			{s = path .. "wfoly_ar_scharlie_raise_first_end.ogg", t = 21/30},
         },
     },

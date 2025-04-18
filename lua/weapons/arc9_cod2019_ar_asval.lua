@@ -711,7 +711,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_ar_valpha_raise_first_up.ogg", t = 0.033},
-            {s = path .. "wfoly_ar_valpha_raise_first_selector.ogg", t = 0.35},
+            {s = path .. "wfoly_ar_valpha_raise_first_selector.ogg", t = 0.3},
             {s = path .. "wfoly_ar_valpha_raise_first_end.ogg", t = 0.567},
         },
     },

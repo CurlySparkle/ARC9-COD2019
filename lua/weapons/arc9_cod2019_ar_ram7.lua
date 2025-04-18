@@ -701,8 +701,8 @@ SWEP.Animations = {
             { t = 0.7, lhik = 1, rhik = 1 },
         },
         EventTable = {
-            {s = path .. "wfoly_ar_tango21_raise_first_up.ogg", t = 0.033},
-            {s = path .. "wfoly_ar_tango21_raise_first_charge.ogg", t = 0.433},
+            {s = path .. "wfoly_ar_tango21_raise_first_up.ogg", t = 0},
+            {s = path .. "wfoly_ar_tango21_raise_first_charge.ogg", t = 0.4},
 			{s = path .. "wfoly_ar_tango21_raise_first_end.ogg", t = 0.9},
         },
     },
