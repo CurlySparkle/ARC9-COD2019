@@ -333,13 +333,25 @@ SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
 SWEP.TriggerDownSound = "weapons/cod2019/svd/weap_delta_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/svd/weap_delta_disconnector_plr_01.ogg"
 
-SWEP.HideBones  = {
-    [1] = "j_mag2",
-}
-
 SWEP.BulletBones = {
     [1] = "j_bullet_01",
     [2] = "j_bullet_02",
+}
+
+SWEP.HideBones = {
+    [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag2",
+    },
+    [2] = {
+        "j_mag2",
+        "j_mag1",
+		"j_bullet_01",
+		"j_bullet_02",
+    }
 }
 
 function SWEP:PrimaryAttack()
@@ -389,6 +401,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_01.ogg", t = 2.1},
 			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_02.ogg", t = 2.233},
 			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 2.367},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.375},
         },
     },
     ["reload_empty"] = {
@@ -398,7 +413,7 @@ SWEP.Animations = {
 		RefillProgress = 0.9,
 		FireASAP = true,
 		EjectAt = 0.475,
-		DropMagAt = 1.9,
+		DropMagAt = 1.85,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
@@ -416,6 +431,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_empty_maghit_01.ogg", t = 3.1},
             {s = path .. "wfoly_sn_alpha50_reload_empty_end.ogg", t = 3.733},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_boltclose_01.ogg", t = 3.733},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.85},
+			{hide = 1, t = 1.933},
         },
     },
     ["reload_fast"] = {
@@ -437,6 +455,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_sn_alpha50_reload_fast_magin_v2_01.ogg", t = 1.13},
 			{s = path .. "wfoly_sn_alpha50_reload_fast_magin_v2_02.ogg", t = 1.25},
 			{s = path .. "wfoly_sn_alpha50_reload_fast_end.ogg", t = 1.3},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 0.7},
         },
     },
     ["reload_fast_empty"] = {
@@ -463,6 +484,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_empty_fast_magin_v2_02.ogg", v = 2.0, t = 1.8},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_fast_boltclose_01.ogg", t = 2.3},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_fast_end.ogg", t = 2.667},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.1},
+			{hide = 1, t = 1.27},
         },
     },
     ["reload_xmag"] = {
@@ -485,6 +509,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_01.ogg", t = 62/30},
 			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_02.ogg", t = 66/30},
 			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 68/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.1},
+			{hide = 1, t = 1.4},
         },
     },
     ["reload_xmag_empty"] = {
@@ -494,7 +521,7 @@ SWEP.Animations = {
 		RefillProgress = 0.9,
 		FireASAP = true,
 		EjectAt = 0.45,
-		DropMagAt = 1.8,
+		DropMagAt = 1.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 1, rhik = 0 },
@@ -512,6 +539,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_empty_maghit_01.ogg", t = 92/30},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_boltclose_01.ogg", t = 110/30},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_end.ogg", t = 108/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.7},
+			{hide = 1, t = 2},
         },
     },
     ["reload_xmag_fast"] = {
@@ -520,7 +550,7 @@ SWEP.Animations = {
 		PeekProgress = 0.85,
 		RefillProgress = 0.65,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -535,6 +565,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_01.ogg", t = 35/30},
 			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_02.ogg", t = 39/30},
 			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 46/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 0.7},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -562,6 +595,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_alpha50_reload_empty_maghit_01.ogg", t = 57/30},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_boltclose_01.ogg", t = 69/30},
 			{s = path .. "wfoly_sn_alpha50_reload_empty_end.ogg", t = 79/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.1},
+			{hide = 1, t = 1.27},
         },
     },
     ["ready"] = {

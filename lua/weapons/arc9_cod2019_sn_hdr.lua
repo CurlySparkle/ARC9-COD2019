@@ -330,8 +330,20 @@ SWEP.BulletBones = {
     [3] = {"j_bullet3","j_ammo3"},
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag2",
+    },
+    [2] = {
+        "j_mag2",
+        "j_mag1",
+		"j_bullet1",
+		"j_bullet2",
+    }
 }
 
 function SWEP:PrimaryAttack()
@@ -382,6 +394,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_01.ogg", t = 2.167},
             {s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_02.ogg", t = 2.7},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_end.ogg", t = 3.033},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.4},
+			{hide = 1, t = 1.8},
         },
     },
     ["reload_empty"] = {
@@ -411,6 +426,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magin_v2_02.ogg", t = 3.267},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_end.ogg", t = 3.567},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_boltclose_01.ogg", t = 3.9},
+			{hide = 1, t = 0},
+			{hide = 2, t = 2.2},
+			{hide = 1, t = 2.3},
         },
     },
     ["reload_fast"] = {
@@ -419,7 +437,7 @@ SWEP.Animations = {
 		PeekProgress = 0.9,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 1.05,
+		DropMagAt = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -435,6 +453,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_magin_v2_02.ogg", t = 1.91},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_shake.ogg", t = 1.91},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_end.ogg", t = 2.233},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.3},
         },
     },
     ["reload_fast_empty"] = {
@@ -465,6 +486,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_boltclose_01.ogg", t = 3.033},
             {s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_armforward.ogg", t = 3.067},
             {s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_end.ogg", t = 3.333},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.6},
+			{hide = 1, t = 1.8},
         },
     },
     ["reload_xmag"] = {
@@ -487,6 +511,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_01.ogg", t = 2.167},
             {s = path .. "wfoly_plr_sn_hdromeo_reload_magin_v2_02.ogg", t = 2.7},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_end.ogg", t = 3.033},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.4},
+			{hide = 1, t = 1.8},
         },
     },
     ["reload_xmag_empty"] = {
@@ -516,6 +543,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_magin_v2_02.ogg", t = 3.267},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_end.ogg", t = 3.567},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_boltclose_01.ogg", t = 3.9},
+			{hide = 1, t = 0},
+			{hide = 2, t = 2.2},
+			{hide = 1, t = 2.3},
         },
     },
     ["reload_xmag_fast"] = {
@@ -524,7 +554,7 @@ SWEP.Animations = {
 		PeekProgress = 0.9,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 1.05,
+		DropMagAt = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -540,6 +570,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_magin_v2_02.ogg", t = 1.91},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_shake.ogg", t = 1.91},
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_fast_end.ogg", t = 2.233},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.3},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -570,6 +603,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_boltclose_01.ogg", t = 3.033},
             {s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_armforward.ogg", t = 3.067},
             {s = path .. "wfoly_plr_sn_hdromeo_reload_empty_fast_end.ogg", t = 3.333},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.6},
+			{hide = 1, t = 1.8},
         },
     },
     ["ready"] = {

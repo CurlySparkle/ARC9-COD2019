@@ -328,8 +328,21 @@ SWEP.BulletBones = {
     [3] = "j_he_round_03",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag2",
+    },
+    [2] = {
+        "j_mag2",
+        "j_mag1",
+		"j_he_round_01",
+		"j_he_round_02",
+		"j_he_round_03",
+    }
 }
 
 function SWEP:PrimaryAttack()
@@ -382,6 +395,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_magin_01.ogg", t = 2.867},
 			{s = path .. "wfoly_sn_xmike109_reload_magin_02.ogg", t = 3.1},
 			{s = path .. "wfoly_sn_xmike109_reload_end.ogg", t = 3.567},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.95},
+			{hide = 1, t = 2.25},
         },
     },
     ["reload_empty"] = {
@@ -409,6 +425,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_empty_boltpull.ogg", t = 4.267},
 			{s = path .. "wfoly_sn_xmike109_reload_empty_boltrelease.ogg", t = 4.8},
 			{s = path .. "wfoly_sn_xmike109_reload_empty_end.ogg", t = 5.1},
+			{hide = 1, t = 0},
+			{hide = 2, t = 2},
+			{hide = 1, t = 2.5},
         },
     },
     ["reload_fast"] = {
@@ -417,7 +436,7 @@ SWEP.Animations = {
 		PeekProgress = 0.91,
 		RefillProgress = 0.7,
 		FireASAP = true,
-		DropMagAt = 1.13,
+		DropMagAt = 1.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 1, rhik = 0 },
@@ -433,6 +452,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_fast_magin_02.ogg", t = 1.967},
             {s = path .. "wfoly_sn_xmike109_reload_fast_shake.ogg", t = 2.0},
 			{s = path .. "wfoly_sn_xmike109_reload_fast_end.ogg", t = 2.467},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.1},
+			{hide = 1, t = 1.3},
         },
     },
     ["reload_fast_empty"] = {
@@ -441,7 +463,7 @@ SWEP.Animations = {
 		PeekProgress = 0.925,
 		RefillProgress = 0.85,
 		FireASAP = true,
-		DropMagAt = 1.15,
+		DropMagAt = 1.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.075, lhik = 1, rhik = 0 },
@@ -459,6 +481,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_xmike109_reload_empty_fast_boltpull.ogg", t = 2.75},
 			{s = path .. "wfoly_sn_xmike109_reload_empty_fast_boltrelease.ogg", t = 3.25},
 			{s = path .. "wfoly_sn_xmike109_reload_empty_fast_end.ogg", t = 3.533},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.1},
+			{hide = 1, t = 1.3},
         },
     },
     ["ready"] = {
