@@ -305,6 +305,38 @@ SWEP.DistantShootSoundSilencedIndoor = "Distant_ShotgunSUP.Inside"
 SWEP.EnterSightsSound = path .. "weap_sh_charlie725_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "weap_sh_charlie725_ads_down.ogg"
 
+SWEP.HideBones = {
+	[1] = "j_shell1_fired",
+    [2] = "j_shell2_fired"
+}
+
+SWEP.ReloadHideBoneTables = {
+	[1] = {
+		"j_shell1"
+	},
+	[2] = {
+		"j_shell1_fired"
+	},
+	[3] = {
+		"j_shell1",
+		"j_shell1_fired"
+	},
+	[4] = {
+		"j_shell1",
+		"j_shell2"
+	},
+	[5] = {
+		"j_shell1",
+		"j_shell1_fired",
+		"j_shell2",
+		"j_shell2_fired"
+	},
+	[6] = {
+		"j_shell1_fired",
+		"j_shell2_fired"
+	},
+}
+
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
@@ -327,7 +359,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		RefillProgress = 0.65,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.55,
 		--EjectAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -343,6 +375,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 1.267},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 1.733},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 2.2},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.55},
+			{hide = 2, t = 0.8},
         },
     },
     ["reload_fast"] = {
@@ -350,7 +385,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.366,
 		--EjectAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -366,6 +401,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 0.933},
             {s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 1.367},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 1.4},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.366},
+			{hide = 2, t = 0.7},
         },
     },
     ["reload_empty"] = {
@@ -373,7 +411,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		RefillProgress = 0.675,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.5,
 		--EjectAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -390,6 +428,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 1.5},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 2.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 2.333},
+			{hide = 4, t = 0},
+			{hide = 5, t = 0.5},
+			{hide = 6, t = 0.8},
         },
     },
     ["reload_empty_fast"] = {
@@ -397,7 +438,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.4,
 		--EjectAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -413,6 +454,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_fast_shellsin_01.ogg", t = 1.033},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 1.533},
             {s = path .. "wfoly_plr_sh_charlie725_reload_empty_fast_end.ogg", t = 1.55},
+			{hide = 4, t = 0},
+			{hide = 5, t = 0.4},
+			{hide = 6, t = 0.7},
         },
     },
 	
@@ -421,7 +465,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		RefillProgress = 0.65,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.55,
 		--EjectAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -437,6 +481,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 1.267},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 1.733},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 2.2},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.55},
+			{hide = 2, t = 0.8},
         },
     },
     ["reload_fast_scope"] = {
@@ -444,7 +491,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.366,
 		--EjectAt = 0.65,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -460,6 +507,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_shellin_01.ogg", t = 0.933},
             {s = path .. "wfoly_plr_sh_charlie725_reload_end.ogg", t = 1.367},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_close_01.ogg", t = 1.4},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.366},
+			{hide = 2, t = 0.7},
         },
     },
     ["reload_empty_scope"] = {
@@ -467,7 +517,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		RefillProgress = 0.675,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.5,
 		--EjectAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -484,6 +534,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_shellsin_v2_02.ogg", t = 1.5},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 2.0},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_end.ogg", t = 2.333},
+			{hide = 4, t = 0},
+			{hide = 5, t = 0.5},
+			{hide = 6, t = 0.8},
         },
     },
     ["reload_empty_fast_scope"] = {
@@ -491,7 +544,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		RefillProgress = 0.725,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.4,
 		--EjectAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -507,6 +560,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_fast_shellsin_01.ogg", t = 1.033},
 			{s = path .. "wfoly_plr_sh_charlie725_reload_empty_close_01.ogg", t = 1.533},
             {s = path .. "wfoly_plr_sh_charlie725_reload_empty_fast_end.ogg", t = 1.55},
+			{hide = 4, t = 0},
+			{hide = 5, t = 0.4},
+			{hide = 6, t = 0.7},
         },
     },
     ["ready"] = {

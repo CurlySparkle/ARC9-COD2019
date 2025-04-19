@@ -319,10 +319,24 @@ SWEP.BulletBones = {
 }
 
 --SWEP.ReloadHideBonesFirstPerson = true
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
 }
 
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag2",
+    },
+    [2] = {
+        "j_mag1",
+		"j_shell01",
+    },
+	[3] = {
+        "j_mag2",
+        "j_mag1",
+		"j_shell01",
+    }
+}
 
 SWEP.Animations = {
     ["fire"] = {
@@ -348,6 +362,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_magin_v2_01.ogg", t = 1.033},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_magin_v2_02.ogg", t = 1.333},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_end.ogg", t = 1.567},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1.8},
+			{hide = 1, t = 2.26},
         },
     },
     ["reload_empty"] = {
@@ -356,7 +374,7 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		PeekProgress = 0.55,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.65,
 		MagSwapTime = 0.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -373,6 +391,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_hands.ogg", t = 1.833},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_charge_01.ogg", t = 2.467},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 2.767},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 3.13},
         },
     },
     ["reload_fast"] = {
@@ -394,6 +415,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_magout_01.ogg", t = 0.35},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_magin_01.ogg", t = 1.033},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_end.ogg", t = 1.267},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.7},
+			{hide = 1, t = 1.96},
         },
     },
     ["reload_fast_empty"] = {
@@ -402,7 +426,7 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		PeekProgress = 0.85,
 		FireASAP = true,
-		DropMagAt = 0.7,
+		DropMagAt = 0.65,
 		MagSwapTime = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -418,6 +442,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_magin_v2_02.ogg", t = 1.1},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_xmag_charge_01.ogg", t = 1.333},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_end.ogg", t = 1.5},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 2.06},
         },
     },
     ["reload_xmag"] = {
@@ -439,6 +466,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_magin_v2_02.ogg", t = 40/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_end.ogg", t = 49/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_pull.ogg", t = 51/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1.8},
+			{hide = 1, t = 2.26},
         },
     },
     ["reload_xmag_empty"] = {
@@ -447,7 +478,7 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		PeekProgress = 0.55,
 		FireASAP = true,
-		DropMagAt = 0.7,
+		DropMagAt = 0.65,
 		MagSwapTime = 0.9,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -464,6 +495,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_tilt.ogg", t = 53/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_charge_01.ogg", t = 73/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 87/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 3.133},
         },
     },
     ["reload_xmag_fast"] = {
@@ -472,7 +506,7 @@ SWEP.Animations = {
 		RefillProgress = 0.55,
 		PeekProgress = 0.85,
 		FireASAP = true,
-		DropMagAt = 0.7,
+		--DropMagAt = 0.7,
 		MagSwapTime = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -485,6 +519,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magout_01.ogg", t = 7/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_01.ogg", t = 25/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 48/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 1.4},
+			{hide = 1, t = 1.96},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -493,7 +531,7 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		PeekProgress = 0.85,
 		FireASAP = true,
-		DropMagAt = 0.7,
+		DropMagAt = 0.65,
 		MagSwapTime = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -507,6 +545,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_02.ogg", t = 34/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_charge_01.ogg", t = 40/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 52/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 2.035},
         },
     },
     ["reload_drum"] = {
@@ -515,6 +556,7 @@ SWEP.Animations = {
 		RefillProgress = 0.525,
 		PeekProgress = 0.85,
 		FireASAP = true,
+		DropMagAt = 0.6,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -527,6 +569,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_drumin_01.ogg", t = 32/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_magin_v2_02.ogg", t = 48/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_end.ogg", t = 56/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.6},
+			{hide = 1, t = 2.366},
         },
     },
     ["reload_drum_empty"] = {
@@ -552,6 +597,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_tilt.ogg", t = 53/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_charge_01.ogg", t = 74/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_end.ogg", t = 87/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.6},
+			{hide = 1, t = 3.1},
         },
     },
     ["reload_drum_fast"] = {
@@ -573,6 +621,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_drumout_01.ogg", t = 8/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_drumin_01.ogg", t = 27/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_fast_drum_end.ogg", t = 45/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.55},
+			{hide = 1, t = 0.65},
         },
     },
     ["reload_drum_fast_empty"] = {
@@ -596,6 +647,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_tilt.ogg", t = 33/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_charge_01.ogg", t = 39/30},
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_fast_drum_end.ogg", t = 45/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.5},
+			{hide = 1, t = 0.65},
         },
     },
     ["ready"] = {

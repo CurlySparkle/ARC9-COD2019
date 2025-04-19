@@ -283,7 +283,7 @@ SWEP.DistantShootSoundSilencedIndoor = "Distant_ShotgunSUP.Inside"
 SWEP.EnterSightsSound = path .. "wfoly_sh_dpapa12_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_sh_dpapa12_ads_down.ogg"
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_shell",
     [2] = "j_fired_shell",
     [3] = "j_group2_fired_shell02",
@@ -291,6 +291,41 @@ SWEP.HideBones  = {
     [5] = "j_group2_shell03",
     [6] = "j_group2_shell04",
     [7] = "j_group2_shell05",
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_shell",
+		"j_fired_shell",
+		"j_group2_fired_shell02",
+		"j_group2_shell02",
+		"j_group2_shell03",
+		"j_group2_shell04",
+		"j_group2_shell05"
+    },
+    [2] = {
+		"j_fired_shell",
+		"j_group2_fired_shell02",
+		"j_group2_shell03",
+		"j_group2_shell04",
+		"j_group2_shell05"
+    },
+	[3] = {
+		"j_shell",
+		"j_fired_shell",
+		"j_group2_fired_shell02",
+		"j_group2_shell03",
+		"j_group2_shell04",
+		"j_group2_shell05"
+    },
+	[4] = {
+		"j_fired_shell",
+		"j_group2_fired_shell02",
+		"j_group2_shell02",
+		"j_group2_shell03",
+		"j_group2_shell04",
+		"j_group2_shell05"
+    }
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -328,6 +363,11 @@ SWEP.Animations = {
 			{s = "COD2019.R90.ShellIn", t = 20/30},
 			{s = path .. "wfoly_sh_dpapa12_reload_loop_cloth.ogg", t = 20/30},
 			{s = "COD2019.R90.ShellIn", t = 33/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.66},
+			{hide = 3, t = 0.8},
+			{hide = 2, t = 1},
+			{hide = 4, t = 1.2},
         },
     },
     ["reload_start"] = {
@@ -341,6 +381,11 @@ SWEP.Animations = {
             {s = path .. "wfoly_sh_dpapa12_reload_start_rotate.ogg", t = 0/30},
 			{s = "COD2019.R90.ShellIn", t = 20/30},
 			{s = path .. "wfoly_sh_dpapa12_reload_loop_cloth.ogg", t = 20/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.66},
+			{hide = 3, t = 0.86},
+			{hide = 2, t = 1.03},
+			{hide = 4, t = 1.2},
         },
     },
     ["reload_insert"] = {
@@ -355,6 +400,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_dpapa12_reload_loop_cloth.ogg", t = 4/30},
 			{s = "COD2019.R90.ShellIn", t = 17/30},
 			{s = path .. "wfoly_sh_dpapa12_reload_loop_cloth.ogg", t = 17/30},
+			{hide = 4, t = 0},
+			{hide = 2, t = 0.2},
+			{hide = 3, t = 0.4},
+			{hide = 1, t = 0.73},
         },
     },
     ["reload_finish"] = {
@@ -370,7 +419,6 @@ SWEP.Animations = {
     },
     ["reload_finish_empty"] = {
         Source = "reload_end_empty",
-		EjectAt = 0.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.5, lhik = 1, rhik = 1 },
@@ -379,6 +427,8 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sh_dpapa12_reload_empty_end_rotate.ogg", t = 0/30},
 			{s = "COD2019.R90.Rechamber_Empty", t = 9/30},
+			{shelleject = true, att = 2, t = 0.5},
+			{shelleject = true, att = 2, t = 0.5},
         },
     },
     ["ready"] = {

@@ -304,16 +304,27 @@ SWEP.DistantShootSoundSilencedIndoor = "Distant_ShotgunSUP.Inside"
 SWEP.EnterSightsSound = path .. "wfoly_sh_mark26_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_sh_mark26_ads_down.ogg"
 
-SWEP.HideBones  = {
-    [1] = "j_mag2",
-}
-
 SWEP.BulletBones = {
     [1] = "j_shell_01",
     [2] = "j_shell_02",
     [3] = "j_shell_03",
 }
 
+SWEP.HideBones = {
+    [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag2",
+    },
+    [2] = {
+        "j_mag2",
+        "j_mag1",
+		"j_shell_01",
+		"j_shell_02"
+    }
+}
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
@@ -364,6 +375,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 35/30},
 			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 51/30},
 			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.7},
+			{hide = 1, t = 0.9},
         },
     },
     ["reload_empty"] = {
@@ -391,6 +405,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_empty_rotate.ogg", t = 68/30},
 			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_forward.ogg", t = 80/30},
 			{s = path .. "wfoly_sh_mark26_reload_empty_end.ogg", t = 95/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.95},
+			{hide = 1, t = 1.25},
         },
     },
     ["reload_fast"] = {
@@ -399,7 +416,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		PeekProgress = 0.875,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.55,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -412,6 +429,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_fast_maghit.ogg", t = 1.067},
 			{s = path .. "wfoly_sh_mark26_reload_fast_magin.ogg", t = 1.333},
 			{s = path .. "wfoly_sh_mark26_reload_fast_end.ogg", t = 1.667},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.55},
+			{hide = 1, t = 0.7},
         },
     },
     ["reload_fast_empty"] = {
@@ -421,7 +441,7 @@ SWEP.Animations = {
 		PeekProgress = 0.925,
 		FireASAP = true,
 		EjectAt = 0.15,
-		DropMagAt = 0.75,
+		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -436,6 +456,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_empty_fast_rotate.ogg", t = 1.7},
 			{s = path .. "wfoly_sh_mark26_reload_empty_fast_bolt_forward.ogg", t = 2.067},
 			{s = path .. "wfoly_sh_mark26_reload_empty_fast_end.ogg", t = 2.4},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.7},
+			{hide = 1, t = 0.9},
         },
     },
     ["reload_xmag"] = {
@@ -456,6 +479,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 35/30},
 			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 51/30},
 			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.7},
+			{hide = 1, t = 1},
         },
     },
     ["reload_xmag_empty"] = {
@@ -483,6 +509,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_empty_rotate.ogg", t = 68/30},
 			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_forward.ogg", t = 80/30},
 			{s = path .. "wfoly_sh_mark26_reload_empty_end.ogg", t = 95/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.95},
+			{hide = 1, t = 1.25},
         },
     },
     ["reload_xmag_fast"] = {
@@ -491,7 +520,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		PeekProgress = 0.875,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -504,6 +533,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_fast_maghit.ogg", t = 1.067},
 			{s = path .. "wfoly_sh_mark26_reload_fast_magin.ogg", t = 1.333},
 			{s = path .. "wfoly_sh_mark26_reload_fast_end.ogg", t = 1.667},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 0.65},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -513,7 +545,7 @@ SWEP.Animations = {
 		PeekProgress = 0.925,
 		FireASAP = true,
 		EjectAt = 0.15,
-		DropMagAt = 0.75,
+		DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -528,6 +560,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_empty_fast_rotate.ogg", t = 1.7},
 			{s = path .. "wfoly_sh_mark26_reload_empty_fast_bolt_forward.ogg", t = 2.067},
 			{s = path .. "wfoly_sh_mark26_reload_empty_fast_end.ogg", t = 2.4},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.7},
+			{hide = 1, t = 0.9},
         },
     },
     ["reload_smag"] = {
@@ -548,6 +583,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_maghit.ogg", t = 35/30},
 			{s = path .. "wfoly_sh_mark26_reload_magin.ogg", t = 51/30},
 			{s = path .. "wfoly_sh_mark26_reload_end.ogg", t = 55/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.7},
+			{hide = 1, t = 0.9},
         },
     },
     ["reload_smag_empty"] = {
@@ -575,6 +613,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_empty_rotate.ogg", t = 68/30},
 			{s = path .. "wfoly_sh_mark26_reload_empty_bolt_forward.ogg", t = 80/30},
 			{s = path .. "wfoly_sh_mark26_reload_empty_end.ogg", t = 95/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.95},
+			{hide = 1, t = 1.25},
         },
     },
     ["reload_smag_fast"] = {
@@ -583,7 +624,7 @@ SWEP.Animations = {
 		RefillProgress = 0.725,
 		PeekProgress = 0.875,
 		FireASAP = true,
-		DropMagAt = 0.6,
+		DropMagAt = 0.55,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -596,6 +637,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_fast_maghit.ogg", t = 1.067},
 			{s = path .. "wfoly_sh_mark26_reload_fast_magin.ogg", t = 1.333},
 			{s = path .. "wfoly_sh_mark26_reload_fast_end.ogg", t = 1.667},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.55},
+			{hide = 1, t = 0.7},
         },
     },
     ["reload_smag_fast_empty"] = {
@@ -620,6 +664,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_mark26_reload_empty_fast_rotate.ogg", t = 1.7},
 			{s = path .. "wfoly_sh_mark26_reload_empty_fast_bolt_forward.ogg", t = 2.067},
 			{s = path .. "wfoly_sh_mark26_reload_empty_fast_end.ogg", t = 2.4},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.7},
+			{hide = 1, t = 0.9},
         },
     },
     ["ready"] = {

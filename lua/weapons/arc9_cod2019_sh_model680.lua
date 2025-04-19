@@ -333,9 +333,23 @@ SWEP.TriggerDelayTime = 0.01 -- Time until weapon fires.
 SWEP.TriggerDownSound = "weapons/cod2019/origin12/weap_oscar12_fire_first_plr_01.ogg"
 SWEP.TriggerUpSound = "weapons/cod2019/model680/weap_romeo870_disconnector_plr_01.ogg"
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_shell",
     [2] = "j_shell_fired",
+	[3] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_shell",
+		"j_shell_fired"
+    },
+    [2] = {
+        "j_shell"
+    },
+	[3] = {
+        "j_shell_fired",
+    }
 }
 
 SWEP.Animations = {
@@ -364,6 +378,8 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0.0},
 			{s = path .. "wfoly_sh_romeo870_reload_start_shellin_01.ogg", t = 0.533},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.3},
         },
     },
     ["reload_insert"] = {
@@ -376,6 +392,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0.0},
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportend.ogg", t = 0.3},
             {s = "COD2019.Model680.ShellIn", t = 0.333},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.27},
         },
     },
     ["reload_finish"] = {
@@ -419,6 +437,8 @@ SWEP.Animations = {
         EventTable = {
             {s = path .. "wfoly_sh_romeo870_reload_start_fast_twist.ogg", t = 0},
             {s = path .. "wfoly_sh_romeo870_reload_start_fast_shellin_01.ogg", t = 0.5},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
         },
     },
     ["reload_insert_fast"] = {
@@ -430,6 +450,8 @@ SWEP.Animations = {
         EventTable = {
 			{s = path .. "wfoly_sh_romeo870_reload_loop_loadportstart.ogg", t = 0},
             {s = "COD2019.Model680.ShellIn", t = 0.267},
+			{hide = 2, t = 0},
+			{hide = 0, t = 0.2},
         },
     },
     ["reload_finish_fast"] = {
@@ -485,6 +507,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_maghit.ogg", t = 1.533},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_magin.ogg", t = 1.967},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_end.ogg", t = 2.1},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 1.2},
         },
     },
     ["reload_empty"] = {
@@ -494,7 +519,7 @@ SWEP.Animations = {
 		PeekProgress = 0.9,
 		FireASAP = true,
 		EjectAt = 0.2,
-		DropMagAt = 1.25,
+		DropMagAt = 1.15,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.125, lhik = 1, rhik = 1 },
@@ -511,6 +536,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_magin.ogg", t = 2.2},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_chamber.ogg", t = 2.5},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_end.ogg", t = 3.0},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.15},
+			{hide = 1, t = 1.4},
         },
     },
     ["reload_mag_fast"] = {
@@ -519,7 +547,7 @@ SWEP.Animations = {
 		RefillProgress = 0.7,
 		PeekProgress = 0.825,
 		FireASAP = true,
-		DropMagAt = 0.65,
+		DropMagAt = 0.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -532,6 +560,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magup.ogg", t = 0.733},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_magin.ogg", t = 1.0},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_fast_end.ogg", t = 1.467},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.5},
+			{hide = 1, t = 0.7},
         },
     },
     ["reload_mag_empty_fast"] = {
@@ -541,7 +572,7 @@ SWEP.Animations = {
 		PeekProgress = 0.9,
 		FireASAP = true,
 		EjectAt = 0.2,
-		DropMagAt = 0.9,
+		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.125, lhik = 1, rhik = 1 },
@@ -556,6 +587,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_sh_romeo870_caldb_reload_empty_fast_magin.ogg", t = 1.267},
             {s = path .. "wfoly_sh_romeo870_caldb_reload_empty_fast_chamber.ogg", t = 1.833},
 			{s = path .. "wfoly_sh_romeo870_caldb_reload_empty_fast_end.ogg", t = 2.067},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 1},
         },
     },
     ["ready"] = {
