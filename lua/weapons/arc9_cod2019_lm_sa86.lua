@@ -339,8 +339,25 @@ SWEP.BulletBones = {
 	[4] = {"j_bullet04","j_magextbullet04"}
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables = {
+	[1] = {
+		"j_mag2"
+	},
+	[2] = {
+		"j_mag1",
+		"j_bullet1",
+		"j_bullet2"
+	},
+	[3] = {
+		"j_mag2",
+		"j_mag1",
+		"j_bullet1",
+		"j_bullet2"
+	}
 }
 
 SWEP.TriggerDelay = 0.15 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -383,6 +400,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_lima86_reload_magin_v2_01.ogg", t = 56/30},
 			{s = path .. "wfoly_lm_lima86_reload_magin_v2_02.ogg", t = 70/30},
 			{s = path .. "wfoly_lm_lima86_reload_end_01.ogg", t = 87/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.1},
+			{hide = 1, t = 1.5},
         },
     },
     ["reload_empty"] = {
@@ -391,7 +411,7 @@ SWEP.Animations = {
 		PeekProgress = 0.8,
 		FireASAP = true,
 		RefillProgress = 0.725,
-		DropMagAt = 1.25,
+		DropMagAt = 1.2,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.15, lhik = 0, rhik = 0 },
@@ -406,6 +426,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_lima86_reload_empty_rotate.ogg", t = 75/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_charge_01.ogg", t = 93/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_end.ogg", t = 75/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.2},
+			{hide = 1, t = 1.5},
         },
     },
     ["reload_fast"] = {
@@ -428,6 +451,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_lima86_reload_fast_magin_v2_01.ogg", t = 38/30},
 			{s = path .. "wfoly_lm_lima86_reload_fast_magin_v2_02.ogg", t = 47/30},
 			{s = path .. "wfoly_lm_lima86_reload_fast_end.ogg", t = 54/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 1.1},
         },
     },
     ["reload_fast_empty"] = {
@@ -450,6 +476,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_lima86_reload_empty_fast_magin_v2_02.ogg", t = 47/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_fast_charge_01.ogg", t = 59/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_fast_end.ogg", t = 71/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 1.1},
         },
     },
     ["reload_xmag"] = {
@@ -458,7 +487,6 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.675,
 		MagSwapTime = 3.5,
-		DropMagAt = 1.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -472,6 +500,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_lima86_reload_magin_v2_01.ogg", t = 56/30},
 			{s = path .. "wfoly_lm_lima86_reload_magin_v2_02.ogg", t = 70/30},
 			{s = path .. "wfoly_lm_lima86_reload_end_01.ogg", t = 87/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.1},
+			{hide = 1, t = 1.5},
         },
     },
     ["reload_xmag_empty"] = {
@@ -494,6 +525,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_lima86_reload_empty_rotate.ogg", t = 75/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_charge_01.ogg", t = 93/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_end.ogg", t = 75/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.2},
+			{hide = 1, t = 1.5},
         },
     },
     ["reload_xmag_fast"] = {
@@ -502,7 +536,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.65,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.85,
+		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.15, lhik = 0, rhik = 0 },
@@ -515,6 +549,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_lima86_reload_fast_magin_v2_01.ogg", t = 38/30},
 			{s = path .. "wfoly_lm_lima86_reload_fast_magin_v2_02.ogg", t = 47/30},
 			{s = path .. "wfoly_lm_lima86_reload_fast_end.ogg", t = 54/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 1.1},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -522,7 +559,7 @@ SWEP.Animations = {
 		MinProgress = 0.9,
 		FireASAP = true,
 		RefillProgress = 0.7,
-		DropMagAt = 0.85,
+		DropMagAt = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -536,6 +573,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_lima86_reload_empty_fast_magin_v2_02.ogg", t = 47/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_fast_charge_01.ogg", t = 59/30},
 			{s = path .. "wfoly_lm_lima86_reload_empty_fast_end.ogg", t = 71/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 1.1},
         },
     },
     ["ready"] = {

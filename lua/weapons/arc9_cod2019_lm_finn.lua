@@ -381,8 +381,38 @@ SWEP.BulletBones = {
 	[16] = "j_bullet016",
 }
 
-SWEP.HideBones  = {
-    [1] = "j_mag2",
+SWEP.HideBones = {
+    [1] =	"j_mag2",
+	[2] =	"j_bulletlinkempty01",
+	[3] =	"j_bulletlinkempty02",
+	[4] =	"j_bulletlinkempty03"
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag2",
+		"j_bulletlinkempty01",
+		"j_bulletlinkempty02",
+		"j_bulletlinkempty03"
+    },
+	[2] = {
+        "j_mag2",
+		"j_mag1",
+		"j_bulletlinkempty01",
+		"j_bulletlinkempty02",
+		"j_bulletlinkempty03",
+		"j_bullet01",
+		"j_bullet02",
+		"j_bullet03",
+		"j_bullet04",
+		"j_bullet05",
+		"j_bullet06",
+		"j_bullet07",
+		"j_bullet08",
+		"j_bullet09",
+		"j_bullet010",
+		"j_bullet011",
+    }
 }
 
 SWEP.TriggerDelay = 0.05 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -428,6 +458,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_bullets.ogg", t = 114/30},
 			{s = path .. "wfoly_lm_sierrax_reload_closecover.ogg", t = 143/30},
 			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 152/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 2},
+			{hide = 1, t = 2.4},
         },
     },
     ["reload_empty"] = {
@@ -436,7 +469,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.825,
 		MagSwapTime = 3,
-		DropMagAt = 3.5,
+		DropMagAt = 3.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.05, lhik = 1, rhik = 0 },
@@ -456,6 +489,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_empty_bullets.ogg", t = 147/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_coverclose.ogg", t = 184/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_end.ogg", t = 192/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 3.4},
+			{hide = 1, t = 3.8},
         },
     },
     ["reload_fast"] = {
@@ -464,7 +500,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.775,
 		MagSwapTime = 2,
-		DropMagAt = 1.1,
+		DropMagAt = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.05, lhik = 0, rhik = 0 },
@@ -480,6 +516,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_fast_bullets.ogg", t = 77/30},
 			{s = path .. "wfoly_lm_sierrax_reload_fast_coverclose.ogg", t = 107/30},
 			{s = path .. "wfoly_lm_sierrax_reload_fast_end.ogg", t = 117/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.5},
         },
     },
     ["reload_fast_empty"] = {
@@ -506,6 +545,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_beltpull.ogg", t = 100/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_coverclose.ogg", t = 129/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_end.ogg", t = 131/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.9},
+			{hide = 1, t = 2.3},
         },
     },
     ["ready"] = {
@@ -705,6 +747,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_bullets.ogg", t = 114/30},
 			{s = path .. "wfoly_lm_sierrax_reload_closecover.ogg", t = 143/30},
 			{s = path .. "wfoly_lm_sierrax_reload_end.ogg", t = 152/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 2},
+			{hide = 1, t = 2.4},
         },
     },
     ["reload_empty_saw"] = {
@@ -713,7 +758,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.85,
 		MagSwapTime = 3,
-		DropMagAt = 3.5,
+		DropMagAt = 3.4,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -732,6 +777,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_empty_bullets.ogg", t = 147/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_coverclose.ogg", t = 185/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_end.ogg", t = 192/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 3.4},
+			{hide = 1, t = 3.8},
         },
     },
     ["reload_fast_saw"] = {
@@ -740,7 +788,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.775,
 		MagSwapTime = 2,
-		DropMagAt = 1.1,
+		DropMagAt = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -756,6 +804,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_fast_bullets.ogg", t = 77/30},
 			{s = path .. "wfoly_lm_sierrax_reload_fast_coverclose.ogg", t = 107/30},
 			{s = path .. "wfoly_lm_sierrax_reload_fast_end.ogg", t = 117/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.5},
         },
     },
     ["reload_fast_empty_saw"] = {
@@ -782,6 +833,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_beltpull.ogg", t = 100/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_coverclose.ogg", t = 129/30},
 			{s = path .. "wfoly_lm_sierrax_reload_empty_fast_end.ogg", t = 131/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.9},
+			{hide = 1, t = 2.3},
         },
     },
     ["ready_saw"] = {

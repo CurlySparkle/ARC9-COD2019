@@ -340,8 +340,31 @@ SWEP.BulletBones = {
 	[3] = "j_bullet3",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables = {
+	[1] = {
+		"j_mag2"
+	},
+	[2] = {
+		"j_mag1",
+		"j_drummag_follower",
+		"j_drummag_release",
+		"j_bullet1",
+		"j_bullet2",
+		"j_bullet3"
+	},
+	[3] = {
+		"j_mag2",
+		"j_mag1",
+		"j_drummag_follower",
+		"j_drummag_release",
+		"j_bullet1",
+		"j_bullet2",
+		"j_bullet3"
+	}
 }
 
 SWEP.TriggerDelay = 0.015 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -378,12 +401,15 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_drum_in.ogg", t = 76/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_drum_smack.ogg", t = 86/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_end.ogg", t = 97/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.1},
+			{hide = 1, t = 1.5},
         },
     },
     ["reload_empty"] = {
         Source = "reload",
 		MinProgress = 0.9,
-		DropMagAt = 1.2,
+		DropMagAt = 1.1,
 		RefillProgress = 0.8,
 		PeekProgress = 0.85,
 		FireASAP = true,
@@ -402,6 +428,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_bolt_lever.ogg", t = 103/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_charge.ogg", t = 107/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_end.ogg", t = 121/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 1.1},
+			{hide = 1, t = 1.5},
         },
     },
     ["reload_fast"] = {
@@ -409,7 +438,7 @@ SWEP.Animations = {
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
 		RefillProgress = 0.65,
-		DropMagAt = 0.86,
+		DropMagAt = 0.85,
 		FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -423,6 +452,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_fast_drum_mag_hit_well.ogg", t = 40/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_fast_drum_magin.ogg", t = 49/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_fast_end.ogg", t = 53/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.85},
+			{hide = 1, t = 0.9},
         },
     },
     ["reload_fast_empty"] = {
@@ -446,6 +478,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_fast_drum_magin.ogg", t = 48/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_fast_charge.ogg", t = 62/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_fast_end.ogg", t = 76/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 0.9},
         },
     },
     ["reload_ar"] = {
@@ -467,12 +502,16 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_hit_mag_well.ogg", t = 41/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_magin.ogg", t = 48/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_armag_end.ogg", t = 70/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.53},
+			{hide = 2, t = 2.08},
+			{hide = 1, t = 2.496},
         },
     },
     ["reload_empty_ar"] = {
         Source = "reload_armag2_empty",
 		MinProgress = 0.9,
-		--DropMagAt = 1.05,
+		DropMagAt = 2.08,
 		RefillProgress = 0.725,
 		PeekProgress = 0.825,
 		MagSwapTime = 1.7,
@@ -490,13 +529,17 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_magin.ogg", t = 49/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_charge.ogg", t = 74/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_armag_end.ogg", t = 99/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.53},
+			{hide = 2, t = 2.08},
+			{hide = 1, t = 2.263},
         },
     },
     ["reload_ar_fast"] = {
         Source = "reload_armag2_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.85,
+		DropMagAt = 0.8,
 		RefillProgress = 0.55,
 		FireASAP = true,
         IKTimeLine = {
@@ -511,12 +554,15 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_fast_armag_mag_well_hit.ogg", t = 30/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_fast_armag_magin.ogg", t = 41/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_fast_armag_end.ogg", t = 54/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 1.1},
         },
     },
     ["reload_ar_fast_empty"] = {
         Source = "reload_armag2_fast_empty",
 		MinProgress = 0.9,
-		DropMagAt = 0.8,
+		DropMagAt = 0.7,
 		RefillProgress = 0.6,
 		PeekProgress = 0.825,
 		FireASAP = true,
@@ -533,6 +579,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_fast_armag_magin.ogg", t = 41/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_fast_armag_bolt_release.ogg", t = 59/30},
 			{s = path .. "wfoly_lm_mgolf36_reload_empty_fast_armag_end.ogg", t = 69/30},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.7},
+			{hide = 1, t = 0.9},
         },
     },
     ["ready"] = {

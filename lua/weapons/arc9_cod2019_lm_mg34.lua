@@ -346,10 +346,31 @@ SWEP.BulletBones = {
 	[5] = "j_bullet_05",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
     [2] = "j_mag_lever_secondary",
     [3] = "j_mag_handle_secondary",
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag2",
+		"j_mag_lever_secondary",
+		"j_mag_handle_secondary",
+    },
+	[2] = {
+        "j_mag2",
+		"j_mag1",
+		"j_bullet_01",
+		"j_bullet_02",
+		"j_bullet_03",
+		"j_bullet_04",
+		"j_bullet_05",
+		"j_mag_lever",
+		"j_mag_handle",
+		"j_mag_lever_secondary",
+		"j_mag_handle_secondary"
+    },
 }
 
 SWEP.TriggerDelay = 0.15 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -405,6 +426,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_raise.ogg", t = 250/30},
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_pull.ogg", t = 247/30},
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_end.ogg", t = 263/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 4},
+			{hide = 1, t = 4.7},
         },
     },
     ["reload_empty"] = {
@@ -436,6 +460,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_end.ogg", t = 232/30},
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_hands.ogg", t = 250/30},
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_pull.ogg", t = 255/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 4},
+			{hide = 1, t = 4.7},
         },
     },
     ["reload_fast"] = {
@@ -444,7 +471,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.835,
 		MagSwapTime = 2.5,
-		DropMagAt = 3.5,
+		DropMagAt = 3.3,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.35, lhik = 1, rhik = 0 },
@@ -466,6 +493,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_fast_belt_01.ogg", t = 149/30},
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_fast_coverclose_01.ogg", t = 171/30},
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_fast_end.ogg", t = 172/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 3.3},
+			{hide = 1, t = 3.6},
         },
     },
     ["reload_fast_empty"] = {
@@ -474,7 +504,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.815,
 		MagSwapTime = 2.5,
-		DropMagAt = 3.5,
+		DropMagAt = 3.3,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.35, lhik = 1, rhik = 0 },
@@ -497,6 +527,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_fast_belt_01.ogg", t = 148/30},
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_fast_coverclose_01.ogg", t = 170/30},
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_fast_end.ogg", t = 171/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 3.3},
+			{hide = 1, t = 3.6},
         },
     },
     ["ready"] = {

@@ -324,12 +324,6 @@ SWEP.DistantShootSoundSilencedIndoor = "Distant_AR_Sup.Inside"
 SWEP.EnterSightsSound = "weapons/cod2019/pkm/wfoly_lm_pkilo_ads_up.ogg"
 SWEP.ExitSightsSound = "weapons/cod2019/pkm/wfoly_lm_pkilo_ads_down.ogg"
 
-SWEP.ReloadHideBoneTables = {
-    [1] = {
-        "j_mag1",
-    },
-}
-
 SWEP.BulletBones = {
     [8] = "j_b_01",
     [7] = "j_b_02",
@@ -341,8 +335,48 @@ SWEP.BulletBones = {
 	[1] = "j_b_08",
 }
 
-SWEP.HideBones  = {
+SWEP.HideBones = {
     [1] = "j_mag2",
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag2",
+    },
+	[2] = {
+        "j_mag2",
+		"j_mag1",
+		"j_mag1_rattler",
+		"j_ammoboxflap",
+		"j_box_lever",
+		"j_b_01",
+		"j_b_02",
+		"j_b_03",
+		"j_b_04",
+		"j_b_05",
+		"j_b_06",
+		"j_b_07",
+		"j_b_08",
+		"j_b_09",
+		"j_b_10",
+		"j_b_11",
+		"j_b_12",
+		"j_b_13",
+		"j_b_14",
+		"j_b_15",
+		"j_b_16"
+    },
+	[3] = {
+        "j_mag2",
+		"j_b_09",
+		"j_b_10",
+		"j_b_11",
+		"j_b_12",
+		"j_b_13",
+		"j_b_14",
+		"j_b_15",
+		"j_b_16"
+    },
 }
 
 SWEP.TriggerDelay = 0.15 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -392,6 +426,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_cover_close.ogg", t = 202/30},
 			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_load_charge.ogg", t = 221/30},
 			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_end.ogg", t = 244/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 3.7},
+			{hide = 1, t = 4.5},
         },
     },
     ["reload_empty"] = {
@@ -420,6 +457,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_cover_close.ogg", t = 202/30},
 			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_load_charge.ogg", t = 221/30},
 			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_end.ogg", t = 244/30},
+			{hide = 3, t = 0},
+			{hide = 2, t = 3.7},
+			{hide = 1, t = 4.5},
         },
     },
     ["reload_fast"] = {
@@ -447,6 +487,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_pkilo_reload_fast_cover_close.ogg", t = 136/30},
 			{s = path .. "wfoly_plr_lm_pkilo_reload_fast_load_charge.ogg", t = 151/30},
 			{s = path .. "wfoly_plr_lm_pkilo_reload_fast_end.ogg", t = 177/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 2.8},
+			{hide = 1, t = 3},
         },
     },
     ["reload_fast_empty"] = {
@@ -474,6 +517,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_fast_cover_close.ogg", t = 137/30},
 			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_fast_load_charge.ogg", t = 151/30},
 			{s = path .. "wfoly_plr_lm_pkilo_reload_empty_fast_end.ogg", t = 173/30},
+			{hide = 3, t = 0},
+			{hide = 2, t = 2.8},
+			{hide = 1, t = 3},
         },
     },
     ["ready"] = {
