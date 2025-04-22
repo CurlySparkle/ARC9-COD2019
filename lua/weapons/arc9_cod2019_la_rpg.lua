@@ -293,6 +293,12 @@ SWEP.BulletBones = {
     [1] = "j_mag1",
 }
 
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_mag1"
+    }
+}
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
@@ -321,6 +327,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_la_rpapa7_reload_lower.ogg", t = 1},
 			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 1.95},
 			{s = path .. "wfoly_la_rpapa7_reload_end.ogg", t = 1.85},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
         },
     },
     ["reload_fast"] = {
@@ -340,6 +348,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_magin.ogg", t = 0.44},
 			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 1.3},
 			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_end.ogg", t = 1},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.2},
         },
     },
     ["ready"] = {

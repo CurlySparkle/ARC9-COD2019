@@ -291,6 +291,12 @@ function SWEP:PrimaryAttack()
     end
 end
 
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_loose_round"
+    }
+}
+
 SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
@@ -305,7 +311,7 @@ SWEP.Animations = {
 		MinProgress = 0.95,
 		FireASAP = true,
 		RefillProgress = 0.8,
-		DropMagAt = 2.75,
+		DropMagAt = 2.6,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -324,6 +330,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_la_kgolf_reload_breechclose.ogg", t = 147/30},
 			{s = path .. "wfoly_la_kgolf_reload_breechclose2.ogg", t = 152/30},
 			{s = path .. "wfoly_la_kgolf_reload_end.ogg", t = 157/30},
+			{hide = 1, t = 2.6},
+			{hide = 0, t = 4.1},
         },
     },
     ["reload_fast"] = {
@@ -331,7 +339,7 @@ SWEP.Animations = {
 		MinProgress = 0.95,
 		FireASAP = true,
 		RefillProgress = 0.75,
-		DropMagAt = 1.5,
+		DropMagAt = 1.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -346,6 +354,8 @@ SWEP.Animations = {
 			{s = path .. "wfoly_la_kgolf_reload_fast_shellin.ogg", t = 70/30},
 			{s = path .. "wfoly_la_kgolf_reload_fast_breechclose.ogg", t = 74/30},
 			{s = path .. "wfoly_la_kgolf_reload_fast_end.ogg", t = 106/30},
+			{hide = 1, t = 1.45},
+			{hide = 0, t = 2.2},
         },
     },
     ["ready"] = {

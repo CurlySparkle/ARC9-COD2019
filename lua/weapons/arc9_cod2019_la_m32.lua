@@ -297,6 +297,51 @@ SWEP.HideBones  = {
     [8] = "j_speed_loader_nade05" 
 }
 
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "j_speed_loader",
+		"j_speed_loader_cylinder",
+		"j_speed_loader_nade00",
+		"j_speed_loader_nade01",
+		"j_speed_loader_nade02",
+		"j_speed_loader_nade03",
+		"j_speed_loader_nade04",
+		"j_speed_loader_nade05" 
+    },
+    [2] = {
+        "j_speed_loader",
+		"j_speed_loader_cylinder",
+		"j_speed_loader_nade00",
+		"j_speed_loader_nade01",
+		"j_speed_loader_nade02",
+		"j_speed_loader_nade03",
+		"j_speed_loader_nade04",
+		"j_speed_loader_nade05",
+        "j_grenade_01",
+        "j_grenade_02",
+        "j_grenade_03",
+        "j_grenade_04",
+        "j_grenade_05",
+        "j_grenade_06"
+    },
+	[3] = {
+        "j_grenade_01",
+        "j_grenade_02",
+        "j_grenade_03",
+        "j_grenade_04",
+        "j_grenade_05",
+        "j_grenade_06"
+    },
+	[4] = {
+		"j_speed_loader_nade00",
+		"j_speed_loader_nade01",
+		"j_speed_loader_nade02",
+		"j_speed_loader_nade03",
+		"j_speed_loader_nade04",
+		"j_speed_loader_nade05" 
+    }
+}
+
 SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
@@ -430,7 +475,7 @@ SWEP.Animations = {
 		MinProgress = 0.95,
 		FireASAP = true,
 		RefillProgress = 0.85,
-		DropMagAt = 0.85,
+		DropMagAt = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 1, rhik = 0 },
@@ -455,6 +500,12 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_la_mike32_reload_grab2.ogg", t = 134/30},
 			{s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 146/30},
 			{s = path .. "wfoly_plr_la_mike32_reload_end.ogg", t = 149/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1},
+			{hide = 3, t = 2.4},
+			{hide = 0, t = 3.05},
+			{hide = 4, t = 3.75},
+			{hide = 1, t = 4.3},
         },
     },
     ["reload_fast"] = {
@@ -487,6 +538,12 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_la_mike32_reload_grab2.ogg", t = 103/30},
 			{s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 117/30},
 			{s = path .. "wfoly_plr_la_mike32_reload_end.ogg", t = 119/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.7},
+			{hide = 3, t = 2},
+			{hide = 0, t = 2.33},
+			{hide = 4, t = 2.9},
+			{hide = 1, t = 3.45},
         },
     },
     ["ready"] = {
