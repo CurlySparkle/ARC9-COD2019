@@ -303,6 +303,7 @@ SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, -90)
+SWEP.DropMagazineVelocity = Vector(0, -45, 0)
 
 -------------------------- SOUNDS
 
@@ -768,9 +769,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 25/30},
             {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 37/30},
-			{hide = 0, t = 0},
-			{hide = 1, t = 1.325},
-			{hide = 0, t = 1.85}
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.26},
+			{hide = 2, t = 1.325}
         },
     },
     ["stock_reload_empty"] = {
@@ -779,7 +780,7 @@ SWEP.Animations = {
 		PeekProgress = 0.775,
 		RefillProgress = 0.75,
 		FireASAP = true,
-		DropMagAt = 0.5,
+		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -794,9 +795,9 @@ SWEP.Animations = {
             {s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 35/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 43/30},
-		    {hide = 0, t = 0},
-			{hide = 1, t = 0.5},
-			{hide = 0, t = 2}
+		    {hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.45}
         },
     },
     ["stock_reload_fast"] = {
@@ -818,9 +819,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 15/30},
             {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 20/30},
 			{s = path .. "wfoly_pi_golf21_reload_fast_end.ogg", t = 28/30},
-			{hide = 0, t = 0},
-			{hide = 1, t = 0.4},
-			{hide = 0, t = 1.8}
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.4},
         },
     },
     ["stock_reload_fast_empty"] = {
@@ -842,9 +843,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 22/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 25/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_end.ogg", t = 32/30},
-			{hide = 0, t = 0},
-			{hide = 1, t = 0.4},
-			{hide = 0, t = 1.8}
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.4},
         },
     },
     ["stock_reload_xmag"] = {
@@ -865,9 +866,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 25/30},
             {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 31/30},
 			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 37/30},
-			{hide = 0, t = 0},
-			{hide = 1, t = 1.375},
-			{hide = 0, t = 1.85}
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.26},
+			{hide = 2, t = 1.35},
+			{hide = 1, t = 1.6}
         },
     },
     ["stock_reload_xmag_empty"] = {
@@ -891,9 +893,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_pi_golf21_reload_empty_down.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 35/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 43/30},
-			{hide = 0, t = 0},
-			{hide = 1, t = 0.45},
-			{hide = 0, t = 2}
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.45},
+			{hide = 1, t = 1.533}
         },
     },
     ["stock_reload_xmag_fast"] = {
@@ -915,9 +918,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 15/30},
             {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 20/30},
 			{s = path .. "wfoly_pi_golf21_reload_fast_end.ogg", t = 28/30},
-			{hide = 0, t = 0},
-			{hide = 1, t = 0.4},
-			{hide = 0, t = 1.8}
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.4},
+			{hide = 1, t = 1.175},
         },
     },
     ["stock_reload_xmag_fast_empty"] = {
@@ -939,9 +943,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 22/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 25/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_end.ogg", t = 32/30},
-			{hide = 0, t = 0},
-			{hide = 1, t = 0.4},
-			{hide = 0, t = 1.8}
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.4},
+			{hide = 1, t = 1.175},
         },
     },
     ["stock_reload_xmaglrg"] = {
@@ -962,9 +967,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 23/30},
             {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 29/30},
 			{s = path .. "wfoly_pi_golf21_reload_end.ogg", t = 35/30},
-			{hide = 0, t = 0},
-			{hide = 1, t = 1.375},
-			{hide = 0, t = 1.85}
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.27},
+			{hide = 2, t = 1.375},
+			{hide = 1, t = 1.575},
         },
     },
     ["stock_reload_xmaglrg_empty"] = {
@@ -988,9 +994,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_raise.ogg", t = 29/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_chamber_01.ogg", t = 36/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_end.ogg", t = 47/30},
-			{hide = 0, t = 0},
-			{hide = 1, t = 0.45},
-			{hide = 0, t = 1.9}
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.45},
+			{hide = 1, t = 1.525},
         },
     },
     ["stock_reload_xmaglrg_fast"] = {
@@ -1012,9 +1019,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_pi_golf21_reload_magin_v2_01.ogg", t = 15/30},
             {s = path .. "wfoly_pi_golf21_reload_magin_v2_02.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_golf21_reload_fast_end.ogg", t = 27/30},
-			{hide = 0, t = 0},
-			{hide = 1, t = 0.4},
-			{hide = 0, t = 1.8}
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.4},
+			{hide = 1, t = 1.175},
         },
     },
     ["stock_reload_xmaglrg_fast_empty"] = {
@@ -1037,9 +1045,10 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_golf21_reload_empty_magin_v2_02.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_chamber_01.ogg", t = 23/30},
 			{s = path .. "wfoly_pi_golf21_reload_empty_fast_end.ogg", t = 32/30},
-			{hide = 0, t = 0},
-			{hide = 1, t = 0.4},
-			{hide = 0, t = 1.8}
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.4},
+			{hide = 1, t = 1.175},
         },
     },
     ["stock_ready"] = {
