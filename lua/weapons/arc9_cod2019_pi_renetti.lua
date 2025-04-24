@@ -310,6 +310,7 @@ SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, -90)
+SWEP.DropMagazineVelocity = Vector(0, -45, 0)
 
 -------------------------- SOUNDS
 

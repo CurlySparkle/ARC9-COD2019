@@ -344,7 +344,11 @@ SWEP.AttachmentTableOverrides = {
 			},
 		},
     },
-    ["cod2019_x16_mag_xmag2"] = {
+    ["cod2019_x16_mag_17"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_mag_xmags_akimbo.mdl",
+	ClipSizeOverride = 30
+    },
+	["cod2019_x16_mag_xmag2"] = {
     Model = "models/weapons/cod2019/attachs/weapons/x16/attachment_vm_pi_golf21_mag_xmags2_akimbo.mdl",
 	ClipSizeOverride = 39
     },

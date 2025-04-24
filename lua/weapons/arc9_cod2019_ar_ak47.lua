@@ -315,6 +315,7 @@ SWEP.DropMagazineQCAHook = function(swep, old)
   if curanim == "reload_drum2_empty" then return 5 end
   if curanim == "reload_drum2_fast" then return 5 end
   if curanim == "reload_drum2_fast_empty" then return 5 end
+  if curanim == "reload_xmag_empty" then return 5 end
   if curanim == "reload_xmag_fast" then return 5 end
   if curanim == "reload_xmag_fast_empty" then return 5 end
 end
