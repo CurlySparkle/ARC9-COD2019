@@ -1155,6 +1155,7 @@ SWEP.Animations = {
 		EventTable = {
             {s = pathubs .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0.0},
 			{s = pathubs .. "wfoly_sh_romeo870_reload_start_shellin_01.ogg", t = 0.55},
+			{hide = 1, t = 0},
 		}
 	},
     ["reload_ubgl_insert"] = {
@@ -1164,6 +1165,7 @@ SWEP.Animations = {
 		EventTable = {
             {s = pathubs .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0.0},
 			{s = pathubs .. "wfoly_sh_romeo870_reload_start_shellin_01.ogg", t = 0.533},
+			{hide = 1, t = 0},
 		}
 	},
     ["reload_ubgl_finish"] = {
@@ -1183,6 +1185,7 @@ SWEP.Animations = {
 		EventTable = {
             {s = pathubs .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0.0},
 			{s = pathubs .. "wfoly_sh_romeo870_reload_start_shellin_01.ogg", t = 0.533},
+			{hide = 1, t = 0},
 		}
 	},
     ["reload_ubgl_fast_insert"] = {
@@ -1193,6 +1196,7 @@ SWEP.Animations = {
 		EventTable = {
             {s = pathubs .. "wfoly_sh_romeo870_reload_start_twist.ogg", t = 0.0},
 			{s = pathubs .. "wfoly_sh_romeo870_reload_start_shellin_01.ogg", t = 0.33},
+			{hide = 1, t = 0},
 		}
 	},
     ["reload_ubgl_fast_finish"] = {
