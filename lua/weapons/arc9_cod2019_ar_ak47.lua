@@ -383,7 +383,13 @@ SWEP.ReloadHideBoneTables = {
 		"j_bullet2",
         "j_bullet_secondary",
         "j_bullet2_secondary",
-    }
+    },
+	[4] = {
+        "j_mag2",
+		"j_bullet_secondary",
+        "j_bullet2_secondary",
+		"j_gpapa25_grenade"
+    },
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -1095,7 +1101,8 @@ SWEP.Animations = {
 			{s = path .. "wpn_iw8_ak47_gl_mvmnt.ogg", t = 2/30},
 			{s = path .. "wpn_iw8_ak47_gl_shell_in.ogg", t = 26.5/30},
 			{s = path .. "wpn_iw8_ak47_gl_end.ogg", t = 56.5/30},
-			{hide = 1, t = 0},
+			{hide = 4, t = 0},
+			{hide = 1, t = 0.6},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -1108,7 +1115,8 @@ SWEP.Animations = {
 			{s = path .. "wpn_iw8_ak47_gl_mvmnt.ogg", t = 2/30},
 			{s = path .. "wpn_iw8_ak47_gl_shell_in.ogg", t = 17.5/30},
 			{s = path .. "wpn_iw8_ak47_gl_end.ogg", t = 40/30},
-			{hide = 1, t = 0},
+			{hide = 4, t = 0},
+			{hide = 1, t = 0.45},
 		}
 	},
     ["enter_ubgl"] = {

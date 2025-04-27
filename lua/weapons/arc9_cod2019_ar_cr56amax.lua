@@ -341,6 +341,7 @@ SWEP.BulletBones = {
 
 SWEP.HideBones  = {
     [1] = "j_mag2",
+	[2] = "j_grenade_empty",
 }
 
 SWEP.ReloadHideBoneTables  = {
@@ -361,6 +362,19 @@ SWEP.ReloadHideBoneTables  = {
 	"j_bullet01",
 	"j_bullet02",
 	"j_bullet03"
+	},
+	[4] = {
+	"j_mag2",
+	"j_grenade",
+	"j_grenade_empty",
+	},
+	[5] = {
+	"j_mag2",
+	"j_grenade_empty",
+	},
+	[6] = {
+	"j_mag2",
+	"j_grenade",
 	}
 }
 
@@ -750,7 +764,9 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 54.5/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 60/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 70/30},
-			{hide = 1, t = 0},
+			{hide = 6, t = 0},
+			{hide = 4, t = 0.8},
+			{hide = 5, t = 1.15},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -766,7 +782,8 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 35/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 42/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 46/30},
-			{hide = 1, t = 0},
+			{hide = 6, t = 0},
+			{hide = 5, t = 0.77},
 		}
 	},
     ["enter_ubgl"] = {

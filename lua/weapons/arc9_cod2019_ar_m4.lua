@@ -382,9 +382,9 @@ SWEP.ReloadHideBoneTables  = {
 	},
 	[3] = {
 	"j_mag2",
+	"j_mag1",
 	"j_grenade",
     "j_grenade_empty",
-	"j_mag1",
 	"j_mag_follower",
 	"j_b_01",
 	"j_b_02",
@@ -402,6 +402,9 @@ SWEP.ReloadHideBoneTables  = {
 	"j_b_014",
 	"j_b_015",
 	"j_b_016"
+	},
+	[4] = {
+	"j_mag2",
 	}
 }
 
@@ -1030,7 +1033,9 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 42.5/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 50/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 60/30},
-			--{hide = 1, t = 0},
+			{hide = 4, t = 0},
+			{hide = 1, t = 0.7},
+			{hide = 4, t = 0.9},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -1046,7 +1051,9 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 25/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 31/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 35/30},
-			--{hide = 1, t = 0},
+			{hide = 4, t = 0},
+			{hide = 1, t = 0.6},
+			{hide = 4, t = 0.7},
 		}
 	},
     ["enter_ubgl"] = {

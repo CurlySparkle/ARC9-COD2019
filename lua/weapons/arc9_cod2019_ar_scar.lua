@@ -347,7 +347,7 @@ SWEP.BulletBones = {
 SWEP.HideBones = {
     [1] = "j_mag2",
 	[2] = "j_grenade",
-	--[3] = "j_grenade_spent",
+	[3] = "j_grenade_spent",
 }
 
 SWEP.ReloadHideBoneTables  = {
@@ -366,6 +366,19 @@ SWEP.ReloadHideBoneTables  = {
 	"j_bullet1",
 	"j_bullet2",
 	"j_bullet3",
+	},
+	[4] = {
+	"j_mag2",
+	"j_grenade",
+	"j_grenade_spent",
+	},
+	[5] = {
+	"j_mag2",
+	"j_grenade_spent",
+	},
+	[6] = {
+	"j_mag2",
+	"j_grenade",
 	}
 }
 
@@ -1292,7 +1305,9 @@ SWEP.Animations = {
 			{s = path .. "wpn_iw8_scar17s_gl_shell_in.ogg", t = 26/30},
 			{s = path .. "wpn_iw8_scar17s_gl_close.ogg", t = 59.5/30},
             {s = path .. "wpn_iw8_scar17s_gl_end.ogg", t = 60.5/30},
-			{hide = 1, t = 0},
+			{hide = 6, t = 0},
+			{hide = 4, t = 0.8},
+			{hide = 5, t = 1},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -1305,7 +1320,9 @@ SWEP.Animations = {
 			{s = path .. "wpn_iw8_scar17s_gl_shell_in.ogg", t = 14/30},
             {s = path .. "wpn_iw8_scar17s_gl_end.ogg", t = 42/30},
 			{s = path .. "wpn_iw8_scar17s_gl_close.ogg", t = 46/30},
-			{hide = 1, t = 0},
+			{hide = 6, t = 0},
+			{hide = 4, t = 0.5},
+			{hide = 5, t = 0.65},
 		}
 	},
     ["enter_ubgl"] = {
