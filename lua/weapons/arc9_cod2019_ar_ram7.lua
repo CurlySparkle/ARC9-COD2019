@@ -348,10 +348,14 @@ SWEP.HideBones = {
 SWEP.ReloadHideBoneTables  = {
     [1] = {
 	"j_mag2",
+	"j_grenade",
+	"j_grenade_empty",
 	},
 	[2] = {
 	"j_mag1",
 	"j_mag_follower",
+	"j_grenade",
+	"j_grenade_empty",
 	"j_bullet1",
 	"j_bullet2",
 	},
@@ -359,21 +363,22 @@ SWEP.ReloadHideBoneTables  = {
 	"j_mag2",
 	"j_mag1",
 	"j_mag_follower",
+	"j_grenade",
+	"j_grenade_empty",
 	"j_bullet1",
 	"j_bullet2",
 	},
 	[4] = {
 	"j_mag2",
-	"j_grenade",
 	"j_grenade_empty",
 	},
 	[5] = {
 	"j_mag2",
-	"j_grenade_empty",
+	"j_grenade",
 	},
 	[6] = {
-	"j_mag2",
 	"j_grenade",
+	"j_grenade_empty",
 	}
 }
 
@@ -410,7 +415,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_magin.ogg", t = 1.433},
 			{s = path .. "wfoly_ar_tango21_reload_end.ogg", t = 1.967},
 			{hide = 1, t = 0},
-			{hide = 0, t = 0.425},
+			{hide = 6, t = 0.425},
 			{hide = 2, t = 1.9},
 			{hide = 1, t = 2.4},
         },
@@ -514,7 +519,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_tango21_reload_magin.ogg", t = 42/30},
 			{s = path .. "wfoly_ar_tango21_reload_end.ogg", t = 59/30},
 			{hide = 1, t = 0},
-			{hide = 0, t = 0.425},
+			{hide = 6, t = 0.425},
 			{hide = 2, t = 1.9},
 			{hide = 1, t = 2.4},
         },
@@ -868,9 +873,9 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 55.5/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 61/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 71/30},
-			{hide = 6, t = 0},
-			{hide = 4, t = 0.9},
-			{hide = 5, t = 1.1},
+			{hide = 5, t = 0},
+			{hide = 1, t = 0.9},
+			{hide = 4, t = 1.1},
 		}
 	},
     ["reload_fast_ubgl"] = {
@@ -886,9 +891,9 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 36/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 43/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 46/30},
-			{hide = 6, t = 0},
-			{hide = 4, t = 0.7},
-			{hide = 5, t = 0.9},
+			{hide = 5, t = 0},
+			{hide = 1, t = 0.7},
+			{hide = 4, t = 0.9},
 		}
 	},
     ["enter_ubgl"] = {

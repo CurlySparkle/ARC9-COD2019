@@ -345,11 +345,13 @@ SWEP.HideBones = {
 
 SWEP.ReloadHideBoneTables  = {
     [1] = {
-	"j_mag2"
+	"j_mag2",
+	"j_grenade",
 	},
 	[2] = {
 	"j_mag2",
 	"j_mag1",
+	"j_grenade",
 	"j_bullet_01",
 	"j_bullet_02",
 	},
@@ -362,10 +364,6 @@ SWEP.ReloadHideBoneTables  = {
 	"j_mag2",
 	"j_grenade_empty",
 	},
-	[5] = {
-	"j_mag2",
-	"j_grenade",
-	}
 }
 
 SWEP.TriggerDelay = 0.025 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
@@ -645,7 +643,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 44.5/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 51/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 61/30},
-			{hide = 5, t = 0},
+			{hide = 1, t = 0},
 			{hide = 3, t = 0.6},
 			{hide = 4, t = 0.8},
 			{hide = 3, t = 1.86},
@@ -664,7 +662,7 @@ SWEP.Animations = {
 			{s = pathub .. "ubgl_reload_end.ogg", t = 25/30},
 			{s = pathub .. "ubgl_reload_glclose.ogg", t = 33/30},
 			{s = pathub .. "ubgl_reload_arm.ogg", t = 37/30},
-			{hide = 5, t = 0},
+			{hide = 1, t = 0},
 			{hide = 4, t = 0.4},
 			{hide = 3, t = 1.225},
 		}
