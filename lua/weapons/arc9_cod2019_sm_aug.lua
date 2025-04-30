@@ -50,13 +50,13 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 23 -- Damage done at point blank range
-SWEP.DamageMin = 11 -- Damage done at maximum range
+SWEP.DamageMax = 25 -- Damage done at point blank range
+SWEP.DamageMin = 18 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 900 -- How far bullets retain their maximum damage for.
-SWEP.RangeMax = 4000 -- In Hammer units, how far bullets can travel before dealing DamageMin.
+SWEP.RangeMin = 13 / ARC9.HUToM -- How far bullets retain their maximum damage for.
+SWEP.RangeMax = 30 / ARC9.HUToM -- In Hammer units, how far bullets can travel before dealing DamageMin.
 
 SWEP.Penetration = 11 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.15
@@ -910,11 +910,6 @@ SWEP.AttachmentElements = {
             {6,1},
         },
     },
-    ["upper_rail_none"] = {
-        Bodygroups = {
-            {9,1},
-        },
-    },
     ["rail_laser"] = {
         Bodygroups = {
             {7,1},
@@ -923,6 +918,11 @@ SWEP.AttachmentElements = {
     ["stock_none"] = {
         Bodygroups = {
             {8,1},
+        },
+    },
+	["upper_rail_none"] = {
+        Bodygroups = {
+            {9,1},
         },
     },
 }

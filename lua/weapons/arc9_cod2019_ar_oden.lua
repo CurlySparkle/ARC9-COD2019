@@ -56,7 +56,7 @@ SWEP.DamageMin = 36 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 43 / ARC9.HUToM
+SWEP.RangeMin = 42 / ARC9.HUToM
 SWEP.RangeMax = 44 / ARC9.HUToM
 
 SWEP.Penetration = 11 -- Units of wood that can be penetrated by this gun.

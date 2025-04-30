@@ -356,6 +356,9 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_trigger_heavy"] = {
 		RPMAdd = 20,
     },
+	["cod2019_357_barrel_01"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_shortbarrel_akimbo.mdl",
+    },
     ["cod2019_357_barrel_long"] = {
     Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_barrel_long_akimbo.mdl",
     },

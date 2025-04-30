@@ -57,7 +57,7 @@ SWEP.DamageMin = 52 -- Damage done at maximum range
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
 SWEP.RangeMin = 22 / ARC9.HUToM
-SWEP.RangeMax = 26 / ARC9.HUToM
+SWEP.RangeMax = 32 / ARC9.HUToM
 
 SWEP.Penetration = 4 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.35
@@ -855,7 +855,7 @@ SWEP.Attachments = {
         Category = "cod2019_muzzle_pistols",
         DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
 		Bone = "tag_silencer",
-        Pos = Vector(0, 0, 0),
+        Pos = Vector(-0.075, 0, 0),
     },
     { -- 2
         PrintName = ARC9:GetPhrase("mw19_category_barrel"),
@@ -1001,7 +1001,7 @@ SWEP.DamageMax = 73 -- Damage done at point blank range
 SWEP.DamageMin = 50 -- Damage done at maximum range
 
 SWEP.RangeMin = 24 / ARC9.HUToM
-SWEP.RangeMax = 25 / ARC9.HUToM
+SWEP.RangeMax = 33 / ARC9.HUToM
 
 SWEP.BodyDamageMults = {
     [HITGROUP_HEAD] = 1.4,
