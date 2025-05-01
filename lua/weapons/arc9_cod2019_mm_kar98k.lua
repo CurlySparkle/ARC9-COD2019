@@ -18,7 +18,7 @@ SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_kar98") or "Kar98k"
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_marksman") or "Marksman Rifle"
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_germany"),
-    [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_762mauser"),
+    [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_792mauser"),
     [ ARC9:GetPhrase("mw19_weight") ] = string.format(ARC9:GetPhrase("mw19_weight_val"), 3.7, 3.7 * 2.20),
     [ ARC9:GetPhrase("mw19_weight_projectile") ] = string.format(ARC9:GetPhrase("mw19_weight_projectile_val"), 178.2),
 }
@@ -51,7 +51,7 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 120 -- Damage done at point blank range
+SWEP.DamageMax = 96 -- Damage done at point blank range
 SWEP.DamageMin = 60 -- Damage done at maximum range
 
 SWEP.Num = 1
