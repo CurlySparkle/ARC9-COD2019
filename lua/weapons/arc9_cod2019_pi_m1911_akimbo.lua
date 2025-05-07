@@ -346,6 +346,10 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_m1911_slide_short"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_barshort_akimbo.mdl",
     },
+	["cod2019_m1911_mag_10"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_mmags_akimbo.mdl",
+	ClipSizeOverride = 17
+    },
     ["cod2019_m1911_mag_15"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_xmags_akimbo.mdl",
 	ClipSizeOverride = 22

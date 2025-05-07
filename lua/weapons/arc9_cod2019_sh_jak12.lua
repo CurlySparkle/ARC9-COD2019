@@ -386,7 +386,7 @@ SWEP.Animations = {
 		RefillProgress = 0.75,
 		PeekProgress = 0.85,
 		FireASAP = true,
-		DropMagAt = 1.1,
+		DropMagAt = 1.15,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -400,7 +400,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sh_aalpha12_reload_empty_boltforward.ogg", t = 2.333},
 			{s = path .. "wfoly_sh_aalpha12_reload_empty_end.ogg", t = 2.733},
 			{hide = 1, t = 0},
-			{hide = 3, t = 1.1},
+			{hide = 3, t = 1.15},
 			{hide = 1, t = 1.4},
         },
     },
@@ -823,11 +823,6 @@ SWEP.AttachmentElements = {
             {1,1},
         },
     },
-    ["mag_none"] = {
-        Bodygroups = {
-            {3,1},
-        },
-    },
     ["barrel_none"] = {
         Bodygroups = {
             {1,1},
@@ -837,6 +832,11 @@ SWEP.AttachmentElements = {
     ["muzzle"] = {
         Bodygroups = {
             {2,1},
+        },
+    },
+	["mag_none"] = {
+        Bodygroups = {
+            {3,1},
         },
     },
     ["sight_none"] = {
