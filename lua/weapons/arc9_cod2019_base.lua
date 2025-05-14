@@ -129,7 +129,7 @@ SWEP.Hook_Think	= function(self)
         ent:SetPoseParameter("aim_blend", Lerp(coolilove, 1, 0))
         ent:SetPoseParameter("empty", (self.Akimbo and clip == 1 and 1 or clip == 0 and (self.Akimbo and 2 or 1)) or 0)
     end
-	self:Hook_Think2()
+    self:Hook_Think2()
 end
 
 SWEP.CustomPoseParamsHandler = function(self, ent, iswm)
@@ -189,64 +189,108 @@ end
 
 SWEP.HookP_NameChange = function(self, name)
     local att = self:GetElements()
-	
-	-- Assault Rifle, M$
-	if att["cod2019_m4a1_barrel_mid"] and att["m203"] and att["cod2019_m4_stock_m16"] and (att["cod2019_m4_carryhandle"] or  att["cod2019_m4_carryhandle_v2"]) then
-		name = ARC9:GetPhrase("mw19_weapon_m4a1_friend") or "Lil' Friend"
-	end
 
-	-- Assault Rifle, AK-47
-	if att["cod2019_akilo47_mag_smg"] and att["cod2019_akilo47_barrel_smg"] then
-		name = string.Replace(name, "-47", "-74U")
-	elseif att["cod2019_akilo47_mag_smg"] then
-		name = string.Replace(name, "47", "74")
-	end
-	
-	-- Assault Rifle, Grau 5.56
-	if att["cod2019_grau556_barrel_long"] then
-		name = string.Replace(name, "56", "50")
-	end	
-	
-	if att["cod2019_grau556_barrel_heavy"] then
-		name = ARC9:GetPhrase("mw19_weapon_grau_imbel") or "Grau Intruso"
-	end
-	
-	-- Assault Rifle, FN Scar-17
-	if att["cod2019_scar_mag_ar"] then
-		name = string.Replace(name, "17", "16")
-	end	
+    -- Assault Rifle, M$
+    if att["cod2019_m4a1_barrel_mid"] and att["m203"] and att["cod2019_m4_stock_m16"] and (att["cod2019_m4_carryhandle"] or  att["cod2019_m4_carryhandle_v2"]) then
+        name = ARC9:GetPhrase("mw19_weapon_m4a1_friend") or "Lil' Friend"
+    end
 
-	-- Assault Rifle, FR 5.56
-	if att["cod2019_famas_upper_railcust"] then
-		name = ARC9:GetPhrase("mw19_weapon_fr556_avancer") or "FR Avancer"
-	end
+    -- Assault Rifle, AK-47
+    if att["cod2019_akilo47_mag_smg"] and att["cod2019_akilo47_barrel_smg"] then
+        name = string.Replace(name, "-47", "-74U")
+    elseif att["cod2019_akilo47_mag_smg"] then
+        name = string.Replace(name, "47", "74")
+    end
 
-	-- Light Machine Gun, Holger-26
-	if att["cod2019_holger_receiver_v2"] then
-		name = string.Replace(name, "26", "556")
-	end	
+    -- Assault Rifle, Grau 5.56
+    if att["cod2019_grau556_barrel_long"] then
+        name = string.Replace(name, "56", "50")
+    end
 
-	if att["optic"] and att["optic_small"] then -- Hybrid Sight Name Change
-		if att["optic_thermal"] then
-			name = string.format( ARC9:GetPhrase("mw19_weapon_att_hybrid_thermal") or "%s Hybrid Thermal", name )
-		else
-			name = string.format( ARC9:GetPhrase("mw19_weapon_att_hybrid") or "%s Hybrid", name )
-		end
-	elseif att["hybrid_scope"] or att["hybrid_scope_int"] then
-		name = string.format( ARC9:GetPhrase("mw19_weapon_att_hybrid") or "%s Hybrid", name )
-	elseif att["optic_thermal"] then
-		name = string.format( ARC9:GetPhrase("mw19_weapon_att_thermal") or "%s Thermal", name )
-	end
+    if att["cod2019_grau556_barrel_heavy"] then
+        name = ARC9:GetPhrase("mw19_weapon_grau_imbel") or "Grau Intruso"
+    end
 
-	if att["m203"] then
-		name = string.format( ARC9:GetPhrase("mw19_weapon_att_m203") or "%s M203", name )
-	elseif att["gp25"] then
-		name = string.format( ARC9:GetPhrase("mw19_weapon_att_gp25") or "%s GP-25", name )
-	end
+    -- Assault Rifle, FN Scar-17
+    if att["cod2019_scar_mag_ar"] then
+        name = string.Replace(name, "17", "16")
+    end
 
-	if att["arc9_stat_stattrak"] then
-		name = "StatTrak™ " .. name
-	end
+    -- Assault Rifle, FR 5.56
+    if att["cod2019_famas_upper_railcust"] then
+        name = ARC9:GetPhrase("mw19_weapon_fr556_avancer") or "FR Avancer"
+    end
+
+    -- Light Machine Gun, Holger-26
+    if att["cod2019_holger_receiver_v2"] then
+        name = string.Replace(name, "26", "556")
+    end
+
+    if att["optic"] and att["optic_small"] then -- Hybrid Sight Name Change
+        if att["optic_thermal"] then
+            name = string.format( ARC9:GetPhrase("mw19_weapon_att_hybrid_thermal") or "%s Hybrid Thermal", name )
+        else
+            name = string.format( ARC9:GetPhrase("mw19_weapon_att_hybrid") or "%s Hybrid", name )
+        end
+    elseif att["hybrid_scope"] or att["hybrid_scope_int"] then
+        name = string.format( ARC9:GetPhrase("mw19_weapon_att_hybrid") or "%s Hybrid", name )
+    elseif att["optic_thermal"] then
+        name = string.format( ARC9:GetPhrase("mw19_weapon_att_thermal") or "%s Thermal", name )
+    end
+
+    if att["m203"] then
+        name = string.format( ARC9:GetPhrase("mw19_weapon_att_m203") or "%s M203", name )
+    elseif att["gp25"] then
+        name = string.format( ARC9:GetPhrase("mw19_weapon_att_gp25") or "%s GP-25", name )
+    end
+
+    if att["arc9_stat_stattrak"] then
+        name = "StatTrak™ " .. name
+    end
 
     return name
 end
+
+--[[]
+local lsstr = "ShootSound"
+local lsslr = "LayerSound"
+local ldsstr = "DistantShootSound"
+
+local sstrSilenced = "ShootSoundSilenced" -- made cuz it'll just pointless to concate.
+local sslrSilenced = "LayerSoundSilenced"
+local dsstrSilenced = "DistantShootSoundSilenced"
+
+-- Slightly gutted function to reduce lag even more, although the difference is probably negligible
+function SWEP:DoShootSounds()
+
+    local sstr = lsstr
+    local sslr = lsslr
+    local dsstr = ldsstr
+
+    local indoor = self:GetIndoor()
+
+    if self:GetProcessedValue("Silencer", true) and !self:GetUBGL() then
+        sstr = sstrSilenced
+        sslr = sslrSilenced
+        dsstr = dsstrSilenced
+    end
+
+    if self.IndoorSoundHardCutoffRatio >= indoor then
+        local ss = self:GetProcessedValue(sstr, true)
+        local sl = self:GetProcessedValue(sslr, true)
+        local dss = self:GetProcessedValue(dsstr, true)
+
+        self:EmitSound(ss)
+        self:EmitSound(sl)
+        self:EmitSound(dss)
+    else
+        local ssIN = self:GetProcessedValue(sstr .. "Indoor", true)
+        local slIN = self:GetProcessedValue(sslr .. "Indoor", true)
+        local dssIN = self:GetProcessedValue(dsstr .. "Indoor", true)
+
+        self:EmitSound(ssIN)
+        self:EmitSound(slIN)
+        self:EmitSound(dssIN)
+    end
+end
+]]
