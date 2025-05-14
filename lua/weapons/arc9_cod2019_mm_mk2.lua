@@ -92,6 +92,7 @@ SWEP.ClipSize = 6 -- Self-explanatory.
 SWEP.SupplyLimit = 12 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
+SWEP.ShotgunReloadIncludesChamber = false -- Shotguns reload to full capacity, assuming that the chamber is loaded as part of the animation.
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
 SWEP.Crosshair = true
