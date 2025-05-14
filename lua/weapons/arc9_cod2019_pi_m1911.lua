@@ -51,12 +51,12 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 51 -- Damage done at point blank range
+SWEP.DamageMax = 37 -- Damage done at point blank range
 SWEP.DamageMin = 22 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 7 / ARC9.HUToM
+SWEP.RangeMin = 13 / ARC9.HUToM
 SWEP.RangeMax = 23 / ARC9.HUToM
 
 SWEP.Penetration = 1 -- Units of wood that can be penetrated by this gun.
@@ -889,14 +889,14 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
+	["sight_mount"] = {
+        Bodygroups = {
+            {4,1},
+        },
+    },
     ["sight_none"] = {
         Bodygroups = {
             {5,1},
-        },
-    },
-    ["sight_mount"] = {
-        Bodygroups = {
-            {4,1},
         },
     },
     ["trigger_none"] = {
@@ -909,7 +909,7 @@ SWEP.AttachmentElements = {
 SWEP.Attachments = {
     { -- 1
         PrintName = ARC9:GetPhrase("mw19_category_muzzle"),
-        Category = "cod2019_muzzle_pistols",
+        Category = {"cod2019_muzzle_pistols","cod2019_1911_muzzle"},
         DefaultIcon = Material("entities/defattachs/muzzle-ar.png", "mips smooth"),
 		Bone = "tag_silencer",
         Pos = Vector(-0.105, 0, 0),

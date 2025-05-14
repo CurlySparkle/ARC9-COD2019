@@ -455,15 +455,18 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 36/30},
 			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 42/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 1.55}
         },
     },
-    ["reload_empty_xmag"] = {
+    ["reload_xmag_empty"] = {
         Source = "reload_xmag_empty",
 		MinProgress = 0.925,
 		PeekProgress = 0.775,
 		RefillProgress = 0.7,
 		FireASAP = true,
-		DropMagAt = 0.8,
+		DropMagAt = 0.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -478,6 +481,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_decho_reload_empty_shake.ogg", t = 30/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_charge_01.ogg", t = 43/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_end.ogg", t = 44/30},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.45},
+			{hide = 1, t = 1.766}
         },
     },
     ["reload_xmag_fast"] = {
@@ -487,7 +493,7 @@ SWEP.Animations = {
 		RefillProgress = 0.5,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.5,
+		DropMagAt = 0.425,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -500,6 +506,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_decho_reload_magin_v2_01.ogg", t = 14/30},
 			{s = path .. "wfoly_pi_decho_reload_magin_v2_02.ogg", t = 20/30},
 			{s = path .. "wfoly_pi_decho_reload_end.ogg", t = 24/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.425}
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -509,7 +518,7 @@ SWEP.Animations = {
 		RefillProgress = 0.625,
 		FireASAP = true,
 		MagSwapTime = 1.5,
-		DropMagAt = 0.5,
+		DropMagAt = 0.425,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -523,6 +532,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_decho_reload_empty_magin_v2_02.ogg", t = 21/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_charge_01.ogg", t = 25/30},
 			{s = path .. "wfoly_pi_decho_reload_empty_end.ogg", t = 25/30},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 0.425}
         },
     },
     ["reload_xmaglrg"] = {
@@ -718,7 +730,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
---- 13 Round & Extended Mags ---
+--- 10 & 13-Round Mags ---
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",

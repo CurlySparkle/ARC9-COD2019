@@ -359,8 +359,14 @@ SWEP.AttachmentTableOverrides = {
 	["cod2019_357_barrel_01"] = {
     Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_shortbarrel_akimbo.mdl",
     },
+	["cod2019_357_barrel_02"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_barrel_v2_akimbo.mdl",
+    },
     ["cod2019_357_barrel_long"] = {
     Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_barrel_long_akimbo.mdl",
+    },
+	["cod2019_357_grip_stock_light"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_grip_stockl_akimbo.mdl",
     },
     ["cod2019_357_grip_stock"] = {
     Model = "models/weapons/cod2019/attachs/weapons/357/attachment_vm_pi_cpapa_grip_stock_akimbo.mdl",
@@ -408,6 +414,12 @@ SWEP.AttachmentElements = {
         Bodygroups = {
             {6,1},
             {7,1},
+        },
+    },
+	["rail_laser_none"] = {
+        Bodygroups = {
+            {8,0},
+            {9,0},
         },
     },
     ["rail_laser"] = {

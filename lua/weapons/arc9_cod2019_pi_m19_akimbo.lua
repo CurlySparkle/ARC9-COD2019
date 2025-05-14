@@ -376,6 +376,10 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_m19_slide_light"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_slide_vented_akimbo.mdl"
     },
+	["cod2019_m19_mag_21"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_mag_ext_akimbo.mdl",
+	ClipSizeOverride = 38
+    },
     ["cod2019_m19_mag_ext2"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_mag_ext2_akimbo.mdl",
 	ClipSizeOverride = 49

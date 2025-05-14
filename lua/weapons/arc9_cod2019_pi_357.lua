@@ -815,6 +815,11 @@ SWEP.AttachmentElements = {
             {3,1},
         },
     },
+	["rail_laser_none"] = {
+        Bodygroups = {
+            {4,0},
+        },
+    },
     ["rail_laser"] = {
         Bodygroups = {
             {4,1},
