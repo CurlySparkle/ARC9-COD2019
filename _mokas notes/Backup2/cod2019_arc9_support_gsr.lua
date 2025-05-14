@@ -8,6 +8,7 @@ ATT.CompactName = [[GSRT]]
 ATT.Description = [[Lets you use tactical attachments from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
+ATT.Free = true
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_tac_pistols"
@@ -23,7 +24,7 @@ ATT.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(-0.5, 0, -1.25),
         Category = "csgo_tac_pistols",
-		Scale = 1
+        Scale = 1
     }
 }
 
@@ -37,6 +38,7 @@ ATT.CompactName = [[GSRO]]
 ATT.Description = [[Lets you use optic attachments from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
+ATT.Free = true
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_optic"
@@ -52,12 +54,12 @@ ATT.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 1.5),
         Category = "csgo_optic",
-		RejectAttachments = {
-		["go_cod_scopes"] = true,
-		["go_eft_scopes"] = true,
-		["go_gas_scopes"] = true,
-		},
-		Scale = 1
+        RejectAttachments = {
+        ["go_cod_scopes"] = true,
+        ["go_eft_scopes"] = true,
+        ["go_gas_scopes"] = true,
+        },
+        Scale = 1
     }
 }
 
@@ -71,6 +73,7 @@ ATT.CompactName = [[GSRO]]
 ATT.Description = [[Lets you use pistol optics from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
+ATT.Free = true
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_optics_pistols_alt"
@@ -86,12 +89,12 @@ ATT.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 1.5),
         Category = "csgo_optics_pistols",
-		RejectAttachments = {
-		["go_cod_scopes_pistol"] = true,
-		["go_eft_scopes_pistol"] = true,
-		["go_gas_scopes_pistol"] = true,
-		},
-		Scale = 1
+        RejectAttachments = {
+        ["go_cod_scopes_pistol"] = true,
+        ["go_eft_scopes_pistol"] = true,
+        ["go_gas_scopes_pistol"] = true,
+        },
+        Scale = 1
     }
 }
 
@@ -105,6 +108,7 @@ ATT.CompactName = [[GSRM]]
 ATT.Description = [[Lets you use muzzles from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
+ATT.Free = true
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_muzzle_shot"
@@ -120,12 +124,12 @@ ATT.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0),
         Category = {"muzzle_shotgun","muzzle"},
-		RejectAttachments = {
-		["go_cod_muzzle"] = true,
-		["go_eft_muzzle"] = true,
-		["go_gas_muzzle"] = true,
-		},
-		Scale = 1
+        RejectAttachments = {
+        ["go_cod_muzzle"] = true,
+        ["go_eft_muzzle"] = true,
+        ["go_gas_muzzle"] = true,
+        },
+        Scale = 1
     }
 }
 
@@ -139,6 +143,7 @@ ATT.CompactName = [[GSRM]]
 ATT.Description = [[Lets you use muzzles from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
+ATT.Free = true
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_muzzle_pistols"
@@ -154,12 +159,12 @@ ATT.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(1.5, 0, 0),
         Category = {"muzzle_pistols","muzzle"},
-		RejectAttachments = {
-		["go_cod_muzzle"] = true,
-		["go_eft_muzzle"] = true,
-		["go_gas_muzzle"] = true,
-		},
-		Scale = 1
+        RejectAttachments = {
+        ["go_cod_muzzle"] = true,
+        ["go_eft_muzzle"] = true,
+        ["go_gas_muzzle"] = true,
+        },
+        Scale = 1
     }
 }
 
@@ -175,6 +180,7 @@ ATT.CompactName = [[GSRM]]
 ATT.Description = [[Lets you use muzzles from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
+ATT.Free = true
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_muzzle"
@@ -189,13 +195,13 @@ ATT.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(1.5, 0, 0),
-		RejectAttachments = {
-		["go_cod_muzzle"] = true,
-		["go_eft_muzzle"] = true,
-		["go_gas_muzzle"] = true,
-		},
+        RejectAttachments = {
+        ["go_cod_muzzle"] = true,
+        ["go_eft_muzzle"] = true,
+        ["go_gas_muzzle"] = true,
+        },
         Category = {"muzzle"},
-		Scale = 1
+        Scale = 1
     }
 }
 
@@ -209,6 +215,7 @@ ATT.CompactName = [[GSRG]]
 ATT.Description = [[Lets you use grips from GSR.]]
 --ATT.Icon = Material("entities/attachs/cod2019_origin12_suppressor.png", "mips smooth")
 
+ATT.Free = true
 ATT.SortOrder = 1000
 ATT.AutoStats = true
 ATT.Category = "cod2019_grip"
@@ -224,14 +231,14 @@ ATT.Attachments = {
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 1.5),
         Category = {"grip"},
-		RejectAttachments = {
-		["go_cod_grips"] = true,
-		["go_eft_grips"] = true,
-		["go_ubgl_m203"] = true,
-		["go_ubgl_mass26"] = true,
-		["go_ubgl_xm1014"] = true,
-		},
-		Scale = 1,
+        RejectAttachments = {
+        ["go_cod_grips"] = true,
+        ["go_eft_grips"] = true,
+        ["go_ubgl_m203"] = true,
+        ["go_ubgl_mass26"] = true,
+        ["go_ubgl_xm1014"] = true,
+        },
+        Scale = 1,
     }
 }
 

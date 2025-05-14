@@ -6,6 +6,7 @@ ATT.PrintName = "Escape from Tarkov Grips"
 ATT.CompactName = "EFTG"
 ATT.Description = "Enables the ability to equip grips from the EFT packs.\n\nNote: Do remember that there are glitches/bugs/clipping."
 
+ATT.Free = true
 ATT.SortOrder = 10000
 ATT.Category = "cod2019_grip"
 ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
@@ -17,7 +18,7 @@ ATT.Attachments = {
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 180),
         Icon_Offset = Vector(1.5, 0, -1.75),
-		RejectAttachments = {["eft_foregrip_sturm"] = true}
+        RejectAttachments = {["eft_foregrip_sturm"] = true}
     },
 }
 
@@ -29,6 +30,7 @@ ATT.PrintName = "Escape from Tarkov Muzzles"
 ATT.CompactName = "EFTM"
 ATT.Description = "Enables the ability to equip muzzles from the EFT packs.\n\nNote: Do remember that there are glitches/bugs/clipping."
 
+ATT.Free = true
 ATT.SortOrder = 10000
 ATT.Category = "cod2019_muzzle"
 ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
@@ -51,6 +53,7 @@ ATT.PrintName = "Escape from Tarkov Scopes"
 ATT.CompactName = "EFTS"
 ATT.Description = "Enables the ability to equip scopes from the EFT packs.\n\nNote: Do remember that there are glitches/bugs/clipping."
 
+ATT.Free = true
 ATT.SortOrder = 10000
 ATT.Category = "cod2019_optic"
 ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
@@ -73,6 +76,7 @@ ATT.PrintName = "Escape from Tarkov Scopes"
 ATT.CompactName = "EFTS"
 ATT.Description = "Enables the ability to equip scopes from the EFT packs.\n\nNote: Do remember that there are glitches/bugs/clipping."
 
+ATT.Free = true
 ATT.SortOrder = 10000
 ATT.Category = "cod2019_optics_pistols_alt"
 ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
@@ -95,6 +99,7 @@ ATT.PrintName = "Escape from Tarkov Stocks"
 ATT.CompactName = "EFTS"
 ATT.Description = "Enables the ability to equip stocks from the EFT packs.\n\nNote: Do remember that there are glitches/bugs/clipping."
 
+ATT.Free = true
 ATT.SortOrder = 10000
 ATT.Category = "cod2019_stocks"
 ATT.Folder = ARC9:GetPhrase("mw19_folder_other2")
