@@ -507,13 +507,13 @@ SWEP.Attachments = {
         -- Category = "cod2019_skins_minigun",
 		-- CosmeticOnly = true,
     -- },
-    -- { -- 6
-        -- PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
-        -- Category = {"universal_camo"},
-        -- Bone = "tag_barrel_attach",
-        -- Pos = Vector(5, 0, 3),
-        -- CosmeticOnly = true,
-    -- },
+    { -- 6
+        PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
+        Category = {"universal_camo"},
+        Bone = "tag_barrel_attach",
+        Pos = Vector(5, 0, 3),
+        CosmeticOnly = true,
+     },
     -- { -- 7
         -- PrintName = ARC9:GetPhrase("mw19_category_sticker"),
         -- StickerModel = "models/weapons/cod2019/stickers/eq_minigun_decal_a.mdl",
