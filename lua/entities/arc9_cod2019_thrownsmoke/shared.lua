@@ -28,7 +28,7 @@ function ENT:Initialize()
         if not self:GetNWBool("Children",false) then
            self:SetNWBool( "Children", false )
         end
-  
+
         if not self:GetNWBool("CreatedNade",false) then
            self:SetNWBool("CreatedNade", false)
         end
@@ -37,9 +37,9 @@ function ENT:Initialize()
         self:SetSolid( SOLID_VPHYSICS )
         self:PhysicsInit( SOLID_VPHYSICS )
         self:DrawShadow( true )
-		self:SetAngles(Angle(0, 0, -75))
-		
-		--ParticleEffectAttach("smoke_thrown_trail",PATTACH_POINT_FOLLOW,self,1)
+        self:SetAngles(Angle(0, 0, -75))
+
+        --ParticleEffectAttach("smoke_thrown_trail",PATTACH_POINT_FOLLOW,self,1)
 
         local phys = self:GetPhysicsObject()
         if phys:IsValid() then
@@ -60,16 +60,16 @@ function ENT:PhysicsCollide(data, physobj)
     if SERVER then
         if data.Speed > 75 then
             --self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"))
-			self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"), 75, 100, 1, CHAN_AUTO )
+            self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"), 75, 100, 1, CHAN_AUTO )
         elseif data.Speed > 25 then
             --self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"))
-			self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.3, CHAN_AUTO )
+            self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.3, CHAN_AUTO )
         end
 
         if (CurTime() - self.SpawnTime >= self.ArmTime) and self.ImpactFuse then
             self:Detonate()
         end
-		
+
            local attacker = self.Attacker or self:GetOwner()
            if IsValid(data.HitEntity) then
            local dmginfo = DamageInfo()
@@ -99,7 +99,7 @@ function ENT:Think()
             self:Detonate()
         end
     end
-	self:DoSmokeTrail()
+    self:DoSmokeTrail()
 end
 
 function ENT:DoSmokeTrail()
@@ -121,7 +121,7 @@ function ENT:DoSmokeTrail()
         smoke:SetPos( self:GetPos() )
         smoke:SetLighting( false )
         emitter:Finish()
-		
+
        if self:GetNWBool("HasDetonated") then
           self.SmokeTrail = false
        end
@@ -149,10 +149,10 @@ function ENT:Detonate()
     self:EmitSound("weapons/rpg/shotdown.wav", 80)
     else
     self:DoDetonate()
-	self:SetNWBool("HasDetonated",true)
+    self:SetNWBool("HasDetonated",true)
    end
 end
-  
+
 function ENT:DoDetonate()
     if self:WaterLevel() > 0 then self:Remove() return end
     local attacker = self.Attacker or self:GetOwner() or self
@@ -164,16 +164,16 @@ function ENT:DoDetonate()
          cloud:SetAngles(self:GetAngles())
          cloud:SetOwner(attacker)
          cloud:Spawn()
-		 cloud:SetParent(self)
-		 cloud.NoIgnite = self
-		 cloud:SetNWBool("Children",true)
+         cloud:SetParent(self)
+         cloud.NoIgnite = self
+         cloud:SetNWBool("Children",true)
          cloud:SetNWBool("CreatedNade",true)
-		 ParticleEffectAttach("smoke_sphere_trail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
-		 --self:Remove()
+         ParticleEffectAttach("smoke_sphere_trail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
+         --self:Remove()
       end
     end
-	self:SetNWBool("CreatedNade",true)
-    
+    self:SetNWBool("CreatedNade",true)
+
     timer.Simple(18, function()
         if IsValid(self) then
             self:Remove()
