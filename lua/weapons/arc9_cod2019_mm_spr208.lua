@@ -396,6 +396,22 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_remeo700_rechamber_boltl_grab.ogg", v = 0.5, t = 0.9},
         },
     },
+	["cycle_heavy"] = {
+		Source = "cycle_heavy",
+		--EjectAt = 0.475,
+		MinProgress = 0.75,
+		FireASAP = true,
+		IKTimeLine = {
+			{ t = 0, lhik = 1, rhik = 1 },
+			{ t = 0.3, lhik = 1, rhik = 0 },
+			{ t = 0.55, lhik = 1, rhik = 0 },
+			{ t = 0.7, lhik = 1, rhik = 1 },
+		},
+		EventTable = {
+			{s = path .. "wfoly_sn_remeo700_rechamber_bolthvy_bolt.ogg", v = 0.5, t = 0.067},
+			{s = path .. "wfoly_sn_remeo700_rechamber_bolthvy_grab.ogg", v = 0.5, t = 0.9},
+		},
+	},
     ["dryfire"] = {
         Source = "dryfire",
 		MinProgress = 0.01,
@@ -786,6 +802,9 @@ local Translate_Fast = {
 local Translate_BoltL = {
     ["cycle"] = "cycle_light",
 }
+local Translate_BoltH = {
+	["cycle"] = "cycle_heavy",
+}
 local Translate_TacSprint = {
     ["idle_sprint"] = "super_sprint_idle",
     ["enter_sprint"] = "super_sprint_in",
@@ -799,14 +818,17 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
     local ammoex = wep:HasElement("ammo_extend")
-    local boltl = wep:HasElement("bolt_light")
+	local boltl = wep:HasElement("bolt_light")
+	local bolth = wep:HasElement("bolt_heavy")
 
     if ammoex and speedload and Translate_XMag_Fast[anim] then
         return Translate_XMag_Fast[anim]
     elseif ammoex and Translate_XMag[anim] then
         return Translate_XMag[anim]
     elseif boltl and Translate_BoltL[anim] then
-        return Translate_BoltL[anim]
+		return Translate_BoltL[anim]
+	elseif bolth and Translate_BoltH[anim] then
+		return Translate_BoltH[anim]
     elseif super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
     end
