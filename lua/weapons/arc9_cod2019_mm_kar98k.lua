@@ -267,12 +267,12 @@ SWEP.EjectDelay = 0.45
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
-SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_snip_spr208_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_snip_kar98k_clip.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 1.6
 SWEP.DropMagazineQCA = 3
-SWEP.DropMagazineAng = Angle(0, -90, 0)
+SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
 
