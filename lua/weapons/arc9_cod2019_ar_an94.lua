@@ -52,7 +52,7 @@ SWEP.WorldModelOffset = {
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 31 -- Damage done at point blank range
-SWEP.DamageMin = 25 -- Damage done at maximum range
+SWEP.DamageMin = 19 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -1512,7 +1512,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(1.6, 0, 0),
+        Pos = Vector(1.45, 0.04, -0.1),
 		Ang = Angle(0, 0, 180),
 		Icon_Offset = Vector(-1, 1.5, 1.3),
     },
