@@ -51,11 +51,11 @@ SWEP.WorldModelOffset = {
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 31 -- Damage done at point blank range
-SWEP.DamageMin = 28 -- Damage done at maximum range
+SWEP.DamageMin = 24 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 28 / ARC9.HUToM
+SWEP.RangeMin = 24 / ARC9.HUToM
 SWEP.RangeMax = 29 / ARC9.HUToM
 
 SWEP.Penetration = 8 -- Units of wood that can be penetrated by this gun.
@@ -335,8 +335,9 @@ SWEP.EnterSightsSound = path .. "wfoly_ar_galima_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_ar_galima_ads_down.ogg"
 
 SWEP.BulletBones = {
-    [1] = "j_bullet01",
-    [2] = "j_bullet02",
+	[1] = "j_bullet01",
+	[2] = "j_bullet02",
+	[3] = "j_bullet03",
 }
 
 SWEP.HideBones  = {
@@ -592,7 +593,106 @@ SWEP.Animations = {
 			{hide = 0, t = 0.4},
 			{hide = 2, t = 1},
         },
-    },
+	},
+	["reload_smag"] = {
+		Source = "reload_smag",
+		MinProgress = 0.85,
+		PeekProgress = 0.8375,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+		IKTimeLine = {
+			{ t = 0, lhik = 1, rhik = 0 },
+			{ t = 0.2, lhik = 0, rhik = 0 },
+			{ t = 0.675, lhik = 0, rhik = 0 },
+			{ t = 0.8, lhik = 1, rhik = 1 },
+		},
+		EventTable = {
+			{s = path .. "wfoly_ar_galima_reload_rotate.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_galima_reload_magout.ogg", t = 0.333},
+			{s = path .. "wfoly_ar_galima_reload_arm.ogg", t = 0.933},
+			{s = path .. "wfoly_ar_galima_reload_maghit.ogg", t = 1.3},
+			{s = path .. "wfoly_ar_galima_reload_magin.ogg", t = 1.433},
+			{s = path .. "wfoly_ar_galima_reload_end.ogg", t = 2.0},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 1.05},
+		},
+	},
+	["reload_smag_empty"] = {
+        Source = "reload_smag_empty",
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
+		RefillProgress = 0.725,
+		FireASAP = true,
+		DropMagAt = 0.8,
+		IKTimeLine = {
+			{ t = 0, lhik = 1, rhik = 0 },
+			{ t = 0.2, lhik = 0, rhik = 0 },
+			{ t = 0.725, lhik = 0, rhik = 0 },
+			{ t = 0.9, lhik = 1, rhik = 1 },
+		},
+		EventTable = {
+			{s = path .. "wfoly_ar_galima_reload_empty_rotate.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_galima_reload_empty_magout.ogg", t = 0.333},
+			{s = path .. "wfoly_ar_galima_reload_empty_arm.ogg", t = 0.933},
+			{s = path .. "wfoly_ar_galima_reload_empty_maghit.ogg", t = 1.3},
+			{s = path .. "wfoly_ar_galima_reload_empty_magin.ogg", t = 1.433},
+			{s = path .. "wfoly_ar_galima_reload_empty_charge.ogg", t = 2.033},
+			{s = path .. "wfoly_ar_galima_reload_empty_end.ogg", t = 2.433},
+			{hide = 1, t = 0},
+			{hide = 3, t = 0.8},
+			{hide = 1, t = 1.05},
+		},
+	},
+	["reload_smag_fast"] = {
+		Source = "reload_smag_fast",
+		MinProgress = 0.855,
+		RefillProgress = 0.625,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.9,
+		IKTimeLine = {
+			{ t = 0, lhik = 1, rhik = 0 },
+			{ t = 0.2, lhik = 0, rhik = 0 },
+			{ t = 0.575, lhik = 0, rhik = 0 },
+			{ t = 0.9, lhik = 1, rhik = 1 },
+		},
+		EventTable = {
+			{s = path .. "wfoly_ar_galima_reload_fast_rotate.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_galima_reload_fast_magout.ogg", t = 0.4},
+			{s = path .. "wfoly_ar_galima_reload_fast_magin.ogg", t = 0.933},
+			{s = path .. "wfoly_ar_galima_reload_fast_end.ogg", t = 1.3},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 0.9},
+		},
+	},
+	["reload_smag_fast_empty"] = {
+        Source = "reload_smag_fast_empty",
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
+		RefillProgress = 0.7,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 0.9,
+		IKTimeLine = {
+			{ t = 0, lhik = 1, rhik = 0 },
+			{ t = 0.2, lhik = 0, rhik = 0 },
+			{ t = 0.65, lhik = 0, rhik = 0 },
+			{ t = 0.9, lhik = 1, rhik = 1 },
+		},
+		EventTable = {
+			{s = path .. "wfoly_ar_galima_reload_empty_fast_rotate.ogg", t = 0.033},
+			{s = path .. "wfoly_ar_galima_reload_empty_fast_magout.ogg", t = 0.333},
+			{s = path .. "wfoly_ar_galima_reload_empty_fast_magin.ogg", t = 0.95},
+			{s = path .. "wfoly_ar_galima_reload_empty_fast_charge.ogg", t = 1.4},
+			{s = path .. "wfoly_ar_galima_reload_empty_fast_end.ogg", t = 1.833},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 0.9},
+		},
+	},
     ["ready"] = {
         Source = "draw",
 		MinProgress = 0.7,
@@ -1039,6 +1139,16 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
+--- 10 Round Mags ---
+local Translate_SMag = {
+    ["reload"] = "reload_smag",
+    ["reload_empty"] = "reload_smag_empty",
+}
+local Translate_SMag_Fast = {
+    ["reload"] = "reload_smag_fast",
+    ["reload_empty"] = "reload_smag_fast_empty",
+}
+
 --- 45 Round Mags ---
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
@@ -1111,6 +1221,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
+	local smag = wep:HasElement("mag_smag")
 	local masterkey = wep:HasElement("shotgun")
 
     if super_sprint and Translate_TacSprint[anim] then
@@ -1127,6 +1238,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_XMag_Fast[anim] then
                 return Translate_XMag_Fast[anim]
             end
+		elseif smag then
+            if Translate_SMag_Fast[anim] then
+                return Translate_SMag_Fast[anim]
+            end
         else
             if Translate_Fast[anim] then
                 return Translate_Fast[anim]
@@ -1141,6 +1256,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         if xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
+            end
+		elseif smag then
+            if Translate_SMag[anim] then
+                return Translate_SMag[anim]
             end
         end
     end
@@ -1402,7 +1521,7 @@ if GetConVar("arc9_mw19_stats_warzone"):GetBool() then
 SWEP.DamageMax = 31 -- Damage done at point blank range
 SWEP.DamageMin = 28 -- Damage done at maximum range
 
-SWEP.RangeMin = 28 / ARC9.HUToM
+SWEP.RangeMin = 24 / ARC9.HUToM
 SWEP.RangeMax = 29 / ARC9.HUToM
 
 SWEP.BodyDamageMults = {
