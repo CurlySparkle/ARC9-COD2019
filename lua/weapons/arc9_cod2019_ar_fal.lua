@@ -51,7 +51,7 @@ SWEP.WorldModelOffset = {
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 49 -- Damage done at point blank range
-SWEP.DamageMin = 45 -- Damage done at maximum range
+SWEP.DamageMin = 34 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -307,7 +307,6 @@ SWEP.DropMagazineAng = Angle(0, -90, -90)
 SWEP.DropMagazineQCAHook = function(swep, old) 
   local curanim = swep:GetIKAnimation() or ""
   if curanim == "reload_fast" then return 5 end
-  --if curanim == "reload_fast_empty" then return 3 end --seems to break randomly
   if curanim == "reload_xmag_fast" then return 5 end
 end
 
@@ -342,10 +341,9 @@ SWEP.EnterSightsSound = path .. "weap_ar_falima_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "weap_ar_falima_ads_down.ogg"
 
 SWEP.BulletBones = {
-    [1] = "j_bullet_04",
-    [2] = "j_bullet_03",
-    [3] = "j_bullet_02",
-    [4] = "j_bullet_01",
+    [1] = "j_bullet_01",
+    [2] = "j_bullet_02",
+    [3] = "j_bullet_03",
 }
 
 SWEP.HideBones = {
@@ -502,7 +500,57 @@ SWEP.Animations = {
 			{hide = 3, t = 1.4},
 			{hide = 1, t = 1.5},
         },
-    },
+	},
+	["reload_med_mag"] = {
+		Source = "reload_med_mag",
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		IKTimeLine = {
+			{ t = 0, lhik = 1, rhik = 0 },
+			{ t = 0.1, lhik = 0, rhik = 0 },
+			{ t = 0.7, lhik = 0, rhik = 0 },
+			{ t = 0.95, lhik = 1, rhik = 1 },
+		},
+		EventTable = {
+			{s = path .. "wfoly_plr_ar_falima_reload_start.ogg", t = 0.033},
+			{s = path .. "wfoly_plr_ar_falima_reload_magout_01.ogg", t = 0.65},
+			{s = path .. "wfoly_plr_ar_falima_reload_arm.ogg", t = 0.75},
+			{s = path .. "wfoly_plr_ar_falima_reload_elbow.ogg", t = 1.45},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_01.ogg", t = 1.5},
+			{s = path .. "wfoly_plr_ar_falima_reload_magin_v2_02.ogg", t = 1.75},
+			{s = path .. "wfoly_plr_ar_falima_reload_end.ogg", t = 2.06},
+			{hide = 2, t = 0},
+			{hide = 0, t = 0.26},
+			{hide = 1, t = 2.25},
+		},
+	},
+	["reload_med_mag_fast"] = {
+		Source = "reload_med_mag_fast",
+		MinProgress = 0.875,
+		PeekProgress = 0.85,
+		RefillProgress = 0.65,
+		DropMagAt = 0.8,
+		FireASAP = true,
+		IKTimeLine = {
+			{ t = 0, lhik = 1, rhik = 0 },
+			{ t = 0.1, lhik = 0, rhik = 0 },
+			{ t = 0.675, lhik = 0, rhik = 0 },
+			{ t = 0.85, lhik = 1, rhik = 1 },
+		},
+		EventTable = {
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_start.ogg", t = 0},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_magout_01.ogg", t = 0.23},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_rattle.ogg", t = 0.33},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_magin_v2_01.ogg", t = 0.76},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_magin_v2_02.ogg", t = 1.25},
+			{s = path .. "wfoly_plr_ar_falima_reload_fast_end.ogg", t = 1.56},
+			{hide = 2, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 1, t = 0.8},--jmag 2 jank going on or something
+		},
+	},
     ["reload_xmag"] = {
         Source = "reload_xmag",
 		MinProgress = 0.9,
@@ -1063,7 +1111,17 @@ SWEP.Animations = {
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
---- 30 Round Mags ---
+--- 24 & 30 Round Mags ---
+local Translate_MMag = {
+    ["reload"] = "reload_med_mag",
+    ["reload_empty"] = "reload_empty",
+}
+local Translate_MMag_Fast = {
+    ["reload"] = "reload_med_mag_fast",
+    ["reload_empty"] = "reload_fast_empty",
+    ["reload_ubgl"] = "reload_fast_ubgl",
+}
+
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
@@ -1135,6 +1193,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
+	local mmag = wep:HasElement("mag_mmag")
 	local masterkey = wep:HasElement("shotgun")
 
     if super_sprint and Translate_TacSprint[anim] then
@@ -1151,6 +1210,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_XMag_Fast[anim] then
                 return Translate_XMag_Fast[anim]
             end
+		elseif mmag then
+            if Translate_MMag_Fast[anim] then
+                return Translate_MMag_Fast[anim]
+            end
         else
             if Translate_Fast[anim] then
                 return Translate_Fast[anim]
@@ -1165,6 +1228,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         if xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
+            end
+		elseif mmag then
+            if Translate_MMag[anim] then
+                return Translate_MMag[anim]
             end
         end
     end
