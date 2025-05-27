@@ -303,15 +303,15 @@ SWEP.Animations = {
     ["fire"] = {
         Source = "shoot1",
         EventTable = {
-            {s = path .. "weap_dblmg_spin_plr.ogg", v = 0.2, t = 0/30},
-			{s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.3, t = 4/30},
+            {s = path .. "weap_dblmg_spin_plr.wav", v = 0.2, t = 0/30},
+			{s = path .. "weap_dblmg_spindown_plr_01.wav", v = 0.3, t = 4/30},
         },
     },
     ["trigger"] = {
         Source = {"windup"},
 		--MinProgress = 0.8,
         EventTable = {
-            {s = path .. "weap_dblmg_spinup_plr_01.ogg", v = 0.5, t = 0/30},
+            {s = path .. "weap_dblmg_spinup_plr_01.wav", v = 0.5, t = 0/30},
         },
     },
     ["untrigger"] = {
@@ -320,7 +320,7 @@ SWEP.Animations = {
 		Reverse = true,
         EventTable = {
             {s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 5/30},
-			{s = path .. "weap_dblmg_spindown_plr_01.ogg", v = 0.4, t = 0/30},
+			{s = path .. "weap_dblmg_spindown_plr_01.wav", v = 0.4, t = 0/30},
         },
     },
     ["reload"] = {

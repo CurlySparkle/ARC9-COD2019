@@ -917,12 +917,12 @@ sound.Add( {
     volume = 1,
     pitch = {80,110},
     sound = {
-        "weapons/cod2019/minigun/weap_kilo121_fire_plr_01.ogg",
-        "weapons/cod2019/minigun/weap_kilo121_fire_plr_02.ogg",
-        "weapons/cod2019/minigun/weap_kilo121_fire_plr_03.ogg",
-        "weapons/cod2019/minigun/weap_kilo121_fire_plr_04.ogg",
-        "weapons/cod2019/minigun/weap_kilo121_fire_plr_05.ogg",
-        "weapons/cod2019/minigun/weap_kilo121_fire_plr_06.ogg",
+        "weapons/cod2019/minigun/weap_kilo121_fire_plr_01.wav",
+        "weapons/cod2019/minigun/weap_kilo121_fire_plr_02.wav",
+        "weapons/cod2019/minigun/weap_kilo121_fire_plr_03.wav",
+        "weapons/cod2019/minigun/weap_kilo121_fire_plr_04.wav",
+        "weapons/cod2019/minigun/weap_kilo121_fire_plr_05.wav",
+        "weapons/cod2019/minigun/weap_kilo121_fire_plr_06.wav",
     }
 } )
 
