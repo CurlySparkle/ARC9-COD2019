@@ -141,7 +141,6 @@ SWEP.AnimDraw = false
 SWEP.CamQCA = 1
 
 local path = "weapons/cod2019/throwables/molotov/"
-local path2 = "weapons/cod2019/throwables/semtex/"
 
 function SWEP:SecondaryAttack()
     return self:MeleeAttack()

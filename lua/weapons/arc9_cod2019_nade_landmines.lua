@@ -150,6 +150,8 @@ SWEP.AnimDraw = false
 SWEP.CamQCA = 1
 SWEP.CamQCA_Mult = 1
 
+local path = "weapons/cod2019/throwables/mine/"
+
 function SWEP:SecondaryAttack()
     return self:MeleeAttack()
 end
@@ -170,7 +172,7 @@ SWEP.Animations = {
         MinProgress = 0.3,
         FireASAP = true,
         EventTable = {
-            {s = "weapons/cod2019/throwables/mine/proxy_pull_out.ogg", t = 0/30},
+            {s = path .. "proxy_pull_out.ogg", t = 0/30},
         },
     },
     ["draw"] = {
@@ -178,19 +180,19 @@ SWEP.Animations = {
         MinProgress = 0.3,
         FireASAP = true,
         EventTable = {
-            {s = "weapons/cod2019/throwables/mine/proxy_pull_out.ogg", t = 0/30},
+            {s = path .. "proxy_pull_out.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = "weapons/cod2019/throwables/mine/proxy_pull_out.ogg", t = 0/30},
+            {s = path .. "proxy_pull_out.ogg", t = 0/30},
         },
     },
     ["throw"] = {
         Source = "throw",
         EventTable = {
-            {s = "weapons/cod2019/throwables/mine/proxy_throw.ogg", t = 0/30},
+            {s = path .. "proxy_throw.ogg", t = 0/30},
         },
         MinProgress = 0.44
     },

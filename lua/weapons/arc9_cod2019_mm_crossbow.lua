@@ -268,8 +268,8 @@ SWEP.TriggerDelay = 0.03 -- Set to > 0 to play the "trigger" animation before sh
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.03 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/crossbow/wfoly_sn_crossbow_hammer_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/crossbow/wfoly_sn_crossbow_disconnector_plr_01.ogg"
+SWEP.TriggerDownSound = path .. "wfoly_sn_crossbow_hammer_plr_01.ogg"
+SWEP.TriggerUpSound = path .. "wfoly_sn_crossbow_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {

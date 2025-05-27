@@ -94,18 +94,6 @@ SWEP.ShouldDropMagEmpty = false
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/357/"
-local path2 = "weapons/cod2019/50gs/"
-
--- SWEP.HideBones = {
-    -- [1] = "j_b_loader_01",
-    -- [2] = "j_b_loader_02",
-	-- [3] = "j_b_loader_03",
-	-- [4] = "j_b_loader_04",
-	-- [5] = "j_b_loader_05",
-	-- [6] = "j_b_loader_06",
-	-- [7] = "j_mag1",
-	-- [8] = "j_b_loader",
--- }
 
 SWEP.TriggerDelay = 0.3 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.

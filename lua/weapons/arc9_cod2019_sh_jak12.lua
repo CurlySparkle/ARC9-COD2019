@@ -319,7 +319,7 @@ SWEP.ExitSightsSound = path .. "wfoly_sh_aalpha12_ads_down.ogg"
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.1 -- Time until weapon fires.
-SWEP.TriggerDownSound = "weapons/cod2019/jak12/weap_aalpha12_prefire_plr_01.ogg"
+SWEP.TriggerDownSound = path .. "weap_aalpha12_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = ""
 
 SWEP.BulletBones = {

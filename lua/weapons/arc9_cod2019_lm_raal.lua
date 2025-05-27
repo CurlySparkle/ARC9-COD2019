@@ -354,8 +354,8 @@ SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
 SWEP.DistantShootSoundSilencedIndoor = "Distant_AR_Sup.Inside"
 ---------------------------------------------------
 
-SWEP.EnterSightsSound = "weapons/cod2019/raal/wfoly_lm_slima_ads_up.ogg"
-SWEP.ExitSightsSound = "weapons/cod2019/raal/wfoly_lm_slima_ads_down.ogg"
+SWEP.EnterSightsSound = path .. "wfoly_lm_slima_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_lm_slima_ads_down.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet1",
@@ -490,7 +490,7 @@ SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.15 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/raal/weap_slima_prefire_plr_01.ogg"
+SWEP.TriggerDownSound = path .. "weap_slima_prefire_plr_01.ogg"
 SWEP.TriggerUpSound = ""
 
 SWEP.Overheat = true

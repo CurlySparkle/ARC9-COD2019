@@ -347,8 +347,8 @@ SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
 SWEP.DistantShootSoundSilencedIndoor = "Distant_AR_Sup.Inside"
 ---------------------------------------------------
 
-SWEP.EnterSightsSound = "weapons/cod2019/ak47/wfoly_ar_akilo47_ads_up.ogg"
-SWEP.ExitSightsSound = "weapons/cod2019/ak47/wfoly_ar_akilo47_ads_down.ogg"
+SWEP.EnterSightsSound = path .. "wfoly_ar_akilo47_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_ar_akilo47_ads_down.ogg"
 
 SWEP.BulletBones = {
     [1] = {"j_bullet1","j_ammo1"},
@@ -397,8 +397,8 @@ SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/ak47/weap_akilo47_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/ak47/weap_akilo47_disconnector_plr_01.ogg"
+SWEP.TriggerDownSound = path .. "weap_akilo47_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = path .. "weap_akilo47_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {

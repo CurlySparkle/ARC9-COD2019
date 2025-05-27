@@ -142,8 +142,6 @@ SWEP.AnimDraw = false
 SWEP.CamQCA = 1
 SWEP.CamQCA_Mult = 1
 
-local path = "weapons/cod2019/throwables/flashbang/"
-
 SWEP.PreBashTime = 0.2
 SWEP.PostBashTime = 0.3
 SWEP.ImpactForce = 15

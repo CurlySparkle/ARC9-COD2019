@@ -350,8 +350,8 @@ SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/m1911/weap_mike1911_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/m1911/weap_mike1911_disconnector_plr_01.ogg"
+SWEP.TriggerDownSound = path .. "weap_mike1911_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = path .. "weap_mike1911_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {

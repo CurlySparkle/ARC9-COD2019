@@ -278,7 +278,6 @@ SWEP.DropMagazineAng = Angle(0, -90, -90)
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/vlk/"
-local path2 = "weapons/cod2019/model680/"
 
 SWEP.ShootSound = "COD2019.VLK.Fire"
 SWEP.ShootSoundIndoor = "COD2019.VLK.Fire"
@@ -332,7 +331,7 @@ SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/jak12/weap_aalpha12_prefire_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/jak12/weap_romeo870_disconnector_plr_01.ogg"
+SWEP.TriggerUpSound = "weapons/cod2019/model680/weap_romeo870_disconnector_plr_01.ogg"
 
 SWEP.Animations = {
     ["fire"] = {

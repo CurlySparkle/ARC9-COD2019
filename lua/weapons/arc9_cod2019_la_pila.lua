@@ -296,8 +296,8 @@ SWEP.DistantShootSoundIndoor = "Distant_JOKR.Inside"
 SWEP.DryFireSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
 SWEP.FiremodeSound = "weapons/cod2019/strela/weap_kgolf_fire_plr_fcg_01.ogg"
 
-SWEP.EnterSightsSound = "weapons/cod2019/pila/weap_la_gromeo_ads_up.ogg"
-SWEP.ExitSightsSound = "weapons/cod2019/pila/weap_la_gromeo_ads_down.ogg"
+SWEP.EnterSightsSound = path .. "weap_la_gromeo_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "weap_la_gromeo_ads_down.ogg"
 
 SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.

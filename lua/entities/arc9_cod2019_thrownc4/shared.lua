@@ -30,7 +30,7 @@ if SERVER then
     function ENT:Detonate()
         if self.Det or self.SpawnTime + 0.75 > CurTime() then return end
         self.Det = true
-        self:EmitSound( "weapons/cod2019/throwables/claymore/claymore_sensors_on.ogg", 75, 100, 1, CHAN_AUTO )
+        self:EmitSound( "weapons/cod2019/throwables/claymore/wpfoly_claymore_sensors_on.ogg", 75, 100, 1, CHAN_AUTO )
         local mult = self:GetArmed() and 1 or 0.5
         local owner = self.Attacker or self
 

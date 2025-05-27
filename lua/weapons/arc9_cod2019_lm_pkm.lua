@@ -321,8 +321,8 @@ SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
 SWEP.DistantShootSoundSilencedIndoor = "Distant_AR_Sup.Inside"
 ---------------------------------------------------
 
-SWEP.EnterSightsSound = "weapons/cod2019/pkm/wfoly_lm_pkilo_ads_up.ogg"
-SWEP.ExitSightsSound = "weapons/cod2019/pkm/wfoly_lm_pkilo_ads_down.ogg"
+SWEP.EnterSightsSound = path .. "wfoly_lm_pkilo_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_lm_pkilo_ads_down.ogg"
 
 SWEP.BulletBones = {
     [8] = "j_b_01",
@@ -385,7 +385,7 @@ SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.15 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = path .. "weap_pkilo_prefire_plr_01.ogg"
-SWEP.TriggerUpSound = path .. ""
+SWEP.TriggerUpSound = ""
 
 SWEP.Overheat = true
 SWEP.HeatCapacity = 65

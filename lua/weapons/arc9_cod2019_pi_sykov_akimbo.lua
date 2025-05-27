@@ -97,7 +97,6 @@ SWEP.DropMagazineAng = Angle(0, -90, 0)
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/sykov/"
-local path2 = "weapons/cod2019/renetti/"
 
 SWEP.BulletBones = {
 	[1] = "j_bullet1",
@@ -293,7 +292,7 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_pi_mike_inspect_01.ogg", t = 0/30},
-			{s = path2 .. "wfoly_pi_mike9_inspect_03.ogg", t = 62/30},
+			{s = "weapons/cod2019/renetti/wfoly_pi_mike9_inspect_03.ogg", t = 62/30},
 			{s = path .. "wfoly_pi_mike_inspect_03.ogg", t = 112/30},
         },
     },

@@ -300,7 +300,6 @@ SWEP.DropMagazineQCA = 4
 -------------------------- SOUNDS
 
 local path = "weapons/cod2019/model680/"
-local path2 = "weapons/cod2019/m13/"
 
 SWEP.ShootSound = "COD2019.Model680.Fire"
 SWEP.ShootSoundIndoor = "COD2019.Model680.Fire"
@@ -332,7 +331,7 @@ SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.01 -- Time until weapon fires.
 
 SWEP.TriggerDownSound = "weapons/cod2019/origin12/weap_oscar12_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/model680/weap_romeo870_disconnector_plr_01.ogg"
+SWEP.TriggerUpSound = path .. "weap_romeo870_disconnector_plr_01.ogg"
 
 SWEP.HideBones = {
     [1] = "j_shell",

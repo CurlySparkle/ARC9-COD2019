@@ -16,7 +16,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {100,100},
-    sound = "weapons/cod2019/50gs/weap_decho_sup_plr_01.ogg",
+    sound = "^weapons/cod2019/50gs/weap_decho_sup_plr_01.wav",
 } )
 
 --- .357 ---
@@ -35,7 +35,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {100,100},
-    sound = "weapons/cod2019/50gs/weap_decho_sup_plr_01.ogg",
+    sound = "^weapons/cod2019/50gs/weap_decho_sup_plr_01.wav",
 } )
 
 --- M19 ---
@@ -54,7 +54,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {90,110},
-    sound = "weapons/cod2019/m19/weap_papa320_supp_plr_01.ogg",
+    sound = "^weapons/cod2019/m19/weap_papa320_supp_plr_01.wav",
 } )
 
 --- 1911 ---
@@ -73,7 +73,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {100,100},
-    sound = "weapons/cod2019/m1911/weap_mike_sup_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/m1911/weap_mike_sup_fire_plr_01.wav",
 } )
 
 --- Renetti ---
@@ -92,7 +92,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {100,100},
-    sound = "weapons/cod2019/renetti/weap_mike9a3_sup_plr_01.ogg",
+    sound = "^weapons/cod2019/renetti/weap_mike9a3_sup_plr_01.wav",
 } )
 
 --- Sykov ---
@@ -111,7 +111,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {100,100},
-    sound = "weapons/cod2019/sykov/weap_mike_sup_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/sykov/weap_mike_sup_fire_plr_01.wav",
 } )
 
 --- X16 ---
@@ -130,7 +130,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {100,100},
-    sound = "weapons/cod2019/x16/weap_golf21_supp_plr_01.ogg",
+    sound = "^weapons/cod2019/x16/weap_golf21_supp_plr_01.wav",
 } )
 
 ------------ Assault Rifles ------------
@@ -244,7 +244,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {90,110},
-    sound = "weapons/cod2019/scar/weap_scharlie_fire_plr_01.wav",
+    sound = "^weapons/cod2019/scar/weap_scharlie_fire_plr_01.wav",
 } )
 
 sound.Add( {
@@ -270,7 +270,7 @@ sound.Add( {
     volume = 0.5,
     pitch = {90,110},
     sound = {
-        "weapons/cod2019/scar/weap_scharlie_mech_plr_01.ogg"
+        "^weapons/cod2019/scar/weap_scharlie_mech_plr_01.wav"
     }
 } )
 
@@ -486,7 +486,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {98,101},
-    sound = "^weapons/cod2019/holger/weap_mgolf36_fire_plr_01_sniper.ogg",
+    sound = "^weapons/cod2019/holger/weap_mgolf36_fire_plr_01_sniper.wav",
 } )
 
 sound.Add( {
@@ -495,7 +495,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {98,101},
-    sound = "^weapons/cod2019/holger/weap_mgolf36_sup_plr_01_sniper.ogg",
+    sound = "^weapons/cod2019/holger/weap_mgolf36_sup_plr_01_sniper.wav",
 } )
 
 --- M91 ---
@@ -602,7 +602,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {100,107},
-    sound = "weapons/cod2019/crossbow/weap_crossbow_fire_01.ogg",
+    sound = "weapons/cod2019/crossbow/weap_crossbow_fire_01.wav",
 } )
 
 --- EBR-14 ---
@@ -640,7 +640,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/kar98k/weap_kilo98_sup_bang_plr_01.ogg",
+    sound = "weapons/cod2019/kar98k/weap_kilo98_sup_bang_plr_01.wav",
 } )
 
 --- MK2 Carbine ---
@@ -659,7 +659,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {90,110},
-    sound = "weapons/cod2019/mk2/weap_sbeta_sup_plr_01.ogg",
+    sound = "weapons/cod2019/mk2/weap_sbeta_sup_plr_01.wav",
 } )
 
 --- SKS ---
@@ -678,7 +678,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/sks/weap_sksierra_sup_plr_01.ogg",
+    sound = "weapons/cod2019/sks/weap_sksierra_sup_plr_01.wav",
 } )
 
 --- SP-R 208 ---
@@ -697,7 +697,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {100,100},
-    sound = "weapons/cod2019/spr208/weap_romeo700_sup_bang_plr_01.ogg",
+    sound = "weapons/cod2019/spr208/weap_romeo700_sup_bang_plr_01.wav",
 } )
 
 ------------ Shotguns ------------
@@ -738,19 +738,6 @@ sound.Add( {
     volume =         1,
     pitch = {80,110},
     sound = "^weapons/cod2019/jak12/weap_aalpha12_fire_plr_sup_01.wav",
-} )
-
-sound.Add( {
-    name = "COD2019.JAK12.Fire.DB",
-    channel = CHAN_WEAPON or 1,
-    level = 140,
-    volume = 1,
-    pitch = {80,110},
-    sound = {
-        "weapons/cod2019/jak12/weap_aalpha12_fire_plr_01_db.ogg",
-        "weapons/cod2019/jak12/weap_aalpha12_fire_plr_02_db.ogg",
-        "weapons/cod2019/jak12/weap_aalpha12_fire_plr_03_db.ogg"
-    }
 } )
 
 --- Model 680 ---
@@ -826,7 +813,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {80,110},
-    sound = "^weapons/cod2019/vlk/weap_mike26_sup_plr_01.ogg",
+    sound = "^weapons/cod2019/vlk/weap_mike26_sup_plr_01.wav",
 } )
 
 ------------ Sniper Rifles ------------
@@ -917,12 +904,12 @@ sound.Add( {
     volume = 1,
     pitch = {80,110},
     sound = {
-        "weapons/cod2019/minigun/weap_kilo121_fire_plr_01.wav",
-        "weapons/cod2019/minigun/weap_kilo121_fire_plr_02.wav",
-        "weapons/cod2019/minigun/weap_kilo121_fire_plr_03.wav",
-        "weapons/cod2019/minigun/weap_kilo121_fire_plr_04.wav",
-        "weapons/cod2019/minigun/weap_kilo121_fire_plr_05.wav",
-        "weapons/cod2019/minigun/weap_kilo121_fire_plr_06.wav",
+        "^weapons/cod2019/minigun/weap_kilo121_fire_plr_01.wav",
+        "^weapons/cod2019/minigun/weap_kilo121_fire_plr_02.wav",
+        "^weapons/cod2019/minigun/weap_kilo121_fire_plr_03.wav",
+        "^weapons/cod2019/minigun/weap_kilo121_fire_plr_04.wav",
+        "^weapons/cod2019/minigun/weap_kilo121_fire_plr_05.wav",
+        "^weapons/cod2019/minigun/weap_kilo121_fire_plr_06.wav",
     }
 } )
 
@@ -943,7 +930,7 @@ sound.Add( {
     channel = CHAN_WEAPON or 1,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/aug/weap_augolf_sup_fire_plr_9mm_01.ogg",
+    sound = "^weapons/cod2019/aug/weap_augolf_sup_fire_plr_9mm_01.wav",
 } )
 
 sound.Add( {
@@ -960,7 +947,7 @@ sound.Add( {
     channel = CHAN_WEAPON or 1,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/aug/weap_augolf_sup_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/aug/weap_augolf_sup_fire_plr_01.wav",
 } )
 
 --- CX-9 ---
@@ -978,7 +965,7 @@ sound.Add( {
     channel = CHAN_WEAPON or 1,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/cx9/weap_secho_sup_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/cx9/weap_secho_sup_fire_plr_01.wav",
 } )
 
 --- Fennec ---
@@ -996,7 +983,7 @@ sound.Add( {
     channel = CHAN_WEAPON or 1,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/vector/weap_victor_sup_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/vector/weap_victor_sup_fire_plr_01.wav",
 } )
 
 --- ISO ---
@@ -1014,7 +1001,7 @@ sound.Add( {
     channel = CHAN_WEAPON or 1,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/iso/weap_charlie9_sup_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/iso/weap_charlie9_sup_fire_plr_01.wav",
 } )
 
 --- MP5 ---
@@ -1032,7 +1019,7 @@ sound.Add( {
     channel = CHAN_WEAPON or 1,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/mp5/weap_mpapa5_sup_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/mp5/weap_mpapa5_sup_fire_plr_01.wav",
 } )
 
 --- MP7 ---
@@ -1050,7 +1037,7 @@ sound.Add( {
     channel = CHAN_WEAPON or 1,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/mp7/weap_mpapa7_sup_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/mp7/weap_mpapa7_sup_fire_plr_01.wav",
 } )
 
 --- P90 ---
@@ -1068,7 +1055,7 @@ sound.Add( {
     channel = CHAN_WEAPON or 1,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/p90/weap_papa90_sup_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/p90/weap_papa90_sup_fire_plr_01.wav",
 } )
 
 --- PP19 Bizon ---
@@ -1086,7 +1073,7 @@ sound.Add( {
     channel = CHAN_WEAPON or 1,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/bizon/weap_beta_sup_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/bizon/weap_beta_sup_fire_plr_01.wav",
 } )
 
 --- Striker 45 ---
@@ -1104,7 +1091,7 @@ sound.Add( {
     channel = CHAN_WEAPON or 1,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/striker45/weap_smgolf45_sup_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/striker45/weap_smgolf45_sup_fire_plr_01.wav",
 } )
 
 --- Uzi ---
@@ -1123,7 +1110,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/uzi/weap_uzulu1911_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/uzi/weap_uzulu1911_fire_plr_01.wav",
 } )
 
 sound.Add( {
@@ -1131,7 +1118,7 @@ sound.Add( {
     channel = CHAN_WEAPON or 1,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/uzi/weap_uzulu_sup_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/uzi/weap_uzulu_sup_fire_plr_01.wav",
 } )
 
 --- Launchers ---
@@ -1142,7 +1129,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {85,110},
-    sound = "^weapons/cod2019/strela/weap_kgolf_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/strela/weap_kgolf_fire_plr_01.wav",
 } )
 
 sound.Add( {
@@ -1151,7 +1138,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {80,110},
-    sound = "weapons/cod2019/pila/weap_gromeo_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/pila/weap_gromeo_fire_plr_01.wav",
 } )
 
 sound.Add( {
@@ -1160,7 +1147,7 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {80,110},
-    sound = "^weapons/cod2019/rpg/weap_rpapa7_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/rpg/weap_rpapa7_fire_plr_01.wav",
 } )
 
 sound.Add( {
@@ -1169,7 +1156,21 @@ sound.Add( {
     level = 140,
     volume = 1,
     pitch = {80,100},
-    sound = "^weapons/cod2019/jokr/weap_juliet_launch_01.ogg",
+    sound = "^weapons/cod2019/jokr/weap_juliet_launch_01.wav",
+} )
+
+sound.Add( {
+    name = "COD2019.M32.Fire",
+    channel = ARC9.CHAN_WEAPON,
+    level = 90,
+    volume = 1,
+    pitch = {100,100},
+    sound = {
+        "^weapons/cod2019/m32/weap_mike32_fire_plr_01.wav",
+		"^weapons/cod2019/m32/weap_mike32_fire_plr_02.wav",
+		"^weapons/cod2019/m32/weap_mike32_fire_plr_03.wav",
+		"^weapons/cod2019/m32/weap_mike32_fire_plr_04.wav",
+    }
 } )
 ------------ UBGL ------------
 sound.Add({
@@ -1177,5 +1178,5 @@ sound.Add({
     channel = CHAN_WEAPON or 1,
     volume = 1.0,
     level = 140,
-    sound = "^weapons/cod2019/shared/ubgl/weap_mike203_fire_plr_01.ogg",
+    sound = "^weapons/cod2019/shared/ubgl/weap_mike203_fire_plr_01.wav",
 })

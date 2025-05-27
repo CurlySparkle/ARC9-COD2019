@@ -334,8 +334,8 @@ SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
 SWEP.DistantShootSoundSilencedIndoor = "Distant_AR_Sup.Inside"
 ---------------------------------------------------
 
-SWEP.EnterSightsSound = "weapons/cod2019/scar/wfoly_ar_scharlie_ads_up.ogg"
-SWEP.ExitSightsSound = "weapons/cod2019/scar/wfoly_ar_scharlie_ads_down.ogg"
+SWEP.EnterSightsSound = path .. "wfoly_ar_scharlie_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_ar_scharlie_ads_down.ogg"
 
 SWEP.BulletBones = {
     [1] = "j_bullet01",
@@ -387,8 +387,8 @@ SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayCancellable = false
 SWEP.TriggerDelayTime = 0.025 -- Time until weapon fires.
 
-SWEP.TriggerDownSound = "weapons/cod2019/scar/weap_scharlie_fire_first_plr_01.ogg"
-SWEP.TriggerUpSound = "weapons/cod2019/scar/weap_scharlie_disconnector_plr_01.ogg"
+SWEP.TriggerDownSound = path .. "weap_scharlie_fire_first_plr_01.ogg"
+SWEP.TriggerUpSound = path .. "weap_scharlie_disconnector_plr_01.ogg"
 
 -- Jammed
 

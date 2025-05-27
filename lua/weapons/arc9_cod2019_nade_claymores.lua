@@ -147,6 +147,8 @@ SWEP.AnimDraw = false
 
 SWEP.CamQCA = 1
 
+local path = "weapons/cod2019/throwables/claymore/"
+
 function SWEP:SecondaryAttack()
     return self:MeleeAttack()
 end
@@ -167,7 +169,7 @@ SWEP.Animations = {
         MinProgress = 0.3,
         FireASAP = true,
         EventTable = {
-            {s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_pullback.ogg", t = 0/30},
+            {s = path .. "iw8_wpfoly_claymore_pullback.ogg", t = 0/30},
         },
     },
     ["draw"] = {
@@ -175,13 +177,13 @@ SWEP.Animations = {
         MinProgress = 0.3,
         FireASAP = true,
         EventTable = {
-            {s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_pullback.ogg", t = 0/30},
+            {s = path .. "iw8_wpfoly_claymore_pullback.ogg", t = 0/30},
         },
     },
     ["holster"] = {
         Source = "holster",
         EventTable = {
-            {s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_putdown.ogg", t = 0/30},
+            {s = path .. "iw8_wpfoly_claymore_putdown.ogg", t = 0/30},
         },
     },
     ["pullpin"] = {
@@ -192,8 +194,8 @@ SWEP.Animations = {
     ["throw"] = {
         Source = "throw",
         EventTable = {
-            {s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_pullback.ogg", t = 0/30},
-            {s = "weapons/cod2019/throwables/claymore/iw8_wpfoly_claymore_putdown.ogg", t = 6/30},
+            {s = path .. "iw8_wpfoly_claymore_pullback.ogg", t = 0/30},
+            {s = path .. "iw8_wpfoly_claymore_putdown.ogg", t = 6/30},
         },
         MinProgress = 0.5
     },

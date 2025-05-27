@@ -329,8 +329,8 @@ SWEP.LayerSoundSilencedIndoor = "Layer_ARSUP.Inside"
 SWEP.DistantShootSoundSilencedIndoor = "Distant_AR_Sup.Inside"
 ---------------------------------------------------
 
-SWEP.EnterSightsSound = "weapons/cod2019/sa87/weap_ar_lima86_ads_up.ogg"
-SWEP.ExitSightsSound = "weapons/cod2019/sa87/weap_ar_lima86_ads_down.ogg"
+SWEP.EnterSightsSound = path .. "weap_ar_lima86_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "weap_ar_lima86_ads_down.ogg"
 
 SWEP.BulletBones = {
     [1] = {"j_bullet01","j_magextbullet01"},

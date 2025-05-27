@@ -279,8 +279,8 @@ SWEP.DistantShootSoundIndoor = "Distant_JOKR.Inside"
 ---------------------------------------------------
 
 SWEP.DryFireSound = "weapons/cod2019/svd/weap_delta_empty.ogg"
-SWEP.EnterSightsSound = "weapons/cod2019/rpg/wfoly_la_rpapa7_ads_up.ogg"
-SWEP.ExitSightsSound = "weapons/cod2019/rpg/wfoly_la_rpapa7_ads_down.ogg"
+SWEP.EnterSightsSound = path .. "wfoly_la_rpapa7_ads_up.ogg"
+SWEP.ExitSightsSound = path .. "wfoly_la_rpapa7_ads_down.ogg"
 
 SWEP.TriggerDelay = 0.02 -- Set to > 0 to play the "trigger" animation before shooting. Delay time is based on this value.
 SWEP.TriggerDelay = true -- Add a delay before the weapon fires.

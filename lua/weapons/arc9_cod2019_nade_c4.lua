@@ -244,7 +244,7 @@ SWEP.Animations = {
       Source = "throw_empty",
 	  Mult = 0.7,
       EventTable = {
-          {s = "weapons/csgo/breachcharges/breach_throw_01.wav", t = 0},
+          {s = path .. "breach_throw_01.wav", t = 0},
       },
       MinProgress = 0.35,
     },

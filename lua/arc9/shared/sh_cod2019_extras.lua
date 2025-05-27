@@ -249,20 +249,6 @@ sound.Add( {
 } )
 
 sound.Add( {
-    name = "COD2019.M32.Fire",
-    channel = ARC9.CHAN_WEAPON,
-    level = 90,
-    volume = 1,
-    pitch = {100,100},
-    sound = {
-        "weapons/cod2019/m32/weap_mike32_fire_plr_01.ogg",
-		"weapons/cod2019/m32/weap_mike32_fire_plr_02.ogg",
-		"weapons/cod2019/m32/weap_mike32_fire_plr_03.ogg",
-		"weapons/cod2019/m32/weap_mike32_fire_plr_04.ogg",
-    }
-} )
-
-sound.Add( {
     name = "COD2019.M32.Trigger",
     channel = ARC9.CHAN_TRIGGER,
     level = 90,
