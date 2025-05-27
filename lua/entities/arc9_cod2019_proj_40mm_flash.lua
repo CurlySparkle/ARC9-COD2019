@@ -74,7 +74,7 @@ function ENT:Detonate()
         self:EmitSound("weapons/underwater_explode3.wav", 100)
     else
         ParticleEffect("Generic_explo_flash", self:GetPos(), Angle(0, 0, 0), nil)
-        self:EmitSound("COD2019.Flash.Explode")
+        self:EmitSound("COD2019.Flash.Explode", _, _, _, _, _, _, ARC9.EveryoneRecipientFilter)
     end
 	
     util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 256, 32)

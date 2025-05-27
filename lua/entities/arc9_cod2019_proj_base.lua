@@ -356,7 +356,7 @@ end
 function ENT:Use(ply)
     if !self.Defusable then return end
 
-    self:EmitSound("TacRP/weapons/rifle_jingle-1.wav")
+    self:EmitSound("shared/rifle_jingle-1.wav")
 
     if self.PickupAmmo then
         ply:GiveAmmo(1, self.PickupAmmo, true)
@@ -366,7 +366,7 @@ function ENT:Use(ply)
 end
 
 function ENT:RemoteDetonate()
-    self:EmitSound("TacRP/weapons/c4/relay_switch-1.wav")
+    self:EmitSound("shared/relay_switch-1.wav")
 
     self.ArmTime = CurTime()
     self.Armed = true

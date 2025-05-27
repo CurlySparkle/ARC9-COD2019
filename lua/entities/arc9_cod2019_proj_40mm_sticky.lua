@@ -111,7 +111,7 @@ function ENT:Detonate()
         ParticleEffect("grenade_final", self:GetPos(), Angle(-90, 0, 0))
     end
 
-    self:EmitSound("Cod2019.Frag.Explode")
+    self:EmitSound("Cod2019.Frag.Explode", _, _, _, _, _, _, ARC9.EveryoneRecipientFilter)
 	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.ExplosionRadius * 4)
 	util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
     self:Remove()
