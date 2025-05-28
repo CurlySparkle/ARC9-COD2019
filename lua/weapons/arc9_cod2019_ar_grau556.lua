@@ -52,7 +52,7 @@ SWEP.WorldModelOffset = {
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 28 -- Damage done at point blank range
-SWEP.DamageMin = 22 -- Damage done at maximum range
+SWEP.DamageMin = 18 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
@@ -1341,6 +1341,7 @@ SWEP.Attachments = {
         Pos = Vector(-2.5, 0, 0),
         Ang = Angle(0, 0, 180),
 		InstalledElements = {"rail_grip"},
+		ExcludeElements = {"barrel_drifter_grip"},
 		MergeSlots = {20}, -- Grenade Launcher(s)
     },
     { -- 7
