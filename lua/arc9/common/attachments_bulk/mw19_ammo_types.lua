@@ -168,7 +168,7 @@ ATT.Penetration = 0
 ATT.TracerEffect = "cod2019_tracer_inc"
 
 ATT.CustomPros = {
-	[ ARC9:GetPhrase("mw19_ammo_stat_ignite_chance") ] = "25%",
+    [ ARC9:GetPhrase("mw19_ammo_stat_ignite_chance") ] = "25%",
 }
 
 local cov = 1 -- ??
@@ -291,25 +291,25 @@ ATT.DamageMaxMult = 2.5
 ATT.NoAimAssist = true
 
 if !warzonestats then -- Regular Stats
-	ATT.BodyDamageMults = {
-		[HITGROUP_HEAD] = 2,
-		[HITGROUP_CHEST] = 1.75,
-		[HITGROUP_STOMACH] = 1.5,
-		[HITGROUP_LEFTARM] = 1,
-		[HITGROUP_RIGHTARM] = 1,
-		[HITGROUP_LEFTLEG] = 1,
-		[HITGROUP_RIGHTLEG] = 1,
-	}
+    ATT.BodyDamageMults = {
+        [HITGROUP_HEAD] = 2,
+        [HITGROUP_CHEST] = 1.75,
+        [HITGROUP_STOMACH] = 1.5,
+        [HITGROUP_LEFTARM] = 1,
+        [HITGROUP_RIGHTARM] = 1,
+        [HITGROUP_LEFTLEG] = 1,
+        [HITGROUP_RIGHTLEG] = 1,
+    }
 else -- Warzone Stats
-	ATT.BodyDamageMults = {
-		[HITGROUP_HEAD] = 1.2,
-		[HITGROUP_CHEST] = 0.9,
-		[HITGROUP_STOMACH] = 0.75,
-		[HITGROUP_LEFTARM] = 0.5,
-		[HITGROUP_RIGHTARM] = 0.5,
-		[HITGROUP_LEFTLEG] = 0.5,
-		[HITGROUP_RIGHTLEG] = 0.5,
-	}
+    ATT.BodyDamageMults = {
+        [HITGROUP_HEAD] = 1.2,
+        [HITGROUP_CHEST] = 0.9,
+        [HITGROUP_STOMACH] = 0.75,
+        [HITGROUP_LEFTARM] = 0.5,
+        [HITGROUP_RIGHTARM] = 0.5,
+        [HITGROUP_LEFTLEG] = 0.5,
+        [HITGROUP_RIGHTLEG] = 0.5,
+    }
 end
 
 ATT.MuzzleParticle = "muzzleflash_slug"
@@ -761,25 +761,25 @@ ATT.SpreadMultSights = 0.25
 ATT.NoAimAssist = true
 
 if !warzonestats then -- Regular Stats
-	ATT.BodyDamageMults = {
-		[HITGROUP_HEAD] = 2,
-		[HITGROUP_CHEST] = 1.75,
-		[HITGROUP_STOMACH] = 1.5,
-		[HITGROUP_LEFTARM] = 1,
-		[HITGROUP_RIGHTARM] = 1,
-		[HITGROUP_LEFTLEG] = 1,
-		[HITGROUP_RIGHTLEG] = 1,
-	}
+    ATT.BodyDamageMults = {
+        [HITGROUP_HEAD] = 2,
+        [HITGROUP_CHEST] = 1.75,
+        [HITGROUP_STOMACH] = 1.5,
+        [HITGROUP_LEFTARM] = 1,
+        [HITGROUP_RIGHTARM] = 1,
+        [HITGROUP_LEFTLEG] = 1,
+        [HITGROUP_RIGHTLEG] = 1,
+    }
 else -- Warzone Stats
-	ATT.BodyDamageMults = {
-		[HITGROUP_HEAD] = 1.2,
-		[HITGROUP_CHEST] = 0.9,
-		[HITGROUP_STOMACH] = 0.75,
-		[HITGROUP_LEFTARM] = 0.5,
-		[HITGROUP_RIGHTARM] = 0.5,
-		[HITGROUP_LEFTLEG] = 0.5,
-		[HITGROUP_RIGHTLEG] = 0.5,
-	}
+    ATT.BodyDamageMults = {
+        [HITGROUP_HEAD] = 1.2,
+        [HITGROUP_CHEST] = 0.9,
+        [HITGROUP_STOMACH] = 0.75,
+        [HITGROUP_LEFTARM] = 0.5,
+        [HITGROUP_RIGHTARM] = 0.5,
+        [HITGROUP_LEFTLEG] = 0.5,
+        [HITGROUP_RIGHTLEG] = 0.5,
+    }
 end
 
 ATT.MuzzleParticle = "muzzleflash_slug"
@@ -823,25 +823,25 @@ ATT.RecoilKickMult = 3
 ATT.NoAimAssist = true
 
 if !warzonestats then -- Regular Stats
-	ATT.BodyDamageMults = {
-		[HITGROUP_HEAD] = 2,
-		[HITGROUP_CHEST] = 1.75,
-		[HITGROUP_STOMACH] = 1.5,
-		[HITGROUP_LEFTARM] = 1,
-		[HITGROUP_RIGHTARM] = 1,
-		[HITGROUP_LEFTLEG] = 1,
-		[HITGROUP_RIGHTLEG] = 1,
-	}
+    ATT.BodyDamageMults = {
+        [HITGROUP_HEAD] = 2,
+        [HITGROUP_CHEST] = 1.75,
+        [HITGROUP_STOMACH] = 1.5,
+        [HITGROUP_LEFTARM] = 1,
+        [HITGROUP_RIGHTARM] = 1,
+        [HITGROUP_LEFTLEG] = 1,
+        [HITGROUP_RIGHTLEG] = 1,
+    }
 else -- Warzone Stats
-	ATT.BodyDamageMults = {
-		[HITGROUP_HEAD] = 1.2,
-		[HITGROUP_CHEST] = 0.9,
-		[HITGROUP_STOMACH] = 0.75,
-		[HITGROUP_LEFTARM] = 0.5,
-		[HITGROUP_RIGHTARM] = 0.5,
-		[HITGROUP_LEFTLEG] = 0.5,
-		[HITGROUP_RIGHTLEG] = 0.5,
-	}
+    ATT.BodyDamageMults = {
+        [HITGROUP_HEAD] = 1.2,
+        [HITGROUP_CHEST] = 0.9,
+        [HITGROUP_STOMACH] = 0.75,
+        [HITGROUP_LEFTARM] = 0.5,
+        [HITGROUP_RIGHTARM] = 0.5,
+        [HITGROUP_LEFTLEG] = 0.5,
+        [HITGROUP_RIGHTLEG] = 0.5,
+    }
 end
 
 ATT.MuzzleParticle  = "muzzleflash_slug"
@@ -870,6 +870,8 @@ ATT.AutoStats = true
 ATT.ActivateElements = {"rocket_shovel"}
 ATT.Free = true
 
+ATT.MuzzleVelocityOverride = 12000
+ATT.Ammo = "xbowbolt"
 ATT.ShootEnt = "arc9_cod2019_proj_rpg_shovel"
 ATT.Category = {"cod2019_rpg_ammo"}
 
@@ -889,6 +891,8 @@ ATT.AutoStats = true
 ATT.ActivateElements = {"rocket_harpoon"}
 ATT.Free = true
 
+ATT.MuzzleVelocityOverride = 9000
+ATT.Ammo = "xbowbolt"
 ATT.ShootEnt = "arc9_cod2019_proj_rpg_harpoon"
 ATT.Category = {"cod2019_rpg_ammo"}
 
@@ -1147,25 +1151,25 @@ ATT.CustomCrosshairUBGL = false
 ATT.CrosshairHideDotUBGL = false
 
 if !warzonestats then -- Regular Stats
-	ATT.BodyDamageMultsUBGL = {
-		[HITGROUP_HEAD] = 2,
-		[HITGROUP_CHEST] = 1.75,
-		[HITGROUP_STOMACH] = 1.5,
-		[HITGROUP_LEFTARM] = 1,
-		[HITGROUP_RIGHTARM] = 1,
-		[HITGROUP_LEFTLEG] = 1,
-		[HITGROUP_RIGHTLEG] = 1,
-	}
+    ATT.BodyDamageMultsUBGL = {
+        [HITGROUP_HEAD] = 2,
+        [HITGROUP_CHEST] = 1.75,
+        [HITGROUP_STOMACH] = 1.5,
+        [HITGROUP_LEFTARM] = 1,
+        [HITGROUP_RIGHTARM] = 1,
+        [HITGROUP_LEFTLEG] = 1,
+        [HITGROUP_RIGHTLEG] = 1,
+    }
 else -- Warzone Stats
-	ATT.BodyDamageMultsUBGL = {
-		[HITGROUP_HEAD] = 1.2,
-		[HITGROUP_CHEST] = 0.9,
-		[HITGROUP_STOMACH] = 0.75,
-		[HITGROUP_LEFTARM] = 0.5,
-		[HITGROUP_RIGHTARM] = 0.5,
-		[HITGROUP_LEFTLEG] = 0.5,
-		[HITGROUP_RIGHTLEG] = 0.5,
-	}
+    ATT.BodyDamageMultsUBGL = {
+        [HITGROUP_HEAD] = 1.2,
+        [HITGROUP_CHEST] = 0.9,
+        [HITGROUP_STOMACH] = 0.75,
+        [HITGROUP_LEFTARM] = 0.5,
+        [HITGROUP_RIGHTARM] = 0.5,
+        [HITGROUP_LEFTLEG] = 0.5,
+        [HITGROUP_RIGHTLEG] = 0.5,
+    }
 end
 
 ATT.MuzzleParticleUBGL  = "muzzleflash_slug"
@@ -1215,25 +1219,25 @@ ATT.CustomCrosshairUBGL = false
 ATT.CrosshairHideDotUBGL = false
 
 if !warzonestats then -- Regular Stats
-	ATT.BodyDamageMultsUBGL = {
-		[HITGROUP_HEAD] = 2,
-		[HITGROUP_CHEST] = 1.75,
-		[HITGROUP_STOMACH] = 1.5,
-		[HITGROUP_LEFTARM] = 1,
-		[HITGROUP_RIGHTARM] = 1,
-		[HITGROUP_LEFTLEG] = 1,
-		[HITGROUP_RIGHTLEG] = 1,
-	}
+    ATT.BodyDamageMultsUBGL = {
+        [HITGROUP_HEAD] = 2,
+        [HITGROUP_CHEST] = 1.75,
+        [HITGROUP_STOMACH] = 1.5,
+        [HITGROUP_LEFTARM] = 1,
+        [HITGROUP_RIGHTARM] = 1,
+        [HITGROUP_LEFTLEG] = 1,
+        [HITGROUP_RIGHTLEG] = 1,
+    }
 else -- Warzone Stats
-	ATT.BodyDamageMultsUBGL = {
-		[HITGROUP_HEAD] = 1.2,
-		[HITGROUP_CHEST] = 0.9,
-		[HITGROUP_STOMACH] = 0.75,
-		[HITGROUP_LEFTARM] = 0.5,
-		[HITGROUP_RIGHTARM] = 0.5,
-		[HITGROUP_LEFTLEG] = 0.5,
-		[HITGROUP_RIGHTLEG] = 0.5,
-	}
+    ATT.BodyDamageMultsUBGL = {
+        [HITGROUP_HEAD] = 1.2,
+        [HITGROUP_CHEST] = 0.9,
+        [HITGROUP_STOMACH] = 0.75,
+        [HITGROUP_LEFTARM] = 0.5,
+        [HITGROUP_RIGHTARM] = 0.5,
+        [HITGROUP_LEFTLEG] = 0.5,
+        [HITGROUP_RIGHTLEG] = 0.5,
+    }
 end
 
 ATT.MuzzleParticleUBGL  = "muzzleflash_slug"
@@ -1305,25 +1309,25 @@ ATT.NoAimAssistUBGL = true
 ATT.CustomCrosshairUBGL = false
 
 if !warzonestats then -- Regular Stats
-	ATT.BodyDamageMultsUBGL = {
-		[HITGROUP_HEAD] = 2,
-		[HITGROUP_CHEST] = 1.75,
-		[HITGROUP_STOMACH] = 1.5,
-		[HITGROUP_LEFTARM] = 1,
-		[HITGROUP_RIGHTARM] = 1,
-		[HITGROUP_LEFTLEG] = 1,
-		[HITGROUP_RIGHTLEG] = 1,
-	}
+    ATT.BodyDamageMultsUBGL = {
+        [HITGROUP_HEAD] = 2,
+        [HITGROUP_CHEST] = 1.75,
+        [HITGROUP_STOMACH] = 1.5,
+        [HITGROUP_LEFTARM] = 1,
+        [HITGROUP_RIGHTARM] = 1,
+        [HITGROUP_LEFTLEG] = 1,
+        [HITGROUP_RIGHTLEG] = 1,
+    }
 else -- Warzone Stats
-	ATT.BodyDamageMultsUBGL = {
-		[HITGROUP_HEAD] = 1.2,
-		[HITGROUP_CHEST] = 0.9,
-		[HITGROUP_STOMACH] = 0.75,
-		[HITGROUP_LEFTARM] = 0.5,
-		[HITGROUP_RIGHTARM] = 0.5,
-		[HITGROUP_LEFTLEG] = 0.5,
-		[HITGROUP_RIGHTLEG] = 0.5,
-	}
+    ATT.BodyDamageMultsUBGL = {
+        [HITGROUP_HEAD] = 1.2,
+        [HITGROUP_CHEST] = 0.9,
+        [HITGROUP_STOMACH] = 0.75,
+        [HITGROUP_LEFTARM] = 0.5,
+        [HITGROUP_RIGHTARM] = 0.5,
+        [HITGROUP_LEFTLEG] = 0.5,
+        [HITGROUP_RIGHTLEG] = 0.5,
+    }
 end
 
 ATT.MuzzleParticleUBGL = "muzzleflash_slug"
@@ -1370,7 +1374,7 @@ ARC9.LoadAttachment(ATT, "cod2019_ammo_ubgl_sg_flechette")
 
 -- ATT.TracerColorHook = function(swep, col)
     -- if IsValid(swep:GetOwner()) and swep:GetOwner():IsPlayer() then
-		-- if !self:GetOwner():GetUBGL() then return color_white end
+        -- if !self:GetOwner():GetUBGL() then return color_white end
         -- local c = swep:GetOwner():GetWeaponColor():ToColor()
         -- local l = math.max(0.001, (0.33 * c.r + 0.5 * c.g * 0.16 * c.b) / 80)
         -- if l < 1 then

@@ -6,7 +6,7 @@ ENT.Spawnable                = false
 
 ENT.Model                    =  "models/props_junk/harpoon002a.mdl"
 
-ENT.IsRocket = false // projectile has a booster and will not drop.
+ENT.IsRocket = true // projectile has a booster and will not drop.
 ENT.InstantFuse = false // projectile is armed immediately after firing.
 ENT.RemoteFuse = false // allow this projectile to be triggered by remote detonator.
 ENT.ImpactFuse = true // projectile explodes on impact.
@@ -14,8 +14,10 @@ ENT.SmokeTrail = false
 
 function ENT:OnInitialize()
     if SERVER then
-        self:GetPhysicsObject():SetMass(25)
-        self:GetPhysicsObject():SetDragCoefficient(10)
+        self:GetPhysicsObject():SetMass(15)
+        self:GetPhysicsObject():SetDragCoefficient(5)
+        self.Armed = false
+        util.SpriteTrail(self, 0, Color(15, 15, 15), false, 3, 1, 0.5, 2, "trails/tube.vmt")
     end
 end
 
@@ -24,6 +26,7 @@ function ENT:Impact(data, collider)
     local attacker = self.Attacker or self:GetOwner() or self
     local d = data.OurOldVelocity:GetNormalized()
     local forward = data.OurOldVelocity:Dot(self:GetAngles():Forward())
+    self.Armed = true
     if forward <= 100 then return true end
     if IsValid(tgt) then
         local ang = data.OurOldVelocity:Angle()
@@ -34,12 +37,12 @@ function ENT:Impact(data, collider)
         util.Effect("ManhackSparks", fx)
 
         if IsValid(data.HitEntity) then
-		    self:EmitSound("weapons/cod2019/shared/blt_imp_flesh_plr_04.ogg",75, 100, 1, CHAN_AUTO)
+            self:EmitSound("weapons/cod2019/shared/blt_imp_flesh_plr_04.ogg",75, 100, 1, CHAN_AUTO)
             local dmginfo = DamageInfo()
             dmginfo:SetAttacker(attacker)
             dmginfo:SetInflictor(self)
             dmginfo:SetDamageType(DMG_CRUSH + DMG_CLUB)
-            dmginfo:SetDamage(250)
+            dmginfo:SetDamage(200)
             dmginfo:SetDamageForce(data.OurOldVelocity * 25)
             dmginfo:SetDamagePosition(data.HitPos)
             data.HitEntity:TakeDamageInfo(dmginfo)
@@ -128,11 +131,11 @@ function ENT:Impact(data, collider)
     return true
 end
 
-local g = Vector(0, 0, -9.81)
+local g = Vector(0, 0, -9.81 * 0.15)
 function ENT:PhysicsUpdate(phys)
-    if !self.Armed and phys:IsGravityEnabled() and self:WaterLevel() <= 2 then
+    if !self.Armed and self:WaterLevel() <= 2 then
         local v = phys:GetVelocity()
         self:SetAngles(v:Angle())
-        phys:SetVelocityInstantaneous(v * 0.985 + g)
+        phys:SetVelocityInstantaneous(v + g)
     end
 end
