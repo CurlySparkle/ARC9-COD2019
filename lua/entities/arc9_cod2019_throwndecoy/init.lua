@@ -140,9 +140,9 @@ function ENT:Think()
                 self.LastBurstStart = self.NextSound
             end
 
-            self:EmitSound(fsound, volume, 100, 1, ARC9.CHAN_WEAPON)
-            self:EmitSound(fdistance, 140, 100, 1, ARC9.CHAN_DISTANT)
-            self:EmitSound(flayer, volume, 100, 1, ARC9.CHAN_LAYER + 4)
+            self:EmitSound(fsound, volume, 100, 1, indoor and ARC9.CHAN_INDOOR or ARC9.CHAN_WEAPON)
+            self:EmitSound(fdistance, 140, 100, 1, indoor and ARC9.CHAN_INDOORDISTANT or ARC9.CHAN_DISTANT)
+            self:EmitSound(flayer, volume, 100, 1, indoor and (ARC9.CHAN_INDOOR + 7) or (ARC9.CHAN_LAYER + 4))
 
             local shot = ents.Create("info_particle_system")
             shot:SetKeyValue("effect_name", "weapon_decoy_ground_effect_shot")
