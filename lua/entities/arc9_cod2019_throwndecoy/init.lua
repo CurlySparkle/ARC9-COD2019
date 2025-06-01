@@ -12,7 +12,7 @@ function ENT:Initialize()
     if self.VJExists then
         for _, x in ipairs(ents.FindInSphere(self:GetPos(), 4000)) do
             if x:IsNPC() and string.find(x:GetClass(), "npc_vj_l4d_com_") and x.Zombie_CanHearPipe == true then
-                table.insert(x.VJ_AddCertainEntityAsEnemy, self)
+                -- table.insert(x.VJ_AddCertainEntityAsEnemy, self)
                 x:AddEntityRelationship(self, D_HT, 99)
                 x.MyEnemy = self
                 x:SetEnemy(self)
@@ -99,14 +99,16 @@ function ENT:Think()
             local flayer = Sound("Layer_AR.Outside")
             local delay = 0.1
             local volume = 140
+            local pitch = 100
             local magfactor = 1
 
             local tr = util.TraceLine({
-                start = self:GetPos(),
+                start = self:GetPos() + Vector(0, 0, 4),
                 endpos = self:GetPos() + Vector(0, 0, 728),
-                mask = 16513
+                mask = 16513,
+                filter = self,
             })
-            local indoor = not tr.HitSky or tr.Fraction <= 0.5
+            local indoor = not tr.HitSky and tr.Fraction <= 0.5
 
             if self:GetOwner().GetActiveWeapon and IsValid(self:GetOwner():GetActiveWeapon()) then
                 local wep = self:GetOwner():GetActiveWeapon()
@@ -125,22 +127,31 @@ function ENT:Think()
                 if wep.ShootVolume then
                     volume = wep.ShootVolume
                 end
+                if wep.ClipSize then
+                    magfactor = Lerp(((wep.ClipSize - 5) / 70) ^ 1, 1, 0.04)
+                end
                 if wep.RPM then
                     delay = 60 / wep.RPM
+                    if wep.ManualAction then
+                        delay = delay + math.Rand(0.4, 1.2) -- can't be bothered to calculate it
+                        magfactor = 5
+                    end
                 end
-                if wep.ClipSize then
-                    magfactor = Lerp(((wep.ClipSize - 10) / 60) ^ 0.5, 1, 0.05)
+
+                if wep.ShootPitch then
+                    local pvar = wep.ShootPitchVariation or 0
+                    pitch = wep.ShootPitch + math.Rand(-pvar, pvar)
                 end
             end
 
             if math.random(1, (CurTime() - self.LastBurstStart) * 30 * magfactor) == 1 then
                 self.NextSound = CurTime() + delay
             else
-                self.NextSound = CurTime() + delay + math.Rand(0.25, 1.5)
+                self.NextSound = CurTime() + delay + math.Rand(0.1, 1.5)
                 self.LastBurstStart = self.NextSound
             end
 
-            self:EmitSound(fsound, volume, 100, 1, indoor and ARC9.CHAN_INDOOR or ARC9.CHAN_WEAPON)
+            self:EmitSound(fsound, volume, pitch, 1, indoor and ARC9.CHAN_INDOOR or ARC9.CHAN_WEAPON)
             self:EmitSound(fdistance, 140, 100, 1, indoor and ARC9.CHAN_INDOORDISTANT or ARC9.CHAN_DISTANT)
             self:EmitSound(flayer, volume, 100, 1, indoor and (ARC9.CHAN_INDOOR + 7) or (ARC9.CHAN_LAYER + 4))
 
