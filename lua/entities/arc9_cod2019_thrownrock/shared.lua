@@ -77,6 +77,7 @@ function ENT:PhysicsCollide(data, physobj)
             self:EmitSound(Sound("physics/concrete/rock_impact_soft" .. math.random(1,3) .. ".wav"))
         end
         if not self.Hit then
+            sound.EmitHint(SOUND_PLAYER, self:GetPos(), 512, 5)
             self.Hit = true
             SafeRemoveEntityDelayed(self, 3)
         end
