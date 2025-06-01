@@ -924,7 +924,7 @@ SWEP.AttachmentElements = {
             {1,1},
         },
     },
-    ["barrel"] = {
+    ["barrel_none"] = {
         Bodygroups = {
             {2,1},
         },
