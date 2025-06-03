@@ -936,6 +936,7 @@ SWEP.Attachments = {
         Bone = "tag_grip_attach",
         Pos = Vector(-1.1, 0, 0),
         Ang = Angle(0, 0, 180),
+		ExcludeElements = {"barrel_short"},
     },
     { -- 7
         PrintName = ARC9:GetPhrase("mw19_category_magazine"),
