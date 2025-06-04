@@ -51,7 +51,7 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 22 -- Damage done at point blank range
+SWEP.DamageMax = 23 -- Damage done at point blank range
 SWEP.DamageMin = 15 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
@@ -318,18 +318,17 @@ SWEP.EnterSightsSound = path .. "wfoly_sm_victor_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_sm_victor_ads_down.ogg"
 
 SWEP.BulletBones = {
-    [1] = "j_bullet01",
-    [2] = "j_bullet02",
-	[3] = "j_bullet03",
-	[4] = "j_bullet04",
+	[1] = "j_bullet1",
+	[2] = "j_bullet2",
+	[3] = "j_bullet3",
 }
 
 SWEP.HideBones  = {
-    [1] = "j_mag2",
+	[1] = "j_mag2",
 }
 
 SWEP.ReloadHideBoneTables  = {
-    [1] = {
+	[1] = {
 	"j_mag2"
 	},
 	[2] = {
