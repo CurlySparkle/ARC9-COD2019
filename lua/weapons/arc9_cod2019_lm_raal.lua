@@ -993,19 +993,28 @@ end
 SWEP.DefaultBodygroups = "00000000000000"
 
 SWEP.AttachmentTableOverrides = {
-    -- ["arc9_stat_proscreen_main"] = {
-    -- ModelOffset = Vector(11.5, -0.5, -1),
+	-- ["arc9_stat_proscreen_main"] = {
+	-- ModelOffset = Vector(11.5, -0.5, -1),
 	-- ModelAngleOffset = Angle(0, 0, 0),
 	-- Scale = 1,
-    -- },
-    ["cod2019_optic_reflex_west05_hybrid"] = { ModelOffset = Vector(-4, 0, 0.1) },
-    ["cod2019_optic_hybrid_west02"] = { ModelOffset = Vector(-4, 0, 0.1) },
-    ["cod2019_optic_hybrid_west02_thermal"] = { ModelOffset = Vector(-4, 0, 0.1) },
-    ["cod2019_optic_raal_scope"] = { ModelOffset = Vector(-3, 0, 0.1) },
-    ["cod2019_optic_scope_mike14"] = { ModelOffset = Vector(-3.5, 0, 0.1) },
-    ["cod2019_crossbow_scope"] = { ModelOffset = Vector(-4, 0, 0.1) },
-    ["cod2019_crossbow_scope_vz"] = { ModelOffset = Vector(-4, 0, 0.1) },
-    ["cod2019_optic_scope_vz"] = { ModelOffset = Vector(-4, 0, 0.1) },
+	-- },
+	["cod2019_optic_reflex_west05_hybrid"] = { ModelOffset = Vector(-4, 0, 0.1) },
+	["cod2019_optic_hybrid_west02"] = { ModelOffset = Vector(-4, 0, 0.1) },
+	["cod2019_optic_hybrid_west02_thermal"] = { ModelOffset = Vector(-4, 0, 0.1) },
+	["cod2019_optic_raal_scope"] = { ModelOffset = Vector(-3, 0, 0.1) },
+	["cod2019_optic_scope_mike14"] = { ModelOffset = Vector(-3.5, 0, 0.1) },
+	["cod2019_crossbow_scope"] = { ModelOffset = Vector(-4, 0, 0.1) },
+	["cod2019_crossbow_scope_vz"] = { ModelOffset = Vector(-4, 0, 0.1) },
+	["cod2019_optic_scope_vz"] = { ModelOffset = Vector(-4, 0, 0.1) },
+	["cod2019_griptape_01"] = {
+	Model = "models/weapons/cod2019/attachs/weapons/raal/attachment_vm_lm_slima_griptape.mdl",
+	},
+	["cod2019_griptape_02"] = {
+	Model = "models/weapons/cod2019/attachs/weapons/raal/attachment_vm_lm_slima_griptape.mdl",
+	},
+	["cod2019_griptape_03"] = {
+	Model = "models/weapons/cod2019/attachs/weapons/raal/attachment_vm_lm_slima_griptape.mdl",
+	},
 }
 
 SWEP.AttachmentElements = {

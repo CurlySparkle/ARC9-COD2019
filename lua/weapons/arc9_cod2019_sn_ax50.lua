@@ -789,14 +789,23 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 end
 
 SWEP.AttachmentTableOverrides = {
-    ["arc9_stat_proscreen_main"] = {
-    ModelOffset = Vector(17, -0.85, -0.04),
+	["arc9_stat_proscreen_main"] = {
+	ModelOffset = Vector(17, -0.85, -0.04),
 	ModelAngleOffset = Angle(0, 0, 0),
 	Scale = 1,
-    },
-    ["go_grip_angled"] = {
-    ModelOffset = Vector(0, 0, 0.1),
-    },
+	},
+	["go_grip_angled"] = {
+	ModelOffset = Vector(0, 0, 0.1),
+	},
+	["cod2019_griptape_01"] = {
+	Model = "models/weapons/cod2019/attachs/weapons/ax50/attachment_vm_sn_alpha50_griptape.mdl",
+	},
+	["cod2019_griptape_02"] = {
+	Model = "models/weapons/cod2019/attachs/weapons/ax50/attachment_vm_sn_alpha50_griptape.mdl",
+	},
+	["cod2019_griptape_03"] = {
+	Model = "models/weapons/cod2019/attachs/weapons/ax50/attachment_vm_sn_alpha50_griptape.mdl",
+	},
 }
 
 SWEP.AttachmentElements = {
