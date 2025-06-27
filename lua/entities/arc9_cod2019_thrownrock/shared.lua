@@ -47,7 +47,7 @@ function ENT:PhysicsCollide(data, physobj)
         if data.Speed > 75 then
             local tgt = data.HitEntity
 
-            if data.Speed > 150 then
+            if data.Speed > 150 or not data.Hit then
                 local eff = EffectData()
                 eff:SetOrigin(data.HitPos)
                 eff:SetStart(self:GetPos())
