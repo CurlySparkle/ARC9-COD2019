@@ -31,7 +31,7 @@ SWEP.Slot = 0
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.NoTPIK = true
-SWEP.TPIKNoSprintAnim = true 
+SWEP.TPIKNoSprintAnim = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_melee_knife_oscar.mdl"
 SWEP.WorldModelOffset = {
     Pos = Vector(-6.5, -3, 0),
@@ -87,36 +87,35 @@ SWEP.SprintVerticalOffset = true
 SWEP.CanLean = false
 
 SWEP.CamQCA = 1
-SWEP.CamQCA_Mult = 1
+SWEP.CamQCA_Mult = 0.25
 
 -------------------------- MELEE
 
 SWEP.Bash = true
 SWEP.PrimaryBash = true
-SWEP.SecondaryBash = true
 
-SWEP.BashDamage = 55
-SWEP.BashLungeRange = 64
+SWEP.BashDamage = 45
+SWEP.BashLungeRange = 0
 SWEP.BashRange = 64
-SWEP.PreBashTime = 0.2
+SWEP.PreBashTime = 0.25
 SWEP.PostBashTime = 0.2
 SWEP.BashDamageType = DMG_SLASH
 
--- SWEP.Bash2 = true
--- SWEP.SecondaryBash = true
+SWEP.Bash2 = true
+SWEP.SecondaryBash = true
 
--- SWEP.Bash2Damage = 70
--- SWEP.Bash2LungeRange = 64
--- SWEP.Bash2Range = 32
--- SWEP.PreBash2Time = 0.15
--- SWEP.PostBash2Time = 0.75
--- SWEP.Bash2DamageType = DMG_SLASH
+SWEP.Bash2Damage = 75
+SWEP.Bash2LungeRange = 72
+SWEP.Bash2Range = 52
+SWEP.PreBash2Time = 0.2
+SWEP.PostBash2Time = 0.5
+SWEP.Bash2DamageType = DMG_SLASH
 
 SWEP.Backstab = true
-SWEP.BackstabDamage = 250
-SWEP.BackstabRange = 32
-SWEP.PreBackstabTime = 0.3
-SWEP.PostBackstabTime = 1
+SWEP.BackstabDamage = 150
+SWEP.BackstabRange = 48
+SWEP.PreBackstabTime = 0.2
+SWEP.PostBackstabTime = 0.9
 SWEP.BackstabDamageType = DMG_SLASH
 
 SWEP.ImpactForce = 15
@@ -172,7 +171,7 @@ SWEP.HoldTypeNPC = "crowbar"
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
-SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE 
+SWEP.AnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 SWEP.NonTPIKAnimMelee = ACT_HL2MP_GESTURE_RANGE_ATTACK_KNIFE
 
 SWEP.Animations = {
@@ -187,8 +186,8 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.9,
-		FireASAP = true,
+        MinProgress = 0.9,
+        FireASAP = true,
         EventTable = {
             {s = path .. "melee_knife_charge_01.ogg", t = 0/30},
         },
@@ -197,7 +196,10 @@ SWEP.Animations = {
         Source = "holster",
     },
     ["bash"] = {
-        Source = {"melee_01","melee_02","melee_03"},
+        Source = {"melee_02","melee_03"},
+    },
+    ["bash2"] = {
+        Source = "melee_01",
     },
     ["backstab"] = {
         Source = {"backstab_01","backstab_02"},
@@ -211,13 +213,13 @@ SWEP.Animations = {
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+        IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         Time = 1.3,
     },
     ["inspect"] = {
         Source = "lookat01",
-		MinProgress = 0.9,
-		FireASAP = true,
+        MinProgress = 0.9,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_me_knife_inspect_01.ogg", t = 0/30},
             {s = path .. "wfoly_me_knife_inspect_01.ogg", t = 72/30},
@@ -243,8 +245,8 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_skins"),
         Category = "cod2019_knife_models",
-		InstalledElements = {"body_none"},
-		CosmeticOnly = true,
+        InstalledElements = {"body_none"},
+        CosmeticOnly = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),

@@ -81,7 +81,7 @@ SWEP.TossForce = 1300 -- Force that the grenade will be thrown with when right c
 SWEP.ThrowChargeTime = 1 -- How long it takes to charge the grenade to its maximum throw force.
 
 SWEP.ThrowTumble = false -- Grenade tumbles when thrown.
-SWEP.Disposable = true 
+SWEP.Disposable = true
 
 -------------------------- HANDLING
 SWEP.SprintToFireTime = 0.2 -- How long it takes to go from sprinting to being able to fire.
@@ -140,12 +140,14 @@ SWEP.AnimReload = ACT_HL2MP_GESTURE_RELOAD_MAGIC
 SWEP.AnimDraw = false
 
 SWEP.CamQCA = 1
-SWEP.CamQCA_Mult = 1
+SWEP.CamQCA_Mult = 0.25
 
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.3
+SWEP.PostBashTime = 0.45
 SWEP.ImpactForce = 15
-SWEP.BackstabRange = 64
+SWEP.BashLungeRange = 96
+SWEP.BashRange = 64
+SWEP.BashDamage = 50
 SWEP.MeleeHitSound = "COD2019.Knife.Hit_Flesh"
 SWEP.MeleeHitWallSound = "COD2019.Knife.Hit_World"
 SWEP.MeleeSwingSound = "COD2019.Knife.Swing"
@@ -190,7 +192,7 @@ SWEP.Animations = {
     },
     ["throw"] = {
         Source = "throw",
-		Mult = 0.8,
+        Mult = 0.8,
         EventTable = {
             {s = "COD2019.Knife.Throw", t = 0/30},
         },
@@ -211,11 +213,11 @@ SWEP.Animations = {
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		Mult = 5,
+        Mult = 5,
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 5,
+        Mult = 5,
     },
     ["bash"] = {
         Source = {"melee_hit01", "melee_hit02"},
@@ -229,7 +231,7 @@ SWEP.Attachments = {
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks"},
     },
-	{
+    {
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
         Category = {"universal_camo"},
         CosmeticOnly = true,

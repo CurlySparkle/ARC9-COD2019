@@ -31,7 +31,7 @@ SWEP.Slot = 0
 SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.NoTPIK = true
-SWEP.TPIKNoSprintAnim = true 
+SWEP.TPIKNoSprintAnim = true
 SWEP.NotForNPCs = true -- Won't be given to NPCs.
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_melee_fist.mdl"
 SWEP.WorldModelOffset = {
@@ -90,35 +90,35 @@ SWEP.MissileCrosshair = false
 SWEP.ForceStandardCrosshair = true
 
 SWEP.CamQCA = 1
-SWEP.CamQCA_Mult = 1
+SWEP.CamQCA_Mult = 0.25
 
 -------------------------- MELEE
 
 SWEP.Bash = true
 SWEP.PrimaryBash = true
 
-SWEP.BashDamage = 35
-SWEP.BashLungeRange = 64
-SWEP.BashRange = 64
+SWEP.BashDamage = 30
+SWEP.BashLungeRange = 0
+SWEP.BashRange = 48
 SWEP.PreBashTime = 0.2
-SWEP.PostBashTime = 0.2
+SWEP.PostBashTime = 0.25
 SWEP.BashDamageType = DMG_GENERIC
 
 SWEP.Bash2 = true
 SWEP.SecondaryBash = true
 
 SWEP.Bash2Damage = 45
-SWEP.Bash2LungeRange = 64
-SWEP.Bash2Range = 64
-SWEP.PreBash2Time = 0.2
-SWEP.PostBash2Time = 0.2
+SWEP.Bash2LungeRange = 72
+SWEP.Bash2Range = 48
+SWEP.PreBash2Time = 0.25
+SWEP.PostBash2Time = 0.4
 SWEP.Bash2DamageType = DMG_GENERIC
 
 SWEP.Backstab = true
-SWEP.BackstabDamage = 250
-SWEP.BackstabRange = 32
-SWEP.PreBackstabTime = 0.5
-SWEP.PostBackstabTime = 0.5
+SWEP.BackstabDamage = 70
+SWEP.BackstabRange = 48
+SWEP.PreBackstabTime = 0.25
+SWEP.PostBackstabTime = 0.4
 SWEP.BackstabDamageType = DMG_GENERIC
 
 SWEP.ImpactForce = 15
@@ -127,9 +127,6 @@ SWEP.MeleeHitSound = "COD2019.Melee.HitBody"
 SWEP.MeleeHitWallSound = "COD2019.Melee.HitWall"
 SWEP.MeleeSwingSound = "COD2019.Knife.Swing"
 SWEP.MeleeHitSound = "COD2019.Melee.HitBody"
-
-local path = "weapons/cod2019/melee/knife/"
-
 SWEP.FiremodeSound = ""
 
 -------------------------- POSITIONS
@@ -192,17 +189,17 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
-		MinProgress = 0.9,
-		FireASAP = true,
+        MinProgress = 0.9,
+        FireASAP = true,
     },
     ["holster"] = {
         Source = "holster",
     },
     ["bash"] = {
-        Source = {"melee_01","melee_05","melee_07"},
+        Source = {"melee_01","melee_02","melee_05","melee_06"},
     },
     ["bash2"] = {
-        Source = {"melee_02","melee_06","melee_08"},
+        Source = {"melee_07","melee_08"},
     },
     ["backstab"] = {
         Source = {"backstab_01","backstab_02"},
@@ -216,13 +213,13 @@ SWEP.Animations = {
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+        IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         Time = 1.5,
     },
     ["inspect"] = {
         Source = "lookat01",
-		MinProgress = 0.9,
-		FireASAP = true,
+        MinProgress = 0.9,
+        FireASAP = true,
     },
 }
 
