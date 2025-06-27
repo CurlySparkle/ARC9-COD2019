@@ -16,6 +16,8 @@ ENT.CollisionGroup = COLLISION_GROUP_PROJECTILE
 ENT.Model = "models/weapons/cod2019/w_eq_rock_thrown.mdl"
 ENT.FuseTime = 3.5
 
+ENT.NextHit = 0
+
 function ENT:Initialize()
     if SERVER then
         self:SetModel(self.Model)
@@ -43,9 +45,19 @@ end
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
         if data.Speed > 75 then
-            self:EmitSound(Sound("physics/concrete/rock_impact_hard" .. math.random(1,6) .. ".wav"))
-
             local tgt = data.HitEntity
+
+            if data.Speed > 150 then
+                local eff = EffectData()
+                eff:SetOrigin(data.HitPos)
+                eff:SetStart(self:GetPos())
+                eff:SetSurfaceProp(data.TheirSurfaceProps)
+                eff:SetDamageType(DMG_GENERIC)
+                eff:SetHitBox(0)
+                eff:SetFlags(1) -- IMPACT_NODECAL
+                util.Effect("Impact_GMOD", eff)
+            end
+
             if IsValid(tgt) and tgt:GetClass() == "func_breakable_surf" then
                 self:FireBullets({
                     Attacker = self:GetOwner(),
@@ -61,25 +73,41 @@ function ENT:PhysicsCollide(data, physobj)
                 self:SetPos(pos)
                 self:GetPhysicsObject():SetVelocityInstantaneous(vel * 0.5)
             elseif IsValid(tgt) and (self.NextHit or 0) < CurTime() then
-                self.NextHit = CurTime() + 0.2
+                self.NextHit = CurTime() + 0.15
                 local dmginfo = DamageInfo()
                 dmginfo:SetDamageType(DMG_CLUB)
-                local d = Lerp(data.Speed / 1000, 10, 45)
-                dmginfo:SetDamage(d)
+                local d = Lerp((data.Speed / 2000) ^ 2, 5, 40)
                 dmginfo:SetAttacker(self:GetOwner())
                 dmginfo:SetInflictor(self)
-                dmginfo:SetDamageForce(data.OurOldVelocity * 20)
-                dmginfo:SetDamagePosition(self:GetPos())
+                dmginfo:SetDamagePosition(data.HitPos)
+
+                if tgt:IsPlayer() or tgt:IsNPC() or tgt:IsNextBot() then
+                    dmginfo:SetDamageForce(data.OurOldVelocity * 20)
+                else
+                    dmginfo:SetDamageForce(data.OurOldVelocity)
+                    d = d * 2
+                end
+                dmginfo:SetDamage(d)
                 tgt:TakeDamageInfo(dmginfo)
             end
-
-        elseif data.Speed > 25 then
-            self:EmitSound(Sound("physics/concrete/rock_impact_soft" .. math.random(1,3) .. ".wav"))
+        elseif data.Speed > 25 and self.Hit then
+            self:EmitSound("physics/concrete/rock_impact_soft" .. math.random(1, 3) .. ".wav")
         end
+
         if not self.Hit then
             sound.EmitHint(SOUND_PLAYER, self:GetPos(), 512, 5)
             self.Hit = true
-            SafeRemoveEntityDelayed(self, 3)
+            if data.OurOldVelocity:Dot(data.HitNormal) >= 700 and self.NextHit < CurTime() then
+                self:EmitSound("physics/concrete/concrete_break3.wav", 70, math.Rand(102, 105))
+                local eff = EffectData()
+                eff:SetOrigin(self:GetPos())
+                eff:SetNormal(-data.OurOldVelocity:GetNormalized())
+                eff:SetScale(0.1)
+                util.Effect("WheelDust", eff)
+                SafeRemoveEntity(self)
+            else
+                SafeRemoveEntityDelayed(self, 3)
+            end
         end
     end
 end
@@ -101,5 +129,6 @@ hook.Add("OnEntityWaterLevelChanged", "arc9_cod2019_rock", function(ent, old, ne
         effectdata:SetOrigin(ent:GetPos())
         effectdata:SetScale(Lerp(ent:GetVelocity():Length2D() / 1000, 1, 10))
         util.Effect("watersplash", effectdata)
+        ent.Hit = true
     end
 end)
