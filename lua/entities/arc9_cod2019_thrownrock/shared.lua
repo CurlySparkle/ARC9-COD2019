@@ -44,19 +44,18 @@ end
 
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
+        local nvel = data.OurOldVelocity:GetNormalized()
         if data.Speed > 75 then
             local tgt = data.HitEntity
 
-            if data.Speed > 150 or not data.Hit then
-                local eff = EffectData()
-                eff:SetOrigin(data.HitPos)
-                eff:SetStart(self:GetPos())
-                eff:SetSurfaceProp(data.TheirSurfaceProps)
-                eff:SetDamageType(DMG_GENERIC)
-                eff:SetHitBox(0)
-                eff:SetFlags(1) -- IMPACT_NODECAL
-                util.Effect("Impact_GMOD", eff)
-            end
+            local eff = EffectData()
+            eff:SetOrigin(data.HitPos - self:GetVelocity():GetNormalized())
+            eff:SetStart(data.HitPos)
+            eff:SetSurfaceProp(data.TheirSurfaceProps)
+            eff:SetDamageType(DMG_GENERIC)
+            eff:SetHitBox(1)
+            eff:SetFlags(1) -- IMPACT_NODECAL
+            util.Effect("Impact_GMOD", eff)
 
             if IsValid(tgt) and tgt:GetClass() == "func_breakable_surf" then
                 self:FireBullets({
@@ -66,7 +65,7 @@ function ENT:PhysicsCollide(data, physobj)
                     Distance = 32,
                     Tracer = 0,
                     Src = self:GetPos(),
-                    Dir = data.OurOldVelocity:GetNormalized(),
+                    Dir = nvel,
                 })
                 local pos, ang, vel = self:GetPos(), self:GetAngles(), data.OurOldVelocity
                 self:SetAngles(ang)
@@ -97,12 +96,12 @@ function ENT:PhysicsCollide(data, physobj)
         if not self.Hit then
             sound.EmitHint(SOUND_PLAYER, self:GetPos(), 512, 5)
             self.Hit = true
-            if data.OurOldVelocity:Dot(data.HitNormal) >= 700 and self.NextHit < CurTime() then
+            if data.OurOldVelocity:Dot(data.HitNormal) >= 5000 and self.NextHit < CurTime() then
                 self:EmitSound("physics/concrete/concrete_break3.wav", 70, math.Rand(102, 105))
                 local eff = EffectData()
-                eff:SetOrigin(self:GetPos())
-                eff:SetNormal(-data.OurOldVelocity:GetNormalized())
-                eff:SetScale(0.1)
+                eff:SetOrigin(data.HitPos)
+                eff:SetNormal(nvel)
+                eff:SetScale(1)
                 util.Effect("WheelDust", eff)
                 SafeRemoveEntity(self)
             else
