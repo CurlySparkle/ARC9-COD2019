@@ -1162,7 +1162,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
         Category = "cod2019_tac",
         Bone = "tag_laser_attach",
-        Pos = Vector(1, 0, 0),
+        Pos = Vector(1.6, -0.03, -0.1),
         Ang = Angle(0, 0, 180),
     },
     { -- 4
