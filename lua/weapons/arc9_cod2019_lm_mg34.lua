@@ -50,12 +50,12 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 38 -- Damage done at point blank range
+SWEP.DamageMax = 34 -- Damage done at point blank range
 SWEP.DamageMin = 23 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 22 / ARC9.HUToM
+SWEP.RangeMin = 20 / ARC9.HUToM
 SWEP.RangeMax = 55 / ARC9.HUToM
 
 SWEP.Penetration = 15 -- Units of wood that can be penetrated by this gun.
@@ -400,7 +400,7 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.835,
 		MagSwapTime = 3,
-		DropMagAt = 4,
+		DropMagAt = 4.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.3, lhik = 1, rhik = 0 },
@@ -427,7 +427,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_pull.ogg", t = 247/30},
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_end.ogg", t = 263/30},
 			{hide = 1, t = 0},
-			{hide = 2, t = 4},
+			{hide = 2, t = 4.1},
 			{hide = 1, t = 4.7},
         },
     },
@@ -436,7 +436,7 @@ SWEP.Animations = {
 		MinProgress = 0.95,
 		FireASAP = true,
 		RefillProgress = 0.835,
-		DropMagAt = 4,
+		DropMagAt = 4.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.3, lhik = 1, rhik = 0 },
@@ -461,7 +461,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_hands.ogg", t = 250/30},
 			{s = path .. "wfoly_plr_lm_mgolf34_reload_empty_pull.ogg", t = 255/30},
 			{hide = 1, t = 0},
-			{hide = 2, t = 4},
+			{hide = 2, t = 4.1},
 			{hide = 1, t = 4.7},
         },
     },
