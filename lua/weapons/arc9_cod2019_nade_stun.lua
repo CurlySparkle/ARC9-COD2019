@@ -79,7 +79,7 @@ SWEP.TossForce = 1000 -- Force that the grenade will be thrown with when right c
 
 SWEP.ThrowChargeTime = 1 -- How long it takes to charge the grenade to its maximum throw force.
 
-SWEP.ThrowTumble = false -- Grenade tumbles when thrown.
+SWEP.ThrowTumble = true -- Grenade tumbles when thrown.
 SWEP.Disposable = true 
 
 -------------------------- HANDLING
