@@ -56,7 +56,7 @@ SWEP.DamageMin = 12 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 25 / ARC9.HUToM
+SWEP.RangeMin = 20 / ARC9.HUToM
 SWEP.RangeMax = 47 / ARC9.HUToM
 
 SWEP.Penetration = 13 -- Units of wood that can be penetrated by this gun.
@@ -755,7 +755,7 @@ SWEP.Animations = {
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
---- 30, 50, & 60 (AR) Round Mags ---
+--- 20, 30, 50, & 60 (AR) Round Mags ---
 local Translate_AR = {
     ["reload"] = "reload_ar",
     ["reload_empty"] = "reload_empty_ar",
