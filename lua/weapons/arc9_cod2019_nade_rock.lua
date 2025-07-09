@@ -77,9 +77,9 @@ SWEP.ThrowAnimSpeed = 1
 
 SWEP.FuseTimer = -1 -- Length of time that the grenade will take to explode in your hands. -1 = Won't explode.
 
-SWEP.ThrowForceMin = 200 -- Minimum force that the grenade will be thrown with.
+SWEP.ThrowForceMin = 0 -- Minimum force that the grenade will be thrown with.
 SWEP.ThrowForceMax = 2500 -- Maximum force that the grenade will be thrown with.
-SWEP.TossForce = 500 -- Force that the grenade will be thrown with when right clicked.
+SWEP.TossForce = 0 -- Force that the grenade will be thrown with when right clicked.
 
 SWEP.ThrowChargeTime = 0.5 -- How long it takes to charge the grenade to its maximum throw force.
 
@@ -148,6 +148,8 @@ SWEP.PostBashTime = 0.3
 
 SWEP.ImpactForce = 25
 
+SWEP.Spread = 0.03
+
 SWEP.MeleeHitSound = path .. "rock_hit.ogg"
 SWEP.MeleeHitWallSound = path .. "rock_hit_world.ogg"
 
@@ -193,7 +195,7 @@ SWEP.Animations = {
     },
     ["throw"] = {
         Source = "throw",
-		Mult = 0.9,
+        Mult = 0.9,
         EventTable = {
             {s = "COD2019.Rock.Throw", t = 0/30},
         },
@@ -211,11 +213,11 @@ SWEP.Animations = {
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+        IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 3,
+        Mult = 3,
     },
     ["bash"] = {
         Source = {"melee_miss01", "melee_miss02","melee_miss03"},
@@ -225,7 +227,7 @@ SWEP.Animations = {
 SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
-        Category = {"cod2019_perks"},
+        Category = {"cod2019_perks", "cod2019_perk_rock"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),

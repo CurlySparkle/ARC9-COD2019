@@ -76,9 +76,9 @@ function ENT:Detonate()
         ParticleEffect("Generic_explo_flash", self:GetPos(), Angle(0, 0, 0), nil)
         self:EmitSound("COD2019.Flash.Explode", _, _, _, _, _, _, ARC9.EveryoneRecipientFilter)
     end
-	
+
     util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 256, 32)
-	util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
+    util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
 
     local radius = 1200
     local owner = self:GetOwner()
@@ -87,7 +87,7 @@ function ENT:Detonate()
         if ((e:IsPlayer() || e:IsNPC()) && !e:IsLineOfSightClear(self:GetPos())) then
             continue
         end
-        
+
         if (e:IsPlayer()) then
             local dist = e:GetPos():DistToSqr(self:GetPos())
             local distDelta = 1 - math.Clamp(dist / (radius * radius), 0, 1)
@@ -123,20 +123,20 @@ function ENT:Detonate()
 end
 
 function ENT:OnRemove()
-	if (self:WaterLevel() <= 0) then
+    if (self:WaterLevel() <= 0) then
      if CLIENT then
-		local dlight = DynamicLight(self:EntIndex())
-		if (dlight) then
-			dlight.pos = self:GetPos()
-			dlight.r = 255
-			dlight.g = 255
-			dlight.b = 255
-			dlight.brightness = 5
-			dlight.Decay = 2000
-			dlight.Size = 1024
-			dlight.DieTime = CurTime() + 5
-		end
-	 end
-	end
-	self:StopParticles()
+        local dlight = DynamicLight(self:EntIndex())
+        if (dlight) then
+            dlight.pos = self:GetPos()
+            dlight.r = 255
+            dlight.g = 255
+            dlight.b = 255
+            dlight.brightness = 5
+            dlight.Decay = 2000
+            dlight.Size = 1024
+            dlight.DieTime = CurTime() + 5
+        end
+     end
+    end
+    self:StopParticles()
 end

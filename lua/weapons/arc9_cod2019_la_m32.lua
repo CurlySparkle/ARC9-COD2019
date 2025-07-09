@@ -43,8 +43,8 @@ SWEP.WorldModelOffset = {
     TPIKPos = Vector(-6, 4.5, -2.5),
     TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1,
-	
-	TPIKPosSightOffset = Vector(0, 2, -4.25),
+
+    TPIKPosSightOffset = Vector(0, 2, -4.25),
 }
 
 SWEP.CantPeek = true
@@ -99,7 +99,7 @@ SWEP.RPM = 125
 SWEP.Firemodes = {
     {
         Mode = 1,
-		LockAttack = false
+        LockAttack = false
     },
 }
 
@@ -294,29 +294,29 @@ SWEP.HideBones  = {
     [5] = "j_speed_loader_nade02",
     [6] = "j_speed_loader_nade03",
     [7] = "j_speed_loader_nade04",
-    [8] = "j_speed_loader_nade05" 
+    [8] = "j_speed_loader_nade05"
 }
 
 SWEP.ReloadHideBoneTables = {
     [1] = {
         "j_speed_loader",
-		"j_speed_loader_cylinder",
-		"j_speed_loader_nade00",
-		"j_speed_loader_nade01",
-		"j_speed_loader_nade02",
-		"j_speed_loader_nade03",
-		"j_speed_loader_nade04",
-		"j_speed_loader_nade05" 
+        "j_speed_loader_cylinder",
+        "j_speed_loader_nade00",
+        "j_speed_loader_nade01",
+        "j_speed_loader_nade02",
+        "j_speed_loader_nade03",
+        "j_speed_loader_nade04",
+        "j_speed_loader_nade05"
     },
     [2] = {
         "j_speed_loader",
-		"j_speed_loader_cylinder",
-		"j_speed_loader_nade00",
-		"j_speed_loader_nade01",
-		"j_speed_loader_nade02",
-		"j_speed_loader_nade03",
-		"j_speed_loader_nade04",
-		"j_speed_loader_nade05",
+        "j_speed_loader_cylinder",
+        "j_speed_loader_nade00",
+        "j_speed_loader_nade01",
+        "j_speed_loader_nade02",
+        "j_speed_loader_nade03",
+        "j_speed_loader_nade04",
+        "j_speed_loader_nade05",
         "j_grenade_01",
         "j_grenade_02",
         "j_grenade_03",
@@ -324,7 +324,7 @@ SWEP.ReloadHideBoneTables = {
         "j_grenade_05",
         "j_grenade_06"
     },
-	[3] = {
+    [3] = {
         "j_grenade_01",
         "j_grenade_02",
         "j_grenade_03",
@@ -332,13 +332,13 @@ SWEP.ReloadHideBoneTables = {
         "j_grenade_05",
         "j_grenade_06"
     },
-	[4] = {
-		"j_speed_loader_nade00",
-		"j_speed_loader_nade01",
-		"j_speed_loader_nade02",
-		"j_speed_loader_nade03",
-		"j_speed_loader_nade04",
-		"j_speed_loader_nade05" 
+    [4] = {
+        "j_speed_loader_nade00",
+        "j_speed_loader_nade01",
+        "j_speed_loader_nade02",
+        "j_speed_loader_nade03",
+        "j_speed_loader_nade04",
+        "j_speed_loader_nade05"
     }
 }
 
@@ -365,15 +365,15 @@ local TrackingIndicator = Material("VGUI/lockon.png")
         if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
              local toscreen = self.TargetEntity:WorldSpaceCenter():ToScreen()
              local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
-             
+
              if tracktime >= 1 then
                 surface.SetDrawColor(255,0,0,200)
                 surface.DrawLine(0, toscreen.y, ScrW(), toscreen.y)
-                surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH()) 
+                surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH())
              else
                 surface.SetMaterial(TrackingIndicator)
                 surface.SetDrawColor(255,0,0,200)
-                surface.DrawTexturedRect(toscreen.x - 30, toscreen.y - 30, 60, 60) 
+                surface.DrawTexturedRect(toscreen.x - 30, toscreen.y - 30, 60, 60)
              end
         end
     end
@@ -426,7 +426,7 @@ SWEP.Hook_Think2 = function(self)
 
             local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
             local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
-			if vol <= 20000 then continue end
+            if vol <= 20000 then continue end
 
             local dot = (ent:GetPos() - self:GetShootPos()):GetNormalized():Dot(self:GetShootDir():Forward())
             local entscore = 1
@@ -472,10 +472,10 @@ SWEP.Animations = {
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.95,
-		FireASAP = true,
-		RefillProgress = 0.85,
-		DropMagAt = 1,
+        MinProgress = 0.95,
+        FireASAP = true,
+        RefillProgress = 0.85,
+        DropMagAt = 1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 1, rhik = 0 },
@@ -487,33 +487,33 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_la_mike32_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_open_01.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_smack.ogg", t = 26/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_shellsout_01.ogg", t = 27/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_grab.ogg", t = 34/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_rattle.ogg", t = 48/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_armup.ogg", t = 75/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_shellsin_01.ogg", t = 76/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_cylinder_01.ogg", t = 93/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_armdown.ogg", t = 121/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_grab2.ogg", t = 134/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 146/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_end.ogg", t = 149/30},
-			{hide = 1, t = 0},
-			{hide = 2, t = 1},
-			{hide = 3, t = 2.4},
-			{hide = 0, t = 3.05},
-			{hide = 4, t = 3.75},
-			{hide = 1, t = 4.3},
+            {s = path .. "wfoly_plr_la_mike32_reload_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_open_01.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_smack.ogg", t = 26/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_shellsout_01.ogg", t = 27/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_grab.ogg", t = 34/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_rattle.ogg", t = 48/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_armup.ogg", t = 75/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_shellsin_01.ogg", t = 76/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_cylinder_01.ogg", t = 93/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_armdown.ogg", t = 121/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_grab2.ogg", t = 134/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 146/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_end.ogg", t = 149/30},
+            {hide = 1, t = 0},
+            {hide = 2, t = 1},
+            {hide = 3, t = 2.4},
+            {hide = 0, t = 3.05},
+            {hide = 4, t = 3.75},
+            {hide = 1, t = 4.3},
         },
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.95,
-		FireASAP = true,
-		RefillProgress = 0.85,
-		DropMagAt = 0.7,
+        MinProgress = 0.95,
+        FireASAP = true,
+        RefillProgress = 0.85,
+        DropMagAt = 0.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 1, rhik = 0 },
@@ -525,48 +525,48 @@ SWEP.Animations = {
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_la_mike32_reload_start.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_open_01.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_smack.ogg", t = 20/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_shellsout_01.ogg", t = 21/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_grab.ogg", t = 30/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_rattle.ogg", t = 45/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_armup.ogg", t = 52/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_shellsin_01.ogg", t = 66/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_cylinder_01.ogg", t = 72/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_armdown.ogg", t = 95/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_grab2.ogg", t = 103/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 117/30},
-			{s = path .. "wfoly_plr_la_mike32_reload_end.ogg", t = 119/30},
-			{hide = 1, t = 0},
-			{hide = 2, t = 0.7},
-			{hide = 3, t = 2},
-			{hide = 0, t = 2.33},
-			{hide = 4, t = 2.9},
-			{hide = 1, t = 3.45},
+            {s = path .. "wfoly_plr_la_mike32_reload_start.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_open_01.ogg", t = 0/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_smack.ogg", t = 20/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_shellsout_01.ogg", t = 21/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_grab.ogg", t = 30/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_rattle.ogg", t = 45/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_armup.ogg", t = 52/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_shellsin_01.ogg", t = 66/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_cylinder_01.ogg", t = 72/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_armdown.ogg", t = 95/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_grab2.ogg", t = 103/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 117/30},
+            {s = path .. "wfoly_plr_la_mike32_reload_end.ogg", t = 119/30},
+            {hide = 1, t = 0},
+            {hide = 2, t = 0.7},
+            {hide = 3, t = 2},
+            {hide = 0, t = 2.33},
+            {hide = 4, t = 2.9},
+            {hide = 1, t = 3.45},
         },
     },
     ["ready"] = {
         Source = "draw",
-		MinProgress = 0.85,
-		FireASAP = true,
+        MinProgress = 0.85,
+        FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
             {s = path .. "wfoly_plr_la_mike32_raise_first_up.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_la_mike32_raise_first_close_01.ogg", t = 11/30},
-			{s = path .. "wfoly_plr_la_mike32_raise_first_settle.ogg", t = 26/30},
+            {s = path .. "wfoly_plr_la_mike32_raise_first_close_01.ogg", t = 11/30},
+            {s = path .. "wfoly_plr_la_mike32_raise_first_settle.ogg", t = 26/30},
         },
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.4,
+        MinProgress = 0.4,
         FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_plr_la_mike32_raise_up.ogg", t = 0/30},
-			{s = path .. "wfoly_plr_la_mike32_raise_settle.ogg", t = 15/30},
+            {s = path .. "wfoly_plr_la_mike32_raise_settle.ogg", t = 15/30},
         },
     },
     ["holster"] = {
@@ -583,12 +583,12 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+        Mult = 2,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 2,
+        IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+        Mult = 2,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
@@ -598,7 +598,7 @@ SWEP.Animations = {
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2,
+        Mult = 2,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.35, lhik = 1, rhik = 1 },
@@ -607,7 +607,7 @@ SWEP.Animations = {
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2.5,
+        Mult = 2.5,
         IKTimeLine = {
             { t = 0, lhik = 0, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -616,8 +616,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
-		MinProgress = 0.9,
-		FireASAP = true,
+        MinProgress = 0.9,
+        FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.05, lhik = 1, rhik = 0 },
@@ -627,13 +627,13 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_la_mike32_inspect_01.ogg", t = 5/30},
-			{s = path .. "wfoly_la_mike32_inspect_02.ogg", t = 62/30},
-			{s = path .. "wfoly_la_mike32_inspect_03.ogg", t = 142/30},
+            {s = path .. "wfoly_la_mike32_inspect_02.ogg", t = 62/30},
+            {s = path .. "wfoly_la_mike32_inspect_03.ogg", t = 142/30},
         },
     },
     ["bash"] = {
         Source = {"melee","melee2","melee3"},
-	    IKTimeLine = {
+        IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
             { t = 0.6, lhik = 0, rhik = 0 },
@@ -676,12 +676,12 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
     ModelOffset = Vector(5.5, -0.05, -1.65),
-	ModelAngleOffset = Angle(0, 0, -50),
-	Scale = 0.8,
+    ModelAngleOffset = Angle(0, 0, -50),
+    Scale = 0.8,
     },
     ["csgo_p90_hold"] = {
-	ModelOffset = Vector(-5, -2.5, 0.2),
-	ModelAngleOffset = Angle(5, -0, 170),
+    ModelOffset = Vector(-5, -2.5, 0.2),
+    ModelAngleOffset = Angle(5, -0, 170),
     },
 }
 
@@ -697,7 +697,7 @@ SWEP.AttachmentElements = {
         },
     },
     ["stock_retracted"] = {
-	AttPosMods = { [5] = { Pos = Vector(-6, 0, 1.82), } }	
+    AttPosMods = { [5] = { Pos = Vector(-6, 0, 1.82), } }
     },
     ["grip_none"] = {
         Bodygroups = {
@@ -714,17 +714,17 @@ SWEP.AttachmentElements = {
             {3,2},
         },
     },
-	["grip_angled"] = {
-    AttPosMods = { [3] = { Pos = Vector(9, 3.9, 0), } }	
-	}
+    ["grip_angled"] = {
+    AttPosMods = { [3] = { Pos = Vector(9, 3.9, 0), } }
+    }
 }
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-	local attached = data.elements
-    if wep:HasElement("stock_retract") then 
-	model:SetBodygroup(3,1) 
-	end
+    local attached = data.elements
+    if wep:HasElement("stock_retract") then
+    model:SetBodygroup(3,1)
+    end
 
     local camo = 0
     if attached["universal_camo"] then
@@ -736,13 +736,13 @@ end
 SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_optic"),
-		DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
+        DefaultIcon = Material("arc9/def_att_icons/optic.png", "mips smooth"),
         Bone = "tag_scope",
         Pos = Vector(1.3, 0, -0.1),
         Ang = Angle(0, 0, 0),
         Category = {"cod2019_optic","cod2019_optic_m32"},
         CorrectiveAng = Angle(0, 0, 0),
-		Installed = "cod2019_optic_default_m32",
+        Installed = "cod2019_optic_default_m32",
         -- Integral = "cod2019_optic_default_m32",
     },
     {
@@ -760,30 +760,30 @@ SWEP.Attachments = {
         Bone = "j_forend",
         Pos = Vector(9.55, 3.85, 0),
         Ang = Angle(0, 0, 90),
-		Scale = 1,
-		InstalledElements = {"grip_none"},
+        Scale = 1,
+        InstalledElements = {"grip_none"},
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_stock"),
-		DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
+        DefaultIcon = Material("arc9/def_att_icons/stock_ak.png", "mips smooth"),
         DefaultAttName = "Standard Stock",
         Category = "cod2019_stocks",
         Bone = "tag_launcher_offset",
         Pos = Vector(-8, 0, 1.83),
         Ang = Angle(0, 0, 0),
-		InstalledElements = {"stock_none"},
-		Scale = 1.05,
+        InstalledElements = {"stock_none"},
+        Scale = 1.05,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
-		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
+        DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",
-		Category = {"cod2019_ammo_gl"},
-		Pos = Vector(-4.5, 0, 0),
+        Category = {"cod2019_ammo_gl"},
+        Pos = Vector(-4.5, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
-		PrintName = ARC9:GetPhrase("mw19_category_perk"),
+        PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
         Bone = "tag_mag_attach",
         Pos = Vector(-8, 0, 0),
@@ -794,7 +794,7 @@ SWEP.Attachments = {
         Category = "cod2019_m32_skins",
         Bone = "tag_cosmetic",
         Pos = Vector(5, 0, 3),
-		CosmeticOnly = true,
+        CosmeticOnly = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
@@ -834,20 +834,20 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = {"killcounter"},
-		CosmeticOnly = true,
+        CosmeticOnly = true,
         Bone = "j_forend",
         Pos = Vector(8.35, 2.04, -2.7),
         Ang = Angle(0, 0, -90),
-		Scale = 1,
+        Scale = 1,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = {"charm"},
-		CosmeticOnly = true,
+        CosmeticOnly = true,
         Bone = "tag_cosmetic",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-		Scale = 1.2,
+        Scale = 1.2,
     },
 }
 

@@ -281,14 +281,14 @@ SWEP.BulletBones = {
     [3] = "j_ammo_11",
     [4] = "j_ammo_10",
     [5] = "j_ammo_9",
-	[6] = "j_ammo_8",
-	[7] = "j_ammo_7",
-	[8] = "j_ammo_6",
-	[9] = "j_ammo_5",
-	[10] = "j_ammo_4",
-	[11] = "j_ammo_3",
-	[12] = "j_ammo_2",
-	[13] = "j_ammo_1",
+    [6] = "j_ammo_8",
+    [7] = "j_ammo_7",
+    [8] = "j_ammo_6",
+    [9] = "j_ammo_5",
+    [10] = "j_ammo_4",
+    [11] = "j_ammo_3",
+    [12] = "j_ammo_2",
+    [13] = "j_ammo_1",
 }
 
 SWEP.Overheat = true
@@ -304,28 +304,28 @@ SWEP.Animations = {
         Source = "shoot1",
         EventTable = {
             {s = path .. "weap_dblmg_spin_plr.wav", v = 0.2, t = 0/30},
-			{s = path .. "weap_dblmg_spindown_plr_01.wav", v = 0.3, t = 4/30},
+            {s = path .. "weap_dblmg_spindown_plr_01.wav", v = 0.3, t = 4/30},
         },
     },
     ["trigger"] = {
         Source = {"windup"},
-		--MinProgress = 0.8,
+        --MinProgress = 0.8,
         EventTable = {
             {s = path .. "weap_dblmg_spinup_plr_01.wav", v = 0.5, t = 0/30},
         },
     },
     ["untrigger"] = {
         Source = {"windup"},
-		--MinProgress = 0.8,
-		Reverse = true,
+        --MinProgress = 0.8,
+        Reverse = true,
         EventTable = {
             {s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 5/30},
-			{s = path .. "weap_dblmg_spindown_plr_01.wav", v = 0.4, t = 0/30},
+            {s = path .. "weap_dblmg_spindown_plr_01.wav", v = 0.4, t = 0/30},
         },
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.8,
+        MinProgress = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -333,15 +333,15 @@ SWEP.Animations = {
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 0.13},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 1.5},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 3.5},
-			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 4.5},
+            {s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 0.13},
+            {s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 1.5},
+            {s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 3.5},
+            {s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 4.5},
         },
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.8,
+        MinProgress = 0.8,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -349,16 +349,16 @@ SWEP.Animations = {
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 0.13},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 0.86},
-			{s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 2.5},
-			{s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 3},
+            {s = path .. "wfoly_plr_lm_minigun_reload_start.ogg", t = 0.13},
+            {s = path .. "wfoly_plr_lm_minigun_reload_belt_out.ogg", t = 0.86},
+            {s = path .. "wfoly_plr_lm_minigun_reload_belt_in.ogg", t = 2.5},
+            {s = path .. "wfoly_plr_lm_minigun_reload_end.ogg", t = 3},
         },
     },
     ["draw"] = {
         Source = "draw",
-		MinProgress = 0.7,
-		FireASAP = true,
+        MinProgress = 0.7,
+        FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_lm_sierrax_raise.ogg", t = 5/30},
         },
@@ -377,28 +377,28 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 3,
+        Mult = 3,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 3,
+        IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+        Mult = 3,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2,
+        Mult = 2,
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2,
+        Mult = 2,
     },
     ["inspect"] = {
         Source = "lookat01",
-		MinProgress = 0.9,
-		FireASAP = true,
+        MinProgress = 0.9,
+        FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -407,8 +407,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_lm_dblmg_inspect_01.ogg", t = 18/30},
-			{s = path .. "wfoly_lm_dblmg_inspect_02.ogg", t = 56/30},
-			{s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 109/30},
+            {s = path .. "wfoly_lm_dblmg_inspect_02.ogg", t = 56/30},
+            {s = path .. "wfoly_lm_dblmg_inspect_03.ogg", t = 109/30},
         },
     },
     ["bash"] = {
@@ -468,19 +468,19 @@ SWEP.AttachmentElements = {
 SWEP.Attachments = {
     { -- 1
         PrintName = ARC9:GetPhrase("mw19_category_laser"),
-		DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
+        DefaultIcon = Material("entities/defattachs/laser-ar.png", "mips smooth"),
         Category = "cod2019_tac_rail_alt",
         Bone = "tag_laser_show",
         Pos = Vector(0.15, -0.16, 0),
         Ang = Angle(0, 0, 18),
-		LaserCorrectionAngle = Angle(-2.5, 0, -9),
+        LaserCorrectionAngle = Angle(-2.5, 0, -9),
     },
     { -- 2
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
-		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
+        DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "tag_mag_attach",
-		Category = {"cod2019_ammo"},
-		Pos = Vector(-1.5, 0, 0),
+        Category = {"cod2019_ammo"},
+        Pos = Vector(-1.5, 0, 0),
     },
     { -- 3
         PrintName = ARC9:GetPhrase("mw19_category_perk"),
@@ -488,24 +488,24 @@ SWEP.Attachments = {
         Bone = "tag_barrel_attach",
         Pos = Vector(4, 0, 0),
     },
-	
-	-- Unofficial
+
+    -- Unofficial
     -- { -- 4
         -- PrintName = ARC9:GetPhrase("mw19_category_receiver"),
         -- Category = "cod2019_minigun_receiver",
         -- Bone = "tag_barrel_attach",
         -- Pos = Vector(0, 0, 0),
-		-- Icon_Offset = Vector(0, 0, 0),
-		-- Hidden = true,
+        -- Icon_Offset = Vector(0, 0, 0),
+        -- Hidden = true,
     -- },
-	
-	-- Cosmetics
+
+    -- Cosmetics
     -- { -- 5
         -- PrintName = ARC9:GetPhrase("mw19_category_skins"),
         -- Bone = "tag_barrel_attach",
         -- Pos = Vector(7, 0, 3),
         -- Category = "cod2019_skins_minigun",
-		-- CosmeticOnly = true,
+        -- CosmeticOnly = true,
     -- },
     { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
@@ -541,16 +541,16 @@ SWEP.Attachments = {
         -- Category = {"charm"},
         -- Bone = "tag_barrel_attach",
         -- Pos = Vector(0.5, 0, 0),
-		-- Icon_Offset = Vector(-7.5, 0, 3),
-		-- Scale = 1.5,
+        -- Icon_Offset = Vector(-7.5, 0, 3),
+        -- Scale = 1.5,
     -- },
     -- { -- 11
         -- PrintName = ARC9:GetPhrase("mw19_category_stats"),
         -- Category = {"killcounter","killcounter2"},
         -- Bone = "tag_barrel_attach",
         -- Pos = Vector(0, 0, 0),
-		-- Icon_Offset = Vector(-3.25, 0, 1.9),
-		-- CosmeticOnly = true,
+        -- Icon_Offset = Vector(-3.25, 0, 1.9),
+        -- CosmeticOnly = true,
     -- },
 }
 

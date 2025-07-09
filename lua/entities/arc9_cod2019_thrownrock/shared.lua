@@ -23,14 +23,18 @@ function ENT:Initialize()
         self:SetModel(self.Model)
         self:SetMoveType(MOVETYPE_VPHYSICS)
         self:SetSolid(SOLID_VPHYSICS)
-        self:PhysicsInit(SOLID_VPHYSICS)
+        -- self:PhysicsInit(SOLID_VPHYSICS)
+        self:PhysicsInitBox(Vector(-0.5, -0.5, -0.5), Vector(0.5, 0.5, 0.5), "boulder")
+
+        self:SetAngles(AngleRand())
 
         local phys = self:GetPhysicsObject()
         if phys:IsValid() then
             phys:SetMass(1)
             phys:SetBuoyancyRatio(1)
-            phys:SetDragCoefficient(1)
+            phys:SetDragCoefficient(10)
             phys:Wake()
+            phys:ApplyTorqueCenter(VectorRand() * 0.05)
         end
 
         self.SpawnTime = CurTime()
@@ -39,13 +43,15 @@ function ENT:Initialize()
         --     self.Trail:SetRenderFX(kRenderFxNone)
         -- end
         self:SetPhysicsAttacker(self:GetOwner(), 10)
+
+        self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
     end
 end
 
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
         local nvel = data.OurOldVelocity:GetNormalized()
-        if data.Speed > 75 then
+        if data.Speed > 100 then
             local tgt = data.HitEntity
 
             local eff = EffectData()
@@ -58,6 +64,7 @@ function ENT:PhysicsCollide(data, physobj)
             util.Effect("Impact_GMOD", eff)
 
             if IsValid(tgt) and tgt:GetClass() == "func_breakable_surf" then
+                local pos, ang, vel = self:GetPos(), self:GetAngles(), data.OurOldVelocity
                 self:FireBullets({
                     Attacker = self:GetOwner(),
                     Inflictor = self,
@@ -67,27 +74,28 @@ function ENT:PhysicsCollide(data, physobj)
                     Src = self:GetPos(),
                     Dir = nvel,
                 })
-                local pos, ang, vel = self:GetPos(), self:GetAngles(), data.OurOldVelocity
                 self:SetAngles(ang)
                 self:SetPos(pos)
                 self:GetPhysicsObject():SetVelocityInstantaneous(vel * 0.5)
-            elseif IsValid(tgt) and (self.NextHit or 0) < CurTime() then
-                self.NextHit = CurTime() + 0.15
-                local dmginfo = DamageInfo()
-                dmginfo:SetDamageType(DMG_CLUB)
-                local d = Lerp((data.Speed / 2000) ^ 2, 5, 40)
-                dmginfo:SetAttacker(self:GetOwner())
-                dmginfo:SetInflictor(self)
-                dmginfo:SetDamagePosition(data.HitPos)
-
-                if tgt:IsPlayer() or tgt:IsNPC() or tgt:IsNextBot() then
-                    dmginfo:SetDamageForce(data.OurOldVelocity * 20)
-                else
-                    dmginfo:SetDamageForce(data.OurOldVelocity)
-                    d = d * 2
+            else
+                if IsValid(tgt) and (self.NextHit or 0) < CurTime() then
+                    self.NextHit = CurTime() + 0.15
+                    local dmginfo = DamageInfo()
+                    dmginfo:SetDamageType(DMG_CLUB)
+                    local d = Lerp((data.Speed - 1000) / 3000, 5, 50)
+                    dmginfo:SetAttacker(self:GetOwner())
+                    dmginfo:SetInflictor(self)
+                    dmginfo:SetDamagePosition(data.HitPos)
+                    if tgt:IsPlayer() or tgt:IsNPC() or tgt:IsNextBot() then
+                        dmginfo:SetDamageForce(data.OurOldVelocity * 5)
+                    else
+                        dmginfo:SetDamageForce(data.OurOldVelocity)
+                        d = d * 2
+                    end
+                    dmginfo:SetDamage(d)
+                    tgt:TakeDamageInfo(dmginfo)
                 end
-                dmginfo:SetDamage(d)
-                tgt:TakeDamageInfo(dmginfo)
+                self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * math.Rand(0.25, 0.5))
             end
         elseif data.Speed > 25 and self.Hit then
             self:EmitSound("physics/concrete/rock_impact_soft" .. math.random(1, 3) .. ".wav")
@@ -96,8 +104,18 @@ function ENT:PhysicsCollide(data, physobj)
         if not self.Hit then
             sound.EmitHint(SOUND_PLAYER, self:GetPos(), 512, 5)
             self.Hit = true
-            if data.OurOldVelocity:Dot(data.HitNormal) >= 5000 and self.NextHit < CurTime() then
+            local d = data.OurOldVelocity:Dot(data.HitNormal)
+            if d >= 3000 and self.NextHit < CurTime() then
                 self:EmitSound("physics/concrete/concrete_break3.wav", 70, math.Rand(102, 105))
+                self:FireBullets({
+                    Attacker = self:GetOwner(),
+                    Inflictor = self,
+                    Damage = 0,
+                    Distance = 32,
+                    Tracer = 0,
+                    Src = data.HitPos,
+                    Dir = nvel,
+                })
                 local eff = EffectData()
                 eff:SetOrigin(data.HitPos)
                 eff:SetNormal(nvel)

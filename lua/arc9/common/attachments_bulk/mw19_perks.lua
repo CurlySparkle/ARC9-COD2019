@@ -290,3 +290,26 @@ else
 end
 
 ARC9.LoadAttachment(ATT, "cod2019_perks_super_sprint")
+
+
+ATT = {}
+
+ATT.PrintName = "Fistful of Rocks"
+ATT.CompactName = "Fistful"
+ATT.Description = "Why throw one rock when can throw many rock?"
+ATT.SortOrder = 0
+
+ATT.Icon = Material("entities/arc9_cod2019_nade_rock.png", "mips smooth")
+ATT.MenuCategory = "ARC9 - MW2019 Attachments"
+ATT.AutoStats = true
+ATT.SpreadAdd = 0.07
+ATT.ThrowAnimSpeedMult = 2
+ATT.ThrowChargeTimeAdd = 0.3
+ATT.ThrowForceMin = 0
+ATT.ThrowForceMax = 1500
+ATT.Num = 5
+ATT.MuzzleVelocityMult = 0.6 -- does nothing but show a stat
+
+ATT.Category = {"cod2019_perk_rock"}
+
+ARC9.LoadAttachment(ATT, "cod2019_perks_rock_multi")

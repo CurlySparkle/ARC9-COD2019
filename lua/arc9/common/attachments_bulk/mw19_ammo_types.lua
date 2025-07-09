@@ -546,6 +546,10 @@ ATT.Icon = Material("entities/arc9_cod2019_nade_rock.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 ATT.Free = true
+ATT.InfiniteAmmo = true
+ATT.Ammo = "arc9_cod2019_nade_rock"
+ATT.ShootEntForceOverride = 4000
+ATT.SpreadAdd = 0.015
 
 ATT.ShootEnt = "arc9_cod2019_thrownrock"
 ATT.ActivateElements = {"bolt_rock"}
@@ -569,6 +573,10 @@ ATT.AutoStats = true
 
 ATT.ActivateElements = {"nades_rock"}
 ATT.Free = true
+ATT.InfiniteAmmo = true
+ATT.Ammo = "arc9_cod2019_nade_rock"
+ATT.ShootEntForceOverride = 2000
+ATT.SpreadAdd = 0.02
 
 ATT.ShootEnt = "arc9_cod2019_thrownrock"
 ATT.Category = {"cod2019_ammo_gl"}
@@ -891,7 +899,7 @@ ATT.AutoStats = true
 ATT.ActivateElements = {"rocket_harpoon"}
 ATT.Free = true
 
-ATT.MuzzleVelocityOverride = 9000
+ATT.ShootEntForceOverride = 6000
 ATT.Ammo = "xbowbolt"
 ATT.ShootEnt = "arc9_cod2019_proj_rpg_harpoon"
 ATT.Category = {"cod2019_rpg_ammo"}
@@ -985,6 +993,10 @@ ATT.AutoStats = true
 
 ATT.ActivateElements = {"nades_rock"}
 ATT.Free = true
+ATT.InfiniteAmmo = true
+ATT.AmmoUBGL = "arc9_cod2019_nade_rock"
+ATT.ShootEntForceOverrideUBGL = 3000
+ATT.SpreadAddUBGL = 0.03
 
 ATT.ShootEntUBGL = "arc9_cod2019_thrownrock"
 ATT.Category = {"cod2019_ammo_ubgl"}
