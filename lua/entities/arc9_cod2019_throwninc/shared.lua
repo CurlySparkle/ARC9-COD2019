@@ -73,22 +73,38 @@ function ENT:Detonate()
         util.Effect("WaterSurfaceExplosion", fx)
         self:Remove()
     else
+        self:EmitSound("weapons/cod2019/shared/weap_thermite_impact_01.ogg", 100)
+
+        local fx = EffectData()
+        fx:SetOrigin(self:GetPos())
+        fx:SetStart(self:GetPos())
+        fx:SetRadius(512)
+        fx:SetEntity(self)
+        util.Effect("cod2019_grenade_explosion", fx)
+
+        local dmg = DamageInfo()
+        dmg:SetAttacker(attacker)
+        dmg:SetDamageType(DMG_BURN + DMG_BLAST)
+        dmg:SetInflictor(self)
+        dmg:SetDamageForce(self:GetVelocity() * 100)
+        dmg:SetDamagePosition(self:GetPos())
+        dmg:SetDamage(50)
+        util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
+
         local tr = util.TraceLine({
             start = self:GetPos(),
-            endpos = self:GetPos() - Vector(0, 0, 64),
+            endpos = self:GetPos() - Vector(0, 0, 256),
             mask = MASK_SOLID,
             filter = {self, self:GetOwner()}
         })
         if tr.Hit then
-            self.Defused = true
-            self:EmitSound("COD2019.Molotov.Explode")
             local firepool = ents.Create("arc9_cod2019_fire_pool")
             if not IsValid(firepool) then self:Remove() return end
             firepool:SetPos(tr.HitPos)
             firepool:SetOwner(attacker)
             firepool:Spawn()
-            self:Remove()
         end
+        self:Remove()
     end
 end
 

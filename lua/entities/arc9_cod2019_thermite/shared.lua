@@ -215,6 +215,12 @@ function ENT:Think()
         util.BlastDamageInfo(dmg, self:GetPos(), 84)
         self.NextDamageTick = CurTime() + 0.1
 
+        if IsValid(self:GetParent()) and IsValid(self:GetParent().StuckEntity) then
+            dmg:SetDamage(15)
+            dmg:SetDamageCustom(2345)
+            self:GetParent().StuckEntity:TakeDamageInfo(dmg)
+        end
+
         if self.SpawnTime + self.FireTime <= CurTime() then
             self:Remove()
 
@@ -290,6 +296,12 @@ local directfiredamage = {
 
 hook.Add("EntityTakeDamage", "arc9_cod2019_thermite", function(ent, dmginfo)
     if IsValid(dmginfo:GetInflictor()) and dmginfo:GetInflictor():GetClass() == "arc9_cod2019_thermite" and dmginfo:GetDamageType() == DMG_BURN then
+
+        -- When stuck to an entity, the damage is applied separately (to ensure large objects take the same amount of damage regardless of distance to origin)
+        if IsValid(dmginfo:GetInflictor():GetParent()) and ent == dmginfo:GetInflictor():GetParent().StuckEntity and dmginfo:GetDamageCustom() ~= 2345 then
+            return true
+        end
+
         if ent:IsNPC() then
             if directfiredamage[ent:GetClass()] then
                 dmginfo:SetDamageType(DMG_SLOWBURN) -- DMG_BURN does not hurt HL2 zombies and instead turns them black.
@@ -299,15 +311,31 @@ hook.Add("EntityTakeDamage", "arc9_cod2019_thermite", function(ent, dmginfo)
                 dmginfo:SetDamageType(DMG_DIRECT) -- some props like to burn slowly against DMG_BURN or DMG_SLOWBURN. don't.
             end
 
-            dmginfo:ScaleDamage(2) -- tremendous damage to props
+            local m = 2
+            if ent.IsGlideVehicle then
+                m = 5 -- they take very little damage for some reason
+            elseif ent.LVS or ent:IsVehicle() then
+                m = 3
+            end
+            dmginfo:ScaleDamage(m) -- tremendous damage to props
         end
 
-        dmginfo:SetDamageForce(Vector()) -- fire does not push things around. still applies to players, but that can't be helped.
+        dmginfo:SetDamageForce(Vector() * 0.01) -- fire does not push things around. still applies to players, but that can't be helped.
+
+        -- ^ you fool. you absolute bafoon. you are like a baby.
+        if ent:IsPlayer() and not ent:IsEFlagSet(EFL_NO_DAMAGE_FORCES) then
+            ent:AddEFlags(EFL_NO_DAMAGE_FORCES)
+            ent.ARC9_MW19_ForceCancel = true
+        end
     end
 end)
 
 hook.Add("PostEntityTakeDamage", "arc9_cod2019_thermite", function(ent, dmginfo, took)
     if took and IsValid(dmginfo:GetInflictor()) and dmginfo:GetInflictor():GetClass() == "arc9_cod2019_thermite" then
-        ent:Ignite(math.Rand(1, 2))
+        ent:Ignite(1)
+    end
+    if ent.ARC9_MW19_ForceCancel then
+        ent.ARC9_MW19_ForceCancel = nil
+        ent:RemoveEFlags(EFL_NO_DAMAGE_FORCES)
     end
 end)

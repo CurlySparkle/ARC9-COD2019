@@ -14,7 +14,7 @@ ENT.AdminSpawnable = false
 ENT.DrawModelExt = true
 ENT.Model = "models/weapons/cod2019/w_eq_thermite_thrown2.mdl"
 ENT.ModelEnt = "models/weapons/cod2019/w_eq_thermite_thrown2.mdl"
-ENT.FuseTime = 2
+ENT.FuseTime = 10
 ENT.ArmTime = 0
 ENT.Ticks = 0
 ENT.ImpactFuse = true
@@ -33,17 +33,19 @@ function ENT:Initialize()
         self:SetModel(self.Model)
         self:SetMoveType(MOVETYPE_VPHYSICS)
         self:SetSolid(SOLID_VPHYSICS)
-        self:PhysicsInit(SOLID_VPHYSICS)
+        -- self:PhysicsInit(SOLID_VPHYSICS)
+        self:PhysicsInitBox(Vector(-1, -1, -6), Vector(1, 1, 10), "grenade", Vector(0, 0, 7))
         self:DrawShadow(true)
-        self:SetAngles(self:GetAngles())
+        self:SetAngles(Angle(0, 0, 0))
         --ParticleEffectAttach("smoke_thrown_trail",PATTACH_POINT_FOLLOW,self,1)
         local phys = self:GetPhysicsObject()
 
         if phys:IsValid() then
             phys:Wake()
+            phys:SetMass(5)
             phys:SetBuoyancyRatio(0)
             phys:EnableMotion(true)
-            phys:AddAngleVelocity(Vector(300, 900, 0))
+            phys:AddAngleVelocity(-self:GetOwner():GetAngles():Right() * 800)
         end
 
         self.SpawnTime = CurTime()
@@ -72,15 +74,32 @@ function ENT:PhysicsCollide(data, physobj)
                 phys:SetVelocity(Vector(0, 0, 0))
                 phys:EnableMotion(true)
             end
+        else
+            return
         end
 
         util.Decal("Dark", hitPos + hitNormal, hitPos - hitNormal)
 
-        if data.HitEntity:GetClass() == "worldspawn" then
+        if hitEntity:GetClass() == "worldspawn" then
             timer.Simple(0, function()
                 self:SetMoveType(MOVETYPE_NONE)
                 self:SetAngles(data.OurOldVelocity:Angle() + Angle(-55, 0, 0))
                 self:SetPos(data.HitPos - (data.HitNormal * 2))
+            end)
+            self.StuckWorld = true
+        elseif not hitEntity:IsPlayer() then
+            timer.Simple(0, function()
+                if not IsValid(self) or not IsValid(hitEntity) then
+                    if IsValid(self) then
+                        self.HasCollided = false
+                        self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity)
+                    end
+                    return
+                end
+                self:SetPos(data.HitPos - (data.HitNormal * 2))
+                self:SetAngles(data.OurOldVelocity:Angle() + Angle(-55, 0, 0))
+                self.StuckEntity = hitEntity
+                self.StuckEntityWeld = constraint.Weld(self, hitEntity, 0, 0, 0, true, false)
             end)
         end
 
@@ -94,8 +113,7 @@ end
 
 function ENT:Detonate()
     if self:WaterLevel() >= 1 or self:WaterLevel() >= 2 then
-        SafeRemoveEntityDelayed(self, 0)
-        self:Remove()
+        SafeRemoveEntity(self)
         self:EmitSound("weapons/rpg/shotdown.wav", 80)
     else
         self:DoDetonate()
@@ -104,13 +122,32 @@ end
 
 function ENT:Think()
     if SERVER then
-        if not self.HasCollided then
-            local phys = self:GetPhysicsObject()
-            phys:ApplyForceCenter(self:GetAngles():Forward() * 500)
+
+        if self.HasCollided and self.SpawnTime + self.FuseTime <= CurTime() then
+            SafeRemoveEntity(self)
+            self:EmitSound("weapons/rpg/shotdown.wav", 80)
+            return
         end
 
-        if self.SpawnTime + self.FuseTime <= CurTime() then
-            self:Detonate()
+        --if self.StuckEntity and (not IsValid(self:GetParent()) or (self:GetParent():Health() <= 0 and (self:GetParent():IsNPC() or self:GetParent():IsNextBot()))) then
+        if self.HasCollided and not self.StuckWorld and not IsValid(self.StuckEntityWeld) then
+            self:SetParent(NULL)
+            self.HasCollided = false
+            self.StuckEntityWeld = nil
+            self.StuckEntity = nil
+            self:SetSolid(SOLID_VPHYSICS)
+            self:SetMoveType(MOVETYPE_VPHYSICS)
+            self:PhysicsInitBox(Vector(-1, -1, -6), Vector(1, 1, 10), "grenade", Vector(0, 0, 7))
+            local phys = self:GetPhysicsObject()
+            if phys:IsValid() then
+                local v = VectorRand() * 128 + Vector(0, 0, 328)
+                phys:SetVelocity(v)
+                phys:EnableMotion(true)
+                phys:AddAngleVelocity(v:GetNormalized():Cross(self:GetUp()) * math.Rand(1000, 2000))
+            end
+            if IsValid(self.Cloud) then
+                self.Cloud:SetParent(self)
+            end
         end
     else
         if self.Ticks % 5 == 0 then
@@ -141,7 +178,6 @@ end
 function ENT:DoDetonate()
     if self:WaterLevel() > 0 then
         self:Remove()
-
         return
     end
 
@@ -161,16 +197,12 @@ function ENT:DoDetonate()
             cloud:EmitSound("weapons/cod2019/shared/weap_thermite_impact_01.ogg", 100)
             cloud:SetParent(self)
             cloud.NoIgnite = self
-            --self:Remove()
+            self.Cloud = cloud
         end
     end
 
     --util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
     self:SetNWBool("CreatedNade", true)
 
-    timer.Simple(7, function()
-        if IsValid(self) then
-            self:Remove()
-        end
-    end)
+    SafeRemoveEntityDelayed(self, 7)
 end
