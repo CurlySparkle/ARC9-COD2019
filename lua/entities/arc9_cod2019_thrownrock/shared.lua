@@ -51,24 +51,15 @@ end
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
         local nvel = data.OurOldVelocity:GetNormalized()
-        if data.Speed > 100 then
+        if data.Speed > 75 then
             local tgt = data.HitEntity
-
-            local eff = EffectData()
-            eff:SetOrigin(data.HitPos - self:GetVelocity():GetNormalized())
-            eff:SetStart(data.HitPos)
-            eff:SetSurfaceProp(data.TheirSurfaceProps)
-            eff:SetDamageType(DMG_GENERIC)
-            eff:SetHitBox(1)
-            eff:SetFlags(1) -- IMPACT_NODECAL
-            util.Effect("Impact_GMOD", eff)
 
             if IsValid(tgt) and tgt:GetClass() == "func_breakable_surf" then
                 local pos, ang, vel = self:GetPos(), self:GetAngles(), data.OurOldVelocity
                 self:FireBullets({
                     Attacker = self:GetOwner(),
                     Inflictor = self,
-                    Damage = 100,
+                    Damage = 20,
                     Distance = 32,
                     Tracer = 0,
                     Src = self:GetPos(),
@@ -82,7 +73,7 @@ function ENT:PhysicsCollide(data, physobj)
                     self.NextHit = CurTime() + 0.15
                     local dmginfo = DamageInfo()
                     dmginfo:SetDamageType(DMG_CLUB)
-                    local d = Lerp((data.Speed - 1000) / 3000, 5, 50)
+                    local d = Lerp((data.Speed - 1000) / 3000, 3, 60)
                     dmginfo:SetAttacker(self:GetOwner())
                     dmginfo:SetInflictor(self)
                     dmginfo:SetDamagePosition(data.HitPos)
@@ -93,9 +84,25 @@ function ENT:PhysicsCollide(data, physobj)
                         d = d * 2
                     end
                     dmginfo:SetDamage(d)
-                    tgt:TakeDamageInfo(dmginfo)
+                    local tr = util.TraceLine({
+                        start = self:GetPos(),
+                        endpos = data.HitPos,
+                        mask = MASK_SHOT
+                    })
+                    tgt:DispatchTraceAttack(dmginfo, tr, nvel)
+                else
+                    local eff = EffectData()
+                    eff:SetOrigin(data.HitPos - self:GetVelocity():GetNormalized())
+                    eff:SetStart(data.HitPos)
+                    eff:SetSurfaceProp(data.TheirSurfaceProps)
+                    eff:SetDamageType(DMG_GENERIC)
+                    eff:SetHitBox(1)
+                    eff:SetFlags(1) -- IMPACT_NODECAL
+                    util.Effect("Impact_GMOD", eff)
                 end
-                self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * math.Rand(0.25, 0.5))
+                if data.Speed >= 1000 then
+                    self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * math.Rand(0.25, 0.5))
+                end
             end
         elseif data.Speed > 25 and self.Hit then
             self:EmitSound("physics/concrete/rock_impact_soft" .. math.random(1, 3) .. ".wav")

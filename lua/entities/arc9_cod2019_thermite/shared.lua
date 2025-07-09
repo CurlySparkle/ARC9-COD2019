@@ -218,6 +218,8 @@ function ENT:Think()
         if IsValid(self:GetParent()) and IsValid(self:GetParent().StuckEntity) then
             dmg:SetDamage(15)
             dmg:SetDamageCustom(2345)
+            dmg:SetDamagePosition(self:GetPos())
+            dmg:SetDamageForce(VectorRand())
             self:GetParent().StuckEntity:TakeDamageInfo(dmg)
         end
 
@@ -313,9 +315,9 @@ hook.Add("EntityTakeDamage", "arc9_cod2019_thermite", function(ent, dmginfo)
 
             local m = 2
             if ent.IsGlideVehicle then
-                m = 5 -- they take very little damage for some reason
+                m = 4 -- they take very little damage for some reason
             elseif ent.LVS or ent:IsVehicle() then
-                m = 3
+                m = 2
             end
             dmginfo:ScaleDamage(m) -- tremendous damage to props
         end
