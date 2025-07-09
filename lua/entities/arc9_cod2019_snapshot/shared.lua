@@ -11,7 +11,7 @@ ENT.Type      = "anim"
 ENT.Spawnable = false
 ENT.AutomaticFrameAdvance = true
 
-ENT.FindRadius = 500
+ENT.FindRadius = 512
 
 ENT.Model = "models/weapons/cod2019/w_eq_snapshot_thrown_fly.mdl"
 
@@ -127,22 +127,10 @@ if SERVER then
 
     function ENT:Detonate()
         local origin = self:GetPos()
+        local owner = self:GetOwner()
 
-        if IsValid(self.Owner) then
-            local _ents = ents.FindInSphere(origin, self.FindRadius)
-            local tab   = {}
-
-            for k, v in pairs(_ents) do
-                if v:IsNPC() or v:IsPlayer() or v:IsNextBot() then
-                    if v ~= self.Owner then
-                        table.insert(tab, v)
-                    end
-                end
-            end
-
-            net.Start("ARC9_MW19_SONAR_EXPLODE")
-            net.WriteTable(tab)
-            net.Send(self.Owner)
+        if IsValid(owner) then
+            ARC9_MW19_Snapshot:FindAndSend(owner, origin, self.FindRadius, 5)
         end
 
         tr.start = origin
@@ -248,7 +236,6 @@ if SERVER then
 end
 
 if CLIENT then
-
     local tr, col = {}, Color(255, 25, 25)
     local glow = Material("mw19/flare_sprite_01")
 
@@ -256,7 +243,7 @@ if CLIENT then
         local ply = LocalPlayer()
         local attach = self:LookupAttachment("Wick")
         local data = self:GetAttachment(attach)
-        local attpos,attangs
+        local attpos, attangs
         attpos = data.Pos
         attangs = data.Ang
 
@@ -278,165 +265,6 @@ if CLIENT then
                     self:StopParticles()
                 end
             end
-        end
-    end
-
-    local ARC9_HaloManager = {}
-    ARC9_HaloManager.EVENT_NAME = "ARC9_MW19_SONAR"
-
-    local function ARC9_MW19_SONAR_CREATE_HALOS(len, ply)
-        local _ents = net.ReadTable()
-
-        timer.Simple(0.5, function()
-            if istable(_ents) then
-                for k, v in pairs(_ents) do
-                    if IsValid(v) then
-                        ARC9_HaloManager:Add(v, 5)
-                    end
-                end
-            end
-        end)
-    end
-
-    -- Taken from Sakarias88's Intelligent HUD
-    local function GetEntityAABB(ent)
-        local mins = ent:OBBMins()
-        local maxs = ent:OBBMaxs()
-
-        local pos = {
-            ent:LocalToWorld(Vector(maxs.x, maxs.y, maxs.z)):ToScreen(),
-            ent:LocalToWorld(Vector(maxs.x, mins.y, maxs.z)):ToScreen(),
-            ent:LocalToWorld(Vector(maxs.x, maxs.y, mins.z)):ToScreen(),
-            ent:LocalToWorld(Vector(maxs.x, mins.y, mins.z)):ToScreen(),
-            ent:LocalToWorld(Vector(mins.x, maxs.y, maxs.z)):ToScreen(),
-            ent:LocalToWorld(Vector(mins.x, mins.y, maxs.z)):ToScreen(),
-            ent:LocalToWorld(Vector(mins.x, maxs.y, mins.z)):ToScreen(),
-            ent:LocalToWorld(Vector(mins.x, mins.y, mins.z)):ToScreen()
-        }
-
-        local minX = pos[1].x
-        local minY = pos[1].y
-
-        local maxX = pos[1].x
-        local maxY = pos[1].y
-
-        for k = 2, 8 do
-            if pos[k].x > maxX then
-                maxX = pos[k].x
-            end
-
-            if pos[k].y > maxY then
-                maxY = pos[k].y
-            end
-
-            if pos[k].x < minX then
-                minX = pos[k].x
-            end
-
-            if pos[k].y < minY then
-                minY = pos[k].y
-            end
-        end
-
-        return Vector(minX, minY), Vector(maxX, maxY)
-    end
-
-    net.Receive("ARC9_MW19_SONAR_EXPLODE", ARC9_MW19_SONAR_CREATE_HALOS)
-
-    function ARC9_HaloManager:Add(ent, t)
-        table.insert(self, {ent = ent, t = CurTime() + t})
-        self:Enable()
-    end
-
-    local _ents = {}
-    local halo_color = Color(255, 0, 0)
-
-    function ARC9_HaloManager:Enable()
-        local events = hook.GetTable()
-
-        local tab = events["PreDrawHalos"]
-
-        if tab and not tab[self.EVENT_NAME] or not tab then
-            hook.Add("PreDrawHalos", self.EVENT_NAME, function()
-                self:DrawHalo()
-            end)
-        end
-
-        local tab = events["PostDrawOpaqueRenderables"]
-
-        if tab and not tab[self.EVENT_NAME] or not tab then
-            hook.Add("PostDrawOpaqueRenderables", self.EVENT_NAME, function()
-                self:Draw()
-            end)
-        end
-    end
-
-    function ARC9_HaloManager:Disable()
-        hook.Remove("PreDrawHalos", self.EVENT_NAME)
-        hook.Remove("PostDrawOpaqueRenderables", self.EVENT_NAME)
-    end
-
-    local mat1 = Material("models/debug/debugwhite")
-    function ARC9_HaloManager:Draw()
-        for k, v in ipairs(self) do
-            if not IsValid(v.ent) then self[k] = nil continue end
-            render.ClearStencil()
-            render.SetStencilEnable(true)
-
-            render.SetStencilWriteMask(255)
-            render.SetStencilTestMask(255)
-            render.SetStencilReferenceValue(1)
-
-            render.SetStencilCompareFunction(STENCILCOMPARISONFUNCTION_ALWAYS)
-            render.SetStencilFailOperation(STENCILOPERATION_KEEP)
-            render.SetStencilPassOperation(STENCILOPERATION_REPLACE)
-            render.SetStencilZFailOperation(STENCILOPERATION_REPLACE)
-
-            v.ent:DrawModel()
-
-            render.SetStencilCompareFunction(STENCILCOMPARISONFUNCTION_EQUAL)
-
-            local mins, maxs = GetEntityAABB(v.ent)
-
-            cam.Start2D()
-                local health    = v.ent:Health()
-                local maxHealth = v.ent:GetMaxHealth()
-
-                local mul = math.Clamp(health / maxHealth, 0, 1)
-
-                local x = mins.x
-                local y = mins.y + (maxs.y - mins.y) * mul
-
-                local w = maxs.x - x
-                local h = maxs.y - y
-
-                surface.SetDrawColor(255, 0, 0, 32)
-                surface.DrawRect(x, y, w, h)
-            cam.End2D()
-
-            render.SetStencilEnable(false)
-        end
-    end
-
-    function ARC9_HaloManager:DrawHalo()
-        local CT = CurTime()
-
-        for i = 1, #_ents do
-            _ents[i] = nil
-        end
-
-        for k, v in ipairs(self) do
-            if (not IsValid(v.ent) or v.ent:Health() <= 0) or v.t <= CT then
-                table.remove(self, k)
-            else
-                table.insert(_ents, v.ent)
-            end
-        end
-
-        halo.Add(_ents, halo_color, 2, 2, 2, true, true )
-
-        if #self <= 0 then
-            self:Disable()
         end
     end
 end
