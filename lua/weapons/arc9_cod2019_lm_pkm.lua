@@ -51,13 +51,13 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 43 -- Damage done at point blank range
-SWEP.DamageMin = 39 -- Damage done at maximum range
+SWEP.DamageMax = 34 -- Damage done at point blank range
+SWEP.DamageMin = 27 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 35 / ARC9.HUToM
-SWEP.RangeMax = 65 / ARC9.HUToM
+SWEP.RangeMin = 30 / ARC9.HUToM
+SWEP.RangeMax = 55 / ARC9.HUToM
 
 SWEP.Penetration = 15 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.15
@@ -770,11 +770,6 @@ SWEP.AttachmentElements = {
             {2,1},
         },
     },
-    ["barrel_extra_none"] = {
-        Bodygroups = {
-            {9,1},
-        },
-    },
     ["muzzle_none"] = {
         Bodygroups = {
             {3,1},
@@ -795,14 +790,24 @@ SWEP.AttachmentElements = {
             {5,1},
         },
     },
-	["sight_front_none"] = {
+	["bullet_none"] = {
         Bodygroups = {
-            {8,1},
+            {6,1},
         },
     },
 	["grip_none"] = {
         Bodygroups = {
             {7,1},
+        },
+    },
+	["sight_front_none"] = {
+        Bodygroups = {
+            {8,1},
+        },
+    },
+    ["barrel_extra_none"] = {
+        Bodygroups = {
+            {9,1},
         },
     },
 }
