@@ -1576,7 +1576,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
---- 30 & 10 (DMR) Round Mags ---
+--- 50 Round Drum Mags ---
 local Translate_Drum = {
     ["reload"] = "reload_drum",
     ["reload_empty"] = "reload_drum_empty",
@@ -1586,6 +1586,8 @@ local Translate_Drum_Fast = {
     ["reload_empty"] = "reload_drum_fast_empty",
     ["reload_ubgl"] = "reload_fast_ubgl",
 }
+
+--- 25, 30, & 10 (DMR) Round Mags ---
 local Translate_AR = {
     ["reload"] = "reload_ar",
     ["reload_empty"] = "reload_ar_empty",
