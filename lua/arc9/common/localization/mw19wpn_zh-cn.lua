@@ -22,10 +22,10 @@ xbowbolt = lineb .. "Changes ammo type to <color=255,255,100>Crossbow Bolts</col
 
 ///////////////////////////// Various Universal Information
 //////////////////// Settings
--- L["settings.mw19"] = "Addon - MW19" -- UO
--- L["settings.mw19.warzonestats"] = "Warzone Stats" -- UO
--- L["settings.mw19.warzonestats.title"] = "Enable Warzone Stats" -- UO
--- L["settings.mw19.warzonestats.desc"] = "Changes the stats on all* weapons and attachments to have stats more accurate to Modern Warfare 2019 / Warzone.\n\nThis is a server variable. Requires restart to take affect.\n\n\n*Some weapons and attachments will not behave differently." -- UO
+L["settings.mw19"] = "插件 - MW19" -- UO
+L["settings.mw19.warzonestats"] = "战区属性" -- UO
+L["settings.mw19.warzonestats.title"] = "战区属性" -- UO
+L["settings.mw19.warzonestats.desc"] = "调整大部分*武器平衡，让属性更接近现代战争19的战区模式。\n\n这是服务器参数，重启后生效。\n\n\n*部分武器和配件不受影响。" -- UO
 
 //////////////////// Trivia
 /////////// Caliber -- UO
@@ -46,13 +46,13 @@ L["mw19_caliber_918"] = "9mm Makarov"
 L["mw19_caliber_46x30"] = "4.6 x 30mm"
 L["mw19_caliber_45acp"] = ".45 ACP"
 L["mw19_caliber_12gauge"] = "12 Gauge"
-L["mw19_caliber_338"] = ".338普通彈匣"
+L["mw19_caliber_338"] = ".338 Norma Mag" -- RAAL MG
 L["mw19_caliber_45-70"] = ".45-70 Government"
 L["mw19_caliber_bolt"] = "20.0\"弩箭"
 L["mw19_caliber_300"] = ".300 Win Mag"
 L["mw19_caliber_50bmg"] = ".50 BMG"
 L["mw19_caliber_357"] = ".357 Magnum"
-L["mw19_caliber_50p"] = ".50手槍"
+L["mw19_caliber_50p"] = ".50 Pistol"
 
 /////////// Country of Origin -- UO
 -- L["mw19_country"] = "Country of Origin1"
@@ -117,61 +117,61 @@ L["mw19_manufacturer"] = "Manufacturer2" -- UO
 -- L["mw19_author"] = "Author1"
 
 /////////// Weapon Categories
-L["mw19_category_weapon_ar"] = "突擊步"
-L["mw19_category_weapon_smg"] = "衝鋒槍"
-L["mw19_category_weapon_shotgun"] = "霰彈槍"
-L["mw19_category_weapon_lmg"] = "輕機槍"
-L["mw19_category_weapon_marksman"] = "射手步槍"
-L["mw19_category_weapon_sniper"] = "狙擊步槍"
-L["mw19_category_weapon_melee"] = "近戰"
-L["mw19_category_weapon_throwable"] = "致命道具和戰術道具"
+L["mw19_category_weapon_ar"] = "突击步枪"
+L["mw19_category_weapon_smg"] = "冲锋枪"
+L["mw19_category_weapon_shotgun"] = "霰弹枪"
+L["mw19_category_weapon_lmg"] = "轻机枪"
+L["mw19_category_weapon_marksman"] = "射手步枪"
+L["mw19_category_weapon_sniper"] = "狙击枪"
+L["mw19_category_weapon_melee"] = "近战"
+L["mw19_category_weapon_throwable"] = "致命和战术道具"
 
-L["mw19_category_weapon_handgun"] = "手槍"
-L["mw19_category_weapon_handgun_akimbo"] = "手槍 (雙武器)"
-L["mw19_category_weapon_launcher"] = "發射器"
+L["mw19_category_weapon_handgun"] = "手枪"
+L["mw19_category_weapon_handgun_akimbo"] = "双持手枪"
+L["mw19_category_weapon_launcher"] = "发射器"
 
 /////////// Weapon Classes
-L["mw19_class_weapon_ar"] = "突擊步槍"
-L["mw19_class_weapon_smg"] = "衝鋒槍"
-L["mw19_class_weapon_shotgun"] = "霰彈槍"
-L["mw19_class_weapon_lmg"] = "輕機槍"
-L["mw19_class_weapon_marksman"] = "射手步槍"
-L["mw19_class_weapon_sniper"] = "狙擊步槍"
-L["mw19_class_weapon_melee"] = "近戰"
+L["mw19_class_weapon_ar"] = "突击步枪"
+L["mw19_class_weapon_smg"] = "冲锋枪"
+L["mw19_class_weapon_shotgun"] = "霰弹枪"
+L["mw19_class_weapon_lmg"] = "轻机枪"
+L["mw19_class_weapon_marksman"] = "射手步枪"
+L["mw19_class_weapon_sniper"] = "狙击枪"
+L["mw19_class_weapon_melee"] = "近战"
 L["mw19_class_weapon_lethal"] = "致命道具"
-L["mw19_class_weapon_tactical"] = "戰術道具"
-L["mw19_class_weapon_grenade"] = "手榴彈" -- UO
+L["mw19_class_weapon_tactical"] = "战术道具"
+L["mw19_class_weapon_grenade"] = "手榴弹" -- UO
 
-L["mw19_class_weapon_handgun"] = "手槍"
-L["mw19_class_weapon_launcher"] = "發射器"
+L["mw19_class_weapon_handgun"] = "手枪"
+L["mw19_class_weapon_launcher"] = "发射器"
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Attachments
 //////////////////// Customize
 L["mw19_category_camouflage"] = "迷彩"
-L["mw19_category_reticle"] = "瞄準緑"
-L["mw19_category_charm"] = "飾物"
-L["mw19_category_sticker"] = "貼紙"
+L["mw19_category_reticle"] = "准星"
+L["mw19_category_charm"] = "挂件"
+L["mw19_category_sticker"] = "贴纸"
 
 //////////////////// Attachment Categories
-L["mw19_category_muzzle"] = "槍口"
-L["mw19_category_barrel"] = "槍管"
-L["mw19_category_laser"] = "雷射"
-L["mw19_category_optic"] = "瞄準鏡"
-L["mw19_category_stock"] = "槍托"
-L["mw19_category_underbarrel"] = "下褂"
-L["mw19_category_magazine"] = "彈匣Y"
-L["mw19_category_reargrip"] = "側握把"
-L["mw19_category_perk"] = "特長"
+L["mw19_category_muzzle"] = "枪口"
+L["mw19_category_barrel"] = "枪管"
+L["mw19_category_laser"] = "激光瞄具"
+L["mw19_category_optic"] = "瞄准镜"
+L["mw19_category_stock"] = "枪托"
+L["mw19_category_underbarrel"] = "下挂"
+L["mw19_category_magazine"] = "弹夹"
+L["mw19_category_reargrip"] = "后握把"
+L["mw19_category_perk"] = "特长"
 
 -- Specific to Handguns
-L["mw19_category_triggeraction"] = "扳機"
+L["mw19_category_triggeraction"] = "扳机"
 
 -- Specific to the R9-0 Shotgun
 L["mw19_category_pumps"] = "滑膛"
 
 -- Specific to the 725 Shotgun
-L["mw19_category_guard"] = "護木"
+L["mw19_category_guard"] = "护木"
 
 -- Specific to the VLK Rogue Shotgun
 L["mw19_category_pumpgrip"] = "滑膛握把"
@@ -182,41 +182,40 @@ L["mw19_category_arms"] = "弓臂"
 L["mw19_category_bolt"] = "弩箭"
 
 -- Specific to the SP-R 208 Marksman Rifle
-L["mw19_category_boltassembly"] = "槍栓零件"
+L["mw19_category_boltassembly"] = "枪栓"
 
 -- Custom ones for the addon
-L["mw19_category_ammo"] = "Ammo" -- UO
-L["mw19_category_function"] = "Functionality" -- UO
-L["mw19_category_grip"] = "Foregrip" -- UO
-L["mw19_category_misc"] = "Misc." -- UO
-L["mw19_category_rails"] = "Rails" -- UO
-L["mw19_category_misc"] = "Misc." -- UO
-L["mw19_category_receiver"] = "Receiver" -- UO
-L["mw19_category_skins"] = "Skins" -- UO
-L["mw19_category_slide"] = "Slide" -- UO, "Pistol Slide"
-L["mw19_category_stats"] = "Stats" -- UO
-L["mw19_category_view"] = "View" -- UO
+L["mw19_category_ammo"] = "弹药" -- UO
+L["mw19_category_function"] = "功能" -- UO
+L["mw19_category_grip"] = "前握把" -- UO
+L["mw19_category_misc"] = "其它" -- UO
+L["mw19_category_rails"] = "导轨" -- UO
+L["mw19_category_receiver"] = "枪身" -- UO
+L["mw19_category_skins"] = "皮肤" -- UO
+L["mw19_category_slide"] = "枪滑" -- UO, "Pistol Slide"
+L["mw19_category_stats"] = "属性" -- UO
+L["mw19_category_view"] = "检视" -- UO
 
 //////////////////// Folder Names
 -- Stocks
--- L["mw19_folder_tube2"] = "Tube" -- UO
+L["mw19_folder_tube2"] = "弹管" -- UO
 
 -- Other
--- L["mw19_folder_other2"] = "Other" -- UO
--- L["mw19_folder_side2"] = "Side" -- UO
+L["mw19_folder_other2"] = "其它" -- UO
+L["mw19_folder_side2"] = "侧面" -- UO
 
 //////////////////// Firemodes
--- L["mw19_firemode_pump"] = "PUMP"
+L["mw19_firemode_pump"] = "泵动"
 
--- L["mw19_firemode_single"] = "SINGLE" -- UO
--- L["mw19_firemode_double"] = "DOUBLE" -- UO
--- L["mw19_firemode_throwable"] = "THROWABLE" -- UO
--- L["mw19_firemode_plant"] = "PLANT" -- UO, "Plant" the bomb
--- L["mw19_firemode_melee"] = "MELEE" -- UO
--- L["mw19_firemode_lockon"] = "LOCK-ON" -- UO
--- L["mw19_firemode_lockon_top"] = "LOCK-ON (TOP-DOWN)" -- UO
--- L["mw19_firemode_guided"] = "GUIDED" -- UO
--- L["mw19_firemode_unguided"] = "UNGUIDED" -- UO
+L["mw19_firemode_single"] = "单击" -- UO
+L["mw19_firemode_double"] = "双击" -- UO
+L["mw19_firemode_throwable"] = "投掷" -- UO
+L["mw19_firemode_plant"] = "部署" -- UO, "Plant" the bomb
+L["mw19_firemode_melee"] = "近战" -- UO
+L["mw19_firemode_lockon"] = "锁定" -- UO
+L["mw19_firemode_lockon_top"] = "锁定 (垂直)" -- UO
+L["mw19_firemode_guided"] = "锁定" -- UO
+L["mw19_firemode_unguided"] = "无锁定" -- UO
 
 //////////////////////////////////////////////////////////////////////
 ///////////////////////////// Base Attachments
@@ -345,15 +344,15 @@ L["mw19_category_view"] = "View" -- UO
 ////////////////////  Perks
 L["cod2019_perks_soh.printname"] = "快手"
 L["cod2019_perks_soh.compactname"] = "快手"
-L["cod2019_perks_soh.description"] = "訓練讓亻尔在壓力下裝填更快。"
+L["cod2019_perks_soh.description"] = "訓練讓你在壓力下裝填更快。"
 
-L["cod2019_perks_speedmelee.printname"] = "荷槍實彈"
-L["cod2019_perks_speedmelee.compactname"] = "荷槍實彈"
-L["cod2019_perks_speedmelee.description"] = "以最大儲備彈桑開始。"
+L["cod2019_perks_speedmelee.printname"] = "快速近战"
+L["cod2019_perks_speedmelee.compactname"] = "快速近战"
+L["cod2019_perks_speedmelee.description"] = "近战手法训练让你的攻击速度超凡。"
 
-L["cod2019_perks_heavyhitter.printname"] = "重型武器"
-L["cod2019_perks_heavyhitter.compactname"] = "重型武器"
-L["cod2019_perks_heavyhitter.description"] = "近戰曾對目標造成更强烈的暈眩效果。"
+L["cod2019_perks_heavyhitter.printname"] = "强硬冲击"
+L["cod2019_perks_heavyhitter.compactname"] = "强硬冲击"
+L["cod2019_perks_heavyhitter.description"] = "近战对目标的效果更强。"
 
 -- L["cod2019_perks_enforcer.printname"] = "Enforcer" -- UO
 -- L["cod2019_perks_enforcer.compactname"] = "Enforcer" -- UO
@@ -377,8 +376,8 @@ L["cod2019_perks_burst_2.description"] = "將射模式轉換成<color=100,255,10
 -- L["cod2019_perks_super_sprint.compactname"] = "Tac. Sprint" -- UO
 -- L["cod2019_perks_super_sprint.description"] = "Provides an altered stance when sprinting. Cancels out up to <color=100,255,100>20%</color> sprint speed reduction at the cost of reduced sprint-to-fire speed." -- UO
 
-L["cod2019_perks_auto.printname"] = "自动的" -- UO
-L["cod2019_perks_auto.compactname"] = "自动的" -- UO
+L["cod2019_perks_auto.printname"] = "自动" -- UO
+L["cod2019_perks_auto.compactname"] = "自动" -- UO
 L["cod2019_perks_auto.description"] = "將射模式轉換成<color=100,255,100>自动的</color>。" -- UO
 
 ////////////////////  Scopes
@@ -588,7 +587,7 @@ L["mw19_weapon_hdr"] = "HDR"
 L["mw19_weapon_ax50"] = "AX-50"
 L["mw19_weapon_rytec"] = "Rytec AMR"
 
-L["mw19_weapon_shield"] = "鎮暴盾"
+L["mw19_weapon_shield"] = "防爆盾"
 
 L["mw19_weapon_glock"] = "X16"
 L["mw19_weapon_1911"] = "1911"
@@ -608,31 +607,31 @@ L["mw19_weapon_knife"] = "小刀"
 L["mw19_weapon_stick"] = "藤棍"
 L["mw19_weapon_sword"] = "雙持小太刀"
 
-L["mw19_weapon_akimbo"] = "%s 雙武器"
+L["mw19_weapon_akimbo"] = "双持 %s"
 
-L["mw19_weapon_nade_claymore"] = "闊刀式地雷"
-L["mw19_weapon_nade_frag"] = "破片手榴彈"
-L["mw19_weapon_nade_molotov"] = "汽油彈"
-L["mw19_weapon_nade_c4"] = "C4炸藥"
-L["mw19_weapon_nade_semtex"] = "塞姆汀炸藥"
-L["mw19_weapon_nade_knife"] = "投躑小刀"
-L["mw19_weapon_nade_proximity"] = "感應地雷"
-L["mw19_weapon_nade_thermite"] = "鋁熱劑"
-L["mw19_weapon_nade_thermite_alt"] = "鋁熱劑榴彈" -- UO
-L["mw19_weapon_nade_drillcharge"] = "Drill Charge" -- UO
+L["mw19_weapon_nade_claymore"] = "阔剑地雷"
+L["mw19_weapon_nade_frag"] = "破片手榴弹"
+L["mw19_weapon_nade_molotov"] = "汽油弹"
+L["mw19_weapon_nade_c4"] = "C4 炸药"
+L["mw19_weapon_nade_semtex"] = "塞姆汀地雷"
+L["mw19_weapon_nade_knife"] = "投掷小刀"
+L["mw19_weapon_nade_proximity"] = "感应地雷"
+L["mw19_weapon_nade_thermite"] = "铝热剂"
+L["mw19_weapon_nade_thermite_alt"] = "燃烧弹" -- UO
+L["mw19_weapon_nade_drillcharge"] = "破墙弹" -- UO
 
-L["mw19_weapon_nade_flash"] = "閃光彈"
-L["mw19_weapon_nade_stun"] = "震撼彈"
-L["mw19_weapon_nade_smoke"] = "烴霧彈"
-L["mw19_weapon_nade_snapshot"] = "快照彈"
-L["mw19_weapon_nade_heartbeat"] = "心跳感應器"
-L["mw19_weapon_nade_stim"] = "興奪劑"
-L["mw19_weapon_nade_decoy"] = "誘餌彈"
-L["mw19_weapon_nade_gas"] = "催唳彈"
+L["mw19_weapon_nade_flash"] = "闪光弹"
+L["mw19_weapon_nade_stun"] = "震撼弹"
+L["mw19_weapon_nade_smoke"] = "烟雾弹"
+L["mw19_weapon_nade_snapshot"] = "快照弹"
+L["mw19_weapon_nade_heartbeat"] = "心跳感应器"
+L["mw19_weapon_nade_stim"] = "兴奋剂"
+L["mw19_weapon_nade_decoy"] = "诱饵弹"
+L["mw19_weapon_nade_gas"] = "催泪弹"
 
--- L["mw19_weapon_minigun"] = "Minigun"-- UO
--- L["mw19_weapon_fists"] = "Fists" -- UO
--- L["mw19_weapon_nade_rock"] = "Rock" -- UO
+L["mw19_weapon_minigun"] = "转轮机枪" -- UO
+L["mw19_weapon_fists"] = "拳头" -- UO
+L["mw19_weapon_nade_rock"] = "石块" -- UO
 
 //////////////////// Weapon Descriptions
 L["mw19_weapon_kilo141_desc"] = "全自動突擊步槍，睬人體工學設計，操控性更佳，射速穩定利於鎖定目標。"
@@ -685,14 +684,14 @@ L["mw19_weapon_spr_desc"] = "Sloan Precision所打造的.300 Win栓動式步槍�
 
 L["mw19_weapon_dragunov_desc"] = "搭載7.62mmx54mmR彈藥的蘇聯製耐用武器。這把氣動式的半自動狙擊步槍讓使用者可以快速地連續開火。"
 L["mw19_weapon_hdr_desc"] = "睬用12.7x108mm彈藥的反器材栓動式狙擊槍。 745 gr子彈槍口初速較低，但具有極為强大的遠距破壞力。"
-L["mw19_weapon_ax50_desc"] = "威力强大、扌采用.50口徑BMG彈藥的栓動式狙擊槍。它的鎢殻尖型子彈的飛行速度很快而且火力强大，但在遠距離射擊時準確度的要求很高。"
+L["mw19_weapon_ax50_desc"] = "威力强大、采用.50口徑BMG彈藥的栓動式狙擊槍。它的鎢殻尖型子彈的飛行速度很快而且火力强大，但在遠距離射擊時準確度的要求很高。"
 L["mw19_weapon_rytec_desc"] = "配以.50 BMG膛室的半自動反器材步槍，在遠距攻擊的表現尤其卓越。25x59mm高爆超能配備變體雖然目前作為實驗性武器，但已在各種機密任務中發揮過糹色佳的戰力。"
 
 L["mw19_weapon_shield_desc"] = "這面防彈又防爆的盾牌近戰傷害更高。"
 
-L["mw19_weapon_glock_desc"] = "半自動手槍，扌采用． 45 ACP 彈 藥。 深陷近戰時，可做為有效的突圍武器。"
+L["mw19_weapon_glock_desc"] = "半自動手槍，采用 .45 ACP 彈藥。 深陷近戰時，可做為有效的突圍武器。"
 L["mw19_weapon_1911_desc"] = "面面俱到的半自動手槍，中等射速。射程比標準的.45 ACP手槍遠一點。"
-L["mw19_weapon_357_desc"] = "雙動式左輪手槍，扌采用.357 Magnum彈 藥，即便遠程也能造成極大傷害。"
+L["mw19_weapon_357_desc"] = "雙動式左輪手槍，采用 .357 Magnum 彈藥，即便遠程也能造成極大傷害。"
 L["mw19_weapon_m19_desc"] = "半自動9mm手槍，擊發循環速度快且穩定。"
 L["mw19_weapon_deagle_desc"] = "火力最强大的半自動手槍，可對中程目標造成嚴重傷害。"
 L["mw19_weapon_m9_desc"] = "這把半自動9mm手槍看似不起眼，實則在近距離戰鬥中極具優勢，更能利用槍匠系統進行多變的一系列改造，適應不同交戰策略。"
@@ -708,7 +707,7 @@ L["mw19_weapon_knife_desc"] = "近戰 (CQC) 戰術小刀。標準軍用配發，
 L["mw19_weapon_stick_desc"] = "雙持警棍可以讓特戰兵以敏捷的身手接近目標。堅固且輕盈的設計讓你可以迅速出擊，把敵人打到無法還手。"
 L["mw19_weapon_sword_desc"] = "使用純手工鍛造的碳鋼刀刃，讓你悄無息、乾氵爭俐落地把對手切成生魚片。/"
 
-local quicknade = "\n\nCan be used with \"Quickthrow\". Requires \"<color=175,175,255>+grenade1</color>\" bind." -- UO
+local quicknade = "\n\n可快速投掷。需要绑定 \"<color=175,175,255>+grenade1</color>\" 指令。" -- UO
 
 L["mw19_weapon_nade_claymore_desc"] = "感應髑發的爆炸地雷。" .. quicknade
 L["mw19_weapon_nade_frag_desc"] = "可延遲擲出的破片手榴彈。" .. quicknade

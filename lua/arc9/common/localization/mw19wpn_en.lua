@@ -52,7 +52,7 @@ L["mw19_caliber_bolt"] = "20.0\" Bolt" -- Crossbow
 L["mw19_caliber_300"] = ".300 Win Mag" -- SP-R 208
 L["mw19_caliber_50bmg"] = ".50 BMG" -- AX-50, Rytec AMR
 L["mw19_caliber_357"] = ".357 Magnum" -- .357
-L["mw19_caliber_50p"] = ".50 pistol" -- .50 GS
+L["mw19_caliber_50p"] = ".50 Pistol" -- .50 GS
 
 /////////// Country of Origin -- UO
 L["mw19_country"] = "Country of Origin1"
