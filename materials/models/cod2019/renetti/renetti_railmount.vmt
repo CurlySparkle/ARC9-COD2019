@@ -1,32 +1,49 @@
-"VertexlitGeneric"
+"VertexLitGeneric"
 {
-	"$basetexture"				"models/cod2019/renetti/renetti_railmount"
-	"$bumpmap"					"models/cod2019/renetti/renetti_railmount_n"
-	"$phongexponenttexture"		"models/cod2019/renetti/renetti_railmount_exp"
-	"$color2"					"[0.8 0.8 0.8]"
-	"$blendTintByBaseAlpha"		"1"
+    "$basetexture" "models/cod2019/renetti/renetti_railmount"
+    "$bumpmap" "models/cod2019/renetti/renetti_railmount_n"
+    "$phongexponenttexture" "models/cod2019/renetti/renetti_railmount_exp"
 
-	"$envmap"					"env_cubemap"
-	"$envmaptint"				"[ .13 .13 .13 ]"
-	"$envmapfresnel"			".25"
-	"$envmapcoefficient"		"[0.39 0.39 0.39]"
+    /////////////////
+    "$color2" "[1 1 1]"                                     //do not touch this
+    "$blendtintbybasealpha" "1"                             //do not touch this
+    /////////////////
 
-	"$phong"					"1"
-	"$phongboost"				"2"
-     //"$phongexponent"				"55"
-	"$phongfresnelranges"		"[0.32 0.72 0.99]"
-	"$phongalbedotint" 			"1"
+    "$phong" "1"
+    "$phongboost" "2"
+// "$phongexponent" "55"
+    "$phongalbedotint" "1"
+    "$phongalbedoboost" "10"                                //toy around with this
+    "$phongfresnelranges" "[0.32 0.72 0.99]"
 
-     "$normalmapalphaenvmapmask"              "1"
-	"$phongwarptexture"                 "models\cod2019\shared\steelwarp"
+    "$phongwarptexture"                 "models\cod2019\shared\steelwarp"
+    /////////////////
+    "$normalmapalphaenvmapmask" "1"                         //do not touch this
+    /////////////////
 
-     "Proxies"
-     {
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[0.13 0.13 0.13]"                 
+    "$envmapfresnel"	".25"
+    "$envmapcoefficient"	"[0.39 0.39 0.39]"
+
+    "$detailblendmode" "4"
+    "$detailblendfactor" "0.7"
+
+    //remove this if not using MWB
+    "Proxies"
+    {
         "Arc9EnvMapTint"
         {
             "specularity" "0.5"
             "min" "0"
             "max" "0.2"
         }
-     }
+	   "CustomCamo" 
+        {
+	"camoTexture" $detail
+	"camoScale" $detailscale
+	"blend" $detailblendfactor
+	"color2" "[0.8 0.8 0.8]"
+        }
+    }
 }
