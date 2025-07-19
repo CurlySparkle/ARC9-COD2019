@@ -34,31 +34,14 @@ function ENT:Initialize()
     ParticleEffectAttach("grenadetrail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
 end
 
-function ENT:OnThink()
-    if self.VJExists then
-        if self.HasShot ~= false then
-            for _, v in ipairs(self.Zombies) do
-                if IsValid(v) then
-                    v:SetLastPosition(self:GetPos())
-                    v:VJ_TASK_GOTO_LASTPOS()
-                end
-            end
-        end
-    else
-        return false
-    end
-end
-
 function ENT:Think()
     if not self.lasttick then
         self.lasttick = CurTime() - 0.1
     end
 
-    if self:GetVelocity():Length() < 5 then
-        self.active = true
-        sound.EmitHint(SOUND_PLAYER + SOUND_BULLET_IMPACT + SOUND_CONTEXT_GUNFIRE, self:GetPos(), 512, 5, self)
-
-        if self.ParticleCreated ~= true then
+    if self:GetVelocity():LengthSqr() < 50 then
+        if not self.active then
+            self.active = true
             local ground = ents.Create("info_particle_system")
             ground:SetKeyValue("effect_name", "weapon_decoy_ground_effect")
             ground:SetOwner(self)
@@ -68,7 +51,19 @@ function ENT:Think()
             ground:Activate()
             ground:Fire("start", "", 0)
             ground:Fire("kill", "", 15)
-            self.ParticleCreated = true
+
+            if IsValid(self:GetOwner()) and self:GetOwner():IsPlayer() then
+                local weps = {}
+                for _, wep in ipairs(self:GetOwner():GetWeapons()) do
+                    if IsValid(wep) and wep.ARC9 and not wep:GetProcessedValue("Throwable") and not wep:GetProcessedValue("PrimaryBash") then
+                        table.insert(weps, wep)
+                    end
+                end
+                if #weps > 0 then
+                    self.DecoyWeapon = weps[math.random(#weps)]
+                    self.DecoyClip = self.DecoyWeapon:GetProcessedValue("ClipSize")
+                end
+            end
         end
 
         if self.VJExists and (self.NextLure or 0) < CurTime() then
@@ -80,7 +75,9 @@ function ENT:Think()
                         x.MyEnemy = self
                         x:SetEnemy(self)
                         table.insert(self.Zombies, x)
-                    elseif not IsValid(x:GetEnemy()) and x:GetPos():DistToSqr(self:GetPos()) > 256 * 256 then
+                        x:SetLastPosition(self:GetPos())
+                        x:VJ_TASK_GOTO_LASTPOS()
+                    elseif (not IsValid(x:GetEnemy()) or not x:Visible(x:GetEnemy())) and x:GetPos():DistToSqr(self:GetPos()) > 256 * 256 then
                         x:SetLastPosition(self:GetPos())
                         x:VJ_TASK_GOTO_LASTPOS()
                     end
@@ -99,6 +96,9 @@ function ENT:Think()
             bul.Spread = vector_origin
             bul.Src = self:GetPos()
             self:GetOwner():FireBullets(bul, true)
+
+            sound.EmitHint(SOUND_PLAYER + SOUND_BULLET_IMPACT + SOUND_CONTEXT_GUNFIRE, self:GetPos(), 512, 1, self)
+
             local fsound = Sound("COD2019.AK47.Fire")
             local fdistance = Sound("Distant_AR.Outside")
             local flayer = Sound("Layer_AR.Outside")
@@ -115,8 +115,16 @@ function ENT:Think()
             })
             local indoor = not tr.HitSky and tr.Fraction <= 0.5
 
-            if self:GetOwner().GetActiveWeapon and IsValid(self:GetOwner():GetActiveWeapon()) then
+            if (not self.DecoyWeapon or not IsValid(self.DecoyWeapon)) then
                 local wep = self:GetOwner():GetActiveWeapon()
+                if IsValid(wep) and wep.ARC9 and not wep:GetProcessedValue("Throwable") and not wep:GetProcessedValue("PrimaryBash")  then
+                    self.DecoyWeapon = wep
+                    self.DecoyClip = self.DecoyWeapon:GetProcessedValue("ClipSize")
+                end
+            end
+
+            if IsValid(self.DecoyWeapon) then
+                local wep = self.DecoyWeapon
                 if wep.ShootSound then
                     fsound = indoor and wep.ShootSoundIndoor or wep.ShootSound
                 end
@@ -138,8 +146,10 @@ function ENT:Think()
                 if wep.RPM then
                     delay = 60 / wep.RPM
                     if wep.ManualAction then
-                        delay = delay + math.Rand(0.4, 1.2) -- can't be bothered to calculate it
+                        delay = delay + math.Rand(0.6, 0.8) -- can't be bothered to calculate it
                         magfactor = 5
+                    elseif wep.RPM < 700 then
+                        delay = delay + math.Rand(0, 0.05) -- fake some delay on low RPM guns
                     end
                 end
 
@@ -147,9 +157,15 @@ function ENT:Think()
                     local pvar = wep.ShootPitchVariation or 0
                     pitch = wep.ShootPitch + math.Rand(-pvar, pvar)
                 end
+
+                self.DecoyClip = (self.DecoyClip or wep:GetProcessedValue("ClipSize")) - 1
             end
 
-            if math.random(1, (CurTime() - self.LastBurstStart) * 30 * magfactor) == 1 then
+            if IsValid(self.DecoyWeapon) and self.DecoyClip <= 0 then
+                self.NextSound = CurTime() + math.Rand(3, 5)
+                self.LastBurstStart = self.NextSound
+                self.DecoyClip = self.DecoyWeapon:GetProcessedValue("ClipSize")
+            elseif math.random(1, (CurTime() - self.LastBurstStart) * 30 * magfactor) == 1 then
                 self.NextSound = CurTime() + delay
             else
                 self.NextSound = CurTime() + delay + math.Rand(0.1, 1.5)
@@ -173,7 +189,6 @@ function ENT:Think()
         end
     end
 
-    self:OnThink()
     self.lasttick = CurTime()
     self:NextThink(CurTime())
 
