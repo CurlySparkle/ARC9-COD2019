@@ -878,7 +878,7 @@ ATT.AutoStats = true
 ATT.ActivateElements = {"rocket_shovel"}
 ATT.Free = true
 
-ATT.MuzzleVelocityOverride = 12000
+ATT.ShootEntForceOverride = 2000
 ATT.Ammo = "xbowbolt"
 ATT.ShootEnt = "arc9_cod2019_proj_rpg_shovel"
 ATT.Category = {"cod2019_rpg_ammo"}
