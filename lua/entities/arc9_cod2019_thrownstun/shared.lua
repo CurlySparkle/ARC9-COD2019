@@ -13,7 +13,7 @@ ENT.Model = "models/weapons/cod2019/w_eq_stun_thrown.mdl"
 ENT.PhysBoxSize = false
 ENT.SphereSize = false
 ENT.PhysMat = "grenade"
-ENT.LifeTime = 1.5
+ENT.LifeTime = 3
 ENT.Radius = 200
 ENT.SmokeTrail = false
 local BLUR_DURATION = 8
@@ -92,6 +92,8 @@ function ENT:PhysicsCollide(data)
     elseif data.Speed > 50 then
         self:EmitSound(Sound("weapons/cod2019/throwables/stun/phy_flash_bounce_concrete_soft_0" .. math.random(1, 3) .. ".ogg"), 75, 100, 0.4, CHAN_AUTO)
     end
+
+    self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.9)
 end
 
 function ENT:Detonate()

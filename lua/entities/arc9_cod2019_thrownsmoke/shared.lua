@@ -44,6 +44,7 @@ function ENT:Initialize()
         if phys:IsValid() then
             phys:Wake()
             phys:SetBuoyancyRatio(0)
+            phys:SetMass(5)
         end
 
         self.SpawnTime = CurTime()
@@ -65,6 +66,8 @@ function ENT:PhysicsCollide(data, physobj)
             self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1, 3) .. ".ogg"), 75, 100, 0.3, CHAN_AUTO)
         end
 
+        self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.9)
+
         if (CurTime() - self.SpawnTime >= self.ArmTime) and self.ImpactFuse then
             self:Detonate()
         end
@@ -78,9 +81,6 @@ end
 -- end
 function ENT:Think()
     if SERVER then
-        local phys = self:GetPhysicsObject()
-        phys:ApplyForceCenter(self:GetAngles():Forward() * 500)
-
         if self.SpawnTime + self.FuseTime <= CurTime() then
             self:Detonate()
         end

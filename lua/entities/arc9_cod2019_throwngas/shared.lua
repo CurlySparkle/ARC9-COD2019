@@ -14,6 +14,7 @@ ENT.AdminSpawnable = false
 
 ENT.Model = "models/weapons/cod2019/w_eq_gas_thrown.mdl"
 ENT.FuseTime = 2
+ENT.Mass = 5
 
 function ENT:Initialize()
     if SERVER then
@@ -22,12 +23,13 @@ function ENT:Initialize()
         self:SetSolid( SOLID_VPHYSICS )
         self:PhysicsInit( SOLID_VPHYSICS )
         self:DrawShadow( true )
-		self:SetAngles(Angle(0, 0, -70))
+        self:SetAngles(Angle(0, 0, -70))
 
         local phys = self:GetPhysicsObject()
         if phys:IsValid() then
             phys:Wake()
             phys:SetBuoyancyRatio(0)
+            phys:SetMass(self.Mass)
         end
 
         timer.Simple(self.FuseTime, function()
@@ -41,25 +43,21 @@ function ENT:Initialize()
             self:SetCollisionGroup(COLLISION_GROUP_PROJECTILE)
         end)
     end
-	ParticleEffectAttach("grenadetrail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
+    ParticleEffectAttach("grenadetrail", PATTACH_ABSORIGIN_FOLLOW, self, 0)
 end
 
 function ENT:PhysicsCollide(data, physobj)
     if SERVER then
         if data.Speed > 75 then
-			self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"), 75, 100, 1, CHAN_AUTO )
+            self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1,3) .. ".ogg"), 75, 100, 1, CHAN_AUTO )
         elseif data.Speed > 45 then
-			self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_med_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.3, CHAN_AUTO )
+            self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_med_0" .. math.random(1,3) .. ".ogg"), 75, 100, 0.3, CHAN_AUTO )
         end
     end
-	self:StopParticles()
-end
 
-function ENT:Think()
-    if SERVER then
-        local phys = self:GetPhysicsObject()
-        phys:ApplyForceCenter(self:GetAngles():Forward() * 500)
-    end
+    self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.9)
+
+    self:StopParticles()
 end
 
 function ENT:Detonate()
@@ -71,7 +69,7 @@ function ENT:Detonate()
     self:DoDetonate()
    end
 end
-  
+
 function ENT:DoDetonate()
     if self:WaterLevel() > 0 then self:Remove() return end
     local attacker = self.Attacker or self:GetOwner() or self
@@ -85,9 +83,9 @@ function ENT:DoDetonate()
             cloud:SetParent(self)
             cloud.NoIgnite = self
         end
-	self:EmitSound("weapons/cod2019/throwables/gas/gas_nade_expl.ogg", 80)
-	ParticleEffectAttach("AC_nade_gas_ejection", PATTACH_POINT_FOLLOW, self, 0)
-    
+    self:EmitSound("weapons/cod2019/throwables/gas/gas_nade_expl.ogg", 80)
+    ParticleEffectAttach("AC_nade_gas_ejection", PATTACH_POINT_FOLLOW, self, 0)
+
     timer.Simple(18, function()
         if IsValid(self) then
             self:Remove()

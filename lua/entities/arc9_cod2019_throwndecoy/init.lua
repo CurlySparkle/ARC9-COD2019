@@ -9,18 +9,6 @@ end
 function ENT:Initialize()
     self.VJExists = file.Exists("lua/autorun/vj_base_autorun.lua", "GAME") or false
 
-    if self.VJExists then
-        for _, x in ipairs(ents.FindInSphere(self:GetPos(), 4000)) do
-            if x:IsNPC() and string.find(x:GetClass(), "npc_vj_l4d_com_") and x.Zombie_CanHearPipe == true then
-                -- table.insert(x.VJ_AddCertainEntityAsEnemy, self)
-                x:AddEntityRelationship(self, D_HT, 99)
-                x.MyEnemy = self
-                x:SetEnemy(self)
-                table.insert(self.Zombies, x)
-            end
-        end
-    end
-
     if SERVER then
         self:SetModel("models/weapons/cod2019/w_eq_decoy_thrown.mdl")
         self:SetMoveType(MOVETYPE_VPHYSICS)
@@ -68,7 +56,7 @@ function ENT:Think()
 
     if self:GetVelocity():Length() < 5 then
         self.active = true
-        sound.EmitHint(SOUND_DANGER + SOUND_BULLET_IMPACT + SOUND_CONTEXT_GUNFIRE, self:GetPos(), 512, 5, self)
+        sound.EmitHint(SOUND_PLAYER + SOUND_BULLET_IMPACT + SOUND_CONTEXT_GUNFIRE, self:GetPos(), 512, 5, self)
 
         if self.ParticleCreated ~= true then
             local ground = ents.Create("info_particle_system")
@@ -81,6 +69,23 @@ function ENT:Think()
             ground:Fire("start", "", 0)
             ground:Fire("kill", "", 15)
             self.ParticleCreated = true
+        end
+
+        if self.VJExists and (self.NextLure or 0) < CurTime() then
+            self.NextLure = CurTime() + 5
+            for _, x in ipairs(ents.FindInSphere(self:GetPos(), 3000)) do
+                if x:IsNPC() and x.MyEnemy == nil then
+                    if (string.find(x:GetClass(), "npc_vj_l4d_com_") and x.Zombie_CanHearPipe == true) then
+                        x:AddEntityRelationship(self, D_HT, 99)
+                        x.MyEnemy = self
+                        x:SetEnemy(self)
+                        table.insert(self.Zombies, x)
+                    elseif not IsValid(x:GetEnemy()) and x:GetPos():DistToSqr(self:GetPos()) > 256 * 256 then
+                        x:SetLastPosition(self:GetPos())
+                        x:VJ_TASK_GOTO_LASTPOS()
+                    end
+                end
+            end
         end
 
         if self.NextSound < CurTime() and IsValid(self:GetOwner()) then

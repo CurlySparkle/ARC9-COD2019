@@ -56,6 +56,8 @@ function ENT:PhysicsCollide(data)
         self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_soft_0" .. math.random(1, 3) .. ".ogg"), 75, 100, 0.4, CHAN_AUTO)
     end
 
+    self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.9)
+
     if self.ExplodeOnImpact then
         self.HitPos = data.HitPos
         self.HitVelocity = data.OurOldVelocity

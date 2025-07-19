@@ -13,6 +13,7 @@ ENT.Radius = 300
 ENT.ExplodeOnImpact = false
 ENT.SmokeTrail = false
 ENT.BounceSound = ""
+ENT.Mass = 5
 
 function ENT:Initialize()
     if SERVER then
@@ -52,6 +53,8 @@ function ENT:PhysicsCollide(data)
     elseif data.Speed > 25 then
         self:EmitSound(Sound("weapons/cod2019/throwables/frag/phy_frag_bounce_concrete_hard_0" .. math.random(1, 3) .. ".ogg"), 75, 100, 0.3, CHAN_AUTO)
     end
+
+    self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.9)
 
     if self.ExplodeOnImpact then
         self.HitPos = data.HitPos

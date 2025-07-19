@@ -1,6 +1,6 @@
 ENT.Type = "anim"
 ENT.PrintName			= "Decoy Grenade"
-ENT.DoNotDuplicate = true 
+ENT.DoNotDuplicate = true
 ENT.DisableDuplicator = true
 ENT.Zombies = {}
 ENT.VJExists = false
@@ -17,7 +17,7 @@ function ENT:PhysicsUpdate()
 end
 
 function ENT:PhysicsCollide(data,phys)
-	if data.Speed > 60 then
+    if data.Speed > 60 then
 
             local tgt = data.HitEntity
             if IsValid(tgt) and not tgt:IsWorld() and (self.NextHit or 0) < CurTime() then
@@ -41,10 +41,12 @@ function ENT:PhysicsCollide(data,phys)
                 end
             end
 
-		self.Entity:EmitSound(Sound("COD2019.Frag.Bounce"))
-		local impulse = (data.OurOldVelocity - 2 * data.OurOldVelocity:Dot(data.HitNormal) * data.HitNormal)*0.25
-		phys:ApplyForceCenter(impulse)
-		self:StopParticles()
-	end
-	
+        self.Entity:EmitSound(Sound("COD2019.Frag.Bounce"))
+        local impulse = (data.OurOldVelocity - 2 * data.OurOldVelocity:Dot(data.HitNormal) * data.HitNormal)*0.25
+        phys:ApplyForceCenter(impulse)
+        self:StopParticles()
+    end
+
+    self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.9)
+
 end

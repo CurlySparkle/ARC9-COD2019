@@ -19,6 +19,7 @@ ENT.ExplodeOnImpact = false
 ENT.SmokeTrail = false
 ENT.BounceSound = "COD2019.Flash.Bounce"
 
+
 function ENT:EntityFacingFactor(theirent)
     local dir = theirent:EyeAngles():Forward()
     local facingdir = (self:GetPos() - (theirent.GetShootPos and theirent:GetShootPos() or theirent:GetPos())):GetNormalized()
@@ -33,6 +34,12 @@ function ENT:EntityFacingUs(theirent)
 end
 
 local BaseClass = baseclass.Get(ENT.Base)
+
+
+function ENT:PhysicsCollide(data)
+    BaseClass.PhysicsCollide(self, data)
+    self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.9)
+end
 
 local function isCowerSupportedForNPC(npc)
     for _, a in pairs(npc:GetSequenceList()) do
