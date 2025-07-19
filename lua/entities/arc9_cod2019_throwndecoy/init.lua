@@ -66,25 +66,6 @@ function ENT:Think()
             end
         end
 
-        if self.VJExists and (self.NextLure or 0) < CurTime() then
-            self.NextLure = CurTime() + 5
-            for _, x in ipairs(ents.FindInSphere(self:GetPos(), 3000)) do
-                if x:IsNPC() and x.MyEnemy == nil then
-                    if (string.find(x:GetClass(), "npc_vj_l4d_com_") and x.Zombie_CanHearPipe == true) then
-                        x:AddEntityRelationship(self, D_HT, 99)
-                        x.MyEnemy = self
-                        x:SetEnemy(self)
-                        table.insert(self.Zombies, x)
-                        x:SetLastPosition(self:GetPos())
-                        x:VJ_TASK_GOTO_LASTPOS()
-                    elseif (not IsValid(x:GetEnemy()) or not x:Visible(x:GetEnemy())) and x:GetPos():DistToSqr(self:GetPos()) > 256 * 256 then
-                        x:SetLastPosition(self:GetPos())
-                        x:VJ_TASK_GOTO_LASTPOS()
-                    end
-                end
-            end
-        end
-
         if self.NextSound < CurTime() and IsValid(self:GetOwner()) then
             local bul = {}
             bul.Attacker = self:GetOwner()
@@ -186,6 +167,25 @@ function ENT:Think()
             shot:Fire("start", "", 0)
             shot:Fire("kill", "", 0.001)
             self.HasShot = true
+
+            if self.VJExists and (self.NextLure or 0) < CurTime() then
+                self.NextLure = CurTime() + 1
+                for _, x in ipairs(ents.FindInSphere(self:GetPos(), 3000)) do
+                    if x:IsNPC() and x.MyEnemy ~= self then
+                        if (string.find(x:GetClass(), "npc_vj_l4d_com_") and x.Zombie_CanHearPipe == true) then
+                            x:AddEntityRelationship(self, D_HT, 99)
+                            x.MyEnemy = self
+                            x:SetEnemy(self)
+                            table.insert(self.Zombies, x)
+                            x:SetLastPosition(self:GetPos())
+                            x:VJ_TASK_GOTO_LASTPOS()
+                        elseif (not IsValid(x:GetEnemy()) or not x:Visible(x:GetEnemy())) and x:GetPos():DistToSqr(self:GetPos()) > 256 * 256 then
+                            x:SetLastPosition(self:GetPos())
+                            x:VJ_TASK_GOTO_LASTPOS()
+                        end
+                    end
+                end
+            end
         end
     end
 

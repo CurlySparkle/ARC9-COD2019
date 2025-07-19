@@ -47,7 +47,7 @@ end
 
 function ENT:OnPlant()
     self:EmitSound("weapons/cod2019/throwables/claymore/wpfoly_claymore_plant_0" .. math.random(1, 3) .. ".ogg", 80, 100)
-	ParticleEffect("small_smoke_effect3", self:GetPos(), self:GetAngles(), nil)
+    ParticleEffect("small_smoke_effect3", self:GetPos(), self:GetAngles(), nil)
     timer.Simple(math.max(0, self.ArmDelay - 1.2), function()
         if IsValid(self) then
             self:EmitSound( "weapons/cod2019/throwables/claymore/wpfoly_claymore_sensors_on.ogg", 75, 100, 1, CHAN_AUTO )
@@ -111,13 +111,13 @@ function ENT:Think()
                 end
             end
             -- Fix deadzone right in front of the mine
-            for _, i in ipairs(ents.FindInSphere(p + (self:GetAngles() + self:GetAdjustment()):Forward() * 12, 24)) do
+            for _, i in ipairs(ents.FindInSphere(p + (self:GetAngles() + self:GetAdjustment()):Forward() * 16, 24)) do
                 if IsValid(i) and (i:IsPlayer() or i:IsNPC() or i:IsNextBot()) then
                     self:Detonate()
                 end
             end
 
-            self:NextThink(CurTime() + 0.15)
+            self:NextThink(CurTime() + 0.25)
             return true
         end
     end
@@ -152,14 +152,14 @@ function ENT:Detonate()
         local dir = Angle(self:GetAngles())
         dir:RotateAroundAxis(self:GetAngles():Forward(), -5 + self:GetAdjustment().p)
 
-        util.BlastDamage(oldowner, oldowner, pos, 200, 150)
+        util.BlastDamage(oldowner, oldowner, pos, 128, 50)
         local btabl = {
             Attacker = oldowner,
             Damage = 30,
             Distance = self.DetectionRange * 1.5,
-            Num = 50,
+            Num = 45,
             HullSize = 4,
-            Tracer = 1,
+            Tracer = 3,
             Force = 0,
             Dir = dir:Forward(),
             Src = self:WorldSpaceCenter() + Vector(0, 0, 4),
@@ -176,25 +176,25 @@ function ENT:Detonate()
 
                     dmg:SetDamageType(DMG_BLAST)
                     dmg:ScaleDamage(Lerp(tr.Fraction ^ 2, 1, 0.5))
-                    dmg:ScaleDamage(Lerp(math.max(0, (tr.Entity.MW19_ClaymoreLastHit[2] - 100) / 400), 1, 0.25))
+                    dmg:ScaleDamage(Lerp(math.max(0, (tr.Entity.MW19_ClaymoreLastHit[2] - 100) / 300), 1, 0.25))
                     tr.Entity.MW19_ClaymoreLastHit[2] = tr.Entity.MW19_ClaymoreLastHit[2] + dmg:GetDamage()
                 end
             end
         }
         self:FireBullets(btabl)
         btabl.Distance = self.DetectionRange * 2
-        btabl.Num = 50
+        btabl.Num = 30
         btabl.Spread = Vector(math.rad(60), math.rad(15), 0)
         self:FireBullets(btabl)
-		
-	    effectdata:SetOrigin(self:GetPos())
-	    effectdata:SetStart(self:GetPos())
-	    effectdata:SetRadius(512)
+
+        effectdata:SetOrigin(self:GetPos())
+        effectdata:SetStart(self:GetPos())
+        effectdata:SetRadius(512)
         effectdata:SetEntity(self)
         util.Effect("cod2019_grenade_explosion", effectdata)
         self:EmitSound("COD2019.Claymore.Explode")
         util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
-		
+
         self:Remove()
     end
 end

@@ -40,7 +40,7 @@ end
 function ENT:Initialize()
     if SERVER then
         self:SetModel(self.Model)
-        self:PhysicsInitBox(self.MinS, self.MaxS)
+        self:PhysicsInitBox(self.MinS, self.MaxS, "grenade")
         self:DrawShadow(true)
         self:SetArmTime(-1)
 
@@ -53,8 +53,8 @@ function ENT:Initialize()
 			phys:AddAngleVelocity(self.SpinAngles)
         end
 
-        self:SetHealth(10)
-        self:SetMaxHealth(10)
+        self:SetHealth(1)
+        self:SetMaxHealth(1)
 
         self.SpawnAngle = self:GetAngles().y
         self.Attacker = self:GetOwner()
@@ -101,7 +101,7 @@ if SERVER then
         end
 
         self:SetOwner(NULL)
-        self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
+        self:SetCollisionGroup(COLLISION_GROUP_INTERACTIVE)
 
         local a = Angle(0, self.LockYaw and self.SpawnAngle or self:GetAngles().y, 0)
         local f = a:Forward()
@@ -143,7 +143,8 @@ if SERVER then
         end
 
         if ent:IsWorld() or (IsValid(ent) and ent:GetSolid() == SOLID_BSP) then
-            self:SetMoveType(MOVETYPE_NONE)
+            -- self:SetMoveType(MOVETYPE_NONE)
+            self:GetPhysicsObject():EnableMotion(false)
             self:SetPos(pos)
         else
             self:SetPos(pos)
@@ -160,25 +161,25 @@ if SERVER then
       local hitPos = data.HitPos -- Get the position where the grenade hit
       local hitNormal = data.HitNormal -- Get the normal vector of the surface hit
       local hitEntity = data.HitEntity -- Get the entity that was hit (can be nil if it hit the world)
-	  
+
 	    if self:Impact(tr1, data, bHull) then
             return
         end
-	  
+
         local ent = data.HitEntity
         if IsValid(ent) and ent:IsPlayer() and ent == self:GetOwner() then
             return
         end
-		
+
         timer.Simple(0, function()
         self:Plant(data.HitEntity, data.HitPos, -data.HitNormal, data.OurOldVelocity:GetNormalized())
         end)
-		
+
 	  if self.GroundDecal then
 		util.Decal("Dark", hitPos + hitNormal, hitPos - hitNormal)
 	  end
     end
-	
+
 	function ENT:Impact()
     end
 

@@ -11,6 +11,9 @@ ENT.ArmDelay = 3
 ENT.Radius = 300
 ENT.SpinAngles = Vector(0, 0, 900)
 
+ENT.MinS = Vector(-6, -6, 0)
+ENT.MaxS = Vector(6, 6, 3)
+
 PrecacheParticleSystem("small_smoke_effect3")
 
 if CLIENT then
@@ -19,19 +22,29 @@ end
 
 function ENT:OnPlant()
     self:EmitSound("weapons/cod2019/throwables/mine/proxy_plant_01.ogg", 75, 100, 1, CHAN_AUTO)
-	ParticleEffect("small_smoke_effect3", self:GetPos(), self:GetAngles(), nil)
+    ParticleEffect("small_smoke_effect3", self:GetPos(), self:GetAngles(), nil)
 end
 
 function ENT:Think()
-    if SERVER and self:GetArmed() then
+    if SERVER and self:GetArmed() and not self.Primed then
         for _, i in ipairs(ents.FindInSphere(self:GetPos(), self.DetectionRange)) do
             if IsValid(i) and ((i:IsPlayer() and i:GetVelocity():Length2DSqr() >= 22500) or i:IsNPC() or i:IsNextBot() or i:IsVehicle()) then
-                self:Detonate()
+                self.Primed = true
+                timer.Simple(0.75, function()
+                    if IsValid(self) then self:Detonate() end
+                end)
                 break
             end
         end
 
-        self:NextThink(CurTime() + 0.15)
+        self:NextThink(CurTime() + 0.25)
+        return true
+    elseif SERVER and self.Primed then
+        local effectData = EffectData()
+        effectData:SetEntity(self)
+        effectData:SetOrigin(self:GetPos())
+        util.Effect("cod2019_effect_semtex", effectData)
+        self:NextThink(CurTime() + 0.075)
         return true
     end
 end
@@ -42,7 +55,7 @@ function ENT:Detonate()
         local pos = self:GetPos() + self:GetUp() * 6
         local effectdata = EffectData()
         effectdata:SetOrigin(pos)
-		effectdata:SetStart(pos)
+        effectdata:SetStart(pos)
         effectdata:SetRadius(512)
         effectdata:SetEntity(self)
 
@@ -50,8 +63,8 @@ function ENT:Detonate()
             util.Effect("WaterSurfaceExplosion", effectdata)
         else
             --ParticleEffect("explosion_grenade", pos, self:GetAngles(), nil)
-			util.Effect("cod2019_grenade_explosion", effectdata)
-			self:EmitSound("COD2019.Mine.Explode")
+            util.Effect("cod2019_grenade_explosion", effectdata)
+            self:EmitSound("COD2019.Mine.Explode")
             local spos = pos
 
             local trs = util.TraceLine({
@@ -67,10 +80,10 @@ function ENT:Detonate()
             oldowner = self
         end
 
-        local d = Lerp(self:GetUp():Dot(Vector(0, 0, 1)), 0.25, 1)
+        local d = Lerp(self:GetUp():Dot(Vector(0, 0, 1)), 0.5, 1)
         --self:SetOwner(NULL)
-        util.BlastDamage(oldowner, oldowner, pos, 128, 300 * d)
-        util.BlastDamage(oldowner, oldowner, pos, 256, 150 * d)
+        util.BlastDamage(oldowner, oldowner, pos, 128, 200 * d)
+        util.BlastDamage(oldowner, oldowner, pos, 256, 100 * d)
         self:Remove()
     end
 end
@@ -78,12 +91,12 @@ end
 function ENT:Draw()
     if CLIENT then
         self:DrawModel()
-        local pos = self:GetPos() + self:GetUp() * 5
 
-        if self:GetArmed() and math.sin(CurTime() * 1) >= 0.75 then
+        if self:GetArmed() and math.sin(self.SpawnTime + CurTime() * 2) >= 0.8 then
+            local pos = self:GetPos() + self:GetUp() * 4
             cam.Start3D() -- Start the 3D function so we can draw onto the screen.
             render.SetMaterial(Material("effects/blueflare1")) -- Tell render what material we want, in this case the flash from the gravgun
-            render.DrawSprite(pos, 16, 16, Color(255, 0, 0)) -- Draw the sprite in the middle of the map, at 16x16 in it's original colour with full alpha.
+            render.DrawSprite(pos, 12, 12, Color(255, 0, 0)) -- Draw the sprite in the middle of the map, at 16x16 in it's original colour with full alpha.
             cam.End3D()
         end
     end
