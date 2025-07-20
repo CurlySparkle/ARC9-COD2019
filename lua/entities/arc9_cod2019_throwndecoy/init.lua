@@ -78,7 +78,7 @@ function ENT:Think()
             bul.Src = self:GetPos()
             self:GetOwner():FireBullets(bul, true)
 
-            sound.EmitHint(SOUND_PLAYER + SOUND_BULLET_IMPACT + SOUND_CONTEXT_GUNFIRE, self:GetPos(), 512, 1, self)
+            sound.EmitHint(SOUND_BULLET_IMPACT, self:GetPos(), 3000, 1, self)
 
             local fsound = Sound("COD2019.AK47.Fire")
             local fdistance = Sound("Distant_AR.Outside")
@@ -179,9 +179,8 @@ function ENT:Think()
                             table.insert(self.Zombies, x)
                             x:SetLastPosition(self:GetPos())
                             x:VJ_TASK_GOTO_LASTPOS()
-                        elseif (not IsValid(x:GetEnemy()) or not x:Visible(x:GetEnemy())) and x:GetPos():DistToSqr(self:GetPos()) > 256 * 256 then
-                            x:SetLastPosition(self:GetPos())
-                            x:VJ_TASK_GOTO_LASTPOS()
+                        elseif (not IsValid(x:GetEnemy()) or not x:Visible(x:GetEnemy())) and x:GetPos():DistToSqr(self:GetPos()) > 328 * 328 then
+                            x:SetSchedule(SCHED_INVESTIGATE_SOUND)
                         end
                     end
                 end
