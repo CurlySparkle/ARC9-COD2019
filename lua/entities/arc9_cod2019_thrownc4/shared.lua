@@ -81,7 +81,7 @@ if SERVER then
         util.Decal("Scorch", self:GetPos(), self:GetPos() - Vector(0, 0, 50), self)
         util.ScreenShake(self:GetPos(), 25, 4, 0.75, self.Radius * 4)
         self:EmitSound("Cod2019.C4.Explode")
-		
+
         self:SetMoveType(MOVETYPE_NONE)
         self:SetNoDraw(true)
         self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
@@ -102,7 +102,7 @@ if SERVER then
         ent:Fire("Open", "", 0)
         ent:Fire("SetSpeed", oldSpeed, 0.3)
 
-        if ent:GetPhysicsObject():IsValid() and cvar == 1 then
+        if ent:GetPhysicsObject():IsValid() and cvar == 1 and ent:GetClass() == "prop_door_rotating" then
 
             -- Don't remove the door, that's a silly thing to do
             ent:SetNoDraw(true)
