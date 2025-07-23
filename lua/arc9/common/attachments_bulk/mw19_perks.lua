@@ -13,7 +13,7 @@ ATT.Icon = Material("entities/attachs/cod2019_perks_soh.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = "cod2019_perks_soh"
 ATT.ActivateElements = {"perk_speedreload"}
@@ -33,7 +33,7 @@ ATT.Icon = Material("entities/attachs/cod2019_perks_soh.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = "cod2019_perks_soh_2"
 ATT.ActivateElements = {"perk_speedreload_2"}
@@ -51,7 +51,7 @@ ATT.Icon = Material("entities/attachs/cod2019_perks_fastmelee.png", "mips smooth
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = "cod2019_perks"
 ATT.ActivateElements = {"perk_speedmelee"}
@@ -69,7 +69,7 @@ ATT.Icon = Material("entities/attachs/cod2019_perks_heavyhitter.png", "mips smoo
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = "cod2019_perks"
 ATT.ActivateElements = {"perk_heavyhitter"}
@@ -92,7 +92,7 @@ ARC9.LoadAttachment(ATT, "cod2019_perks_heavyhitter")
 -- ATT.SortOrder = 0
 -- ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 
--- ATT.Free = true
+-- ATT.Free = false
 
 -- ATT.Category = "cod2019_perks"
 -- ATT.ActivateElements = {"perk_enforcer"}
@@ -120,7 +120,7 @@ ATT.Icon = Material("entities/attachs/cod2019_perks_bolt.png", "mips smooth")
 ATT.AutoStats = true
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = {"cod2019_perks_2"}
 ATT.ActivateElements = {"perk_bolt"}
@@ -138,7 +138,7 @@ ATT.Icon = Material("entities/attachs/cod2019_perks_bolt.png", "mips smooth")
 ATT.AutoStats = true
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = {"cod2019_perks_2_alt"}
 ATT.ActivateElements = {"perk_bolt"}
@@ -158,7 +158,7 @@ ATT.Icon = Material("entities/attachs/cod2019_perks_slamfire.png", "mips smooth"
 ATT.AutoStats = true
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = {"cod2019_perks_shot"}
 ATT.ActivateElements = {"perk_slamfire"}
@@ -176,7 +176,7 @@ ATT.Description = "Changes fire mode to 3-round burst."
 ATT.Icon = Material("entities/attachs/cod2019_perks_burst.png", "mips smooth")
 ATT.AutoStats = true
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.Free = true
+ATT.Free = false
 
 ATT.RunawayBurst = true
 ATT.PostBurstDelay = 0.15
@@ -209,7 +209,7 @@ ATT.Description = "Changes fire mode to 2-round burst."
 ATT.Icon = Material("entities/attachs/cod2019_perks_burst_2.png", "mips smooth")
 ATT.AutoStats = true
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = {"cod2019_perks_burst_2"}
 ATT.ActivateElements = {"perk_burst"}
@@ -241,7 +241,7 @@ ATT.Description = "Changes fire mode to full auto."
 ATT.Icon = Material("entities/attachs/cod2019_perks_hipaim.png", "mips smooth")
 ATT.AutoStats = true
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = {"cod2019_perks_auto"}
 ATT.ActivateElements = {"perk_auto"}
@@ -272,7 +272,7 @@ ATT.Icon = Material("entities/attachs/cod2019_perks_supersprint.png", "mips smoo
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = "cod2019_perks_ss"
 ATT.ActivateElements = {"perk_super_sprint"}

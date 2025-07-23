@@ -15,7 +15,7 @@ ATT.SortOrder = 0
 ATT.Icon = Material("entities/attachs/cod2019_ammo_tmj.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = "cod2019_ammo"
 
@@ -40,7 +40,7 @@ ATT.SortOrder = 0.1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_ricochet.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 ATT.Category = "cod2019_ammo"
 
 ATT.DamageMaxMult = 0.85
@@ -545,7 +545,7 @@ ATT.SortOrder = 0
 ATT.Icon = Material("entities/arc9_cod2019_nade_rock.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 ATT.InfiniteAmmo = true
 ATT.Ammo = "arc9_cod2019_nade_rock"
 ATT.ShootEntForceOverride = 4000
@@ -572,7 +572,7 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
 ATT.ActivateElements = {"nades_rock"}
-ATT.Free = true
+ATT.Free = false
 ATT.InfiniteAmmo = true
 ATT.Ammo = "arc9_cod2019_nade_rock"
 ATT.ShootEntForceOverride = 2000
@@ -594,7 +594,7 @@ ATT.SortOrder = 0.5
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_flash.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_flash"
 ATT.Category = {"cod2019_ammo_gl"}
@@ -612,7 +612,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_fire.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_inc"
 ATT.Category = {"cod2019_ammo_gl"}
@@ -630,7 +630,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_smoke.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_smoke"
 ATT.Category = {"cod2019_ammo_gl"}
@@ -648,7 +648,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_gas.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_gas"
 ATT.Category = {"cod2019_ammo_gl"}
@@ -666,7 +666,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_slug.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_sticky"
 ATT.Category = {"cod2019_ammo_gl"}
@@ -684,7 +684,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_mine.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_mine"
 ATT.Category = {"cod2019_ammo_gl"}
@@ -702,7 +702,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_energy.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_energy"
 ATT.Category = {"cod2019_ammo_gl"}
@@ -723,7 +723,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_seeker.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEnt = "arc9_cod2019_proj_40mm_seeker"
 ATT.Category = {"cod2019_ammo_gl"}
@@ -749,7 +749,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_slug.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootSound = "COD2019.Model680.Fire"
 ATT.ShootSoundIndoor = "COD2019.Model680.Fire"
@@ -809,7 +809,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_buck.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootSound = "COD2019.Model680.Fire"
 ATT.ShootSoundIndoor = "COD2019.Model680.Fire"
@@ -876,7 +876,7 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
 ATT.ActivateElements = {"rocket_shovel"}
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEntForceOverride = 2000
 ATT.Ammo = "xbowbolt"
@@ -897,7 +897,7 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
 ATT.ActivateElements = {"rocket_harpoon"}
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEntForceOverride = 6000
 ATT.Ammo = "xbowbolt"
@@ -918,7 +918,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_launcher_guide.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEnt = "arc9_cod2019_proj_jokr_saclos"
 ATT.Category = {"cod2019_pila_ammo"}
@@ -945,7 +945,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_launcher_guide.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEnt = "arc9_cod2019_proj_jokr_saclos"
 ATT.Category = {"cod2019_jokr_ammo"}
@@ -971,7 +971,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_launcher_cluster.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEnt = "arc9_cod2019_proj_jokr_airstrike"
 ATT.Category = {"cod2019_jokr_ammo"}
@@ -992,7 +992,7 @@ ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
 ATT.ActivateElements = {"nades_rock"}
-ATT.Free = true
+ATT.Free = false
 ATT.InfiniteAmmo = true
 ATT.AmmoUBGL = "arc9_cod2019_nade_rock"
 ATT.ShootEntForceOverrideUBGL = 3000
@@ -1014,7 +1014,7 @@ ATT.SortOrder = 0.5
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_flash.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_flash"
 ATT.Category = {"cod2019_ammo_ubgl"}
@@ -1032,7 +1032,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_fire.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_inc"
 ATT.Category = {"cod2019_ammo_ubgl"}
@@ -1050,7 +1050,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_smoke.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_smoke"
 ATT.Category = {"cod2019_ammo_ubgl"}
@@ -1068,7 +1068,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_gas.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_gas"
 ATT.Category = {"cod2019_ammo_ubgl"}
@@ -1086,7 +1086,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_slug.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_sticky"
 ATT.Category = {"cod2019_ammo_ubgl"}
@@ -1104,7 +1104,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_mine.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_mine"
 ATT.Category = {"cod2019_ammo_ubgl"}
@@ -1122,7 +1122,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_energy.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootEntUBGL = "arc9_cod2019_proj_40mm_energy"
 ATT.Category = {"cod2019_ammo_ubgl"}
@@ -1140,7 +1140,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_slug.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootSoundUBGL = "COD2019.Model680.Fire"
 ATT.ShootSoundIndoorUBGL = "COD2019.Model680.Fire"
@@ -1206,7 +1206,7 @@ ATT.SortOrder = 1
 ATT.Icon = Material("entities/attachs/cod2019_ammo_gl_buck.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
-ATT.Free = true
+ATT.Free = false
 
 ATT.ShootSoundUBGL = "COD2019.Model680.Fire"
 ATT.ShootSoundIndoorUBGL = "COD2019.Model680.Fire"
