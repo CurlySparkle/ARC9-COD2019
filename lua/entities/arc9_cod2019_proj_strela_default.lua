@@ -74,37 +74,20 @@ function ENT:Impact(data, collider)
     util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
 end
 
-function ENT:Detonate()
+function ENT:Detonate(data)
     local attacker = self.Attacker or self:GetOwner()
-    local dir = self:GetForward()
+    local dir = self:GetVelocity():GetNormalized()
     local src = self:GetPos() - dir * 64
 
     local dmg = DamageInfo()
     dmg:SetAttacker(attacker)
-    dmg:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
+    dmg:SetDamageType(DMG_BLAST)
     dmg:SetInflictor(self)
-    dmg:SetDamageForce(self:GetForward() * 10000)
+    dmg:SetDamageForce(self:GetForward() * 5000)
     dmg:SetDamagePosition(src)
-    dmg:SetDamage(128)
+    dmg:SetDamage(150)
     util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
-
-    self:FireBullets({
-        Attacker = attacker,
-        Damage = 512,
-        Tracer = 0,
-        Src = src,
-        Dir = dir,
-        HullSize = 16,
-        Distance = 128,
-        IgnoreEntity = self,
-        Callback = function(atk, btr, dmginfo)
-            dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
-            dmginfo:SetDamageForce(self:GetForward() * 20000)
-            if IsValid(btr.Entity) and btr.Entity.LVS then
-                dmginfo:ScaleDamage(5)
-            end
-        end,
-    })
+    self:ImpactTraceAttack(data.HitEntity, 700, 28000)
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())

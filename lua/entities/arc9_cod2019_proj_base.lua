@@ -93,7 +93,7 @@ function ENT:Initialize()
 
         if self.IsRocket then
             phys:EnableGravity(false)
-			phys:SetMass(5)
+            phys:SetMass(5)
         end
     end
 
@@ -104,7 +104,7 @@ function ENT:Initialize()
     if self.AudioLoop then
         self.LoopSound = CreateSound(self, self.AudioLoop)
         self.LoopSound:Play()
-	   if self:GetNWBool("HasDetonated") then
+       if self:GetNWBool("HasDetonated") then
        self.LoopSound:Stop()
        end
     end
@@ -113,15 +113,15 @@ function ENT:Initialize()
         self.ArmTime = CurTime()
         self.Armed = true
     end
-	
+
     if self.RocketTrail then
-	   ParticleEffectAttach(self.RocketTrailParticle, PATTACH_ABSORIGIN_FOLLOW, self, 0)
-	   if self:GetNWBool("HasDetonated") then
+       ParticleEffectAttach(self.RocketTrailParticle, PATTACH_ABSORIGIN_FOLLOW, self, 0)
+       if self:GetNWBool("HasDetonated") then
        self.RocketTrail = false
        end
     end
-	
-	self.HitSkybox = false
+
+    self.HitSkybox = false
     self:OnInitialize()
 end
 
@@ -129,7 +129,7 @@ function ENT:OnRemove()
     if self.LoopSound then
         self.LoopSound:Stop()
     end
-	self:StopParticles()
+    self:StopParticles()
 end
 
 function ENT:OnTakeDamage(dmg)
@@ -140,7 +140,7 @@ function ENT:OnTakeDamage(dmg)
     if self.ExplodeOnDamage then
         if IsValid(self:GetOwner()) and IsValid(dmg:GetAttacker()) then self:SetOwner(dmg:GetAttacker())
         else self.Attacker = dmg:GetAttacker() or self.Attacker end
-        self:PreDetonate(data)
+        self:PreDetonate()
     elseif self.DefuseOnDamage and dmg:GetDamageType() != DMG_BLAST then
         self:EmitSound("physics/plastic/plastic_box_break" .. math.random(1, 2) .. ".wav", 70, math.Rand(95, 105))
         local fx = EffectData()
@@ -163,29 +163,29 @@ function ENT:PhysicsCollide(data, collider, physobj)
             Tracer = 0,
             Src = self:GetPos(),
             Dir = data.OurOldVelocity:GetNormalized(),
-	        })
+            })
         local pos, ang, vel = self:GetPos(), self:GetAngles(), data.OurOldVelocity
         self:SetAngles(ang)
         self:SetPos(pos)
         self:GetPhysicsObject():SetVelocityInstantaneous(vel * 0.5)
         return
     end
-	
+
     -- local theirProps = util.GetSurfaceData(data.TheirSurfaceProps)
     -- if (theirProps != nil && theirProps.material == MAT_DEFAULT) then
     -- timer.Simple(0, function() self:Remove() end)
     -- return
     -- end
-	
+
     if self.BounceWall then
         local ang = data.HitNormal:Angle()
         ang.p = math.abs( ang.p )
         ang.y = math.abs( ang.y )
         ang.r = math.abs( ang.r )
-	
+
         if ang.p > 90 or ang.p < 60 then
         --self:EmitSound(Sound("GlassBottle.ImpactHard"))
-		self:SetNWBool("HasDetonated",true)
+        self:SetNWBool("HasDetonated",true)
 
         local impulse = (data.OurOldVelocity - 2 * data.OurOldVelocity:Dot(data.HitNormal) * data.HitNormal)*0.25
         collider:ApplyForceCenter(impulse)
@@ -193,7 +193,7 @@ function ENT:PhysicsCollide(data, collider, physobj)
         self:PreDetonate(data)
         end
     end
-	
+
     if self.ImpactFuse and !self.Armed then
         self.ArmTime = CurTime()
         self.Armed = true
@@ -241,15 +241,15 @@ function ENT:PhysicsCollide(data, collider, physobj)
         end
 
         self:Stuck()
-		self:SetNWBool("HasDetonated",true)
+        self:SetNWBool("HasDetonated",true)
     end
-	
+
     if self.NoBounce then
-	  timer.Simple(0, function()
+      timer.Simple(0, function()
        self:SetPos(self:GetPos())
-	   self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.1)
-	  end)
-	  self:SetNWBool("HasDetonated",true)
+       self:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.1)
+      end)
+      self:SetNWBool("HasDetonated",true)
     end
 
     if data.DeltaTime < 0.1 then return end
@@ -291,14 +291,14 @@ function ENT:DoSmokeTrail()
         smoke:SetGravity(Vector(0, 0, 0))
 
         emitter:Finish()
-		
+
        if self:GetNWBool("HasDetonated") then
           self.SmokeTrail = false
        end
     end
 end
 
-function ENT:Think(data)
+function ENT:Think()
     if !IsValid(self) or self:GetNoDraw() then return end
 
     if !self.SpawnTime then
@@ -311,27 +311,27 @@ function ENT:Think(data)
     end
 
     if self.Armed and self.ArmTime + self.Delay < CurTime() then
-        self:PreDetonate(data)
+        self:PreDetonate()
     end
-	
+
     if self.ExplodeUnderwater and self:WaterLevel() > 0 then
-        self:PreDetonate(data)
-		elseif self:WaterLevel() > 0 then
-		local phys = self:GetPhysicsObject()
-	    if phys:IsValid() then
-		   phys:EnableGravity(true)
-		   phys:EnableMotion(true)
-		   phys:EnableDrag(false)
-		   phys:SetMass(10)
-	    end
-		self:SetNWBool("HasDetonated",true)
-		self:StopParticles()
+        self:PreDetonate()
+        elseif self:WaterLevel() > 0 then
+        local phys = self:GetPhysicsObject()
+        if phys:IsValid() then
+           phys:EnableGravity(true)
+           phys:EnableMotion(true)
+           phys:EnableDrag(false)
+           phys:SetMass(10)
+        end
+        self:SetNWBool("HasDetonated",true)
+        self:StopParticles()
     end
-	
-	if (self:WaterLevel() > 0) then
-		self:StopParticles()
-	end
-	
+
+    if (self:WaterLevel() > 0) then
+        self:StopParticles()
+    end
+
     local gunship = {["npc_combinegunship"] = true,["npc_combinedropship"] = true}
 
     if SERVER and self.GunshipWorkaround and (self.GunshipCheck or 0 < CurTime()) then
@@ -345,7 +345,7 @@ function ENT:Think(data)
             })
         if IsValid(tr.Entity) and gunship[tr.Entity:GetClass()] then
            self:SetPos(tr.HitPos)
-           self:PreDetonate(data)
+           self:PreDetonate()
         end
     end
 
@@ -381,7 +381,7 @@ function ENT:PreDetonate(data)
         if !IsValid(self.Attacker) and !IsValid(self:GetOwner()) then self.Attacker = game.GetWorld() end
 
         self:Detonate(data)
-		self:SetNWBool("HasDetonated",true)
+        self:SetNWBool("HasDetonated",true)
   end
 end
 
@@ -410,10 +410,52 @@ function ENT:Draw()
         render.SetMaterial(mat)
         render.DrawSprite(self:GetPos() + (self:GetAngles():Forward() * -20), mult * math.Rand(self.FlareSizeMin, self.FlareSizeMax), mult * math.Rand(self.FlareSizeMin, self.FlareSizeMax), self.FlareColor)
     end
-	 if self:GetNWBool("HasDetonated") then
+     if self:GetNWBool("HasDetonated") then
      self.Flare = false
      end
    end
+end
+
+function ENT:ImpactTraceAttack(ent, damage, pen)
+    if !IsValid(ent) then return end
+    if ent.LVS then
+        -- LVS only does its penetration logic on FireBullets, so we must fire a bullet to trigger it
+        self:SetCollisionGroup(COLLISION_GROUP_DEBRIS) -- The projectile blocks the penetration decal?!
+        self:FireBullets({
+            Attacker = self.Attacker or self:GetOwner(),
+            Damage = damage,
+            Tracer = 0,
+            Src = self:GetPos(),
+            Dir = self:GetForward(),
+            HullSize = 16,
+            Distance = 128,
+            IgnoreEntity = self,
+            Callback = function(atk, btr, dmginfo)
+                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER) -- LVS wants this
+                dmginfo:SetDamageForce(self:GetForward() * pen) -- penetration strength
+            end,
+        })
+    else
+        -- This is way more consistent because the damage always lands
+        local tr = util.TraceHull({
+            start = self:GetPos(),
+            endpos = self:GetPos() + self:GetForward() * 256,
+            filter = ent,
+            whitelist = true,
+            ignoreworld = true,
+            mask = MASK_ALL,
+            mins = Vector( -8, -8, -8 ),
+            maxs = Vector( 8, 8, 8 ),
+        })
+        local dmginfo = DamageInfo()
+        dmginfo:SetAttacker(self.Attacker or self:GetOwner())
+        dmginfo:SetInflictor(self)
+        dmginfo:SetDamagePosition(self:GetPos())
+        dmginfo:SetDamageForce(self:GetForward() * pen)
+        dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER)
+        dmginfo:SetDamage(damage)
+        ent:DispatchTraceAttack(dmginfo, tr, self:GetForward())
+    end
 end
 
 hook.Add("EntityTakeDamage", "cod2019_proj_collision", function(ent, dmginfo)

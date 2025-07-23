@@ -35,12 +35,12 @@ ENT.FuseTime = 0
 ENT.Boost = 1700
 ENT.Lift = 80
 
-ENT.FireAndForget = false 
+ENT.FireAndForget = false
 ENT.TopAttack = false  -- This missile flies up above its target before going down in a top-attack trajectory.
 ENT.TopAttackHeight = 5000
-ENT.SuperSeeker = false 
+ENT.SuperSeeker = false
 ENT.SuperSteerBoostTime = 5
-ENT.NoReacquire = false 
+ENT.NoReacquire = false
 
 ENT.ShootEntData = {}
 ENT.IsProjectile = true
@@ -99,7 +99,7 @@ function ENT:OnThink()
             if self.ShootEntData.Target and IsValid(self.ShootEntData.Target) then
                 local target = self.ShootEntData.Target
                 if target.UnTrackable then self.ShootEntData.Target = nil end
-				
+
                 local tpos = target:EyePos()
                 if self.TopAttack and !self.TopAttackReached then
                     tpos = tpos + Vector(0, 0, self.TopAttackHeight)
@@ -161,47 +161,33 @@ function ENT:OnThink()
 
         if SERVER then
         self:GetPhysicsObject():AddVelocity(Vector(0, 0, self.Lift) + self:GetForward() * self.Boost)
-		end
+        end
 end
 
-function ENT:Detonate()
+function ENT:Detonate(data)
     local attacker = self.Attacker or self:GetOwner()
+    local dir = self:GetVelocity():GetNormalized()
+    local src = self:GetPos() - dir * 64
 
-    if self.NPCDamage then
-        util.BlastDamage(self, attacker, self:GetPos(), 350, 145)
-    else
-        util.BlastDamage(self, attacker, self:GetPos(), 350, 185)
-        local dir = self:GetVelocity():GetNormalized()
-        local src = self:GetPos() - dir * 64
-        self:FireBullets({
-            Attacker = attacker,
-            Damage = 600,
-            Tracer = 0,
-            Src = src,
-            Dir = dir,
-            HullSize = 0,
-            Distance = 256,
-            IgnoreEntity = self,
-            Callback = function(atk, btr, dmginfo)
-                if IsValid(btr.Entity) and btr.Entity.LVS then
-                    dmginfo:ScaleDamage(5)
-                    dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
-                    dmginfo:SetDamageForce(self:GetForward() * 100000)
-                end
-            end,
-        })
-    end
+    local dmg = DamageInfo()
+    dmg:SetAttacker(attacker)
+    dmg:SetDamageType(DMG_BLAST)
+    dmg:SetInflictor(self)
+    dmg:SetDamageForce(self:GetForward() * 5000)
+    dmg:SetDamagePosition(src)
+    dmg:SetDamage(400)
+    util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
 
     local fx = EffectData()
-	fx:SetOrigin(self:GetPos())
-	fx:SetStart(self:GetPos() + self:GetUp())
-	fx:SetRadius(350)
+    fx:SetOrigin(self:GetPos())
+    fx:SetStart(self:GetPos() + self:GetUp())
+    fx:SetRadius(350)
     fx:SetEntity(self)
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
     else
         util.Effect("cod2019_grenade_explosion", fx)
-		self:EmitSound("Cod2019.Frag.Explode", _, _, _, _, _, _, ARC9.EveryoneRecipientFilter)
+        self:EmitSound("Cod2019.Frag.Explode", _, _, _, _, _, _, ARC9.EveryoneRecipientFilter)
     end
 
     for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do

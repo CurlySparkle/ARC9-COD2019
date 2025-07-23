@@ -59,7 +59,7 @@ function ENT:OnInitialize()
         self.LockOnPoint = tr.HitPos
     end
     self:EmitSound("weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg",75, 100, 1, CHAN_AUTO)
-	self.LastAimPos = self:GetOwner():GetEyeTrace().HitPos
+    self.LastAimPos = self:GetOwner():GetEyeTrace().HitPos
 end
 
 function ENT:Impact(data, collider)
@@ -132,48 +132,32 @@ if SERVER then
 end
 end
 
-function ENT:Detonate()
+function ENT:Detonate(data)
     local attacker = self.Attacker or self:GetOwner()
     local dir = self:GetVelocity():GetNormalized()
     local src = self:GetPos() - dir * 64
 
+
     local dmg = DamageInfo()
     dmg:SetAttacker(attacker)
-    dmg:SetDamageType(DMG_AIRBOAT + DMG_BLAST)
+    dmg:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
     dmg:SetInflictor(self)
-    dmg:SetDamageForce(self:GetVelocity() * 100)
+    dmg:SetDamageForce(self:GetForward() * 5000)
     dmg:SetDamagePosition(src)
-    dmg:SetDamage(325)
+    dmg:SetDamage(200)
     util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
-    util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 300, 64)
-    self:FireBullets({
-        Attacker = attacker,
-        Damage = 600,
-        Tracer = 0,
-        Src = src,
-        Dir = dir,
-        HullSize = 16,
-        Distance = 256,
-        IgnoreEntity = self,
-        Callback = function(atk, btr, dmginfo)
-            if IsValid(btr.Entity) and btr.Entity.LVS then
-                dmginfo:ScaleDamage(5)
-                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
-                dmginfo:SetDamageForce(self:GetForward() * 100000)
-            end
-        end,
-    })
+    self:ImpactTraceAttack(data.HitEntity, 800, 30000)
 
     local fx = EffectData()
-	fx:SetOrigin(self:GetPos())
-	fx:SetStart(self:GetPos() + self:GetUp())
-	fx:SetRadius(512)
+    fx:SetOrigin(self:GetPos())
+    fx:SetStart(self:GetPos() + self:GetUp())
+    fx:SetRadius(512)
     fx:SetEntity(self)
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
     else
         util.Effect("cod2019_grenade_explosion", fx)
-		self:EmitSound("Cod2019.Frag.Explode", _, _, _, _, _, _, ARC9.EveryoneRecipientFilter)
+        self:EmitSound("Cod2019.Frag.Explode", _, _, _, _, _, _, ARC9.EveryoneRecipientFilter)
     end
 
     for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do

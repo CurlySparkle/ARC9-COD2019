@@ -198,7 +198,7 @@ L["mw19_category_view"] = "检视" -- UO
 
 //////////////////// Folder Names
 -- Stocks
-L["mw19_folder_tube2"] = "弹管" -- UO
+L["mw19_folder_tube2"] = "枪托管" -- UO
 
 -- Other
 L["mw19_folder_other2"] = "其它" -- UO
@@ -213,7 +213,7 @@ L["mw19_firemode_throwable"] = "投掷" -- UO
 L["mw19_firemode_plant"] = "部署" -- UO, "Plant" the bomb
 L["mw19_firemode_melee"] = "近战" -- UO
 L["mw19_firemode_lockon"] = "锁定" -- UO
-L["mw19_firemode_lockon_top"] = "锁定 (垂直)" -- UO
+L["mw19_firemode_lockon_top"] = "垂直攻击" -- UO
 L["mw19_firemode_guided"] = "锁定" -- UO
 L["mw19_firemode_unguided"] = "无锁定" -- UO
 

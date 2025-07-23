@@ -36,9 +36,12 @@ function ENT:OnThink()
     end
 end
 
-function ENT:Detonate()
+function ENT:Detonate(data)
     if self:WaterLevel() > 0 then self:Remove() self:StopParticles() return end
-    local attacker = self.Attacker or self:GetOwner() or self
+    local attacker = self.Attacker or self:GetOwner()
+    local dir = self:GetVelocity():GetNormalized()
+    local src = self:GetPos() - dir * 64
+
 
     if (self:WaterLevel() <= 0) then
         ParticleEffect("Generic_explo_high", self:GetPos(), Angle(0,0,0))
@@ -48,12 +51,14 @@ function ENT:Detonate()
         util.Effect("WaterSurfaceExplosion", effectdata)
     end
 
-    local dmgInfo = DamageInfo()
-    dmgInfo:SetDamage(50)
-    dmgInfo:SetAttacker(IsValid(self:GetOwner()) && self:GetOwner() || self)
-    dmgInfo:SetInflictor(self)
-    dmgInfo:SetDamageType(self:GetDamageType())
-    util.BlastDamageInfo(dmgInfo, self:GetPos(), self.Radius)
+    local dmg = DamageInfo()
+    dmg:SetAttacker(attacker)
+    dmg:SetDamageType(DMG_BLAST)
+    dmg:SetInflictor(self)
+    dmg:SetDamageForce(self:GetForward() * 1000)
+    dmg:SetDamagePosition(src)
+    dmg:SetDamage(50)
+    util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
 
     util.ScreenShake(self:GetPos(), 3500, 1111, 1, self.Radius * 4)
 
@@ -74,7 +79,7 @@ function ENT:Detonate()
         if IsValid(child) then
             child:SetPos(self:GetPos() + self:GetRight() * offsets[i].x + self:GetUp() * offsets[i].y + self:GetForward() * offsets[i].z)
             child.LastPos = self:GetPos()
-            
+
             local dir
             if #validTargets > 0 then
                 -- Select a random target from the valid targets
@@ -84,7 +89,7 @@ function ENT:Detonate()
                 -- If no valid targets, use the last aim position with spread
                 local spreadRadius = 200 -- Adjust this value to change the spread size
                 local angle = math.rad((i - 1) * (360 / numMissiles))
-                local spreadOffset = Vector(math.cos(angle) * spreadRadius, math.sin(angle) * spreadRadius, 0)
+                local spreadOffset = Vector(math.cos(angle) * spreadRadius + math.Rand(-50, 50), math.sin(angle) * spreadRadius + math.Rand(-50, 50), 0)
                 local spreadPos = self.LastAimPos + spreadOffset
                 dir = (spreadPos - child:GetPos()):GetNormalized()
             else
@@ -105,6 +110,6 @@ function ENT:Detonate()
     self:Remove()
 end
 
-function ENT:GetDamageType() 
-	return DMG_BLAST + DMG_AIRBOAT + DMG_SNIPER
+function ENT:GetDamageType()
+    return DMG_BLAST + DMG_AIRBOAT + DMG_SNIPER
 end

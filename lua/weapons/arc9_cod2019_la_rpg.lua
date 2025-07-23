@@ -89,7 +89,7 @@ SWEP.RPM = 300
 SWEP.Firemodes = {
     {
         Mode = 1,
-		PrintName = ARC9:GetPhrase("mw19_firemode_unguided"),
+        PrintName = ARC9:GetPhrase("mw19_firemode_unguided"),
     },
 }
 
@@ -305,16 +305,16 @@ SWEP.Animations = {
     },
     ["dryfire"] = {
         Source = "firemode",
-		MinProgress = 0.01,
-		FireASAP = true,
+        MinProgress = 0.01,
+        FireASAP = true,
     },
     ["reload"] = {
         Source = "reload",
-		MinProgress = 0.95,
-		FireASAP = true,
-		RefillProgress = 0.75,
-		FireASAP = true,
-		MagSwapTime = 0.1,
+        MinProgress = 0.95,
+        FireASAP = true,
+        RefillProgress = 0.75,
+        FireASAP = true,
+        MagSwapTime = 0.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -322,21 +322,21 @@ SWEP.Animations = {
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_la_rpapa7_reload_raise.ogg", t = 0.1},
-			{s = path .. "wfoly_la_rpapa7_reload_load.ogg", t = 0.55},
-			{s = path .. "wfoly_la_rpapa7_reload_lower.ogg", t = 1},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 1.95},
-			{s = path .. "wfoly_la_rpapa7_reload_end.ogg", t = 1.85},
-			{hide = 1, t = 0},
-			{hide = 0, t = 0.3},
+            {s = path .. "wfoly_la_rpapa7_reload_raise.ogg", t = 0.1},
+            {s = path .. "wfoly_la_rpapa7_reload_load.ogg", t = 0.55},
+            {s = path .. "wfoly_la_rpapa7_reload_lower.ogg", t = 1},
+            {s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 1.95},
+            {s = path .. "wfoly_la_rpapa7_reload_end.ogg", t = 1.85},
+            {hide = 1, t = 0},
+            {hide = 0, t = 0.3},
         },
     },
     ["reload_fast"] = {
         Source = "reload_fast",
-		MinProgress = 0.95,
-		FireASAP = true,
-		RefillProgress = 0.75,
-		MagSwapTime = 0.1,
+        MinProgress = 0.95,
+        FireASAP = true,
+        RefillProgress = 0.75,
+        MagSwapTime = 0.1,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -344,12 +344,12 @@ SWEP.Animations = {
             { t = 1, lhik = 1, rhik = 1 },
         },
         EventTable = {
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_start.ogg", t = 0.033},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_magin.ogg", t = 0.44},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 1.3},
-			{s = path .. "wfoly_la_rpapa7_reload_fast_hip_end.ogg", t = 1},
-			{hide = 1, t = 0},
-			{hide = 0, t = 0.2},
+            {s = path .. "wfoly_la_rpapa7_reload_fast_hip_start.ogg", t = 0.033},
+            {s = path .. "wfoly_la_rpapa7_reload_fast_hip_magin.ogg", t = 0.44},
+            {s = path .. "wfoly_la_rpapa7_reload_fast_hip_safetyclick.ogg", t = 1.3},
+            {s = path .. "wfoly_la_rpapa7_reload_fast_hip_end.ogg", t = 1},
+            {hide = 1, t = 0},
+            {hide = 0, t = 0.2},
         },
     },
     ["ready"] = {
@@ -364,7 +364,7 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw_short",
-		MinProgress = 0.5,
+        MinProgress = 0.5,
         FireASAP = true,
         EventTable = {
             {s = path .. "wfoly_la_rpapa7_raise.ogg", t = 0/30},
@@ -384,28 +384,28 @@ SWEP.Animations = {
     },
     ["exit_sprint"] = {
         Source = "sprint_out",
-		Mult = 2,
+        Mult = 2,
     },
     ["enter_sprint"] = {
         Source = "sprint_in",
-		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
-		Mult = 2,
+        IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
+        Mult = 2,
     },
     ["super_sprint_idle"] = {
         Source = "super_sprint",
     },
     ["super_sprint_in"] = {
         Source = "super_sprint_in",
-		Mult = 2,
+        Mult = 2,
     },
     ["super_sprint_out"] = {
         Source = "super_sprint_out",
-		Mult = 2,
+        Mult = 2,
     },
     ["inspect"] = {
         Source = "lookat01",
-		MinProgress = 0.9,
-		FireASAP = true,
+        MinProgress = 0.9,
+        FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -414,8 +414,8 @@ SWEP.Animations = {
         },
         EventTable = {
             {s = path .. "wfoly_la_rpapa7_inspect_01.ogg", t = 5/30},
-			{s = path .. "wfoly_la_rpapa7_inspect_02.ogg", t = 88/30},
-			{s = path .. "wfoly_la_rpapa7_inspect_03.ogg", t = 165/30},
+            {s = path .. "wfoly_la_rpapa7_inspect_02.ogg", t = 88/30},
+            {s = path .. "wfoly_la_rpapa7_inspect_03.ogg", t = 165/30},
         },
     },
     ["bash"] = {
@@ -456,8 +456,8 @@ end
 SWEP.AttachmentTableOverrides = {
     ["arc9_stat_proscreen_main"] = {
     ModelOffset = Vector(0, 0, 0),
-	ModelAngleOffset = Angle(0, 0, 0),
-	Scale = 0.8,
+    ModelAngleOffset = Angle(0, 0, 0),
+    Scale = 0.8,
     },
     ["cod2019_perks_super_sprint"] = {
     SprintPos = Vector(0, 0, -2),
@@ -503,14 +503,14 @@ SWEP.Attachments = {
     -- },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),
-		DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
+        DefaultIcon = Material("arc9/def_att_icons/ammotype.png", "mips smooth"),
         Bone = "j_mag1",
         Category = {"cod2019_rpg_ammo"},
         Pos = Vector(5, 0, 0),
         Ang = Angle(0, 0, 0),
     },
     {
-		PrintName = ARC9:GetPhrase("mw19_category_perk"),
+        PrintName = ARC9:GetPhrase("mw19_category_perk"),
         Category = {"cod2019_perks","cod2019_perks_soh","cod2019_perks_ss"},
         Bone = "tag_launcher_offset",
         Pos = Vector(13, 0, -3),
@@ -521,7 +521,7 @@ SWEP.Attachments = {
         Category = "cod2019_rpg_skins",
         Bone = "tag_launcher_offset",
         Pos = Vector(15, 0, 5),
-		CosmeticOnly = true,
+        CosmeticOnly = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_camouflage"),
@@ -575,13 +575,13 @@ SWEP.Attachments = {
     {
         PrintName = ARC9:GetPhrase("mw19_category_charm"),
         Category = {"charm", "killcounter"},
-		RejectAttachments = { ["arc9_stat_proscreen"] = true },
-		CosmeticOnly = true,
+        RejectAttachments = { ["arc9_stat_proscreen"] = true },
+        CosmeticOnly = true,
         Bone = "tag_launcher_offset",
         Pos = Vector(11, -0.9, 0.3),
         Ang = Angle(0, 0, 0),
-		Scale = 1.5,
-		Icon_Offset = Vector(-12.25, 0, 4.5),
+        Scale = 1.5,
+        Icon_Offset = Vector(-12.25, 0, 4.5),
     },
 }
 

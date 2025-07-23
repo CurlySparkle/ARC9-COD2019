@@ -24,8 +24,7 @@ ENT.RocketTrail = true -- leaves trail of a particle effect
 
 ENT.Delay = 0
 ENT.FlareColor = Color(235, 188, 37)
-ENT.Radius = 430
-ENT.RadiusDamage = 700
+ENT.Radius = 200
 ENT.AudioLoop = "^weapons/cod2019/jokr/weap_juliet_proj_ignite_01.ogg"
 
 --- Stuff
@@ -50,8 +49,8 @@ ENT.LockOnPoint = nil
 DEFINE_BASECLASS(ENT.Base)
 
 function ENT:OnInitialize()
-	self:SetModelScale(0.8)
-	BaseClass.OnInitialize(self)
+    self:SetModelScale(0.8)
+    BaseClass.OnInitialize(self)
 end
 
 function ENT:Impact(data, collider)
@@ -59,7 +58,11 @@ function ENT:Impact(data, collider)
 end
 
 function ENT:Detonate()
+    local attacker = self.Attacker or self:GetOwner()
+    local dir = self:GetVelocity():GetNormalized()
+    local src = self:GetPos() - dir * 64
     local phys = self:GetPhysicsObject()
+
     if (self:WaterLevel() <= 0) then
         ParticleEffect("Generic_explo_mid", self:GetPos(), Angle(-90, 0, 0))
     else
@@ -68,46 +71,22 @@ function ENT:Detonate()
         util.Effect("WaterSurfaceExplosion", effectdata)
     end
 
-    local dmgInfo = DamageInfo()
-    dmgInfo:SetDamage(self.RadiusDamage)
-    dmgInfo:SetAttacker(IsValid(self:GetOwner()) && self:GetOwner() || self)
-    dmgInfo:SetInflictor(self)
-    dmgInfo:SetDamageType(self:GetDamageType())
-    util.BlastDamageInfo(dmgInfo, phys:GetPos(), self.Radius)
-
-    local dir = self:GetVelocity():GetNormalized()
-    local src = self:GetPos() - dir * 64
-    self:FireBullets({
-        Attacker = attacker,
-        Damage = 100,
-        Tracer = 0,
-        Src = src,
-        Dir = dir,
-        HullSize = 0,
-        Distance = 256,
-        IgnoreEntity = self,
-        Callback = function(atk, btr, dmginfo)
-            if IsValid(btr.Entity) and btr.Entity.LVS then
-                dmginfo:ScaleDamage(5)
-                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
-                dmginfo:SetDamageForce(self:GetForward() * 8000)
-            end
-        end,
-    })
+    local dmg = DamageInfo()
+    dmg:SetAttacker(attacker)
+    dmg:SetDamageType(DMG_BLAST)
+    dmg:SetInflictor(self)
+    dmg:SetDamageForce(self:GetForward() * 1000)
+    dmg:SetDamagePosition(src)
+    dmg:SetDamage(50)
+    util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
 
     self:EmitSound("^weapons/cod2019/shared/rocket_expl_body_02.ogg", 100, 100, 1, CHAN_WEAPON)
     util.ScreenShake(phys:GetPos(), 3500, 1111, 1, self.Radius)
     --util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
 
-    for i, e in pairs(ents.FindInSphere(self:GetPos(), 32)) do
-        if (e:GetClass() == "npc_strider") then
-            e:Fire("Explode")
-        end
-    end
-
     self:Remove()
 end
 
-function ENT:GetDamageType() 
-	return DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST
+function ENT:GetDamageType()
+    return DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST
 end

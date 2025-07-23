@@ -311,7 +311,7 @@ SWEP.BulletBones = {
 function SWEP:HookP_BlockFire()
     -- local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 1)
     -- if self:GetSightAmount() < 1 or !(tracktime >= 1 and self.TargetEntity and IsValid(self.TargetEntity)) then
-        -- return true 
+        -- return true
     -- end
     if self:GetSightAmount() < 1 then
         return true
@@ -332,15 +332,15 @@ local TrackingIndicator = Material("VGUI/lockon.png")
         if self.TargetEntity and IsValid(self.TargetEntity) and self:Clip1() > 0 then
              local toscreen = self.TargetEntity:WorldSpaceCenter():ToScreen()
              local tracktime = math.Clamp((CurTime() - self.StartTrackTime) / self.LockTime, 0, 2)
-             
+
              if tracktime >= 1 then
                 surface.SetDrawColor(255,0,0,200)
                 surface.DrawLine(0, toscreen.y, ScrW(), toscreen.y)
-                surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH()) 
+                surface.DrawLine(toscreen.x, 0, toscreen.x, ScrH())
              else
                 surface.SetMaterial(TrackingIndicator)
                 surface.SetDrawColor(255,0,0,200)
-                surface.DrawTexturedRect(toscreen.x - 30, toscreen.y - 30, 60, 60) 
+                surface.DrawTexturedRect(toscreen.x - 30, toscreen.y - 30, 60, 60)
              end
         end
     end
@@ -390,10 +390,10 @@ SWEP.Hook_Think2 = function(self)
             if ent.IsProjectile then continue end
             if ent.UnTrackable then continue end
             if ent:GetClass():find("prop_") then continue end
-			
+
             local aa, bb = ent:GetRotatedAABB(ent:OBBMins(), ent:OBBMaxs())
             local vol = math.abs(bb.x - aa.x) * math.abs(bb.y - aa.y) * math.abs(bb.z - aa.z)
-			if vol <= 20000 then continue end
+            if vol <= 20000 then continue end
 
             local dot = (ent:GetPos() - self:GetShootPos()):GetNormalized():Dot(self:GetShootDir():Forward())
             local entscore = 1
@@ -447,8 +447,8 @@ SWEP.Animations = {
     },
     ["dryfire"] = {
         Source = "firemode",
-		MinProgress = 0.01,
-		FireASAP = true,
+        MinProgress = 0.01,
+        FireASAP = true,
     },
     ["reload"] = {
         Source = "reload",
@@ -545,8 +545,8 @@ SWEP.Animations = {
     },
     ["inspect"] = {
         Source = "lookat01",
-		MinProgress = 0.9,
-		FireASAP = true,
+        MinProgress = 0.9,
+        FireASAP = true,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.2, lhik = 0, rhik = 0 },
@@ -623,7 +623,7 @@ SWEP.Attachments = {
         Category = {"cod2019_jokr_optic"},
         Installed = "cod2019_optic_default_jokr",
         Integral = "cod2019_optic_default_jokr",
-		Hidden = true,
+        Hidden = true,
     },
     {
         PrintName = ARC9:GetPhrase("mw19_category_ammo"),

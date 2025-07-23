@@ -78,35 +78,18 @@ function ENT:Detonate(data)
 
     local dmg = DamageInfo()
     dmg:SetAttacker(attacker)
-    dmg:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
+    dmg:SetDamageType(DMG_BLAST)
     dmg:SetInflictor(self)
-    dmg:SetDamageForce(self:GetForward() * 10000)
+    dmg:SetDamageForce(self:GetForward() * 5000)
     dmg:SetDamagePosition(src)
-    dmg:SetDamage(256)
+    dmg:SetDamage(200)
     util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
-
-    self:FireBullets({
-        Attacker = attacker,
-        Damage = 256,
-        Tracer = 0,
-        Src = src,
-        Dir = dir,
-        HullSize = 16,
-        Distance = 128,
-        IgnoreEntity = self,
-        Callback = function(atk, btr, dmginfo)
-            dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
-            dmginfo:SetDamageForce(self:GetForward() * 20000)
-            if IsValid(btr.Entity) and btr.Entity.LVS then
-                dmginfo:ScaleDamage(5)
-            end
-        end,
-    })
+    self:ImpactTraceAttack(data.HitEntity, 400, 20000)
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())
     fx:SetStart(self:GetPos() + self:GetUp())
-    fx:SetRadius(256)
+    fx:SetRadius(300)
     fx:SetEntity(self)
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
