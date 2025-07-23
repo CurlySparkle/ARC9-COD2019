@@ -56,7 +56,7 @@ function ENT:Impact(data, collider)
         self:EmitSound("weapons/rpg/shotdown.wav", 80)
 
         for i = 1, 1 do
-		  timer.Simple(0, function()
+          timer.Simple(0, function()
             local prop = ents.Create("prop_physics")
             prop:SetPos(self:GetPos())
             prop:SetAngles(self:GetAngles())
@@ -65,13 +65,13 @@ function ENT:Impact(data, collider)
             prop:GetPhysicsObject():SetVelocityInstantaneous(data.OurNewVelocity * 0.5 + VectorRand() * 75)
             prop:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
             SafeRemoveEntityDelayed(prop, 3)
-		   end)
+           end)
         end
 
         self:Remove()
         return true
     end
-	util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
+    util.Decal("Scorch", data.HitPos + data.HitNormal, data.HitPos - data.HitNormal)
 end
 
 function ENT:Detonate()
@@ -83,15 +83,14 @@ function ENT:Detonate()
     dmg:SetAttacker(attacker)
     dmg:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
     dmg:SetInflictor(self)
-    dmg:SetDamageForce(self:GetVelocity() * 100)
+    dmg:SetDamageForce(self:GetForward() * 10000)
     dmg:SetDamagePosition(src)
-    dmg:SetDamage(275)
+    dmg:SetDamage(128)
     util.BlastDamageInfo(dmg, self:GetPos(), self.Radius)
-	util.BlastDamage(self, IsValid(self:GetOwner()) and self:GetOwner() or self, self:GetPos(), 300, 64)
-	
+
     self:FireBullets({
         Attacker = attacker,
-        Damage = 200,
+        Damage = 512,
         Tracer = 0,
         Src = src,
         Dir = dir,
@@ -99,26 +98,26 @@ function ENT:Detonate()
         Distance = 128,
         IgnoreEntity = self,
         Callback = function(atk, btr, dmginfo)
+            dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
+            dmginfo:SetDamageForce(self:GetForward() * 20000)
             if IsValid(btr.Entity) and btr.Entity.LVS then
                 dmginfo:ScaleDamage(5)
-                dmginfo:SetDamageType(DMG_AIRBOAT + DMG_SNIPER + DMG_BLAST)
-                dmginfo:SetDamageForce(self:GetForward() * 20000)
             end
         end,
     })
 
     local fx = EffectData()
-	fx:SetOrigin(self:GetPos())
-	fx:SetStart(self:GetPos() + self:GetUp())
-	fx:SetRadius(200)
+    fx:SetOrigin(self:GetPos())
+    fx:SetStart(self:GetPos() + self:GetUp())
+    fx:SetRadius(200)
     fx:SetEntity(self)
     if self:WaterLevel() > 0 then
         util.Effect("WaterSurfaceExplosion", fx)
     else
         util.Effect("cod2019_grenade_explosion", fx)
-		self:EmitSound("Cod2019.Frag.Explode", _, _, _, _, _, _, ARC9.EveryoneRecipientFilter)
+        self:EmitSound("Cod2019.Frag.Explode", _, _, _, _, _, _, ARC9.EveryoneRecipientFilter)
     end
 
-	--util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
+    --util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
     timer.Simple(0, function() self:Remove() end)
 end
