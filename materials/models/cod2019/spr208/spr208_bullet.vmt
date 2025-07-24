@@ -5,7 +5,7 @@
     "$phongexponenttexture" "models\cod2019\spr208\spr208_bullet_e"
 
     /////////////////
-    "$color2" "[0 0 0]"                                     //do not touch this
+    "$color2" "[0.4 0.4 0.4]"                                     //do not touch this
     "$blendtintbybasealpha" "1"                             //do not touch this
     /////////////////
 
