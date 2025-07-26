@@ -5,7 +5,7 @@
     "$phongexponenttexture" "models\cod2019\mk2\mk2_bullet_e"
 
     /////////////////
-    "$color2" "[0 0 0]"                                     //do not touch this
+    "$color2" "[0.35 0.35 0.35]"                                     //do not touch this
     "$blendtintbybasealpha" "1"                             //do not touch this
     /////////////////
 
@@ -28,7 +28,7 @@
         "Arc9EnvMapTint"
         {
             "min" "0"
-            "max" "1"
+            "max" "0.6"
             "color" "[0.725 0.612 0.361]"
         }
     }
