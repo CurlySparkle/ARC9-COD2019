@@ -5,7 +5,7 @@
     "$phongexponenttexture" "models\cod2019\jak12\jak12_shells_e"
 
     /////////////////
-    "$color2" "[0 0 0]"                                     //do not touch this
+    "$color2" "[0.6 0.6 0.6]"                                     //do not touch this
     "$blendtintbybasealpha" "1"                             //do not touch this
     /////////////////
 
@@ -28,7 +28,7 @@
         "Arc9EnvMapTint"
         {
             "min" "0"
-            "max" "1"
+            "max" "0.7"
             "color" "[0.29 0.259 0.192]"
         }
     }

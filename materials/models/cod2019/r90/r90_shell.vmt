@@ -5,7 +5,7 @@
     "$phongexponenttexture" "models\cod2019\r90\r90_shell_e"
 
     /////////////////
-    "$color2" "[0 0 0]"                                     //do not touch this
+    "$color2" "[0.35 0.35 0.35]"                                     //do not touch this
     "$blendtintbybasealpha" "1"                             //do not touch this
     /////////////////
 
