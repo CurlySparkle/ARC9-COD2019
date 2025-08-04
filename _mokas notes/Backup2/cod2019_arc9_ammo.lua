@@ -13,7 +13,7 @@ ATT.Icon = Material("entities/attachs/cod2019_ammo_tmj.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = {"cod2019_ammo"}
 
@@ -42,7 +42,7 @@ ATT.Icon = Material("entities/attachs/cod2019_ammo_ricochet.png", "mips smooth")
 ATT.MenuCategory = "ARC9 - MW2019 Attachments"
 ATT.AutoStats = true
 
-ATT.Free = true
+ATT.Free = false
 
 ATT.Category = {"cod2019_ammo"}
 
