@@ -275,7 +275,7 @@ SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_rytec.mdl"
-SWEP.ShellCorrectAng = Angle(0, 0, 0)
+SWEP.ShellCorrectAng = Angle(0, -90, 0)
 SWEP.ShellScale = 1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.EjectDelay = 0.5

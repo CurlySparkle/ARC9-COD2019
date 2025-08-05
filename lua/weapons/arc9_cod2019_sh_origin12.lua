@@ -256,8 +256,8 @@ SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_origin12.mdl"
 SWEP.ShellSounds = ARC9.COD2019_Shotgun_Table
-SWEP.ShellCorrectAng = Angle(0, 0, 0)
-SWEP.ShellScale = 1.2
+SWEP.ShellCorrectAng = Angle(0, -90, 0)
+SWEP.ShellScale = 1
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.ShouldDropMag = false
@@ -276,7 +276,7 @@ SWEP.DropMagazineTime = 0.4
 SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, -90)
 
-SWEP.EjectDelay = 0.1
+SWEP.EjectDelay = 0.05
 
 -------------------------- SOUNDS
 

@@ -268,7 +268,7 @@ SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
 SWEP.ShellModel = "models/weapons/cod2019/shared/shell_mg34_hr.mdl"
-SWEP.ShellCorrectAng = Angle(0, 0, 0)
+SWEP.ShellCorrectAng = Angle(0, -90, 0)
 SWEP.ShellScale = 0.05
 SWEP.ShellPhysBox = Vector(1, 1, 1)
 SWEP.ShellSounds = ARC9.COD2019_556_Table
@@ -277,10 +277,12 @@ SWEP.ExtraShellModels = {
     [1] = {
         model = "models/weapons/cod2019/shared/shell_mg34_link_hr.mdl",
         physbox = Vector(1, 1, 1),
+		scale = 0.05,
         smoke = false
     },
     [2] = {
         model = "models/weapons/cod2019/shared/shell_mg34_link_hr.mdl",
+		scale = 0.05,
         smoke = false
     }
 }
