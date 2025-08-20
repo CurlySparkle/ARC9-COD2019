@@ -64,7 +64,6 @@ SWEP.RangeMin = 20 / ARC9.HUToM
 SWEP.RangeMax = 40 / ARC9.HUToM
 
 SWEP.Penetration = 1 -- Units of wood that can be penetrated by this gun.
-SWEP.RicochetChance = 0
 SWEP.ImpactForce = 6.5
 SWEP.DamageType = DMG_BULLET + DMG_BUCKSHOT
 SWEP.CurvedDamageScaling = true

@@ -60,12 +60,11 @@ SWEP.Num = 6
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 4.5 / ARC9.HUToM
-SWEP.RangeMax = 30 / ARC9.HUToM
+SWEP.RangeMin = 15 / ARC9.HUToM -- 4.5
+SWEP.RangeMax = 30 / ARC9.HUToM -- 30
 
 SWEP.Penetration = 5 -- Units of wood that can be penetrated by this gun.
 SWEP.ImpactForce = 8.5
-SWEP.RicochetChance = 0
 SWEP.DamageType = DMG_BULLET + DMG_BUCKSHOT
 SWEP.CurvedDamageScaling = true
 
@@ -74,6 +73,8 @@ SWEP.CurvedDamageScaling = true
 SWEP.PhysBulletMuzzleVelocity = 1410.76 * 12
 SWEP.PhysBulletGravity = 2
 SWEP.PhysBulletDrag = 3
+
+SWEP.RicochetChance = 0
 
 -------------------------- MAGAZINE
 
