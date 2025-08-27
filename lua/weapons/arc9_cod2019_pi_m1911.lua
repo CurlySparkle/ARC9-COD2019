@@ -56,8 +56,8 @@ SWEP.DamageMin = 22 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 13 / ARC9.HUToM
-SWEP.RangeMax = 23 / ARC9.HUToM
+SWEP.RangeMin = 14 / ARC9.HUToM
+SWEP.RangeMax = 24 / ARC9.HUToM
 
 SWEP.Penetration = 1 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.25
@@ -291,6 +291,7 @@ SWEP.DropMagazineAng = Angle(0, -90, -90)
 SWEP.DropMagazineVelocity = Vector(0, -45, 0)
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 160
 
 local path = "weapons/cod2019/m1911/"
 

@@ -279,6 +279,7 @@ SWEP.CamQCA_Mult = 1
 SWEP.NoShellEject = true
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 180
 
 local path = "weapons/cod2019/pila/"
 

@@ -297,6 +297,7 @@ SWEP.DropMagazineAng = Angle(0, -90, -90)
 --SWEP.DropMagazineVelocity = Vector(-40, 30, 0)
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 160
 
 local path = "weapons/cod2019/pkm/"
 

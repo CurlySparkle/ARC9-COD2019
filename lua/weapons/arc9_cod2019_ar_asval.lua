@@ -307,6 +307,7 @@ SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 125
 
 local path = "weapons/cod2019/asval/"
 

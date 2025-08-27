@@ -264,6 +264,7 @@ function SWEP:PrimaryAttack()
 end
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 180
 
 local path = "weapons/cod2019/rpg/"
 

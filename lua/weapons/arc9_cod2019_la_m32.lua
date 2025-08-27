@@ -270,6 +270,7 @@ SWEP.DropMagazineTime = 1
 SWEP.DropMagazineQCA = 4
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 130
 
 local path = "weapons/cod2019/m32/"
 

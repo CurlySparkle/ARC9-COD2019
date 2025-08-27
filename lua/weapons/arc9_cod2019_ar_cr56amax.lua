@@ -305,6 +305,7 @@ SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 160
 
 local path = "weapons/cod2019/cr56amax/"
 local pathub = "weapons/cod2019/shared/ubgl/"

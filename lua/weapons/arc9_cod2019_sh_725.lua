@@ -277,6 +277,7 @@ SWEP.DropMagazineQCA = 6
 SWEP.NoShellEject = true
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 155
 
 local path = "weapons/cod2019/725/"
 

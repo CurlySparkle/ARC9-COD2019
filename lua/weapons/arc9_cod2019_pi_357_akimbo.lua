@@ -456,6 +456,7 @@ SWEP.Attachments = {
     { -- 4
         Bone = "tag_reflex_l",
 		DuplicateModels = { { Bone = "tag_reflex" } },
+		RejectAttachments = { ["cod2019_optic_scope_357"] = true },
     },
     { -- 5
         Bone = "j_trigger_l",

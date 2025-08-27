@@ -53,7 +53,7 @@ SWEP.WorldModelOffset = {
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 90 -- Damage done at point blank range
-SWEP.DamageMin = 22 -- Damage done at maximum range
+SWEP.DamageMin = 30 -- Damage done at maximum range --22
 SWEP.DistributeDamage = true
 
 SWEP.Num = 6
@@ -280,6 +280,7 @@ SWEP.DropMagazineAng = Angle(0, -90, -90)
 SWEP.EjectDelay = 0.05
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 155
 
 local path = "weapons/cod2019/origin12/"
 

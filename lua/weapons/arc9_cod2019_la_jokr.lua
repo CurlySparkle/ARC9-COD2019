@@ -277,6 +277,7 @@ SWEP.DropMagazineQCA = 2
 SWEP.DropMagazineAng = Angle(0, -90, 0)
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 180
 
 local path = "weapons/cod2019/jokr/"
 

@@ -321,6 +321,7 @@ SWEP.DropMagazineQCAHook = function(swep, old)
 end
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 159
 
 local path = "weapons/cod2019/ak47/"
 local pathub = "weapons/cod2019/shared/ubgl/"

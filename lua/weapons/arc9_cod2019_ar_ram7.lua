@@ -51,12 +51,12 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 26 -- Damage done at point blank range
-SWEP.DamageMin = 23 -- Damage done at maximum range
+SWEP.DamageMax = 28 -- Damage done at point blank range
+SWEP.DamageMin = 18 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 27 / ARC9.HUToM
+SWEP.RangeMin = 22 / ARC9.HUToM
 SWEP.RangeMax = 28 / ARC9.HUToM
 
 SWEP.Penetration = 8 -- Units of wood that can be penetrated by this gun.
@@ -65,7 +65,7 @@ SWEP.RicochetChance = 0.15
 SWEP.ImpactForce = 8
 
 SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 1.475,
+    [HITGROUP_HEAD] = 1.5,
     [HITGROUP_CHEST] = 1,
     [HITGROUP_STOMACH] = 1,
     [HITGROUP_LEFTARM] = 1,
@@ -303,6 +303,7 @@ SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 160
 
 local path = "weapons/cod2019/ram7/"
 local pathub = "weapons/cod2019/shared/ubgl/"

@@ -250,6 +250,7 @@ SWEP.CamQCA_Mult = 1
 SWEP.NoShellEject = true
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 90
 
 local path = "weapons/cod2019/crossbow/"
 

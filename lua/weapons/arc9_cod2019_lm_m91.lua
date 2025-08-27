@@ -51,7 +51,7 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 35 -- Damage done at point blank range
+SWEP.DamageMax = 32 -- Damage done at point blank range
 SWEP.DamageMin = 25 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
@@ -330,6 +330,7 @@ SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 160
 
 local path = "weapons/cod2019/m91/"
 

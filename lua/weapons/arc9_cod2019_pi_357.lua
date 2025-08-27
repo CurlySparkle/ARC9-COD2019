@@ -56,7 +56,7 @@ SWEP.DamageMin = 52 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 22 / ARC9.HUToM
+SWEP.RangeMin = 25 / ARC9.HUToM
 SWEP.RangeMax = 32 / ARC9.HUToM
 
 SWEP.Penetration = 4 -- Units of wood that can be penetrated by this gun.
@@ -272,6 +272,7 @@ SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 164
 
 local path = "weapons/cod2019/357/"
 

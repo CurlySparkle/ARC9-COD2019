@@ -258,6 +258,7 @@ SWEP.TriggerDelay = true -- Add a delay before the weapon fires.
 SWEP.TriggerDelayTime = 0.45 -- Time until weapon fires.
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 170
 
 local path = "weapons/cod2019/minigun/"
 

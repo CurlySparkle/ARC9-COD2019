@@ -56,8 +56,8 @@ SWEP.DamageMin = 36 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 42 / ARC9.HUToM
-SWEP.RangeMax = 44 / ARC9.HUToM
+SWEP.RangeMin = 32 / ARC9.HUToM
+SWEP.RangeMax = 42 / ARC9.HUToM
 
 SWEP.Penetration = 11 -- Units of wood that can be penetrated by this gun.
 SWEP.RicochetChance = 0.15
@@ -302,6 +302,7 @@ SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 160
 
 local path = "weapons/cod2019/oden/"
 local pathub = "weapons/cod2019/shared/ubgl/"

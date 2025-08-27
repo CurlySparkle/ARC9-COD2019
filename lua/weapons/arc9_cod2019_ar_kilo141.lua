@@ -52,11 +52,11 @@ SWEP.WorldModelOffset = {
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 28 -- Damage done at point blank range
-SWEP.DamageMin = 22 -- Damage done at maximum range
+SWEP.DamageMin = 20 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 31 / ARC9.HUToM
+SWEP.RangeMin = 24 / ARC9.HUToM
 SWEP.RangeMax = 32 / ARC9.HUToM
 
 SWEP.Penetration = 8 -- Units of wood that can be penetrated by this gun.
@@ -307,6 +307,7 @@ SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 156
 
 local path = "weapons/cod2019/kilo141/"
 local pathub = "weapons/cod2019/shared/ubgl/"

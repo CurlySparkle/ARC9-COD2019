@@ -51,8 +51,8 @@ SWEP.WorldModelOffset = {
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax = 24 -- Damage done at point blank range
-SWEP.DamageMin = 12 -- Damage done at maximum range
+SWEP.DamageMax = 25 -- Damage done at point blank range
+SWEP.DamageMin = 14 -- Damage done at maximum range
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
 SWEP.RangeMin = 15 / ARC9.HUToM
@@ -103,8 +103,8 @@ SWEP.Firemodes = {
     },
     { -- Auto
         Mode = -1,
-		DamageMaxMult = 0.7,
-		DamageMinMult = 0.6,
+		DamageMaxMult = 0.8,
+		DamageMinMult = 0.8,
 		RPMMult = 0.8,
     },
 }
@@ -321,6 +321,7 @@ SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 155
 
 local path = "weapons/cod2019/famas/"
 local pathub = "weapons/cod2019/shared/ubgl/"

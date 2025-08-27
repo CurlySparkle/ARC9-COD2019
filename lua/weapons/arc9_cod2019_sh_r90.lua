@@ -53,7 +53,7 @@ SWEP.WorldModelOffset = {
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 95 -- Damage done at point blank range
-SWEP.DamageMin = 25 -- Damage done at maximum range
+SWEP.DamageMin = 30 -- Damage done at maximum range --25
 SWEP.DistributeDamage = true
 
 SWEP.Num = 6
@@ -257,6 +257,7 @@ SWEP.ShotgunReload = true
 SWEP.ManualActionChamber = 2
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 155
 
 local path = "weapons/cod2019/r90/"
 

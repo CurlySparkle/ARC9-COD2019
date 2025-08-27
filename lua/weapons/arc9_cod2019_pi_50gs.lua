@@ -57,7 +57,7 @@ SWEP.DamageMin = 39 -- Damage done at maximum range
 
 SWEP.DamageRand = 0 -- Damage varies randomly per shot by this fraction. 0.1 = +- 10% damage per shot.
 
-SWEP.RangeMin = 10 / ARC9.HUToM
+SWEP.RangeMin = 16 / ARC9.HUToM
 SWEP.RangeMax = 30 / ARC9.HUToM
 
 SWEP.Penetration = 6 -- Units of wood that can be penetrated by this gun.
@@ -274,6 +274,7 @@ SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 165
 
 local path = "weapons/cod2019/50gs/"
 

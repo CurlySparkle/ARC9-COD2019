@@ -284,6 +284,7 @@ SWEP.ShouldDropMagEmpty = false
 SWEP.ShotgunReload = true
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 160
 
 local path = "weapons/cod2019/mk2/"
 

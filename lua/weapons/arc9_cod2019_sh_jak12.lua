@@ -52,7 +52,7 @@ SWEP.WorldModelOffset = {
 -------------------------- DAMAGE PROFILE
 
 SWEP.DamageMax = 60 -- Damage done at point blank range
-SWEP.DamageMin = 25-- Damage done at maximum range
+SWEP.DamageMin = 30 -- Damage done at maximum range --25
 SWEP.DistributeDamage = true
 
 SWEP.Num = 6
@@ -288,6 +288,7 @@ SWEP.DropMagazineAng = Angle(0, -90, -90)
 SWEP.NoShellEject = true
 
 -------------------------- SOUNDS
+SWEP.ShootVolume = 155
 
 local path = "weapons/cod2019/jak12/"
 
