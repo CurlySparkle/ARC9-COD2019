@@ -268,11 +268,19 @@ SWEP.EjectDelay = 0.45
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
 SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_snip_kar98k_clip.mdl" -- Set to a string or table to drop this magazine when reloading.
-SWEP.DropMagazineSounds = {"physics/metal/weapon_impact_soft1.wav", "physics/metal/weapon_impact_soft2.wav", "physics/metal/weapon_impact_soft3.wav"}
+SWEP.DropMagazineSounds = {
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_01.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_02.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_03.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_04.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_05.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_06.ogg",
+}
 SWEP.DropMagazineAmount = 1 -- Amount of mags to drop.
 SWEP.DropMagazineTime = 1.6
 SWEP.DropMagazineQCA = 3
 SWEP.DropMagazineAng = Angle(0, -90, -90)
+SWEP.DropMagazineVelocity = Vector(0, 20, 0)
 
 -------------------------- SOUNDS
 SWEP.ShootVolume = 160
@@ -412,7 +420,7 @@ SWEP.Animations = {
 		RefillProgress = 0.8,
 		PeekProgress = 0.925,
 		EjectAt = 0.5,
-		--DropMagAt = 3.3,
+		DropMagAt = 3.3,
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_boltopen_01.ogg", t = 0/30},
@@ -458,7 +466,7 @@ SWEP.Animations = {
 		RefillProgress = 0.825,
 		PeekProgress = 0.95,
 		EjectAt = 0.5,
-		--DropMagAt = 2.4,
+		DropMagAt = 2.4,
 		IKTimeLine = { { t = 0,  lhik = 1, rhik = 1} },
         EventTable = {
 			{s = path .. "wfoly_sn_kilo98_reload_empty_fast_boltopen_01.ogg", t = 0/30},

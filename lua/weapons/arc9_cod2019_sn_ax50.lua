@@ -850,9 +850,14 @@ SWEP.AttachmentElements = {
             {4,2},
         },
     },
-    ["stock_none"] = {
+    ["stock_none2"] = {
         Bodygroups = {
             {5,2},
+        },
+    },
+    ["stock_none"] = {
+        Bodygroups = {
+            {5,3},
         },
     },
     ["stock_main_none"] = {
@@ -869,7 +874,10 @@ SWEP.Hook_ModifyBodygroups = function(wep, data)
 	model:SetBodygroup(5,0)
 	model:SetBodygroup(6,0)	
 	end
-	
+    if wep:HasElement("stock_custom") then 
+	model:SetBodygroup(5,2)
+	model:SetBodygroup(6,0)	
+	end
     local camo = 0
     if attached["universal_camo"] then
         camo = 1
