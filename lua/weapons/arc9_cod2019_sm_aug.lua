@@ -423,7 +423,7 @@ SWEP.Animations = {
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.2, lhik = 0, rhik = 1 },
-            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.625, lhik = 0, rhik = 1 },
             { t = 0.85, lhik = 1, rhik = 1 },
         },
         EventTable = {
@@ -463,6 +463,112 @@ SWEP.Animations = {
 			{hide = 1, t = 0.6},
         },
     },
+	["reload_xmag"] = {
+		Source = "reload_xmag",
+		MinProgress = 0.925,
+		PeekProgress = 0.825,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.65, lhik = 0, rhik = 1 },
+            { t = 0.825, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_raise.ogg", t = 0.067},
+			{s = path .. "wfoly_sm_augolf_reload_magout_cloth.ogg", t = 0.533},
+			{s = path .. "wfoly_sm_augolf_reload_magout_01.ogg", t = 0.533},
+			{s = path .. "wfoly_sm_augolf_reload_magin_cloth.ogg", t = 1.033},
+			{s = path .. "wfoly_sm_augolf_reload_magin_v2_01.ogg", t = 1.25},
+			{s = path .. "wfoly_sm_augolf_reload_magin_v2_02.ogg", t = 1.55},
+			{s = path .. "wfoly_sm_augolf_reload_lower.ogg", t = 1.533},
+			{s = path .. "wfoly_sm_augolf_reload_end.ogg", t = 1.933},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.65},
+			{hide = 1, t = 1},
+		},
+	},
+	["reload_empty_xmag"] = {
+		Source = "reload_empty_xmag",
+		MinProgress = 0.925,
+		PeekProgress = 0.825,
+		RefillProgress = 0.74,
+		FireASAP = true,
+		DropMagAt = 1.25,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.1, lhik = 0, rhik = 1 },
+            { t = 0.75, lhik = 0, rhik = 1 },
+            { t = 0.875, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_empty_mvmnt.ogg", t = 0.067},
+			{s = path .. "wfoly_sm_augolf_reload_empty_boltopen.ogg", t = 0.3},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magout_01.ogg", t = 0.92},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magoutcloth.ogg", t = 1.22},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magincloth.ogg", t = 1.8},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_01.ogg", t = 2.0},
+			{s = path .. "wfoly_sm_augolf_reload_empty_magin_v2_02.ogg", t = 2.1},
+			{s = path .. "wfoly_sm_augolf_reload_empty_chamber_01.ogg", t = 2.55},
+			{s = path .. "wfoly_sm_augolf_reload_empty_end.ogg", t = 2.633},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.25},
+			{hide = 1, t = 1.6},
+		},
+	},
+	["reload_xmag_fast"] = {
+		Source = "reload_xmag_fast",
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		DropMagAt = 0.5,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.625, lhik = 0, rhik = 1 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+		EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_fast_raise.ogg", t = 0.1},
+			{s = path .. "wfoly_sm_augolf_reload_fast_magout_01.ogg", t = 0.167},
+			{s = path .. "wfoly_sm_augolf_reload_fast_cloth.ogg", t = 0.633},
+			{s = path .. "wfoly_sm_augolf_reload_fast_magin_01.ogg", t = 0.84},
+			{s = path .. "wfoly_sm_augolf_reload_fast_end.ogg", t = 1.2},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 0.65},
+		},
+	},
+	["reload_empty_xmag_fast"] = {
+		Source = "reload_empty_xmag_fast",
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.7,
+		FireASAP = true,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 1 },
+            { t = 0.2, lhik = 0, rhik = 1 },
+            { t = 0.7, lhik = 0, rhik = 1 },
+            { t = 0.95, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_augolf_reload_empty_fast_waffle_raise.ogg", t = 0.033},
+			{s = path .. "wfoly_sm_augolf_reload_empty_fast_waffle_magout_01.ogg", t = 0.2},
+			{s = path .. "wfoly_sm_augolf_reload_empty_fast_waffle_cloth02.ogg", t = 0.433},
+			{s = path .. "wfoly_sm_augolf_reload_empty_fast_waffle_cloth01.ogg", t = 0.7},
+			{s = path .. "wfoly_sm_augolf_reload_empty_fast_waffle_magin_01.ogg", t = 0.86},
+			{s = path .. "wfoly_sm_augolf_reload_empty_fast_waffle_chamber_01.ogg", t = 1.36},
+			{s = path .. "wfoly_sm_augolf_reload_empty_fast_waffle_end.ogg", t = 1.633},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 0.65},
+		},
+	},
     ["reload_armag"] = {
 	    Source = "reload_ar",
 		MinProgress = 0.925,
@@ -928,7 +1034,15 @@ SWEP.AttachmentElements = {
     },
 }
 
---- 30-Round (AR) & 60-Round (Drum) Mags ---
+--- 32-Round (9mm), 30-Round (AR) & 60-Round (Drum) Mags ---
+local Translate_XMag = {
+    ["reload"] = "reload_xmag",
+    ["reload_empty"] = "reload_empty_xmag",
+}
+local Translate_XMag_Fast = {
+    ["reload"] = "reload_xmag_fast",
+    ["reload_empty"] = "reload_empty_xmag_fast",
+}
 local Translate_AR = {
     ["reload"] = "reload_armag",
     ["reload_empty"] = "reload_armag_empty",
@@ -962,6 +1076,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
+	local xmag = wep:HasElement("mag_xmag")
 	local ar = wep:HasElement("mag_armag")
     local drum = wep:HasElement("mag_drum")
 
@@ -970,7 +1085,11 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     end
 
     if speedload then
-        if ar then
+		if xmag then
+            if Translate_XMag_Fast[anim] then
+                return Translate_XMag_Fast[anim]
+            end
+        elseif ar then
             if Translate_AR_Fast[anim] then
                 return Translate_AR_Fast[anim]
             end
@@ -984,6 +1103,11 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             end
         end
     else 
+		if xmag then
+            if Translate_XMag[anim] then
+                return Translate_XMag[anim]
+            end
+        end
         if ar then
             if Translate_AR[anim] then
                 return Translate_AR[anim]
