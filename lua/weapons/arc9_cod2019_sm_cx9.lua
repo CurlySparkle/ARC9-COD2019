@@ -480,6 +480,107 @@ SWEP.Animations = {
 			{hide = 1, t = 1.575},
         },
     },
+    ["reload_smag"] = {
+        Source = "reload_smag",
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.525,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.925, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sm_secho_reload_up.ogg", t = 0.0},
+            {s = path .. "wfoly_sm_secho_reload_magout.ogg", t = 0.433},
+			{s = path .. "wfoly_sm_secho_reload_maghit.ogg", t = 0.867},
+			{s = path .. "wfoly_sm_secho_reload_magin.ogg", t = 1.233},
+			{s = path .. "wfoly_sm_secho_reload_end.ogg", t = 1.567},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.5},
+			{hide = 2, t = 1.6},
+			{hide = 1, t = 2.06},
+        },
+    },
+    ["reload_empty_smag"] = {
+        Source = "reload_empty_smag",
+		MinProgress = 0.925,
+		PeekProgress = 0.85,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		DropMagAt = 0.575,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sm_secho_reload_empty_up.ogg", t = 0.033},
+			{s = path .. "wfoly_sm_secho_reload_empty_magout.ogg", t = 0.467},
+			{s = path .. "wfoly_sm_secho_reload_empty_mvmnt.ogg", t = 1.133},
+			{s = path .. "wfoly_sm_secho_reload_empty_maghit.ogg", t = 1.25},
+			{s = path .. "wfoly_sm_secho_reload_empty_magin.ogg", t = 1.35},
+			{s = path .. "wfoly_sm_secho_reload_empty_charge.ogg", t = 1.64},
+			{s = path .. "wfoly_sm_secho_reload_empty_end.ogg", t = 1.867},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.575},
+			{hide = 0, t = 2},
+			{hide = 1, t = 2.12},
+        },
+    },
+    ["reload_fast_smag"] = {
+        Source = "reload_fast_smag",
+		MinProgress = 0.85,
+		PeekProgress = 0.8,
+		RefillProgress = 0.575,
+		FireASAP = true,
+		DropMagAt = 0.375,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.75, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sm_secho_reload_fast_up.ogg", t = 0.0},
+            {s = path .. "wfoly_sm_secho_reload_fast_magout.ogg", t = 0.233},
+			{s = path .. "wfoly_sm_secho_reload_fast_maghit.ogg", t = 0.667},
+            {s = path .. "wfoly_sm_secho_reload_fast_magin.ogg", t = 0.8},
+            {s = path .. "wfoly_sm_secho_reload_fast_end.ogg", t = 0.867},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.375},
+			{hide = 1, t = 1.116},
+        },
+    },
+    ["reload_empty_smag_fast"] = {
+        Source = "reload_empty_smag_fast",
+		MinProgress = 0.9,
+		PeekProgress = 0.825,
+		RefillProgress = 0.6,
+		FireASAP = true,
+		DropMagAt = 0.375,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.5, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sm_secho_reload_empty_fast_up.ogg", t = 0.0},
+            {s = path .. "wfoly_sm_secho_reload_empty_fast_magout.ogg", t = 0.233},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_mvmnt.ogg", t = 0.467},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_maghit.ogg", t = 0.8},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_magin.ogg", t = 0.82},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_charge.ogg", t = 1.1},
+			{s = path .. "wfoly_sm_secho_reload_empty_fast_end.ogg", t = 1.2},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.375},
+			{hide = 1, t = 1.416},
+        },
+    },
     ["reload_drum"] = {
         Source = "reload_drum",
 		MinProgress = 0.9,
@@ -664,6 +765,22 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sm_secho_inspect_end.ogg", t = 3.4},
         },
     },
+    ["inspect_smag"] = {
+        Source = "lookat01_smag",
+		MinProgress = 0.9,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.8, lhik = 0, rhik = 0 },
+            { t = 0.925, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_sm_secho_inspect_magout.ogg", t = 0.033},
+			{s = path .. "wfoly_sm_secho_inspect_magin.ogg", t = 1.967},
+			{s = path .. "wfoly_sm_secho_inspect_end.ogg", t = 3.4},
+        },
+    },
     ["inspect_drum"] = {
         Source = "lookat01_drum",
 		MinProgress = 0.9,
@@ -740,6 +857,18 @@ SWEP.Animations = {
 
 -- SWEP.Hook_Think	= ARC9.COD2019.BlendSights2
 
+--- 12 Round Mags ---
+local Translate_SMag = {
+    ["reload"] = "reload_smag",
+    ["reload_empty"] = "reload_empty_smag",
+    ["inspect"] = "inspect_smag",
+}
+local Translate_SMag_Fast = {
+    ["reload"] = "reload_fast_smag",
+    ["reload_empty"] = "reload_empty_smag_fast",
+    ["inspect"] = "inspect_smag",
+}
+
 --- 50 Round Drums ---
 local Translate_Drum = {
     ["reload"] = "reload_drum",
@@ -769,6 +898,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local drum = wep:HasElement("mag_drum")
+	local smag = wep:HasElement("mag_smag")
 
     if super_sprint and Translate_TacSprint[anim] then
         return Translate_TacSprint[anim]
@@ -779,6 +909,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_Drum_Fast[anim] then
                 return Translate_Drum_Fast[anim]
             end
+		elseif smag then
+            if Translate_SMag_Fast[anim] then
+                return Translate_SMag_Fast[anim]
+            end
         else
             if Translate_Fast[anim] then
                 return Translate_Fast[anim]
@@ -788,6 +922,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         if drum then
             if Translate_Drum[anim] then
                 return Translate_Drum[anim]
+            end
+		elseif smag then
+            if Translate_SMag[anim] then
+                return Translate_SMag[anim]
             end
         end
     end
