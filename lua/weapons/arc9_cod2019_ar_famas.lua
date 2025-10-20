@@ -1533,9 +1533,14 @@ SWEP.AttachmentTableOverrides = {
 }
 
 SWEP.AttachmentElements = {
-    ["body_none"] = {
+    ["stock_none"] = {
         Bodygroups = {
             {0,1},
+        },
+    },
+    ["body_none"] = {
+        Bodygroups = {
+            {0,2},
         },
     },
     ["mag_none"] = {
@@ -1642,7 +1647,6 @@ SWEP.Attachments = {
         Bone = "tag_stock_attach",
         Pos = Vector(0, 0, 0),
 		Icon_Offset = Vector(-18, 0, -2),
-		InstalledElements = {"stock_none"},
     },
     { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),

@@ -430,7 +430,7 @@ SWEP.AttachmentElements = {
     ["slide_none"] = {
         Bodygroups = {
             {1,1},
-            {4,1},
+            {3,1},
         },
     },
     _, -- This is important, trust me.

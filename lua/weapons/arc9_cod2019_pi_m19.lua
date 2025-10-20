@@ -906,7 +906,7 @@ SWEP.AttachmentElements = {
     },
     ["sight_none"] = {
         Bodygroups = {
-            -- {3,1},
+            {3,1},
         },
     },
     ["trigger_none"] = {

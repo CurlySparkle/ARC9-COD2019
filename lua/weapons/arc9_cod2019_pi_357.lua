@@ -261,15 +261,29 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 4
 SWEP.CamQCA_Mult = 1
 
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_357.mdl"
+SWEP.ShellCorrectAng = Angle(0, 0, 180)
+SWEP.ShellScale = 1
+SWEP.ShellVelocity = 0.75
+SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.NoShellEject = true
+SWEP.ShellSounds = ARC9.COD2019_9mm_Table
 
-SWEP.DropMagazineModel = "models/weapons/cod2019/shared/shell_357.mdl"
-SWEP.DropMagazineSounds = {"weapons/cod2019/shared/casings/blt_case_bounce_9_01.wav", "weapons/cod2019/shared/casings/blt_case_bounce_9_02.wav", "weapons/cod2019/shared/casings/blt_case_bounce_9_03.wav", "weapons/cod2019/shared/casings/blt_case_bounce_9_04.wav"}
-SWEP.DropMagazineAmount = 6
-SWEP.DropMagazineTime = 1
-SWEP.DropMagazineQCA = 5
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
+SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_pist_357_loader.mdl"
+SWEP.DropMagazineSounds = {
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_01.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_02.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_03.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_04.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_05.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_smg_metal_concrete_06.ogg",
+}
+SWEP.DropMagazineAmount = 1
+SWEP.DropMagazineTime = 1
+SWEP.DropMagazineQCA = 3
+SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
 SWEP.ShootVolume = 164
@@ -390,7 +404,7 @@ SWEP.Animations = {
         Source = "reload",
 		MinProgress = 0.85,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.75,
+		DropMagAt = 2.52,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -409,18 +423,24 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 64/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 75/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 78/30},
+			{shelleject = true, att = 2, t = 0.75},
+			{shelleject = true, att = 5, t = 0.75},
+			{shelleject = true, att = 6, t = 0.75},
+			{shelleject = true, att = 7, t = 0.75},
+			{shelleject = true, att = 8, t = 0.75},
+			{shelleject = true, att = 9, t = 0.75},
 			{hide = 1, t = 0},
 			{hide = 2, t = 0.75},
 			{hide = 3, t = 1.375},
 			{hide = 4, t = 2.05},
-			{hide = 1, t = 2.6},			
+			{hide = 1, t = 2.52},			
         },
     },
     ["reload_fast"] = {
         Source = "reload_fast",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.43,
+		DropMagAt = 1.73,
         IKTimeLine = {
            { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -439,11 +459,17 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_ejectorrod_01.ogg", t = 1.06},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 1.6},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 1.84},
+			{shelleject = true, att = 2, t = 0.43},
+			{shelleject = true, att = 5, t = 0.43},
+			{shelleject = true, att = 6, t = 0.43},
+			{shelleject = true, att = 7, t = 0.43},
+			{shelleject = true, att = 8, t = 0.43},
+			{shelleject = true, att = 9, t = 0.43},
 			{hide = 1, t = 0},
 			{hide = 2, t = 0.43},
 			{hide = 3, t = 0.75},
 			{hide = 4, t = 1.3},
-			{hide = 1, t = 1.8},
+			{hide = 1, t = 1.73},
         },
     },
     ["ready"] = {
@@ -567,7 +593,7 @@ SWEP.Animations = {
         Source = "reload_stock",
 		MinProgress = 0.85,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.75,
+		DropMagAt = 2.52,
         IKTimeLine = {
 			{ t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -586,18 +612,24 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_ejectorrod_01.ogg", t = 64/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 75/30},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_end.ogg", t = 78/30},
+			{shelleject = true, att = 2, t = 0.75},
+			{shelleject = true, att = 5, t = 0.75},
+			{shelleject = true, att = 6, t = 0.75},
+			{shelleject = true, att = 7, t = 0.75},
+			{shelleject = true, att = 8, t = 0.75},
+			{shelleject = true, att = 9, t = 0.75},
 			{hide = 1, t = 0},
 			{hide = 2, t = 0.75},
 			{hide = 3, t = 1.45},
 			{hide = 4, t = 2.05},
-			{hide = 1, t = 2.6},	
+			{hide = 1, t = 2.52},	
         },
     },
     ["reload_fast_stock"] = {
         Source = "reload_fast_stock",
 		MinProgress = 0.8,
 		MagSwapTime = 3.5,
-		DropMagAt = 0.44,
+		DropMagAt = 1.73,
         IKTimeLine = {
 			{ t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -616,11 +648,17 @@ SWEP.Animations = {
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_ejectorrod_01.ogg", t = 1.06},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_cylinderclose_01.ogg", t = 1.6},
 			{s = path .. "wfoly_pi_cpapa_charge_reload_fast_end.ogg", t = 1.84},
+			{shelleject = true, att = 2, t = 0.44},
+			{shelleject = true, att = 5, t = 0.44},
+			{shelleject = true, att = 6, t = 0.44},
+			{shelleject = true, att = 7, t = 0.44},
+			{shelleject = true, att = 8, t = 0.44},
+			{shelleject = true, att = 9, t = 0.44},
 			{hide = 1, t = 0},
 			{hide = 2, t = 0.43},
 			{hide = 3, t = 0.925},
 			{hide = 4, t = 1.4},
-			{hide = 1, t = 1.8},
+			{hide = 1, t = 1.73},
         },
     },
     ["ready_stock"] = {
