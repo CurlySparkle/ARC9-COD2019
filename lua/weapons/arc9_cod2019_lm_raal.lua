@@ -993,6 +993,46 @@ SWEP.Animations = {
 			{s = path .. "wfoly_lm_slima_inspect_06.ogg", t = 168/30},
         },
     },
+	["inspect_smag"] = {
+		Source = "lookat01_smag",
+		MinProgress = 0.9,
+		FireASAP = true,
+		IKTimeLine = {
+			{ t = 0, lhik = 1, rhik = 0 },
+			{ t = 0.05, lhik = 1, rhik = 0 },
+			{ t = 0.125, lhik = 0, rhik = 0 },
+			{ t = 0.55, lhik = 0, rhik = 0 },
+			{ t = 0.625, lhik = 1, rhik = 1 },
+		},
+		EventTable = {
+			{s = path .. "wfoly_lm_slima_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_slima_inspect_02.ogg", t = 25/30},
+			{s = path .. "wfoly_lm_slima_inspect_03.ogg", t = 47/30},
+			{s = path .. "wfoly_lm_slima_inspect_04.ogg", t = 79/30},
+			{s = path .. "wfoly_lm_slima_inspect_05.ogg", t = 121/30},
+			{s = path .. "wfoly_lm_slima_inspect_06.ogg", t = 168/30},
+		},
+	},
+	["inspect_xmag"] = {
+		Source = "lookat01_xmag",
+		MinProgress = 0.9,
+		FireASAP = true,
+		IKTimeLine = {
+			{ t = 0, lhik = 1, rhik = 0 },
+			{ t = 0.05, lhik = 1, rhik = 0 },
+			{ t = 0.125, lhik = 0, rhik = 0 },
+			{ t = 0.55, lhik = 0, rhik = 0 },
+			{ t = 0.625, lhik = 1, rhik = 1 },
+		},
+		EventTable = {
+			{s = path .. "wfoly_lm_slima_inspect_01.ogg", t = 0/30},
+			{s = path .. "wfoly_lm_slima_inspect_02.ogg", t = 25/30},
+			{s = path .. "wfoly_lm_slima_inspect_03.ogg", t = 47/30},
+			{s = path .. "wfoly_lm_slima_inspect_04.ogg", t = 79/30},
+			{s = path .. "wfoly_lm_slima_inspect_05.ogg", t = 121/30},
+			{s = path .. "wfoly_lm_slima_inspect_06.ogg", t = 168/30},
+		},
+	},
     ["bash"] = {
         Source = {"melee","melee2","melee3"},
         IKTimeLine = {
@@ -1063,19 +1103,23 @@ SWEP.Animations = {
 local Translate_SMag = {
 	["reload"] = "reload_smag",
 	["reload_empty"] = "reload_smag_empty",
+	["inspect"] = "inspect_smag",
 }
 local Translate_SMag_Fast = {
 	["reload"] = "reload_smag_fast",
 	["reload_empty"] = "reload_smag_fast_empty",
+	["inspect"] = "inspect_smag",
 }
 
 local Translate_XMag = {
 	["reload"] = "reload_xmag",
 	["reload_empty"] = "reload_xmag_empty",
+	["inspect"] = "inspect_xmag",
 }
 local Translate_XMag_Fast = {
 	["reload"] = "reload_xmag_fast",
 	["reload_empty"] = "reload_xmag_fast_empty",
+	["inspect"] = "inspect_xmag",
 }
 
 --- Fast & Tac. Sprint ---
