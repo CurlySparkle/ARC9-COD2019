@@ -754,7 +754,7 @@ SWEP.Animations = {
 			{hide = 1, t = 0},
 			{hide = 6, t = 0.425},
 			{hide = 2, t = 1},
-			{hide = 1, t = 2.275},
+			{hide = 1, t = 2.568},
         },
     },
     ["reload_xmagslrg_fast"] = {
@@ -1311,8 +1311,8 @@ local Translate_XMag_Fast = {
     ["reload_ubgl"] = "reload_fast_ubgl",
 }
 local Translate_XMagslrg = {
-    ["reload"] = "reload_xmagslrg",
-    ["reload_empty"] = "reload_xmagslrg_empty",
+    ["reload"] = "reload_xmaglrg",
+    ["reload_empty"] = "reload_xmaglrg_empty",
 }
 local Translate_XMagslrg_Fast = {
     ["reload"] = "reload_xmagslrg_fast",

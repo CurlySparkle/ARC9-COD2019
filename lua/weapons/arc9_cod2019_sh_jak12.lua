@@ -712,7 +712,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
---- 32-Round Drum Mags ---
+--- 20 & 32-Round Drum Mags ---
 local Translate_Drum = {
     ["reload"] = "reload_drum",
     ["reload_empty"] = "reload_drum_empty",

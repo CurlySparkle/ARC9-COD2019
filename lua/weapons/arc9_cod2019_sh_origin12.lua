@@ -395,7 +395,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 2.767},
 			{hide = 1, t = 0},
 			{hide = 2, t = 0.65},
-			{hide = 1, t = 3.13},
+			{hide = 1, t = 3.125},
         },
     },
     ["reload_fast"] = {
@@ -499,7 +499,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_sh_oscar12_reload_empty_end.ogg", t = 87/30},
 			{hide = 1, t = 0},
 			{hide = 2, t = 0.65},
-			{hide = 1, t = 3.133},
+			{hide = 1, t = 3.13},
         },
     },
     ["reload_xmag_fast"] = {
@@ -898,13 +898,14 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         if drum then
             if Translate_Drum[anim] then
                 return Translate_Drum[anim]
+			end
         elseif xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
             end
         end
     end
-end
+
 	
     --wep.MWHybridSwitching = nil
     if anim == "switchsights" then

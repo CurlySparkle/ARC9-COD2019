@@ -855,12 +855,21 @@ SWEP.AttachmentTableOverrides = {
     },
     ["cod2019_trigger_light"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_trigcust.mdl",
+		BoneMerge = false,
+		ModelOffset = Vector(-2, 0, -0.8),
+		ModelAngleOffset = Angle(0, -90, 0),
     },
     ["cod2019_trigger_heavy"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_trigcust02.mdl",
+		BoneMerge = false,
+		ModelOffset = Vector(-2, 0, -0.795),
+		ModelAngleOffset = Angle(0, -90, 0),
     },
     ["cod2019_trigger_match"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m1911/attachment_vm_pi_mike1911_trigcust03.mdl",
+		BoneMerge = false,
+		ModelOffset = Vector(-2, 0, -0.81),
+		ModelAngleOffset = Angle(0, -90, 0),
     },
     ["cod2019_renetti_foregrip"] = {
     BoneMerge = false,
