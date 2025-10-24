@@ -258,16 +258,29 @@ SWEP.ProceduralViewQCA = 1
 SWEP.CamQCA = 3
 SWEP.CamQCA_Mult = 1
 
+SWEP.ShellModel = "models/weapons/cod2019/shared/shell_m32.mdl"
+SWEP.ShellCorrectAng = Angle(0, 0, 180)
+SWEP.ShellScale = 1
+SWEP.ShellVelocity = 0.75
+SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 SWEP.NoShellEject = true
+SWEP.ShellSounds = {"weapons/cod2019/m32/40mm_shell_01.ogg","weapons/cod2019/m32/40mm_shell_02.ogg","weapons/cod2019/m32/40mm_shell_03.ogg",}
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
-
-SWEP.DropMagazineModel = "models/weapons/cod2019/shared/shell_m32.mdl"
-SWEP.DropMagazineSounds = {"weapons/cod2019/m32/40mm_shell_02.ogg"}
-SWEP.DropMagazineAmount = 6
+SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_eq_m32_loader.mdl"
+SWEP.DropMagazineSounds = {
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_01.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_02.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_03.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_04.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_05.ogg",
+"weapons/cod2019/shared/magazine_drops/iw8_phys_mag_drop_ar_poly_concrete_06.ogg",
+}
+SWEP.DropMagazineAmount = 1
 SWEP.DropMagazineTime = 1
 SWEP.DropMagazineQCA = 4
+SWEP.DropMagazineAng = Angle(0, -90, -90)
 
 -------------------------- SOUNDS
 SWEP.ShootVolume = 130
@@ -476,7 +489,7 @@ SWEP.Animations = {
         MinProgress = 0.95,
         FireASAP = true,
         RefillProgress = 0.85,
-        DropMagAt = 1,
+        DropMagAt = 4.3,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 1, rhik = 0 },
@@ -501,6 +514,12 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_la_mike32_reload_grab2.ogg", t = 134/30},
             {s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 146/30},
             {s = path .. "wfoly_plr_la_mike32_reload_end.ogg", t = 149/30},
+			{shelleject = true, att = 2, t = 1},
+			{shelleject = true, att = 5, t = 1},
+			{shelleject = true, att = 6, t = 1},
+			{shelleject = true, att = 7, t = 1},
+			{shelleject = true, att = 8, t = 1},
+			{shelleject = true, att = 9, t = 1},
             {hide = 1, t = 0},
             {hide = 2, t = 1},
             {hide = 3, t = 2.4},
@@ -514,7 +533,7 @@ SWEP.Animations = {
         MinProgress = 0.95,
         FireASAP = true,
         RefillProgress = 0.85,
-        DropMagAt = 0.7,
+        DropMagAt = 3.45,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 1, rhik = 0 },
@@ -539,6 +558,12 @@ SWEP.Animations = {
             {s = path .. "wfoly_plr_la_mike32_reload_grab2.ogg", t = 103/30},
             {s = path .. "wfoly_plr_la_mike32_reload_close_01.ogg", t = 117/30},
             {s = path .. "wfoly_plr_la_mike32_reload_end.ogg", t = 119/30},
+			{shelleject = true, att = 2, t = 0.7},
+			{shelleject = true, att = 5, t = 0.7},
+			{shelleject = true, att = 6, t = 0.7},
+			{shelleject = true, att = 7, t = 0.7},
+			{shelleject = true, att = 8, t = 0.7},
+			{shelleject = true, att = 9, t = 0.7},
             {hide = 1, t = 0},
             {hide = 2, t = 0.7},
             {hide = 3, t = 2},
