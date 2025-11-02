@@ -490,6 +490,114 @@ SWEP.Animations = {
 			{hide = 1, t = 1.27},
         },
     },
+    ["reload_mmag"] = {
+        Source = "reload_mmag",
+		MinProgress = 0.925,
+		PeekProgress = 0.875,
+		RefillProgress = 0.725,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 0, rhik = 0 },
+            { t = 0.725, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_alpha50_reload_raise.ogg", t = 0.167},
+			{s = path .. "wfoly_sn_alpha50_reload_magout_01.ogg", t = 0.733},
+			{s = path .. "wfoly_sn_alpha50_reload_arm.ogg", t = 1.3},
+			{s = path .. "wfoly_sn_alpha50_reload_maghit.ogg", t = 1.8},
+			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_01.ogg", t = 2.1},
+			{s = path .. "wfoly_sn_alpha50_reload_magin_v2_02.ogg", t = 2.233},
+			{s = path .. "wfoly_sn_alpha50_reload_end.ogg", t = 2.367},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.1},
+			{hide = 1, t = 1.375},
+        },
+    },
+    ["reload_mmag_empty"] = {
+        Source = "reload_empty_mmag",
+		MinProgress = 0.975,
+		PeekProgress = 0.95,
+		RefillProgress = 0.9,
+		FireASAP = true,
+		EjectAt = 0.475,
+		DropMagAt = 1.7,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.275, lhik = 0, rhik = 0 },
+            { t = 0.65, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = "COD2019.AX50.Rechamber", t = 0.2},
+            {s = path .. "wfoly_sn_alpha50_reload_empty_arm.ogg", t = 0.367},
+            {s = path .. "wfoly_sn_alpha50_reload_empty_magout_01.ogg", t = 1.3},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_maggrab.ogg", t = 1.533},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magin_v2_01.ogg", t = 2.5},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_magin_v2_02.ogg", t = 2.8},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_maghit_01.ogg", t = 3.1},
+            {s = path .. "wfoly_sn_alpha50_reload_empty_end.ogg", t = 3.733},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_boltclose_01.ogg", t = 3.733},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.7},
+			{hide = 1, t = 2},
+        },
+    },
+    ["reload_mmag_fast"] = {
+        Source = "reload_mmag_fast",
+		MinProgress = 0.9,
+		PeekProgress = 0.85,
+		RefillProgress = 0.65,
+		FireASAP = true,
+		DropMagAt = 0.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.625, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_sn_alpha50_reload_fast_mvmnt.ogg", t = 0.133},
+			{s = path .. "wfoly_sn_alpha50_reload_fast_magout_01.ogg", t = 0.3},
+            {s = path .. "wfoly_sn_alpha50_reload_fast_magin_v2_01.ogg", t = 1.13},
+			{s = path .. "wfoly_sn_alpha50_reload_fast_magin_v2_02.ogg", t = 1.25},
+			{s = path .. "wfoly_sn_alpha50_reload_fast_end.ogg", t = 1.3},
+			{hide = 1, t = 0},
+			{hide = 2, t = 0.5},
+			{hide = 1, t = 0.7},
+        },
+    },
+    ["reload_mmag_fast_empty"] = {
+        Source = "reload_empty_mmag_fast",
+		MinProgress = 0.975,
+		PeekProgress = 0.925,
+		RefillProgress = 0.85,
+		FireASAP = true,
+		EjectAt = 0.35,
+		DropMagAt = 1.1,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.2, lhik = 1, rhik = 0 },
+            { t = 0.3, lhik = 0, rhik = 0 },
+            { t = 0.6, lhik = 0, rhik = 0 },
+            { t = 0.725, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = "COD2019.AX50.Rechamber", t = 0.05},
+            {s = path .. "wfoly_sn_alpha50_reload_empty_fast_raise.ogg", t = 0.233},
+            {s = path .. "wfoly_sn_alpha50_reload_empty_fast_magout_01.ogg", v = 2.0, t = 0.75},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_fast_maggrab.ogg", t = 1.0},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_fast_magin_v2_01.ogg", v = 2.0, t = 1.6},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_fast_magin_v2_02.ogg", v = 2.0, t = 1.8},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_fast_boltclose_01.ogg", t = 2.3},
+			{s = path .. "wfoly_sn_alpha50_reload_empty_fast_end.ogg", t = 2.667},
+			{hide = 1, t = 0},
+			{hide = 2, t = 1.1},
+			{hide = 1, t = 1.27},
+        },
+    },
     ["reload_xmag"] = {
         Source = "reload_xmag",
 		MinProgress = 0.925,
@@ -521,7 +629,7 @@ SWEP.Animations = {
 		PeekProgress = 0.95,
 		RefillProgress = 0.9,
 		FireASAP = true,
-		EjectAt = 0.45,
+		EjectAt = 0.475,
 		DropMagAt = 1.7,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
@@ -723,7 +831,7 @@ SWEP.Animations = {
 
 -------------------------- ATTACHMENTS
 
---- 6 & ?? Round Mags ---
+--- 7 & 9 Round Mags ---
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
@@ -731,6 +839,14 @@ local Translate_XMag = {
 local Translate_XMag_Fast = {
     ["reload"] = "reload_xmag_fast",
     ["reload_empty"] = "reload_xmag_fast_empty",
+}
+local Translate_MMag = {
+    ["reload"] = "reload_mmag",
+    ["reload_empty"] = "reload_mmag_empty",
+}
+local Translate_MMag_Fast = {
+    ["reload"] = "reload_mmag_fast",
+    ["reload_empty"] = "reload_mmag_fast_empty",
 }
 
 --- Fast & Tac. Sprint ---
@@ -750,6 +866,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
     local xmag = wep:HasElement("mag_xmag")
+    local mmag = wep:HasElement("mag_mmag")
     local magex = wep:HasElement("mag_extend")
 
     if magex and speedload and Translate_XMag_Fast[anim] then
@@ -765,6 +882,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
             if Translate_XMag_Fast[anim] then
                 return Translate_XMag_Fast[anim]
             end
+		elseif mmag then
+            if Translate_MMag_Fast[anim] then
+                return Translate_MMag_Fast[anim]
+            end 
         else
             if Translate_Fast[anim] then
                 return Translate_Fast[anim]
@@ -774,6 +895,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         if xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
+            end
+		elseif mmag then
+            if Translate_MMag[anim] then
+                return Translate_MMag[anim]
             end
         end
     end
