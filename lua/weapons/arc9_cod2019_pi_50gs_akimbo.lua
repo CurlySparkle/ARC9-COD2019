@@ -297,10 +297,10 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 
 SWEP.AttachmentTableOverrides = {
     ["cod2019_50gs_slide_ext"] = {
-    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_slide_ext_akimbo.mdl"
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_slide_ext02_akimbo.mdl"
     },
     ["cod2019_50gs_slide_ext2"] = {
-    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_slide_ext02_akimbo.mdl"
+    Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_slide_ext_akimbo.mdl"
     },
 	["cod2019_50gs_mag_10"] = {
     Model = "models/weapons/cod2019/attachs/weapons/50gs/attachment_vm_pi_decho_xmags_akimbo.mdl",
