@@ -1811,7 +1811,6 @@ local Translate_AR_GL = {
     ["reload"] = "reload_argl",
     ["reload_empty"] = "reload_argl_empty",
 }
-
 local Translate_AR_GL_Fast = {
     ["reload"] = "reload_argl_fast",
     ["reload_empty"] = "reload_argl_fast_empty",
