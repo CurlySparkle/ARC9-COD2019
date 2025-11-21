@@ -518,7 +518,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_anovember94_reload_end.ogg", t = 2.1},
 			{hide = 1, t = 0},
 			{hide = 0, t = 0.4},
-			{hide = 2, t = 2.1},
+			{hide = 2, t = 2.09},
 			{hide = 1, t = 2.433},
         },
     },
