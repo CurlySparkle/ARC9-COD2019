@@ -794,6 +794,48 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_valpha_inspect_end.ogg", t = 4.967},
         },
     },
+    ["inspect_smag"] = {
+        Source = "lookat01_smag",
+		MinProgress = 0.9,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_ar_valpha_inspect_up.ogg", t = 0.1},
+			{s = path .. "wfoly_ar_valpha_inspect_magout.ogg", t = 0.633},
+			{s = path .. "wfoly_ar_valpha_inspect_magcatch.ogg", t = 1.3},
+			{s = path .. "wfoly_ar_valpha_inspect_magin.ogg", t = 1.767},
+			{s = path .. "wfoly_ar_valpha_inspect_rotate.ogg", t = 2.6},
+			{s = path .. "wfoly_ar_valpha_inspect_boltpull.ogg", t = 3.3},
+			{s = path .. "wfoly_ar_valpha_inspect_boltforward.ogg", t = 4.1},
+			{s = path .. "wfoly_ar_valpha_inspect_end.ogg", t = 4.867},
+        },
+    },
+    ["inspect_xmag"] = {
+        Source = "lookat01_xmag",
+		MinProgress = 0.9,
+		FireASAP = true,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 0, rhik = 0 },
+            { t = 0.9, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+            {s = path .. "wfoly_ar_valpha_inspect_up.ogg", t = 0.1},
+			{s = path .. "wfoly_ar_valpha_inspect_magout.ogg", t = 0.633},
+			{s = path .. "wfoly_ar_valpha_inspect_magcatch.ogg", t = 1.4},
+			{s = path .. "wfoly_ar_valpha_inspect_magin.ogg", t = 2.067},
+			{s = path .. "wfoly_ar_valpha_inspect_rotate.ogg", t = 2.7},
+			{s = path .. "wfoly_ar_valpha_inspect_boltpull.ogg", t = 3.4},
+			{s = path .. "wfoly_ar_valpha_inspect_boltforward.ogg", t = 4.2},
+			{s = path .. "wfoly_ar_valpha_inspect_end.ogg", t = 4.967},
+        },
+    },
     ["bash"] = {
         Source = {"melee","melee2","melee3"},
         IKTimeLine = {
@@ -855,20 +897,24 @@ SWEP.Animations = {
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
+	["inspect"] = "inspect_xmag",
 }
 local Translate_XMag_Fast = {
     ["reload"] = "reload_xmag_fast",
     ["reload_empty"] = "reload_xmag_fast_empty",
+	["inspect"] = "inspect_xmag",
 }
 
 --- 10 Round Mags ---
 local Translate_SMag = {
     ["reload"] = "reload_smag",
     ["reload_empty"] = "reload_smag_empty",
+	["inspect"] = "inspect_smag",
 }
 local Translate_SMag_Fast = {
     ["reload"] = "reload_smag_fast",
     ["reload_empty"] = "reload_smag_fast_empty",
+	["inspect"] = "inspect_smag",
 }
 
 --- Fast & Tac. Sprint ---
