@@ -371,10 +371,13 @@ SWEP.AttachmentTableOverrides = {
     Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_barrel_ext_akimbo.mdl"
     },
     ["cod2019_m19_slide_vented"] = {
-    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_slide_black_akimbo.mdl"
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_v2_slide_akimbo.mdl"
     },
     ["cod2019_m19_slide_light"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_slide_vented_akimbo.mdl"
+    },
+    ["cod2019_m19_slide_alt_black"] = {
+    Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_slide_black_akimbo.mdl"
     },
 	["cod2019_m19_mag_21"] = {
     Model = "models/weapons/cod2019/attachs/weapons/m19/attachment_vm_pi_papa320_mag_ext_akimbo.mdl",
