@@ -1526,7 +1526,7 @@ SWEP.Attachments = {
 		DefaultIcon = Material("entities/defattachs/optic.png", "mips smooth"),
         Bone = "tag_holo",
         Pos = Vector(1.5, 0, -0.1),
-        Category = {"cod2019_optic"},
+        Category = {"cod2019_optic","cod2019_an94_optic"},
 		InstalledElements = {"sight_rail"},
     },
     { -- 5
