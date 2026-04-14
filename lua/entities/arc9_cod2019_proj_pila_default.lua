@@ -176,7 +176,7 @@ function ENT:Detonate(data)
         util.Effect("WaterSurfaceExplosion", fx)
     else
         util.Effect("cod2019_grenade_explosion", fx)
-        self:EmitSound("Cod2019.Frag.Explode", _, _, _, _, _, _, ARC9.EveryoneRecipientFilter)
+        self:EmitSound("Cod2019.Frag.Explode")
     end
 
     --util.Decal("Scorch", self:GetPos(), self:GetPos() + self:GetUp() * -100, {self})
