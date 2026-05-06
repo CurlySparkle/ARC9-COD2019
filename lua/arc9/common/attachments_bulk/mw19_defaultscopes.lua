@@ -348,10 +348,14 @@ ATT.RTScopeSubmatIndex = 1
 ATT.RTScopeFOV = 36 / 3
 ATT.RTScopeRes = 1024
 ATT.RTScopeReticle = Material("hud/arc9_cod2019/overlays/mk4_crosshair.png", "mips")
-ATT.RTScopeReticleScale = 1.1
+ATT.RTScopeReticleScale = 1.0
 ATT.RTScopeShadowIntensity = 1
 ATT.RTScopeNoPP = false
 ATT.RTScopeColorable = false
+ATT.RTScopeNew_DisableShaderEyeOffset = true
+ATT.RTScopeNew_FixAngle = Angle(1, -1.623739361763, 0)
+ATT.RTScopeNew_ForceCheap = true -- highly specific
+ATT.RTScopeNew_OnlyInSights = true -- highly specific
 
 ARC9.LoadAttachment(ATT, "cod2019_optic_default_pila")
 
@@ -399,7 +403,7 @@ ATT.RTScopeNoShadow = true
 ATT.RTScopeBlackBox = false
 ATT.RTScopeBlackBoxShadow = false
 ATT.ScopeScreenRatio = 1
-ATT.RTScopeReticleScale = 1
+ATT.RTScopeReticleScale = 0.2
 
 ATT.RTScopeFLIR = true
 ATT.RTScopeFLIRSolid = false -- Solid color FLIR instead of like a shaded look
@@ -426,14 +430,20 @@ ATT.RTScopeFLIRCCHot = { -- Color correction drawn only on FLIR targets
     ["$pp_colour_mulb"] = 0
 }
 
+ATT.RTScopeNew_DisableShaderEyeOffset = true
+ATT.RTScopeNew_ForceCheap = true -- highly specific
+ATT.RTScopeNew_FixAngle = Angle(-0.6, -0.75, 0)
+ATT.RTScopeNew_ShadowScale = 3
+ATT.RTScopeNew_OnlyInSights = true -- highly specific
+
 local noise = Material("models/cod2019/shared/mw19_thermalnoise")
 
-ATT.RTScopeDrawFunc = function(swep, rtsize)
-cam.Start2D()
+ATT.RTScopeNew_DrawFunc2D = function(swep, rtsize)
+-- cam.Start2D()
 surface.SetMaterial(noise)
 surface.SetDrawColor(255, 255, 255, 255)
 surface.DrawTexturedRect(ScrW() * 0, ScrH() * 0, ScrW() * 1, ScrH() * 1)
-cam.End2D()
+-- cam.End2D()
 
 --DrawBloom( 0.65, 2, 9, 9, 1, 1, 1, 1, 1 )
 end

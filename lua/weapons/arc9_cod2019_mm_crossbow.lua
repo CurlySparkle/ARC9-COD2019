@@ -191,6 +191,8 @@ SWEP.IronSights = {
     CrosshairInSights = false
 }
 
+SWEP.DoFDepth = 0.05 -- Adjust if front sight getting blurred too
+
 SWEP.ViewModelFOVBase = 64
 
 SWEP.SprintMidPoint = {
