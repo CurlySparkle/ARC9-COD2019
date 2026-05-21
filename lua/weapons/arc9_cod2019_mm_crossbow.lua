@@ -88,6 +88,7 @@ SWEP.Crosshair = true
 SWEP.ForceStandardCrosshair = false
 SWEP.LauncherCrosshair = true
 
+SWEP.NoMuzzleEffect = true -- Disable muzzle effect entirely
 SWEP.NoFlash = true -- Disable light flash
 
 -------------------------- FIREMODES
