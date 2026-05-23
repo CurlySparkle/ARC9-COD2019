@@ -475,7 +475,6 @@ SWEP.Animations = {
 		RefillProgress = 0.6,
 		PeekProgress = 0.75,
 		FireASAP = true,
-		--DropMagAt = 0.75,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -500,7 +499,7 @@ SWEP.Animations = {
 		RefillProgress = 0.7,
 		PeekProgress = 0.775,
 		FireASAP = true,
-		DropMagAt = 0.75,
+		DropMagAt = 0.94,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 1 },
             { t = 0.1, lhik = 0, rhik = 1 },
@@ -519,8 +518,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_sn_mike14_reload_empty_charge.ogg", t = 59/30},
 			{s = path .. "wfoly_sn_mike14_reload_empty_end.ogg", t = 63/30},
 			{hide = 1, t = 0},
-			{hide = 3, t = 0.75},
-			{hide = 1, t = 0.933},	
+			{hide = 0, t = 0.233},
+			{hide = 2, t = 0.94},
+			{hide = 1, t = 1.86},
         },
     },
     ["reload_xmag_fast"] = {
@@ -882,13 +882,13 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
         if xmag2 then
             if Translate_XMag2[anim] then
                 return Translate_XMag2[anim]
+			end
         elseif xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
             end
         end
     end
-end
 	
     --wep.MWHybridSwitching = nil
     if anim == "switchsights" then
