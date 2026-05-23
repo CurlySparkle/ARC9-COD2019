@@ -252,7 +252,7 @@ SWEP.CustomizeNoRotate = false
 
 SWEP.PeekMaxFOV = 60
 
-SWEP.PeekPos = Vector(-1.5, 1, -3.2)
+SWEP.PeekPos = Vector(-1, 2.5, -3.2)
 SWEP.PeekAng = Angle(-0.5, 1, -45)
 
 SWEP.PeekPosReloading = Vector(0, 4, -1.5)
