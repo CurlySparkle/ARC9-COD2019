@@ -500,6 +500,111 @@ SWEP.Animations = {
 			{hide = 1, t = 1.675},
         },
     },
+    ["reload_mmag"] = {
+        Source = "reload_mmag",
+		MinProgress = 0.85,
+		PeekProgress = 0.8,
+		RefillProgress = 0.55,
+		FireASAP = true,
+		MagSwapTime = 3.5,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.15, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.825, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_raise.ogg", t = 0.1},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_magout.ogg", t = 0.667},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_maghit.ogg", t = 1.233},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_magin.ogg", t = 1.467},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_arm.ogg", t = 1.667},
+            {s = path .. "wfoly_ar_sierra552_reload_xmag_end.ogg", t = 1.9},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1.825},
+			{hide = 1, t = 2.4},
+        },
+    },
+    ["reload_mmag_empty"] = {
+        Source = "reload_mmag_empty",
+		MinProgress = 0.9,
+		PeekProgress = 0.81,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 1.13,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.725, lhik = 0, rhik = 0 },
+            { t = 0.875, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_empty_raise.ogg", t = 0.1},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_empty_magout.ogg", t = 0.633},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_empty_maghit.ogg", t = 0.8},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_empty_magin.ogg", t = 1.5},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_empty_arm.ogg", t = 1.867},
+			{s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 2.2},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_empty_end.ogg", t = 2.667},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.4},
+			{hide = 2, t = 1.13},
+			{hide = 1, t = 2.8},
+        },
+    },
+    ["reload_mmag_fast"] = {
+        Source = "reload_mmag_fast",
+		MinProgress = 0.85,
+		PeekProgress = 0.815,
+		RefillProgress = 0.675,
+		FireASAP = true,
+		MagSwapTime = 1.5,
+		DropMagAt = 1,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.675, lhik = 0, rhik = 0 },
+            { t = 0.85, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_raise.ogg", t = 0.067},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_magout.ogg", t = 0.467},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_maghit.ogg", t = 0.9},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_magin.ogg", t = 1.2},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_end.ogg", t = 1.533},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.7},
+        },
+    },
+    ["reload_mmag_fast_empty"] = {
+        Source = "reload_mmag_fast_empty",
+		MinProgress = 0.9,
+		PeekProgress = 0.825,
+		RefillProgress = 0.75,
+		FireASAP = true,
+		DropMagAt = 1,
+        IKTimeLine = {
+            { t = 0, lhik = 1, rhik = 0 },
+            { t = 0.1, lhik = 0, rhik = 0 },
+            { t = 0.7, lhik = 0, rhik = 0 },
+            { t = 0.875, lhik = 1, rhik = 1 },
+        },
+        EventTable = {
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_empty_raise.ogg", t = 0.1},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_empty_magout.ogg", t = 0.467},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_empty_maghit.ogg", t = 0.9},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_empty_magin.ogg", t = 1.167},
+			{s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 1.47},
+			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_empty_end.ogg", t = 1.9},
+			{hide = 1, t = 0},
+			{hide = 0, t = 0.3},
+			{hide = 2, t = 1},
+			{hide = 1, t = 1.675},
+        },
+    },
     ["reload_xmag"] = {
         Source = "reload_xmag",
 		MinProgress = 0.85,
@@ -574,9 +679,9 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_magin.ogg", t = 1.2},
 			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_end.ogg", t = 1.533},
 			{hide = 1, t = 0},
-			{hide = 0, t = 0.4},
+			{hide = 0, t = 0.3},
 			{hide = 2, t = 1},
-			{hide = 1, t = 1.675},
+			{hide = 1, t = 1.7},
         },
     },
     ["reload_xmag_fast_empty"] = {
@@ -600,7 +705,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_ar_sierra552_raise_first_bolt_release.ogg", t = 1.47},
 			{s = path .. "wfoly_ar_sierra552_reload_xmag_fast_empty_end.ogg", t = 1.9},
 			{hide = 1, t = 0},
-			{hide = 0, t = 0.4},
+			{hide = 0, t = 0.3},
 			{hide = 2, t = 1},
 			{hide = 1, t = 1.675},
         },
@@ -1044,6 +1149,15 @@ SWEP.Animations = {
 -------------------------- ATTACHMENTS
 
 --- 50 & 60 Round Mags ---
+local Translate_MMag = {
+	["reload"] = "reload_mmag",
+	["reload_empty"] = "reload_mmag_empty",
+}
+local Translate_MMag_Fast = {
+	["reload"] = "reload_mmag_fast",
+	["reload_empty"] = "reload_mmag_fast_empty",
+	["reload_ubgl"] = "reload_fast_ubgl",
+}
 local Translate_XMag = {
     ["reload"] = "reload_xmag",
     ["reload_empty"] = "reload_xmag_empty",
@@ -1114,7 +1228,8 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
-    local xmag = wep:HasElement("mag_xmag")
+	local mmag = wep:HasElement("mag_mmag")
+	local xmag = wep:HasElement("mag_xmag")
 	local masterkey = wep:HasElement("shotgun")
 
     if super_sprint and Translate_TacSprint[anim] then
@@ -1127,10 +1242,14 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 				return Translate_UBGLS_Fast[anim]
 			end
 		end
-        if xmag then
+        if mmag then
+            if Translate_MMag_Fast[anim] then
+                return Translate_MMag_Fast[anim]
+            end
+		elseif xmag then
             if Translate_XMag_Fast[anim] then
                 return Translate_XMag_Fast[anim]
-            end
+            end 
         else
             if Translate_Fast[anim] then
                 return Translate_Fast[anim]
@@ -1142,7 +1261,11 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 				return Translate_UBGLS[anim]
 			end
 		end
-        if xmag then
+        if mmag then
+            if Translate_MMag[anim] then
+                return Translate_MMag[anim]
+            end
+		elseif xmag then
             if Translate_XMag[anim] then
                 return Translate_XMag[anim]
             end
@@ -1176,7 +1299,7 @@ SWEP.AttachmentTableOverrides = {
     ["cod2019_attach_xmag_50"] = {
     Model = "models/weapons/cod2019/attachs/weapons/grau556/attachment_vm_ar_sierra552_xmags.mdl",
     DropMagazineModel = "models/weapons/cod2019/attachs/weapons/grau556/attachment_vm_ar_sierra552_xmags.mdl",
-	ActivateElements = {"mag_none","mag_xmag"}
+	ActivateElements = {"mag_none","mag_mmag"}
     },
     ["cod2019_attach_xmag_60"] = {
     Model = "models/weapons/cod2019/attachs/weapons/grau556/attachment_vm_ar_sierra552_xmagslrg.mdl",
