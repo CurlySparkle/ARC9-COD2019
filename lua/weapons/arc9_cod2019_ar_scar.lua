@@ -1439,10 +1439,12 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.75,
 		EventTable = {
-			{s = path .. "wpn_iw8_scar17s_gl_open.ogg", t = 4/30},
-			{s = path .. "wpn_iw8_scar17s_gl_shell_in.ogg", t = 26/30},
-			{s = path .. "wpn_iw8_scar17s_gl_close.ogg", t = 59.5/30},
-            {s = path .. "wpn_iw8_scar17s_gl_end.ogg", t = 60.5/30},
+			{s = path .. "wfoly_ar_scharlie_gl_reload_open.ogg", t = 4/30},
+            {s = path .. "wfoly_ar_scharlie_gl_fromgrenade_mvmnt.ogg", t = 6/30},
+            {s = path .. "wfoly_ar_scharlie_gl_togrenade_movement.ogg", t = 20/30},
+			{s = path .. "wfoly_ar_scharlie_gl_reload_shell_load.ogg", t = 26/30},
+			{s = path .. "wfoly_ar_scharlie_gl_reload_chamber_close.ogg", t = 59.5/30},
+            {s = path .. "wfoly_ar_scharlie_gl_reload_end.ogg", t = 60.5/30},
 			{hide = 6, t = 0},
 			{hide = 4, t = 0.8},
 			{hide = 5, t = 1},
@@ -1454,10 +1456,12 @@ SWEP.Animations = {
 		FireASAP = true,
 		RefillProgress = 0.75,
 		EventTable = {
-			{s = path .. "wpn_iw8_scar17s_gl_open.ogg", t = 0/30},
-			{s = path .. "wpn_iw8_scar17s_gl_shell_in.ogg", t = 14/30},
-            {s = path .. "wpn_iw8_scar17s_gl_end.ogg", t = 42/30},
-			{s = path .. "wpn_iw8_scar17s_gl_close.ogg", t = 46/30},
+			{s = path .. "wfoly_ar_scharlie_gl_reload_fast_shell_eject.ogg", t = 0/30},
+            {s = path .. "wfoly_ar_scharlie_gl_fromgrenade_mvmnt.ogg", t = 3/30},
+            {s = path .. "wfoly_ar_scharlie_gl_togrenade_movement.ogg", t = 10/30},
+			{s = path .. "wfoly_ar_scharlie_gl_reload_fast_shell_load.ogg", t = 13/30},
+            {s = path .. "wfoly_ar_scharlie_gl_reload_fast_end.ogg", t = 42/30},
+			{s = path .. "wfoly_ar_scharlie_gl_reload_chamber_close.ogg", t = 46/30},
 			{hide = 6, t = 0},
 			{hide = 4, t = 0.5},
 			{hide = 5, t = 0.65},
@@ -1474,7 +1478,7 @@ SWEP.Animations = {
             { t = 0.7, lhik = 0, rhik = 0 },
         },
 		EventTable = {
-			{s = path .. "wpn_iw8_scar17s_to_gl.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_gl_raise_mvmnt.ogg", t = 0/30},
 		}
 	},
     ["exit_ubgl"] = {
@@ -1488,7 +1492,7 @@ SWEP.Animations = {
             { t = 0.9, lhik = 1, rhik = 0 },
         },
         EventTable = {
-			{s = path .. "wpn_iw8_scar17s_out_gl.ogg", t = 0/30},
+			{s = path .. "wfoly_ar_scharlie_gl_drop_mvmnt.ogg", t = 0/30},
         },
     },
     ["draw_ubgl"] = {
