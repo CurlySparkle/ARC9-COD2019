@@ -1794,7 +1794,7 @@ local Translate_GL_Fast = {
 }
 local Translate_XMags_GL = {
     ["reload"] = "reload_xmags_glaunch",
-    ["reload_empty"] = "reload_empty_glaunch",
+    ["reload_empty"] = "reload_xmags_empty_glaunch",
 }
 local Translate_XMags_GL_Fast = {
     ["reload"] = "reload_fast_glaunch",
