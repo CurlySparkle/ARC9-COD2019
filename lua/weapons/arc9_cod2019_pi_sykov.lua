@@ -496,7 +496,7 @@ SWEP.Animations = {
 		PeekProgress = 0.725,
 		RefillProgress = 0.575,
 		FireASAP = true,
-		MagSwapTime = 4,
+		MagSwapTime = 2,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -957,7 +957,7 @@ SWEP.Animations = {
 		PeekProgress = 0.725,
 		RefillProgress = 0.575,
 		FireASAP = true,
-		MagSwapTime = 4,
+		MagSwapTime = 2,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -1381,7 +1381,7 @@ SWEP.Hook_TranslateAnimation = function(wep, anim)
 
     local speedload = wep:HasElement("perk_speedreload")
     local super_sprint = wep:HasElement("perk_super_sprint")
-	local xmag = wep:HasElement("mag_xmaglrg")
+	local xmag = wep:HasElement("mag_xmag")
     local drum = wep:HasElement("mag_drum")
 	local stock = wep:HasElement("stock")
 
