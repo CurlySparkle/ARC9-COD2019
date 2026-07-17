@@ -331,13 +331,13 @@ SWEP.EnterSightsSound = path .. "wfoly_ar_mike4_ads_up.ogg"
 SWEP.ExitSightsSound = path .. "wfoly_ar_mike4_ads_down.ogg"
 
 SWEP.BulletBones = {
-    [1] = {"j_b_16"},
-    [2] = {"j_b_15"},
-    [3] = {"j_b_14"},
-    [4] = {"j_b_13"},
-    [5] = {"j_b_12"},
-    [6] = {"j_b_11"},
-    [7] = {"j_b_10"},
+    [1] = {"j_b_016"},
+    [2] = {"j_b_015"},
+    [3] = {"j_b_014"},
+    [4] = {"j_b_013"},
+    [5] = {"j_b_012"},
+    [6] = {"j_b_011"},
+    [7] = {"j_b_010"},
     [8] = {"j_b_09"},
     [9] = {"j_b_08"},
     [10] = {"j_b_07"},
@@ -440,6 +440,7 @@ SWEP.Animations = {
 		PeekProgress = 0.8625,
 		RefillProgress = 0.575,
 		FireASAP = true,
+		MagSwapTime = 2.5,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.1, lhik = 0, rhik = 0 },
@@ -464,6 +465,7 @@ SWEP.Animations = {
 		PeekProgress = 0.85,
 		RefillProgress = 0.7,
 		FireASAP = true,
+		MagSwapTime = 0.9,
 		DropMagAt = 0.425,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
