@@ -1,0 +1,35 @@
+"VertexLitGeneric"
+{
+    "$basetexture" "models/cod2019/shared/shell_ar_762n_rgb"
+    "$bumpmap" "models/cod2019/shared/shell_ar_762n_n"
+    "$phongexponenttexture" "models/cod2019/shared/shell_ar_762n_e"
+
+    /////////////////
+    "$color2" "[0.45 0.45 0.45]"                                     //do not touch this
+    "$blendtintbybasealpha" "1"                             //do not touch this
+    /////////////////
+
+    "$phong" "1"
+    "$phongboost" "1"
+    "$phongalbedotint" "1"
+    "$phongalbedoboost" "10"                                //toy around with this
+    "$phongfresnelranges" "[1 0.5 0]"
+
+    /////////////////
+    "$normalmapalphaenvmapmask" "1"                         //do not touch this
+    /////////////////
+
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[0.525 0.408 0.224]"                 
+
+    //remove this if not using MWB
+    "Proxies"
+    {
+        "Arc9EnvMapTint"
+        {
+            "min" "0"
+            "max" "0.5"
+            "color" "[0.525 0.408 0.224]"
+        }
+    }
+}
