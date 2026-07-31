@@ -46,7 +46,7 @@ SWEP.WorldModelOffset = {
     TPIKAng = Angle(-12.5, -1, 165),
     Scale = 1,
 
-    TPIKPosSightOffset = Vector(2.5, 1, -2.5),
+    TPIKPosSightOffset = Vector(2.5, 1.25, -1.5),
 }
 
 -------------------------- DAMAGE PROFILE
@@ -426,9 +426,10 @@ SWEP.Animations = {
             {s = path .. "wfoly_ar_akilo47_reload_maghit.ogg", t = 1.66},
             {s = path .. "wfoly_ar_akilo47_reload_click.ogg", t = 1.83},
             {s = path .. "wfoly_ar_akilo47_reload_end.ogg", t = 2.13},
-            {hide = 2, t = 0},
+            {hide = 1, t = 0},
             {hide = 0, t = 0.4},
-            {hide = 1, t = 2},
+            {hide = 2, t = 2},
+            {hide = 1, t = 2.45},
         },
     },
     ["reload_empty"] = {
