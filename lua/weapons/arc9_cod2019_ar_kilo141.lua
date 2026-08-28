@@ -426,7 +426,7 @@ SWEP.Animations = {
 		PeekProgress = 0.8,
 		RefillProgress = 0.7,
 		FireASAP = true,
-		DropMagAt = 0.525,
+		DropMagAt = 0.52,
         IKTimeLine = {
             { t = 0, lhik = 1, rhik = 0 },
             { t = 0.15, lhik = 0, rhik = 0 },
@@ -443,7 +443,7 @@ SWEP.Animations = {
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_charge_01.ogg", t = 1.93},
 			{s = path .. "wfoly_plr_ar_kilo433_reload_empty_end.ogg", t = 2.4},
 			{hide = 1, t = 0},
-			{hide = 3, t = 0.525},
+			{hide = 3, t = 0.52},
 			{hide = 1, t = 0.625},
         },
     },

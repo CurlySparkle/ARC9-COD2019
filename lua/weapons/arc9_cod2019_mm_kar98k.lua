@@ -16,6 +16,7 @@ SWEP.ARC9WeaponCategory = 5
 SWEP.PrintName = ARC9:GetPhrase("mw19_weapon_kar98") or "Kar98k"
 
 SWEP.Class = ARC9:GetPhrase("mw19_class_weapon_marksman") or "Marksman Rifle"
+
 SWEP.Trivia = {
     [ ARC9:GetPhrase("mw19_country") ] = ARC9:GetPhrase("mw19_country_germany"),
     [ ARC9:GetPhrase("mw19_caliber") ] = ARC9:GetPhrase("mw19_caliber_792mauser"),
@@ -819,7 +820,10 @@ SWEP.AttachmentElements = {
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
     local model = data.model
-	
+
+    if wep:HasElement("cod2019_kar98k_grip_monopod") then 
+		model:SetBodygroup(5,0)	
+	end
     if wep:HasElement("scope_kar98k") then 
 		model:SetBodygroup(7,0)	
 	end
@@ -868,7 +872,7 @@ SWEP.Attachments = {
     { -- 6
         PrintName = ARC9:GetPhrase("mw19_category_underbarrel"),
 		DefaultIcon = Material("entities/defattachs/grip.png", "mips smooth"),
-        Category = "cod2019_grip",
+        Category = {"cod2019_grip","cod2019_kar98k_grip"},
         Bone = "tag_attachments",
         Pos = Vector(18.2, 0, 0.55),
         Ang = Angle(0, 0, 180),
