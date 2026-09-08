@@ -41,7 +41,7 @@ SWEP.MirrorVMWM = true
 SWEP.NoTPIKVMPos = true
 SWEP.WorldModelMirror = "models/weapons/cod2019/c_snip_mk2.mdl"
 SWEP.WorldModelOffset = {
-    Pos = Vector(-1.5, 4, -5.75),
+    Pos = Vector(-2, 3.5, -5.75),
     Ang = Angle(-5, 0, 180),
     TPIKPos = Vector(-5, 4, -5),
     TPIKAng = Angle(-12.5, -1, 165),
@@ -92,6 +92,7 @@ SWEP.ClipSize = 6 -- Self-explanatory.
 SWEP.SupplyLimit = 12 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
+SWEP.ShotgunReload = true
 SWEP.ShotgunReloadIncludesChamber = false -- Shotguns reload to full capacity, assuming that the chamber is loaded as part of the animation.
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
@@ -99,8 +100,6 @@ SWEP.Crosshair = true
 
 SWEP.ManualAction = true
 SWEP.NoLastCycle = false
-
-SWEP.ManualAction = true
 SWEP.ManualActionNoLastCycle = true
 
 -------------------------- FIREMODES
@@ -281,7 +280,6 @@ SWEP.ShellSounds = ARC9.COD2019_338_Table
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
-SWEP.ShotgunReload = true
 
 -------------------------- SOUNDS
 SWEP.ShootVolume = 160

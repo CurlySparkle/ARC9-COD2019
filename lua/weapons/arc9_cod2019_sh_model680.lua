@@ -85,6 +85,7 @@ SWEP.ClipSize = 8 -- Self-explanatory.
 SWEP.SupplyLimit = 8 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit = 2 -- Amount of reserve UBGL magazines you can take.
 
+SWEP.ShotgunReload = true
 SWEP.ShotgunReloadIncludesChamber = false -- Shotguns reload to full capacity, assuming that the chamber is loaded as part of the animation.
 SWEP.ReloadInSights = true -- This weapon can aim down sights while reloading.
 SWEP.DrawCrosshair = true
@@ -93,8 +94,6 @@ SWEP.ForceStandardCrosshair = false
 
 SWEP.ManualAction = true
 SWEP.NoLastCycle = true
-
-SWEP.ManualAction = true
 SWEP.ManualActionNoLastCycle = true
 
 -------------------------- FIREMODES
@@ -283,7 +282,6 @@ SWEP.EjectDelay = 0.15
 
 SWEP.ShouldDropMag = false
 SWEP.ShouldDropMagEmpty = false
-SWEP.ShotgunReload = true
 
 --SWEP.DropMagazineModel = "models/weapons/cod2019/mags/w_pist_50gs_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds = {
